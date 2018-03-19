@@ -22,18 +22,26 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+<p align="center">
+<img src="https://github.com/eclipse/openj9/blob/master/artwork/OpenJ9.svg" alt="OpenJ9 logo" align="middle" width="50%" height="50%" />
+<p>
 
-This repository contains the documentation to support the Open J9 virtual machine.
+# Eclipse OpenJ9 user documentation
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+[![License](https://img.shields.io/badge/License-EPL%202.0-green.svg)](https://opensource.org/licenses/EPL-2.0)
+[![License](https://img.shields.io/badge/License-APL%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+This repository contains the source files for the [Eclipse OpenJ9 user documentation](http://www.eclipse.org/openj9/docs).
+The user documentation tells you how to configure, tune, and diagnose problems with
+an OpenJDK that has been built with the OpenJ9 Java virtual machine.
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+New to Eclipse OpenJ9? Here are a few links to get you started:
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+- Visit the [Eclipse OpenJ9 website](http://www.eclipse.org/openj9) to find out more.
+- Grab an OpenJDK binary that embeds OpenJ9 from  [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk8-openj9).
+
+The files in this repository are authored in markdown format and built using
+[Mkdocs](http://www.mkdocs.org/) with the [MkDocs-material theme](https://squidfunk.github.io/mkdocs-material/).
+
+We welcome contributions to the user documentation. Please follow our
+[Contribution guidelines](CONTRIBUTING.md).
