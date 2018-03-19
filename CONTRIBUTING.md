@@ -24,8 +24,6 @@
 
 # Contributing to the documentation
 
-:warning: The ID team are not accepting contributions at this time.
-
 The user documentation is authored in markdown and built into HTML using [Mkdocs](http://www.mkdocs.org/), with a [mkdocs-material](https://github.com/squidfunk/mkdocs-material) theme. If you want to
 contribute to the documentation, we recommend that you install a local test environment for editing and previewing your changes.
 
