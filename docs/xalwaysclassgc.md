@@ -22,18 +22,20 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xalwaysclassgc 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Always perform dynamic class unloading checks during global garbage collection.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+## Syntax
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+        -Xalwaysclassgc
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+## Default behavior
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+If you don't set this option, the default behavior is defined by [`-Xclassgc`](xclassgc.md).
+
+
+
+
+<!-- ==== END OF TOPIC ==== xalwaysclassgc.md ==== -->
+

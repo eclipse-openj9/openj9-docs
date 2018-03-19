@@ -1,0 +1,520 @@
+﻿<!--
+* Copyright (c) 2017, 2018 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+-->
+
+
+
+
+
+
+# -Xshareclasses
+
+You can use the `-Xshareclasses` option to enable class sharing. This option can take a number of parameters, some of which are cache utilities.
+
+Cache utilities perform the required operation on the specified cache, without starting the VM. You can combine multiple suboptions, which are separated by commas, but the cache utilities are mutually exclusive.
+
+When you are running cache utilities, the message `Could not create the Java virtual machine` is expected. Cache utilities do not create the virtual machine.
+
+Some cache utilities can work with caches from previous Java<sup>&trade;</sup> versions or caches that are created by virtual machines (VMs) with different bit-widths. These caches are referred to as *"incompatible"* caches.
+
+## Syntax
+
+        -Xshareclasses:<parameter>
+
+## Parameters
+
+### `adjustmaxaot` (Cache utility)
+
+        -Xshareclasses:adjustmaxaot=<size>
+
+: Adjusts the maximum shared classes cache space that is allowed for AOT data. When you use the `-Xshareclasses:verbose` option, the VM writes to the console the number of bytes that are not stored due to the current setting of the [`-Xscmaxaot`](xscminaot.md "When you create a shared classes cache, you can use this option to apply a maximum number of bytes in the class cache that can be used for AOT data.") option.
+
+### `adjustminaot` (Cache utility)
+
+        -Xshareclasses:adjustminaot=<size>
+
+: Adjusts the minimum shared classes cache space that is reserved for AOT data. Use the [`-Xscminaot`](xscminaot.md "When you create a shared classes cache, you can use this option to apply a minimum number of bytes in the class cache to reserve for AOT data.") option to set the initial minimum size.
+
+### `adjustmaxjitdata` (Cache utility)
+
+        -Xshareclasses:adjustmaxjitdata=<size>
+
+: Adjusts the maximum shared classes cache space that is allowed for JIT data. When you use the `-Xshareclasses:verbose` option, the VM writes to the console the number of bytes that are not stored due to the current setting of the [`-Xscmaxjitdata`](xscminjitdata.md "When you create a shared classes cache, you can use this option to apply a maximum number of bytes in the class cache that can be used for JIT data.") option.
+
+### `adjustminjitdata` (Cache utility)
+
+        -Xshareclasses:adjustminjitdata=<size>
+
+: Adjusts the minimum shared classes cache space that is reserved for JIT data. Use the [`-Xscminjitdata`](xscminjitdata.md "When you create a shared classes cache, you can use this option to apply a minimum number of bytes in the class cache to reserve for JIT data.") option to set the initial minimum size.
+
+### `adjustsoftmx` (Cache utility)
+
+        -Xshareclasses:adjustsoftmx=<size>
+
+: Adjusts the soft maximum size of the cache. When you use the `-Xshareclasses:verbose` option, the VM writes to the console the number of bytes that are not stored due to the current setting of the soft maximum size. For more information about the soft maximum size, see [-Xscmx](xscmx.md "For a new shared class cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option).").
+
+### `allowClasspaths`
+
+        -Xshareclasses:allowClasspaths
+
+: Allows a VM to store classpaths into an existing shared cache that was created by using the `restrictClasspaths` option.
+
+### `cacheDir`
+
+        -Xshareclasses:cacheDir=<directory>
+
+: Sets the directory in which cache data is read and written. The following defaults apply:
+
+    - On Windows<sup>&trade;</sup> systems, `<directory>` is the user's `C:\\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
+    - On AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and z/OS<sup>&reg;</sup> systems, `<directory>` is `/tmp/javasharedresources`. You must have sufficient permissions in `<directory>`. For AIX, the directory must not be on an NFS mount for persistent caches.
+
+: On AIX, Linux, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system.
+
+: Nonpersistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a `javasharedresources` subdirectory of the `cacheDir` specified. Do not move or delete control files in this directory. The `listAllCaches` utility, the `destroyAll` utility, and the `expire` suboption work only in the scope of a given `cacheDir`.
+
+: On AIX and Linux systems, if you specify the `cacheDir=<directory>` option, persistent caches are created with the following permissions (`-rw-r--r--`):
+
+    -   User: read/write
+    -   Group: read (read/write if you also specify `-Xshareclasses:groupAccess`)
+    -   Other: read only
+
+
+: Otherwise, persistent caches are created with the same permissions as non-persistent caches. The permissions for non-persistent caches are `-rw-r-----`, or `-rw-rw----` if you also specify `-Xshareclasses:groupAccess`.
+
+
+### `cacheDirPerm`
+
+: **(AIX, Linux, z/OS only)**
+
+        -Xshareclasses:cacheDirPerm=<permission>
+
+: Sets Unix-style permissions when you are creating a cache directory. `<permission>` must be an octal number in the ranges 0700 - 0777 or 1700 - 1777. If `<permission>` is not valid, the VM ends with an appropriate error message.
+
+: The permissions that are specified by this suboption are used only when you are creating a new cache directory. If the cache directory already exists, this suboption is ignored and the cache directory permissions are not changed.
+
+: If you set this suboption to 0000, the default directory permissions are used. If you set this suboption to 1000, the machine default directory permissions are used, but the sticky bit is enabled.
+
+: If the cache directory is the platform default directory, `/tmp/javasharedresources`, this suboption is ignored and the cache directory permissions are set to 777. If you do not set this suboption, the cache directory permissions are set to 777, for compatibility with earlier Java versions.
+
+: On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF<sup>&reg;</sup> errors, which generate log messages.
+
+### `cacheRetransformed`
+
+        -Xshareclasses:cacheRetransformed
+
+: Enables caching of classes that are transformed by using the JVMTI `RetransformClasses` function. For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [JVMTI redefinition and retransformation of classes](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_jvmti.html).
+
+The option `enableBCI` is enabled by default. However, if you use the `cacheRetransformed` option, this option forces cache creation into `-Xshareclasses:disableBCI` mode.
+
+### `destroy` (Cache utility)
+
+        -Xshareclasses:destroy
+
+: Destroys a cache that is specified by the `name`, `cacheDir`, and `nonpersistent` suboptions. A cache can be destroyed only if all VMs that are using it have ended and the user has sufficient permissions.
+
+### `destroyAll` (Cache utility)
+
+        -Xshareclasses:destroyAll
+
+: Tries to destroy all the caches that are specified by the `cacheDir` and `nonpersistent` suboptions.
+
+: On Windows and z/OS systems, a cache can be destroyed only if all VMs that are using it have shut down and the user has sufficient permissions.
+
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** On z/OS, when the `destroyAll` option is invoked from a 31-bit VM, 64-bit caches are not destroyed. Similarly, when the `destroyAll` option is invoked from a 64-bit VM, 31-bit caches are not destroyed. The following message is displayed:
+
+        JVMSHRC735I: Use a nn-bit VM to perform the requested operation on the
+        nn-bit shared cache "cachename" as the nn-bit VM
+        cannot verify that the shared memory was created by the VM.
+
+: On AIX and Linux systems:
+
+- Non-persistent caches can be destroyed only if all VMs that are using it have shut down and the user has sufficient permissions.
+
+- Persistent caches that are still in use continue to exist even when you use this option, but they are unlinked from the file system so they are not visible to new VM invocations. If you update the VM then restart an application for which a persistent shared cache already exists, the VM unlinks the existing cache and creates a new cache. Because the unlinked caches are not visible to new VMs, you cannot find them by using the `-Xshareclasses:listAllCaches` option, and you cannot use the `-Xshareclasses:printStats` option on them. You can therefore have multiple unlinked caches that consume file system space until they are no longer in use.
+
+### `destroyAllSnapshots` (Cache utility)
+
+: **(AIX, Linux, z/OS only)**
+
+        -Xshareclasses:destroyAllSnapshots
+
+: Destroys all shared cache snapshots that are available as a result of the specified `cacheDir` suboption.
+
+### `destroySnapshot` (Cache utility)
+
+: **(AIX, Linux, z/OS only)**
+
+        -Xshareclasses:destroySnapshot
+
+: Destroys a snapshot that is specified by the `name` and `cacheDir` suboptions.
+
+### `disableBCI`
+
+        -Xshareclasses:disableBCI
+
+: Turns off BCI support. This option can be used to override [`-XXShareClassesEnableBCI`](xxshareclassesenablebci.md).
+
+### `enableBCI`
+
+        -Xshareclasses:enableBCI
+
+: This option is enabled by default.
+
+: Allows a JVMTI `ClassFileLoadHook` event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about this option, see <i class="fa fa-external-link" aria-hidden="true"></i> [Using the JVMTI ClassFileLoadHook with cached classes](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/diag/tools/shcpd_rbm_jvmti_mod.html). This option is incompatible with the [`cacheRetransformed`](#cacheretransformed) option. Using the two options together causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this
+case, the VM continues without using shared classes.
+
+: A cache that is created without the `enableBCI` suboption cannot be reused with the `enableBCI` suboption. Attempting to do so causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this case, the VM continues without using shared classes. A cache that is created with the `enableBCI` suboption can be reused without specifying this suboption. In this case, the VM detects that the cache was created with the `enableBCI` suboption and uses the cache in this mode.
+
+### `expire` (Cache utility)
+
+        -Xshareclasses:expire=<time_in_minutes>
+
+: Destroys all caches that are unused for the time that is specified before loading shared classes. This option is not a utility option because it does not cause the VM to exit. On Windows systems, which have NTFS file systems, the `expire` option is accurate to the nearest hour.
+
+### `findAotMethods` (Cache utility)
+
+        -Xshareclasses:findAotMethods=<method_specification>
+        -Xshareclasses:findAotMethods=help
+
+: Print the AOT methods in the shared cache that match the method specifications. Methods that are already invalidated are indicated in the output. Use this suboption to check which AOT methods in the shared class cache would be invalidated by using the same method specifications with the `invalidateAotMethods` suboption. To learn more about the syntax to use for `<method_specification>`, including how to specify more than one method, see [Method specification syntax](#method-specification-syntax).
+
+### `groupAccess`
+
+: **(AIX, Linux, z/OS only)**
+
+        -Xshareclasses:groupAccess
+
+: Sets operating system permissions on a new cache to allow group access to the cache. Group access can be set only when permitted by the operating system `umask` setting. The default is user access only.
+
+: On AIX and Linux systems, if a user creates a cache by specifying the `groupAccess` suboption, other users in the same group must also specify this suboption to be granted access to the same cache.
+
+: In certain situations, warning messages might be generated when the `groupAccess` suboption is used.
+
+: This message can occur when persistent caches are used:
+
+        JVMSHRC756W Failed to set group access permission on the shared cache
+        file as requested by the 'groupAccess' sub-option
+
+: These messages can occur when non-persistent caches are used:
+
+        JVMSHRC759W Failed to set group access permission as requested by the
+        'groupAccess' sub-option on the semaphore control file associated
+        with shared class cache.
+
+        JVMSHRC760W Failed to set group access permission as requested by the
+        'groupAccess' sub-option on the shared memory control file associated
+        with shared class cache.
+
+: This message can occur in combination with the `snapshotCache` suboption:
+
+        JVMSHRC761W Failed to set group access permission as requested by the
+        'groupAccess' sub-option on the shared cache snapshot file.
+
+: All of these warning messages mean that the user's **umask** setting does not allow either, or both, of the group `read` and `write` permission to be set on the file. The typical umask setting restricts only the `write` permission. To resolve the warning, either change the **umask** setting or remove the `groupAccess` suboption.
+
+### `help`
+
+        -Xshareclasses:help
+
+: Lists all the command-line options.
+
+### `invalidateAotMethods` (Cache utility)
+
+        -Xshareclasses:invalidateAotMethods=<method_specification>
+        -Xshareclasses:invalidateAotMethods=help
+
+: Modify the existing shared cache to invalidate the AOT methods that match the method specifications. Use this suboption to invalidate AOT methods that cause a failure in the application, without having to destroy the shared cache. Invalidated AOT methods remain in the shared cache, but are then excluded from being loaded. VMs that have not processed the methods, or new VMs that use the cache are not affected by the invalidated methods. The AOT methods are invalidated for the lifetime of the cache, but do not prevent the AOT methods from being compiled again if a new shared cache is created. To prevent AOT method compilation into a new shared cache, use the `-Xaot:exclude` option. For more information, see [-Xaot](xaot.md#exclude).
+
+: To identify AOT problems, see <i class="fa fa-external-link" aria-hidden="true"></i> [Diagnosing a JIT or AOT problem](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_pd_diagnose.html).
+
+: To revalidate an AOT method, see the `revalidateAotMethods` suboption. Use the `findAotMethod` suboption to determine which AOT methods match the method specifications. To learn more about the syntax to use for `<method_specification>`, including how to specify more than one method, see [Method specification syntax](#method-specification-syntax).
+
+
+### `listAllCaches` (Cache utility)
+
+: **(AIX, Linux, z/OS only)**
+
+        -Xshareclasses:listAllCaches
+
+: Lists all the compatible and incompatible caches, and snapshots that exist in the specified cache directory. If you do not specify `cacheDir`, the default directory is used. Summary information, such as Java version and current usage, is displayed for each cache.
+
+### `mprotect`
+
+: AIX, z/OS 31-bit:
+
+        -Xshareclasses:mprotect=[default|all|none]
+
+: Linux, Windows:
+
+        -Xshareclasses:mprotect=[default|all|partialpagesonstartup|onfind|nopartialpages|none]
+
+: where:
+
+    - `default`: By default, the memory pages that contain the cache are always protected, unless a specific page is being updated. This protection helps prevent accidental or deliberate corruption to the cache. The cache header is not protected by default because this protection has a performance cost. On Linux and Windows systems, after the startup phase, the Java virtual machine (VM) protects partially filled pages whenever new data is added to the shared class cache in the following sequence:
+        - The VM changes the memory protection of any partially filled pages to read/write.
+        - The VM adds the data to the cache.
+        - The VM changes the memory protection of any partially filled pages to read only.
+
+
+    - `all`: This value ensures that all the cache pages are protected, including the header.
+
+    : <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Specifying `all` has a negative impact on performance. You should specify `all` only for problem diagnosis and not for production. Specifying values `partialpagesonstartup` or `onfind` can also have a negative impact on performance when the cache is being populated. There is no further impact when the cache is full or no longer being modified.
+
+    - `partialpagesonstartup`: This value causes the VM to protect partially filled pages during startup as well as after the startup phase. This value is available only on Linux and Windows systems.
+
+    - `onfind`: When this option is specified, the VM protects partially filled pages when it reads new data in the cache that is added by another VM. This option is available only on Linux and Windows systems.
+
+    - `nopartialpages`: Use this value to turn off the protection of partially filled pages. This value is available only on Linux and Windows systems.
+
+    - `none`: Specifying this value disables the page protection.
+
+### `modified`
+
+        -Xshareclasses:modified=<modified_context>
+
+: Used when a JVMTI agent is installed that might modify bytecode at run time. If you do not specify this suboption and a bytecode modification agent is installed, classes are safely shared with an extra performance cost. The `<modified context>` is a descriptor that is chosen by the user; for example, *myModification1*. This option partitions the cache so that only VMs that are using context *myModification1* can share the same classes. So if, for example, you run an application with a modification context and then run it again with a different modification context, all classes are stored twice in the cache.
+
+: For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [Dealing with runtime bytecode modification](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_runtime_bytecode_mod.html).
+
+: If you are migrating from IBM<sup>&reg;</sup> SDK, Java Technology Edition, Version 7, or earlier releases, you must set [`-Xshareclasses:disableBCI`](#disablebci) when you use this option to retain the same behavior.
+
+### `name`
+
+        -Xshareclasses:name=<name>
+
+:   Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, `destroy`. Use the `listAllCaches` utility to show which named caches are currently available. If you do not specify a name, the default name *"sharedcc\_%u"* is used. "%u" in the cache name inserts the current user name. On AIX, Linux, and z/OS systems, you can specify *"%g"* in the cache name to insert the current group name.
+
+### `noaot`
+
+        -Xshareclasses:noaot
+
+:   Disables caching and loading of AOT code. AOT code already in the shared data cache can be loaded.
+
+### `noBootclasspath`
+
+        -Xshareclasses:noBootclasspath
+
+:   Disables the storage of classes that are loaded by the bootstrap class loader in the shared classes cache. Often used with the `SharedClassURLFilter` API to control exactly which classes are cached. For more information about shared class filtering, see <i class="fa fa-external-link" aria-hidden="true"></i> [Using the SharedClassHelper API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_class.html).
+
+### `nojitdata`
+
+        -Xshareclasses:nojitdata
+
+:   Disables caching of JIT data. JIT data already in the shared data cache can be loaded.
+
+### `none`
+
+        -Xshareclasses:none
+
+:   Added to the end of a command line, disables class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption disables the shared class utility APIs. To disable class data sharing without disabling the utility APIs, use the `utilities` suboption. For more information about the shared class utility APIs, see <i class="fa fa-external-link" aria-hidden="true"></i> [Obtaining information about shared caches](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_getting_shrc_info.html).
+
+### `nonfatal`
+
+        -Xshareclasses:nonfatal
+
+:   Allows the VM to start even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select `nonfatal` and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing.
+
+### `nonpersistent`
+
+        -Xshareclasses:nonpersistent
+
+:   Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a nonpersistent cache. z/OS supports only nonpersistent caches.
+
+### `persistent`
+
+        -Xshareclasses:persistent
+
+:   Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Nonpersistent and persistent caches can have the same name. On AIX, you must always use the `persistent` suboption when you run utilities such as `destroy` on a persistent cache.
+
+### `printAllStats` (Cache utility)
+
+        -Xshareclasses:printAllStats
+
+:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [printAllStats utility](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_out_printallstats.html).
+
+### `printStats` (Cache utility)
+
+        -Xshareclasses:printStats=<data_type>[+<data_type>]
+
+:   Displays summary information for the cache that is specified by the [`name`](#name), [`cacheDir`](#cachedir), and [`nonpersistent`](#nonpersistent) suboptions. The most useful information that is displayed is how full the cache is and how many classes it contains. Stale classes are classes that are updated on the file system and which the cache has therefore marked as "stale". Stale classes are not purged from the cache and can be reused. Use the `printStats=stale` option to list all the stale entries and stale bytes.
+
+: Specify one or more data types, which are separated by a plus symbol (+), to see more detailed information about the cache content. Data types include AOT data, class paths, and ROMMethods.
+
+: For more information and for a full list of data types, see <i class="fa fa-external-link" aria-hidden="true"></i> [printStats utility](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_out_printstats.html).
+
+### `readonly`
+
+        -Xshareclasses:readonly
+
+:   Opens an existing cache with read-only permissions. The Java virtual machine does not create a new cache with this suboption. Opening a cache read-only prevents the VM from making any updates to the cache. If you specify this suboption, the VM can connect to caches that were created by other users or groups without requiring write access.
+
+: On AIX and Linux systems, this access is permitted only if the cache was created by using the [`-Xshareclasses:cacheDir`](#cachedir) option to specify a directory with appropriate permissions. If you do not use the `-Xshareclasses:cacheDir` option, the cache is created with default permissions, which do not permit access by other users or groups.
+
+: By default, this suboption is not specified.
+
+### `reset`
+
+        -Xshareclasses:reset
+
+: Causes a cache to be destroyed and then re-created when the VM starts up. This option can be added to the end of a command line as `-Xshareclasses:reset`.
+
+### `restoreFromSnapshot` (Cache utility)
+
+: **(AIX, Linux, z/OS only)**
+
+        -Xshareclasses:restoreFromSnapshot
+
+: Restores a new non-persistent shared cache from a snapshot file. The snapshot and shared cache have the same name and location, as specified by the [`name`](#name) and [`cacheDir`](#cachedir) suboptions. The non-persistent cache cannot already exist when the snapshot is restored. Restoring a snapshot does not remove the snapshot file; it can be restored multiple times. On platforms that support persistent caches, the [`nonpersistent`](#nonpersistent) suboption must be specified in order to restore a snapshot.
+
+### `restrictClasspaths`
+
+        -Xshareclasses:restrictClasspaths
+
+: Allows only the first VM that is initializing a shared cache to store classpaths in the cache. Subsequent VMs are not allowed to store classpaths in the cache unless the `allowClasspaths` option is specified.
+
+: Use the `restrictClasspaths` option only if the application is designed to create class loaders of type `java.net.URLClassloader` or its subclass, such that their classpaths are unique to the instance of the application, but the classes that are loaded from these classpaths are the same. In such cases application classpaths that are stored by one VM cannot be used by another VM.
+
+: For example, consider two VMs, VM1 and VM2, that are using class paths CP1 and CP2 respectively, where:
+
+        -   `CP1: url1;url2;url3;tempurl1;url4;url5`
+        -   `CP2: url1;url2;url3;tempurl2;url4;url5`
+
+
+: These class paths differ only by one entry, which is the `tempurl`. The `url1`, `url2`, `url3`, `url4`, and `url5` entries never change from run to run, whereas the `tempurl` entry is always different. This difference means that a class that is loaded from `url4` or `url5`, and stored into the shared cache by VM1, cannot be located by VM2. Therefore, an attempt by VM2 to load a class from `url4` or `url5` would cause it to store its own classpath `CP2` into the shared cache, and also add new metadata for classes that are loaded from `url4` or `url5`. Addition of such unique class paths into the shared cache is not useful. Moreover, the additional metadata might adversely affect the performance of other VMs that connect to the shared cache. Because classes loaded from `url4` or `url5` are not loaded from the shared cache when the `tempurl` differs from the original, it is good practice to put the `tempurl` as the last entry in the class path.
+
+: In situations such as that described in the example, the `restrictClasspaths` option can be used to restrict the addition of classpaths by ensuring that the first VM initializes the shared cache, and then prevents the addition of unique classpaths by subsequent VMs that attach to the shared cache. Note that use of the `restrictClasspaths` option in any other scenario is likely to negatively impact a VM's performance when it is using an existing cache.
+
+
+### `revalidateAotMethods` (Cache utility)
+
+        -Xshareclasses:revalidateAotMethods=<method_specification>
+        -Xshareclasses:revalidateAotMethods=help
+
+:   Modify the shared cache to revalidate the AOT methods that match the method specifications. Use this suboption to revalidate AOT methods that were invalidated by using the [`invalidateAotMethods`](#invalidateaotmethods-cache-utility) suboption. Revalidated AOT methods are then eligible for loading into a VM, but do not affect VMs where the methods have already been processed. To learn more about the syntax to use for `<method_specification>`, including how to specify more than one method, see [Method specification syntax](#method-specification-syntax).
+
+### `silent`
+
+        -Xshareclasses:silent
+
+:   Disables all shared class messages, including error messages. Unrecoverable error messages, which prevent the VM from initializing, are displayed.
+
+### `snapshotCache` (Cache utility)
+
+: **(AIX, Linux, z/OS only)**
+
+        -Xshareclasses:snapshotCache
+
+:   Creates a snapshot file of an existing non-persistent shared cache. The snapshot has the same name and location as the shared cache, as specified by the [`name`](#name) and [`cacheDir`](#cachedir) suboptions. The shared cache can be in use when the snapshot is taken, but VMs are blocked when they try to write to the shared cache, while the cache data is copied to the file.
+
+: Typically, after a system is reinitialized, the snapshot file is used to restore the copy of the non-persistent cache into shared memory, via the [`restoreFromSnapshot`](#restorefromsnapshot-cache-utility) suboption. Since this process removes all non-persistent caches from shared memory, restoring the cache from the snapshot file can result in better VM startup performance, because the contents of the shared cache, including classes and AOT code, do not have to be re-created.
+
+: A snapshot can be created only if the user has sufficient permissions to create the destination snapshot file. If a snapshot of the same name exists already, it is overwritten. On platforms that support persistent caches, the [`nonpersistent`](#nonpersistent) suboption must be specified in order to create a snapshot. For information about removing snapshot files, see the [`destroySnapshot`](#destroysnapshot-cache-utility) and [`destroyAllSnapshots`](#destroyallsnapshots-cache-utility) suboptions.
+
+### `utilities`
+
+        -Xshareclasses:utilities
+
+:   Can be added to the end of a command line to disable class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption is like [`none`](#none), but does not disable the shared class utility APIs. For more information about the shared class utility APIs, see <i class="fa fa-external-link" aria-hidden="true"></i> [Obtaining information about shared caches](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_getting_shrc_info.html).
+
+### `verbose`
+
+        -Xshareclasses:verbose
+
+:   Gives detailed output on the cache I/O activity, listing information about classes that are stored and found. Each class loader is given a unique ID (the bootstrap loader is always 0) and the output shows the class loader hierarchy at work, where class loaders ask their parents for a class if they can't find it themselves. It is typical to see many failed requests; this behavior is expected for the class loader hierarchy. The standard option `-verbose:class` also enables class sharing verbose output if class sharing is enabled.
+
+### `verboseAOT`
+
+        -Xshareclasses:verboseAOT
+
+:   Enables verbose output when compiled AOT code is being found or stored in the cache. AOT code is generated heuristically. You might not see any AOT code that is generated at all for a small application. You can disable AOT caching by using the `noaot` suboption. See the <i class="fa fa-external-link" aria-hidden="true"></i> [Messages Guide](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/messages_intro.html) for a list of the messages produced.
+
+### `verboseHelper`
+
+        -Xshareclasses:verboseHelper
+
+: Enables verbose output for the Java Helper API. This output shows you how the Helper API is used by your class loader.
+
+### `verboseIO`
+
+        -Xshareclasses:verboseIO
+
+: Gives detailed output on the cache I/O activity, listing information about classes that are stored and found. Each class loader is given a unique ID (the bootstrap loader is always 0) and the output shows the class loader hierarchy at work, where class loaders must ask their parents for a class before they can load it themselves. It is typical to see many failed requests; this behavior is expected for the class loader hierarchy.
+
+## Method specification syntax
+
+The following examples show how to specify more than one method specification when you are using the [`findAotMethods`](#findaotmethods-cache-utility), [`invalidateAotMethods`](#invalidateaotmethods-cache-utility), or [`revalidateAotMethods`](#revalidateaotmethods-cache-utility) suboptions.
+
+Each method specification is defined as follows:
+
+    :::java
+    <packagename>/<classname>[.<methodname>[(<parameters>)]]
+
+If you want to include more than one method specification in a single option, separate the specifications with a comma and enclose all the specifications in {braces}. For example:
+
+    :::java
+    {<packagename/classname>}[.{<methodname>}[({<parameters>})]]
+<!--
+    {<method_specification1>,<method_specification2>,<method_specification3>}
+-->
+
+
+- You can use an asterisk (*) in most places as a wildcard.
+- You can use an exclamation point (!) before the specification to mean "everything *except* this".
+- Parameters are optional, but if specified, should be enclosed in parentheses and the following native signature formats must be used:
+    - `B` for byte
+    - `C` for char
+    - `D` for double
+    - `F` for float
+    - `I` for int
+    - `J` for long
+    - `S` for short
+    - `Z` for Boolean
+    - `L<classname>;` for objects
+    - `[` before the signature means array
+
+If you want to specify parameters to distinguish between methods, you can use [`-Xshareclasses:findAotMethods=*`](#findaotmethods-cache-utility) (with a wildcard) to list all the parameter variations. Copy the signature for the method that you want from the output. For example, the signature for the parameters
+
+    (byte[] bytes, int offset, int length, Charset charset)
+
+is
+
+    ([BIILjava/nio/charset/Charset;)
+
+Here are some examples:
+
+
+| Method signature                             | Matches...                                                                                                      |
+|----------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| `*`                                          | All AOT methods.                                                                                                |
+| `java/lang/Object`                           | All AOT methods in the `java.lang.Object` class                                                                 |
+| `java/util/*`                                | All AOT classes and methods in the `java.util` package                                                          |
+| `java/util/HashMap.putVal`                   | All `putVal` methods in the `java.util.HashMap` class                                                           |
+| `java/util/HashMap.hash(Ljava/lang/Object;)` | The private `java.util.HashMap.hash(java.lang.Object)` method                                                   |
+| `*.equals`                                   | All `equals` methods in all classes                                                                             |
+| `{java/lang/Object,!java/lang/Object.clone}` | All methods in `java.lang.Object` except `clone`                                                                |
+| `{java/util/*.*(),java/lang/Object.*(*)}`    | All classes or methods with no input parameter in the `java.util` package, and all methods in `java.lang.Object`|
+| `{java/util/*.*(),!java/util/*.*()}`         | Nothing.                                                                                                        |
+
+
+
+<!-- ==== END OF TOPIC ==== docs/xshareclasses.md ==== -->

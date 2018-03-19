@@ -22,18 +22,31 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xmso 
 
-This repository contains the documentation to support the Open J9 virtual machine.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+Sets the initial stack size for operating system threads.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+You can use the `-verbose:sizes` option to find out the values that the VM is currently using.
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+If you exceed the maximum value, a `java/lang/StackOverflowError` message is reported.
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+## Syntax
+
+        -Xmso<size>
+
+See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.  
+
+## Default setting
+
+By default, the stack size is set to 256 KB. 
+
+See [Default settings for the OpenJ9 VM](openj9_defaults.md) for information about default values.
+
+## See also
+
+- [`-Xiss/-Xss/-Xssi`](xss.md) (Stack size and behavior of Java<sup>&trade;</sup> threads)
+
+
+<!-- ==== END OF TOPIC ==== xmso.md ==== -->
+

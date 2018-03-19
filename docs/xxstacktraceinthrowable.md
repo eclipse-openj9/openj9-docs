@@ -22,18 +22,23 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -XX:-StackTraceInThrowable
 
-This repository contains the documentation to support the Open J9 virtual machine.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+This option removes stack traces from exceptions.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+## Syntax
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+        -XX:-StackTraceInThrowable
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+| Setting                      | Effect  | Default                                                          |
+|------------------------------|---------|------------------------------------------------------------------|
+|`-XX:-StackTraceInThrowable`  | Disable | No                                                               |
+
+:   While stack traces are included in exceptions by default, recording them can have a negative impact on performance. Use this option if you want to remove stack traces, although this might cause difficulties with problem determination.
+
+    When this option is enabled, `Throwable.getStackTrace()` returns an empty array and the stack trace is displayed when an uncaught exception occurs. `Thread.getStackTrace()` and `Thread.getAllStackTraces()` are not affected by this option.
+
+
+
+<!-- ==== END OF TOPIC ==== xxstacktraceinthrowable.md ==== -->

@@ -22,18 +22,22 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xnuma:none
 
-This repository contains the documentation to support the Open J9 virtual machine.
+**(AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and Windows<sup>&trade;</sup> only)**
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+Use this option to turn off non-uniform memory architecture (NUMA) awareness when using the balanced garbage collection policy.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+For workloads that do most of their work in one thread, or workloads that maintain a full heap, turning off NUMA awareness can improve performance.
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+## Syntax
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+        -Xnuma:none
+
+## Default behavior
+
+The option is enabled by default.
+
+
+
+<!-- ==== END OF TOPIC ==== xnumanone.md ==== -->

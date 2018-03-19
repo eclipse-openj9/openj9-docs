@@ -22,18 +22,42 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xargencoding 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+The `java` and `javaw` launchers accept arguments and class names containing any character that is in the character set of the current locale. You can also specify any Unicode character in the class name and arguments by using Java<sup>&trade;</sup> escape sequences.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+To do this, use the `-Xargencoding` command-line option.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+## Syntax
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+        -Xargencoding:<parameter>
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+## Parameters
+
+### No parameter
+
+        -Xargencoding
+
+: You can use Unicode escape sequences in the argument list that you pass to this option. To specify a Unicode character, use escape sequences in the form `\u####`, where `#` is a hexadecimal digit (0-9, A-F). For example, to specify a class that is called `HelloWorld` and use Unicode encoding for both capital letters, use this command:
+
+        :::java
+        java -Xargencoding \u0048ello\u0057orld
+
+### `utf8`
+
+        -Xargencoding:utf8
+
+: Use utf8 encoding.
+
+### `latin`
+
+        -Xargencoding:latin
+
+: Use ISO8859_1 encoding.
+
+
+
+<!-- ==== END OF TOPIC ==== xargencoding.md ==== -->
+
+
+

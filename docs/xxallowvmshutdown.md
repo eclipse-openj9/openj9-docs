@@ -22,18 +22,19 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -XXallowvmshutdown
 
-This repository contains the documentation to support the Open J9 virtual machine.
+This option is provided as a workaround for applications that cannot shut down cleanly, as described in [APAR IZ59734](http://www.ibm.com/support/docview.wss?uid=swg1IZ59734).
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+## Syntax
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+        -XX:allowvmshutdown:[false|true]
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+| Setting | Effect  | Default                                                                            |
+|---------|---------|:----------------------------------------------------------------------------------:|
+| false   | Disable |                                                                                    |
+| true    | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+
+
+<!-- ==== END OF TOPIC ==== xxallowvmshutdown.md ==== -->

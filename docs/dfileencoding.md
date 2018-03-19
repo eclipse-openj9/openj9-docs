@@ -22,18 +22,25 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Dfile.encoding
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Use this OpenJDK property to define the file encoding that is required.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+## Syntax
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+        -Dfile.encoding=<value>
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+| Setting    | Value        | Default                                    |
+|------------|--------------|--------------------------------------------|
+| `<value>`  | [string]     | Unicode 3.0 standards                      |
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+
+: where `<value>` defines the file encoding that is required.
+
+## Explanation
+
+By default the GBK converter follows Unicode 3.0 standards. To force the GBK converter to follow Unicode 2.0 standards, use a value of `bestfit936`.
+
+
+
+<!-- ==== END OF TOPIC ==== dfileencoding.md ==== -->

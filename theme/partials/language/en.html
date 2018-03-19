@@ -21,19 +21,21 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
-
-# Open J9 documentation
-
-This repository contains the documentation to support the Open J9 virtual machine.
-
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
-
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
-
-- If you find a problem with the hosting solution, please create an ISSUE.
-
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+{% macro t(key) %}{{ {
+  "language": "en",
+  "clipboard.copy": "Copy to clipboard",
+  "clipboard.copied": "Copied to clipboard",
+  "edit.link.title": "Edit this page in GitHub",
+  "footer.previous": "Previous",
+  "footer.next": "Next",
+  "meta.comments": "Comments",
+  "meta.source": "Source",
+  "search.placeholder": "Search",
+  "search.result.placeholder": "Type to start searching",
+  "search.result.none": "No matching documents",
+  "search.result.one": "1 matching document",
+  "search.result.other": "# matching documents",
+  "search.tokenizer": "[\s\-]+",
+  "source.link.title": "Go to repository",
+  "toc.title": "On this page ..."
+}[key] }}{% endmacro %}

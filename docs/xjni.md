@@ -22,18 +22,22 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xjni 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Sets JNI options.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+## Syntax
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+        -Xjni:<parameter>
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+## Parameters
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+### `arrayCacheMax`
+
+        -Xjni:arrayCacheMax=<size in bytes>
+        -Xjni:arrayCacheMax=unlimited
+
+: Sets the maximum size of the array cache. The default size is 128 KB (`-Xjni:arrayCacheMax=131072`).
+
+<!-- ==== END OF TOPIC ==== xjni.md ==== -->
+

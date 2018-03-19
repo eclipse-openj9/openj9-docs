@@ -22,18 +22,26 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xmcrs 
 
-This repository contains the documentation to support the Open J9 virtual machine.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+Sets an initial size for an area in memory that is reserved for any native classes, monitors, and threads that are used by compressed references within the lowest 4 GB memory area.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+You can use the `-verbose:sizes` option to find out the value that is being used by the VM.
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Notes:** 
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+- Native memory `OutOfMemoryError` exceptions might occur when using compressed references if the lowest 4 GB of address space becomes full, particularly when loading classes, starting threads, or using monitors. 
+- If you are not using compressed references and this option is set, the option is ignored and the output of `-verbose:sizes` shows `-Xmcrs0`.
+
+
+
+## Syntax
+
+        -Xmcrs<size>
+
+See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
+
+
+<!-- ==== END OF TOPIC ==== xmcrs.md ==== -->
+

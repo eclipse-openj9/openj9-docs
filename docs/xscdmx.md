@@ -22,18 +22,23 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xscdmx 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Use the `-Xscdmx` option to control the size of the class debug area when you create a shared class cache.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+## Syntax
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+        -Xscdmx<size>
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+## Explanation
+
+The `-Xscdmx` option works in a similar way to the [`-Xscmx`](xscmx.md) option, which is used to control the overall size of the shared class cache. The size of `-Xscdmx` must be smaller than the size of `-Xscmx`. By default, the size of the class debug area is a percentage of the free class data bytes in a newly created or empty cache.
+
+A class debug area is still created if you use the [`-Xnolinenumbers`](xlinenumbers.md) option with the `-Xscdmx` option on the command line.
+
+
+
+<!-- ==== END OF TOPIC ==== xscdmx.md ==== -->
+

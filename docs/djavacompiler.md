@@ -22,18 +22,20 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Djava.compiler
 
-This repository contains the documentation to support the Open J9 virtual machine.
+This Oracle Hotspot property is used for loading a JIT compiler from a named, native library. This option can be used on the command line to specify the JIT compiler for the OpenJ9 VM.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+## Syntax
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+        -Djava.compiler=j9jit29
 
-- If you find a problem with the hosting solution, please create an ISSUE.
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+<!-- OLD: 
+## Explanation
+
+Enable JIT compilation by setting to `j9jit<vm_version>`, where `<vm_version>` is the version of the J9 virtual machine. Use only digits, for example "29" for VM version 2.9. Check the output of the `java -version` command to confirm your VM level. (Equivalent to `–Xjit`).-->
+
+
+
+<!-- ==== END OF TOPIC ==== djavacompiler.md ==== -->

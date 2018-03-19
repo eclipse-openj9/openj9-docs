@@ -22,18 +22,26 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -XsamplingExpirationTime 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Disables JIT sampling after a specified amount of time. 
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+When the JIT sampling thread is disabled, no processor cycles are used by an idle OpenJ9 VM.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+Use this option with care; after the sampling thread is disabled, you cannot reactivate it. However, because the profiling frequency is automatically reduced, you should not have to use this option. 
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+Allow the sampling thread to run for long enough to identify important optimizations.
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+## Syntax
+
+        -XsamplingExpirationTime<time>
+        
+: where `<time>` is specified in seconds.
+
+## Explanation
+
+The JIT sampling thread profiles the running Java<sup>&trade;</sup> application to discover commonly used methods. The memory and processor usage of the sampling thread is negligible, and the frequency of profiling is automatically reduced when the OpenJ9 VM is idle, to once per second instead of once every 10ms, or once every 100 seconds if the idle state lasts more than 50 seconds.
+
+
+<!-- ==== END OF TOPIC ==== xsamplingexpirationtime.md ==== -->
+
