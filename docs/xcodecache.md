@@ -22,18 +22,23 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xcodecache 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Use this option to tune performance.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+This option sets the size of each block of memory that is allocated to store the native code of compiled Java<sup>&trade;</sup> methods. By default, this size is selected internally according to the processor architecture and the capability of your system. The maximum value you can specify is 32 MB. If you set a value larger than 32 MB, the JIT ignores the input and sets the value to 32 MB.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** The JIT compiler might allocate more than one code cache for an application. Use the [`-Xcodecachetotal`](xcodecachetotal.md) option to set the maximum amount of memory that is used by all code caches.
 
-- If you find a problem with the hosting solution, please create an ISSUE.
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+## Syntax
+
+        -Xcodecache <size>
+
+: See [Using -X command-line options](x_jvm_commands) for more information about specifying the `<size>` parameter.
+
+
+
+
+<!-- ==== END OF TOPIC ==== xcodecache.md ==== -->
+

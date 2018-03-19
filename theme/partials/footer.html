@@ -1,0 +1,58 @@
+<!--
+* Copyright (c) 2017, 2018 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+-->
+<cite></cite>{% import "partials/language.html" as lang with context %}
+<footer class="md-footer">
+
+  <div class="md-footer-meta md-typeset">
+    {% if config.copyright %}
+    <div class="md-footer-copyright1">
+    	{{ config.copyright }}
+    </div>
+    {% endif %}
+
+    {% block social %}
+      {% include "partials/social.html" %}
+    {% endblock %}
+
+    <div class="md-footer-eclipse1">OpenJ9 is an Eclipse Incubator project.</div>
+
+    <div class="md-footer-links1">
+      <span class="no-wrap"><i class="fa fa-chevron-circle-right f_mini" aria-hidden="true"></i><a class="dark-link" href="http://www.eclipse.org">Eclipse Foundation website</a></span>
+      &nbsp; <span class="no-wrap"><i class="fa fa-chevron-circle-right f_mini" aria-hidden="true"></i><a class="dark-link" href="http://www.eclipse.org/legal/privacy.php">Privacy policy</a></span>
+      &nbsp; <span class="no-wrap"><i class="fa fa-chevron-circle-right f_mini" aria-hidden="true"></i><a class="dark-link" href="http://www.eclipse.org/legal/termsofuse.php">Website terms of use</a></span>
+      &nbsp; <span class="no-wrap"><i class="fa fa-chevron-circle-right f_mini" aria-hidden="true"></i><a class="dark-link" href="http://www.eclipse.org/legal/copyright.php">Copyright agent</a></span>
+      &nbsp; <span class="no-wrap"><i class="fa fa-chevron-circle-right f_mini" aria-hidden="true"></i><a class="dark-link" href="http://www.eclipse.org/legal">Legal</a></span>
+    </div>
+
+    <div class="md-footer-power1">
+      powered by
+      <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+      and
+      <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+      Material for MkDocs</a><br/><br/>
+    </div>
+
+  </div>
+
+</footer>

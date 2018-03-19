@@ -22,18 +22,14 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# Using -XX command-line options
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Java<sup>&trade;</sup> VM command-line options that are specified with -XX: are not checked for validity. If the VM does not recognize the option, the option is ignored. These options can therefore be used across different VM versions without ensuring a particular level of the VM.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+For options that take a `<size>` parameter, add a suffix to the size value: "k" or "K" to indicate kilobytes, "m" or "M" to indicate megabytes, or "g" or "G" to indicate gigabytes.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+For example, to set the `-Xmx` value to 16 MB, you can specify `-Xmx16M`, `-Xmx16m`, `-Xmx16384K`, or `Xmx16384k` on the command line.
 
-- If you find a problem with the hosting solution, please create an ISSUE.
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+
+<!-- ==== END OF TOPIC ==== xx_jvm_commands.md ==== -->

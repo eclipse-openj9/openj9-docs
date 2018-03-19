@@ -22,18 +22,26 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xmint / -Xmaxt
 
-This repository contains the documentation to support the Open J9 virtual machine.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+Sets the minimum and maximum proportion of time to spend in the garbage collection (GC) process as a percentage of the overall running time that included the last three GC runs. 
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+- If the percentage of time drops to less than the minimum, the OpenJ9 VM tries to shrink the heap.
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+- If the percentage of time exceeds the maximum, the OpenJ9 VM tries to expand the heap. 
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restrictions</span> **Restrictions:**  
+- This option applies only to GC policies that include stop-the-world (STW) operations, such as `-Xgcpolicy:optthruput`.  
+-This option is ignored by the default policy `-Xgcpolicy:gencon`.
+
+## Syntax
+
+| Setting        | Effect                 | Default |
+|----------------|------------------------|---------|
+|`-Xmint<value>` | Set minimum time in GC | 5       |
+|`-Xmaxt<value>` | Set maximum time in GC | 13      |
+
+
+<!-- ==== END OF TOPIC ==== xmint.md ==== -->
+<!-- ==== END OF TOPIC ==== xmaxt.md ==== -->

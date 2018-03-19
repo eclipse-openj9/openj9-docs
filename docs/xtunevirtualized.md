@@ -22,18 +22,20 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xtune:virtualized 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Optimizes OpenJ9 VM function for virtualized environments, such as a cloud by reducing OpenJ9 VM CPU consumption when idle.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Performance is optimized if there is a large shared class cache (SCC) and AOT space in the SCC is not capped.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+## Syntax
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+        -Xtune:virtualized
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+## See also
+
+- For an example of the effect of using this option, see: [Measuring the strengths of OpenJDK with Eclipse OpenJ9](https://github.com/eclipse/openj9-website/blob/master/benchmark/daytrader3.md)
+
+
+<!-- ==== END OF TOPIC ==== xtunevirtualized.md ==== -->
+

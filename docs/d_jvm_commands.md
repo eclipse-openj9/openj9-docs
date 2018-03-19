@@ -22,18 +22,24 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# Using system property command-line options
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Java™ system properties determine the environment in which a Java<sup>&trade;</sup> program runs by starting a Java virtual machine with a set of values.
+You can choose to use the default values for Java system properties or you can specify values for them by adding parameters to the command line when you start your application.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+To set a system property from the command line, use:
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+```
+java -D<property_name>=<value> <program_name>
+```
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+For example, to specify the UTF-8 file encoding for your application `MyProgram`, use:
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+```
+java -Dfile.encoding=UTF-8 MyProgram
+```
+
+
+
+
+<!-- ==== END OF TOPIC ==== x_jvm_commands.md ==== -->

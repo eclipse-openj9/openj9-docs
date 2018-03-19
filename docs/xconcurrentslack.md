@@ -22,18 +22,23 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xconcurrentslack 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Attempts to keep the specified amount of the heap space free in concurrent collectors by starting the concurrent operations earlier.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+Using this option can sometimes alleviate pause time problems in concurrent collectors at the cost of longer concurrent cycles, affecting total throughput. 
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+## Syntax
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+        -Xconcurrentslack<size>
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+: See [Using -X command-line options](x_jvm_commands) for more information about specifying the `<size>` parameter.
+
+## Default behavior
+
+The default value is 0, which is optimal for most applications.
+
+
+
+<!-- ==== END OF TOPIC ==== xconcurrentslack.md ==== -->
+

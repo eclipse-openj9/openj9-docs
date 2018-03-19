@@ -22,18 +22,27 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Dcom.ibm.tools.attach.id
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Specify a different target virtual machine (VM) to attach to.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+## Syntax
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+        -Dcom.ibm.tools.attach.id=<process_ID>
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+|  Setting         | Value    | Default                  |
+|------------------|----------|--------------------------|
+| `<process_ID>`   | [string] | Target VM process ID     |
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+To use a different target, change the value for `<process_ID>`.
+
+## See also
+
+- <i class="fa fa-external-link" aria-hidden="true"></i> [Support for the Java<sup>&trade;</sup> Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html)
+- [-Dcom.ibm.tools.attach.enable](dcomibmtoolsattachenable.md)
+- [-Dcom.ibm.tools.attach.displayName](dcomibmtoolsattachdisplayname.md)
+- [-Dcom.ibm.tools.attach.directory](dcomibmtoolsattachdirectory.md)
+- [-Dcom.ibm.tools.attach.timeout](dcomibmtoolsattachtimeout.md)
+
+
+<!-- ==== END OF TOPIC ==== dcomibmtoolsattachid.md ==== -->

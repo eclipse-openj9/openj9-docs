@@ -1,0 +1,76 @@
+﻿<!--
+* Copyright (c) 2017, 2018 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+-->
+
+# -Xsignal
+
+**(z/OS<sup>&reg;</sup> only)**
+
+This option controls the behavior of OpenJ9 VM signal handlers.
+
+## Syntax
+
+        -Xsignal:<parameter>=<value>
+
+## Parameters
+
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restriction</span> **Restriction:** You cannot use these parameters together.
+
+### `posixSignalHandler`
+
+        -Xsignal:posixSignalHandler=cooperativeShutdown
+
+: When the VM signal handlers for SIGSEGV, SIGILL, SIGBUS, SIGFPE, SIGTRAP, and SIGABRT end a process, they call `exit()`, by default. In this case, the z/OS<sup>&trade;</sup> Language Environment<sup>&reg;</sup> is not aware that the VM ended abnormally.
+
+    With `-Xsignal:posixSignalHandler=cooperativeShutdown`, the VM no longer uses `exit()` to end the process from the signal handlers. Instead, the VM behaves in one of the following ways:
+
+    - In response to a z/OS hardware exception, the VM uses `return()`.
+    - In response to signals raised or injected by software, the VM ends the enclave with `abend 3565`.
+
+    Language Environment detects that the VM is ending abnormally and initiates Resource Recovery Services.
+
+
+### `userConditionHandler`
+
+: **(31-bit z/OS only)**
+
+        -Xsignal:userConditionHandler=percolate
+
+: This option results in similar behavior to the [`-XCEEHDLR`](xceehdlr.md) option: the VM registers user condition handlers to handle the z/OS exceptions that would otherwise be handled by the VM POSIX signal handlers for the SIGBUS, SIGFPE, SIGILL, SIGSEGV, and SIGTRAP signals.
+
+    As with the `-XCEEHDLR` option, the VM does not install POSIX signal handlers for these signals.
+
+    This option differs from the `-XCEEHDLR` option in that the VM percolates *all* Language Environment<sup>&reg;</sup> conditions that were not triggered and expected by the VM during normal running, including conditions that are severity 2 or greater. The VM generates its own diagnostic information before percolating severity 2 or greater conditions.
+
+    The VM is in an undefined state after percolating a severity 2 or greater condition. Applications cannot resume running then call back into, or return to, the VM.
+
+
+## See also
+
+- [`-XCEEHDLR`](xceehdlr.md)
+
+- <i class="fa fa-external-link" aria-hidden="true"></i> [Signals used by the VM](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_signals_j9_handling.html).
+
+<!-- ==== END OF TOPIC ==== xsignal.md ==== -->
+<!-- ==== END OF TOPIC ==== xsignalposixsignalhandlercooperativeshutdown.md ==== -->
+<!-- ==== END OF TOPIC ==== xsignaluserconditionhandlerpercolate.md ==== -->

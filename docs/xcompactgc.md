@@ -22,18 +22,28 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xcompactgc / -Xnocompactgc 
 
-This repository contains the documentation to support the Open J9 virtual machine.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+Enables or disables full compaction on all garbage collections (system and global).
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+## Syntax
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+| Setting        | Action                  |
+|----------------|-------------------------|
+|`-Xcompactgc`   | Enable full compaction  |
+|`-Xnocompactgc` | Disable full compaction |
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+
+## Default behavior
+
+If no compaction option is specified, the garbage collector compacts based on a series of triggers that attempt to compact only when it is beneficial to the future performance of the OpenJ9 VM.
+
+## See also
+
+- <i class="fa fa-external-link" aria-hidden="true"></i> [Global garbage collection: Compaction phase](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_compact.html)
+
+
+<!-- ==== END OF TOPIC ==== xcompactgc.md ==== -->
+<!-- ==== END OF TOPIC ==== xnocompactgc.md ==== -->
+

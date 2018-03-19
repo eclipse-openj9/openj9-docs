@@ -22,18 +22,19 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xconcurrentbackground 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Specifies the number of low-priority background threads attached to assist the mutator threads in concurrent mark.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+## Syntax
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+        -Xconcurrentbackground<n>
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+## Default behavior
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+The default is `0` for Linux<sup>&trade;</sup> on IBM Z<sup>&reg;</sup> and `1` on all other platforms.
+
+ 
+
+<!-- ==== END OF TOPIC ==== xconcurrentbackground.md ==== -->
+

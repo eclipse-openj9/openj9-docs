@@ -22,18 +22,24 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Dcom.ibm.dbgmalloc
 
-This repository contains the documentation to support the Open J9 virtual machine.
+##<i class="fa fa-eye"></i>
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+This option provides memory allocation diagnostic information for class library native code.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+## Syntax
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+        -Dcom.ibm.dbgmalloc=true
+
+## Explanation
+
+When an application is started with this option, a Java<sup>&trade;</sup> dump records the amount of memory allocated by the class library components.
+
+You can use this option together with the `-Xcheck:memory` option to obtain information about class library call sites and their allocation sizes.
+
+Enabling this option has an impact on throughput performance. For sample Java dump output, see <i class="fa fa-external-link" aria-hidden="true"></i> [Native memory (NATIVEMEMINFO)](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump_tags_nativememinfo.html).
+
+
+<!-- ==== END OF TOPIC ==== dcomibmdbgmalloc.md ==== -->

@@ -22,18 +22,27 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xmca / -Xmco
 
-This repository contains the documentation to support the Open J9 virtual machine.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+Sets the expansion step for the memory allocated to store the RAM (`-Xmca`) and ROM (`-Xmco`) portions of loaded classes.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+Each time more memory is required to store classes in RAM or ROM, the allocated memory is increased by the amount set. 
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+If the expansion step size you choose is too large, `OutOfMemoryError` is reported. The exact value of a *"too large"* expansion step size varies according to the platform and the specific machine configuration.
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+You can use the `-verbose:sizes` option to find out the value that is being used by the VM.
+
+## Syntax
+
+|  Setting      | Effect                     | Default  |
+|---------------|----------------------------|----------|
+| `-Xmca<size>` | Set expansion step for RAM | 32 KB    |
+| `-Xmco<size>` | Set expansion step for ROM | 128 KB   |
+
+See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
+
+
+<!-- ==== END OF TOPIC ==== xmca.md ==== -->
+<!-- ==== END OF TOPIC ==== xmco.md ==== -->
+

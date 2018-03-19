@@ -22,18 +22,38 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xconmeter 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+This option determines the usage of which area, LOA (large object area) or SOA (small object area), is metered and hence which allocations are taxed during concurrent mark.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+## Syntax
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+        -Xconmeter:<parameter>
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+## Parameters
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+### `soa`
+
+        -Xconmeter:soa
+
+: (Default) Applies the allocation tax to allocations from the small object area (SOA).
+
+### `loa`
+
+        -Xconmeter:loa
+
+: Applies the allocation tax to allocations from the large object area (LOA).
+
+### `dynamic`
+
+        -Xconmeter:dynamic
+
+: The collector dynamically determines which area to meter based on which area is exhausted first, whether it is the SOA or the LOA.
+
+## Default behavior
+
+By default, allocation tax is applied to the SOA.
+
+
+<!-- ==== END OF TOPIC ==== xconmeter.md ==== -->
+

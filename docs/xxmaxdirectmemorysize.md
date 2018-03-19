@@ -22,18 +22,24 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -XX:MaxDirectMemorySize
 
-This repository contains the documentation to support the Open J9 virtual machine.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+This Oracle Hotspot option sets a limit on the amount of memory that can be reserved for all Direct Byte Buffers.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+## Syntax
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+        -XX:MaxDirectMemorySize<size>
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+| Setting      |  Value                             | Default  |
+|--------------|------------------------------------|----------|
+|`<size>`      | *[1[k\|K\|m\|M\|g\|G] or greater]* | -        |
+
+The value you choose is the limit on memory that can be reserved for all Direct Byte Buffers. If a value is set for this option, the sum of all Direct Byte Buffer sizes cannot exceed the limit. After the limit is reached, a new Direct Byte Buffer can be allocated only when enough old buffers are freed to provide enough space to allocate the new buffer.
+
+    By default, the VM does not set a limit on how much memory is reserved for Direct Byte Buffers. A soft limit of 64 MB is set, which the VM automatically expands in 32 MB chunks, as required.
+
+
+
+
+<!-- ==== END OF TOPIC ==== xxmaxdirectmemorysize.md ==== -->

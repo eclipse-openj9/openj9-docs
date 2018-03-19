@@ -22,18 +22,25 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xsoftrefthreshold 
 
-This repository contains the documentation to support the Open J9 virtual machine.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+Sets the value used by the garbage collector to determine the number of garbage collections after which a soft reference is cleared if its referent has not been marked.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+## Syntax
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+        -Xsoftrefthreshold<value>
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+## Default behavior
+
+The default value is 32.
+
+## Explanation
+
+A soft reference (where its referent is not marked) is cleared after a number of garbage collection cycles calculated as: `<value>` \* (proportion of free heap space)
+
+For example, if `-Xsoftrefthreshold` is set to 32, and the heap is 25% free, soft references are cleared after 8 garbage collection cycles.
+
+
+<!-- ==== END OF TOPIC ==== xsoftrefthreshold.md ==== -->
+

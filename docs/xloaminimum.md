@@ -22,18 +22,25 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Xloainitial / -Xloaminimum / -Xloamaximum 
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Specifies the initial, minimum, and maximum proportion of the current tenure space allocated to the large object area (LOA). 
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+The LOA does not shrink to less than the minimum value. 
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+## Syntax
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+| Setting               | Effect            | Default  |
+|-----------------------|-------------------|----------|
+| `-Xloainitial<value>` | Set initial space | `0.05`   |
+| `-Xloaminimum<value>` | Set minimum space | `0.01`   |
+| `-Xloamaximum<value>` | Set minimum space | `0.5`    |
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+## See also
+
+- [-Xloa / Xnoloa](xloa.md)
+
+
+<!-- ==== END OF TOPIC ==== xloainitial.md ==== -->
+<!-- ==== END OF TOPIC ==== xloaminimum.md ==== -->
+<!-- ==== END OF TOPIC ==== xloamaximum.md ==== -->

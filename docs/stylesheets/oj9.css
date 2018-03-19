@@ -1,0 +1,511 @@
+/*
+* Copyright (c) 2017, 2018 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+*/
+
+[data-md-color-primary=cyan] .md-header {
+  background-color: #36354f;  /* blue - dark */
+/* 
+  background-image: url("https://www.eclipse.org/openj9/assets/bg-d.png");
+*/
+  background: #36354f url(../cr/bg-d.png)
+}
+
+[data-md-color-primary=cyan] .md-typeset a {
+  padding-right: 0rem;
+  color: #B63814;  /* orange - dull*/
+}
+
+
+[data-md-color-primary=cyan] a.md-icon {
+  color: white;
+  padding-right: 1.5rem;
+  padding-left: 2rem;
+}
+
+
+[data-md-color-primary=cyan] .md-typeset a:hover {
+  color: #ff5424;  /* orange - bright */
+}
+
+[data-md-color-primary=cyan] .md-nav__item--active>.md-nav__link, [data-md-color-primary=teal] .md-nav__link:active {
+  color: #69c1bd;  /* cyan */
+}
+
+[data-md-color-primary=cyan] .md-nav__item--active>.md-nav__link:hover, [data-md-color-primary=teal] .md-nav__link:hover {
+  color: #ff5424;  /* orange - bright */
+}
+
+.md-flex__ellipsis, .md-footer-nav__button {
+  color: #B63814;  /* orange - dull*/
+}
+.md-flex__ellipsis:hover, .md-footer-nav__button:hover {
+  color: #ff5424;  /* orange - bright */
+}
+.md-footer-nav__link:hover {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 76.1875em) {
+
+  html [data-md-color-primary=cyan] .md-nav--primary .md-nav__title--site {
+      background-color: #69c1bd;  /* cyan */
+  }
+
+  [data-md-color-primary=cyan] .md-nav__source {
+    background-color: #69c1bd;  /* cyan */
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  [data-md-color-primary=cyan] .md-nav--secondary {
+    border-left: .4rem solid #69c1bd;  /* cyan */
+  }
+}
+
+.md-logo {
+  text-align: center;
+}
+.md-logo img {
+  height: 45px;
+  /*margin-left:32rem;*/
+}
+
+.md-sidebar__scrollwrap::-webkit-scrollbar {
+  width: .8rem;
+}
+
+/*----------------------------------------------------------------------------*/
+/*
+.md-main__inner {
+  border: 3px solid yellow;
+  overflow: hidden;
+}
+.md-grid {
+}
+.md-sidebar {
+  height: 50%;
+  border: 1px solid blue;
+  overflow-y: auto;
+}
+.md-sidebar--primary {
+  border: 1px dashed green;
+}
+
+.md-sidebar__scrollwrap {
+  border: 1px solid red;
+}
+*/
+/*----------------------------------------------------------------------------*/
+
+
+.xxx {
+  color: #407471;  /* cyan - dark */
+  color: #69c1bd;  /* cyan */
+  color: #B63814;  /* orange - dull*/
+  color: #e95a32;  /* orange */
+  color: #ff5424;  /* orange - bright */
+}
+
+.md-typeset h1 {
+  background: #69c1bd url(../cr/bg-l.png);  /* cyan */
+  color: white;
+  padding-left: 1rem;
+  font-weight: 500;
+}
+.md-typeset h1 code {
+  padding-left: 0;
+  color: white;
+}
+.md-typeset h1[id]:before {
+  margin-top: 0;
+  padding-top: 0;
+    content: "";
+}
+
+.md-typeset h2 {
+  color: #69c1bd;  /* cyan */
+  font-weight: 500;
+}
+.md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  color: #69c1bd;  /* cyan */
+}
+.md-typeset h2 code, .md-typeset h3 code, .md-typeset h4 code, .md-typeset h5 code, .md-typeset h6 code {
+  color: #69c1bd;  /* cyan */
+}
+.md-typeset h3 code {
+  font-size: 1.9rem;
+}
+
+.md-nav__title {
+  color: #69c1bd;
+}
+
+/*
+.md-footer-nav__inner.md-grid img {
+height 3rem;
+}
+*/
+.md-footer-nav__inner.md-grid {
+margin-top: 5rem;
+}
+
+/* HEADER */
+
+.md-header {
+  height: 4.8rem;
+  padding: .3rem 0rem 5rem 0rem;
+}
+/*
+body{color:red;}
+*/
+
+/* Logo in the header - container */
+.md-header-nav__button {
+  padding-left: 1rem;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.egg {
+  height: 4rem;
+  transition: opacity .4s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.egg:hover {
+  opacity: .7;
+  transition: opacity .4s;
+}
+
+
+
+/* LH NAV */
+
+/* Add a > twisty symbol as a pseudo-element before every parent item in the TOC */
+.md-nav__item--nested>.md-nav__link:before {
+  content: "➤";
+  color: #69c1bd;  /* cyan */
+}
+
+/* Remove the original twisty symbol */
+.md-nav__item--nested>.md-nav__link:after {
+  content: "";
+}
+
+.md-nav__item--nested .md-nav__toggle:checked~.md-nav__link:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.js .md-nav__item--nested>.md-nav__link:before {
+  -webkit-transition: -webkit-transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
+  display: inline-block;
+}
+
+
+/* RH NAV */
+
+[data-md-color-accent=cyan] .md-nav__link:hover {
+  color: #ff5424;  /* orange - bright */
+}
+/*
+[data-md-color-accent=cyan] .md-nav__link {
+  color: #B63814;  /* orange - dull
+}
+*/
+
+@media only screen and (min-width: 76.25em) {
+  .md-sidebar__inner {
+    border-right: .2rem solid rgba(0,0,0,.1);
+  }
+}
+
+/* FOOTER CSS */
+
+.md-footer-meta {
+  background: #ddd url(../cr/bg-lg.png);
+}
+
+html .md-footer-meta.md-typeset a {
+  color: #B63814;  /* orange - dull*/
+}
+html .md-footer-meta.md-typeset a:hover {
+  color: #ff5424;  /* orange - bright */
+}
+
+.md-footer-social__link:before {
+    font-size: 3rem;
+}
+.md-footer-social__link:hover:before {
+  color: #ff5424;  /* orange - bright */
+}
+
+
+div .md-footer-copyright__highlight p {
+	font-size:1.9rem;
+	-webkit-margin-before: 0rem;
+	-webkit-margin-after : .6rem;
+}
+
+.md-footer-meta.md-typeset {
+  text-align: center;
+}
+.md-footer-copyright1 {
+  text-align: left; 
+  font-size: 1.3rem; 
+  padding: 1rem 5rem 0 5rem;
+}
+.md-footer-social1 {
+  
+}
+.md-footer-eclipse1 {
+  padding: 1rem 0 1rem 0;
+}
+.md-footer-links1 {
+  font-size: 1.5rem;
+  color: rgba(0,0,0,.5);
+}
+.md-footer-links1 .dark-link {
+  padding-left: .4rem;
+}
+      
+      
+.md-footer-power1 {
+  text-align: right;
+  font-size: 1.3rem;
+  padding: 0 5rem 0 5rem;
+}
+
+
+/*
+.md-footer-copyright__highlight.no-wrap {
+  white-space: nowrap;
+  padding-left: .4rem;
+}
+i.fa-chevron-circle-right {
+  padding-right: .5rem;
+}
+
+.md-footer-copyright__highlight {
+  color: #333; /* color of footer text 
+}
+
+.md-footer-copyright {
+    margin: 1rem 2rem 0rem 2rem;
+    padding: 0rem 0;
+    font-size: 1.6rem;
+}
+
+.md-footer-social {
+    padding: 1.6rem 2rem 0rem 0;
+}
+*/
+
+.md-footer-nav {
+  background-color: white;
+/*  margin-top: 4rem;*/
+  margin-top: -3.5rem;
+}
+
+.md-footer-nav__inner > a.md-footer-nav__link div { /* Previous and Next topic buttons */
+  color: #1a1a1a;
+}
+
+.md-footer-nav__direction {
+  color: #757575;
+}
+
+.md-footer-nav__link {
+  padding-top: 3rem;
+}
+
+.md-footer-nav__button {
+  margin-left: 0;
+  margin-right: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.md-footer-nav__link {
+  padding-left: 0;
+}
+
+
+.md-flex__ellipsis {
+  font-size: initial;
+}
+
+.md-footer-nav__direction {
+  font-size: 1.3rem;
+}
+
+
+
+/* DRAFT COMMENTS */
+
+aside {
+  background-color: #ddffee;
+  padding: 0 0 .3rem 0;
+  margin: 0 0 0 0;
+}
+aside p {
+  padding: 0rem .8rem 0rem 1rem;
+  font-size: 1.3rem;
+  }
+aside p:first-child {
+  padding: .6rem .8rem .6rem 1rem;
+  background-color: #bbffcc;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.fa-external-link {
+  color: #407471;  /* cyan - dark */
+  opacity: 0.7;
+}
+
+
+/* TABLES */
+
+.md-typeset table:not([class]) th {
+  min-width: 10rem;
+  padding: .4rem 1.6rem;
+  background-color: #407471;  /* cyan - dark */
+  color: #fff;
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) th code {
+  color: #fff;
+  background-color: #407471;  /* cyan - dark */
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) td {
+  padding: .5rem 1.6rem;
+  border-top: .1rem solid rgba(0,0,0,.07);
+  vertical-align: top;
+}
+    
+/* TODO ICONS */
+
+.fa-hourglass-start {
+  color: red;
+  color: #000;
+  opacity: 0.4;
+}
+.fa-hourglass-start:after {
+  content: " not started";
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  color: red;
+  color: #000;
+  opacity: 0.7;
+}
+
+.fa-hourglass-half {
+  color: #407471;  /* cyan - dark */
+  opacity: 0.6;
+}
+.fa-hourglass-half:after {
+  content: " started";
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  color: #407471;  /* cyan - dark */
+  opacity: 0.7;
+}
+
+.fa-hourglass-end {
+  color: #69c1bd;  /* cyan */
+  opacity: 0.8;
+}
+.fa-hourglass-end:after {
+  content: " finished";
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  color: #69c1bd;  /* cyan */
+  opacity: 0.9;
+}
+
+.fa-eye {
+  color: #990099; /* dark magenta */
+  opacity: 0.7;
+}
+.fa-eye:after {
+  content: " ready for review";
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  color: #990099 /* dark magenta */
+  opacity: 0.8;
+}
+
+
+/* RED|AMBER|GREEN|GREY ICONS */
+
+.x1, .x2, .x3, .x0 {
+  padding: .5rem;
+  background-color: white;
+  position: relative;
+  left: -1rem;
+}
+.x0 { color: #ccc;  }
+.x1 { color: green;  }
+.x2 { color: orange; }
+.x3 { color: red;    }
+
+/* CHECK MARKS (tick and cross) */
+
+.fa-check, .fa-times {  
+  color: #407471;  /* cyan - dark */
+  opacity: 0.8;
+}
+
+/* Stop code wrapping except in a list items */
+code {
+  white-space: pre;
+}
+li code {
+  white-space: pre-wrap;
+}
+
+/* Hide H4 and below in secondary sidebar
+(use "Inspect > Copy > Copy selector" to find correct selector! */
+body > div > main > div > div.md-sidebar.md-sidebar--secondary > div > div > nav > ul > li:nth-child(2) > nav > ul > li:nth-child(1) > nav > ul > li {
+	display: none;
+}
+
+/* Just tweak in-line icons a bit! */
+img {
+	vertical-align: -.2rem;
+}
+
+
+
+
+.md-nav__item, .md-nav__link {
+	white-space: nowrap;
+}

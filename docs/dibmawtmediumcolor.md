@@ -22,18 +22,28 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# -Dibm.awt.mediumColor
 
-This repository contains the documentation to support the Open J9 virtual machine.
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+**(AIX<sup>&reg;</sup> only)**
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+This property reverts behavior to an earlier release.
 
-- If you find a problem with the hosting solution, please create an ISSUE.
+## Syntax
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+        -Dibm.awt.mediumColor=[true|false]
+
+| Setting      | Effect  |  Default                                                                           |
+|--------------|---------|:----------------------------------------------------------------------------------:|
+| true         | Enable  |                                                                                    |
+| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+
+## Explanation
+
+The default `SystemColor` settings of Abstract Windows<sup>&trade;</sup> Toolkit (AWT) components are changed. To revert to the original color palette settings, set this property to `true` on the command line.
+
+This property is not enabled by default.
+
+
+
+<!-- ==== END OF TOPIC ==== dibmawtmediumcolor.md ==== -->

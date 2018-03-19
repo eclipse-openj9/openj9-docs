@@ -22,18 +22,14 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Open J9 documentation
+# Release notes - version 0.8
 
-This repository contains the documentation to support the Open J9 virtual machine.
+Version 0.8 is the first release of Eclipse OpenJ9, as defined in the [release plan](https://projects.eclipse.org/projects/technology.openj9/releases/0.8/plan).
 
-Currently, the documentation is being authored outside of this GitHub project in DITA
-and converted to markdown format. Do not edit content in this repository.
+This release supports OpenJDK Version 8 binaries at [AdoptOpenJDK.net](https://adoptopenjdk.net/?variant=openjdk8-openj9) that contain the Eclipse OpenJ9 virtual machine.
 
-The documentation is built using MkDocs and hosted on the gh-pages branch. 
-The purpose of this repository is to test the MkDocs solution and fix any issues
-with the UI that hosts Open J9 documentation.
+For more information about supported platforms, and any issues and limitations, read the [OpenJ9 GitHub release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.8/0.8.md).
 
-- If you find a problem with the hosting solution, please create an ISSUE.
 
-Note: Please do not create issues for the documentation structure or content. A 
-separate review process is being put in place for this purpose.
+
+<!-- ==== END OF TOPIC ==== cmdline_general.md ==== -->
