@@ -111,7 +111,7 @@ Java and all Java-based trademarks are trademarks of Oracle Corporation in the U
 
 ### Third-party code
 
-These notices are provided for informational purposes.
+These notices are provided for informational purposes. The third party tools are not distributed with the source files.
 
 **Section A: SUMMARY**
 
