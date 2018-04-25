@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends python3 python3
     && DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends openssh-server \
     && rm -rf /var/lib/apt/lists/* \
     && pip3 install --upgrade pip \
-    && pip3 install -U setuptools \
+    && python3 -m pip install -U setuptools \
     && sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd \
     && mkdir -p /var/run/sshd
 
