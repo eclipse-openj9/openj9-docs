@@ -24,43 +24,52 @@
 NAMESPACE = 'eclipse'
 CONTAINER_NAME = 'openj9-docs'
 
-node('docker') {
-    stage('Clone') {
-        checkout scm
-    }
+timeout(time: 6, unit: 'HOURS') {
+    timestamps {
+        node('docker') {
+            try {
+                stage('Clone') {
+                    checkout scm
+                }
 
-    stage('Build') {
-        if (params.ghprbPullId) {
-            // Tag PullRequest Containers with a PR in the name
-            TAGS = "-t ${NAMESPACE}/${CONTAINER_NAME}:PR${BUILD_NUMBER}"
-        } else {
-            // Tag Regular build Containers with BUILD_NUMBER and 'latest'
-            TAGS = "-t ${NAMESPACE}/${CONTAINER_NAME}:${BUILD_NUMBER} -t ${NAMESPACE}/${CONTAINER_NAME}:latest"
-        }
-        sh "docker build -f Dockerfile ${TAGS} ."
-    }
+                stage('Build') {
+                    if (params.ghprbPullId) {
+                        // Tag PullRequest Containers with a PR in the name
+                        TAGS = "-t ${NAMESPACE}/${CONTAINER_NAME}:PR${BUILD_NUMBER}"
+                    } else {
+                        // Tag Regular build Containers with BUILD_NUMBER and 'latest'
+                        TAGS = "-t ${NAMESPACE}/${CONTAINER_NAME}:${BUILD_NUMBER} -t ${NAMESPACE}/${CONTAINER_NAME}:latest"
+                    }
+                    sh "docker build -f Dockerfile ${TAGS} ."
+                }
 
-    if (params.ghprbPullId) {
-        // Archive PullRequest containers to Jenkins for manual download/verification
-        ARCHIVE_NAME = "Container_PR${ghprbPullId}_`date +%Y%d%m%H%M`"
-        stage('Archive') {
-            sh "docker save -o ${WORKSPACE}/${ARCHIVE_NAME} ${NAMESPACE}/${CONTAINER_NAME}:PR${BUILD_NUMBER}"
-            sh "gzip ${ARCHIVE_NAME}"
-            archiveArtifacts "${ARCHIVE_NAME}*"
-            echo "Container archived to Jenkins. Download it from the build page here: ${BUILD_URL}/artifact/"
-            echo "Test it out by uncompressing it and loading it into Docker"
-            echo "\$ gunzip ${ARCHIVE_NAME}* && docker load -i ${ARCHIVE_NAME}"
-        }
-    } else {
-        // Push non-PullRequest containers to Dockerhub
-        stage('Push') {
-            withCredentials([usernamePassword(credentialsId: '7fb9f8f0-14bf-469a-9132-91db4dd80c48', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-                sh "docker login --username=\"${USER}\" --password=\"${PASS}\""
+                if (params.ghprbPullId) {
+                    // Archive PullRequest containers to Jenkins for manual download/verification
+                    DATE = sh(
+                        script: 'date +%Y%m%d_%H%M%S',
+                        returnStdout: true
+                        ).trim()
+                    ARCHIVE_NAME = "Container_PR${ghprbPullId}_${DATE}.tar"
+                    stage('Archive') {
+                        sh "docker save -o ${WORKSPACE}/${ARCHIVE_NAME} ${NAMESPACE}/${CONTAINER_NAME}:PR${BUILD_NUMBER}"
+                        sh "gzip ${ARCHIVE_NAME}"
+                        archiveArtifacts "${ARCHIVE_NAME}.gz"
+                        echo "Container archived to Jenkins. Download it from the build page here: ${BUILD_URL}artifact/\nTest it out by loading it into Docker\n\$ docker load -i ${ARCHIVE_NAME}.gz"
+                    }
+                } else {
+                    // Push non-PullRequest containers to Dockerhub
+                    stage('Push') {
+                        withCredentials([usernamePassword(credentialsId: '7fb9f8f0-14bf-469a-9132-91db4dd80c48', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                            sh "docker login --username=\"${USER}\" --password=\"${PASS}\""
+                        }
+                        sh "docker push ${NAMESPACE}/${CONTAINER_NAME}:${BUILD_NUMBER}"
+                        sh "docker push ${NAMESPACE}/${CONTAINER_NAME}:latest"
+                        sh 'docker logout'
+                    }
+                }
+            } finally {
+                cleanWs()
             }
-            sh "docker push ${NAMESPACE}/${CONTAINER_NAME}:${BUILD_NUMBER}"
-            sh "docker push ${NAMESPACE}/${CONTAINER_NAME}:latest"
-            sh 'docker logout'
         }
-    }    
+    }
 }
-
