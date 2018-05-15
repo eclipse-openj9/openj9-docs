@@ -25,13 +25,14 @@
 # -Xscmx
 
 For a new shared class cache, specifies either:
+
 - the actual size of the cache, if the `-XX:SharedCacheHardLimit` option is not present
 - the soft maximum size of the cache, if used with the `-XX:SharedCacheHardLimit` option
 (See [`-XX:SharedCacheHardLimit`](xxsharedcachehardlimit.md))
 
 This option applies only if a cache is being created and no cache of the same name exists.
 
-When you run an application with the [`-Xshareclasses:verbose`](xshareclasses.md#verbose) option, the VM writes to the console the number of bytes that are not stored due to the current setting of the soft maximum size. You can also get this information by using the `MemoryMXBean.getSharedClassCacheSoftmxUnstoredBytes()` method in the `com.ibm.lang.management` API. 
+When you run an application with the [`-Xshareclasses:verbose`](xshareclasses.md#verbose) option, the VM writes to the console the number of bytes that are not stored due to the current setting of the soft maximum size. You can also get this information by using the `MemoryMXBean.getSharedClassCacheSoftmxUnstoredBytes()` method in the `com.ibm.lang.management` API.
 
 You can increase the soft maximum size accordingly if you want to add the unstored data to the shared cache. However, the VM that provided the information no longer has the opportunity to store that data. Therefore, increasing the soft maximum size does not necessarily cause any more data to be stored in the shared cache by the current VM, but subsequent VMs can add data to the shared cache.
 

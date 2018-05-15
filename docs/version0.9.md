@@ -22,13 +22,11 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Release notes - version 0.8.0
+# Release notes - version 0.9.0
 
-Version 0.8.0 is the first release of Eclipse OpenJ9, as defined in the [release plan](https://projects.eclipse.org/projects/technology.openj9/releases/0.8/plan).
+Version 0.9.0 is currently in the planning phase, as defined in the [release plan](https://projects.eclipse.org/projects/technology.openj9/releases/0.9.0/plan).
 
-This release supports OpenJDK Version 8 binaries at [AdoptOpenJDK.net](https://adoptopenjdk.net/?variant=openjdk8-openj9) that contain the Eclipse OpenJ9 virtual machine.
 
-For more information about supported platforms, and any issues and limitations, read the [OpenJ9 GitHub release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.8/0.8.md).
 
 
 
