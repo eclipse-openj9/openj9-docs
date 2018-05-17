@@ -100,7 +100,8 @@ pages:
     - "Introduction"                                                             : index.md
     
     - "Release notes" :
-        - "Version 0.8"                                                          : version0.8.md
+        - "Version 0.9.0"                                                          : version0.9.md
+        - "Version 0.8.0"                                                          : version0.8.md
         
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md
@@ -285,9 +286,10 @@ pages:
 
         
     - " Reference" :
+        - "Supported environments"                                                : openj9_support.md
         - "Default settings"                                                      : openj9_defaults.md
         - "Directory conventions"                                                 : openj9_directories.md
-        - " OpenJ9 messages"                                                      : messages_intro.md
+        - "OpenJ9 messages"                                                       : messages_intro.md
         - "Environment variables"                                                 : env_var.md
         
     - "Legal"                                                                     : legal.md

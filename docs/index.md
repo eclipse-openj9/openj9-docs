@@ -26,9 +26,7 @@
 
 Welcome to the user documentation for the Eclipse OpenJ9 virtual machine (VM).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Documentation to support OpenJ9 is still under construction. The current content covers the command-line options and environment variables that you can use to configure the VM when you start your application, plus some diagnostic tools. We expect further content to be contributed over time. Because OpenJ9 was contributed to the Eclipse Foundation by IBM, this content contains some links to additional information that forms part of the <i class="fa fa-external-link" aria-hidden="true"></i> [IBM<sup>&reg;</sup> SDK, Java<sup>&trade;</sup> Technology Edition product documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2/welcome_javasdk_family.html) in IBM Knowledge Center. That content supplements the documentation here until a more complete set of user documentation is available. (The <i class="fa fa-external-link" aria-hidden="true"></i> symbol is used to indicate external links.)
-
-This user documentation supports the configuration, tuning, and diagnosis of the OpenJ9 VM in an OpenJDK version 8 or OpenJDK version 9 runtime. However, due to differences between the Java SE 8 and 9 class libraries, specific options might apply only to one environment. Icons are used to indicate where differences apply. For example:
+This user documentation supports the configuration, tuning, and diagnosis of the OpenJ9 VM in an OpenJDK runtime. However, due to differences between the Java SE class libraries, specific options might apply only to one Java SE version. Icons are used to indicate where differences apply. For example:
 
 ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) This sentence applies only to Java 8 binaries that include the OpenJ9 VM. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
@@ -43,6 +41,9 @@ The following table indicates which Java releases are LTS releases and which are
 | 8               | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">LTS</span> |                                                                                    |
 | 9               |                                                                                | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Feature</span> |
 | 10              |                                                                                | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Feature</span> |
+
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Documentation to support OpenJ9 is still under construction. The current content covers the command-line options and environment variables that you can use to configure the VM when you start your application, plus some diagnostic tools. We expect further content to be contributed over time. Because OpenJ9 was contributed to the Eclipse Foundation by IBM, this content contains some links to additional information that forms part of the <i class="fa fa-external-link" aria-hidden="true"></i> [IBM<sup>&reg;</sup> SDK, Java<sup>&trade;</sup> Technology Edition product documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2/welcome_javasdk_family.html) in IBM Knowledge Center. That content supplements the documentation here until a more complete set of user documentation is available. (The <i class="fa fa-external-link" aria-hidden="true"></i> symbol is used to indicate external links.)
 
 We welcome contributions to the user documentation. If you would like to get involved, please read our [Contribution guidelines](https://github.com/eclipse/openj9-docs/blob/master/CONTRIBUTING.md).
 
