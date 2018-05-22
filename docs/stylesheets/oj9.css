@@ -22,17 +22,18 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 */
 
+
+
 [data-md-color-primary=cyan] .md-header {
-  background-color: #36354f;  /* blue - dark */
-/* 
-  background-image: url("https://www.eclipse.org/openj9/assets/bg-d.png");
-*/
-  background: #36354f url(../cr/bg-d.png)
+  background-color: #353434;
+  background-image: url(../cr/bg-d.png);
 }
 
 [data-md-color-primary=cyan] .md-typeset a {
   padding-right: 0rem;
   color: #B63814;  /* orange - dull*/
+  color: #69c1bd;  /* cyan */
+  color: #af6e3d;                      /* dark orange - Eclipse link: visited */
 }
 
 
@@ -45,21 +46,42 @@
 
 [data-md-color-primary=cyan] .md-typeset a:hover {
   color: #ff5424;  /* orange - bright */
+  color: #da7a08;                      /* orange - Eclipse button: hover */
+}
+
+/*
+[data-md-color-accent=cyan] .md-nav__link:focus, 
+[data-md-color-accent=cyan] .md-nav__link:hover, 
+[data-md-color-accent=cyan] .md-typeset .footnote li:hover .footnote-backref:hover, 
+[data-md-color-accent=cyan] .md-typeset .footnote li:target .footnote-backref, 
+[data-md-color-accent=cyan] .md-typeset [id] .headerlink:focus, 
+[data-md-color-accent=cyan] .md-typeset [id]:hover .headerlink:hover, 
+[data-md-color-accent=cyan] .md-typeset [id]:target .headerlink,
+*/
+[data-md-color-accent=cyan] .md-typeset .md-clipboard:active:before, 
+[data-md-color-accent=cyan] .md-typeset .md-clipboard:hover:before {
+  color: #00b8d4;
+  color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 
 [data-md-color-primary=cyan] .md-nav__item--active>.md-nav__link, [data-md-color-primary=teal] .md-nav__link:active {
   color: #69c1bd;  /* cyan */
-}
+  color: #cc7a19;  /* orange - dark */}
+  color: #af6e3d;                      /* dark orange - Eclipse link: visited */
 
 [data-md-color-primary=cyan] .md-nav__item--active>.md-nav__link:hover, [data-md-color-primary=teal] .md-nav__link:hover {
   color: #ff5424;  /* orange - bright */
+  color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 
 .md-flex__ellipsis, .md-footer-nav__button {
   color: #B63814;  /* orange - dull*/
+  color: #69c1bd;  /* cyan */
+  color: #af6e3d;                      /* dark orange - Eclipse link: visited */
 }
 .md-flex__ellipsis:hover, .md-footer-nav__button:hover {
   color: #ff5424;  /* orange - bright */
+  color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 .md-footer-nav__link:hover {
     opacity: 1;
@@ -79,6 +101,7 @@
 @media only screen and (min-width: 60em) {
   [data-md-color-primary=cyan] .md-nav--secondary {
     border-left: .4rem solid #69c1bd;  /* cyan */
+    border-left: .4rem solid #888888;
   }
 }
 
@@ -94,40 +117,14 @@
   width: .8rem;
 }
 
-/*----------------------------------------------------------------------------*/
-/*
-.md-main__inner {
-  border: 3px solid yellow;
-  overflow: hidden;
-}
-.md-grid {
-}
-.md-sidebar {
-  height: 50%;
-  border: 1px solid blue;
-  overflow-y: auto;
-}
-.md-sidebar--primary {
-  border: 1px dashed green;
+[data-md-color-accent=cyan] .md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
+  background-color: #69c1bd;  /* cyan */
 }
 
-.md-sidebar__scrollwrap {
-  border: 1px solid red;
-}
-*/
-/*----------------------------------------------------------------------------*/
-
-
-.xxx {
-  color: #407471;  /* cyan - dark */
-  color: #69c1bd;  /* cyan */
-  color: #B63814;  /* orange - dull*/
-  color: #e95a32;  /* orange */
-  color: #ff5424;  /* orange - bright */
-}
 
 .md-typeset h1 {
-  background: #69c1bd url(../cr/bg-l.png);  /* cyan */
+/*  background: #69c1bd url(../cr/bg-l.png);  */
+  background: #888888;
   color: white;
   padding-left: 1rem;
   font-weight: 500;
@@ -142,15 +139,20 @@
     content: "";
 }
 
-.md-typeset h2 {
-  color: #69c1bd;  /* cyan */
-  font-weight: 500;
-}
 .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
   color: #69c1bd;  /* cyan */
+  color: #4c4c4c;  /* gray - dark */
 }
 .md-typeset h2 code, .md-typeset h3 code, .md-typeset h4 code, .md-typeset h5 code, .md-typeset h6 code {
   color: #69c1bd;  /* cyan */
+  color: #4c4c4c;  /* gray - dark */
+}
+.md-typeset h2 {
+  font-weight: 500;
+  font-weight: 600;
+}
+.md-typeset h3 {
+  font-weight: 600;
 }
 .md-typeset h3 code {
   font-size: 1.9rem;
@@ -175,9 +177,6 @@ margin-top: 5rem;
   height: 4.8rem;
   padding: .3rem 0rem 5rem 0rem;
 }
-/*
-body{color:red;}
-*/
 
 /* Logo in the header - container */
 .md-header-nav__button {
@@ -231,6 +230,7 @@ body{color:red;}
 
 [data-md-color-accent=cyan] .md-nav__link:hover {
   color: #ff5424;  /* orange - bright */
+  color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 /*
 [data-md-color-accent=cyan] .md-nav__link {
@@ -247,14 +247,18 @@ body{color:red;}
 /* FOOTER CSS */
 
 .md-footer-meta {
-  background: #ddd url(../cr/bg-lg.png);
+  color: #4c4c4c;
+  background-color: #dddddd;
+/*   background-image: url(../cr/bg-lg.png); */
 }
 
 html .md-footer-meta.md-typeset a {
   color: #B63814;  /* orange - dull*/
+  color: #af6e3d;                      /* dark orange - Eclipse link: visited */
 }
 html .md-footer-meta.md-typeset a:hover {
   color: #ff5424;  /* orange - bright */
+  color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 
 .md-footer-social__link:before {
@@ -262,6 +266,7 @@ html .md-footer-meta.md-typeset a:hover {
 }
 .md-footer-social__link:hover:before {
   color: #ff5424;  /* orange - bright */
+  color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 
 
@@ -383,9 +388,14 @@ aside p:first-child {
   font-weight: bold;
 }
 
+/*
 .fa-external-link {
-  color: #407471;  /* cyan - dark */
+  color: #407471;   cyan - dark
   opacity: 0.7;
+}
+*/
+.fa-pencil-square-o, .fa-external-link {
+  color: #69c1bd;  /* cyan */
 }
 
 
@@ -395,6 +405,7 @@ aside p:first-child {
   min-width: 10rem;
   padding: .4rem 1.6rem;
   background-color: #407471;  /* cyan - dark */
+  background-color: #888888;
   color: #fff;
   vertical-align: top;
 }
@@ -402,6 +413,7 @@ aside p:first-child {
 .md-typeset table:not([class]) th code {
   color: #fff;
   background-color: #407471;  /* cyan - dark */
+  background-color: #888888;
   box-shadow: none;
 }
 
@@ -410,72 +422,6 @@ aside p:first-child {
   border-top: .1rem solid rgba(0,0,0,.07);
   vertical-align: top;
 }
-    
-/* TODO ICONS */
-
-.fa-hourglass-start {
-  color: red;
-  color: #000;
-  opacity: 0.4;
-}
-.fa-hourglass-start:after {
-  content: " not started";
-  font-size: 1.8rem;
-  font-family: sans-serif;
-  color: red;
-  color: #000;
-  opacity: 0.7;
-}
-
-.fa-hourglass-half {
-  color: #407471;  /* cyan - dark */
-  opacity: 0.6;
-}
-.fa-hourglass-half:after {
-  content: " started";
-  font-size: 1.8rem;
-  font-family: sans-serif;
-  color: #407471;  /* cyan - dark */
-  opacity: 0.7;
-}
-
-.fa-hourglass-end {
-  color: #69c1bd;  /* cyan */
-  opacity: 0.8;
-}
-.fa-hourglass-end:after {
-  content: " finished";
-  font-size: 1.8rem;
-  font-family: sans-serif;
-  color: #69c1bd;  /* cyan */
-  opacity: 0.9;
-}
-
-.fa-eye {
-  color: #990099; /* dark magenta */
-  opacity: 0.7;
-}
-.fa-eye:after {
-  content: " ready for review";
-  font-size: 1.8rem;
-  font-family: sans-serif;
-  color: #990099 /* dark magenta */
-  opacity: 0.8;
-}
-
-
-/* RED|AMBER|GREEN|GREY ICONS */
-
-.x1, .x2, .x3, .x0 {
-  padding: .5rem;
-  background-color: white;
-  position: relative;
-  left: -1rem;
-}
-.x0 { color: #ccc;  }
-.x1 { color: green;  }
-.x2 { color: orange; }
-.x3 { color: red;    }
 
 /* CHECK MARKS (tick and cross) */
 
