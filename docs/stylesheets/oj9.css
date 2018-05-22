@@ -31,8 +31,6 @@
 
 [data-md-color-primary=cyan] .md-typeset a {
   padding-right: 0rem;
-  color: #B63814;  /* orange - dull*/
-  color: #69c1bd;  /* cyan */
   color: #af6e3d;                      /* dark orange - Eclipse link: visited */
 }
 
@@ -45,7 +43,6 @@
 
 
 [data-md-color-primary=cyan] .md-typeset a:hover {
-  color: #ff5424;  /* orange - bright */
   color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 
@@ -60,27 +57,21 @@
 */
 [data-md-color-accent=cyan] .md-typeset .md-clipboard:active:before, 
 [data-md-color-accent=cyan] .md-typeset .md-clipboard:hover:before {
-  color: #00b8d4;
   color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 
 [data-md-color-primary=cyan] .md-nav__item--active>.md-nav__link, [data-md-color-primary=teal] .md-nav__link:active {
-  color: #69c1bd;  /* cyan */
-  color: #cc7a19;  /* orange - dark */}
   color: #af6e3d;                      /* dark orange - Eclipse link: visited */
+}
 
 [data-md-color-primary=cyan] .md-nav__item--active>.md-nav__link:hover, [data-md-color-primary=teal] .md-nav__link:hover {
-  color: #ff5424;  /* orange - bright */
   color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 
 .md-flex__ellipsis, .md-footer-nav__button {
-  color: #B63814;  /* orange - dull*/
-  color: #69c1bd;  /* cyan */
   color: #af6e3d;                      /* dark orange - Eclipse link: visited */
 }
 .md-flex__ellipsis:hover, .md-footer-nav__button:hover {
-  color: #ff5424;  /* orange - bright */
   color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 .md-footer-nav__link:hover {
@@ -100,7 +91,6 @@
 
 @media only screen and (min-width: 60em) {
   [data-md-color-primary=cyan] .md-nav--secondary {
-    border-left: .4rem solid #69c1bd;  /* cyan */
     border-left: .4rem solid #888888;
   }
 }
@@ -140,11 +130,9 @@
 }
 
 .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
-  color: #69c1bd;  /* cyan */
   color: #4c4c4c;  /* gray - dark */
 }
 .md-typeset h2 code, .md-typeset h3 code, .md-typeset h4 code, .md-typeset h5 code, .md-typeset h6 code {
-  color: #69c1bd;  /* cyan */
   color: #4c4c4c;  /* gray - dark */
 }
 .md-typeset h2 {
@@ -229,7 +217,6 @@ margin-top: 5rem;
 /* RH NAV */
 
 [data-md-color-accent=cyan] .md-nav__link:hover {
-  color: #ff5424;  /* orange - bright */
   color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 /*
@@ -253,11 +240,9 @@ margin-top: 5rem;
 }
 
 html .md-footer-meta.md-typeset a {
-  color: #B63814;  /* orange - dull*/
   color: #af6e3d;                      /* dark orange - Eclipse link: visited */
 }
 html .md-footer-meta.md-typeset a:hover {
-  color: #ff5424;  /* orange - bright */
   color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 
@@ -265,7 +250,6 @@ html .md-footer-meta.md-typeset a:hover {
     font-size: 3rem;
 }
 .md-footer-social__link:hover:before {
-  color: #ff5424;  /* orange - bright */
   color: #da7a08;                      /* orange - Eclipse button: hover */
 }
 
@@ -388,12 +372,6 @@ aside p:first-child {
   font-weight: bold;
 }
 
-/*
-.fa-external-link {
-  color: #407471;   cyan - dark
-  opacity: 0.7;
-}
-*/
 .fa-pencil-square-o, .fa-external-link {
   color: #69c1bd;  /* cyan */
 }
@@ -404,7 +382,6 @@ aside p:first-child {
 .md-typeset table:not([class]) th {
   min-width: 10rem;
   padding: .4rem 1.6rem;
-  background-color: #407471;  /* cyan - dark */
   background-color: #888888;
   color: #fff;
   vertical-align: top;
@@ -412,7 +389,6 @@ aside p:first-child {
 
 .md-typeset table:not([class]) th code {
   color: #fff;
-  background-color: #407471;  /* cyan - dark */
   background-color: #888888;
   box-shadow: none;
 }

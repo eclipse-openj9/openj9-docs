@@ -729,7 +729,7 @@ Dump output is written to different files, depending on the type of dump and the
 
 The tokens used in this table, for example `%Y`, are described in [Dump agent tokens](#dump-agent-tokens).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** On z/OS. the system dump file name can be set with the `JAVA_DUMP_TDUMP_PATTERN` environment variable. The CEEDUMP, which is not produced by default, is stored in the directory specified by
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** On z/OS, the system dump file name can be set with the `JAVA_DUMP_TDUMP_PATTERN` environment variable. The CEEDUMP, which is not produced by default, is stored in the directory specified by
 `_CEE_DMPTARG` or the current directory if `_CEE_DMPTARG` is not specified.
 
 ### System dumps on Linux
