@@ -29,7 +29,7 @@ Use this option to control the behavior of the JIT compiler.
 
 Specifying `-Xjit` with no parameters, has no effect as the JIT compiler is enabled by default.
 
-`-Xnojit` (it takes no parameters) turns off the JIT compiler. This option does not affect the AOT compiler.
+`-Xnojit` turns off the JIT compiler but does not affect the AOT compiler.
 
 ## Syntax
 
@@ -37,7 +37,7 @@ Specifying `-Xjit` with no parameters, has no effect as the JIT compiler is enab
 |-----------------------------------------------------|-------------------------|:----------------------------------------------------------------------------------:|
 | `-Xjit`                                             | Enable JIT              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
 | `-Xjit[:<parameter>=<value>{,<parameter>=<value>}]` | Enable JIT with options |                                                                                    |
-| `-Xnojit`                                           | Disable JIT             |                                                                                    |
+| `-Xnojit`                                           | Disable JIT             |                                                                                    ||
 
 ## Parameters
 
@@ -48,7 +48,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 | [`count`         ](#count         ) | Forces compilation of methods on first invocation.                                      |
 | [`disableRMODE64`](#disablermode64) | Allows the JIT to allocate executable code caches above the 2 GB memory bar.            |
 | [`exclude`       ](#exclude       ) | Excludes the specified method from compilation.                                         |
-| [`<filename>`    ](#filename      ) | Compile methods that are listed in the limit file.                                      |
+| [`<limitFile>`    ](#limitfile      ) | Compile methods that are listed in the limit file.                                      |
 | [`optlevel`      ](#optlevel      ) | Forces the JIT compiler to compile all methods at a specific optimization level.        |
 | [`verbose`       ](#verbose       ) | Reports information about the JIT and AOT compiler configuration and method compilation.|
 | [`vlog`          ](#vlog          ) | Sends verbose output to a file.                                                         |
@@ -57,7 +57,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
         -Xjit:count=<n>
 
-: where `<n>` is the number of times a method is called before it is compiled. For example, setting `count=0` forces the JIT compiler to compile everything on first execution.
+: where `<n>` is the number of times a method is called before it is compiled. For example, setting `count=0` forces the JIT compiler to compile everything on first execution, which is useful for problem determination.
 
 ### `disableRMODE64`
 
@@ -73,11 +73,11 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Excludes the specified method from compilation.
 
-### `<filename>`
+### `limitFile`
 
-        -Xjit:(<filename>, <m>, <n>)
+        -Xjit:limitFile=(<vlog_filename>, <m>, <n>)
 
-: Compile only the methods that are listed on lines `<m>` to `<n>` in the specified limit file. Methods that are not listed in the limit file and methods that are listed on lines outside the range are not compiled.
+: Compile only the methods that are listed on lines `<m>` to `<n>` in the specified limit file, where the limit file is a verbose log that you generated with the `-Xjit:verbose,vlog=<vlog_filename>` option. Methods that are not listed in the limit file and methods that are listed on lines outside the range are not compiled.
 
 ### `optlevel`
 
@@ -88,18 +88,72 @@ These parameters can be used to modify the behavior of `-Xjit`:
 ### `verbose`
 
         -Xjit:verbose
-        -Xjit:verbose=compileStart
-        -Xjit:verbose=compileEnd
-        -Xjit:verbose=compileStart,compileEnd
 
-: Reports information about the JIT and AOT compiler configuration and method compilation.
+: Generates a JIT verbose log. The log provides a summary of which methods were compiled by the JIT and some of the compilation heurisic decisions that were taken while the JIT operates inside the OpenJ9 VM.
 
-    `compileStart` and `compileEnd` reports when the JIT starts to compile a method, and when it ends.
+        -Xjit:verbose={compileStart}
+
+: Prints out a line when the JIT is about to start compiling a method.
+
+        -Xjit:verbose={compileEnd}
+
+: Prints out a line when the JIT stops compiling a method.
+
+        -Xjit:verbose={compilePerformance}
+
+: Adds the values `time` (time taken to do the compilation) and `mem` (the amount of memory that was allocated during the compilation) into each line. This option includes the `compileStart` and `compileEnd` suboptions by default.
+
+        -Xjit:verbose={disableInlining}
+
+: Turns off inlining operations.
+
+        -Xjit:verbose={inlining}
+
+: Shows the methods that are inlined.
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Suboptions can be chained together by using a  `|` character. When used, you must enclose the full option name in single quotes (') to avoid the shell misinterpreting these characters as pipe commands. For example:
+
+```
+java '-Xjit:verbose={compileStart|compileEnd|inlining}' -version
+```
 
 ### `vlog`
-        -Xjit:vlog=<filename>
+        -Xjit:vlog=<vlog_filename>
 
-:   Sends verbose output to a file. If you do not specify this parameter, the output is sent to the standard error output stream (STDERR).
+: Sends verbose output to a file, of the format `<vlog_filename>.<date>.<time>.<JVM_process_ID>`, which is created in your current directory. Running the command multiple times produces multiple distinct versions of this file. If you do not specify this parameter, the output is sent to the standard error output stream (STDERR). This type of log file can be used with the `limitFile` suboption to target the compilation of specific methods.
+
+## Examples
+
+### Generating a JIT verbose log
+
+The following example requests a JIT verbose log of the `java -version` command:
+
+```
+java -Xjit:verbose,vlog=vlogfile -version
+```
+
+### Analyzing JIT performance
+
+The following example requests information about the performance of JIT compiler threads, with output written to `vlogfile`.
+
+```
+java -Xjit:verbose={compilePerformance},vlog=vlogfile -version
+```
+The output generated by using this command adds the following information to compilation entry:
+
+- the amount of time taken to do the compilation.
+- the amount of memory that was allocated during the compilation.
+
+### Analyzing inlining operations
+
+The following example generates output that contains performance data and inlining operations. The suboptions `count` and `-XcompilationThreads1` are used only to simplify the output. These options are not recommended for production because performance will be affected.
+
+```
+java '-Xjit:verbose={compileStart|compileEnd|inlining},count=5,vlog=vlogfile' -XcompilationThreads1 -version
+```
+
+<!--Include this line when the JIT section is added to the docs -> To learn how to read verbose logs, see [Troubleshooting](#jit_pd.md).-->
+
 
 ## See also
 

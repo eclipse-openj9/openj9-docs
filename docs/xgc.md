@@ -34,7 +34,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
 | Parameter                                                       | Effect                                                                                                  |
 |-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [`concurrentScavenge`          ](#concurrentscavenge          ) | Enables a garbage collection (GC) mode with less pause times (z/OS<sup>&reg;</sup> only).               |
+| [`concurrentScavenge`          ](#concurrentscavenge          ) | Enables a garbage collection (GC) mode with less pause times (Linux on IBM Z<sup>&reg;</sup> and z/OS<sup>&reg;</sup> only).|
 | [`dnssExpectedTimeRatioMaximum`](#dnssexpectedtimeratiomaximum) | Sets the maximum time to spend on GC of the nursery area.                                               |
 | [`dnssExpectedTimeRatioMinimum`](#dnssexpectedtimeratiominimum) | Sets the minimum time to spend on GC of the nursery area.                                               |
 | [`excessiveGCratio`            ](#excessivegcratio            ) | Sets a boundary value beyond which GC is deemed to be excessive.                                        |
@@ -48,13 +48,28 @@ Options that change the behavior of the Garbage Collector (GC).
 
 ### `concurrentScavenge`
 
-**(z/OS only)**
+**(Linux on Z and z/OS only)**
 
         -Xgc:concurrentScavenge
 
-: This option is supported only on the 64-bit VM with the Generational Concurrent (`gencon`) garbage collection policy. When this mode is enabled, the VM attempts to reduce GC pause-times for response-time sensitive, large heap applications. This option is supported only on IBM z14<sup>&trade;</sup> hardware with z/OS V2R3, or with z/OS V2R2 and <i class="fa fa-external-link" aria-hidden="true"></i> [APAR OA51643](http://www.ibm.com/support/docview.wss?uid=isg1OA51643). If the operating system and hardware requirement is not met, the option is ignored.
+: This option is supported only on the 64-bit VM with the Generational Concurrent (`gencon`) garbage collection policy. When this mode is enabled, the VM attempts to reduce GC pause-times for response-time sensitive, large heap applications. This option is supported only on IBM z14<sup>&trade;</sup> hardware and the following software:
 
-    The virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by **ulimit -M**, to a larger value than the maximum heap size.
+
+Operating systems:
+
+- z/OS V2R3
+- z/OS V2R2 and <i class="fa fa-external-link" aria-hidden="true"></i> [APAR OA51643](http://www.ibm.com/support/docview.wss?uid=isg1OA51643).
+- RHEL 7.5 (minimum kernel level 4.14)
+- Ubuntu 18.04 (minimum kernel level 4.15)
+
+Hypervisors:
+
+- IBM z/VM 6.4 with <i class="fa fa-external-link" aria-hidden="true"></i> [APAR VM65987](http://www-01.ibm.com/support/docview.wss?uid=isg1VM65987)
+- KVM solutions with QEMU 2.10 or later and minimum host kernel level 4.12 (for example, RHEL 7.5 with kernel level 4.14)
+
+If these requirements are not met, the option is ignored.
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by **ulimit -M**, to a larger value than the maximum heap size.
 
 ### `dnssExpectedTimeRatioMaximum`
 
