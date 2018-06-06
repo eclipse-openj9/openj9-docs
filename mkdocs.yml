@@ -274,6 +274,7 @@ pages:
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
             - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
+            - "-XX:[+|-]UseNoGC"                                                 : xxusenogc.md
             - "-XX:[+|-]VerboseVerification"                                     : xxverboseverification.md
             - "-XX:[+|-]VMLockClassLoader"                                       : xxvmlockclassloader.md
 

@@ -25,7 +25,7 @@
 # -Xgcpolicy
 
 
-Controls the behavior of the garbage collector.
+Controls the behavior of the garbage collector by specifying different garbage collection policies.
 
 ## Syntax
 
@@ -33,13 +33,16 @@ Controls the behavior of the garbage collector.
 
 ## Parameters
 
+| Parameter                                                        | Default  |
+|------------------------------------------------------------------|----------|
+| [`balanced`](#balanced)                                          |          |
+| [`gencon`](#gencon)                                              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| [`metronome`](#metronome) (AIX<sup>&reg;</sup>, Linux x86 only)  |          |
+| [`optavgpause`](#optavdpause)                                    |          |
+| [`optthruput`](#optthruput)                                      |          |
+
+
 Specify the garbage collection policy that you want the OpenJ9 VM to use:
-
-### `gencon`
-
-        -Xgcpolicy:gencon
-
-: The generational concurrent policy (default) uses a concurrent mark phase combined with generational garbage collection to help minimize the time that is spent in any garbage collection pause. This policy is particularly useful for applications with many short-lived objects, such as transactional applications. Pause times can be significantly shorter than with the `optthruput` policy, while still producing good throughput. Heap fragmentation is also reduced.
 
 ### `balanced`
 
@@ -57,33 +60,33 @@ The initial heap size is *Xmx/1024*, rounded down to the nearest power of 2, whe
 
 The following options can also be specified on the command line with `-Xgcpolicy:balanced`:
 
-- -Xalwaysclassgc
-- -Xclassgc
-- -Xcompactexplicitgc
-- -Xdisableexcessivegc
-- -Xdisableexplicitgc
-- -Xenableexcessivegc
-- -Xgcthreads<number>
-- -Xgcworkpackets<number>
-- -Xmaxe<size>
-- -Xmaxf<percentage>
-- -Xmaxt<percentage>
-- -Xmca<size>
-- -Xmco<size>
-- -Xmine<size>
-- -Xminf<percentage>
-- -Xmint<percentage>
-- -Xmn<size>
-- -Xmns<size>
-- -Xmnx<size>
-- -Xms<size>
-- -Xmx<size>
-- -Xnoclassgc
-- -Xnocompactexplicitgc
-- -Xnuma:none
-- -Xsoftmx<size>
-- -Xsoftrefthreshold<number>
-- -Xverbosegclog[:<file> [, <X>,<Y>]]
+- `-Xalwaysclassgc`
+- `-Xclassgc`
+- `-Xcompactexplicitgc`
+- `-Xdisableexcessivegc`
+- `-Xdisableexplicitgc`
+- `-Xenableexcessivegc`
+- `-Xgcthreads<number>`
+- `-Xgcworkpackets<number>`
+- `-Xmaxe<size>`
+- `-Xmaxf<percentage>`
+- `-Xmaxt<percentage>`
+- `-Xmca<size>`
+- `-Xmco<size>`
+- `-Xmine<size>`
+- `-Xminf<percentage>`
+- `-Xmint<percentage>`
+- `-Xmn<size>`
+- `-Xmns<size>`
+- `-Xmnx<size>`
+- `-Xms<size>`
+- `-Xmx<size>`
+- `-Xnoclassgc`
+- `-Xnocompactexplicitgc`
+- `-Xnuma:none`
+- `-Xsoftmx<size>`
+- `-Xsoftrefthreshold<number>`
+- `-Xverbosegclog[:<file> [, <X>,<Y>]]`
 
 The behavior of the following options is different when specified with `-Xgcpolicy:balanced`:
 
@@ -95,25 +98,30 @@ The behavior of the following options is different when specified with `-Xgcpoli
 
 The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
-- -Xconcurrentbackground<number>
-- -Xconcurrentlevel<number>
-- -Xconcurrentslack<size>
-- -Xconmeter:<soa | loa | dynamic>
-- -Xdisablestringconstantgc
-- -Xenablestringconstantgc
-- -Xloa
-- -Xloainitial<percentage>
-- -Xloamaximum<percentage>
-- -Xloaminimum<percentage>
-- -Xmo<size>
-- -Xmoi<size>
-- -Xmos<size>
-- -Xmr<size>
-- -Xmrx<size>
-- -Xnoloa
-- -Xnopartialcompactgc (deprecated)
-- -Xpartialcompactgc (deprecated)
+- `-Xconcurrentbackground<number>`
+- `-Xconcurrentlevel<number>`
+- `-Xconcurrentslack<size>`
+- `-Xconmeter:<soa | loa | dynamic>`
+- `-Xdisablestringconstantgc`
+- `-Xenablestringconstantgc`
+- `-Xloa`
+- `-Xloainitial<percentage>`
+- `-Xloamaximum<percentage>`
+- `-Xloaminimum<percentage>`
+- `-Xmo<size>`
+- `-Xmoi<size>`
+- `-Xmos<size>`
+- `-Xmr<size>`
+- `-Xmrx<size>`
+- `-Xnoloa`
+- `-Xnopartialcompactgc` (deprecated)
+- `-Xpartialcompactgc` (deprecated)
 
+### `gencon`
+
+        -Xgcpolicy:gencon
+
+: The generational concurrent policy (default) uses a concurrent mark phase combined with generational garbage collection to help minimize the time that is spent in any garbage collection pause. This policy is particularly useful for applications with many short-lived objects, such as transactional applications. Pause times can be significantly shorter than with the `optthruput` policy, while still producing good throughput. Heap fragmentation is also reduced.
 
 ### `metronome` (AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup> only)
 
@@ -154,6 +162,12 @@ java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
 `-Xmx<size>`
 : Specifies the Java heap size. Unlike other garbage collection strategies, the real-time Metronome GC does not support heap expansion. There is not an initial or maximum heap size option. You can specify only the maximum heap size.
 
+### `nogc`
+
+        -Xgcpolicy:nogc
+
+: When this policy is enabled, the Java object heap is expanded in the normal way until the limit is reached, but memory is not reclaimed through garbage collection. This policy can be useful for test
+purposes and for short-lived applications. When the limit is reached an `OutOfMemory` error is generated and the VM shuts down. This policy can also be enabled with the [`-XX:+UseNoGC`](xxusenogc.md) option.
 
 ### `optavgpause`
 
@@ -161,17 +175,15 @@ java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
 
 : The "optimize for pause time" policy uses concurrent mark and concurrent sweep phases. Pause times are shorter than with `optthruput`, but application throughput is reduced because some garbage collection work is taking place while the application is running. Consider using this policy if you have a large heap size (available on 64-bit platforms), because this policy limits the effect of increasing heap size on the length of the garbage collection pause. However, if your application uses many short-lived objects, the `gencon` policy might produce better performance.
 
-### `subpool`  (AIX, Linux, and z/OS<sup>&reg;</sup> only)
-
-        -Xgcpolicy:subpool
-
-: The subpool policy is deprecated and is now an alias for `optthruput`. Therefore, if you use this option, the effect is the same as `optthruput`.
-
 ### `optthruput`
 
         -Xgcpolicy:optthruput
 
 : The "optimize for throughput" policy disables the concurrent mark phase. The application stops during global garbage collection, so long pauses can occur. This configuration is typically used for large-heap applications when high application throughput, rather than short garbage collection pauses, is the main performance goal. If your application cannot tolerate long garbage collection pauses, consider using another policy, such as `gencon`.
+
+
+
+
 
 
 
