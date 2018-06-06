@@ -28,7 +28,7 @@
 
 This option controls the percentage of free memory pages in the object heap that can be released when the OpenJ9 VM is in an idle state.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restrictions</span> **Restrictions:** This option applies only to Linux on x86-32 and x86-64 architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restrictions</span> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
 
 ## Syntax
 
