@@ -43,7 +43,7 @@ supported by any open project.
 | OpenJ9 release  | Release date       | JDK8 (LTS)| JDK9 | JDK10 | JDK11 (LTS) | JDK12 | JDK13 |
 |-----------------|--------------------|-----------|------|-------|-------------|-------|-------|
 | v0.8.0          | March 2018         | Yes       | No   |       |             |       |       |
-| v0.9.0          | May 2018 (\*1)     | Yes       | No   | Yes     |             |       |       |
+| v0.9.0          | May 2018 (\*1)     | Yes       | No   | Yes   |             |       |       |
 | v0.10.0         | August 2018 (\*2)  | Yes       | No   | Yes   |             |       |       |
 | v0.11.0         | October 2018 (\*2) | Yes       | No   | No    | Yes         |       |       |
 | v0.12.0         | January 2019 (\*2) | Yes       | No   | No    | Yes         |       |       |
@@ -60,6 +60,8 @@ supported by any open project.
 so we expect to be able to continue supporting JDK8 beyond that date. Until maintainers have been established
 we are unable to make a definitive support statement. This position is the same for JDK11 and all future "LTS" releases.
 
+For any issues or limitations of an Eclipse OpenJ9 release, read the [release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/).
+
 ## Platform support
 
 The Eclipse OpenJ9 project is open to supporting any hardware/operating system platforms
@@ -67,23 +69,21 @@ provided that we have community members available to maintain them. For practica
 reasons the Eclipse OpenJ9 JVM does not currently run on every platform. The following tables
 show the minimum build configurations that we have tested to build an OpenJDK binary.
 
-For any issues or limitations of an Eclipse OpenJ9 release, read the release notes:
-
-- [OpenJ9 0.8.0 release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.8/0.8.md)
-- [OpenJ9 0.9.0 release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.9/0.9.md)
-
 **NOTE:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
 platform support might vary, depending on their build environment.
 
 ### OpenJDK 8 build environment
 
-| Platform                    | Operating system          |  Compiler                       |  Comments      |
-|-----------------------------|---------------------------|---------------------------------|----------------|
-| Linux x86 64-bit            | Ubuntu 14.04              | gcc 4.8.4                       |                |
-| Linux on POWER LE 64-bit    | Ubuntu 14.04              | gcc 4.8.4                       |                |
-| Linux on IBM Z 64-bit       | Ubuntu 14.04              | gcc 4.8.4                       |                |
-| Windows x86 64-bit          | Windows Server 2012       | Microsoft Visual Studio 2010 SP1|                |
-| AIX POWER BE 64-bit         | AIX 7.1 TL04              | xlc/C++ 13.1.3                  |                |
+| Platform                                    | Operating system          |  Compiler                       |  Comments      |
+|---------------------------------------------|---------------------------|---------------------------------|----------------|
+| Linux x86 64-bit                            | Ubuntu 14.04              | gcc 4.4.7                       |                |
+| Linux on POWER<sup>&reg;</sup> LE 64-bit    | Ubuntu 14.04              | gcc 4.4.7                       |                |
+| Linux on IBM Z<sup>&reg;</sup> 64-bit       | Ubuntu 14.04              | gcc 4.4.7                       |                |
+| Windows x86 32-bit                          | Windows Server 2012       | Microsoft Visual Studio 2010 SP1|                |
+| Windows x86 64-bit                          | Windows Server 2012       | Microsoft Visual Studio 2010 SP1|                |
+| AIX<sup>&reg;</sup> POWER BE 64-bit         | AIX 7.1 TL04              | xlc/C++ 13.1.3                  |                |
+
+**NOTE:** The level of gcc supported is currently v4.4.7, but plans are in place to move to at least v4.8 in the near future.
 
 OpenJDK8 binaries are supported on the minimum operating system levels shown in the table.
 For Linux, other distributions are supported provided that they have a Linux kernel v3.2 or later
@@ -95,11 +95,11 @@ When public support for an operating system version ends, OpenJ9 can no longer b
 
 | Platform                    | Operating system         |  Compiler                       |   Comments     |
 |-----------------------------|--------------------------|---------------------------------|----------------|
-| Linux x86 64-bit            | Ubuntu 16.04 (kernel 4.4)| gcc 4.8.4                       |                |
-| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 4.8.4                       |                |
-| Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 4.8.4                       |                |
+| Linux x86 64-bit            | Ubuntu 16.04 (kernel 4.4)| gcc 4.8.5                       |                |
+| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 4.8.5                       |                |
+| Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 4.8.5                       |                |
 | Windows x86 64-bit          | Windows Server 2016      | Microsoft Visual Studio 2013    |                |
-| AIX POWER BE 64-bit         | AIX 7.1 TL04                 | xlc/C++ 13.1.3                  |                |
+| AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |                |
 
 
 OpenJDK9 binaries are supported on the minimum operating system levels shown in the table.
@@ -112,9 +112,9 @@ When public support for an operating system version ends, OpenJ9 can no longer b
 
 | Platform                    | Operating system         |  Compiler                       |   Comments     |
 |-----------------------------|--------------------------|---------------------------------|----------------|
-| Linux x86 64-bit            | Ubuntu 16.04             | gcc 4.8.4                       |                |
-| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 4.8.4                       |                |
-| Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 4.8.4                       |                |
+| Linux x86 64-bit            | Ubuntu 16.04             | gcc 4.8.5                       |                |
+| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 4.8.5                       |                |
+| Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 4.8.5                       |                |
 | Windows x86 64-bit          | Windows Server 2016      | Microsoft Visual Studio 2013    |                |
 | AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |                |
 
