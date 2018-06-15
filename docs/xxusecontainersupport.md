@@ -40,7 +40,7 @@ If your application is running in a container that imposes a memory limit, and y
 | `-XX:+UseContainerSupport` | Enable  |                                                                                    |
 
 
-When using container technology, applications are typically run on their own and do not need to compete for memory. OpenJDK 9 detects when OpenJ9 is running inside a container that imposes a memory limit, and if `-XX:+UserContainerSupport` is set, adjusts the maximum Java heap size appropriately.
+When using container technology, applications are typically run on their own and do not need to compete for memory. The VM detects when OpenJ9 is running inside a container that imposes a memory limit, and if `-XX:+UserContainerSupport` is set, adjusts the maximum Java heap size appropriately.
 
 The following table shows the values that are used when `-XX:+UserContainerSupport` is set:
 

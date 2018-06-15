@@ -261,9 +261,11 @@ pages:
             - "-XX:IdleTuningMinFreeHeapOnIdle"                                  : xxidletuningminfreeheaponidle.md
             - "-XX:IdleTuningMinIdleWaitTime"                                    : xxidletuningminidlewaittime.md
             - "-XX:[+|-]IgnoreUnrecognizedVMOptions"                             : xxignoreunrecognizedvmoptions.md
+            - "-XX:InitialRAMPercentage"                                         : xxinitialrampercentage.md
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
+            - "-XX:MaxRAMPercentage"                                             : xxmaxrampercentage.md
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
             - "-XX:[+|-]ReduceCPUMonitorOverhead"                                : xxreducecpumonitoroverhead.md
