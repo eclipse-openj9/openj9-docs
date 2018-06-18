@@ -34,5 +34,6 @@ This Oracle Hotspot option can be used to specify the maximum Java heap size as 
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** If you set a value for [`-Xmx`](xms.md), this option is ignored.
 
+If your application is running in a container and you have specified [`-XX:+UseContainerSupport`](xxusecontainersupport), both the default heap size for containers and the `-XX:MaxRAMPercentage` option are based on the available container memory.
 
 <!-- ==== END OF TOPIC ==== xxmaxrampercentage.md ==== -->
