@@ -62,7 +62,7 @@ General VM environment variables are shown in the following table:
 |Environment&nbsp;variable                                  | Usage information                                                                                |
 |-----------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 |`IBM_JAVA_COMMAND_LINE`                                    | This variable is set by the VM after it starts. Using this variable, you can find the command-line parameters set when the VM started. This setting is not available if the VM is invoked by using JNI.|
-|`IBM_JAVA_OPTIONS=<option>`                                | Set this variable to store default Java options, including **-X**, **-D**, or **-verbose:gc** style options. For example, **-Xms256m -Djava.compiler**. Any options set are overridden by equivalent options that are specified when Java is started. This variable does not support **-fullversion** or **-version**. If you specify the name of a trace output file either directly, or indirectly, by using a properties file, the output file might be accidentally overwritten if you run utilities such as the trace formatter, dump extractor, or dump viewer. For information about avoiding this problem, see [Controlling the trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_control.html), noting the restrictions</a>.
+|`IBM_JAVA_OPTIONS=<option>`                                | Set this variable to store default Java options, including **-X**, **-D**, or **-verbose:gc** style options. For example, **-Xms256m -Djava.compiler**. Any options set are overridden by equivalent options that are specified when Java is started. This variable does not support **-fullversion** or **-version**. If you specify the name of a trace output file either directly, or indirectly, by using a properties file, the output file might be accidentally overwritten if you run utilities such as the trace formatter, dump extractor, or dump viewer. For information about avoiding this problem, see <i class="fa fa-external-link" aria-hidden="true"></i> [Controlling the trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_control.html), noting the restrictions</a>.
 |`JAVA_FONTS=<list of directories>`                         | Set this environment variable to specify the font directory. Setting this variable is equivalent to setting the property `java.awt.fonts` on Windows operating systems, and `sun.java2d.fontpath` on other operating systems. |
 
 
@@ -121,7 +121,7 @@ If the `JAVA_DUMP_TOOL` environment variable is set, that variable is assumed to
 The dump settings are applied in the following order. Settings later in the list take precedence:
 
 1.  Default VM dump behavior.
-2.  `-Xdump` command-line options that specify `-Xdump:<type>:defaults`, see [OpenJ9 default options](openj9_defaults.html).
+2.  `-Xdump` command-line options that specify `-Xdump:<type>:defaults`, see [OpenJ9 default options](openj9_defaults.md).
 3.  `DISABLE_JAVADUMP`, `IBM_HEAPDUMP`, and `IBM_HEAP_DUMP` environment variables.
 4.  `IBM_JAVADUMP_OUTOFMEMORY` and `IBM_HEAPDUMP_OUTOFMEMORY` environment variables.
 5.  `JAVA_DUMP_OPTS` environment variable.
