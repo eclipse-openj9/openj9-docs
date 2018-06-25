@@ -93,11 +93,11 @@ Trace can produce large amounts of data in a very short time. Before running tra
 - In many cases, just use internal trace with an increased buffer size and snap the trace when the problem occurs.
 - If the problem results in a thread stack dump or operating system signal or exception, trace buffers are snapped automatically to a file that is in the current directory. The file is called: `Snapnnnn.yyyymmdd.hhmmssth.process.trc`.
 
-You must also think carefully about which components need to be traced and what level of tracing is required. For example, if you are tracing a suspected shared classes problem, it might be enough to trace all components at level 1, and **j9shr** at level 9, while `maximal` can be used to show parameters and other information for the failing component. Tracepoint components and trace levels are described in the following sections: [Tracepoint specification](#tracepoint-specification) and [Trace levels](trace-levels).
+You must also think carefully about which components need to be traced and what level of tracing is required. For example, if you are tracing a suspected shared classes problem, it might be enough to trace all components at level 1, and **j9shr** at level 9, while `maximal` can be used to show parameters and other information for the failing component. Tracepoint components and trace levels are described in the following sections: [Tracepoint specification](#tracepoint-specification) and [Trace levels](#trace-levels).
 
 There are two types of tracepoints inside the VM:  
 - Regular tracepoints include method tracepoints, application tracepoints, data tracepoints inside the VM and data tracepoints inside class libraries. You can display regular tracepoint data on the screen or save the data to a file. You can also use command line options to trigger specific actions when regular tracepoints fire.
-- Auxiliary tracepoints are a special type of tracepoint that can be fired only when another tracepoint is being processed. For example, the stack frame information produced by the jstacktrace -Xtrace:trigger command. You cannot control where auxiliary tracepoint data is sent and you cannot set triggers on auxiliary tracepoints. Auxiliary tracepoint data is sent to the same destination as the tracepoint that caused them to be generated.
+- Auxiliary tracepoints are a special type of tracepoint that can be fired only when another tracepoint is being processed. For example, the stack frame information produced by the jstacktrace `-Xtrace:trigger` command. You cannot control where auxiliary tracepoint data is sent and you cannot set triggers on auxiliary tracepoints. Auxiliary tracepoint data is sent to the same destination as the tracepoint that caused them to be generated.
 
 Trace data can be written to one of the following locations:
 
@@ -190,7 +190,7 @@ In some cases, you must use them with other options. For example, if you specify
 
 With the exceptions of `none`, all options require at least one `<tracepoint_specification>`. Multiple statements of each type of trace are allowed and their effect is cumulative. If you want to use multiple trace options of the same name, use a properties file. (See [`properties`](#properties))
 
-Each option takes a `<tracepoint_specification>`, which is described in the sections that follow. To learn more about the control options, see [Options](Options).
+Each option takes a `<tracepoint_specification>`, which is described in the sections that follow. To learn more about the control options, see [Options](#options).
 
 #### Tracepoint specification
 
@@ -345,7 +345,7 @@ To trace all components at level 6, but do not trace `j9vrb` at all, and do not 
 Xtrace:minimal=<tracepoint_specification>`          
 ```
 
-For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](tracepoint-specification).
+For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
 
 When specified, trace data is placed into internal trace buffers that can then be written to a snap file or written to the files that are specified in an output trace option. Only the time stamp and tracepoint identifier are recorded. When the trace is formatted, missing trace data is replaced with the characters "???" in the output file.
 
@@ -357,7 +357,7 @@ When specified, trace data is placed into internal trace buffers that can then b
 Xtrace:maximal=<tracepoint_specification>`         
 ```
 
-For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](tracepoint-specification).
+For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
 
 When specified, trace data is placed into internal trace buffers that can then be written to a snap file or written to the files that are specified in an output trace option. All associated data is traced.
 `minimal` and `maximal` traces are independent from any types that follow them. For example, if the `maximal` option is specified, it does not affect a later option such as `print`.
@@ -369,7 +369,7 @@ When specified, trace data is placed into internal trace buffers that can then b
 Xtrace:count=<tracepoint_specification>             
 ```
 
-For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](tracepoint-specification).
+For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
 
 The count option requests that only a count of the selected tracepoints is kept. When the VM ends, all nonzero totals of tracepoints (sorted by tracepoint id) are written to a file, called `utTrcCounters`, in the current directory. This information is useful if you want to determine the overhead of particular tracepoints, but do not want to produce a large amount (GB) of trace data.
 For example, to count the tracepoints that are used in the default trace configuration, use the following command:
@@ -384,7 +384,7 @@ For example, to count the tracepoints that are used in the default trace configu
 Xtrace:print=<tracepoint_specification>`            
 ```
 
-For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](tracepoint-specification).
+For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
 
 The print option causes the specified tracepoints to be routed to stderr in real time. The VM tracepoints are formatted by using `J9TraceFormat.dat`. The class library tracepoints are formatted by `J9TraceFormat.dat` and `TraceFormat.dat`.
 
@@ -394,7 +394,7 @@ The print option causes the specified tracepoints to be routed to stderr in real
 Xtrace:iprint=<tracepoint_specification>`          
 ```
 
-For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](tracepoint-specification).
+For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
 
 The `iprint` option is the same as the `print` option, but uses indenting to format the trace.
 
@@ -404,12 +404,12 @@ The `iprint` option is the same as the `print` option, but uses indenting to for
 Xtrace:exception=<tracepoint_specification>
 ```
 
-For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](tracepoint-specification).
+For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
 
 When exception trace is enabled, the trace data is collected in internal buffers that are separate from the normal buffers. These internal buffers can then be written to a snap file or written to the file that is specified in an `exception.output` option.
 The `exception` option allows low-volume tracing in buffers and files that are distinct from the higher-volume information that `minimal` and `maximal` tracing have provided. In most cases, this information is exception-type data, but you can use this option to capture any trace data that you want.
 
-This form of tracing is channeled through a single set of buffers, as opposed to the buffer-per-thread approach for normal trace. Buffer contention might occur if high volumes of trace data are collected. A difference exists in the `<tracepoint_specification>` defaults for exception tracing;  see [Tracepoint specification](tracepoint-specification).
+This form of tracing is channeled through a single set of buffers, as opposed to the buffer-per-thread approach for normal trace. Buffer contention might occur if high volumes of trace data are collected. A difference exists in the `<tracepoint_specification>` defaults for exception tracing;  see [Tracepoint specification](#tracepoint-specification).
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Notes:**
 - The exception trace buffers are intended for low-volume tracing. By default, the exception trace buffers log garbage collection (GC) event tracepoints, see Default tracing. You can send additional tracepoints to the exception buffers or turn off the GC tracepoints. Changing the exception trace buffers alters the contents of the GC History section in any Javadumps.
@@ -421,7 +421,7 @@ This form of tracing is channeled through a single set of buffers, as opposed to
 Xtrace:external<tracepoint_specification>
 ```
 
-For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](tracepoint-specification).
+For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
 
 The `external` option routes trace data to trace listeners, which are registered by using the JVMTI `RegisterTracePointSubscriber()` and `DeregisterTracePointSubscriber()` APIs.
 
@@ -431,7 +431,7 @@ The `external` option routes trace data to trace listeners, which are registered
 Xtrace:none[=<tracepoint_specification>]
 ```
 
-For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](tracepoint-specification).
+For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
 
 `-Xtrace:none` prevents the trace engine from loading if it is the only trace option specified. However, if other `-Xtrace` options are on the command line, it is treated as the equivalent of `-Xtrace:none=all` and the trace engine still loads.
 
@@ -782,7 +782,7 @@ If `<count>` is greater than zero, each thread initially has its tracing enabled
 
 <i class="fa fa-pencil-square-o"></i> You cannot use `resumecount` and `suspendcount` together because they both set the same internal counter.
 
-This trace option is for use with the [trigger](trigger) option.
+This trace option is for use with the [trigger](#trigger) option.
 
 The following example starts with tracing turned on. Each thread stops tracing when it has had three `suspendthis` actions performed on it:
 
@@ -906,6 +906,6 @@ To write a Java stack trace to the trace output file when the `Sample.code()` me
 - <i class="fa fa-external-link" aria-hidden="true"></i> [Using method trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_method_trace.html)
 - <i class="fa fa-external-link" aria-hidden="true"></i> [Using Heapdump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html)
 - <i class="fa fa-external-link" aria-hidden="true"></i> [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html)
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Using the dump viewer](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/systemdump_viewer.html)
+- [Dump viewer](tool_jdmpview.md)
 
 <!-- ==== END OF TOPIC ==== xtrace.md ==== -->
