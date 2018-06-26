@@ -158,9 +158,11 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               {% block content %}
+<!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 {% if page.edit_url %}
                   <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-icon md-content__icon">&#xE3C9;</a>
                 {% endif %}
+-->
                 {% if not "\x3ch1" in page.content %}
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
                 {% endif %}
