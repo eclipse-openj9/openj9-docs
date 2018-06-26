@@ -226,7 +226,7 @@ java -Xdump:java:events=unload,priority=100 -Xdump:what
 The results of the `-Xdump:what` option in the command are as follows.
 
 ```
-...6
+...
 ----------------------
 -Xdump:java:
     events=unload,

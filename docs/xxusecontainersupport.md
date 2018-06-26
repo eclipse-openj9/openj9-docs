@@ -40,15 +40,21 @@ If your application is running in a container that imposes a memory limit, and y
 | `-XX:+UseContainerSupport` | Enable  |                                                                                    |
 
 
-When using container technology, applications are typically run on their own and do not need to compete for memory. The VM detects when OpenJ9 is running inside a container that imposes a memory limit, and if `-XX:+UserContainerSupport` is set, adjusts the maximum Java heap size appropriately.
+When using container technology, applications are typically run on their own and do not need to compete for memory. The OpenJ9 VM detects when it is running inside a container that imposes a memory limit, and if `-XX:+UserContainerSupport` is set, adjusts the maximum Java heap size appropriately.
 
 The following table shows the values that are used when `-XX:+UserContainerSupport` is set:
 
-| Physical memory *&lt;size&gt;* | Maximum Java heap size  |
-|--------------------------------|-------------------------|
-| Less than 1 GB                 | 50% *&lt;size&gt;*      |
-| 1 GB - 2 GB                    | *&lt;size&gt;* - 512 MB |
-| Greater than 2 GB              | 75% *&lt;size&gt;*      |
+| Container memory limit *&lt;size&gt;* | Maximum Java heap size  |
+|---------------------------------------|-------------------------|
+| Less than 1 GB                        | 50% *&lt;size&gt;*      |
+| 1 GB - 2 GB                           | *&lt;size&gt;* - 512 MB |
+| Greater than 2 GB                     | 75% *&lt;size&gt;*      |
+
+The default heap size for containers takes affect only when the following conditions are met:
+
+1. The application is running in a container environment.
+2. The memory limit for the container is set.
+3. The `-XX:+UseContainerSupport` option is specified on the command line, which is expected to be the default in a future release.
 
 When [`-XX:MaxRAMPercentage`](xxmaxrampercentage.md) or [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md) are used with `-XX:+UseContainerSupport`, the corresponding heap setting is determined based on the memory limit of the container. For example, to set the maximum heap size to 80% of the container memory, specify the following options:
 

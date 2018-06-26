@@ -96,6 +96,7 @@ Trace can produce large amounts of data in a very short time. Before running tra
 You must also think carefully about which components need to be traced and what level of tracing is required. For example, if you are tracing a suspected shared classes problem, it might be enough to trace all components at level 1, and **j9shr** at level 9, while `maximal` can be used to show parameters and other information for the failing component. Tracepoint components and trace levels are described in the following sections: [Tracepoint specification](#tracepoint-specification) and [Trace levels](#trace-levels).
 
 There are two types of tracepoints inside the VM:  
+
 - Regular tracepoints include method tracepoints, application tracepoints, data tracepoints inside the VM and data tracepoints inside class libraries. You can display regular tracepoint data on the screen or save the data to a file. You can also use command line options to trigger specific actions when regular tracepoints fire.
 - Auxiliary tracepoints are a special type of tracepoint that can be fired only when another tracepoint is being processed. For example, the stack frame information produced by the jstacktrace `-Xtrace:trigger` command. You cannot control where auxiliary tracepoint data is sent and you cannot set triggers on auxiliary tracepoints. Auxiliary tracepoint data is sent to the same destination as the tracepoint that caused them to be generated.
 

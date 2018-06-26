@@ -487,15 +487,15 @@ When `jdmpview` is started, the following parameters can be used during the sess
 
 ### whatis <hex_address>
 
-: Displays information about what is stored at the given memory address, `<hex_address>`. This command examines the memory location at `<hex_address>` and tries to find out more information about this address. For example:
+: Displays information about `whatis` stored at the given memory address, `<hex_address>`. This command examines the memory location at `<hex_address>` and tries to find out more information about this address. For example:
 
-        --------------------------------------------------------------------
+
         > whatis 0x8e76a8
 
         heap #1 - name: Default@19fce8
         0x8e76a8 is within heap segment: 8b0000 -- cb0000
         0x8e76a8 is start of an object of type java/lang/Thread
-        --------------------------------------------------------------------
+        
 
 ### x/ (examine)
 
