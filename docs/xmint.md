@@ -25,15 +25,16 @@
 # -Xmint / -Xmaxt
 
 
-Sets the minimum and maximum proportion of time to spend in the garbage collection (GC) process as a percentage of the overall running time that included the last three GC runs. 
+Sets the minimum and maximum proportion of time to spend in the garbage collection (GC) process as a percentage of the overall running time that included the last three GC runs.
 
 - If the percentage of time drops to less than the minimum, the OpenJ9 VM tries to shrink the heap.
 
-- If the percentage of time exceeds the maximum, the OpenJ9 VM tries to expand the heap. 
+- If the percentage of time exceeds the maximum, the OpenJ9 VM tries to expand the heap.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restrictions</span> **Restrictions:**  
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restrictions</span> **Restrictions:**
+
 - This option applies only to GC policies that include stop-the-world (STW) operations, such as `-Xgcpolicy:optthruput`.  
--This option is ignored by the default policy `-Xgcpolicy:gencon`.
+- This option is ignored by the default policy `-Xgcpolicy:gencon`.
 
 ## Syntax
 
