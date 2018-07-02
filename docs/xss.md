@@ -24,7 +24,7 @@
 
 # -Xiss / -Xss / -Xssi
 
-Determines the size and behavior of the stack size for Java<sup>&trade;</sup> threads. 
+Determines the size and behavior of the stack size for Java&trade; threads. 
 
 To increase the maximum number of threads your system can support, reduce the maximum native stack size.
 

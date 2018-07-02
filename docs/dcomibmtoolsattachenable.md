@@ -30,35 +30,35 @@ Enable the Attach API for this application.
 
         -Dcom.ibm.tools.attach.enable=[yes|no]
 
-On AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and Windows<sup>&trade;</sup> systems, the following default applies:
+On AIX&reg;, Linux&trade;, and Windows&trade; systems, the following default applies:
 
 | Value        | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
-| yes          | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| yes          | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | no           | Disable |                                                                                    |
 
-On z/OS<sup>&reg;</sup> systems, the following default applies:
+On z/OS&reg; systems, the following default applies:
 
 | Value        | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
 | yes          | Enable  |                                                                                    |
-| no           | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| no           | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 
 
 ## Explanation
 
-A useful reference for information about the Java<sup>&trade;</sup> Attach API can be found at [http://docs.oracle.com/javase/8/docs/technotes/guides/attach/index.html](http://docs.oracle.com/javase/8/docs/technotes/guides/attach/index.html). The following extract is taken from the Oracle documentation:
+A useful reference for information about the Java&trade; Attach API can be found at [http://docs.oracle.com/javase/8/docs/technotes/guides/attach/index.html](http://docs.oracle.com/javase/8/docs/technotes/guides/attach/index.html). The following extract is taken from the Oracle documentation:
 
 > The Attach API is an extension that provides a mechanism to attach to a Java virtual machine. A tool written in the Java Language, uses this API to attach to a target  virtual machine and load its tool agent into that virtual machine.
 
-For example, to late attach the IBM<sup>&reg;</sup> Health Center agent to a virtual machine (VM) that is already running.
+For example, to late attach the IBM&reg; Health Center agent to a virtual machine (VM) that is already running.
 
 The OpenJ9 implementation of the Attach API is equivalent to the Oracle implementation. However, the OpenJ9 implementation cannot be used to attach to, or accept attach requests from, other VM implementations.
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Support for the Java Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html)
+- [Support for the Java Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html)
 - [-Dcom.ibm.tools.attach.directory](dcomibmtoolsattachdirectory.md)
 - [-Dcom.ibm.tools.attach.displayName](dcomibmtoolsattachdisplayname.md)
 - [-Dcom.ibm.tools.attach.id](dcomibmtoolsattachid.md)

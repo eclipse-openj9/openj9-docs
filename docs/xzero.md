@@ -24,7 +24,7 @@
 
 # -Xzero
 
-Enables reduction of the memory footprint of the Java<sup>&trade;</sup> runtime environment when concurrently running multiple Java invocations.
+Enables reduction of the memory footprint of the Java&trade; runtime environment when concurrently running multiple Java invocations.
 
 This option is deprecated and will be removed in a future release.
 

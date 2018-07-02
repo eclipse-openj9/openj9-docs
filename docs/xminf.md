@@ -38,9 +38,9 @@ If the free space is above or below these limits, the OpenJ9 VM attempts to adju
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Heap shrinkage](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapshrinkage.html)
+- [Heap shrinkage](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapshrinkage.html)
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Heap expansion](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapexpansion.html)
+- [Heap expansion](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapexpansion.html)
 
 
 <!-- ==== END OF TOPIC ==== xminf.md ==== -->

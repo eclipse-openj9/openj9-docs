@@ -25,7 +25,7 @@
 # Using -X command-line options
 
 
-Use these options to configure the OpenJ9 virtual machine (VM). Unlike standard options, options prefixed with `-X` are nonstandard and are typically unique to a Java<sup>&trade;</sup> virtual
+Use these options to configure the OpenJ9 virtual machine (VM). Unlike standard options, options prefixed with `-X` are nonstandard and are typically unique to a Java&trade; virtual
 machine implementation. However, in some cases, `-X` option names are common to different VM implementations and might have the same function.
 
 For options that take a `<size>` parameter, suffix the number with "k" or "K" to indicate kilobytes, "m" or "M" to indicate megabytes, or "g" or "G" to indicate gigabytes.

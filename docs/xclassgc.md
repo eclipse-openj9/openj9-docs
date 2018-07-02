@@ -28,13 +28,13 @@ Enables and disables class garbage collection (the dynamic unloading of class ob
 
 When enabled, garbage collection, occurs only on class loader changes. This is the default behavior.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Disabling class garbage collection is not recommended as this causes unlimited native memory growth, leading to out-of-memory errors.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Disabling class garbage collection is not recommended as this causes unlimited native memory growth, leading to out-of-memory errors.
 
 ## Syntax
 
 | Setting      | Action     | Default                                                                            |
 |--------------|------------|:----------------------------------------------------------------------------------:|
-|`-Xclassgc`   | Enable GC  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+|`-Xclassgc`   | Enable GC  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 |`-Xnoclassgc` | Disable GC |                                                                                    |
 
 

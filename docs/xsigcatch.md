@@ -30,7 +30,7 @@ Enables and disables VM signal handling code.
 
 | Setting        | Effect  | Default                                                                            |
 |----------------|---------|:----------------------------------------------------------------------------------:|
-| `-Xsigcatch`   | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-Xsigcatch`   | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-Xnosigcatch` | Disable |                                                                                    |
 
 

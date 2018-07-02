@@ -28,7 +28,7 @@ Tune performance by improving the resolution time for classes when the field cou
 
 If profiling tools show significant costs in field resolution, change the threshold until the costs are reduced. If you enable this option, additional memory is used when the threshold is exceeded.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** The use of this option is deprecated.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The use of this option is deprecated.
 
 ## Syntax
 

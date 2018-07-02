@@ -24,11 +24,11 @@
 
 # -XX:\[+|-\]IdleTuningGcOnIdle  
 
-**(Linux<sup>&trade;</sup> only)**
+**(Linux&trade; only)**
 
 This option can be used to reduce the memory footprint of the OpenJ9 VM when it is in an idle state.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restrictions</span> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
 
 ## Syntax
 
@@ -37,10 +37,10 @@ This option can be used to reduce the memory footprint of the OpenJ9 VM when it 
 | Setting                   | Effect  | Default                                                                            |
 |---------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+IdleTuningGcOnIdle` | Enable  |                                                                                    |
-| `-XX:-IdleTuningGcOnIdle` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:-IdleTuningGcOnIdle` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 
-When the VM enters the idle state, enabling this option causes the VM to release free memory pages in the object heap without resizing the Java<sup>&trade;</sup> heap. The pages are reclaimed by the operating system, which reduces the physical memory footprint of the VM.
+When the VM enters the idle state, enabling this option causes the VM to release free memory pages in the object heap without resizing the Java&trade; heap. The pages are reclaimed by the operating system, which reduces the physical memory footprint of the VM.
 
 This option is used with `-XX:IdleTuningMinIdleWaitTime` and `-XX:IdleTuningMinFreeHeapOnIdle` . If values for these options are not explicitly specified, the VM sets the following defaults:
 

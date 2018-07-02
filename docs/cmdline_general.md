@@ -25,7 +25,7 @@
 # Standard command-line options
 
 
-The OpenJ9 virtual machine supports the standard Java<sup>&trade;</sup> options that are common to all Java virtual machine implementations, including Oracle's Hotspot VM.
+The OpenJ9 virtual machine supports the standard Java&trade; options that are common to all Java virtual machine implementations, including Oracle's Hotspot VM.
 Some of the common options supported are summarised in the following table:
 
 | Standard option name                                                | Purpose                                                                                                                   |
@@ -37,7 +37,7 @@ Some of the common options supported are summarised in the following table:
 | `-verbose:<option>[,<option>]`                                      | Enables verbose output. Options include `class`, `dynload`, `gc`, `init`, `jni`, `sizes` and `stack`. (See **Notes**)     |
 | `-version`                                                          | Prints the full build and version information a VM                                                                        |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Notes:**
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
 - `-verbose:class`: Writes an entry to `stderr` for each class that is loaded.
 - `-verbose:dynload`: Writes detailed class information to `stderr` as each bootstrap class is loaded by the VM:

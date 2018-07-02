@@ -40,7 +40,7 @@ Allow the sampling thread to run for long enough to identify important optimizat
 
 ## Explanation
 
-The JIT sampling thread profiles the running Java<sup>&trade;</sup> application to discover commonly used methods. The memory and processor usage of the sampling thread is negligible, and the frequency of profiling is automatically reduced when the OpenJ9 VM is idle, to once per second instead of once every 10ms, or once every 100 seconds if the idle state lasts more than 50 seconds.
+The JIT sampling thread profiles the running Java&trade; application to discover commonly used methods. The memory and processor usage of the sampling thread is negligible, and the frequency of profiling is automatically reduced when the OpenJ9 VM is idle, to once per second instead of once every 10ms, or once every 100 seconds if the idle state lasts more than 50 seconds.
 
 
 <!-- ==== END OF TOPIC ==== xsamplingexpirationtime.md ==== -->

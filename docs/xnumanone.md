@@ -24,7 +24,7 @@
 
 # -Xnuma:none
 
-**(AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and Windows<sup>&trade;</sup> only)**
+**(AIX&reg;, Linux&trade;, and Windows&trade; only)**
 
 Use this option to turn off non-uniform memory architecture (NUMA) awareness when using the balanced garbage collection policy.
 

@@ -32,7 +32,7 @@ Specifies the number of low-priority background threads attached to assist the m
 
 ## Default behavior
 
-The default is `0` for Linux<sup>&trade;</sup> on IBM Z<sup>&reg;</sup> and `1` on all other platforms.
+The default is `0` for Linux&trade; on IBM Z&reg; and `1` on all other platforms.
 
  
 

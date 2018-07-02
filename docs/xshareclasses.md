@@ -35,7 +35,7 @@ Cache utilities perform the required operation on the specified cache, without s
 
 When you are running cache utilities, the message `Could not create the Java virtual machine` is expected. Cache utilities do not create the virtual machine.
 
-Some cache utilities can work with caches from previous Java<sup>&trade;</sup> versions or caches that are created by virtual machines (VMs) with different bit-widths. These caches are referred to as *"incompatible"* caches.
+Some cache utilities can work with caches from previous Java&trade; versions or caches that are created by virtual machines (VMs) with different bit-widths. These caches are referred to as *"incompatible"* caches.
 
 ## Syntax
 
@@ -85,8 +85,8 @@ Some cache utilities can work with caches from previous Java<sup>&trade;</sup> v
 
 : Sets the directory in which cache data is read and written. The following defaults apply:
 
-    - On Windows<sup>&trade;</sup> systems, `<directory>` is the user's `C:\\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
-    - On AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and z/OS<sup>&reg;</sup> systems, `<directory>` is `/tmp/javasharedresources`. You must have sufficient permissions in `<directory>`. For AIX, the directory must not be on an NFS mount for persistent caches.
+    - On Windows&trade; systems, `<directory>` is the user's `C:\\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
+    - On AIX&reg;, Linux&trade;, and z/OS&reg; systems, `<directory>` is `/tmp/javasharedresources`. You must have sufficient permissions in `<directory>`. For AIX, the directory must not be on an NFS mount for persistent caches.
 
 : On AIX, Linux, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system.
 
@@ -116,13 +116,13 @@ Some cache utilities can work with caches from previous Java<sup>&trade;</sup> v
 
 : If the cache directory is the platform default directory, `/tmp/javasharedresources`, this suboption is ignored and the cache directory permissions are set to 777. If you do not set this suboption, the cache directory permissions are set to 777, for compatibility with earlier Java versions.
 
-: On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF<sup>&reg;</sup> errors, which generate log messages.
+: On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
 
 ### `cacheRetransformed`
 
         -Xshareclasses:cacheRetransformed
 
-: Enables caching of classes that are transformed by using the JVMTI `RetransformClasses` function. For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [JVMTI redefinition and retransformation of classes](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_jvmti.html).
+: Enables caching of classes that are transformed by using the JVMTI `RetransformClasses` function. For more information, see [JVMTI redefinition and retransformation of classes](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_jvmti.html).
 
 The option `enableBCI` is enabled by default. However, if you use the `cacheRetransformed` option, this option forces cache creation into `-Xshareclasses:disableBCI` mode.
 
@@ -140,7 +140,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : On Windows and z/OS systems, a cache can be destroyed only if all VMs that are using it have shut down and the user has sufficient permissions.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** On z/OS, when the `destroyAll` option is invoked from a 31-bit VM, 64-bit caches are not destroyed. Similarly, when the `destroyAll` option is invoked from a 64-bit VM, 31-bit caches are not destroyed. The following message is displayed:
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, when the `destroyAll` option is invoked from a 31-bit VM, 64-bit caches are not destroyed. Similarly, when the `destroyAll` option is invoked from a 64-bit VM, 31-bit caches are not destroyed. The following message is displayed:
 
         JVMSHRC735I: Use a nn-bit VM to perform the requested operation on the
         nn-bit shared cache "cachename" as the nn-bit VM
@@ -180,7 +180,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : This option is enabled by default.
 
-: Allows a JVMTI `ClassFileLoadHook` event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about this option, see <i class="fa fa-external-link" aria-hidden="true"></i> [Using the JVMTI ClassFileLoadHook with cached classes](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/diag/tools/shcpd_rbm_jvmti_mod.html). This option is incompatible with the [`cacheRetransformed`](#cacheretransformed) option. Using the two options together causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this
+: Allows a JVMTI `ClassFileLoadHook` event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about this option, see [Using the JVMTI ClassFileLoadHook with cached classes](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/diag/tools/shcpd_rbm_jvmti_mod.html). This option is incompatible with the [`cacheRetransformed`](#cacheretransformed) option. Using the two options together causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this
 case, the VM continues without using shared classes.
 
 : A cache that is created without the `enableBCI` suboption cannot be reused with the `enableBCI` suboption. Attempting to do so causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this case, the VM continues without using shared classes. A cache that is created with the `enableBCI` suboption can be reused without specifying this suboption. In this case, the VM detects that the cache was created with the `enableBCI` suboption and uses the cache in this mode.
@@ -245,7 +245,7 @@ case, the VM continues without using shared classes.
 
 : Modify the existing shared cache to invalidate the AOT methods that match the method specifications. Use this suboption to invalidate AOT methods that cause a failure in the application, without having to destroy the shared cache. Invalidated AOT methods remain in the shared cache, but are then excluded from being loaded. VMs that have not processed the methods, or new VMs that use the cache are not affected by the invalidated methods. The AOT methods are invalidated for the lifetime of the cache, but do not prevent the AOT methods from being compiled again if a new shared cache is created. To prevent AOT method compilation into a new shared cache, use the `-Xaot:exclude` option. For more information, see [-Xaot](xaot.md#exclude).
 
-: To identify AOT problems, see <i class="fa fa-external-link" aria-hidden="true"></i> [Diagnosing a JIT or AOT problem](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_pd_diagnose.html).
+: To identify AOT problems, see [Diagnosing a JIT or AOT problem](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_pd_diagnose.html).
 
 : To revalidate an AOT method, see the `revalidateAotMethods` suboption. Use the `findAotMethod` suboption to determine which AOT methods match the method specifications. To learn more about the syntax to use for `<method_specification>`, including how to specify more than one method, see [Method specification syntax](#method-specification-syntax).
 
@@ -278,7 +278,7 @@ case, the VM continues without using shared classes.
 
     - `all`: This value ensures that all the cache pages are protected, including the header.
 
-    : <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Specifying `all` has a negative impact on performance. You should specify `all` only for problem diagnosis and not for production. Specifying values `partialpagesonstartup` or `onfind` can also have a negative impact on performance when the cache is being populated. There is no further impact when the cache is full or no longer being modified.
+    : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Specifying `all` has a negative impact on performance. You should specify `all` only for problem diagnosis and not for production. Specifying values `partialpagesonstartup` or `onfind` can also have a negative impact on performance when the cache is being populated. There is no further impact when the cache is full or no longer being modified.
 
     - `partialpagesonstartup`: This value causes the VM to protect partially filled pages during startup as well as after the startup phase. This value is available only on Linux and Windows systems.
 
@@ -294,9 +294,9 @@ case, the VM continues without using shared classes.
 
 : Used when a JVMTI agent is installed that might modify bytecode at run time. If you do not specify this suboption and a bytecode modification agent is installed, classes are safely shared with an extra performance cost. The `<modified context>` is a descriptor that is chosen by the user; for example, *myModification1*. This option partitions the cache so that only VMs that are using context *myModification1* can share the same classes. So if, for example, you run an application with a modification context and then run it again with a different modification context, all classes are stored twice in the cache.
 
-: For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [Dealing with runtime bytecode modification](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_runtime_bytecode_mod.html).
+: For more information, see [Dealing with runtime bytecode modification](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_runtime_bytecode_mod.html).
 
-: If you are migrating from IBM<sup>&reg;</sup> SDK, Java Technology Edition, Version 7, or earlier releases, you must set [`-Xshareclasses:disableBCI`](#disablebci) when you use this option to retain the same behavior.
+: If you are migrating from IBM&reg; SDK, Java Technology Edition, Version 7, or earlier releases, you must set [`-Xshareclasses:disableBCI`](#disablebci) when you use this option to retain the same behavior.
 
 ### `name`
 
@@ -314,7 +314,7 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:noBootclasspath
 
-:   Disables the storage of classes that are loaded by the bootstrap class loader in the shared classes cache. Often used with the `SharedClassURLFilter` API to control exactly which classes are cached. For more information about shared class filtering, see <i class="fa fa-external-link" aria-hidden="true"></i> [Using the SharedClassHelper API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_class.html).
+:   Disables the storage of classes that are loaded by the bootstrap class loader in the shared classes cache. Often used with the `SharedClassURLFilter` API to control exactly which classes are cached. For more information about shared class filtering, see [Using the SharedClassHelper API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_class.html).
 
 ### `nojitdata`
 
@@ -326,7 +326,7 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:none
 
-:   Added to the end of a command line, disables class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption disables the shared class utility APIs. To disable class data sharing without disabling the utility APIs, use the `utilities` suboption. For more information about the shared class utility APIs, see <i class="fa fa-external-link" aria-hidden="true"></i> [Obtaining information about shared caches](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_getting_shrc_info.html).
+:   Added to the end of a command line, disables class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption disables the shared class utility APIs. To disable class data sharing without disabling the utility APIs, use the `utilities` suboption. For more information about the shared class utility APIs, see [Obtaining information about shared caches](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_getting_shrc_info.html).
 
 ### `nonfatal`
 
@@ -350,7 +350,7 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:printAllStats
 
-:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [printAllStats utility](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_out_printallstats.html).
+:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see [printAllStats utility](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_out_printallstats.html).
 
 ### `printStats` (Cache utility)
 
@@ -360,7 +360,7 @@ case, the VM continues without using shared classes.
 
 : Specify one or more data types, which are separated by a plus symbol (+), to see more detailed information about the cache content. Data types include AOT data, class paths, and ROMMethods.
 
-: For more information and for a full list of data types, see <i class="fa fa-external-link" aria-hidden="true"></i> [printStats utility](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_out_printstats.html).
+: For more information and for a full list of data types, see [printStats utility](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_out_printstats.html).
 
 ### `readonly`
 
@@ -434,7 +434,7 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:utilities
 
-:   Can be added to the end of a command line to disable class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption is like [`none`](#none), but does not disable the shared class utility APIs. For more information about the shared class utility APIs, see <i class="fa fa-external-link" aria-hidden="true"></i> [Obtaining information about shared caches](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_getting_shrc_info.html).
+:   Can be added to the end of a command line to disable class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption is like [`none`](#none), but does not disable the shared class utility APIs. For more information about the shared class utility APIs, see [Obtaining information about shared caches](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_getting_shrc_info.html).
 
 ### `verbose`
 
@@ -446,7 +446,7 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:verboseAOT
 
-:   Enables verbose output when compiled AOT code is being found or stored in the cache. AOT code is generated heuristically. You might not see any AOT code that is generated at all for a small application. You can disable AOT caching by using the `noaot` suboption. See the <i class="fa fa-external-link" aria-hidden="true"></i> [Messages Guide](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/messages_intro.html) for a list of the messages produced.
+:   Enables verbose output when compiled AOT code is being found or stored in the cache. AOT code is generated heuristically. You might not see any AOT code that is generated at all for a small application. You can disable AOT caching by using the `noaot` suboption. See the [Messages Guide](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/messages_intro.html) for a list of the messages produced.
 
 ### `verboseHelper`
 

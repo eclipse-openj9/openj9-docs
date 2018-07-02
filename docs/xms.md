@@ -25,16 +25,16 @@
 # -Xms / -Xmx
 
 
-These Oracle<sup>&reg;</sup> Hotspot<sup>&trade;</sup> options set the initial/minimum Java<sup>&trade;</sup> heap size, and the maximum heap size respectively. These options are recognized by the OpenJ9 VM.
+These Oracle&reg; Hotspot&trade; options set the initial/minimum Java&trade; heap size, and the maximum heap size respectively. These options are recognized by the OpenJ9 VM.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Notes: **
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes: **
 
 - If you set `-Xms` &gt; `-Xmx`, the OpenJ9 VM fails with the message `-Xms too large for -Xmx`.
 
 - If you exceed the limit set by the `-Xmx` option, the OpenJ9 VM generates an `OutofMemoryError`.
 
 If you are allocating the Java heap with large pages, see also [-Xlp](xlp.md) and
-<i class="fa fa-external-link" aria-hidden="true"></i> [More effective heap usage using compressed references](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_compressed_refs.html).
+[More effective heap usage using compressed references](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_compressed_refs.html).
 
 You can also use the [`-Xmo`](xmo.md) option (not supported by the balanced garbage collection policy):  
 If the scavenger is enabled, `-Xms` &ge; `-Xmn` + `-Xmo`  

@@ -24,7 +24,7 @@
 
 # -Xsignal
 
-**(z/OS<sup>&reg;</sup> only)**
+**(z/OS&reg; only)**
 
 This option controls the behavior of OpenJ9 VM signal handlers.
 
@@ -34,13 +34,13 @@ This option controls the behavior of OpenJ9 VM signal handlers.
 
 ## Parameters
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restriction</span> **Restriction:** You cannot use these parameters together.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** You cannot use these parameters together.
 
 ### `posixSignalHandler`
 
         -Xsignal:posixSignalHandler=cooperativeShutdown
 
-: When the VM signal handlers for SIGSEGV, SIGILL, SIGBUS, SIGFPE, SIGTRAP, and SIGABRT end a process, they call `exit()`, by default. In this case, the z/OS<sup>&trade;</sup> Language Environment<sup>&reg;</sup> is not aware that the VM ended abnormally.
+: When the VM signal handlers for SIGSEGV, SIGILL, SIGBUS, SIGFPE, SIGTRAP, and SIGABRT end a process, they call `exit()`, by default. In this case, the z/OS&trade; Language Environment&reg; is not aware that the VM ended abnormally.
 
     With `-Xsignal:posixSignalHandler=cooperativeShutdown`, the VM no longer uses `exit()` to end the process from the signal handlers. Instead, the VM behaves in one of the following ways:
 
@@ -60,7 +60,7 @@ This option controls the behavior of OpenJ9 VM signal handlers.
 
     As with the `-XCEEHDLR` option, the VM does not install POSIX signal handlers for these signals.
 
-    This option differs from the `-XCEEHDLR` option in that the VM percolates *all* Language Environment<sup>&reg;</sup> conditions that were not triggered and expected by the VM during normal running, including conditions that are severity 2 or greater. The VM generates its own diagnostic information before percolating severity 2 or greater conditions.
+    This option differs from the `-XCEEHDLR` option in that the VM percolates *all* Language Environment&reg; conditions that were not triggered and expected by the VM during normal running, including conditions that are severity 2 or greater. The VM generates its own diagnostic information before percolating severity 2 or greater conditions.
 
     The VM is in an undefined state after percolating a severity 2 or greater condition. Applications cannot resume running then call back into, or return to, the VM.
 
@@ -69,7 +69,7 @@ This option controls the behavior of OpenJ9 VM signal handlers.
 
 - [`-XCEEHDLR`](xceehdlr.md)
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Signals used by the VM](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_signals_j9_handling.html).
+- [Signals used by the VM](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_signals_j9_handling.html).
 
 <!-- ==== END OF TOPIC ==== xsignal.md ==== -->
 <!-- ==== END OF TOPIC ==== xsignalposixsignalhandlercooperativeshutdown.md ==== -->

@@ -35,7 +35,7 @@ Specifying `-Xjit` with no parameters, has no effect as the JIT compiler is enab
 
 | Setting                                             | Action                  | Default                                                                            |
 |-----------------------------------------------------|-------------------------|:----------------------------------------------------------------------------------:|
-| `-Xjit`                                             | Enable JIT              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-Xjit`                                             | Enable JIT              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-Xjit[:<parameter>=<value>{,<parameter>=<value>}]` | Enable JIT with options |                                                                                    |
 | `-Xnojit`                                           | Disable JIT             |                                                                                    ||
 
@@ -61,7 +61,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 ### `disableRMODE64`
 
-**(z/OS<sup>&reg;</sup> only)**
+**(z/OS&reg; only)**
 
         -Xjit:disableRMODE64
 
@@ -111,7 +111,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Shows the methods that are inlined.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Suboptions can be chained together by using a  `|` character. When used, you must enclose the full option name in single quotes (') to avoid the shell misinterpreting these characters as pipe commands. For example:
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Suboptions can be chained together by using a  `|` character. When used, you must enclose the full option name in single quotes (') to avoid the shell misinterpreting these characters as pipe commands. For example:
 
 ```
 java '-Xjit:verbose={compileStart|compileEnd|inlining}' -version
@@ -157,7 +157,7 @@ java '-Xjit:verbose={compileStart|compileEnd|inlining},count=5,vlog=vlogfile' -X
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Diagnosing a JIT or AOT problem](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_pd_diagnose.html)
+- [Diagnosing a JIT or AOT problem](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_pd_diagnose.html)
 
 
 <!-- ==== END OF TOPIC ==== xjit.md ==== -->

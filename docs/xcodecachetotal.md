@@ -41,12 +41,12 @@ The value that you specify is rounded up to a multiple of the code cache block s
 
 When you use this option, the maximum size limit for the JIT data cache, which holds metadata about compiled methods, is increased proportionally to support the additional JIT compilations.
 
-The maximum size limits, for both the JIT code and data caches, that are in use by the VM are shown in Javadump output. Look for lines that begin with `1STSEGLIMIT`. Use this information together with verbose JIT tracing to determine suitable values for this option on your system. For example Javadump output, see <i class="fa fa-external-link" aria-hidden="true"></i> [Interpreting a Java dump: Storage Management (MEMINFO)](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump_tags_meminfo.html).
+The maximum size limits, for both the JIT code and data caches, that are in use by the VM are shown in Javadump output. Look for lines that begin with `1STSEGLIMIT`. Use this information together with verbose JIT tracing to determine suitable values for this option on your system. For example Javadump output, see [Interpreting a Java dump: Storage Management (MEMINFO)](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump_tags_meminfo.html).
 
 ## See also
 
 - [-Xjit](xjit.md)
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html)
+- [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html)
 
 <!-- ==== END OF TOPIC ==== xcodecachetotal.md ==== -->

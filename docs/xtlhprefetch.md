@@ -24,7 +24,7 @@
 
 # -XtlhPrefetch
 
-**(AIX<sup>&reg;</sup>, Windows<sup>&trade;</sup> only)**
+**(AIX&reg;, Windows&trade; only)**
 
 Speculatively prefetches bytes in the thread local heap (TLH) ahead of the current allocation pointer during object allocation. This option helps reduce the performance cost of subsequent allocations.
 

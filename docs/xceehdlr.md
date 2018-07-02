@@ -24,9 +24,9 @@
 
 # -XCEEHDLR
 
-**(31-bit z/OS<sup>&reg;</sup> only)**
+**(31-bit z/OS&reg; only)**
 
-Controls OpenJ9 VM Language Environment<sup>&reg;</sup> condition handling.
+Controls OpenJ9 VM Language Environment&reg; condition handling.
 
 ## Syntax
 
@@ -34,7 +34,7 @@ Controls OpenJ9 VM Language Environment<sup>&reg;</sup> condition handling.
 
 ## Explanation
 
-Use the `-XCEEHDLR` option if you want the new behavior for the Java<sup>&trade;</sup> and COBOL interoperability batch mode environment, because this option makes signal and condition handling behavior more predictable in a mixed Java and COBOL environment.
+Use the `-XCEEHDLR` option if you want the new behavior for the Java&trade; and COBOL interoperability batch mode environment, because this option makes signal and condition handling behavior more predictable in a mixed Java and COBOL environment.
 
 When the `-XCEEHDLR` option is enabled, a condition triggered by an arithmetic operation while executing a Java Native Interface (JNI) component causes the VM to convert the Language Environment condition into a Java `ConditionException`.
 
@@ -62,18 +62,18 @@ When the `-XCEEHDLR` option is used, condition handler actions take place in the
 1. All severity 0 and severity 1 conditions are percolated.
 
 2. If a Language Environment condition is triggered in JNI code as a result of an arithmetic operation, the VM condition handler resumes executing Java code as if the JNI native code had thrown a `com.ibm.le.conditionhandling.ConditionException` exception. This exception class is a subclass of `java.lang.RuntimeException`.  
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** The Language Environment conditions that correspond to arithmetic operations are `CEE3208S` through `CEE3234S`. However, the Language Environment does not deliver conditions `CEE3208S`, `CEE3213S`, or `CEE3234S` to C applications, so the VM condition handler will not receive them.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The Language Environment conditions that correspond to arithmetic operations are `CEE3208S` through `CEE3234S`. However, the Language Environment does not deliver conditions `CEE3208S`, `CEE3213S`, or `CEE3234S` to C applications, so the VM condition handler will not receive them.
 
 3. If the condition handling reaches this step, the condition is considered to be unrecoverable. RAS diagnostic information is generated, and the VM ends by calling the `CEE3AB2()` service with abend code 3565, reason code 0, and cleanup code 0.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restriction</span> **Restriction:** You cannot use `-Xsignal:userConditionHandler=percolate` and `-XCEEHDLR` together.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** You cannot use `-Xsignal:userConditionHandler=percolate` and `-XCEEHDLR` together.
 
 
 ## See also
 
 - [-Xsignal:userConditionHandler=percolate](xsignal.md#userconditionhandler)
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Signals used by the VM](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_signals_j9_handling.html").
+- [Signals used by the VM](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_signals_j9_handling.html").
 
 
 

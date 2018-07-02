@@ -24,7 +24,7 @@
 
 # -Xsoftmx
 
-This option sets a "soft" maximum limit for the initial size of the Java<sup>&trade;</sup> heap.
+This option sets a "soft" maximum limit for the initial size of the Java&trade; heap.
 
 ## Syntax
 
@@ -39,7 +39,7 @@ You can set this option on the command line, then modify it at run time by using
 For example, you might set the initial heap size to 1 GB and the maximum heap size to 8 GB. You might set a smaller value, such as 2 GB, for `-Xsoftmx`, to limit the heap size that is used initially:
 
     :::java
-    –Xms1g –Xsoftmx2g –Xmx8g
+    -Xms1g -Xsoftmx2g -Xmx8g
 
 You can then use the `com.ibm.lang.management` API from within a Java application to increase the `-Xsoftmx` value during run time, as load increases. This change allows the application to use more memory than you specified initially.
 
@@ -47,14 +47,14 @@ If you reduce the `-Xsoftmx` value, the garbage collector attempts to respect th
 
 When the heap shrinks, the garbage collector might release memory. The ability of the operating system to reclaim and use this memory varies based on the capabilities of the operating system.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Notes:**
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
 - When using `-Xgcpolicy:gencon`, `-Xsoftmx` applies only to the non-nursery portion of the heap. In some cases the heap grows to greater than the `-Xsoftmx` value because the nursery portion grows, making the heap size exceed the limit that is set. See `-Xmn` for limiting the nursery size.
 
 - When using `-Xgcpolicy:metronome`, `-Xsoftmx` is ignored because the Metronome garbage collector does not support contraction or expansion of the heap.
 
-- There might be little benefit in reducing the `-Xsoftmx` value when the Java heap is using large pages. Large pages are pinned in memory and are not reclaimed by the operating system, with the exception of 1M pageable pages on z/OS<sup>&reg;</sup>. On certain platforms and processors the VM starts with large pages enabled by default for the Java heap when the operating system is configured to provide large pages.
-For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html). A future version of the Java virtual machine might provide a hint to the operating system when large pages are no longer in use.
+- There might be little benefit in reducing the `-Xsoftmx` value when the Java heap is using large pages. Large pages are pinned in memory and are not reclaimed by the operating system, with the exception of 1M pageable pages on z/OS&reg;. On certain platforms and processors the VM starts with large pages enabled by default for the Java heap when the operating system is configured to provide large pages.
+For more information, see [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html). A future version of the Java virtual machine might provide a hint to the operating system when large pages are no longer in use.
 
 
 

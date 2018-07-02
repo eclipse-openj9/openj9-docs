@@ -35,12 +35,12 @@ The Oracle documentation to support this option is no longer available, because 
 
 | Setting                    | Effect  | Default                                                                            |
 |----------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:-VerboseVerification` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:-VerboseVerification` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-XX:+VerboseVerification` | Enable  |                                                                                    |
 
 Use  `-XX:-VerboseVerification` to enable the output of verbose diagnostic data to `stderr` that is generated during verification from the class file `StackMapTable` attribute. The data provides extra contextual information about bytecode verification, which helps diagnose bytecode or stackmap deficiencies in the field.
 
-Class files that have `StackMapTable` attributes (that is, class files that conform to version 50.0 or later of the class file format specification), are introduced in Java<sup>&trade;</sup> V6. Class files with `StackMapTable` attributes are marked as `new format` in the verbose output, as shown in the example. Class files without the `StackMapTable` attributes are marked as `old format`. The `StackMapTable` diagnostic information is available only to classes verified with the new format.
+Class files that have `StackMapTable` attributes (that is, class files that conform to version 50.0 or later of the class file format specification), are introduced in Java&trade; V6. Class files with `StackMapTable` attributes are marked as `new format` in the verbose output, as shown in the example. Class files without the `StackMapTable` attributes are marked as `old format`. The `StackMapTable` diagnostic information is available only to classes verified with the new format.
 
 
 Here is an example of `StackMapTable` diagnostic output:

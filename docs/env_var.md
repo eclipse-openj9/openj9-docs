@@ -26,15 +26,15 @@
 
 Although the OpenJ9 virtual machine (VM) recognizes many environment variables, most are superseded by command-line arguments. Use command-line arguments rather than environment variables, which are retained only for compatibility.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Environment variables are overridden by command-line arguments.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Environment variables are overridden by command-line arguments.
 
 ## Finding and setting environment variables
 
 To show the current environment, run:
 
--   `set` (Windows<sup>&trade;</sup>)
--   `env` (AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>)
--   `set` (z/OS<sup>&reg;</sup>)
+-   `set` (Windows&trade;)
+-   `env` (AIX&reg;, Linux&trade;)
+-   `set` (z/OS&reg;)
 
 To show a particular environment variable, run:
 
@@ -62,7 +62,7 @@ General VM environment variables are shown in the following table:
 |Environment&nbsp;variable                                  | Usage information                                                                                |
 |-----------------------------------------------------------|--------------------------------------------------------------------------------------------------|
 |`IBM_JAVA_COMMAND_LINE`                                    | This variable is set by the VM after it starts. Using this variable, you can find the command-line parameters set when the VM started. This setting is not available if the VM is invoked by using JNI.|
-|`IBM_JAVA_OPTIONS=<option>`                                | Set this variable to store default Java options, including **-X**, **-D**, or **-verbose:gc** style options. For example, **-Xms256m -Djava.compiler**. Any options set are overridden by equivalent options that are specified when Java is started. This variable does not support **-fullversion** or **-version**. If you specify the name of a trace output file either directly, or indirectly, by using a properties file, the output file might be accidentally overwritten if you run utilities such as the trace formatter, dump extractor, or dump viewer. For information about avoiding this problem, see <i class="fa fa-external-link" aria-hidden="true"></i> [Controlling the trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_control.html), noting the restrictions</a>.
+|`IBM_JAVA_OPTIONS=<option>`                                | Set this variable to store default Java options, including **-X**, **-D**, or **-verbose:gc** style options. For example, **-Xms256m -Djava.compiler**. Any options set are overridden by equivalent options that are specified when Java is started. This variable does not support **-fullversion** or **-version**. If you specify the name of a trace output file either directly, or indirectly, by using a properties file, the output file might be accidentally overwritten if you run utilities such as the trace formatter, dump extractor, or dump viewer. For information about avoiding this problem, see [Controlling the trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_control.html), noting the restrictions</a>.
 |`JAVA_FONTS=<list of directories>`                         | Set this environment variable to specify the font directory. Setting this variable is equivalent to setting the property `java.awt.fonts` on Windows operating systems, and `sun.java2d.fontpath` on other operating systems. |
 
 
@@ -151,7 +151,7 @@ The preferred mechanism for controlling the production of Java dumps is by using
 | `IBM_JAVADUMP_OUTOFMEMORY`| By setting this environment variable to false, you disable Java dumps for an out-of-memory exception.                             |
 | `TMPDIR=<directory>`      | This variable specifies an alternative temporary directory. This directory is used only when Java dumps and Heap dumps cannot be written to their target directories, or the current working directory. The default is `/tmp` (`C:\\temp` for Windows). |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Note:** You can use the dump agent `JAVA_DUMP_OPTS` variable to control the conditions under which Java dumps are produced.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You can use the dump agent `JAVA_DUMP_OPTS` variable to control the conditions under which Java dumps are produced.
 
 ## Heap dump options
 
@@ -166,7 +166,7 @@ The preferred mechanism for controlling the production of Java dumps is by using
 |`IBM_JAVA_HEAPDUMP_TEXT`        | Use this environment variable to cause the VM to generate a text (human readable) Heap dump. Equivalent to `opts=CLASSIC` on the `-Xdump:heap` option.|
 |`TMPDIR=<directory>`            | This variable specifies an alternative temporary directory. This directory is used only when Java dumps and heap dumps cannot be written to their target directories, or the current working directory. The default is `/tmp` (`C:\temp` for Windows).|
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Note:** You can use the dump agent `JAVA_DUMP_OPTS` variable to control the conditions under which Heap dumps are produced.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You can use the dump agent `JAVA_DUMP_OPTS` variable to control the conditions under which Heap dumps are produced.
 
 ## Other diagnostic options
 
@@ -184,7 +184,7 @@ The following table lists other environment variables that can be set for diagno
 |`IBM_XE_COE_NAME=<value>`                      | Set this variable to generate a system dump when the specified exception occurs. The value that is supplied is the package description of the exception; for example, `java/lang/InternalError`. A Signal 11 is followed by a JVMXE message and then the VM ends.|
 |`JAVA_PLUGIN_TRACE=TRUE`                       | When this variable is set to `TRUE` or 1, a Java plug-in trace is produced for the session when an application runs. Traces are produced from both the Java and Native layer. By default, this variable is set to `FALSE`, so that a Java plug-in trace is not produced. |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Notes:**
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 C code fragment to discover `%uid` for `JAVA_DUMP_TDUMP_PATTERN=<string>`:
 
 ```

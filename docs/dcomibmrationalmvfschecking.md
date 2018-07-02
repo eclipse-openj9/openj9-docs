@@ -24,7 +24,7 @@
 
 # -Dcom.ibm.rational.mvfs.checking
 
-**(Windows<sup>&trade;</sup> only)**
+**(Windows&trade; only)**
 
 Use this property to improve the performance of Multi Version File System (MVFS) file systems.
 
@@ -35,7 +35,7 @@ Use this property to improve the performance of Multi Version File System (MVFS)
 | Setting      | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
 | true         | Enable  |                                                                                    |
-| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 

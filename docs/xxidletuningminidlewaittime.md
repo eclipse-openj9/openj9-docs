@@ -24,11 +24,11 @@
 
 # -XX:IdleTuningMinIdleWaitTime
 
-** (Linux<sup>&trade;</sup> only) **
+** (Linux&trade; only) **
 
 When the OpenJ9 VM is idle, this option controls the minimum length of time that the VM must be idle before the status of the VM is set to idle. Further tuning options control the compaction of the object heap and the release of free memory pages, which reduces the footprint of the VM.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restrictions</span> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
 
 ## Syntax
 

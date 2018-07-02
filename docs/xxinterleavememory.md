@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]InterleaveMemory
 
-**(AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and Windows<sup>&trade;</sup> only, but not Linux on IBM Z<sup>&reg;</sup>)**
+**(AIX&reg;, Linux&trade;, and Windows&trade; only, but not Linux on IBM Z&reg;)**
 
 Use the `-XX:+InterleaveMemory` option to enable the interleaving of allocated memory across NUMA nodes.
 
@@ -35,7 +35,7 @@ Use the `-XX:+InterleaveMemory` option to enable the interleaving of allocated m
 | Setting                 | Effect  | Default                                                                            |
 |-------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+InterleaveMemory` | Enable  |                                                                                    |
-| `-XX:-InterleaveMemory` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:-InterleaveMemory` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 
 

@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]handleSIGXFSZ
 
-**(Linux<sup>&trade;</sup> only)**
+**(Linux&trade; only)**
 
 This option affects the handling of the operating system signal `SIGXFSZ`. This signal is generated when a process attempts to write to a file that causes the maximum file size `ulimit` to be exceeded.
 
@@ -35,13 +35,13 @@ This option affects the handling of the operating system signal `SIGXFSZ`. This 
 
 | Setting               | Effect  | Default                                                                            |
 |-----------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+handleSIGXFSZ ` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:+handleSIGXFSZ ` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-XX:-handleSIGXFSZ ` | Disable |                                                                                    |
 
 
 ## Explanation
 
-When enabled, the VM handles the signal `SIGXFSZ` and continues, without ending. When a file is written from a Java<sup>&trade;</sup> API class that exceeds the maximum file size `ulimit`, an exception is raised. Log files that are created by the VM are silently truncated when they reach the maximum file size `ulimit`.
+When enabled, the VM handles the signal `SIGXFSZ` and continues, without ending. When a file is written from a Java&trade; API class that exceeds the maximum file size `ulimit`, an exception is raised. Log files that are created by the VM are silently truncated when they reach the maximum file size `ulimit`.
 
 When the option is disabled, the VM does not handle the signal `SIGXFSZ`. In this situation, if the maximum file size `ulimit` for any file is reached, the operating system ends the process with a core dump.
 

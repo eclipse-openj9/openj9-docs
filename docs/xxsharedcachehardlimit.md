@@ -41,7 +41,7 @@ When you use this option with the `-Xscmx` option, the `-Xscmx` option sets the 
 
 If you use this option without the `-Xscmx` option, the behavior is the same as using the `-Xscmx` option by itself; both options set the actual size of the shared class cache.
 
-For more information about cache sizes, see <i class="fa fa-external-link" aria-hidden="true"></i> [Cache size limits](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_cache_size.html).
+For more information about cache sizes, see [Cache size limits](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_cache_size.html).
 
 ## Example
 

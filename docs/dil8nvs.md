@@ -28,7 +28,7 @@
 
 This system property enables awareness of Unicode Ideographic Variation Sequence (IVS) to draw characters, except in peered components.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restriction</span> **Restriction:** This option is supported only for Japanese.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This option is supported only for Japanese.
 
 ## Syntax
 
@@ -37,7 +37,7 @@ This system property enables awareness of Unicode Ideographic Variation Sequence
 | Setting      | Effect  |  Default                                                                           |
 |--------------|---------|:----------------------------------------------------------------------------------:|
 | true         | Enable  |                                                                                    |
-|              | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+|              | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 
 ## Explanation

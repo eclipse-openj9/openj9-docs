@@ -66,7 +66,7 @@ Logged messages can be found in different locations, according to platform.
 
 ### Finding AIX messages
 
-On AIX<sup>&reg;</sup>, messages are logged by the syslog daemon (`/usr/sbin/syslogd`). Logged messages are written to the syslog file that is configured in `/etc/syslog.conf`. If the syslog daemon is not running, logged messages are lost.
+On AIX&reg;, messages are logged by the syslog daemon (`/usr/sbin/syslogd`). Logged messages are written to the syslog file that is configured in `/etc/syslog.conf`. If the syslog daemon is not running, logged messages are lost.
 
 You can redirect messages from the syslog daemon to the AIX error log facility by performing the following configuration steps:
 
@@ -86,28 +86,28 @@ You can redirect messages from the syslog daemon to the AIX error log facility b
 
 3.  The updated configuration is used each time **syslogd** starts. 4.  Use the AIX **errpt** command or the System Management Interface Tool (SMIT) to read the messages sent to the error log.
 
-For more information about AIX logging, see: <i class="fa fa-external-link" aria-hidden="true"></i> [Error-logging overview](http://www.ibm.com/support/knowledgecenter/ssw_aix_61/com.ibm.aix.genprogc/logoverview.htm).
+For more information about AIX logging, see: [Error-logging overview](http://www.ibm.com/support/knowledgecenter/ssw_aix_61/com.ibm.aix.genprogc/logoverview.htm).
 
 ### Finding Linux messages
 
-On Linux<sup>&trade;</sup>, messages are logged by the **syslog** daemon. To find where messages are logged, check the syslog configuration file.
+On Linux&trade;, messages are logged by the **syslog** daemon. To find where messages are logged, check the syslog configuration file.
 
 ### Finding Windows messages
 
-On Windows<sup>&trade;</sup>, messages are logged in the application events section of the event viewer.
+On Windows&trade;, messages are logged in the application events section of the event viewer.
 
 ### Finding z/OS messages
 
-On z/OS<sup>&reg;</sup>, messages are sent to the operator console. To see the messages, go from the **ispf** panel to the **sdsf** panel, then open the **log** panel.
+On z/OS&reg;, messages are sent to the operator console. To see the messages, go from the **ispf** panel to the **sdsf** panel, then open the **log** panel.
 
 ## Obtaining detailed message descriptions
 
 Detailed message information is available to help with problem diagnosis.
 
-Understanding the warning or error message issued by the VM can help you diagnose problems. All warning and error messages issued by the VM are listed by type in the messages guide: <i class="fa fa-external-link" aria-hidden="true"></i> [IBM<sup>&reg;</sup> VM messages](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.messages/diag/appendixes/messages/messages.html).
+Understanding the warning or error message issued by the VM can help you diagnose problems. All warning and error messages issued by the VM are listed by type in the messages guide: [IBM&reg; VM messages](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.messages/diag/appendixes/messages/messages.html).
 
 The messages, error codes, and exit codes in this guide apply to multiple versions of the VM.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Note:** If the VM fills all available memory, the message number might be produced without a description for the error that caused the problem. Look for the message number in the relevant section of the J9 VM  Messages guide to see the message description and the additional information provided.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If the VM fills all available memory, the message number might be produced without a description for the error that caused the problem. Look for the message number in the relevant section of the J9 VM  Messages guide to see the message description and the additional information provided.
 
 <!-- ==== END OF TOPIC ==== messages_intro.md ==== -->

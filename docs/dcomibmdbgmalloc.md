@@ -35,11 +35,11 @@ This option provides memory allocation diagnostic information for class library 
 
 ## Explanation
 
-When an application is started with this option, a Java<sup>&trade;</sup> dump records the amount of memory allocated by the class library components.
+When an application is started with this option, a Java&trade; dump records the amount of memory allocated by the class library components.
 
 You can use this option together with the `-Xcheck:memory` option to obtain information about class library call sites and their allocation sizes.
 
-Enabling this option has an impact on throughput performance. For sample Java dump output, see <i class="fa fa-external-link" aria-hidden="true"></i> [Native memory (NATIVEMEMINFO)](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump_tags_nativememinfo.html).
+Enabling this option has an impact on throughput performance. For sample Java dump output, see [Native memory (NATIVEMEMINFO)](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump_tags_nativememinfo.html).
 
 
 <!-- ==== END OF TOPIC ==== dcomibmdbgmalloc.md ==== -->

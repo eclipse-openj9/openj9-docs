@@ -116,7 +116,7 @@ Make your contributions valuable to all users, including those who have English 
 Although OpenJ9 supports a number of platforms and architectures, there might be different configuration and tuning options, or different default behavior. When adding content to the user documentation
 that does not apply to all environments, call it out. For example:
 
-      **(Linux<sup>&trade;</sup> only)**
+      **(Linux&trade; only)**
 
 If content is not marked it should apply to any platform.
 
@@ -127,6 +127,12 @@ The user documentation supports the configuration, tuning, and diagnosis of the 
 - ![Java 8 icon](docs/cr/java8.png) - For content that applies only to an OpenJDK version 8.
 - ![Java 9 icon](docs/cr/java9.png) - For content that applies only to an OpenJDK version 9.
 - ![Java 9 and later icon](docs/cr/java9plus.png) -  For content that applies to an OpenJDK version 9 or later version.
+- ![Java 10 icon](docs/cr/java10.png) - For content that applies only to an OpenJDK version 10.
+- ![Java 10 and later icon](docs/cr/java10plus.png) -  For content that applies to an OpenJDK version 10 or later version.
+- ![Java 11 icon](docs/cr/java11.png) - For content that applies only to an OpenJDK version 11.
+- ![Java 11 and later icon](docs/cr/java11plus.png) -  For content that applies to an OpenJDK version 11 or later version.
+- ![Java 12 icon](docs/cr/java12.png) - For content that applies only to an OpenJDK version 12.
+- ![Java 12 and later icon](docs/cr/java12plus.png) -  For content that applies to an OpenJDK version 12 or later version.
 
 Different colors are used for the icons to differentiate long term service (LTS) releases from feature releases. For accessibility reasons it is important to use alternative text with these icons that differentiates an LTS release.
 
@@ -154,15 +160,28 @@ If you believe that a diagram can be used to enhance the content, add the .gif o
 ![Add alternative text here to describe the image for users who are using a screen reader](images/my_image.png)
 ```
 
-[Font-awesome](http://fontawesome.io/icons/) icons can also be used to highlight user "notes" (:pencil:) and "restrictions" (:warning:). The following examples show how to embed these icons, which incude some important attributes for accessibility:
+[Font-awesome](http://fontawesome.io/icons/) icons can also be used to highlight user "notes" (:pencil:) and "restrictions" (:warning:). The following examples show how to embed
+these icons, which include some important attributes for accessibility:
 
 ```
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Here is something you should be aware of.
+<i class="fa fa-pencil-square-o" aria-hidden="true"> **Note:** Here is something you should be aware of.
 ```
 
 ```
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restrictions</span> **Restrictions:** Here is something you should be aware of.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** Here is something you should be aware of.
 ```
+
+Font-awesome icons are also used in option tables to indicate defaults. The following examples show how to embed these "ticks" (:heavy_check_mark:) and "crosses" (:heavy_multiplication_x:).
+
+```
+<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>
+```
+
+```
+<i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span>
+```
+
+Note that these require an extra `<span>`, which is used by screen readers.
 
 For examples that embed the ![Java 8 icon](docs/cr/java8.png) and ![Java 9 icon](docs/cr/java9.png) icons, see [Which OpenJDK version?](#which-openjdk-version?).
 
@@ -193,15 +212,18 @@ In particular, if your changes address an issue, quote the issue number in the c
 
 ## Accepting contributions
 
-**(Project committers only)**
+Project committers are responsible for checking pull requests and merging changes.
 
-Before merging changes with master, use the Jenkins job "Test Pull Request on staging server" to verify that changes are good.
+### Previewing pull requests (whitelisted users only)
 
-- Jenkins (temporary): http://edgar.hursley.ibm.com:8080/
-- Staging server site: https://pages.github.ibm.com/runtimes/openj9-docs-staging/
+Pull requests must be previewed before merging by triggering this [Jenkins-ci job](https://ci.eclipse.org/openj9/view/Pull%20Requests/job/PullRequest-Doc-test_on_staging_site/)  
+To run the job, add the following trigger comment into a pull request:  
+```
+Jenkins docs stage
+```  
+Staging site: http://staging.eclipse.org/openj9/docs
 
-When the changes are merged with the master branch, Travis-CI will test the build before updating the gh-pages site.
-
-Check that your changes make it to the public site: https://pages.github.ibm.com/runtimes/openj9-docs/
-
-For Build & Deployment Status, see: https://travis.ibm.com/runtimes/openj9-docs
+#### Please Note
+The staging website is based on the staging branch of the Eclipse repo.  
+Since there is only one staging branch, whichever preview job ran last, will be the current one staged to the staging website.  
+You can view the [build history](https://ci.eclipse.org/openj9/view/Pull%20Requests/job/PullRequest-Doc-test_on_staging_site/) on the build page (left hand column) to see which PR ran last. Each run is annotated with the link to the PR as well as the PR title. Also note that it can take a few minutes for the contents of the staging website to refresh.

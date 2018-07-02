@@ -45,7 +45,7 @@ See [Default settings for the OpenJ9 VM](openj9_defaults.md) for information abo
 
 ## See also
 
-- [`-Xiss/-Xss/-Xssi`](xss.md) (Stack size and behavior of Java<sup>&trade;</sup> threads)
+- [`-Xiss/-Xss/-Xssi`](xss.md) (Stack size and behavior of Java&trade; threads)
 
 
 <!-- ==== END OF TOPIC ==== xmso.md ==== -->

@@ -30,7 +30,7 @@ This option enables or prevents allocation of a large object area (LOA) during g
 
 | Setting            | Effect      | Default                                                                                                                        |
 |--------------------|-------------|:------------------------------------------------------------------------------------------------------------------------------:|
-| `-Xloa`            | Enable LOA  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> (see [Default behavior)](#default-behavior) |
+| `-Xloa`            | Enable LOA  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> (see [Default behavior)](#default-behavior) |
 | `-Xnoloa`          | Disable LOA |                                                                                                                                |
 
 ## Default behavior
@@ -45,7 +45,7 @@ The LOA is an area of the tenure area of the heap set used solely to satisfy all
 
 As objects are allocated and freed, the heap can become fragmented in such a way that allocation can be met only by time-consuming compactions. This problem is more pronounced if an application allocates large objects. In an attempt to alleviate this problem, the LOA is allocated. A large object in this context is considered to be any object 64 KB or greater in size. Allocations for new TLH objects are not considered to be large objects.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** The Balanced Garbage Collection policy does not use the LOA. Therefore, when specifying -`Xgcpolicy:balanced`, any LOA options passed on the command line are ignored. The policy addresses the issues of LOA by reorganizing object layout with the VM to reduce heap fragmentation and compaction requirements. 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The Balanced Garbage Collection policy does not use the LOA. Therefore, when specifying -`Xgcpolicy:balanced`, any LOA options passed on the command line are ignored. The policy addresses the issues of LOA by reorganizing object layout with the VM to reduce heap fragmentation and compaction requirements. 
 
 ## See also
 

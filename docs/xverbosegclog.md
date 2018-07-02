@@ -46,7 +46,7 @@ By default, no verbose GC logging occurs.
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Dump agent tokens](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/dump_agents_tokens.html) for more information.
+- [Dump agent tokens](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/dump_agents_tokens.html) for more information.
 
 
 <!-- ==== END OF TOPIC ==== xverbosegclog.md ==== -->

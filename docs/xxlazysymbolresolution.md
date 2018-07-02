@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]LazySymbolResolution
 
-**(Linux<sup>&trade;</sup> only)**
+**(Linux&trade; only)**
 
 This option affects the timing of symbol resolution for functions in user native libraries.
 
@@ -34,7 +34,7 @@ This option affects the timing of symbol resolution for functions in user native
 
 | Setting                     | Effect  | Default                                                                            |
 |-----------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+LazySymbolResolution` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:+LazySymbolResolution` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-XX:-LazySymbolResolution` | Disable |                                                                                    |
 
 ## Explanation

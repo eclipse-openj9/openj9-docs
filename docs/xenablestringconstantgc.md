@@ -30,7 +30,7 @@ Enables or disables the collection of strings from the string intern table.
 
 | Setting                     | Effect             | Default                                                                            |
 |-----------------------------|--------------------|:----------------------------------------------------------------------------------:|
-| `-Xenablestringconstantgc`  | Enable collection  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-Xenablestringconstantgc`  | Enable collection  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-Xdisablestringconstantgc` | Disable collection |                                                                                    |
 
 <!-- ==== END OF TOPIC ==== xenablestringconstantgc.md ==== -->

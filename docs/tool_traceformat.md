@@ -25,7 +25,7 @@
 # Trace formatter (`traceformat`)
 
 
-The trace formatter is a Java<sup>&trade;</sup> program that converts binary trace point data in a trace file to a readable form. The formatter requires the `TraceFormat.dat` and `J9TraceFormat.dat` files, which contain the formatting templates. The formatter produces a file that contains header information about the VM that produced the binary trace file, a list of threads for which trace points were produced, and the formatted trace points with their time stamp, thread ID, trace point ID, and trace point data.
+The trace formatter is a Java&trade; program that converts binary trace point data in a trace file to a readable form. The formatter requires the `TraceFormat.dat` and `J9TraceFormat.dat` files, which contain the formatting templates. The formatter produces a file that contains header information about the VM that produced the binary trace file, a list of threads for which trace points were produced, and the formatted trace points with their time stamp, thread ID, trace point ID, and trace point data.
 
 ## Syntax
 

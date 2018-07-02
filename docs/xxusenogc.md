@@ -34,7 +34,7 @@ reclaimed through garbage collection.
 | Setting                 | Effect | Default                                                                            |
 |-------------------------|--------|:----------------------------------------------------------------------------------:|
 |`-XX:+UseNoGC`           | Enable |                                                                                    |
-|`-XX:-UseNoGC`           | Disable| <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+|`-XX:-UseNoGC`           | Disable| <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 

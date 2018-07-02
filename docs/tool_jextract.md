@@ -24,7 +24,7 @@
 
 # Dump extractor (`jextract`)
 
-**(AIX<sup>&reg;</sup> & Linux<sup>&trade;</sup> only)**
+**(AIX&reg; & Linux&trade; only)**
 
 For an analysis of core dumps from Linux and AIX platforms, copies of executable files and libraries are required along with the system dump. Run the `jextract` utility to collect these files.
 
@@ -39,7 +39,7 @@ where:
 
 If you are analyzing a dump from a VM that used [`-Xcompressedrefs`](xcompressedrefs.md), include the `-J-Xcompressedrefs` parameter to run `jextract` using compressed references.
 
-: <i class="fa fa-exclamation-triangle"></i><span class="sr-only">Restriction</span> **Restriction: ** You must run `jextract` using the same VM level, on the same system that produced the system dump. The `jextract` utility compresses the dump, executable files, and libraries into a single .zip file for use in subsequent problem diagnosis. To analyze the output, use the [dump viewer (`jdmpview`)](tool_jdmpview.md).
+: <i class="fa fa-exclamation-triangle"></i> **Restriction: ** You must run `jextract` using the same VM level, on the same system that produced the system dump. The `jextract` utility compresses the dump, executable files, and libraries into a single .zip file for use in subsequent problem diagnosis. To analyze the output, use the [dump viewer (`jdmpview`)](tool_jdmpview.md).
 
     If you run `jextract` on a VM level that is different from the one on which the dump was produced you see the following messages:
 

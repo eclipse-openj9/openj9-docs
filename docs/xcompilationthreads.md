@@ -31,7 +31,7 @@ Use this option to specify the number of compilation threads that are used by th
 
         -XcompilationThreads<n>
 
-: where `<n>` is the number of threads, in the range 1-4 inclusive. A number greater than 4 prevents the Java<sup>&trade;</sup> VM from starting successfully. 
+: where `<n>` is the number of threads, in the range 1-4 inclusive. A number greater than 4 prevents the Java&trade; VM from starting successfully. 
 
 : Setting the compilation threads to zero does not prevent the JIT from working. Instead, if you do not want the JIT to work, use the [`-Xint`](xint.md) option.
 

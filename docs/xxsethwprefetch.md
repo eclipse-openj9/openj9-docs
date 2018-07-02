@@ -24,9 +24,9 @@
 
 # -XXsetHWPrefetch  
 
-**(AIX<sup>&reg;</sup> only)**
+**(AIX&reg; only)**
 
-This option enables or disables hardware prefetch. Hardware prefetch can improve the performance of applications by prefetching memory. However, because of the workload characteristics of many Java<sup>&trade;</sup> applications, prefetching often has an adverse effect on performance.
+This option enables or disables hardware prefetch. Hardware prefetch can improve the performance of applications by prefetching memory. However, because of the workload characteristics of many Java&trade; applications, prefetching often has an adverse effect on performance.
 
 ## Syntax
 
@@ -34,7 +34,7 @@ This option enables or disables hardware prefetch. Hardware prefetch can improve
 
 | Setting    | Effect  | Default                                                                            |
 |------------|---------|:----------------------------------------------------------------------------------:|
-| none       | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| none       | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | os-default | Enable  |                                                                                    |
 
 The `-XXsetHWPrefetch:none` option disables hardware prefetch. Although you can disable hardware prefetch on AIX by issuing the command `dscrctl -n -s 1`, this command disables hardware prefetch for all processes, and for all future processes, which might not be desirable in a mixed workload environment. The `-XXsetHWPrefetch:none` option allows hardware prefetch to be disabled for individual VMs.

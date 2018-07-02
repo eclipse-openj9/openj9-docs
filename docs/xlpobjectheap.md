@@ -25,17 +25,17 @@
 # -Xlp:objectheap
 
 
-Requests the OpenJ9 VM to allocate the Java<sup>&trade;</sup> object heap by using large page sizes.
+Requests the OpenJ9 VM to allocate the Java&trade; object heap by using large page sizes.
 
 To find out the large page sizes available and the current setting, use the `-verbose:sizes` option. Note that the current settings are the requested sizes and not the sizes obtained. For object heap size information, check the `-verbose:gc` output.
 
 ## Syntax
 
-AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and Windows<sup>&trade;</sup>:
+AIX&reg;, Linux&trade;, and Windows&trade;:
 
         -Xlp:objectheap:pagesize=<size>[,strict|warn]
 
-z/OS<sup>&reg;</sup>:
+z/OS&reg;:
 
         -Xlp:objectheap:pagesize=<size>[,strict|warn][,pageable|nonpageable]
 
@@ -56,7 +56,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 : On Linux systems, the default size for the object heap depends on the architecture:
 
     - Linux on x86 and AMD64/EM64T systems: 2 MB large pages
-    - Linux on IBM Z<sup>&reg;</sup>: 1 MB large pages
+    - Linux on IBM Z&reg;: 1 MB large pages
     - On other architectures, the VM uses the default operating system page size.
 
 ### `strict` | `warn`
@@ -67,7 +67,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 :    -   `strict` causes an error message to be generated if large pages are requested but cannot be obtained. This option causes the VM to end.
     -   `warn` causes a warning message to be generated if large pages are requested but cannot be obtained. This option allows the VM to continue.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** If both `strict` and `warn` are specified, `strict` takes precedence.
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If both `strict` and `warn` are specified, `strict` takes precedence.
 
 ### `pageable`|`nonpageable
 
@@ -81,7 +81,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
+- [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
 
 
 

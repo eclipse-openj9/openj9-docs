@@ -27,7 +27,7 @@
 
 Specifies a file that contains VM options and definitions.
 
-The contents of the options file are recorded in the `ENVINFO` section of a Java<sup>&trade;</sup> dump.
+The contents of the options file are recorded in the `ENVINFO` section of a Java&trade; dump.
 
 ## Syntax
 
@@ -85,7 +85,7 @@ Here is an example of an options file:
 
 - [Specifying command-line options](cmdline_specifying.md)
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Javadump: TITLE, GPINFO, and ENVINFO sections](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump_tags_info.html)
+- [Javadump: TITLE, GPINFO, and ENVINFO sections](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump_tags_info.html)
 
 
 <!-- ==== END OF TOPIC ==== xoptionsfile.md ==== -->

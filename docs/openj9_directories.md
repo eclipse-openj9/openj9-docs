@@ -30,10 +30,10 @@ pages refer to the VM directory location as `<vm_dir>`.
 
 | Operating system            | Java 8                                  | Java 9 and later                          |
 |-----------------------------|-----------------------------------------|-------------------------------------------|
-| AIX<sup>&reg;</sup>         | `<install_dir>/jre/lib/ppc[64]/default` | `<install_dir>/` |
-| Linux<sup>&trade;</sup>     | `<install_dir>/jre/lib/<arch>/default`  | `<install_dir>/` |
-| Windows<sup>&trade;</sup>   | `<install_dir>\jre\bin\default`         | `<install_dir>\` |
-| z/OS<sup>&reg;</sup>        | `<install_dir>/jre/lib/s390[x]/default` | `<install_dir>/` |
+| AIX&reg;         | `<install_dir>/jre/lib/ppc[64]/default` | `<install_dir>/` |
+| Linux&trade;     | `<install_dir>/jre/lib/<arch>/default`  | `<install_dir>/` |
+| Windows&trade;   | `<install_dir>\jre\bin\default`         | `<install_dir>\` |
+| z/OS&reg;        | `<install_dir>/jre/lib/s390[x]/default` | `<install_dir>/` |
 
 Where:
 
@@ -44,8 +44,8 @@ Where:
 |----------------------------------------------------|-----------------------|
 | x86 32-bit                                         | `i386`                |
 | x86 64-bit                                         | `x86-64`              |
-| IBM POWER<sup>&reg;</sup> 32-bit (Big Endian)      | `ppc`                 |
+| IBM POWER&reg; 32-bit (Big Endian)      | `ppc`                 |
 | IBM POWER 64-bit (Big Endian)                      | `ppc64`               |
 | IBM POWER 64-bit (Little Endian)                   | `ppc64le`             |
-| IBM Z<sup>&reg;</sup> 31-bit                       | `s390`                |
+| IBM Z&reg; 31-bit                       | `s390`                |
 | IBM Z 64-bit                                       | `s390x`               |

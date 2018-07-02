@@ -24,9 +24,9 @@
 
 # -XX:\[+|-\]DisclaimJitScratch  
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restriction</span> **Restriction:** This option is deprecated; the option is accepted but ignored.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This option is deprecated; the option is accepted but ignored.
 
-**(Linux<sup>&trade;</sup> only)**
+**(Linux&trade; only)**
 
 The `-XX:+DisclaimJitScratch` option signals to the operating system to discard temporary physical memory that is consumed by the JIT compilation threads.
 
@@ -37,11 +37,11 @@ The `-XX:+DisclaimJitScratch` option signals to the operating system to discard 
 | Setting                 | Effect | Default                                                                            |
 |-------------------------|--------|:----------------------------------------------------------------------------------:|
 |`-XX:+DisclaimJitScratch`| Enable |                                                                                    |
-|`-XX:-DisclaimJitScratch`| Disable| <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+|`-XX:-DisclaimJitScratch`| Disable| <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 
-Discarding temporary physical memory can reduce the physical memory reported in use by the Java<sup>&trade;</sup> application. The physical memory that is released is available to other processes without the operating system needing to search for the least recently used frames.
+Discarding temporary physical memory can reduce the physical memory reported in use by the Java&trade; application. The physical memory that is released is available to other processes without the operating system needing to search for the least recently used frames.
 
 The `-XX:-DisclaimJitScratch` option turns off a previously enabled `-XX:+DisclaimJitScratch` option.
 

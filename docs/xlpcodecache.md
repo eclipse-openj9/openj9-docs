@@ -32,11 +32,11 @@ To find out the large page sizes available and the current setting, use the `-ve
 
 ## Syntax
 
-AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and Windows<sup>&trade;</sup>:
+AIX&reg;, Linux&trade;, and Windows&trade;:
 
         -Xlp:codecache:pagesize=<size>
 
-z/OS<sup>&reg;</sup>:
+z/OS&reg;:
 
         -Xlp:codecache:pagesize=<size>,pageable
 
@@ -48,26 +48,26 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 :   The code cache page size is controlled by the `DATAPSIZE` setting of the `LDR_CNTRL` environment variable. The page size cannot be controlled by the `-Xlp:codecache:pagesize=<size>` option. Specifying any other page size results in a warning that the page size is not available. The `-verbose:sizes` output reflects the current operating system setting.
 
-    For more information about the `LDR_CNTRL` environment variable, see <i class="fa fa-external-link" aria-hidden="true"></i> [Working with the LDR_CNTRL environment variable](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_aix_ldr_cntrl.html).
+    For more information about the `LDR_CNTRL` environment variable, see [Working with the LDR_CNTRL environment variable](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_aix_ldr_cntrl.html).
 
 ### Linux
 
 : The default size for the code cache depends on the architecture:
 
     - Linux on x86 and AMD64/EM64T systems: 2 MB large pages
-    - Linux on IBM Z<sup>&reg;</sup>: 1 MB large pages
-    - Linux on Power Systems<sup>&trade;</sup>: The code cache page size cannot be controlled by the `-Xlp:codecache:pagesize=<size>` option. Specifying any other page size results in a warning that the page size is not available. The `-verbose:sizes` output reflects the current operating system setting.
+    - Linux on IBM Z&reg;: 1 MB large pages
+    - Linux on Power Systems&trade;: The code cache page size cannot be controlled by the `-Xlp:codecache:pagesize=<size>` option. Specifying any other page size results in a warning that the page size is not available. The `-verbose:sizes` output reflects the current operating system setting.
     - On other architectures, the VM uses the default operating system page size.
 
 ### z/OS
 
 : 1 M pageable pages, when available, are the default size for the code cache.
 
-    The `-Xlp:codecache:pagesize=<size>,pageable` option supports only a large page size of 1 M pageable large pages. The use of 1 M pageable large pages for the JIT code cache can improve the runtime performance of some Java<sup>&trade;</sup> applications. A page size of 4 K can also be used.
+    The `-Xlp:codecache:pagesize=<size>,pageable` option supports only a large page size of 1 M pageable large pages. The use of 1 M pageable large pages for the JIT code cache can improve the runtime performance of some Java&trade; applications. A page size of 4 K can also be used.
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
+- [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
 
 
 

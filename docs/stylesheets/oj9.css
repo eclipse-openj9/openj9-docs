@@ -401,8 +401,13 @@ aside p:first-child {
 
 /* CHECK MARKS (tick and cross) */
 
-.fa-check, .fa-times {  
+.fa-check {  
   color: #407471;  /* cyan - dark */
+  opacity: 0.8;
+}
+
+.fa-times {  
+  color: #744043;  /* red - dark */
   opacity: 0.8;
 }
 

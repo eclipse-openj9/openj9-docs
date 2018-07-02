@@ -33,7 +33,7 @@ The MXBean interface now reports more detailed information about memory pools an
 | Setting                                  | Effect  | Default                                                                            |
 |------------------------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+HeapManagementMXBeanCompatibility` | Enable  |                                                                                    |
-| `-XX:-HeapManagementMXBeanCompatibility` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:-HeapManagementMXBeanCompatibility` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 Setting `-XX:+HeapManagementMXBeanCompatibility` on the command line turns on compatibility with earlier versions of the VM. Information about memory pools and garbage collectors are reported in the older format.
 
@@ -50,7 +50,7 @@ The additional information that is available from the MXBean interface for later
 | **balanced**                     | balanced-reserved, balanced-eden, balanced-survivor, balanced-old      | partial gc, global garbage collect |
 | **metronome**                    | JavaHeap                                                               | global                             |                    
 
-The `MemoryPoolMXBean` API reports values for 4 detailed memory pools instead of a single value for the overall Java<sup>&trade;</sup> heap. In some cases the total sum of the 4 pools is more than the maximum heap size. This irregularity can be caused if data for each pool is collected between garbage collection cycles, where objects have been moved or reclaimed. If you want to collect memory usage data that is synchronized across the memory pools, use the `GarbageCollectionNotificationInfo` or `GarbageCollectorMXBean.getLastGcInfo` extensions.
+The `MemoryPoolMXBean` API reports values for 4 detailed memory pools instead of a single value for the overall Java&trade; heap. In some cases the total sum of the 4 pools is more than the maximum heap size. This irregularity can be caused if data for each pool is collected between garbage collection cycles, where objects have been moved or reclaimed. If you want to collect memory usage data that is synchronized across the memory pools, use the `GarbageCollectionNotificationInfo` or `GarbageCollectorMXBean.getLastGcInfo` extensions.
 
 Earlier releases included only the following names:
 
@@ -59,9 +59,9 @@ Earlier releases included only the following names:
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Verbose garbage collection logging](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_pd_verbosegc.html).
+- [Verbose garbage collection logging](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_pd_verbosegc.html).
 
-For more information about IBM<sup>&reg;</sup> MXBeans, see the `com.ibm.lang.management` API documentation.
+For more information about IBM&reg; MXBeans, see the `com.ibm.lang.management` API documentation.
 
 
 
