@@ -274,19 +274,13 @@ case, the VM continues without using shared classes.
         - The VM changes the memory protection of any partially filled pages to read/write.
         - The VM adds the data to the cache.
         - The VM changes the memory protection of any partially filled pages to read only.
-
-
-    - `all`: This value ensures that all the cache pages are protected, including the header.
-
-    : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Specifying `all` has a negative impact on performance. You should specify `all` only for problem diagnosis and not for production. Specifying values `partialpagesonstartup` or `onfind` can also have a negative impact on performance when the cache is being populated. There is no further impact when the cache is full or no longer being modified.
-
+    - `all`: This value ensures that all the cache pages are protected, including the header. See Note.
     - `partialpagesonstartup`: This value causes the VM to protect partially filled pages during startup as well as after the startup phase. This value is available only on Linux and Windows systems.
-
     - `onfind`: When this option is specified, the VM protects partially filled pages when it reads new data in the cache that is added by another VM. This option is available only on Linux and Windows systems.
-
     - `nopartialpages`: Use this value to turn off the protection of partially filled pages. This value is available only on Linux and Windows systems.
-
     - `none`: Specifying this value disables the page protection.
+
+  : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Specifying `all` has a negative impact on performance. You should specify `all` only for problem diagnosis and not for production. Specifying values `partialpagesonstartup` or `onfind` can also have a negative impact on performance when the cache is being populated. There is no further impact when the cache is full or no longer being modified.
 
 ### `modified`
 
@@ -396,8 +390,8 @@ case, the VM continues without using shared classes.
 
 : For example, consider two VMs, VM1 and VM2, that are using class paths CP1 and CP2 respectively, where:
 
-        -   `CP1: url1;url2;url3;tempurl1;url4;url5`
-        -   `CP2: url1;url2;url3;tempurl2;url4;url5`
+    - CP1: `url1;url2;url3;tempurl1;url4;url5`
+    - CP2: `url1;url2;url3;tempurl2;url4;url5`
 
 
 : These class paths differ only by one entry, which is the `tempurl`. The `url1`, `url2`, `url3`, `url4`, and `url5` entries never change from run to run, whereas the `tempurl` entry is always different. This difference means that a class that is loaded from `url4` or `url5`, and stored into the shared cache by VM1, cannot be located by VM2. Therefore, an attempt by VM2 to load a class from `url4` or `url5` would cause it to store its own classpath `CP2` into the shared cache, and also add new metadata for classes that are loaded from `url4` or `url5`. Addition of such unique class paths into the shared cache is not useful. Moreover, the additional metadata might adversely affect the performance of other VMs that connect to the shared cache. Because classes loaded from `url4` or `url5` are not loaded from the shared cache when the `tempurl` differs from the original, it is good practice to put the `tempurl` as the last entry in the class path.

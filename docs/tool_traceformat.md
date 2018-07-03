@@ -56,49 +56,52 @@ The following `<parameters>` are available with the trace formatter:
 
 The following example shows output from running the trace formatter command:
 
+```
     C:\test>traceformat sample.trc
     Writing formatted trace output to file sample.trc.fmt
     Processing 0.4921875Mb of binary trace data
     Completed processing of 6983 tracepoints with 0 warnings and 0 errors
+```
 
 The formatted trace output looks similar to the following extract, which is truncated to show the key areas of information:
 
+```
     Trace Summary
-    
+
     Service level:
     JRE 1.8.0 Windows 7 amd64-64 build  (pwa6480sr2-20150624_06(SR2))
-    
+
     JVM startup options:
     -Xoptionsfile=c:\build\pwa6480sr2-20150624\sdk\lib\compressedrefs\options.default
     ....
-    
+
     Processor information:
     Arch family:         AMD64
     Processor Sub-type:  Opteron
     Num Processors:      8
     Word size:           64
-    
+
     Trace activation information::
     FORMAT=c:\build\pwa6480sr2-20150624\sdk\lib;.
     MAXIMAL=all{level1}
     EXCEPTION=j9mm{gclogger}
     MAXIMAL=all{level2}
     output=sample
-    
+
     Trace file header:
     JVM start time: 08:58:35.527000000
     Generations:    1
     Pointer size:   8
-    
+
     Active threads
     ....
     0x000000000f155f00  Attach API wait loop
     0x000000000f18b200  Thread-1
     0x000000000f190200  Thread-3
-    
-    
+
+
      Trace Formatted Data
-    
+
     Time (UTC)          Thread ID          Tracepoint ID Type   Tracepoint Data
     08:58:35.527291919 *0x000000000f010500 j9trc.0       Event  Trace engine initialized for VM = 0x3ad4d0
     08:58:35.527349836  0x000000000f010500 j9prt.0       Event  Trace engine initialized for module j9port
@@ -108,5 +111,6 @@ The formatted trace output looks similar to the following extract, which is trun
     08:58:35.536134516  0x000000000f010500 j9vm.1        Entry >Create RAM class from ROM class 0x3cab680 in class loader 0x3042338
     08:58:35.536136384  0x000000000f010500 j9vm.80       Event  ROM class 0x3cab680 is named java/lang/Object
     08:58:35.536200373  0x000000000f010500 j9vm.2        Exit  <Created RAM class 0xf03ef00 from ROM class 0x3cab680
+```
 
 <!-- ==== END OF TOPIC ==== xss.md ==== -->

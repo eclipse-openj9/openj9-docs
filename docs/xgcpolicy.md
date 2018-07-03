@@ -145,11 +145,11 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 `-Xgc:targetUtilization=N`
 : Sets the application utilization to `N%`; the Garbage Collector attempts to use at most (100-N)% of each time interval. Reasonable values are in the range of 50-80%. Applications with low allocation rates might be able to run at 90%. The default is 70%.
 
-  This example shows the maximum size of the heap memory is 30 MB. The garbage collector attempts to use 25% of each time interval because the target utilization for the application is 75%.
+    This example shows the maximum size of the heap memory is 30 MB. The garbage collector attempts to use 25% of each time interval because the target utilization for the application is 75%.
 
-```
-java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
-```
+
+      java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
+
 
 `-Xgc:threads=N`
 : Specifies the number of GC threads to run. The default is the number of processor cores available to the process. The maximum value you can specify is the number of processors available to the operating system.
@@ -157,7 +157,7 @@ java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
 `-Xgc:verboseGCCycleTime=N`
 : N is the time in milliseconds that the summary information should be dumped.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The cycle time does not mean that the summary information is dumped precisely at that time, but when the last garbage collection event that meets this time criterion passes.
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The cycle time does not mean that the summary information is dumped precisely at that time, but when the last garbage collection event that meets this time criterion passes.
 
 `-Xmx<size>`
 : Specifies the Java heap size. Unlike other garbage collection strategies, the real-time Metronome GC does not support heap expansion. There is not an initial or maximum heap size option. You can specify only the maximum heap size.

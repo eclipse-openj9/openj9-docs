@@ -46,27 +46,27 @@ Class files that have `StackMapTable` attributes (that is, class files that conf
 Here is an example of `StackMapTable` diagnostic output:
 
 
-    :::java
-            Verifying class java.example.ibm.com with new format
-            Verifying method java.example.ibm.com.foo(Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/String;Ljava/io/PrintStream;)I
-            StackMapTable: frame_count = 3
-            table = {
-              bci: @37
-              flags: { }
-              locals: { 'java/lang/String', 'java/lang/Class', '[Ljava/lang/String;', 'java/io/PrintStream', 'java/lang/Class' }
-              stack: { 'java/lang/ThreadDeath' }
-              bci: @42
-              flags: { }
-              locals: { 'java/lang/String', 'java/lang/Class', '[Ljava/lang/String;', 'java/io/PrintStream', 'java/lang/Class' }
-              stack: { 'java/lang/Throwable' }
-              bci: @79
-              flags: { }
-              locals: { 'java/lang/String', 'java/lang/Class', '[Ljava/lang/String;', 'java/io/PrintStream', 'java/lang/Class',
-                    'java/lang/Throwable' }
-              stack: { }
-             }
-            End class verification for: java.example.ibm.com
-
+```
+Verifying class java.example.ibm.com with new format
+Verifying method java.example.ibm.com.foo(Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/String;Ljava/io/PrintStream;)I
+StackMapTable: frame_count = 3
+table = {
+  bci: @37
+  flags: { }
+  locals: { 'java/lang/String', 'java/lang/Class', '[Ljava/lang/String;', 'java/io/PrintStream', 'java/lang/Class' }
+  stack: { 'java/lang/ThreadDeath' }
+  bci: @42
+  flags: { }
+  locals: { 'java/lang/String', 'java/lang/Class', '[Ljava/lang/String;', 'java/io/PrintStream', 'java/lang/Class' }
+  stack: { 'java/lang/Throwable' }
+  bci: @79
+  flags: { }
+  locals: { 'java/lang/String', 'java/lang/Class', '[Ljava/lang/String;', 'java/io/PrintStream', 'java/lang/Class',
+        'java/lang/Throwable' }
+  stack: { }
+ }
+End class verification for: java.example.ibm.com
+```
 
 
 

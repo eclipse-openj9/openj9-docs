@@ -417,7 +417,10 @@ The location for the dump file is selected from the following options, in this o
 
 1. The location specified by the `-Xdump:<agent>:file` suboption on the command line (if that location includes a path). This location applies to the specified dump agent type only.
 2. The location specified by the `-Xdump:directory` option on the command line. This location applies to all dump agent types.
-3. The location specified by the relevant environment variable:
+3. The location specified by the relevant environment variable (See **Table: Environment Variables**).
+4. The current working directory of the OpenJ9 VM process.
+
+**Table: Environment Variables**
 
 | Dump agent type            | z/OS operating systems     | Other operating systems |
 |----------------------------|----------------------------|-------------------------|
@@ -426,7 +429,6 @@ The location for the dump file is selected from the following options, in this o
 | System dumps and JIT dumps | `JAVA_DUMP_TDUMP_PATTERN`  | `IBM_COREDIR`           |
 | Snap traces                | `_CEE_DMPTARG`             | `IBM_COREDIR`           |
 
-4. The current working directory of the OpenJ9 VM process.
 
 If the directory does not exist, it is created.
 
@@ -498,7 +500,7 @@ You can filter the **catch** exception events by Java method name (optional port
 -Xdump:java:events=catch,filter=ExceptionClassName[#com/ibm/CatchingClassName.catchingMethodName]
 ```
 
-You can filter **throw**, **uncaught**, and **systhrowexception** events by Java method name (optional portions are shown in brackets)::
+You can filter **throw**, **uncaught**, and **systhrowexception** events by Java method name (optional portions are shown in brackets):
 
 ```
 -Xdump:java:events=throw,filter=ExceptionClassName[#com/ibm/ThrowingClassName.throwingMethodName[#stackFrameOffset]]
@@ -630,7 +632,7 @@ Finally the last example starts the process and waits for 10 seconds before cont
 
 One event can generate multiple dump files. The agents that produce each dump file run sequentially and their order is determined by the priority keyword set for each agent. The full syntax for this command is `-Xdump:<agent>:priority=<0-999>`.
 
-Examination of the output from `-Xdump:what`shows that a **gpf** event produces a snap trace, a Java dump file, and a system dump file. In this example, the system dump runs first, with priority 999. The snap dump runs second, with priority 500. The Java dump runs last, with priority 10:
+Examination of the output from `-Xdump:what` shows that a **gpf** event produces a snap trace, a Java dump file, and a system dump file. In this example, the system dump runs first, with priority 999. The snap dump runs second, with priority 500. The Java dump runs last, with priority 10:
 
 ```
 -Xdump:heap:events=vmstop,priority=123
@@ -745,7 +747,6 @@ You can use the Linux `kernel.core_pattern` setting to specify the name and path
 ## See also
 
 - [`-Xtrace`](xtrace.md)
-
 - [`-Xdisablejavadump`](xdisablejavadump.md)
 
 

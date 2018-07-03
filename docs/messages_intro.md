@@ -42,8 +42,9 @@ There are three main categories of message:
 
 OpenJ9 virtual machine messages have the following format:
 
-    :::java
+```
     JVM<type><number><code>
+```
 
 where:
 
@@ -72,17 +73,15 @@ You can redirect messages from the syslog daemon to the AIX error log facility b
 
 1.  Set up a redirect in the file `syslog.conf` so that syslog messages are sent to the error log, by adding the following line:
 
-
-        :::java
+```
         user.debug errlog
-
+```
 
 2.  If **syslogd** is already running, reload the updated configuration by running the following command:
 
-
-        :::java
+```
         refresh -s syslogd
-
+```
 
 3.  The updated configuration is used each time **syslogd** starts. 4.  Use the AIX **errpt** command or the System Management Interface Tool (SMIT) to read the messages sent to the error log.
 

@@ -68,7 +68,6 @@ This option controls the behavior of OpenJ9 VM signal handlers.
 ## See also
 
 - [`-XCEEHDLR`](xceehdlr.md)
-
 - [Signals used by the VM](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_signals_j9_handling.html).
 
 <!-- ==== END OF TOPIC ==== xsignal.md ==== -->

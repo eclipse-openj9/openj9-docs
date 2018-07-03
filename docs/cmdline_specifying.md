@@ -25,7 +25,7 @@
 # OpenJ9 command-line options
 
 
-When you start Java&trade; you can specify various options on the command line to configure the runtime environment. These options include:
+When you start a Java&trade; application you can specify various options on the command line to configure the runtime environment. These options include:
 
 - [System properties](d_jvm_commands.md)
 - [Standard options](cmdline_general.md)

@@ -29,7 +29,7 @@ This Oracle Hotspot option sets a limit on the amount of memory that can be rese
 
 ## Syntax
 
-        -XX:MaxDirectMemorySize<size>
+    -XX:MaxDirectMemorySize<size>
 
 | Setting      |  Value                             | Default  |
 |--------------|------------------------------------|----------|
@@ -37,7 +37,7 @@ This Oracle Hotspot option sets a limit on the amount of memory that can be rese
 
 The value you choose is the limit on memory that can be reserved for all Direct Byte Buffers. If a value is set for this option, the sum of all Direct Byte Buffer sizes cannot exceed the limit. After the limit is reached, a new Direct Byte Buffer can be allocated only when enough old buffers are freed to provide enough space to allocate the new buffer.
 
-    By default, the VM does not set a limit on how much memory is reserved for Direct Byte Buffers. A soft limit of 64 MB is set, which the VM automatically expands in 32 MB chunks, as required.
+By default, the VM does not set a limit on how much memory is reserved for Direct Byte Buffers. A soft limit of 64 MB is set, which the VM automatically expands in 32 MB chunks, as required.
 
 
 
