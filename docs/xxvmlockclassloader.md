@@ -32,7 +32,7 @@ This option affects synchronization on class loaders that are not parallel-capab
 
 | Setting                  | Effect  | Default                                                                            |
 |--------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+VMLockClassLoader` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:+VMLockClassLoader` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-XX:-VMLockClassLoader` | Disable |                                                                                    |
 
 :   The option, `-XX:+VMLockClassLoader`, causes the VM to force synchronization on a class loader that is not a parallel capable class loader during class loading. This action occurs even if the `loadClass()` method for that class loader is not synchronized. For information about parallel capable class loaders, see `java.lang.ClassLoader.registerAsParallelCapable()`. Note that this option might cause a deadlock if class loaders use non-hierarchical delegation. For example, setting the system property `osgi.classloader.lock=classname` with Equinox is known to cause a deadlock. This is the default option.

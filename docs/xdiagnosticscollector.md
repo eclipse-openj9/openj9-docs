@@ -24,7 +24,7 @@
 
 # -Xdiagnosticscollector 
 
-This option is now redundant, and only generates a warning message. Use the [IBM<sup>&reg;</sup> Support Assistant Data Collector](http://www-01.ibm.com/software/support/isa/#isa-dc-dl) instead.
+This option is now redundant, and only generates a warning message. Use the [IBM&reg; Support Assistant Data Collector](http://www-01.ibm.com/software/support/isa/#isa-dc-dl) instead.
 
 
 ## Syntax

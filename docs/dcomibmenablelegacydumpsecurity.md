@@ -33,7 +33,7 @@ To improve security, the security checks in the certain `com.ibm.jvm.Dump` APIs 
 
 | Setting      | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
-| true         | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| true         | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | false        | Disable |                                                                                    |
 
 ## Explanation

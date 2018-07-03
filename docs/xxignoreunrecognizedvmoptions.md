@@ -33,7 +33,7 @@ This Oracle option affects the behavior of the Hotspot JVM when it finds an unre
 | Setting                            | Effect  | Default                                                                            |
 |------------------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+IgnoreUnrecognizedVMOptions` | Enable  |                                                                                    |
-| `-XX:-IgnoreUnrecognizedVMOptions` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:-IgnoreUnrecognizedVMOptions` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 
 

@@ -26,7 +26,7 @@
 
 Enables message logging. 
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Changes made to message logging using the `-Xlog` option do not affect messages written to the standard error stream (`stderr`).
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Changes made to message logging using the `-Xlog` option do not affect messages written to the standard error stream (`stderr`).
 
 ## Syntax
 
@@ -34,7 +34,7 @@ Enables message logging.
 
 ## Parameters
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restriction</span> **Restriction:** The parameters `all`, `none` and `help` must be used on their own and cannot be combined. However, the other parameters can be grouped. For example, to include error, vital and warning messages use `-Xlog:error,vital,warn`. 
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** The parameters `all`, `none` and `help` must be used on their own and cannot be combined. However, the other parameters can be grouped. For example, to include error, vital and warning messages use `-Xlog:error,vital,warn`. 
 
 For message details see [OpenJ9 VM messages](messages_intro.md#jvm-messages).
 

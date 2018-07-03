@@ -24,7 +24,7 @@
 
 # -Xbootclasspath
 
-This Oracle<sup>&reg;</sup> Hotspot<sup>&trade;</sup> option specifies the search path for bootstrap classes and resources. The default is to search for bootstrap classes and resources in the internal VM directories and `.jar` files. The option is recognized by the OpenJ9 VM.
+This Oracle&reg; Hotspot&trade; option specifies the search path for bootstrap classes and resources. The default is to search for bootstrap classes and resources in the internal VM directories and `.jar` files. The option is recognized by the OpenJ9 VM.
 
 ## Syntax
 
@@ -34,7 +34,7 @@ This Oracle<sup>&reg;</sup> Hotspot<sup>&trade;</sup> option specifies the searc
 |![](cr/java8.png)  |`-Xbootclasspath/p:<path>` |Prepends the specified resources to the front of the bootstrap class path.|
 |                    |`-Xbootclasspath/a:<path>` |Appends the specified resources to the end of the bootstrap class path.   |
 
-: where `<path>` represents directories and compressed or Java<sup>&trade;</sup> archive files separated with colons (:). On Windows<sup>&trade;</sup> systems, use a semicolon (;) as a separator.
+: where `<path>` represents directories and compressed or Java&trade; archive files separated with colons (:). On Windows&trade; systems, use a semicolon (;) as a separator.
 
 ![](cr/java8.png) Oracle advise that you should "not deploy applications that use this option to override a class in `rt.jar`, because this violates the JRE binary code license."
 

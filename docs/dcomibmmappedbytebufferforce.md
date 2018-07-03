@@ -34,7 +34,7 @@ Setting this value to true forces data to be committed to disk during system fai
 | Setting      | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
 | true         | Enable  |                                                                                    |
-| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 
 ## Explanation

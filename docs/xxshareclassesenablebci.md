@@ -33,13 +33,13 @@ The option `-Xshareclasses:enableBCI` improves startup performance without using
 | Setting                      | Effect  | Default                                                                            |
 |------------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:ShareClassesDisableBCI` | Disable |                                                                                    |
-| `-XX:ShareClassesEnableBCI`  | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:ShareClassesEnableBCI`  | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 These options are equivalent to `-Xshareclasses:disableBCI` and `-Xshareclasses:enableBCI`. For more information, see [`-Xshareclasses`](xshareclasses.md#disablebci).
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Runtime bytecode modification](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_bytecode.html)
+- [Runtime bytecode modification](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_bytecode.html)
 
 
 <!-- ==== END OF TOPIC ==== xxshareclassesdisablebci.md ==== -->

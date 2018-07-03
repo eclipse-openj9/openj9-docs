@@ -24,7 +24,7 @@
 
 # Using system property command-line options
 
-Java™ system properties determine the environment in which a Java<sup>&trade;</sup> program runs by starting a Java virtual machine with a set of values.
+Java&trade; system properties determine the environment in which a Java program runs by starting a Java virtual machine with a set of values.
 You can choose to use the default values for Java system properties or you can specify values for them by adding parameters to the command line when you start your application.
 
 To set a system property from the command line, use:

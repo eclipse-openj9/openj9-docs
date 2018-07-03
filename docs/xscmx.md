@@ -50,7 +50,7 @@ If you specify the `-Xscmx` option with the [-XX:SharedCacheHardLimit](xxsharedc
 
 When the soft maximum limit is reached, no more data can be added into the shared cache, unless there is reserved AOT or JIT data space. If such reserved space exists, AOT or JIT data can still be added into the reserved space. The reserved AOT and JIT data spaces are counted as used space within the soft maximum size, so the soft maximum size should not be less than the minimum reserved space for AOT and JIT data if you specify the [-Xscminaot](xscminaot.md) or [-Xscminjitdata](xscminjitdata.md) options.
 
-You can change the soft maximum size by using the `-Xshareclasses:adjustsoftmx=<size>` option or the `MemoryMXBean.setSharedClassCacheSoftmxBytes()` method in the `com.ibm.lang.management` API. By using this API, Java<sup>&trade;</sup> applications can dynamically monitor and adjust the cache soft maximum size as required. This function can be useful in virtualized or cloud environments, for example, where the shared cache size might change dynamically to meet business needs.
+You can change the soft maximum size by using the `-Xshareclasses:adjustsoftmx=<size>` option or the `MemoryMXBean.setSharedClassCacheSoftmxBytes()` method in the `com.ibm.lang.management` API. By using this API, Java&trade; applications can dynamically monitor and adjust the cache soft maximum size as required. This function can be useful in virtualized or cloud environments, for example, where the shared cache size might change dynamically to meet business needs.
 
 For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the `-Xscmx` option, to limit the data stored in the cache:
 
@@ -61,7 +61,7 @@ You can then use the `com.ibm.lang.management` API from within a Java applicatio
 
 You can increase the soft maximum size if it is currently less than the actual cache size. If you attempt to reduce the soft maximum size to a value that is less than the number of bytes already used in the cache, the number of used bytes is set as the new soft maximum size.
 
-For more information about cache sizes, see <i class="fa fa-external-link" aria-hidden="true"></i> [Cache size limits](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_cache_size.html).
+For more information about cache sizes, see [Cache size limits](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_cache_size.html).
 
 ## See also
 

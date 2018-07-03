@@ -24,9 +24,9 @@
 
 # -XXnosuballoc32bitmem  
 
-**(z/OS<sup>&reg;</sup> only)**
+**(z/OS&reg; only)**
 
-When compressed references are used with a 64-bit OpenJ9 VM on z/OS<sup>&reg;</sup>, this option forces the VM to use 31-bit memory allocation functions provided by z/OS.
+When compressed references are used with a 64-bit OpenJ9 VM on z/OS&reg;, this option forces the VM to use 31-bit memory allocation functions provided by z/OS.
 
 ## Syntax
 
@@ -35,7 +35,7 @@ When compressed references are used with a 64-bit OpenJ9 VM on z/OS<sup>&reg;</s
 | Setting                 | Effect  | Default                                                                            |
 |-------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XXnosuballoc32bitmem` | Enable  |                                                                                    |   
-| No setting              | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| No setting              | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 

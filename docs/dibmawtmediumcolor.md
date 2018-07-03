@@ -25,7 +25,7 @@
 # -Dibm.awt.mediumColor
 
 
-**(AIX<sup>&reg;</sup> only)**
+**(AIX&reg; only)**
 
 This property reverts behavior to an earlier release.
 
@@ -36,11 +36,11 @@ This property reverts behavior to an earlier release.
 | Setting      | Effect  |  Default                                                                           |
 |--------------|---------|:----------------------------------------------------------------------------------:|
 | true         | Enable  |                                                                                    |
-| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 
-The default `SystemColor` settings of Abstract Windows<sup>&trade;</sup> Toolkit (AWT) components are changed. To revert to the original color palette settings, set this property to `true` on the command line.
+The default `SystemColor` settings of Abstract Windows&trade; Toolkit (AWT) components are changed. To revert to the original color palette settings, set this property to `true` on the command line.
 
 This property is not enabled by default.
 

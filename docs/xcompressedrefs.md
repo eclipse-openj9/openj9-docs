@@ -29,26 +29,26 @@
 
 Enables or disables the use of compressed references.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restriction</span> **Restriction:** You cannot include `-Xcompressedrefs` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** You cannot include `-Xcompressedrefs` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
 
 ## Syntax
 
 | Setting             | Action              | Default                                                                                                                        |
 |---------------------|---------------------|:------------------------------------------------------------------------------------------------------------------------------:|
-|`-Xcompressedrefs`   | Enable compression  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> (see [Default behavior](#default-behavior)) |
+|`-Xcompressedrefs`   | Enable compression  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> (see [Default behavior](#default-behavior)) |
 |`-Xnocompressedrefs` | Disable compression |                                                                                                                                |
 
 ## Default behavior
 
 Compressed references are enabled by default when [`-Xmx`](xms.md) &le; 57 GB.
 
-**z/OS<sup>&reg;</sup>:** This threshold value assumes that you have <i class="fa fa-external-link" aria-hidden="true"></i> [APAR OA49416](http://www.ibm.com/support/docview.wss?uid=isg1OA49416) installed. If you do not have the APAR installed, the threshold value is 25 GB.
+**z/OS&reg;:** This threshold value assumes that you have [APAR OA49416](http://www.ibm.com/support/docview.wss?uid=isg1OA49416) installed. If you do not have the APAR installed, the threshold value is 25 GB.
 
-**AIX<sup>&reg;</sup> and Linux<sup>&trade;</sup>:** For the metronome garbage collection policy, the threshold is 25 GB.
+**AIX&reg; and Linux&trade;:** For the metronome garbage collection policy, the threshold is 25 GB.
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Compressed references](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_compressed_references.html)
+- [Compressed references](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_compressed_references.html)
 
 
 <!-- ==== END OF TOPIC ==== xcompressedrefs.md ==== -->

@@ -40,7 +40,7 @@ parent directory is specified, it must exist.
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Support for the Java<sup>&trade;</sup> Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html)
+- [Support for the Java&trade; Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html)
 - [-Dcom.ibm.tools.attach.enable](dcomibmtoolsattachenable.md)
 - [-Dcom.ibm.tools.attach.displayName](dcomibmtoolsattachdisplayname.md)
 - [-Dcom.ibm.tools.attach.id](dcomibmtoolsattachid.md)

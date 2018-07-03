@@ -36,8 +36,8 @@ Controls the behavior of the garbage collector by specifying different garbage c
 | Parameter                                                        | Default  |
 |------------------------------------------------------------------|----------|
 | [`balanced`](#balanced)                                          |          |
-| [`gencon`](#gencon)                                              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
-| [`metronome`](#metronome) (AIX<sup>&reg;</sup>, Linux x86 only)  |          |
+| [`gencon`](#gencon)                                              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| [`metronome`](#metronome) (AIX&reg;, Linux x86 only)  |          |
 | [`optavgpause`](#optavdpause)                                    |          |
 | [`optthruput`](#optthruput)                                      |          |
 
@@ -48,11 +48,11 @@ Specify the garbage collection policy that you want the OpenJ9 VM to use:
 
         -Xgcpolicy:balanced
 
-: The balanced policy policy uses mark, sweep, compact and generational style garbage collection. The concurrent mark phase is disabled; concurrent garbage collection technology is used, but not in the way that concurrent mark is implemented for other policies. The `balanced` policy uses a region-based layout for the Java<sup>&trade;</sup> heap. These regions are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The policy tries to avoid global collections by matching object allocation and survival rates.
+: The balanced policy policy uses mark, sweep, compact and generational style garbage collection. The concurrent mark phase is disabled; concurrent garbage collection technology is used, but not in the way that concurrent mark is implemented for other policies. The `balanced` policy uses a region-based layout for the Java&trade; heap. These regions are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The policy tries to avoid global collections by matching object allocation and survival rates.
 
-: If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance. If you are using large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER<sup>&trade;</sup> platforms only), the balanced policy might further improve application throughput.
+: If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance. If you are using large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), the balanced policy might further improve application throughput.
 
-    For more information about this policy, including when to use it, see <i class="fa fa-external-link" aria-hidden="true"></i> [Balanced Garbage Collection policy](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_balanced.html).
+    For more information about this policy, including when to use it, see [Balanced Garbage Collection policy](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_balanced.html).
 
 #### Defaults and options
 
@@ -123,13 +123,13 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
 : The generational concurrent policy (default) uses a concurrent mark phase combined with generational garbage collection to help minimize the time that is spent in any garbage collection pause. This policy is particularly useful for applications with many short-lived objects, such as transactional applications. Pause times can be significantly shorter than with the `optthruput` policy, while still producing good throughput. Heap fragmentation is also reduced.
 
-### `metronome` (AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup> only)
+### `metronome` (AIX&reg;, Linux&trade; only)
 
         -Xgcpolicy:metronome
 
 : The metronome policy is an incremental, deterministic garbage collector with short pause times. Applications that are dependent on precise response times can take advantage of this technology by avoiding potentially long delays from garbage collection activity. The metronome policy is supported on specific hardware and operating system configurations.
 
-    For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [Using the Metronome Garbage Collector](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_mgc.html).
+    For more information, see [Using the Metronome Garbage Collector](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_mgc.html).
 
 #### Defaults and options
 
@@ -157,7 +157,7 @@ java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
 `-Xgc:verboseGCCycleTime=N`
 : N is the time in milliseconds that the summary information should be dumped.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** The cycle time does not mean that the summary information is dumped precisely at that time, but when the last garbage collection event that meets this time criterion passes.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The cycle time does not mean that the summary information is dumped precisely at that time, but when the last garbage collection event that meets this time criterion passes.
 
 `-Xmx<size>`
 : Specifies the Java heap size. Unlike other garbage collection strategies, the real-time Metronome GC does not support heap expansion. There is not an initial or maximum heap size option. You can specify only the maximum heap size.

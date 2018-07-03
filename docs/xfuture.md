@@ -24,7 +24,7 @@
 
 # -Xfuture
 
-As described in the <i class="fa fa-external-link" aria-hidden="true"></i> [Oracle "Non-Standard Options" documentation](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html#BABHDABI), this Hotspot option turns on strict class-file format checks. For compatibility, this option is also supported by the OpenJ9 VM.
+As described in the [Oracle "Non-Standard Options" documentation](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html#BABHDABI), this Hotspot option turns on strict class-file format checks. For compatibility, this option is also supported by the OpenJ9 VM.
 
 ## Syntax
 

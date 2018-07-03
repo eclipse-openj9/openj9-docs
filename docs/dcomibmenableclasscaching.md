@@ -33,11 +33,11 @@ Setting this property to `true` enables caching of the Latest User Defined Class
 | Setting      | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
 | true         | Enable  |                                                                                    |
-| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 
-By reducing repeated lookups, Java<sup>&trade;</sup> applications that use deserialization extensively can see a performance improvement.
+By reducing repeated lookups, Java&trade; applications that use deserialization extensively can see a performance improvement.
 
 ## See also
 

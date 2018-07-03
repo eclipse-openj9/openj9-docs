@@ -30,7 +30,7 @@ Enables or disables line numbers in stack traces for debugging.
 
 | Setting               | Effect  | Default                                                                            |
 |-----------------------|---------|:----------------------------------------------------------------------------------:|
-| `-Xlinenumbers`       | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-Xlinenumbers`       | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-Xnolinenumbers`     | Disable |                                                                                    |
 
 ## Explanation

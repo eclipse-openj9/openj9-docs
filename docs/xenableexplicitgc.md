@@ -31,7 +31,7 @@ Enables and disables garbage collection (GC) when calls are made to `System.gc()
 
 | Setting               | Effect     | Default                                                                            |
 |-----------------------|------------|:----------------------------------------------------------------------------------:|
-| `-Xenableexplicitgc`  | Enable GC  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-Xenableexplicitgc`  | Enable GC  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-Xdisableexplicitgc` | Disable GC |                                                                                    |
 
 ## Explanation

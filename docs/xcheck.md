@@ -35,7 +35,7 @@ You can use the `-Xcheck` option to run checks during OpenJ9 virtual machine (VM
 | Parameter                |  Effect                                                                                                        |
 |--------------------------|----------------------------------------------------------------------------------------------------------------|
 | [`classpath`](#classpath)| Checks the classpath and reports errors such as a missing directory or JAR file.                               |
-| [`dump`](#dump)          | Checks the operating system for settings that might truncate system dumps. (AIX<sup>&reg;</sup> and Linux<sup>&trade;</sup> only)|
+| [`dump`](#dump)          | Checks the operating system for settings that might truncate system dumps. (AIX&reg; and Linux&trade; only)|
 | [`gc`](#gc)              | Runs additional checks on garbage collection.                                                                  |
 | [`jni`](#jni)            | Runs additional checks for JNI functions.                                                                      |
 | [`memory`](#memory)      | Identifies memory leaks inside the VM using strict checks that cause the VM to exit on failure.                |
@@ -60,27 +60,27 @@ You can use the `-Xcheck` option to run checks during OpenJ9 virtual machine (VM
 
     - `JVMJ9VM133W The system core size hard ulimit is set to <value>, system dumps may be truncated`
 
-    : This message indicates that the AIX operating system user limit is set to restrict the size of system dumps to the value indicated. If a system dump is produced by the VM it might be truncated, and therefore of greatly reduced value in investigating the cause of crashes and other issues. For more information about how to set user limits on AIX, see <i class="fa fa-external-link" aria-hidden="true"></i> [Setting system resource limits on AIX and Linux systems](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html).
+    : This message indicates that the AIX operating system user limit is set to restrict the size of system dumps to the value indicated. If a system dump is produced by the VM it might be truncated, and therefore of greatly reduced value in investigating the cause of crashes and other issues. For more information about how to set user limits on AIX, see [Setting system resource limits on AIX and Linux systems](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html).
 
     - `JVMJ9VM134W The system fullcore option is set to FALSE, system dumps may be truncated`
 
-    : This message indicates that the AIX operating system `Enable full CORE dump`option is set to *FALSE*. This setting might result in truncated system dumps. For more information about how to set this option correctly on AIX, see <i class="fa fa-external-link" aria-hidden="true"></i> [Setting system resource limits on AIX and Linux systems](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html).
+    : This message indicates that the AIX operating system `Enable full CORE dump`option is set to *FALSE*. This setting might result in truncated system dumps. For more information about how to set this option correctly on AIX, see [Setting system resource limits on AIX and Linux systems](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html).
 
     <!--![Linux](cr/_lnx.png) -->On **Linux** systems, the following messages are possible:
 
     - `JVMJ9VM133W The system core size hard ulimit is set to <value>, system dumps may be truncated.`
 
-    : This message indicates that the Linux operating system user limit is set to restrict the size of system dumps to the value indicated. If a system dump is produced by the VM, it might be truncated and therefore of greatly reduced value in investigating the cause of crashes and other issues. Review the documentation that is provided for your operating system to correctly configure the value for `ulimits`. For further information, see <i class="fa fa-external-link" aria-hidden="true"></i> [Setting system resource limits on AIX and Linux systems](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html).
+    : This message indicates that the Linux operating system user limit is set to restrict the size of system dumps to the value indicated. If a system dump is produced by the VM, it might be truncated and therefore of greatly reduced value in investigating the cause of crashes and other issues. Review the documentation that is provided for your operating system to correctly configure the value for `ulimits`. For further information, see [Setting system resource limits on AIX and Linux systems](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html).
 
     - `JVMJ9VM135W /proc/sys/kernel/core_pattern setting "|/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e" specifies that core dumps are to be piped to an external program. The JVM may be unable to locate core dumps and rename them.`
 
     : This message means that an external program, **abrt-hook-ccpp**, is configured in the operating system to intercept any system dump files that are generated. This program is part of the Automatic Bug Reporting Tool (ABRT).
 
-    : For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [Automatic Bug Reporting Tool](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-abrt). This tool might interfere with the VM's system dump file processing by renaming or truncating system dumps. Review the configuration of the ABRT tool and messages that are written by the tool in` /var/log/messages`. If problems occur when generating system dumps from the VM, consider disabling ABRT.
+    : For more information, see [Automatic Bug Reporting Tool](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-abrt). This tool might interfere with the VM's system dump file processing by renaming or truncating system dumps. Review the configuration of the ABRT tool and messages that are written by the tool in` /var/log/messages`. If problems occur when generating system dumps from the VM, consider disabling ABRT.
 
     - `JVMJ9VM135W /proc/sys/kernel/core_pattern setting "|/usr/share/apport/apport %p %s %c" specifies that core dumps are to be piped to an external program. The JVM may be unable to locate core dumps and rename them.`
 
-    : This message means that an external program, **apport**, is configured in the operating system to intercept any system dump files that are generated. For more information about this tool, see: <i class="fa fa-external-link" aria-hidden="true"></i> [Apport](https://wiki.ubuntu.com/Apport) The tool might interfere with the VM's system dump file processing by renaming or truncating system dumps. Review the configuration of the Apport tool and messages that are written by the tool in `/var/log/apport.log`. If problems occur when generating system dumps from the VM, consider disabling the Apport tool.
+    : This message means that an external program, **apport**, is configured in the operating system to intercept any system dump files that are generated. For more information about this tool, see: [Apport](https://wiki.ubuntu.com/Apport) The tool might interfere with the VM's system dump file processing by renaming or truncating system dumps. Review the configuration of the Apport tool and messages that are written by the tool in `/var/log/apport.log`. If problems occur when generating system dumps from the VM, consider disabling the Apport tool.
 
     - `JVMJ9VM136W "/proc/sys/kernel/core_pattern setting "/tmp/cores/core.%e.%p.%h.%t " specifies a format string for renaming core dumps. The JVM may be unable to locate core dumps and rename them.`
 
@@ -107,7 +107,7 @@ You can use the `-Xcheck` option to run checks during OpenJ9 virtual machine (VM
 
 : Identifies memory leaks inside the VM by using strict checks that cause the VM to exit on failure.
 
-: <i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restriction</span> **Restriction:** You cannot include `-Xcheck:memory` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
+: <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** You cannot include `-Xcheck:memory` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
 
 : The available parameters are as follows:
 
@@ -140,7 +140,7 @@ You can use the `-Xcheck` option to run checks during OpenJ9 virtual machine (VM
     : Standard padding scans detect buffer underruns when using `top` and buffer overruns when using `bottom`.
 
     `:nofree`
-    :   Keeps a list of blocks that are already used instead of freeing memory. This list, and the list of currently allocated blocks, is checked for memory corruption on every allocation and deallocation. Use this option to detect a dangling pointer (a pointer that is "dereferenced" after its target memory is freed). This option cannot be reliably used with long-running applications (such as WebSphere<sup>&reg;</sup> Application Server), because *"freed"* memory is never reused or released by the VM.
+    :   Keeps a list of blocks that are already used instead of freeing memory. This list, and the list of currently allocated blocks, is checked for memory corruption on every allocation and deallocation. Use this option to detect a dangling pointer (a pointer that is "dereferenced" after its target memory is freed). This option cannot be reliably used with long-running applications (such as WebSphere&reg; Application Server), because *"freed"* memory is never reused or released by the VM.
 
     `:noscan`
     :   Checks for blocks that are not freed. This option has little effect on performance, but memory corruption is not detected. This option is compatible only with `subAllocator`, `callsite`, and `callsitesmall`.

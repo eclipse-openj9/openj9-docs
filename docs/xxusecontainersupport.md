@@ -24,7 +24,7 @@
 
 # -XX:[+|-]UseContainerSupport
 
-**(Linux<sup>&trade;</sup> only)**
+**(Linux&trade; only)**
 
 If your application is running in a container that imposes a memory limit, and you want the VM to allocate a larger fraction of memory to the Java heap, set the  `-XX:+UserContainerSupport` option.
 
@@ -36,7 +36,7 @@ If your application is running in a container that imposes a memory limit, and y
 
 | Setting                    | Effect  | Default                                                                            |
 |----------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:-UseContainerSupport` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:-UseContainerSupport` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-XX:+UseContainerSupport` | Enable  |                                                                                    |
 
 

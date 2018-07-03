@@ -24,7 +24,7 @@
 
 # -Dcom.ibm.signalhandling.ignoreLogoff
 
-**(Windows<sup>&trade;</sup> only)**
+**(Windows&trade; only)**
 
 This property controls the way the OpenJ9 VM handles a `CTRL_LOGOFF_EVENT` signal when the VM is running as an interactive Windows service.
 
@@ -35,7 +35,7 @@ This property controls the way the OpenJ9 VM handles a `CTRL_LOGOFF_EVENT` signa
 | Setting      | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
 | true         | Enable  |                                                                                    |
-| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 

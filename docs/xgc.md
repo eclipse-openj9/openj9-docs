@@ -34,14 +34,14 @@ Options that change the behavior of the Garbage Collector (GC).
 
 | Parameter                                                       | Effect                                                                                                  |
 |-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [`concurrentScavenge`          ](#concurrentscavenge          ) | Enables a garbage collection (GC) mode with less pause times (Linux on IBM Z<sup>&reg;</sup> and z/OS<sup>&reg;</sup> only).|
+| [`concurrentScavenge`          ](#concurrentscavenge          ) | Enables a garbage collection (GC) mode with less pause times (Linux on IBM Z&reg; and z/OS&reg; only).|
 | [`dnssExpectedTimeRatioMaximum`](#dnssexpectedtimeratiomaximum) | Sets the maximum time to spend on GC of the nursery area.                                               |
 | [`dnssExpectedTimeRatioMinimum`](#dnssexpectedtimeratiominimum) | Sets the minimum time to spend on GC of the nursery area.                                               |
 | [`excessiveGCratio`            ](#excessivegcratio            ) | Sets a boundary value beyond which GC is deemed to be excessive.                                        |
 | [`minContractPercent`          ](#mincontractpercent          ) | Sets the minimum percentage of the heap that can be contracted at any given time.                       |
 | [`maxContractPercent`          ](#maxcontractpercent          ) | Sets the maximum percentage of the heap that can be contracted at any given time.                       |
 | [`overrideHiresTimerCheck`     ](#overridehirestimercheck     ) | Overrides GC operating system checks for timer resolution.                                              |
-| [`preferredHeapBase`           ](#preferredheapbase           ) | Sets a memory range for the Java<sup>&trade;</sup> heap. (AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and Windows<sup>&trade;</sup> only) |
+| [`preferredHeapBase`           ](#preferredheapbase           ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&trade;, and Windows&trade; only) |
 | [`scvNoAdaptiveTenure`         ](#scvnoadaptivetenure         ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                             |
 | [`scvTenureAge`                ](#scvtenureage                ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                         |
 | [`verboseFormat`               ](#verboseformat               ) | Sets the verbose GC format.                                                                             |
@@ -52,24 +52,24 @@ Options that change the behavior of the Garbage Collector (GC).
 
         -Xgc:concurrentScavenge
 
-: This option is supported only on the 64-bit VM with the Generational Concurrent (`gencon`) garbage collection policy. When this mode is enabled, the VM attempts to reduce GC pause-times for response-time sensitive, large heap applications. This option is supported only on IBM z14<sup>&trade;</sup> hardware and the following software:
+: This option is supported only on the 64-bit VM with the Generational Concurrent (`gencon`) garbage collection policy. When this mode is enabled, the VM attempts to reduce GC pause-times for response-time sensitive, large heap applications. This option is supported only on IBM z14&trade; hardware and the following software:
 
 
 Operating systems:
 
 - z/OS V2R3
-- z/OS V2R2 and <i class="fa fa-external-link" aria-hidden="true"></i> [APAR OA51643](http://www.ibm.com/support/docview.wss?uid=isg1OA51643).
+- z/OS V2R2 and [APAR OA51643](http://www.ibm.com/support/docview.wss?uid=isg1OA51643).
 - RHEL 7.5 (minimum kernel level 4.14)
 - Ubuntu 18.04 (minimum kernel level 4.15)
 
 Hypervisors:
 
-- IBM z/VM 6.4 with <i class="fa fa-external-link" aria-hidden="true"></i> [APAR VM65987](http://www-01.ibm.com/support/docview.wss?uid=isg1VM65987)
+- IBM z/VM 6.4 with [APAR VM65987](http://www-01.ibm.com/support/docview.wss?uid=isg1VM65987)
 - KVM solutions with QEMU 2.10 or later and minimum host kernel level 4.12 (for example, RHEL 7.5 with kernel level 4.14)
 
 If these requirements are not met, the option is ignored.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by **ulimit -M**, to a larger value than the maximum heap size.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by **ulimit -M**, to a larger value than the maximum heap size.
 
 ### `dnssExpectedTimeRatioMaximum`
 
@@ -129,7 +129,7 @@ If these requirements are not met, the option is ignored.
 
 : When the VM starts, the GC checks that the operating system can meet the timer resolution requirements for the requested target pause time. Typically, this check correctly identifies operating systems that can deliver adequate time resolution. However, in some cases the operating system provides a more conservative answer than strictly necessary for GC pause time management, which prevents startup. Specifying this parameter causes the GC to ignore the answer returned by the operating system. The VM starts, but GC pause time management remains subject to operating system performance, which might not provide adequate timer resolution.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Use this option with caution, and only when you are unable to use a supported operating system.
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Use this option with caution, and only when you are unable to use a supported operating system.
 
 ### `preferredHeapBase`
 
@@ -170,13 +170,13 @@ If these requirements are not met, the option is ignored.
 
 : | Setting       | Value          | Default                                                                            |
   |---------------|----------------|:----------------------------------------------------------------------------------:|
-  | `<format>`    | `default`      | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+  | `<format>`    | `default`      | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
   |               | `deprecated`   |                                                                                    |
 
 
-    - `default`: The default verbose garbage collection format for OpenJ9. For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [Verbose garbage collection logging](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_pd_verbosegc.html).
+    - `default`: The default verbose garbage collection format for OpenJ9. For more information, see [Verbose garbage collection logging](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_pd_verbosegc.html).
 
-    - `deprecated`: The verbose garbage collection format available in Version 6 and earlier releases of the IBM SDK. For more information, see the [IBM<sup>&reg;</sup> SDK, Java Technology Edition, Version 6 Diagnostic Guide](http://www.ibm.com/support/knowledgecenter/SSYKE2_6.0.0/com.ibm.java.doc.diagnostics.60/homepage/plugin-homepage-java.html).
+    - `deprecated`: The verbose garbage collection format available in Version 6 and earlier releases of the IBM SDK. For more information, see the [IBM&reg; SDK, Java Technology Edition, Version 6 Diagnostic Guide](http://www.ibm.com/support/knowledgecenter/SSYKE2_6.0.0/com.ibm.java.doc.diagnostics.60/homepage/plugin-homepage-java.html).
 
 
 

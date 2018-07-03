@@ -25,7 +25,7 @@
 # OpenJ9 command-line options
 
 
-When you start Java<sup>&trade;</sup> you can specify various options on the command line to configure the runtime environment. These options include:
+When you start Java&trade; you can specify various options on the command line to configure the runtime environment. These options include:
 
 - [System properties](d_jvm_commands.md)
 - [Standard options](cmdline_general.md)
@@ -79,12 +79,12 @@ At startup, the list of VM arguments is constructed in the following order, with
 
 3.  Environment variables that are described in [OpenJ9 environment variables](env_var.md "In general, environment variables are superseded by command-line arguments but retained for compatibility.") are translated into command-line options. For example, the following environment variable adds the parameter `-Xrs` to the list of arguments:
 
-    - On Windows<sup>&trade;</sup> systems:
+    - On Windows&trade; systems:
 
             :::java
             set IBM_NOSIGHANDLER=<non_null_string>
 
-    - On AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and z/OS<sup>&reg;</sup> systems:
+    - On AIX&reg;, Linux&trade;, and z/OS&reg; systems:
 
             :::java
             export IBM_NOSIGHANDLER=<non_null_string>
@@ -101,7 +101,7 @@ At startup, the list of VM arguments is constructed in the following order, with
             :::java
             export IBM_JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Note:** The environment variable `JAVA_TOOLS_OPTIONS` is equivalent to `IBM_JAVA_OPTIONS` and is available for compatibility with JVMTI.
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The environment variable `JAVA_TOOLS_OPTIONS` is equivalent to `IBM_JAVA_OPTIONS` and is available for compatibility with JVMTI.
 
 5.  Options that are specified on the command line. For example:
 

@@ -24,13 +24,13 @@
 
 # -Xverify
 
-As described in the <i class="fa fa-external-link" aria-hidden="true"></i> [Oracle documentation](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html), this Hotspot option enables or disables the verifier. For compatibility, this option is also supported by the OpenJ9 VM.
+As described in the [Oracle documentation](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html), this Hotspot option enables or disables the verifier. For compatibility, this option is also supported by the OpenJ9 VM.
 
 ## Syntax
 
 | Setting           | Effect | Default |
 |-------------------|--------|:-------:|
-| `-Xverify`        | Enables verification for all non-bootstrap classes. [`-Xfuture`](xfuture.md) verification is not enabled. | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-Xverify`        | Enables verification for all non-bootstrap classes. [`-Xfuture`](xfuture.md) verification is not enabled. | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-Xverify:all`    | Enables verification for all classes and enables [`-Xfuture`](xfuture.md) verification. &nbsp; **Note:** This setting might have an impact on performance. | |
 | `-Xverify:remote` | For compatibility, this parameter is accepted, but is equivalent to the default `-Xverify`. | |
 | `-Xverify:none`   | Disables the verifier. &nbsp; **Note:** This is not a supported configuration. If you encounter problems with the verifier turned off, remove this option and try to reproduce the problem. | |

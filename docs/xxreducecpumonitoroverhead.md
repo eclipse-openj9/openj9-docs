@@ -24,13 +24,13 @@
 
 # -XX:\[+|-\]ReduceCPUMonitorOverhead
 
-**(AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and Windows<sup>&trade;</sup> only)**
+**(AIX&reg;, Linux&trade;, and Windows&trade; only)**
 
 This option relates to the CPU usage of thread categories that can be obtained with the `com.ibm.lang.management.JvmCpuMonitorMXBean` application programming interface. This option affects the way that the VM records the amount of CPU usage of non-Garbage Collection (GC) threads that do work on behalf of GC.
 
 Most GC policies require non-GC threads to do some GC housekeeping work in proportion to the amount of memory allocation that they do. Ideally the exact amount of CPU time that the thread spends doing this housekeeping work should be accounted for in the GC thread category. However there is an overhead that is associated with maintaining the CPU usage data in the correct thread category.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restriction</span> **Restriction:** This option is not supported on z/OS<sup>&reg;</sup>. If you attempt to use this option, the following message is generated: `JVMJ9VM145E -XX:-ReduceCPUMonitorOverhead is unsupported on z/OS. Error: Could not create the Java Virtual Machine.`
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This option is not supported on z/OS&reg;. If you attempt to use this option, the following message is generated: `JVMJ9VM145E -XX:-ReduceCPUMonitorOverhead is unsupported on z/OS. Error: Could not create the Java Virtual Machine.`
 
 ## Syntax
 
@@ -38,7 +38,7 @@ Most GC policies require non-GC threads to do some GC housekeeping work in propo
 
 | Setting                         | Effect  | Default                                                                            |
 |---------------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+ReduceCPUMonitorOverhead` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:+ReduceCPUMonitorOverhead` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-XX:-ReduceCPUMonitorOverhead` | Disable |                                                                                    |
 
 

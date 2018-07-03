@@ -33,7 +33,7 @@ This option is provided as a workaround for applications that cannot shut down c
 | Setting | Effect  | Default                                                                            |
 |---------|---------|:----------------------------------------------------------------------------------:|
 | false   | Disable |                                                                                    |
-| true    | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| true    | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 
 

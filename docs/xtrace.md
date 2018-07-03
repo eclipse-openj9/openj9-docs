@@ -25,11 +25,11 @@
 # -Xtrace
 
 
-OpenJ9 VM tracing is a powerful feature to help you diagnose problems with minimal affect on performance. Tracing is enabled by default, together with a small set of trace points going to memory buffers. You can enable tracepoints at run time by using levels, components, group names, or individual tracepoint identifiers to trace VM internal operations and instrumented Java<sup>&trade;</sup> applications. You can also trace Java methods.
+OpenJ9 VM tracing is a powerful feature to help you diagnose problems with minimal affect on performance. Tracing is enabled by default, together with a small set of trace points going to memory buffers. You can enable tracepoints at run time by using levels, components, group names, or individual tracepoint identifiers to trace VM internal operations and instrumented Java&trade; applications. You can also trace Java methods.
 
 Trace data can be output in human-readable or in compressed binary formats. The VM provides a tool to process and convert the compressed binary data into a readable format. See the [Trace formatter](tool_traceformat.md).  
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** You can also control trace by using the `com.ibm.jvm.Trace` API or by using JVMTI from an external agent.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You can also control trace by using the `com.ibm.jvm.Trace` API or by using JVMTI from an external agent.
 
 ## Syntax
 
@@ -68,7 +68,7 @@ The following options can be used to configure trace or control tracepoint activ
 | `Xtrace:suspendcount=<count>`                        | Suspends tracing at a thread level after a specified count.                                        |
 | `Xtrace:trigger=<clause>`                            | Determines when various triggered trace actions occur, including turning trace on or off.          |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** These options control which individual tracepoints are activated at run time and the implicit destination of the trace data. All these properties are independent of each other and can be mixed and matched in any way that you choose.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** These options control which individual tracepoints are activated at run time and the implicit destination of the trace data. All these properties are independent of each other and can be mixed and matched in any way that you choose.
 
 If an option value contains commas, it must be enclosed in braces. For example: `methods={java/lang/*,com/ibm/*}`
 
@@ -82,7 +82,7 @@ VM internal operations
 : The OpenJ9 virtual machine (VM) is extensively instrumented with tracepoints for tracing operations. Interpretating this trace data requires detailed knowledge of the VM, and is intended to diagnose VM problems. No guarantee is given that tracepoints will not vary from release to release and from platform to platform.
 
 Applications
-: VM trace contains an application trace facility that allows tracepoints to be placed in Java code, enabling you to combine trace data with the other forms of trace. This capability is supported by the `com.ibm.jvm.Trace` API. Note that an instrumented Java application runs only on an OpenJ9 VM. For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [Application trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_application.html).
+: VM trace contains an application trace facility that allows tracepoints to be placed in Java code, enabling you to combine trace data with the other forms of trace. This capability is supported by the `com.ibm.jvm.Trace` API. Note that an instrumented Java application runs only on an OpenJ9 VM. For more information, see [Application trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_application.html).
 
 Java methods
 : Use method trace to debug and trace application code and the system classes provided with the VM. You can trace entry to and exit from Java methods run by the VM. You can select method trace by classname, method name, or both. You can also use wildcards to create complex method selections. For more information about command syntax, see [methods](#methods). For more information about using method trace, see  [Using method trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_method_trace.html).
@@ -221,7 +221,7 @@ The following table lists the possible Java components (`<component>`). To inclu
 |  Component name          |  Description                                                             |
 |--------------------------|--------------------------------------------------------------------------|
 | **avl**                  | VM AVL tree support                                                      |
-| **ibm_gpu**              | Class library graphics processing unit (GPU) native code (Linux<sup>&trade;</sup> only)   |
+| **ibm_gpu**              | Class library graphics processing unit (GPU) native code (Linux&trade; only)   |
 | **io**                   | Class library java.io native code                                        |
 | **JSOR**                 | Class library Java Sockets over RDMA (JSOR) native code (Linux only)    |
 | **j9bcu**                | VM byte code utilities                                                   |
@@ -250,7 +250,7 @@ The following table lists the possible Java components (`<component>`). To inclu
 | **simplepool**           | VM storage pool support                                                  |
 | **sunvmi**               | VM class library interface                                               |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** When specifying the **mt** component you must also specify the `methods` option.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** When specifying the **mt** component you must also specify the `methods` option.
 
 The following table lists all the tracepoint groups (`<group>`). Each group is associated with one or more Java components:
 
@@ -315,7 +315,7 @@ or
 ```
 In the first example, tracepoints that have a level of 5 or less are enabled for all components. In the second example, all level 1 tracepoints are enabled. All level 2 tracepoints in **j9mm** are enabled. All tracepoints up to level 9 are enabled in **j9bcu**.
 
-<i class="fa fa-pencil-square-o"></i><span class="sr-only">Note</span> **Note:** The level applies only to the current component. If multiple trace selection components are found in a trace properties file, the level is reset to the default for each new component.
+<i class="fa fa-pencil-square-o"></i> **Note:** The level applies only to the current component. If multiple trace selection components are found in a trace properties file, the level is reset to the default for each new component.
 Level specifications do not apply to explicit tracepoint specifications that use the **TPNID** keyword.
 
 When the not operator is specified, the level is inverted; that is, `!j9mm{level5}` disables all tracepoints of level 6 or greater for the **j9mm** component. The following example enables trace for all components at level 9 (the default), but disables level 6 and higher for the **locking** component, and level 7 and higher for the **storage** component:
@@ -412,7 +412,7 @@ The `exception` option allows low-volume tracing in buffers and files that are d
 
 This form of tracing is channeled through a single set of buffers, as opposed to the buffer-per-thread approach for normal trace. Buffer contention might occur if high volumes of trace data are collected. A difference exists in the `<tracepoint_specification>` defaults for exception tracing;  see [Tracepoint specification](#tracepoint-specification).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Notes:**
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 - The exception trace buffers are intended for low-volume tracing. By default, the exception trace buffers log garbage collection (GC) event tracepoints, see Default tracing. You can send additional tracepoints to the exception buffers or turn off the GC tracepoints. Changing the exception trace buffers alters the contents of the GC History section in any Javadumps.
 - When exception trace is entered for an active tracepoint, the current thread ID is checked against the previous caller's thread ID. If it is a different thread, or this is the first call to exception trace, a context tracepoint is put into the trace buffer first. This context tracepoint consists only of the current thread ID, which is necessary because of the single set of buffers for exception trace. (The formatter identifies all trace entries as coming from the Exception trace pseudo thread when it formats exception trace files.)
 
@@ -487,7 +487,7 @@ If external trace is enabled, the number of buffers is doubled; that is, each th
 
 The `dynamic` and `nodynamic` suboptions have meaning only when tracing to an output file.
 
-<i class="fa fa-pencil-square-o"></i><span class="sr-only">Note</span> **Note:** If `nodynamic` is specified, you might lose trace data if the volume of trace data exceeds the bandwidth of the trace output file. Message **UTE115** is issued when the first trace entry is lost, and message **UTE018** is issued when the VM ends.
+<i class="fa fa-pencil-square-o"></i> **Note:** If `nodynamic` is specified, you might lose trace data if the volume of trace data exceeds the bandwidth of the trace output file. Message **UTE115** is issued when the first trace entry is lost, and message **UTE018** is issued when the VM ends.
 
 Here are some command line examples:
 
@@ -645,7 +645,7 @@ Where:
 - Optionally, `<size>` is a value in megabytes (MB), for example, use *4m* to specify 4 MB. When full, it wraps to the beginning. If you do not limit the file, it grows indefinitely, until limited by disk space.
 - Optionally, `<generations>` is a value 2 through 36. These values cause up to 36 files to be used sequentially as each file reaches its `<size>` threshold. When a file needs to be reused, it is overwritten. If `<generations>` is specified, the filename must contain a **#** (hash, pound symbol), which will be substituted with its generation identifier, the sequence of which is 0 through 9 followed by A through Z.
 
-<i class="fa fa-pencil-square-o"></i><span class="sr-only">Note</span> **Note:** When tracing to a file, buffers for each thread are written when the buffer is full or when the VM ends. If a thread has been inactive for a period of time before the VM ends, what seems to be 'old' trace data is written to the file. When formatted, it then seems that trace data is missing from the other threads, but this is an unavoidable side-effect of the buffer-per-thread design. This effect becomes especially noticeable when you use the generation facility, and format individual earlier generations.
+<i class="fa fa-pencil-square-o"></i> **Note:** When tracing to a file, buffers for each thread are written when the buffer is full or when the VM ends. If a thread has been inactive for a period of time before the VM ends, what seems to be 'old' trace data is written to the file. When formatted, it then seems that trace data is missing from the other threads, but this is an unavoidable side-effect of the buffer-per-thread design. This effect becomes especially noticeable when you use the generation facility, and format individual earlier generations.
 
 Here are some examples:
 
@@ -735,7 +735,7 @@ Xtrace:resumecount=<count>
 ```
 If `<count>` is greater than zero, each thread initially has its tracing disabled and must receive `<count>` `resumethis` actions before it starts tracing. This option is used with the [trigger](#trigger) option.
 
-<i class="fa fa-pencil-square-o"></i><span class="sr-only">Note</span> **Note:** You cannot use `resumecount` and `suspendcount` together because they use the same internal counter.
+<i class="fa fa-pencil-square-o"></i> **Note:** You cannot use `resumecount` and `suspendcount` together because they use the same internal counter.
 
 The following example starts with all tracing turned off. Each thread starts tracing when it has had three `resumethis` actions performed on it:
 
@@ -832,10 +832,10 @@ Wherever an action must be specified, you must select from these choices:
 | `<action>`                    | Effect                                                                                                                                            |
 |-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
 | **abort**                     | Halt the VM.                                                                                                                                     |
-| **ceedump**                   | This action is applicable to z/OS<sup>&reg;</sup> only. For more information, see z/OS LE CEEDUMPs.                                                              |
+| **ceedump**                   | This action is applicable to z/OS&reg; only. For more information, see z/OS LE CEEDUMPs.                                                              |
 | **coredump**                  | See **sysdump**.                                                                                                                                  |
-| **heapdump**                  | Produce a Heapdump. See <i class="fa fa-external-link" aria-hidden="true"></i> [Using Heapdump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html).  |
-| **javadump**                  | Produce a Javadump. See <i class="fa fa-external-link" aria-hidden="true"></i> [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html).  |
+| **heapdump**                  | Produce a Heapdump. See [Using Heapdump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html).  |
+| **javadump**                  | Produce a Javadump. See [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html).  |
 | **jstacktrace**               | Examine the Java stack of the current thread and generate auxiliary tracepoints for each stack frame. The auxiliary tracepoints are written to the same destination as the tracepoint or method trace that triggered the action. You can control the number of stack frames examined with the stackdepth=n option. See the [stackdepth](#stackdepth) option.   |
 | **resume**                    | Resume all tracing (except for threads that are suspended by the action of the resumecount property and `Trace.suspendThis()` calls).             |
 | **resumethis**                | Decrement the suspend count for this thread. If the suspend count is zero or less, resume tracing for this thread.                                |
@@ -844,7 +844,7 @@ Wherever an action must be specified, you must select from these choices:
 | **snap**                      | Snap all active trace buffers to a file in the current working directory. The file name has the format: `Snapnnnn.yyyymmdd.hhmmssth.ppppp.trc`, where *nnnn* is the sequence number of the snap file since VM startup, *yyyymmdd* is the date, *hhmmssth* is the time, and *ppppp* is the process ID in decimal with leading zeros removed.                     |
 | **suspend**                   | Suspend all tracing (except for special trace points).                                                                                            |
 | **suspendthis**               | Increment the suspend count for this thread. If the suspend-count is greater than zero, prevent all tracing for this thread.                      |
-| **sysdump** (or **coredump**) | Produce a system dump. See <i class="fa fa-external-link" aria-hidden="true"></i> [Using the dump viewer](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/systemdump_viewer.html).|
+| **sysdump** (or **coredump**) | Produce a system dump. See [Using the dump viewer](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/systemdump_viewer.html).|
 
 Here are some examples:
 
@@ -862,13 +862,13 @@ To produce a Java dump when a class constructor is called, specify the following
 ```
 "-Xtrace:trigger=method{java/lang/Thread.<init>,javadump}"
 ```
-<i class="fa fa-pencil-square-o"></i><span class="sr-only">Note</span> **Note:** This trace option is enclosed in quotation marks to avoid unwanted shell expansion of some of the characters.
+<i class="fa fa-pencil-square-o"></i> **Note:** This trace option is enclosed in quotation marks to avoid unwanted shell expansion of some of the characters.
 
 To produce a Java dump when a class static initializer is called, specify the following command:
 ```
 "-Xtrace:trigger=method{java/lang/Thread.<clinit>,javadump}"
 ```
-<i class="fa fa-pencil-square-o"></i><span class="sr-only">Note</span> **Note:** This trace option is enclosed in quotation marks to avoid unwanted shell expansion of some of the characters.
+<i class="fa fa-pencil-square-o"></i> **Note:** This trace option is enclosed in quotation marks to avoid unwanted shell expansion of some of the characters.
 
 To produce a Java dump when a method is entered 1000 times and 1001 times, specify the following command:
 ```
@@ -903,10 +903,10 @@ To write a Java stack trace to the trace output file when the `Sample.code()` me
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Application trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_application.html)
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Using method trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_method_trace.html)
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Using Heapdump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html)
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html)
+- [Application trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_application.html)
+- [Using method trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_method_trace.html)
+- [Using Heapdump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html)
+- [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html)
 - [Dump viewer](tool_jdmpview.md)
 
 <!-- ==== END OF TOPIC ==== xtrace.md ==== -->

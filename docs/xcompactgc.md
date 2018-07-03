@@ -41,7 +41,7 @@ If no compaction option is specified, the garbage collector compacts based on a 
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Global garbage collection: Compaction phase](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_compact.html)
+- [Global garbage collection: Compaction phase](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_compact.html)
 
 
 <!-- ==== END OF TOPIC ==== xcompactgc.md ==== -->

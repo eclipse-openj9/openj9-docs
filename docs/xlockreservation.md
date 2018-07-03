@@ -24,7 +24,7 @@
 
 # -XlockReservation
 
-**(AIX<sup>&reg;</sup> & Windows<sup>&trade;</sup> only)**
+**(AIX&reg; & Windows&trade; only)**
 
 Enables an optimization that presumes a monitor is owned by the thread that last acquired it.
 

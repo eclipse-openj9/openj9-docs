@@ -24,11 +24,11 @@
 
 # -XX:\[+|-\]RuntimeInstrumentation  
 
-**(AIX<sup>&reg;</sup>, Linux<sup>&trade;</sup>, and z/OS<sup>&reg;</sup> only)**
+**(AIX&reg;, Linux&trade;, and z/OS&reg; only)**
 
 This option controls the use of the Runtime Instrumentation (RI) facility in the virtual machines that support it.
 
-The RI facility is a feature that is available in POWER8<sup>&reg;</sup>, zEC12, and later processors that offers hardware support for collecting profiling information at run time. The process uses minimal resources. The use of the RI facility is not enabled by default.
+The RI facility is a feature that is available in POWER8&reg;, zEC12, and later processors that offers hardware support for collecting profiling information at run time. The process uses minimal resources. The use of the RI facility is not enabled by default.
 
 ## Syntax
 
@@ -37,10 +37,10 @@ The RI facility is a feature that is available in POWER8<sup>&reg;</sup>, zEC12,
 | Setting                       | Effect  | Default                                                                            |
 |-------------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+RuntimeInstrumentation` | Enable  |                                                                                    |
-| `-XX:-RuntimeInstrumentation` | Disable |  <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span>|
+| `-XX:-RuntimeInstrumentation` | Disable |  <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>|
 
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** On Linux, the RI facility on Power 8 and later processors uses the Performance Monitoring Unit (PMU) inside the processor. However, the PMU is also used by system profilers like **oprofile** or **perf**. Due to the current Linux kernel implementation, a user cannot reliably profile a Java<sup>&trade;</sup> application when RI is enabled. Although this limitation might be addressed in future Linux kernels, for reliable profiling on Power systems that use Linux, the `-XX:-RuntimeInstrumentation` option must be used.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On Linux, the RI facility on Power 8 and later processors uses the Performance Monitoring Unit (PMU) inside the processor. However, the PMU is also used by system profilers like **oprofile** or **perf**. Due to the current Linux kernel implementation, a user cannot reliably profile a Java&trade; application when RI is enabled. Although this limitation might be addressed in future Linux kernels, for reliable profiling on Power systems that use Linux, the `-XX:-RuntimeInstrumentation` option must be used.
 
 
 <!-- ==== END OF TOPIC ==== xxruntimeinstrumentation.md ==== -->

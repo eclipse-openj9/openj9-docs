@@ -33,7 +33,7 @@ Changes the unit of the return value of the `OperatingSystemMXBean.getProcessCpu
 | Setting | Effect  | Default                                                                            |
 |---------|---------|:----------------------------------------------------------------------------------:|
 | true    | Enable  |                                                                                    |
-| false   | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| false   | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 
@@ -47,7 +47,7 @@ The default value for this property is `false`.
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [com.ibm.lang.management API documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.lang.management/index.html)
+- [com.ibm.lang.management API documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.lang.management/index.html)
 
 
 <!-- ==== END OF TOPIC ==== dcomibmlangmanagementosmxbeaniscputime100ns.md ==== -->

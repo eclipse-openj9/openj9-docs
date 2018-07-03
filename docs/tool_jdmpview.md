@@ -25,7 +25,7 @@
 # Dump viewer (`jdmpview`)
 
 
-The dump viewer is a command-line tool that allows you to examine the contents of system dumps produced from the OpenJ9 VM. The dump viewer allows you to view both Java and native information from the time the dump was produced.
+The dump viewer is a command-line tool that allows you to examine the contents of system dumps produced from the OpenJ9 VM. The dump viewer allows you to view both Java&trade; and native information from the time the dump was produced.
 
 For long running tasks, the dump viewer can also be run in batch mode.
 
@@ -42,11 +42,11 @@ For long running tasks, the dump viewer can also be run in batch mode.
 | `-notemp`               | By default, when you specify a file by using the `-zip` option, the contents are extracted to a temporary directory before processing. Use the `-notemp` option to prevent this extraction step, and run all subsequent commands in memory. |
 | `-zip <zip file>`       | Specifies a compressed file containing the core file and associated XML file (produced by the [dump extractor (`jextract`)](tool_jextract.md)). |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Notes</span> **Note:** The `-core` option can be used with the `-zip` option to specify the core and XML files in the compressed file. Without these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.  
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The `-core` option can be used with the `-zip` option to specify the core and XML files in the compressed file. Without these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.  
 
-On AIX<sup>&reg;</sup> and Linux<sup>&trade;</sup> systems you must first extract the system dump with the `jextract` tool, see [Dump extractor](tool_jextract).
+On AIX&reg; and Linux&trade; systems you must first extract the system dump with the `jextract` tool, see [Dump extractor](tool_jextract).
 
-On z/OS<sup>&reg;</sup>, you can copy the dump to an HFS file and supply that as input to `jdmpview`, or you can supply a fully qualified MVS<sup>&trade;</sup> data set name. For example:
+On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to `jdmpview`, or you can supply a fully qualified MVS&trade; data set name. For example:
 
         > jdmpview -core USER1.JVM.TDUMP.SSHD6.D070430.T092211
         DTFJView version 4.28.3, using DTFJ version 1.11.28004
@@ -181,7 +181,7 @@ You can also use `charsFrom` and `charsTo` together, separated by a vertical bar
     lib/ppc64le/libjava.so
     lib/ppc64le/compressedrefs/libj9jit29.so
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** The line will not be displayed if the `charsFrom` and `charsTo` are used together, but only one of the patterns are matched in a line. Furthermore, the line will not be displayed if both patterns are matched in a line, but the `charsTo` pattern appears before, and not after, the `charsFrom` pattern.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The line will not be displayed if the `charsFrom` and `charsTo` are used together, but only one of the patterns are matched in a line. Furthermore, the line will not be displayed if both patterns are matched in a line, but the `charsTo` pattern appears before, and not after, the `charsFrom` pattern.
 
 Use the `grep` command after the vertical bar character to show which lines match a specified pattern.
 
@@ -190,7 +190,7 @@ Use the `grep` command after the vertical bar character to show which lines matc
 Where `<options>`:
 
 - `-i` : Ignore case.
-- `-r`, `-G`, or `--regex`: Use a regular expression as defined in the Java™ documentation of the java.utils.regex.Pattern class.
+- `-r`, `-G`, or `--regex`: Use a regular expression as defined in the Java documentation of the java.utils.regex.Pattern class.
 - `-b` or `--block` : Show blocks of lines where at least one of the lines matches the pattern. Blocks of lines are separated by empty lines.
 - `-A` <NUM> or +<NUM> : Show at most <NUM> lines after the matching line. For example grep -A 2 pattern or grep +2 pattern.
 - `-B` <NUM> or -<NUM> : Show at most <NUM> lines before the matching line.
@@ -495,7 +495,7 @@ When `jdmpview` is started, the following parameters can be used during the sess
         heap #1 - name: Default@19fce8
         0x8e76a8 is within heap segment: 8b0000 -- cb0000
         0x8e76a8 is start of an object of type java/lang/Thread
-        
+
 
 ### x/ (examine)
 
@@ -515,7 +515,7 @@ When `jdmpview` is started, the following parameters can be used during the sess
 
 : Displays information about a particular object, or all objects of a class. If <class_name> is supplied, all static fields with their values are shown, followed by all objects of that class with their fields and values. If an object address (in hex) is supplied, static fields for that object's class are not shown; the other fields and values of that object are printed along with its address.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** This command ignores the number of items and unit size passed to it by the `x/` command.
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This command ignores the number of items and unit size passed to it by the `x/` command.
 
 ### x/D <0xaddr>
 
@@ -527,13 +527,13 @@ When `jdmpview` is started, the following parameters can be used during the sess
 
 : Displays the hex value of the bytes at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big endian architecture.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** This command uses the number of items and unit size passed to it by the `x/` command.
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This command uses the number of items and unit size passed to it by the `x/` command.
 
 ### x/K <0xaddr>
 
 : Where the size is defined by the pointer size of the architecture, this parameter shows the value of each section of memory. The output is adjusted for the hardware architecture this dump file is from, starting at the specified address. It also displays a module with a module section and an offset from the start of that module section in memory if the pointer points to that module section. If no symbol is found, it displays a "\*" and an offset from the current address if the pointer points to an address in 4KB (4096 bytes) of the current address. Although this command can work on an arbitrary section of memory, it is probably more useful on a section of memory that refers to a stack frame. To find the memory section of a thread stack frame, use the info thread command.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** This command uses the number of items and unit size passed to it by the `x/` command.
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This command uses the number of items and unit size passed to it by the `x/` command.
 
 
 ## Example

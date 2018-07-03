@@ -33,12 +33,12 @@ Compaction takes place on global garbage collections if you specify `-Xcompactgc
 
 | Setting                | Action             | Default                                                                            |
 |------------------------|--------------------|:----------------------------------------------------------------------------------:|
-|`-Xcompactexplicitgc`   | Enable compaction  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+|`-Xcompactexplicitgc`   | Enable compaction  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 |`-Xnocompactexplicitgc` | Disable compaction |                                                                                    |
 
 ## See also
 
-- <i class="fa fa-external-link" aria-hidden="true"></i> [Global garbage collection: Compaction phase](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_compact.html)
+- [Global garbage collection: Compaction phase](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_compact.html)
 
 
 <!-- ==== END OF TOPIC ==== xcompactexplicitgc.md ==== -->

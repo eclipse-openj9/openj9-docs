@@ -24,7 +24,7 @@
 
 # Using -XX command-line options
 
-Java<sup>&trade;</sup> VM command-line options that are specified with -XX: are not checked for validity. If the VM does not recognize the option, the option is ignored. These options can therefore be used across different VM versions without ensuring a particular level of the VM.
+Java&trade; VM command-line options that are specified with -XX: are not checked for validity. If the VM does not recognize the option, the option is ignored. These options can therefore be used across different VM versions without ensuring a particular level of the VM.
 
 For options that take a `<size>` parameter, add a suffix to the size value: "k" or "K" to indicate kilobytes, "m" or "M" to indicate megabytes, or "g" or "G" to indicate gigabytes.
 

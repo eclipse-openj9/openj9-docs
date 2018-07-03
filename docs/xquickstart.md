@@ -26,7 +26,7 @@
 
 This option causes the JIT compiler to run with a subset of optimizations, which can improve the performance of short-running applications.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** For compatibility with other Java<sup>&trade;</sup> virtual machines, you can also specify the `-client` option, which results in identical behavior to `-Xquickstart`.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** For compatibility with other Java&trade; virtual machines, you can also specify the `-client` option, which results in identical behavior to `-Xquickstart`.
 
 ## Syntax
 
@@ -42,7 +42,7 @@ The JIT compiler is tuned for long-running applications typically used on a serv
 
 When the AOT compiler is active (both shared classes and AOT compilation enabled), `-Xquickstart` causes all methods to be AOT compiled. The AOT compilation improves the startup time of subsequent runs, but might reduce performance for longer running applications, especially those that contain hot methods.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** The implementation of `-Xquickstart` is subject to change in future releases. 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The implementation of `-Xquickstart` is subject to change in future releases. 
 
 
 <!-- ==== END OF TOPIC ==== xquickstart.md ==== -->

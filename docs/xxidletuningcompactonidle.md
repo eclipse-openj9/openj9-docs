@@ -24,11 +24,11 @@
 
 # -XX:\[+|-\]IdleTuningCompactOnIdle
 
-**(Linux<sup>&trade;</sup> only)**
+**(Linux&trade; only)**
 
 This option controls garbage collection processing with compaction when the status of the OpenJ9 VM is set to idle.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restrictions</span> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
 
 ## Syntax
 
@@ -37,7 +37,7 @@ This option controls garbage collection processing with compaction when the stat
 | Setting                        | Effect  | Default                                                                            |
 |--------------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+IdleTuningCompactOnIdle` | Enable  |                                                                                    |
-| `-XX:-IdleTuningCompactOnIdle` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| `-XX:-IdleTuningCompactOnIdle` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 
 If you enable this option, the OpenJ9 VM attempts to compact the object heap when the VM status is idle.

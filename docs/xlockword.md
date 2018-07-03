@@ -48,7 +48,7 @@ If performance does not improve, remove the previous command-line options or use
 
     -Xlockword:mode=default
 
-: See <i class="fa fa-external-link" aria-hidden="true"></i> [Testing VM optimizations](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.win.80.doc/diag/problem_determination/optimizations_pd.html).
+: See [Testing VM optimizations](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.win.80.doc/diag/problem_determination/optimizations_pd.html).
 
 ### `nolockword`
 

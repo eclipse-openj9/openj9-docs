@@ -26,7 +26,7 @@
 
 Use this option to control the behavior of the ahead-of-time (AOT) compiler.
 
-AOT compilation allows the compilation of Java<sup>&trade;</sup> classes into native code for subsequent executions of the same program. The AOT compiler works with the class data sharing framework.
+AOT compilation allows the compilation of Java&trade; classes into native code for subsequent executions of the same program. The AOT compiler works with the class data sharing framework.
 
 The AOT compiler generates native code dynamically while an application runs and caches any generated AOT code in the shared data cache. Subsequent VMs that execute the method can load and use the AOT code from the shared data cache without incurring the performance decrease experienced with JIT-compiled native code.
 
@@ -48,14 +48,14 @@ When the AOT compiler is active, the compiler selects the methods to be AOT comp
 
 | Setting      | Action      | Default                                                                            |
 |--------------|-------------|:----------------------------------------------------------------------------------:|
-|`-Xaot`       | Enable AOT  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+|`-Xaot`       | Enable AOT  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 |`-Xaot:<parameter>[=<value>]{,<parameter>[=<value>]}` | Enable AOT with modifications |                          |
 |`-Xnoaot`     | Disable AOT |                                                                                    |
 
 
 ## Parameters for `-Xaot`
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Although the AOT compiler is enabled by default, it is not active unless shared classes are enabled. Using this option on its own therefore has no effect. Use the [-Xshareclasses](xshareclasses.md) option to enable shared classes.
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Although the AOT compiler is enabled by default, it is not active unless shared classes are enabled. Using this option on its own therefore has no effect. Use the [-Xshareclasses](xshareclasses.md) option to enable shared classes.
 
     You can concatenate several parameters by using commas.
 

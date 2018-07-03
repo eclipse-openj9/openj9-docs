@@ -30,7 +30,7 @@ Enables and disables signal handler chaining.
 
 | Setting       | Effect  | Default                                                                                                             |
 |---------------|---------|:-------------------------------------------------------------------------------------------------------------------:|
-|`-Xsigchain`   | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> (except on z/OS<sup>&reg;</sup>) |
+|`-Xsigchain`   | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> (except on z/OS&reg;) |
 |`-Xnosigchain` | Disable |                                                                                                                     |
 
 

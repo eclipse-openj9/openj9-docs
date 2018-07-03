@@ -53,7 +53,7 @@ The following options can be used to control the production of diagnostic data:
 | `-Xdump:dynamic`             | Enable support for pluggable agents                                                                                                                         |
 | `-Xdump:nofailover`          | Discards dumps when the default or specified dump location is full.                                                                                         |
 | `-Xdump:directory=<path>`    | Specifies a directory for all dump types to be written to. This directory path is prefixed to the path of all non-absolute dump file names, including the file names for the default dump agents. (Linux only)    |
-| `-Xdump:suspendwith=<offset>`| Modifies the signal that is used to suspend VM threads while a dump file is being written. Use `<offset>` to change the default signal number. (Linux<sup>&trade;</sup> only) |
+| `-Xdump:suspendwith=<offset>`| Modifies the signal that is used to suspend VM threads while a dump file is being written. Use `<offset>` to change the default signal number. (Linux&trade; only) |
 | `-Xdump:<agent>:<suboptions>`| Provides detailed suboptions per dump agent that provide more granular control.                                                                             |
 
 Dump agents can be configured at a very granular level by specifying suboptions. The `<events>` suboption is the prime trigger mechanism. The full set of suboptions are listed in the following table:
@@ -72,7 +72,7 @@ Dump agents can be configured at a very granular level by specifying suboptions.
 | `-Xdump:<agent>:range=<ranges>`                       | Starts and stops a dump agent on a particular occurrence of a VM.          |
 | `-Xdump:<agent>:request=<requests>`                   | Asks the VM to prepare the state before starting the dump agent.           |
 
-You can have multiple `-Xdump` options on the command line. You can also have multiple dump types triggered by multiple events. For example, the following command turns off the creation of heap dump files, and creates a dump agent that produces a heap dump file and a Java<sup>&trade;</sup> dump file when either a **vmstart** or **vmstop** event occurs:
+You can have multiple `-Xdump` options on the command line. You can also have multiple dump types triggered by multiple events. For example, the following command turns off the creation of heap dump files, and creates a dump agent that produces a heap dump file and a Java&trade; dump file when either a **vmstart** or **vmstop** event occurs:
 
 ```
 java -Xdump:heap:none -Xdump:heap+java:events=vmstart+vmstop -mp . -m <class> [args...]
@@ -88,13 +88,13 @@ An exception is the "tool" agent, which can be used to trigger external processe
 | Dump agent                | Description                                                                                            |
 |---------------------------|--------------------------------------------------------------------------------------------------------|
 | stack                     | Stack dumps are very basic dumps in which the status and Java stack of the thread is written to stderr.|
-| console                   | Console dumps are very basic dumps, in which the status of every Java™ thread is written to stderr.    |
+| console                   | Console dumps are very basic dumps, in which the status of every Java thread is written to stderr.     |
 | system                    | System dumps capture the raw process image or address space of an application.                         |
 | tool                      | The tool option allows external processes to be started when an event occurs.                          |
 | java                      | Java dumps are an internally generated and formatted analysis of the VM, giving information that includes the Java threads present, the classes loaded, and heap statistics.|
 | heap                      | Heap dumps capture all object instances in the heap, including each object address, type or class name, size, and references to other objects.|
 | snap                      | Take a snap of the trace buffers, which contain tracepoint data.                                       |
-| ceedump                   | LE CEEDUMP dumps are z/OS<sup>&reg;</sup> formatted summary system dumps that show stack traces for each thread that is in the VM process, together with register information and a short dump of storage for each register. |
+| ceedump                   | LE CEEDUMP dumps are z/OS&reg; formatted summary system dumps that show stack traces for each thread that is in the VM process, together with register information and a short dump of storage for each register. |
 | jit                       | JIT compiler dumps contain diagnostic data in a binary format.                                         |
 
 ### Default dump agents
@@ -273,7 +273,7 @@ The following table shows the events that are available as dump agent triggers:
 | Event           |  Triggered when....                                                         | Filters on ....                                                |
 | ----------------|-----------------------------------------------------------------------------|----------------------------------------------------------------|
 | **gpf**         | A General Protection Fault (GPF) occurs.                                    | Not applicable                                                 |
-| **user**        | The VM receives the SIGQUIT (Linux, AIX<sup>&reg;</sup>, z/OS) or SIGBREAK (Windows<sup>&trade;</sup>) signal from the operating system.|  Not applicable                      |
+| **user**        | The VM receives the SIGQUIT (Linux, AIX&reg;, z/OS) or SIGBREAK (Windows&trade;) signal from the operating system.|  Not applicable                      |
 | **abort**       | The VM receives the SIGABRT signal from the operating system.               | Not applicable                                                 |
 | **vmstart**     | The virtual machine is started.                                             | Not applicable                                                 |
 | **vmstop**      | The virtual machine stops.                                                  | Exit code; for example, `filter=#129..#192#-42#255`            |
@@ -293,7 +293,7 @@ The following table shows the events that are available as dump agent triggers:
 | **corruptcache**| The VM finds that the shared class cache is corrupt.                        | Not applicable                                                 |
 | **excessivegc** | An excessive amount of time is being spent in the garbage collector.        | Not applicable                                                 |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** The **gpf**, **traceassert**, and **abort** events cannot trigger a heap dump, prepare the heap (request=prepwalk), or compact the heap (request=compact).
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The **gpf**, **traceassert**, and **abort** events cannot trigger a heap dump, prepare the heap (request=prepwalk), or compact the heap (request=compact).
 
 ## Parameters
 
@@ -360,7 +360,7 @@ If you remove all dump agents by using `-Xdump:none` with no further `-Xdump` op
 - If a user signal (kill -QUIT) is sent to the VM, a brief listing of the Java threads including their stacks, status, and monitor information is written to stderr.
 - If a crash occurs, information about the location of the crash, VM options, and native and Java stack traces are written to stderr. A system dump file is also written to the user's home directory.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Removing dump agents and specifying a new dump configuration can require a long set of command-line options. To reuse command-line options, save the new dump configuration in a file and use the `-Xoptionsfile` option. For more information, see [-Xoptionsfile](xoptionsfile.md).
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Removing dump agents and specifying a new dump configuration can require a long set of command-line options. To reuse command-line options, save the new dump configuration in a file and use the `-Xoptionsfile` option. For more information, see [-Xoptionsfile](xoptionsfile.md).
 
 ### `defaults`
 
@@ -380,7 +380,7 @@ Or, for example, on z/OS, you can add the jobname to the Java dump file name usi
 
 This option does not add a Java dump agent; it updates the default settings for Java dump agents. Further Java dump agents will then create dump files using this specification for filenames, unless overridden.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Changing the defaults for a dump type will also affect the default agents for that dump type added by the VM during initialization. For example if you change the default file name for Java dump files, that will change the file name used by the default Java dump agents. However, changing the default range option will not change the range used by the default Java dump agents, because those agents override the range option with specific values.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Changing the defaults for a dump type will also affect the default agents for that dump type added by the VM during initialization. For example if you change the default file name for Java dump files, that will change the file name used by the default Java dump agents. However, changing the default range option will not change the range used by the default Java dump agents, because those agents override the range option with specific values.
 
 ### `events=<event>`
 
@@ -510,7 +510,7 @@ You can filter the **catch** exception events by Java method name (optional port
 -Xdump:java:events=catch,filter=ExceptionClassName[#com/ibm/CatchingClassName.catchingMethodName]
 ```
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** The filters apply to the stacktrace and fire every time the same exception is rethrown, which might result in multiple Java core files.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The filters apply to the stacktrace and fire every time the same exception is rethrown, which might result in multiple Java core files.
 
 #### vmstop event
 
@@ -577,9 +577,9 @@ The heap dump agent uses this suboption to specify the type of file to produce. 
 You can specify a PHD heap dump file (PHD), a classic text heap dump file (CLASSIC), or both. The default is a PHD file. For example:
 
 ```
-–Xdump:heap:opts=PHD  
-–Xdump:heap:opts=CLASSIC
-–Xdump:heap:opts=PHD+CLASSIC
+-Xdump:heap:opts=PHD  
+-Xdump:heap:opts=CLASSIC
+-Xdump:heap:opts=PHD+CLASSIC
 ```
 
 #### z/OS system dumps
@@ -587,9 +587,9 @@ You can specify a PHD heap dump file (PHD), a classic text heap dump file (CLASS
 You can specify a system transaction dump (IEATDUMP), an LE dump (CEEDUMP), or both. The default is an IEADUMP file. For example:
 
 ```
-–Xdump:system:opts=IEATDUMP
-–Xdump:system:opts=CEEDUMP
-–Xdump:system:opts=IEATDUMP+CEEDUMP
+-Xdump:system:opts=IEATDUMP
+-Xdump:system:opts=CEEDUMP
+-Xdump:system:opts=IEATDUMP+CEEDUMP
 ```
 
 The ceedump agent is the preferred way to specify LE dumps, for example:
@@ -633,7 +633,7 @@ One event can generate multiple dump files. The agents that produce each dump fi
 Examination of the output from `-Xdump:what`shows that a **gpf** event produces a snap trace, a Java dump file, and a system dump file. In this example, the system dump runs first, with priority 999. The snap dump runs second, with priority 500. The Java dump runs last, with priority 10:
 
 ```
-–Xdump:heap:events=vmstop,priority=123
+-Xdump:heap:events=vmstop,priority=123
 ```
 
 The maximum value allowed for priority is 999. Higher priority dump agents are started first.
@@ -666,7 +666,7 @@ For example:
 -Xdump:java:events=fullgc,range=100..200
 ```
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** range=1..0 against an event means "on every occurrence".
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** range=1..0 against an event means "on every occurrence".
 
 The VM default dump agents have the range suboption set to 1..0 for all events except systhrow. Most systhrow events with `filter=java/lang/OutOfMemoryError` have the range suboption set to 1..4, which limits the number of dump files produced on `OutOfMemory` conditions to a maximum of 4. For more information, see [Default dump agents](#default-dump-agents).
 
@@ -684,7 +684,7 @@ The available suboptions are listed in the following table:
 | compact          | Run garbage collection. This option removes all unreachable objects from the heap before the dump file is generated.      |
 | prepwalk         | Prepare the heap for walking. You must also specify exclusive when you use this option.                                   |
 | serial           | Suspend other dumps until this dump is finished.                                                                          |
-| preempt          | Applies to the Java™ dump agent and controls whether native threads in the process are forcibly pre-empted in order to collect stack traces. If this option is not specified, only Java stack traces are collected in the Java dump.|
+| preempt          | Applies to the Java dump agent and controls whether native threads in the process are forcibly pre-empted in order to collect stack traces. If this option is not specified, only Java stack traces are collected in the Java dump.|
 
 You can specify more than one request option by using **+**. For example:
 
@@ -729,7 +729,7 @@ Dump output is written to different files, depending on the type of dump and the
 
 The tokens used in this table, for example `%Y`, are described in [Dump agent tokens](#dump-agent-tokens).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** On z/OS, the system dump file name can be set with the `JAVA_DUMP_TDUMP_PATTERN` environment variable. The CEEDUMP, which is not produced by default, is stored in the directory specified by
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, the system dump file name can be set with the `JAVA_DUMP_TDUMP_PATTERN` environment variable. The CEEDUMP, which is not produced by default, is stored in the directory specified by
 `_CEE_DMPTARG` or the current directory if `_CEE_DMPTARG` is not specified.
 
 ### System dumps on Linux
@@ -740,7 +740,7 @@ The system dump file for the child process contains an exact copy of the memory 
 
 You can use the Linux `kernel.core_pattern` setting to specify the name and path for system dumps. The VM dump agents override the Linux system dump name and path by renaming the dump as specified in the `-Xdump` options. If the `kernel.core_pattern` setting specifies a different file system to the `-Xdump` options, the VM dump agents might be unable to change the file path. In this case the VM renames the dump file, but leaves the file path unchanged. You can find the dump file name and location in the JVMDUMP010I message.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** If you use the `%t` specifier in the `kernel.core_pattern` setting, the VM does not rename the dump. The VM cannot determine the exact time that Linux generated the core file, and therefore cannot be certain which Linux dump file is the correct one to rename.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you use the `%t` specifier in the `kernel.core_pattern` setting, the VM does not rename the dump. The VM cannot determine the exact time that Linux generated the core file, and therefore cannot be certain which Linux dump file is the correct one to rename.
 
 ## See also
 

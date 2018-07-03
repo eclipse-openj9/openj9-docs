@@ -34,11 +34,11 @@ The `Java.util.zip.ZipFile` class allows you to create `InputStreams` on files h
 | Setting      | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
 | true         | Enable  |                                                                                    |
-| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Default</span> |
+| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 
-Under some conditions, using `ZipFile.close()` to close all `InputStreams` that have been opened on the compressed archive might result in a 56-byte-per-`InputStream` native memory leak. Setting the `-Dcom.ibm.zipfile.closeinputstreams=true` forces the OpenJ9 VM to track and close `InputStreams` without the memory impact caused by retaining native-backed objects. Native-backed objects are objects that are stored in native memory, rather than the Java<sup>&trade;</sup> heap. By default, the value of this system property is not enabled.
+Under some conditions, using `ZipFile.close()` to close all `InputStreams` that have been opened on the compressed archive might result in a 56-byte-per-`InputStream` native memory leak. Setting the `-Dcom.ibm.zipfile.closeinputstreams=true` forces the OpenJ9 VM to track and close `InputStreams` without the memory impact caused by retaining native-backed objects. Native-backed objects are objects that are stored in native memory, rather than the Java&trade; heap. By default, the value of this system property is not enabled.
 
 
 

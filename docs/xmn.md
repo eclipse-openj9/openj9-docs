@@ -41,7 +41,7 @@ You can use the `-verbose:sizes` option to find out the value that is being used
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span class="sr-only">Restrictions</span> **Restriction:** If you try to set `-Xmn` with either `-Xmns` or `-Xmnx`, the VM does not start, returning an error. 
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** If you try to set `-Xmn` with either `-Xmns` or `-Xmnx`, the VM does not start, returning an error. 
 
 
 

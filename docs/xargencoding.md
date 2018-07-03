@@ -24,7 +24,7 @@
 
 # -Xargencoding 
 
-The `java` and `javaw` launchers accept arguments and class names containing any character that is in the character set of the current locale. You can also specify any Unicode character in the class name and arguments by using Java<sup>&trade;</sup> escape sequences.
+The `java` and `javaw` launchers accept arguments and class names containing any character that is in the character set of the current locale. You can also specify any Unicode character in the class name and arguments by using Java&trade; escape sequences.
 
 To do this, use the `-Xargencoding` command-line option.
 
