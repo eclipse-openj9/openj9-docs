@@ -24,7 +24,7 @@
 
 # Directory conventions
 
-The following tables provide a quick reference to the OpenJ9 VM directory location on different versions of Java and different platform architectures. Some
+The following tables provide a quick reference to the OpenJ9 VM directory location on different Java&trade; versions and different platform architectures. Some
 pages refer to the VM directory location as `<vm_dir>`.
 
 
@@ -38,7 +38,7 @@ pages refer to the VM directory location as `<vm_dir>`.
 Where:
 
 - `<install_dir>` is your JDK installation directory.
-- <arch> depends on the architecture your Linux distribution is running on. See the following table for possible values:
+- `<arch>` depends on the architecture your Linux distribution is running on. See the following table for possible values:
 
 | Architecture                                       | Value of `<arch>`     |
 |----------------------------------------------------|-----------------------|

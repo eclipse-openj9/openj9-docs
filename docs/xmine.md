@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xmine / -Xmaxe 
+# -Xmine / -Xmaxe
 
 
 Set the minimum and maximum amounts by which the garbage collector expands the heap.
@@ -38,7 +38,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 ## Explanation
 
-Typically, the garbage collector expands the heap by the amount required to restore the free space to 30% (or the amount specified by [`-Xminf`](xminf.md)). 
+Typically, the garbage collector expands the heap by the amount required to restore the free space to 30% (or the amount specified by [`-Xminf`](xminf.md)).
 
 If heap expansion is required:
 
@@ -48,10 +48,8 @@ If heap expansion is required:
 ## See also
 
 - [Heap shrinkage](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapshrinkage.html)
-
 - [Heap expansion](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapexpansion.html)
 
 
 <!-- ==== END OF TOPIC ==== xmine.md ==== -->
 <!-- ==== END OF TOPIC ==== xmaxe.md ==== -->
-

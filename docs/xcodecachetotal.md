@@ -31,7 +31,7 @@ Use this option to set the maximum size limit for the JIT code cache. This optio
 
         -Xcodecachetotal<size>
 
-: See [Using -X command-line options](x_jvm_commands) for more information about specifying the `<size>` parameter.
+See [Using -X command-line options](x_jvm_commands) for more information about specifying the `<size>` parameter.
 
 ## Explanation
 
@@ -46,7 +46,6 @@ The maximum size limits, for both the JIT code and data caches, that are in use 
 ## See also
 
 - [-Xjit](xjit.md)
-
 - [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html)
 
 <!-- ==== END OF TOPIC ==== xcodecachetotal.md ==== -->

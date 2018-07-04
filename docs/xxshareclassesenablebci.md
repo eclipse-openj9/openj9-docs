@@ -24,7 +24,7 @@
 
 # -XX:ShareClassesDisableBCI / <br> -XX:ShareClassesEnableBCI
 
-The option `-Xshareclasses:enableBCI` improves startup performance without using a modification context, when using JVMTI class modification. This suboption allows classes loaded from the shared cache to be modified using a JVMTI `ClassFileLoadHook`, or a `java.lang.instrument` agent, and prevents modified classes being stored in the shared classes cache. You can turn off this option by specifying `-XX:ShareClassesDisableBCI` when you start your Java application.
+The option `-Xshareclasses:enableBCI` improves startup performance without using a modification context, when using JVMTI class modification. This suboption allows classes loaded from the shared cache to be modified using a JVMTI `ClassFileLoadHook`, or a `java.lang.instrument` agent, and prevents modified classes being stored in the shared classes cache. You can turn off this option by specifying `-XX:ShareClassesDisableBCI` when you start your Java&trade; application.
 
 ## Syntax
 

@@ -25,7 +25,7 @@
 # `-Xminf` / `-Xmaxf`
 
 
-Specifies the minimum and maximum proportion of the heap that must remain free after a global garbage collection cycle. 
+Specifies the minimum and maximum proportion of the heap that must remain free after a global garbage collection cycle.
 
 If the free space is above or below these limits, the OpenJ9 VM attempts to adjust the heap size so that: `-Xminf` &le; free space &le; `-Xmaxf`.
 
@@ -39,7 +39,6 @@ If the free space is above or below these limits, the OpenJ9 VM attempts to adju
 ## See also
 
 - [Heap shrinkage](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapshrinkage.html)
-
 - [Heap expansion](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapexpansion.html)
 
 

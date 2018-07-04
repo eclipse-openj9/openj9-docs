@@ -69,7 +69,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If both `strict` and `warn` are specified, `strict` takes precedence.
 
-### `pageable`|`nonpageable
+### `pageable`|`nonpageable`
 
         -Xlp:objectheap:pageable
         -Xlp:objectheap:nonpageable

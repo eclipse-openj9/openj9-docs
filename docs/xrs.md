@@ -40,9 +40,7 @@ Disabling signal handling in the OpenJ9 VM reduces performance by approximately 
 : If you specify the `sync` parameter:
 
     - **On AIX&reg; systems:** Disables signal handling in the VM for `SIGSEGV`, `SIGFPE`, `SIGBUS`, `SIGILL`, `SIGTRAP`, and `SIGABRT` signals. However, the VM still handles the `SIGQUIT` and `SIGTERM` signals, among others.
-
     - **On Windows&trade; systems:** Hardware exceptions are not handled by the OpenJ9 VM when this option is specified. However, the Windows CTRL\_BREAK\_EVENT signal, triggered by the Ctrl-Break key combination, is still handled by the VM.
-
     - **Linux&trade; systems** always use the `SIGUSR1` signal.
 
 <!-- ==== END OF TOPIC ==== xrs.md ==== -->

@@ -84,7 +84,6 @@ Here is an example of an options file:
 ## See also
 
 - [Specifying command-line options](cmdline_specifying.md)
-
 - [Javadump: TITLE, GPINFO, and ENVINFO sections](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump_tags_info.html)
 
 

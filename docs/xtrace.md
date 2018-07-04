@@ -45,28 +45,28 @@ The following tables lists the help options for `-Xtrace`, which provide usage a
 
 The following options can be used to configure trace or control tracepoint activation:
 
-| Command                                              | Result                                                                                             |
-|------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| `Xtrace:properties[=<filename>]`                     | Configures trace options based on a file                                                           |
-| `Xtrace:buffers=<size>[dynamic\|nodynamic]`          | Modifies the size of buffers that are used to store trace data                                     |
-| `Xtrace:minimal=<tracepoint_specification>`          | Records only the time stamp and tracepoint identifier. (See **Note**)                              |
-| `Xtrace:maximal=<tracepoint_specification>`          | Records all associated data. (See **Note**)                                                        |
-| `Xtrace:count=<tracepoint_specification>`            | Counts the tracepoints that are used in a trace configuration. (See **Note**)                      |
-| `Xtrace:print=<tracepoint_specification>`            | Prints the specified tracepoints to stderr in real time. (See **Note**)                            |
-| `Xtrace:iprint=<tracepoint_specification>`           | Prints the specified tracepoints to stderr in real time with indentation. (See **Note**)           |
-| `Xtrace:exception=<tracepoint_specification>`        | Enables exception tracing.(See **Note**)                                                           |
-| `Xtrace:exception.output=<filename>[,<size>]`        | Redirects exceptions trace data to a file.                                                         |
-| `Xtrace:external<tracepoint_specification>`          | Routes trace data to trace listeners, which are registered by using the JVMTI APIs. (See **Note**) |
-| `Xtrace:none[=<tracepoint_specification>]`           | Prevents the trace engine from loading if it is the only trace option specified. (See **Note**)    |
-| `Xtrace:methods=<method_specification>`              | Traces methods                                                                                     |
-| `Xtrace:output=<filename>[,<size>[,<generations>]]`  | Sends trace data to a file, optionally of a specific size and number of generations.               |
-| `Xtrace:resume`                                      | Resumes tracing globally.                                                                          |
-| `Xtrace:resumecount=<count>`                         | Enables tracing at a thread level after a specified count.                                         |
-| `Xtrace:sleeptime=<time>`                            | Pauses trace operations for a specified length of time.                                            |
-| `Xtrace:stackdepth=<n>`                              | Limits the maximum number of stack frames reported by the jstacktrace trace trigger action.        |
-| `Xtrace:suspend`                                     | Suspends tracing globally.                                                                         |
-| `Xtrace:suspendcount=<count>`                        | Suspends tracing at a thread level after a specified count.                                        |
-| `Xtrace:trigger=<clause>`                            | Determines when various triggered trace actions occur, including turning trace on or off.          |
+| Command                                               | Result                                                                                             |
+|-------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| `-Xtrace:properties[=<filename>]`                     | Configures trace options based on a file                                                           |
+| `-Xtrace:buffers=<size>[dynamic\|nodynamic]`          | Modifies the size of buffers that are used to store trace data                                     |
+| `-Xtrace:minimal=<tracepoint_specification>`          | Records only the time stamp and tracepoint identifier. (See **Note**)                              |
+| `-Xtrace:maximal=<tracepoint_specification>`          | Records all associated data. (See **Note**)                                                        |
+| `-Xtrace:count=<tracepoint_specification>`            | Counts the tracepoints that are used in a trace configuration. (See **Note**)                      |
+| `-Xtrace:print=<tracepoint_specification>`            | Prints the specified tracepoints to stderr in real time. (See **Note**)                            |
+| `-Xtrace:iprint=<tracepoint_specification>`           | Prints the specified tracepoints to stderr in real time with indentation. (See **Note**)           |
+| `-Xtrace:exception=<tracepoint_specification>`        | Enables exception tracing.(See **Note**)                                                           |
+| `-Xtrace:exception.output=<filename>[,<size>]`        | Redirects exceptions trace data to a file.                                                         |
+| `-Xtrace:external<tracepoint_specification>`          | Routes trace data to trace listeners, which are registered by using the JVMTI APIs. (See **Note**) |
+| `-Xtrace:none[=<tracepoint_specification>]`           | Prevents the trace engine from loading if it is the only trace option specified. (See **Note**)    |
+| `-Xtrace:methods=<method_specification>`              | Traces methods                                                                                     |
+| `-Xtrace:output=<filename>[,<size>[,<generations>]]`  | Sends trace data to a file, optionally of a specific size and number of generations.               |
+| `-Xtrace:resume`                                      | Resumes tracing globally.                                                                          |
+| `-Xtrace:resumecount=<count>`                         | Enables tracing at a thread level after a specified count.                                         |
+| `-Xtrace:sleeptime=<time>`                            | Pauses trace operations for a specified length of time.                                            |
+| `-Xtrace:stackdepth=<n>`                              | Limits the maximum number of stack frames reported by the jstacktrace trace trigger action.        |
+| `-Xtrace:suspend`                                     | Suspends tracing globally.                                                                         |
+| `-Xtrace:suspendcount=<count>`                        | Suspends tracing at a thread level after a specified count.                                        |
+| `-Xtrace:trigger=<clause>`                            | Determines when various triggered trace actions occur, including turning trace on or off.          |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** These options control which individual tracepoints are activated at run time and the implicit destination of the trace data. All these properties are independent of each other and can be mixed and matched in any way that you choose.
 
@@ -145,29 +145,30 @@ Default assertion tracing
 
     When an assertion trace point is reached, a message like the following output is produced on the standard error stream:
 
-```
-16:43:48.671 0x10a4800    j9vm.209    *   ** ASSERTION FAILED ** at jniinv.c:251:
-((javaVM == ((void *)0)))
-```
+    ```
+    16:43:48.671 0x10a4800    j9vm.209    *   ** ASSERTION FAILED ** at jniinv.c:251:
+    ((javaVM == ((void *)0)))
+    ```
 
-This error stream is followed with information about the diagnostic logs produced:
+    This error stream is followed with information about the diagnostic logs produced:
 
-```
-JVMDUMP007I JVM Requesting System Dump using 'core.20060426.124348.976.dmp'
-JVMDUMP010I System Dump written to core.20060426.124348.976.dmp
-JVMDUMP007I JVM Requesting Snap Dump using 'Snap0001.20060426.124648.976.trc'
-JVMDUMP010I Snap Dump written to Snap0001.20060426.124648.976.trc
-```
+    ```
+    JVMDUMP007I JVM Requesting System Dump using 'core.20060426.124348.976.dmp'
+    JVMDUMP010I System Dump written to core.20060426.124348.976.dmp
+    JVMDUMP007I JVM Requesting Snap Dump using 'Snap0001.20060426.124648.976.trc'
+    JVMDUMP010I Snap Dump written to Snap0001.20060426.124648.976.trc
+    ```
 
-Assertions are special trace points. They can be enabled or disabled by using the standard trace command-line options.
+    Assertions are special trace points. They can be enabled or disabled by using the standard trace command-line options.
 
-Assertion failures might occur early during VM startup, before trace is enabled. In this case, the assert message has a different format, and is not prefixed by a timestamp or thread ID. For example:
-```
-** ASSERTION FAILED ** j9vmutil.15 at thrinfo.c:371 Assert_VMUtil_true((
-publicFlags & 0x200))
-```
+    Assertion failures might occur early during VM startup, before trace is enabled. In this case, the assert message has a different format, and is not prefixed by a timestamp or thread ID. For example:
 
-Assertion failures that occur early during startup cannot be disabled. These failures do not produce diagnostic dumps, and do not cause the VM to stop.
+    ```
+    ** ASSERTION FAILED ** j9vmutil.15 at thrinfo.c:371 Assert_VMUtil_true((
+      publicFlags & 0x200))
+    ```
+
+    Assertion failures that occur early during startup cannot be disabled. These failures do not produce diagnostic dumps, and do not cause the VM to stop.
 
 
 ## Parameters
@@ -343,7 +344,7 @@ To trace all components at level 6, but do not trace `j9vrb` at all, and do not 
 ##### `minimal`
 
 ```
-Xtrace:minimal=<tracepoint_specification>`          
+-Xtrace:minimal=<tracepoint_specification>          
 ```
 
 For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
@@ -355,7 +356,7 @@ When specified, trace data is placed into internal trace buffers that can then b
 ##### `maximal`
 
 ```
-Xtrace:maximal=<tracepoint_specification>`         
+-Xtrace:maximal=<tracepoint_specification>         
 ```
 
 For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
@@ -367,7 +368,7 @@ When specified, trace data is placed into internal trace buffers that can then b
 ##### `count`
 
 ```
-Xtrace:count=<tracepoint_specification>             
+-Xtrace:count=<tracepoint_specification>             
 ```
 
 For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
@@ -382,7 +383,7 @@ For example, to count the tracepoints that are used in the default trace configu
 ##### `print`
 
 ```
-Xtrace:print=<tracepoint_specification>`            
+-Xtrace:print=<tracepoint_specification>            
 ```
 
 For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
@@ -392,7 +393,7 @@ The print option causes the specified tracepoints to be routed to stderr in real
 ##### `iprint`
 
 ```
-Xtrace:iprint=<tracepoint_specification>`          
+-Xtrace:iprint=<tracepoint_specification>          
 ```
 
 For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
@@ -402,7 +403,7 @@ The `iprint` option is the same as the `print` option, but uses indenting to for
 ##### `exception`
 
 ```
-Xtrace:exception=<tracepoint_specification>
+-Xtrace:exception=<tracepoint_specification>
 ```
 
 For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
@@ -413,13 +414,14 @@ The `exception` option allows low-volume tracing in buffers and files that are d
 This form of tracing is channeled through a single set of buffers, as opposed to the buffer-per-thread approach for normal trace. Buffer contention might occur if high volumes of trace data are collected. A difference exists in the `<tracepoint_specification>` defaults for exception tracing;  see [Tracepoint specification](#tracepoint-specification).
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+
 - The exception trace buffers are intended for low-volume tracing. By default, the exception trace buffers log garbage collection (GC) event tracepoints, see Default tracing. You can send additional tracepoints to the exception buffers or turn off the GC tracepoints. Changing the exception trace buffers alters the contents of the GC History section in any Javadumps.
 - When exception trace is entered for an active tracepoint, the current thread ID is checked against the previous caller's thread ID. If it is a different thread, or this is the first call to exception trace, a context tracepoint is put into the trace buffer first. This context tracepoint consists only of the current thread ID, which is necessary because of the single set of buffers for exception trace. (The formatter identifies all trace entries as coming from the Exception trace pseudo thread when it formats exception trace files.)
 
 ##### `external`
 
 ```
-Xtrace:external<tracepoint_specification>
+-Xtrace:external<tracepoint_specification>
 ```
 
 For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
@@ -429,7 +431,7 @@ The `external` option routes trace data to trace listeners, which are registered
 ##### `none`
 
 ```
-Xtrace:none[=<tracepoint_specification>]
+-Xtrace:none[=<tracepoint_specification>]
 ```
 
 For further syntax on `<tracepoint_specification>`, see [Tracepoint specification](#tracepoint-specification).
@@ -459,6 +461,7 @@ output=c:\traces\classloader.trc
 print=tpnid(j9vm.23-25)
 ```
 The following restrictions apply to the file:
+
 - The file must be a flat ASCII file.
 - Nesting is not supported; that is, the file cannot contain a properties option.
 - You cannot leave properties that have the form `<name>=<value>` to default if they are specified in the property file; that is, you must specify a value, for example `maximal=all`.
@@ -505,7 +508,7 @@ To limit each thread to 2 trace buffers, each of 128 KB:
 Using method trace provides a complete and potentially large diagnosis of code paths inside your application and the system classes. Use wild cards and filtering to control method trace so that you can focus on the sections of code that interest you. To specify one or more method specifications, use the following syntax:
 
 ```
-Xtrace:methods=<method_specification>[,<method_specification>]
+-Xtrace:methods=<method_specification>[,<method_specification>]
 ```
 
 The syntax for `<method_specification>` can be further broken down to the following suboptions:
@@ -636,7 +639,7 @@ The output lines comprise of:
 Sends trace data to a file, optionally of a specific size and number of generations.
 
 ```
-Xtrace:output=<filename>[,<size>[,<generations>]]`   
+-Xtrace:output=<filename>[,<size>[,<generations>]]`   
 ```
 
 Where:
@@ -684,7 +687,7 @@ Trace output goes to a file whose name contains the time in *hhmmss* format (for
 Use exception output to redirect exceptions trace data to a file.
 
 ```
-Xtrace:exception.output=<filename>[,<size>]
+-Xtrace:exception.output=<filename>[,<size>]
 ```
 
 Where:
@@ -722,7 +725,7 @@ Exception trace output goes to a file whose filename contains the time in *hhmms
 The resume option resumes tracing globally.
 
 ```
-Xtrace:resume
+-Xtrace:resume
 ```
 
 The `suspend` and `resume` options are not recursive. That is, two suspends that are followed by a single resume cause trace to be resumed.
@@ -731,7 +734,7 @@ The `suspend` and `resume` options are not recursive. That is, two suspends that
 This trace option determines whether tracing is enabled for each thread.
 
 ```
-Xtrace:resumecount=<count>
+-Xtrace:resumecount=<count>
 ```
 If `<count>` is greater than zero, each thread initially has its tracing disabled and must receive `<count>` `resumethis` actions before it starts tracing. This option is used with the [trigger](#trigger) option.
 
@@ -746,7 +749,7 @@ The following example starts with all tracing turned off. Each thread starts tra
 ### `sleeptime`
 You can specify how long the sleep lasts when using the `sleep` trigger action.
 ```
-Xtrace:sleeptime=nnn|aaams|bbbs
+-Xtrace:sleeptime=nnn|aaams|bbbs
 ```
 
 Where:
@@ -760,23 +763,21 @@ The default length of time is 30 seconds. If no units are specified, the default
 ### `stackdepth`
 Use this option to limit the maximum number of stack frames reported by the `jstacktrace` trace trigger action.
 ```
-Xtrace:stackdepth=<n>
+-Xtrace:stackdepth=<n>
 ```
 
-Where:
-
-- *n* records *n* stack frames. All stack frames are recorded by default.
+Where *n* records *n* stack frames. All stack frames are recorded by default.
 
 ### `suspend`
 Suspends tracing globally for all threads and all forms of tracing but leaves tracepoints activated.
 ```
-Xtrace:suspend
+-Xtrace:suspend
 ```
 
 ### `suspendcount`
 This trace option determines whether tracing is enabled for each thread.
 ```
-Xtrace:suspendcount=<count>
+-Xtrace:suspendcount=<count>
 ```
 
 If `<count>` is greater than zero, each thread initially has its tracing enabled and must receive `<count>` `suspendthis` actions before it stops tracing.
@@ -796,7 +797,7 @@ The following example starts with tracing turned on. Each thread stops tracing w
 The `trigger` option determines when various triggered trace actions occur. Supported actions include turning tracing on and off for all threads, turning tracing on or off for the current thread, or producing various dumps.
 
 ```
-Xtrace:trigger=<clause>[,<clause>]
+-Xtrace:trigger=<clause>[,<clause>]
 ```
 This trace option does not control what is traced. It controls only whether the information that has been selected by the other trace options is produced as normal or is blocked.
 
@@ -829,22 +830,22 @@ On finding any active tracepoint that is defined as being in trace group `<group
 
 Wherever an action must be specified, you must select from these choices:
 
-| `<action>`                    | Effect                                                                                                                                            |
+| **`<action>`**                    | Effect                                                                                                                                            |
 |-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| **abort**                     | Halt the VM.                                                                                                                                     |
-| **ceedump**                   | This action is applicable to z/OS&reg; only. For more information, see z/OS LE CEEDUMPs.                                                              |
-| **coredump**                  | See **sysdump**.                                                                                                                                  |
-| **heapdump**                  | Produce a Heapdump. See [Using Heapdump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html).  |
-| **javadump**                  | Produce a Javadump. See [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html).  |
-| **jstacktrace**               | Examine the Java stack of the current thread and generate auxiliary tracepoints for each stack frame. The auxiliary tracepoints are written to the same destination as the tracepoint or method trace that triggered the action. You can control the number of stack frames examined with the stackdepth=n option. See the [stackdepth](#stackdepth) option.   |
-| **resume**                    | Resume all tracing (except for threads that are suspended by the action of the resumecount property and `Trace.suspendThis()` calls).             |
-| **resumethis**                | Decrement the suspend count for this thread. If the suspend count is zero or less, resume tracing for this thread.                                |
-| **sigsev**                    | Cause a segmentation violation. (Intended for use in debugging.)                                                                                  |
-| **sleep**                     | Delay the current thread for a length of time controlled by the sleeptime option. The default is 30 seconds. See sleeptime option.                |
-| **snap**                      | Snap all active trace buffers to a file in the current working directory. The file name has the format: `Snapnnnn.yyyymmdd.hhmmssth.ppppp.trc`, where *nnnn* is the sequence number of the snap file since VM startup, *yyyymmdd* is the date, *hhmmssth* is the time, and *ppppp* is the process ID in decimal with leading zeros removed.                     |
-| **suspend**                   | Suspend all tracing (except for special trace points).                                                                                            |
-| **suspendthis**               | Increment the suspend count for this thread. If the suspend-count is greater than zero, prevent all tracing for this thread.                      |
-| **sysdump** (or **coredump**) | Produce a system dump. See [Using the dump viewer](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/systemdump_viewer.html).|
+| `abort`                     | Halt the VM.                                                                                                                                     |
+| `ceedump`                   | This action is applicable to z/OS&reg; only. For more information, see z/OS LE CEEDUMPs.                                                              |
+| `coredump`                  | See `sysdump`.                                                                                                                                  |
+| `heapdump`                  | Produce a Heapdump. See [Using Heapdump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html).  |
+| `javadump`                  | Produce a Javadump. See [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html).  |
+| `jstacktrace`               | Examine the Java stack of the current thread and generate auxiliary tracepoints for each stack frame. The auxiliary tracepoints are written to the same destination as the tracepoint or method trace that triggered the action. You can control the number of stack frames examined with the stackdepth=n option. See the [stackdepth](#stackdepth) option.   |
+| `resume`                    | Resume all tracing (except for threads that are suspended by the action of the resumecount property and `Trace.suspendThis()` calls).             |
+| `resumethis`                | Decrement the suspend count for this thread. If the suspend count is zero or less, resume tracing for this thread.                                |
+| `sigsev`                    | Cause a segmentation violation. (Intended for use in debugging.)                                                                                  |
+| `sleep`                     | Delay the current thread for a length of time controlled by the sleeptime option. The default is 30 seconds. See sleeptime option.                |
+| `snap`                      | Snap all active trace buffers to a file in the current working directory. The file name has the format: `Snapnnnn.yyyymmdd.hhmmssth.ppppp.trc`, where *nnnn* is the sequence number of the snap file since VM startup, *yyyymmdd* is the date, *hhmmssth* is the time, and *ppppp* is the process ID in decimal with leading zeros removed.                     |
+| `suspend`                   | Suspend all tracing (except for special trace points).                                                                                            |
+| `suspendthis`               | Increment the suspend count for this thread. If the suspend-count is greater than zero, prevent all tracing for this thread.                      |
+| `sysdump` (or `coredump`) | Produce a system dump. See [Using the dump viewer](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/systemdump_viewer.html).|
 
 Here are some examples:
 

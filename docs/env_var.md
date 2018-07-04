@@ -133,7 +133,7 @@ Setting `JAVA_DUMP_OPTS` affects only those conditions that you specify. Actions
 
 When setting the `JAVA_DUMP_OPTS` environment variable, the mapping of operating system signals to the "condition" is shown in the following table:
 
-|                  | z/OS                                                      |  Windows                | Linux and AIX                                     |
+| Condition        | z/OS                                                      |  Windows                | Linux and AIX                                     |
 |------------------|-----------------------------------------------------------|-------------------------|---------------------------------------------------|
 | **EXCEPTION**    | SIGTRAP, SIGILL, SIGSEGV, SIGFPE, SIGBUS, SIGSYS, SIGXFSV | SIGILL, SIGSEGV, SIGFPE | SIGTRAP, SIGILL, SIGSEGV, SIGFPE, SIGBUS, SIGXFSV |
 | **INTERRUPT**    | SIGINT, SIGTERM, SIGHUP                                   | SIGINT, SIGTERM         | SIGINT, SIGTERM, SIGHUP                           |

@@ -33,7 +33,7 @@ For long running tasks, the dump viewer can also be run in batch mode.
 
 ### Starting the dump viewer
 
-        jdmpview  (-core <core file> | -zip <zip file>) [-notemp]
+    jdmpview  (-core <core file> | -zip <zip file>) [-notemp]
 
 
 |          Input option   |  Explanation                                                                                           |
@@ -48,20 +48,24 @@ On AIX&reg; and Linux&trade; systems you must first extract the system dump with
 
 On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to `jdmpview`, or you can supply a fully qualified MVS&trade; data set name. For example:
 
-        > jdmpview -core USER1.JVM.TDUMP.SSHD6.D070430.T092211
-        DTFJView version 4.28.3, using DTFJ version 1.11.28004
-        Loading image from DTFJ...
+```
+> jdmpview -core USER1.JVM.TDUMP.SSHD6.D070430.T092211
+DTFJView version 4.28.3, using DTFJ version 1.11.28004
+Loading image from DTFJ...
+```
 
 MVS data set names may contain the dollar sign ($). Names that contain a dollar sign must be enclosed by single quotation marks ('). For example:
 
-        > jdmpview -core 'USER1.JVM.$TDUMP.SSH$D7.D141211.T045506'
-
+```
+> jdmpview -core 'USER1.JVM.$TDUMP.SSH$D7.D141211.T045506'
+```
 
 After `jdmpview` processes the dump files, a session starts, showing this message:
 
-
-        For a list of commands, type "help"; for how to use "help", type "help help"
-        >
+```
+For a list of commands, type "help"; for how to use "help", type "help help"
+>
+```
 
 When you run the `jdmpview` tool on a compressed file, the tool detects and shows all system dump, Java dump, and heap dump files within the compressed file. Because of this behavior, more than one context might be displayed when you start `jdmpview`.
 
@@ -125,12 +129,12 @@ You can chain more than two commands together by using multiple vertical bar cha
 
 The following commands can be used to interrogate the output:
 
-- `charsFrom`
-- `charsTo`
-- `grep`
-- `tokens`
+- [`charsFrom`](#using-`charsfrom`)
+- [`charsTo`](#using-`charsto`)
+- [`grep`](#using-`grep`)
+- [`tokens`](#using-`tokens`)
 
-More information about these commands, including examples, are shown here:
+#### Using `CharsFrom`
 
 Use the `charsFrom` command after the vertical bar character to exclude all characters that come before a specified pattern in a resulting line.
 
@@ -150,6 +154,8 @@ For example, the following command displays resulting lines that contain the pat
     jre/lib/ppc64/libverify.so @ 0x0, sections:
     jre/lib/ppc64/libjava.so @ 0x0, sections:
     jre/lib/ppc64/compressedrefs/libjclse7b_28.so @ 0x0, sections:
+
+#### Using `CharsTo`
 
 Use the `CharsTo` command after the vertical bar character to include the characters in a resulting line until a specific pattern is found.
 
@@ -183,6 +189,8 @@ You can also use `charsFrom` and `charsTo` together, separated by a vertical bar
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The line will not be displayed if the `charsFrom` and `charsTo` are used together, but only one of the patterns are matched in a line. Furthermore, the line will not be displayed if both patterns are matched in a line, but the `charsTo` pattern appears before, and not after, the `charsFrom` pattern.
 
+#### Using `grep`
+
 Use the `grep` command after the vertical bar character to show which lines match a specified pattern.
 
     grep <options> pattern
@@ -192,24 +200,24 @@ Where `<options>`:
 - `-i` : Ignore case.
 - `-r`, `-G`, or `--regex`: Use a regular expression as defined in the Java documentation of the java.utils.regex.Pattern class.
 - `-b` or `--block` : Show blocks of lines where at least one of the lines matches the pattern. Blocks of lines are separated by empty lines.
-- `-A` <NUM> or +<NUM> : Show at most <NUM> lines after the matching line. For example grep -A 2 pattern or grep +2 pattern.
-- `-B` <NUM> or -<NUM> : Show at most <NUM> lines before the matching line.
-- `-C` <NUM> or +-<NUM> : Show at most <NUM> lines before and after the matching line.
+- `-A` &lt;NUM&gt; or +&lt;NUM&gt; : Show at most &lt;NUM&gt; lines after the matching line. For example grep -A 2 pattern or grep +2 pattern.
+- `-B` &lt;NUM&gt; or -&lt;NUM&gt; : Show at most &lt;NUM&gt; lines before the matching line.
+- `-C` &lt;NUM&gt; or +-&lt;NUM&gt; : Show at most &lt;NUM&gt; lines before and after the matching line.
 - `-v` or `--invert-match` : Use with the grep command to show lines that do not match the pattern. These options are equivalent to the grep- command.
 - `-F` or `--fixed-strings` : Do not treat the asterisk (\*) as a wildcard character. Use these options with the `-r`, `-G`, or `--regex` options.
 
 Pattern rules:
+
 - An asterisk (\*) in a pattern is treated as a wildcard character unless you specify the `-F` or `--fixed-strings` options.
 - If a pattern contains spaces, enclose the pattern in a pair of double quotation marks (").
 - If a pattern contains double quotation marks, enclose the pattern in a pair of single quotation marks (').
-
-You can specify multiple sub-patterns to match by using the following format, but only if you do not use the `-r`, `-G`, or `--regex` options:
+- You can specify multiple sub-patterns to match by using the following format, but only if you do not use the `-r`, `-G`, or `--regex` options:
 
     "[pattern1|pattern2|...|patternN]"
 
-The initial and trailing double quotation marks and brackets ([ ]) are required. Use a vertical bar character to separate the sub-patterns. Quotation marks and the vertical bar are not allowed in a sub-pattern. Spaces are allowed in the middle of a sub-pattern, but leading and trailing spaces will be trimmed.
+    The initial and trailing double quotation marks and brackets ([ ]) are required. Use a vertical bar character to separate the sub-patterns. Quotation marks and the vertical bar are not allowed in a sub-pattern. Spaces are allowed in the middle of a sub-pattern, but leading and trailing spaces will be trimmed.
 
-Use the `grep` command to show lines that do not match the pattern.
+- Use the `grep` command to show lines that do not match the pattern.
 
 For example, the following command displays the number of instances and total heap size for the `java/lang/String` class:
 
@@ -223,6 +231,8 @@ The following command uses two pipes in combination to display the number of ins
 
     > info class | grep java/lang/String | grep -i decoder
     1 48 java/lang/StringCoding$StringDecoder
+
+#### Using `tokens`
 
 Use the `tokens` command after the vertical bar character to isolate specified tokens in the resulting lines.
 
@@ -259,7 +269,6 @@ When `jdmpview` is started, the following parameters can be used during the sess
 
 ### cd
 
-
         cd <directory_name>
 
 
@@ -294,9 +303,10 @@ When `jdmpview` is started, the following parameters can be used during the sess
 
 ### findnext
 
-: Finds the next instance of the last string passed to `find` or `findptr`. It repeats the previous `find` or `findptr` command, depending on which one was issued last, starting from the last match.
 
         findptr <pattern>,<start_address>,<end_address>,<memory_boundary>, <bytes_to_print>,<matches_to_display>
+
+: Finds the next instance of the last string passed to `find` or `findptr`. It repeats the previous `find` or `findptr` command, depending on which one was issued last, starting from the last match.
 
     Searches memory for the given pointer. `findptr` searches for `<pattern>` as a pointer in the memory segment from `<start_address>` to `<end_address>` (both inclusive), and shows the number of matching addresses you specify with `<matches_to_display>`. You can also display the next `<bytes_to_print>` bytes for the last match.
 
@@ -325,7 +335,12 @@ When `jdmpview` is started, the following parameters can be used during the sess
     - Stack sections
     - Thread frames: procedure name and base pointer
     - Thread properties: list of native thread properties and their values. For example: thread priority.
-    - Associated Java thread, if applicable: (Name of Java thread, Address of associated `java.lang.Thread` object, State (shown in JVMTI and `java.lang.Thread.State` formats, The monitor the thread is waiting for, Thread frames: base pointer, method, and filename:line).
+    - Associated Java thread, if applicable:
+        - Name of Java thread
+        - Address of associated `java.lang.Thread` object
+        - State (shown in JVMTI and `java.lang.Thread.State` formats)
+        - The monitor the thread is waiting for
+        - Thread frames: base pointer, method, and filename:line
 
     If you supply no parameters, the command shows information about the current thread.
 
@@ -333,36 +348,35 @@ When `jdmpview` is started, the following parameters can be used during the sess
 
 : Displays the following information about the system that produced the core dump:
 
-    - amount of memory
-    - operating system
-    - virtual machine or virtual machines present
+    - Amount of memory
+    - Operating system
+    - Virtual machine or virtual machines present
 
 ### info class
 
-: Displays the inheritance chain and other data for a given class.
-
-
         info class [<class_name>] [-sort:<name>|<count>|<size>]
 
-    If a class name is passed to info class, the following information is shown about that class:
+: Displays the inheritance chain and other data for a given class.
 
-    - name
+If a class name is passed to info class, the following information is shown about that class:
+
+    - Name
     - ID
-    - superclass ID
-    - class loader ID
-    - modifiers
-    - number of instances and total size of instances
-    - inheritance chain
-    - fields with modifiers (and values for static fields)
-    - methods with modifiers
+    - Superclass ID
+    - Class loader ID
+    - Modifiers
+    - Number of instances and total size of instances
+    - Inheritance chain
+    - Fields with modifiers (and values for static fields)
+    - Methods with modifiers
 
     If no parameters are passed to `info class`, the following information is shown:
 
-    - the number of instances of each class.
-    - the total size of all instances of each class.
-    - the class name
-    - the total number of instances of all classes.
-    - the total size of all objects.
+    - The number of instances of each class.
+    - The total size of all instances of each class.
+    - The class name
+    - The total number of instances of all classes.
+    - The total size of all objects.
 
     The `sort` option allows the list of classes to be sorted by name (default), by number of instances of each class, or by the total size of instances of each class.
 
@@ -397,15 +411,20 @@ When `jdmpview` is started, the following parameters can be used during the sess
 
 ### info heap
 
-        info heap [*|<heap_name>]
+        info heap [*|<heap_name>*]
 
 : If no parameters are passed to this command, the heap names and heap sections are shown.
 
     Using either "\*" or a heap name shows the following information about all heaps or the specified heap:
 
-    - heap name
-    - (heap size and occupancy)
-    - heap sections (section name, section size, whether the section is shared, whether the section is executable, and whether the section is read only.)
+    - Heap name
+    - (Heap size and occupancy)
+    - Heap sections
+      - Section name
+      - Section size
+      - Whether the section is shared
+      - Whether the section is executable
+      - Whether the section is read only
 
 
 ### heapdump
@@ -440,7 +459,7 @@ When `jdmpview` is started, the following parameters can be used during the sess
 
 : Configures Heapdump generation settings.
 
-    set heapdump <options>
+        set heapdump <options>
 
 : where `<options>` are:
 
@@ -451,21 +470,16 @@ When `jdmpview` is started, the following parameters can be used during the sess
 
 ### set logging
 
-: Configures logging settings, starts logging, or stops logging. This parameter enables the results of commands to be logged to a file.
-
         set logging <options>
 
-: where `<options>` are:
+: Configures logging settings, starts logging, or stops logging. This parameter enables the results of commands to be logged to a file, where `<options>` are:
 
     - `[on|off]`: Turns logging on or off. (Default: off)
     - `file <filename>`: Sets the file to log to. The path is relative to the directory returned by the pwd command, unless an absolute path is specified. If the file is set while logging is on, the change takes effect the next time logging is started. Not set by default.
     - `overwrite [on|off]`: Turns overwriting of the specified log file on or off. When overwrite is off, log messages are appended to the log file. When overwrite is on, the log file is overwritten after the set logging command. (Default: off)
-    - `redirect [on|off]`: Turns redirecting to file on or off, with off being the default.
-
-    When logging is set to on:
-
-    - a value of on for redirect sends non-error output only to the log file.
-    - a value of off for redirect sends non-error output to the console and log file.
+    - `redirect [on|off]`: Turns redirecting to file on or off, with off being the default. When logging is set to on:
+      - A value of on for redirect sends non-error output only to the log file.
+      - A value of off for redirect sends non-error output to the console and log file.
 
     Redirect must be turned off before logging can be turned off. (Default: off)
 
@@ -544,6 +558,7 @@ In the example session, which is generated on a Linux system, some lines have be
 
 User input is prefaced by a greater than symbol (>).
 
+```
     test@madras:~/test> sdk/bin/jdmpview -core core.20121116.154147.16838.0001.dmp
     DTFJView version 4.27.57, using DTFJ version 1.10.27022
     Loading image from DTFJ...
@@ -752,7 +767,7 @@ User input is prefaced by a greater than symbol (>).
             heap #1 - name: Generational@fff78303d30
                     0x2ffd0298 is within heap segment: 2ffd0000 -- 30050000
                     0x2ffd0298 is the start of an object of type [Ljava/lang/String;
+```
 
 
-
-<!-- ==== END OF TOPIC ==== xss.md ==== -->
+<!-- ==== END OF TOPIC ==== tool_jdmpview.md ==== -->
