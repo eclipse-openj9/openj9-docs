@@ -32,45 +32,51 @@ This user documentation supports the configuration, tuning, and diagnosis of the
 
 ![Start of content that applies only to Java 9 and later](cr/java9plus.png) This sentence applies only to Java 9 or later binaries that include the OpenJ9 VM. ![End of content that applies only to Java 9 or later](cr/java_close.png)
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** As a usability aid, the icons for long term service (LTS) releases are a different colour from feature releases.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** As a usability aid, the icons for long term service (LTS) releases are a different colour from feature releases.
 
 The following table indicates which Java releases are LTS releases and which are feature releases:
 
 | Java SE version | LTS release                                                                    | Feature release                                                                    |
 |-----------------|:------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:|
-| 8               | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">LTS</span> |                                                                                    |
-| 9               |                                                                                | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Feature</span> |
-| 10              |                                                                                | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">Feature</span> |
+| 8               | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |                                                                                    |
+| 9               |                                                                                | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| 10              |                                                                                | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| 11              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> | |
 
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="sr-only">Note</span> **Note:** Documentation to support OpenJ9 is still under construction. The current content covers the command-line options and environment variables that you can use to configure the VM when you start your application, plus some diagnostic tools. We expect further content to be contributed over time. Because OpenJ9 was contributed to the Eclipse Foundation by IBM, this content contains some links to additional information that forms part of the <i class="fa fa-external-link" aria-hidden="true"></i> [IBM<sup>&reg;</sup> SDK, Java<sup>&trade;</sup> Technology Edition product documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2/welcome_javasdk_family.html) in IBM Knowledge Center. That content supplements the documentation here until a more complete set of user documentation is available. (The <i class="fa fa-external-link" aria-hidden="true"></i> symbol is used to indicate external links.)
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Documentation to support OpenJ9 is still under construction. The current content covers the command-line options and environment variables that you can use to configure the VM when you start your application, plus some diagnostic tools. We expect further content to be contributed over time. Because OpenJ9 was contributed to the Eclipse Foundation by IBM, this content contains some links to additional information that forms part of the [IBM&reg; SDK, Java&trade; Technology Edition product documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2/welcome_javasdk_family.html) in IBM Knowledge Center. That content supplements the documentation here until a more complete set of user documentation is available.
 
 We welcome contributions to the user documentation. If you would like to get involved, please read our [Contribution guidelines](https://github.com/eclipse/openj9-docs/blob/master/CONTRIBUTING.md).
 
 ## What is OpenJ9
 
-OpenJ9 is a high performance, scalable, Java™ virtual machine (VM) implementation that is fully compliant with the [Java Virtual Machine Specification](https://docs.oracle.com/javase/specs/index.html).
+OpenJ9 is a high performance, scalable, Java&trade; virtual machine (VM) implementation that is fully compliant with the [Java Virtual Machine Specification](https://docs.oracle.com/javase/specs/index.html).
 
-At run time, the VM interprets the Java bytecode that is compiled by the Java compiler. The VM acts as a translator between the language and the underlying operating system and hardware. A Java program requires a specific VM to run on a particular platform, such as Linux<sup>&trade;</sup>, z/OS<sup>&reg;</sup>, or Windows<sup>&trade;</sup>.
+At run time, the VM interprets the Java bytecode that is compiled by the Java compiler. The VM acts as a translator between the language and the underlying operating system and hardware. A Java program requires a specific VM to run on a particular platform, such as Linux&trade;, z/OS&reg;, or Windows&trade;.
 
 This reference material provides information about the VM configuration and tuning options, together with the default settings.
 
 ## Useful links
 
 - [Eclipse OpenJ9 website home page](https://www.eclipse.org/openj9)
-- [OpenJDK V8 with Eclipse OpenJ9 binaries](https://adoptopenjdk.net/releases.html?variant=openjdk8-openj9)
 - [Eclipse OpenJ9 GitHub repository](https://github.com/eclipse/openj9)
 - [Eclipse Foundation OpenJ9 project page](https://projects.eclipse.org/projects/technology.openj9)
 
+You can obtain pre-built OpenJDK binaries from the AdoptOpenJDK project:
+
+- [OpenJDK8 with OpenJ9](https://adoptopenjdk.net/?variant=openjdk8-openj9)
+- [OpenJDK9 with OpenJ9](https://adoptopenjdk.net/?variant=openjdk9-openj9)
+- [OpenJDK10 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk10-openj9)
+
 ## Configuring your system
 
-For normal operation, certain environment variables must be set at the operating system level. Depending on your system environment, you might also want to set other configuration options that allow the VM to exploit hardware and operating system features. Read <i class="fa fa-external-link" aria-hidden="true"></i> [Customizing your system](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure.html) to learn more about the following options:
+For normal operation, certain environment variables must be set at the operating system level. Depending on your system environment, you might also want to set other configuration options that allow the VM to exploit hardware and operating system features. Read [Customizing your system](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure.html) to learn more about the following options:
 
 - Setting the PATH and CLASSPATH environment variable.
-- Setting the LIBPATH or LD_LIBRARY_PATH environment variable (AIX<sup>&reg;</sup> and Linux).
+- Setting the LIBPATH or LD_LIBRARY_PATH environment variable (AIX&reg; and Linux).
 - Setting ulimits on AIX and Linux systems to ensure that the operating system allocates sufficient resources for your application.
-- Setting region size, BPXPRM parameters, and Language Environment<sup>&reg;</sup> runtime options on z/OS systems.
-- If your application allocates a large amount of memory and frequently accesses that memory, you might want to enable large page support on your system. See <i class="fa fa-external-link" aria-hidden="true"></i> [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
+- Setting region size, BPXPRM parameters, and Language Environment&reg; runtime options on z/OS systems.
+- If your application allocates a large amount of memory and frequently accesses that memory, you might want to enable large page support on your system. See [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
 - Configuring Dynamic LPAR support on AIX systems.
 
 ## Performance tuning
@@ -78,10 +84,10 @@ For normal operation, certain environment variables must be set at the operating
 OpenJ9 is configured to start with a set of default options that provide the optimal runtime environment for Java applications with typical workloads. However, if your application is atypical, you can improve performance by tuning the OpenJ9 VM. You can also improve performance by enabling hardware features or using specific APIs in your application code. Click the links to learn more about the following options:
 
 Choosing a garbage collection policy
-: J9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see <i class="fa fa-external-link" aria-hidden="true"></i> [Specifying a garbage collection policy](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_specify.html).
+: J9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see [Specifying a garbage collection policy](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_specify.html).
 
 Improving startup times with class data sharing
-: You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see <i class="fa fa-external-link" aria-hidden="true"></i> [Class data sharing between VMs](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_intro.html).
+: You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Class data sharing between VMs](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_intro.html).
 
 
 
@@ -113,13 +119,19 @@ Runtime options are specified on the command line and include system properties,
 
 If you do not specify any options on the command line at run time, the OpenJ9 VM starts with default settings that define how it operates. For more information about these settings, see [Default settings for the OpenJ9 VM](openj9_defaults.md).
 
+## Supported environments
+
+OpenJDK binaries that contain the OpenJ9 VM are supported on a range of hardware and operating systems. This range is expanding as work progresses at the Eclipse foundation. The current list of supported environments can be found [here](openj9_support.md).
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This user guide contains information about configuring, tuning, and debugging OpenJ9 on the z/OS&reg; platform. This content was contributed by IBM so that it is available when the work to create OpenJDK binaries for the z/OS platform is complete.
+
 ## Troubleshooting
 
 The OpenJ9 diagnostic component contains extensive features to assist with problem determination. Diagnostic data is produced under default conditions, but can also be controlled by starting the VM with the [-Xdump option](xdump.md). You can also trace Java applications, methods, and VM operations by using the [-Xtrace option](xtrace.md).
 
 A number of cross-platform tools are available to help you diagnose problems.
 
-To learn more, read <i class="fa fa-external-link" aria-hidden="true"></i> [Diagnostic tools and data](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/diag_tools_intro.html).
+To learn more, read [Diagnostic tools and data](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/diag_tools_intro.html).
 
 
 
