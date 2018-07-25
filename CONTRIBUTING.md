@@ -164,7 +164,7 @@ If you believe that a diagram can be used to enhance the content, add the .gif o
 these icons, which include some important attributes for accessibility:
 
 ```
-<i class="fa fa-pencil-square-o" aria-hidden="true"> **Note:** Here is something you should be aware of.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Here is something you should be aware of.
 ```
 
 ```
