@@ -31,6 +31,10 @@ user base. Currently, Eclipse OpenJ9 produces a new release every quarter that c
 currently supported by the OpenJDK community. We are committed to accepting problem reports when using
 Eclipse OpenJ9 against a supported OpenJDK level, with fixes being delivered in each release of Eclipse OpenJ9.
 
+In order to track the OpenJDK 6 month release cadence, OpenJ9 also produces two releases a year that support only
+a single JDK level.  These releases will occur in March and September with the intention of only supporting
+the corresponding new OpenJDK feature release (ie: 11, 12, ...).
+
 The following table summarizes which JDK levels are expected to be supported by which Eclipse OpenJ9 releases,
 along with projected release dates. All future dates and support expectations are predictions that might change
 depending on how the OpenJDK and OpenJ9 projects evolve over time. Note also that columns may be removed from
@@ -40,15 +44,17 @@ supported by any open project.
 
 ## Eclipse OpenJ9 releases
 
-| OpenJ9 release  | Release date        | JDK8 (LTS)| JDK9 | JDK10 | JDK11 (LTS) | JDK12 | JDK13 |
-|-----------------|---------------------|-----------|------|-------|-------------|-------|-------|
-| v0.8.0          | March 2018          | Yes       | No   |       |             |       |       |
-| v0.9.0          | August 2018 (\*1)   | Yes       | No   | Yes   |             |       |       |
-| v0.10.0         | September 2018 (\*1)| Yes       | No   | No    | Yes         |       |       |
-| v0.11.0         | October 2018 (\*1)  | Yes       | No   | No    | Yes         |       |       |
-| v0.12.0         | January 2019 (\*1)  | No (\*2)  | No   | No    | No (\*2)    | Yes   |       |
-| v0.13.0         | April 2019 (\*1)    | No (\*2)  | No   | No    | No (\*2)    | Yes   |       |
-| v0.14.0         | July 2019 (\*1)     | No (\*2)  | No   | No    | No (\*2)    | No    | Yes   |
+| OpenJ9 release  | Release date        | JDK8 (LTS)| JDK9 | JDK10 | JDK11 (LTS) | JDK12   | JDK13 |
+|-----------------|---------------------|-----------|------|-------|-------------|---------|-------|
+| v0.8.0          | March 2018          | Yes       | No   |       |             |         |       |
+| v0.9.0          | August 2018 (\*1)   | Yes       | No   | Yes   |             |         |       |
+| v0.10.0         | September 2018 (\*1)| Yes       | No   | No    | Yes         |         |       |
+| v0.11.0         | September 2018 (\*1)| No        | No   | No    | Yes(\*3)    |         |       |
+| v0.12.0         | October 2018 (\*1)  | Yes       | No   | No    | Yes         |         |       |
+| v0.13.0         | January 2019 (\*1)  | No (\*2)  | No   | No    | No (\*2)    | Yes     |       |
+| v0.14.0         | March 2019 (\*1)    | No        | No   | No    | No          | Yes(\*3)|       |
+| v0.15.0         | April 2019 (\*1)    | No (\*2)  | No   | No    | No (\*2)    | Yes     |       |
+| v0.16.0         | July 2019 (\*1)     | No (\*2)  | No   | No    | No (\*2)    | No      | Yes   |
 
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
@@ -57,6 +63,7 @@ supported by any open project.
 - (\*2): We fully expect that OpenJDK8 will have open community maintainers beyond January 2019,
 so we expect to be able to continue supporting JDK8 beyond that date. Until maintainers have been established
 we are unable to make a definitive support statement. This position is the same for JDK11 and all future "LTS" releases.
+- (\*3): These OpenJ9 releases are the feature releases that only support the new OpenJDK release.
 
 For any issues or limitations of an Eclipse OpenJ9 release, read the [release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/).
 
