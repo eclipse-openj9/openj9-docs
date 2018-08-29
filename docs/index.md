@@ -44,7 +44,8 @@ The following table indicates which Java releases are LTS releases and which are
 | 11              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> | |
 
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Documentation to support OpenJ9 is still under construction. The current content covers the command-line options and environment variables that you can use to configure the VM when you start your application, plus some diagnostic tools. We expect further content to be contributed over time. Because OpenJ9 was contributed to the Eclipse Foundation by IBM, this content contains some links to additional information that forms part of the [IBM&reg; SDK, Java&trade; Technology Edition product documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2/welcome_javasdk_family.html) in IBM Knowledge Center. That content supplements the documentation here until a more complete set of user documentation is available.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Documentation to support OpenJ9 is still under construction. The current content covers
+some high level information about OpenJ9 components together with the command-line options and environment variables that you can use to configure the VM when you start your application. We expect further content to be contributed over time. Because OpenJ9 was contributed to the Eclipse Foundation by IBM, this content contains some links to additional information that forms part of the [IBM&reg; SDK, Java&trade; Technology Edition product documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2/welcome_javasdk_family.html) in IBM Knowledge Center. That content supplements the documentation here until a more complete set of user documentation is available.
 
 We welcome contributions to the user documentation. If you would like to get involved, please read our [Contribution guidelines](https://github.com/eclipse/openj9-docs/blob/master/CONTRIBUTING.md).
 
@@ -64,9 +65,9 @@ This reference material provides information about the VM configuration and tuni
 
 You can obtain pre-built OpenJDK binaries from the AdoptOpenJDK project:
 
-- [OpenJDK8 with OpenJ9](https://adoptopenjdk.net/?variant=openjdk8-openj9)
-- [OpenJDK9 with OpenJ9](https://adoptopenjdk.net/?variant=openjdk9-openj9)
-- [OpenJDK10 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk10-openj9)
+- [OpenJDK8 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk8&jvmVariant=openj9)
+- [OpenJDK9 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk9&jvmVariant=openj9)
+- [OpenJDK10 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk10&jvmVariant=openj9)
 
 ## Configuring your system
 
@@ -84,10 +85,10 @@ For normal operation, certain environment variables must be set at the operating
 OpenJ9 is configured to start with a set of default options that provide the optimal runtime environment for Java applications with typical workloads. However, if your application is atypical, you can improve performance by tuning the OpenJ9 VM. You can also improve performance by enabling hardware features or using specific APIs in your application code. Click the links to learn more about the following options:
 
 Choosing a garbage collection policy
-: J9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see [Specifying a garbage collection policy](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_specify.html).
+: J9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see [Garbage Collection](gc.md).
 
 Improving startup times with class data sharing
-: You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Class data sharing between VMs](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_intro.html).
+: You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Class Data Sharing](shrc.md).
 
 
 
@@ -105,11 +106,15 @@ Exploiting Remote Direct Memory Access (RDMA)
 Exploiting Graphics Processing Units (GPU)
 : On Linux and Windows systems, you can improve the performance of your Java applications by offloading certain processing functions from your processor (CPU) to a graphics processing unit. For more information, see Exploiting Graphics Processing Units.-->
 
-Native data
+Dealing with native data
 : If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator API.
 
-Cloud optimizations
-: When running applications on most cloud services, a smaller footprint can generate cost savings. OpenJ9 provides a tuning mechanism that detects when the VM is idle, releasing free memory pages to keep the footprint as small as possible and keep your running costs to a minimum. For more information, see [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md).
+Optimizing your application for cloud deployments
+: To improve the performance of applications that run in the cloud, try setting the following tuning options:
+
+  - Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For more information, see [Class Data Sharing](shrc.md) and [AOT Compiler](aot.md).
+  - Use the idle VM settings to maintain a smaller footprint, which can generate cost savings for cloud services that charge based on memory usage. The idle tuning mechanism detects when the VM is idle, releasing free memory pages to keep the footprint as small as possible and keep your running costs to a minimum. For more information, see [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md).
+  - Use the [-Xtune:virtualized](xtunevirtualized) option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.
 
 ## Runtime options
 
@@ -121,18 +126,15 @@ If you do not specify any options on the command line at run time, the OpenJ9 VM
 
 ## Supported environments
 
-OpenJDK binaries that contain the OpenJ9 VM are supported on a range of hardware and operating systems. This range is expanding as work progresses at the Eclipse foundation. The current list of supported environments can be found [here](openj9_support.md).
+OpenJDK binaries that contain the OpenJ9 VM are supported on a range of hardware and operating systems. This range is expanding as work progresses at the Eclipse foundation. See the [current list of supported environments](openj9_support.md) for details.
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This user guide contains information about configuring, tuning, and debugging OpenJ9 on the z/OS&reg; platform. This content was contributed by IBM so that it is available when the work to create OpenJDK binaries for the z/OS platform is complete.
 
 ## Troubleshooting
 
-The OpenJ9 diagnostic component contains extensive features to assist with problem determination. Diagnostic data is produced under default conditions, but can also be controlled by starting the VM with the [-Xdump option](xdump.md). You can also trace Java applications, methods, and VM operations by using the [-Xtrace option](xtrace.md).
+The OpenJ9 diagnostic component contains extensive features to assist with problem determination. Diagnostic data is produced under default conditions, but can also be controlled by starting the VM with the [-Xdump option](xdump.md) or using the `com.ibm.jvm.Dump` API. You can also trace Java applications, methods, and VM operations by using the [-Xtrace option](xtrace.md).
 
-A number of cross-platform tools are available to help you diagnose problems.
-
-To learn more, read [Diagnostic tools and data](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/diag_tools_intro.html).
-
+To get started, read [Diagnostic tools and data](diag_overview.md).
 
 
 <!-- ==== END OF TOPIC ==== index.md ==== -->
