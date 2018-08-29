@@ -100,8 +100,22 @@ pages:
     - "Introduction"                                                             : index.md
     
     - "Release notes" :
-        - "Version 0.9.0"                                                          : version0.9.md
-        - "Version 0.8.0"                                                          : version0.8.md
+        - "Version 0.9.0"                                                        : version0.9.md
+        - "Version 0.8.0"                                                        : version0.8.md
+
+    - "Garbage Collection"                                                       : gc.md
+        
+    - "JIT Compiler"                                                             : jit.md
+           
+    - "AOT Compiler"                                                             : aot.md
+    
+    - "Class data sharing"                                                       : shrc.md
+    
+    - "Diagnostics" :
+        - "Tools and data"                                                       : diag_overview.md   
+        - "Java dump"                                                            : dump_javadump.md
+        - "Heap dump"                                                            : dump_heapdump.md
+        - "System dump"                                                          : dump_systemdump.md
         
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md
@@ -284,7 +298,6 @@ pages:
 
 
     - "Tools" : 
-        - "Dump extractor"                                                        : tool_jextract.md
         - "Dump viewer"                                                           : tool_jdmpview.md
         - "Trace formatter"                                                       : tool_traceformat.md
 

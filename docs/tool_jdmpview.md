@@ -33,18 +33,10 @@ For long running tasks, the dump viewer can also be run in batch mode.
 
 ### Starting the dump viewer
 
-    jdmpview  (-core <core file> | -zip <zip file>) [-notemp]
+    jdmpview -core <core file>
 
 
-|          Input option   |  Explanation                                                                                           |
-|-------------------------|--------------------------------------------------------------------------------------------------------|
-| `-core <core file>`     | Specifies a dump file.                                                                                 |
-| `-notemp`               | By default, when you specify a file by using the `-zip` option, the contents are extracted to a temporary directory before processing. Use the `-notemp` option to prevent this extraction step, and run all subsequent commands in memory. |
-| `-zip <zip file>`       | Specifies a compressed file containing the core file and associated XML file (produced by the [dump extractor (`jextract`)](tool_jextract.md)). |
-
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The `-core` option can be used with the `-zip` option to specify the core and XML files in the compressed file. Without these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.  
-
-On AIX&reg; and Linux&trade; systems you must first extract the system dump with the `jextract` tool, see [Dump extractor](tool_jextract).
+Where <core file> specifies a dump file.                                                                                 |
 
 On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to `jdmpview`, or you can supply a fully qualified MVS&trade; data set name. For example:
 
@@ -597,7 +589,7 @@ User input is prefaced by a greater than symbol (>).
     info system                                    displays information about the system the core dump is from
     info thread                                    displays information about Java and native threads
     log                       [name level]         display and control instances of java.util.logging.Logger
-    open                      [path to core or zip] opens the specified core or zip file
+    open                      [path to core]       opens the specified core file
     plugins                                        Plugin management commands
                          list                      Show the list of loaded plugins for the current context
                        reload                      Reload plugins for the current context
