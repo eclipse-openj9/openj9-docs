@@ -39,7 +39,7 @@ You can get help with `-Xtrace`by using the folowing options:
 - `-Xtrace:help` &nbsp; Displays general trace help
 - `-Xtrace:what` &nbsp; Shows the current trace settings
 
-<!-- 
+<!--
 The following table lists the parameters for `-Xtrace` that provide usage and configuration information:
 
 | Command        | Result                             |
@@ -172,7 +172,7 @@ Assertion failures might occur early during VM startup, before trace is enabled.
 
     ** ASSERTION FAILED ** j9vmutil.15 at thrinfo.c:371 Assert_VMUtil_true((
       publicFlags & 0x200))
-    
+
 Assertion failures that occur early during startup cannot be disabled. These failures do not produce diagnostic dumps, and do not cause the VM to stop.
 
 ## Tracepoint activation
@@ -229,7 +229,6 @@ The following table lists the possible Java components (`<component>`). To inclu
 | **avl**         | VM AVL tree support                                                            |
 | **ibm_gpu**     | Class library graphics processing unit (GPU) native code (Linux&trade; only)   |
 | **io**          | Class library java.io native code                                              |
-| **JSOR**        | Class library Java Sockets over RDMA (JSOR) native code (Linux only)           |
 | **j9bcu**       | VM byte code utilities                                                         |
 | **j9bcverify**  | VM byte code verification                                                      |
 | **j9codertvm**  | VM byte code run time                                                          |
@@ -247,7 +246,6 @@ The following table lists the possible Java components (`<component>`). To inclu
 | **j9vm**        | VM general                                                                     |
 | **j9vmutil**    | VM utilities                                                                   |
 | **j9vrb**       | VM verbose stack walker                                                        |
-| **JVERBS**      | Class library jVerbs native code                                               |
 | **map**         | VM mapped memory support                                                       |
 | **mt**          | Java methods (see **Note**)                                                    |
 | **net**         | Class library TCP/IP networking native code                                    |
@@ -577,7 +575,7 @@ Here is some example output:
                                   V Compiled static method
     10:02:42.328 0x9e900      mt.10          < java/lang/J9VMInternals.initialize(Ljava/lang/Class;)
                                   V Compiled static method
-    
+
 The output lines comprise of:
 
 - `0x9e900`, the current `execenv` (execution environment). Because every VM thread has its own `execenv`, you can regard `execenv` as a `thread-id`. All trace with the same `execenv` relates to a single thread.
