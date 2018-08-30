@@ -47,7 +47,7 @@ supported by any open project.
 | OpenJ9 release  | Release date        | JDK8 (LTS)| JDK9 | JDK10 | JDK11 (LTS) | JDK12   | JDK13 |
 |-----------------|---------------------|-----------|------|-------|-------------|---------|-------|
 | v0.8.0          | March 2018          | Yes       | No   |       |             |         |       |
-| v0.9.0          | August 2018 (\*1)   | Yes       | No   | Yes   |             |         |       |
+| v0.9.0          | August 2018         | Yes       | No   | Yes   |             |         |       |
 | v0.10.0         | September 2018 (\*1)| No        | No   | No    | Yes(\*3)    |         |       |
 | v0.11.0         | October 2018 (\*1)  | Yes       | No   | No    | Yes         |         |       |
 | v0.12.0         | January 2019 (\*1)  | No (\*2)  | No   | No    | No (\*2)    | Yes     |       |
