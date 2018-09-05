@@ -264,6 +264,7 @@ pages:
 
         - "JVM -XX: options" :
             - "Using -XX options"                                                : xx_jvm_commands.md
+            - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
