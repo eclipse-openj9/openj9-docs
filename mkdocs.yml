@@ -1,3 +1,4 @@
+        - "Migrating from Hotspot"                                               : cmdline_migration.md
 # Copyright (c) 2017, 2018 IBM Corp. and others
 #
 # This program and the accompanying materials are made
@@ -106,6 +107,7 @@ pages:
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md
         - "Standard options"                                                     : cmdline_general.md
+        - "Migrating from Hotspot"                                               : cmdline_migration.md
         
 # System properties that are commented out are not supported at this time.
         
