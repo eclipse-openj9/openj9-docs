@@ -144,12 +144,12 @@ When setting the `JAVA_DUMP_OPTS` environment variable, the mapping of operating
 
 The preferred mechanism for controlling the production of Java dumps is by using the `-Xdump:java` option. However, these legacy environment variables are preserved and can still be used.
 
-| Environment Variable      | Usage Information                                                                                                                 |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `DISABLE_JAVADUMP`        | Setting `DISABLE_JAVADUMP` to true is the equivalent of using `-Xdump:java:none` and stops the default production of Java dumps.  |
-| `IBM_JAVACOREDIR`         | The default location into which the Java dump is written. On z/OS, the `_CEE_DMPTARG` environment variable is used instead.       |
-| `IBM_JAVADUMP_OUTOFMEMORY`| By setting this environment variable to false, you disable Java dumps for an out-of-memory exception.                             |
-| `TMPDIR=<directory>`      | This variable specifies an alternative temporary directory. This directory is used only when Java dumps and Heap dumps cannot be written to their target directories, or the current working directory. The default is `/tmp` (`C:\\temp` for Windows). |
+| Environment Variable                   | Usage Information                                                                                                                 |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `DISABLE_JAVADUMP=[TRUE|FALSE]`        | Setting `DISABLE_JAVADUMP` to `TRUE` is the equivalent of using `-Xdump:java:none` and stops the default production of Java dumps.  |
+| `IBM_JAVACOREDIR=<directory>`          | The default location into which the Java dump is written. On z/OS, the `_CEE_DMPTARG` environment variable is used instead.       |
+| `IBM_JAVADUMP_OUTOFMEMORY=[TRUE|FALSE]`| By setting this environment variable to `FALSE`, you disable Java dumps for an out-of-memory exception. When not set, a Java dump is generated when an out-of-memory exception is thrown but not caught and handled by the application. Set to `TRUE` to generate a dump when an out-of-memory exception is thrown, even if it is handled by the application. Set to `FALSE` to disable Java dumps for an out-of-memory exception.                             |
+| `TMPDIR=<directory>`                   | This variable specifies an alternative temporary directory. This directory is used only when Java dumps and Heap dumps cannot be written to their target directories, or the current working directory. The default is `/tmp` (`C:\temp` for Windows). |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You can use the dump agent `JAVA_DUMP_OPTS` variable to control the conditions under which Java dumps are produced.
 
@@ -159,9 +159,10 @@ The preferred mechanism for controlling the production of Java dumps is by using
 
 | Environment Variable           | Usage Information                                                                                                          |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-|`IBM_HEAPDUMP`, `IBM_HEAP_DUMP` | Setting either of these options to any value, such as `TRUE`, enables heap dump production by using signals.                                              |
-|`IBM_HEAPDUMPDIR`               | The default location into which the heap dump is written. On z/OS, the `_CEE_DMPTARG` environment variable is used instead.                             |
-|`IBM_HEAPDUMP_OUTOFMEMORY`      | By setting this environment variable to `FALSE`, you disable heap dumps for an `OutOfMemory` condition.                                                   |
+|`IBM_HEAPDUMP=[TRUE|FALSE]`     | Setting this option to `TRUE` enables heap dump production by using signals.                                               |
+|`IBM_HEAP_DUMP=[TRUE|FALSE]`    |  Setting this option to `TRUE` enables heap dump production by using signals.                                               |
+|`IBM_HEAPDUMPDIR=<directory>`   | The default location into which the heap dump is written. On z/OS, the `_CEE_DMPTARG` environment variable is used instead.                             |
+|`IBM_HEAPDUMP_OUTOFMEMORY=[TRUE|FALSE]`| Controls the generation of a heap dump when an out-of-memory exception is thrown. When not set, a heap dump is generated when an out-of-memory exception is thrown but not caught and handled by the application. Set to TRUE to generate a dump when an out-of-memory exception is thrown, even if it is handled by the application. Set to FALSE to disable heap dump for an out-of-memory exception.                                                   |
 |`IBM_JAVA_HEAPDUMP_TEST`        | Use this environment variable to cause the VM to generate both PHD and text versions of heap dumps. Equivalent to `opts=PHD+CLASSIC` on the `-Xdump:heap` option.|
 |`IBM_JAVA_HEAPDUMP_TEXT`        | Use this environment variable to cause the VM to generate a text (human readable) Heap dump. Equivalent to `opts=CLASSIC` on the `-Xdump:heap` option.|
 |`TMPDIR=<directory>`            | This variable specifies an alternative temporary directory. This directory is used only when Java dumps and heap dumps cannot be written to their target directories, or the current working directory. The default is `/tmp` (`C:\temp` for Windows).|
