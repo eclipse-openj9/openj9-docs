@@ -41,12 +41,10 @@ Some cache utilities can work with caches from previous Java&trade; versions or 
 
         -Xshareclasses:<parameter>
 
-When you specify `-Xshareclasses` without any parameters and without specifying either the `-Xscmx` or `-XX:SharedCacheHardLimit` options, a shared classes cache is created with a default size. This size differs depending on your environment:
+When you specify `-Xshareclasses` without any parameters and without specifying either the `-Xscmx` or `-XX:SharedCacheHardLimit` options, a shared classes cache is created with a default size of 300 MB, with a "soft" maximum limit for the initial size of the cache (`-Xscmx`) set to 64MB. The following exceptions apply:
 
-- ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) The default size is 16 MB. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
-- ![Start of content that applies only to Java 9 and later](cr/java9plus.png) The default size is 300 MB, with a "soft" maximum limit for the initial size of the cache (`-Xscmx`) set to 64MB. The following exceptions apply:
-    - For a persistent cache, if the free disk space is less than 6 GB, the default size is set to 64 MB and an `-Xscmx` size is not set.
-    - For a non-persistent cache on Linux, the cache size is limited by the maximum amount of memory that can be reserved by a process (`SHMMAX`). If `SHMMAX` is less than 300MB, the default shared cache size is set to equal `SHMMAX`. If `SHMMAX` is greater than 80 MB, `-Xscmx` is set to 64 MB. If `SHMMAX` is less than 80MB an `-Xscmx` size is not set. ![End of content that applies only to Java 9 or later](cr/java_close.png)
+  - For a persistent cache, if the free disk space is less than 6 GB, the default size is set to 64 MB and an `-Xscmx` size is not set.
+  - For a non-persistent cache on Linux, the cache size is limited by the maximum amount of memory that can be reserved by a process (`SHMMAX`). If `SHMMAX` is less than 300MB, the default shared cache size is set to equal `SHMMAX`. If `SHMMAX` is greater than 80 MB, `-Xscmx` is set to 64 MB. If `SHMMAX` is less than 80MB an `-Xscmx` size is not set.
 
 ## Parameters
 
