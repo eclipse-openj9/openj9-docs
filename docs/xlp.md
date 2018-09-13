@@ -26,7 +26,7 @@
 
 Requests the OpenJ9 VM to allocate the Java&trade; object heap and JIT code cache memory with large pages.
 
-![Start of content that applies only to Java 9 and later](cr/java9plus.png) This option is deprecated. Use the [`-Xlp:codecache`](xlpcodecache.md) and [`-Xlp:objectheap`](xlpobjectheap.md) options instead. ![End of content that applies only to Java 9 or later](cr/java_close.png)
+**Note:** This option is deprecated in all versions later than Java 8. Use the [`-Xlp:codecache`](xlpcodecache.md) and [`-Xlp:objectheap`](xlpobjectheap.md) options instead.
 
 If you use the [`-Xgc:preferredHeapBase`](xgc.md#preferredheapbase) option with `-Xlp`, the preferredHeapBase address must be a multiple of the large page size. If you specify an inaccurate heap base address, the heap is allocated with the default page size.
 

@@ -28,26 +28,16 @@ Welcome to the user documentation for the Eclipse OpenJ9 virtual machine (VM).
 
 This user documentation supports the configuration, tuning, and diagnosis of the OpenJ9 VM in an OpenJDK runtime. However, due to differences between the Java SE class libraries, specific options might apply only to one Java SE version. Icons are used to indicate where differences apply. For example:
 
-![Start of content that applies only to Java 8 (LTS)](cr/java8.png) This sentence applies only to Java 8 binaries that include the OpenJ9 VM. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+![Start of content that applies only to Java 8 (LTS)](cr/java8.png) This sentence applies only to Java 8 binaries that include the OpenJ9 VM. Icons for LTS releases are this colour. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
-![Start of content that applies only to Java 9 and later](cr/java9plus.png) This sentence applies only to Java 9 or later binaries that include the OpenJ9 VM. ![End of content that applies only to Java 9 or later](cr/java_close.png)
+![Start of content that applies only to Java 10 and later](cr/java10plus.png) This sentence applies only to Java 10 or later binaries that include the OpenJ9 VM. Icons for feature releases are this colour. ![End of content that applies only to Java 10 or later](cr/java_close.png)
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** As a usability aid, the icons for long term service (LTS) releases are a different colour from feature releases.
-
-The following table indicates which Java releases are LTS releases and which are feature releases:
-
-| Java SE version | LTS release                                                                    | Feature release                                                                    |
-|-----------------|:------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:|
-| 8               | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |                                                                                    |
-| 9               |                                                                                | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
-| 10              |                                                                                | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
-| 11              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> | |
-
+To see which Java releases are LTS releases and which are feature releases, and for information about release cadence, supported platforms, and build environments, see [Supported environments](openj9_support.md).
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Documentation to support OpenJ9 is still under construction. The current content covers
 some high level information about OpenJ9 components together with the command-line options and environment variables that you can use to configure the VM when you start your application. We expect further content to be contributed over time. Because OpenJ9 was contributed to the Eclipse Foundation by IBM, this content contains some links to additional information that forms part of the [IBM&reg; SDK, Java&trade; Technology Edition product documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2/welcome_javasdk_family.html) in IBM Knowledge Center. That content supplements the documentation here until a more complete set of user documentation is available.
 
-We welcome contributions to the user documentation. If you would like to get involved, please read our [Contribution guidelines](https://github.com/eclipse/openj9-docs/blob/master/CONTRIBUTING.md).
+We welcome contributions to the user documentation. If you would like to get involved, please read our [Contribution guidelines](https://github.com/eclipse/openj9-docs/blob/master/CONTRIBUTING.md). If you spot any errors in the documentation, please raise an [issue](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-error.md) at our GitHub repository.
 
 ## What is OpenJ9
 
@@ -66,8 +56,8 @@ This reference material provides information about the VM configuration and tuni
 You can obtain pre-built OpenJDK binaries from the AdoptOpenJDK project:
 
 - [OpenJDK8 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk8&jvmVariant=openj9)
-- [OpenJDK9 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk9&jvmVariant=openj9)
 - [OpenJDK10 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk10&jvmVariant=openj9)
+- [OpenJDK11 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk11&jvmVariant=openj9) (coming soon)
 
 ## Configuring your system
 
@@ -82,35 +72,19 @@ For normal operation, certain environment variables must be set at the operating
 
 ## Performance tuning
 
-OpenJ9 is configured to start with a set of default options that provide the optimal runtime environment for Java applications with typical workloads. However, if your application is atypical, you can improve performance by tuning the OpenJ9 VM. You can also improve performance by enabling hardware features or using specific APIs in your application code. Click the links to learn more about the following options:
+OpenJ9 is configured to start with a set of default options that provide the optimal runtime environment for Java applications with typical workloads. However, if your application is atypical, you can improve performance by tuning the OpenJ9 VM. You can also improve performance by enabling hardware features or using specific APIs in your application code.
 
-Choosing a garbage collection policy
-: J9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see [Garbage Collection](gc.md).
+### Garbage collection policies
+OpenJ9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see [Garbage Collection](gc.md).
 
-Improving startup times with class data sharing
-: You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Class Data Sharing](shrc.md).
+### Class data sharing
+You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Class Data Sharing](shrc.md).
 
+### Native data operations
+If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator API.
 
-
-<!-- These features not yet available in OpenJDK class libaries
-
-Using hardware compression acceleration devices
-: J9 can exploit hardware compression devices to reduce CPU consumption and shorten processing times.
-- For AIX and Linux systems, see Enabling hardware compression acceleration.
-- For IBM zEnterprise<sup>&reg;</sup> systems, see zEnterprise Data Compression.
-
-Exploiting Remote Direct Memory Access (RDMA)
-: High performance network infrastructure that supports Remote Direct Memory Access (RDMA) is designed to speed up communications between applications. : On Linux systems, existing Java socket applications can take advantage of RDMA-capable network adapters by using extensions to the Socket and ServerSocket APIs. For more information, see Java Sockets over Remote Direct Memory Access. Alternatively, you can write applications that use APIs in the jVerbs library to communicate directly over RDMA-capable infrastructure. See The jVerbs library.
--  On z/OS systems, J9 supports the use of the SMC-R protocol solution to enable TCP socket applications to transparently use RDMA. For more information, see Shared Memory Communication via RDMA.
-
-Exploiting Graphics Processing Units (GPU)
-: On Linux and Windows systems, you can improve the performance of your Java applications by offloading certain processing functions from your processor (CPU) to a graphics processing unit. For more information, see Exploiting Graphics Processing Units.-->
-
-Dealing with native data
-: If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator API.
-
-Optimizing your application for cloud deployments
-: To improve the performance of applications that run in the cloud, try setting the following tuning options:
+### Cloud optimizations  
+To improve the performance of applications that run in the cloud, try setting the following tuning options:
 
   - Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For more information, see [Class Data Sharing](shrc.md) and [AOT Compiler](aot.md).
   - Use the idle VM settings to maintain a smaller footprint, which can generate cost savings for cloud services that charge based on memory usage. The idle tuning mechanism detects when the VM is idle, releasing free memory pages to keep the footprint as small as possible and keep your running costs to a minimum. For more information, see [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md).

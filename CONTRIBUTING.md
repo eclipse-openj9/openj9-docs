@@ -25,7 +25,13 @@
 # Contributing to the documentation
 
 The user documentation is authored in markdown and built into HTML using [Mkdocs](http://www.mkdocs.org/), with a [mkdocs-material](https://github.com/squidfunk/mkdocs-material) theme. If you want to
-contribute to the documentation, we recommend that you install a local test environment for editing and previewing your changes.
+contribute to the documentation, we recommend that you install a local test environment for editing and previewing your changes. If you don't want to contribute to the documentation but you have a suggestion or want to report an error, please raise an issue in this repository. The following templates are available to help you provide the correct information for someone else to handle any changes:
+
+- [General documentation enhancements / ideas for improvements](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-enhancement.md)
+- [Documentation errors or inaccuracies](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-error.md)
+- [New content as a result of code changes at the Eclipse OpenJ9 repo](https://github.com/eclipse/openj9-docs/issues/new?template=new-documentation-change.md)
+
+Table of contents:
 
 - [Setting up a local MkDocs environment](#setting-up-a-local-mkdocs-environment)
 - [Editing the documentation](#editing-the-documentation)
@@ -125,10 +131,6 @@ If content is not marked it should apply to any platform.
 The user documentation supports the configuration, tuning, and diagnosis of the OpenJ9 VM in an OpenJDK version 8 or OpenJDK version 9 runtime. However, due to differences between the Java<sup>&trade;</sup> SE class libraries, specific options might apply only to one environment. The following icons are available to indicate where differences apply:
 
 - ![Java 8 icon](docs/cr/java8.png) - For content that applies only to an OpenJDK version 8.
-- ![Java 9 icon](docs/cr/java9.png) - For content that applies only to an OpenJDK version 9.
-- ![Java 9 and later icon](docs/cr/java9plus.png) -  For content that applies to an OpenJDK version 9 or later version.
-- ![Java 10 icon](docs/cr/java10.png) - For content that applies only to an OpenJDK version 10.
-- ![Java 10 and later icon](docs/cr/java10plus.png) -  For content that applies to an OpenJDK version 10 or later version.
 - ![Java 11 icon](docs/cr/java11.png) - For content that applies only to an OpenJDK version 11.
 - ![Java 11 and later icon](docs/cr/java11plus.png) -  For content that applies to an OpenJDK version 11 or later version.
 - ![Java 12 icon](docs/cr/java12.png) - For content that applies only to an OpenJDK version 12.
@@ -149,7 +151,7 @@ Here are some examples:
 ```
 
 ```
-![Start of content that applies only to Java 9 and later](cr/java9plus.png) This sentence applies only to Java 9 or later runtime environments that include the OpenJ9 VM. ![End of content that applies only to Java 9 or later](cr/java_close.png)
+![Start of content that applies only to Java 10 and later](cr/java10plus.png) This sentence applies only to Java 9 or later runtime environments that include the OpenJ9 VM. ![End of content that applies only to Java 10 and later](cr/java_close.png)
 ```
 
 ### Using images
@@ -183,7 +185,7 @@ Font-awesome icons are also used in option tables to indicate defaults. The foll
 
 Note that these require an extra `<span>`, which is used by screen readers.
 
-For examples that embed the ![Java 8 icon](docs/cr/java8.png) and ![Java 9 icon](docs/cr/java9.png) icons, see [Which OpenJDK version?](#which-openjdk-version?).
+For examples that embed Java version icons such as ![Java 8 icon](docs/cr/java8.png) and ![Java 12 and later icon](docs/cr/java12plus.png), see [Which OpenJDK version?](#which-openjdk-version?).
 
 ### Accessibility
 
