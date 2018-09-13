@@ -120,6 +120,7 @@ pages:
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md
         - "Standard options"                                                     : cmdline_general.md
+        - "Migrating to OpenJ9"                                                  : cmdline_migration.md
         
 # System properties that are commented out are not supported at this time.
         
@@ -270,6 +271,11 @@ pages:
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
             - "-XX:[+|-]handleSIGXFSZ"                                           : xxhandlesigxfsz.md
+
+            - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
+            - "-XX:[+|-]HeapDumpOnOutOfMemory"                                   : xxheapdumponoutofmemory.md
+            - "-XX:HeapDumpPath"                                                 : xxheapdumppath.md
+
             - "-XX:[+|-]HeapManagementMXBeanCompatibility"                       : xxheapmanagementmxbeancompatibility.md
             - "-XX:[+|-]IdleTuningCompactOnIdle"                                 : xxidletuningcompactonidle.md
             - "-XX:[+|-]IdleTuningGcOnIdle"                                      : xxidletuninggconidle.md
