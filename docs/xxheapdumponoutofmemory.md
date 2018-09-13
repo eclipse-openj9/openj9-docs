@@ -26,8 +26,6 @@
 
 This Hotspot option is recognized by OpenJ9. You can use the option to to disable Java&trade;, heap, snap, and system dumps on out-of-memory conditions, which are enabled by default. 
 
-
-this behavior.
 ## Syntax
 
         -XX:[+|-]HeapDumpOnOutOfMemory
