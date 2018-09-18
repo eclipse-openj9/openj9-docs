@@ -30,35 +30,36 @@ If you are already familiar with HotSpot command-line options but want the advan
 
 You can use the following command-line options in OpenJ9, just as you did in Hotspot; you can continue to use the HotSpot option in OpenJ9 without having to change your code:
 
-| Option                                                | Usage                                                                                                              |
-|-------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| [`-X`](x.md)                                          | Displays help on nonstandard options.                                                                              |
-| [`-Xbootclasspath`](xbootclasspath.md)                | Specifies the search path for bootstrap classes and resources.                                                     |
-| [`-Xcheck:jni`](xcheck.md)                            | Runs additional checks for JNI functions during VM startup.                                                        |
-| [`-Xfuture`](xfuture.md)                              | Turns on strict class-file format checks.                                                                          |
-| [`-Xint`](xint.md)                                    | Runs an application in interpreted-only mode.                                                                      |
-| [`-Xmn`](xmn.md)                                      | Sets the initial and maximum size of the new area when using -Xgcpolicy:gencon.                                    |
-| [`-Xms`](xms.md)                                      | Sets the initial size of the heap.                                                                                 |
-| [`-Xmx`](xms.md)                                      | Specifies the maximum size of the object memory allocation pool. (Equivalent to `-XX:MaxHeapSize`**<sup>1</sup>**) |
-| [`-Xnoclassgc`](xclassgc.md)                          | Disables class garbage collection (GC).                                                                            |
-| [`-Xrs`](xrs.md)                                      | Prevents the OpenJ9 run time environment from handling signals.                                                    |
-| [`-Xss`](xss.md)                                      | Sets the thread stack size. (Equivalent to `-XX:ThreadStackSize`**<sup>2</sup>**)                                  |
-| [`-Xverify:mode`](xverify.md)                         | Enables or disables the verifier.                                                                                  |
-| `-XX:+DisableExplicitGC`                              | Disables `System.gc()` calls. (Implements OpenJ9 [`-Xdisableexplicitgc`](xenableexplicitgc.md))                    |
-| `-XX:-DisableExplicitGC`                              | Reenables `System.gc()` calls. (Implements OpenJ9 [`-Xenableexplicitgc`](xenableexplicitgc.md))                    |
-| [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md) | Sets a limit on the amount of memory that can be reserved for all direct byte buffers.                             |
-| [`-XX:-UseCompressedOops`](xxusecompressedoops.md)    | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                 |
+| Option                                                           | Usage                                                                                                                                        |
+|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| [`-X`](x.md)                                                     | Displays help on nonstandard options.                                                                                                        |
+| [`-Xbootclasspath`](xbootclasspath.md)                           | Specifies the search path for bootstrap classes and resources.                                                                               |
+| [`-Xcheck:jni`](xcheck.md)                                       | Runs additional checks for JNI functions during VM startup.                                                                                  |
+| [`-Xfuture`](xfuture.md)                                         | Turns on strict class-file format checks.                                                                                                    |
+| [`-Xint`](xint.md)                                               | Runs an application in interpreted-only mode.                                                                                                |
+| [`-Xmn`](xmn.md)                                                 | Sets the initial and maximum size of the new area when using -Xgcpolicy:gencon.                                                              |
+| [`-Xms`](xms.md)                                                 | Sets the initial size of the heap.                                                                                                           |
+| [`-Xmx`](xms.md)                                                 | Specifies the maximum size of the object memory allocation pool. (Equivalent to `-XX:MaxHeapSize`**<sup>1</sup>**)                           |
+| [`-Xnoclassgc`](xclassgc.md)                                     | Disables class garbage collection (GC).                                                                                                      |
+| [`-Xrs`](xrs.md)                                                 | Prevents the OpenJ9 run time environment from handling signals.                                                                              |
+| [`-Xss`](xss.md)                                                 | Sets the thread stack size. (Equivalent to `-XX:ThreadStackSize`**<sup>2</sup>**)                                                            |
+| [`-Xverify:mode`](xverify.md)                                    | Enables or disables the verifier.                                                                                                            |
+| [`-XX:[+|-]DisableExplicitGC`](xxdisableexplicitgc.md)           | Enables/disables `System.gc()` calls. (Alias for [`-Xdisableexplicitgc` / `-Xenableexplicitgc`](xenableexplicitgc.md))                       |
+| [`-XX:[+|-]HeapDumpOnOutOfMemory`](xxheapdumponoutofmemory.md)   | Enables/disables dumps on out-of-memory conditions.                                                                                          |
+| [`-XX:HeapDumpPath`](xxheapdumppath.md)                          | Specifies a directory for all VM dumps including heap dumps, javacores, and system dumps. (Alias for [`-Xdump:directory`](xdump/#syntax))    |
+| [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md)            | Sets a limit on the amount of memory that can be reserved for all direct byte buffers.                                                       |
+| [`-XX:-UseCompressedOops`](xxusecompressedoops.md)               | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
 
 ## Equivalent options
 
 These Hotspot command-line options have equivalents in OpenJ9 that are not specified in the same way, but perform the same function:
 
-| HotSpot Option          | OpenJ9 Option                                    | Usage                                                      |
-|-------------------------|--------------------------------------------------|------------------------------------------------------------|                                                                        
-| `-Xcomp`                | [`-Xjit:count=0`](xjit.md#count)**<sup>3</sup>** | `-Xcomp` disables interpreted method invocations.          |
-| `-Xgc`                  | [`-Xgcpolicy`](xgcpolicy.md)**<sup>4</sup>**     | Configuring your garbage collection policy                 |
-| `-XX:ParallelGCThreads` | [`-Xgcthreads`](xgcthreads.md)                   | Configure number of GC threads                             |
-| `-XX:+UseNUMA`          | [`-Xnuma:none`](xnumanone.md)**<sup>5</sup>**    | Controls non-uniform memory architecture (NUMA) awareness. |
+| HotSpot Option          | OpenJ9 Option                                    | Usage                                                            |
+|-------------------------|--------------------------------------------------|------------------------------------------------------------------|                                                                        
+| `-Xcomp`                | [`-Xjit:count=0`](xjit.md#count)**<sup>3</sup>** | `-Xcomp` disables interpreted method invocations.                |
+| `-Xgc`                  | [`-Xgcpolicy`](xgcpolicy.md)**<sup>4</sup>**     | Configuring your garbage collection policy.                      |
+| `-XX:ParallelGCThreads` | [`-Xgcthreads`](xgcthreads.md)                   | Configure number of GC threads.                                  |
+| `-XX:+UseNUMA`          | [`-Xnuma:none`](xnumanone.md)**<sup>5</sup>**    | Controls non-uniform memory architecture (NUMA) awareness.       |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 

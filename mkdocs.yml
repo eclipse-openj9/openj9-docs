@@ -268,9 +268,12 @@ pages:
             - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
+            - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
             - "-XX:[+|-]handleSIGXFSZ"                                           : xxhandlesigxfsz.md
+            - "-XX:[+|-]HeapDumpOnOutOfMemory"                                   : xxheapdumponoutofmemory.md
+            - "-XX:HeapDumpPath"                                                 : xxheapdumppath.md
             - "-XX:[+|-]HeapManagementMXBeanCompatibility"                       : xxheapmanagementmxbeancompatibility.md
             - "-XX:[+|-]IdleTuningCompactOnIdle"                                 : xxidletuningcompactonidle.md
             - "-XX:[+|-]IdleTuningGcOnIdle"                                      : xxidletuninggconidle.md
