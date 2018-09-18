@@ -49,9 +49,9 @@ There are a number of ways to disable the JIT:
 
 - Specify `-Djava.compiler=NONE` on the command line.
 - Specify `-Xint` on the command line, which turns off the JIT and AOT compiler. To eliminate problems with one or the other you can turn these compilers off selectively with the `-Xnojit` and `-Xnoaot` options.
-- Call the `java.lang.Compiler` API programmatically.
+- Call the `java.lang.Compile` API programmatically.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `java.lang.Compiler` is deprecated for removal in Java SE 9.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `java.lang.Compile` is deprecated for removal in Java SE 9.
 
 If turning off the JIT solves your problem, you can investigate JIT operations in more detail by using a number of options to control behavior.
 
