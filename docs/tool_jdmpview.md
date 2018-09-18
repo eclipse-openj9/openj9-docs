@@ -29,6 +29,9 @@ The dump viewer is a command-line tool that allows you to examine the contents o
 
 For long running tasks, the dump viewer can also be run in batch mode.
 
+The dump viewer is useful for diagnosing `OutOfMemoryError` exceptions in Java&trade; applications. For problems like general protection faults (GPF), system abends, and SIGSEVs, a system debugger such as **gdb** (Linux) provides more information.
+
+
 ## Syntax
 
 ### Starting the dump viewer
@@ -36,7 +39,7 @@ For long running tasks, the dump viewer can also be run in batch mode.
     jdmpview -core <core file>
 
 
-Where <core file> specifies a dump file.                                                                                 |
+Where `<core file>` specifies a dump file.                                                                                 
 
 On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to `jdmpview`, or you can supply a fully qualified MVS&trade; data set name. For example:
 
@@ -59,9 +62,32 @@ For a list of commands, type "help"; for how to use "help", type "help help"
 >
 ```
 
-When you run the `jdmpview` tool on a compressed file, the tool detects and shows all system dump, Java dump, and heap dump files within the compressed file. Because of this behavior, more than one context might be displayed when you start `jdmpview`.
+If you run the `jdmpview` tool on a compressed file that contains multiple dumps, the tool detects and shows all the dump files, whether these are system dumps, Java dumps, or heap dumps. Because of this behavior, more than one context might be displayed when you start `jdmpview`. To switch context, type `context <n>`, where `<n>` is the context value for the dump you want to investigate.
 
-The context allows you to select which dump file you want to view. On z/OS, a system dump can contain multiple address spaces and multiple VM instances. In this case, the context allows you to select the address space and VM instance within the dump file.
+On z/OS, a system dump can contain multiple address spaces and an address space can contain multiple VM instances. In this case, the context allows you to select the address space and VM instance within the dump file. The following z/OS example shows address spaces (`ASID`), with two JVMs occupying address space `0x73` (context 5 and 6). The current context is 5 (`CTX:5>`), shown with an asterisk. To view the JVM in context 6, you can switch by specifying `context 6`.  
+
+```
+CTX:5> context
+Available contexts (* = currently selected context) :
+
+0 : ASID: 0x1 : No JRE : No JRE
+1 : ASID: 0x3 : No JRE : No JRE
+2 : ASID: 0x4 : No JRE : No JRE
+3 : ASID: 0x6 : No JRE : No JRE
+4 : ASID: 0x7 : No JRE : No JRE
+*5 : ASID: 0x73 EDB: 0x83d2053a0 : JRE 1.8.0 z/OS s390x-64 build 20181117_128845 (pmz6480-20181120_01)
+6 : ASID: 0x73 EDB: 0x8004053a0 : JRE 1.8.0 z/OS s390x-64 build 20181117_128845 (pmz6480-20181120_01)
+7 : ASID: 0x73 EDB: 0x4a7bd9e8 : No JRE
+8 : ASID: 0xffff : No JRE : No JRE
+```
+
+If you are using `jdmpview` to view Java dumps and heap dumps, some options do not produce any output. For example, a heap dump doesn't contain the information requested by the `info system` command, but does contain information requested by the `info class` command.
+
+If you are viewing a dump where there are a large number of objects on the heap, you can speed up the performance of `jdmpview` by ensuring that your system has enough memory available and does not need to page memory to disk. To achieve this, start `jdmpview` with a larger heap size by specifying the `-Xmx` option. Use the `-J` option to pass the `-Xmx` command line option to the JVM. For example:
+
+```
+jdmpview -J-Xmx<n> -core <core file>
+```
 
 The options available to the dump viewer session are shown under [Session parameters](#session-parameters)
 
@@ -73,7 +99,9 @@ You can run a single command without specifying a command file by appending the 
 
     jdmpview -core mycore.dmp info class
 
-When specifying jdmpview commands that accept a wildcard parameter, you must replace the wildcard symbol with `ALL` to prevent the shell interpreting the wildcard symbol.
+When specifying jdmpview commands that accept a wildcard parameter, you must replace the wildcard symbol with `ALL` to prevent the shell interpreting the wildcard symbol. For example, in interactive mode, the command `info thread *` must be specified in the following way:
+
+    jdmpview -core mycore.dmp info thread ALL
 
 Batch mode is controlled with the following command line options:
 
