@@ -265,7 +265,7 @@ pages:
 
         - "JVM -XX: options" :
             - "Using -XX options"                                                : xx_jvm_commands.md
-            - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
+            - "-XX:ActiveProcessorCount"                                         : xxactiveprocessorcount.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
