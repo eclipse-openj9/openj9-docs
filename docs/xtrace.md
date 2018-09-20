@@ -30,6 +30,10 @@ Trace data can be output in human-readable or in compressed binary formats. The 
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You can also control trace by using the `com.ibm.jvm.Trace` API or by using JVMTI from an external agent.
 
+## Xtrace Option Builder
+
+Use the <a href="https://www.eclipse.org/openj9/tools/xtrace_option_builder.html" target="_blank">Xtrace Option Builder tool</a> to help you specify the correct options and avoid incompatibilities.
+
 ## Syntax
 
     -Xtrace:<parameter>
