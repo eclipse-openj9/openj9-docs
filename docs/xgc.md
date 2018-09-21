@@ -44,7 +44,10 @@ Options that change the behavior of the Garbage Collector (GC).
 | [`preferredHeapBase`           ](#preferredheapbase           ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&trade;, and Windows&trade; only) |
 | [`scvNoAdaptiveTenure`         ](#scvnoadaptivetenure         ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                             |
 | [`scvTenureAge`                ](#scvtenureage                ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                         |
-| [`verboseFormat`               ](#verboseformat               ) | Sets the verbose GC format.                                                                             |
+| [`tlhIncrementSize`            ](#tlhincrementsize            ) | Sets the size of the thread local heap (TLH)  increment                                      |
+| [`tlhInitialSize`              ](#tlhinitialsize              ) | Sets the initial size of the thread local heap                                               |
+| [`tlhMaximumSize`              ](#tlhmaximumsize              ) | Sets the maximum size of the thread local heap                                                      |
+| [`verboseFormat`               ](#verboseformat               ) | Sets the verbose GC format.                                                                  |
 
 ### `concurrentScavenge`
 
@@ -163,6 +166,25 @@ If these requirements are not met, the option is ignored.
   | `<n>`         | [1 - 14]       | 10                    |
 
 : Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see [Tenure age](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_generational_tenure.html).
+
+### `tlhIncrementSize`
+
+        -Xgc:tlhIncrementSize=<bytes>
+
+: Sets the increment size of the thread local heap (TLH), which plays a key role in cache allocation. Threads start creating TLHs with a predefined initial size (default 2 KB). On every TLH refresh, the requested size for that thread is increased by an increment (default 4 KB). Use this option to control the increment size.
+
+### `tlhInitialSize`
+
+        -Xgc:tlhInitialSize=<bytes>
+
+: Sets the initial size of the TLH. The default size is 2 KB.
+
+### `tlhMaximumSize`
+
+        -Xgc:tlhMaximumSize=<bytes>
+
+: Sets the maximum size of the TLH. The size of the TLH varies from 512 bytes (768 on 64-bit JVMs) to 128 KB, depending on the allocation rate of the thread.
+Larger TLHs can help reduce heap lock contention, but might also reduce heap utilisation and increase heap fragmentation. Typically, when the maximum TLH size is increased, you should also increase the increment size (`-XtlhIncrementSize`) proportionally, so that active threads can reach the maximum requested TLH size more quickly.
 
 ### `verboseFormat`
 
