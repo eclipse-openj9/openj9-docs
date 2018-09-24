@@ -27,7 +27,7 @@
 
 **(Windows&trade; 32-bit only)**
 
-By default, the VM uses a contiguous Java&trade; heap to store Java objects. However, on Windows 32-bit systems, there are restrictions in the 32-bit memory space that prevents a porocess accessing more than 2GB of memory, even if there is more memory available. To increase the maximum allocatable heap size, OpenJ9 can split the heap, allowing memory use up to the 4GB limit.
+By default, the VM uses a contiguous Java&trade; heap to store Java objects. However, on Windows 32-bit systems, there are restrictions in the 32-bit memory space that prevents a process accessing more than 2GB of memory, even if there is more memory available. To increase the maximum allocatable heap size, OpenJ9 can split the heap, allowing memory use up to the 4GB limit.
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
 
