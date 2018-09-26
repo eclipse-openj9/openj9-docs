@@ -29,6 +29,10 @@ OpenJ9 produces various types of diagnostic information for analysis when differ
 
 A large set of options and suboptions are available for controlling dumps, which provides a lot of flexibility.
 
+## Xdump Option Builder
+
+Use the <a href="https://www.eclipse.org/openj9/tools/xdump_option_builder.html" target="_blank">Xdump Option Builder tool</a> to help you specify the correct options and avoid incompatibilities.
+
 ## Syntax
 
         -Xdump:<parameter>
