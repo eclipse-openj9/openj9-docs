@@ -100,6 +100,7 @@ pages:
     - "Introduction"                                                             : index.md
     
     - "Release notes" :
+        - "Version 0.10.0"                                                       : version0.10.md
         - "Version 0.9.0"                                                        : version0.9.md
         - "Version 0.8.0"                                                        : version0.8.md
 
