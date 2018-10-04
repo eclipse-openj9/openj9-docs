@@ -97,7 +97,8 @@ markdown_extensions:
 pages:
 
 
-    - "Introduction"                                                             : index.md
+    - "About"                                                                    : index.md
+    - "Introduction"                                                             : introduction.md
     
     - "Release notes" :
         - "Version 0.10.0"                                                       : version0.10.md
