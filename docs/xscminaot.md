@@ -33,7 +33,7 @@ Setting `-Xscmaxaot` is useful if you want a certain amount of cache space guara
 
 | Setting           | Effect                               | Default                                       |
 |-------------------|--------------------------------------|-----------------------------------------------|
-|`-Xscminaot<size>` | Set minimum size for AOT class cache | 0 (See [Default behavior](#default-behavior)) |
+|`-Xscminaot<size>` | Set minimum size for AOT class cache | 0                                             |
 |`-Xscmaxaot<size>` | Set maximum size for AOT class cache | The amount of free space in the cache         |
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.

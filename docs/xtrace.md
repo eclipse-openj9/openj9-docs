@@ -80,14 +80,14 @@ The following parameters can be used to control tracepoint activation. (Follow l
 
 | Command                                                            | Result                                                                              |
 |--------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| [`-Xtrace:maximal=<tracepoint_specification>`](#maximal)           | Records all associated data.                                                        |
-| [`-Xtrace:minimal=<tracepoint_specification>`](#minimal)           | Records only the time stamp and tracepoint identifier.                              |
-| [`-Xtrace:count=<tracepoint_specification>`](#count)               | Counts the tracepoints that are used in a trace configuration.                      |
-| [`-Xtrace:print=<tracepoint_specification>`](#print)               | Prints the specified tracepoints to stderr in real time.                            |
-| [`-Xtrace:iprint=<tracepoint_specification>`](#iprint)             | Prints the specified tracepoints to stderr in real time with indentation.           |
-| [`-Xtrace:exception=<tracepoint_specification>`](#exception)       | Enables exception tracing.                                                          |
-| [`-Xtrace:external<tracepoint_specification>`](#external)          | Routes trace data to trace listeners, which are registered by using the JVMTI APIs. |
-| [`-Xtrace:none[=<tracepoint_specification>]`](#none)               | Prevents the trace engine from loading if it is the only trace option specified.    |
+| [`-Xtrace:maximal=<tracepoint_specification>`](#maximal-tracepoint)           | Records all associated data.                                                        |
+| [`-Xtrace:minimal=<tracepoint_specification>`](#minimal-tracepoint)           | Records only the time stamp and tracepoint identifier.                              |
+| [`-Xtrace:count=<tracepoint_specification>`](#count-tracepoint)               | Counts the tracepoints that are used in a trace configuration.                      |
+| [`-Xtrace:print=<tracepoint_specification>`](#print-tracepoint)               | Prints the specified tracepoints to stderr in real time.                            |
+| [`-Xtrace:iprint=<tracepoint_specification>`](#iprint-tracepoint)             | Prints the specified tracepoints to stderr in real time with indentation.           |
+| [`-Xtrace:exception=<tracepoint_specification>`](#exception-tracepoint)       | Enables exception tracing.                                                          |
+| [`-Xtrace:external<tracepoint_specification>`](#external-tracepoint)          | Routes trace data to trace listeners, which are registered by using the JVMTI APIs. |
+| [`-Xtrace:none[=<tracepoint_specification>]`](#none-tracepoint)               | Prevents the trace engine from loading if it is the only trace option specified.    |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** These options control which individual tracepoints are activated at run time and the implicit destination of the trace data. All these properties are independent of each other and can be mixed and matched in any way that you choose. For more information, see [Tracepoint activation](#tracepoint-activation).
 
@@ -200,9 +200,7 @@ The following options control which individual tracepoints are activated at run 
 -->
 In some cases, you must use them with other options. For example, if you specify `maximal` or `minimal` tracepoints, the trace data is put into memory buffers. If you are going to send the data to a file, you must use an `output` option to specify the destination file name.
 
-With the exceptions of `none`, all options require at least one `<tracepoint_specification>`. Multiple statements of each type of trace are allowed and their effect is cumulative. If you want to use multiple trace options of the same name, use a properties file. (See [`properties`](#properties))
-
-Each option takes a `<tracepoint_specification>`, which is described in the sections that follow. To learn more about the control options, see [Options](#options).
+With the exception of `none`, all options require at least one `<tracepoint_specification>`, which is described in the following section. Multiple statements of each type of trace are allowed and their effect is cumulative. If you want to use multiple trace options of the same name, use a properties file. (See [`properties`](#properties).)
 
 ### Tracepoint specification
 
@@ -210,7 +208,7 @@ Tracepoints are enabled by specifying *component* and *tracepoint*.
 
 If no qualifier parameters are entered, all tracepoints are enabled, except for `<exception.output>` trace, where the default is all {exception}.
 
-The `<tracepoint_specification>` syntax is can be further broken down as follows:
+The `<tracepoint_specification>` syntax can be further broken down as follows:
 
     [!]<component>[{<group>}] or [!]<component>[{<type>}] or [!]<tracepoint_id>[,<tracepoint_id>]
 
