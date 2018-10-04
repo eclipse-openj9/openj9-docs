@@ -71,7 +71,7 @@ When the `-XCEEHDLR` option is used, condition handler actions take place in the
 
 - [-Xsignal:userConditionHandler=percolate](xsignal.md#userconditionhandler)
 
-- [Signals used by the VM](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_signals_j9_handling.html").
+- [Signals used by the VM](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_signals_j9_handling.html).
 
 
 
