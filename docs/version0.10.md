@@ -35,9 +35,9 @@ The following new features and notable changes since v.0.9.0 are included in thi
 
 ## Binaries and supported environments
 
-OpenJ9 release 0.10.0 supports OpenJDK 11, which we expect to be available from the AdoptOpenJDK community in the near future at the following link:
+OpenJ9 release 0.10.0 supports OpenJDK 11, which is available from the AdoptOpenJDK community at the following link:
 
-- [OpenJDK version 11](https://adoptopenjdk.net/releases.html?variant=openjdk11-openj9)
+- [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 
 OpenJDK 11 with Eclipse OpenJ9 is a long term support (LTS) release and supersedes OpenJDK 10 with Eclipse OpenJ9.
 
