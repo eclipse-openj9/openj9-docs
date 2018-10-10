@@ -62,6 +62,40 @@ To improve the performance of applications that run in the cloud, try setting th
   - Use the idle VM settings to maintain a smaller footprint, which can generate cost savings for cloud services that charge based on memory usage. The idle tuning mechanism detects when the VM is idle, releasing free memory pages to keep the footprint as small as possible and keep your running costs to a minimum. For more information, see [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md).
   - Use the [-Xtune:virtualized](xtunevirtualized) option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.
 
+### Cryptographic operations
+
+![Start of content that applies only to Java 8 (LTS)](cr/java8.png)
+
+OpenJDK uses the in-built Java cryptographic implementation by default. However, native cryptographic implementations
+typically provide better performance. OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and
+Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.1.x implementation is
+currently supported for OpenJDK 8 with OpenJ9 for the Digest, CBC, and GCM algorithms.
+
+OpenSSL support is not enabled by default. If you want to use this implementation to improve cryptographic performance, a number of system properties are
+available to enable it.
+
+If you want to enable native OpenSSL for all three supported algorithms, set the following system property on the command line when you start your application:
+
+```
+-Djdk.nativeCrypto=yes
+```
+
+Alternatively, you can enable one or more of the algorithms individually by using the following system properties:
+
+- For **digest**, set `-Djdk.nativeDigest=yes`
+- For **CBC**, set `-Djdk.nativeCBC=yes`
+- For **GCM**, set `-Djdk.nativeGCM=yes`
+
+
+To build a version of OpenJDK with OpenJ9 that includes OpenSSL v1.1.x support, follow the steps in our [detailed build instructions](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V8.md).
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you obtain an OpenJDK with OpenJ9 build from [AdoptOpenJDK](https://adoptopenjdk.net/) that includes OpenSSL v1.1.x or build a version yourself that includes OpenSSL v1.1.x support, the following acknowledgements apply in accordance with the license terms:
+
+- *This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/).*
+- *This product includes cryptographic software written by Eric Young (eay@cryptsoft.com).*
+
+![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+
 ## Runtime options
 
 Runtime options are specified on the command line and include system properties, standard options, nonstandard (**-X**) options, and **-XX** options. For a detailed list of runtime options, see [OpenJ9 command-line options](cmdline_specifying.md)
