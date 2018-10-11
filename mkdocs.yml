@@ -43,7 +43,6 @@ site_description: Eclipse OpenJ9 documentation
 
 theme:
     name: material
-#    custom_dir: 'custom_theme'
     custom_dir: 'theme'
     palette:
       primary:  'cyan'
@@ -94,8 +93,8 @@ markdown_extensions:
 
 # Documentation layout
 
+# nav:   # "pages:" --> "nav:" for MkDocs 1.0
 pages:
-
 
     - "About"                                                                    : index.md
     - "Introduction"                                                             : introduction.md
@@ -283,9 +282,11 @@ pages:
             - "-XX:IdleTuningMinIdleWaitTime"                                    : xxidletuningminidlewaittime.md
             - "-XX:[+|-]IgnoreUnrecognizedVMOptions"                             : xxignoreunrecognizedvmoptions.md
             - "-XX:InitialRAMPercentage"                                         : xxinitialrampercentage.md
+            - "-XX:InitialHeapSize"                                              : xxinitialheapsize.md
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
+            - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect    
             - "-XX:MaxRAMPercentage"                                             : xxmaxrampercentage.md
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
@@ -296,6 +297,7 @@ pages:
             - "-XX:ShareClassesEnableBCI"                                        : xxshareclassesenablebci.md
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
             - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
+            - "-XX:ThreadStackSize"                                              : xxthreadstacksize.md
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
             - "-XX:[+|-]UseContainerSupport"                                     : xxusecontainersupport.md
             - "-XX:[+|-]UseNoGC"                                                 : xxusenogc.md

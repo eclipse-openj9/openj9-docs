@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 * Copyright (c) 2017, 2018 IBM Corp. and others
 *
 * This program and the accompanying materials are made
@@ -22,22 +22,15 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xnuma:none
+# -XX:InitialHeapSize / -XX:MaxHeapSize
 
-**(AIX&reg;, Linux&trade;, and Windows&trade; only)**
-
-Use this option to turn off non-uniform memory architecture (NUMA) awareness when using the balanced garbage collection policy.
-
-For workloads that do most of their work in one thread, or workloads that maintain a full heap, turning off NUMA awareness can improve performance.
+These Hotspot options for specifying heap size are recognized by OpenJ9 for compatibility. See [-Xms / -Xmx](xms.md) for details.
 
 ## Syntax
 
-        -Xnuma:none
+| Setting                     | Effect                  |
+|-----------------------------|-------------------------|
+| `-XX:InitialHeapSize<size>` | Set initial heap size   |
+| `-XX:MaxHeapSize<size>`     | Set maximum heap size   |
 
-## Default behavior
-
-NUMA awareness is enabled by default.
-
-
-
-<!-- ==== END OF TOPIC ==== xnumanone.md ==== -->
+<!-- ==== END OF TOPIC ==== xxinitialheapsize.md ==== -->
