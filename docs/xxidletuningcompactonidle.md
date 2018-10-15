@@ -37,8 +37,9 @@ This option controls garbage collection processing with compaction when the stat
 | Setting                        | Effect  | Default                                                                            |
 |--------------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+IdleTuningCompactOnIdle` | Enable  |                                                                                    |
-| `-XX:-IdleTuningCompactOnIdle` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-IdleTuningCompactOnIdle` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> (See **Note**) |
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If your application is running in a container, the default setting is `-XX:+IdleTuningCompactOnIdle`.
 
 If you enable this option, the OpenJ9 VM attempts to compact the object heap when the VM status is idle.
 

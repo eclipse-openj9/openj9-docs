@@ -37,8 +37,9 @@ This option can be used to reduce the memory footprint of the OpenJ9 VM when it 
 | Setting                   | Effect  | Default                                                                            |
 |---------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+IdleTuningGcOnIdle` | Enable  |                                                                                    |
-| `-XX:-IdleTuningGcOnIdle` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-IdleTuningGcOnIdle` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> (See **Note**) |
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If your application is running in a container, the default setting is `-XX:+IdleTuningCompactOnIdle`.
 
 When the VM enters the idle state, enabling this option causes the VM to release free memory pages in the object heap without resizing the Java&trade; heap. The pages are reclaimed by the operating system, which reduces the physical memory footprint of the VM.
 
