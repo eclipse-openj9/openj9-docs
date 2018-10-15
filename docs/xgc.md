@@ -197,7 +197,7 @@ Larger TLHs can help reduce heap lock contention, but might also reduce heap uti
 
 
     - `default`: The default verbose garbage collection format for OpenJ9. For more information, see [Verbose garbage collection logging](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_pd_verbosegc.html).
-    - `deprecated`: The verbose garbage collection format available in Version 6 and earlier releases of the IBM SDK. For more information, see the [IBM&reg; SDK, Java Technology Edition, Version 6 Diagnostic Guide](http://www.ibm.com/support/knowledgecenter/SSYKE2_6.0.0/com.ibm.java.doc.diagnostics.60/homepage/plugin-homepage-java.html).
+    - `deprecated`: The verbose garbage collection format available in the IBM J9 VM V2.4 and earlier.
 
 
 

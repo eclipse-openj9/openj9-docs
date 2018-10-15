@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xlockword 
+# -Xlockword
 
 Test whether performance optimizations are negatively impacting an application.
 
@@ -48,13 +48,11 @@ If performance does not improve, remove the previous command-line options or use
 
     -Xlockword:mode=default
 
-: See [Testing VM optimizations](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.win.80.doc/diag/problem_determination/optimizations_pd.html).
-
 ### `nolockword`
 
         -Xlockword:nolockword=<class_name>
 
-: Removes the lockword from object instances of the class `<class_name>`, reducing the space required for these objects. However, this action might have an adverse effect on synchronization for those objects. 
+: Removes the lockword from object instances of the class `<class_name>`, reducing the space required for these objects. However, this action might have an adverse effect on synchronization for those objects.
 
     You should only use this option for troubleshooting.
 
@@ -65,4 +63,3 @@ If performance does not improve, remove the previous command-line options or use
 : Shows the current lockword configuration.
 
 <!-- ==== END OF TOPIC ==== xlockword.md ==== -->
-

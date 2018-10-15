@@ -22,22 +22,22 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xverbosegclog 
+# -Xverbosegclog
 
 Causes garbage collection (GC) output from the `-verbose:gc` option to be written to a specified file.
 
 ## Syntax
 
         -Xverbosegclog[:<filename>[,<x>,<y>]]
-        
+
 : where `<filename>` is the name of the file to which output is written. Dump agent tokens can be used in the filename.
 
-    If the file cannot be found, the file is created, and output is written to the new file. 
-    
+    If the file cannot be found, the file is created, and output is written to the new file.
+
     If the file cannot be created (for example, if an invalid filename is specified), output is redirected to `stderr`.
-    
+
     If you do not specify a file name, `verbosegc.%Y%m%d.%H%M%S.%pid.txt` is used (for example, `verbosegc.20180124.093210.1234.txt`).
-    
+
     If you specify `<x>` and `<y>`, output is redirected to `x` files, each containing `y` GC cycles.
 
 ## Default behavior
@@ -46,8 +46,7 @@ By default, no verbose GC logging occurs.
 
 ## See also
 
-- [Dump agent tokens](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/dump_agents_tokens.html) for more information.
+- [Dump agent tokens](xdump.md#dump-agent-tokens) for more information.
 
 
 <!-- ==== END OF TOPIC ==== xverbosegclog.md ==== -->
-

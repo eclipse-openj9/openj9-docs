@@ -82,8 +82,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 ## Limitation and workaround
 
-The VM ends if insufficient operating system resources are available to satisfy the request. However, an error message is not issued. This limitation and a workaround for verifying the page size that is used can be found in [J9 issues and limitations](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/user/limitations_8.html "Known issues or limitations that you might encounter in specific system environments, or configurations.").
-
+The VM ends if insufficient operating system resources are available to satisfy the request. However, an error message is not issued. There are a number of reasons why the VM cannot honor a large page request. For example, there might be insufficient large pages available on the system at the time of the request. To check whether the `-Xlp` request was honored, you can review the output from `-verbose:gc`. Look for the attributes `requestedPageSize` and `pageSize` in the `-verbose:gc` log file. The attribute `requestedPageSize` contains the value specified by `-Xlp`. The attribute `pageSize` is the actual page size used by the VM.
 
 ## See also
 

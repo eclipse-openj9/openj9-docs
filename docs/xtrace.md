@@ -102,7 +102,7 @@ Applications
 : VM trace contains an application trace facility that allows tracepoints to be placed in Java code, enabling you to combine trace data with the other forms of trace. This capability is supported by the `com.ibm.jvm.Trace` API. Note that an instrumented Java application runs only on an OpenJ9 VM. For more information, see [Application trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_application.html).
 
 Java methods
-: Use method trace to debug and trace application code and the system classes provided with the VM. You can trace entry to and exit from Java methods run by the VM. You can select method trace by classname, method name, or both. You can also use wildcards to create complex method selections. For more information about command syntax, see [methods](#methods). For more information about using method trace, see  [Using method trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_method_trace.html).
+: Use method trace to debug and trace application code and the system classes provided with the VM. You can trace entry to and exit from Java methods run by the VM. You can select method trace by classname, method name, or both. You can also use wildcards to create complex method selections. For more information about command syntax, see [methods](#methods).
 
 Trace can produce large amounts of data in a very short time. Before running trace, think carefully about what information you need in order to solve the problem. Here are some considerations:
 
@@ -813,7 +813,7 @@ Wherever an action (`<action>`, `<entryAction>`, or `<exitAction>`) must be spec
 | `snap`                      | Snap all active trace buffers to a file in the current working directory. The file name has the format: `Snapnnnn.yyyymmdd.hhmmssth.ppppp.trc`, where *nnnn* is the sequence number of the snap file since VM startup, *yyyymmdd* is the date, *hhmmssth* is the time, and *ppppp* is the process ID in decimal with leading zeros removed.                                                                              |
 | `suspend`                   | Suspend all tracing (except for special trace points).                                                                                                           |
 | `suspendthis`               | Increment the suspend count for this thread. If the suspend-count is greater than zero, prevent all tracing for this thread.                                     |
-| `sysdump` (or `coredump`)   | Produce a system dump. See [Using the dump viewer](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/systemdump_viewer.html). |
+| `sysdump` (or `coredump`)   | Produce a system dump. See [Dump agents(`-Xdump:system`)](xdump.md#dump-agents). |
 
 Here are some examples of using the `trigger` option:
 
