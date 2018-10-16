@@ -26,7 +26,7 @@
 
 **(Linux&trade; only)**
 
-If your application is running in a container that imposes a memory limit, and you want the VM to allocate a larger fraction of memory to the Java heap, set the  `-XX:+UserContainerSupport` option.
+If your application is running in a container that imposes a memory limit, the VM allocates a larger fraction of memory to the Java heap. To turn off this behavior, set the `-XX:-UserContainerSupport` option on the command line.
 
 ## Syntax
 
@@ -36,11 +36,11 @@ If your application is running in a container that imposes a memory limit, and y
 
 | Setting                    | Effect  | Default                                                                            |
 |----------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:-UseContainerSupport` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-XX:+UseContainerSupport` | Enable  |                                                                                    |
+| `-XX:-UseContainerSupport` | Disable |                                                                                    |
+| `-XX:+UseContainerSupport` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
 
 
-When using container technology, applications are typically run on their own and do not need to compete for memory. The OpenJ9 VM detects when it is running inside a container that imposes a memory limit, and if `-XX:+UserContainerSupport` is set, adjusts the maximum Java heap size appropriately.
+When using container technology, applications are typically run on their own and do not need to compete for memory. The OpenJ9 VM detects when it is running inside a container that imposes a memory limit, and adjusts the maximum Java heap size appropriately.
 
 The following table shows the values that are used when `-XX:+UserContainerSupport` is set:
 
@@ -54,7 +54,9 @@ The default heap size for containers takes affect only when the following condit
 
 1. The application is running in a container environment.
 2. The memory limit for the container is set.
-3. The `-XX:+UseContainerSupport` option is specified on the command line, which is expected to be the default in a future release.
+3. The `-XX:+UseContainerSupport` option is set, which is the default behavior.
+
+To prevent the VM adjusting the maximum heap size when running in a container, set `-XX:-UseContainerSupport`.
 
 When [`-XX:MaxRAMPercentage`](xxmaxrampercentage.md) or [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md) are used with `-XX:+UseContainerSupport`, the corresponding heap setting is determined based on the memory limit of the container. For example, to set the maximum heap size to 80% of the container memory, specify the following options:
 
