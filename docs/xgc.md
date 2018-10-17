@@ -34,7 +34,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
 | Parameter                                                       | Effect                                                                                                  |
 |-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [`concurrentScavenge`          ](#concurrentscavenge          ) | Enables a garbage collection (GC) mode with less pause times (Linux on IBM Z&reg; and z/OS&reg; only).|
+| [`concurrentScavenge`          ](#concurrentscavenge          ) | Enables a garbage collection (GC) mode with less pause times.|
 | [`dnssExpectedTimeRatioMaximum`](#dnssexpectedtimeratiomaximum) | Sets the maximum time to spend on GC of the nursery area.                                               |
 | [`dnssExpectedTimeRatioMinimum`](#dnssexpectedtimeratiominimum) | Sets the minimum time to spend on GC of the nursery area.                                               |
 | [`excessiveGCratio`            ](#excessivegcratio            ) | Sets a boundary value beyond which GC is deemed to be excessive.                                        |
@@ -51,28 +51,37 @@ Options that change the behavior of the Garbage Collector (GC).
 
 ### `concurrentScavenge`
 
-**(Linux on Z and z/OS only)**
+**(64-bit: not AIX or Linux on IBM Power Systems)**
 
         -Xgc:concurrentScavenge
 
-: This option is supported only on the 64-bit VM with the Generational Concurrent (`gencon`) garbage collection policy. When this mode is enabled, the VM attempts to reduce GC pause-times for response-time sensitive, large heap applications. This option is supported only on IBM z14&trade; hardware and the following software:
+: This option supports pause-less garbage collection mode. If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications.
 
+    The following restrictions apply:
 
-Operating systems:
+    - The Generational Concurrent ([`gencon`](xgcpolicy.md)) garbage collection policy must be used.<br/>(This is the default policy.)
 
-- z/OS V2R3
-- z/OS V2R2 and [APAR OA51643](http://www.ibm.com/support/docview.wss?uid=isg1OA51643).
-- RHEL 7.5 (minimum kernel level 4.14)
-- Ubuntu 18.04 (minimum kernel level 4.15)
+    - Compressed references must be used. See [`-Xcompressedrefs`](xcompressedrefs.md).<br/>(Compressed references are enabled by default when the maximum heap size ([-Xmx](xms.md)) &le; 57 GB. The concurrent scavenge option is ignored if the maximum heap size is &gt; 57 GB.)
 
-Hypervisors:
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note: Linux on Z and z/OS**
 
-- IBM z/VM 6.4 with [APAR VM65987](http://www-01.ibm.com/support/docview.wss?uid=isg1VM65987)
-- KVM solutions with QEMU 2.10 or later and minimum host kernel level 4.12 (for example, RHEL 7.5 with kernel level 4.14)
+    This option is supported on IBM z14&trade; hardware running the following software:
+ 
+    Operating systems:
 
-If these requirements are not met, the option is ignored.
+    - z/OS V2R3
+    - z/OS V2R2 and [APAR OA51643](http://www.ibm.com/support/docview.wss?uid=isg1OA51643).
+    - RHEL 7.5 (minimum kernel level 4.14)
+    - Ubuntu 18.04 (minimum kernel level 4.15)
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by **ulimit -M**, to a larger value than the maximum heap size.
+    Hypervisors:
+
+    - IBM z/VM 6.4 with [APAR VM65987](http://www-01.ibm.com/support/docview.wss?uid=isg1VM65987)
+    - KVM solutions with QEMU 2.10 or later and minimum host kernel level 4.12 (for example, RHEL 7.5 with kernel level 4.14)
+
+    If these requirements are not met, the option is ignored.
+
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by `ulimit -M`, to a larger value than the maximum heap size.
 
 ### `dnssExpectedTimeRatioMaximum`
 
