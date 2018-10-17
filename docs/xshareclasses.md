@@ -84,16 +84,25 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : Allows a VM to store classpaths into an existing shared cache that was created by using the `restrictClasspaths` option.
 
+### `bootClassesOnly`
+
+        -Xshareclasses:bootClassesOnly
+
+: Disables caching of classes that are loaded by class loaders other than the bootstrap class loader. If you use this suboption, the `nonfatal` suboption is also set, so this suboption is the equivalent of specifying `-Xshareclasses:bootClassesOnly,nonfatal`.
+
 ### `cacheDir`
 
         -Xshareclasses:cacheDir=<directory>
 
 : Sets the directory in which cache data is read and written. The following defaults apply:
 
-    - On Windows&trade; systems, `<directory>` is the user's `C:\\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
-    - On AIX&reg;, Linux&trade;, and z/OS&reg; systems, `<directory>` is `/tmp/javasharedresources`. You must have sufficient permissions in `<directory>`. For AIX, the directory must not be on an NFS mount for persistent caches.
+    - On Windows&trade; systems, `<directory>` is the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
+    - On AIX&reg;, Linux&trade;, and z/OS&reg; systems, `<directory>` is as follows. You must have sufficient permissions in `<directory>`:
+        - ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) `/tmp/javasharedresources` ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+        - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) The user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 
-: On AIX, Linux, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system.
+
+: On AIX, Linux, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
 
 : Nonpersistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a `javasharedresources` subdirectory of the `cacheDir` specified. Do not move or delete control files in this directory. The `listAllCaches` utility, the `destroyAll` utility, and the `expire` suboption work only in the scope of a given `cacheDir`.
 
@@ -195,6 +204,12 @@ case, the VM continues without using shared classes.
         -Xshareclasses:expire=<time_in_minutes>
 
 : Destroys all caches that are unused for the time that is specified before loading shared classes. This option is not a utility option because it does not cause the VM to exit. On Windows systems, which have NTFS file systems, the `expire` option is accurate to the nearest hour.
+
+### `fatal`
+
+        -Xshareclasses:fatal
+
+: The VM does not start if class data sharing fails, for example because there was an error when accessing the cache directory. An error message is generated. This suboption is specified by default unless you use the `bootClassesOnly` suboption, which is equivalent to `-Xshareclasses:bootClassesOnly,nonfatal`. You can override this behavior by specifying `-Xshareclasses:bootClassesOnly,fatal`. See also [`nonfatal`](#nonfatal).
 
 ### `findAotMethods` (Cache utility)
 
@@ -331,7 +346,7 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:nonfatal
 
-:   Allows the VM to start even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select `nonfatal` and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing.
+:   Allows the VM to start even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select `nonfatal` and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing. See also [`fatal`](#fatal).
 
 ### `nonpersistent`
 
