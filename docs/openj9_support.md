@@ -48,7 +48,7 @@ this table over time.
 | v0.8.0          | March 2018          | Yes       |       |             |         |       |
 | v0.9.0          | August 2018         | Yes       | Yes   |             |         |       |
 | v0.10.0         | September 2018      | No        | No    | Yes(\*3)    |         |       |
-| v0.11.0         | October 2018 (\*1)  | Yes       | No    | Yes         |         |       |
+| v0.11.0         | October 2018        | Yes       | No    | Yes         |         |       |
 | v0.12.0         | January 2019 (\*1)  | No (\*2)  | No    | No (\*2)    | Yes     |       |
 | v0.13.0         | March 2019 (\*1)    | No        | No    | No          | Yes(\*3)|       |
 | v0.14.0         | April 2019 (\*1)    | No (\*2)  | No    | No (\*2)    | Yes     |       |
@@ -166,6 +166,9 @@ minimum glibc version 2.12 are expected to function without problems.
 | Windows Server 2012 R2     |   Y    |
 | Windows Server 2016        |   Y    |
 
+| MacOS                  |   x64    |
+|------------------------|----------|
+| OSX 10                 |    Y     |
 
 | AIX          |  ppc64   |
 |--------------|----------|
@@ -211,4 +214,5 @@ building OpenJDK 8 on Linux is v4.4.7. However, plans are in place to update the
 | Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
 | Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 7.3                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
+| MacOS x86 64-bit            | macOS 10.9.0             | xcode/clang 9.4                 |
 | AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |
