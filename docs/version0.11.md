@@ -32,7 +32,7 @@ The following new features and notable changes since v.0.10.0 are included in th
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [Changes to the location of the default shared cache and cache snapshot directory](#changes-to-the-location-of-the-default-shared-cache-and-cache-snapshot-directory)
 - [New class data sharing suboptions](#new-class-data-sharing-suboptions)
 - [Container awareness in the OpenJ9 VM is now enabled by default](#container-awareness-in-the-openj9-vm-is-now-enabled-by-default)
-- [Pause-less garbage collection mode is now available on x86 platforms](#pause-less-garbage-collection-mode-is-now-available-on-x86-platforms)
+- [Pause-less garbage collection mode is now available on Linux x86 platforms](#pause-less-garbage-collection-mode-is-now-available-on-x86-platforms)
 - [You can now restrict identity hash codes to non-negative values](#you-can-now-restrict-identity-hash-codes-to-non-negative-values)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 
@@ -92,11 +92,11 @@ For nonpersistent caches or snapshots:
 When using container technology, applications are typically run on their own and do not need to compete for memory. If the VM detects that it is running in a container environment, and a memory limit for the container is set, the VM automatically adjusts the maximum default Java heap size.
 
 In earlier releases, this behavior was enabled by setting the `-XX:+UseContainerSupport` option. This setting is now the default. For more information
-about the Java heap size set for a container, see [-XX:\[+|-\]UseContainerSupport](xxusercontainersupport.md).
+about the Java heap size set for a container, see [-XX:\[+|-\]UseContainerSupport](xxusecontainersupport.md).
 
-## Pause-less garbage collection mode is now available on x86 platforms
+## Pause-less garbage collection mode is now available on Linux x86 platforms
 
-Pause-less garbage collection mode is aimed at large heap, response-time sensitive applications. When enabled, the VM attempts to reduce GC pause times. In earlier releases, pause-less garbage collection mode ([`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge)) was available only on IBM z14 hardware. This mode is now available on 64-bit x86 Linux and Windows platforms.
+Pause-less garbage collection mode is aimed at large heap, response-time sensitive applications. When enabled, the VM attempts to reduce GC pause times. In earlier releases, pause-less garbage collection mode ([`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge)) was available only on IBM z14 hardware. This mode is now available on 64-bit x86 Linux platforms.
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
 

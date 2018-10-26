@@ -51,7 +51,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
 ### `concurrentScavenge`
 
-**(64-bit: not AIX or Linux on IBM Power Systems)**
+**(64-bit: Linux on x86, Linux on IBM Z&reg;, or z/OS&reg; only)**
 
         -Xgc:concurrentScavenge
 
@@ -66,7 +66,7 @@ Options that change the behavior of the Garbage Collector (GC).
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note: Linux on Z and z/OS**
 
     This option is supported on IBM z14&trade; hardware running the following software:
- 
+
     Operating systems:
 
     - z/OS V2R3
