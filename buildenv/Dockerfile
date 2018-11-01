@@ -1,0 +1,44 @@
+# (C) Copyright IBM Corporation 2016, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+FROM ubuntu:16.04
+MAINTAINER openj9.bot <openj9.bot@gmail.com> 
+
+# Install basic requirementes from APT. Set up for SSH (including SSH login fix to prevent user being logged out), install and setup  virtualenv from pip3 
+COPY requirements.* /tmp/
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pip git openjdk-8-jdk zip \
+    && DEBIAN_FRONTEND="noninteractive" apt-get -q upgrade -y -o Dpkg::Options::="--force-confnew" --no-install-recommends \
+    && DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends openssh-server \
+    && rm -rf /var/lib/apt/lists/* \
+    && sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd \
+    && mkdir -p /var/run/sshd \
+    && pip3 install virtualenv \
+    && virtualenv myenv -p python3 
+# Update LANG to fix error with pip-tools
+ENV LANG=C.UTF-8
+# Update path to include the virtual env install location
+ENV PATH /myenv/bin:$PATH
+# Activate the virtualenv environment, install build and test tools, create a new dependency list, and change permissions to ensure that Jenkins modify packages where necessary
+RUN /bin/bash -c "source /myenv/bin/activate && pip3 install setuptools pip-tools && pip3 install --requirement /tmp/requirements.txt && mv /tmp/requirements.txt /tmp/requirements.orig && pip-compile /tmp/requirements.in && chmod -R ugo+w /myenv"
+# Setup jenkins user
+RUN  useradd -m -d /home/jenkins -s /bin/sh jenkins \
+    && echo "jenkins:jenkinspass" | chpasswd \
+# Standard SSH port
+EXPOSE 22
+# Default command
+CMD ["/usr/sbin/sshd", "-D"]
+# Create and set a working directory /docs
+RUN mkdir /docs
+WORKDIR /docs
