@@ -24,13 +24,31 @@
 
 # Java dump
 
-Java dumps, sometimes referred to as *Java cores*, are produced when the VM ends unexpectedly because of an operating system signal, `OutOfMemoryError` exception, or a user-initiated keystroke combination. You can also generate a Java dump by calling the Dump API programmatically from your application or specifying the `-Xdump:java` option on the command line.
+Java dumps, sometimes referred to as *Java cores*, are produced when the VM ends unexpectedly because of an operating system signal, `OutOfMemoryError`, or a user-initiated keystroke combination. You can also generate a Java dump by calling the Dump API programmatically from your application or specifying the `-Xdump:java` option on the command line.
+
+If your Java application crashes or hangs, Java dumps can provide useful information to help you diagnose the root cause.
+
+- If your application crashes, Javadumps are generated automatically for the following types of failure:
+    - the VM receives an unexpected signal or an assertion failure
+    - the VM runs out of memory
+- If your application hangs, you can trigger the generation of a Java dump by sending a SIGQUIT signal (`kill -3`) to the VM.
+
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On Windows, if you started the VM in a console window you can force the VM to produce a Java dump in response to a SIGBREAK signal
+    (Ctrl-Break keyboard combination). If you didn't start in a console window there is no equivalent to a Linux `kill` command on Windows for sending signals.
+    The only option here is to trigger a full system dump by finding the VM process in the **Processes** tab of the Windows Task Manager and clicking
+    **Create dump file**.
+
+To help you understand how a Java dump can help you with problem diagnosis, we've included a few scenarios at the end of the topic that might help you interpret the data:
+
+- [A crash caused by a general protection fault (gpf)](#general-protection-fault)
+- [A Java heap OutOfMemoryError (OOM)](#java-outofmemoryerror)
+
+## Java dump contents
 
 Java dumps summarize the state of the VM when the event occurs, with most of the information relating to components of the VM.
-The file is made up of a number of sections that provide different types of information. The information that follows describes
-each section and provides examples to help you interpret the data.
+The file is made up of a number of sections that provide different types of information.
 
-## TITLE
+### TITLE
 
 The first section of the Java dump file provides information about the event that triggered the production of the dump.
 In the following example you can see that a `vmstop` event triggered the dump at a specified date and time.
@@ -47,7 +65,7 @@ NULL           ===============================
 1TIPREPSTATE   Prep State: 0x106 (vm_access+exclusive_vm_access+trace_disabled)
 ```
 
-## GPINFO
+### GPINFO
 
 The GPINFO section provides general information about the system that the JVM is running on. The following example is taken
 from a Java dump that was generated on a Linux system.
@@ -90,7 +108,7 @@ The hexadecimal number recorded for `VM flags` ends in MSSSS, where M is the VM 
 
 A value of `0000000000000000` (0x00000) indicates that a crash occurred outside of the VM.
 
-## ENVINFO
+### ENVINFO
 
 This section contains useful information about the environment in which the crash took place, including the following data:
 
@@ -206,7 +224,7 @@ NULL           -----------------------------------------------------------------
 NULL           
 -->
 
-## NATIVEMEMINFO
+### NATIVEMEMINFO
 
 This section records information about native memory that is requested by using library functions such as `malloc()` and `mmap()`.
 Values are provided as a breakdown, per component, indicating the total number of bytes allocated and the number of native memory allocations.
@@ -278,7 +296,7 @@ NULL
 This section does not record memory that is allocated by application or JNI code and is typically a little less than the
 value recorded by operating system tools.
 
-## MEMINFO
+### MEMINFO
 
 This section relates to memory management, providing a breakdown of memory usage in the VM for the object heap,
 internal memory, memory used for classes, the JIT code cache, and JIT data cache in decimal and hexadecimal format.
@@ -350,7 +368,7 @@ NULL
 In the example, the GC History (`1STGCHTYPE`) section is blank. This section is populated if a garbage collection cycle occurred in
 a VM that is being diagnosed with the trace facility.
 
-## LOCKS
+### LOCKS
 
 This section of the Java dump provides information about locks, which protect shared resources from being accessed by more than one entity at a time. The information is essential in a deadlock situation, where two threads attempt to synchronize on an object and lock an instance of a class. Precise information is recorded about the threads that are causing the problem, which enables you to identify the root cause.
 
@@ -378,7 +396,7 @@ NULL
 NULL           
 ```
 
-## THREADS
+### THREADS
 
 The THREADS section of a Java dump file provides summary information about the VM thread pool and detailed information about Java threads, native threads, and stack traces. Understanding the content of this section can help you diagnose problems that are caused by blocked or waiting threads.
 
@@ -477,7 +495,7 @@ NULL
 NULL
 ```
 
-## HOOKS
+### HOOKS
 
 This section shows internal VM event callbacks, which are used for diagnosing performance problems in the VM. Multiple hook interfaces are listed, which include their individual hook events. The following example shows data for the `J9VMHookInterface`, including the call site location (source file:line number), start time, and duration of the last callback and the longest callback.
 
@@ -523,7 +541,7 @@ NULL           -----------------------------------------------------------------
 NULL
 ```
 
-## SHARED CLASSES
+### SHARED CLASSES
 
 If the shared classes cache is enabled at run time, the information provided in a Java dump file describes settings that were used when creating the cache, together with summary information about the size and content of the cache.
 
@@ -617,7 +635,7 @@ NULL
 NULL
 ```
 
-## CLASSES
+### CLASSES
 
 The classes section shows information about class loaders. The first part is a summary that records each available class loader (`2CLTEXTCLLOADER`) followed by the number of libraries and classes that it loaded. This information is followed by a more detailed list of libraries (`1CLTEXTCLLIB`) and classes (`1CLTEXTCLLO`) that are loaded.
 
@@ -660,6 +678,254 @@ NULL           =================================
 2CLTEXTCLLOAD  		Loader jdk/internal/loader/ClassLoaders$AppClassLoader(0x00000000FFE1DAD0)
 ```
 
+## Scenarios
+
+### General Protection Fault
+
+In this scenario, a Java application has crashed due to a General Protection Fault (GPF), automatically generating a Java dump file.
+
+The first section of the file (TITLE) tells you that the GPF triggered the Java dump.
+
+```
+0SECTION       TITLE subcomponent dump routine
+NULL           ===============================
+1TICHARSET     UTF-8
+1TISIGINFO     Dump Event "gpf" (00002000) received
+1TIDATETIME    Date: 2018/09/24 at 15:18:03:115
+1TINANOTIME    System nanotime: 4498949283020796
+1TIFILENAME    Javacore filename:    /home/test/JNICrasher/javacore.20180924.151801.29399.0002.txt
+1TIREQFLAGS    Request Flags: 0x81 (exclusive+preempt)
+1TIPREPSTATE   Prep State: 0x100 (trace_disabled)
+1TIPREPINFO    Exclusive VM access not taken: data may not be consistent across javacore sections
+```
+
+To troubleshoot this problem, you need to know which thread caused the GPF to occur. The thread that was running at the time of the crash is reported as the **current thread**
+in the THREADS section of the Java dump. Here is an extract from the THREADS section:
+
+```
+NULL           ------------------------------------------------------------------------
+0SECTION       THREADS subcomponent dump routine
+NULL           =================================
+NULL
+1XMPOOLINFO    JVM Thread pool info:
+2XMPOOLTOTAL       Current total number of pooled threads: 16
+2XMPOOLLIVE        Current total number of live threads: 15
+2XMPOOLDAEMON      Current total number of live daemon threads: 14
+NULL            
+1XMCURTHDINFO  Current thread
+3XMTHREADINFO      "main" J9VMThread:0xB6B60E00, omrthread_t:0xB6B049D8, java/lang/Thread:0xB55444D0, state:R, prio=5
+3XMJAVALTHREAD            (java/lang/Thread getId:0x1, isDaemon:false)
+3XMTHREADINFO1            (native thread ID:0x72D8, native priority:0x5, native policy:UNKNOWN, vmstate:R, vm thread flags:0x00000000)
+3XMTHREADINFO2            (native stack address range from:0xB6CE3000, to:0xB74E4000, size:0x801000)
+3XMCPUTIME               CPU usage total: 0.319865924 secs, current category="Application"
+3XMHEAPALLOC             Heap bytes allocated since last GC cycle=778008 (0xBDF18)
+3XMTHREADINFO3           Java callstack:
+4XESTACKTRACE                at JNICrasher.doSomethingThatCrashes(Native Method)
+4XESTACKTRACE                at JNICrasher.main(JNICrasher.java:7)
+3XMTHREADINFO3           Native callstack:
+4XENATIVESTACK               (0xB6C6F663 [libj9prt29.so+0x3b663])
+4XENATIVESTACK               (0xB6C52F6E [libj9prt29.so+0x1ef6e])
+4XENATIVESTACK               (0xB6C6F1CE [libj9prt29.so+0x3b1ce])
+4XENATIVESTACK               (0xB6C6F2C6 [libj9prt29.so+0x3b2c6])
+4XENATIVESTACK               (0xB6C6ED93 [libj9prt29.so+0x3ad93])
+4XENATIVESTACK               (0xB6C52F6E [libj9prt29.so+0x1ef6e])
+4XENATIVESTACK               (0xB6C6ED07 [libj9prt29.so+0x3ad07])
+4XENATIVESTACK               (0xB6C6AA3D [libj9prt29.so+0x36a3d])
+4XENATIVESTACK               (0xB6C6C3A4 [libj9prt29.so+0x383a4])
+4XENATIVESTACK               (0xB667FA19 [libj9dmp29.so+0xfa19])
+4XENATIVESTACK               (0xB6C52F6E [libj9prt29.so+0x1ef6e])
+4XENATIVESTACK               (0xB66878CF [libj9dmp29.so+0x178cf])
+4XENATIVESTACK               (0xB6688083 [libj9dmp29.so+0x18083])
+4XENATIVESTACK               (0xB6C52F6E [libj9prt29.so+0x1ef6e])
+4XENATIVESTACK               (0xB6680C0D [libj9dmp29.so+0x10c0d])
+4XENATIVESTACK               (0xB667F9D7 [libj9dmp29.so+0xf9d7])
+4XENATIVESTACK               (0xB6C52F6E [libj9prt29.so+0x1ef6e])
+4XENATIVESTACK               (0xB668B02F [libj9dmp29.so+0x1b02f])
+4XENATIVESTACK               (0xB668B4D3 [libj9dmp29.so+0x1b4d3])
+4XENATIVESTACK               (0xB66740F1 [libj9dmp29.so+0x40f1])
+4XENATIVESTACK               (0xB66726FA [libj9dmp29.so+0x26fa])
+4XENATIVESTACK               (0xB6C52F6E [libj9prt29.so+0x1ef6e])
+4XENATIVESTACK               (0xB66726A9 [libj9dmp29.so+0x26a9])
+4XENATIVESTACK               (0xB6676AE4 [libj9dmp29.so+0x6ae4])
+4XENATIVESTACK               (0xB668D75A [libj9dmp29.so+0x1d75a])
+4XENATIVESTACK               (0xB6A28DD4 [libj9vm29.so+0x81dd4])
+4XENATIVESTACK               (0xB6C52F6E [libj9prt29.so+0x1ef6e])
+4XENATIVESTACK               (0xB6A289EE [libj9vm29.so+0x819ee])
+4XENATIVESTACK               (0xB6A29A40 [libj9vm29.so+0x82a40])
+4XENATIVESTACK               (0xB6C52B6A [libj9prt29.so+0x1eb6a])
+4XENATIVESTACK               __kernel_rt_sigreturn+0x0 (0xB7747410)
+4XENATIVESTACK               (0xB75330B6 [libffi29.so+0x50b6])
+4XENATIVESTACK               ffi_raw_call+0xad (0xB7531C53 [libffi29.so+0x3c53])
+4XENATIVESTACK               (0xB69BE4AB [libj9vm29.so+0x174ab])
+4XENATIVESTACK               (0xB6A665BC [libj9vm29.so+0xbf5bc])
+4XENATIVESTACK               (0xB6A15552 [libj9vm29.so+0x6e552])
+4XENATIVESTACK               (0xB6A30894 [libj9vm29.so+0x89894])
+4XENATIVESTACK               (0xB6A6F169 [libj9vm29.so+0xc8169])
+4XENATIVESTACK               (0xB6C52F6E [libj9prt29.so+0x1ef6e])
+4XENATIVESTACK               (0xB6A6F1FA [libj9vm29.so+0xc81fa])
+4XENATIVESTACK               (0xB6A30994 [libj9vm29.so+0x89994])
+4XENATIVESTACK               (0xB6A2CE4C [libj9vm29.so+0x85e4c])
+4XENATIVESTACK               (0xB770487D [libjli.so+0x787d])
+4XENATIVESTACK               (0xB7719F72 [libpthread.so.0+0x6f72])
+4XENATIVESTACK               clone+0x5e (0xB763543E [libc.so.6+0xee43e])
+```
+
+The extract tells you that the current thread was `java/lang/Thread`, and information is provided about the Java callstack and Native callstack
+(`3XMTHREADINFO3`) at the point at which the crash occurred. To simulate a crash caused by a bug in an application, this example
+calls a JNI method whose native implementation causes a crash. The Java callstack shows the call to the JNI native method (`JNIcrasher`), and the
+native callstack shows the point of failure. In this example, the native call stack does not include any function names to help you isolate the error
+in the native code. You can get this information from a system dump, which is usually produced alongside the Java dump. Open the
+system dump with the [Dump viewer](tool_jdmpview.md) and use the `info thread` command to print the Java and native stack for the current thread.
+
+### Java OutOfMemoryError
+
+In this scenario, the Java heap runs out of memory, causing an `OutOfMemoryError`, which automatically generates a Java dump file.
+
+The first section of the file (TITLE) tells you that a `systhrow` event triggered the Java dump as a result of an OOM (`java/lang/OutOfMemoryError`) for
+Java heap space.
+
+```
+0SECTION       TITLE subcomponent dump routine
+NULL           ===============================
+1TICHARSET     UTF-8
+1TISIGINFO     Dump Event "systhrow" (00040000) Detail "java/lang/OutOfMemoryError" "Java heap space" received
+1TIDATETIME    Date: 2018/09/14 at 15:29:42:709
+1TINANOTIME    System nanotime: 3635648876608448
+1TIFILENAME    Javacore filename:    /home/cheesemp/test/javacore.20180914.152929.18885.0003.txt
+1TIREQFLAGS    Request Flags: 0x81 (exclusive+preempt)
+1TIPREPSTATE   Prep State: 0x104 (exclusive_vm_access+trace_disabled)
+```
+
+The MEMINFO section records how much memory is allocated to the Java heap (`1STHEAPTYPE Object Memory`), how much is in use, and how much is free. Solving
+your problem might be as simple as setting a larger heap size when you start your application.
+
+If you don't know what size the Java heap was set to, you might find that information in the ENVINFO section, which records the command line options that
+were used when the application started. Look or search for the `1CIUSERARGS    UserArgs:` string and review the entries recorded for all lines that
+start `2CIUSERARG`. The Java heap size is set by the `-Xmx` option. If the size has not been set on the command line by `-Xmx`, the default value applies, which
+you can find in [Default Settings](openj9_defaults.md).
+
+In our scenario the solution to the problem is not an adjustment to the Java heap size. Here is the MEMINFO section:
+
+```
+0SECTION       MEMINFO subcomponent dump routine
+NULL           =================================
+NULL
+1STHEAPTYPE    Object Memory
+NULL           id         start      end        size       space/region
+1STHEAPSPACE   0xB6B49D20     --         --         --     Generational
+1STHEAPREGION  0xB6B4A078 0x95750000 0xB5470000 0x1FD20000 Generational/Tenured Region
+1STHEAPREGION  0xB6B49F10 0xB5470000 0xB54C0000 0x00050000 Generational/Nursery Region
+1STHEAPREGION  0xB6B49DA8 0xB54C0000 0xB5750000 0x00290000 Generational/Nursery Region
+NULL
+1STHEAPTOTAL   Total memory:         536870912 (0x20000000)
+1STHEAPINUSE   Total memory in use:  302603160 (0x12095B98)
+1STHEAPFREE    Total memory free:    234267752 (0x0DF6A468)
+```
+
+The output shows that only 56% of the Java heap is in use, so this suggests that the application is trying to do something sub-optimal. To
+investigate further we need to work out which thread was the current thread when the OOM occurred to see what it was trying to do. As in our previous scenario, we can find the
+**current thread** in the THREADS section. Here is an extract from the output:
+
+```
+0SECTION       THREADS subcomponent dump routine
+NULL           =================================
+NULL
+1XMPOOLINFO    JVM Thread pool info:
+2XMPOOLTOTAL       Current total number of pooled threads: 16
+2XMPOOLLIVE        Current total number of live threads: 16
+2XMPOOLDAEMON      Current total number of live daemon threads: 15
+NULL
+1XMCURTHDINFO  Current thread
+3XMTHREADINFO      "main" J9VMThread:0xB6B60C00, omrthread_t:0xB6B049D8, java/lang/Thread:0x95764520, state:R, prio=5
+3XMJAVALTHREAD            (java/lang/Thread getId:0x1, isDaemon:false)
+3XMTHREADINFO1            (native thread ID:0x49C6, native priority:0x5, native policy:UNKNOWN, vmstate:R, vm thread flags:0x00001020)
+3XMTHREADINFO2            (native stack address range from:0xB6CB5000, to:0xB74B6000, size:0x801000)
+3XMCPUTIME               CPU usage total: 8.537823831 secs, current category="Application"
+3XMHEAPALLOC             Heap bytes allocated since last GC cycle=0 (0x0)
+3XMTHREADINFO3           Java callstack:
+4XESTACKTRACE                at java/lang/StringBuffer.ensureCapacityImpl(StringBuffer.java:696)
+4XESTACKTRACE                at java/lang/StringBuffer.append(StringBuffer.java:486(Compiled Code))
+5XESTACKTRACE                   (entered lock: java/lang/StringBuffer@0x957645B8, entry count: 1)
+4XESTACKTRACE                at java/lang/StringBuffer.append(StringBuffer.java:428(Compiled Code))
+4XESTACKTRACE                at HeapBreaker.main(HeapBreaker.java:34(Compiled Code))
+3XMTHREADINFO3           Native callstack:
+4XENATIVESTACK               (0xB6C535B3 [libj9prt29.so+0x3b5b3])
+4XENATIVESTACK               (0xB6C36F3E [libj9prt29.so+0x1ef3e])
+4XENATIVESTACK               (0xB6C5311E [libj9prt29.so+0x3b11e])
+4XENATIVESTACK               (0xB6C53216 [libj9prt29.so+0x3b216])
+4XENATIVESTACK               (0xB6C52CE3 [libj9prt29.so+0x3ace3])
+4XENATIVESTACK               (0xB6C36F3E [libj9prt29.so+0x1ef3e])
+4XENATIVESTACK               (0xB6C52C57 [libj9prt29.so+0x3ac57])
+4XENATIVESTACK               (0xB6C4E9CD [libj9prt29.so+0x369cd])
+4XENATIVESTACK               (0xB6C502FA [libj9prt29.so+0x382fa])
+```
+
+To simulate a Java `OutOfMemoryError`, this example application repeatedly appends characters to a `StringBuffer` object in an infinite loop. The Java callstack shows the `HeapBreaker.main` method appending characters (`java/lang/StringGuffer.append`) until the method `java/lang/StringBuffer.ensureCapacityImpl()` throws the `OutOfMemoryError`.
+
+StringBuffer objects are wrappers for character arrays (`char[]`) and when the capacity of the underlying array is reached, the contents are automatically copied into a new, larger array. The new array is created in the `StringBuffer.ensureCapacity()` method, which more or less doubles the size of the old array. In our scenario, the array takes up all the remaining space in the Java heap.
+
+The MEMINFO section of the Java dump file can also tell you when an unexpectedly large allocation request causes an OOM. Look for the GC History (`1STGCHTYPE`) section, which details allocation requests that trigger GC activity. In the sample output you can see that a large allocation request (`requestedbytes=603979784`) triggered a global GC. When the GC could not free up sufficient space in the heap to satisfy the request, the allocation failure generated the OOM.
+
+```
+1STGCHTYPE     GC History  
+3STHSTTYPE     14:29:29:580239000 GMT j9mm.101 -   J9AllocateIndexableObject() returning NULL! 0 bytes requested for object of class B6BBC300 from memory space 'Generational' id=B6B49D20
+3STHSTTYPE     14:29:29:579916000 GMT j9mm.134 -   Allocation failure end: newspace=2686912/3014656 oldspace=231597224/533856256 loa=5338112/5338112
+3STHSTTYPE     14:29:29:579905000 GMT j9mm.470 -   Allocation failure cycle end: newspace=2686912/3014656 oldspace=231597224/533856256 loa=5338112/5338112
+3STHSTTYPE     14:29:29:579859000 GMT j9mm.475 -   GlobalGC end: workstackoverflow=0 overflowcount=0 memory=234284136/536870912
+3STHSTTYPE     14:29:29:579807000 GMT j9mm.90 -   GlobalGC collect complete
+3STHSTTYPE     14:29:29:579776000 GMT j9mm.137 -   Compact end: bytesmoved=301989896
+3STHSTTYPE     14:29:29:313899000 GMT j9mm.136 -   Compact start: reason=compact to meet allocation
+3STHSTTYPE     14:29:29:313555000 GMT j9mm.57 -   Sweep end
+3STHSTTYPE     14:29:29:310772000 GMT j9mm.56 -   Sweep start
+3STHSTTYPE     14:29:29:310765000 GMT j9mm.94 -   Class unloading end: classloadersunloaded=0 classesunloaded=0
+3STHSTTYPE     14:29:29:310753000 GMT j9mm.60 -   Class unloading start
+3STHSTTYPE     14:29:29:310750000 GMT j9mm.55 -   Mark end
+3STHSTTYPE     14:29:29:306013000 GMT j9mm.54 -   Mark start
+3STHSTTYPE     14:29:29:305957000 GMT j9mm.474 -   GlobalGC start: globalcount=9
+3STHSTTYPE     14:29:29:305888000 GMT j9mm.475 -   GlobalGC end: workstackoverflow=0 overflowcount=0 memory=234284136/536870912
+3STHSTTYPE     14:29:29:305837000 GMT j9mm.90 -   GlobalGC collect complete
+3STHSTTYPE     14:29:29:305808000 GMT j9mm.137 -   Compact end: bytesmoved=189784
+3STHSTTYPE     14:29:29:298042000 GMT j9mm.136 -   Compact start: reason=compact to meet allocation
+3STHSTTYPE     14:29:29:297695000 GMT j9mm.57 -   Sweep end
+3STHSTTYPE     14:29:29:291696000 GMT j9mm.56 -   Sweep start
+3STHSTTYPE     14:29:29:291692000 GMT j9mm.55 -   Mark end
+3STHSTTYPE     14:29:29:284994000 GMT j9mm.54 -   Mark start
+3STHSTTYPE     14:29:29:284941000 GMT j9mm.474 -   GlobalGC start: globalcount=8
+3STHSTTYPE     14:29:29:284916000 GMT j9mm.135 -   Exclusive access: exclusiveaccessms=0.016 meanexclusiveaccessms=0.016 threads=0 lastthreadtid=0xB6B61100 beatenbyotherthread=0
+3STHSTTYPE     14:29:29:284914000 GMT j9mm.469 -   Allocation failure cycle start: newspace=2678784/3014656 oldspace=80601248/533856256 loa=5338112/5338112 requestedbytes=603979784
+3STHSTTYPE     14:29:29:284893000 GMT j9mm.470 -   Allocation failure cycle end: newspace=2678784/3014656 oldspace=80601248/533856256 loa=5338112/5338112
+3STHSTTYPE     14:29:29:284858000 GMT j9mm.560 -   LocalGC end: rememberedsetoverflow=0 causedrememberedsetoverflow=0 scancacheoverflow=0 failedflipcount=0 failedflipbytes=0 failedtenurecount=0 failedtenurebytes=0 flipcount=2 flipbytes=64 newspace=2678784/3014656 oldspace=80601248/533856256 loa=5338112/5338112 tenureage=0
+3STHSTTYPE     14:29:29:284140000 GMT j9mm.140 -   Tilt ratio: 89
+3STHSTTYPE     14:29:29:283160000 GMT j9mm.64 -   LocalGC start: globalcount=8 scavengecount=335 weakrefs=0 soft=0 phantom=0 finalizers=0
+3STHSTTYPE     14:29:29:283123000 GMT j9mm.135 -   Exclusive access: exclusiveaccessms=0.016 meanexclusiveaccessms=0.016 threads=0 lastthreadtid=0xB6B61100 beatenbyotherthread=0
+3STHSTTYPE     14:29:29:283120000 GMT j9mm.469 -   Allocation failure cycle start: newspace=753616/3014656 oldspace=80601248/533856256 loa=5338112/5338112 requestedbytes=603979784
+3STHSTTYPE     14:29:29:283117000 GMT j9mm.133 -   Allocation failure start: newspace=753616/3014656 oldspace=80601248/533856256 loa=5338112/5338112 requestedbytes=603979784
+3STHSTTYPE     14:29:29:269762000 GMT j9mm.134 -   Allocation failure end: newspace=2686928/3014656 oldspace=80601248/533856256 loa=5338112/5338112
+3STHSTTYPE     14:29:29:269751000 GMT j9mm.470 -   Allocation failure cycle end: newspace=2686976/3014656 oldspace=80601248/533856256 loa=5338112/5338112
+3STHSTTYPE     14:29:29:269718000 GMT j9mm.560 -   LocalGC end: rememberedsetoverflow=0 causedrememberedsetoverflow=0 scancacheoverflow=0 failedflipcount=0 failedflipbytes=0 failedtenurecount=0 failedtenurebytes=0 flipcount=0 flipbytes=0 newspace=2686976/3014656 oldspace=80601248/533856256 loa=5338112/5338112 tenureage=0
+3STHSTTYPE     14:29:29:268981000 GMT j9mm.140 -   Tilt ratio: 89
+3STHSTTYPE     14:29:29:268007000 GMT j9mm.64 -   LocalGC start: globalcount=8 scavengecount=334 weakrefs=0 soft=0 phantom=0 finalizers=0
+3STHSTTYPE     14:29:29:267969000 GMT j9mm.135 -   Exclusive access: exclusiveaccessms=0.016 meanexclusiveaccessms=0.016 threads=0 lastthreadtid=0xB6B61100 beatenbyotherthread=0
+3STHSTTYPE     14:29:29:267966000 GMT j9mm.469 -   Allocation failure cycle start: newspace=0/3014656 oldspace=80601248/533856256 loa=5338112/5338112 requestedbytes=48
+3STHSTTYPE     14:29:29:267963000 GMT j9mm.133 -   Allocation failure start: newspace=0/3014656 oldspace=80601248/533856256 loa=5338112/5338112 requestedbytes=48
+3STHSTTYPE     14:29:29:249015000 GMT j9mm.134 -   Allocation failure end: newspace=2686928/3014656 oldspace=80601248/533856256 loa=5338112/5338112
+3STHSTTYPE     14:29:29:249003000 GMT j9mm.470 -   Allocation failure cycle end: newspace=2686976/3014656 oldspace=80601248/533856256 loa=5338112/5338112
+3STHSTTYPE     14:29:29:248971000 GMT j9mm.560 -   LocalGC end: rememberedsetoverflow=0 causedrememberedsetoverflow=0 scancacheoverflow=0 failedflipcount=0 failedflipbytes=0 failedtenurecount=0 failedtenurebytes=0 flipcount=0 flipbytes=0 newspace=2686976/3014656 oldspace=80601248/533856256 loa=5338112/5338112 tenureage=0
+```
+
+Although the Java code we used in this scenario deliberately triggered an `OutOfMemoryError` in a pronounced way, similar allocation issues can and do occur when dealing with large data sets such as XML files.
+
+The next step in diagnosing the problem is to open the system dump that gets generated automatically when an `OutOfMemoryError` occurs. Open
+the dump with the [Eclipse Memory Analyzer tool (MAT)](https://www.eclipse.org/mat/) and search for the `StringBuffer` object, which should provide further clues about what went wrong. A common example is seeing the same `String` duplicated over and over again, which might indicate that code is stuck in a loop.
+
+  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you want to use MAT to analyze your system dump, you must install the Diagnostic Tool Framework for Java (DTFJ) plugin in the Eclipse IDE. Select the following menu items:
+
+```
+Help > Install New Software > Work with "IBM Diagnostic Tool Framework for Java" >  
+```
+
+If, unlike the previous scenario, you receive an `OutOfMemoryError` and the MEMINFO section shows that there is very little space left
+on the Java heap, the current thread information is not important. The current thread is simply the thread that happened to be current when the space ran out. In this situation you might want to increase your Java heap size. For help with this task, see [How to do heap sizing](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_heapsizing.html).
 
 
 <!-- ==== END OF TOPIC ==== dump_javadump.md ==== -->
