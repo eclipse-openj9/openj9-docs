@@ -128,31 +128,23 @@ pages:
         
         - "System property options" :
             - "Using System properties"                                          : d_jvm_commands.md 
-#           - "-Dcom.ibm.dbgmalloc"                                              : dcomibmdbgmalloc.md
             - "-Dcom.ibm.enableClassCaching"                                     : dcomibmenableclasscaching.md
             - "-Dcom.ibm.enableLegacyDumpSecurity"                               : dcomibmenablelegacydumpsecurity.md
             - "-Dcom.ibm.enableLegacyLogSecurity"                                : dcomibmenablelegacylogsecurity.md
             - "-Dcom.ibm.enableLegacyTraceSecurity"                              : dcomibmenablelegacytracesecurity.md
             - "-Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns"   : dcomibmlangmanagementosmxbeaniscputime100ns.md
             - "-Dcom.ibm.lang.management.verbose"                                : dcomibmlangmanagementverbose.md
-#           - "-Dcom.ibm.mappedByteBufferForce"                                  : dcomibmmappedbytebufferforce.md
-#           - "-Dcom.ibm.rational.mvfs.checking"                                 : dcomibmrationalmvfschecking.md
-#           - "-Dcom.ibm.signalhandling.ignoreLogoff"                            : dcomibmsignalhandlingignorelogoff.md
             - "-Dcom.ibm.tools.attach.directory"                                 : dcomibmtoolsattachdirectory.md
             - "-Dcom.ibm.tools.attach.displayName"                               : dcomibmtoolsattachdisplayname.md
             - "-Dcom.ibm.tools.attach.enable"                                    : dcomibmtoolsattachenable.md
             - "-Dcom.ibm.tools.attach.id"                                        : dcomibmtoolsattachid.md
             - "-Dcom.ibm.tools.attach.timeout"                                   : dcomibmtoolsattachtimeout.md
-#           - "-Dcom.ibm.zipfile.closeinputstreams"                              : dcomibmzipfilecloseinputstreams.md
             - "-Dfile.encoding"                                                  : dfileencoding.md
-#           - "-Dibm.awt.mediumColor"                                            : dibmawtmediumcolor.md
-#           - "-Dil8n.vs"                                                        : dil8nvs.md
+            - "-Djava.compiler"                                                  : djavacompiler.md
             - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
             - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
             - "-Djdk.nativeDigest"                                               : djdknativedigest.md
             - "-Djdk.nativeGCM"                                                  : djdknativegcm.md            
-            - "-Djava.compiler"                                                  : djavacompiler.md
-#           - "-Dsun.rmi.transport.tcp.connectionPool"                           : dsunrmitransporttcpconnectionpool.md
             
         - "JVM -X options" :
             - "Using -X options"                                                 : x_jvm_commands.md
@@ -292,7 +284,7 @@ pages:
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
             - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect    
-            - "-XX:MaxRAMPercentage"                                             : xxmaxrampercentage.md
+            - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
             - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md

@@ -29,7 +29,7 @@ This Oracle Hotspot option sets a limit on the amount of memory that can be rese
 
 ## Syntax
 
-    -XX:MaxDirectMemorySize<size>
+    -XX:MaxDirectMemorySize=<size>
 
 | Setting      |  Value                             | Default                      |
 |--------------|------------------------------------|------------------------------|

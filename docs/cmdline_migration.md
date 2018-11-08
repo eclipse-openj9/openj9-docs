@@ -66,15 +66,13 @@ These Hotspot command-line options have equivalents in OpenJ9 that are not speci
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
-1. Hotspot uses `-Xcomp` to force compilation of methods on first invocation. Use `-Xjit` with `count`set to `0`. (`-Xjit` sets the number of times a method is called before it is compiled. Setting `count=0` forces the JIT compiler to compile everything on first execution.)
+1. Hotspot uses `-Xcomp` to force compilation of methods on first invocation. However, this option is deprecated. Whilst it can be used for compatibility, using `-Xjit:count=0` is preferred.
 
 2. Hotspot uses `-Xgc` to both select policies and configure them; OpenJ9 uses `-Xgcpolicy` to select policies, reserving `-Xgc` for configuration.
 
-3. In Hotspot, NUMA awareness is turned off by default and is turned on by using the `-XX:+UseNUMA` option. Conversely, the OpenJ9 VM automatically enables NUMA awareness and uses `-Xnuma:none` to turn it *off*. 
+3. In Hotspot, NUMA awareness is turned off by default and is turned on by using the `-XX:+UseNUMA` option. Conversely, the OpenJ9 VM automatically enables NUMA awareness and uses `-Xnuma:none` to turn it *off*.
     - If you were previously using Hotspot in its default mode, you must now explicitly turn off NUMA awareness in OpenJ9.
-    - If you are used to using `-XX:+UseNUMA` in Hotspot, you no longer need to explicitly turn on NUMA awareness; it's on by default. 
+    - If you are used to using `-XX:+UseNUMA` in Hotspot, you no longer need to explicitly turn on NUMA awareness; it's on by default.
 
 
 <!-- ==== END OF TOPIC ==== cmdline_migration.md ==== -->
-
-
