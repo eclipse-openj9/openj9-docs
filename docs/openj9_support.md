@@ -214,5 +214,5 @@ building OpenJDK 8 on Linux is v4.4.7. However, plans are in place to update the
 | Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
 | Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 7.3                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
-| MacOS x86 64-bit            | macOS 10.9.0             | xcode/clang 9.4                 |
+| MacOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
 | AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |

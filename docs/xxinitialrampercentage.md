@@ -22,19 +22,22 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -XX:InitialRAMPercentage
+# -XX:InitialRAMPercentage / -XX:MaxRAMPercentage
 
-This Oracle Hotspot option can be used to specify the initial size of the Java heap as a percentage of the total memory available to the VM. The option is recognized by the OpenJ9 VM and is provided for compatibility.
+These Oracle Hotspot options can be used to specify the initial and maximum size of the Java heap as a percentage of the total memory available to the VM. The options are recognized by OpenJ9 and provided for compatibility.
 
 ## Syntax
 
-        -XX:InitialRAMPercentage=N
+| Setting                      | Effect                                                 |
+|------------------------------|--------------------------------------------------------|
+| `-XX:InitialRAMPercentage=N` | Set initial heap size as a percentage of total memory  |
+| `-XX:MaxRAMPercentage=N`     | Set maximum heap size as a percentage of total memory  |
 
-: Where N is a value between 0 and 100, which can by of type "double". For example, 12.3456.
+: Where N is a value between 0 and 100, which can be of type "double". For example, 12.3456.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you set a value for [`-Xms`](xms.md), this option is ignored.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you set a value for [`-Xms`](xms.md), these options are ignored.
 
-If your application is running in a container and you have specified [`-XX:+UseContainerSupport`](xxusecontainersupport), both the default heap size for containers and the `-XX:InitialRAMPercentage` option are based on the available container memory.
+If your application is running in a container and you have specified [`-XX:+UseContainerSupport`](xxusecontainersupport), both the default heap size for containers, the `-XX:InitialRAMPercentage` option, and the `-XX:MaxRAMPercentage` option are based on the available container memory.
 
 
 <!-- ==== END OF TOPIC ==== xxinitialrampercentage.md ==== -->
