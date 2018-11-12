@@ -38,10 +38,12 @@ If your Java application crashes or hangs, Java dumps can provide useful informa
     The only option here is to trigger a full system dump by finding the VM process in the **Processes** tab of the Windows Task Manager and clicking
     **Create dump file**.
 
-To help you understand how a Java dump can help you with problem diagnosis, we've included a few scenarios at the end of the topic that might help you interpret the data:
+To help you understand how a Java dump can help you with problem diagnosis, this topic includes a few scenarios to help you interpret the data:
 
 - [A crash caused by a general protection fault (gpf)](#general-protection-fault)
 - [A Java heap OutOfMemoryError (OOM)](#java-outofmemoryerror)
+- [A native OutOfMemoryError (OOM)](#native-outofmemoryerror)
+- [A deadlock situation](#deadlock)
 
 ## Java dump contents
 
@@ -67,7 +69,7 @@ NULL           ===============================
 
 ### GPINFO
 
-The GPINFO section provides general information about the system that the JVM is running on. The following example is taken
+The GPINFO section provides general information about the system that the VM is running on. The following example is taken
 from a Java dump that was generated on a Linux system.
 
 ```
@@ -639,7 +641,7 @@ NULL
 
 The classes section shows information about class loaders. The first part is a summary that records each available class loader (`2CLTEXTCLLOADER`) followed by the number of libraries and classes that it loaded. This information is followed by a more detailed list of libraries (`1CLTEXTCLLIB`) and classes (`1CLTEXTCLLO`) that are loaded.
 
-In the example we can see that the `java/lang/InternalAnonymousClassLoader` loaded 2 classes, `jdk/internal/loader/BuiltinClassLoader$$Lambda$2/00000000F03876A0(0x0000000001030F00)` and    			`jdk/internal/loader/BuiltinClassLoader$$Lambda$1/00000000F00D2460(0x0000000001018A00)`.
+In the example you can see that the `java/lang/InternalAnonymousClassLoader` loaded 2 classes, `jdk/internal/loader/BuiltinClassLoader$$Lambda$2/00000000F03876A0(0x0000000001030F00)` and    			`jdk/internal/loader/BuiltinClassLoader$$Lambda$1/00000000F00D2460(0x0000000001018A00)`.
 
 
 ```
@@ -770,7 +772,7 @@ NULL
 4XENATIVESTACK               clone+0x5e (0xB763543E [libc.so.6+0xee43e])
 ```
 
-The extract tells you that the current thread was `java/lang/Thread`, and information is provided about the Java callstack and Native callstack
+The extract tells you that the current thread was `java/lang/Thread`, and information is provided about the Java callstack and native callstack
 (`3XMTHREADINFO3`) at the point at which the crash occurred. To simulate a crash caused by a bug in an application, this example
 calls a JNI method whose native implementation causes a crash. The Java callstack shows the call to the JNI native method (`JNIcrasher`), and the
 native callstack shows the point of failure. In this example, the native call stack does not include any function names to help you isolate the error
@@ -804,7 +806,7 @@ were used when the application started. Look or search for the `1CIUSERARGS    U
 start `2CIUSERARG`. The Java heap size is set by the `-Xmx` option. If the size has not been set on the command line by `-Xmx`, the default value applies, which
 you can find in [Default Settings](openj9_defaults.md).
 
-In our scenario the solution to the problem is not an adjustment to the Java heap size. Here is the MEMINFO section:
+In this scenario the solution to the problem is not an adjustment to the Java heap size. Here is the MEMINFO section:
 
 ```
 0SECTION       MEMINFO subcomponent dump routine
@@ -823,7 +825,7 @@ NULL
 ```
 
 The output shows that only 56% of the Java heap is in use, so this suggests that the application is trying to do something sub-optimal. To
-investigate further we need to work out which thread was the current thread when the OOM occurred to see what it was trying to do. As in our previous scenario, we can find the
+investigate further you need to work out which thread was the current thread when the OOM occurred to see what it was trying to do. As in the previous scenario, you can find the
 **current thread** in the THREADS section. Here is an extract from the output:
 
 ```
@@ -862,7 +864,7 @@ NULL
 
 To simulate a Java `OutOfMemoryError`, this example application repeatedly appends characters to a `StringBuffer` object in an infinite loop. The Java callstack shows the `HeapBreaker.main` method appending characters (`java/lang/StringGuffer.append`) until the method `java/lang/StringBuffer.ensureCapacityImpl()` throws the `OutOfMemoryError`.
 
-StringBuffer objects are wrappers for character arrays (`char[]`) and when the capacity of the underlying array is reached, the contents are automatically copied into a new, larger array. The new array is created in the `StringBuffer.ensureCapacity()` method, which more or less doubles the size of the old array. In our scenario, the array takes up all the remaining space in the Java heap.
+StringBuffer objects are wrappers for character arrays (`char[]`) and when the capacity of the underlying array is reached, the contents are automatically copied into a new, larger array. The new array is created in the `StringBuffer.ensureCapacity()` method, which more or less doubles the size of the old array. In this scenario, the array takes up all the remaining space in the Java heap.
 
 The MEMINFO section of the Java dump file can also tell you when an unexpectedly large allocation request causes an OOM. Look for the GC History (`1STGCHTYPE`) section, which details allocation requests that trigger GC activity. In the sample output you can see that a large allocation request (`requestedbytes=603979784`) triggered a global GC. When the GC could not free up sufficient space in the heap to satisfy the request, the allocation failure generated the OOM.
 
@@ -913,7 +915,7 @@ The MEMINFO section of the Java dump file can also tell you when an unexpectedly
 3STHSTTYPE     14:29:29:248971000 GMT j9mm.560 -   LocalGC end: rememberedsetoverflow=0 causedrememberedsetoverflow=0 scancacheoverflow=0 failedflipcount=0 failedflipbytes=0 failedtenurecount=0 failedtenurebytes=0 flipcount=0 flipbytes=0 newspace=2686976/3014656 oldspace=80601248/533856256 loa=5338112/5338112 tenureage=0
 ```
 
-Although the Java code we used in this scenario deliberately triggered an `OutOfMemoryError` in a pronounced way, similar allocation issues can and do occur when dealing with large data sets such as XML files.
+Although the Java code that was used in this scenario deliberately triggered an `OutOfMemoryError` in a pronounced way, similar allocation issues can and do occur when dealing with large data sets such as XML files.
 
 The next step in diagnosing the problem is to open the system dump that gets generated automatically when an `OutOfMemoryError` occurs. Open
 the dump with the [Eclipse Memory Analyzer tool (MAT)](https://www.eclipse.org/mat/) and search for the `StringBuffer` object, which should provide further clues about what went wrong. A common example is seeing the same `String` duplicated over and over again, which might indicate that code is stuck in a loop.
@@ -925,7 +927,214 @@ Help > Install New Software > Work with "IBM Diagnostic Tool Framework for Java"
 ```
 
 If, unlike the previous scenario, you receive an `OutOfMemoryError` and the MEMINFO section shows that there is very little space left
-on the Java heap, the current thread information is not important. The current thread is simply the thread that happened to be current when the space ran out. In this situation you might want to increase your Java heap size. For help with this task, see [How to do heap sizing](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_heapsizing.html).
+on the Java heap, the current thread information is typically not important. The current thread is simply the thread that happened to be current when the space ran out. In this situation you might want to increase your Java heap size. For help with this task, see [How to do heap sizing](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_heapsizing.html).
+
+
+### Native OutOfMemoryError
+
+
+In this scenario, the VM runs out of native memory. Native memory is memory that is used by the VM for storing all virtualized resources and data that it needs for VM operations. Native memory that is available to the VM process is limited by the operating system. The native memory available to the VM might also be subject to additional limits imposed by the operating system, for example Unix `ulimits`.  
+
+When a `NativeOutOfMemoryError` occurs, a Java dump is generated by default. The first section of the file (TITLE) tells you that a systhrow event triggered the Java dump as a result of an OOM (`java/lang/OutOfMemoryError`) for native memory.
+
+```
+0SECTION       TITLE subcomponent dump routine
+NULL           ===============================
+1TICHARSET     UTF-8
+1TISIGINFO     Dump Event "systhrow" (00040000) Detail "java/lang/OutOfMemoryError" "native memory exhausted" received
+1TIDATETIME    Date: 2018/09/14 at 15:49:55:887
+1TINANOTIME    System nanotime: 3636862054495675
+1TIFILENAME    Javacore filename:    /home/cheesemp/test/javacore.20180914.154814.19708.0003.txt
+1TIREQFLAGS    Request Flags: 0x81 (exclusive+preempt)
+1TIPREPSTATE   Prep State: 0x104 (exclusive_vm_access+trace_disabled)
+```
+
+Sometimes, the current thread is responsible for causing the `NativeOutOfMemoryError`. Information about the current thread can be found in the THREADS section, as shown in the following output.
+
+```
+0SECTION       THREADS subcomponent dump routine
+NULL           =================================
+NULL
+1XMPOOLINFO    JVM Thread pool info:
+2XMPOOLTOTAL       Current total number of pooled threads: 16
+2XMPOOLLIVE        Current total number of live threads: 16
+2XMPOOLDAEMON      Current total number of live daemon threads: 15
+NULL            
+1XMCURTHDINFO  Current thread
+3XMTHREADINFO      "main" J9VMThread:0xB6C60C00, omrthread_t:0xB6C049D8, java/lang/Thread:0xB55E3C10, state:R, prio=5
+3XMJAVALTHREAD            (java/lang/Thread getId:0x1, isDaemon:false)
+3XMTHREADINFO1            (native thread ID:0x4CFD, native priority:0x5, native policy:UNKNOWN, vmstate:R, vm thread flags:0x00001020)
+3XMTHREADINFO2            (native stack address range from:0xB6D4E000, to:0xB754F000, size:0x801000)
+3XMCPUTIME               CPU usage total: 3.654896026 secs, current category="Application"
+3XMHEAPALLOC             Heap bytes allocated since last GC cycle=0 (0x0)
+3XMTHREADINFO3           Java callstack:
+4XESTACKTRACE                at sun/misc/Unsafe.allocateDBBMemory(Native Method)
+4XESTACKTRACE                at java/nio/DirectByteBuffer.<init>(DirectByteBuffer.java:127(Compiled Code))
+4XESTACKTRACE                at java/nio/ByteBuffer.allocateDirect(ByteBuffer.java:311)
+4XESTACKTRACE                at NativeHeapBreaker.main(NativeHeapBreaker.java:9)
+3XMTHREADINFO3           Native callstack:
+4XENATIVESTACK               (0xB6A9F5B3 [libj9prt29.so+0x3b5b3])
+...
+4XENATIVESTACK               (0xB582CC9C [libjclse7b_29.so+0x40c9c])
+4XENATIVESTACK               Java_sun_misc_Unsafe_allocateDBBMemory+0x88 (0xB5827F6B [libjclse7b_29.so+0x3bf6b])
+4XENATIVESTACK               (0x94A2084A [<unknown>+0x0])
+4XENATIVESTACK               (0xB6B2538B [libj9vm29.so+0x6c38b])
+4XENATIVESTACK               (0xB6B4074C [libj9vm29.so+0x8774c])
+4XENATIVESTACK               (0xB6B7F299 [libj9vm29.so+0xc6299])
+4XENATIVESTACK               (0xB6A82F3E [libj9prt29.so+0x1ef3e])
+4XENATIVESTACK               (0xB6B7F32A [libj9vm29.so+0xc632a])
+4XENATIVESTACK               (0xB6B4084C [libj9vm29.so+0x8784c])
+4XENATIVESTACK               (0xB6B3CD0C [libj9vm29.so+0x83d0c])
+4XENATIVESTACK               (0xB776F87D [libjli.so+0x787d])
+4XENATIVESTACK               (0xB7784F72 [libpthread.so.0+0x6f72])
+4XENATIVESTACK               clone+0x5e (0xB76A043E [libc.so.6+0xee43e])
+```
+
+For clarity in the `Native callstack` output, `...` indicates that some lines are removed.
+
+The Java callstack shows the transition from Java to native code (`sun/misc/Unsafe.allocateDBBMemory(Native Method)`), indicating a request for Direct Byte Buffer (DBB) storage. DBB storage is backed by native memory, with the Java heap containing only a reference to the native heap buffer. In this scenario, DBB storage is the likely culprit for this `NativeOutOfMemoryError`.
+
+The next step is to investigate the NATIVEMEMINFO section of the Java dump file, which reports the amount of memory used by the JRE process, broken down into component areas.
+
+```
+0SECTION       NATIVEMEMINFO subcomponent dump routine
+NULL           =================================
+0MEMUSER
+1MEMUSER       JRE: 3,166,386,688 bytes / 4388 allocations
+1MEMUSER       |
+2MEMUSER       +--VM: 563,176,824 bytes / 1518 allocations
+2MEMUSER       |  |
+3MEMUSER       |  +--Classes: 3,104,416 bytes / 120 allocations
+2MEMUSER       |  |
+3MEMUSER       |  +--Memory Manager (GC): 548,181,888 bytes / 398 allocations
+3MEMUSER       |  |  |
+4MEMUSER       |  |  +--Java Heap: 536,932,352 bytes / 1 allocation
+3MEMUSER       |  |  |
+4MEMUSER       |  |  +--Other: 11,249,536 bytes / 397 allocations
+2MEMUSER       |  |
+3MEMUSER       |  +--Threads: 10,817,120 bytes / 147 allocations
+3MEMUSER       |  |  |
+4MEMUSER       |  |  +--Java Stack: 115,584 bytes / 16 allocations
+3MEMUSER       |  |  |
+4MEMUSER       |  |  +--Native Stack: 10,616,832 bytes / 17 allocations
+3MEMUSER       |  |  |
+4MEMUSER       |  |  +--Other: 84,704 bytes / 114 allocations
+2MEMUSER       |  |
+3MEMUSER       |  +--Trace: 163,688 bytes / 268 allocations
+2MEMUSER       |  |
+3MEMUSER       |  +--JVMTI: 17,320 bytes / 13 allocations
+2MEMUSER       |  |
+3MEMUSER       |  +--JNI: 23,296 bytes / 55 allocations
+2MEMUSER       |  |
+3MEMUSER       |  +--Port Library: 8,576 bytes / 74 allocations
+2MEMUSER       |  |
+3MEMUSER       |  +--Other: 860,520 bytes / 443 allocations
+1MEMUSER       |
+2MEMUSER       +--JIT: 3,744,728 bytes / 122 allocations
+2MEMUSER       |  |
+3MEMUSER       |  +--JIT Code Cache: 2,097,152 bytes / 1 allocation
+2MEMUSER       |  |
+3MEMUSER       |  +--JIT Data Cache: 524,336 bytes / 1 allocation
+2MEMUSER       |  |
+3MEMUSER       |  +--Other: 1,123,240 bytes / 120 allocations
+1MEMUSER       |
+2MEMUSER       +--Class Libraries: 2,599,463,024 bytes / 2732 allocations
+2MEMUSER       |  |
+3MEMUSER       |  +--Harmony Class Libraries: 1,024 bytes / 1 allocation
+2MEMUSER       |  |
+3MEMUSER       |  +--VM Class Libraries: 2,599,462,000 bytes / 2731 allocations
+3MEMUSER       |  |  |
+4MEMUSER       |  |  +--sun.misc.Unsafe: 2,598,510,480 bytes / 2484 allocations
+4MEMUSER       |  |  |  |
+5MEMUSER       |  |  |  +--Direct Byte Buffers: 2,598,510,480 bytes / 2484 allocations
+3MEMUSER       |  |  |
+4MEMUSER       |  |  +--Other: 951,520 bytes / 247 allocations
+1MEMUSER       |
+2MEMUSER       +--Unknown: 2,112 bytes / 16 allocations
+NULL           
+```
+
+In the `VM Class Libraries` section, the amount of memory allocated for `Direct Byte Buffers` is shown. Because the `NativeOutOfMemoryError` was received on a small 32-bit system, a value of `2,598,510,480 bytes` indicates that the operating system has run out of memory. On a larger UNIX system, the process might have run out of memory because of the `ulimit` setting. Increasing the value for `ulimit` might avoid the error, which you can do temporarily by setting  `ulimit -f unlimited` in your current session.
+
+The theoretical maximum size for a 32-bit process is the size of the 32-bit address space, which is 4 GB. On most operating systems a portion of the address space for each process is used by the kernel, such that the real limit for 32-bit processes is actually significantly less than 4GB. As a result, running out of native memory with a 32-bit VM is quite common.
+
+The same 4 GB limit is also important if you are using a 64-bit VM with compressed references. In compressed references mode, all references to objects, classes, threads, and monitors are represented by 32-bit values for performance reasons, so these structures can be allocated only at 32-bit addresses. However, the operating system might place other allocations within this 4 GB of address space, and if this area becomes sufficiently full or fragmented, the VM throws a native `NativeOutOfMemoryError` error. These errors typically occur when the VM tries to create a new thread or load a class. The **Current Thread History** section should contain more information about what the thread was doing at the VM level when the `NativeOutOfMemoryError` error occurred.
+
+You can usually avoid this type of problem by using the `-Xmcrs` option to reserve a contiguous area of memory within the lowest 4GB of memory at VM startup.
+
+Another common cause of a `NativeOutOfMemoryError` is when an application loads duplicate classes. Classes are allocated outside of the Java heap in native memory. If the value reported for `Classes` in the NATIVEMEMINFO section is very large, duplicate classes might be the cause of your problem. The [Eclipse Memory Analyzer Tool (MAT)](https://www.eclipse.org/mat/) can tell you if you have duplicate classes by using the *Class Loader Explorer* feature. Because a system dump is automatically generated as well as a Java dump in response to a `NativeOutOfMemoryError`, simply open the system dump in MAT to continue your diagnosis.  
+
+
+### Deadlock
+
+Deadlocks occur when two threads attempt to synchronize on an object and lock an instance of a class. When this happens, your application stops responding and hangs. Generating a Java dump file will quickly tell you whether you have a deadlock situation. Trigger the Java dump by sending a SIGQUIT signal (`kill -3`) to the VM.
+
+The VM can detect the most common types of deadlock scenario involving Java monitors. If this type of deadlock is detected, information is provided in the LOCKS section. More complex deadlocks, including those that involve a mixture of native mutexes and Java monitors, are not detected.
+
+Here is the output from the code that was used to cause a common deadlock scenario:
+
+```
+NULL           
+1LKDEADLOCK    Deadlock detected !!!
+NULL           ---------------------
+NULL           
+2LKDEADLOCKTHR  Thread "Worker Thread 2" (0x94501D00)
+3LKDEADLOCKWTR    is waiting for:
+4LKDEADLOCKMON      sys_mon_t:0x08C2B344 infl_mon_t: 0x08C2B384:
+4LKDEADLOCKOBJ      java/lang/Object@0xB5666698
+3LKDEADLOCKOWN    which is owned by:
+2LKDEADLOCKTHR  Thread "Worker Thread 3" (0x94507500)
+3LKDEADLOCKWTR    which is waiting for:
+4LKDEADLOCKMON      sys_mon_t:0x08C2B3A0 infl_mon_t: 0x08C2B3E0:
+4LKDEADLOCKOBJ      java/lang/Object@0xB5666678
+3LKDEADLOCKOWN    which is owned by:
+2LKDEADLOCKTHR  Thread "Worker Thread 1" (0x92A3EC00)
+3LKDEADLOCKWTR    which is waiting for:
+4LKDEADLOCKMON      sys_mon_t:0x08C2B2E8 infl_mon_t: 0x08C2B328:
+4LKDEADLOCKOBJ      java/lang/Object@0xB5666688
+3LKDEADLOCKOWN    which is owned by:
+2LKDEADLOCKTHR  Thread "Worker Thread 2" (0x94501D00)
+```
+
+This output tells you that `Worker Thread 2` is waiting for `Worker Thread 3`, which is waiting for `Worker Thread 1`. Because `Worker Thread 1` is also waiting for `Worker Thread 2`, there is a deadlock. The next place to look is the output for Java and native stacks, in the THREADS section. By looking at the stack for each of these worker threads you can trace the problem back to specific lines in your application code.
+
+In this example, you can see from the following output that for all worker threads, the stack traces (`4XESTACKTRACE`/`5XESTACKTRACE`) indicate a problem in line 35 of the application `DeadLockTest.java`:
+
+```
+3XMTHREADINFO      "Worker Thread 1" J9VMThread:0x92A3EC00, omrthread_t:0x92A3C2B0, java/lang/Thread:0xB5666778, state:B, prio=5
+3XMJAVALTHREAD            (java/lang/Thread getId:0x13, isDaemon:false)
+3XMTHREADINFO1            (native thread ID:0x52CF, native priority:0x5, native policy:UNKNOWN, vmstate:B, vm thread flags:0x00000201)
+3XMTHREADINFO2            (native stack address range from:0x9297E000, to:0x929BF000, size:0x41000)
+3XMCPUTIME               CPU usage total: 0.004365543 secs, current category="Application"
+3XMTHREADBLOCK     Blocked on: java/lang/Object@0xB5666688 Owned by: "Worker Thread 2" (J9VMThread:0x94501D00, java/lang/Thread:0xB56668D0)
+3XMHEAPALLOC             Heap bytes allocated since last GC cycle=0 (0x0)
+3XMTHREADINFO3           Java callstack:
+4XESTACKTRACE                at WorkerThread.run(DeadLockTest.java:35)
+5XESTACKTRACE                   (entered lock: java/lang/Object@0xB5666678, entry count: 1)
+...
+3XMTHREADINFO      "Worker Thread 2" J9VMThread:0x94501D00, omrthread_t:0x92A3C8F0, java/lang/Thread:0xB56668D0, state:B, prio=5
+3XMJAVALTHREAD            (java/lang/Thread getId:0x14, isDaemon:false)
+3XMTHREADINFO1            (native thread ID:0x52D0, native priority:0x5, native policy:UNKNOWN, vmstate:B, vm thread flags:0x00000201)
+3XMTHREADINFO2            (native stack address range from:0x946BF000, to:0x94700000, size:0x41000)
+3XMCPUTIME               CPU usage total: 0.004555580 secs, current category="Application"
+3XMTHREADBLOCK     Blocked on: java/lang/Object@0xB5666698 Owned by: "Worker Thread 3" (J9VMThread:0x94507500, java/lang/Thread:0xB5666A18)
+3XMHEAPALLOC             Heap bytes allocated since last GC cycle=0 (0x0)
+3XMTHREADINFO3           Java callstack:
+4XESTACKTRACE                at WorkerThread.run(DeadLockTest.java:35)
+5XESTACKTRACE                   (entered lock: java/lang/Object@0xB5666688, entry count: 1)
+...
+3XMTHREADINFO      "Worker Thread 3" J9VMThread:0x94507500, omrthread_t:0x92A3CC10, java/lang/Thread:0xB5666A18, state:B, prio=5
+3XMJAVALTHREAD            (java/lang/Thread getId:0x15, isDaemon:false)
+3XMTHREADINFO1            (native thread ID:0x52D1, native priority:0x5, native policy:UNKNOWN, vmstate:B, vm thread flags:0x00000201)
+3XMTHREADINFO2            (native stack address range from:0x9467E000, to:0x946BF000, size:0x41000)
+3XMCPUTIME               CPU usage total: 0.003657010 secs, current category="Application"
+3XMTHREADBLOCK     Blocked on: java/lang/Object@0xB5666678 Owned by: "Worker Thread 1" (J9VMThread:0x92A3EC00, java/lang/Thread:0xB5666778)
+3XMHEAPALLOC             Heap bytes allocated since last GC cycle=0 (0x0)
+3XMTHREADINFO3           Java callstack:
+4XESTACKTRACE                at WorkerThread.run(DeadLockTest.java:35)
+5XESTACKTRACE                   (entered lock: java/lang/Object@0xB5666698, entry count: 1)
+```
+
 
 
 <!-- ==== END OF TOPIC ==== dump_javadump.md ==== -->
