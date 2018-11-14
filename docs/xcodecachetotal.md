@@ -31,21 +31,23 @@ Use this option to set the maximum size limit for the JIT code cache. This optio
 
         -Xcodecachetotal<size>
 
+The default size is 256 MB for a 64-bit VM and 64 MB for a 31/32-bit VM.
+
 See [Using -X command-line options](x_jvm_commands) for more information about specifying the `<size>` parameter.
 
 ## Explanation
 
-By default, the total size of the JIT code cache is determined by your operating system, architecture, and the version of the VM that you are using. Long-running, complex, server-type applications can fill the JIT code cache, which can cause performance problems because not all of the important methods can be JIT-compiled. Use the `-Xcodecachetotal` option to increase the maximum code cache size beyond the default setting, to a setting that suits your application.
+By default, the total size of the JIT code cache is 256 MB for a 64-bit VM and 64 MB for a 31/32-bit VM. Long-running, complex, server-type applications can fill the JIT code cache, which can cause performance problems because not all of the important methods can be JIT-compiled. Use the `-Xcodecachetotal` option to increase or decrease the maximum code cache size to a setting that suits your application. The minimum size of the code cache is restricted to 2 MB.
 
 The value that you specify is rounded up to a multiple of the code cache block size, as specified by the [-Xcodecache](xcodecache.md) option. If you specify a value for the `-Xcodecachetotal` option that is smaller than the default setting, that value is ignored.
 
-When you use this option, the maximum size limit for the JIT data cache, which holds metadata about compiled methods, is increased proportionally to support the additional JIT compilations.
+When you use this option, the maximum size limit for the JIT data cache, which holds metadata about compiled methods, is increased or decreased proportionally to support the JIT compilations.
 
-The maximum size limits, for both the JIT code and data caches, that are in use by the VM are shown in Javadump output. Look for lines that begin with `1STSEGLIMIT`. Use this information together with verbose JIT tracing to determine suitable values for this option on your system. For example Javadump output, see [Interpreting a Java dump: Storage Management (MEMINFO)](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump_tags_meminfo.html).
+The maximum size limits, for both the JIT code and data caches, that are in use by the VM are shown in Javadump output. Look for lines that begin with `1STSEGLIMIT`. Use this information together with verbose JIT tracing to determine suitable values for this option on your system. For example Javadump output, see [Java dump: Storage Management (MEMINFO)](dump_javadump.md#meminfo).
 
 ## See also
 
 - [-Xjit](xjit.md)
-- [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html)
+
 
 <!-- ==== END OF TOPIC ==== xcodecachetotal.md ==== -->
