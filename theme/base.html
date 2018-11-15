@@ -58,8 +58,8 @@
       ] %}
         <meta name="lang:{{ key }}" content="{{ lang.t(key) }}">
       {% endfor %}
-      <link rel="shortcut icon" href="{{ base_url }}/{{ config.theme.favicon }}">
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-2.6.3">
+      <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-3.0.4">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
@@ -71,28 +71,43 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/application.9b572555.css">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.451f80e5.css' | url }}">
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/application-palette.22915126.css' | url }}">
+      {% endif %}
+      {% if palette.primary %}
+        {% import "partials/palette.html" as map %}
+        {% set primary = map.primary(
+          palette.primary | replace(" ", "-") | lower
+        ) %}
+        <meta name="theme-color" content="{{ primary }}">
       {% endif %}
     {% endblock %}
     {% block libs %}
-      <script src="{{ base_url }}/assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="{{ 'assets/javascripts/modernizr.1aa3b519.js' | url }}"></script>
     {% endblock %}
     {% block fonts %}
       {% if font != false %}
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{
               font.text | replace(' ', '+')  + ':300,400,400i,700|' +
               font.code | replace(' ', '+')
             }}">
         <style>body,input{font-family:"{{ font.text }}","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"{{ font.code }}","Courier New",Courier,monospace}</style>
       {% endif %}
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {% endblock %}
-    {% for path in extra_css %}
-      <link rel="stylesheet" href="{{ path }}">
+    <link rel="stylesheet" href="{{ 'assets/fonts/material-icons.css' | url }}">
+    {% for path in config["extra_css"] %}
+      <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
     {% block extrahead %}{% endblock %}
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f (https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore%28j,f) );
+})(window,document,'script','dataLayer','GTM-5WLCZXC');</script>
+<!-- End Google Tag Manager -->  
   </head>
   {% if palette.primary or palette.accent %}
     {% set primary = palette.primary | replace(" ", "-") | lower %}
@@ -105,19 +120,19 @@
       <defs>
         {% set platform = config.extra.repo_icon or config.repo_url %}
         {% if "github" in platform %}
-          {% include "assets/images/icons/github.a4034fb1.svg" %}
+          {% include "assets/images/icons/github.f0b8504a.svg" %}
         {% elif "gitlab" in platform %}
-          {% include "assets/images/icons/gitlab.d80e5efc.svg" %}
+          {% include "assets/images/icons/gitlab.6dd19c00.svg" %}
         {% elif "bitbucket" in platform %}
-          {% include "assets/images/icons/bitbucket.4ebea66e.svg" %}
+          {% include "assets/images/icons/bitbucket.1b09e088.svg" %}
         {% endif %}
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     {% if page.toc | first is defined %}
-      <a href="{{ (page.toc | first).url }}" tabindex="1" class="md-skip">
+      <a href="{{ (page.toc | first).url | url }}" tabindex="1" class="md-skip">
         {{ lang.t('skip.link.title') }}
       </a>
     {% endif %}
@@ -184,10 +199,7 @@
               {% endblock %}
 <!--
               {% block disqus %}
-                {% if (config.extra.disqus and not page.is_homepage) or
-                      (page and page.meta and page.meta.disqus) %}
-                  {% include "partials/integrations/disqus.html" %}
-                {% endif %}
+                {% include "partials/integrations/disqus.html" %}
               {% endblock %}
 -->
               <!-- This block was originally in the theme's 'footer.html' partial file. It has been moved here in part to resolve issues with the footer being too large. -->
@@ -203,30 +215,30 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ base_url }}/assets/javascripts/application.abd7b172.js"></script>
+      <script src="{{ 'assets/javascripts/application.583bbe55.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
-          {% set path = base_url + "/assets/javascripts/lunr" %}
-          <script src="{{ path }}/lunr.stemmer.support.js"></script>
+          {% set path = "assets/javascripts/lunr/" %}
+          <script src="{{ (path ~ 'lunr.stemmer.support.js') | url }}"></script>
           {% for language in languages | map("trim") %}
             {% if language != "en" %}
               {% if language == "jp" %}
-                <script src="{{ path }}/tinyseg.js"></script>
+                <script src="{{ (path ~ 'tinyseg.js') | url }}"></script>
               {% endif %}
               {% if language in ("da", "de", "du", "es", "fi", "fr", "hu", "it", "jp", "no", "pt", "ro", "ru", "sv", "tr") %}
-                <script src="{{ path }}/lunr.{{ language }}.js"></script>
+                <script src="{{ (path ~ 'lunr.' ~ language ~ '.js') | url }}"></script>
               {% endif %}
             {% endif %}
           {% endfor %}
           {% if languages | length > 1 %}
-            <script src="{{ path }}/lunr.multi.js"></script>
+            <script src="{{ (path ~ 'lunr.multi.js') | url }}"></script>
           {% endif %}
         {% endif %}
       {% endif %}
       <script>app.initialize({version:"{{ mkdocs_version }}",url:{base:"{{ base_url }}"}})</script>
-      {% for path in extra_javascript %}
-        <script src="{{ path }}"></script>
+      {% for path in config["extra_javascript"] %}
+        <script src="{{ path | url }}"></script>
       {% endfor %}
     {% endblock %}
     {% block analytics %}
