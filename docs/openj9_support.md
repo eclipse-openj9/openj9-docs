@@ -43,16 +43,17 @@ this table over time.
 
 ## Eclipse OpenJ9 releases
 
-| OpenJ9 release  | Release date        | JDK8 (LTS)| JDK10 | JDK11 (LTS) | JDK12   | JDK13 |
-|-----------------|---------------------|-----------|-------|-------------|---------|-------|
-| v0.8.0          | March 2018          | Yes       |       |             |         |       |
-| v0.9.0          | August 2018         | Yes       | Yes   |             |         |       |
-| v0.10.0         | September 2018      | No        | No    | Yes(\*3)    |         |       |
-| v0.11.0         | October 2018        | Yes       | No    | Yes         |         |       |
-| v0.12.0         | January 2019 (\*1)  | Yes (\*2) | No    | Yes (\*2)   | No      |       |
-| v0.13.0         | March 2019 (\*1)    | No        | No    | No          | Yes(\*3)|       |
-| v0.14.0         | April 2019 (\*1)    | Yes (\*2) | No    | Yes (\*2)   | Yes     |       |
-| v0.15.0         | July 2019 (\*1)     | Yes (\*2) | No    | Yes (\*2)   | No      | Yes   |
+| OpenJ9 release  | Release date        | JDK8 (LTS)| JDK10 | JDK11 (LTS) | JDK12   | JDK13    |
+|-----------------|---------------------|-----------|-------|-------------|---------|----------|
+| v0.8.0          | March 2018          | Yes       |       |             |         |          |
+| v0.9.0          | August 2018         | Yes       | Yes   |             |         |          |
+| v0.10.0         | September 2018      | No        | No    | Yes(\*3)    |         |          |
+| v0.11.0         | October 2018        | Yes       | No    | Yes         |         |          |
+| v0.12.0         | January 2019 (\*1)  | Yes (\*2) | No    | Yes         |         |          |
+| v0.13.0         | March 2019 (\*1)    | No        | No    | No          | Yes(\*3)|          |
+| v0.14.0         | April 2019 (\*1)    | Yes (\*2) | No    | Yes (\*2)   | Yes     |          |
+| v0.15.0         | July 2019 (\*1)     | Yes (\*2) | No    | Yes (\*2)   | Yes     |          |
+| v0.16.0         | September 2019 (\*1)| No        | No    | No          | No      | Yes(\*3) |
 
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
