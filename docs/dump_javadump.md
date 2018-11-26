@@ -44,6 +44,7 @@ To help you understand how a Java dump can help you with problem diagnosis, this
 - [A Java heap OutOfMemoryError (OOM)](#java-outofmemoryerror)
 - [A native OutOfMemoryError (OOM)](#native-outofmemoryerror)
 - [A deadlock situation](#deadlock)
+- [A hang](#hang)
 
 ## Java dump contents
 
@@ -1135,6 +1136,79 @@ In this example, you can see from the following output that for all worker threa
 5XESTACKTRACE                   (entered lock: java/lang/Object@0xB5666698, entry count: 1)
 ```
 
+### Hang
+
+An application can hang for a number of reasons but the most common cause is excessive global garbage collection (GC) activity, where your application is repeatedly paused because your Java heap has *almost* run out of memory. You can identify this problem by looking at verbose GC output. Collect this output by specifying the `-verbose:gc` option.
+
+Deadlock situations can also manifest themselves as hangs. For more information on diagnosing this type of problem from a Java dump, see the [deadlock](#deadlock) scenario.
+
+If you have eliminated verbose GC activity and deadlocks, another common hang scenario involves threads that compete and wait for Java object locks. This type of problem can usually be diagnosed by examining a Java dump. The simplest hang scenario involving Java object locks is where a thread acquires a lock that other threads are waiting for, but it doesn't release the lock for some reason.
+
+The first place to look in the Java dump output is the **LOCKS** section. This section lists all the monitors and shows which threads have acquired a lock and which threads are waiting. If the hang is caused by a thread not releasing a lock that other threads need, you can see a list of waiting threads in the output.
+
+In this example scenario, the Java dump **LOCKS** section shows that `Worker Thread 0` (`3LKMONOBJECT`) has acquired a lock and there are 19 other worker threads waiting to obtain the lock.
+
+```
+NULL           ------------------------------------------------------------------------
+0SECTION       LOCKS subcomponent dump routine
+NULL           ===============================
+NULL           
+1LKPOOLINFO    Monitor pool info:
+2LKPOOLTOTAL     Current total number of monitors: 1
+NULL           
+1LKMONPOOLDUMP Monitor Pool Dump (flat & inflated object-monitors):
+2LKMONINUSE      sys_mon_t:0x92711200 infl_mon_t: 0x92711240:
+3LKMONOBJECT       java/lang/Object@0xB56658D8: Flat locked by "Worker Thread 0" (J9VMThread:0x92A3EC00), entry count 1
+3LKWAITERQ            Waiting to enter:
+3LKWAITER                "Worker Thread 1" (J9VMThread:0x92703F00)
+3LKWAITER                "Worker Thread 2" (J9VMThread:0x92709C00)
+3LKWAITER                "Worker Thread 3" (J9VMThread:0x92710A00)
+3LKWAITER                "Worker Thread 4" (J9VMThread:0x92717F00)
+3LKWAITER                "Worker Thread 5" (J9VMThread:0x9271DC00)
+3LKWAITER                "Worker Thread 6" (J9VMThread:0x92723A00)
+3LKWAITER                "Worker Thread 7" (J9VMThread:0x92729800)
+3LKWAITER                "Worker Thread 8" (J9VMThread:0x92733700)
+3LKWAITER                "Worker Thread 9" (J9VMThread:0x92739400)
+3LKWAITER                "Worker Thread 10" (J9VMThread:0x92740200)
+3LKWAITER                "Worker Thread 11" (J9VMThread:0x92748100)
+3LKWAITER                "Worker Thread 12" (J9VMThread:0x9274DF00)
+3LKWAITER                "Worker Thread 13" (J9VMThread:0x92754D00)
+3LKWAITER                "Worker Thread 14" (J9VMThread:0x9275AA00)
+3LKWAITER                "Worker Thread 15" (J9VMThread:0x92760800)
+3LKWAITER                "Worker Thread 16" (J9VMThread:0x92766600)
+3LKWAITER                "Worker Thread 17" (J9VMThread:0x9276C300)
+3LKWAITER                "Worker Thread 18" (J9VMThread:0x92773100)
+3LKWAITER                "Worker Thread 19" (J9VMThread:0x92778F00)
+NULL           
+```
+
+The next step is to determine why `Worker Thread 0` is not releasing the lock. The best place to start is the stack trace for this thread, which you can find by searching on the thread name or J9VMThread ID in the **THREADS** section.
+
+The following extract shows the details for `"Worker Thread 0" (J9VMThread:0x92A3EC00)`:
+
+```
+NULL
+3XMTHREADINFO      "Worker Thread 0" J9VMThread:0x92A3EC00, omrthread_t:0x92A3C280, java/lang/Thread:0xB56668B8, state:CW, prio=5
+3XMJAVALTHREAD            (java/lang/Thread getId:0x13, isDaemon:false)
+3XMTHREADINFO1            (native thread ID:0x511F, native priority:0x5, native policy:UNKNOWN, vmstate:CW, vm thread flags:0x00000401)
+3XMTHREADINFO2            (native stack address range from:0x9297E000, to:0x929BF000, size:0x41000)
+3XMCPUTIME               CPU usage total: 0.000211878 secs, current category="Application"
+3XMHEAPALLOC             Heap bytes allocated since last GC cycle=0 (0x0)
+3XMTHREADINFO3           Java callstack:
+4XESTACKTRACE                at java/lang/Thread.sleep(Native Method)
+4XESTACKTRACE                at java/lang/Thread.sleep(Thread.java:941)
+4XESTACKTRACE                at WorkerThread.doWork(HangTest.java:37)
+4XESTACKTRACE                at WorkerThread.run(HangTest.java:31)
+5XESTACKTRACE                   (entered lock: java/lang/Object@0xB56658D8, entry count: 1)
+```
+
+In the last line of this output you can see where the thread acquired the lock. Working up from this line, you can see that `WorkerThread.run` was called, which in turn called `WorkerThread.doWork`. The stack shows that the thread then entered a call to `java/lang/Thread.sleep` in HangTest.java on line 37, which is preventing the thread from completing its work and releasing the lock. In this example the `sleep` call was added to induce a hang, but in real-world scenarios the cause could be any blocking operation, such as reading from an input stream or socket. Another possibility is that the thread is waiting for *another* lock owned by yet another thread.
+
+It is important to remember that each Java dump represents a single snapshot in time. You should generate at least three Java dumps separated by a short pause, for example 30 seconds, and compare the output. This comparison tells you whether the threads involved are stuck in a fixed state or whether they are moving.
+
+In this example, the threads do not move and the investigation needs to focus on the logic in `WorkerThread.doWork` to understand why `Worker Thread 0` entered the `java/lang/Thread.sleep` call.
+
+Another common scenario is where each Java dump shows a number of threads waiting for a lock owned by another thread, but the list of waiting threads and the lock-owning thread change over time. In this case the cause is likely to be a bottleneck caused by thread contention, where the threads are continually competing for the same lock. In severe cases, the lock is held only for a small amount of time but there are lots of threads trying to obtain it. Because more time is spent handling the lock and scheduling the thread than executing application code, the degradation in performance is manifested as a hang. Thread contention is usually caused by an application design problem. You can use a similar approach to the one used in this scenario to determime which lines of code are responsible for the contention.
 
 
 <!-- ==== END OF TOPIC ==== dump_javadump.md ==== -->
