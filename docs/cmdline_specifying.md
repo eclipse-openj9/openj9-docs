@@ -89,19 +89,19 @@ At startup, the list of VM arguments is constructed in the following order, with
             :::java
             export IBM_NOSIGHANDLER=<non_null_string>
 
-4.  The `IBM_JAVA_OPTIONS` environment variable. You can set command-line options using this environment variable. The options that you specify with this environment variable are added to the command line when a VM starts in that environment. The environment variable can contain multiple blank-delimited argument strings, but must not contain comments. For example:
+4.  The `OPENJ9_JAVA_OPTIONS` environment variable. You can set command-line options using this environment variable. The options that you specify with this environment variable are added to the command line when a VM starts in that environment. The environment variable can contain multiple blank-delimited argument strings, but must not contain comments. For example:
 
     - On Windows systems:
 
             :::java
-            set IBM_JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
+            set OPENJ9_JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
 
     - On AIX, Linux, and z/OS systems:
 
             :::java
-            export IBM_JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
+            export OPENJ9_JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The environment variable `JAVA_TOOLS_OPTIONS` is equivalent to `IBM_JAVA_OPTIONS` and is available for compatibility with JVMTI.
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The environment variable `JAVA_TOOLS_OPTIONS` is equivalent to `OPENJ9_JAVA_OPTIONS` and is available for compatibility with JVMTI. The equivalent `IBM_JAVA_OPTIONS` environment variable is deprecated and will be removed in a future release.
 
 5.  Options that are specified on the command line. For example:
 
@@ -110,7 +110,7 @@ At startup, the list of VM arguments is constructed in the following order, with
 
     The Java launcher adds some automatically generated arguments to this list, such as the names of the main class.
 
-You can also use the `-Xoptionsfile` parameter to specify VM options. This parameter can be used on the command line, or as part of the `IBM_JAVA_OPTIONS` environment variable. The contents of an option file are expanded in place during startup. For more information about the structure and contents of this type of file, see [-Xoptionsfile](xoptionsfile.md#xoptionsfile "Specifies a file that contains VM options and definitions. The contents of the options file are recorded in the ENVINFO section of a Java dump.").
+You can also use the `-Xoptionsfile` parameter to specify VM options. This parameter can be used on the command line, or as part of the `OPENJ9_JAVA_OPTIONS` environment variable. The contents of an option file are expanded in place during startup. For more information about the structure and contents of this type of file, see [-Xoptionsfile](xoptionsfile.md#xoptionsfile "Specifies a file that contains VM options and definitions. The contents of the options file are recorded in the ENVINFO section of a Java dump.").
 
 To troubleshoot startup problems, you can check which options are used by the OpenJ9 VM. Append the following command-line option, and inspect the Java core file that is generated:
 
