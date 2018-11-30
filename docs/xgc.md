@@ -55,13 +55,9 @@ Options that change the behavior of the Garbage Collector (GC).
 
         -Xgc:concurrentScavenge
 
-: This option supports pause-less garbage collection mode. If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications.
+: This option supports pause-less garbage collection mode when you use the Generational Concurrent ([`gencon`](xgcpolicy.md)) garbage collection policy (the default policy).
 
-    The following restrictions apply:
-
-    - The Generational Concurrent ([`gencon`](xgcpolicy.md)) garbage collection policy must be used.<br/>(This is the default policy.)
-
-    - Compressed references must be used. See [`-Xcompressedrefs`](xcompressedrefs.md).<br/>(Compressed references are enabled by default when the maximum heap size ([-Xmx](xms.md)) &le; 57 GB. The concurrent scavenge option is ignored if the maximum heap size is &gt; 57 GB.)
+    If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications.
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note: Linux on Z and z/OS**
 
