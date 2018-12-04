@@ -40,7 +40,9 @@ timeout(time: 6, unit: 'HOURS') {
                         // Tag Regular build Containers with BUILD_NUMBER and 'latest'
                         TAGS = "-t ${NAMESPACE}/${CONTAINER_NAME}:${BUILD_NUMBER} -t ${NAMESPACE}/${CONTAINER_NAME}:latest"
                     }
-                    sh "docker build -f Dockerfile ${TAGS} ."
+                    dir('buildenv') {
+                        sh "docker build -f Dockerfile ${TAGS} ."
+                        }
                 }
 
                 if (params.ghprbPullId) {

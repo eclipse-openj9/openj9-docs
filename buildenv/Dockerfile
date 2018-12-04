@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# Dockerfile Version 1.0
+# - implements virtualenv to isolate python3 from system python.
 
 FROM ubuntu:16.04
 MAINTAINER openj9.bot <openj9.bot@gmail.com> 
