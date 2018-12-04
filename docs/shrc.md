@@ -29,13 +29,23 @@ Sharing class data between JVMs improves start up performance and reduces memory
 Start up performance is improved by placing classes that an application needs when initializing into a shared classes cache. The next time the
 application runs, it takes much less time to start because the classes are already available. When you enable class data sharing, AOT compilation is also enabled by default, which dynamically compiles certain methods into AOT code at runtime. By using these features in combination, startup performance can be improved even further because the cached AOT code can be used to quickly enable native code performance for subsequent runs of your application.
 
-Class data sharing is enabled by setting the `-Xshareclasses` option on the command line when you start your application. When specified, OpenJ9 automatically creates a memory mapped file that stores and shares the classes in memory. By default, OpenJ9 always shares both the bootstrap and application classes that are loaded by the default system class loader.
+When class data sharing is enabled, OpenJ9 automatically creates a memory mapped file that stores and shares the classes in memory.
 
 The shared classes cache is updated dynamically; When an application loads new classes, the JVM automatically stores them in the cache without any user intervention.
 
 Memory footprint is reduced by sharing common classes between applications that run in separate Java VMs.
 
-The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing you to specify where to create the cache, how much space to allocate for AOT code and more. You can also set the cache size by using the [-Xscmx](xscmx.md) option. 
+## Enabling class data sharing
+
+![Start of content that applies only to Java 8 (LTS)](cr/java8.png)
+Class data sharing is enabled by setting the `-Xshareclasses` option on the command line when you start your application. By default, OpenJ9 always shares both the bootstrap and application classes that are loaded by the default system class loader.![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+
+![Start of content that applies only to Java 11 (LTS)](cr/java11.png)  For operating systems other than macOS, which follows the Java 8 behavior, class data sharing is enabled by default for bootstrap classes only, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including the name and location of the default shared classes cache. Trace point `j9shr.2271` is activated if the default cache cannot be started, so you can enable this trace point to determine whether the default cache started successfully. You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it. Note that if you have multiple VMs and you do not change the default shared classes behavior, the following applies:
+
+- If the VMs are from a single Java installation, they will share a single default cache.
+- If the VMs are from different Java installations, of the same Java release and installed by the same user, each VM checks whether the existing default shared cache in the cache directory is from the same Java installation as the VM. If not, the VM deletes that shared cache, then creates a new one. To avoid this situation, use `-Xshareclasses:cacheDir=<dir>` to specify a different cache directory for each Java installation. ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
+
+The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing you to specify where to create the cache, how much space to allocate for AOT code and more. You can also set the cache size by using the [-Xscmx](xscmx.md) option.
 
 ## Support for custom class loaders
 
