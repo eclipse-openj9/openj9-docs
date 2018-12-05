@@ -26,7 +26,7 @@ CONTAINER_NAME = 'openj9-docs'
 
 timeout(time: 6, unit: 'HOURS') {
     timestamps {
-        node('docker') {
+        node('hw.arch.x86&&sw.tool.docker') {
             try {
                 stage('Clone') {
                     checkout scm
