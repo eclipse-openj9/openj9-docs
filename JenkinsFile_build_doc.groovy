@@ -30,7 +30,7 @@ ECLIPSE_REPO = 'ssh://genie.openj9@git.eclipse.org:29418/www.eclipse.org/openj9/
 timeout(time: 6, unit: 'HOURS') {
     timestamps {
         try {
-            node('docker') {
+            node('hw.arch.x86&&sw.tool.docker') {
                 stage('Build Doc') {
                     docker.image("${NAMESPACE}/${CONTAINER_NAME}:latest").inside {
                         REFSPEC = ''

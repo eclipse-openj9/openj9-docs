@@ -26,7 +26,7 @@ CONTAINER_NAME = 'openj9-docs'
 
 timeout(time: 6, unit: 'HOURS') {
     timestamps {
-        node('docker') {
+        node('hw.arch.x86&&sw.tool.docker') {
             try {
                 stage('Clone') {
                     checkout scm
@@ -35,37 +35,28 @@ timeout(time: 6, unit: 'HOURS') {
                 stage('Build') {
                     if (params.ghprbPullId) {
                         // Tag PullRequest Containers with a PR in the name
-                        TAGS = "-t ${NAMESPACE}/${CONTAINER_NAME}:PR${BUILD_NUMBER}"
+                        TAGS = "-t ${NAMESPACE}/${CONTAINER_NAME}:PR${params.ghprbPullId}"
                     } else {
                         // Tag Regular build Containers with BUILD_NUMBER and 'latest'
                         TAGS = "-t ${NAMESPACE}/${CONTAINER_NAME}:${BUILD_NUMBER} -t ${NAMESPACE}/${CONTAINER_NAME}:latest"
                     }
-                    sh "docker build -f Dockerfile ${TAGS} ."
+                    dir('buildenv') {
+                        sh "docker build -f Dockerfile ${TAGS} ."
+                    }
                 }
 
-                if (params.ghprbPullId) {
-                    // Archive PullRequest containers to Jenkins for manual download/verification
-                    DATE = sh(
-                        script: 'date +%Y%m%d_%H%M%S',
-                        returnStdout: true
-                        ).trim()
-                    ARCHIVE_NAME = "Container_PR${ghprbPullId}_${DATE}.tar"
-                    stage('Archive') {
-                        sh "docker save -o ${WORKSPACE}/${ARCHIVE_NAME} ${NAMESPACE}/${CONTAINER_NAME}:PR${BUILD_NUMBER}"
-                        sh "gzip ${ARCHIVE_NAME}"
-                        archiveArtifacts "${ARCHIVE_NAME}.gz"
-                        echo "Container archived to Jenkins. Download it from the build page here: ${BUILD_URL}artifact/\nTest it out by loading it into Docker\n\$ docker load -i ${ARCHIVE_NAME}.gz"
+                // Push container to Dockerhub
+                stage('Push') {
+                    withCredentials([usernamePassword(credentialsId: '7fb9f8f0-14bf-469a-9132-91db4dd80c48', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                        sh "docker login --username=\"${USER}\" --password=\"${PASS}\""
                     }
-                } else {
-                    // Push non-PullRequest containers to Dockerhub
-                    stage('Push') {
-                        withCredentials([usernamePassword(credentialsId: '7fb9f8f0-14bf-469a-9132-91db4dd80c48', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-                            sh "docker login --username=\"${USER}\" --password=\"${PASS}\""
-                        }
+                    if (params.ghprbPullId) {
+                        sh "docker push ${NAMESPACE}/${CONTAINER_NAME}:PR${params.ghprbPullId}"
+                    } else {
                         sh "docker push ${NAMESPACE}/${CONTAINER_NAME}:${BUILD_NUMBER}"
                         sh "docker push ${NAMESPACE}/${CONTAINER_NAME}:latest"
-                        sh 'docker logout'
                     }
+                    sh 'docker logout'
                 }
             } finally {
                 cleanWs()
