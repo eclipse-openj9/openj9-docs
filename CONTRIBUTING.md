@@ -56,7 +56,7 @@ Basic pre-requisites:
 - Pip 9.0.1
 - a markdown editor E.g. Atom
 
-Use **pip** to install the other components, reusing the **requirements.txt** file in the repository to ensure that you are mirroring build levels:
+Use **pip** to install the other components, reusing the **requirements.txt** file in the `/buildenv` directory of the repository to ensure that you are mirroring build levels:
 
 `pip install -r requirements.txt`
 
@@ -221,7 +221,7 @@ Project committers are responsible for checking pull requests and merging change
 Pull requests must be previewed before merging by triggering this [Jenkins-ci job](https://ci.eclipse.org/openj9/view/Pull%20Requests/job/PullRequest-Doc-test_on_staging_site/)  
 To run the job, add the following trigger comment into a pull request:  
 ```
-Jenkins docs stage
+Jenkins doc stage
 ```  
 Staging site: http://staging.eclipse.org/openj9/docs
 
