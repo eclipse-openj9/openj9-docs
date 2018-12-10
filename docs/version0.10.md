@@ -32,8 +32,9 @@ The following new features and notable changes since v.0.9.0 are included in thi
 - [New information for the SHARED CLASSES section of a Javadump file](#new-information-for-the-shared-classes-section-of-a-java-dump-file)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 
+## Features and changes
 
-## Binaries and supported environments
+### Binaries and supported environments
 
 OpenJ9 release 0.10.0 supports OpenJDK 11, which is available from the AdoptOpenJDK community at the following link:
 
@@ -45,15 +46,15 @@ Although it is possible to build an OpenJDK v8 with the OpenJ9 0.10.0 release le
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md)
 
-## Change to the default shared classes cache size
+### Change to the default shared classes cache size
 
 For OpenJDK 8 builds, the default shared classes cache size is increased from 16 MB to 300 MB, with a "soft" maximum limit for the initial size of the cache set to 64 MB. Certain exceptions apply. For more information, see [-Xshareclasses](xshareclasses.md). The new default also applies to OpenJDK 11 builds.
 
-## New information for the SHARED CLASSES section of a Java dump file
+### New information for the SHARED CLASSES section of a Java dump file
 
 The value of the soft maximum size (`-Xscmx`) of the shared classes cache is now recorded in the `SHARED CLASSES` section of a Java dump file against the string `2SCLTEXTSMB`. For example output, see [Java dump](dump_javadump.md).
 
-## Support for OpenJDK HotSpot options
+### Support for OpenJDK HotSpot options
 
 For compatibility, the following OpenJDK Hotspot options are now supported by OpenJ9:
 
