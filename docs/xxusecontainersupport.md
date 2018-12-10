@@ -58,7 +58,7 @@ The default heap size for containers takes affect only when the following condit
 
 To prevent the VM adjusting the maximum heap size when running in a container, set `-XX:-UseContainerSupport`.
 
-When [`-XX:MaxRAMPercentage`](xxmaxrampercentage.md) or [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md) are used with `-XX:+UseContainerSupport`, the corresponding heap setting is determined based on the memory limit of the container. For example, to set the maximum heap size to 80% of the container memory, specify the following options:
+When [`-XX:MaxRAMPercentage` / `-XX:InitialRAMPercentage`](xxinitialrampercentage.md) are used with `-XX:+UseContainerSupport`, the corresponding heap setting is determined based on the memory limit of the container. For example, to set the maximum heap size to 80% of the container memory, specify the following options:
 
     -XX:+UseContainerSupport -XX:MaxRAMPercentage=80
 

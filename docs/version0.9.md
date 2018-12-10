@@ -103,7 +103,7 @@ set for the VM:
 - `-XX:MaxRAMPercentage`
 - `-XX:InitialRAMPercentage`
 
-To understand how to set these options, see [-XX:MaxRAMPercentage](xxmaxrampercentage.md) and [-XX:InitialRAMPercentage](xxinitialrampercentage.md).
+To understand how to set these options, see [-XX:InitialRAMPercentage / -XX:MaxRAMPercentage](xxinitialrampercentage.md).
 
 If your application is running in a container and you have specified `-XX:+UseContainerSupport`, as described in [Modifying the default Java heap size for applications that run in containers](#modifying-the-default-java-heap-size-for-applications-that-run-in-containers), both the default heap size for containers and the `-XX:MaxRAMPercentage` and `-XX:InitialRAMPercentage`
 options are based on the available container memory.
