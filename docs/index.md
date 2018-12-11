@@ -45,6 +45,10 @@ OpenJDK binaries that contain the OpenJ9 VM are supported on a range of hardware
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This user guide contains information about configuring, tuning, and debugging OpenJ9 on the z/OS&reg; platform. This content was contributed by IBM so that it is available when the work to create OpenJDK binaries for the z/OS platform is complete.
 
+## Downloadable documentation
+
+The online documentation provides information about the latest changes in the Eclipse OpenJ9 VM. To view documentation for a specific release of OpenJ9, download the appropriate zip file from the [GitHub `downloads` directory](https://github.com/eclipse/openj9-docs/downloads/). Extract the files and open the `index.html` file in your browser.  
+
 ## Useful links
 
 - [Eclipse OpenJ9 website home page](https://www.eclipse.org/openj9)

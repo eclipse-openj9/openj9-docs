@@ -37,7 +37,9 @@ The following new features and notable changes from v.0.8.0 are included in this
 - [There are notable changes to the `java.lang.String` class.](#changes-to-the-javalangstring-class)
 - [There are notable changes to the `com.ibm.oti.shared.SharedClassCacheInfo` class.](#changes-to-the-SharedClassCacheInfo-class)
 
-## Binaries and supported platforms
+## Features and changes
+
+### Binaries and supported platforms
 
 The following additional OpenJDK binaries that contain the OpenJ9 VM are now available from the AdoptOpenJDK community:
 
@@ -47,7 +49,7 @@ The following additional OpenJDK binaries that contain the OpenJ9 VM are now ava
 
 Complete platform support information for OpenJ9 can be found in [Supported environments](#openj9_support.md)
 
-## Idle tuning feature
+### Idle tuning feature
 
 The idle tuning feature in OpenJ9 keeps your memory footprint small by releasing unused memory back to the
 operating system. Prior to Eclipse v0.9.0 this feature was available only on Linux x86 architectures with the
@@ -63,7 +65,7 @@ behavior:
 The following blog post describes the benefits of using this feature: [Are you still paying for unused memory when your Java app is idle?](https://developer.ibm.com/javasdk/2017/09/25/still-paying-unused-memory-java-app-idle/)
 
 
-## New GC policy
+### New GC policy
 
 A new GC policy is introduced for [JEP 318: Epsilon: A No-Op Garbage Collector](http://openjdk.java.net/jeps/318).
 
@@ -77,7 +79,7 @@ To enable this policy you can use one of the following options:
 - [-Xgcpolicy:nogc](xgcpolicy.md)
 - [-XX:+UseNoGC](xxusenogc.md)
 
-## Modifying the default Java heap size for applications that run in containers
+### Modifying the default Java heap size for applications that run in containers
 
 When using container technology, applications are typically run on their own and do not need to compete for memory. In this release, changes
 are introduced to detect when OpenJ9 is running inside a container. If your application is running in a container and
@@ -95,7 +97,7 @@ The following table shows the maximum Java heap size that gets set, depending on
 The default heap size for containers only takes affect when running in a container environment and when `-XX:+UseContainerSupport` is specified,
 which is expected to be the default in a future release.
 
-## Specifying the maximum Java heap size as a percentage value
+### Specifying the maximum Java heap size as a percentage value
 
 OpenJ9 now supports setting the heap size as a percentage of the physical memory. The following OpenJDK options are recognized and can be
 set for the VM:
@@ -108,11 +110,11 @@ To understand how to set these options, see [-XX:InitialRAMPercentage / -XX:MaxR
 If your application is running in a container and you have specified `-XX:+UseContainerSupport`, as described in [Modifying the default Java heap size for applications that run in containers](#modifying-the-default-java-heap-size-for-applications-that-run-in-containers), both the default heap size for containers and the `-XX:MaxRAMPercentage` and `-XX:InitialRAMPercentage`
 options are based on the available container memory.
 
-## Shared classes support for nested jar files
+### Shared classes support for nested jar files
 
 Changes are made to the `com.ibm.oti.shared` API to support nested jar files.
 
-## Direct Dump Reader enabled on Linux and Windows
+### Direct Dump Reader enabled on Linux and Windows
 
 Direct Dump Reader (DDR) support is now enabled for the OpenJ9 VM on all Linux architectures and on Windows. The DDR code enables the VM to read system dump data by using the OpenJ9 Diagnostic Tool
 Framework for Java (DTFJ) API or the [`jdmpview`](tool_jdmpview.md) tool. If you use the [Eclipse Memory Analyzer Tool (MAT)](https://www.eclipse.org/mat/), you can also analyze OpenJ9 or IBM VMs by installing the DTFJ plugin.
@@ -121,18 +123,17 @@ Framework for Java (DTFJ) API or the [`jdmpview`](tool_jdmpview.md) tool. If you
 You must use a 32-bit JVM to look at a 32-bit core, and a 64-bit JVM to look at a 64-bit core. This restriction will be fixed in a later version of OpenJ9.
 
 
-## Changes to the `java.lang.String` class
+### Changes to the `java.lang.String` class
 
 ![Start of content that applies only to Java 9 and later](cr/java9plus.png) To match the behavior of OpenJDK, `java.lang.String` no longer has a count field, which changes the way that `String.subString()` works compared to Java 8. `String.subString()` now copies the value array. Similarly, `StringBuffer` and `StringBuilder` do not share the value array with any `String` created by `toString()`.
 
 For performance and compatibility with the new String object layout, the OpenJ9 implementations of `StringBuffer` and `StringBuilder` have been deprecated in favor of the OpenJDK implementations.
 ![End of content that applies only to Java 9 or later](cr/java_close.png)
 
-## Changes to the `SharedClassCacheInfo` class
+### Changes to the `SharedClassCacheInfo` class
 
 ![Start of content that applies only to Java 10 and later](cr/java10plus.png) `SharedClassCacheInfo.getCacheJVMLevel()` used to return the JVMLEVEL constant that maps to a Java version number, for example **JVMLEVEL_JAVA8**. This call now returns only the Java version number, for example **10** for Java 10.
 ![End of content that applies only to Java 10 or later](cr/java_close.png)
-
 
 ## Full release information
 

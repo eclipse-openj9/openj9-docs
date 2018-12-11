@@ -27,7 +27,7 @@
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This release is under development. For more information about the features that are expected in this release, read the [release plan](https://projects.eclipse.org/projects/technology.openj9/releases/0.12.0).
 
-<!--Use the line below for the final release notes and remove the one below that -->
+<!--Use the line below for the final release notes and remove the one below that. Don't forget to add a download and full release changes at the bottom of the topic -->
 <!--The following new features and notable changes since v.0.11.0 are included in this release:-->
 The following new features and notable changes since v.0.11.0 are delivered in the OpenJ9 code base:
 

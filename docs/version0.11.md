@@ -36,8 +36,9 @@ The following new features and notable changes since v.0.10.0 are included in th
 - [You can now restrict identity hash codes to non-negative values](#you-can-now-restrict-identity-hash-codes-to-non-negative-values)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 
+## Features and changes
 
-## Binaries and supported environments
+### Binaries and supported environments
 
 OpenJ9 release 0.11.0 provides limited support for the macOS&reg; platform on OpenJDK 11. Early builds of OpenJDK 11 with OpenJ9 on macOS are available at
 the AdoptOpenJDK project at the following link:  
@@ -48,7 +49,7 @@ Support for macOS on OpenJDK 8 is coming soon.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md)
 
-## OpenSSL is now supported for improved native cryptographic performance
+### OpenSSL is now supported for improved native cryptographic performance
 
 ![Start of content that applies only to Java 8 (LTS)](cr/java8.png)
 
@@ -58,7 +59,7 @@ OpenSSL is a native open source cryptographic toolkit for Transport Layer Securi
 
 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
-## Changes to the location of the default shared cache and cache snapshot directory
+### Changes to the location of the default shared cache and cache snapshot directory
 
 ![Start of content that applies only to Java 11 (LTS)](cr/java11.png)
 
@@ -81,20 +82,20 @@ For nonpersistent caches or snapshots:
 
 ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 
-## New class data sharing suboptions
+### New class data sharing suboptions
 
 `-Xshareclasses:bootClassesOnly`: disables caching of classes that are loaded by non-bootstrap class loaders. This suboption also enables the `nonfatal` suboption, which allows the VM to start even if there was an error creating the shared classes cache.
 
 `-Xshareclasses:fatal`: prevents the VM from starting if there was an error creating the shared classes cache. You might want to enable this suboption when using the -Xshareclasses:bootClassesOnly suboption, to troubleshoot problems when creating the cache.
 
-## Container awareness in the OpenJ9 VM is now enabled by default
+### Container awareness in the OpenJ9 VM is now enabled by default
 
 When using container technology, applications are typically run on their own and do not need to compete for memory. If the VM detects that it is running in a container environment, and a memory limit for the container is set, the VM automatically adjusts the maximum default Java heap size.
 
 In earlier releases, this behavior was enabled by setting the `-XX:+UseContainerSupport` option. This setting is now the default. For more information
 about the Java heap size set for a container, see [-XX:\[+|-\]UseContainerSupport](xxusecontainersupport.md).
 
-## Pause-less garbage collection mode is now available on Linux x86 platforms
+### Pause-less garbage collection mode is now available on Linux x86 platforms
 
 Pause-less garbage collection mode is aimed at large heap, response-time sensitive applications. When enabled, the VM attempts to reduce GC pause times. In earlier releases, pause-less garbage collection mode ([`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge)) was available only on IBM z14 hardware. This mode is now available on 64-bit x86 Linux platforms.
 
@@ -104,11 +105,11 @@ Pause-less garbage collection mode is aimed at large heap, response-time sensiti
 - Compressed references must be used. See [`-Xcompressedrefs`](xcompressedrefs.md). Compressed references are enabled by default when the maximum heap size (`-Xmx`) ≤ 57 GB. The concurrent scavenge option is ignored if the maximum heap size is > 57 GB.
 
 
-## You can now restrict identity hash codes to non-negative values
+### You can now restrict identity hash codes to non-negative values
 
 OpenJ9 allows both positive and negative identity hashcodes, which can be problematic if your program (incorrectly) assumes hashcodes can only be positive. However, you can now use the [-XX:\[+|-\]PositiveIdentityHash](xxpositiveidentityhash.md) option to limit identity hash codes to non-negative values.
 
-## Support for OpenJDK HotSpot options
+### Support for OpenJDK HotSpot options
 
 For compatibility, the following OpenJDK Hotspot options are now supported by OpenJ9:
 
