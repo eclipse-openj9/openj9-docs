@@ -33,6 +33,7 @@ The following new features and notable changes since v.0.11.0 are delivered in t
 
 - [Improved flexibility for managing the size of the JIT code cache](#improved-flexibility-for-managing-the-size-of-the-jit-code-cache)
 - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default)
+- ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [OpenSSL is now supported for improved native cryptographic performance](#openssl-is-now-supported-for-improved-native-cryptographic-performance)
 
 
 ## Improved flexibility for managing the size of the JIT code cache
@@ -42,5 +43,15 @@ The JIT code cache stores the native code of compiled Java&trade; methods. By de
 ## Class data sharing is enabled by default
 
 For operating systems other than macOS&reg;, class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [`Class Data Sharing`](shrc.md).
+
+### OpenSSL is now supported for improved native cryptographic performance
+
+![Start of content that applies only to Java 11 (LTS)](cr/java11.png)
+
+OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which provides improved cryptographic performance compared to the in-built OpenJDK Java cryptographic implementation. The OpenSSL V1.1.x implementation is enabled by default and  supported for the Digest, CBC, and GCM algorithms. Binaries obtained from AdoptOpenJDK include OpenSSL v1.1.x (see Note). For more information about tuning the OpenSSL implementation, see [Performance tuning](introduction.md#cryptographic-operations).
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** OpenJDK 8 with OpenJ9 includes OpenSSL support since V0.11.0. Currently, OpenSSL is not bundled as part of the AdoptOpenJDK AIX binaries due to an unresolved problem.
+
+![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 
 <!-- ==== END OF TOPIC ==== version0.12.md ==== -->
