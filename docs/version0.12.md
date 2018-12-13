@@ -33,6 +33,8 @@ The following new features and notable changes since v.0.11.0 are delivered in t
 
 - [Improved flexibility for managing the size of the JIT code cache](#improved-flexibility-for-managing-the-size-of-the-jit-code-cache)
 - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default)
+- [`IBM_JAVA_OPTIONS` is deprecated](#ibm_java_options-is-deprecated)
+- [Pause-less garbage collection on 64-bit Linux x86 platforms has improved support](#pause-less-garbage-collection-on-64-bit-linux-x86-platforms-has-improved-support)
 
 
 ## Improved flexibility for managing the size of the JIT code cache
@@ -41,6 +43,15 @@ The JIT code cache stores the native code of compiled Java&trade; methods. By de
 
 ## Class data sharing is enabled by default
 
-For operating systems other than macOS&reg;, class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [`Class Data Sharing`](shrc.md).
+For operating systems other than macOS&reg;, class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [Class Data Sharing](shrc.md).
+
+## `IBM_JAVA_OPTIONS` is deprecated
+
+The VM environment variable `IBM_JAVA_OPTIONS` is deprecated and is replaced by `OPENJ9_JAVA_OPTIONS`. `IBM_JAVA_OPTIONS` will be removed in a future release. For more information about the use of this variable, see the [general options](env_var.md#general-options) in [Environment variables](env_var.md).
+
+
+## Pause-less garbage collection on 64-bit Linux x86 platforms has improved support
+In Eclipse OpenJ9 V0.11.0, support was added for `-Xgc:concurrentScavenge` on Linux x86-64 virtual machines that use compressed references. In this release, support is now available for Linux x86-64 large-heap virtual machines (non-compressed references). See details of the [`concurrentScavenge`](xgc.md#concurrentscavenge) option on the [`-Xgc`](xgc.md) parameter for current information.
+
 
 <!-- ==== END OF TOPIC ==== version0.12.md ==== -->
