@@ -64,8 +64,6 @@ To improve the performance of applications that run in the cloud, try setting th
 
 ### Cryptographic operations
 
-![Start of content that applies only to Java 8 (LTS)](cr/java8.png)
-
 OpenJDK uses the in-built Java cryptographic implementation by default. However, native cryptographic implementations
 typically provide better performance. OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and
 Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.1.x implementation is
@@ -86,14 +84,16 @@ You can turn off all three algorithms by setting the following system property o
 -Djdk.nativeCrypto=false
 ```
 
-To build a version of OpenJDK 8 with OpenJ9 that includes OpenSSL v1.1.x support, follow the steps in our [detailed build instructions](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V8.md).
+To build a version of OpenJDK with OpenJ9 that includes OpenSSL v1.1.x support, follow the steps in our detailed build instructions:
+
+- [OpenJDK 8 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V8.md).
+- [OpenJDK 11 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you obtain an OpenJDK with OpenJ9 build from [AdoptOpenJDK](https://adoptopenjdk.net/) that includes OpenSSL v1.1.x or build a version yourself that includes OpenSSL v1.1.x support, the following acknowledgements apply in accordance with the license terms:
 
 - *This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/).*
 - *This product includes cryptographic software written by Eric Young (eay@cryptsoft.com).*
 
-![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
 ## Runtime options
 

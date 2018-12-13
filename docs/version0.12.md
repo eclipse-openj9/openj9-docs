@@ -33,9 +33,9 @@ The following new features and notable changes since v.0.11.0 are delivered in t
 
 - [Improved flexibility for managing the size of the JIT code cache](#improved-flexibility-for-managing-the-size-of-the-jit-code-cache)
 - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default)
+- ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [OpenSSL is now supported for improved native cryptographic performance](#openssl-is-now-supported-for-improved-native-cryptographic-performance)
 - [`IBM_JAVA_OPTIONS` is deprecated](#ibm_java_options-is-deprecated)
-- [Pause-less garbage collection on 64-bit Linux x86 platforms has improved support](#pause-less-garbage-collection-on-64-bit-linux-x86-platforms-has-improved-support)
-
+- [Pause-less garbage collection on 64-bit Linux x86 platforms has improved support](#pause-1less-garbage-collection-on-64-bit-linux-x86-platforms-has-improved-support)
 
 ## Improved flexibility for managing the size of the JIT code cache
 
@@ -45,13 +45,21 @@ The JIT code cache stores the native code of compiled Java&trade; methods. By de
 
 For operating systems other than macOS&reg;, class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [Class Data Sharing](shrc.md).
 
+### OpenSSL is now supported for improved native cryptographic performance
+
+![Start of content that applies only to Java 11 (LTS)](cr/java11.png)
+
+OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which provides improved cryptographic performance compared to the in-built OpenJDK Java cryptographic implementation. The OpenSSL V1.1.x implementation is enabled by default and  supported for the Digest, CBC, and GCM algorithms. Binaries obtained from AdoptOpenJDK include OpenSSL v1.1.x (see Note). For more information about tuning the OpenSSL implementation, see [Performance tuning](introduction.md#cryptographic-operations).
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** OpenJDK 8 with OpenJ9 includes OpenSSL support since V0.11.0. Currently, OpenSSL is not bundled as part of the AdoptOpenJDK AIX binaries due to an unresolved problem.
+
+![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
+
 ## `IBM_JAVA_OPTIONS` is deprecated
 
 The VM environment variable `IBM_JAVA_OPTIONS` is deprecated and is replaced by `OPENJ9_JAVA_OPTIONS`. `IBM_JAVA_OPTIONS` will be removed in a future release. For more information about the use of this variable, see the [general options](env_var.md#general-options) in [Environment variables](env_var.md).
 
-
 ## Pause-less garbage collection on 64-bit Linux x86 platforms has improved support
 In Eclipse OpenJ9 V0.11.0, support was added for `-Xgc:concurrentScavenge` on Linux x86-64 virtual machines that use compressed references. In this release, support is now available for Linux x86-64 large-heap virtual machines (non-compressed references). See details of the [`concurrentScavenge`](xgc.md#concurrentscavenge) option on the [`-Xgc`](xgc.md) parameter for current information.
-
 
 <!-- ==== END OF TOPIC ==== version0.12.md ==== -->
