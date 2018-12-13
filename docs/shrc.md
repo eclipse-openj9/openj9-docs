@@ -47,6 +47,29 @@ Class data sharing is enabled by setting the `-Xshareclasses` option on the comm
 
 The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing you to specify where to create the cache, how much space to allocate for AOT code and more. You can also set the cache size by using the [-Xscmx](xscmx.md) option.
 
+
+## Best practices for using `-Xshareclasses`
+
+When you explicitly set the [-Xshareclasses](xshareclasses.md) option, it is good practice to set a number of parameters on the option:
+
+- Set an application-specific cache name ([`-Xshareclasses:name=<name>`](xshareclasses.md#name)).
+
+    If a cache with the specified name doesn't alkready exist, a new cache is created. This avoids sharing your application cache with a cache that is enabled by default (for example, by another application that doesn't set a name), and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application.
+
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** A default cache might already exist and therefore you cannot change its size by using the [`-Xscmx`](xscmx.md) option, which has no effect on a pre-existing cache.
+
+- Set an application-specific cache directory ([`-Xshareclasses:cacheDir=<directory>`](xshareclasses.md#cachedir)). 
+
+    This avoids sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is unaffected by the user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility).
+
+- Ensure that the cache directory permissions are set appropriately ([`-Xshareclasses:cacheDirPerm`](xshareclasses.md#cachedirperm)).
+
+    It is good practice to explicitly set permissions for the cache directory.
+
+- Set the [`-Xshareclasses:nonfatal`](xshareclasses.md#nonfatal) option.
+
+    This option means that your application can start even if there is a problem opening or creating the shared cache, in which case, the VM might be able to start *without* class data sharing.
+
 ## Support for custom class loaders
 
 Classes are shared by the bootstrap class loader internally in the OpenJ9 VM. If you are using a custom class loader, you can use the Java Helper API to find and store classes in the shared class cache.
