@@ -73,6 +73,7 @@ Options that change the behavior of the Garbage Collector (GC).
     Hypervisors:
 
     - IBM z/VM 6.4 with [APAR VM65987](http://www-01.ibm.com/support/docview.wss?uid=isg1VM65987)
+    - IBM z/VM 7.1
     - KVM solutions with QEMU 2.10 or later and minimum host kernel level 4.12 (for example, RHEL 7.5 with kernel level 4.14)
 
     If these requirements are not met, the option is ignored.

@@ -34,11 +34,10 @@ If excessive time is spent in the GC, the option returns `null` for an allocate 
 
 | Setting               | Effect            | Default                                                                            |
 |-----------------------|-------------------|:----------------------------------------------------------------------------------:|
-|`-Xenableexcessivegc`  | Enable exception  |                                                                                    |
-|`-Xdisableexcessivegc` | Disable exception | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+|`-Xenableexcessivegc`  | Enable exception  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+|`-Xdisableexcessivegc` | Disable exception |                                                                                    |
 
 
 
 <!-- ==== END OF TOPIC ==== xenableexcessivegc.md ==== -->
 <!-- ==== END OF TOPIC ==== xdisableexcessivegc.md ==== -->
-
