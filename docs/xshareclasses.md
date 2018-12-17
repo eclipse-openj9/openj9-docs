@@ -99,10 +99,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 : Sets the directory in which cache data is read and written. The following defaults apply:
 
     - On Windows&trade; systems, `<directory>` is the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
-    - On AIX&reg;, Linux&trade;, and z/OS&reg; systems, `<directory>` is as follows. You must have sufficient permissions in `<directory>`:
-        - ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) `/tmp/javasharedresources` ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
-        - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) The user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
-
+    - On AIX&reg;, Linux&trade;, and z/OS&reg; systems, `<directory>` is the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`:
 
 : On AIX, Linux, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
 
