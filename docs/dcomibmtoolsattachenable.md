@@ -30,7 +30,7 @@ Enable the Attach API for this application.
 
         -Dcom.ibm.tools.attach.enable=[yes|no]
 
-On AIX&reg;, Linux&trade;, and Windows&trade; systems, the following default applies:
+On AIX&reg;, Linux&reg;, and Windows&trade; systems, the following default applies:
 
 | Value        | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|

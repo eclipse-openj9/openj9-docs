@@ -24,7 +24,7 @@
 
 # -XX:[+|-]UseContainerSupport
 
-**(Linux&trade; only)**
+**(Linux&reg; only)**
 
 If your application is running in a container that imposes a memory limit, the VM allocates a larger fraction of memory to the Java heap. To turn off this behavior, set the `-XX:-UserContainerSupport` option on the command line.
 

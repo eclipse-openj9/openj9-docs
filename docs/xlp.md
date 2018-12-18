@@ -52,7 +52,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
     For more information about configuring AIX support for large pages, see [Large pages](https://www.ibm.com/support/knowledgecenter/ssw_aix_72/com.ibm.aix.performance/large_page_ovw.htm) in the AIX product documentation.
 
-### Linux&trade;
+### Linux&reg;
 
 :   If `<size>` is specified, the VM attempts to allocate the JIT code cache memory by using pages of that size. Allocating large pages by using `-Xlp` is supported only on the 64-bit VM, not the 32-bit VM.
 

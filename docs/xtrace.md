@@ -229,7 +229,7 @@ The following table lists the possible Java components (`<component>`). To inclu
 |  Component name |  Description                                                                   |
 |-----------------|--------------------------------------------------------------------------------|
 | **avl**         | VM AVL tree support                                                            |
-| **ibm_gpu**     | Class library graphics processing unit (GPU) native code (Linux&trade; only)   |
+| **ibm_gpu**     | Class library graphics processing unit (GPU) native code (Linux&reg; only)   |
 | **io**          | Class library java.io native code                                              |
 | **j9bcu**       | VM byte code utilities                                                         |
 | **j9bcverify**  | VM byte code verification                                                      |

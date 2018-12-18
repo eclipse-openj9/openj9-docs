@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]IdleTuningCompactOnIdle
 
-**(Linux&trade; only)**
+**(Linux&reg; only)**
 
 This option controls garbage collection processing with compaction when the status of the OpenJ9 VM is set to idle.
 

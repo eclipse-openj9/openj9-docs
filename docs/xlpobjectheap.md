@@ -31,7 +31,7 @@ To find out the large page sizes available and the current setting, use the `-ve
 
 ## Syntax
 
-AIX&reg;, Linux&trade;, and Windows&trade;:
+AIX&reg;, Linux&reg;, and Windows&trade;:
 
         -Xlp:objectheap:pagesize=<size>[,strict|warn]
 

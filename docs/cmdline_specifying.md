@@ -84,7 +84,7 @@ At startup, the list of VM arguments is constructed in the following order, with
             :::java
             set IBM_NOSIGHANDLER=<non_null_string>
 
-    - On AIX&reg;, Linux&trade;, and z/OS&reg; systems:
+    - On AIX&reg;, Linux&reg;, and z/OS&reg; systems:
 
             :::java
             export IBM_NOSIGHANDLER=<non_null_string>

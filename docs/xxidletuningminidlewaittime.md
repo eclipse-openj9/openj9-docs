@@ -24,7 +24,7 @@
 
 # -XX:IdleTuningMinIdleWaitTime
 
-** (Linux&trade; only) **
+** (Linux&reg; only) **
 
 When the OpenJ9 VM is idle, this option controls the minimum length of time that the VM must be idle before the status of the VM is set to idle. Further tuning options control the compaction of the object heap and the release of free memory pages, which reduces the footprint of the VM.
 

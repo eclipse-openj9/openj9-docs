@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]handleSIGXFSZ
 
-**(Linux&trade; only)**
+**(Linux&reg; only)**
 
 This option affects the handling of the operating system signal `SIGXFSZ`. This signal is generated when a process attempts to write to a file that causes the maximum file size `ulimit` to be exceeded.
 

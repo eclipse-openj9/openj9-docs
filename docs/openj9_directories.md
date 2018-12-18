@@ -31,7 +31,7 @@ pages refer to the VM directory location as `<vm_dir>`.
 | Operating system            | Java 8                                  | Java 10 and later                          |
 |-----------------------------|-----------------------------------------|-------------------------------------------|
 | AIX&reg;         | `<install_dir>/jre/lib/ppc[64]/default` | `<install_dir>/` |
-| Linux&trade;     | `<install_dir>/jre/lib/<arch>/default`  | `<install_dir>/` |
+| Linux&reg;     | `<install_dir>/jre/lib/<arch>/default`  | `<install_dir>/` |
 | Windows&trade;   | `<install_dir>\jre\bin\default`         | `<install_dir>\` |
 | z/OS&reg;        | `<install_dir>/jre/lib/s390[x]/default` | `<install_dir>/` |
 
