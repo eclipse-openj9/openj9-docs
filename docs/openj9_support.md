@@ -79,13 +79,12 @@ platform support might vary, depending on their build environment.
 
 OpenJDK8 binaries are supported on the minimum operating system levels shown in the following tables:
 
-
-| Linux                                 |   x32  |  x64   | ppc64le    | Z31  | Z64 |
+| Linux&reg;                            |   x32  |  x64   | ppc64le    | Z31  | Z64 |
 |---------------------------------------|--------|--------|------------|------|------|
-| Centos 6                              |   Y    |   Y    |     Y      |   N  |  N   |
-| Centos 7                              |   Y    |   Y    |     Y      |   N  |  N   |
-| Red Hat Enterprise Linux (RHEL) 6     |   Y    |   Y    |     Y      |   Y  |  Y   |
-| RHEL 7                                |   Y    |   Y    |     Y      |   Y  |  Y   |
+| Centos 6.9                            |   Y    |   Y    |     Y      |   N  |  N   |
+| Centos 7.4                            |   Y    |   Y    |     Y      |   N  |  N   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |   Y    |     Y      |   Y  |  Y   |
+| RHEL 7.4                              |   Y    |   Y    |     Y      |   Y  |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |   Y    |     Y      |   Y  |  Y   |
 | Ubuntu 16.04                          |   Y    |   Y    |     Y      |   N  |  Y   |
 | Ubuntu 18.04                          |   Y    |   Y    |     Y      |   N  |  Y   |
@@ -93,12 +92,19 @@ OpenJDK8 binaries are supported on the minimum operating system levels shown in 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Not all of these distributions are tested, but Linux distributions that have a
 minimum glibc version 2.12 are expected to function without problems.
 
-| Windows                    |  x32   |  x64  |
+| Windows&reg;               |  x32   |  x64  |
 |----------------------------|--------|-------|
+| Windows 7 SP1              |   Y    |   Y   |
+| Windows 8                  |   Y    |   Y   |
+| Windows 8.1                |   Y    |   Y   |
 | Windows 10                 |   Y    |   Y   |
 | Windows Server 2012        |   Y    |   Y   |
 | Windows Server 2012 R2     |   Y    |   Y   |
 | Windows Server 2016        |   Y    |   Y   |
+
+| macOS&reg;             |   x64    |
+|------------------------|----------|
+| OSX 10.10+             |    Y     |
 
 
 | AIX&reg;     |  ppc32   |  ppc64   |
@@ -115,10 +121,10 @@ OpenJDK10 binaries are supported on the minimum operating system levels shown in
 
 | Linux                                 |  x64   |  ppc64le   | Z64  |
 |---------------------------------------|--------|------------|------|
-| Centos 6                              |   Y    |     Y      |  N   |
-| Centos 7                              |   Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6     |   Y    |     Y      |  Y   |
-| RHEL 7                                |   Y    |     Y      |  Y   |
+| Centos 6.9                            |   Y    |     Y      |  N   |
+| Centos 7.4                            |   Y    |     Y      |  N   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
+| RHEL 7.4                              |   Y    |     Y      |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
 | Ubuntu 16.04                          |   Y    |     Y      |  Y   |
 | Ubuntu 18.04                          |   Y    |     Y      |  Y   |
@@ -128,6 +134,9 @@ minimum glibc version 2.12 are expected to function without problems.
 
 | Windows                    |  x64   |
 |----------------------------|--------|
+| Windows 7 SP1              |   Y    |
+| Windows 8                  |   Y    |
+| Windows 8.1                |   Y    |
 | Windows 10                 |   Y    |
 | Windows Server 2012        |   Y    |
 | Windows Server 2012 R2     |   Y    |
@@ -149,10 +158,10 @@ OpenJDK11 binaries are supported on the minimum operating system levels shown in
 
 | Linux                                 |  x64   |  ppc64le   | Z64  |
 |---------------------------------------|--------|------------|------|
-| Centos 6                              |   Y    |     Y      |  N   |
-| Centos 7                              |   Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6     |   Y    |     Y      |  Y   |
-| RHEL 7                                |   Y    |     Y      |  Y   |
+| Centos 6.9                            |   Y    |     Y      |  N   |
+| Centos 7.4                            |   Y    |     Y      |  N   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
+| RHEL 7.4                              |   Y    |     Y      |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
 | Ubuntu 16.04                          |   Y    |     Y      |  Y   |
 | Ubuntu 18.04                          |   Y    |     Y      |  Y   |
@@ -162,14 +171,17 @@ minimum glibc version 2.12 are expected to function without problems.
 
 | Windows                    |  x64   |
 |----------------------------|--------|
+| Windows 7 SP1              |   Y    |
+| Windows 8                  |   Y    |
+| Windows 8.1                |   Y    |
 | Windows 10                 |   Y    |
 | Windows Server 2012        |   Y    |
 | Windows Server 2012 R2     |   Y    |
 | Windows Server 2016        |   Y    |
 
-| MacOS                  |   x64    |
+| macOS                  |   x64    |
 |------------------------|----------|
-| OSX 10                 |    Y     |
+| OSX 10.10+             |    Y     |
 
 | AIX          |  ppc64   |
 |--------------|----------|
