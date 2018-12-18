@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]RuntimeInstrumentation  
 
-**(AIX&reg;, Linux&trade;, and z/OS&reg; only)**
+**(AIX&reg;, Linux&reg;, and z/OS&reg; only)**
 
 This option controls the use of the Runtime Instrumentation (RI) facility in the virtual machines that support it.
 

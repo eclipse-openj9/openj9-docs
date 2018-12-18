@@ -123,7 +123,7 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
 : The generational concurrent policy (default) uses a concurrent mark phase combined with generational garbage collection to help minimize the time that is spent in any garbage collection pause. This policy is particularly useful for applications with many short-lived objects, such as transactional applications. Pause times can be significantly shorter than with the `optthruput` policy, while still producing good throughput. Heap fragmentation is also reduced.
 
-### `metronome` (AIX&reg;, Linux&trade; only)
+### `metronome` (AIX&reg;, Linux&reg; only)
 
         -Xgcpolicy:metronome
 

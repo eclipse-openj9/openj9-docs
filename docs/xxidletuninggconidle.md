@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]IdleTuningGcOnIdle  
 
-**(Linux&trade; only)**
+**(Linux&reg; only)**
 
 This option can be used to reduce the memory footprint of the OpenJ9 VM when it is in an idle state.
 

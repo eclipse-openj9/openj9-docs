@@ -122,7 +122,7 @@ Make your contributions valuable to all users, including those who have English 
 Although OpenJ9 supports a number of platforms and architectures, there might be different configuration and tuning options, or different default behavior. When adding content to the user documentation
 that does not apply to all environments, call it out. For example:
 
-      **(Linux&trade; only)**
+      **(Linux&reg; only)**
 
 If content is not marked it should apply to any platform.
 
