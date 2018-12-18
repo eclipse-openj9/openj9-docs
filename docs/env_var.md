@@ -33,26 +33,27 @@ Although the OpenJ9 virtual machine (VM) recognizes many environment variables, 
 To show the current environment, run:
 
 -   `set` (Windows&trade;)
--   `env` (AIX&reg;, Linux&trade;)
+-   `env` (AIX&reg;, Linux&reg;, and macOS&reg;)
 -   `set` (z/OS&reg;)
 
 To show a particular environment variable, run:
 
 -   `echo %ENVNAME%` (Windows)
--   `echo $ENVNAME` (AIX, Linux, and z/OS)
+-   `echo $ENVNAME` (AIX, Linux, macOS, and z/OS)
 
-Use values exactly as shown in the documentation. The names of environment variables are case-sensitive in AIX, Linux, and z/OS.
+Use values exactly as shown in the documentation. The names of environment variables are case-sensitive in AIX, Linux, macOS, and z/OS.
 
 To set the environment variable **LOGIN\_NAME** to *Fred*, run:
 
 -   `set LOGIN_NAME=Fred` (Windows)
 -   `export LOGIN_NAME=Fred` (AIX/Linux: ksh or bash shells)
+-   `setenv LOGIN_NAME Fred` (macOS or csh shells)
 
 These variables are set only for the current shell or command-line session.
 
 If you are setting multiple values for an environment variable in a list:
 
--   On AIX, Linux, and z/OS the separator is typically a colon (:).
+-   On AIX, Linux, macOS, and z/OS the separator is typically a colon (:).
 -   On Windows the separator is typically a semicolon (;).
 
 ## General options
@@ -179,9 +180,6 @@ The following table lists other environment variables that can be set for diagno
 |`IBM_JAVA_ABEND_ON_FAILURE=Y` (z/OS only)      | This setting tells the Java launcher to mark the Task Control Block (TCB) with an abend code if the OpenJ9 VM fails to load or is terminated by an uncaught exception. By default, the Java launcher does not mark the TCB.|
 |`JAVA_DUMP_TDUMP_PATTERN=<string>` (z/OS only) | The specified `<string>` is passed to IEATDUMP to use as the data/set name for the Transaction Dump. The default `<string>` is `%uid.JVM.TDUMP.%job.D%y%m%d.T%H%M%S` (31-bit) or `%uid.JVM.%job.D%y%m%d.T%H%M%S.X&amp;DS` (64-bit), where `%uid` is found from the C code fragment shown in **Notes**.|
 |`JAVA_THREAD_MODEL=<string>`                   | `<string>` can be defined as one of the following values: *NATIVE* (all threads are created as `_MEDIUM_WEIGHT`), *HEAVY* (all threads are created as `_HEAVY_WEIGHT`), *MEDIUM* (same as *NATIVE*), or *NULL*. The default is *NATIVE*. |
-|`IBM_JVM_DEBUG_PROG=<debugger>` (Linux only)   | Set this variable to start the VM under the specified debugger.                                                          |
-|`IBM_MALLOCTRACE=TRUE`                         | Setting this variable to a non-null value lets you trace memory allocation in the VM. You can use this variable with the `-Dcom.ibm.dbgmalloc=true` system property to trace native allocations from the Java classes. This variable is equivalent to the command-line option `-Xcheck:memory`.|
-|`IBM_USE_FLOATING_STACKS=TRUE` (Linux only)    | Set this variable to override the automatic disabling of floating stacks. If this variable is not set, the launcher might set `LD_ASSUME_KERNEL=2.2.5`.|
 |`IBM_XE_COE_NAME=<value>`                      | Set this variable to generate a system dump when the specified exception occurs. The value that is supplied is the package description of the exception; for example, `java/lang/InternalError`. A Signal 11 is followed by a JVMXE message and then the VM ends.|
 |`JAVA_PLUGIN_TRACE=TRUE`                       | When this variable is set to `TRUE` or 1, a Java plug-in trace is produced for the session when an application runs. Traces are produced from both the Java and Native layer. By default, this variable is set to `FALSE`, so that a Java plug-in trace is not produced. |
 
