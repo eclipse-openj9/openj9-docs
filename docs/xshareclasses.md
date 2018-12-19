@@ -37,6 +37,8 @@ When you are running cache utilities, the message `Could not create the Java vir
 
 Some cache utilities can work with caches from previous Java&trade; versions or caches that are created by virtual machines (VMs) with different bit-widths. These caches are referred to as *"incompatible"* caches.
 
+See also the [Class data sharing](shrc.md) topic, which includes some [best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+
 ## Syntax
 
         -Xshareclasses:<parameter>
@@ -45,7 +47,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
   - For 64-bit platforms, the default size is 300 MB, with a "soft" maximum limit for the initial size of the cache (`-Xscmx`) of 64MB, with the following exceptions:
     - For a persistent cache, if the free disk space is less than 6 GB, the default size is set to 64 MB and an `-Xscmx` size is not set.
-    - For a non-persistent cache on Linux, the cache size is limited by the maximum amount of memory that can be reserved by a process (`SHMMAX`). If `SHMMAX` is less than 300MB, the default shared cache size is set to equal `SHMMAX`. If `SHMMAX` is greater than 80 MB, `-Xscmx` is set to 64 MB. If `SHMMAX` is less than 80MB an `-Xscmx` size is not set.
+    - For a non-persistent cache on Linux&reg; systems, the cache size is limited by the maximum amount of memory that can be reserved by a process (`SHMMAX`). If `SHMMAX` is less than 300MB, the default shared cache size is set to equal `SHMMAX`. If `SHMMAX` is greater than 80 MB, `-Xscmx` is set to 64 MB. If `SHMMAX` is less than 80MB an `-Xscmx` size is not set.
   - For other platforms, the default size is 16MB.
 
 ## Parameters
@@ -99,7 +101,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 : Sets the directory in which cache data is read and written. The following defaults apply:
 
     - On Windows&trade; systems, `<directory>` is the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
-    - On AIX&reg;, Linux&trade;, and z/OS&reg; systems, `<directory>` is the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`.
+    - On AIX&reg;, Linux, and z/OS&reg; systems, `<directory>` is the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`.
 
 : On AIX, Linux, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
 
@@ -114,6 +116,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : Otherwise, persistent caches are created with the same permissions as non-persistent caches. The permissions for non-persistent caches are `-rw-r-----`, or `-rw-rw----` if you also specify `-Xshareclasses:groupAccess`.
 
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to set an application-specific cache directory  to avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
 ### `cacheDirPerm`
 
@@ -130,6 +133,8 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 : If the cache directory is the platform default directory, `/tmp/javasharedresources`, this suboption is ignored and the cache directory permissions are set to 777. If you do not set this suboption, the cache directory permissions are set to 777, for compatibility with earlier Java versions.
 
 : On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
+
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
 ### `cacheRetransformed`
 
@@ -317,6 +322,8 @@ case, the VM continues without using shared classes.
 
 :   Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, `destroy`. Use the `listAllCaches` utility to show which named caches are currently available. If you do not specify a name, the default name *"sharedcc\_%u"* is used. "%u" in the cache name inserts the current user name. On AIX, Linux, and z/OS systems, you can specify *"%g"* in the cache name to insert the current group name.
 
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to explicitly specify a cache for your application. This avoids the application sharing a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application. Note that you cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+
 ### `noaot`
 
         -Xshareclasses:noaot
@@ -346,6 +353,9 @@ case, the VM continues without using shared classes.
         -Xshareclasses:nonfatal
 
 :   Allows the VM to start even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select `nonfatal` and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing. See also [`fatal`](#fatal).
+
+:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Unless it is important that your application runs with class data sharing, it is good practice to set this parameter. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+
 
 ### `nonpersistent`
 
@@ -532,5 +542,6 @@ Here are some examples:
 
 - [-Xscmx](xscmx.md)
 - [-XX\:SharedCacheHardLimit](xxsharedcachehardlimit)
+- [Class data sharing](shrc.md)
 
 <!-- ==== END OF TOPIC ==== docs/xshareclasses.md ==== -->
