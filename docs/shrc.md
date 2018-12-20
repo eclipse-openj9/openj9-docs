@@ -37,9 +37,7 @@ Memory footprint is reduced by sharing common classes between applications that 
 
 ## Enabling class data sharing
 
-On macOS&reg;, you enable class data sharing by setting the `-Xshareclasses` option on the command line when you start your application. By default, OpenJ9 always shares both the bootstrap and application classes that are loaded by the default system class loader.
-
-  For operating systems other than macOS, class data sharing is enabled by default for bootstrap classes only, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including the name and location of the default shared classes cache. Trace point `j9shr.2271` is activated if the default cache cannot be started, so you can enable this trace point to determine whether the default cache started successfully. You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it. Note that if you have multiple VMs and you do not change the default shared classes behavior, the following applies:
+  Class data sharing is enabled by default for bootstrap classes only, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including the name and location of the default shared classes cache. Trace point `j9shr.2271` is activated if the default cache cannot be started, so you can enable this trace point to determine whether the default cache started successfully. You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it. Note that if you have multiple VMs and you do not change the default shared classes behavior, the following applies:
 
 - If the VMs are from a single Java installation, they will share a single default cache.
 - If the VMs are from different Java installations, of the same Java release and installed by the same user, each VM checks whether the existing default shared cache in the cache directory is from the same Java installation as the VM. If not, the VM deletes that shared cache, then creates a new one. To avoid this situation, use `-Xshareclasses:cacheDir=<dir>` to specify a different cache directory for each Java installation.
@@ -52,13 +50,13 @@ When you explicitly set the [-Xshareclasses](xshareclasses.md) option, it is goo
 
 - Set an application-specific cache name ([`-Xshareclasses:name=<name>`](xshareclasses.md#name)).
 
-    If a cache with the specified name doesn't already exist, a new cache is created. 
+    If a cache with the specified name doesn't already exist, a new cache is created.
 
     This avoids sharing your application cache with a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application.
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache.
 
-- Set an application-specific cache directory ([`-Xshareclasses:cacheDir=<directory>`](xshareclasses.md#cachedir)). 
+- Set an application-specific cache directory ([`-Xshareclasses:cacheDir=<directory>`](xshareclasses.md#cachedir)).
 
     This avoids sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility).
 
@@ -69,8 +67,8 @@ When you explicitly set the [-Xshareclasses](xshareclasses.md) option, it is goo
 - Set the [`-Xshareclasses:nonfatal`](xshareclasses.md#nonfatal) option.
 
     This option means that your application can start even if there is a problem opening or creating the shared cache, in which case, the VM might be able to start *without* class data sharing.
-    
-    
+
+
 
 ## Support for custom class loaders
 
