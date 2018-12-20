@@ -43,7 +43,7 @@ The JIT code cache stores the native code of compiled Java&trade; methods. By de
 
 ## Class data sharing is enabled by default
 
-For operating systems other than macOS&reg;, class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [Class Data Sharing](shrc.md).
+Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [Class Data Sharing](shrc.md).
 
 ### OpenSSL is now supported for improved native cryptographic performance
 
