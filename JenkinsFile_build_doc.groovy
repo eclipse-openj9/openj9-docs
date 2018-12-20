@@ -25,7 +25,8 @@ NAMESPACE = 'eclipse'
 CONTAINER_NAME = 'openj9-docs'
 ARCHIVE = 'doc.tar.gz'
 OPENJ9_REPO = 'https://github.com/eclipse/openj9-docs'
-ECLIPSE_REPO = 'ssh://genie.openj9@git.eclipse.org:29418/www.eclipse.org/openj9/docs.git'
+OPENJ9_STAGING = 'https://github.com/eclipse/openj9-docs-staging'
+// ECLIPSE_REPO = 'ssh://genie.openj9@git.eclipse.org:29418/www.eclipse.org/openj9/docs.git'
 
 timeout(time: 6, unit: 'HOURS') {
     timestamps {
@@ -35,12 +36,14 @@ timeout(time: 6, unit: 'HOURS') {
                     docker.image("${NAMESPACE}/${CONTAINER_NAME}:latest").inside {
                         REFSPEC = ''
                         // Target Branch for push
-                        BRANCH = 'master'
+						// SUE: Was BRANCH = 'master' ... we will now push latest doc to ghpages of openj9-docs
+                        BRANCH = 'ghpages'
                         if (params.ghprbPullId) {
                             // If building a PullRequest, checkout PR merge commit
                             REFSPEC = "+refs/pull/${ghprbPullId}/merge:refs/remotes/origin/pr/${ghprbPullId}/merge"
                             MERGE_COMMIT = sha1
-                            BRANCH = 'staging'
+							// SUE: Was BRANCH = 'staging' ... we will now stage PRs at the openj9-docs-staging:master repo
+                            BRANCH = 'master'
                         }
                         // If launched manually, MERGE_COMMIT won't be populated from the webhook so default to master
                         GET_SHA = false
@@ -55,7 +58,7 @@ timeout(time: 6, unit: 'HOURS') {
                                 branches: [[name: MERGE_COMMIT]],
                                 userRemoteConfigs: [[refspec: REFSPEC, url: OPENJ9_REPO]]]
 
-                        if (GET_SHA) {
+								if (GET_SHA) {
                             MERGE_COMMIT = sh (script: 'git rev-parse HEAD', returnStdout: true).trim()
                         }
                         COMMIT_MSG = sh (script: 'git log -1 --oneline', returnStdout: true).trim()
@@ -67,7 +70,16 @@ timeout(time: 6, unit: 'HOURS') {
                             setBuildStatus(OPENJ9_REPO, MERGE_COMMIT, 'PENDING', 'In Progress')
                             currentBuild.description = "${MERGE_COMMIT.take(8)} - ${COMMIT_MSG}"
                         }
+						// Need to insert website banners to identify the documentation
 
+                        if (params.ghprbPullId) {
+                            // Staging site banner
+                            sh "sed -i 's|{% block hero %}|<!--Staging site notice --><div class="md-container"><div style="margin:-5rem 0 -5rem 0; background: linear-gradient(white, #69c1bd, white); color:white; text-align:center; font-size:1.5rem; font-weight:bold; text-shadow: 2px 2px 4px #000000;"><p style="padding:2rem 0 2rem 0;"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> CAUTION: This site is for reviewing draft documentation. For published content, visit <a style="color:#af6e3d; text-shadow:none; padding-left:1rem;" href="http://www.eclipse.org/openj9/docs/index.html">www.eclipse.org/openj9/docs</a></p></div>{% block hero %}|' theme/base.html"
+                        }
+                        else {
+                            // Ghpages site banner
+                            sh "sed -i 's|{% block hero %}|<!--Ghpages site notice --><div class="md-container"><div style="margin:-5rem 0 -5rem 0; background: linear-gradient(white, #ffa02e, white); color:white; text-align:center; font-size:1.5rem; font-weight:bold; text-shadow: 2px 2px 4px #000000;"><p style="padding:2rem 0 2rem 0;"><i class="fa fa-cogs" aria-hidden="true"></i> CAUTION: This site hosts draft documentation for the next release. For published content of the latest release, visit <a style="color:#af6e3d; text-shadow:none; padding-left:1rem;" href="http://www.eclipse.org/openj9/docs/index.html">www.eclipse.org/openj9/docs</a></p></div>{% block hero %}|' theme/base.html"
+                        }
                         sh 'mkdocs build -v'
                         sh "tar -zcf ${ARCHIVE} site/"
                         stash includes: "${ARCHIVE}", name: 'doc'
@@ -84,21 +96,40 @@ timeout(time: 6, unit: 'HOURS') {
                             sh "tar -zxf ${ARCHIVE}"
                         }
 
-                        dir('eclipse_repo') {
-                            git branch: BRANCH, url: ECLIPSE_REPO
-                            sh 'rm -rf *'
-                            sh "cp -r ${WORKSPACE}/built_doc/site/* ."
-                            sh 'git status'
-                            STATUS = sh (script: 'git status --porcelain', returnStdout: true).trim()
-                            if ("x${STATUS}" != "x") {
-                                sh 'git add -A'
-                                sh "git commit -m 'Generated from commit: ${MERGE_COMMIT}'"
-                                sh "git push origin ${BRANCH}"
+                        if (params.ghprbPullId) {
+                           dir('openj9-staging') {
+                                git branch: BRANCH, url: OPENJ9_STAGING
+                                // SUE: Was `sh 'rm -rf *'`
+                                // SUE: Set the PR directory name and remove any content if it exists & copy the built doc into it
+                                dir("${ghprbPullId}") {
+                                    deleteDir()
+                                    sh "cp -r ${WORKSPACE}/built_doc/site/* ."
+                                }
+                                sh 'git status'
+                                STATUS = sh (script: 'git status --porcelain', returnStdout: true).trim()
+                                if ("x${STATUS}" != "x") {
+                                    sh 'git add -A'
+                                    sh "git commit -m 'Generated from commit: ${MERGE_COMMIT}'"
+                                    sh "git push origin ${BRANCH}"
+                                }
                             }
                         }
+
                         if (!params.ghprbPullId) {
+                            dir('openj9-ghpages') {
+                                git branch: BRANCH, url: OPENJ9_REPO
+                                sh 'rm -rf *'
+                                sh "cp -r ${WORKSPACE}/built_doc/site/* ."
+                                sh 'git status'
+                                STATUS = sh (script: 'git status --porcelain', returnStdout: true).trim()
+                                if ("x${STATUS}" != "x") {
+                                    sh 'git add -A'
+                                    sh "git commit -m 'Generated from commit: ${MERGE_COMMIT}'"
+                                    sh "git push origin ${BRANCH}"
+                                }
+                            }
                             // Set status on the Github commit for merge builds
-                            setBuildStatus(OPENJ9_REPO, MERGE_COMMIT, 'SUCCESS', 'Doc built and pushed to Eclipse website')
+                            setBuildStatus(OPENJ9_REPO, MERGE_COMMIT, 'SUCCESS', 'Doc built and pushed to openj9-docs:ghpages')
                         }
                     } finally {
                         cleanWs()
@@ -109,7 +140,7 @@ timeout(time: 6, unit: 'HOURS') {
             if (!params.ghprbPullId) {
                 node('worker') {
                     // Set status on the Github commit for merge builds
-                    setBuildStatus(OPENJ9_REPO, MERGE_COMMIT, 'FAILURE', 'Failed to build doc and push to Eclipse website')
+                    setBuildStatus(OPENJ9_REPO, MERGE_COMMIT, 'FAILURE', 'Failed to build doc and push to openj9-docs ghpages')
                     slackSend channel: '#jenkins', color: 'danger', message: "Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
                 }
             }
