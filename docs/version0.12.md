@@ -34,14 +34,24 @@ The following new features and notable changes since v.0.11.0 are delivered in t
 - [Improved flexibility for managing the size of the JIT code cache](#improved-flexibility-for-managing-the-size-of-the-jit-code-cache)
 - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default)
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [OpenSSL is now supported for improved native cryptographic performance](#openssl-is-now-supported-for-improved-native-cryptographic-performance)
+- [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
 - [`IBM_JAVA_OPTIONS` is deprecated](#ibm_java_options-is-deprecated)
-- [Pause-less garbage collection on 64-bit Linux x86 platforms has improved support](#pause-1less-garbage-collection-on-64-bit-linux-x86-platforms-has-improved-support)
 
-## Improved flexibility for managing the size of the JIT code cache
+## Features and changes
+
+### Binaries and supported environments
+
+OpenJ9 release 0.12.0 provides limited support for the macOS&reg; platform on OpenJDK 8. Early builds of OpenJDK 8 with OpenJ9 on macOS are available at the AdoptOpenJDK project at the following link:
+
+- [OpenJDK 8 with OpenJ9 macOS x64](https://adoptopenjdk.net/nightly.html?variant=openjdk8&jvmVariant=openj9)
+
+To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### Improved flexibility for managing the size of the JIT code cache
 
 The JIT code cache stores the native code of compiled Java&trade; methods. By default, the size of the code cache is 256 MB for a 64-bit VM and 64 MB for a 31/32-bit VM. In earlier releases the size of the code cache could be increased from the default value by using the `-Xcodecachetotal` command line option. In this release the size can also be decreased by using this option, with a minimum size of 2 MB. The size of the JIT code cache also affects the size of the JIT data cache, which holds metadata about compiled methods. If you use the `-Xcodecachetotal` option to manage the size of the code cache, the size of the data cache is adjusted by the same proportion. For more information, see [`-Xcodecachetotal`](xcodecachetotal.md).
 
-## Class data sharing is enabled by default
+### Class data sharing is enabled by default
 
 Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [Class Data Sharing](shrc.md).
 
@@ -55,11 +65,17 @@ OpenSSL is a native open source cryptographic toolkit for Transport Layer Securi
 
 ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 
-## `IBM_JAVA_OPTIONS` is deprecated
+
+### Improved support for pause-less garbage collection
+
+Concurrent scavenge mode is now supported on 64-bit Windows operating systems.
+
+In Eclipse OpenJ9 V0.11.0, support was added for `-Xgc:concurrentScavenge` on Linux x86-64 virtual machines that use compressed references. In this release, support is now available for Linux x86-64 large-heap virtual machines (non-compressed references).
+
+For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge) option.
+
+### `IBM_JAVA_OPTIONS` is deprecated
 
 The VM environment variable `IBM_JAVA_OPTIONS` is deprecated and is replaced by `OPENJ9_JAVA_OPTIONS`. `IBM_JAVA_OPTIONS` will be removed in a future release. For more information about the use of this variable, see the [general options](env_var.md#general-options) in [Environment variables](env_var.md).
-
-## Pause-less garbage collection on 64-bit Linux x86 platforms has improved support
-In Eclipse OpenJ9 V0.11.0, support was added for `-Xgc:concurrentScavenge` on Linux x86-64 virtual machines that use compressed references. In this release, support is now available for Linux x86-64 large-heap virtual machines (non-compressed references). See details of the [`concurrentScavenge`](xgc.md#concurrentscavenge) option on the [`-Xgc`](xgc.md) parameter for current information.
 
 <!-- ==== END OF TOPIC ==== version0.12.md ==== -->
