@@ -110,7 +110,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
 : where `<value>` is a percentage of total application run time that is not spent in GC.
 
-    The default value is 95, which means that anything over 5% of total application run time spent on GC is deemed excessive. This option can be used only when [`-Xenableexcessivegc`](xenableexcessivegc.md) is set.
+    The default value is 95, which means that anything over 5% of total application run time spent on GC is deemed excessive. This option can be used only when [`-Xenableexcessivegc`](xenableexcessivegc.md) is set (enabled by default).
 
 ### `minContractPercent`
 
@@ -171,7 +171,7 @@ Options that change the behavior of the Garbage Collector (GC).
   |---------------|----------------|-----------------------|
   | `<n>`         | [1 - 14]       | 10                    |
 
-: Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see [Tenure age](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_generational_tenure.html).
+: Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see [Generational Concurrent policy](gc.md#generational-concurrent-policy).
 
 ### `tlhIncrementSize`
 
