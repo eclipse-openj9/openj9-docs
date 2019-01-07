@@ -32,7 +32,7 @@ To find out the large page sizes available and the current setting, use the `-ve
 
 ## Syntax
 
-AIX&reg;, Linux&reg;, and Windows&trade;:
+AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade;:
 
         -Xlp:codecache:pagesize=<size>
 
@@ -59,11 +59,15 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
     - Linux on Power Systems&trade;: The code cache page size cannot be controlled by the `-Xlp:codecache:pagesize=<size>` option. Specifying any other page size results in a warning that the page size is not available. The `-verbose:sizes` output reflects the current operating system setting.
     - On other architectures, the VM uses the default operating system page size.
 
+### macOS
+
+: The default size for the code cache is 4 KB large pages.
+
 ### z/OS
 
-: 1 M pageable pages, when available, are the default size for the code cache.
+: 1 MB pageable pages, when available, are the default size for the code cache.
 
-    The `-Xlp:codecache:pagesize=<size>,pageable` option supports only a large page size of 1 M pageable large pages. The use of 1 M pageable large pages for the JIT code cache can improve the runtime performance of some Java&trade; applications. A page size of 4 K can also be used.
+    The `-Xlp:codecache:pagesize=<size>,pageable` option supports only a large page size of 1 MB pageable large pages. The use of 1 MB pageable large pages for the JIT code cache can improve the runtime performance of some Java&trade; applications. A page size of 4 KB can also be used.
 
 ## See also
 

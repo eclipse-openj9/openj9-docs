@@ -277,7 +277,7 @@ The following table shows the events that are available as dump agent triggers:
 | Event           |  Triggered when....                                                         | Filters on ....                                                |
 | ----------------|-----------------------------------------------------------------------------|----------------------------------------------------------------|
 | **gpf**         | A General Protection Fault (GPF) occurs.                                    | Not applicable                                                 |
-| **user**        | The VM receives the SIGQUIT (Linux, AIX&reg;, z/OS) or SIGBREAK (Windows&trade;) signal from the operating system.|  Not applicable                      |
+| **user**        | The VM receives the SIGQUIT (Linux, macOS&reg;, AIX&reg;, z/OS) or SIGBREAK (Windows&trade;) signal from the operating system.|  Not applicable                      |
 | **abort**       | The VM receives the SIGABRT signal from the operating system.               | Not applicable                                                 |
 | **vmstart**     | The virtual machine is started.                                             | Not applicable                                                 |
 | **vmstop**      | The virtual machine stops.                                                  | Exit code; for example, `filter=#129..#192#-42#255`            |
@@ -535,7 +535,7 @@ You can filter the **slow** event to change the time threshold from the default 
 ```
 
 #### allocation event
-**(Linux and Windows only)**
+**(Linux, macOS, and Windows only)**
 
 You must filter the **allocation** event to specify the size of objects that cause a trigger. You can set the filter size from zero up to the maximum value of a 32-bit pointer on 32-bit platforms, or the maximum value of a 64-bit pointer on 64-bit platforms. Setting the lower filter value to zero triggers a dump on all allocations.
 
@@ -725,7 +725,7 @@ In general, the default request options are sufficient.
 
 Dump output is written to different files, depending on the type of dump and the platform. File names include a time stamp.
 
-| Dump type      | File name  (AIX, Linux, Windows)                                | File name (z/OS)                                                                                         |
+| Dump type      | File name  (AIX, Linux, macOS, Windows)                                | File name (z/OS)                                                                                         |
 |----------------|-----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
 | System dump    | core.%Y%m%d.%H%M%S.%pid.dmp                                     |  %uid.JVM.TDUMP.%job.D%Y%m%d.T%H%M%S (31-bit),  %uid.JVM.%job.D%y%m%d.T%H%M%S.X&DS (64-bit) See **Note** |
 | Java dump      | javacore.%Y%m%d.%H%M%S.%pid.%seq.txt                            | javacore.%Y%m%d.%H%M%S.%pid.%seq.txt                                                                     |

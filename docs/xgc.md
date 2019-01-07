@@ -41,7 +41,7 @@ Options that change the behavior of the Garbage Collector (GC).
 | [`minContractPercent`          ](#mincontractpercent          ) | Sets the minimum percentage of the heap that can be contracted at any given time.                       |
 | [`maxContractPercent`          ](#maxcontractpercent          ) | Sets the maximum percentage of the heap that can be contracted at any given time.                       |
 | [`overrideHiresTimerCheck`     ](#overridehirestimercheck     ) | Overrides GC operating system checks for timer resolution.                                              |
-| [`preferredHeapBase`           ](#preferredheapbase           ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&reg;, and Windows&trade; only) |
+| [`preferredHeapBase`           ](#preferredheapbase           ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; only) |
 | [`scvNoAdaptiveTenure`         ](#scvnoadaptivetenure         ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                             |
 | [`scvTenureAge`                ](#scvtenureage                ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                         |
 | [`tlhIncrementSize`            ](#tlhincrementsize            ) | Sets the size of the thread local heap (TLH)  increment                                      |
@@ -142,7 +142,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
 ### `preferredHeapBase`
 
-**(AIX, Linux, Windows only)**
+**(AIX, Linux, macOS, and Windows only)**
 
         -Xgc:preferredHeapBase=<address>
 
@@ -152,7 +152,6 @@ Options that change the behavior of the Garbage Collector (GC).
 
 : where, `<address>` is the base memory address for the heap. Use this option with the `-Xcompressedrefs` option to allocate the heap you specify with the [`-Xmx`](xms.md) option, in a memory range of your choice. If `-Xcompressedrefs` is not specified, this option has no effect. In the following example, the heap is located at the 4 GB mark, leaving the lowest 4 GB of address space for use by other processes.
 
-        :::java
         -Xgc:preferredHeapBase=0x100000000
 
     If the heap cannot be allocated in a contiguous block at the `preferredHeapBase` address you specified, an error occurs detailing a Garbage Collection (GC) allocation failure startup. When the `preferredHeapBase` option is used with the [`-Xlp`](xlp.md) option, the `preferredHeapBase` address must be a multiple of the large page size. If you specify an inaccurate heap base address, the heap is allocated with the default page size.

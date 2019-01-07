@@ -33,7 +33,7 @@ Sets the minimum and maximum proportion of time to spend in the garbage collecti
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
 
 - This option applies only to GC policies that include stop-the-world (STW) operations, such as `-Xgcpolicy:optthruput`.  
-- This option is ignored by the default policy `-Xgcpolicy:gencon`.
+
 
 ## Syntax
 

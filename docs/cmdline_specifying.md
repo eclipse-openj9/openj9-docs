@@ -45,7 +45,6 @@ Use single or double quotation marks for command-line options only when explicit
 
 The sequence of the Java options on the command line defines which options take precedence during startup. Rightmost options have precedence over leftmost options. In the following example, the `-Xjit` option takes precedence:
 
-    :::java
     java -Xint -Xjit myClass
 
 
@@ -81,31 +80,26 @@ At startup, the list of VM arguments is constructed in the following order, with
 
     - On Windows&trade; systems:
 
-            :::java
             set IBM_NOSIGHANDLER=<non_null_string>
 
-    - On AIX&reg;, Linux&reg;, and z/OS&reg; systems:
+    - On AIX&reg;, Linux&reg;, macOS&reg;, and z/OS&reg; systems:
 
-            :::java
             export IBM_NOSIGHANDLER=<non_null_string>
 
 4.  The `OPENJ9_JAVA_OPTIONS` environment variable. You can set command-line options using this environment variable. The options that you specify with this environment variable are added to the command line when a VM starts in that environment. The environment variable can contain multiple blank-delimited argument strings, but must not contain comments. For example:
 
     - On Windows systems:
 
-            :::java
             set OPENJ9_JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
 
-    - On AIX, Linux, and z/OS systems:
+    - On AIX, Linux, macOS, and z/OS systems:
 
-            :::java
             export OPENJ9_JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The environment variable `JAVA_TOOLS_OPTIONS` is equivalent to `OPENJ9_JAVA_OPTIONS` and is available for compatibility with JVMTI. The equivalent `IBM_JAVA_OPTIONS` environment variable is deprecated and will be removed in a future release.
 
 5.  Options that are specified on the command line. For example:
 
-        :::java
         java -Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump MyJavaClass
 
     The Java launcher adds some automatically generated arguments to this list, such as the names of the main class.
@@ -114,7 +108,6 @@ You can also use the `-Xoptionsfile` parameter to specify VM options. This param
 
 To troubleshoot startup problems, you can check which options are used by the OpenJ9 VM. Append the following command-line option, and inspect the Java core file that is generated:
 
-    :::java
     -Xdump:java:events=vmstart
 
 Here is an extract from a Java core file that shows the options that are used:

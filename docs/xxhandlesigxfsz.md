@@ -22,21 +22,21 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -XX:\[+|-\]handleSIGXFSZ
+# -XX:\[+|-\]HandleSIGXFSZ
 
-**(Linux&reg; only)**
+**(AIX&reg;, Linux&reg;, macOS&reg;, and z/OS&reg; only)**
 
 This option affects the handling of the operating system signal `SIGXFSZ`. This signal is generated when a process attempts to write to a file that causes the maximum file size `ulimit` to be exceeded.
 
 
 ## Syntax
 
-        -XX:[+|-]handleSIGXFSZ
+        -XX:[+|-]HandleSIGXFSZ
 
 | Setting               | Effect  | Default                                                                            |
 |-----------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+handleSIGXFSZ ` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-XX:-handleSIGXFSZ ` | Disable |                                                                                    |
+| `-XX:+HandleSIGXFSZ ` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-HandleSIGXFSZ ` | Disable |                                                                                    |
 
 
 ## Explanation

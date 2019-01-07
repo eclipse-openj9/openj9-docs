@@ -37,7 +37,7 @@ Controls the behavior of the garbage collector by specifying different garbage c
 |------------------------------------------------------------------|----------|
 | [`balanced`](#balanced)                                          |          |
 | [`gencon`](#gencon)                                              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| [`metronome`](#metronome-aix-linux-only) (AIX&reg;, Linux x86 only)  |          |
+| [`metronome`](#metronome-aix-linux-only) (AIX&reg;, Linux&reg; x86 only)  |          |
 | [`optavgpause`](#optavgpause)                                    |          |
 | [`optthruput`](#optthruput)                                      |          |
 
@@ -123,7 +123,7 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
 : The generational concurrent policy (default) uses a concurrent mark phase combined with generational garbage collection to help minimize the time that is spent in any garbage collection pause. This policy is particularly useful for applications with many short-lived objects, such as transactional applications. Pause times can be significantly shorter than with the `optthruput` policy, while still producing good throughput. Heap fragmentation is also reduced.
 
-### `metronome` (AIX&reg;, Linux&reg; only)
+### `metronome` (AIX, Linux x86 only)
 
         -Xgcpolicy:metronome
 

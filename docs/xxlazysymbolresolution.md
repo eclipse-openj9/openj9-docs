@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]LazySymbolResolution
 
-**(Linux&reg; only)**
+**(Linux&reg; and macOS&reg; only)**
 
 This option affects the timing of symbol resolution for functions in user native libraries.
 
@@ -42,7 +42,7 @@ This option affects the timing of symbol resolution for functions in user native
 Enabling this option forces the VM to delay symbol resolution for each function in a user native library, until the function is called.
 The `-XX:-LazySymbolResolution` option forces the VM to immediately resolve symbols for all functions in a user native library when the library is loaded.
 
-These options apply only to functions; variable symbols are always resolved immediately when loaded. If you attempt to use these options on an operating system other than Linux, the options are accepted, but ignored.
+These options apply only to functions; variable symbols are always resolved immediately when loaded. If you attempt to use these options on an operating system other than Linux or macOS, the options are accepted, but ignored.
 
 
 
