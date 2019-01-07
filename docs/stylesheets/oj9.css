@@ -155,9 +155,11 @@
 height 3rem;
 }
 */
+/*
 .md-footer-nav__inner.md-grid {
 margin-top: 5rem;
 }
+*/
 
 /* HEADER */
 
@@ -314,15 +316,16 @@ i.fa-chevron-circle-right {
 }
 */
 
+/*
 .md-footer-nav {
   background-color: white;
-/*  margin-top: 4rem;*/
   margin-top: -3.5rem;
 }
 
-.md-footer-nav__inner > a.md-footer-nav__link div { /* Previous and Next topic buttons */
+.md-footer-nav__inner > a.md-footer-nav__link div { 
   color: #1a1a1a;
 }
+
 
 .md-footer-nav__direction {
   color: #757575;
@@ -351,7 +354,7 @@ i.fa-chevron-circle-right {
 .md-footer-nav__direction {
   font-size: 1.3rem;
 }
-
+*/)
 
 
 /* DRAFT COMMENTS */
