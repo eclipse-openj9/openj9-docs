@@ -33,6 +33,7 @@ The following new features and notable changes since v.0.11.0 are delivered in t
 
 - [Improved flexibility for managing the size of the JIT code cache](#improved-flexibility-for-managing-the-size-of-the-jit-code-cache)
 - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default)
+- [Idle-tuning is enabled by default when OpenJ9 runs in a docker container](#idle-tuning-is-enabled-by-default-when-openj9-runs-in-a-docker-container)
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [OpenSSL is now supported for improved native cryptographic performance](#openssl-is-now-supported-for-improved-native-cryptographic-performance)
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
 - [`IBM_JAVA_OPTIONS` is deprecated](#ibm_java_options-is-deprecated)
@@ -54,6 +55,15 @@ The JIT code cache stores the native code of compiled Java&trade; methods. By de
 ### Class data sharing is enabled by default
 
 Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [Class Data Sharing](shrc.md).
+
+### Idle-tuning is enabled by default when OpenJ9 runs in a docker container
+
+In an earlier release, a set of idle-tuning options were introduced to manage the footprint of the Java heap when the OpenJ9 VM is in an idle state. These options could be set manually on the command line. In this release, the following two options are enabled by default when OpenJ9 is running in a container:
+
+- `-XX:[+|-]IdleTuningGcOnIdle`, which runs a garbage collection cycle and releases free memory pages back to the operating system when the VM state is set to idle.
+- `-XX:[+|-]IdleTuningCompactOnIdle`, which compacts the object heap to reduce fragmentation when the VM state is set to idle.
+
+By default, the VM must be idle for 180 seconds before the status is set to idle. To control the wait time before an idle state is set, use the [`-XX:IdleTuningMinIdleWaitTime`](xxidletuningminidlewaittime.md) option. To turn off idle detection, set the value to `0`.
 
 ### OpenSSL is now supported for improved native cryptographic performance
 
