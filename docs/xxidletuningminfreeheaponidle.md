@@ -47,9 +47,9 @@ If you set `-XX:IdleTuningMinFreeHeapOnIdle=10`, no more than 90% of the free me
 
 ## See also
 
-- [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md#xxidletuningminidlewaittime "When the VM is idle, this option controls the minimum length of time that the VM must be idle before the status of the VM is set to idle. Further tuning options control the compaction of the object heap and the release of free memory pages, which reduces the footprint of the VM.")
-- [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md#xx/|-/idletuningcompactonidle "This option controls garbage collection processing with compaction when the status of the VM is set to idle.")
-- [-XX:\[+|-\]IdleTuningGcOnIdle](xxidletuninggconidle.md#xx/|-/idletuninggconidle "This option can be used to reduce the memory footprint of the VM when it is in an idle state.")
+- [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md)
+- [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md)
+- [-XX:\[+|-\]IdleTuningGcOnIdle](xxidletuninggconidle.md)
 
 
 <!-- ==== END OF TOPIC ==== xxidletuningminfreeheaponidle.md ==== -->

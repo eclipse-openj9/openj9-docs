@@ -26,29 +26,27 @@
 
 **(Linux&reg; only)**
 
-This option can be used to reduce the memory footprint of the OpenJ9 VM when it is in an idle state.
+This option controls whether a garbage collection cycle takes place when the state of the OpenJ9 VM is set to idle.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This option applies only to Linux&reg; architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
 
 ## Syntax
 
         -XX:[+|-]IdleTuningGcOnIdle
 
-| Setting                   | Effect  | Default                                                                            |
-|---------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+IdleTuningGcOnIdle` | Enable  |                                                                                    |
-| `-XX:-IdleTuningGcOnIdle` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| Setting                   | Effect  | Default  | Default when running in a docker container                                 |
+|---------------------------|---------|:--------:|:--------------------------------------------------------------------------:|
+| `-XX:+IdleTuningGcOnIdle` | Enable  |  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| `-XX:-IdleTuningGcOnIdle` | Disable |  <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>   |   |
 
+The default depends on whether or not the OpenJ9 VM is running in a docker container. As indicated in the table, when the VM is running in a container and the state is set to idle, this option causes the VM to release free memory pages in the object heap without resizing the Java&trade; heap. The pages are reclaimed by the operating system, which reduces the physical memory footprint of the VM. In a container environment, the VM also attempts to compact the object heap before releasing memory by default, which is controlled by the `-XX:[+|-]IdleTuningCompactOnIdle` option.
 
-When the VM enters the idle state, enabling this option causes the VM to release free memory pages in the object heap without resizing the Java&trade; heap. The pages are reclaimed by the operating system, which reduces the physical memory footprint of the VM.
+If your application is not running in a container and you want to enable idle-tuning, set the `-XX:+IdleTuningGcOnIdle` option on the command line when you start your application.
 
-This option is used with `-XX:IdleTuningMinIdleWaitTime` and `-XX:IdleTuningMinFreeHeapOnIdle` . If values for these options are not explicitly specified, the VM sets the following defaults:
+When enabled, the `-XX:+IdleTuningGcOnIdle` option is used with the `-XX:IdleTuningMinIdleWaitTime` and `-XX:IdleTuningMinFreeHeapOnIdle` options. If values for these options are not explicitly specified, the VM sets the following defaults:
 
 -   `-XX:IdleTuningMinIdleWaitTime`=180
 -   `-XX:IdleTuningMinFreeHeapOnIdle`=0
-
-
-If you want the VM to attempt to compact the object heap before releasing memory, use the`-XX:+IdleTuningCompactOnIdle` option.
 
 ## See also
 

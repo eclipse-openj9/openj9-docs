@@ -56,11 +56,12 @@ You can share class data between running VMs, which can reduce the startup time 
 If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator API.
 
 ### Cloud optimizations  
-To improve the performance of applications that run in the cloud, try setting the following tuning options:
+To improve the performance of applications that run in containers, try setting the following tuning options:
 
   - Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For more information, see [Class Data Sharing](shrc.md) and [AOT Compiler](aot.md).
-  - Use the idle VM settings to maintain a smaller footprint, which can generate cost savings for cloud services that charge based on memory usage. The idle tuning mechanism detects when the VM is idle, releasing free memory pages to keep the footprint as small as possible and keep your running costs to a minimum. For more information, see [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md).
   - Use the [-Xtune:virtualized](xtunevirtualized) option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.
+
+  The OpenJ9 VM automatically detects when it is running in a docker container and uses a mechanism to detect when the VM is idle. When an idle state is detected, OpenJ9 runs a garbage collection cycle and releases free memory pages back to the operating system. The object heap is also compacted to make best use of the available memory for further application processing. For cloud services that charge based on memory usage, maintaining a small footprint can generate cost savings. For more information about tuning options that control this process, see [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md).
 
 ### Cryptographic operations
 
