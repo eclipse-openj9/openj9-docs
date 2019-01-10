@@ -34,6 +34,7 @@ The following new features and notable changes since v.0.11.0 are delivered in t
 - [Improved flexibility for managing the size of the JIT code cache](#improved-flexibility-for-managing-the-size-of-the-jit-code-cache)
 - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default)
 - [Idle-tuning is enabled by default when OpenJ9 runs in a docker container](#idle-tuning-is-enabled-by-default-when-openj9-runs-in-a-docker-container)
+- [Changes to default shared classes cache directory permissions (not Windows)](#changes-to-default-shared-classes-cache-directory-permissions-not-windows)
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [OpenSSL is now supported for improved native cryptographic performance](#openssl-is-now-supported-for-improved-native-cryptographic-performance)
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
 - [`IBM_JAVA_OPTIONS` is deprecated](#ibm_java_options-is-deprecated)
@@ -64,6 +65,14 @@ In an earlier release, a set of idle-tuning options were introduced to manage th
 - `-XX:[+|-]IdleTuningCompactOnIdle`, which compacts the object heap to reduce fragmentation when the VM state is set to idle.
 
 By default, the VM must be idle for 180 seconds before the status is set to idle. To control the wait time before an idle state is set, use the [`-XX:IdleTuningMinIdleWaitTime`](xxidletuningminidlewaittime.md) option. To turn off idle detection, set the value to `0`.
+
+### Changes to default shared classes cache directory permissions (not Windows)
+If you do not use the `cachDirPerm` suboption to specify permissions for a shared classes cache directory, and the cache directory is not the `/tmp/javasharedresources` default, the following changes apply:
+
+- When creating a new cache directory, the default permissions are now stricter.
+- If the cache directory already exists, permissions are now unchanged (previously, when a cache was opened using this directory, the permissions would be set to 0777).
+
+For more information, see [`-Xshareclasses`](xshareclasses.md#cachedirperm).
 
 ### OpenSSL is now supported for improved native cryptographic performance
 

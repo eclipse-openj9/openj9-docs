@@ -551,25 +551,25 @@ If a class name is passed to info class, the following information is shown abou
     This command is similar to the use of the `x/` command in gdb, including the use of defaults.
 
 
-### x/J [&lt;class_name&gt;|<0xaddr>]
+### x/J [`<class_name>`|`<0xaddr>`]
 
 : Displays information about a particular object, or all objects of a class. If `<class_name>` is supplied, all static fields with their values are shown, followed by all objects of that class with their fields and values. If an object address (in hex) is supplied, static fields for that object's class are not shown; the other fields and values of that object are printed along with its address.
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This command ignores the number of items and unit size passed to it by the `x/` command.
 
-### x/D <0xaddr>
+### x/D <`0xaddr`>
 
 : Displays the integer at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big endian architecture.
 
     <i class="fa fa-pencil-square-o"></i> This command uses the number of items and unit size passed to it by the `x/` command.
 
-### x/X <0xaddr>
+### x/X <`0xaddr`>
 
 : Displays the hex value of the bytes at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big endian architecture.
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This command uses the number of items and unit size passed to it by the `x/` command.
 
-### x/K <0xaddr>
+### x/K <`0xaddr`>
 
 : Where the size is defined by the pointer size of the architecture, this parameter shows the value of each section of memory. The output is adjusted for the hardware architecture this dump file is from, starting at the specified address. It also displays a module with a module section and an offset from the start of that module section in memory if the pointer points to that module section. If no symbol is found, it displays a "\*" and an offset from the current address if the pointer points to an address in 4KB (4096 bytes) of the current address. Although this command can work on an arbitrary section of memory, it is probably more useful on a section of memory that refers to a stack frame. To find the memory section of a thread stack frame, use the info thread command.
 
