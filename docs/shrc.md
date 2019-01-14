@@ -37,10 +37,13 @@ Memory footprint is reduced by sharing common classes between applications that 
 
 ## Enabling class data sharing
 
+You enable class data sharing by setting the `-Xshareclasses` option on the command line when you start your application. By default, OpenJ9 always shares both the bootstrap and application classes that are loaded by the default system class loader.
+
+<!--
   Class data sharing is enabled by default for bootstrap classes only, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including the name and location of the default shared classes cache. Trace point `j9shr.2271` is activated if the default cache cannot be started, so you can enable this trace point to determine whether the default cache started successfully. You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it. Note that if you have multiple VMs and you do not change the default shared classes behavior, the following applies:
 
 - If the VMs are from a single Java installation, they will share a single default cache.
-- If the VMs are from different Java installations, of the same Java release and installed by the same user, each VM checks whether the existing default shared cache in the cache directory is from the same Java installation as the VM. If not, the VM deletes that shared cache, then creates a new one. To avoid this situation, use `-Xshareclasses:cacheDir=<dir>` to specify a different cache directory for each Java installation.
+- If the VMs are from different Java installations, of the same Java release and installed by the same user, each VM checks whether the existing default shared cache in the cache directory is from the same Java installation as the VM. If not, the VM deletes that shared cache, then creates a new one. To avoid this situation, use `-Xshareclasses:cacheDir=<dir>` to specify a different cache directory for each Java installation. -->
 
 The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing you to specify where to create the cache, how much space to allocate for AOT code and more. You can also set the cache size by using the [-Xscmx](xscmx.md) option.
 
