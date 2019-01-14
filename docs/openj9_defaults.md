@@ -94,6 +94,6 @@ The default value of `-Xmx` depends on the version of Java.
 - ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) The value is half the available memory with a minimum of 16MB and a maximum of 512 MB. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
 
-- ![Start of content that applies only to Java 10 and later](cr/java10plus.png) The value is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB     and a maximum value of 512 MB. ![End of content that applies only to Java 10 and later](cr/java_close.png)
+- ![Start of content that applies only to Java 11 and later](cr/java11plus.png) The value is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 *Available memory* is defined as being the smallest of two values: The real or *physical* memory or the *RLIMIT_AS* value.

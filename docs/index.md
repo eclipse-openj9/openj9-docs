@@ -30,7 +30,7 @@ This user documentation supports the configuration, tuning, and diagnosis of the
 
 ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) This sentence applies only to Java 8 binaries that include the OpenJ9 VM. Icons for LTS releases are this colour. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
-![Start of content that applies only to Java 10 and later](cr/java10plus.png) This sentence applies only to Java 10 or later binaries that include the OpenJ9 VM. Icons for feature releases are this colour. ![End of content that applies only to Java 10 or later](cr/java_close.png)
+![Start of content that applies only to Java 12 and later](cr/java12plus.png) This sentence applies only to Java 12 or later binaries that include the OpenJ9 VM. Icons for feature releases are this colour. ![End of content that applies only to Java 12 or later](cr/java_close.png)
 
 To see which Java releases are LTS releases and which are feature releases, and for information about release cadence, supported platforms, and build environments, see [Supported environments](openj9_support.md).
 
@@ -58,7 +58,6 @@ The online documentation provides information about the latest changes in the Ec
 You can obtain pre-built OpenJDK binaries from the AdoptOpenJDK project:
 
 - [OpenJDK8 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk8&jvmVariant=openj9)
-- [OpenJDK10 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk10&jvmVariant=openj9)
 - [OpenJDK11 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk11&jvmVariant=openj9)
 
 

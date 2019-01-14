@@ -114,43 +114,6 @@ minimum glibc version 2.12 are expected to function without problems.
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
-### OpenJDK 10
-
-OpenJDK10 binaries are supported on the minimum operating system levels shown in the following tables:
-
-
-| Linux                                 |  x64   |  ppc64le   | Z64  |
-|---------------------------------------|--------|------------|------|
-| Centos 6.9                            |   Y    |     Y      |  N   |
-| Centos 7.4                            |   Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
-| RHEL 7.4                              |   Y    |     Y      |  Y   |
-| SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
-| Ubuntu 16.04                          |   Y    |     Y      |  Y   |
-| Ubuntu 18.04                          |   Y    |     Y      |  Y   |
-
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Not all of these distributions are tested, but Linux distributions that have a
-minimum glibc version 2.12 are expected to function without problems.
-
-| Windows                    |  x64   |
-|----------------------------|--------|
-| Windows 7 SP1              |   Y    |
-| Windows 8                  |   Y    |
-| Windows 8.1                |   Y    |
-| Windows 10                 |   Y    |
-| Windows Server 2012        |   Y    |
-| Windows Server 2012 R2     |   Y    |
-| Windows Server 2016        |   Y    |
-
-
-| AIX          |  ppc64   |
-|--------------|----------|
-| AIX 7.1 TL4  |    Y     |
-| AIX 7.2      |    Y     |
-
-When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
-
-
 ### OpenJDK 11
 
 OpenJDK11 binaries are supported on the minimum operating system levels shown in the following tables:
@@ -208,16 +171,6 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The minimum level of gcc supported for
 building OpenJDK 8 on Linux is v4.4.7. However, plans are in place to update the minimum supported level to at least v4.8 in the future.
-
-### OpenJDK 10
-
-| Platform                    | Operating system         |  Compiler                       |
-|-----------------------------|--------------------------|---------------------------------|
-| Linux x86 64-bit            | Ubuntu 16.04             | gcc 4.8.5                       |
-| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 4.8.5                       |
-| Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 4.8.5                       |
-| Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2013    |
-| AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |
 
 ### OpenJDK 11
 
