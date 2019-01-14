@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2019 IBM Corp. and others
+* Copyright (c) 2017, 2018 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -24,8 +24,8 @@
               {% if page.previous_page or page.next_page %}
                 <div class="md-footer-nav">
                   <nav class="md-footer-nav__inner md-grid">
-                    <!-- Separator -->
-                    <img alt="" src="../cr/rule.png">
+<!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
+                    <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     {% if page.previous_page %}
                       <a href="{{ page.previous_page.url }}" title="{{ page.previous_page.title }}" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
@@ -56,6 +56,7 @@
                         </div>
                       </a>
                     {% endif %}
+-->
                   </nav>
                 </div>
               {% endif %}

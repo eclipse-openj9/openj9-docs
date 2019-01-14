@@ -120,7 +120,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 ### `cacheDirPerm`
 
-: **(AIX, Linux, macOS, and z/OS only)**
+: **(Not Windows)**
 
         -Xshareclasses:cacheDirPerm=<permission>
 
@@ -130,9 +130,18 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : If you set this suboption to 0000, the default directory permissions are used. If you set this suboption to 1000, the machine default directory permissions are used, but the sticky bit is enabled.
 
-: If the cache directory is the platform default directory, `/tmp/javasharedresources`, this suboption is ignored and the cache directory permissions are set to 777. If you do not set this suboption, the cache directory permissions are set to 777, for compatibility with earlier Java versions.
+: If the cache directory is the platform default directory, `/tmp/javasharedresources`, this suboption is ignored and the cache directory permissions are set to 0777.
 
-: On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
+: If you do not set this suboption, the default permissions are used according to the following conditions:
+
+| Condition | Permissions |
+| ---------- | ----------- |
+| The cache directory is `/tmp/javasharedresources`. If this directory already exists with different permissions, the permissions are changed when the cache is opened.† | 0777 |
+| The cache directory is a new directory and you also specify the `groupAcess` suboption | 0770 |
+| The cache directory is a new directory and you do not specify the `groupAccess` suboption | 0700 |
+| The cache directory already exists and is not `/tmp/javasharedresources` | Unchanged |
+
+: †On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
 
 : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 

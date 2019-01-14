@@ -26,7 +26,7 @@
 
 ** (Linux&reg; only) **
 
-When the OpenJ9 VM is idle, this option controls the minimum length of time that the VM must be idle before the status of the VM is set to idle. Further tuning options control the compaction of the object heap and the release of free memory pages, which reduces the footprint of the VM.
+When the OpenJ9 VM is idle, this option controls the minimum length of time that the VM must be idle before the state of the VM is set to idle. When the state changes to idle, a garbage collection cycle runs, the object heap is compacted, and free memory pages are released back to the operating system, which reduces the footprint of the VM. Garbage collection and compaction are controlled by the `-XX:+IdleTuningGcOnIdle` and `-XX:+IdleTuningCompactOnIdle` options, which are enabled by default when the OpenJ9 VM is running inside a docker container.
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
 
@@ -34,11 +34,13 @@ When the OpenJ9 VM is idle, this option controls the minimum length of time that
 
         -XX:IdleTuningMinIdleWaitTime=<secs>
 
-| Setting     |  Value           | Default  |
-|-------------|------------------|----------|
-|`<secs>`     | *[0 or greater]* | 0        |
+| Setting     |  Value           |  Default  | Default when running in a docker container   |
+|-------------|------------------|-----------|----------------------------------------------|
+|`<secs>`     | *[0 or greater]* |    0      |                   180                        |
 
-The value used for `<secs>` specifies the minimum length of time in seconds that the VM is idle before the state is set to idle. Setting the value to 0 disables this feature, which causes the following idle tuning options to have no effect:
+The value used for `<secs>` specifies the minimum length of time in seconds that the VM is idle before the state is set to idle. Idle tuning is enabled by default when the OpenJ9 VM is running in a docker container and the VM is detected as idle for 180 seconds. 
+
+Setting the value to 0 disables this feature, which causes the following idle tuning options to have no effect:
 
 - `-XX:+IdleTuningCompactOnIdle`
 - `-XX:+IdleTuningGcOnIdle`
@@ -47,9 +49,9 @@ The value used for `<secs>` specifies the minimum length of time in seconds that
 
 ## See also
 
--   [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md#xx/|-/idletuningcompactonidle "This option controls garbage collection processing with compaction when the status of the VM is set to idle.")
--   [-XX:\[+|-\]IdleTuningGcOnIdle](xxidletuninggconidle.md#xx/|-/idletuninggconidle "This option can be used to reduce the memory footprint of the VM when it is in an idle state.")
--   [-XX:IdleTuningMinFreeHeapOnIdle](xxidletuningminfreeheaponidle.md#xxidletuningminfreeheaponidle "This option controls the percentage of free memory pages in the object heap that can be released when the VM is in an idle state.")
+-   [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md)
+-   [-XX:\[+|-\]IdleTuningGcOnIdle](xxidletuninggconidle.md)
+-   [-XX:IdleTuningMinFreeHeapOnIdle](xxidletuningminfreeheaponidle.md#xxidletuningminfreeheaponidle)
 
 
 
