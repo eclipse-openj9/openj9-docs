@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xcodecache 
+# -Xcodecache
 
 Use this option to tune performance.
 
@@ -33,7 +33,7 @@ This option sets the size of each block of memory that is allocated to store the
 
 ## Syntax
 
-        -Xcodecache <size>
+        -Xcodecache<size>
 
 : See [Using -X command-line options](x_jvm_commands) for more information about specifying the `<size>` parameter.
 
@@ -41,4 +41,3 @@ This option sets the size of each block of memory that is allocated to store the
 
 
 <!-- ==== END OF TOPIC ==== xcodecache.md ==== -->
-

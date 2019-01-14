@@ -91,6 +91,10 @@ For more information about AIX logging, see: [Error-logging overview](http://www
 
 On Linux&reg;, messages are logged by the **syslog** daemon. To find where messages are logged, check the syslog configuration file.
 
+### Finding macOS messages
+
+On macOS&reg;, messages are logged by the **syslog** daemon. However, on Sierra and High Sierra, syslog does not work. If `/var/log/system.log` is not available, `Console.app` can be used instead. 
+
 ### Finding Windows messages
 
 On Windows&trade;, messages are logged in the application events section of the event viewer.

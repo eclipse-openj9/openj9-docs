@@ -236,7 +236,6 @@ pages:
             - "-Xnuma:none"                                                      : xnumanone.md
             - "-Xoptionsfile"                                                    : xoptionsfile.md
             - "-Xquickstart"                                                     : xquickstart.md
-            - "-Xrdbginfo"                                                       : xrdbginfo.md
             - "-Xrs"                                                             : xrs.md
             - "-XsamplingExpirationTime"                                         : xsamplingexpirationtime.md
             - "-Xscdmx"                                                          : xscdmx.md

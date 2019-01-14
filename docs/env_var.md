@@ -46,8 +46,8 @@ Use values exactly as shown in the documentation. The names of environment varia
 To set the environment variable **LOGIN\_NAME** to *Fred*, run:
 
 -   `set LOGIN_NAME=Fred` (Windows)
--   `export LOGIN_NAME=Fred` (AIX/Linux: ksh or bash shells)
--   `setenv LOGIN_NAME Fred` (macOS or csh shells)
+-   `export LOGIN_NAME=Fred` (AIX/Linux/macOS: ksh or bash shells)
+-   `setenv LOGIN_NAME Fred` (csh shells)
 
 These variables are set only for the current shell or command-line session.
 
@@ -134,7 +134,7 @@ Setting `JAVA_DUMP_OPTS` affects only those conditions that you specify. Actions
 
 When setting the `JAVA_DUMP_OPTS` environment variable, the mapping of operating system signals to the "condition" is shown in the following table:
 
-| Condition        | z/OS                                                      |  Windows                | Linux and AIX                                     |
+| Condition        | z/OS                                                      |  Windows                | Linux, macOS, and AIX                                     |
 |------------------|-----------------------------------------------------------|-------------------------|---------------------------------------------------|
 | **EXCEPTION**    | SIGTRAP, SIGILL, SIGSEGV, SIGFPE, SIGBUS, SIGSYS, SIGXFSV | SIGILL, SIGSEGV, SIGFPE | SIGTRAP, SIGILL, SIGSEGV, SIGFPE, SIGBUS, SIGXFSV |
 | **INTERRUPT**    | SIGINT, SIGTERM, SIGHUP                                   | SIGINT, SIGTERM         | SIGINT, SIGTERM, SIGHUP                           |
@@ -176,7 +176,7 @@ The following table lists other environment variables that can be set for diagno
 
 | Environment variable                          | Usage Instructions                                                                                              |
 |-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-|`IBM_COREDIR=<directory>`                      | Set this variable to specify an alternative location for system dumps, JIT dumps, and snap trace. On z/OS, `_CEE_DMPTARG` is used instead for snap trace, and transaction dumps are written to TSO according to `JAVA_DUMP_TDUMP_PATTERN`. On Linux, the dump is written to the directory that is specified directory by the operating system before being moved to the specified location.|
+|`IBM_COREDIR=<directory>`                      | Set this variable to specify an alternative location for system dumps, JIT dumps, and snap trace. On z/OS, `_CEE_DMPTARG` is used instead for snap trace, and transaction dumps are written to TSO according to `JAVA_DUMP_TDUMP_PATTERN`. On Linux and macOS, the dump is written to the directory that is specified directory by the operating system before being moved to the specified location.|
 |`IBM_JAVA_ABEND_ON_FAILURE=Y` (z/OS only)      | This setting tells the Java launcher to mark the Task Control Block (TCB) with an abend code if the OpenJ9 VM fails to load or is terminated by an uncaught exception. By default, the Java launcher does not mark the TCB.|
 |`JAVA_DUMP_TDUMP_PATTERN=<string>` (z/OS only) | The specified `<string>` is passed to IEATDUMP to use as the data/set name for the Transaction Dump. The default `<string>` is `%uid.JVM.TDUMP.%job.D%y%m%d.T%H%M%S` (31-bit) or `%uid.JVM.%job.D%y%m%d.T%H%M%S.X&amp;DS` (64-bit), where `%uid` is found from the C code fragment shown in **Notes**.|
 |`JAVA_THREAD_MODEL=<string>`                   | `<string>` can be defined as one of the following values: *NATIVE* (all threads are created as `_MEDIUM_WEIGHT`), *HEAVY* (all threads are created as `_HEAVY_WEIGHT`), *MEDIUM* (same as *NATIVE*), or *NULL*. The default is *NATIVE*. |

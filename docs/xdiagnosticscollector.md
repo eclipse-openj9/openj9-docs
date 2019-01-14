@@ -22,9 +22,15 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xdiagnosticscollector 
+# -Xdiagnosticscollector
 
-This option is now redundant, and only generates a warning message. Use the [IBM&reg; Support Assistant Data Collector](http://www-01.ibm.com/software/support/isa/#isa-dc-dl) instead.
+This option is now redundant and generates only the following warning message:
+
+```
+JVMJ9VM138W The -Xdiagnosticscollector option is not supported by this JVM.
+```
+
+Use the [IBM&reg; Support Assistant Data Collector](http://www-01.ibm.com/software/support/isa/#isa-dc-dl) instead.
 
 
 ## Syntax
@@ -34,4 +40,3 @@ This option is now redundant, and only generates a warning message. Use the [IBM
 
 
 <!-- ==== END OF TOPIC ==== xdiagnosticscollector.md ==== -->
-

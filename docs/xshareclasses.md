@@ -47,7 +47,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
   - For 64-bit platforms, the default size is 300 MB, with a "soft" maximum limit for the initial size of the cache (`-Xscmx`) of 64MB, with the following exceptions:
     - For a persistent cache, if the free disk space is less than 6 GB, the default size is set to 64 MB and an `-Xscmx` size is not set.
-    - For a non-persistent cache on Linux&reg; systems, the cache size is limited by the maximum amount of memory that can be reserved by a process (`SHMMAX`). If `SHMMAX` is less than 300MB, the default shared cache size is set to equal `SHMMAX`. If `SHMMAX` is greater than 80 MB, `-Xscmx` is set to 64 MB. If `SHMMAX` is less than 80MB an `-Xscmx` size is not set.
+    - For a non-persistent cache on Linux&reg; or macOS&reg; systems, the cache size is limited by the maximum amount of memory that can be reserved by a process (`SHMMAX`). If `SHMMAX` is less than 300MB, the default shared cache size is set to equal `SHMMAX`. If `SHMMAX` is greater than 80 MB, `-Xscmx` is set to 64 MB. If `SHMMAX` is less than 80MB an `-Xscmx` size is not set.
   - For other platforms, the default size is 16MB.
 
 ## Parameters
@@ -103,11 +103,11 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
     - On Windows&trade; systems, `<directory>` is the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
     - On other operating systems, `<directory>` is the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`.
 
-: On AIX, Linux, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
+: On AIX, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
 
 : Nonpersistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a `javasharedresources` subdirectory of the `cacheDir` specified. Do not move or delete control files in this directory. The `listAllCaches` utility, the `destroyAll` utility, and the `expire` suboption work only in the scope of a given `cacheDir`.
 
-: On AIX and Linux systems, if you specify the `cacheDir=<directory>` option, persistent caches are created with the following permissions (`-rw-r--r--`):
+: On AIX, Linux, and macOS systems, if you specify the `cacheDir=<directory>` option, persistent caches are created with the following permissions (`-rw-r--r--`):
 
     -   User: read/write
     -   Group: read (read/write if you also specify `-Xshareclasses:groupAccess`)
@@ -173,7 +173,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
         nn-bit shared cache "cachename" as the nn-bit VM
         cannot verify that the shared memory was created by the VM.
 
-: On AIX and Linux systems:
+: On AIX, Linux, and macOS systems:
 
 - Non-persistent caches can be destroyed only if all VMs that are using it have shut down and the user has sufficient permissions.
 
@@ -181,7 +181,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 ### `destroyAllSnapshots` (Cache utility)
 
-: **(AIX, Linux, z/OS only)**
+: **(AIX, Linux, macOS, and z/OS only)**
 
         -Xshareclasses:destroyAllSnapshots
 
@@ -189,7 +189,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 ### `destroySnapshot` (Cache utility)
 
-: **(AIX, Linux, z/OS only)**
+: **(AIX, Linux, macOS, and z/OS only)**
 
         -Xshareclasses:destroySnapshot
 
@@ -233,13 +233,13 @@ case, the VM continues without using shared classes.
 
 ### `groupAccess`
 
-: **(AIX, Linux, z/OS only)**
+: **(AIX, Linux, macOS, and z/OS only)**
 
         -Xshareclasses:groupAccess
 
 : Sets operating system permissions on a new cache to allow group access to the cache. Group access can be set only when permitted by the operating system `umask` setting. The default is user access only.
 
-: On AIX and Linux systems, if a user creates a cache by specifying the `groupAccess` suboption, other users in the same group must also specify this suboption to be granted access to the same cache.
+: On AIX, Linux, and macOS systems, if a user creates a cache by specifying the `groupAccess` suboption, other users in the same group must also specify this suboption to be granted access to the same cache.
 
 : In certain situations, warning messages might be generated when the `groupAccess` suboption is used.
 
@@ -285,7 +285,7 @@ case, the VM continues without using shared classes.
 
 ### `listAllCaches` (Cache utility)
 
-: **(AIX, Linux, z/OS only)**
+: **(AIX, Linux, macOS, and z/OS only)**
 
         -Xshareclasses:listAllCaches
 
@@ -297,20 +297,20 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:mprotect=[default|all|none]
 
-: Linux, Windows:
+: Linux, Windows, macOS:
 
         -Xshareclasses:mprotect=[default|all|partialpagesonstartup|onfind|nopartialpages|none]
 
 : where:
 
-    - `default`: By default, the memory pages that contain the cache are always protected, unless a specific page is being updated. This protection helps prevent accidental or deliberate corruption to the cache. The cache header is not protected by default because this protection has a performance cost. On Linux and Windows systems, after the startup phase, the Java virtual machine (VM) protects partially filled pages whenever new data is added to the shared class cache in the following sequence:
+    - `default`: By default, the memory pages that contain the cache are always protected, unless a specific page is being updated. This protection helps prevent accidental or deliberate corruption to the cache. The cache header is not protected by default because this protection has a performance cost. On Linux, macOS, and Windows systems, after the startup phase, the Java virtual machine (VM) protects partially filled pages whenever new data is added to the shared class cache in the following sequence:
         - The VM changes the memory protection of any partially filled pages to read/write.
         - The VM adds the data to the cache.
         - The VM changes the memory protection of any partially filled pages to read only.
     - `all`: This value ensures that all the cache pages are protected, including the header. See Note.
-    - `partialpagesonstartup`: This value causes the VM to protect partially filled pages during startup as well as after the startup phase. This value is available only on Linux and Windows systems.
-    - `onfind`: When this option is specified, the VM protects partially filled pages when it reads new data in the cache that is added by another VM. This option is available only on Linux and Windows systems.
-    - `nopartialpages`: Use this value to turn off the protection of partially filled pages. This value is available only on Linux and Windows systems.
+    - `partialpagesonstartup`: This value causes the VM to protect partially filled pages during startup as well as after the startup phase. This value is available only on Linux, macOS, and Windows systems.
+    - `onfind`: When this option is specified, the VM protects partially filled pages when it reads new data in the cache that is added by another VM. This option is available only on Linux, macOS, and Windows systems.
+    - `nopartialpages`: Use this value to turn off the protection of partially filled pages. This value is available only on Linux, macOS, and Windows systems.
     - `none`: Specifying this value disables the page protection.
 
   : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Specifying `all` has a negative impact on performance. You should specify `all` only for problem diagnosis and not for production. Specifying values `partialpagesonstartup` or `onfind` can also have a negative impact on performance when the cache is being populated. There is no further impact when the cache is full or no longer being modified.
@@ -329,7 +329,7 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:name=<name>
 
-:   Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, `destroy`. Use the `listAllCaches` utility to show which named caches are currently available. If you do not specify a name, the default name *"sharedcc\_%u"* is used. "%u" in the cache name inserts the current user name. On AIX, Linux, and z/OS systems, you can specify *"%g"* in the cache name to insert the current group name.
+:   Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, `destroy`. Use the `listAllCaches` utility to show which named caches are currently available. If you do not specify a name, the default name *"sharedcc\_%u"* is used. "%u" in the cache name inserts the current user name. On AIX, Linux, macOS, and z/OS systems, you can specify *"%g"* in the cache name to insert the current group name.
 
 : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to explicitly specify a cache for your application. This avoids the application sharing a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application. Note that you cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
@@ -370,7 +370,9 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:nonpersistent
 
-:   Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a nonpersistent cache. z/OS supports only nonpersistent caches.
+:   Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a nonpersistent cache. z/OS supports only nonpersistent caches.
+
+:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a non-persistent cache.
 
 ### `persistent`
 
@@ -400,7 +402,7 @@ case, the VM continues without using shared classes.
 
 :   Opens an existing cache with read-only permissions. The Java virtual machine does not create a new cache with this suboption. Opening a cache read-only prevents the VM from making any updates to the cache. If you specify this suboption, the VM can connect to caches that were created by other users or groups without requiring write access.
 
-: On AIX and Linux systems, this access is permitted only if the cache was created by using the [`-Xshareclasses:cacheDir`](#cachedir) option to specify a directory with appropriate permissions. If you do not use the `-Xshareclasses:cacheDir` option, the cache is created with default permissions, which do not permit access by other users or groups.
+: On AIX, Linux, and macOS systems, this access is permitted only if the cache was created by using the [`-Xshareclasses:cacheDir`](#cachedir) option to specify a directory with appropriate permissions. If you do not use the `-Xshareclasses:cacheDir` option, the cache is created with default permissions, which do not permit access by other users or groups.
 
 : By default, this suboption is not specified.
 
@@ -412,7 +414,7 @@ case, the VM continues without using shared classes.
 
 ### `restoreFromSnapshot` (Cache utility)
 
-: **(AIX, Linux, z/OS only)**
+: **(AIX, Linux, macOS, and z/OS only)**
 
         -Xshareclasses:restoreFromSnapshot
 
@@ -452,7 +454,7 @@ case, the VM continues without using shared classes.
 
 ### `snapshotCache` (Cache utility)
 
-: **(AIX, Linux, z/OS only)**
+: **(AIX, Linux, macOS, and z/OS only)**
 
         -Xshareclasses:snapshotCache
 
@@ -498,12 +500,12 @@ The following examples show how to specify more than one method specification wh
 
 Each method specification is defined as follows:
 
-    :::java
+
     <packagename>/<classname>[.<methodname>[(<parameters>)]]
 
 If you want to include more than one method specification in a single option, separate the specifications with a comma and enclose all the specifications in {braces}. For example:
 
-    :::java
+
     {<packagename/classname>}[.{<methodname>}[({<parameters>})]]
 <!--
     {<method_specification1>,<method_specification2>,<method_specification3>}

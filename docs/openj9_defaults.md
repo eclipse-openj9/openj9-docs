@@ -68,7 +68,7 @@ The last 2 columns show whether the default setting can be changed by a command-
 
 
 
-|VM setting                                                    |AIX       |Linux    |macOS     |Windows          |z/OS      | Command line           | Env. variable          |
+|VM setting                                                    |AIX       |Linux    |macOS      |Windows          |z/OS      | Command line           | Env. variable          |
 |--------------------------------------------------------------|----------|---------|----------|-----------------|----------|------------------------|------------------------|
 |Default locale                                                |None      |None      |None     |N/A              |None      | <i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span> |<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>|
 |Time to wait before starting plug-in                          |N/A       |Zero      |N/A       |N/A              |N/A       | <i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span> |<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>|

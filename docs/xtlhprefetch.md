@@ -30,7 +30,7 @@ Speculatively prefetches bytes in the thread local heap (TLH) ahead of the curre
 
 ## Syntax
 
-        XtlhPrefetch
+        -XtlhPrefetch
 
 
 

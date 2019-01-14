@@ -48,7 +48,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 | [`count`         ](#count         ) | Forces compilation of methods on first invocation.                                      |
 | [`disableRMODE64`](#disablermode64) | Allows the JIT to allocate executable code caches above the 2 GB memory bar.            |
 | [`exclude`       ](#exclude       ) | Excludes the specified method from compilation.                                         |
-| [`<limitFile>`    ](#limitfile      ) | Compile methods that are listed in the limit file.                                      |
+| [`<limitFile>`   ](#limitfile     ) | Compile methods that are listed in the limit file.                                      |
 | [`optlevel`      ](#optlevel      ) | Forces the JIT compiler to compile all methods at a specific optimization level.        |
 | [`verbose`       ](#verbose       ) | Reports information about the JIT and AOT compiler configuration and method compilation.|
 | [`vlog`          ](#vlog          ) | Sends verbose output to a file.                                                         |

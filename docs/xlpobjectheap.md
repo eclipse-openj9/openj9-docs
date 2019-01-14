@@ -31,7 +31,7 @@ To find out the large page sizes available and the current setting, use the `-ve
 
 ## Syntax
 
-AIX&reg;, Linux&reg;, and Windows&trade;:
+AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade;:
 
         -Xlp:objectheap:pagesize=<size>[,strict|warn]
 
@@ -59,6 +59,8 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
     - Linux on IBM Z&reg;: 1 MB large pages
     - On other architectures, the VM uses the default operating system page size.
 
+: On macOS, the default page size is 4 KB.
+
 ### `strict` | `warn`
 
         -Xlp:objectheap:strict
@@ -76,8 +78,8 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 : On z/OS systems, defines the type of memory to allocate for the Java object heap.
 
-    1 M pageable pages, when available, are the default size for the object heap.  
-    Supported large page sizes are 2 G nonpageable, 1 M nonpageable, and 1 M pageable. A page size of 4 K can also be used.
+    1 MB pageable pages, when available, are the default size for the object heap.  
+    Supported large page sizes are 2 GB nonpageable, 1 MB nonpageable, and 1 MB pageable. A page size of 4 KB can also be used.
 
 ## See also
 

@@ -45,7 +45,7 @@ The following new features and notable changes since v.0.11.0 are delivered in t
 
 OpenJ9 release 0.12.0 provides limited support for the macOS&reg; platform on OpenJDK 8. Early builds of OpenJDK 8 with OpenJ9 on macOS are available at the AdoptOpenJDK project at the following link:
 
-- [OpenJDK 8 with OpenJ9 macOS x64](https://adoptopenjdk.net/nightly.html?variant=openjdk8&jvmVariant=openj9)
+- [OpenJDK 8 with OpenJ9 macOS  x64](https://adoptopenjdk.net/nightly.html?variant=openjdk8&jvmVariant=openj9)
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
