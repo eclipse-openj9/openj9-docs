@@ -32,7 +32,7 @@
 The following new features and notable changes since v.0.11.0 are delivered in the OpenJ9 code base:
 
 - [Improved flexibility for managing the size of the JIT code cache](#improved-flexibility-for-managing-the-size-of-the-jit-code-cache)
-- [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default)
+<!-- - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default) -->
 - [Idle-tuning is enabled by default when OpenJ9 runs in a docker container](#idle-tuning-is-enabled-by-default-when-openj9-runs-in-a-docker-container)
 - [Changes to default shared classes cache directory permissions (not Windows)](#changes-to-default-shared-classes-cache-directory-permissions-not-windows)
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [OpenSSL is now supported for improved native cryptographic performance](#openssl-is-now-supported-for-improved-native-cryptographic-performance)
@@ -53,9 +53,9 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 The JIT code cache stores the native code of compiled Java&trade; methods. By default, the size of the code cache is 256 MB for a 64-bit VM and 64 MB for a 31/32-bit VM. In earlier releases the size of the code cache could be increased from the default value by using the `-Xcodecachetotal` command line option. In this release the size can also be decreased by using this option, with a minimum size of 2 MB. The size of the JIT code cache also affects the size of the JIT data cache, which holds metadata about compiled methods. If you use the `-Xcodecachetotal` option to manage the size of the code cache, the size of the data cache is adjusted by the same proportion. For more information, see [`-Xcodecachetotal`](xcodecachetotal.md).
 
-### Class data sharing is enabled by default
+<!-- ### Class data sharing is enabled by default
 
-Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [Class Data Sharing](shrc.md).
+Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [Class Data Sharing](shrc.md). -->
 
 ### Idle-tuning is enabled by default when OpenJ9 runs in a docker container
 
