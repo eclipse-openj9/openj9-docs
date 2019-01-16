@@ -40,10 +40,7 @@ Memory footprint is reduced by sharing common classes between applications that 
 You enable class data sharing by setting the `-Xshareclasses` option on the command line when you start your application. By default, OpenJ9 always shares both the bootstrap and application classes that are loaded by the default system class loader.
 
 <!--
-  Class data sharing is enabled by default for bootstrap classes only, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including the name and location of the default shared classes cache. Trace point `j9shr.2271` is activated if the default cache cannot be started, so you can enable this trace point to determine whether the default cache started successfully. You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it. Note that if you have multiple VMs and you do not change the default shared classes behavior, the following applies:
-
-- If the VMs are from a single Java installation, they will share a single default cache.
-- If the VMs are from different Java installations, of the same Java release and installed by the same user, each VM checks whether the existing default shared cache in the cache directory is from the same Java installation as the VM. If not, the VM deletes that shared cache, then creates a new one. To avoid this situation, use `-Xshareclasses:cacheDir=<dir>` to specify a different cache directory for each Java installation. -->
+  Class data sharing is enabled by default for bootstrap classes only, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including the name and location of the default shared classes cache. Trace point `j9shr.2271` is activated if the default cache cannot be started, so you can enable this trace point to determine whether the default cache started successfully. You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it. Note that if you have multiple VMs and you do not change the default shared classes behavior, the VMs will share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and recreated; for more information, see the following section about best practices. -->
 
 The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing you to specify where to create the cache, how much space to allocate for AOT code and more. You can also set the cache size by using the [-Xscmx](xscmx.md) option.
 
@@ -59,9 +56,13 @@ When you explicitly set the [-Xshareclasses](xshareclasses.md) option, it is goo
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache.
 
-- Set an application-specific cache directory ([`-Xshareclasses:cacheDir=<directory>`](xshareclasses.md#cachedir)).
+- Set a specific cache directory ([`-Xshareclasses:cacheDir=<directory>`](xshareclasses.md#cachedir)).
 
-    This avoids sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility).
+    Set a cache directory that is specific to your application, to  avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory. Your application will be unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility).
+
+    In addition, if you have VMs from different Java installations, of the same Java release and installed by the same user, each VM checks whether the existing default shared cache in the cache directory is from the same Java installation as the VM. If not, the VM deletes that shared cache, then creates a new one. Specifying a different cache directory for each Java installation avoids this situation.
+
+
 
 - Ensure that the cache directory permissions are set appropriately ([`-Xshareclasses:cacheDirPerm`](xshareclasses.md#cachedirperm)).
 
