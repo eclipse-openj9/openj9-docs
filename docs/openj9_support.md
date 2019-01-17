@@ -162,15 +162,12 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 
 | Platform                                    | Operating system          |  Compiler                       |
 |---------------------------------------------|---------------------------|---------------------------------|
-| Linux x86 64-bit                            | Ubuntu 16.04              | gcc 4.8.5                       |
-| Linux on POWER&reg; LE 64-bit               | Ubuntu 16.04              | gcc 4.8.5                       |
-| Linux on IBM Z&reg; 64-bit                  | Ubuntu 16.04              | gcc 4.8.5                       |
+| Linux x86 64-bit                            | Ubuntu 16.04              | gcc 7.3                         |
+| Linux on POWER&reg; LE 64-bit               | Ubuntu 16.04              | gcc 7.3                         |
+| Linux on IBM Z&reg; 64-bit                  | Ubuntu 16.04              | gcc 7.4                         |
 | Windows x86 32-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2010 SP1|
 | Windows x86 64-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2010 SP1|
 | AIX POWER BE 64-bit                         | AIX 7.1 TL04              | xlc/C++ 13.1.3                  |
-
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The minimum level of gcc supported for
-building OpenJDK 8 on Linux is v4.4.7. However, plans are in place to update the minimum supported level to at least v4.8 in the future.
 
 ### OpenJDK 11
 
