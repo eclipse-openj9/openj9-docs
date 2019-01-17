@@ -222,7 +222,6 @@ pages:
             - "-Xms"                                                             : xms.md
             - "-Xmso"                                                            : xmso.md                            
             - "-Xmx"                                                             : xms.md                             # redirect
-#           - "-Xnoagent"                                                        : xnoagent.md
             - "-Xnoaot"                                                          : xaot.md                            # redirect
             - "-Xnoclassgc"                                                      : xclassgc.md                        # redirect
             - "-Xnocompactexplicitgc"                                            : xcompactexplicitgc.md              # redirect
