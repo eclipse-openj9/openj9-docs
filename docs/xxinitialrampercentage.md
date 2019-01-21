@@ -37,7 +37,7 @@ These Oracle Hotspot options can be used to specify the initial and maximum size
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you set a value for [`-Xms`](xms.md), these options are ignored.
 
-If your application is running in a container and you have specified [`-XX:+UseContainerSupport`](xxusecontainersupport), both the default heap size for containers, the `-XX:InitialRAMPercentage` option, and the `-XX:MaxRAMPercentage` option are based on the available container memory.
+If your application is running in a container and you have specified [`-XX:+UseContainerSupport`](xxusecontainersupport.md), both the default heap size for containers, the `-XX:InitialRAMPercentage` option, and the `-XX:MaxRAMPercentage` option are based on the available container memory.
 
 
 <!-- ==== END OF TOPIC ==== xxinitialrampercentage.md ==== -->
