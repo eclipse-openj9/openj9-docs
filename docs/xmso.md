@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xmso 
+# -Xmso
 
 
 Sets the initial stack size for operating system threads.
@@ -39,9 +39,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 ## Default setting
 
-By default, the stack size is set to 256 KB. 
-
-See [Default settings for the OpenJ9 VM](openj9_defaults.md) for information about default values.
+Default values vary by platform. See [Default settings for the OpenJ9 VM](openj9_defaults.md).
 
 ## See also
 
@@ -49,4 +47,3 @@ See [Default settings for the OpenJ9 VM](openj9_defaults.md) for information abo
 
 
 <!-- ==== END OF TOPIC ==== xmso.md ==== -->
-
