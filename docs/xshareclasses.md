@@ -552,7 +552,7 @@ Here are some examples:
 ## See also
 
 - [-Xscmx](xscmx.md)
-- [-XX\:SharedCacheHardLimit](xxsharedcachehardlimit)
+- [-XX:SharedCacheHardLimit](xxsharedcachehardlimit.md)
 - [Class data sharing](shrc.md)
 
 <!-- ==== END OF TOPIC ==== docs/xshareclasses.md ==== -->

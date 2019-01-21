@@ -32,7 +32,7 @@ Using this option can sometimes alleviate pause time problems in concurrent coll
 
         -Xconcurrentslack<size>
 
-: See [Using -X command-line options](x_jvm_commands) for more information about specifying the `<size>` parameter.
+: See [Using -X command-line options](x_jvm_commands.md) for more information about specifying the `<size>` parameter.
 
 ## Default behavior
 

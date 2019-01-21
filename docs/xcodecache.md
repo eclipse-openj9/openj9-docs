@@ -35,7 +35,7 @@ This option sets the size of each block of memory that is allocated to store the
 
         -Xcodecache<size>
 
-: See [Using -X command-line options](x_jvm_commands) for more information about specifying the `<size>` parameter.
+: See [Using -X command-line options](x_jvm_commands.md) for more information about specifying the `<size>` parameter.
 
 
 

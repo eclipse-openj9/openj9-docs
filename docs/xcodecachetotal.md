@@ -33,7 +33,7 @@ Use this option to set the maximum size limit for the JIT code cache. This optio
 
 The default size is 256 MB for a 64-bit VM and 64 MB for a 31/32-bit VM.
 
-See [Using -X command-line options](x_jvm_commands) for more information about specifying the `<size>` parameter.
+See [Using -X command-line options](x_jvm_commands.md) for more information about specifying the `<size>` parameter.
 
 ## Explanation
 
