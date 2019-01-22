@@ -40,10 +40,9 @@ The following new features and notable changes since v.0.10.0 are included in th
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.11.0 provides limited support for the macOS&reg; platform on OpenJDK 11. Early builds of OpenJDK 11 with OpenJ9 on macOS are available at
-the AdoptOpenJDK project at the following link:  
+OpenJ9 release 0.11.0 provides limited support for the macOS&reg; platform on OpenJDK 11. Early builds of OpenJDK 11 with OpenJ9 on macOS are available at the AdoptOpenJDK project at the following link:  
 
-- [OpenJDK version 11](https://adoptopenjdk.net/nightly.html?variant=openjdk11&jvmVariant=openj9)
+- [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 
 Support for macOS on OpenJDK 8 is coming soon.
 

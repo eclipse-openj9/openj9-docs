@@ -25,11 +25,7 @@
 
 # What's new in version 0.12.0
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This release is under development. For more information about the features that are expected in this release, read the [release plan](https://projects.eclipse.org/projects/technology.openj9/releases/0.12.0).
-
-<!--Use the line below for the final release notes and remove the one below that. Don't forget to add a download and full release changes at the bottom of the topic -->
-<!--The following new features and notable changes since v.0.11.0 are included in this release:-->
-The following new features and notable changes since v.0.11.0 are delivered in the OpenJ9 code base:
+The following new features and notable changes since v.0.11.0 are included in this release:
 
 - [Improved flexibility for managing the size of the JIT code cache](#improved-flexibility-for-managing-the-size-of-the-jit-code-cache)
 <!-- - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default) -->
@@ -37,15 +33,19 @@ The following new features and notable changes since v.0.11.0 are delivered in t
 - [Changes to default shared classes cache directory permissions (not Windows)](#changes-to-default-shared-classes-cache-directory-permissions-not-windows)
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [OpenSSL is now supported for improved native cryptographic performance](#openssl-is-now-supported-for-improved-native-cryptographic-performance)
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
+- [RSA algorithm support for OpenSSL](#rsa-algorithm-support-for-openssl)
 - [`IBM_JAVA_OPTIONS` is deprecated](#ibm_java_options-is-deprecated)
 
 ## Features and changes
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.12.0 provides limited support for the macOS&reg; platform on OpenJDK 8. Early builds of OpenJDK 8 with OpenJ9 on macOS are available at the AdoptOpenJDK project at the following link:
+OpenJ9 release 0.12.0 provides support for *OpenJDK 8 with OpenJ9* and *OpenJDK 11 with OpenJ9*. In this release support is extended to the 64-bit macOS&reg; platform on OpenJDK with OpenJ9.
 
-- [OpenJDK 8 with OpenJ9 macOS  x64](https://adoptopenjdk.net/nightly.html?variant=openjdk8&jvmVariant=openj9)
+Builds for all platforms are available from the AdoptOpenJDK project at the following links:
+
+- [OpenJDK 8 with OpenJ9](https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=openj9)
+- [OpenJDK 11 with OpenJ9](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -93,8 +93,16 @@ In Eclipse OpenJ9 V0.11.0, support was added for `-Xgc:concurrentScavenge` on Li
 
 For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge) option.
 
+### RSA algorithm support for OpenSSL
+
+OpenSSL v1.1 support for the RSA algorithm is added in this release, providing improved cryptographic performance. OpenSSL support is enabled by default. If you want to turn off support for the RSA algorithm, set the [`-Djdk.nativeRSA`](djdknativersa.md) system property to `false`.
+
 ### `IBM_JAVA_OPTIONS` is deprecated
 
 The VM environment variable `IBM_JAVA_OPTIONS` is deprecated and is replaced by `OPENJ9_JAVA_OPTIONS`. `IBM_JAVA_OPTIONS` will be removed in a future release. For more information about the use of this variable, see the [general options](env_var.md#general-options) in [Environment variables](env_var.md).
+
+## Full release information
+
+To see a complete list of changes between Eclipse OpenJ9 V0.11.0 and V0.12.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.12/0.12.md).
 
 <!-- ==== END OF TOPIC ==== version0.12.md ==== -->
