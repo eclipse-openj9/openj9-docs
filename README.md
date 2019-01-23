@@ -40,10 +40,10 @@ an OpenJDK that has been built with the OpenJ9 Java virtual machine.
 New to Eclipse OpenJ9? Here are a few links to get you started:
 
 - Visit the [Eclipse OpenJ9 website](http://www.eclipse.org/openj9) to find out more.
-- Grab an OpenJDK binary that embeds OpenJ9 from  [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk8-openj9).
+- Grab an OpenJDK binary that embeds OpenJ9 from  [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk8&jvmVariant=openj9).
 
 The files in this repository are authored in markdown format and built using
-[Mkdocs](http://www.mkdocs.org/) with the [MkDocs-material theme](https://squidfunk.github.io/mkdocs-material/).
+[Mkdocs](http://www.mkdocs.org/) with the [MkDocs-material theme](https://squidfunk.github.io/mkdocs-material/). Draft documentation for the next release is hosted via the gh-pages branch of this repository at the following URL: https://eclipse.github.io/openj9-docs/).
 
 We welcome contributions to the user documentation. Please follow our
 [Contribution guidelines](CONTRIBUTING.md).
