@@ -218,14 +218,17 @@ Project committers are responsible for checking pull requests and merging change
 
 ### Previewing pull requests (whitelisted users only)
 
-Pull requests must be previewed before merging by triggering this [Jenkins-ci job](https://ci.eclipse.org/openj9/view/Pull%20Requests/job/PullRequest-Doc-test_on_staging_site/)  
-To run the job, add the following trigger comment into a pull request:  
+Pull requests must be previewed before merging by triggering a Jenkins-ci job. To run the job, add the following trigger comment into a pull request:  
 ```
 Jenkins doc stage
 ```  
-Staging site: http://staging.eclipse.org/openj9/docs
+Pull request builds are staged at the gh-pages branch of the https://github.com/eclipse/openj9-docs-staging repository. To view
+a draft of the documentation, visit the following URL, substituting &lt;PR&gt; with the Pull request number:
 
-#### Please Note
-The staging website is based on the staging branch of the Eclipse repo.  
-Since there is only one staging branch, whichever preview job ran last, will be the current one staged to the staging website.  
-You can view the [build history](https://ci.eclipse.org/openj9/view/Pull%20Requests/job/PullRequest-Doc-test_on_staging_site/) on the build page (left hand column) to see which PR ran last. Each run is annotated with the link to the PR as well as the PR title. Also note that it can take a few minutes for the contents of the staging website to refresh.
+https://eclipse.github.io/openj9-docs-staging/&lt;PR>
+
+When PR requests are merged, the documentation is published to the gh-pages branch of the https://github.com/eclipse/openj9-docs repository at the following URL:
+
+https://eclipse.github.io/openj9-docs
+
+The latest release of Eclipse OpenJ9 is published to https://www.eclipse.org/openj9/docs.
