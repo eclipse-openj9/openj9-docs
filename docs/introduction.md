@@ -70,9 +70,9 @@ To improve the performance of applications that run in containers, try setting t
 OpenJDK uses the in-built Java cryptographic implementation by default. However, native cryptographic implementations
 typically provide better performance. OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and
 Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.1.x implementation is
-currently supported for the Digest, CBC, and GCM algorithms.
+currently supported for the Digest, CBC, GCM, and RSA algorithms.
 
-OpenSSL support is enabled by default for all three supported algorithms. If you want to limit support to one or two of these algorithms, a number of
+OpenSSL support is enabled by default for all these supported algorithms. If you want to limit support to specific algorithms, a number of
 system properties are available for tuning the implementation.
 
 Each algorithm can be disabled individually by setting the following system properties on the command line:
@@ -80,8 +80,9 @@ Each algorithm can be disabled individually by setting the following system prop
 - To turn off **digest**, set `-Djdk.nativeDigest=false`
 - To turn off **CBC**, set `-Djdk.nativeCBC=false`
 - To turn off **GCM**, set `-Djdk.nativeGCM=false`
+- To turn off **RSA**, set `-Djdk.nativeRSA=false`
 
-You can turn off all three algorithms by setting the following system property on the command line:
+You can turn off all the algorithms by setting the following system property on the command line:
 
 ```
 -Djdk.nativeCrypto=false

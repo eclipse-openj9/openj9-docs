@@ -22,27 +22,28 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Djdk.nativeDigest
+# -Djdk.nativeRSA
 
-This option enables or disables OpenSSL native cryptographic support for the Digest algorithm.
+This option enables or disables OpenSSL native cryptographic support for the RSA algorithm.
 
 
 ## Syntax
 
-        -Djdk.nativeDigest=[true|false]
+        -Djdk.nativeRSA=[true|false]
 
-| Setting              | value    | Default                                                                        |
-|----------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeDigest` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-Djdk.nativeDigest` | false    |                                                                                |
+
+| Setting           | value    | Default                                                                        |
+|-------------------|----------|:------------------------------------------------------------------------------:|
+| `-Djdk.nativeRSA` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Djdk.nativeRSA` | false    |                                                                                |
 
 ## Explanation
 
-OpenSSL support is enabled by default for the CBC, Digest, GCM, and RSA algorithm. If you want to turn off the Digest algorithm, set this option to `false`.
+OpenSSL support is enabled by default for the CBC, Digest, GCM, and RSA algorithm. If you want to turn off the RSA algorithm, set this option to `false`.
 
 To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
 
 
 
 
-<!-- ==== END OF TOPIC ==== dcomibmdbgmalloc.md ==== -->
+<!-- ==== END OF TOPIC ==== djdknativersa.md ==== -->

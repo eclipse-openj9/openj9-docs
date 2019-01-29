@@ -145,7 +145,8 @@ pages:
             - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
             - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
             - "-Djdk.nativeDigest"                                               : djdknativedigest.md
-            - "-Djdk.nativeGCM"                                                  : djdknativegcm.md            
+            - "-Djdk.nativeGCM"                                                  : djdknativegcm.md 
+            - "-Djdk.nativeRSA"                                                  : djdknativersa.md               
             
         - "JVM -X options" :
             - "Using -X options"                                                 : x_jvm_commands.md
