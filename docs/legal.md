@@ -38,7 +38,7 @@ See [Notices](https://github.com/eclipse/openj9-docs/blob/master/NOTICE.md)
 
 Eclipse OpenJ9 documentation is subject to the following copyright:
 
-    Copyright (c) 2017, 2018 IBM Corp.
+    Copyright (c) 2017, 2019 IBM Corp.
 
 ### Trademarks
 
