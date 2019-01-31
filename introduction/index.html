@@ -915,6 +915,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djdknativersa/" title="-Djdk.nativeRSA" class="md-nav__link">
+      -Djdk.nativeRSA
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -3104,16 +3116,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>OpenJDK uses the in-built Java cryptographic implementation by default. However, native cryptographic implementations
 typically provide better performance. OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and
 Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.1.x implementation is
-currently supported for the Digest, CBC, and GCM algorithms.</p>
-<p>OpenSSL support is enabled by default for all three supported algorithms. If you want to limit support to one or two of these algorithms, a number of
+currently supported for the Digest, CBC, GCM, and RSA algorithms.</p>
+<p>OpenSSL support is enabled by default for all these supported algorithms. If you want to limit support to specific algorithms, a number of
 system properties are available for tuning the implementation.</p>
 <p>Each algorithm can be disabled individually by setting the following system properties on the command line:</p>
 <ul>
 <li>To turn off <strong>digest</strong>, set <code>-Djdk.nativeDigest=false</code></li>
 <li>To turn off <strong>CBC</strong>, set <code>-Djdk.nativeCBC=false</code></li>
 <li>To turn off <strong>GCM</strong>, set <code>-Djdk.nativeGCM=false</code></li>
+<li>To turn off <strong>RSA</strong>, set <code>-Djdk.nativeRSA=false</code></li>
 </ul>
-<p>You can turn off all three algorithms by setting the following system property on the command line:</p>
+<p>You can turn off all the algorithms by setting the following system property on the command line:</p>
 <div class="codehilite"><pre><span></span>-Djdk.nativeCrypto=false
 </pre></div>
 

@@ -418,6 +418,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#rsa-algorithm-support-for-openssl" title="RSA algorithm support for OpenSSL" class="md-nav__link">
+    RSA algorithm support for OpenSSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibm_java_options-is-deprecated" title="IBM_JAVA_OPTIONS is deprecated" class="md-nav__link">
     IBM_JAVA_OPTIONS is deprecated
   </a>
@@ -426,6 +433,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-release-information" title="Full release information" class="md-nav__link">
+    Full release information
+  </a>
   
 </li>
       
@@ -899,6 +913,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li class="md-nav__item">
     <a href="../djdknativegcm/" title="-Djdk.nativeGCM" class="md-nav__link">
       -Djdk.nativeGCM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djdknativersa/" title="-Djdk.nativeRSA" class="md-nav__link">
+      -Djdk.nativeRSA
     </a>
   </li>
 
@@ -2988,6 +3014,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#rsa-algorithm-support-for-openssl" title="RSA algorithm support for OpenSSL" class="md-nav__link">
+    RSA algorithm support for OpenSSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibm_java_options-is-deprecated" title="IBM_JAVA_OPTIONS is deprecated" class="md-nav__link">
     IBM_JAVA_OPTIONS is deprecated
   </a>
@@ -2996,6 +3029,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-release-information" title="Full release information" class="md-nav__link">
+    Full release information
+  </a>
   
 </li>
       
@@ -3045,12 +3085,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="whats-new-in-version-0120">What's new in version 0.12.0</h1>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> This release is under development. For more information about the features that are expected in this release, read the <a href="https://projects.eclipse.org/projects/technology.openj9/releases/0.12.0">release plan</a>.</p>
-<!--Use the line below for the final release notes and remove the one below that. Don't forget to add a download and full release changes at the bottom of the topic -->
-
-<!--The following new features and notable changes since v.0.11.0 are included in this release:-->
-
-<p>The following new features and notable changes since v.0.11.0 are delivered in the OpenJ9 code base:</p>
+<p>The following new features and notable changes since v.0.11.0 are included in this release:</p>
 <ul>
 <li><a href="#improved-flexibility-for-managing-the-size-of-the-jit-code-cache">Improved flexibility for managing the size of the JIT code cache</a>
 <!-- - <a href="#class-data-sharing-is-enabled-by-default">Class data sharing is enabled by default</a> --></li>
@@ -3058,13 +3093,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#changes-to-default-shared-classes-cache-directory-permissions-not-windows">Changes to default shared classes cache directory permissions (not Windows)</a></li>
 <li><img alt="Start of content that applies only to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#openssl-is-now-supported-for-improved-native-cryptographic-performance">OpenSSL is now supported for improved native cryptographic performance</a></li>
 <li><a href="#improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</a></li>
+<li><a href="#rsa-algorithm-support-for-openssl">RSA algorithm support for OpenSSL</a></li>
 <li><a href="#ibm_java_options-is-deprecated"><code>IBM_JAVA_OPTIONS</code> is deprecated</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
-<p>OpenJ9 release 0.12.0 provides limited support for the macOS&reg; platform on OpenJDK 8. Early builds of OpenJDK 8 with OpenJ9 on macOS are available at the AdoptOpenJDK project at the following link:</p>
+<p>OpenJ9 release 0.12.0 provides support for <em>OpenJDK 8 with OpenJ9</em> and <em>OpenJDK 11 with OpenJ9</em>. In this release support is extended to the 64-bit macOS&reg; platform on OpenJDK with OpenJ9.</p>
+<p>Builds for all platforms are available from the AdoptOpenJDK project at the following links:</p>
 <ul>
-<li><a href="https://adoptopenjdk.net/nightly.html?variant=openjdk8&amp;jvmVariant=openj9">OpenJDK 8 with OpenJ9 macOS  x64</a></li>
+<li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk8&amp;jvmVariant=openj9">OpenJDK 8 with OpenJ9</a></li>
+<li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk11&amp;jvmVariant=openj9">OpenJDK 11 with OpenJ9</a></li>
 </ul>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="improved-flexibility-for-managing-the-size-of-the-jit-code-cache">Improved flexibility for managing the size of the JIT code cache</h3>
@@ -3096,8 +3134,12 @@ Class data sharing is enabled by default for bootstrap classes, unless your appl
 <p>Concurrent scavenge mode is now supported on 64-bit Windows operating systems.</p>
 <p>In Eclipse OpenJ9 V0.11.0, support was added for <code>-Xgc:concurrentScavenge</code> on Linux x86-64 virtual machines that use compressed references. In this release, support is now available for Linux x86-64 large-heap virtual machines (non-compressed references).</p>
 <p>For more information, see the <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a> option.</p>
+<h3 id="rsa-algorithm-support-for-openssl">RSA algorithm support for OpenSSL</h3>
+<p>OpenSSL v1.1 support for the RSA algorithm is added in this release, providing improved cryptographic performance. OpenSSL support is enabled by default. If you want to turn off support for the RSA algorithm, set the <a href="../djdknativersa/"><code>-Djdk.nativeRSA</code></a> system property to <code>false</code>.</p>
 <h3 id="ibm_java_options-is-deprecated"><code>IBM_JAVA_OPTIONS</code> is deprecated</h3>
 <p>The VM environment variable <code>IBM_JAVA_OPTIONS</code> is deprecated and is replaced by <code>OPENJ9_JAVA_OPTIONS</code>. <code>IBM_JAVA_OPTIONS</code> will be removed in a future release. For more information about the use of this variable, see the <a href="../env_var/#general-options">general options</a> in <a href="../env_var/">Environment variables</a>.</p>
+<h2 id="full-release-information">Full release information</h2>
+<p>To see a complete list of changes between Eclipse OpenJ9 V0.11.0 and V0.12.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.12/0.12.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.12.md ==== -->
                 
                   
