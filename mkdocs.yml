@@ -296,7 +296,6 @@ pages:
             - "-XX:ShareClassesEnableBCI"                                        : xxshareclassesenablebci.md
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
             - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
-            - "-XX:ThreadStackSize"                                              : xxthreadstacksize.md
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
             - "-XX:[+|-]UseContainerSupport"                                     : xxusecontainersupport.md
             - "-XX:[+|-]UseNoGC"                                                 : xxusenogc.md

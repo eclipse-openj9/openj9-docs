@@ -50,7 +50,6 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md)            | Sets a limit on the amount of memory that can be reserved for all direct byte buffers.                                                       |
 | [`-XX:InitialHeapSize`](xxinitialheapsize.md)                    | Sets the initial size of the heap. (Alias for [`-Xms`](xms.md))                                                                              |
 | [`-XX:MaxHeapSize`    ](xxinitialheapsize.md)                    | Specifies the maximum size of the object memory allocation pool. (Alias for [`-Xmx`](xms.md))                                                |
-| [`-XX:ThreadStackSize`](xxthreadstacksize.md)                    | Sets the thread stack size. (Alias for [`-Xss`](xss.md))                                                                                     |
 | [`-XX:-UseCompressedOops`](xxusecompressedoops.md)               | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
 
 ## Equivalent options
