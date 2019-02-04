@@ -98,6 +98,7 @@ pages:
 
     - "About"                                                                    : index.md
     - "Introduction"                                                             : introduction.md
+    - "New to OpenJ9?"                                                           : openj9_newuser.md
     
     - "Release notes" :
         - "Version 0.12.0"                                                       : version0.12.md        
@@ -123,7 +124,7 @@ pages:
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md
         - "Standard options"                                                     : cmdline_general.md
-        - "Migrating to OpenJ9"                                                  : cmdline_migration.md
+        - "Switching to OpenJ9"                                                  : cmdline_migration.md
         
 # System properties that are commented out are not supported at this time.
         
