@@ -22,28 +22,16 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Djdk.nativeRSA
 
-This option enables or disables OpenSSL native cryptographic support for the RSA algorithm.
+# What's new in version 0.12.1
 
+The following change is implemented since v.0.12.0:
 
-## Syntax
+By default, OpenJ9 provides native cryptographic acceleration using OpenSSL V1.1.x for the Digest, CBC, GCM, and RSA algorithms. Under certain
+circumstances acceleration of the Digest algorithm was found to cause a segmentation error. Cryptographic acceleration of the Digest algorithm is now turned off by default. The system property `-Djdk.nativeDigest` cannot be used to turn on support. This property is ignored by the VM.
 
-        -Djdk.nativeRSA=[true|false]
+## Full release information
 
+Release notes to describe the changes between Eclipse OpenJ9 V0.12.0 and V0.12.1 releases, can be found in the [OpenJ9 GitHub repository](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.12/0.12.1md).
 
-| Setting           | value    | Default                                                                        |
-|-------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeRSA` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-Djdk.nativeRSA` | false    |                                                                                |
-
-## Explanation
-
-OpenSSL support is enabled by default for the CBC,<!-- Digest,--> GCM, and RSA algorithm. If you want to turn off the RSA algorithm, set this option to `false`.
-
-To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
-
-
-
-
-<!-- ==== END OF TOPIC ==== djdknativersa.md ==== -->
+<!-- ==== END OF TOPIC ==== version0.12.1.md ==== -->
