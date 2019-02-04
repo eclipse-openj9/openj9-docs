@@ -911,11 +911,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://www.eclipse.org/openj9/docs/xxthreadstacksize/</loc>
-     <lastmod>2019-02-04</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://www.eclipse.org/openj9/docs/xxusecompressedoops/</loc>
      <lastmod>2019-02-04</lastmod>
      <changefreq>daily</changefreq>
