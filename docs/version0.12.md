@@ -37,7 +37,8 @@ The following new features and notable changes since v.0.11.0 are included in th
 - [`IBM_JAVA_OPTIONS` is deprecated](#ibm_java_options-is-deprecated)
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Warning:** Following the release of OpenJ9 0.12.0, an intermittent problem
-was identified with OpenSSL V1.1.x acceleration of the cryptographic Digest algorithm. For more information about the issue, see [#4530](https://github.com/eclipse/openj9/issue/4530). You can turn off the Digest algorithm by setting the [-Djdk.nativeDigest](djdknativedigest.md) system property to `false`. A new release of OpenJ9 (0.12.1) is available that disables the Digest algorithm by default. 
+was identified with OpenSSL V1.1.x acceleration of the cryptographic Digest algorithm. For more information about the issue, see [#4530](https://github.com/eclipse/openj9/issues/4530). You can turn off the Digest algorithm by setting the [-Djdk.nativeDigest](djdknativedigest.md) system property to `false`. A new release of OpenJ9 (0.12.1) is available that disables the Digest algorithm by default. 
+
 
 ## Features and changes
 
