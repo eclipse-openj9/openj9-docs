@@ -26,7 +26,7 @@
 
 This option enables or disables OpenSSL native cryptographic support for the Digest algorithm.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** Pending the resolution of Github issue [#4530] (https://github.com/eclipse/openj9#4530), this option is disabled and has no effect. Currently, the Digest algorithm is not enabled by default.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** Due to Github issue [#4530](https://github.com/eclipse/openj9/issues/4530), this option is disabled and has no effect. Currently, the Digest algorithm is not enabled by default.
 
 
 <!--## Syntax

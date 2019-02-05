@@ -40,13 +40,13 @@ This option controls the use of OpenSSL native cryptographic support.
 
 OpenSSL support is enabled by default for the <!--Digest,--> CBC, GCM, and RSA algorithms. If you want to turn off the OpenSSL implementation, set this option to `false`.
 
-If you want to turn off the an algorithms individually, use the following system properties:
+If you want to turn off the algorithms individually, use the following system properties:
 
 - [`-Djdk.nativeCBC`](djdknativecbc.md)
-<!--- [`-Djdk.nativeDigest`](djdknativedigest.md)-->
 - [`-Djdk.nativeGCM`](djdknativegcm.md)
 - [`-Djdk.nativeRSA`](djdknativersa.md)
 
+<!--- [`-Djdk.nativeDigest`](djdknativedigest.md)-->
 
 
 <!-- ==== END OF TOPIC ==== dcomibmdbgmalloc.md ==== -->
