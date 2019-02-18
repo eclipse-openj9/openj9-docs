@@ -73,5 +73,14 @@ These Hotspot command-line options have equivalents in OpenJ9 that are not speci
     - If you were previously using Hotspot in its default mode, you must now explicitly turn off NUMA awareness in OpenJ9.
     - If you are used to using `-XX:+UseNUMA` in Hotspot, you no longer need to explicitly turn on NUMA awareness; it's on by default.
 
+## Equivalent tools
+
+OpenJ9 provides some tools for compatibility with the reference implementation. These tools might differ in behavior from the HotSpot equivalent:
+
+| HotSpot Tool          | OpenJ9 Tool                                    | Usage                                                            |
+|-------------------------|--------------------------------------------------|------------------------------------------------------------------|                                                                        
+| `jps`                | [`jps`](jps.md)**<sup>1</sup>** | Displays information about running Java<sup>&trade;</sup> processes                |
+
+1. The main differences from HotSpot are as follows: `jps` uses the Attach API, you can use it for the current host only, and there is no `-V` option.
 
 <!-- ==== END OF TOPIC ==== cmdline_migration.md ==== -->

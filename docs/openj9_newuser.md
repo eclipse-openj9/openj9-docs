@@ -20,6 +20,8 @@ If you have a different type of workload, you might want to select a different G
 
 If you are a Java application developer or you are responsible for managing large server or desktop deployments of a Java runtime environment, you probably use a number of tools for monitoring, management, and troubleshooting. Because OpenJ9 is an independent implementation, it has evolved with its own approach for these areas and, in some cases, its own unique tools.
 
+In other cases, tools have been added for compatibility with the reference implementation, but these tools might differ in behavior from equivalent tools in HotSpot. For a list of these tools, see [Switching to OpenJ9](cmdline_migration.md).
+
 ### Dumps, logs, and trace files
 
 OpenJ9 contains extensive trace and debugging capabilities to help identify, isolate, and solve run time problems.
