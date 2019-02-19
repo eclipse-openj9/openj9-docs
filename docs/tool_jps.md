@@ -44,7 +44,7 @@ The output has the following format:
 where `lvm_id` is a local VM identifier for the Java process. This ID is often the same as the operating system *process ID*, but can be different, for example if you are running Java in CygWin.
 
 For example:
-  ````
+
   $ jps -l
   5462 looper
   14332 openj9.tools.attach.diagnostics.Jps
@@ -52,11 +52,11 @@ For example:
   $ jps -q
   5462
   14332
-  ````
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This tool is the OpenJ9 implementation of the `jps` tool in the Java reference implementation, and differs from the HotSpot implementation. The tool is not supported and is subject to change or removal in future releases.
 
 The tool uses the Attach API, and has the following limitations:
+
 - Does not list Java processes on other hosts, to enhance security
 - Does not list Java processes owned by other users
 - Does not list non-OpenJ9 Java processes
@@ -65,4 +65,4 @@ The tool uses the Attach API, and has the following limitations:
 For more information about the Attach API, including how to enable and secure it, see [Support for the Java Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html).
 
 
-<!-- ==== END OF TOPIC ==== tool_builder.md ==== -->
+<!-- ==== END OF TOPIC ==== tool_jps.md ==== -->

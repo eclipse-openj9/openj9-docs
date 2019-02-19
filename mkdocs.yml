@@ -310,6 +310,7 @@ pages:
         - "Trace formatter"                                                       : tool_traceformat.md
         - "Option builder"                                                        : tool_builder.md
         - "Java process status"                                                   : tool_jps.md
+        - "Switching to OpenJ9"                                                   : tool_migration.md        
 
         
     - " Reference" :
