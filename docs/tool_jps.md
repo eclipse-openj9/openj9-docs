@@ -41,7 +41,7 @@ The output has the following format:
 
     <lvm_id> [[<class_name>|<jar_name>|"Unknown"] [<application_args>][<vm_args>]]
 
-where `lvm_id` is a local VM identifier for the Java process. This ID is often the same as the operating system *process ID*, but can be different, for example if you are running Java in CygWin.
+where `lvm_id` is a local VM identifier for the Java process. This ID is often the same as the operating system *process ID*, but can be different, for example if you are running Java in Cygwin.
 
 For example:
 
