@@ -32,10 +32,10 @@ OpenJ9 provides the following tools for compatibility with the reference impleme
 
 Displays information about running Java<sup>&trade;</sup> processes. The main differences from the HotSpot `jps` tool are as follows:
 
-- runs on Windows&reg;, AIX&reg;, and z/OS&reg;
-- uses the Attach API
-- shows processes on the current host only
-- there is no `-V` option
+- Runs on Windows&reg;, AIX&reg;, and z/OS&reg;
+- Uses the Attach API
+- Shows processes on the current host only
+- There is no `-V` option
 
 For more information, see [`Java process status`](tool_jps.md).
 
