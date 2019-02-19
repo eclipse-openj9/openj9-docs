@@ -24,21 +24,40 @@
 
 # Java process status
 
-Use the `jps` tool to query running Java<sup>&trade;</sup> processes on the current host. The command syntax is as follows:
+Use the `jps` tool to query running Java<sup>&trade;</sup> processes. The tool shows information for every Java process that is owned by your user, for every VM, on the current host. The command syntax is as follows:
 
     jps [<options>]
 
-    jps: Print a list of Java processes and information about them
-    -J: supply arguments to the Java VM running jps
-    -l: print the application package name
-    -q: print only the virtual machine identifiers
-    -m: print the application arguments
-    -v: print the Java VM arguments, including those produced automatically
+where the available `<options>` are as follows:    
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This tool is the OpenJ9 implementation of the `jps` tool in the Java reference implementation, and differs from the HotSpot implementation. The tool is subject to change or removal in future releases.
+
+- `-J`: supplies arguments to the Java VM that is running the `jps` command. You can use multiple `-J` options, for example: `jps -J-Xmx10m -J-Dcom.ibm.tools.attach.enable=yes`
+- `-l`: prints the application package name
+- `-q`: prints only the virtual machine identifiers
+- `-m`: prints the application arguments
+- `-v`: prints the Java VM arguments, including those that are produced automatically
+
+The output has the following format:
+
+    <lvm_id> [[<class_name>|<jar_name>|"Unknown"] [<application_args>][<vm_args>]]
+
+where `lvm_id` is a local VM identifier for the Java process. This ID is often the same as the operating system *process ID*, but can be different, for example if you are running Java in CygWin.
+
+For example:
+  ````
+  $ jps -l
+  5462 looper
+  14332 openj9.tools.attach.diagnostics.Jps
+
+  $ jps -q
+  5462
+  14332
+  ````
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This tool is the OpenJ9 implementation of the `jps` tool in the Java reference implementation, and differs from the HotSpot implementation. The tool is not supported and is subject to change or removal in future releases.
 
 The tool uses the Attach API, and has the following limitations:
-- Does not list Java processes on other hosts, for security reasons
+- Does not list Java processes on other hosts, to enhance security
 - Does not list Java processes owned by other users
 - Does not list non-OpenJ9 Java processes
 - Does not list processes whose attach API is disabled. <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The Attach API is disabled by default on z/OS.

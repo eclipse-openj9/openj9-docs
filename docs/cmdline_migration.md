@@ -79,7 +79,7 @@ OpenJ9 provides some tools for compatibility with the reference implementation. 
 
 | HotSpot Tool          | OpenJ9 Tool                                    | Usage                                                            |
 |-------------------------|--------------------------------------------------|------------------------------------------------------------------|                                                                        
-| `jps`                | [`jps`](jps.md)**<sup>1</sup>** | Displays information about running Java<sup>&trade;</sup> processes                |
+| `jps`                | [`jps`](tool_jps.md)**<sup>1</sup>** | Displays information about running Java<sup>&trade;</sup> processes                |
 
 1. The main differences from HotSpot are as follows: `jps` uses the Attach API, you can use it for the current host only, and there is no `-V` option.
 
