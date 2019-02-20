@@ -24,7 +24,7 @@
 
 # Java process status
 
-Use the `jps` tool to query running Java<sup>&trade;</sup> processes. The tool shows information for every Java process that is owned by your user, for every VM, on the current host. The command syntax is as follows:
+Use the `jps` tool to query running Java<sup>&trade;</sup> processes. The tool shows information for every Java process that is owned by the current user ID on the current host. The command syntax is as follows:
 
     jps [<options>]
 
@@ -39,19 +39,19 @@ where the available `<options>` are as follows:
 
 The output has the following format:
 
-    <lvm_id> [[<class_name>|<jar_name>|"Unknown"] [<application_args>][<vm_args>]]
+    <VMID> [[<class_name>|<jar_name>|"Unknown"] [<application_args>][<vm_args>]]
 
-where `lvm_id` is a local VM identifier for the Java process. This ID is often the same as the operating system *process ID*, but can be different, for example if you are running Java in Cygwin.
+where `VMID` is the Attach API virtual machine identifier for the Java process. This ID is often, but not always, the same as the operating system *process ID*. One example where the ID might be different is if you specified the system property `-Dcom.ibm.tools.attach.id` when you started the process.
 
 For example:
 
-  $ jps -l
-  5462 looper
-  14332 openj9.tools.attach.diagnostics.Jps
+    $ jps -l
+    5462  org.foo.bar.MyApplication
+    14332 openj9.tools.attach.diagnostics.Jps
 
-  $ jps -q
-  5462
-  14332
+    $ jps -q
+    5462
+    14332
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This tool is the OpenJ9 implementation of the `jps` tool in the Java reference implementation, and differs from the HotSpot implementation. The tool is not supported and is subject to change or removal in future releases.
 
