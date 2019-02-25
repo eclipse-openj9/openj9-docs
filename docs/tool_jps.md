@@ -24,7 +24,7 @@
 
 # Java process status
 
-Use the `jps` tool to query running Java<sup>&trade;</sup> processes. The tool shows information for every Java process that is owned by the current user ID on the current host. The command syntax is as follows:
+Use the `jps` tool to query running Java&trade; processes. The tool shows information for every Java process that is owned by the current user ID on the current host. The command syntax is as follows:
 
     jps [<options>]
 

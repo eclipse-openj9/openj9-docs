@@ -27,9 +27,26 @@
 
 The following new features and notable changes since v.0.12.1 are included in this release:
 
+- [New Java&trade; process status tool](#new-java-process-status-tool)
 - [Writing a Java dump to STDOUT or STDERR](#writing-a-java-dump-to-stdout-or-stderr)
 
 ## Features and changes
+
+### Binaries and supported environments
+
+OpenJ9 release 0.13.0 supports OpenJDK 12, which is available from the AdoptOpenJDK community at the following link:
+
+- [OpenJDK version 12](https://adoptopenjdk.net/archive.html?variant=openjdk12&jvmVariant=openj9)
+
+OpenJDK 12 with Eclipse OpenJ9 is not a long term support (LTS) release.
+
+Although it is possible to build an OpenJDK 8, or other versions, with OpenJ9 0.13.0, testing at the project is not complete and therefore support is not available.
+
+To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md)
+
+### New Java process status tool
+
+A Java process status tool (`jps`) is available for querying running Java processes. This tool is added for compliance with the Java reference implementation; its behaviour differs from the equivalent HotSpot tool. For more information, see [Java process status](tool_jps.md)
 
 ### Writing a Java dump to STDOUT or STDERR
 
