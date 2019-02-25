@@ -29,6 +29,7 @@ The following new features and notable changes since v.0.12.1 are included in th
 
 - [New Java&trade; process status tool](#new-java-process-status-tool)
 - [Writing a Java dump to STDOUT or STDERR](#writing-a-java-dump-to-stdout-or-stderr)
+- [Better diagnostic information for Linux systems that implement control groups](#better-diagnostic-information-for-linux-systems-that-implement-control-groups)
 
 ## Features and changes
 
@@ -51,6 +52,10 @@ A Java process status tool (`jps`) is available for querying running Java proces
 ### Writing a Java dump to STDOUT or STDERR
 
 You can now write a Java dump file to STDOUT or STDERR by using the [`-Xdump`](xdump.md) command-line option. See [Writing to `STDOUT`/`STDERR`](xdump.md#writing-to-stdoutstderr) for details.
+
+### Better diagnostic information for Linux systems that implement control groups
+
+If you use control groups (cgroups) to manage resources on Linux systems, information about CPU and memory limits is now recorded in a Java dump file. This information is particularly important for applications that run in Docker containers, because when resource limits are set inside a container, the Docker Engine relies on cgroups to enforce the settings. If you are getting a Java `OutOfMemoryError` error because a container limit has been set on the amount of memory available to an application and this allocation is not sufficient, you can diagnose this problem from the Java dump file. You can find the cgroup information in the ENVINFO section. For sample output, see [Java dump (ENVINFO)](dump_javadump.md#envinfo).
 
 ## Full release information
 
