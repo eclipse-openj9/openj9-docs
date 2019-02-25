@@ -397,7 +397,10 @@ For example, the following command instructs the VM to create a dump agent at st
 
 ### `exec=<command>`
 
-The exec suboption is used by the tool dump agent to specify an external application to start. You can set a specific command to run for a particular dump agent with the following command:  `-Xdump:<agent>:exec=<command>`.
+The exec suboption is used by the tool dump agent to specify an external application to start. You can set a specific command to run for a particular dump agent with the following command:
+```
+-Xdump:<agent>:exec=<command>
+```
 
 ### `file=<filename>`
 
@@ -415,24 +418,41 @@ When producing system dump files or CEEDUMPs on z/OS platforms, use the `dsn` op
 java -Xdump:system:events=vmstop,dsn=%uid.MYDUMP
 ```
 
+
+#### Writing to `STDOUT`/`STDERR`
+
+Add one of the following options to write a Java dump file to STDOUT or STDERR respectively:
+
+```
+-Xdump:java:file=/STDOUT/
+-Xdump:java:file=/STDERR/
+```
+
+- The keywords `/STDOUT/` and `/STDERR/` are *not* case sensitive; `/stdout/` and `/stderr/` are equivalent.
+- By common convention, you can use a dash (`-`) to refer to STDOUT:
+
+        -Xdump:java:file=-
+
+#### Tokens
+
 You can use tokens to add context to dump file names. For a list of tokens, see [Dump agent tokens](#dump-agent-tokens).
+
+#### File location
 
 The location for the dump file is selected from the following options, in this order:
 
 1. The location specified by the `-Xdump:<agent>:file` suboption on the command line (if that location includes a path). This location applies to the specified dump agent type only.
 2. The location specified by the `-Xdump:directory` option on the command line. This location applies to all dump agent types.
-3. The location specified by the relevant environment variable (See **Table: Environment Variables**).
+3. The location specified by the relevant environment variable:
+
+    | Dump agent type            | z/OS operating systems     | Other operating systems |
+    |----------------------------|----------------------------|-------------------------|
+    | Java dumps                 | `_CEE_DMPTARG`             | `IBM_JAVACOREDIR`       |
+    | Heap dumps                 | `_CEE_DMPTARG`             | `IBM_HEAPDUMPDIR`       |
+    | System dumps and JIT dumps | `JAVA_DUMP_TDUMP_PATTERN`  | `IBM_COREDIR`           |
+    | Snap traces                | `_CEE_DMPTARG`             | `IBM_COREDIR`           |
+
 4. The current working directory of the OpenJ9 VM process.
-
-**Table: Environment Variables**
-
-| Dump agent type            | z/OS operating systems     | Other operating systems |
-|----------------------------|----------------------------|-------------------------|
-| Java dumps                 | `_CEE_DMPTARG`             | `IBM_JAVACOREDIR`       |
-| Heap dumps                 | `_CEE_DMPTARG`             | `IBM_HEAPDUMPDIR`       |
-| System dumps and JIT dumps | `JAVA_DUMP_TDUMP_PATTERN`  | `IBM_COREDIR`           |
-| Snap traces                | `_CEE_DMPTARG`             | `IBM_COREDIR`           |
-
 
 If the directory does not exist, it is created.
 
