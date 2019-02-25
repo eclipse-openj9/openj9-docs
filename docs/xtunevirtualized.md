@@ -22,9 +22,9 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xtune:virtualized 
+# -Xtune:virtualized
 
-Optimizes OpenJ9 VM function for virtualized environments, such as a cloud by reducing OpenJ9 VM CPU consumption when idle.
+Optimizes OpenJ9 VM function for virtualized environments, such as a cloud, by reducing OpenJ9 VM CPU consumption when idle.
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Performance is optimized if there is a large shared class cache (SCC) and AOT space in the SCC is not capped.
 
@@ -32,10 +32,13 @@ Optimizes OpenJ9 VM function for virtualized environments, such as a cloud by re
 
         -Xtune:virtualized
 
+This option is recommended for CPU-constrained environments, such as those found in cloud deployments that use containers. Internally, the option makes the JIT compiler more conservative with inlining and recompilation decisions, which saves CPU resources. The Garbage Collector also reduces the rate of heap expansion, which reduces the memory footprint. These changes to reduce the amount of CPU that is consumed are at the expense of a small loss in throughput.
+
+When `-Xtune:virtualized` is used in conjunction with the [`-Xshareclasses`](xshareclasses.md) option, the JIT compiler is more aggressive with its use of [AOT-compiled code](aot.md) compared to setting only `-Xshareclasses`. This action provides additional CPU savings during application start-up and ramp-up, but comes at the expense of an additional small loss in throughput.
+
 ## See also
 
 - For an example of the effect of using this option, see: [Measuring the strengths of OpenJDK with Eclipse OpenJ9](https://github.com/eclipse/openj9-website/blob/master/benchmark/daytrader3.md)
 
 
 <!-- ==== END OF TOPIC ==== xtunevirtualized.md ==== -->
-
