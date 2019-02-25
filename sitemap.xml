@@ -961,6 +961,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_jps/</loc>
+     <lastmod>2019-02-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_migration/</loc>
+     <lastmod>2019-02-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/openj9_support/</loc>
      <lastmod>2019-02-25</lastmod>
      <changefreq>daily</changefreq>

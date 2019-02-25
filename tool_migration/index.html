@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xconcurrentslack/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/tool_migration/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-Xconcurrentslack -  </title>
+        <title>Switching to OpenJ9 -  </title>
       
     
     
@@ -134,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-xconcurrentslack" tabindex="1" class="md-skip">
+      <a href="../#switching-to-openj9" tabindex="1" class="md-skip">
         
       </a>
     
@@ -558,12 +558,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
     <label class="md-nav__link" for="nav-10">
       Command-line options
@@ -867,12 +865,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-5" type="checkbox" id="nav-10-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-5" type="checkbox" id="nav-10-5">
     
     <label class="md-nav__link" for="nav-10-5">
       JVM -X options
@@ -1116,56 +1112,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -Xconcurrentslack
-      </label>
-    
-    <a href="./" title="-Xconcurrentslack" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../xconcurrentslack/" title="-Xconcurrentslack" class="md-nav__link">
       -Xconcurrentslack
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-behavior" title="Default behavior" class="md-nav__link">
-    Default behavior
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2755,10 +2706,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
     
     <label class="md-nav__link" for="nav-11">
       Tools
@@ -2822,11 +2775,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../tool_migration/" title="Switching to OpenJ9" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Switching to OpenJ9
+      </label>
+    
+    <a href="./" title="Switching to OpenJ9" class="md-nav__link md-nav__link--active">
       Switching to OpenJ9
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#java-process-status-jps" title="Java process status (jps)" class="md-nav__link">
+    Java process status (jps)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2952,15 +2943,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-behavior" title="Default behavior" class="md-nav__link">
-    Default behavior
+  <a href="#java-process-status-jps" title="Java process status (jps)" class="md-nav__link">
+    Java process status (jps)
   </a>
   
 </li>
@@ -2982,7 +2966,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xconcurrentslack.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/tool_migration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3010,20 +2994,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xconcurrentslack">-Xconcurrentslack</h1>
-<p>Attempts to keep the specified amount of the heap space free in concurrent collectors by starting the concurrent operations earlier.</p>
-<p>Using this option can sometimes alleviate pause time problems in concurrent collectors at the cost of longer concurrent cycles, affecting total throughput. </p>
-<h2 id="syntax">Syntax</h2>
-<div class="codehilite"><pre><span></span>    -Xconcurrentslack&lt;size&gt;
-</pre></div>
-
-
-<dl>
-<dd>See <a href="../x_jvm_commands/">Using -X command-line options</a> for more information about specifying the <code>&lt;size&gt;</code> parameter.</dd>
-</dl>
-<h2 id="default-behavior">Default behavior</h2>
-<p>The default value is 0, which is optimal for most applications.</p>
-<!-- ==== END OF TOPIC ==== xconcurrentslack.md ==== -->
+<h1 id="switching-to-openj9">Switching to OpenJ9</h1>
+<p>OpenJ9 provides the following tools for compatibility with the reference implementation. These tools might differ in behavior from the HotSpot equivalent.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> For information about HotSpot equivalences and differences for items other than tools, see <a href="../openj9_newuser/">New to OpenJ9?</a>.</p>
+<h4 id="java-process-status-jps">Java process status (<code>jps</code>)</h4>
+<p>Displays information about running Java<sup>&trade;</sup> processes. The main differences from the HotSpot <code>jps</code> tool are as follows:</p>
+<ul>
+<li>Runs on Windows&reg;, AIX&reg;, and z/OS&reg;</li>
+<li>Uses the Attach API</li>
+<li>Shows processes on the current host only</li>
+<li>There is no <code>-V</code> option</li>
+</ul>
+<p>For more information, see <a href="../tool_jps/"><code>Java process status</code></a>.</p>
+<!-- ==== END OF TOPIC ==== tools_migration.md ==== -->
                 
                   
                 
@@ -3066,7 +3049,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="xconcurrentlevel/" title="-Xconcurrentlevel" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="tool_jps/" title="Java process status" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3075,19 +3058,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -Xconcurrentlevel
+                            Java process status
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="xconmeter/" title="-Xconmeter" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="openj9_support/" title="Supported environments" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            -Xconmeter
+                            Supported environments
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">
