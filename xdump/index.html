@@ -351,6 +351,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../version0.13/" title="Version 0.13.0" class="md-nav__link">
+      Version 0.13.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../version0.12.1/" title="Version 0.12.1" class="md-nav__link">
       Version 0.12.1
     </a>
@@ -1318,6 +1330,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <a href="#filefilename" title="file=&lt;filename&gt;" class="md-nav__link">
     file=&lt;filename&gt;
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-to-stdoutstderr" title="Writing to STDOUT/STDERR" class="md-nav__link">
+    Writing to STDOUT/STDERR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-location" title="File location" class="md-nav__link">
+    File location
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3258,6 +3297,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     file=&lt;filename&gt;
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-to-stdoutstderr" title="Writing to STDOUT/STDERR" class="md-nav__link">
+    Writing to STDOUT/STDERR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tokens" title="Tokens" class="md-nav__link">
+    Tokens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-location" title="File location" class="md-nav__link">
+    File location
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4040,7 +4106,11 @@ Registered dump agents
 
 
 <h3 id="execcommand"><code>exec=&lt;command&gt;</code></h3>
-<p>The exec suboption is used by the tool dump agent to specify an external application to start. You can set a specific command to run for a particular dump agent with the following command:  <code>-Xdump:&lt;agent&gt;:exec=&lt;command&gt;</code>.</p>
+<p>The exec suboption is used by the tool dump agent to specify an external application to start. You can set a specific command to run for a particular dump agent with the following command:</p>
+<div class="codehilite"><pre><span></span>-Xdump:&lt;agent&gt;:exec=&lt;command&gt;
+</pre></div>
+
+
 <h3 id="filefilename"><code>file=&lt;filename&gt;</code></h3>
 <p>The file suboption specifies where the diagnostics information is written for the specified dump type. The syntax is <code>-Xdump:&lt;agent&gt;:file=&lt;filename&gt;</code>.</p>
 <p>For example, to create a Heap dump called <code>my.dmp</code> when a <strong>vmstop</strong> event is received, use:</p>
@@ -4053,15 +4123,30 @@ Registered dump agents
 </pre></div>
 
 
+<h4 id="writing-to-stdoutstderr">Writing to <code>STDOUT</code>/<code>STDERR</code></h4>
+<p>Add one of the following options to write a Java dump file to STDOUT or STDERR respectively:</p>
+<div class="codehilite"><pre><span></span>-Xdump:java:file=/STDOUT/
+-Xdump:java:file=/STDERR/
+</pre></div>
+
+
+<ul>
+<li>The keywords <code>/STDOUT/</code> and <code>/STDERR/</code> are <em>not</em> case sensitive; <code>/stdout/</code> and <code>/stderr/</code> are equivalent.</li>
+<li>By common convention, you can use a dash (<code>-</code>) to refer to STDOUT:<div class="codehilite"><pre><span></span>-Xdump:java:file=-
+</pre></div>
+
+
+</li>
+</ul>
+<h4 id="tokens">Tokens</h4>
 <p>You can use tokens to add context to dump file names. For a list of tokens, see <a href="#dump-agent-tokens">Dump agent tokens</a>.</p>
+<h4 id="file-location">File location</h4>
 <p>The location for the dump file is selected from the following options, in this order:</p>
 <ol>
 <li>The location specified by the <code>-Xdump:&lt;agent&gt;:file</code> suboption on the command line (if that location includes a path). This location applies to the specified dump agent type only.</li>
 <li>The location specified by the <code>-Xdump:directory</code> option on the command line. This location applies to all dump agent types.</li>
-<li>The location specified by the relevant environment variable (See <strong>Table: Environment Variables</strong>).</li>
-<li>The current working directory of the OpenJ9 VM process.</li>
-</ol>
-<p><strong>Table: Environment Variables</strong></p>
+<li>
+<p>The location specified by the relevant environment variable:</p>
 <table>
 <thead>
 <tr>
@@ -4093,6 +4178,11 @@ Registered dump agents
 </tr>
 </tbody>
 </table>
+</li>
+<li>
+<p>The current working directory of the OpenJ9 VM process.</p>
+</li>
+</ol>
 <p>If the directory does not exist, it is created.</p>
 <p>If the dump file cannot be written to the selected location, the VM reverts to using the following locations, in this order:</p>
 <ol>
