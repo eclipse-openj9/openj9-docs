@@ -26,6 +26,8 @@
 
 If you are already familiar with HotSpot command-line options but want the advantages of OpenJ9, the following information will prove helpful. In all cases, check individual topics for minor discrepancies in the way these options might work.
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** For information about HotSpot equivalences and differences for items other than command-line options, see [New to OpenJ9?](openj9_newuser.md).
+
 ## Compatible options
 
 You can use the following command-line options in OpenJ9, just as you did in Hotspot; you can continue to use the HotSpot option in OpenJ9 without having to change your code:

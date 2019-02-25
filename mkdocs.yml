@@ -264,7 +264,7 @@ pages:
             - "-Xverify"                                                         : xverify.md
             - "-Xzero"                                                           : xzero.md
 
-        - "JVM -XX: options" :
+        - "JVM -XX options" :
             - "Using -XX options"                                                : xx_jvm_commands.md
             - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
@@ -310,6 +310,8 @@ pages:
         - "Dump viewer"                                                           : tool_jdmpview.md
         - "Trace formatter"                                                       : tool_traceformat.md
         - "Option builder"                                                        : tool_builder.md
+        - "Java process status"                                                   : tool_jps.md
+        - "Switching to OpenJ9"                                                   : tool_migration.md        
 
         
     - " Reference" :

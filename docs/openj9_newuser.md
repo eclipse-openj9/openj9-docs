@@ -6,7 +6,7 @@ The Eclipse OpenJ9 virtual machine (VM) implements the [Java Virtual Machine Spe
 
 ## Command-line options
 
-Although OpenJ9 implements its own command-line interface, many Hotspot options are recognized and accepted by the VM for compatibility. Any -XX options that are not recognized by the VM are ignored by default, which prevents an application failing to start. For a list of compatible options, see [Switching to OpenJ9](cmdline_migration.md).
+Although OpenJ9 implements its own command-line interface, many Hotspot options are recognized and accepted by the VM for compatibility. Any -XX options that are not recognized by the VM are ignored by default, which prevents an application failing to start. For a list of compatible options, see [Switching to OpenJ9](cmdline_migration.md) in the Command-line options section.
 
 
 ## Garbage collection policies
@@ -19,6 +19,8 @@ If you have a different type of workload, you might want to select a different G
 ## Operational tooling
 
 If you are a Java application developer or you are responsible for managing large server or desktop deployments of a Java runtime environment, you probably use a number of tools for monitoring, management, and troubleshooting. Because OpenJ9 is an independent implementation, it has evolved with its own approach for these areas and, in some cases, its own unique tools.
+
+In other cases, tools have been added for compatibility with the reference implementation, but these tools might differ in behavior from equivalent tools in HotSpot. For a list of these tools, see [Switching to OpenJ9](tool_migration.md) in the Tools section.
 
 ### Dumps, logs, and trace files
 
