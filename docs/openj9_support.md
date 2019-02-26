@@ -43,26 +43,23 @@ this table over time.
 
 ## Eclipse OpenJ9 releases
 
-| OpenJ9 release  | Release date        | JDK8 (LTS)| JDK10 | JDK11 (LTS) | JDK12   | JDK13    |
-|-----------------|---------------------|-----------|-------|-------------|---------|----------|
-| v0.8.0          | March 2018          | Yes       |       |             |         |          |
-| v0.9.0          | August 2018         | Yes       | Yes   |             |         |          |
-| v0.10.0         | September 2018      | No        | No    | Yes(\*3)    |         |          |
-| v0.11.0         | October 2018        | Yes       | No    | Yes         |         |          |
-| v0.12.0         | January 2019        | Yes (\*2) | No    | Yes         |         |          |
-| v0.13.0         | March 2019 (\*1)    | No        | No    | No          | Yes(\*3)|          |
-| v0.14.0         | April 2019 (\*1)    | Yes (\*2) | No    | Yes (\*2)   | Yes     |          |
-| v0.15.0         | July 2019 (\*1)     | Yes (\*2) | No    | Yes (\*2)   | Yes     |          |
-| v0.16.0         | September 2019 (\*1)| No        | No    | No          | No      | Yes(\*3) |
+| OpenJ9 release  | Release date        | JDK8 (LTS)| JDK11 (LTS) | JDK12   | JDK13    |
+|-----------------|---------------------|-----------|-------------|---------|----------|
+| v0.8.0          | March 2018          | Yes       |             |         |          |
+| v0.9.0          | August 2018         | Yes       |             |         |          |
+| v0.10.0         | September 2018      | No        | Yes(\*2)    |         |          |
+| v0.11.0         | October 2018        | Yes       | Yes         |         |          |
+| v0.12.0         | January 2019        | Yes       | Yes         |         |          |
+| v0.13.0         | March 2019          | No        | No          | Yes(\*2)|          |
+| v0.14.0         | April 2019 (\*1)    | Yes       | Yes         | Yes     |          |
+| v0.15.0         | July 2019 (\*1)     | Yes       | Yes         | Yes     |          |
+| v0.16.0         | September 2019 (\*1)| No        | No          | No      | Yes(\*2) |
 
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
 - (\*1): These OpenJ9 releases are expected, in line with our support statement.
-- (\*2): We fully expect that OpenJDK8 will have open community maintainers beyond January 2019,
-so we expect to be able to continue supporting JDK8 beyond that date. Until maintainers have been established
-we are unable to make a definitive support statement. This position is the same for JDK11 and all future "LTS" releases.
-- (\*3): These OpenJ9 releases are the feature releases that only support the new OpenJDK release.
+- (\*2): These OpenJ9 releases are the feature releases that only support the new OpenJDK release.
 
 For any issues or limitations of an Eclipse OpenJ9 release, read the [release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/).
 
@@ -72,10 +69,10 @@ The Eclipse OpenJ9 project is open to supporting any hardware/operating system p
 provided that we have community members available to maintain them. For practical
 reasons the Eclipse OpenJ9 JVM does not currently run on every platform.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
-platform support might vary, depending on their build environment.
-
 ### OpenJDK 8
+
+<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
+platform support might vary, depending on their build environment. Check the AdoptOpenJDK [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
 
 OpenJDK8 binaries are supported on the minimum operating system levels shown in the following tables:
 
@@ -116,7 +113,52 @@ When public support for an operating system version ends, OpenJ9 can no longer b
 
 ### OpenJDK 11
 
+<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
+platform support might vary, depending on their build environment. Check the AdoptOpenJDK [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
+
 OpenJDK11 binaries are supported on the minimum operating system levels shown in the following tables:
+
+
+| Linux                                 |  x64   |  ppc64le   | Z64  |
+|---------------------------------------|--------|------------|------|
+| Centos 6.9                            |   Y    |     Y      |  N   |
+| Centos 7.4                            |   Y    |     Y      |  N   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
+| RHEL 7.4                              |   Y    |     Y      |  Y   |
+| SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
+| Ubuntu 16.04                          |   Y    |     Y      |  Y   |
+| Ubuntu 18.04                          |   Y    |     Y      |  Y   |
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Not all of these distributions are tested, but Linux distributions that have a
+minimum glibc version 2.12 are expected to function without problems.
+
+| Windows                    |  x64   |
+|----------------------------|--------|
+| Windows 7 SP1              |   Y    |
+| Windows 8                  |   Y    |
+| Windows 8.1                |   Y    |
+| Windows 10                 |   Y    |
+| Windows Server 2012        |   Y    |
+| Windows Server 2012 R2     |   Y    |
+| Windows Server 2016        |   Y    |
+
+| macOS                   |   x64    |
+|-------------------------|----------|
+| OS X 10.9.0+            |    Y     |
+
+| AIX          |  ppc64   |
+|--------------|----------|
+| AIX 7.1 TL4  |    Y     |
+| AIX 7.2      |    Y     |
+
+When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
+
+### OpenJDK 12
+
+<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
+platform support might vary, depending on their build environment. Check the AdoptOpenJDK [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
+
+OpenJDK12 binaries are supported on the minimum operating system levels shown in the following tables:
 
 
 | Linux                                 |  x64   |  ppc64le   | Z64  |
@@ -176,7 +218,18 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 |-----------------------------|--------------------------|---------------------------------|
 | Linux x86 64-bit            | Ubuntu 16.04             | gcc 7.3                         |
 | Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
-| Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 7.3                         |
+| Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 7.4                         |
+| Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
+| macOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
+| AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |
+
+### OpenJDK 12
+
+| Platform                    | Operating system         |  Compiler                       |
+|-----------------------------|--------------------------|---------------------------------|
+| Linux x86 64-bit            | Ubuntu 16.04             | gcc 7.3                         |
+| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
+| Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 7.4                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
 | macOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
 | AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |

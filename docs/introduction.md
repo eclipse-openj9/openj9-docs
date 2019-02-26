@@ -92,6 +92,7 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL v1.1.x support, 
 
 - [OpenJDK 8 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V8.md).
 - [OpenJDK 11 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
+- [OpenJDK 12 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V12.md).
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you obtain an OpenJDK with OpenJ9 build from [AdoptOpenJDK](https://adoptopenjdk.net/) that includes OpenSSL v1.1.x or build a version yourself that includes OpenSSL v1.1.x support, the following acknowledgements apply in accordance with the license terms:
 
