@@ -124,7 +124,7 @@ This section contains useful information about the environment in which the cras
 - Environment variables in place (`1CIENVVARS`)
 - System information (`1CISYSINFO`)
 - CPU information (`1CICPUINFO`)
-<!--- Control group (Cgroup) information (`1CICGRPINFO`)-->
+- Control group (Cgroup) information (`1CICGRPINFO`)
 
 For clarity, the following example shows a shortened version of this section, where `...` indicates that lines are removed:
 
@@ -141,6 +141,8 @@ NULL           =================================
 1CIJITMODES    JIT enabled, AOT enabled, FSD disabled, HCR enabled
 1CIRUNNINGAS   Running as a standalone JVM
 1CIVMIDLESTATE VM Idle State: ACTIVE
+1CICONTINFO    Running in container : FALSE
+1CICGRPINFO    JVM support for cgroups enabled : TRUE
 1CISTARTTIME   JVM start time: 2018/08/30 at 21:55:47:387
 1CISTARTNANO   JVM start nanotime: 22012135233549
 1CIPROCESSID   Process ID: 30285 (0x764D)
@@ -189,13 +191,7 @@ NULL           -----------------------------------------------------------------
 2CIBOUNDCPU    Bound CPUs: 4
 2CIACTIVECPU   Active CPUs: 0
 2CITARGETCPU   Target CPUs: 4
-```
-
-<!--
-NULL 			
-2CICONTINFO    Running in container : FALSE
-2CICGRPINFO    JVM support for cgroups enabled : FALSE
-
+NULL
 1CICGRPINFO    Cgroup Information
 NULL           ------------------------------------------------------------------------
 2CICGRPINFO    subsystem : cpu
@@ -206,26 +202,27 @@ NULL           -----------------------------------------------------------------
 2CICGRPINFO		Period intervals elapsed count : 0
 2CICGRPINFO		Throttled count : 0
 2CICGRPINFO		Total throttle time : 0 nanoseconds
-2CICGRPINFO    subsystem : memory
-2CICGRPINFO    cgroup name : /
-2CICGRPINFO		Memory Limit : Not Set
-2CICGRPINFO		Memory + Swap Limit : Not Set
-2CICGRPINFO		Memory Usage : 5485015040 bytes
-2CICGRPINFO		Memory + Swap Usage : 5486088192 bytes
-2CICGRPINFO		Memory Max Usage : 2933260288 bytes
-2CICGRPINFO		Memory + Swap Max Usage : 2935902208 bytes
-2CICGRPINFO		Memory limit exceeded count : 0
-2CICGRPINFO		Memory + Swap limit exceeded count : 0
-2CICGRPINFO		OOM Killer Disabled : 0
-2CICGRPINFO		Under OOM : 0
 2CICGRPINFO    subsystem : cpuset
 2CICGRPINFO    cgroup name : /
 2CICGRPINFO		CPU exclusive : 1
 2CICGRPINFO		Mem exclusive : 1
 2CICGRPINFO		CPUs : 0-3
 2CICGRPINFO		Mems : 0
+2CICGRPINFO    subsystem : memory
+2CICGRPINFO    cgroup name : /
+2CICGRPINFO		Memory Limit : Not Set
+2CICGRPINFO		Memory + Swap Limit : Not Set
+2CICGRPINFO		Memory Usage : 5363396608 bytes
+2CICGRPINFO		Memory + Swap Usage : 5363396608 bytes
+2CICGRPINFO		Memory Max Usage : 0 bytes
+2CICGRPINFO		Memory + Swap Max Usage : 0 bytes
+2CICGRPINFO		Memory limit exceeded count : 0
+2CICGRPINFO		Memory + Swap limit exceeded count : 0
+2CICGRPINFO		OOM Killer Disabled : 0
+2CICGRPINFO		Under OOM : 0
 NULL           
--->
+```
+
 
 ### NATIVEMEMINFO
 
