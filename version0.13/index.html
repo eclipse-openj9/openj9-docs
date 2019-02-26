@@ -408,6 +408,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#better-diagnostic-information-for-linux-systems-that-implement-control-groups" title="Better diagnostic information for Linux systems that implement control groups" class="md-nav__link">
+    Better diagnostic information for Linux systems that implement control groups
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3005,6 +3012,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#better-diagnostic-information-for-linux-systems-that-implement-control-groups" title="Better diagnostic information for Linux systems that implement control groups" class="md-nav__link">
+    Better diagnostic information for Linux systems that implement control groups
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3067,6 +3081,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li><a href="#new-java-process-status-tool">New Java&trade; process status tool</a></li>
 <li><a href="#writing-a-java-dump-to-stdout-or-stderr">Writing a Java dump to STDOUT or STDERR</a></li>
+<li><a href="#better-diagnostic-information-for-linux-systems-that-implement-control-groups">Better diagnostic information for Linux systems that implement control groups</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3081,6 +3096,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>A Java process status tool (<code>jps</code>) is available for querying running Java processes. This tool is added for compliance with the Java reference implementation; its behaviour differs from the equivalent HotSpot tool. For more information, see <a href="../tool_jps/">Java process status</a></p>
 <h3 id="writing-a-java-dump-to-stdout-or-stderr">Writing a Java dump to STDOUT or STDERR</h3>
 <p>You can now write a Java dump file to STDOUT or STDERR by using the <a href="../xdump/"><code>-Xdump</code></a> command-line option. See <a href="../xdump/#writing-to-stdoutstderr">Writing to <code>STDOUT</code>/<code>STDERR</code></a> for details.</p>
+<h3 id="better-diagnostic-information-for-linux-systems-that-implement-control-groups">Better diagnostic information for Linux systems that implement control groups</h3>
+<p>If you use control groups (cgroups) to manage resources on Linux systems, information about CPU and memory limits is now recorded in a Java dump file. This information is particularly important for applications that run in Docker containers, because when resource limits are set inside a container, the Docker Engine relies on cgroups to enforce the settings. If you are getting a Java <code>OutOfMemoryError</code> error because a container limit has been set on the amount of memory available to an application and this allocation is not sufficient, you can diagnose this problem from the Java dump file. You can find the cgroup information in the ENVINFO section. For sample output, see <a href="../dump_javadump/#envinfo">Java dump (ENVINFO)</a>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.12.1 and V0.13.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.13/0.13.md">Release notes</a>.
 <!-- ==== END OF TOPIC ==== cmdline_general.md ==== --></p>

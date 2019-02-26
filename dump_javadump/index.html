@@ -3365,8 +3365,8 @@ following line in the output:</p>
 <li>User limits imposed by the system (<code>1CIUSERLIMITS</code>)</li>
 <li>Environment variables in place (<code>1CIENVVARS</code>)</li>
 <li>System information (<code>1CISYSINFO</code>)</li>
-<li>CPU information (<code>1CICPUINFO</code>)
-<!--- Control group (Cgroup) information (<code>1CICGRPINFO</code>)--></li>
+<li>CPU information (<code>1CICPUINFO</code>)</li>
+<li>Control group (Cgroup) information (<code>1CICGRPINFO</code>)</li>
 </ul>
 <p>For clarity, the following example shows a shortened version of this section, where <code>...</code> indicates that lines are removed:</p>
 <div class="codehilite"><pre><span></span><span class="nb">NULL</span>           <span class="o">------------------------------------------------------------------------</span>
@@ -3381,6 +3381,8 @@ following line in the output:</p>
 <span class="mi">1</span><span class="n">CIJITMODES</span>    <span class="n">JIT</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">AOT</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">FSD</span> <span class="n">disabled</span><span class="p">,</span> <span class="n">HCR</span> <span class="n">enabled</span>
 <span class="mi">1</span><span class="n">CIRUNNINGAS</span>   <span class="n">Running</span> <span class="n">as</span> <span class="n">a</span> <span class="n">standalone</span> <span class="n">JVM</span>
 <span class="mi">1</span><span class="n">CIVMIDLESTATE</span> <span class="n">VM</span> <span class="n">Idle</span> <span class="nl">State</span><span class="p">:</span> <span class="n">ACTIVE</span>
+<span class="mi">1</span><span class="n">CICONTINFO</span>    <span class="n">Running</span> <span class="k">in</span> <span class="nl">container</span> <span class="p">:</span> <span class="nb">FALSE</span>
+<span class="mi">1</span><span class="n">CICGRPINFO</span>    <span class="n">JVM</span> <span class="n">support</span> <span class="k">for</span> <span class="n">cgroups</span> <span class="nl">enabled</span> <span class="p">:</span> <span class="nb">TRUE</span>
 <span class="mi">1</span><span class="n">CISTARTTIME</span>   <span class="n">JVM</span> <span class="n">start</span> <span class="nl">time</span><span class="p">:</span> <span class="mi">2018</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">30</span> <span class="n">at</span> <span class="mi">21</span><span class="o">:</span><span class="mi">55</span><span class="o">:</span><span class="mi">47</span><span class="o">:</span><span class="mi">387</span>
 <span class="mi">1</span><span class="n">CISTARTNANO</span>   <span class="n">JVM</span> <span class="n">start</span> <span class="nl">nanotime</span><span class="p">:</span> <span class="mi">22012135233549</span>
 <span class="mi">1</span><span class="n">CIPROCESSID</span>   <span class="n">Process</span> <span class="nl">ID</span><span class="p">:</span> <span class="mi">30285</span> <span class="p">(</span><span class="mh">0x764D</span><span class="p">)</span>
@@ -3429,44 +3431,38 @@ following line in the output:</p>
 <span class="mi">2</span><span class="n">CIBOUNDCPU</span>    <span class="n">Bound</span> <span class="nl">CPUs</span><span class="p">:</span> <span class="mi">4</span>
 <span class="mi">2</span><span class="n">CIACTIVECPU</span>   <span class="n">Active</span> <span class="nl">CPUs</span><span class="p">:</span> <span class="mi">0</span>
 <span class="mi">2</span><span class="n">CITARGETCPU</span>   <span class="n">Target</span> <span class="nl">CPUs</span><span class="p">:</span> <span class="mi">4</span>
+<span class="nb">NULL</span>
+<span class="mi">1</span><span class="n">CICGRPINFO</span>    <span class="n">Cgroup</span> <span class="n">Information</span>
+<span class="nb">NULL</span>           <span class="o">------------------------------------------------------------------------</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>    <span class="nl">subsystem</span> <span class="p">:</span> <span class="n">cpu</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>    <span class="n">cgroup</span> <span class="nl">name</span> <span class="p">:</span> <span class="o">/</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">CPU</span> <span class="nl">Period</span> <span class="p">:</span> <span class="mi">100000</span> <span class="n">microseconds</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">CPU</span> <span class="nl">Quota</span> <span class="p">:</span> <span class="n">Not</span> <span class="n">Set</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">CPU</span> <span class="nl">Shares</span> <span class="p">:</span> <span class="mi">1024</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Period</span> <span class="n">intervals</span> <span class="n">elapsed</span> <span class="nl">count</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Throttled</span> <span class="nl">count</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Total</span> <span class="n">throttle</span> <span class="nl">time</span> <span class="p">:</span> <span class="mi">0</span> <span class="n">nanoseconds</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>    <span class="nl">subsystem</span> <span class="p">:</span> <span class="n">cpuset</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>    <span class="n">cgroup</span> <span class="nl">name</span> <span class="p">:</span> <span class="o">/</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">CPU</span> <span class="nl">exclusive</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Mem</span> <span class="nl">exclusive</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="nl">CPUs</span> <span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">3</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="nl">Mems</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>    <span class="nl">subsystem</span> <span class="p">:</span> <span class="n">memory</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>    <span class="n">cgroup</span> <span class="nl">name</span> <span class="p">:</span> <span class="o">/</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Memory</span> <span class="nl">Limit</span> <span class="p">:</span> <span class="n">Not</span> <span class="n">Set</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Memory</span> <span class="o">+</span> <span class="n">Swap</span> <span class="nl">Limit</span> <span class="p">:</span> <span class="n">Not</span> <span class="n">Set</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Memory</span> <span class="nl">Usage</span> <span class="p">:</span> <span class="mi">5363396608</span> <span class="n">bytes</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Memory</span> <span class="o">+</span> <span class="n">Swap</span> <span class="nl">Usage</span> <span class="p">:</span> <span class="mi">5363396608</span> <span class="n">bytes</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Memory</span> <span class="n">Max</span> <span class="nl">Usage</span> <span class="p">:</span> <span class="mi">0</span> <span class="n">bytes</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Memory</span> <span class="o">+</span> <span class="n">Swap</span> <span class="n">Max</span> <span class="nl">Usage</span> <span class="p">:</span> <span class="mi">0</span> <span class="n">bytes</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Memory</span> <span class="n">limit</span> <span class="n">exceeded</span> <span class="nl">count</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Memory</span> <span class="o">+</span> <span class="n">Swap</span> <span class="n">limit</span> <span class="n">exceeded</span> <span class="nl">count</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">OOM</span> <span class="n">Killer</span> <span class="nl">Disabled</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="mi">2</span><span class="n">CICGRPINFO</span>     <span class="n">Under</span> <span class="nl">OOM</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="nb">NULL</span>           
 </pre></div>
 
-
-<!--
-NULL            
-2CICONTINFO    Running in container : FALSE
-2CICGRPINFO    JVM support for cgroups enabled : FALSE
-
-1CICGRPINFO    Cgroup Information
-NULL           ------------------------------------------------------------------------
-2CICGRPINFO    subsystem : cpu
-2CICGRPINFO    cgroup name : /
-2CICGRPINFO     CPU Period : 100000 microseconds
-2CICGRPINFO     CPU Quota : Not Set
-2CICGRPINFO     CPU Shares : 1024
-2CICGRPINFO     Period intervals elapsed count : 0
-2CICGRPINFO     Throttled count : 0
-2CICGRPINFO     Total throttle time : 0 nanoseconds
-2CICGRPINFO    subsystem : memory
-2CICGRPINFO    cgroup name : /
-2CICGRPINFO     Memory Limit : Not Set
-2CICGRPINFO     Memory + Swap Limit : Not Set
-2CICGRPINFO     Memory Usage : 5485015040 bytes
-2CICGRPINFO     Memory + Swap Usage : 5486088192 bytes
-2CICGRPINFO     Memory Max Usage : 2933260288 bytes
-2CICGRPINFO     Memory + Swap Max Usage : 2935902208 bytes
-2CICGRPINFO     Memory limit exceeded count : 0
-2CICGRPINFO     Memory + Swap limit exceeded count : 0
-2CICGRPINFO     OOM Killer Disabled : 0
-2CICGRPINFO     Under OOM : 0
-2CICGRPINFO    subsystem : cpuset
-2CICGRPINFO    cgroup name : /
-2CICGRPINFO     CPU exclusive : 1
-2CICGRPINFO     Mem exclusive : 1
-2CICGRPINFO     CPUs : 0-3
-2CICGRPINFO     Mems : 0
-NULL           
--->
 
 <h3 id="nativememinfo">NATIVEMEMINFO</h3>
 <p>This section records information about native memory that is requested by using library functions such as <code>malloc()</code> and <code>mmap()</code>.
