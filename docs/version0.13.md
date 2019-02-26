@@ -47,7 +47,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 ### New Java process status tool
 
-A Java process status tool (`jps`) is available for querying running Java processes. This tool is added for compliance with the Java reference implementation; its behaviour differs from the equivalent HotSpot tool. For more information, see [Java process status](tool_jps.md)
+A Java process status tool (`jps`) is available for querying running Java processes. For more information, see [Java process status](tool_jps.md)
 
 ### Writing a Java dump to STDOUT or STDERR
 

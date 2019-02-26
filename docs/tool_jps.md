@@ -53,7 +53,7 @@ For example:
     5462
     14332
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This tool is the OpenJ9 implementation of the `jps` tool in the Java reference implementation, and differs from the HotSpot implementation. The tool is not supported and is subject to change or removal in future releases.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation specific to OpenJ9. 
 
 The tool uses the Attach API, and has the following limitations:
 
