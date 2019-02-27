@@ -2998,7 +2998,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="-xx-usecontainersupport">-XX:[+|-]UseContainerSupport</h1>
 <p><strong>(Linux&reg; only)</strong></p>
-<p>If your application is running in a container that imposes a memory limit, the VM allocates a larger fraction of memory to the Java heap. To turn off this behavior, set the <code>-XX:-UserContainerSupport</code> option on the command line.</p>
+<p>If your application is running in a container that imposes a memory limit, the VM allocates a larger fraction of memory to the Java heap. To turn off this behavior, set the <code>-XX:-UseContainerSupport</code> option on the command line.</p>
 <h2 id="syntax">Syntax</h2>
 <div class="codehilite"><pre><span></span>    -XX:[+|-]UseContainerSupport
 </pre></div>
@@ -3026,7 +3026,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tbody>
 </table>
 <p>When using container technology, applications are typically run on their own and do not need to compete for memory. The OpenJ9 VM detects when it is running inside a container that imposes a memory limit, and adjusts the maximum Java heap size appropriately.</p>
-<p>The following table shows the values that are used when <code>-XX:+UserContainerSupport</code> is set:</p>
+<p>The following table shows the values that are used when <code>-XX:+UseContainerSupport</code> is set:</p>
 <table>
 <thead>
 <tr>
