@@ -26,7 +26,7 @@
 
 **(Linux&reg; only)**
 
-If your application is running in a container that imposes a memory limit, the VM allocates a larger fraction of memory to the Java heap. To turn off this behavior, set the `-XX:-UserContainerSupport` option on the command line.
+If your application is running in a container that imposes a memory limit, the VM allocates a larger fraction of memory to the Java heap. To turn off this behavior, set the `-XX:-UseContainerSupport` option on the command line.
 
 ## Syntax
 
@@ -42,7 +42,7 @@ If your application is running in a container that imposes a memory limit, the V
 
 When using container technology, applications are typically run on their own and do not need to compete for memory. The OpenJ9 VM detects when it is running inside a container that imposes a memory limit, and adjusts the maximum Java heap size appropriately.
 
-The following table shows the values that are used when `-XX:+UserContainerSupport` is set:
+The following table shows the values that are used when `-XX:+UseContainerSupport` is set:
 
 | Container memory limit *&lt;size&gt;* | Maximum Java heap size  |
 |---------------------------------------|-------------------------|
