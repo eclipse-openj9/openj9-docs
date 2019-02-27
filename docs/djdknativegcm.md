@@ -38,11 +38,11 @@ This option enables or disables OpenSSL native cryptographic support for the GCM
 
 ## Explanation
 
-OpenSSL support is enabled by default for the CBC,<!-- Digest,--> GCM, and RSA algorithm. If you want to turn off the GCM algorithm, set this option to `false`.
+OpenSSL support is enabled by default for the CBC, ![Start of content that applies only to Java 12](cr/java12.png)Digest![End of content that applies only to Java 12](cr/java_close.png), GCM, and RSA algorithm. If you want to turn off the GCM algorithm, set this option to `false`.
 
 To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
 
 
 
 
-<!-- ==== END OF TOPIC ==== dcomibmdbgmalloc.md ==== -->
+<!-- ==== END OF TOPIC ==== djdknativegcm.md ==== -->
