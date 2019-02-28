@@ -27,7 +27,7 @@
 
 The following new features and notable changes since v.0.12.1 are included in this release:
 
-- [New Java&trade; process status tool](#new-java-process-status-tool)
+- ![Start of content that applies only to Java 12](cr/java12.png) [New Java&trade; process status tool](#new-java-process-status-tool)
 - [Writing a Java dump to STDOUT or STDERR](#writing-a-java-dump-to-stdout-or-stderr)
 - [Better diagnostic information for Linux systems that implement control groups](#better-diagnostic-information-for-linux-systems-that-implement-control-groups)
 
@@ -46,6 +46,8 @@ Although it is possible to build an OpenJDK 8, or other versions, with OpenJ9 0.
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md)
 
 ### New Java process status tool
+
+![Start of content that applies only to Java 12](cr/java12.png)
 
 A Java process status tool (`jps`) is available for querying running Java processes. For more information, see [Java process status](tool_jps.md)
 
