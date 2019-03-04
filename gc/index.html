@@ -3148,15 +3148,15 @@ reach the maximum requested TLH size more quickly.</p>
 </ul>
 </li>
 <li>
-<p><strong>Software-based support: (Linux on x86-64 only)</strong> With software-based support, <em>Concurrent Scavenge</em> can be enabled without any pre-requisite hardware although the performance throughput is not as good as hardware-based support.</p>
+<p><strong>Software-based support: (Linux on x86-64, Linux on POWER LE, AIX&reg; on POWER&reg;)</strong> With software-based support, <em>Concurrent Scavenge</em> can be enabled without any pre-requisite hardware although the performance throughput is not as good as hardware-based support.</p>
 </li>
 </ul>
 <p>For more information about enabling Concurrent Scavenge, see the <a href="../xgc/#concurrentscavenge">-Xgc:concurrentScavenge</a> option.</p>
 <h3 id="other-policies">Other policies</h3>
 <p>OpenJ9 has the following alternative GC policies:</p>
 <ul>
-<li><code>-Xgcpolicy:balanced</code> divides the Java heap into regions, which are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global collections by matching object allocation and survival rates. If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance, particularly on large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER™ platforms).</li>
-<li><code>-Xgcpolicy:metronome</code> is designed for applications that require precise response times. Garbage collection occurs in small interruptible steps to avoid stop-the-world pauses. This policy is available only on x86 Linux and AIX&reg; platforms.</li>
+<li><code>-Xgcpolicy:balanced</code> divides the Java heap into regions, which are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global collections by matching object allocation and survival rates. If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance, particularly on large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER platforms).</li>
+<li><code>-Xgcpolicy:metronome</code> is designed for applications that require precise response times. Garbage collection occurs in small interruptible steps to avoid stop-the-world pauses. This policy is available only on x86 Linux and AIX platforms.</li>
 <li><code>-Xgcpolicy:optavgpause</code> uses concurrent mark and sweep phases, which means that pause times are reduced when compared to optthruput, but at the expense of some performance throughput.</li>
 <li><code>-Xgcpolicy:optthruput</code> is optimized for throughput by disabling the concurrent mark phase, which means that applications will stop for long pauses while garbage collection takes place. You might consider using this policy when high application throughput, rather than short garbage collection pauses, is the main performance goal.</li>
 </ul>
