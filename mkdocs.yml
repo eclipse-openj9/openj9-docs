@@ -97,7 +97,8 @@ markdown_extensions:
 pages:
 
     - "About"                                                                    : index.md
-    - "Introduction"                                                             : introduction.md
+    - "AdoptOpenJDK builds"                                                      : adoptopenjdk.md
+    - "Getting started"                                                          : introduction.md
     - "New to OpenJ9?"                                                           : openj9_newuser.md
     
     - "Release notes" :
