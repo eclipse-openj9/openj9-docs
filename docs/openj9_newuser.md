@@ -81,14 +81,4 @@ If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, you 
 
 ## Other differences
 
-This topic describes the differences between the HotSpot VM and the Eclipse OpenJ9 VM. Therefore, if you are currently using an OpenJDK with the default Hotspot VM and you want to switch to using an OpenJDK with the OpenJ9 VM, these are the only differences you might be concerned about. If however, you are using an Oracle JDK, you might want to learn about differences between other components that make up an Oracle JDK or an OpenJDK from the AdoptOpenJDK community.
-
-The following proprietary features are not available in an OpenJDK v8 binary:
-
-- **JavaFX:** This feature is deprecated by Oracle in Java SE 9 and is not available in Oracle JDK 11. The source code was contributed to OpenJDK under the OpenJFX project.
-- **Java plug-in and webstart:** These features were deprecated by Oracle in Java SE 9 and are not available in Oracke JDK 11. Oracle encourages developers to migrate to other solutions.
-- **T2K font library:** T2K is a proprietary native font library, which is licensed for use by Java 2D from a third party. OpenJDK uses the open FreeType font library as an alternative. The rendering of these fonts is almost identical and situations where there are differences are rare.
-
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Discussions are underway at the AdoptOpenJDK project to include OpenJFX and investigate the IcedTea-web project as a replacement for the Web Start capabilities.
-
-In addition to these proprietary features, there are currently no installers or updaters available for OpenJDK binaries from AdoptOpenJDK.
+This topic describes the differences between the HotSpot VM and the Eclipse OpenJ9 VM. Therefore, if you are currently using an OpenJDK with the default Hotspot VM and you want to switch to using an OpenJDK with the OpenJ9 VM, these are the only differences you might be concerned about. If however, you are using an Oracle JDK, you might want to learn about differences between other components that make up an Oracle JDK or an OpenJDK from the AdoptOpenJDK community. For more information, read the [Migration guide](https://adoptopenjdk.net/MigratingtoAdoptOpenJDKfromOracleJava.pdf).
