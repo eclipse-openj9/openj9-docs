@@ -27,6 +27,8 @@
 
 The following new features and notable changes since v.0.12.1 are included in this release:
 
+- [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- ![Start of content that applies only to Java 12](cr/java12.png) [Support for OpenSSL 1.0.2](#support-for-openssl-102)
 - ![Start of content that applies only to Java 12](cr/java12.png) [New Java&trade; process status tool](#new-java-process-status-tool)
 - [Writing a Java dump to STDOUT or STDERR](#writing-a-java-dump-to-stdout-or-stderr)
 - [Better diagnostic information for Linux systems that implement control groups](#better-diagnostic-information-for-linux-systems-that-implement-control-groups)
@@ -42,15 +44,29 @@ OpenJ9 release 0.13.0 supports OpenJDK 12, which is available from the AdoptOpen
 
 OpenJDK 12 with Eclipse OpenJ9 is not a long term support (LTS) release.
 
-Although it is possible to build an OpenJDK 8, or other versions, with OpenJ9 0.13.0, testing at the project is not complete and therefore support is not available.
+The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK community are for Eclipse OpenJ9 release 0.12.0. Features mentioned in these release notes are not available in these builds. Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 0.13.0, testing at the project is not complete and therefore support for any of these features is not available.
 
-To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md)
+To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### Support for OpenSSL 1.0.2
+
+![Start of content that applies only to Java 12](cr/java12.png)
+
+OpenSSL cryptographic support is extended to include OpenSSL 1.0.2 for the Digest, CBC, GCM, and RSA algorithms. Support is enabled by default. On Linux and AIX platforms, the OpenSSL libraries are expected to be available on the system path. For more information about cryptographic acceleration with OpenSSL, see [Cryptographic operations](introduction.md#cryptographic-operations).
+
+In addition, support for the OpenSSL Digest algorithm is re-enabled in this release following the resolution of issue [#4530](https://github.com/eclipse/openj9/issues/4530).
+
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Warning:** Earlier versions of OpenJDK with OpenJ9 from the AdoptOpenJDK project bundle OpenSSL as part of the binary package. On Linux and AIX systems, OpenSSL is no longer bundled and the libraries are expected to be available on the system path.
+
+![End of content that applies only to Java 12](cr/java_close.png)
 
 ### New Java process status tool
 
 ![Start of content that applies only to Java 12](cr/java12.png)
 
-A Java process status tool (`jps`) is available for querying running Java processes. For more information, see [Java process status](tool_jps.md)
+A Java process status tool (`jps`) is available for querying running Java processes. For more information, see [Java process status](tool_jps.md).
+
+![End of content that applies only to Java 12](cr/java_close.png)
 
 ### Writing a Java dump to STDOUT or STDERR
 
@@ -72,4 +88,5 @@ For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscave
 ## Full release information
 
 To see a complete list of changes between Eclipse OpenJ9 V0.12.1 and V0.13.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.13/0.13.md).
-<!-- ==== END OF TOPIC ==== cmdline_general.md ==== -->
+
+<!-- ==== END OF TOPIC ==== version0.13.md ==== -->
