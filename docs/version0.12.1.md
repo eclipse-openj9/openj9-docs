@@ -32,6 +32,6 @@ circumstances acceleration of the Digest algorithm was found to cause a segmenta
 
 ## Full release information
 
-Release notes to describe the changes between Eclipse OpenJ9 V0.12.0 and V0.12.1 releases, can be found in the [OpenJ9 GitHub repository](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.12/0.12.1md).
+Release notes to describe the changes between Eclipse OpenJ9 V0.12.0 and V0.12.1 releases, can be found in the [OpenJ9 GitHub repository](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.12/0.12.1.md).
 
 <!-- ==== END OF TOPIC ==== version0.12.1.md ==== -->
