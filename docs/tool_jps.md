@@ -24,6 +24,8 @@
 
 # Java process status
 
+![Start of content that applies only to Java 12](cr/java12.png)
+
 Use the `jps` tool to query running Java&trade; processes. The tool shows information for every Java process that is owned by the current user ID on the current host. The command syntax is as follows:
 
     jps [<options>]
@@ -53,7 +55,7 @@ For example:
     5462
     14332
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation specific to OpenJ9. 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation specific to OpenJ9.
 
 The tool uses the Attach API, and has the following limitations:
 

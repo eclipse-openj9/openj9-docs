@@ -29,9 +29,10 @@ The following new features and notable changes since v.0.12.1 are included in th
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies only to Java 12](cr/java12.png) [Support for OpenSSL 1.0.2](#support-for-openssl-102)
-- [New Java&trade; process status tool](#new-java-process-status-tool)
+- ![Start of content that applies only to Java 12](cr/java12.png) [New Java&trade; process status tool](#new-java-process-status-tool)
 - [Writing a Java dump to STDOUT or STDERR](#writing-a-java-dump-to-stdout-or-stderr)
 - [Better diagnostic information for Linux systems that implement control groups](#better-diagnostic-information-for-linux-systems-that-implement-control-groups)
+- [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
 
 ## Features and changes
 
@@ -74,6 +75,15 @@ You can now write a Java dump file to STDOUT or STDERR by using the [`-Xdump`](x
 ### Better diagnostic information for Linux systems that implement control groups
 
 If you use control groups (cgroups) to manage resources on Linux systems, information about CPU and memory limits is now recorded in a Java dump file. This information is particularly important for applications that run in Docker containers, because when resource limits are set inside a container, the Docker Engine relies on cgroups to enforce the settings. If you are getting a Java `OutOfMemoryError` error because a container limit has been set on the amount of memory available to an application and this allocation is not sufficient, you can diagnose this problem from the Java dump file. You can find the cgroup information in the ENVINFO section. For sample output, see [Java dump (ENVINFO)](dump_javadump.md#envinfo).
+
+### Improved support for pause-less garbage collection
+
+Concurrent scavenge mode is now supported on the following platforms:
+
+- Linux on POWER LE
+- AIX
+
+For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge) option.
 
 ## Full release information
 

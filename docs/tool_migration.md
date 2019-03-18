@@ -30,6 +30,8 @@ OpenJ9 provides the following tools, which might differ in behavior from the Hot
 
 #### Java process status (`jps`)
 
+![Start of content that applies only to Java 12](cr/java12.png)
+
 Displays information about running Java<sup>&trade;</sup> processes. The main differences from the HotSpot `jps` tool are as follows:
 
 - Runs on Windows&reg;, AIX&reg;, and z/OS&reg;
@@ -39,6 +41,7 @@ Displays information about running Java<sup>&trade;</sup> processes. The main di
 
 For more information, see [`Java process status`](tool_jps.md).
 
+![End of content that applies only to Java 12](cr/java_close.png)
 
 
 
