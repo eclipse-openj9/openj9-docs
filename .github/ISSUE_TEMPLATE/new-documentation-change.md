@@ -10,6 +10,8 @@ about: Request updates as a result of external changes at github.com/eclipse/ope
 **Overview:**
 *Describe the external change and the impact/benefit from a user perspective.*
 
+**Release target:**
+*E.g. Eclipse OpenJ9 0.14.0*
 
 **Applies to the following JDK versions:**
 *E.g. 8 only / 8 and later / 9 and later*
