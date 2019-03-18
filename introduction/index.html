@@ -3176,13 +3176,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>OpenJDK uses the in-built Java cryptographic implementation by default. However, native cryptographic implementations
 typically provide better performance. OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and
 Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.1.x implementation is
-currently supported for the <!--Digest,--> CBC, GCM, and RSA algorithms.</p>
-<p>OpenSSL support is enabled by default for all these supported algorithms. If you want to limit support to specific algorithms, a number of
+currently supported for the <img alt="Start of content that applies only to Java 12" src="../cr/java12.png" />Digest<img alt="End of content that applies only to Java 12" src="../cr/java_close.png" />, CBC, GCM, and RSA algorithms.</p>
+<p><img alt="Start of content that applies only to Java 12" src="../cr/java12.png" />The OpenSSL V1.0.2 implementation is also supported for the Digest, CBC, GCM, and
+RSA algorithms. On Linux and AIX platforms, the OpenSSL 1.0.2 or 1.1.X library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On other platforms, the OpenSSL 1.1.X library is currently bundled with the binaries from AdoptOpenJDK. <img alt="End of content that applies only to Java 12" src="../cr/java_close.png" /></p>
+<p>OpenSSL support is enabled by default for all supported algorithms. If you want to limit support to specific algorithms, a number of
 system properties are available for tuning the implementation.</p>
 <p>Each algorithm can be disabled individually by setting the following system properties on the command line:</p>
-<!--- To turn off **digest**, set `-Djdk.nativeDigest=false`-->
-
 <ul>
+<li><img alt="Start of content that applies only to Java 12" src="../cr/java12.png" />To turn off <strong>digest</strong>, set <code>-Djdk.nativeDigest=false</code><img alt="End of content that applies only to Java 12" src="../cr/java_close.png" /></li>
 <li>To turn off <strong>CBC</strong>, set <code>-Djdk.nativeCBC=false</code></li>
 <li>To turn off <strong>GCM</strong>, set <code>-Djdk.nativeGCM=false</code></li>
 <li>To turn off <strong>RSA</strong>, set <code>-Djdk.nativeRSA=false</code></li>
@@ -3192,7 +3193,7 @@ system properties are available for tuning the implementation.</p>
 </pre></div>
 
 
-<p>To build a version of OpenJDK with OpenJ9 that includes OpenSSL v1.1.x support, follow the steps in our detailed build instructions:</p>
+<p>To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow the steps in our detailed build instructions:</p>
 <ul>
 <li><a href="https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V8.md">OpenJDK 8 with OpenJ9</a>.</li>
 <li><a href="https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md">OpenJDK 11 with OpenJ9</a>.</li>

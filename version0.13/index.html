@@ -407,6 +407,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#support-for-openssl-102" title="Support for OpenSSL 1.0.2" class="md-nav__link">
+    Support for OpenSSL 1.0.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-java-process-status-tool" title="New Java process status tool" class="md-nav__link">
     New Java process status tool
   </a>
@@ -3018,6 +3025,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#support-for-openssl-102" title="Support for OpenSSL 1.0.2" class="md-nav__link">
+    Support for OpenSSL 1.0.2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-java-process-status-tool" title="New Java process status tool" class="md-nav__link">
     New Java process status tool
   </a>
@@ -3105,6 +3119,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h1 id="whats-new-in-version-0130">What's new in version 0.13.0</h1>
 <p>The following new features and notable changes since v.0.12.1 are included in this release:</p>
 <ul>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><img alt="Start of content that applies only to Java 12" src="../cr/java12.png" /> <a href="#support-for-openssl-102">Support for OpenSSL 1.0.2</a></li>
 <li><img alt="Start of content that applies only to Java 12" src="../cr/java12.png" /> <a href="#new-java-process-status-tool">New Java&trade; process status tool</a></li>
 <li><a href="#writing-a-java-dump-to-stdout-or-stderr">Writing a Java dump to STDOUT or STDERR</a></li>
 <li><a href="#better-diagnostic-information-for-linux-systems-that-implement-control-groups">Better diagnostic information for Linux systems that implement control groups</a></li>
@@ -3117,11 +3133,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk12&amp;jvmVariant=openj9">OpenJDK version 12</a></li>
 </ul>
 <p>OpenJDK 12 with Eclipse OpenJ9 is not a long term support (LTS) release.</p>
-<p>Although it is possible to build an OpenJDK 8, or other versions, with OpenJ9 0.13.0, testing at the project is not complete and therefore support is not available.</p>
-<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a></p>
+<p>The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK community are for Eclipse OpenJ9 release 0.12.0. Features mentioned in these release notes are not available in these builds. Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 0.13.0, testing at the project is not complete and therefore support for any of these features is not available.</p>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="support-for-openssl-102">Support for OpenSSL 1.0.2</h3>
+<p><img alt="Start of content that applies only to Java 12" src="../cr/java12.png" /></p>
+<p>OpenSSL cryptographic support is extended to include OpenSSL 1.0.2 for the Digest, CBC, GCM, and RSA algorithms. Support is enabled by default. On Linux and AIX platforms, the OpenSSL libraries are expected to be available on the system path. For more information about cryptographic acceleration with OpenSSL, see <a href="../introduction/#cryptographic-operations">Cryptographic operations</a>.</p>
+<p>In addition, support for the OpenSSL Digest algorithm is re-enabled in this release following the resolution of issue <a href="https://github.com/eclipse/openj9/issues/4530">#4530</a>.</p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Warning:</strong> Earlier versions of OpenJDK with OpenJ9 from the AdoptOpenJDK project bundle OpenSSL as part of the binary package. On Linux and AIX systems, OpenSSL is no longer bundled and the libraries are expected to be available on the system path.</p>
+<p><img alt="End of content that applies only to Java 12" src="../cr/java_close.png" /></p>
 <h3 id="new-java-process-status-tool">New Java process status tool</h3>
 <p><img alt="Start of content that applies only to Java 12" src="../cr/java12.png" /></p>
-<p>A Java process status tool (<code>jps</code>) is available for querying running Java processes. For more information, see <a href="../tool_jps/">Java process status</a></p>
+<p>A Java process status tool (<code>jps</code>) is available for querying running Java processes. For more information, see <a href="../tool_jps/">Java process status</a>.</p>
+<p><img alt="End of content that applies only to Java 12" src="../cr/java_close.png" /></p>
 <h3 id="writing-a-java-dump-to-stdout-or-stderr">Writing a Java dump to STDOUT or STDERR</h3>
 <p>You can now write a Java dump file to STDOUT or STDERR by using the <a href="../xdump/"><code>-Xdump</code></a> command-line option. See <a href="../xdump/#writing-to-stdoutstderr">Writing to <code>STDOUT</code>/<code>STDERR</code></a> for details.</p>
 <h3 id="better-diagnostic-information-for-linux-systems-that-implement-control-groups">Better diagnostic information for Linux systems that implement control groups</h3>
@@ -3134,8 +3157,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 <p>For more information, see the <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a> option.</p>
 <h2 id="full-release-information">Full release information</h2>
-<p>To see a complete list of changes between Eclipse OpenJ9 V0.12.1 and V0.13.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.13/0.13.md">Release notes</a>.
-<!-- ==== END OF TOPIC ==== cmdline_general.md ==== --></p>
+<p>To see a complete list of changes between Eclipse OpenJ9 V0.12.1 and V0.13.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.13/0.13.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.13.md ==== -->
                 
                   
                 

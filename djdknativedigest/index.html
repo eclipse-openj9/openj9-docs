@@ -850,9 +850,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        -Djdk.nativeDigest
+      </label>
+    
     <a href="./" title="-Djdk.nativeDigest" class="md-nav__link md-nav__link--active">
       -Djdk.nativeDigest
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" title="Explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2924,6 +2960,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
   
   
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" title="Explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2964,24 +3023,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-djdknativedigest">-Djdk.nativeDigest</h1>
+<p><img alt="Start of content that applies only to Java 12" src="../cr/java12.png" /></p>
 <p>This option enables or disables OpenSSL native cryptographic support for the Digest algorithm.</p>
-<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> Due to Github issue <a href="https://github.com/eclipse/openj9/issues/4530">#4530</a>, this option is disabled and has no effect. Currently, the Digest algorithm is not enabled by default.</p>
-<!--## Syntax
+<h2 id="syntax">Syntax</h2>
+<div class="codehilite"><pre><span></span>    -Djdk.nativeDigest=[true|false]
+</pre></div>
 
-        -Djdk.nativeDigest=[true|false]
 
-| Setting              | value    | Default                                                                        |
-|----------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeDigest` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-Djdk.nativeDigest` | false    |                                                                                |
-
-## Explanation
-
-OpenSSL support is enabled by default for the CBC, Digest, GCM, and RSA algorithm. If you want to turn off the Digest algorithm, set this option to `false`.
-
-To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.-->
-
-<!-- ==== END OF TOPIC ==== dcomibmdbgmalloc.md ==== -->
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>value</th>
+<th align="center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-Djdk.nativeDigest</code></td>
+<td>true</td>
+<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
+</tr>
+<tr>
+<td><code>-Djdk.nativeDigest</code></td>
+<td>false</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explanation">Explanation</h2>
+<p>OpenSSL support is enabled by default for the CBC, Digest, GCM, and RSA algorithm. If you want to turn off the Digest algorithm, set this option to <code>false</code>.</p>
+<p>To turn off all the algorithms, see the <a href="../djdknativecrypto/">-Djdk.nativeCrypto</a> system property command line option.</p>
+<p><img alt="End of content that applies only to Java 12" src="../cr/java_close.png" /></p>
+<!-- ==== END OF TOPIC ==== djdknativedigest.md ==== -->
                 
                   
                 
