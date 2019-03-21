@@ -101,13 +101,13 @@ timeout(time: 6, unit: 'HOURS') {
 
                             // Need to insert website banners to identify the documentation
                             if (params.ghprbPullId) {
-                                // Staging site banner
+                                // If a pull request, use staging site banner
                                 sh """
                                     sed -i 's|{% block hero %}|<!--Staging site notice --><div class="md-container"><div style="margin:-5rem 0 -5rem 0; background: linear-gradient(white, #69c1bd, white); color:white; text-align:center; font-size:1.5rem; font-weight:bold; text-shadow: 2px 2px 4px #000000;"><p style="padding:2rem 0 2rem 0;"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> CAUTION: This site is for reviewing draft documentation. For published content, visit <a style="color:#af6e3d; text-shadow:none; padding-left:1rem;" href="http://www.eclipse.org/openj9/docs/index.html">www.eclipse.org/openj9/docs</a></p></div>{% block hero %}|' theme/base.html
                                     """
                             }
-                            else {
-                                // Ghpages site banner
+                            else if (params.BUILD_TYPE != "RELEASE") {
+                                // Otherwise, and if this isn't for a release, use ghpages site banner
                                 sh """
                                     sed -i 's|{% block hero %}|<!--Ghpages site notice --><div class="md-container"><div style="margin:-5rem 0 -5rem 0; background: linear-gradient(white, #ffa02e, white); color:white; text-align:center; font-size:1.5rem; font-weight:bold; text-shadow: 2px 2px 4px #000000;"><p style="padding:2rem 0 2rem 0;"><i class="fa fa-cogs" aria-hidden="true"></i> CAUTION: This site hosts draft documentation for the next release. For published content of the latest release, visit <a style="color:#af6e3d; text-shadow:none; padding-left:1rem;" href="http://www.eclipse.org/openj9/docs/index.html">www.eclipse.org/openj9/docs</a></p></div>{% block hero %}|' theme/base.html
                                     """
