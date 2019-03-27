@@ -33,7 +33,7 @@ The following new features and notable changes since v.0.13.0 are included in th
 
 ### New option for ignoring or reporting unrecognized -XX: options
 
-By default, unrecognized `-XX:` command-line options are ignored, which prevents an application failing to start. You can now use  `-XX:-IgnoreUnrecognizedXXColonOptions` to turn off this behavior, so that unrecognized `-XX:` options are reported instead. For more information, see [`-XX:\[+|-\]IgnoreUnrecognizedXXColonOptions`](xxignoreunrecognizedxxcolonoptions.md).
+By default, unrecognized `-XX:` command-line options are ignored, which prevents an application failing to start. You can now use  `-XX:-IgnoreUnrecognizedXXColonOptions` to turn off this behavior, so that unrecognized `-XX:` options are reported instead. For more information, see [`-XX:[+|-]IgnoreUnrecognizedXXColonOptions`](xxignoreunrecognizedxxcolonoptions.md).
 
 ## Full release information
 
