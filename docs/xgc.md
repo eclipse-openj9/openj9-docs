@@ -51,7 +51,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
 ### `concurrentScavenge`
 
-**(64-bit: Windows, Linux on x86, Linux on IBM Z&reg;, z/OS&reg;, Linux on POWER&reg; LE, or AIX)**
+**(64-bit: Windows, AIX, Linux (x86, POWER&reg;, or IBM Z&reg;), and z/OS&reg;)**
 
         -Xgc:concurrentScavenge
 
