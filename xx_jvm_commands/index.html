@@ -363,6 +363,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../version0.14/" title="Version 0.14.0" class="md-nav__link">
+      Version 0.14.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../version0.13/" title="Version 0.13.0" class="md-nav__link">
       Version 0.13.0
     </a>
@@ -2459,6 +2471,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxignoreunrecognizedxxcolonoptions/" title="-XX:[+|-]IgnoreUnrecognizedXXColonOptions" class="md-nav__link">
+      -XX:[+|-]IgnoreUnrecognizedXXColonOptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxinitialrampercentage/" title="-XX:InitialRAMPercentage" class="md-nav__link">
       -XX:InitialRAMPercentage
     </a>
@@ -2964,7 +2988,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="using-xx-command-line-options">Using -XX command-line options</h1>
-<p>Java&trade; VM command-line options that are specified with -XX: are not checked for validity. If the VM does not recognize the option, the option is ignored. These options can therefore be used across different VM versions without ensuring a particular level of the VM.</p>
+<p>Java&trade; VM command-line options that are specified with <code>-XX:</code> are not checked for validity. If the VM does not recognize the option, the option is ignored. These options can therefore be used across different VM versions without ensuring a particular level of the VM.  If you want
+to turn off this behavior to test whether your -XX options are valid, use the <a href="../xxignoreunrecognizedxxcolonoptions/">-XX:-IgnoreUnrecognizedXXColonOptions</a> option.</p>
 <p>For options that take a <code>&lt;size&gt;</code> parameter, add a suffix to the size value: "k" or "K" to indicate kilobytes, "m" or "M" to indicate megabytes, or "g" or "G" to indicate gigabytes.</p>
 <p>For example, to set the <code>-Xmx</code> value to 16 MB, you can specify <code>-Xmx16M</code>, <code>-Xmx16m</code>, <code>-Xmx16384K</code>, or <code>Xmx16384k</code> on the command line.</p>
 <!-- ==== END OF TOPIC ==== xx_jvm_commands.md ==== -->
