@@ -400,8 +400,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" title="Binaries and supported environments" class="md-nav__link">
+    Binaries and supported environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-option-for-ignoring-or-reporting-unrecognized-xx-options" title="New option for ignoring or reporting unrecognized -XX: options" class="md-nav__link">
     New option for ignoring or reporting unrecognized -XX: options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved-support-for-pause-less-garbage-collection" title="Improved support for pause-less garbage collection" class="md-nav__link">
+    Improved support for pause-less garbage collection
   </a>
   
 </li>
@@ -3007,8 +3021,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" title="Binaries and supported environments" class="md-nav__link">
+    Binaries and supported environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-option-for-ignoring-or-reporting-unrecognized-xx-options" title="New option for ignoring or reporting unrecognized -XX: options" class="md-nav__link">
     New option for ignoring or reporting unrecognized -XX: options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved-support-for-pause-less-garbage-collection" title="Improved support for pause-less garbage collection" class="md-nav__link">
+    Improved support for pause-less garbage collection
   </a>
   
 </li>
@@ -3073,11 +3101,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h1 id="whats-new-in-version-0140">What's new in version 0.14.0</h1>
 <p>The following new features and notable changes since v.0.13.0 are included in this release:</p>
 <ul>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#new-option-for-ignoring-or-reporting-unrecognized-xx-options">New option for ignoring or reporting unrecognized -XX: options</a></li>
+<li><a href="#improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>OpenJ9 release 0.14.0 supports OpenJDK 8, 11, and 12. Binaries are available from the AdoptOpenJDK community at the following links:</p>
+<ul>
+<li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk8&amp;jvmVariant=openj9">OpenJDK version 8</a></li>
+<li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk11&amp;jvmVariant=openj9">OpenJDK version 11</a></li>
+<li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk12&amp;jvmVariant=openj9">OpenJDK version 12</a></li>
+</ul>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="new-option-for-ignoring-or-reporting-unrecognized-xx-options">New option for ignoring or reporting unrecognized -XX: options</h3>
 <p>By default, unrecognized <code>-XX:</code> command-line options are ignored, which prevents an application failing to start. You can now use  <code>-XX:-IgnoreUnrecognizedXXColonOptions</code> to turn off this behavior, so that unrecognized <code>-XX:</code> options are reported instead. For more information, see <a href="../xxignoreunrecognizedxxcolonoptions/"><code>-XX:[+|-]IgnoreUnrecognizedXXColonOptions</code></a>.</p>
+<h3 id="improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</h3>
+<p>Support for Concurrent scavenge mode is now extended to Linux on POWER BE architectures. For more information, see the <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a> option.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.13.0 and V0.14.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.14/0.14.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.14.md ==== -->
