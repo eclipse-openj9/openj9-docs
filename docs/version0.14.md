@@ -22,15 +22,21 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Using -XX command-line options
 
-Java&trade; VM command-line options that are specified with `-XX:` are not checked for validity. If the VM does not recognize the option, the option is ignored. These options can therefore be used across different VM versions without ensuring a particular level of the VM.  If you want
-to turn off this behavior to test whether your -XX options are valid, use the [-XX:-IgnoreUnrecognizedXXColonOptions](xxignoreunrecognizedxxcolonoptions.md) option.
+# What's new in version 0.14.0
 
-For options that take a `<size>` parameter, add a suffix to the size value: "k" or "K" to indicate kilobytes, "m" or "M" to indicate megabytes, or "g" or "G" to indicate gigabytes.
+The following new features and notable changes since v.0.13.0 are included in this release:
 
-For example, to set the `-Xmx` value to 16 MB, you can specify `-Xmx16M`, `-Xmx16m`, `-Xmx16384K`, or `Xmx16384k` on the command line.
+- [New option for ignoring or reporting unrecognized -XX: options](#new-option-for-ignoring-or-reporting-unrecognized-xx-options)
 
+## Features and changes
 
+### New option for ignoring or reporting unrecognized -XX: options
 
-<!-- ==== END OF TOPIC ==== xx_jvm_commands.md ==== -->
+By default, unrecognized `-XX:` command-line options are ignored, which prevents an application failing to start. You can now use  `-XX:-IgnoreUnrecognizedXXColonOptions` to turn off this behavior, so that unrecognized `-XX:` options are reported instead. For more information, see [`-XX:[+|-]IgnoreUnrecognizedXXColonOptions`](xxignoreunrecognizedxxcolonoptions.md).
+
+## Full release information
+
+To see a complete list of changes between Eclipse OpenJ9 V0.13.0 and V0.14.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.14/0.14.md).
+
+<!-- ==== END OF TOPIC ==== version0.14.md ==== -->
