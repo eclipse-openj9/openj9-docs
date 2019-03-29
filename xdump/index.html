@@ -4470,7 +4470,7 @@ You can prevent the VM reverting to different dump locations by using the <code>
 <p>The VM exclusive access mechanism allows a VM thread to halt the activity of other VM threads in a controlled way by using internal VM locks. When the <code>request=exclusive</code> option is specified for a dump agent, the VM thread that is producing the dump waits for threads that are running Java code to halt, and for garbage collection operations to complete, before the dump file is written. This process helps ensure that the dump has consistent data. When the dump is complete, the mechanism allows the other threads to resume.</p>
 <p>By default, only system dumps for <code>OutOfMemoryError</code> exceptions request exclusive access. Other system dump events typically result from a crash. In these cases, exclusive access is not requested because acquiring locks during a crash can be problematic.</p>
 <p>If system dumps are requested by using the <code>com.ibm.jvm.Dump.SystemDump()</code> API, the default system dump agent settings are used, and exclusive access is not requested. However, if you intend to use the system dump file for Java heap memory analysis, use the following option to request exclusive access when the dump is taken:</p>
-<div class="codehilite"><pre><span></span>-Xdump:system:defaults:request=exclusive+compact+prewalk
+<div class="codehilite"><pre><span></span>-Xdump:system:defaults:request=exclusive+compact+prepwalk
 </pre></div>
 
 
