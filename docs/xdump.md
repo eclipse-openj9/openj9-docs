@@ -725,7 +725,7 @@ By default, only system dumps for `OutOfMemoryError` exceptions request exclusiv
 If system dumps are requested by using the `com.ibm.jvm.Dump.SystemDump()` API, the default system dump agent settings are used, and exclusive access is not requested. However, if you intend to use the system dump file for Java heap memory analysis, use the following option to request exclusive access when the dump is taken:
 
 ```
--Xdump:system:defaults:request=exclusive+compact+prewalk
+-Xdump:system:defaults:request=exclusive+compact+prepwalk
 ```
 
 These settings avoid capturing a dump file with in-flight data during garbage collection.
