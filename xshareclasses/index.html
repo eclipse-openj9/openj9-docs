@@ -4198,7 +4198,7 @@ with shared class cache.
 
 <dl>
 <dd>Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the <code>nonpersistent</code> suboption when you run utilities such as <code>destroy</code> on a nonpersistent cache. z/OS supports only nonpersistent caches.</dd>
-<dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On macOS systems, you must set <code>kern.sysv.shmmax</code> and <code>kern.sysv.shmall</code> when using a non-persistent cache.</dd>
+<dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On macOS systems, you must set <code>kern.sysv.shmmax</code> and <code>kern.sysv.shmall</code> when using a nonpersistent cache.</dd>
 </dl>
 <h3 id="persistent"><code>persistent</code></h3>
 <div class="codehilite"><pre><span></span>    -Xshareclasses:persistent
@@ -4207,6 +4207,7 @@ with shared class cache.
 
 <dl>
 <dd>Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Nonpersistent and persistent caches can have the same name. On AIX, you must always use the <code>persistent</code> suboption when you run utilities such as <code>destroy</code> on a persistent cache.</dd>
+<dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Persisent caches are not supported on z/OS systems. z/OS supports only nonpersistent caches.</dd>
 </dl>
 <h3 id="printallstats-cache-utility"><code>printAllStats</code> (Cache utility)</h3>
 <div class="codehilite"><pre><span></span>    -Xshareclasses:printAllStats
