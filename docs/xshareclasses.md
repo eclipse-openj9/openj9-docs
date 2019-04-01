@@ -372,13 +372,15 @@ case, the VM continues without using shared classes.
 
 :   Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a nonpersistent cache. z/OS supports only nonpersistent caches.
 
-:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a non-persistent cache.
+:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a nonpersistent cache.
 
 ### `persistent`
 
         -Xshareclasses:persistent
 
 :   Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Nonpersistent and persistent caches can have the same name. On AIX, you must always use the `persistent` suboption when you run utilities such as `destroy` on a persistent cache.
+
+:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Persisent caches are not supported on z/OS systems. z/OS supports only nonpersistent caches.
 
 ### `printAllStats` (Cache utility)
 
