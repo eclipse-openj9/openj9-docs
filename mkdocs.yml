@@ -294,6 +294,7 @@ pages:
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
             - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md
+            - "-XX:[+|-]ReadIPInfoForRAS"                                        : xxreadipinfoforras.md
             - "-XX:[+|-]ReduceCPUMonitorOverhead"                                : xxreducecpumonitoroverhead.md
             - "-XX:[+|-]RuntimeInstrumentation"                                  : xxruntimeinstrumentation.md
             - "-XXsetHWPrefetch"                                                 : xxsethwprefetch.md
