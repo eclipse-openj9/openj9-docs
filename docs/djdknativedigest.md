@@ -24,8 +24,6 @@
 
 # -Djdk.nativeDigest
 
-![Start of content that applies only to Java 12](cr/java12.png)
-
 This option enables or disables OpenSSL native cryptographic support for the Digest algorithm.
 
 ## Syntax
@@ -43,7 +41,6 @@ OpenSSL support is enabled by default for the CBC, Digest, GCM, and RSA algorith
 
 To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
 
-![End of content that applies only to Java 12](cr/java_close.png)
 
 
 <!-- ==== END OF TOPIC ==== djdknativedigest.md ==== -->

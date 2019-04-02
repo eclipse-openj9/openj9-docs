@@ -70,17 +70,16 @@ To improve the performance of applications that run in containers, try setting t
 OpenJDK uses the in-built Java cryptographic implementation by default. However, native cryptographic implementations
 typically provide better performance. OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and
 Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.1.x implementation is
-currently supported for the ![Start of content that applies only to Java 12](cr/java12.png)Digest![End of content that applies only to Java 12](cr/java_close.png), CBC, GCM, and RSA algorithms.
+currently supported for the Digest, CBC, GCM, and RSA algorithms.
 
-![Start of content that applies only to Java 12](cr/java12.png)The OpenSSL V1.0.2 implementation is also supported for the Digest, CBC, GCM, and
-RSA algorithms. On Linux and AIX platforms, the OpenSSL 1.0.2 or 1.1.X library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On other platforms, the OpenSSL 1.1.X library is currently bundled with the binaries from AdoptOpenJDK. ![End of content that applies only to Java 12](cr/java_close.png)
+The OpenSSL V1.0.2 implementation is also supported for the Digest, CBC, GCM, and RSA algorithms. On Linux and AIX platforms, the OpenSSL 1.0.2 or 1.1.X library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On other platforms, the OpenSSL 1.1.X library is currently bundled with the binaries from AdoptOpenJDK.
 
 OpenSSL support is enabled by default for all supported algorithms. If you want to limit support to specific algorithms, a number of
 system properties are available for tuning the implementation.
 
 Each algorithm can be disabled individually by setting the following system properties on the command line:
 
-- ![Start of content that applies only to Java 12](cr/java12.png)To turn off **digest**, set `-Djdk.nativeDigest=false`![End of content that applies only to Java 12](cr/java_close.png)
+- To turn off **Digest**, set `-Djdk.nativeDigest=false`
 - To turn off **CBC**, set `-Djdk.nativeCBC=false`
 - To turn off **GCM**, set `-Djdk.nativeGCM=false`
 - To turn off **RSA**, set `-Djdk.nativeRSA=false`
