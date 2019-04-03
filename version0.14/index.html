@@ -427,6 +427,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address" title="New option to prevent a network query being used to determine host name and IP address" class="md-nav__link">
+    New option to prevent a network query being used to determine host name and IP address
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2671,6 +2678,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxreadipinfoforras/" title="-XX:[+|-]ReadIPInfoForRAS" class="md-nav__link">
+      -XX:[+|-]ReadIPInfoForRAS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxreducecpumonitoroverhead/" title="-XX:[+|-]ReduceCPUMonitorOverhead" class="md-nav__link">
       -XX:[+|-]ReduceCPUMonitorOverhead
     </a>
@@ -3055,6 +3074,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address" title="New option to prevent a network query being used to determine host name and IP address" class="md-nav__link">
+    New option to prevent a network query being used to determine host name and IP address
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3119,6 +3145,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#support-for-openssl-102">Support for OpenSSL 1.0.2</a></li>
 <li><a href="#new-option-for-ignoring-or-reporting-unrecognized-xx-options">New option for ignoring or reporting unrecognized -XX: options</a></li>
 <li><a href="#improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</a></li>
+<li><a href="#new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address">New option to prevent a network query being used to determine host name and IP address</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3136,7 +3163,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h3 id="new-option-for-ignoring-or-reporting-unrecognized-xx-options">New option for ignoring or reporting unrecognized -XX: options</h3>
 <p>By default, unrecognized <code>-XX:</code> command-line options are ignored, which prevents an application failing to start. You can now use  <code>-XX:-IgnoreUnrecognizedXXColonOptions</code> to turn off this behavior, so that unrecognized <code>-XX:</code> options are reported instead. For more information, see <a href="../xxignoreunrecognizedxxcolonoptions/"><code>-XX:[+|-]IgnoreUnrecognizedXXColonOptions</code></a>.</p>
 <h3 id="improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</h3>
-<p>Support for Concurrent scavenge mode is now extended to Linux on POWER BE architectures. For more information, see the <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a> option.</p>
+<p>Support for Concurrent scavenge mode is now extended to Linux on POWER BE architectures. For more information, see <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a>.</p>
+<h3 id="new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address">New option to prevent a network query being used to determine host name and IP address</h3>
+<p>By default, a network query is used to determine the host name and IP address for troubleshooting purposes. To avoid your program waiting to time out if a nameserver cannot be contacted, you can now prevent the query from being performed. For more information, see <a href="../xxreadipinfoforras/"><code>-XX:[+|-]ReadIPInfoForRAS</code></a>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.13.0 and V0.14.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.14/0.14.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.14.md ==== -->

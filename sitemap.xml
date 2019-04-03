@@ -901,6 +901,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/xxreadipinfoforras/</loc>
+     <lastmod>2019-04-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/xxreducecpumonitoroverhead/</loc>
      <lastmod>2019-04-03</lastmod>
      <changefreq>daily</changefreq>
