@@ -31,6 +31,8 @@ The following new features and notable changes since v.0.13.0 are included in th
 - [Support for OpenSSL 1.0.2](#support-for-openssl-102)
 - [New option for ignoring or reporting unrecognized -XX: options](#new-option-for-ignoring-or-reporting-unrecognized-xx-options)
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
+- [New Java stack (`jstack`) tool for obtaining stack traces and thread information](#new-jstack-tool-for-obtaining-stack-traces-and-thread-information)
+- [New Java process status (`jps`) tool](#new-jps-tool)
 
 ## Features and changes
 
@@ -59,6 +61,15 @@ By default, unrecognized `-XX:` command-line options are ignored, which prevents
 ### Improved support for pause-less garbage collection
 
 Support for Concurrent scavenge mode is now extended to Linux on POWER BE architectures. For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge) option.
+
+### New jstack tool for obtaining stack traces and thread information
+
+For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the `jstack` tool. To learn how to use the tool and
+about any differences compared to the HotSpot tool of the same name, see [Java stack tool](tool_jstack.md).
+
+### New jps tool
+
+OpenJ9 release 0.13.0 introduced support for the `jps` tool for Java 12. In this release, support is added for Java 8 and 11. The `jps` tool can be used to  query running Java processes. For more information, see [Java process status](tool_jps.md).
 
 ## Full release information
 

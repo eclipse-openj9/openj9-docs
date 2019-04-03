@@ -30,8 +30,6 @@ OpenJ9 provides the following tools, which might differ in behavior from the Hot
 
 #### Java process status (`jps`)
 
-![Start of content that applies only to Java 12](cr/java12.png)
-
 Displays information about running Java<sup>&trade;</sup> processes. The main differences from the HotSpot `jps` tool are as follows:
 
 - Runs on Windows&reg;, AIX&reg;, and z/OS&reg;
@@ -41,8 +39,16 @@ Displays information about running Java<sup>&trade;</sup> processes. The main di
 
 For more information, see [`Java process status`](tool_jps.md).
 
-![End of content that applies only to Java 12](cr/java_close.png)
+#### Java stack (`jstack`) tool
 
+Displays information about Java stack traces and thread information for processes. The main differences from the HotSpot `jstack` tool are as follows:
+
+- In the interests of security, the OpenJ9 implementation of `jstack` prints only information about local processes that are owned by the current user.
+- Printing data for core dumps is not supported. Use the [Dump viewer](tool_jdmpview.md) instead.
+- There is no `-m` option. Printing data for native stack frames is not supported.
+- There is no `-F` option to force a dump, although this might be accomplished using `kill -QUIT <pid>` on some platforms.
+
+For more information, see [`jstack`](tool_jstack.md).
 
 
 <!-- ==== END OF TOPIC ==== tools_migration.md ==== -->
