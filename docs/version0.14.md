@@ -31,6 +31,7 @@ The following new features and notable changes since v.0.13.0 are included in th
 - [Support for OpenSSL 1.0.2](#support-for-openssl-102)
 - [New option for ignoring or reporting unrecognized -XX: options](#new-option-for-ignoring-or-reporting-unrecognized-xx-options)
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
+- [New option to prevent a network query being used to determine host name and IP address](#new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address)
 
 ## Features and changes
 
@@ -58,7 +59,11 @@ By default, unrecognized `-XX:` command-line options are ignored, which prevents
 
 ### Improved support for pause-less garbage collection
 
-Support for Concurrent scavenge mode is now extended to Linux on POWER BE architectures. For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge) option.
+Support for Concurrent scavenge mode is now extended to Linux on POWER BE architectures. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
+
+### New option to prevent a network query being used to determine host name and IP address
+
+By default, a network query is used to determine the host name and IP address for troubleshooting purposes. To avoid your program waiting to time out if a nameserver cannot be contacted, you can now prevent the query from being performed. For more information, see [`-XX:[+|-]ReadIPInfoForRAS`](xxreadipinfoforras.md).
 
 ## Full release information
 
