@@ -63,7 +63,7 @@
     
     
       
-        <title>Java process status -  </title>
+        <title>Java process status (jps) -  </title>
       
     
     
@@ -134,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#java-process-status" tabindex="1" class="md-skip">
+      <a href="../#java-process-status-jps" tabindex="1" class="md-skip">
         
       </a>
     
@@ -2821,10 +2821,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
     
     
-    <a href="./" title="Java process status" class="md-nav__link md-nav__link--active">
-      Java process status
+    <a href="./" title="Java process status (jps)" class="md-nav__link md-nav__link--active">
+      Java process status (jps)
     </a>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jstack/" title="Java stack (jstack) tool" class="md-nav__link">
+      Java stack (jstack) tool
+    </a>
   </li>
 
         
@@ -2997,7 +3009,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="java-process-status">Java process status</h1>
+<h1 id="java-process-status-jps">Java process status (<code>jps</code>)</h1>
 <p><img alt="Start of content that applies only to Java 12" src="../cr/java12.png" /></p>
 <p>Use the <code>jps</code> tool to query running Java&trade; processes. The tool shows information for every Java process that is owned by the current user ID on the current host. The command syntax is as follows:</p>
 <div class="codehilite"><pre><span></span>jps [&lt;options&gt;]
@@ -3029,7 +3041,7 @@ $ jps -q
 </pre></div>
 
 
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation specific to OpenJ9.</p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restrictions:</strong> This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9.</p>
 <p>The tool uses the Attach API, and has the following limitations:</p>
 <ul>
 <li>Does not list Java processes on other hosts, to enhance security</li>
@@ -3096,13 +3108,13 @@ $ jps -q
                       </a>
                     
                     
-                      <a href="tool_migration/" title="Switching to OpenJ9" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="tool_jstack/" title="Java stack (jstack) tool" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            Switching to OpenJ9
+                            Java stack (jstack) tool
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">

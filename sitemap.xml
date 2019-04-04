@@ -986,6 +986,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_jstack/</loc>
+     <lastmod>2019-04-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/tool_migration/</loc>
      <lastmod>2019-04-04</lastmod>
      <changefreq>daily</changefreq>
