@@ -314,7 +314,8 @@ pages:
         - "Dump viewer"                                                           : tool_jdmpview.md
         - "Trace formatter"                                                       : tool_traceformat.md
         - "Option builder"                                                        : tool_builder.md
-        - "Java process status"                                                   : tool_jps.md
+        - "Java process status (jps)"                                             : tool_jps.md
+        - "Java stack (jstack) tool"                                              : tool_jstack.md
         - "Switching to OpenJ9"                                                   : tool_migration.md        
 
         
