@@ -33,6 +33,7 @@ The following new features and notable changes since v.0.13.0 are included in th
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
 - [New Java stack (`jstack`) tool for obtaining stack traces and thread information](#new-jstack-tool-for-obtaining-stack-traces-and-thread-information)
 - [New Java process status (`jps`) tool](#new-jps-tool)
+- [New option to prevent a network query being used to determine host name and IP address](#new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address)
 
 ## Features and changes
 
@@ -60,7 +61,7 @@ By default, unrecognized `-XX:` command-line options are ignored, which prevents
 
 ### Improved support for pause-less garbage collection
 
-Support for Concurrent scavenge mode is now extended to Linux on POWER BE architectures. For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge) option.
+Support for Concurrent scavenge mode is now extended to Linux on POWER BE architectures. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
 
 ### New jstack tool for obtaining stack traces and thread information
 
@@ -70,6 +71,10 @@ about any differences compared to the HotSpot tool of the same name, see [Java s
 ### New jps tool
 
 OpenJ9 release 0.13.0 introduced support for the `jps` tool for Java 12. In this release, support is added for Java 8 and 11. The `jps` tool can be used to  query running Java processes. For more information, see [Java process status](tool_jps.md).
+
+### New option to prevent a network query being used to determine host name and IP address
+
+By default, a network query is used to determine the host name and IP address for troubleshooting purposes. To avoid your program waiting to time out if a nameserver cannot be contacted, you can now prevent the query from being performed. For more information, see [`-XX:[+|-]ReadIPInfoForRAS`](xxreadipinfoforras.md).
 
 ## Full release information
 
