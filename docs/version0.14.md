@@ -34,7 +34,7 @@ The following new features and notable changes since v.0.13.0 are included in th
 - [New Java stack (`jstack`) tool for obtaining stack traces and thread information](#new-jstack-tool-for-obtaining-stack-traces-and-thread-information)
 - [New Java process status (`jps`) tool](#new-jps-tool)
 - [New option to prevent a network query being used to determine host name and IP address](#new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address)
-- [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
+<!-- - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number) -->
 
 ## Features and changes
 
@@ -77,9 +77,11 @@ OpenJ9 release 0.13.0 introduced support for the `jps` tool for Java 12. In this
 
 By default, a network query is used to determine the host name and IP address for troubleshooting purposes. To avoid your program waiting to time out if a nameserver cannot be contacted, you can now prevent the query from being performed. For more information, see [`-XX:[+|-]ReadIPInfoForRAS`](xxreadipinfoforras.md).
 
+<!--
 ### Changes to the shared classes cache generation number
 
 On all platforms, the format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache, rather than re-creating or reusing an existing cache. To save space, all existing shared caches can be removed unless they are in use by an earlier release. For more information about destroying a shared classes cache, see [`-Xshareclasses`](xshareclasses.md).</td>
+-->
 
 ## Full release information
 
