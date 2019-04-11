@@ -448,13 +448,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#changes-to-the-shared-classes-cache-generation-number" title="Changes to the shared classes cache generation number" class="md-nav__link">
-    Changes to the shared classes cache generation number
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3128,13 +3121,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#changes-to-the-shared-classes-cache-generation-number" title="Changes to the shared classes cache generation number" class="md-nav__link">
-    Changes to the shared classes cache generation number
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3201,8 +3187,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</a></li>
 <li><a href="#new-jstack-tool-for-obtaining-stack-traces-and-thread-information">New Java stack (<code>jstack</code>) tool for obtaining stack traces and thread information</a></li>
 <li><a href="#new-jps-tool">New Java process status (<code>jps</code>) tool</a></li>
-<li><a href="#new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address">New option to prevent a network query being used to determine host name and IP address</a></li>
-<li><a href="#changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</a></li>
+<li><a href="#new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address">New option to prevent a network query being used to determine host name and IP address</a>
+<!-- - <a href="#changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</a> --></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3228,8 +3214,12 @@ about any differences compared to the HotSpot tool of the same name, see <a href
 <p>OpenJ9 release 0.13.0 introduced support for the <code>jps</code> tool for Java 12. In this release, support is added for Java 8 and 11. The <code>jps</code> tool can be used to  query running Java processes. For more information, see <a href="../tool_jps/">Java process status</a>.</p>
 <h3 id="new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address">New option to prevent a network query being used to determine host name and IP address</h3>
 <p>By default, a network query is used to determine the host name and IP address for troubleshooting purposes. To avoid your program waiting to time out if a nameserver cannot be contacted, you can now prevent the query from being performed. For more information, see <a href="../xxreadipinfoforras/"><code>-XX:[+|-]ReadIPInfoForRAS</code></a>.</p>
-<h3 id="changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</h3>
-<p>On all platforms, the format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache, rather than re-creating or reusing an existing cache. To save space, all existing shared caches can be removed unless they are in use by an earlier release. For more information about destroying a shared classes cache, see <a href="../xshareclasses/"><code>-Xshareclasses</code></a>.</td></p>
+<!--
+### Changes to the shared classes cache generation number
+
+On all platforms, the format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache, rather than re-creating or reusing an existing cache. To save space, all existing shared caches can be removed unless they are in use by an earlier release. For more information about destroying a shared classes cache, see [`-Xshareclasses`](xshareclasses.md).</td>
+-->
+
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.13.0 and V0.14.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.14/0.14.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.14.md ==== -->
