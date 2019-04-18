@@ -22,9 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Java process status (`jps`)
-
-![Start of content that applies only to Java 12](cr/java12.png)
+# Java process status (`jps`) tool
 
 Use the `jps` tool to query running Java&trade; processes. The tool shows information for every Java process that is owned by the current user ID on the current host. The command syntax is as follows:
 
