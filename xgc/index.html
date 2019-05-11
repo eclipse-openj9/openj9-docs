@@ -3375,7 +3375,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This option supports pause-less garbage collection mode when you use the Generational Concurrent (<a href="../xgcpolicy/"><code>gencon</code></a>) garbage collection policy (the default policy).</p>
 <p>If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications.</p>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note: Linux on Z and z/OS</strong></p>
-<p>This option is supported on IBM z14&trade; hardware running the following software:</p>
+</dd>
+<dd>
+<p>This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode. </p>
+<p>Hardware-based pause-less GC is supported on IBM z14&trade; and later hardware running the following software:</p>
 <p>Operating systems:</p>
 <ul>
 <li>z/OS V2R3</li>
