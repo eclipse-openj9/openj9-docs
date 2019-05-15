@@ -82,6 +82,12 @@ You can have multiple `-Xdump` options on the command line. You can also have mu
 java -Xdump:heap:none -Xdump:heap+java:events=vmstart+vmstop -mp . -m <class> [args...]
 ```
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Multiple suboptions that follow an `Xdump` suboption must be split with a comma (,), for example:
+
+```
+java -Xdump:java:events=vmstart,file=/STDERR/ -version
+```
+
 For more detailed information on the these parameters and suboptions, including examples, see [Parameters](#parameters).
 
 ## Dump agents
@@ -449,7 +455,8 @@ The location for the dump file is selected from the following options, in this o
     |----------------------------|----------------------------|-------------------------|
     | Java dumps                 | `_CEE_DMPTARG`             | `IBM_JAVACOREDIR`       |
     | Heap dumps                 | `_CEE_DMPTARG`             | `IBM_HEAPDUMPDIR`       |
-    | System dumps and JIT dumps | `JAVA_DUMP_TDUMP_PATTERN`  | `IBM_COREDIR`           |
+    | System dumps               | `JAVA_DUMP_TDUMP_PATTERN`  | `IBM_COREDIR`           |
+    | JIT dumps                  | `_CEE_DMPTARG`             | `IBM_COREDIR`           |
     | Snap traces                | `_CEE_DMPTARG`             | `IBM_COREDIR`           |
 
 4. The current working directory of the OpenJ9 VM process.
