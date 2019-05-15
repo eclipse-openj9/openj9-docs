@@ -34,10 +34,10 @@ This option controls JIT operations that relate to JVMTI watched fields.
 
 | Setting                 | Effect  | Default                                                                            |
 |-------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+JITInlineWatches` | Enable  |                                                                                    |
-| `-XX:-JITInlineWatches` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| `-XX:+JITInlineWatches` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| `-XX:-JITInlineWatches` | Disable |                                                                                    |
 
-When enabled, this option turns on experimental performance improvements relating to JVMTI watched fields.
+This option enables performance improvements relating to JVMTI watched fields.
 
 
 <!-- ==== END OF TOPIC ==== xxjitinlinewatches.md ==== -->

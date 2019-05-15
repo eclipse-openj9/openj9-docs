@@ -30,7 +30,7 @@ site_url: https://www.eclipse.org/openj9/docs
 repo_url: https://github.com/eclipse/openj9-docs
 # A link to your GitHub or Bitbucket repository on each page.
 
-edit_uri: 
+edit_uri:
 # edit/master/docs/
 
 site_description: Eclipse OpenJ9 documentation
@@ -100,40 +100,41 @@ pages:
     - "AdoptOpenJDK builds"                                                      : adoptopenjdk.md
     - "Getting started"                                                          : introduction.md
     - "New to OpenJ9?"                                                           : openj9_newuser.md
-    
+
     - "Release notes" :
+        - "Version 0.15.0"                                                       : version0.15.md
         - "Version 0.14.0"                                                       : version0.14.md
         - "Version 0.13.0"                                                       : version0.13.md
         - "Version 0.12.1"                                                       : version0.12.1.md
-        - "Version 0.12.0"                                                       : version0.12.md        
+        - "Version 0.12.0"                                                       : version0.12.md
         - "Version 0.11.0"                                                       : version0.11.md
         - "Version 0.10.0"                                                       : version0.10.md
         - "Version 0.9.0"                                                        : version0.9.md
         - "Version 0.8.0"                                                        : version0.8.md
 
     - "Garbage Collection"                                                       : gc.md
-        
+
     - "JIT Compiler"                                                             : jit.md
-           
+
     - "AOT Compiler"                                                             : aot.md
-    
+
     - "Class data sharing"                                                       : shrc.md
-    
+
     - "Diagnostics" :
-        - "Tools and data"                                                       : diag_overview.md   
+        - "Tools and data"                                                       : diag_overview.md
         - "Java dump"                                                            : dump_javadump.md
         - "Heap dump"                                                            : dump_heapdump.md
         - "System dump"                                                          : dump_systemdump.md
-        
+
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md
         - "Standard options"                                                     : cmdline_general.md
         - "Switching to OpenJ9"                                                  : cmdline_migration.md
-        
+
 # System properties that are commented out are not supported at this time.
-        
+
         - "System property options" :
-            - "Using System properties"                                          : d_jvm_commands.md 
+            - "Using System properties"                                          : d_jvm_commands.md
             - "-Dcom.ibm.enableClassCaching"                                     : dcomibmenableclasscaching.md
             - "-Dcom.ibm.enableLegacyDumpSecurity"                               : dcomibmenablelegacydumpsecurity.md
             - "-Dcom.ibm.enableLegacyLogSecurity"                                : dcomibmenablelegacylogsecurity.md
@@ -150,9 +151,9 @@ pages:
             - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
             - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
             - "-Djdk.nativeDigest"                                               : djdknativedigest.md
-            - "-Djdk.nativeGCM"                                                  : djdknativegcm.md 
-            - "-Djdk.nativeRSA"                                                  : djdknativersa.md               
-            
+            - "-Djdk.nativeGCM"                                                  : djdknativegcm.md
+            - "-Djdk.nativeRSA"                                                  : djdknativersa.md
+
         - "JVM -X options" :
             - "Using -X options"                                                 : x_jvm_commands.md
             - "-X"                                                               : x.md
@@ -226,7 +227,7 @@ pages:
             - "-Xmr"                                                             : xmr.md
             - "-Xmrx"                                                            : xmr.md                             # redirect
             - "-Xms"                                                             : xms.md
-            - "-Xmso"                                                            : xmso.md                            
+            - "-Xmso"                                                            : xmso.md
             - "-Xmx"                                                             : xms.md                             # redirect
             - "-Xnoaot"                                                          : xaot.md                            # redirect
             - "-Xnoclassgc"                                                      : xclassgc.md                        # redirect
@@ -283,14 +284,14 @@ pages:
             - "-XX:IdleTuningMinFreeHeapOnIdle"                                  : xxidletuningminfreeheaponidle.md
             - "-XX:IdleTuningMinIdleWaitTime"                                    : xxidletuningminidlewaittime.md
             - "-XX:[+|-]IgnoreUnrecognizedVMOptions"                             : xxignoreunrecognizedvmoptions.md
-            - "-XX:[+|-]IgnoreUnrecognizedXXColonOptions"                        : xxignoreunrecognizedxxcolonoptions.md            
+            - "-XX:[+|-]IgnoreUnrecognizedXXColonOptions"                        : xxignoreunrecognizedxxcolonoptions.md
             - "-XX:InitialRAMPercentage"                                         : xxinitialrampercentage.md
             - "-XX:InitialHeapSize"                                              : xxinitialheapsize.md
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
-            - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md            
+            - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
-            - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect    
+            - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
             - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
@@ -311,21 +312,20 @@ pages:
 
 
 
-    - "Tools" : 
+    - "Tools" :
         - "Dump viewer"                                                           : tool_jdmpview.md
         - "Trace formatter"                                                       : tool_traceformat.md
         - "Option builder"                                                        : tool_builder.md
         - "Java process status (jps) tool"                                        : tool_jps.md
         - "Java stack (jstack) tool"                                              : tool_jstack.md
-        - "Switching to OpenJ9"                                                   : tool_migration.md        
+        - "Switching to OpenJ9"                                                   : tool_migration.md
 
-        
+
     - " Reference" :
         - "Supported environments"                                                : openj9_support.md
         - "Default settings"                                                      : openj9_defaults.md
         - "Directory conventions"                                                 : openj9_directories.md
         - "OpenJ9 messages"                                                       : messages_intro.md
         - "Environment variables"                                                 : env_var.md
-        
-    - "Legal"                                                                     : legal.md
 
+    - "Legal"                                                                     : legal.md
