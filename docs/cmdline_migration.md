@@ -49,11 +49,15 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-XX:[+|-]DisableExplicitGC`](xxdisableexplicitgc.md)           | Enables/disables `System.gc()` calls. (Alias for [`-Xdisableexplicitgc` / `-Xenableexplicitgc`](xenableexplicitgc.md))                       |
 | [`-XX:[+|-]HeapDumpOnOutOfMemory`](xxheapdumponoutofmemory.md)   | Enables/disables dumps on out-of-memory conditions.                                                                                          |
 | [`-XX:HeapDumpPath`](xxheapdumppath.md)                          | Specifies a directory for all VM dumps including heap dumps, javacores, and system dumps. (Alias for [`-Xdump:directory`](xdump.md#syntax))    |
-| [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md)            | Sets a limit on the amount of memory that can be reserved for all direct byte buffers.                                                       |
-| [`-XX:[+|-]IgnoreUnrecognizedVMOptions`](xxignoreunrecognizedvmoptions.md) | Specifies whether to ignore unrecognized top-level VM options |
+| [`-XX:[+|-]IgnoreUnrecognizedVMOptions`](xxignoreunrecognizedvmoptions.md) | Specifies whether to ignore unrecognized top-level VM options |                                                       |
 | [`-XX:InitialHeapSize`](xxinitialheapsize.md)                    | Sets the initial size of the heap. (Alias for [`-Xms`](xms.md))                                                                              |
+| [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md)          | Sets the initial size of the Java heap as a percentage of total memory.                                                                              |
+| [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md)            | Sets a limit on the amount of memory that can be reserved for all direct byte buffers.                                                                 |
 | [`-XX:MaxHeapSize`    ](xxinitialheapsize.md)                    | Specifies the maximum size of the object memory allocation pool. (Alias for [`-Xmx`](xms.md))                                                |
-| [`-XX:-UseCompressedOops`](xxusecompressedoops.md)               | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
+| [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md)              | Sets the maximum size of the Java heap as a percentage of total memory.                                                                     |
+| [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md)               | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
+| [`-XX:[+|-]UseContainerSupport`](xxusecontainersupport.md)           | Sets a larger fraction of memory to the Java heap when the VM detects that it is running in a container.                                 |
+
 
 ## Equivalent options
 
