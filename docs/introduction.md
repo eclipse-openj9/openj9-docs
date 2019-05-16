@@ -69,17 +69,18 @@ To improve the performance of applications that run in containers, try setting t
 
 OpenJDK uses the in-built Java cryptographic implementation by default. However, native cryptographic implementations
 typically provide better performance. OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and
-Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.1.x implementation is
-currently supported for the Digest, CBC, GCM, and RSA algorithms.
+Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.0.x and V1.1.x implementations are currently supported for the Digest, CBC, GCM, and RSA algorithms.
 
-The OpenSSL V1.0.2 implementation is also supported for the Digest, CBC, GCM, and RSA algorithms. On Linux and AIX platforms, the OpenSSL 1.0.2 or 1.1.X library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On other platforms, the OpenSSL 1.1.X library is currently bundled with the binaries from AdoptOpenJDK.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is currently disabled. ![End of content that applies only to Java 8 and 11 (LTS)](cr/java_close_lts.png)
+
+On Linux and AIX platforms, the OpenSSL 1.0.x or 1.1.x library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On other platforms, the OpenSSL 1.1.x library is currently bundled with the binaries from AdoptOpenJDK.
 
 OpenSSL support is enabled by default for all supported algorithms. If you want to limit support to specific algorithms, a number of
 system properties are available for tuning the implementation.
 
 Each algorithm can be disabled individually by setting the following system properties on the command line:
 
-- To turn off **Digest**, set `-Djdk.nativeDigest=false`
+- ![Start of content that applies only to Java 12](cr/java12.png) To turn off **Digest**, set `-Djdk.nativeDigest=false`
 - To turn off **CBC**, set `-Djdk.nativeCBC=false`
 - To turn off **GCM**, set `-Djdk.nativeGCM=false`
 - To turn off **RSA**, set `-Djdk.nativeRSA=false`
@@ -96,7 +97,7 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow 
 - [OpenJDK 11 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
 - [OpenJDK 12 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V12.md).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you obtain an OpenJDK with OpenJ9 build from [AdoptOpenJDK](https://adoptopenjdk.net/) that includes OpenSSL v1.1.x or build a version yourself that includes OpenSSL v1.1.x support, the following acknowledgements apply in accordance with the license terms:
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you obtain an OpenJDK with OpenJ9 build from [AdoptOpenJDK](https://adoptopenjdk.net/) that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgements apply in accordance with the license terms:
 
 - *This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/).*
 - *This product includes cryptographic software written by Eric Young (eay@cryptsoft.com).*

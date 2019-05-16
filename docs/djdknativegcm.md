@@ -40,6 +40,8 @@ This option enables or disables OpenSSL native cryptographic support for the GCM
 
 OpenSSL support is enabled by default for the CBC, Digest, GCM, and RSA algorithm. If you want to turn off the GCM algorithm, set this option to `false`.
 
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is currently disabled. ![End of content that applies only to Java 8 and 11 (LTS)](cr/java_close_lts.png)
+
 To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
 
 

@@ -26,13 +26,15 @@
 
 This option enables or disables OpenSSL native cryptographic support for the Digest algorithm.
 
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is currently disabled. ![End of content that applies only to Java 8 and 11 (LTS)](cr/java_close_lts.png)
+
 ## Syntax
 
         -Djdk.nativeDigest=[true|false]
 
 | Setting              | value    | Default                                                                        |
 |----------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeDigest` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Djdk.nativeDigest` | true     | ![Start of content that applies to Java 12 (LTS)](cr/java12.png)<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-Djdk.nativeDigest` | false    |                                                                                |
 
 ## Explanation
