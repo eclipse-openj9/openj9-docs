@@ -61,9 +61,11 @@ Options that change the behavior of the Garbage Collector (GC).
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note: Linux on Z and z/OS**
 
-: This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode. 
- 
-    Hardware-based pause-less GC is supported on IBM z14&trade; and later hardware running the following software:
+<!-- 0.15.0 change to be re-enabled : This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode. 
+
+    Hardware-based pause-less GC is supported on IBM z14&trade; and later hardware running the following software: -->
+
+    This option is supported on IBM z14&trade; hardware running the following software:
 
     Operating systems:
 
