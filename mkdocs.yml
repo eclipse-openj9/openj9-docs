@@ -102,6 +102,7 @@ pages:
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 
     - "Release notes" :
+        - "Version 0.14.2"                                                       : version0.14.2.md
         - "Version 0.14.0"                                                       : version0.14.md
         - "Version 0.13.0"                                                       : version0.13.md
         - "Version 0.12.1"                                                       : version0.12.1.md
