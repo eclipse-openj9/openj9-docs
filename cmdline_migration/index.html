@@ -363,6 +363,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../version0.14.2/" title="Version 0.14.2" class="md-nav__link">
+      Version 0.14.2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../version0.14/" title="Version 0.14.0" class="md-nav__link">
       Version 0.14.0
     </a>
@@ -3154,10 +3166,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td>Specifies a directory for all VM dumps including heap dumps, javacores, and system dumps. (Alias for <a href="../xdump/#syntax"><code>-Xdump:directory</code></a>)</td>
 </tr>
 <tr>
-<td><a href="../xxmaxdirectmemorysize/"><code>-XX:MaxDirectMemorySize</code></a></td>
-<td>Sets a limit on the amount of memory that can be reserved for all direct byte buffers.</td>
-</tr>
-<tr>
 <td><a href="../xxignoreunrecognizedvmoptions/"><code>-XX:[+|-]IgnoreUnrecognizedVMOptions</code></a></td>
 <td>Specifies whether to ignore unrecognized top-level VM options</td>
 </tr>
@@ -3166,12 +3174,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td>Sets the initial size of the heap. (Alias for <a href="../xms/"><code>-Xms</code></a>)</td>
 </tr>
 <tr>
+<td><a href="../xxinitialrampercentage/"><code>-XX:InitialRAMPercentage</code></a></td>
+<td>Sets the initial size of the Java heap as a percentage of total memory.</td>
+</tr>
+<tr>
+<td><a href="../xxmaxdirectmemorysize/"><code>-XX:MaxDirectMemorySize</code></a></td>
+<td>Sets a limit on the amount of memory that can be reserved for all direct byte buffers.</td>
+</tr>
+<tr>
 <td><a href="../xxinitialheapsize/"><code>-XX:MaxHeapSize</code>    </a></td>
 <td>Specifies the maximum size of the object memory allocation pool. (Alias for <a href="../xms/"><code>-Xmx</code></a>)</td>
 </tr>
 <tr>
-<td><a href="../xxusecompressedoops/"><code>-XX:-UseCompressedOops</code></a></td>
+<td><a href="../xxinitialrampercentage/"><code>-XX:MaxRAMPercentage</code></a></td>
+<td>Sets the maximum size of the Java heap as a percentage of total memory.</td>
+</tr>
+<tr>
+<td><a href="../xxusecompressedoops/"><code>-XX:[+|-]UseCompressedOops</code></a></td>
 <td>Disables compressed references in 64-bit JVMs. (See also <a href="../xcompressedrefs/"><code>-Xcompressedrefs</code></a>)</td>
+</tr>
+<tr>
+<td><a href="../xxusecontainersupport/"><code>-XX:[+|-]UseContainerSupport</code></a></td>
+<td>Sets a larger fraction of memory to the Java heap when the VM detects that it is running in a container.</td>
 </tr>
 </tbody>
 </table>

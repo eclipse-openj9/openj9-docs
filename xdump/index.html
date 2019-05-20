@@ -363,6 +363,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../version0.14.2/" title="Version 0.14.2" class="md-nav__link">
+      Version 0.14.2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../version0.14/" title="Version 0.14.0" class="md-nav__link">
       Version 0.14.0
     </a>
@@ -3756,6 +3768,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </pre></div>
 
 
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Multiple suboptions that follow an <code>Xdump</code> suboption must be split with a comma (,), for example:</p>
+<div class="codehilite"><pre><span></span>java -Xdump:java:events=vmstart,file=/STDERR/ -version
+</pre></div>
+
+
 <p>For more detailed information on the these parameters and suboptions, including examples, see <a href="#parameters">Parameters</a>.</p>
 <h2 id="dump-agents">Dump agents</h2>
 <p>A dump agent performs diagnostic tasks when triggered. Most dump agents save information on the state of the VM in some form of dump or trace file for later analysis.
@@ -4263,8 +4280,13 @@ Registered dump agents
 <td><code>IBM_HEAPDUMPDIR</code></td>
 </tr>
 <tr>
-<td>System dumps and JIT dumps</td>
+<td>System dumps</td>
 <td><code>JAVA_DUMP_TDUMP_PATTERN</code></td>
+<td><code>IBM_COREDIR</code></td>
+</tr>
+<tr>
+<td>JIT dumps</td>
+<td><code>_CEE_DMPTARG</code></td>
 <td><code>IBM_COREDIR</code></td>
 </tr>
 <tr>
