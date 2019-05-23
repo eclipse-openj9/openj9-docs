@@ -41,7 +41,7 @@ OpenJ9 release 0.14.2 supports OpenJDK 8 and 11. Binaries are available from the
 - [OpenJDK version 8](https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=openj9)
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 
-The Windows (MSI) installer for these binaries can now be used to optionally install the IcedTea-Web package, which provides
+The Windows (MSI) installer for OpenJDK v8 (64-bit) can now be used to optionally install the IcedTea-Web package, which provides
 equivalent functionality to Java Web Start. For more information about the installer, see the AdoptOpenJDK [Installation page](https://adoptopenjdk.net/installation.html). For more information about migrating to IcedTea-Web, read the AdoptOpenJDK
 [Migration Guide](https://adoptopenjdk.net/migration.html).
 
@@ -53,7 +53,7 @@ OpenSSL version 1.0.1 support is now enabled; Earlier releases supported only Op
 
 ### OpenSSL Digest algorithm disabled
 
-Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is disabled. 
+Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is disabled.
 
 
 <!-- ==== END OF TOPIC ==== version0.14.2.md ==== -->
