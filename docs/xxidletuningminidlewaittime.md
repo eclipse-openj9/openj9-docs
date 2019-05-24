@@ -26,7 +26,7 @@
 
 ** (Linux&reg; only) **
 
-When the OpenJ9 VM is idle, this option controls the minimum length of time that the VM must be idle before the state of the VM is set to idle. When the state changes to idle, a garbage collection cycle runs, the object heap is compacted, and free memory pages are released back to the operating system, which reduces the footprint of the VM. Garbage collection and compaction are controlled by the `-XX:+IdleTuningGcOnIdle` and `-XX:+IdleTuningCompactOnIdle` options, which are enabled by default when the OpenJ9 VM is running inside a docker container.
+When the OpenJ9 VM is idle, this option controls the minimum length of time that the VM must be idle before the state of the VM is set to idle. When the state changes to idle, a garbage collection cycle runs, the object heap is compacted, and free memory pages are released back to the operating system, which reduces the footprint of the VM. Garbage collection and compaction are controlled by `-XX:+IdleTuningGcOnIdle` which is enabled by default when the OpenJ9 VM is running inside a docker container.
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
 
@@ -49,9 +49,9 @@ Setting the value to 0 disables this feature, which causes the following idle tu
 
 ## See also
 
--   [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md)
 -   [-XX:\[+|-\]IdleTuningGcOnIdle](xxidletuninggconidle.md)
 -   [-XX:IdleTuningMinFreeHeapOnIdle](xxidletuningminfreeheaponidle.md#xxidletuningminfreeheaponidle)
+-   [-XX:\[+|-\]IdleTuningCompactOnIdle \(deprecated\)](xxidletuningcompactonidle.md)
 
 
 
