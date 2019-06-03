@@ -106,8 +106,7 @@ A special mode of the `gencon` policy is known as *Concurrent Scavenge* (`-Xgc:c
     - [Reducing Garbage Collection pause times with Concurrent Scavenge and the Guarded Storage Facility](https://developer.ibm.com/javasdk/2017/09/18/reducing-garbage-collection-pause-times-concurrent-scavenge-guarded-storage-facility/)
     - [How Concurrent Scavenge using the Guarded Storage Facility Works](https://developer.ibm.com/javasdk/2017/09/25/concurrent-scavenge-using-guarded-storage-facility-works/)
 
-<!-- 0.15 change to be re-enabled - **Software-based support: (64-bit: Linux on (x86-64, POWER, IBM Z&reg;), AIX&reg;, and z/OS&reg;)** -->
-- **Software-based support: (Linux on x86-64, Linux on POWER LE, AIX&reg; on POWER&reg;)** With software-based support, *Concurrent Scavenge* can be enabled without any pre-requisite hardware although the performance throughput is not as good as hardware-based support.
+- **Software-based support: (64-bit: Linux on (x86-64, POWER, IBM Z&reg;), AIX&reg;, and z/OS&reg;)** With software-based support, *Concurrent Scavenge* can be enabled without any pre-requisite hardware although the performance throughput is not as good as hardware-based support.
 
 For more information about enabling Concurrent Scavenge, see the [-Xgc:concurrentScavenge](xgc.md#concurrentscavenge) option.
 
