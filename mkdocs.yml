@@ -293,6 +293,7 @@ pages:
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
             - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
             - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
+            - "-XX:OnOutOfMemoryError"                                           : xxonoutofmemoryerror.md
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
             - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md
