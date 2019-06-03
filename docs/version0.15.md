@@ -30,7 +30,7 @@
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Performance improvements for JVMTI watched fields](#performance-improvements-for-jvmti-watched-fields)
 - [Support for pause-less garbage collection on IBM Z systems](#support-for-pause-less-garbage-collection-on-ibm-z-systems)
-- [Support for OpenJDK HotSpot options](support_for_openjdk_hotspot_options)
+- [Support for OpenJDK HotSpot options](#support_for_openjdk_hotspot_options)
 
 
 ## Features and changes
