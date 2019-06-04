@@ -363,6 +363,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../version0.15/" title="Version 0.15.0" class="md-nav__link">
+      Version 0.15.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../version0.14.2/" title="Version 0.14.2" class="md-nav__link">
       Version 0.14.2
     </a>
@@ -2731,6 +2743,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxonoutofmemoryerror/" title="-XX:OnOutOfMemoryError" class="md-nav__link">
+      -XX:OnOutOfMemoryError
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxnosuballoc32bitmem/" title="-XXnosuballoc32bitmem" class="md-nav__link">
       -XXnosuballoc32bitmem
     </a>
@@ -3387,33 +3411,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This option supports pause-less garbage collection mode when you use the Generational Concurrent (<a href="../xgcpolicy/"><code>gencon</code></a>) garbage collection policy (the default policy).</p>
 <p>If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications.</p>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note: Linux on Z and z/OS</strong></p>
+<p>This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode. </p>
+<p>Hardware-based pause-less GC is supported on IBM z14&trade; and later hardware running the following software:</p>
+<p>Operating systems:</p>
+<ul>
+<li>z/OS V2R3</li>
+<li>z/OS V2R2 and <a href="http://www.ibm.com/support/docview.wss?uid=isg1OA51643">APAR OA51643</a>.</li>
+<li>RHEL 7.5 (minimum kernel level 4.14)</li>
+<li>Ubuntu 18.04 (minimum kernel level 4.15)</li>
+</ul>
+<p>Hypervisors:</p>
+<ul>
+<li>IBM z/VM 6.4 with <a href="http://www-01.ibm.com/support/docview.wss?uid=isg1VM65987">APAR VM65987</a></li>
+<li>IBM z/VM 7.1</li>
+<li>KVM solutions with QEMU 2.10 or later and minimum host kernel level 4.12 (for example, RHEL 7.5 with kernel level 4.14)</li>
+</ul>
+<p>If these requirements are not met, the option is ignored.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by <code>ulimit -M</code>, to a larger value than the maximum heap size.</p>
 </dd>
 </dl>
-<!-- 0.15.0 change to be re-enabled : This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode.
-
-    Hardware-based pause-less GC is supported on IBM z14&trade; and later hardware running the following software: -->
-
-<div class="codehilite"><pre><span></span><span class="n">This</span> <span class="n">option</span> <span class="n">is</span> <span class="n">supported</span> <span class="n">on</span> <span class="n">IBM</span> <span class="n">z14</span><span class="o">&amp;</span><span class="n">trade</span><span class="p">;</span> <span class="n">hardware</span> <span class="n">running</span> <span class="n">the</span> <span class="n">following</span> <span class="nl">software</span><span class="p">:</span>
-
-<span class="n">Operating</span> <span class="nl">systems</span><span class="p">:</span>
-
-<span class="o">-</span> <span class="n">z</span><span class="o">/</span><span class="n">OS</span> <span class="n">V2R3</span>
-<span class="o">-</span> <span class="n">z</span><span class="o">/</span><span class="n">OS</span> <span class="n">V2R2</span> <span class="n">and</span> <span class="p">[</span><span class="n">APAR</span> <span class="n">OA51643</span><span class="p">](</span><span class="nl">http</span><span class="p">:</span><span class="c1">//www.ibm.com/support/docview.wss?uid=isg1OA51643).</span>
-<span class="o">-</span> <span class="n">RHEL</span> <span class="mf">7.5</span> <span class="p">(</span><span class="n">minimum</span> <span class="n">kernel</span> <span class="n">level</span> <span class="mf">4.14</span><span class="p">)</span>
-<span class="o">-</span> <span class="n">Ubuntu</span> <span class="mf">18.04</span> <span class="p">(</span><span class="n">minimum</span> <span class="n">kernel</span> <span class="n">level</span> <span class="mf">4.15</span><span class="p">)</span>
-
-<span class="nl">Hypervisors</span><span class="p">:</span>
-
-<span class="o">-</span> <span class="n">IBM</span> <span class="n">z</span><span class="o">/</span><span class="n">VM</span> <span class="mf">6.4</span> <span class="n">with</span> <span class="p">[</span><span class="n">APAR</span> <span class="n">VM65987</span><span class="p">](</span><span class="nl">http</span><span class="p">:</span><span class="c1">//www-01.ibm.com/support/docview.wss?uid=isg1VM65987)</span>
-<span class="o">-</span> <span class="n">IBM</span> <span class="n">z</span><span class="o">/</span><span class="n">VM</span> <span class="mf">7.1</span>
-<span class="o">-</span> <span class="n">KVM</span> <span class="n">solutions</span> <span class="n">with</span> <span class="n">QEMU</span> <span class="mf">2.10</span> <span class="n">or</span> <span class="n">later</span> <span class="n">and</span> <span class="n">minimum</span> <span class="n">host</span> <span class="n">kernel</span> <span class="n">level</span> <span class="mf">4.12</span> <span class="p">(</span><span class="k">for</span> <span class="n">example</span><span class="p">,</span> <span class="n">RHEL</span> <span class="mf">7.5</span> <span class="n">with</span> <span class="n">kernel</span> <span class="n">level</span> <span class="mf">4.14</span><span class="p">)</span>
-
-<span class="n">If</span> <span class="n">these</span> <span class="n">requirements</span> <span class="n">are</span> <span class="n">not</span> <span class="n">met</span><span class="p">,</span> <span class="n">the</span> <span class="n">option</span> <span class="n">is</span> <span class="n">ignored</span><span class="p">.</span>
-
-<span class="o">&lt;</span><span class="n">i</span> <span class="k">class</span><span class="o">=</span><span class="s">&quot;fa fa-pencil-square-o&quot;</span> <span class="n">aria</span><span class="o">-</span><span class="n">hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="o">&gt;&lt;/</span><span class="n">i</span><span class="o">&gt;</span> <span class="o">**</span><span class="nl">Note</span><span class="p">:</span><span class="o">**</span> <span class="n">On</span> <span class="n">z</span><span class="o">/</span><span class="n">OS</span><span class="p">,</span> <span class="n">the</span> <span class="n">virtual</span> <span class="n">storage</span> <span class="n">used</span> <span class="n">might</span> <span class="n">exceed</span> <span class="n">the</span> <span class="n">Java</span> <span class="n">maximum</span> <span class="n">heap</span> <span class="n">size</span><span class="p">.</span> <span class="n">Set</span> <span class="n">the</span> <span class="n">z</span><span class="o">/</span><span class="n">OS</span> <span class="n">memory</span> <span class="n">limit</span><span class="p">,</span> <span class="n">specified</span> <span class="n">by</span> <span class="err">`</span><span class="n">ulimit</span> <span class="o">-</span><span class="n">M</span><span class="err">`</span><span class="p">,</span> <span class="n">to</span> <span class="n">a</span> <span class="n">larger</span> <span class="n">value</span> <span class="n">than</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">heap</span> <span class="n">size</span><span class="p">.</span>
-</pre></div>
-
-
 <h3 id="dnssexpectedtimeratiomaximum"><code>dnssExpectedTimeRatioMaximum</code></h3>
 <div class="codehilite"><pre><span></span>    -Xgc:dnssExpectedTimeRatioMaximum=&lt;value&gt;
 </pre></div>
