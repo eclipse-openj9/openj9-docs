@@ -150,6 +150,7 @@ pages:
             - "-Dfile.encoding"                                                  : dfileencoding.md
             - "-Djava.compiler"                                                  : djavacompiler.md
             - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
+            - "-Djdk.nativeChaCha20"                                             : djdknativechacha20.md            
             - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
             - "-Djdk.nativeDigest"                                               : djdknativedigest.md
             - "-Djdk.nativeGCM"                                                  : djdknativegcm.md

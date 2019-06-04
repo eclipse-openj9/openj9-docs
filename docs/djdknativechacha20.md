@@ -22,24 +22,31 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Djdk.nativeCBC
+# -Djdk.nativeChaCha20
 
-This option enables or disables OpenSSL native cryptographic support for the CBC algorithm.
+This option enables or disables OpenSSL native cryptographic support for the ChaCha20 and ChaCha20-Poly1305 algorithms.
+
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
+
+- ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 12](cr/java12.png) These algorithms are not supported on Java 8 or 12. ![End of content that applies only to Java 8 and 12](cr/java_close_lts.png)
+- These algorithms are not supported on OpenSSL 1.0.x.
 
 
 ## Syntax
 
-        -Djdk.nativeCBC=[true|false]
+        -Djdk.nativeChaCha20=[true|false]
 
 
 | Setting           | value    | Default                                                                        |
 |-------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeCBC` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-Djdk.nativeCBC` | false    |                                                                                |
+| `-Djdk.nativeChaCha20` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Djdk.nativeChaCha20` | false    |                                                                                |
 
 ## Explanation
 
-OpenSSL support is enabled by default for the CBC algorithm. If you want to turn off this algorithm only, set this option to `false`. To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
+OpenSSL support is enabled by default for the ChaCha20 and ChaCha20-Poly1305 algorithms. If you want to turn off support for these algorithms only, set this option to `false`. To turn off support for these and other algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
 
 
-<!-- ==== END OF TOPIC ==== djdknativecbc.md ==== -->
+
+
+<!-- ==== END OF TOPIC ==== djdknativechacha20.md ==== -->

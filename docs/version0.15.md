@@ -30,6 +30,7 @@
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Performance improvements for JVMTI watched fields](#performance-improvements-for-jvmti-watched-fields)
 - [Support for pause-less garbage collection on IBM Z systems](#support-for-pause-less-garbage-collection-on-ibm-z-systems)
+- ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [ChaCha20 algorithm support for OpenSSL](#chacha20-algorithm-support-for-openssl)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 
 
@@ -53,6 +54,10 @@
 ### Support for pause-less garbage collection on IBM Z systems
 
 Support for Concurrent scavenge mode is now extended to Linux on IBM Z&reg; systems and z/OS&reg;. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
+
+### ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) ChaCha20 algorithm support for OpenSSL
+
+The ChaCha20 and ChaCha20-Poly1305 algorithms are now supported on Java 11. For more information, see [`-Djdk.nativeChaCha20`](djdknativechacha20.md). ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 
 ### Support for OpenJDK HotSpot options
 
