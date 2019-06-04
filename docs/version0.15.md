@@ -30,6 +30,7 @@
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Performance improvements for JVMTI watched fields](#performance-improvements-for-jvmti-watched-fields)
 - [Support for pause-less garbage collection on IBM Z systems](#support-for-pause-less-garbage-collection-on-ibm-z-systems)
+- [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 
 
 ## Features and changes
@@ -52,6 +53,10 @@
 ### Support for pause-less garbage collection on IBM Z systems
 
 Support for Concurrent scavenge mode is now extended to Linux on IBM Z&reg; systems and z/OS&reg;. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
+
+### Support for OpenJDK HotSpot options
+
+For compatibility, the [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md) OpenJDK Hotspot option is now supported by OpenJ9.
 
 <!--## Full release information
 
