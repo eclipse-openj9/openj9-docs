@@ -421,6 +421,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#chacha20-algorithm-support-for-openssl" title="ChaCha20 algorithm support for OpenSSL" class="md-nav__link">
+    ChaCha20 algorithm support for OpenSSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#support-for-openjdk-hotspot-options" title="Support for OpenJDK HotSpot options" class="md-nav__link">
     Support for OpenJDK HotSpot options
   </a>
@@ -926,6 +933,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li class="md-nav__item">
     <a href="../djdknativecbc/" title="-Djdk.nativeCBC" class="md-nav__link">
       -Djdk.nativeCBC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djdknativechacha20/" title="-Djdk.nativeChaCha20" class="md-nav__link">
+      -Djdk.nativeChaCha20
     </a>
   </li>
 
@@ -3114,6 +3133,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#chacha20-algorithm-support-for-openssl" title="ChaCha20 algorithm support for OpenSSL" class="md-nav__link">
+    ChaCha20 algorithm support for OpenSSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#support-for-openjdk-hotspot-options" title="Support for OpenJDK HotSpot options" class="md-nav__link">
     Support for OpenJDK HotSpot options
   </a>
@@ -3176,6 +3202,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#performance-improvements-for-jvmti-watched-fields">Performance improvements for JVMTI watched fields</a></li>
 <li><a href="#support-for-pause-less-garbage-collection-on-ibm-z-systems">Support for pause-less garbage collection on IBM Z systems</a></li>
+<li><img alt="Start of content that applies only to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#chacha20-algorithm-support-for-openssl">ChaCha20 algorithm support for OpenSSL</a><img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><a href="#support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -3191,6 +3218,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>OpenJ9 version 0.14.0 introduced the <a href="../xxjitinlinewatches/"><code>-XX:[+|-]JITInlineWatches</code></a> option, which, when enabled, turned on experimental JIT operations to improve the performance of JVMTI watched fields. Following successful results, this option is now enabled by default. Currently, performance improvements are enabled only on x86 platforms (Windows&reg;, macOS&reg;, and Linux).</p>
 <h3 id="support-for-pause-less-garbage-collection-on-ibm-z-systems">Support for pause-less garbage collection on IBM Z systems</h3>
 <p>Support for Concurrent scavenge mode is now extended to Linux on IBM Z&reg; systems and z/OS&reg;. For more information, see <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a>.</p>
+<h3 id="chacha20-algorithm-support-for-openssl"><img alt="Start of content that applies only to Java 11 (LTS)" src="../cr/java11.png" /> ChaCha20 algorithm support for OpenSSL</h3>
+<p>The ChaCha20 and ChaCha20-Poly1305 algorithms can now use OpenSSL on Java 11. For more information, see <a href="../djdknativechacha20/"><code>-Djdk.nativeChaCha20</code></a>. <img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></p>
 <h3 id="support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</h3>
 <p>For compatibility, the <a href="../xxonoutofmemoryerror/"><code>-XX:OnOutOfMemoryError</code></a> OpenJDK Hotspot option is now supported by OpenJ9.</p>
 <!--## Full release information
