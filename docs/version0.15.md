@@ -57,7 +57,7 @@ Support for Concurrent scavenge mode is now extended to Linux on IBM Z&reg; syst
 
 ### ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) ChaCha20 algorithm support for OpenSSL
 
-The ChaCha20 and ChaCha20-Poly1305 algorithms are now supported on Java 11. For more information, see [`-Djdk.nativeChaCha20`](djdknativechacha20.md). ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
+The ChaCha20 and ChaCha20-Poly1305 algorithms can now use OpenSSL on Java 11. For more information, see [`-Djdk.nativeChaCha20`](djdknativechacha20.md). ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 
 ### Support for OpenJDK HotSpot options
 
