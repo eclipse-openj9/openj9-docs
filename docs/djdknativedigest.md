@@ -39,9 +39,7 @@ This option enables or disables OpenSSL native cryptographic support for the Dig
 
 ## Explanation
 
-OpenSSL support is enabled by default for the CBC, Digest, GCM, and RSA algorithm. If you want to turn off the Digest algorithm, set this option to `false`.
-
-To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
+OpenSSL support is enabled by default for the Digest algorithm. If you want to turn off this algorithm only, set this option to `false`. To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
 
 
 
