@@ -1446,6 +1446,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#stdglobalcompacttosatisfyallocate" title="stdGlobalCompactToSatisfyAllocate" class="md-nav__link">
+    stdGlobalCompactToSatisfyAllocate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tlhincrementsize" title="tlhIncrementSize" class="md-nav__link">
     tlhIncrementSize
   </a>
@@ -3261,6 +3268,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#stdglobalcompacttosatisfyallocate" title="stdGlobalCompactToSatisfyAllocate" class="md-nav__link">
+    stdGlobalCompactToSatisfyAllocate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tlhincrementsize" title="tlhIncrementSize" class="md-nav__link">
     tlhIncrementSize
   </a>
@@ -3395,16 +3409,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td>Sets the initial scavenger tenure age in the generational concurrent GC policy.</td>
 </tr>
 <tr>
+<td><a href="#stdglobalcompacttosatisfyallocate"><code>stdGlobalCompactToSatisfyAllocate</code></a></td>
+<td>Prevents the GC from performing a compaction unless absolutely required.</td>
+</tr>
+<tr>
 <td><a href="#tlhincrementsize"><code>tlhIncrementSize</code>            </a></td>
-<td>Sets the size of the thread local heap (TLH)  increment</td>
+<td>Sets the size of the thread local heap (TLH).  increment</td>
 </tr>
 <tr>
 <td><a href="#tlhinitialsize"><code>tlhInitialSize</code>              </a></td>
-<td>Sets the initial size of the thread local heap</td>
+<td>Sets the initial size of the thread local. heap</td>
 </tr>
 <tr>
 <td><a href="#tlhmaximumsize"><code>tlhMaximumSize</code>              </a></td>
-<td>Sets the maximum size of the thread local heap</td>
+<td>Sets the maximum size of the thread local. heap</td>
 </tr>
 <tr>
 <td><a href="#verboseformat"><code>verboseFormat</code>               </a></td>
@@ -3423,7 +3441,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This option supports pause-less garbage collection mode when you use the Generational Concurrent (<a href="../xgcpolicy/"><code>gencon</code></a>) garbage collection policy (the default policy).</p>
 <p>If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications.</p>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note: Linux on Z and z/OS</strong></p>
-<p>This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode. </p>
+<p>This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode.</p>
 <p>Hardware-based pause-less GC is supported on IBM z14&trade; and later hardware running the following software:</p>
 <p>Operating systems:</p>
 <ul>
@@ -3664,6 +3682,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see <a href="../gc/#generational-concurrent-policy">Generational Concurrent policy</a>.</p>
 </dd>
 </dl>
+<h3 id="stdglobalcompacttosatisfyallocate"><code>stdGlobalCompactToSatisfyAllocate</code></h3>
+<div class="codehilite"><pre><span></span>    -Xgc:stdGlobalCompactToSatisfyAllocate
+</pre></div>
+
+
+<dl>
+<dd>Prevents the GC from performing a compaction unless absolutely required to satisfy the current allocation failure by removing
+the dynamic compaction triggers that look at heap occupancy. This option works only with the following GC policies:</dd>
+</dl>
+<ul>
+<li><code>gencon</code></li>
+<li><code>optthruput</code></li>
+<li><code>optavgpause</code></li>
+</ul>
 <h3 id="tlhincrementsize"><code>tlhIncrementSize</code></h3>
 <div class="codehilite"><pre><span></span>    -Xgc:tlhIncrementSize=&lt;bytes&gt;
 </pre></div>
