@@ -3681,7 +3681,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xtrace">-Xtrace</h1>
-<p>OpenJ9 VM tracing is a powerful feature to help you diagnose problems with minimal affect on performance. Tracing is enabled by default, together with a small set of trace points going to memory buffers. You can enable tracepoints at run time by using levels, components, group names, or individual tracepoint identifiers to trace VM internal operations and instrumented Java&trade; applications. You can also trace Java methods. See the <a href="#about-trace">About trace</a> section that follows for more detail.</p>
+<p>OpenJ9 VM tracing is a powerful feature to help you diagnose problems with minimal effect on performance. Tracing is enabled by default, together with a small set of trace points going to memory buffers. You can enable tracepoints at run time by using levels, components, group names, or individual tracepoint identifiers to trace VM internal operations and instrumented Java&trade; applications. You can also trace Java methods. See the <a href="#about-trace">About trace</a> section that follows for more detail.</p>
 <p>Trace data can be output in human-readable or in compressed binary formats. The VM provides a tool to process and convert the compressed binary data into a readable format. See <a href="../tool_traceformat/">Trace formatter</a>.  </p>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> You can also control trace by using the <code>com.ibm.jvm.Trace</code> API or by using JVMTI from an external agent.</p>
 <h2 id="xtrace-option-builder">Xtrace Option Builder</h2>
@@ -3815,7 +3815,7 @@ The following table lists the parameters for `-Xtrace` that provide usage and co
 <p>With the OpenJ9 trace feature, you can trace VM internal operations, Java applications, and Java methods, or any combination of these.</p>
 <dl>
 <dt>VM internal operations</dt>
-<dd>The OpenJ9 virtual machine (VM) is extensively instrumented with tracepoints for tracing operations. Interpretating this trace data requires detailed knowledge of the VM, and is intended to diagnose VM problems. No guarantee is given that tracepoints will not vary from release to release and from platform to platform.</dd>
+<dd>The OpenJ9 virtual machine (VM) is extensively instrumented with tracepoints for tracing operations. Interpreting this trace data requires detailed knowledge of the VM, and is intended to diagnose VM problems. No guarantee is given that tracepoints will not vary from release to release and from platform to platform.</dd>
 <dt>Applications</dt>
 <dd>VM trace contains an application trace facility that allows tracepoints to be placed in Java code, enabling you to combine trace data with the other forms of trace. This capability is supported by the <code>com.ibm.jvm.Trace</code> API. Note that an instrumented Java application runs only on an OpenJ9 VM. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_application.html">Application trace</a>.</dd>
 <dt>Java methods</dt>
@@ -4257,7 +4257,7 @@ how this parameter can be set:</p>
 <p>Where:</p>
 <ul>
 <li><code>&lt;filename&gt;</code> is a file name, which is created automatically if it does not exist. Otherwise, it is overwritten. To embed specific values in the file name use any of the following variables: <em>%d%</em> (today's date in "
-yyyymmdd" format), <em>%p%</em> (process ID number of the process generating the trace), or <em>%t%</em> (time in 24-hour hhmmss format).</li>
+yyyymmdd" format), <em>%p</em> (process ID number of the process generating the trace), or <em>%t%</em> (time in 24-hour hhmmss format).</li>
 <li>Optionally, <code>&lt;size&gt;</code> is a value in megabytes (MB), for example, use <em>4m</em> to specify 4 MB. When full, it wraps nondestructively to the beginning. If you do not limit the file, it grows indefinitely, until limited by disk space.</li>
 </ul>
 <p>Here are some examples:</p>
