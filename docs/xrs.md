@@ -24,7 +24,7 @@
 
 # -Xrs
 
-Prevents the OpenJ9 run time environment from handling any internally or externally generated signals such as `SIGSEGV` and `SIGABRT`. Any signals that are raised are handled by the default operating system handlers.
+Prevents the OpenJ9 runtime environment from handling any internally or externally generated signals such as `SIGSEGV` and `SIGABRT`. Any signals that are raised are handled by the default operating system handlers, which you might want if you are using a debugger such as GDB or WinDbg to diagnose problems in JNI code.
 
 Disabling signal handling in the OpenJ9 VM reduces performance by approximately 2-4%, depending on the application.
 
