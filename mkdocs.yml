@@ -89,7 +89,7 @@ markdown_extensions:
     - def_list
     - toc
     - sane_lists
-    - codehilite(linenums=false)
+#    - codehilite(linenums=false)
 
 # Documentation layout
 
@@ -122,10 +122,38 @@ pages:
     - "Class data sharing"                                                       : shrc.md
 
     - "Diagnostics" :
-        - "Tools and data"                                                       : diag_overview.md
-        - "Java dump"                                                            : dump_javadump.md
-        - "Heap dump"                                                            : dump_heapdump.md
-        - "System dump"                                                          : dump_systemdump.md
+
+        - "Tools and data"                                                       : diag_overview.md   
+
+        - "Dumps" :
+#          Move dump agents, events, xdump builder from -Xdump (link to -Xdump for detail) then...
+            - "Java dump"                                                        : dump_javadump.md
+            - "Heap dump"                                                        : dump_heapdump.md
+            - "System dump"                                                      : dump_systemdump.md
+
+#        - "Logs" :
+#            - "verboseGC"                                                        : logs_verboseGC.md  (to be written)
+#            - "JIT logs"                                                         : (move from JIT)
+#            - "SHRC"                                                             : logs_shrc.md  (to be written)
+
+#        - "Trace" :
+#            Move high level content and xtrace builder from -Xtrace (link to -Xtrace and -Xtgc for cmd line detail).
+#            - "Application trace"                                                :   trace_aplication.md  (to be written)
+#            - "Method trace"                                                     :   trace_method.md  (to be written)
+
+        - "Tools" : 
+#              3rd party tools topic for IBM monitoring & diag tools & Eclipse MA (take from New to OpenJ9), then...
+            - "Dump viewer"                                                      : tool_jdmpview.md
+            - "Trace formatter"                                                  : tool_traceformat.md
+            - "Option builder"                                                   : tool_builder.md
+            - "Java process status (jps)"                                        : tool_jps.md
+            - "Java stack (jstack) tool"                                         : tool_jstack.md
+            - "Switching to OpenJ9"                                              : tool_migration.md        
+        
+        - "Interfaces" :
+            - "JVMTI"                                                            : interface_jvmti.md
+#            - "MXbeans"                                                          : interface_mxbeans.md
+            - "DTFJ"                                                             : interface_dtfj.md
 
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md
@@ -312,16 +340,6 @@ pages:
             - "-XX:[+|-]UseNoGC"                                                 : xxusenogc.md
             - "-XX:[+|-]VerboseVerification"                                     : xxverboseverification.md
             - "-XX:[+|-]VMLockClassLoader"                                       : xxvmlockclassloader.md
-
-
-
-    - "Tools" :
-        - "Dump viewer"                                                           : tool_jdmpview.md
-        - "Trace formatter"                                                       : tool_traceformat.md
-        - "Option builder"                                                        : tool_builder.md
-        - "Java process status (jps) tool"                                        : tool_jps.md
-        - "Java stack (jstack) tool"                                              : tool_jstack.md
-        - "Switching to OpenJ9"                                                   : tool_migration.md
 
 
     - " Reference" :
