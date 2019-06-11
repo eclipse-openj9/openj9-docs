@@ -22,24 +22,29 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Djdk.nativeCBC
+# -XX:OnOutOfMemoryError
 
-This option enables or disables OpenSSL native cryptographic support for the CBC algorithm.
-
+You can use this Oracle Hotspot option to run commands when a `java.lang.OutOfMemoryError` is thrown. This option is recognized by OpenJ9 and provided for compatibility.
 
 ## Syntax
 
-        -Djdk.nativeCBC=[true|false]
+        -XX:OnOutOfMemoryError="<command_string>"
+
+where `<command_string>` is a command or list of commands to run when a `java.lang.OutOfMemoryError` occurs.
+
+For example, the following command specifies that the `java -version` command is run if the `Test` application throws a `java.lang.OutOfMemoryError` exception:
+
+`java -XX:OnOutOfMemoryError="java -version" Test`
+
+If you want to run multiple commands, use semicolons to separate them  within `<command_string>`. For example:
+
+`-XX:OnOutOfMemoryError="<java_path> <java_program>; cat file.txt"`
+
+The `-XX:OnOutOfMemoryError` option is equivalent to the following `-Xdump` option:
+
+`-Xdump:tool:events=systhrow,filter=java/lang/OutOfMemoryError,exec=<command_string>`
+
+For more information, see [`-Xdump`](xdump.md).  
 
 
-| Setting           | value    | Default                                                                        |
-|-------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeCBC` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-Djdk.nativeCBC` | false    |                                                                                |
-
-## Explanation
-
-OpenSSL support is enabled by default for the CBC algorithm. If you want to turn off this algorithm only, set this option to `false`. To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
-
-
-<!-- ==== END OF TOPIC ==== djdknativecbc.md ==== -->
+<!-- ==== END OF TOPIC ==== xxonoutofmemoryerror.md ==== -->

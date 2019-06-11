@@ -102,6 +102,7 @@ pages:
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 
     - "Release notes" :
+        - "Version 0.15.0"                                                       : version0.15.md      
         - "Version 0.14.2"                                                       : version0.14.2.md
         - "Version 0.14.0"                                                       : version0.14.md
         - "Version 0.13.0"                                                       : version0.13.md
@@ -149,6 +150,7 @@ pages:
             - "-Dfile.encoding"                                                  : dfileencoding.md
             - "-Djava.compiler"                                                  : djavacompiler.md
             - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
+            - "-Djdk.nativeChaCha20"                                             : djdknativechacha20.md            
             - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
             - "-Djdk.nativeDigest"                                               : djdknativedigest.md
             - "-Djdk.nativeGCM"                                                  : djdknativegcm.md
@@ -293,6 +295,7 @@ pages:
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
             - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
             - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
+            - "-XX:OnOutOfMemoryError"                                           : xxonoutofmemoryerror.md
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
             - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md

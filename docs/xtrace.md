@@ -24,7 +24,7 @@
 
 # -Xtrace
 
-OpenJ9 VM tracing is a powerful feature to help you diagnose problems with minimal affect on performance. Tracing is enabled by default, together with a small set of trace points going to memory buffers. You can enable tracepoints at run time by using levels, components, group names, or individual tracepoint identifiers to trace VM internal operations and instrumented Java&trade; applications. You can also trace Java methods. See the [About trace](#about-trace) section that follows for more detail.
+OpenJ9 VM tracing is a powerful feature to help you diagnose problems with minimal effect on performance. Tracing is enabled by default, together with a small set of trace points going to memory buffers. You can enable tracepoints at run time by using levels, components, group names, or individual tracepoint identifiers to trace VM internal operations and instrumented Java&trade; applications. You can also trace Java methods. See the [About trace](#about-trace) section that follows for more detail.
 
 Trace data can be output in human-readable or in compressed binary formats. The VM provides a tool to process and convert the compressed binary data into a readable format. See [Trace formatter](tool_traceformat.md).  
 
@@ -96,7 +96,7 @@ The following parameters can be used to control tracepoint activation. (Follow l
 With the OpenJ9 trace feature, you can trace VM internal operations, Java applications, and Java methods, or any combination of these.
 
 VM internal operations
-: The OpenJ9 virtual machine (VM) is extensively instrumented with tracepoints for tracing operations. Interpretating this trace data requires detailed knowledge of the VM, and is intended to diagnose VM problems. No guarantee is given that tracepoints will not vary from release to release and from platform to platform.
+: The OpenJ9 virtual machine (VM) is extensively instrumented with tracepoints for tracing operations. Interpreting this trace data requires detailed knowledge of the VM, and is intended to diagnose VM problems. No guarantee is given that tracepoints will not vary from release to release and from platform to platform.
 
 Applications
 : VM trace contains an application trace facility that allows tracepoints to be placed in Java code, enabling you to combine trace data with the other forms of trace. This capability is supported by the `com.ibm.jvm.Trace` API. Note that an instrumented Java application runs only on an OpenJ9 VM. For more information, see [Application trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_application.html).
@@ -408,7 +408,7 @@ Use exception output to redirect exceptions trace data to a file.
 Where:
 
 - `<filename>` is a file name, which is created automatically if it does not exist. Otherwise, it is overwritten. To embed specific values in the file name use any of the following variables: *%d%* (today's date in "
-yyyymmdd" format), *%p%* (process ID number of the process generating the trace), or *%t%* (time in 24-hour hhmmss format).
+yyyymmdd" format), *%p* (process ID number of the process generating the trace), or *%t%* (time in 24-hour hhmmss format).
 - Optionally, `<size>` is a value in megabytes (MB), for example, use *4m* to specify 4 MB. When full, it wraps nondestructively to the beginning. If you do not limit the file, it grows indefinitely, until limited by disk space.
 
 Here are some examples:

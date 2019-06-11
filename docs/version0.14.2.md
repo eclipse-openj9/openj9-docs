@@ -28,7 +28,7 @@
 The following new features and notable changes since v.0.14.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [Support for OpenSSL 1.0.2](#support-for-openssl-102)
+- [Support for OpenSSL 1.0.1](#support-for-openssl-101)
 - [OpenSSL Digest algorithm disabled](#openssl-digest-algorithm-disabled)
 
 
@@ -49,7 +49,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 ### Support for OpenSSL 1.0.1
 
-OpenSSL version 1.0.1 support is now enabled; Earlier releases supported only OpenJDK 1.0.2 and 1.1.x. On Linux&reg; and AIX&reg; platforms, the OpenSSL libraries are expected to be available on the system path. For more information about cryptographic acceleration with OpenSSL, see [Cryptographic operations](introduction.md#cryptographic-operations).
+OpenSSL version 1.0.1 support is now enabled; Earlier releases supported only OpenSSL 1.0.2 and 1.1.x. On Linux&reg; and AIX&reg; platforms, the OpenSSL libraries are expected to be available on the system path. For more information about cryptographic acceleration with OpenSSL, see [Cryptographic operations](introduction.md#cryptographic-operations).
 
 ### OpenSSL Digest algorithm disabled
 

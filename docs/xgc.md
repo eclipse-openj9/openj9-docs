@@ -44,9 +44,10 @@ Options that change the behavior of the Garbage Collector (GC).
 | [`preferredHeapBase`           ](#preferredheapbase           ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; only) |
 | [`scvNoAdaptiveTenure`         ](#scvnoadaptivetenure         ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                               |
 | [`scvTenureAge`                ](#scvtenureage                ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                           |
-| [`tlhIncrementSize`            ](#tlhincrementsize            ) | Sets the size of the thread local heap (TLH)  increment                                                   |
-| [`tlhInitialSize`              ](#tlhinitialsize              ) | Sets the initial size of the thread local heap                                                            |
-| [`tlhMaximumSize`              ](#tlhmaximumsize              ) | Sets the maximum size of the thread local heap                                                            |
+| [`stdGlobalCompactToSatisfyAllocate`](#stdglobalcompacttosatisfyallocate) | Prevents the GC from performing a compaction unless absolutely required. |
+| [`tlhIncrementSize`            ](#tlhincrementsize            ) | Sets the size of the thread local heap (TLH).  increment                                                   |
+| [`tlhInitialSize`              ](#tlhinitialsize              ) | Sets the initial size of the thread local. heap                                                            |
+| [`tlhMaximumSize`              ](#tlhmaximumsize              ) | Sets the maximum size of the thread local. heap                                                            |
 | [`verboseFormat`               ](#verboseformat               ) | Sets the verbose GC format.                                                                               |
 
 ### `concurrentScavenge`
@@ -61,11 +62,9 @@ Options that change the behavior of the Garbage Collector (GC).
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note: Linux on Z and z/OS**
 
-<!-- 0.15.0 change to be re-enabled : This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode. 
+    This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode.
 
-    Hardware-based pause-less GC is supported on IBM z14&trade; and later hardware running the following software: -->
-
-    This option is supported on IBM z14&trade; hardware running the following software:
+    Hardware-based pause-less GC is supported on IBM z14&trade; and later hardware running the following software:
 
     Operating systems:
 
@@ -175,6 +174,18 @@ Options that change the behavior of the Garbage Collector (GC).
   | `<n>`         | [1 - 14]       | 10                    |
 
 : Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see [Generational Concurrent policy](gc.md#generational-concurrent-policy).
+
+### `stdGlobalCompactToSatisfyAllocate`
+
+        -Xgc:stdGlobalCompactToSatisfyAllocate
+
+: Prevents the GC from performing a compaction unless absolutely required to satisfy the current allocation failure by removing
+the dynamic compaction triggers that look at heap occupancy. This option works only with the following GC policies:
+
+- `gencon`
+- `optthruput`
+- `optavgpause`
+
 
 ### `tlhIncrementSize`
 
