@@ -26,7 +26,7 @@
 
 **(AIX&reg; & Linux&trade; only)**
 
-For an analysis of core dumps from Linux and AIX platforms, copies of executable files and libraries are required along with the system dump. Run the `jextract` utility to collect these files.
+For a full analysis of core dumps from Linux and AIX platforms, copies of executable files and libraries are required along with the system dump (you can get some information from the dump without these files, but not as much). Run the `jextract` utility to collect these files.
 
 ## Syntax
 
