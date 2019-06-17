@@ -26,7 +26,7 @@
 
 **(AIX&reg;, Linux&trade;, ![Start of content that applies only to Java 11 (LTS) and later](cr/java11plus.png) macOS&reg;![End of content that applies only to Java 10 and later](cr/java_close_lts.png))**
 
-On some operating systems, copies of executable files and libraries are required for a full analysis of a core dump (you can get some information from the dump without these files, but not as much). Run the `jextract` utility to collect these extra files and package them into an archive file along with the core dump.
+On some operating systems, copies of executable files and libraries are required for a full analysis of a core dump (you can get some information from the dump without these files, but not as much). Run the `jextract` utility to collect these extra files and package them into an archive file along with the core dump. To analyze the output, use the [dump viewer (`jdmpview`)](tool_jdmpview.md).
 
 ## Syntax
 
@@ -35,13 +35,11 @@ On some operating systems, copies of executable files and libraries are required
 where:
 
 - `<core file name>` is the name of the system dump.
-- `<zip_file>` is the name you want to give to the processed file. If you do not specify a name, output is written to `<core file name>.zip` by default.
+- `<zip_file>` is the name you want to give to the processed file. If you do not specify a name, output is written to `<core file name>.zip` by default. The output is written to the same directory as the core file.
 
 If you are analyzing a dump from a VM that used [`-Xcompressedrefs`](xcompressedrefs.md), include the `-J-Xcompressedrefs` parameter to run `jextract` using compressed references.
 
-: <i class="fa fa-exclamation-triangle"></i> **Restriction: ** You must run `jextract` using the same VM level, on the same system that produced the system dump. The `jextract` utility compresses the dump, executable files, and libraries into a single .zip file for use in subsequent problem diagnosis. To analyze the output, use the [dump viewer (`jdmpview`)](tool_jdmpview.md).
-
-    If you run `jextract` on a VM level that is different from the one on which the dump was produced you see the following messages:
+: <i class="fa fa-exclamation-triangle"></i> **Restriction: ** You must run `jextract` using the same VM level, on the same system that produced the system dump. If you run `jextract` on a VM level that is different from the one on which the dump was produced you see the following messages:
 
         J9RAS.buildID is incorrect (found e8801ed67d21c6be, expecting eb4173107d21c673).
         This version of jextract is incompatible with this dump.
