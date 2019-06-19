@@ -316,6 +316,7 @@ pages:
 
 
     - "Tools" :
+        - "Dump extractor"                                                        : tool_jextract.md    
         - "Dump viewer"                                                           : tool_jdmpview.md
         - "Trace formatter"                                                       : tool_traceformat.md
         - "Option builder"                                                        : tool_builder.md
