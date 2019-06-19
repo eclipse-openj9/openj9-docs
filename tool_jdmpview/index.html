@@ -2835,6 +2835,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../tool_jextract/" title="Dump extractor" class="md-nav__link">
+      Dump extractor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -3744,11 +3756,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The dump viewer is useful for diagnosing <code>OutOfMemoryError</code> exceptions in Java&trade; applications. For problems like general protection faults (GPF), system abends, and SIGSEVs, a system debugger such as <strong>gdb</strong> (Linux) provides more information.</p>
 <h2 id="syntax">Syntax</h2>
 <h3 id="starting-the-dump-viewer">Starting the dump viewer</h3>
-<div class="codehilite"><pre><span></span>jdmpview -core &lt;core file&gt;
-</pre></div>
-
-
-<p>Where <code>&lt;core file&gt;</code> specifies a dump file.                                                                                 </p>
+<p><code>jdmpview (-core &lt;core file&gt; | -zip &lt;zip file&gt;) [-notemp]</code></p>
+<table>
+<thead>
+<tr>
+<th>Input option</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-core &lt;core file&gt;</code></td>
+<td>Specifies a dump file.</td>
+</tr>
+<tr>
+<td><code>-zip &lt;zip file&gt;</code></td>
+<td>Specifies a compressed file containing the core file and associated XML file (produced by the <a href="../tool_jextract/">dump extractor (<code>jextract</code>)</a> tool on AIX&reg; and Linux&trade; systems).</td>
+</tr>
+<tr>
+<td><code>-notemp</code></td>
+<td>By default, when you specify a file by using the <code>-zip</code> option, the contents are extracted to a temporary directory before processing. Use the <code>-notemp</code> option to prevent this extraction step, and run all subsequent commands in memory.</td>
+</tr>
+</tbody>
+</table>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The <code>-core</code> option can be used with the <code>-zip</code> option to specify the core and XML files in the compressed file. Without these options, <code>jdmpview</code> shows multiple contexts, one for each source file that it identified in the compressed file.  </p>
 <p>On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to <code>jdmpview</code>, or you can supply a fully qualified MVS&trade; data set name. For example:</p>
 <div class="codehilite"><pre><span></span>&gt; jdmpview -core USER1.JVM.TDUMP.SSHD6.D070430.T092211
 DTFJView version 4.28.3, using DTFJ version 1.11.28004
@@ -4417,7 +4448,7 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
     <span class="n">info</span> <span class="n">system</span>                                    <span class="n">displays</span> <span class="n">information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">system</span> <span class="n">the</span> <span class="n">core</span> <span class="n">dump</span> <span class="n">is</span> <span class="n">from</span>
     <span class="n">info</span> <span class="kr">thread</span>                                    <span class="n">displays</span> <span class="n">information</span> <span class="n">about</span> <span class="n">Java</span> <span class="n">and</span> <span class="n">native</span> <span class="n">threads</span>
     <span class="n">log</span>                       <span class="p">[</span><span class="n">name</span> <span class="n">level</span><span class="p">]</span>         <span class="n">display</span> <span class="n">and</span> <span class="n">control</span> <span class="n">instances</span> <span class="n">of</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">Logger</span>
-    <span class="n">open</span>                      <span class="p">[</span><span class="n">path</span> <span class="n">to</span> <span class="n">core</span><span class="p">]</span>       <span class="n">opens</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">core</span> <span class="n">file</span>
+    <span class="n">open</span>                      <span class="p">[</span><span class="n">path</span> <span class="n">to</span> <span class="n">core</span> <span class="n">or</span> <span class="n">zip</span><span class="p">]</span> <span class="n">opens</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">core</span> <span class="n">or</span> <span class="n">zip</span> <span class="n">file</span>
     <span class="n">plugins</span>                                        <span class="n">Plugin</span> <span class="n">management</span> <span class="n">commands</span>
                          <span class="n">list</span>                      <span class="n">Show</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">loaded</span> <span class="n">plugins</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">context</span>
                        <span class="n">reload</span>                      <span class="n">Reload</span> <span class="n">plugins</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">context</span>
@@ -4633,7 +4664,7 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="xxvmlockclassloader/" title="-XX:[+|-]VMLockClassLoader" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="tool_jextract/" title="Dump extractor" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -4642,7 +4673,7 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -XX:[+|-]VMLockClassLoader
+                            Dump extractor
                           </span>
                         </div>
                       </a>

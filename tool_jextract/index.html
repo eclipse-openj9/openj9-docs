@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxignoreunrecognizedvmoptions/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/tool_jextract/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-XX:[+|-]IgnoreUnrecognizedVMOptions -  </title>
+        <title>Dump extractor -  </title>
       
     
     
@@ -134,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-xx91-93ignoreunrecognizedvmoptions" tabindex="1" class="md-skip">
+      <a href="../#dump-extractor-jextract" tabindex="1" class="md-skip">
         
       </a>
     
@@ -606,12 +606,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
     <label class="md-nav__link" for="nav-11">
       Command-line options
@@ -2283,12 +2281,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-6" type="checkbox" id="nav-11-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-6" type="checkbox" id="nav-11-6">
     
     <label class="md-nav__link" for="nav-11-6">
       JVM -XX options
@@ -2484,49 +2480,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -XX:[+|-]IgnoreUnrecognizedVMOptions
-      </label>
-    
-    <a href="./" title="-XX:[+|-]IgnoreUnrecognizedVMOptions" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../xxignoreunrecognizedvmoptions/" title="-XX:[+|-]IgnoreUnrecognizedVMOptions" class="md-nav__link">
       -XX:[+|-]IgnoreUnrecognizedVMOptions
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2856,10 +2814,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
     
     <label class="md-nav__link" for="nav-12">
       Tools
@@ -2875,11 +2835,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../tool_jextract/" title="Dump extractor" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Dump extractor
+      </label>
+    
+    <a href="./" title="Dump extractor" class="md-nav__link md-nav__link--active">
       Dump extractor
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" title="See also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3083,6 +3088,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" title="See also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
       
       
       
@@ -3100,12 +3112,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xxignoreunrecognizedvmoptions.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/tool_jextract.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
                 <!--
-* Copyright (c) 2017, 2019 IBM Corp. and others
+* Copyright (c) 2017, 2018 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -3128,35 +3140,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xx91-93ignoreunrecognizedvmoptions">-XX:[+|-]IgnoreUnrecognizedVMOptions</h1>
-<p>This Oracle option affects the behavior of the Hotspot JVM when it finds an unrecognized top-level option at startup. This option is implemented in the OpenJ9 VM for compatibility.</p>
+<h1 id="dump-extractor-jextract">Dump extractor (<code>jextract</code>)</h1>
+<p><strong>(AIX&reg;, Linux&trade;, <img alt="Start of content that applies only to Java 11 (LTS) and later" src="../cr/java11plus.png" /> macOS&reg;<img alt="End of content that applies only to Java 10 and later" src="../cr/java_close_lts.png" />)</strong></p>
+<p>On some operating systems, copies of executable files and libraries are required for a full analysis of a core dump (you can get some information from the dump without these files, but not as much). Run the <code>jextract</code> utility to collect these extra files and package them into an archive file along with the core dump. To analyze the output, use the <a href="../tool_jdmpview/">dump viewer (<code>jdmpview</code>)</a>.</p>
 <h2 id="syntax">Syntax</h2>
-<div class="codehilite"><pre><span></span>    -XX:[+|-]IgnoreUnrecognizedVMOptions
+<div class="codehilite"><pre><span></span>    jextract &lt;core file name&gt; [&lt;zip_file&gt;]
 </pre></div>
 
 
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Effect</th>
-<th align="center">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-XX:+IgnoreUnrecognizedVMOptions</code></td>
-<td>Enable</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td><code>-XX:-IgnoreUnrecognizedVMOptions</code></td>
-<td>Disable</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-</tbody>
-</table>
-<!-- ==== END OF TOPIC ==== xxignoreunrecognizedvmoptions.md ==== -->
+<p>where:</p>
+<ul>
+<li><code>&lt;core file name&gt;</code> is the name of the system dump.</li>
+<li><code>&lt;zip_file&gt;</code> is the name you want to give to the processed file. If you do not specify a name, output is written to <code>&lt;core file name&gt;.zip</code> by default. The output is written to the same directory as the core file.</li>
+</ul>
+<dl>
+<dt>If you are analyzing a dump from a VM that used <a href="../xcompressedrefs/"><code>-Xcompressedrefs</code></a>, include the <code>-J-Xcompressedrefs</code> parameter to run <code>jextract</code> using compressed references.</dt>
+<dd>
+<p><i class="fa fa-exclamation-triangle"></i> <strong>Restriction: </strong> You must run <code>jextract</code> using the same VM level, on the same system that produced the system dump. If you run <code>jextract</code> on a VM level that is different from the one on which the dump was produced you see the following messages:</p>
+<div class="codehilite"><pre><span></span>J9RAS.buildID is incorrect (found e8801ed67d21c6be, expecting eb4173107d21c673).
+This version of jextract is incompatible with this dump.
+Failure detected during jextract, see previous message(s).
+</pre></div>
+
+
+</dd>
+</dl>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../tool_jdmpview/">Dump viewer (<code>jdmpview</code>)</a></li>
+</ul>
+<!-- ==== END OF TOPIC ==== tool_jextract.md ==== -->
                 
                   
                 
@@ -3199,7 +3212,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="xxidletuningminidlewaittime/" title="-XX:IdleTuningMinIdleWaitTime" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="xxvmlockclassloader/" title="-XX:[+|-]VMLockClassLoader" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3208,19 +3221,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -XX:IdleTuningMinIdleWaitTime
+                            -XX:[+|-]VMLockClassLoader
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="xxignoreunrecognizedxxcolonoptions/" title="-XX:[+|-]IgnoreUnrecognizedXXColonOptions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="tool_jdmpview/" title="Dump viewer" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            -XX:[+|-]IgnoreUnrecognizedXXColonOptions
+                            Dump viewer
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">
