@@ -341,7 +341,6 @@ pages:
             - "-XX:[+|-]VerboseVerification"                                     : xxverboseverification.md
             - "-XX:[+|-]VMLockClassLoader"                                       : xxvmlockclassloader.md
 
-
     - " Reference" :
         - "Supported environments"                                                : openj9_support.md
         - "Default settings"                                                      : openj9_defaults.md
