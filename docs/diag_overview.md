@@ -48,27 +48,29 @@ Some components of OpenJ9 can also produce verbose output or log files to assist
 
 - Class loader operations can be analyzed by producing verbose output from the `-verbose:dynload` standard option, which shows detailed information as each class is loaded by the VM.
 
-## Trace facility
+## Debugging tools
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you are already familiar with tools that are provided with HotSpot, see [Switching to OpenJ9](tool_migration.md), which explains some of the differences you might encounter when using OpenJ9 .
+
+### Trace facility
 
 The OpenJ9 trace facility can be used to trace applications, Java methods, or internal JVM operations with minimal impact on performance. Trace is configured by using the [-Xtrace](xtrace.md) command line option, which allows you to control what is traced and when.
 
 Trace data is produced in binary format and must be processed by the OpenJ9 trace formatter to convert it to a readable form. For more information, see [Trace formattter](tool_traceformat.md).
 
-## Debugging tools and interfaces
-
-
-
 ### Dump viewer
 
 Because system dumps are binary files, OpenJ9 provides a dump viewer tool (`jdmpview`) to analyze the contents. This tool can work with dumps from any platforms independently of a system debugger. For more information, see [Dump viewer](tool_jdmpview.md).
 
+## Interfaces
+
 ### JVMTI tools interface
 
-OpenJ9 supports the Java Virtual Machine Tool Interface (JVMTI) and provides extensions that allow JVMTI tools to obtain diagnostic information or trigger diagnostic operations in the VM. For more information, see [JVMTI extensions](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jvmti_extensions.html).
+OpenJ9 supports the Java Virtual Machine Tool Interface (JVMTI) and provides extensions that allow JVMTI tools to obtain diagnostic information or trigger diagnostic operations in the VM. For more information, see [Java Virtual Machine Tool Interface](interface_jvmti.md).
 
 ### DTFJ Interface
 
-OpenJ9 includes the Diagnostic Tool Framework for Java (DTFJ) API. Custom applications can be written that use this API to access a wide range of information in a system dump or a Java dump. For more information, see [Using DTFJ](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/dtfj.html).
+OpenJ9 includes the Diagnostic Tool Framework for Java (DTFJ) API. Custom applications can be written that use this API to access a wide range of information in a system dump or a Java dump. For more information, see [Diagnostic Tool Framework for Java](interface_dtfj.md).
 
 ### JPDA tools
 
