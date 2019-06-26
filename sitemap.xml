@@ -371,11 +371,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://www.eclipse.org/openj9/docs/xdiagnosticscollector/</loc>
-     <lastmod>2019-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://www.eclipse.org/openj9/docs/xenableexcessivegc/</loc>
      <lastmod>2019-06-26</lastmod>
      <changefreq>daily</changefreq>
