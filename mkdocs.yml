@@ -206,7 +206,6 @@ pages:
             - "-Xconcurrentlevel"                                                : xconcurrentlevel.md
             - "-Xconcurrentslack"                                                : xconcurrentslack.md
             - "-Xconmeter"                                                       : xconmeter.md
-            - "-Xdiagnosticscollector"                                           : xdiagnosticscollector.md
             - "-Xdisableexcessivegc"                                             : xenableexcessivegc.md              # redirect
             - "-Xdisableexplicitgc"                                              : xenableexplicitgc.md               # redirect
             - "-Xdisablejavadump"                                                : xdisablejavadump.md
