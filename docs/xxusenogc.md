@@ -38,9 +38,11 @@ reclaimed through garbage collection.
 
 ## Explanation
 
-This policy can be useful for test purposes and for short-lived applications. When the limit is reached an `OutOfMemory` error is generated and the VM shuts down. This policy can also be enabled with the [`-Xgcpolicy:nogc`](xgcpolicy.md) option.
+This policy can be useful for test purposes and for short-lived applications. When the limit is reached an `OutOfMemory` error is generated and the VM shuts down.
 
 The `-XX:-UseNoGC` option turns off a previously enabled `-XX:+UseNoGC` option.
+
+This policy can also be enabled with the `-Xgcpolicy:nogc` option. See [`-Xgcpolicy:nogc`](xgcpolicy.md#nogc) for more details about this policy and when it is appropriate to use it.
 
 
 

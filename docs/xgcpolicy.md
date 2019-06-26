@@ -33,13 +33,14 @@ Controls the behavior of the garbage collector by specifying different garbage c
 
 ## Parameters
 
-| Parameter                                                        | Default  |
-|------------------------------------------------------------------|----------|
-| [`balanced`](#balanced)                                          |          |
-| [`gencon`](#gencon)                                              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| Parameter                                                                 | Default  |
+|---------------------------------------------------------------------------|----------|
+| [`balanced`](#balanced)                                                   |          |
+| [`gencon`](#gencon)                                                       | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | [`metronome`](#metronome-aix-linux-only) (AIX&reg;, Linux&reg; x86 only)  |          |
-| [`optavgpause`](#optavgpause)                                    |          |
-| [`optthruput`](#optthruput)                                      |          |
+| [`nogc`](#nogc)                                                           |          |
+| [`optavgpause`](#optavgpause)                                             |          |
+| [`optthruput`](#optthruput)                                               |          |
 
 
 Specify the garbage collection policy that you want the OpenJ9 VM to use:
@@ -168,8 +169,37 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
         -Xgcpolicy:nogc
 
-: When this policy is enabled, the Java object heap is expanded in the normal way until the limit is reached, but memory is not reclaimed through garbage collection. This policy can be useful for test
-purposes and for short-lived applications. When the limit is reached an `OutOfMemory` error is generated and the VM shuts down. This policy can also be enabled with the [`-XX:+UseNoGC`](xxusenogc.md) option.
+: This policy handles only memory allocation and heap expansion, but doesn't reclaim any memory. If the available Java heap becomes exhausted, an `OutOfMemoryError` exception is triggered and the VM stops.
+
+    Because there is no GC pause and most overheads on allocations are eliminated, the impact on runtime performance is minimized. This policy therefore provides benfits for "garbage-free" applications. See "When to use `nogc`" below for possible use cases.
+
+    You should be especially careful when using any of the following techniques with `nogc` because memory is never released under this policy:  
+    - Finalization  
+    - Direct memory access  
+    - Weak, soft, and phantom references
+
+    This policy can also be enabled with the [`-XX:+UseNoGC`](xxusenogc.md) option.
+    
+    Further details are available at [JEP 318: Epsilon: A No-Op Garbage Collector](http://openjdk.java.net/jeps/318).
+
+####When to use nogc
+
+: For most Java applications, you should _not_ use `nogc`. However, there are some particular situations where it can be appropriate:
+
+    Testing during development
+
+    - GC performance. Use `nogc` to provide a baseline when testing the performance of other GC policies, including the provision of a latency baseline for low-latency.
+
+    - Application memory. Use `nogc` to test your settings for allocated memory, use [`-Xmx`](xms.md) to set the heap size that should not be exceeded. If your application tries to exceed your memory limit, it will crash with a heap dump.
+
+    - VM interface. Use `nogc` to help with VM interface to the GC; the `nogc` policy is the minimum implementation possible and so provides a simple test case.
+
+    Running applications with minimal or no GC requrements
+
+    - You might use `nogc` when an application is so short lived that allocated memory is never exhausted and running a full GC cycle is therfore a waste of resources.
+    
+    - Similarly, when memory application is well understood or where there is rarely memory to be reclaimed, you might prefer to avoid unnecessary GC cycles and rely on a failover mechanism to occasionally restart the VM as necessary.
+
 
 ### `optavgpause`
 
