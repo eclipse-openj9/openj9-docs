@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xdump/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/interface_jvmti/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-Xdump -  </title>
+        <title>JVMTI -  </title>
       
     
     
@@ -134,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-xdump" tabindex="1" class="md-skip">
+      <a href="../#java-virtual-machine-tool-interface" tabindex="1" class="md-skip">
         
       </a>
     
@@ -534,10 +534,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
     
     <label class="md-nav__link" for="nav-10">
       Diagnostics
@@ -721,10 +723,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4" type="checkbox" id="nav-10-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4" type="checkbox" id="nav-10-4" checked>
     
     <label class="md-nav__link" for="nav-10-4">
       Interfaces
@@ -740,11 +744,282 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../interface_jvmti/" title="JVMTI" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        JVMTI
+      </label>
+    
+    <a href="./" title="JVMTI" class="md-nav__link md-nav__link--active">
       JVMTI
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openj9-extensions" title="OpenJ9 extensions" class="md-nav__link">
+    OpenJ9 extensions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-jvmti-agent" title="Sample JVMTI agent" class="md-nav__link">
+    Sample JVMTI agent
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent_onload" title="Agent_OnLoad()" class="md-nav__link">
+    Agent_OnLoad()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dumpstartcallback" title="DumpStartCallback()" class="md-nav__link">
+    DumpStartCallback()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-sample-jvmti-agent" title="Using the sample JVMTI agent" class="md-nav__link">
+    Using the sample JVMTI agent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" title="API reference" class="md-nav__link">
+    API reference
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getosthreadid" title="GetOSThreadID" class="md-nav__link">
+    GetOSThreadID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queryvmdump" title="QueryVmDump" class="md-nav__link">
+    QueryVmDump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvmdump" title="SetVmDump" class="md-nav__link">
+    SetVmDump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggervmdump" title="TriggerVmDump" class="md-nav__link">
+    TriggerVmDump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetvmdump" title="ResetVmDump" class="md-nav__link">
+    ResetVmDump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmdumpstart" title="VMDumpStart" class="md-nav__link">
+    VMDumpStart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmdumpend" title="VMDumpEnd" class="md-nav__link">
+    VMDumpEnd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvmtrace" title="SetVmTrace" class="md-nav__link">
+    SetVmTrace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registertracepointsubscriber" title="RegisterTracePointSubscriber" class="md-nav__link">
+    RegisterTracePointSubscriber
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jvmtitracesubscriber-function" title="jvmtiTraceSubscriber function" class="md-nav__link">
+    jvmtiTraceSubscriber function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvmtitracealarm-function" title="jvmtiTraceAlarm function" class="md-nav__link">
+    jvmtiTraceAlarm function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deregistertracepointsubscriber" title="DeregisterTracePointSubscriber" class="md-nav__link">
+    DeregisterTracePointSubscriber
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmemorycategories" title="GetMemoryCategories" class="md-nav__link">
+    GetMemoryCategories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queryvmlogoptions" title="QueryVmLogOptions" class="md-nav__link">
+    QueryVmLogOptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvmlogoptions" title="SetVmLogOptions" class="md-nav__link">
+    SetVmLogOptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteratesharedcaches" title="IterateSharedCaches" class="md-nav__link">
+    IterateSharedCaches
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jvmtiiteratesharedcachescallback-function" title="jvmtiIterateSharedCachesCallback function" class="md-nav__link">
+    jvmtiIterateSharedCachesCallback function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvmtisharedcacheinfo-structure" title="jvmtiSharedCacheInfo structure" class="md-nav__link">
+    jvmtiSharedCacheInfo structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroysharedcache" title="DestroySharedCache" class="md-nav__link">
+    DestroySharedCache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registerverbosegcsubscriber" title="RegisterVerboseGCSubscriber" class="md-nav__link">
+    RegisterVerboseGCSubscriber
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jvmtiverbosegcsubscriber-function" title="jvmtiVerboseGCSubscriber function" class="md-nav__link">
+    jvmtiVerboseGCSubscriber function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvmtiverbosegcalarm-function" title="jvmtiVerboseGCAlarm function" class="md-nav__link">
+    jvmtiVerboseGCAlarm function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deregisterverbosegcsubscriber" title="DeregisterVerboseGCSubscriber" class="md-nav__link">
+    DeregisterVerboseGCSubscriber
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -774,12 +1049,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
     <label class="md-nav__link" for="nav-11">
       Command-line options
@@ -1095,12 +1368,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-5" type="checkbox" id="nav-11-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-5" type="checkbox" id="nav-11-5">
     
     <label class="md-nav__link" for="nav-11-5">
       JVM -X options
@@ -1428,323 +1699,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -Xdump
-      </label>
-    
-    <a href="./" title="-Xdump" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../xdump/" title="-Xdump" class="md-nav__link">
       -Xdump
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#xdump-option-builder" title="Xdump Option Builder" class="md-nav__link">
-    Xdump Option Builder
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-agents" title="Dump agents" class="md-nav__link">
-    Dump agents
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#default-dump-agents" title="Default dump agents" class="md-nav__link">
-    Default dump agents
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dump-agent-tokens" title="Dump agent tokens" class="md-nav__link">
-    Dump agent tokens
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merging-xdump-agents" title="Merging -Xdump agents" class="md-nav__link">
-    Merging -Xdump agents
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-events" title="Dump events" class="md-nav__link">
-    Dump events
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" title="Parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#help" title="help" class="md-nav__link">
-    help
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#noneoptions" title="none:&lt;options&gt;" class="md-nav__link">
-    none:&lt;options&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#defaults" title="defaults" class="md-nav__link">
-    defaults
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eventsevent" title="events=&lt;event&gt;" class="md-nav__link">
-    events=&lt;event&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execcommand" title="exec=&lt;command&gt;" class="md-nav__link">
-    exec=&lt;command&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filefilename" title="file=&lt;filename&gt;" class="md-nav__link">
-    file=&lt;filename&gt;
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#writing-to-stdoutstderr" title="Writing to STDOUT/STDERR" class="md-nav__link">
-    Writing to STDOUT/STDERR
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tokens" title="Tokens" class="md-nav__link">
-    Tokens
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#file-location" title="File location" class="md-nav__link">
-    File location
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filterfilter" title="filter=&lt;filter&gt;" class="md-nav__link">
-    filter=&lt;filter&gt;
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wildcards" title="Wildcards" class="md-nav__link">
-    Wildcards
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#class-loading-and-exception-events" title="Class loading and exception events" class="md-nav__link">
-    Class loading and exception events
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vmstop-event" title="vmstop event" class="md-nav__link">
-    vmstop event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slow-event" title="slow event" class="md-nav__link">
-    slow event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#allocation-event" title="allocation event" class="md-nav__link">
-    allocation event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-events" title="Other events" class="md-nav__link">
-    Other events
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msg_filterfilter" title="msg_filter=&lt;filter&gt;" class="md-nav__link">
-    msg_filter=&lt;filter&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optsoptions" title="opts=&lt;options&gt;" class="md-nav__link">
-    opts=&lt;options&gt;
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#heap-dumps" title="Heap dumps" class="md-nav__link">
-    Heap dumps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zos-system-dumps" title="z/OS system dumps" class="md-nav__link">
-    z/OS system dumps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tool-dumps" title="Tool dumps" class="md-nav__link">
-    Tool dumps
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#priority0-999" title="priority=&lt;0-999&gt;" class="md-nav__link">
-    priority=&lt;0-999&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rangeranges" title="range=&lt;ranges&gt;" class="md-nav__link">
-    range=&lt;ranges&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requestrequests" title="request=&lt;requests&gt;" class="md-nav__link">
-    request=&lt;requests&gt;
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-output" title="Dump output" class="md-nav__link">
-    Dump output
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#system-dumps-on-linux" title="System dumps on Linux" class="md-nav__link">
-    System dumps on Linux
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" title="See also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3411,44 +3370,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#xdump-option-builder" title="Xdump Option Builder" class="md-nav__link">
-    Xdump Option Builder
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
-    Syntax
+  <a href="#openj9-extensions" title="OpenJ9 extensions" class="md-nav__link">
+    OpenJ9 extensions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dump-agents" title="Dump agents" class="md-nav__link">
-    Dump agents
+  <a href="#sample-jvmti-agent" title="Sample JVMTI agent" class="md-nav__link">
+    Sample JVMTI agent
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#default-dump-agents" title="Default dump agents" class="md-nav__link">
-    Default dump agents
+  <a href="#agent_onload" title="Agent_OnLoad()" class="md-nav__link">
+    Agent_OnLoad()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dump-agent-tokens" title="Dump agent tokens" class="md-nav__link">
-    Dump agent tokens
+  <a href="#dumpstartcallback" title="DumpStartCallback()" class="md-nav__link">
+    DumpStartCallback()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#merging-xdump-agents" title="Merging -Xdump agents" class="md-nav__link">
-    Merging -Xdump agents
+  <a href="#using-the-sample-jvmti-agent" title="Using the sample JVMTI agent" class="md-nav__link">
+    Using the sample JVMTI agent
   </a>
   
 </li>
@@ -3459,80 +3418,87 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
-  <a href="#dump-events" title="Dump events" class="md-nav__link">
-    Dump events
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" title="Parameters" class="md-nav__link">
-    Parameters
+  <a href="#api-reference" title="API reference" class="md-nav__link">
+    API reference
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#help" title="help" class="md-nav__link">
-    help
+  <a href="#getosthreadid" title="GetOSThreadID" class="md-nav__link">
+    GetOSThreadID
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#noneoptions" title="none:&lt;options&gt;" class="md-nav__link">
-    none:&lt;options&gt;
+  <a href="#queryvmdump" title="QueryVmDump" class="md-nav__link">
+    QueryVmDump
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#defaults" title="defaults" class="md-nav__link">
-    defaults
+  <a href="#setvmdump" title="SetVmDump" class="md-nav__link">
+    SetVmDump
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#eventsevent" title="events=&lt;event&gt;" class="md-nav__link">
-    events=&lt;event&gt;
+  <a href="#triggervmdump" title="TriggerVmDump" class="md-nav__link">
+    TriggerVmDump
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#execcommand" title="exec=&lt;command&gt;" class="md-nav__link">
-    exec=&lt;command&gt;
+  <a href="#resetvmdump" title="ResetVmDump" class="md-nav__link">
+    ResetVmDump
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#filefilename" title="file=&lt;filename&gt;" class="md-nav__link">
-    file=&lt;filename&gt;
+  <a href="#vmdumpstart" title="VMDumpStart" class="md-nav__link">
+    VMDumpStart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmdumpend" title="VMDumpEnd" class="md-nav__link">
+    VMDumpEnd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvmtrace" title="SetVmTrace" class="md-nav__link">
+    SetVmTrace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registertracepointsubscriber" title="RegisterTracePointSubscriber" class="md-nav__link">
+    RegisterTracePointSubscriber
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#writing-to-stdoutstderr" title="Writing to STDOUT/STDERR" class="md-nav__link">
-    Writing to STDOUT/STDERR
+  <a href="#jvmtitracesubscriber-function" title="jvmtiTraceSubscriber function" class="md-nav__link">
+    jvmtiTraceSubscriber function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tokens" title="Tokens" class="md-nav__link">
-    Tokens
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#file-location" title="File location" class="md-nav__link">
-    File location
+  <a href="#jvmtitracealarm-function" title="jvmtiTraceAlarm function" class="md-nav__link">
+    jvmtiTraceAlarm function
   </a>
   
 </li>
@@ -3543,51 +3509,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#filterfilter" title="filter=&lt;filter&gt;" class="md-nav__link">
-    filter=&lt;filter&gt;
+  <a href="#deregistertracepointsubscriber" title="DeregisterTracePointSubscriber" class="md-nav__link">
+    DeregisterTracePointSubscriber
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmemorycategories" title="GetMemoryCategories" class="md-nav__link">
+    GetMemoryCategories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queryvmlogoptions" title="QueryVmLogOptions" class="md-nav__link">
+    QueryVmLogOptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvmlogoptions" title="SetVmLogOptions" class="md-nav__link">
+    SetVmLogOptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteratesharedcaches" title="IterateSharedCaches" class="md-nav__link">
+    IterateSharedCaches
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#wildcards" title="Wildcards" class="md-nav__link">
-    Wildcards
+  <a href="#jvmtiiteratesharedcachescallback-function" title="jvmtiIterateSharedCachesCallback function" class="md-nav__link">
+    jvmtiIterateSharedCachesCallback function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#class-loading-and-exception-events" title="Class loading and exception events" class="md-nav__link">
-    Class loading and exception events
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vmstop-event" title="vmstop event" class="md-nav__link">
-    vmstop event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slow-event" title="slow event" class="md-nav__link">
-    slow event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#allocation-event" title="allocation event" class="md-nav__link">
-    allocation event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-events" title="Other events" class="md-nav__link">
-    Other events
+  <a href="#jvmtisharedcacheinfo-structure" title="jvmtiSharedCacheInfo structure" class="md-nav__link">
+    jvmtiSharedCacheInfo structure
   </a>
   
 </li>
@@ -3598,37 +3564,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#msg_filterfilter" title="msg_filter=&lt;filter&gt;" class="md-nav__link">
-    msg_filter=&lt;filter&gt;
+  <a href="#destroysharedcache" title="DestroySharedCache" class="md-nav__link">
+    DestroySharedCache
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#optsoptions" title="opts=&lt;options&gt;" class="md-nav__link">
-    opts=&lt;options&gt;
+  <a href="#registerverbosegcsubscriber" title="RegisterVerboseGCSubscriber" class="md-nav__link">
+    RegisterVerboseGCSubscriber
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#heap-dumps" title="Heap dumps" class="md-nav__link">
-    Heap dumps
+  <a href="#jvmtiverbosegcsubscriber-function" title="jvmtiVerboseGCSubscriber function" class="md-nav__link">
+    jvmtiVerboseGCSubscriber function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#zos-system-dumps" title="z/OS system dumps" class="md-nav__link">
-    z/OS system dumps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tool-dumps" title="Tool dumps" class="md-nav__link">
-    Tool dumps
+  <a href="#jvmtiverbosegcalarm-function" title="jvmtiVerboseGCAlarm function" class="md-nav__link">
+    jvmtiVerboseGCAlarm function
   </a>
   
 </li>
@@ -3639,55 +3598,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#priority0-999" title="priority=&lt;0-999&gt;" class="md-nav__link">
-    priority=&lt;0-999&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rangeranges" title="range=&lt;ranges&gt;" class="md-nav__link">
-    range=&lt;ranges&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requestrequests" title="request=&lt;requests&gt;" class="md-nav__link">
-    request=&lt;requests&gt;
+  <a href="#deregisterverbosegcsubscriber" title="DeregisterVerboseGCSubscriber" class="md-nav__link">
+    DeregisterVerboseGCSubscriber
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-output" title="Dump output" class="md-nav__link">
-    Dump output
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#system-dumps-on-linux" title="System dumps on Linux" class="md-nav__link">
-    System dumps on Linux
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" title="See also" class="md-nav__link">
-    See also
-  </a>
   
 </li>
       
@@ -3708,7 +3626,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xdump.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/interface_jvmti.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3736,916 +3654,788 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xdump">-Xdump</h1>
-<p>OpenJ9 produces various types of diagnostic information for analysis when different events occur, such as a general protection fault. The dumps produced are controlled by dump agents, which are initialized when the OpenJ9 virtual machine (VM) starts. The default settings for the dump agents are sufficient for most cases. However, you can use the <code>-Xdump</code> option on the command line to fine tune the dump agent settings. For example, you can use the <code>-Xdump</code> option to add and remove dump agents for various VM events, update default dump settings, and limit the number of dumps that are produced.</p>
-<p>A large set of options and suboptions are available for controlling dumps, which provides a lot of flexibility.</p>
-<h2 id="xdump-option-builder">Xdump Option Builder</h2>
-<p>Use the <a href="https://www.eclipse.org/openj9/tools/xdump_option_builder.html" target="_blank">Xdump Option Builder tool</a> to help you specify the correct options and avoid incompatibilities.</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -Xdump:&lt;parameter&gt;
+<h1 id="java-virtual-machine-tool-interface">Java Virtual Machine Tool Interface</h1>
+<p>The Java&trade; Virtual Machine Tool Interface (JVMTI) is a two-way interface that allows communication between the VM and a native agent. It replaces both the Java Virtual Machine Debug Interface (JVMDI) and Java Virtual Machine Profiler Interface (JVMPI).</p>
+<h2 id="overview">Overview</h2>
+<p>The JVMTI allows third parties to develop debugging, profiling, and monitoring tools for the VM. The interface contains mechanisms for the agent to notify the VM about the kinds of information it requires, and also provides a means of receiving relevant notifications. </p>
+<p>Several agents can be attached to a VM at any one time.</p>
+<p>JVMTI agents can be loaded at startup using short or long forms of the command-line option:</p>
+<pre><code>-agentlib:&lt;agent-lib-name&gt;=&lt;options&gt;
 </code></pre>
-<p>The following table lists the help options for <code>-Xdump</code>, which provide usage and configuration information:</p>
+<p>or</p>
+<pre><code>-agentpath:&lt;path-to-agent&gt;=&lt;options&gt;
+</code></pre>
+<p>In the example that follows (see <a href="sample-jvmti-agent">Sample JVMTI agent</a>), the directory containing the <code>jdwp</code> library is assumed to  be on the library path. If you require a specific library, such as <code>jdwp</code>, with your JVMTI agent, you can specify the path at startup, for example:</p>
+<pre><code>-agentlib:jdwp=&lt;options&gt;
+</code></pre>
+<p>For more information about JVMTI, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/management/index.html">https://docs.oracle.com/javase/8/docs/technotes/guides/management/index.html</a>.</p>
+<p>For advice on porting JVMPI-based profilers to JVMTI, see <a href="http://www.oracle.com/technetwork/articles/javase/jvmpitransition-138768.html">http://www.oracle.com/technetwork/articles/javase/jvmpitransition-138768.html</a>.</p>
+<p>For a guide about writing a JVMTI agent, see <a href="http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html">http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html</a>.</p>
+<h2 id="openj9-extensions">OpenJ9 extensions</h2>
+<p>OpenJ9 extensions to the JVMTI allow a JVMTI agent to query or automatically trigger operations in the VM, including the following tasks:</p>
 <table>
 <thead>
 <tr>
-<th>Command</th>
-<th>Result</th>
+<th>Task</th>
+<th>OpenJ9 extensions</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>-Xdump:help</code></td>
-<td>Displays general dump help.</td>
+<td>Get the OS thread ID</td>
+<td><a href="#getosthreadid"><code>GetOSThreadID</code></a></td>
 </tr>
 <tr>
-<td><code>-Xdump:events</code></td>
-<td>Lists available trigger events.</td>
+<td>Query, set, and reset the VM dump options</td>
+<td><a href="#queryvmdump"><code>QueryVmDump</code></a>, <a href="#setvmdump"><code>SetVmDump</code></a>, <a href="#resetvmdump"><code>ResetVmDump</code></a></td>
 </tr>
 <tr>
-<td><code>-Xdump:request</code></td>
-<td>Lists additional VM requests.</td>
+<td>Trigger a VM dump, and monitor JVMTI event functions when VM dumps start and end</td>
+<td><a href="#triggervmdump"><code>TriggerVmDump</code></a>, <a href="#vmdumpstart"><code>VMDumpStart</code></a>, <a href="#vmdumpend"><code>VMDumpEnd</code></a></td>
 </tr>
 <tr>
-<td><code>-Xdump:tokens</code></td>
-<td>Lists recognized label tokens.</td>
+<td>Set VM trace options</td>
+<td><a href="#setvmtrace"><code>SetVmTrace</code></a></td>
 </tr>
 <tr>
-<td><code>-Xdump:what</code></td>
-<td>Shows registered agents on startup.</td>
+<td>Subscribe to and unsubscribe from VM tracepoints</td>
+<td><a href="#registertracepointsubscriber"><code>RegisterTracePointSubscriber</code></a>, <a href="#deregistertracepointsubscriber"><code>DeregisterTracePointSubscriber</code></a></td>
 </tr>
 <tr>
-<td><code>-Xdump:&lt;agent&gt;:help</code></td>
-<td>Displays dump agent usage information.</td>
-</tr>
-</tbody>
-</table>
-<p>The following options can be used to control the production of diagnostic data:  </p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-Xdump:none</code></td>
-<td>Removes all default dump agents and any preceding dump options.</td>
+<td>Query runtime environment native memory categories</td>
+<td><a href="#getmemorycategories"><code>GetMemoryCategories</code></a></td>
 </tr>
 <tr>
-<td><code>-Xdump:dynamic</code></td>
-<td>Enable support for pluggable agents</td>
+<td>Query and set VM log options</td>
+<td><a href="#queryvmlogoptions"><code>QueryVmLogOptions</code></a>, <a href="#setvmlogoptions"><code>SetVmLogOptions</code></a></td>
 </tr>
 <tr>
-<td><code>-Xdump:nofailover</code></td>
-<td>Discards dumps when the default or specified dump location is full.</td>
+<td>Search for and remove a shared class cache</td>
+<td><a href="#iteratesharedcaches"><code>IterateSharedCaches</code></a>, <a href="#destroysharedcache"><code>DestroySharedCache</code></a></td>
 </tr>
 <tr>
-<td><code>-Xdump:directory=&lt;path&gt;</code></td>
-<td>Specifies a directory for all dump types to be written to. This directory path is prefixed to the path of all non-absolute dump file names, including the file names for the default dump agents.</td>
-</tr>
-<tr>
-<td><code>-Xdump:suspendwith=&lt;offset&gt;</code></td>
-<td>Modifies the signal that is used to suspend VM threads while a dump file is being written. Use <code>&lt;offset&gt;</code> to change the default signal number. (Linux&reg; only)</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:&lt;suboptions&gt;</code></td>
-<td>Provides detailed suboptions per dump agent that provide more granular control.</td>
+<td>Subscribe to and unsubscribe from verbose garbage collection (GC) data logging</td>
+<td><a href="#registerverbosegcsubscriber"><code>RegisterVerboseGCSubscriber</code></a>, <a href="#deregisterverbosegcsubscriber"><code>DeregisterVerboseGCSubscriber</code></a></td>
 </tr>
 </tbody>
 </table>
-<p>Dump agents can be configured at a very granular level by specifying suboptions. The <code>&lt;events&gt;</code> suboption is the prime trigger mechanism. The full set of suboptions are listed in the following table:</p>
-<table>
-<thead>
-<tr>
-<th>Dump agent suboptions</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:none</code></td>
-<td>Removes the dump agent.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:defaults</code></td>
-<td>Prints the default options for the dump agent.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:events=&lt;events&gt;</code></td>
-<td>Triggers a dump agent when a specific event occurs.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:exec=&lt;command&gt;</code></td>
-<td>Starts an external application for the dump agent.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:file=&lt;filename&gt;</code></td>
-<td>Specifies where to write the dump for the dump agent.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:filter=&lt;filter&gt;</code></td>
-<td>Filters dumps by wildcards or events.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:msg_filter=&lt;filter&gt;</code></td>
-<td>Filters on text strings within an exception message.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:opts=&lt;options&gt;</code></td>
-<td>Used by specific dump agents to select the type of dump file to produce.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:priority=&lt;0-999&gt;</code></td>
-<td>Specifies the priority that the dump agents run in.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:range=&lt;ranges&gt;</code></td>
-<td>Starts and stops a dump agent on a particular occurrence of a VM.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:request=&lt;requests&gt;</code></td>
-<td>Asks the VM to prepare the state before starting the dump agent.</td>
-</tr>
-</tbody>
-</table>
-<p>You can have multiple <code>-Xdump</code> options on the command line. You can also have multiple dump types triggered by multiple events. For example, the following command turns off the creation of heap dump files, and creates a dump agent that produces a heap dump file and a Java&trade; dump file when either a <strong>vmstart</strong> or <strong>vmstop</strong> event occurs:</p>
-<pre><code>java -Xdump:heap:none -Xdump:heap+java:events=vmstart+vmstop -mp . -m &lt;class&gt; [args...]
+<p>The definitions that you need when you write a JVMTI agent are provided in the header files <code>jvmti.h</code> and <code>ibmjvmti.h</code>. These files are in <code>sdk/include</code>.</p>
+<h2 id="sample-jvmti-agent">Sample JVMTI agent</h2>
+<p>The following sample shows you how to write a simple JVMTI agent that uses OpenJ9 extensions to the JVMTI.</p>
+<p><details>
+  <summary>Sample JVMTI agent written in C/C++, which uses the OpenJ9 extensions</summary></p>
+<pre><code>/*
+ * tiSample.c
+ *
+ * Sample JVMTI agent to demonstrate the OpenJ9 JVMTI dump extensions
+ */
+
+#include &quot;jvmti.h&quot;
+#include &quot;ibmjvmti.h&quot;
+
+/* Forward declarations for JVMTI callback functions */
+void JNICALL VMInitCallback(jvmtiEnv *jvmti_env, JNIEnv* jni_env, jthread thread);
+void JNICALL DumpStartCallback(jvmtiEnv *jvmti_env, char* label, char* event, char* detail, ...);
+
+
+/*
+ * Agent_Onload()
+ *
+ * JVMTI agent initialisation function, invoked as agent is loaded by the VM
+ */
+JNIEXPORT jint JNICALL Agent_OnLoad(JavaVM *jvm, char *options, void *reserved) {
+
+  jvmtiEnv *jvmti = NULL;
+  jvmtiError rc;
+  jint extensionEventCount = 0;
+  jvmtiExtensionEventInfo *extensionEvents = NULL;
+  jint extensionFunctionCount = 0;
+  jvmtiExtensionFunctionInfo *extensionFunctions = NULL;
+  int i = 0, j = 0;
+
+  printf(&quot;tiSample: Loading JVMTI sample agent\n&quot;);
+
+    /* Get access to JVMTI */
+    (*jvm)-&gt;GetEnv(jvm, (void **)&amp;jvmti, JVMTI_VERSION_1_0);
+
+     /* Look up all the JVMTI extension events and functions */
+   (*jvmti)-&gt;GetExtensionEvents(jvmti, &amp;extensionEventCount, &amp;extensionEvents);
+   (*jvmti)-&gt;GetExtensionFunctions(jvmti, &amp;extensionFunctionCount, &amp;extensionFunctions);
+
+    printf(&quot;tiSample: Found %i JVMTI extension events, %i extension functions\n&quot;, extensionEventCount, extensionFunctionCount);
+
+   /* Find the JVMTI extension event we want */
+   while (i++ &lt; extensionEventCount) {
+
+        if (strcmp(extensionEvents-&gt;id, COM_IBM_VM_DUMP_START) == 0) {
+            /* Found the dump start extension event, now set up a callback for it */
+            rc = (*jvmti)-&gt;SetExtensionEventCallback(jvmti, extensionEvents-&gt;extension_event_index, &amp;DumpStartCallback);
+            printf(&quot;tiSample: Setting JVMTI event callback %s, rc=%i\n&quot;, COM_IBM_VM_DUMP_START, rc);
+            break;
+        }
+        extensionEvents++; /* move on to the next extension event */
+    }
+
+    /* Find the JVMTI extension function we want */
+    while (j++ &lt; extensionFunctionCount) {
+        jvmtiExtensionFunction function = extensionFunctions-&gt;func;
+
+        if (strcmp(extensionFunctions-&gt;id, COM_IBM_SET_VM_DUMP) == 0) {
+            /* Found the set dump extension function, now set a dump option to generate javadumps on
+          thread starts */
+            rc = function(jvmti, &quot;java:events=thrstart&quot;);
+            printf(&quot;tiSample: Calling JVMTI extension %s, rc=%i\n&quot;, COM_IBM_SET_VM_DUMP, rc);
+            break;
+        }
+        extensionFunctions++; /* move on to the next extension function */
+     }
+
+     return JNI_OK;
+}
+
+
+/*
+ * DumpStartCallback()
+ * JVMTI callback for dump start event (IBM JVMTI extension)  */
+void JNICALL
+DumpStartCallback(jvmtiEnv *jvmti_env, char* label, char* event, char* detail, ...) {
+      printf(&quot;tiSample: Received JVMTI event callback, for event %s\n&quot;, event);
+}
 </code></pre>
 
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Multiple suboptions that follow an <code>Xdump</code> suboption must be split with a comma (,), for example:</p>
-<pre><code>java -Xdump:java:events=vmstart,file=/STDERR/ -version
-</code></pre>
-
-<p>For more detailed information on the these parameters and suboptions, including examples, see <a href="#parameters">Parameters</a>.</p>
-<h2 id="dump-agents">Dump agents</h2>
-<p>A dump agent performs diagnostic tasks when triggered. Most dump agents save information on the state of the VM in some form of dump or trace file for later analysis.
-An exception is the "tool" agent, which can be used to trigger external processes when specific events occur.</p>
-<table>
-<thead>
-<tr>
-<th>Dump agent</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>stack</td>
-<td>Stack dumps are very basic dumps in which the status and Java stack of the thread is written to stderr.</td>
-</tr>
-<tr>
-<td>console</td>
-<td>Console dumps are very basic dumps, in which the status of every Java thread is written to stderr.</td>
-</tr>
-<tr>
-<td>system</td>
-<td>System dumps capture the raw process image or address space of an application.</td>
-</tr>
-<tr>
-<td>tool</td>
-<td>The tool option allows external processes to be started when an event occurs.</td>
-</tr>
-<tr>
-<td>java</td>
-<td>Java dumps are an internally generated and formatted analysis of the VM, giving information that includes the Java threads present, the classes loaded, and heap statistics.</td>
-</tr>
-<tr>
-<td>heap</td>
-<td>Heap dumps capture all object instances in the heap, including each object address, type or class name, size, and references to other objects.</td>
-</tr>
-<tr>
-<td>snap</td>
-<td>Take a snap of the trace buffers, which contain tracepoint data.</td>
-</tr>
-<tr>
-<td>ceedump</td>
-<td>LE CEEDUMP dumps are z/OS&reg; formatted summary system dumps that show stack traces for each thread that is in the VM process, together with register information and a short dump of storage for each register.</td>
-</tr>
-<tr>
-<td>jit</td>
-<td>JIT compiler dumps contain diagnostic data in a binary format.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="default-dump-agents">Default dump agents</h3>
-<p>During VM initialization a set of dump agents are added by default. You can override this set of dump agents using <code>-Xdump</code> on the command line. To show the registered dump agents, user the <code>Xdump:what</code> option on the command line. The following sample output shows the default dump agents that are in place on a Linux system:</p>
-<pre><code>java -Xdump:what
-
-Registered dump agents
-----------------------
--Xdump:system:
-    events=gpf+abort+traceassert+corruptcache,
-    label=/home/user/core.%Y%m%d.%H%M%S.%pid.%seq.dmp,
-    range=1..0,
-    priority=999,
-    request=serial
-----------------------
--Xdump:system:
-    events=systhrow,
-    filter=java/lang/OutOfMemoryError,
-    label=/home/user/core.%Y%m%d.%H%M%S.%pid.%seq.dmp,
-    range=1..1,
-    priority=999,
-    request=exclusive+compact+prepwalk
-----------------------
--Xdump:heap:
-    events=systhrow,
-    filter=java/lang/OutOfMemoryError,
-    label=/home/user/heapdump.%Y%m%d.%H%M%S.%pid.%seq.phd,
-    range=1..4,
-    priority=500,
-    request=exclusive+compact+prepwalk,
-    opts=PHD
-----------------------
--Xdump:java:
-    events=gpf+user+abort+traceassert+corruptcache,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..0,
-    priority=400,
-    request=exclusive+preempt
-----------------------
--Xdump:java:
-    events=systhrow,
-    filter=java/lang/OutOfMemoryError,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..4,
-    priority=400,
-    request=exclusive+preempt
-----------------------
--Xdump:snap:
-    events=gpf+abort+traceassert+corruptcache,
-    label=/home/user/Snap.%Y%m%d.%H%M%S.%pid.%seq.trc,
-    range=1..0,
-    priority=300,
-    request=serial
-----------------------
--Xdump:snap:
-    events=systhrow,
-    filter=java/lang/OutOfMemoryError,
-    label=/home/user/Snap.%Y%m%d.%H%M%S.%pid.%seq.trc,
-    range=1..4,
-    priority=300,
-    request=serial
-----------------------
--Xdump:jit:
-    events=gpf+abort,
-    label=/home/user/jitdump.%Y%m%d.%H%M%S.%pid.%seq.dmp,
-    range=1..0,
-    priority=200,
-    request=serial
-----------------------
-</code></pre>
-
-<h3 id="dump-agent-tokens">Dump agent tokens</h3>
-<p>You can use tokens to add context to dump file names and directories, and to pass command-line arguments to the tool agent. The tokens available are listed in the following table:</p>
-<table>
-<thead>
-<tr>
-<th>Token</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>%Y</td>
-<td>Year (4 digits)</td>
-</tr>
-<tr>
-<td>%y</td>
-<td>Year (2 digits)</td>
-</tr>
-<tr>
-<td>%m</td>
-<td>Month (2 digits)</td>
-</tr>
-<tr>
-<td>%d</td>
-<td>Day of the month (2 digits)</td>
-</tr>
-<tr>
-<td>%H</td>
-<td>Hour ( 2 digits)</td>
-</tr>
-<tr>
-<td>%M</td>
-<td>Minute (2 digits)</td>
-</tr>
-<tr>
-<td>%S</td>
-<td>Second (2 digits)</td>
-</tr>
-<tr>
-<td>%pid</td>
-<td>Process ID</td>
-</tr>
-<tr>
-<td>%uid</td>
-<td>User name</td>
-</tr>
-<tr>
-<td>%seq</td>
-<td>Dump counter</td>
-</tr>
-<tr>
-<td>%tick</td>
-<td>msec counter</td>
-</tr>
-<tr>
-<td>%home</td>
-<td>Java home directory</td>
-</tr>
-<tr>
-<td>%last</td>
-<td>Last dump</td>
-</tr>
-<tr>
-<td>%job</td>
-<td>Job name (z/OS only)</td>
-</tr>
-<tr>
-<td>&amp;DS</td>
-<td>Dump Section. An incrementing sequence number used for splitting TDUMP files to be less than 2 GB in size. (z/OS 64-bit only)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="merging-xdump-agents">Merging -Xdump agents</h3>
-<p>If you configure more than one dump agent, each responds to events according to its configuration. However, the internal structures representing the dump agent configuration might not match the command line, because dump agents are merged for efficiency. Two sets of options can be merged as long as none of the agent settings conflict. This means that the list of installed dump agents and their parameters produced by <code>-Xdump:what</code> might not be grouped in the same way as the original <code>-Xdump</code> options that configured them.</p>
-<p>For example, you can use the following command to specify that a dump agent creates a Java dump file on class unload:</p>
-<pre><code>java -Xdump:java:events=unload -Xdump:what
-</code></pre>
-
-<p>This command does not create a new agent, as can be seen in the results from the <code>-Xdump:what</code> option.</p>
-<pre><code>...
-----------------------
--Xdump:java:
-    events=gpf+user+abort+unload+traceassert+corruptcache,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..0,
-    priority=400,
-    request=exclusive+preempt
-----------------------
-</code></pre>
-
-<p>The configuration is merged with the existing Java dump agent for events <strong>gpf</strong>, <strong>user</strong>, <strong>abort</strong>, <strong>traceassert</strong>, and <strong>corruptcache</strong>, because none of the specified options for the new unload agent conflict with those for the existing agent.</p>
-<p>In the previous example, if one of the parameters for the unload agent is changed so that it conflicts with the existing agent, then it cannot be merged. For example, the following command specifies a different priority, forcing a separate agent to be created:</p>
-<pre><code>java -Xdump:java:events=unload,priority=100 -Xdump:what
-</code></pre>
-
-<p>The results of the <code>-Xdump:what</code> option in the command are as follows.</p>
-<pre><code>...
-----------------------
--Xdump:java:
-    events=unload,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..0,
-    priority=100,
-    request=exclusive+preempt
-----------------------
--Xdump:java:
-    events=gpf+user+abort+traceassert+corruptcache,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..0,
-    priority=400,
-    request=exclusive+preempt
-----------------------
-</code></pre>
-
-<p>To merge dump agents, the <em>request</em>, <em>filter</em>, <em>opts</em>, <em>label</em>, and <em>range</em> parameters must match exactly. If you specify multiple agents that filter on the same string, but keep all other parameters the same, the agents are merged. For example:</p>
-<pre><code>java -Xdump:none -Xdump:java:events=uncaught,filter=java/lang/NullPointerException -Xdump:java:events=unload,filter=java/lang/NullPointerException -Xdump:what
-</code></pre>
-
-<p>The results of this command are as follows:</p>
-<pre><code>Registered dump agents
-----------------------
--Xdump:java:
-    events=unload+uncaught,
-    filter=java/lang/NullPointerException,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..0,
-    priority=400,
-    request=exclusive+preempt
-----------------------
-</code></pre>
-
-<h2 id="dump-events">Dump events</h2>
-<p>Dump agents are triggered by events occurring during operation of the OpenJ9 VM. Some events can be filtered to improve the relevance of the output.</p>
-<p>The following table shows the events that are available as dump agent triggers:</p>
-<table>
-<thead>
-<tr>
-<th>Event</th>
-<th>Triggered when....</th>
-<th>Filters on ....</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>gpf</strong></td>
-<td>A General Protection Fault (GPF) occurs.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>user</strong></td>
-<td>The VM receives the SIGQUIT (Linux, macOS&reg;, AIX&reg;, z/OS) or SIGBREAK (Windows&trade;) signal from the operating system.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>abort</strong></td>
-<td>The VM receives the SIGABRT signal from the operating system.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>vmstart</strong></td>
-<td>The virtual machine is started.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>vmstop</strong></td>
-<td>The virtual machine stops.</td>
-<td>Exit code; for example, <code>filter=#129..#192#-42#255</code></td>
-</tr>
-<tr>
-<td><strong>load</strong></td>
-<td>A class is loaded.</td>
-<td>Class name; for example, <code>filter=java/lang/String</code></td>
-</tr>
-<tr>
-<td><strong>unload</strong></td>
-<td>A class us unloaded.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>throw</strong></td>
-<td>An exception is thrown.</td>
-<td>Exception class name; for example, <code>filter=java/lang/OutOfMem*</code></td>
-</tr>
-<tr>
-<td><strong>catch</strong></td>
-<td>An exception is caught.</td>
-<td>Exception class name; for example, <code>filter=*Memory*</code></td>
-</tr>
-<tr>
-<td><strong>uncaught</strong></td>
-<td>A Java exception is not caught by the application.</td>
-<td>Exception class name; for example, <code>filter=*MemoryError</code></td>
-</tr>
-<tr>
-<td><strong>systhrow</strong></td>
-<td>A Java exception is about to be thrown by the VM. This is different from the 'throw' event because it is only triggered for error conditions detected internally in the VM.</td>
-<td>Exception class name; for example, <code>filter=java/lang/OutOfMem*</code>.</td>
-</tr>
-<tr>
-<td><strong>thrstart</strong></td>
-<td>A new thread is started.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>blocked</strong></td>
-<td>A thread becomes blocked.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>thrstop</strong></td>
-<td>A thread stops.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>fullgc</strong></td>
-<td>A garbage collection cycle is started.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>slow</strong></td>
-<td>A thread takes longer than 50ms to respond to an internal VM request.</td>
-<td>Time taken; for example, filter=#300ms will trigger when a thread takes longer than 300ms to respond to an internal VM request.</td>
-</tr>
-<tr>
-<td><strong>allocation</strong></td>
-<td>A Java object is allocated with a size matching the given filter specification.</td>
-<td>Object size; a filter must be supplied. For example, filter=#5m will trigger on objects larger than 5 Mb. Ranges are also supported; for example, filter=#256k..512k will trigger on objects between 256 Kb and 512 Kb in size.</td>
-</tr>
-<tr>
-<td><strong>traceassert</strong></td>
-<td>An internal error occurs in the VM.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>corruptcache</strong></td>
-<td>The VM finds that the shared class cache is corrupt.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>excessivegc</strong></td>
-<td>An excessive amount of time is being spent in the garbage collector.</td>
-<td>Not applicable</td>
-</tr>
-</tbody>
-</table>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The <strong>gpf</strong>, <strong>traceassert</strong>, and <strong>abort</strong> events cannot trigger a heap dump, prepare the heap (request=prepwalk), or compact the heap (request=compact).</p>
-<h2 id="parameters">Parameters</h2>
-<p><code>-Xdump:&lt;agent&gt;:&lt;suboptions&gt;</code> descriptions and examples.</p>
-<h3 id="help"><code>help</code></h3>
-<p>To print usage information for a specific dump agent, use <code>-Xdump:&lt;agent&gt;:help</code></p>
-<h3 id="noneoptions"><code>none:&lt;options&gt;</code></h3>
-<p>Use the <code>-Xdump:none</code> option to add and remove dump agents for various VM events, update default dump settings (such as the dump name), and limit the number of dumps that are produced.</p>
-<p>The option can be used to affect all agents by specifying <code>-Xdump:none:&lt;options&gt;</code> or specific agents by specifying <code>-Xdump:&lt;agent&gt;:none:&lt;suboptions&gt;</code></p>
-<p>where <code>&lt;suboptions&gt;</code> is one of the following control types:</p>
+<p></details></p>
+<p>The sample JVMTI agent consists of two functions, <code>Agent_OnLoad()</code> and <code>DumpStartCallback()</code>: </p>
+<h3 id="agent_onload"><code>Agent_OnLoad()</code></h3>
+<p>This function is called by the VM when the agent is loaded at itialization is complete. The sample agent obtains access to the JVMTI interface by using the JNI Invocation API function <code>GetEnv()</code>. The agent calls the APIs <code>GetExtensionEvents()</code> and <code>GetExtensionFunctions()</code> to find the JVMTI extensions that are supported by the VM. These APIs provide access to the list of extensions available in the <code>jvmtiExtensionEventInfo</code> and <code>jvmtiExtensionFunctionInfo</code> structures. The sample uses an extension event and an extension function in the following way:</p>
+<p><strong>Extension event:</strong> The sample JVMTI agent searches for the extension event <code>VmDumpStart</code> in the list of <code>jvmtiExtensionEventInfo</code> structures, by using the identifier <code>COM_IBM_VM_DUMP_START</code> provided in <code>ibmjvmti.h</code>. When the event is found, the JVMTI agent calls the JVMTI interface <code>SetExtensionEventCallback()</code> to enable the event, providing a function <code>DumpStartCallback()</code> that is called when the event is triggered.</p>
+<p><strong>Extension function:</strong> Next, the sample JVMTI agent searches for the extension function <code>SetVMDump</code> in the list of <code>jvmtiExtensionFunctionInfo</code> structures, by using the identifier <code>COM_IBM_SET_VM_DUMP</code> provided in <code>ibmjvmti.h</code>. The JVMTI agent calls the function by using the <code>jvmtiExtensionFunction</code> pointer to set a VM dump option <code>java:events=thrstart</code>. This option requests the VM to trigger a Java dump every time a VM thread is started.</p>
+<h3 id="dumpstartcallback"><code>DumpStartCallback()</code></h3>
+<p>This callback function issues a message when the associated extension event is called. In the sample code, <code>DumpStartCallback()</code> is used when the <code>VmDumpStart</code> event is triggered.</p>
+<h3 id="using-the-sample-jvmti-agent">Using the sample JVMTI agent</h3>
 <ul>
-<li><code>events=&lt;event&gt;</code></li>
-<li><code>exec=&lt;command&gt;</code></li>
-<li><code>file=&lt;filename&gt;</code></li>
-<li><code>filter=&lt;filter&gt;</code></li>
-<li><code>opts=&lt;options&gt;</code></li>
-<li><code>priority=&lt;0-999&gt;</code></li>
-<li><code>range=&lt;ranges&gt;</code></li>
-<li><code>request=&lt;requests&gt;</code></li>
-</ul>
-<p>Explanations for these suboptions are provided elsewhere in this topic.</p>
-<p>To remove all default dump agents and any preceding dump options, use <code>-Xdump:none</code>. Use this option so that you can subsequently specify a completely new dump configuration.</p>
-<p>You can also remove dump agents of a particular type. Here are some examples:</p>
-<p>To turn off all heap dumps (including default agents) but leave Java dumps enabled, use the following option:</p>
-<pre><code>-Xdump:java+heap:events=vmstop -Xdump:heap:none
-</code></pre>
-
-<p>To turn off all dump agents for corruptcache events:</p>
-<pre><code>-Xdump:none:events=corruptcache
-</code></pre>
-
-<p>To turn off just system dumps for corruptcache events:</p>
-<pre><code>-Xdump:system:none:events=corruptcache
-</code></pre>
-
-<p>To turn off all dumps when a <code>java/lang/OutOfMemory</code> error is thrown:</p>
-<pre><code>-Xdump:none:events=systhrow,filter=java/lang/OutOfMemoryError
-</code></pre>
-
-<p>To turn off just system dumps when a <code>java/lang/OutOfMemory</code> error is thrown:</p>
-<pre><code>-Xdump:system:none:events=systhrow,filter=java/lang/OutOfMemoryError
-</code></pre>
-
-<p>If you remove all dump agents by using <code>-Xdump:none</code> with no further <code>-Xdump</code> options, the VM still provides these basic diagnostic outputs:</p>
-<ul>
-<li>If a user signal (kill -QUIT) is sent to the VM, a brief listing of the Java threads including their stacks, status, and monitor information is written to stderr.</li>
-<li>If a crash occurs, information about the location of the crash, VM options, and native and Java stack traces are written to stderr. A system dump file is also written to the user's home directory.</li>
-</ul>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Removing dump agents and specifying a new dump configuration can require a long set of command-line options. To reuse command-line options, save the new dump configuration in a file and use the <code>-Xoptionsfile</code> option. For more information, see <a href="../xoptionsfile/">-Xoptionsfile</a>.</p>
-<h3 id="defaults"><code>defaults</code></h3>
-<p>Each dump type has default options. To view the default options for a particular dump type, use <code>-Xdump:&lt;agent&gt;:defaults</code>.</p>
-<p>You can change the default options at run time. For example, you can direct Java dump files into a separate directory for each process, and guarantee unique files by adding a sequence number to the file name using:</p>
-<pre><code>-Xdump:java:defaults:file=dumps/%pid/javacore-%seq.txt`
-</code></pre>
-
-<p>Or, for example, on z/OS, you can add the jobname to the Java dump file name using:</p>
-<pre><code>-Xdump:java:defaults:file=javacore.%job.%H%M%S.txt
-</code></pre>
-
-<p>This option does not add a Java dump agent; it updates the default settings for Java dump agents. Further Java dump agents will then create dump files using this specification for filenames, unless overridden.</p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Changing the defaults for a dump type will also affect the default agents for that dump type added by the VM during initialization. For example if you change the default file name for Java dump files, that will change the file name used by the default Java dump agents. However, changing the default range option will not change the range used by the default Java dump agents, because those agents override the range option with specific values.</p>
-<h3 id="eventsevent"><code>events=&lt;event&gt;</code></h3>
-<p>To trigger a dump as a result of an event, use the <code>-Xdump:&lt;agent&gt;:events=&lt;event&gt;</code> suboption. For a list of possible events, see <a href="#dump-events">Dump events</a>.</p>
-<p>For example, the following command instructs the VM to create a dump agent at startup that produces a Heap dump whenever the <em>vmstop</em> event happens:</p>
-<pre><code>-Xdump:heap:events=vmstop
-</code></pre>
-
-<h3 id="execcommand"><code>exec=&lt;command&gt;</code></h3>
-<p>The exec suboption is used by the tool dump agent to specify an external application to start. You can set a specific command to run for a particular dump agent with the following command:</p>
-<pre><code>-Xdump:&lt;agent&gt;:exec=&lt;command&gt;
-</code></pre>
-
-<h3 id="filefilename"><code>file=&lt;filename&gt;</code></h3>
-<p>The file suboption specifies where the diagnostics information is written for the specified dump type. The syntax is <code>-Xdump:&lt;agent&gt;:file=&lt;filename&gt;</code>.</p>
-<p>For example, to create a Heap dump called <code>my.dmp</code> when a <strong>vmstop</strong> event is received, use:</p>
-<pre><code>java -Xdump:heap:events=vmstop,file=my.dmp
-</code></pre>
-
-<p>When producing system dump files or CEEDUMPs on z/OS platforms, use the <code>dsn</code> option instead of the <code>file</code> option. For example:</p>
-<pre><code>java -Xdump:system:events=vmstop,dsn=%uid.MYDUMP
-</code></pre>
-
-<h4 id="writing-to-stdoutstderr">Writing to <code>STDOUT</code>/<code>STDERR</code></h4>
-<p>Add one of the following options to write a Java dump file to STDOUT or STDERR respectively:</p>
-<pre><code>-Xdump:java:file=/STDOUT/
--Xdump:java:file=/STDERR/
-</code></pre>
-
-<ul>
-<li>The keywords <code>/STDOUT/</code> and <code>/STDERR/</code> are <em>not</em> case sensitive; <code>/stdout/</code> and <code>/stderr/</code> are equivalent.</li>
-<li>By common convention, you can use a dash (<code>-</code>) to refer to STDOUT:<pre><code>-Xdump:java:file=-
-</code></pre>
-</li>
-</ul>
-<h4 id="tokens">Tokens</h4>
-<p>You can use tokens to add context to dump file names. For a list of tokens, see <a href="#dump-agent-tokens">Dump agent tokens</a>.</p>
-<h4 id="file-location">File location</h4>
-<p>The location for the dump file is selected from the following options, in this order:</p>
-<ol>
-<li>The location specified by the <code>-Xdump:&lt;agent&gt;:file</code> suboption on the command line (if that location includes a path). This location applies to the specified dump agent type only.</li>
-<li>The location specified by the <code>-Xdump:directory</code> option on the command line. This location applies to all dump agent types.</li>
 <li>
-<p>The location specified by the relevant environment variable:</p>
-<table>
-<thead>
-<tr>
-<th>Dump agent type</th>
-<th>z/OS operating systems</th>
-<th>Other operating systems</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Java dumps</td>
-<td><code>_CEE_DMPTARG</code></td>
-<td><code>IBM_JAVACOREDIR</code></td>
-</tr>
-<tr>
-<td>Heap dumps</td>
-<td><code>_CEE_DMPTARG</code></td>
-<td><code>IBM_HEAPDUMPDIR</code></td>
-</tr>
-<tr>
-<td>System dumps</td>
-<td><code>JAVA_DUMP_TDUMP_PATTERN</code></td>
-<td><code>IBM_COREDIR</code></td>
-</tr>
-<tr>
-<td>JIT dumps</td>
-<td><code>_CEE_DMPTARG</code></td>
-<td><code>IBM_COREDIR</code></td>
-</tr>
-<tr>
-<td>Snap traces</td>
-<td><code>_CEE_DMPTARG</code></td>
-<td><code>IBM_COREDIR</code></td>
-</tr>
-</tbody>
-</table>
+<p>Build the sample JVMTI agent:</p>
+<p>Windows:</p>
+<pre><code>cl /I&lt;jre_path&gt;\include /MD /FetiSample.dll tiSample.c /link /DLL
+</code></pre>
+<p>Linux, AIX®, and z/OS®:</p>
+<pre><code>gcc -I&lt;jre_path&gt;/include -o libtiSample.so -shared tiSample.c
+</code></pre>
+<p>where <code>&lt;jre_path&gt;</code> is the path to your Java runtime environment installation.</p>
 </li>
 <li>
-<p>The current working directory of the OpenJ9 VM process.</p>
+<p>To run the sample JVMTI agent, use the command:</p>
+<pre><code>java -agentlib:tiSample -version
+</code></pre>
+<p>When the sample JVMTI agent loads, messages are generated. When the JVMTI agent initiates a Java dump, the message <code>JVMDUMP010</code> is issued.</p>
 </li>
-</ol>
-<p>If the directory does not exist, it is created.</p>
-<p>If the dump file cannot be written to the selected location, the VM reverts to using the following locations, in this order:</p>
-<ol>
-<li>On Windows platforms only, the system default location is <code>C:\WINDOWS</code>.</li>
-<li>The location specified by the <code>TMPDIR</code> environment variable.</li>
-<li>The <code>C:\Temp</code> on Windows operating systems, or the <code>/tmp</code> directory on other operating systems.</li>
-</ol>
-<p>This VM action does not apply to CEEDUMPs on z/OS operating systems that use the <code>dsn</code> option.
-You can prevent the VM reverting to different dump locations by using the <code>-Xdump:nofailover</code> option.</p>
-<h3 id="filterfilter"><code>filter=&lt;filter&gt;</code></h3>
-<p>Some VM events occur thousands of times during the lifetime of an application. Dump agents can use filters and ranges to avoid producing an excessive number of dump files. The following syntax must be used:</p>
-<pre><code>-Xdump:&lt;agent&gt;:filter=&lt;filter&gt;
-</code></pre>
-
-<h4 id="wildcards">Wildcards</h4>
-<p>You can use a wildcard in your exception event filter by placing an asterisk only at the beginning or end of the filter. The following command does not work because the second asterisk is not at the end:</p>
-<pre><code>-Xdump:java:events=throw,filter=*InvalidArgumentException#*.myVirtualMethod
-</code></pre>
-
-<p>To fix the problem, change this filter to the following string:</p>
-<pre><code>-Xdump:java:events=throw,filter=*InvalidArgumentException#MyApplication.*
-</code></pre>
-
-<h4 id="class-loading-and-exception-events">Class loading and exception events</h4>
-<p>You can filter class loading (<strong>load</strong>) and exception (<strong>throw</strong>, <strong>catch</strong>, <strong>uncaught</strong>, <strong>systhrow</strong>) events by the name of the class that is being loaded, thrown or caught. For example:</p>
-<pre><code>-Xdump:java:events=load,filter=java/lang/String
--Xdump:java:events=throw,filter=java/lang/ArrayStoreException
--Xdump:java:events=catch,filter=java/lang/NullPointerException
-</code></pre>
-
-<p>In addition, you can filter <strong>throw</strong>, <strong>uncaught</strong>, and <strong>systhrow</strong> exception events by the name of the method that throws the exception. The name of the parent class must include the full package name, using the forward slash (/) as a separator. Use a dot (.) to separate the method name from the class name. You can use an asterisk (*) as a wildcard character, to include all methods (optional portions are shown in brackets). For example:</p>
-<pre><code>-Xdump:java:events=throw,filter=ExceptionClassName[#com/ibm/ThrowingClassName.throwingMethodName[#stackFrameOffset]]
-</code></pre>
-
-<p>For example, to trigger a Java dump when method <code>MyApplication.myMethod()</code> throws a <code>NullPointerException</code> exception, use the following syntax:</p>
-<pre><code>-Xdump:java:events=throw,filter=java/lang/NullPointerException#com/ibm/MyApplication.myMethod
-</code></pre>
-
-<p>The stack frame offset allows you to filter on the name of a method that calls the throwing method. This option is useful if the exception is being thrown from a general purpose or utility class. For example, to trigger a Java dump when a method called by <code>MyApplication.main()</code> throws a <code>NullPointerException</code>, use the following syntax:</p>
-<pre><code>-Xdump:java:events=throw,filter=java/lang/NullPointerException#com/ibm/MyApplication.main#1
-</code></pre>
-
-<p>The default value of the stack frame offset is zero.</p>
-<p>You can filter the <strong>catch</strong> exception events by Java method name (optional portions are shown in brackets). For example:</p>
-<pre><code>-Xdump:java:events=catch,filter=ExceptionClassName[#com/ibm/CatchingClassName.catchingMethodName]
-</code></pre>
-
-<p>You can filter <strong>throw</strong>, <strong>uncaught</strong>, and <strong>systhrowexception</strong> events by Java method name (optional portions are shown in brackets):</p>
-<pre><code>-Xdump:java:events=throw,filter=ExceptionClassName[#com/ibm/ThrowingClassName.throwingMethodName[#stackFrameOffset]]
-</code></pre>
-
-<p>You can filter the <strong>catch</strong> exception events by Java method name (optional portions are shown in brackets):</p>
-<pre><code>-Xdump:java:events=catch,filter=ExceptionClassName[#com/ibm/CatchingClassName.catchingMethodName]
-</code></pre>
-
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The filters apply to the stacktrace and fire every time the same exception is rethrown, which might result in multiple Java core files.</p>
-<h4 id="vmstop-event">vmstop event</h4>
-<p>You can filter the VM shut down event (<strong>vmstop</strong>) by using one or more exit codes:</p>
-<pre><code>-Xdump:java:events=vmstop,filter=#129..192#-42#255
-</code></pre>
-
-<h4 id="slow-event">slow event</h4>
-<p>You can filter the <strong>slow</strong> event to change the time threshold from the default of 50 ms:</p>
-<pre><code>-Xdump:java:events=slow,filter=#300ms
-</code></pre>
-
-<h4 id="allocation-event">allocation event</h4>
-<p><strong>(Linux, macOS, and Windows only)</strong></p>
-<p>You must filter the <strong>allocation</strong> event to specify the size of objects that cause a trigger. You can set the filter size from zero up to the maximum value of a 32-bit pointer on 32-bit platforms, or the maximum value of a 64-bit pointer on 64-bit platforms. Setting the lower filter value to zero triggers a dump on all allocations.</p>
-<p>For example, to trigger dumps on allocations greater than 5 Mb in size, use:</p>
-<pre><code>-Xdump:stack:events=allocation,filter=#5m
-</code></pre>
-
-<p>To trigger dumps on allocations between 256Kb and 512Kb in size, use:</p>
-<pre><code>-Xdump:stack:events=allocation,filter=#256k..512k
-</code></pre>
-
-<h4 id="other-events">Other events</h4>
-<p>If you apply a filter to an event that does not support filtering, the filter is ignored.</p>
-<h3 id="msg_filterfilter"><code>msg_filter=&lt;filter&gt;</code></h3>
-<p>You can use the msg_filter suboption to filter on text strings within an exception message, allowing you to reduce the number of dump files produced. This option is supported only for the following events: <strong>throw</strong>, <strong>catch</strong>, <strong>systhrow</strong>, and <strong>uncaught</strong>.</p>
-<p>Use the following syntax to include message filtering in your dump output:</p>
-<pre><code>-Xdump:&lt;agent&gt;:events=&lt;event&gt;,msg_filter=&lt;filter&gt;`
-</code></pre>
-
-<p>where <code>&lt;filter&gt;</code> is a text string from the exceptions that you want to include in the dump file. This suboption supports asterisks as wild cards.</p>
-<p>The following example filters <code>java/lang/VerifyError</code> exceptions that contains the text string <em>class format</em>:</p>
-<pre><code>-Xdump:java:events=throw,filter=java/lang/VerifyError,msg_filter=*class format*
-</code></pre>
-
-<h3 id="optsoptions"><code>opts=&lt;options&gt;</code></h3>
-<p>The full syntax is <code>-Xdump:&lt;agent&gt;:opts=&lt;options&gt;</code>.</p>
-<p>The heap dump agent uses this suboption to specify the type of file to produce. On z/OS, the system dump agent uses this suboption to specify the type of dump to produce.</p>
-<h4 id="heap-dumps">Heap dumps</h4>
-<p>You can specify a PHD heap dump file (PHD), a classic text heap dump file (CLASSIC), or both. The default is a PHD file. For example:</p>
-<pre><code>-Xdump:heap:opts=PHD  
--Xdump:heap:opts=CLASSIC
--Xdump:heap:opts=PHD+CLASSIC
-</code></pre>
-
-<h4 id="zos-system-dumps">z/OS system dumps</h4>
-<p>You can specify a system transaction dump (IEATDUMP), an LE dump (CEEDUMP), or both. The default is an IEADUMP file. For example:</p>
-<pre><code>-Xdump:system:opts=IEATDUMP
--Xdump:system:opts=CEEDUMP
--Xdump:system:opts=IEATDUMP+CEEDUMP
-</code></pre>
-
-<p>The ceedump agent is the preferred way to specify LE dumps, for example:</p>
-<pre><code>-Xdump:ceedump:events=gpf
-</code></pre>
-
-<h4 id="tool-dumps">Tool dumps</h4>
-<p>The tool dump agent supports two suboptions that can be specified using the <code>opts</code> subption. You can run the external process asynchronously with opts=ASYNC. You can also specify a delay in milliseconds that produces a pause after starting the command. These two options can be used independently or together. The following examples show different options for starting a new process that runs <code>myProgram</code>:</p>
-<pre><code>-Xdump:tool:events=vmstop,exec=myProgram
-</code></pre>
-
-<p>Without the <code>opts</code> suboption, the tool dump agent starts the process, and waits for the process to end before continuing.</p>
-<pre><code>-Xdump:tool:events=vmstop,exec=myProgram,opts=ASYNC
-</code></pre>
-
-<p>When <code>opts=ASYNC</code> is specified, the tool dump agent starts the process, and continues without waiting for the new process to end.</p>
-<pre><code>-Xdump:tool:events=vmstop,exec=myProgram,opts=WAIT1000
-</code></pre>
-
-<p>This option starts the process, waits for the process to end, and then waits a further 1 second (1000 milliseconds) before continuing.</p>
-<pre><code>-Xdump:tool:events=vmstop,exec=myProgram,opts=ASYNC+WAIT10000
-</code></pre>
-
-<p>Finally the last example starts the process and waits for 10 seconds before continuing, whether the process is still running or not. This last form is useful if you are starting a process that does not end, but requires time to initialize properly.</p>
-<h3 id="priority0-999"><code>priority=&lt;0-999&gt;</code></h3>
-<p>One event can generate multiple dump files. The agents that produce each dump file run sequentially and their order is determined by the priority keyword set for each agent. The full syntax for this command is <code>-Xdump:&lt;agent&gt;:priority=&lt;0-999&gt;</code>.</p>
-<p>Examination of the output from <code>-Xdump:what</code> shows that a <strong>gpf</strong> event produces a snap trace, a Java dump file, and a system dump file. In this example, the system dump runs first, with priority 999. The snap dump runs second, with priority 500. The Java dump runs last, with priority 10:</p>
-<pre><code>-Xdump:heap:events=vmstop,priority=123
-</code></pre>
-
-<p>The maximum value allowed for priority is 999. Higher priority dump agents are started first.</p>
-<p>If you do not specifically set a priority, default values are taken based on the dump type. The default priority and the other default values for a particular type of dump, can be displayed by using <code>-Xdump:&lt;type&gt;:defaults</code>. For example:</p>
-<pre><code>java -Xdump:heap:defaults -version
-</code></pre>
-
-<p>Default <code>-Xdump:heap</code> settings:</p>
-<pre><code>  events=gpf+user
-  filter=
-  file=/home/user/heapdump.%Y%m%d.%H%M%S.%pid.phd
-  range=1..0
-  priority=500
-  request=exclusive+compact+prepwalk
-  opts=PHD
-</code></pre>
-
-<h3 id="rangeranges"><code>range=&lt;ranges&gt;</code></h3>
-<p>You can start and stop dump agents on a particular occurrence of a VM event by using the <code>range</code> suboption: <code>-Xdump:&lt;agent&gt;:range=&lt;ranges&gt;</code></p>
-<p>For example:</p>
-<pre><code>-Xdump:java:events=fullgc,range=100..200
-</code></pre>
-
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> range=1..0 against an event means "on every occurrence".</p>
-<p>The VM default dump agents have the range suboption set to 1..0 for all events except systhrow. Most systhrow events with <code>filter=java/lang/OutOfMemoryError</code> have the range suboption set to 1..4, which limits the number of dump files produced on <code>OutOfMemory</code> conditions to a maximum of 4. For more information, see <a href="#default-dump-agents">Default dump agents</a>.</p>
-<p>If you add a new dump agent and do not specify the range, a default of 1..0 is used.</p>
-<h3 id="requestrequests"><code>request=&lt;requests&gt;</code></h3>
-<p>Use the request suboption to ask the VM to prepare the state before starting the dump agent: <code>-Xdump:&lt;agent&gt;:request=&lt;requests&gt;</code></p>
-<p>The available suboptions are listed in the following table:</p>
-<table>
-<thead>
-<tr>
-<th>suboption value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>exclusive</td>
-<td>Request exclusive access to the VM.</td>
-</tr>
-<tr>
-<td>compact</td>
-<td>Run garbage collection. This option removes all unreachable objects from the heap before the dump file is generated.</td>
-</tr>
-<tr>
-<td>prepwalk</td>
-<td>Prepare the heap for walking. You must also specify exclusive when you use this option.</td>
-</tr>
-<tr>
-<td>serial</td>
-<td>Suspend other dumps until this dump is finished.</td>
-</tr>
-<tr>
-<td>preempt</td>
-<td>Applies to the Java dump agent and controls whether native threads in the process are forcibly pre-empted in order to collect stack traces. If this option is not specified, only Java stack traces are collected in the Java dump.</td>
-</tr>
-</tbody>
-</table>
-<p>You can specify more than one request option by using <strong>+</strong>. For example:</p>
-<pre><code>-Xdump:heap:request=exclusive+compact+prepwalk
-</code></pre>
-
-<p>The VM exclusive access mechanism allows a VM thread to halt the activity of other VM threads in a controlled way by using internal VM locks. When the <code>request=exclusive</code> option is specified for a dump agent, the VM thread that is producing the dump waits for threads that are running Java code to halt, and for garbage collection operations to complete, before the dump file is written. This process helps ensure that the dump has consistent data. When the dump is complete, the mechanism allows the other threads to resume.</p>
-<p>By default, only system dumps for <code>OutOfMemoryError</code> exceptions request exclusive access. Other system dump events typically result from a crash. In these cases, exclusive access is not requested because acquiring locks during a crash can be problematic.</p>
-<p>If system dumps are requested by using the <code>com.ibm.jvm.Dump.SystemDump()</code> API, the default system dump agent settings are used, and exclusive access is not requested. However, if you intend to use the system dump file for Java heap memory analysis, use the following option to request exclusive access when the dump is taken:</p>
-<pre><code>-Xdump:system:defaults:request=exclusive+compact+prepwalk
-</code></pre>
-
-<p>These settings avoid capturing a dump file with in-flight data during garbage collection.
-As an alternative, you can use the <code>com.ibm.jvm.Dump.triggerDump()</code> API and specify <code>request=exclusive+compact+prepwalk</code> on the API call.</p>
-<p>For more information about the <code>com.ibm.jvm.Dump API</code>, see the API reference information.</p>
-<p>The default setting of the <code>request</code> suboption for Java dump files is <code>request=exclusive+preempt</code>. To change the settings so that Java dump files are produced without pre-empting threads to collect native stack traces, use the following option:</p>
-<pre><code>-Xdump:java:request=exclusive
-</code></pre>
-
-<p>In general, the default request options are sufficient.</p>
-<h2 id="dump-output">Dump output</h2>
-<p>Dump output is written to different files, depending on the type of dump and the platform. File names include a time stamp.</p>
-<table>
-<thead>
-<tr>
-<th>Dump type</th>
-<th>File name  (AIX, Linux, macOS, Windows)</th>
-<th>File name (z/OS)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>System dump</td>
-<td>core.%Y%m%d.%H%M%S.%pid.dmp</td>
-<td>%uid.JVM.TDUMP.%job.D%Y%m%d.T%H%M%S (31-bit),  %uid.JVM.%job.D%y%m%d.T%H%M%S.X&amp;DS (64-bit) See <strong>Note</strong></td>
-</tr>
-<tr>
-<td>Java dump</td>
-<td>javacore.%Y%m%d.%H%M%S.%pid.%seq.txt</td>
-<td>javacore.%Y%m%d.%H%M%S.%pid.%seq.txt</td>
-</tr>
-<tr>
-<td>Heap dump</td>
-<td>heapdump.%Y%m%d.%H%M%S.%pid.phd</td>
-<td>heapdump.%Y%m%d.T%H%M%S.phd</td>
-</tr>
-<tr>
-<td>JIT dump</td>
-<td>jitdump%Y%m%d.%H%M%S.%pid.%seq.dmp</td>
-<td>jitdump%Y%m%d.%H%M%S.%pid.%seq.dmp</td>
-</tr>
-<tr>
-<td>LE CEEDUMP</td>
-<td>-</td>
-<td>CEEDUMP.%Y%m%d.%H%M%S.%pid See <strong>Note</strong></td>
-</tr>
-</tbody>
-</table>
-<p>The tokens used in this table, for example <code>%Y</code>, are described in <a href="#dump-agent-tokens">Dump agent tokens</a>.</p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On z/OS, the system dump file name can be set with the <code>JAVA_DUMP_TDUMP_PATTERN</code> environment variable. The CEEDUMP, which is not produced by default, is stored in the directory specified by
-<code>_CEE_DMPTARG</code> or the current directory if <code>_CEE_DMPTARG</code> is not specified.</p>
-<h3 id="system-dumps-on-linux">System dumps on Linux</h3>
-<p>Linux does not provide an operating system API for generating a system dump from a running process. The VM produces system dumps on Linux by using the fork() API to start an identical process to the parent VM process. The VM then generates a SIGSEGV signal in the child process. The SIGSEGV signal causes Linux to create a system dump for the child process. The parent VM processes and renames the system dump, as required, by the <code>-Xdump</code> options, and might add additional data into the dump file.</p>
-<p>The system dump file for the child process contains an exact copy of the memory areas used in the parent. The <a href="../tool_jdmpview/">dump viewer</a> can obtain information about the Java threads, classes, and heap from the system dump. However, the dump viewer, and other system dump debuggers show only the single native thread that was running in the child process.</p>
-<p>You can use the Linux <code>kernel.core_pattern</code> setting to specify the name and path for system dumps. The VM dump agents override the Linux system dump name and path by renaming the dump as specified in the <code>-Xdump</code> options. If the <code>kernel.core_pattern</code> setting specifies a different file system to the <code>-Xdump</code> options, the VM dump agents might be unable to change the file path. In this case the VM renames the dump file, but leaves the file path unchanged. You can find the dump file name and location in the JVMDUMP010I message.</p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> If you use the <code>%t</code> specifier in the <code>kernel.core_pattern</code> setting, the VM does not rename the dump. The VM cannot determine the exact time that Linux generated the core file, and therefore cannot be certain which Linux dump file is the correct one to rename.</p>
-<h2 id="see-also">See also</h2>
-<ul>
-<li><a href="../xtrace/"><code>-Xtrace</code></a></li>
-<li><a href="../xdisablejavadump/"><code>-Xdisablejavadump</code></a></li>
 </ul>
-<!-- ==== END OF TOPIC ==== xdump.md ==== -->
+<h2 id="api-reference">API reference</h2>
+<p>The following sections provide reference information for the OpenJ9 extensions to the JVMTI.</p>
+<!-- ==================================================================================================== -->
+
+<h3 id="getosthreadid"><code>GetOSThreadID</code></h3>
+<p>You can <strong>get the OS thread ID</strong> by using the <code>GetOSThreadID()</code> API:</p>
+<pre><code>jvmtiError GetOSThreadID(jvmtiEnv* jvmti_env, jthread thread, jlong * threadid_ptr);
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>thread</code>: The thread for which the ID is required.</li>
+<li><code>threadid_ptr</code>: A pointer to a variable, used to return the thread ID that corresponds to the thread specified by the thread parameter.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: The <code>threadid_ptr</code> parameter is null.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <code>jvmti_env</code> parameter is invalid.<br />
+<code>JVMTI_ERROR_INVALID_THREAD</code>: The thread is not valid.<br />
+<code>JVMTI_ERROR_THREAD_NOT_ALIVE</code>: The VM state of the thread is not started or has died.<br />
+<code>JVMTI_ERROR_UNATTACHED_THREAD</code>: The current thread is not attached to the VM. 
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI start or live phase.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.GetOSThreadID</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_GET_OS_THREAD_ID</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="queryvmdump"><code>QueryVmDump</code></h3>
+<p>You can <strong>query the VM dump options</strong> that are set for a VM by using the <code>QueryVmDump()</code> API:</p>
+<pre><code>jvmtiError QueryVmDump(jvmtiEnv* jvmti_env, jint buffer_size, void* options_buffer, jint* data_size_ptr)
+</code></pre>
+<p>This extension returns a set of dump option specifications as ASCII strings. The syntax of the option string is the same as the -Xdump command-line option, with the initial <code>-Xdump:</code> omitted. See <a href="../xdump/">-Xdump</a>. The option strings are separated by newline characters. If the memory buffer is too small to contain the current VM dump option strings, you can expect the following results:</p>
+<ul>
+<li>The error message <code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code> is returned.</li>
+<li>The variable for <code>data_size_ptr</code> is set to the required buffer size.</li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>buffer_size</code>: The size of the supplied memory buffer in bytes.</li>
+<li><code>options_buffer</code>: A pointer to the supplied memory buffer.</li>
+<li><code>data_size_ptr</code>: A pointer to a variable, used to return the total size of the option strings.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: The options_buffer or data_size_ptr parameters are null.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The jvmti_env parameter is invalid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_NOT_AVAILABLE</code>: The dump configuration is locked because a dump is in progress.<br />
+<code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code>: The supplied memory buffer in <code>options_buffer</code> is too small.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.QueryVmDump</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_QUERY_VM_DUMP</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="setvmdump"><code>SetVmDump</code></h3>
+<p>You can <strong>set VM dump options</strong> by using the <code>SetVmDump()</code> API:</p>
+<pre><code>jvmtiError SetVmDump(jvmtiEnv* jvmti_env, char* option)
+</code></pre>
+<p>The dump option is passed in as an ASCII character string. Use the same syntax as the <code>-Xdump</code> command-line option, with the initial <code>-Xdump:</code> omitted. See <a href="../xdump/">-Xdump</a>.</p>
+<p>When dumps are in progress, the dump configuration is locked, and calls to <code>SetVmDump()</code> fail with a return value of <code>JVMTI_ERROR_NOT_AVAILABLE</code>.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>option</code>: The VM dump option string.<br />
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On z/OS, you might need to convert the option string from EBCDIC to ASCII before using this JVMTI extension function.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: The parameter option is null.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The jvmti_env parameter is invalid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_NOT_AVAILABLE</code>: The dump configuration is locked because a dump is in progress.<br />
+<code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code>: The parameter option contains an invalid <code>-Xdump</code> string.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.SetVmDump</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_SET_VM_DUMP</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="triggervmdump"><code>TriggerVmDump</code></h3>
+<p>You can <strong>trigger a VM dump</strong> and specify the type of dump you want by using the <code>TriggerVmDump()</code> API:</p>
+<pre><code>jvmtiError TriggerVmDump(jvmtiEnv* jvmti_env, char* option)
+</code></pre>
+<p>Choose the type of dump required by specifying an ASCII string that contains one of the supported dump agent types. See <a href="../xdump/">-Xdump</a>. JVMTI events are provided at the start and end of the dump.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li>
+<p><code>option</code>: A pointer to the dump type string, which can be one of the following types:  </p>
+<p><code>stack</code><br />
+<code>java</code><br />
+<code>system</code><br />
+<code>console</code><br />
+<code>tool</code><br />
+<code>heap</code><br />
+<code>snap</code><br />
+<code>ceedump</code> (z/OS only)  </p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On z/OS, you might need to convert the option string from EBCDIC to ASCII before using this JVMTI extension function.</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: The option parameter is null.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The jvmti_env parameter is invalid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_NOT_AVAILABLE</code>: The dump configuration is locked because a dump is in progress.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.TriggerVmDump</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_TRIGGER_VM_DUMP</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="resetvmdump"><code>ResetVmDump</code></h3>
+<p>You can <strong>reset VM dump options</strong> to the values at VM initialization by using the <code>ResetVmDump()</code> API:</p>
+<pre><code>jvmtiError ResetVmDump(jvmtiEnv* jvmti_env)
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: The JVMTI environment pointer.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The jvmti_env parameter is invalid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_NOT_AVAILABLE</code>: The dump configuration is locked because a dump is in progress.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.ResetVmDump</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_RESET_VM_DUMP</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="vmdumpstart"><code>VMDumpStart</code></h3>
+<p>The following <strong>JVMTI event function is called when a VM dump starts</strong>:</p>
+<pre><code>void JNICALL VMDumpStart(jvmtiEnv *jvmti_env, JNIEnv* jni_env, char* label, char* event, char* detail)
+</code></pre>
+<p>The event function provides the dump file name, the name of the JVMTI event, and the detail string from the dump event. The detail string provides additional information about the event that triggered the dump. This information is the same as the information detailed in the <code>JVMDUMP039I</code> message. For example:</p>
+<pre><code>JVMDUMP039I Processing dump event "systhrow", detail "java/lang/OutOfMemoryError" at 2014/10/17 13:31:03 - please wait."
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: JVMTI environment pointer.</li>
+<li><code>jni_env</code>: JNI environment pointer for the thread on which the event occurred.</li>
+<li><code>label</code>: The dump file name, including directory path.</li>
+<li><code>event</code>: The extension event name, such as <code>com.ibm.VmDumpStart</code>.</li>
+<li><code>detail</code>: The dump event detail string. The string can be empty.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>None</p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="vmdumpend"><code>VMDumpEnd</code></h3>
+<p>The following <strong>JVMTI event function is called when a VM dump ends</strong>:</p>
+<pre><code>void JNICALL VMDumpEnd(jvmtiEnv *jvmti_env, JNIEnv* jni_env, char* label, char* event, char* detail)
+</code></pre>
+<p>The event function provides the dump file name, the name of the JVMTI event, and the detail string from the dump event. The detail string provides additional information about the event that triggered the dump. This information is the same as the information detailed in the <code>JVMDUMP039I</code> message. For example:</p>
+<pre><code>JVMDUMP039I Processing dump event "systhrow", detail "java/lang/OutOfMemoryError" at 2014/10/17 13:31:03 - please wait.
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: JVMTI environment pointer.  </li>
+<li><code>jni_env</code>: JNI environment pointer for the thread on which the event occurred.  </li>
+<li><code>label</code>: The dump file name, including directory path.  </li>
+<li><code>event</code>: The extension event name <code>com.ibm.VmDumpEnd</code>.  </li>
+<li><code>detail</code>: The dump event detail string. The string can be empty.  </li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>None</p>
+<!-- ==================================================================================================== -->
+
+<hr />
+<h3 id="setvmtrace"><code>SetVmTrace</code></h3>
+<p>You can <strong>set VM trace options</strong> by using the <code>SetVmTrace()</code> API:</p>
+<pre><code>jvmtiError SetVmTrace(jvmtiEnv* jvmti_env, char* option)
+</code></pre>
+<p>The trace option is passed in as an ASCII character string. Use the same syntax as the <code>-Xtrace</code> command-line option, with the initial <code>-Xtrace:</code> omitted. See <a href="../xtrace/">-Xtrace</a>.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: JVMTI environment pointer.</li>
+<li><code>option</code>: Enter the VM trace option string.<br />
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On z/OS, you might need to convert the option string from EBCDIC to ASCII before using this JVMTI extension function.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: The option parameter is null.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <code>jvmti_env</code> parameter is invalid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code>: The option parameter contains an invalid <code>-Xtrace</code> string.  </p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.SetVmTrace</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_SET_VM_TRACE</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="registertracepointsubscriber"><code>RegisterTracePointSubscriber</code></h3>
+<p>You can <strong>subscribe to VM tracepoints</strong> by using the <code>RegisterTracePointSubscriber()</code> API:</p>
+<pre><code>jvmtiError RegisterTracePointSubscriber(jvmtiEnv* jvmti_env, char *description, jvmtiTraceSubscriber subscriber, jvmtiTraceAlarm alarm, void *userData, void **subscriptionID)
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>description</code>: An ASCII character string that describes the subscriber.</li>
+<li><code>subscriber</code>: A function of type <a href="#jvmtitracesubscriberfunction"><code>jvmtiTraceSubscriber</code></a>.</li>
+<li><code>alarm</code>: A function pointer of type <a href="#jvmtitracealarmfunction"><code>jvmtiTraceAlarm</code></a>.</li>
+<li><code>user_data</code>: A pointer to user data. This pointer is passed to the subscriber and alarm functions each time these functions are called. This pointer can be a null value.</li>
+<li><code>subscription_id</code>: A pointer to a subscription identifier. This pointer is returned by the <code>RegisterTracePointSubscriber</code> call if successful. The value must be supplied to a future call to the <code>DeregisterTracePointSubscriber</code> API, which is used to unsubscribe from the VM tracepoint.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: One of the supplied parameters is null.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <code>jvmti_env</code> parameter is not valid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_NOT_AVAILABLE</code>: VM trace is not available.<br />
+<code>JVMTI_ERROR_INTERNAL</code>: An internal error occurred.  </p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.RegisterTracePointSubscriber</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_REGISTER_TRACEPOINT_SUBSCRIBER</code></p>
+<h4 id="jvmtitracesubscriber-function"><code>jvmtiTraceSubscriber</code> function</h4>
+<dl>
+<dd>
+<p>The subscriber function type is defined as follows:</p>
+<pre><code>typedef jvmtiError (*jvmtiTraceSubscriber)(jvmtiEnv *jvmti_env, void *record, jlong length, void *user_data);
+</code></pre>
+<p>The subscriber function must be of type <code>jvmtiTraceSubscriber</code>, which is declared in <code>ibmjvmti.h</code>. </p>
+<p>This function is called with each tracepoint record that is selected through the <code>-Xtrace:external</code> option. </p>
+<p>The tracepoint record that is supplied to the subscriber function is valid only for the duration of the function. If the subscriber wants to save the data, the data must be copied elsewhere.</p>
+<p>If the subscriber function returns an error, the alarm function is called, the subscription is disconnected, and no further tracepoints are sent to the subscriber.</p>
+<p><strong>Subscriber function parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>record</code>: A UTF-8 string that contains a tracepoint record.</li>
+<li><code>length</code>: The number of UTF-8 characters in the tracepoint record.</li>
+<li><code>user_data</code>: User data that is supplied when the subscriber is registered.</li>
+</ul>
+</dd>
+</dl>
+<h4 id="jvmtitracealarm-function"><code>jvmtiTraceAlarm</code> function</h4>
+<dl>
+<dd>
+<p>The alarm function type is defined as follows:</p>
+<pre><code>typedef jvmtiError (*jvmtiTraceAlarm)(jvmtiEnv *jvmti_env, void *subscription_id, void *user_data);
+</code></pre>
+<p>The alarm function must be of type <code>jvmtiTraceAlarm</code>, which is declared in <code>ibmjvmti.h</code>. This function is called if the subscriber function returns an error.</p>
+<p><strong>Alarm function parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>subscription_id</code>: The subscription identifier.</li>
+<li><code>user_data</code>: User data that is supplied when the subscriber is registered.</li>
+</ul>
+</dd>
+</dl>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="deregistertracepointsubscriber"><code>DeregisterTracePointSubscriber</code></h3>
+<p>You can <strong>unsubscribe from VM tracepoints</strong> by using the <code>DeregisterTracePointSubscriber()</code> API:</p>
+<pre><code>jvmtiError DeregisterTracePointSubscriber(jvmtiEnv* jvmti_env, void *userData, void *subscription_id)
+</code></pre>
+<p>After the <code>DeregisterTracePointSubscriber()</code> API is called, no further calls are made to the subscriber function.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>subscription_id</code>: The subscription identifier that is returned by the call to the <a href="#registertracepointsubscriber">RegisterTracePointSubscriber</a> API.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: The <code>subscription_id</code> parameter is null.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <code>jvmti_env</code> parameter is not valid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.  </p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.DeregisterTracePointSubscriber</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_DEREGISTER_TRACEPOINT_SUBSCRIBER</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="getmemorycategories"><code>GetMemoryCategories</code></h3>
+<p>You can <strong>query runtime environment native memory categories</strong> by using the <code>GetMemoryCategories()</code> API:</p>
+<pre><code>jvmtiError GetMemoryCategories(jvmtiEnv* env, jint version, jint max_categories, jvmtiMemoryCategory * categories_buffer, jint * written_count_ptr, jint * total_categories_ptr);
+</code></pre>
+<p>You can query the total native memory consumption of the runtime environment for each memory category by using this API. Native memory is memory requested from the operating system using library functions such as <code>malloc()</code> and <code>mmap()</code>. Runtime environment native memory use is grouped under high-level memory categories, as described in the <code>NATIVEMEMINFO</code> section of the <em>Java dump</em> topic. The data returned by the <code>GetMemoryCategories()</code> API is consistent with this format. See <a href="../dump_javadump/#nativememinfo">Java dump: NATIVEMEMINFO</a>.</p>
+<p>The extension writes native memory information to a memory buffer specified by the user. Each memory category is recorded as a <code>jvmtiMemoryCategory</code> structure, whose format is defined in <code>ibmjvmti.h</code>.</p>
+<p>You can use the <code>GetMemoryCategories()</code> API to work out the buffer size you must allocate to hold all memory categories defined inside the VM. To calculate the size, call the API with a null <code>categories_buffer</code> argument and a non-null <code>total_categories_ptr</code> argument.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>env</code>: A pointer to the JVMTI environment.</li>
+<li><code>version</code>: The version of the <code>jvmtiMemoryCategory</code> structure that you are using. Use <code>COM_IBM_GET_MEMORY_CATEGORIES_VERSION_1</code> for this argument, unless you must work with an obsolete version of the <code>jvmtiMemoryCategory</code> structure.</li>
+<li><code>max_categories</code>: The number of <code>jvmtiMemoryCategory</code> structures that can fit in the <code>categories_buffer</code> memory buffer.</li>
+<li><code>categories_buffer</code>: A pointer to the memory buffer for holding the result of the <code>GetMemoryCategories()</code> call. The number of <code>jvmtiMemoryCategory</code> slots available in the <code>categories_buffer</code> memory buffer must be accurately specified with <code>max_categories</code>, otherwise <code>GetMemoryCategories()</code> can overflow the memory buffer. The value can be null.</li>
+<li><code>written_count_ptr</code>: A pointer to <code>jint</code> to store the number of <code>jvmtiMemoryCategory</code> structures to be written to the <code>categories_buffer</code> memory buffer. The value can be null.</li>
+<li><code>total_categories_ptr</code>: A pointer to <code>jint</code> to store the total number of memory categories declared in the VM. The value can be null.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_UNSUPPORTED_VERSION</code>: Unrecognized value passed for version.<br />
+<code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code>: Illegal argument; <code>categories_buffer</code>, <code>count_ptr</code>, and <code>total_categories_ptr</code> all have null values.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <code>env</code> parameter is invalid.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: Memory category data is truncated because <code>max_categories</code> is not large enough.  </p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.GetMemoryCategories</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_GET_MEMORY_CATEGORIES</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="queryvmlogoptions"><code>QueryVmLogOptions</code></h3>
+<p>You can <strong>query VM log options</strong> by using the <code>QueryVmLogOptions()</code> API:</p>
+<pre><code>jvmtiError QueryVmLogOptions(jvmtiEnv* jvmti_env, jint buffer_size, void* options, jint* data_size_ptr)
+</code></pre>
+<p>This extension returns the current log options as an ASCII string. The syntax of the string is the same as the <code>-Xlog</code> command-line option, with the initial <code>-Xlog:</code> omitted. For example, the string "error,warn" indicates that the VM is set to log error and warning messages only. For more information, see <a href="../xlog/"><code>-Xlog</code></a>. </p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.  </li>
+<li><code>buffer_size</code>: The size of the supplied memory buffer in bytes. If the memory buffer is too small to contain the current VM log option string, the <code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code> error message is returned.  </li>
+<li><code>options_buffer</code>: A pointer to the supplied memory buffer.  </li>
+<li><code>data_size_ptr</code>: A pointer to a variable, used to return the total size of the option string.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: The <code>options</code> or <code>data_size_ptr</code> parameters are null.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <code>jvmti_env</code> parameter is invalid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code>: The supplied memory buffer is too small.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.QueryVmLogOptions</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_QUERY_VM_LOG_OPTIONS</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="setvmlogoptions"><code>SetVmLogOptions</code></h3>
+<p>You can <strong>set VM log options</strong> by using the <code>SetVmLogOptions()</code> API:</p>
+<pre><code>jvmtiError SetVmLogOptions(jvmtiEnv* jvmti_env, char* options_buffer)
+</code></pre>
+<p>The log option is passed in as an ASCII character string. Use the same syntax as the <code>-Xlog</code> command-line option, with the initial <code>-Xlog:</code> omitted. For example, to set the VM to log error and warning messages, pass in a string containing "error,warn". For more information, see <a href="../xlog/"><code>-Xlog</code></a>.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>options_buffer</code>: A pointer to memory containing the log option.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: The parameter option is null.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <em><code>jvmti_env</code></em> parameter is invalid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code>: The parameter option contains an invalid <code>-Xlog</code> string.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.SetVmLogOptions</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_SET_VM_LOG_OPTIONS</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="iteratesharedcaches"><code>IterateSharedCaches</code></h3>
+<p>You can <strong>search for shared class caches</strong> that exist in a specified cache directory by using the <code>IterateSharedCaches()</code> API:</p>
+<pre><code>jvmtiError IterateSharedCaches(jvmtiEnv* env, jint version, const char *cacheDir, jint flags, jboolean useCommandLineValues, jvmtiIterateSharedCachesCallback callback, void *user_data);
+</code></pre>
+<p>Information about the caches is returned in a structure that is populated by a user-specified callback function. You can specify the search directory in two ways:</p>
+<ul>
+<li>Set the value of <code>useCommandLineValues</code> to <code>true</code> and specify the directory on the command line. If the directory is not specified on the command line, the default location for the platform is used.</li>
+<li>Set the value of <code>useCommandLineValues</code> to <code>false</code> and use the <code>cacheDir</code> parameter. To accept the default location for the platform, specify <code>cacheDir</code> with a <code>null</code> value.</li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>env</code>: A pointer to the JVMTI environment.</li>
+<li><code>version</code>: Version information for <code>IterateSharedCaches</code>, which describes the <code>jvmtiSharedCacheInfo</code> structure passed to the <code>jvmtiIterateSharedCachesCallback</code> function. The values allowed are:<ul>
+<li><code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_1</code></li>
+<li><code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_2</code></li>
+<li><code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_3</code></li>
+<li><code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_4</code></li>
+</ul>
+</li>
+<li><code>cacheDir</code>: When the value of <code>useCommandLineValues</code> is <code>false</code>, specify the absolute path of the directory for the shared class cache. If the value is <code>null</code>, the platform-dependent default is used.</li>
+<li><code>flags</code>: Reserved for future use. The only value allowed is <code>COM_IBM_ITERATE_SHARED_CACHES_NO_FLAGS</code>.</li>
+<li><code>useCommandLineValues</code>: Set this value to <code>true</code> when you want to specify the cache directory on the command line. Set this value to <code>false</code> when you want to use the <code>cacheDir</code> parameter.</li>
+<li><code>callback</code>: A function pointer to a user provided callback routine <code>jvmtiIterateSharedCachesCallback</code>.</li>
+<li><code>user_data</code>: User supplied data, passed as an argument to the callback function.  <pre><code>jint (JNICALL *jvmtiIterateSharedCachesCallback)(jvmtiEnv *env,jvmtiSharedCacheInfo *cache_info, void *user_data);
+</code></pre>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The env parameter is not valid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_UNSUPPORTED_VERSION</code>: The <code>version</code> parameter is not valid.<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: The <code>callback</code> parameter is null.<br />
+<code>JVMTI_ERROR_NOT_AVAILABLE</code>: The shared classes feature is not enabled in the VM.<br />
+<code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code>: The flags parameter is not valid.<br />
+<code>JVMTI_ERROR_INTERNAL</code>: This error is returned when the <code>jvmtiIterateSharedCachesCallback</code> returns <code>JNI_ERR</code>.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.IterateSharedCaches</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_ITERATE_SHARED_CACHES</code></p>
+<h4 id="jvmtiiteratesharedcachescallback-function"><code>jvmtiIterateSharedCachesCallback</code> function</h4>
+<dl>
+<dd>
+<p><strong>Callback function parameters</strong></p>
+<ul>
+<li><code>env</code>: A pointer to the JVMTI environment when calling <code>COM_IBM_ITERATE_SHARED_CACHES</code>.</li>
+<li><code>cache_info</code>: A <code>jvmtiSharedCacheInfo</code> structure containing information about a shared cache.</li>
+<li><code>user_data</code>: User-supplied data, passed as an argument to <code>IterateSharedCaches</code>.</li>
+</ul>
+<p><strong>Callback function returns</strong></p>
+<p><code>JNI_OK</code>: Continue iterating.<br />
+<code>JNI_ERR</code>: Stop iterating, which causes <code>IterateSharedCaches</code> to return <code>JVMTI_ERROR_INTERNAL</code></p>
+</dd>
+</dl>
+<h4 id="jvmtisharedcacheinfo-structure"><code>jvmtiSharedCacheInfo</code> structure</h4>
+<dl>
+<dd>
+<p>The structure of <code>jvmtiSharedCacheInfo</code></p>
+<pre><code>typedef struct jvmtiSharedCacheInfo {
+const char *name;      // the name of the shared cache
+jboolean isCompatible; // if the shared cache is compatible with this VM
+jboolean isPersistent; // true if the shared cache is persistent, false if its non-persistent
+jint os_shmid;         // the OS shared memory ID associated with a non-persistent cache, -1 otherwise
+jint os_semid;         // the OS shared semaphore ID associated with a non-persistent cache, -1 otherwise
+jint modLevel;         // one of:
+                       //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA5
+                       //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA6 
+                       //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA7
+                       //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA8 
+jint addrMode;         // the address mode of the VM creating the shared cache: includes additional 
+                       // information on whether it is a 64-bit compressedRefs cache when 
+                       // COM_IBM_ITERATE_SHARED_CACHES_VERSION_3 or later is specified.
+jboolean isCorrupt;    // if the cache is corrupted
+jlong cacheSize;       // the total usable shared class cache size, or -1 when isCompatible is false
+jlong freeBytes;       // the number of free bytes in the shared class cache, or -1 when isCompatible is false
+jlong lastDetach;      // the last detach time specified in milliseconds since 00:00:00 on 1 January 1970 UTC, 
+                       // or -1 when the last detach time is not available
+jint cacheType;        // the type of the cache
+jlong softMaxBytes;    // the soft limit for the available space in the cache
+} jvmtiSharedCacheInfo;
+</code></pre>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
+<ul>
+<li>
+<p>The field <code>cacheType</code> is included when <code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_2</code> or later is specified.</p>
+</li>
+<li>
+<p><code>jvmtiSharedCacheInfo.addrMode</code> encodes both address mode and the compressed reference mode when <code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_3</code> or later is specified. In this case, use the following set of macros to access the address mode and compressed reference mode:</p>
+</li>
+</ul>
+<dl>
+<dd>
+<p>To get the address mode, use:</p>
+<pre><code>COM_IBM_ITERATE_SHARED_CACHES_GET_ADDR_MODE(jvmtiSharedCacheInfo.addrMode)
+</code></pre>
+<p>This macro returns one of the following values:<br />
+<code>COM_IBM_SHARED_CACHE_ADDRMODE_32</code><br />
+<code>COM_IBM_SHARED_CACHE_ADDRMODE_64</code>  </p>
+</dd>
+<dd>
+<p>To get the compressed references mode, use:</p>
+<pre><code>COM_IBM_ITERATE_SHARED_CACHES_GET_CMPRSSREF_MODE(jvmtiSharedCacheInfo.addrMode)
+</code></pre>
+<p>This macro returns one of the following values:<br />
+<code>COM_IBM_ITERATE_SHARED_CACHES_UNKNOWN_COMPRESSED_POINTERS_MODE</code><br />
+<code>COM_IBM_ITERATE_SHARED_CACHES_COMPRESSED_POINTERS_MODE</code><br />
+<code>COM_IBM_ITERATE_SHARED_CACHES_NON_COMPRESSED_POINTERS_MODE</code>  </p>
+</dd>
+</dl>
+<ul>
+<li>The field <code>softMaxBytes</code> is included when <code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_4</code> or later is specified.</li>
+</ul>
+</dd>
+</dl>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="destroysharedcache"><code>DestroySharedCache</code></h3>
+<p>You can <strong>remove a shared class cache</strong> by using the <code>DestroySharedCache()</code> API:</p>
+<pre><code>jvmtiError DestroySharedCache(jvmtiEnv *env, const char *cacheDir, const char *name, jint persistence, jboolean useCommandLineValues, jint *internalErrorCode);
+</code></pre>
+<p>This extension removes a named shared class cache of a given persistence type, in a given directory. You can specify the cache name, persistence type, and directory in one of these ways:</p>
+<ul>
+<li>
+<p>Set <code>useCommandLineValues</code> to <code>true</code> and specify the values on the command line. If a value is not available, the default values for the platform are used.</p>
+</li>
+<li>
+<p>Set <code>useCommandLineValues</code> to <code>false</code> and use the <code>cacheDir</code>, <code>persistence</code> and <code>cacheName</code> parameters to identify the cache to be removed. To accept the default value for <code>cacheDir</code> or <code>cacheName</code>, specify the parameter with a <code>null</code> value.</p>
+</li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>env</code>: A pointer to the JVMTI environment.</li>
+<li><code>cacheDir</code>: When the value of useCommandLineValues is <code>false</code>, specify the absolute path of the directory for the shared class cache. If the value is <code>null</code>, the platform-dependent default is used.</li>
+<li><code>cacheName</code>: When the value of <code>useCommandLineValues</code> is <code>false</code>, specify the name of the cache to be removed. If the value is <code>null</code>, the platform-dependent default is used.</li>
+<li><code>persistence</code>: When the value of <code>useCommandLineValues</code> is false, specify the type of cache to remove. This parameter must have one of the following values:<br />
+<code>PERSISTENCE_DEFAULT</code> (The default value for the platform).<br />
+<code>PERSISTENT</code><br />
+<code>NONPERSISTENT</code>  </li>
+<li><code>useCommandLineValues</code>: Set this value to <code>true</code> when you want to specify the shared class cache name, persistence type, and directory on the command line. Set this value to <code>false</code> when you want to use the <code>cacheDir</code>, <code>persistence</code>, and <code>cacheName</code> parameters instead.</li>
+<li><code>internalErrorCode</code>: If not <code>null</code>, this value is set to one of the following constants when <code>JVMTI_ERROR_INTERNAL</code> is returned:  <ul>
+<li><code>COM_IBM_DESTROYED_ALL_CACHE</code>: Set when <code>JVMTI_ERROR_NONE is</code> returned.</li>
+<li><code>COM_IBM_DESTROYED_NONE</code>: Set when the function fails to remove any caches.  </li>
+<li><code>COM_IBM_DESTROY_FAILED_CURRENT_GEN_CACHE</code>: Set when the function fails to remove the existing current generation cache, irrespective of the state of older generation caches.  </li>
+<li><code>COM_IBM_DESTROY_FAILED_OLDER_GEN_CACHE</code>: Set when the function fails to remove any older generation caches. The current generation cache does not exist or is successfully removed.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success. No cache exists or all existing caches of all generations are removed.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <code>env</code> parameter is not valid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_NOT_AVAILABLE</code>: The shared classes feature is not enabled in the VM.<br />
+<code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code>: The <code>persistence</code> parameter is not valid. 
+<code>JVMTI_ERROR_INTERNAL</code>: Failed to remove any existing cache with the given name. See the value of the <code>internalErrorCode</code> parameter for more information about the failure.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.DestroySharedCache</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_DESTROY_SHARED_CACHE</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="registerverbosegcsubscriber"><code>RegisterVerboseGCSubscriber</code></h3>
+<p>You can <strong>subscribe to verbose garbage collection (GC) data logging</strong> by using the <code>RegisterVerboseGCSubscriber()</code> API:</p>
+<pre><code>jvmtiError RegisterVerboseGCSubscriber(jvmtiEnv* jvmti_env, char *description, jvmtiVerboseGCSubscriber subscriber, jvmtiVerboseGCAlarm alarm, void *user_data, void **subscription_id)
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>description</code>: A ASCII character string that describes the subscriber.</li>
+<li><code>subscriber</code>: A function of type <a href="#jvmtiverbosegcsubscriberfunction"><code>jvmtiVerboseGCSubscriber</code></a>.</li>
+<li><code>alarm</code>: A function pointer of type <a href="#jvmtiverbosegcalarmfunction"><code>jvmtiVerboseGCAlarm</code></a>.</li>
+<li><code>user_data</code>: A pointer to user data. This pointer is passed to the subscriber and alarm functions each time these functions are called. This pointer can be a null value.</li>
+<li><code>subscription_id</code>: A pointer to a subscription identifier. This pointer is returned by the <code>RegisterVerboseGCSubscriber</code> call if successful. The value must be supplied to a future call to <code>DeregisterVerboseGCSubscriber</code> API, which is used to unsubscribe from verbose GC data logging.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: One of the supplied parameters is null.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <code>jvmti_env</code> parameter is not valid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
+<code>JVMTI_ERROR_NOT_AVAILABLE</code>: GC verbose logging is not available.<br />
+<code>JVMTI_ERROR_INTERNAL</code>: An internal error has occurred.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.RegisterVerboseGCSubscriber</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_REGISTER_VERBOSEGC_SUBSCRIBER</code></p>
+<h4 id="jvmtiverbosegcsubscriber-function"><code>jvmtiVerboseGCSubscriber</code> function</h4>
+<dl>
+<dd>
+<p>The subscriber function type is defined as follows:</p>
+<pre><code>typedef jvmtiError (*jvmtiVerboseGCSubscriber)(jvmtiEnv *jvmti_env, const char *record, jlong length, void *user_data);
+</code></pre>
+<p>The subscriber function must be of type <code>jvmtiVerboseGCSubscriber</code>, which is declared in <code>ibmjvmti.h</code>. </p>
+<p>This function is called with each record of verbose logging data produced by the VM. </p>
+<p>The verbose logging record supplied to the subscriber function is valid only for the duration of the function. If the subscriber wants to save the data, the data must be copied elsewhere. </p>
+<p>If the subscriber function returns an error, the alarm function is called, and the subscription is deregistered.</p>
+<p><strong>Subscriber function parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>record</code>: An ASCII string that contains a verbose log record.</li>
+<li><code>length</code>: The number of ASCII characters in the verbose log record.</li>
+<li><code>user_data</code>: User data supplied when the subscriber is registered.</li>
+</ul>
+</dd>
+</dl>
+<h4 id="jvmtiverbosegcalarm-function"><code>jvmtiVerboseGCAlarm</code> function</h4>
+<dl>
+<dd>
+<p>The alarm function type is defined as follows:</p>
+<pre><code>typedef jvmtiError (*jvmtiVerboseGCAlarm)(jvmtiEnv *jvmti_env, void *subscription_id, void *user_data);
+</code></pre>
+<p>The alarm function must be of type <code>jvmtiVerboseGCAlarm</code>, which is declared in <code>ibmjvmti.h</code>. This function is called if the subscriber function returns an error.</p>
+<p><strong>Alarm function parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>user_data</code>: User data supplied when the subscriber is registered.</li>
+<li><code>subscription_id</code>: The subscription identifier.</li>
+</ul>
+</dd>
+</dl>
+<hr />
+<!-- ==================================================================================================== -->
+
+<h3 id="deregisterverbosegcsubscriber"><code>DeregisterVerboseGCSubscriber</code></h3>
+<p>You can <strong>unsubscribe from verbose Garbage Collection (GC) data logging</strong> by using the <code>DeregisterVerboseGCSubscriber()</code> API:</p>
+<pre><code>jvmtiError DeregisterVerboseGCSubscriber(jvmtiEnv* jvmti_env, void *userData, void *subscription_id)
+</code></pre>
+<p>After the <code>DeregisterVerboseGCSubscriber()</code> API is called, no further calls are made to the previously registered subscriber function.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
+<li><code>subscription_id</code>: The subscription identifier that is returned by the call to the <a href="#registerverbosegcsubscriber">RegisterVerboseGCSubscriber()</a> API. </li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>JVMTI_ERROR_NONE</code>: Success.<br />
+<code>JVMTI_ERROR_NULL_POINTER</code>: The <code>subscription_id</code> parameter is null.<br />
+<code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
+<code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <code>jvmti_env</code> parameter is not valid.<br />
+<code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.</p>
+<p><strong>Identifiers</strong></p>
+<p>JVMTI Extension Function identifier: <code>com.ibm.DeregisterVerboseGCSubscriber</code><br />
+Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_DEREGISTER_VERBOSEGC_SUBSCRIBER</code></p>
+<hr />
+<!-- ==================================================================================================== -->
+
+<!-- ==== END OF TOPIC ==== interface_jvmti.md ==== -->
                 
                   
                 
@@ -4688,7 +4478,7 @@ As an alternative, you can use the <code>com.ibm.jvm.Dump.triggerDump()</code> A
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="xenablestringconstantgc/" title="-Xdisablestringconstantgc" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="tool_migration/" title="Switching to OpenJ9" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -4697,19 +4487,19 @@ As an alternative, you can use the <code>com.ibm.jvm.Dump.triggerDump()</code> A
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -Xdisablestringconstantgc
+                            Switching to OpenJ9
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="xenableexcessivegc/" title="-Xenableexcessivegc" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="interface_dtfj/" title="DTFJ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            -Xenableexcessivegc
+                            DTFJ
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">

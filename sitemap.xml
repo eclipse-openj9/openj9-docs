@@ -111,6 +111,46 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_jdmpview/</loc>
+     <lastmod>2019-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_traceformat/</loc>
+     <lastmod>2019-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_builder/</loc>
+     <lastmod>2019-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_jps/</loc>
+     <lastmod>2019-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_jstack/</loc>
+     <lastmod>2019-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_migration/</loc>
+     <lastmod>2019-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/interface_jvmti/</loc>
+     <lastmod>2019-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/interface_dtfj/</loc>
+     <lastmod>2019-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/cmdline_specifying/</loc>
      <lastmod>2019-06-26</lastmod>
      <changefreq>daily</changefreq>
@@ -987,41 +1027,6 @@
     </url>
     <url>
      <loc>https://www.eclipse.org/openj9/docs/xxvmlockclassloader/</loc>
-     <lastmod>2019-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.eclipse.org/openj9/docs/tool_jextract/</loc>
-     <lastmod>2019-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.eclipse.org/openj9/docs/tool_jdmpview/</loc>
-     <lastmod>2019-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.eclipse.org/openj9/docs/tool_traceformat/</loc>
-     <lastmod>2019-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.eclipse.org/openj9/docs/tool_builder/</loc>
-     <lastmod>2019-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.eclipse.org/openj9/docs/tool_jps/</loc>
-     <lastmod>2019-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.eclipse.org/openj9/docs/tool_jstack/</loc>
-     <lastmod>2019-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://www.eclipse.org/openj9/docs/tool_migration/</loc>
      <lastmod>2019-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>

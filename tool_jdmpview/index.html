@@ -534,10 +534,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
     
     <label class="md-nav__link" for="nav-10">
       Diagnostics
@@ -560,6 +562,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </a>
   </li>
 
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-2" type="checkbox" id="nav-10-2">
+    
+    <label class="md-nav__link" for="nav-10-2">
+      Dumps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-2">
+        Dumps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -594,6 +615,507 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a href="../dump_systemdump/" title="System dump" class="md-nav__link">
       System dump
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3" type="checkbox" id="nav-10-3" checked>
+    
+    <label class="md-nav__link" for="nav-10-3">
+      Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-3">
+        Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Dump viewer
+      </label>
+    
+    <a href="./" title="Dump viewer" class="md-nav__link md-nav__link--active">
+      Dump viewer
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-dump-viewer" title="Starting the dump viewer" class="md-nav__link">
+    Starting the dump viewer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-in-batch-mode" title="Starting in batch mode" class="md-nav__link">
+    Starting in batch mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-output" title="Processing output" class="md-nav__link">
+    Processing output
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-charsfrom" title="Using CharsFrom" class="md-nav__link">
+    Using CharsFrom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-charsto" title="Using CharsTo" class="md-nav__link">
+    Using CharsTo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-grep" title="Using grep" class="md-nav__link">
+    Using grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-tokens" title="Using tokens" class="md-nav__link">
+    Using tokens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-parameters" title="Session parameters" class="md-nav__link">
+    Session parameters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#j9help" title="!j9help" class="md-nav__link">
+    !j9help
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd" title="cd" class="md-nav__link">
+    cd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmdfile" title="cmdfile" class="md-nav__link">
+    cmdfile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deadlock" title="deadlock" class="md-nav__link">
+    deadlock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" title="find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#findnext" title="findnext" class="md-nav__link">
+    findnext
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" title="help" class="md-nav__link">
+    help
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" title="history" class="md-nav__link">
+    history
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-thread" title="info thread" class="md-nav__link">
+    info thread
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-system" title="info system" class="md-nav__link">
+    info system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-class" title="info class" class="md-nav__link">
+    info class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-proc" title="info proc" class="md-nav__link">
+    info proc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-jitm" title="info jitm" class="md-nav__link">
+    info jitm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-lock" title="info lock" class="md-nav__link">
+    info lock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-sym" title="info sym" class="md-nav__link">
+    info sym
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-mmap" title="info mmap" class="md-nav__link">
+    info mmap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-heap" title="info heap" class="md-nav__link">
+    info heap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heapdump" title="heapdump" class="md-nav__link">
+    heapdump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hexdump" title="hexdump" class="md-nav__link">
+    hexdump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="+" class="md-nav__link">
+    +
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" title="-" class="md-nav__link">
+    -
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwd" title="pwd" class="md-nav__link">
+    pwd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quit" title="quit" class="md-nav__link">
+    quit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-heapdump" title="set heapdump" class="md-nav__link">
+    set heapdump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-logging" title="set logging" class="md-nav__link">
+    set logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-heapdump" title="show heapdump" class="md-nav__link">
+    show heapdump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-logging" title="show logging" class="md-nav__link">
+    show logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whatis-hex_address" title="whatis &lt;hex_address&gt;" class="md-nav__link">
+    whatis &lt;hex_address&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-examine" title="x/ (examine)" class="md-nav__link">
+    x/ (examine)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xj-class_name0xaddr" title="x/J [&lt;class_name&gt;|&lt;0xaddr&gt;]" class="md-nav__link">
+    x/J [&lt;class_name&gt;|&lt;0xaddr&gt;]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xd-0xaddr" title="x/D &lt;0xaddr&gt;" class="md-nav__link">
+    x/D &lt;0xaddr&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xx-0xaddr" title="x/X &lt;0xaddr&gt;" class="md-nav__link">
+    x/X &lt;0xaddr&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xk-0xaddr" title="x/K &lt;0xaddr&gt;" class="md-nav__link">
+    x/K &lt;0xaddr&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_traceformat/" title="Trace formatter" class="md-nav__link">
+      Trace formatter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_builder/" title="Option builder" class="md-nav__link">
+      Option builder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jps/" title="Java process status (jps)" class="md-nav__link">
+      Java process status (jps)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jstack/" title="Java stack (jstack) tool" class="md-nav__link">
+      Java stack (jstack) tool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_migration/" title="Switching to OpenJ9" class="md-nav__link">
+      Switching to OpenJ9
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4" type="checkbox" id="nav-10-4">
+    
+    <label class="md-nav__link" for="nav-10-4">
+      Interfaces
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-4">
+        Interfaces
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../interface_jvmti/" title="JVMTI" class="md-nav__link">
+      JVMTI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../interface_dtfj/" title="DTFJ" class="md-nav__link">
+      DTFJ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -2814,476 +3336,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
-    
-    <label class="md-nav__link" for="nav-12">
-      Tools
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
-        Tools
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tool_jextract/" title="Dump extractor" class="md-nav__link">
-      Dump extractor
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Dump viewer
-      </label>
-    
-    <a href="./" title="Dump viewer" class="md-nav__link md-nav__link--active">
-      Dump viewer
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#starting-the-dump-viewer" title="Starting the dump viewer" class="md-nav__link">
-    Starting the dump viewer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#starting-in-batch-mode" title="Starting in batch mode" class="md-nav__link">
-    Starting in batch mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#processing-output" title="Processing output" class="md-nav__link">
-    Processing output
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-charsfrom" title="Using CharsFrom" class="md-nav__link">
-    Using CharsFrom
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-charsto" title="Using CharsTo" class="md-nav__link">
-    Using CharsTo
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-grep" title="Using grep" class="md-nav__link">
-    Using grep
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-tokens" title="Using tokens" class="md-nav__link">
-    Using tokens
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#session-parameters" title="Session parameters" class="md-nav__link">
-    Session parameters
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#j9help" title="!j9help" class="md-nav__link">
-    !j9help
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cd" title="cd" class="md-nav__link">
-    cd
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cmdfile" title="cmdfile" class="md-nav__link">
-    cmdfile
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deadlock" title="deadlock" class="md-nav__link">
-    deadlock
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find" title="find" class="md-nav__link">
-    find
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#findnext" title="findnext" class="md-nav__link">
-    findnext
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#help" title="help" class="md-nav__link">
-    help
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#history" title="history" class="md-nav__link">
-    history
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#info-thread" title="info thread" class="md-nav__link">
-    info thread
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#info-system" title="info system" class="md-nav__link">
-    info system
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#info-class" title="info class" class="md-nav__link">
-    info class
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#info-proc" title="info proc" class="md-nav__link">
-    info proc
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#info-jitm" title="info jitm" class="md-nav__link">
-    info jitm
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#info-lock" title="info lock" class="md-nav__link">
-    info lock
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#info-sym" title="info sym" class="md-nav__link">
-    info sym
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#info-mmap" title="info mmap" class="md-nav__link">
-    info mmap
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#info-heap" title="info heap" class="md-nav__link">
-    info heap
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#heapdump" title="heapdump" class="md-nav__link">
-    heapdump
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hexdump" title="hexdump" class="md-nav__link">
-    hexdump
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_1" title="+" class="md-nav__link">
-    +
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-" title="-" class="md-nav__link">
-    -
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pwd" title="pwd" class="md-nav__link">
-    pwd
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quit" title="quit" class="md-nav__link">
-    quit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-heapdump" title="set heapdump" class="md-nav__link">
-    set heapdump
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-logging" title="set logging" class="md-nav__link">
-    set logging
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#show-heapdump" title="show heapdump" class="md-nav__link">
-    show heapdump
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#show-logging" title="show logging" class="md-nav__link">
-    show logging
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#whatis-hex_address" title="whatis &lt;hex_address&gt;" class="md-nav__link">
-    whatis &lt;hex_address&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#x-examine" title="x/ (examine)" class="md-nav__link">
-    x/ (examine)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xj-class_name0xaddr" title="x/J [&lt;class_name&gt;|&lt;0xaddr&gt;]" class="md-nav__link">
-    x/J [&lt;class_name&gt;|&lt;0xaddr&gt;]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xd-0xaddr" title="x/D &lt;0xaddr&gt;" class="md-nav__link">
-    x/D &lt;0xaddr&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xx-0xaddr" title="x/X &lt;0xaddr&gt;" class="md-nav__link">
-    x/X &lt;0xaddr&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xk-0xaddr" title="x/K &lt;0xaddr&gt;" class="md-nav__link">
-    x/K &lt;0xaddr&gt;
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tool_traceformat/" title="Trace formatter" class="md-nav__link">
-      Trace formatter
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tool_builder/" title="Option builder" class="md-nav__link">
-      Option builder
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tool_jps/" title="Java process status (jps) tool" class="md-nav__link">
-      Java process status (jps) tool
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tool_jstack/" title="Java stack (jstack) tool" class="md-nav__link">
-      Java stack (jstack) tool
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tool_migration/" title="Switching to OpenJ9" class="md-nav__link">
-      Switching to OpenJ9
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-13">
+    <label class="md-nav__link" for="nav-12">
        Reference
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-13">
+      <label class="md-nav__title" for="nav-12">
          Reference
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -3781,59 +3843,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </table>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The <code>-core</code> option can be used with the <code>-zip</code> option to specify the core and XML files in the compressed file. Without these options, <code>jdmpview</code> shows multiple contexts, one for each source file that it identified in the compressed file.  </p>
 <p>On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to <code>jdmpview</code>, or you can supply a fully qualified MVS&trade; data set name. For example:</p>
-<div class="codehilite"><pre><span></span>&gt; jdmpview -core USER1.JVM.TDUMP.SSHD6.D070430.T092211
+<pre><code>&gt; jdmpview -core USER1.JVM.TDUMP.SSHD6.D070430.T092211
 DTFJView version 4.28.3, using DTFJ version 1.11.28004
 Loading image from DTFJ...
-</pre></div>
-
+</code></pre>
 
 <p>MVS data set names may contain the dollar sign ($). Names that contain a dollar sign must be enclosed by single quotation marks ('). For example:</p>
-<div class="codehilite"><pre><span></span>&gt; jdmpview -core &#39;USER1.JVM.$TDUMP.SSH$D7.D141211.T045506&#39;
-</pre></div>
-
+<pre><code>&gt; jdmpview -core 'USER1.JVM.$TDUMP.SSH$D7.D141211.T045506'
+</code></pre>
 
 <p>After <code>jdmpview</code> processes the dump files, a session starts, showing this message:</p>
-<div class="codehilite"><pre><span></span>For a list of commands, type &quot;help&quot;; for how to use &quot;help&quot;, type &quot;help help&quot;
+<pre><code>For a list of commands, type &quot;help&quot;; for how to use &quot;help&quot;, type &quot;help help&quot;
 &gt;
-</pre></div>
-
+</code></pre>
 
 <p>If you run the <code>jdmpview</code> tool on a compressed file that contains multiple dumps, the tool detects and shows all the dump files, whether these are system dumps, Java dumps, or heap dumps. Because of this behavior, more than one context might be displayed when you start <code>jdmpview</code>. To switch context, type <code>context &lt;n&gt;</code>, where <code>&lt;n&gt;</code> is the context value for the dump you want to investigate.</p>
 <p>On z/OS, a system dump can contain multiple address spaces and an address space can contain multiple VM instances. In this case, the context allows you to select the address space and VM instance within the dump file. The following z/OS example shows address spaces (<code>ASID</code>), with two JVMs occupying address space <code>0x73</code> (context 5 and 6). The current context is 5 (<code>CTX:5&gt;</code>), shown with an asterisk. To view the JVM in context 6, you can switch by specifying <code>context 6</code>.  </p>
-<div class="codehilite"><pre><span></span><span class="n">CTX</span><span class="o">:</span><span class="mi">5</span><span class="o">&gt;</span> <span class="n">context</span>
-<span class="n">Available</span> <span class="n">contexts</span> <span class="o">(*</span> <span class="o">=</span> <span class="n">currently</span> <span class="n">selected</span> <span class="n">context</span><span class="o">)</span> <span class="o">:</span>
+<pre><code>CTX:5&gt; context
+Available contexts (* = currently selected context) :
 
-<span class="mi">0</span> <span class="o">:</span> <span class="n">ASID</span><span class="o">:</span> <span class="mh">0x1</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span>
-<span class="mi">1</span> <span class="o">:</span> <span class="n">ASID</span><span class="o">:</span> <span class="mh">0x3</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span>
-<span class="mi">2</span> <span class="o">:</span> <span class="n">ASID</span><span class="o">:</span> <span class="mh">0x4</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span>
-<span class="mi">3</span> <span class="o">:</span> <span class="n">ASID</span><span class="o">:</span> <span class="mh">0x6</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span>
-<span class="mi">4</span> <span class="o">:</span> <span class="n">ASID</span><span class="o">:</span> <span class="mh">0x7</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span>
-<span class="o">*</span><span class="mi">5</span> <span class="o">:</span> <span class="n">ASID</span><span class="o">:</span> <span class="mh">0x73</span> <span class="n">EDB</span><span class="o">:</span> <span class="mh">0x83d2053a0</span> <span class="o">:</span> <span class="n">JRE</span> <span class="mf">1.8</span><span class="o">.</span><span class="mi">0</span> <span class="n">z</span><span class="o">/</span><span class="n">OS</span> <span class="n">s390x</span><span class="o">-</span><span class="mi">64</span> <span class="n">build</span> <span class="mi">20181117</span><span class="n">_128845</span> <span class="o">(</span><span class="n">pmz6480</span><span class="o">-</span><span class="mi">20181120</span><span class="n">_01</span><span class="o">)</span>
-<span class="mi">6</span> <span class="o">:</span> <span class="n">ASID</span><span class="o">:</span> <span class="mh">0x73</span> <span class="n">EDB</span><span class="o">:</span> <span class="mh">0x8004053a0</span> <span class="o">:</span> <span class="n">JRE</span> <span class="mf">1.8</span><span class="o">.</span><span class="mi">0</span> <span class="n">z</span><span class="o">/</span><span class="n">OS</span> <span class="n">s390x</span><span class="o">-</span><span class="mi">64</span> <span class="n">build</span> <span class="mi">20181117</span><span class="n">_128845</span> <span class="o">(</span><span class="n">pmz6480</span><span class="o">-</span><span class="mi">20181120</span><span class="n">_01</span><span class="o">)</span>
-<span class="mi">7</span> <span class="o">:</span> <span class="n">ASID</span><span class="o">:</span> <span class="mh">0x73</span> <span class="n">EDB</span><span class="o">:</span> <span class="mh">0x4a7bd9e8</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span>
-<span class="mi">8</span> <span class="o">:</span> <span class="n">ASID</span><span class="o">:</span> <span class="mh">0xffff</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span> <span class="o">:</span> <span class="n">No</span> <span class="n">JRE</span>
-</pre></div>
-
+0 : ASID: 0x1 : No JRE : No JRE
+1 : ASID: 0x3 : No JRE : No JRE
+2 : ASID: 0x4 : No JRE : No JRE
+3 : ASID: 0x6 : No JRE : No JRE
+4 : ASID: 0x7 : No JRE : No JRE
+*5 : ASID: 0x73 EDB: 0x83d2053a0 : JRE 1.8.0 z/OS s390x-64 build 20181117_128845 (pmz6480-20181120_01)
+6 : ASID: 0x73 EDB: 0x8004053a0 : JRE 1.8.0 z/OS s390x-64 build 20181117_128845 (pmz6480-20181120_01)
+7 : ASID: 0x73 EDB: 0x4a7bd9e8 : No JRE
+8 : ASID: 0xffff : No JRE : No JRE
+</code></pre>
 
 <p>If you are using <code>jdmpview</code> to view Java dumps and heap dumps, some options do not produce any output. For example, a heap dump doesn't contain the information requested by the <code>info system</code> command, but does contain information requested by the <code>info class</code> command.</p>
 <p>If you are viewing a dump where there are a large number of objects on the heap, you can speed up the performance of <code>jdmpview</code> by ensuring that your system has enough memory available and does not need to page memory to disk. To achieve this, start <code>jdmpview</code> with a larger heap size by specifying the <code>-Xmx</code> option. Use the <code>-J</code> option to pass the <code>-Xmx</code> command line option to the JVM. For example:</p>
-<div class="codehilite"><pre><span></span>jdmpview -J-Xmx&lt;n&gt; -core &lt;core file&gt;
-</pre></div>
-
+<pre><code>jdmpview -J-Xmx&lt;n&gt; -core &lt;core file&gt;
+</code></pre>
 
 <p>The options available to the dump viewer session are shown under <a href="#session-parameters">Session parameters</a></p>
 <h3 id="starting-in-batch-mode">Starting in batch mode</h3>
 <p>For long running or routine jobs, <code>jdmpview</code> can be used in batch mode.</p>
 <p>You can run a single command without specifying a command file by appending the command to the end of the <code>jdmpview</code> command line. For example:</p>
-<div class="codehilite"><pre><span></span>jdmpview -core mycore.dmp info class
-</pre></div>
-
-
+<pre><code>jdmpview -core mycore.dmp info class
+</code></pre>
 <p>When specifying jdmpview commands that accept a wildcard parameter, you must replace the wildcard symbol with <code>ALL</code> to prevent the shell interpreting the wildcard symbol. For example, in interactive mode, the command <code>info thread *</code> must be specified in the following way:</p>
-<div class="codehilite"><pre><span></span>jdmpview -core mycore.dmp info thread ALL
-</pre></div>
-
-
+<pre><code>jdmpview -core mycore.dmp info thread ALL
+</code></pre>
 <p>Batch mode is controlled with the following command line options:</p>
 <table>
 <thead>
@@ -3866,37 +3919,27 @@ Loading image from DTFJ...
 </tbody>
 </table>
 <p>The command file can have empty lines that contain spaces, or comment lines that start with // or #. These lines are ignored by jdmpview. Example command file:</p>
-<div class="codehilite"><pre><span></span>// commands.txt
+<pre><code>// commands.txt
 info system
 info proc
-</pre></div>
-
-
+</code></pre>
 <p>To run jdmpview in batch mode, using this command file, specify:</p>
-<div class="codehilite"><pre><span></span>jdmpview -outfile out.txt [-overwrite|-append] -cmdfile commands.txt -core &lt;path to core file&gt;
-</pre></div>
-
-
+<pre><code>jdmpview -outfile out.txt [-overwrite|-append] -cmdfile commands.txt -core &lt;path to core file&gt;
+</code></pre>
 <p>When the output file exists, you need to specify either the <code>-overwrite</code> option or the <code>-append</code> option. If you do not, an error message is generated.</p>
 <h3 id="processing-output">Processing output</h3>
 <p>You can redirect command output to a file, or pipe the command output to another command.</p>
 <p>To redirect jdmpview command output to a file, use one of the following formats:</p>
-<div class="codehilite"><pre><span></span>command &gt; &lt;target_file&gt;
-</pre></div>
-
-
+<pre><code>command &gt; &lt;target_file&gt;
+</code></pre>
 <p>If the target file exists, this redirection overwrites the content within it.</p>
-<div class="codehilite"><pre><span></span>command &gt;&gt; &lt;target_file&gt;
-</pre></div>
-
-
+<pre><code>command &gt;&gt; &lt;target_file&gt;
+</code></pre>
 <p>If the target file exists, this redirection appends the output to it.</p>
 <p>Where <code>&lt;target_file&gt;</code> is the file name, which can include the full path to the file.</p>
 <p>To pipe <code>jdmpview</code> command output to another command, use the vertical bar (|) character. For example:</p>
-<div class="codehilite"><pre><span></span>command | grep string
-</pre></div>
-
-
+<pre><code>command | grep string
+</code></pre>
 <p>You can chain more than two commands together by using multiple vertical bar characters.</p>
 <p>The following commands can be used to interrogate the output:</p>
 <ul>
@@ -3907,10 +3950,8 @@ info proc
 </ul>
 <h4 id="using-charsfrom">Using <code>CharsFrom</code></h4>
 <p>Use the <code>charsFrom</code> command after the vertical bar character to exclude all characters that come before a specified pattern in a resulting line.</p>
-<div class="codehilite"><pre><span></span>charsFrom &lt;options&gt; pattern
-</pre></div>
-
-
+<pre><code>charsFrom &lt;options&gt; pattern
+</code></pre>
 <p>Where <code>&lt;options&gt;</code>:</p>
 <ul>
 <li><code>-e</code> or <code>-exclude</code> : Exclude the matched pattern from the resulting line. By default, the matched pattern is included in the resulting line.</li>
@@ -3918,21 +3959,17 @@ info proc
 <li><code>-i</code> or <code>-ignoreCase</code> : Ignore case.</li>
 </ul>
 <p>For example, the following command displays resulting lines that contain the pattern <code>jre</code>, and trims each line to exclude all characters that come before this pattern:</p>
-<div class="codehilite"><pre><span></span>&gt; info mod | charsFrom jre
+<pre><code>&gt; info mod | charsFrom jre
 jre/lib/ppc64/libzip.so @ 0x0, sections:
 jre/lib/ppc64/libdbgwrapper80.so @ 0x0, sections:
 jre/lib/ppc64/libverify.so @ 0x0, sections:
 jre/lib/ppc64/libjava.so @ 0x0, sections:
 jre/lib/ppc64/compressedrefs/libjclse7b_28.so @ 0x0, sections:
-</pre></div>
-
-
+</code></pre>
 <h4 id="using-charsto">Using <code>CharsTo</code></h4>
 <p>Use the <code>CharsTo</code> command after the vertical bar character to include the characters in a resulting line until a specific pattern is found.</p>
-<div class="codehilite"><pre><span></span>charsTo &lt;options&gt; pattern
-</pre></div>
-
-
+<pre><code>charsTo &lt;options&gt; pattern
+</code></pre>
 <p>Where <code>&lt;options&gt;</code>:</p>
 <ul>
 <li><code>-include</code> : Include the matched pattern in the resulting line. By default, the matched pattern is excluded from the resulting line.</li>
@@ -3940,7 +3977,7 @@ jre/lib/ppc64/compressedrefs/libjclse7b_28.so @ 0x0, sections:
 <li><code>-i</code> or <code>-ignoreCase</code> : Ignore case.</li>
 </ul>
 <p>For example, the following command displays lines that contain the pattern "@", and trims each line to exclude all characters from "@" onwards:</p>
-<div class="codehilite"><pre><span></span>&gt; info mod | charsTo @
+<pre><code>&gt; info mod | charsTo @
 bin/java
 /usr/lib64/gconv/UTF-16.so
 /test/sdk/lib/ppc64le/libnet.so
@@ -3948,26 +3985,20 @@ bin/java
 /test/sdk/lib/ppc64le/libzip.so
 /test/sdk/lib/ppc64le/libjsig.so
 libjsig.so
-</pre></div>
-
-
+</code></pre>
 <p>You can also use <code>charsFrom</code> and <code>charsTo</code> together, separated by a vertical bar character. For example, the following command displays lines that contain the pattern "lib", and trims each line to exclude all characters that come before this pattern, as well as all characters from the pattern <code>@</code> :</p>
-<div class="codehilite"><pre><span></span>&gt; info mod | charsFrom lib | charsTo @
+<pre><code>&gt; info mod | charsFrom lib | charsTo @
 lib/ppc64le/libzip.so
 lib/ppc64le/libjsig.so
 lib/ppc64le/libverify.so
 lib/ppc64le/libjava.so
 lib/ppc64le/compressedrefs/libj9jit29.so
-</pre></div>
-
-
+</code></pre>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The line will not be displayed if the <code>charsFrom</code> and <code>charsTo</code> are used together, but only one of the patterns are matched in a line. Furthermore, the line will not be displayed if both patterns are matched in a line, but the <code>charsTo</code> pattern appears before, and not after, the <code>charsFrom</code> pattern.</p>
 <h4 id="using-grep">Using <code>grep</code></h4>
 <p>Use the <code>grep</code> command after the vertical bar character to show which lines match a specified pattern.</p>
-<div class="codehilite"><pre><span></span>grep &lt;options&gt; pattern
-</pre></div>
-
-
+<pre><code>grep &lt;options&gt; pattern
+</code></pre>
 <p>Where <code>&lt;options&gt;</code>:</p>
 <ul>
 <li><code>-i</code> : Ignore case.</li>
@@ -3994,26 +4025,20 @@ lib/ppc64le/compressedrefs/libj9jit29.so
 </li>
 </ul>
 <p>For example, the following command displays the number of instances and total heap size for the <code>java/lang/String</code> class:</p>
-<div class="codehilite"><pre><span></span>&gt; info class | grep java/lang/String              
+<pre><code>&gt; info class | grep java/lang/String              
 94 7688 [Ljava/lang/String;            
 1822 58304 java/lang/String               
 1 16 java/lang/String$CaseInsensitiveComparator               
 0 0 java/lang/String$UnsafeHelpers
-</pre></div>
-
-
+</code></pre>
 <p>The following command uses two pipes in combination to display the number of instances and total heap size for the <code>java/lang/StringCoding.StringDecoder</code> class:</p>
-<div class="codehilite"><pre><span></span>&gt; info class | grep java/lang/String | grep -i decoder
+<pre><code>&gt; info class | grep java/lang/String | grep -i decoder
 1 48 java/lang/StringCoding$StringDecoder
-</pre></div>
-
-
+</code></pre>
 <h4 id="using-tokens">Using <code>tokens</code></h4>
 <p>Use the <code>tokens</code> command after the vertical bar character to isolate specified tokens in the resulting lines.</p>
-<div class="codehilite"><pre><span></span>tokens [options] range[,range][..range]
-</pre></div>
-
-
+<pre><code>tokens [options] range[,range][..range]
+</code></pre>
 <p>You can define range in the following formats:</p>
 <ul>
 <li>x</li>
@@ -4027,7 +4052,7 @@ lib/ppc64le/compressedrefs/libj9jit29.so
 </ul>
 <p>In this format, if x is omitted, it is assumed to be '1'. If y is omitted, it is assumed to be '-1'.</p>
 <p>For example, the following command displays the first and second token for each resulting line:</p>
-<div class="codehilite"><pre><span></span>&gt; info mmap | grep -r ^0x | tokens 1,2
+<pre><code>&gt; info mmap | grep -r ^0x | tokens 1,2
 0x0000000000012fff 0x000000000000d000
 0x0000000000017fff 0x0000000000004000
 0x00000000009dafff 0x0000000000018000
@@ -4036,32 +4061,24 @@ lib/ppc64le/compressedrefs/libj9jit29.so
 0x0000000000d76fff 0x0000000000001000
 0x0000000003145fff 0x0000000000071000
 0x0000000003b93fff 0x0000000000003000
-</pre></div>
-
-
+</code></pre>
 <h2 id="session-parameters">Session parameters</h2>
 <p>When <code>jdmpview</code> is started, many parameters can be used during the session to interrogate the system dump data, which are divided into <em>general</em> and <em>expert</em> parameters. The <em>general</em> parameters are documented in this section. To see a list of <em>expert</em> parameters, use the <code>!j9help</code> option.</p>
 <h3 id="j9help">!j9help</h3>
-<div class="codehilite"><pre><span></span>    !j9help
-</pre></div>
-
-
+<pre><code>    !j9help
+</code></pre>
 <dl>
 <dd>Lists all <em>expert</em> parameters that can be used in a session, with a brief description.</dd>
 </dl>
 <h3 id="cd">cd</h3>
-<div class="codehilite"><pre><span></span>    cd &lt;directory_name&gt;
-</pre></div>
-
-
+<pre><code>    cd &lt;directory_name&gt;
+</code></pre>
 <dl>
 <dd>Changes the working directory to <code>&lt;directory_name&gt;</code>. The working directory is used for log files. Logging is controlled by the <code>set logging</code> command. Use the <code>pwd</code> command to query the current working directory.</dd>
 </dl>
 <h3 id="cmdfile">cmdfile</h3>
-<div class="codehilite"><pre><span></span>    cmdfile &lt;directory_name&gt;
-</pre></div>
-
-
+<pre><code>    cmdfile &lt;directory_name&gt;
+</code></pre>
 <dl>
 <dd>Runs all of the commands in a file. The commands are read line by line and run sequentially. Empty lines, and lines that start with <strong>//</strong> or <strong>#</strong>, are ignored. Use the option charset to identify the character set that is used in the chosen file. The character set must be supported, as defined in <code>java.nio.charset.Charset</code>, such as <code>US-ASCII</code>.</dd>
 </dl>
@@ -4069,22 +4086,18 @@ lib/ppc64le/compressedrefs/libj9jit29.so
 <dl>
 <dd>
 <p>This command detects deadlock situations in the Java application that was running when the system dump was produced. Example output:</p>
-<div class="codehilite"><pre><span></span>deadlock loop:
+<pre><code>deadlock loop:
 thread: Thread-2 (monitor object: 0x9e32c8) waiting for =&gt;
 thread: Thread-3 (monitor object: 0x9e3300) waiting for =&gt;
 thread: Thread-2 (monitor object: 0x9e32c8)
-</pre></div>
-
-
+</code></pre>
 <p>In this example, the deadlock analysis shows that <code>Thread-2</code> is waiting for a lock held by <code>Thread-3</code>, which is in turn waiting for a lock held earlier by <code>Thread-2</code>.</p>
 <p>Threads are identified by their Java thread name, whereas object monitors are identified by the address of the object in the Java heap. You can obtain further information about the threads using the <code>info thread *</code> command. You can obtain further information about the monitors using the <code>x/J &lt;0xaddr&gt;</code> command.</p>
 </dd>
 </dl>
 <h3 id="find">find</h3>
-<div class="codehilite"><pre><span></span>    find &lt;pattern&gt;,&lt;start_address&gt;,&lt;end_address&gt;,&lt;memory_boundary&gt;, &lt;bytes_to_print&gt;,&lt;matches_to_display&gt;
-</pre></div>
-
-
+<pre><code>    find &lt;pattern&gt;,&lt;start_address&gt;,&lt;end_address&gt;,&lt;memory_boundary&gt;, &lt;bytes_to_print&gt;,&lt;matches_to_display&gt;
+</code></pre>
 <dl>
 <dd>
 <p>This command searches for <code>&lt;pattern&gt;</code> in the memory segment from <code>&lt;start_address&gt;</code> to <code>&lt;end_address&gt;</code> (both inclusive), and shows the number of matching addresses you specify with <code>&lt;matches_to_display&gt;</code>. You can also display the next <code>&lt;bytes_to_print&gt;</code> bytes for the last match.</p>
@@ -4092,10 +4105,8 @@ thread: Thread-2 (monitor object: 0x9e32c8)
 </dd>
 </dl>
 <h3 id="findnext">findnext</h3>
-<div class="codehilite"><pre><span></span>    findptr &lt;pattern&gt;,&lt;start_address&gt;,&lt;end_address&gt;,&lt;memory_boundary&gt;,&lt;bytes_to_print&gt;,&lt;matches_to_display&gt;
-</pre></div>
-
-
+<pre><code>    findptr &lt;pattern&gt;,&lt;start_address&gt;,&lt;end_address&gt;,&lt;memory_boundary&gt;,&lt;bytes_to_print&gt;,&lt;matches_to_display&gt;
+</code></pre>
 <dl>
 <dd>
 <p>Finds the next instance of the last string passed to <code>find</code> or <code>findptr</code>. It repeats the previous <code>find</code> or <code>findptr</code> command, depending on which one was issued last, starting from the last match.</p>
@@ -4104,26 +4115,20 @@ thread: Thread-2 (monitor object: 0x9e32c8)
 </dd>
 </dl>
 <h3 id="help">help</h3>
-<div class="codehilite"><pre><span></span>    help [&lt;command_name&gt;]
-</pre></div>
-
-
+<pre><code>    help [&lt;command_name&gt;]
+</code></pre>
 <dl>
 <dd>Shows information for a specific command. If you supply no parameters, help shows the complete list of supported commands.</dd>
 </dl>
 <h3 id="history">history</h3>
-<div class="codehilite"><pre><span></span>    history|his [-r][&lt;N&gt;]
-</pre></div>
-
-
+<pre><code>    history|his [-r][&lt;N&gt;]
+</code></pre>
 <dl>
 <dd>Recalls and displays the history of commands that you have run. The default behavior is to display the 20 most recent commands. If you use the argument <code>&lt;N&gt;</code>, then N commands are displayed. For example, if you run history 35, then the 35 most recent commands are displayed. You can also use the <code>-r</code> option with <code>&lt;N&gt;</code> to run the Nth most recent command in your history. Using the <code>-r</code> option alone runs the most recent command in your history.</dd>
 </dl>
 <h3 id="info-thread">info thread</h3>
-<div class="codehilite"><pre><span></span>    info thread [*|all|&lt;native_thread_ID&gt;|&lt;zos_TCB_address&gt;]
-</pre></div>
-
-
+<pre><code>    info thread [*|all|&lt;native_thread_ID&gt;|&lt;zos_TCB_address&gt;]
+</code></pre>
 <dl>
 <dd>
 <p>Displays information about Java and native threads. The following information is displayed for all threads ("*"), or the specified thread:</p>
@@ -4157,15 +4162,13 @@ thread: Thread-2 (monitor object: 0x9e32c8)
 </dd>
 </dl>
 <h3 id="info-class">info class</h3>
-<div class="codehilite"><pre><span></span>    info class [&lt;class_name&gt;] [-sort:&lt;name&gt;|&lt;count&gt;|&lt;size&gt;]
-</pre></div>
-
-
+<pre><code>    info class [&lt;class_name&gt;] [-sort:&lt;name&gt;|&lt;count&gt;|&lt;size&gt;]
+</code></pre>
 <dl>
 <dd>Displays the inheritance chain and other data for a given class.</dd>
 </dl>
 <p>If a class name is passed to info class, the following information is shown about that class:</p>
-<div class="codehilite"><pre><span></span>- Name
+<pre><code>- Name
 - ID
 - Superclass ID
 - Class loader ID
@@ -4184,9 +4187,7 @@ If no parameters are passed to `info class`, the following information is shown:
 - The total size of all objects.
 
 The `sort` option allows the list of classes to be sorted by name (default), by number of instances of each class, or by the total size of instances of each class.
-</pre></div>
-
-
+</code></pre>
 <h3 id="info-proc">info proc</h3>
 <dl>
 <dd>
@@ -4214,18 +4215,14 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
 <dd>Displays a list of available modules. For each process in the address spaces, this command shows a list of module sections for each module, their start and end addresses, names, and sizes.</dd>
 </dl>
 <h3 id="info-mmap">info mmap</h3>
-<div class="codehilite"><pre><span></span>    info mmap [&lt;address&gt;] [-verbose] [-sort:&lt;size&gt;|&lt;address&gt;]
-</pre></div>
-
-
+<pre><code>    info mmap [&lt;address&gt;] [-verbose] [-sort:&lt;size&gt;|&lt;address&gt;]
+</code></pre>
 <dl>
 <dd>Displays a summary list of memory sections in the process address space, with start and end address, size, and properties. If an address parameter is specified, the results show details of only the memory section containing the address. If <code>-verbose</code> is specified, full details of the properties of each memory section are displayed. The <code>-sort</code> option allows the list of memory sections to be sorted by size or by start address (default).</dd>
 </dl>
 <h3 id="info-heap">info heap</h3>
-<div class="codehilite"><pre><span></span>    info heap [*|&lt;heap_name&gt;*]
-</pre></div>
-
-
+<pre><code>    info heap [*|&lt;heap_name&gt;*]
+</code></pre>
 <dl>
 <dd>
 <p>If no parameters are passed to this command, the heap names and heap sections are shown.</p>
@@ -4243,18 +4240,14 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
 </dd>
 </dl>
 <h3 id="heapdump">heapdump</h3>
-<div class="codehilite"><pre><span></span>    heapdump [&lt;heaps&gt;]
-</pre></div>
-
-
+<pre><code>    heapdump [&lt;heaps&gt;]
+</code></pre>
 <dl>
 <dd>Generates a Java heap dump to a file. You can select which Java heaps to dump by listing the heap names, separated by spaces. To see which heaps are available, use the <code>info heap</code> command. By default, all Java heaps are dumped.</dd>
 </dl>
 <h3 id="hexdump">hexdump</h3>
-<div class="codehilite"><pre><span></span>    hexdump &lt;hex_address&gt; &lt;bytes_to_print&gt;
-</pre></div>
-
-
+<pre><code>    hexdump &lt;hex_address&gt; &lt;bytes_to_print&gt;
+</code></pre>
 <dl>
 <dd>Displays a section of memory in a hexdump-like format. Displays <code>&lt;bytes_to_print&gt;</code> bytes of memory contents starting from <code>&lt;hex_address&gt;</code>.</dd>
 </dl>
@@ -4276,10 +4269,8 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
 </dl>
 <h3 id="set-heapdump">set heapdump</h3>
 <dl>
-<dd>Configures Heapdump generation settings.<div class="codehilite"><pre><span></span>set heapdump &lt;options&gt;
-</pre></div>
-
-
+<dd>Configures Heapdump generation settings.<pre><code>set heapdump &lt;options&gt;
+</code></pre>
 </dd>
 <dd>
 <p>where <code>&lt;options&gt;</code> are:</p>
@@ -4292,10 +4283,8 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
 </dd>
 </dl>
 <h3 id="set-logging">set logging</h3>
-<div class="codehilite"><pre><span></span>    set logging &lt;options&gt;
-</pre></div>
-
-
+<pre><code>    set logging &lt;options&gt;
+</code></pre>
 <dl>
 <dd>
 <p>Configures logging settings, starts logging, or stops logging. This parameter enables the results of commands to be logged to a file, where <code>&lt;options&gt;</code> are:</p>
@@ -4330,14 +4319,12 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
 </dl>
 <h3 id="whatis-hex_address">whatis <code>&lt;hex_address&gt;</code></h3>
 <dl>
-<dd>Displays information about <code>whatis</code> stored at the given memory address, <code>&lt;hex_address&gt;</code>. This command examines the memory location at <code>&lt;hex_address&gt;</code> and tries to find out more information about this address. For example:<div class="codehilite"><pre><span></span><span class="o">&gt;</span> <span class="n">whatis</span> <span class="mh">0x8e76a8</span>
+<dd>Displays information about <code>whatis</code> stored at the given memory address, <code>&lt;hex_address&gt;</code>. This command examines the memory location at <code>&lt;hex_address&gt;</code> and tries to find out more information about this address. For example:<pre><code>&gt; whatis 0x8e76a8
 
-<span class="n">heap</span> <span class="err">#</span><span class="mi">1</span> <span class="o">-</span> <span class="nl">name</span><span class="p">:</span> <span class="n">Default</span><span class="mf">@19f</span><span class="n">ce8</span>
-<span class="mh">0x8e76a8</span> <span class="n">is</span> <span class="n">within</span> <span class="n">heap</span> <span class="nl">segment</span><span class="p">:</span> <span class="mi">8</span><span class="n">b0000</span> <span class="o">--</span> <span class="n">cb0000</span>
-<span class="mh">0x8e76a8</span> <span class="n">is</span> <span class="n">start</span> <span class="n">of</span> <span class="n">an</span> <span class="n">object</span> <span class="n">of</span> <span class="n">type</span> <span class="n">java</span><span class="o">/</span><span class="n">lang</span><span class="o">/</span><span class="n">Thread</span>
-</pre></div>
-
-
+heap #1 - name: Default@19fce8
+0x8e76a8 is within heap segment: 8b0000 -- cb0000
+0x8e76a8 is start of an object of type java/lang/Thread
+</code></pre>
 </dd>
 </dl>
 <h3 id="x-examine">x/ (examine)</h3>
@@ -4410,216 +4397,215 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
 <p>This example session illustrates a selection of the commands available and their use.</p>
 <p>In the example session, which is generated on a Linux system, some lines have been removed for clarity (and terseness).</p>
 <p>User input is prefaced by a greater than symbol (&gt;).</p>
-<div class="codehilite"><pre><span></span>    <span class="n">test</span><span class="p">@</span><span class="nl">madras</span><span class="p">:</span><span class="o">~/</span><span class="n">test</span><span class="o">&gt;</span> <span class="n">sdk</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">jdmpview</span> <span class="o">-</span><span class="n">core</span> <span class="n">core</span><span class="mf">.20121116.154147.16838.0001</span><span class="p">.</span><span class="n">dmp</span>
-    <span class="n">DTFJView</span> <span class="n">version</span> <span class="mf">4.27.57</span><span class="p">,</span> <span class="n">using</span> <span class="n">DTFJ</span> <span class="n">version</span> <span class="mf">1.10.27022</span>
-    <span class="n">Loading</span> <span class="n">image</span> <span class="n">from</span> <span class="n">DTFJ</span><span class="p">...</span>
+<pre><code>    test@madras:~/test&gt; sdk/bin/jdmpview -core core.20121116.154147.16838.0001.dmp
+    DTFJView version 4.27.57, using DTFJ version 1.10.27022
+    Loading image from DTFJ...
 
-    <span class="n">For</span> <span class="n">a</span> <span class="n">list</span> <span class="n">of</span> <span class="n">commands</span><span class="p">,</span> <span class="n">type</span> <span class="s">&quot;help&quot;</span><span class="p">;</span> <span class="k">for</span> <span class="n">how</span> <span class="n">to</span> <span class="n">use</span> <span class="s">&quot;help&quot;</span><span class="p">,</span> <span class="n">type</span> <span class="s">&quot;help help&quot;</span>
-    <span class="n">Available</span> <span class="n">contexts</span> <span class="p">(</span><span class="o">*</span> <span class="o">=</span> <span class="n">currently</span> <span class="n">selected</span> <span class="n">context</span><span class="p">)</span> <span class="o">:</span>
+    For a list of commands, type &quot;help&quot;; for how to use &quot;help&quot;, type &quot;help help&quot;
+    Available contexts (* = currently selected context) :
 
-    <span class="nl">Source</span> <span class="p">:</span> <span class="nl">file</span><span class="p">:</span><span class="c1">///home/test/core.20121116.154147.16838.0001.dmp</span>
-            <span class="o">*</span><span class="mi">0</span> <span class="o">:</span> <span class="nl">PID</span><span class="p">:</span> <span class="mi">16867</span> <span class="o">:</span> <span class="n">JRE</span> <span class="mf">1.8.0</span> <span class="n">Linux</span> <span class="n">ppc64</span><span class="o">-</span><span class="mi">64</span> <span class="n">build</span> <span class="mi">20121115</span><span class="n">_128521</span> <span class="p">(</span><span class="n">pxp6480</span><span class="o">-</span><span class="mi">20121116</span><span class="n">_01</span> <span class="p">)</span>
+    Source : file:///home/test/core.20121116.154147.16838.0001.dmp
+            *0 : PID: 16867 : JRE 1.8.0 Linux ppc64-64 build 20121115_128521 (pxp6480-20121116_01 )
 
-    <span class="o">&gt;</span> <span class="n">help</span>
-    <span class="o">+</span>                                              <span class="n">displays</span> <span class="n">the</span> <span class="n">next</span> <span class="n">section</span> <span class="n">of</span> <span class="n">memory</span> <span class="k">in</span> <span class="n">hexdump</span><span class="o">-</span><span class="n">like</span> <span class="n">format</span>
-    <span class="o">-</span>                                              <span class="n">displays</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">section</span> <span class="n">of</span> <span class="n">memory</span> <span class="k">in</span> <span class="n">hexdump</span><span class="o">-</span><span class="n">like</span> <span class="n">format</span>
-    <span class="n">cd</span>                                             <span class="n">changes</span> <span class="n">the</span> <span class="n">current</span> <span class="n">working</span> <span class="n">directory</span><span class="p">,</span> <span class="n">used</span> <span class="k">for</span> <span class="n">log</span> <span class="n">files</span>
-    <span class="n">close</span>                     <span class="p">[</span><span class="n">context</span> <span class="kt">id</span><span class="p">]</span>         <span class="n">closes</span> <span class="n">the</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">a</span> <span class="n">core</span> <span class="n">file</span>
-    <span class="n">context</span>                   <span class="p">[</span><span class="n">ID</span><span class="o">|</span><span class="n">asid</span> <span class="n">ID</span><span class="p">]</span>         <span class="k">switch</span> <span class="n">to</span> <span class="n">the</span> <span class="n">selected</span> <span class="n">context</span>
-    <span class="n">deadlock</span>                                       <span class="n">displays</span> <span class="n">information</span> <span class="n">about</span> <span class="n">deadlocks</span> <span class="k">if</span> <span class="n">there</span> <span class="n">are</span> <span class="n">any</span>
-    <span class="n">exit</span>                                           <span class="n">Exit</span> <span class="n">the</span> <span class="n">application</span>
-    <span class="n">find</span>                                           <span class="n">searches</span> <span class="n">memory</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">string</span>
-    <span class="n">findnext</span>                                       <span class="n">finds</span> <span class="n">the</span> <span class="n">next</span> <span class="n">instance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">last</span> <span class="n">string</span> <span class="n">passed</span> <span class="n">to</span> <span class="s">&quot;find&quot;</span>
-    <span class="n">findptr</span>                                        <span class="n">searches</span> <span class="n">memory</span> <span class="k">for</span> <span class="n">the</span> <span class="n">given</span> <span class="n">pointer</span>
-    <span class="n">heapdump</span>                                       <span class="n">generates</span> <span class="n">a</span> <span class="n">PHD</span> <span class="n">or</span> <span class="n">classic</span> <span class="n">format</span> <span class="n">heapdump</span>
-    <span class="n">help</span>                      <span class="p">[</span><span class="n">command</span> <span class="n">name</span><span class="p">]</span>       <span class="n">displays</span> <span class="n">list</span> <span class="n">of</span> <span class="n">commands</span> <span class="n">or</span> <span class="n">help</span> <span class="k">for</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">command</span>
-    <span class="n">hexdump</span>                                        <span class="n">outputs</span> <span class="n">a</span> <span class="n">section</span> <span class="n">of</span> <span class="n">memory</span> <span class="k">in</span> <span class="n">a</span> <span class="n">hexdump</span><span class="o">-</span><span class="n">like</span> <span class="n">format</span>
-    <span class="n">info</span>                      <span class="o">&lt;</span><span class="n">component</span><span class="o">&gt;</span>          <span class="n">Information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">component</span>
-    <span class="n">info</span> <span class="k">class</span>                <span class="o">&lt;</span><span class="n">Java</span> <span class="k">class</span> <span class="n">name</span><span class="o">&gt;</span>    <span class="n">Provides</span> <span class="n">information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">Java</span> <span class="k">class</span>
-    <span class="n">info</span> <span class="n">heap</span>                 <span class="p">[</span><span class="o">*|</span><span class="n">heap</span> <span class="n">name</span><span class="p">]</span>        <span class="n">Displays</span> <span class="n">information</span> <span class="n">about</span> <span class="n">Java</span> <span class="n">heaps</span>
-    <span class="n">info</span> <span class="n">jitm</span>                                      <span class="n">Displays</span> <span class="n">JIT</span><span class="err">&#39;</span><span class="n">ed</span> <span class="n">methods</span> <span class="n">and</span> <span class="n">their</span> <span class="n">addresses</span>
-    <span class="n">info</span> <span class="n">lock</span>                                      <span class="n">outputs</span> <span class="n">a</span> <span class="n">list</span> <span class="n">of</span> <span class="n">system</span> <span class="n">monitors</span> <span class="n">and</span> <span class="n">locked</span> <span class="n">objects</span>
-    <span class="n">info</span> <span class="n">mmap</span>                                      <span class="n">Outputs</span> <span class="n">a</span> <span class="n">list</span> <span class="n">of</span> <span class="n">all</span> <span class="n">memory</span> <span class="n">segments</span> <span class="k">in</span> <span class="n">the</span> <span class="n">address</span> <span class="n">space</span>
-    <span class="n">info</span> <span class="n">mod</span>                                       <span class="n">outputs</span> <span class="n">module</span> <span class="n">information</span>
-    <span class="n">info</span> <span class="n">proc</span>                                      <span class="n">shortened</span> <span class="n">form</span> <span class="n">of</span> <span class="n">info</span> <span class="n">process</span>
-    <span class="n">info</span> <span class="n">process</span>                                   <span class="n">displays</span> <span class="n">threads</span><span class="p">,</span> <span class="n">command</span> <span class="n">line</span> <span class="n">arguments</span><span class="p">,</span> <span class="n">environment</span>
-    <span class="n">info</span> <span class="n">sym</span>                                       <span class="n">an</span> <span class="n">alias</span> <span class="k">for</span> <span class="err">&#39;</span><span class="n">mod</span><span class="err">&#39;</span>
-    <span class="n">info</span> <span class="n">sys</span>                                       <span class="n">shortened</span> <span class="n">form</span> <span class="n">of</span> <span class="n">info</span> <span class="n">system</span>
-    <span class="n">info</span> <span class="n">system</span>                                    <span class="n">displays</span> <span class="n">information</span> <span class="n">about</span> <span class="n">the</span> <span class="n">system</span> <span class="n">the</span> <span class="n">core</span> <span class="n">dump</span> <span class="n">is</span> <span class="n">from</span>
-    <span class="n">info</span> <span class="kr">thread</span>                                    <span class="n">displays</span> <span class="n">information</span> <span class="n">about</span> <span class="n">Java</span> <span class="n">and</span> <span class="n">native</span> <span class="n">threads</span>
-    <span class="n">log</span>                       <span class="p">[</span><span class="n">name</span> <span class="n">level</span><span class="p">]</span>         <span class="n">display</span> <span class="n">and</span> <span class="n">control</span> <span class="n">instances</span> <span class="n">of</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">logging</span><span class="p">.</span><span class="n">Logger</span>
-    <span class="n">open</span>                      <span class="p">[</span><span class="n">path</span> <span class="n">to</span> <span class="n">core</span> <span class="n">or</span> <span class="n">zip</span><span class="p">]</span> <span class="n">opens</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">core</span> <span class="n">or</span> <span class="n">zip</span> <span class="n">file</span>
-    <span class="n">plugins</span>                                        <span class="n">Plugin</span> <span class="n">management</span> <span class="n">commands</span>
-                         <span class="n">list</span>                      <span class="n">Show</span> <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">loaded</span> <span class="n">plugins</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">context</span>
-                       <span class="n">reload</span>                      <span class="n">Reload</span> <span class="n">plugins</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">context</span>
-                     <span class="n">showpath</span>                      <span class="n">Show</span> <span class="n">the</span> <span class="n">DTFJ</span> <span class="n">View</span> <span class="n">plugin</span> <span class="n">search</span> <span class="n">path</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">context</span>
-                      <span class="n">setpath</span>                      <span class="n">Set</span> <span class="n">the</span> <span class="n">DTFJ</span> <span class="n">View</span> <span class="n">plugin</span> <span class="n">search</span> <span class="n">path</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">context</span>
-    <span class="n">pwd</span>                                            <span class="n">displays</span> <span class="n">the</span> <span class="n">current</span> <span class="n">working</span> <span class="n">directory</span>
-    <span class="n">quit</span>                                           <span class="n">Exit</span> <span class="n">the</span> <span class="n">application</span>
-    <span class="n">set</span>                       <span class="p">[</span><span class="n">logging</span><span class="o">|</span><span class="n">heapdump</span><span class="p">]</span>   <span class="n">Sets</span> <span class="n">options</span> <span class="k">for</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">command</span>
-    <span class="n">set</span> <span class="n">heapdump</span>                                   <span class="n">configures</span> <span class="n">heapdump</span> <span class="n">format</span><span class="p">,</span> <span class="n">filename</span> <span class="n">and</span> <span class="n">multiple</span> <span class="n">heap</span> <span class="n">support</span>
-    <span class="n">set</span> <span class="n">logging</span>                                    <span class="n">configures</span> <span class="n">several</span> <span class="n">logging</span><span class="o">-</span><span class="n">related</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">starts</span><span class="o">/</span><span class="n">stops</span> <span class="n">logging</span>
-                           <span class="n">on</span>                      <span class="n">turn</span> <span class="n">on</span> <span class="n">logging</span>
-                          <span class="n">off</span>                      <span class="n">turn</span> <span class="n">off</span> <span class="n">logging</span>
-                         <span class="n">file</span>                      <span class="n">turn</span> <span class="n">on</span> <span class="n">logging</span>
-                    <span class="n">overwrite</span>                      <span class="n">controls</span> <span class="n">the</span> <span class="n">overwriting</span> <span class="n">of</span> <span class="n">log</span> <span class="n">files</span>
-    <span class="n">show</span>                      <span class="p">[</span><span class="n">logging</span><span class="o">|</span><span class="n">heapdump</span><span class="p">]</span>   <span class="n">Displays</span> <span class="n">the</span> <span class="n">current</span> <span class="n">set</span> <span class="n">options</span> <span class="k">for</span> <span class="n">a</span> <span class="n">command</span>
-    <span class="n">show</span> <span class="n">heapdump</span>                                  <span class="n">displays</span> <span class="n">heapdump</span> <span class="n">settings</span>
-    <span class="n">show</span> <span class="n">logging</span>                                   <span class="n">shows</span> <span class="n">the</span> <span class="n">current</span> <span class="n">logging</span> <span class="n">options</span>
-    <span class="n">whatis</span>                    <span class="p">[</span><span class="n">hex</span> <span class="n">address</span><span class="p">]</span>        <span class="n">gives</span> <span class="n">information</span> <span class="n">about</span> <span class="n">what</span> <span class="n">is</span> <span class="n">stored</span> <span class="n">at</span> <span class="n">the</span> <span class="n">given</span> <span class="n">memory</span> <span class="n">address</span>
-    <span class="n">x</span><span class="o">/</span><span class="n">d</span>                       <span class="o">&lt;</span><span class="n">hex</span> <span class="n">address</span><span class="o">&gt;</span>        <span class="n">displays</span> <span class="n">the</span> <span class="n">integer</span> <span class="n">at</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">address</span>
-    <span class="n">x</span><span class="o">/</span><span class="n">j</span>                       <span class="o">&lt;</span><span class="n">object</span> <span class="n">address</span><span class="o">&gt;</span> <span class="p">[</span><span class="k">class</span> <span class="n">name</span><span class="p">]</span> <span class="n">displays</span> <span class="n">information</span> <span class="n">about</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">object</span> <span class="n">or</span> <span class="n">all</span> <span class="n">objects</span> <span class="n">of</span> <span class="n">a</span> <span class="k">class</span>
-    <span class="n">x</span><span class="o">/</span><span class="n">k</span>                       <span class="o">&lt;</span><span class="n">hex</span> <span class="n">address</span><span class="o">&gt;</span>        <span class="n">displays</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">memory</span> <span class="n">section</span> <span class="n">as</span> <span class="k">if</span> <span class="n">it</span> <span class="n">were</span> <span class="n">a</span> <span class="n">stack</span> <span class="n">frame</span> <span class="n">parameters</span>
-    <span class="n">x</span><span class="o">/</span><span class="n">x</span>                       <span class="o">&lt;</span><span class="n">hex</span> <span class="n">address</span><span class="o">&gt;</span>        <span class="n">displays</span> <span class="n">the</span> <span class="n">hex</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">bytes</span> <span class="n">at</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">address</span>
+    &gt; help
+    +                                              displays the next section of memory in hexdump-like format
+    -                                              displays the previous section of memory in hexdump-like format
+    cd                                             changes the current working directory, used for log files
+    close                     [context id]         closes the connection to a core file
+    context                   [ID|asid ID]         switch to the selected context
+    deadlock                                       displays information about deadlocks if there are any
+    exit                                           Exit the application
+    find                                           searches memory for a given string
+    findnext                                       finds the next instance of the last string passed to &quot;find&quot;
+    findptr                                        searches memory for the given pointer
+    heapdump                                       generates a PHD or classic format heapdump
+    help                      [command name]       displays list of commands or help for a specific command
+    hexdump                                        outputs a section of memory in a hexdump-like format
+    info                      &lt;component&gt;          Information about the specified component
+    info class                &lt;Java class name&gt;    Provides information about the specified Java class
+    info heap                 [*|heap name]        Displays information about Java heaps
+    info jitm                                      Displays JIT'ed methods and their addresses
+    info lock                                      outputs a list of system monitors and locked objects
+    info mmap                                      Outputs a list of all memory segments in the address space
+    info mod                                       outputs module information
+    info proc                                      shortened form of info process
+    info process                                   displays threads, command line arguments, environment
+    info sym                                       an alias for 'mod'
+    info sys                                       shortened form of info system
+    info system                                    displays information about the system the core dump is from
+    info thread                                    displays information about Java and native threads
+    log                       [name level]         display and control instances of java.util.logging.Logger
+    open                      [path to core or zip] opens the specified core or zip file
+    plugins                                        Plugin management commands
+                         list                      Show the list of loaded plugins for the current context
+                       reload                      Reload plugins for the current context
+                     showpath                      Show the DTFJ View plugin search path for the current context
+                      setpath                      Set the DTFJ View plugin search path for the current context
+    pwd                                            displays the current working directory
+    quit                                           Exit the application
+    set                       [logging|heapdump]   Sets options for the specified command
+    set heapdump                                   configures heapdump format, filename and multiple heap support
+    set logging                                    configures several logging-related parameters, starts/stops logging
+                           on                      turn on logging
+                          off                      turn off logging
+                         file                      turn on logging
+                    overwrite                      controls the overwriting of log files
+    show                      [logging|heapdump]   Displays the current set options for a command
+    show heapdump                                  displays heapdump settings
+    show logging                                   shows the current logging options
+    whatis                    [hex address]        gives information about what is stored at the given memory address
+    x/d                       &lt;hex address&gt;        displays the integer at the specified address
+    x/j                       &lt;object address&gt; [class name] displays information about a particular object or all objects of a class
+    x/k                       &lt;hex address&gt;        displays the specified memory section as if it were a stack frame parameters
+    x/x                       &lt;hex address&gt;        displays the hex value of the bytes at the specified address
 
-    <span class="o">&gt;</span> <span class="n">set</span> <span class="n">logging</span> <span class="n">file</span> <span class="n">log</span><span class="p">.</span><span class="n">txt</span>
-    <span class="n">logging</span> <span class="n">turned</span> <span class="n">on</span><span class="p">;</span> <span class="n">outputting</span> <span class="n">to</span> <span class="s">&quot;/home/test/log.txt&quot;</span>
+    &gt; set logging file log.txt
+    logging turned on; outputting to &quot;/home/test/log.txt&quot;
 
-    <span class="o">&gt;</span> <span class="n">info</span> <span class="n">system</span>
-    <span class="n">Machine</span> <span class="nl">OS</span><span class="p">:</span>     <span class="n">Linux</span>
-    <span class="nl">Hypervisor</span><span class="p">:</span>     <span class="n">PowerVM</span>
-    <span class="n">Machine</span> <span class="nl">name</span><span class="p">:</span>   <span class="n">madras</span>
-    <span class="n">Machine</span> <span class="n">IP</span> <span class="n">address</span><span class="p">(</span><span class="n">es</span><span class="p">)</span><span class="o">:</span>
-                    <span class="mf">9.20.88.155</span>
-    <span class="n">System</span> <span class="nl">memory</span><span class="p">:</span>  <span class="mi">8269201408</span>
+    &gt; info system
+    Machine OS:     Linux
+    Hypervisor:     PowerVM
+    Machine name:   madras
+    Machine IP address(es):
+                    9.20.88.155
+    System memory:  8269201408
 
-    <span class="n">Dump</span> <span class="n">creation</span> <span class="nl">time</span><span class="p">:</span> <span class="mi">2015</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">14</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mi">36</span><span class="o">:</span><span class="mo">01</span><span class="mi">9</span>
-    <span class="n">Dump</span> <span class="n">creation</span> <span class="n">time</span> <span class="p">(</span><span class="n">nanoseconds</span><span class="p">)</span><span class="o">:</span> <span class="mi">21314421467539</span>
+    Dump creation time: 2015/08/10 14:44:36:019
+    Dump creation time (nanoseconds): 21314421467539
 
-    <span class="n">Java</span> <span class="nl">version</span><span class="p">:</span>
-    <span class="n">JRE</span> <span class="mf">1.8.0</span> <span class="n">Linux</span> <span class="n">ppc64</span><span class="o">-</span><span class="mi">64</span> <span class="n">build</span> <span class="mi">20121115</span><span class="n">_128521</span> <span class="p">(</span><span class="n">pxp6490</span><span class="o">-</span><span class="mi">20121116</span><span class="n">_01</span><span class="p">)</span>
+    Java version:
+    JRE 1.8.0 Linux ppc64-64 build 20121115_128521 (pxp6490-20121116_01)
 
-    <span class="n">JVM</span> <span class="n">start</span> <span class="nl">time</span><span class="p">:</span> <span class="mi">2015</span><span class="o">/</span><span class="mi">08</span><span class="o">/</span><span class="mi">10</span> <span class="mi">14</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mo">05</span><span class="o">:</span><span class="mi">690</span>
-    <span class="n">JVM</span> <span class="n">start</span> <span class="n">time</span> <span class="p">(</span><span class="n">nanoseconds</span><span class="p">)</span><span class="o">:</span> <span class="mi">21284086192267</span>
+    JVM start time: 2015/08/10 14:44:05:690
+    JVM start time (nanoseconds): 21284086192267
 
-    <span class="o">&gt;</span> <span class="n">info</span> <span class="kr">thread</span> <span class="o">*</span>
-    <span class="n">native</span> <span class="n">threads</span> <span class="k">for</span> <span class="n">address</span> <span class="n">space</span>
-     <span class="n">process</span> <span class="kt">id</span><span class="o">:</span> <span class="mi">16838</span>
+    &gt; info thread *
+    native threads for address space
+     process id: 16838
 
-      <span class="kr">thread</span> <span class="kt">id</span><span class="o">:</span> <span class="mi">16839</span>
-       <span class="nl">registers</span><span class="p">:</span>
+      thread id: 16839
+       registers:
 
-       <span class="n">native</span> <span class="n">stack</span> <span class="nl">sections</span><span class="p">:</span>
-       <span class="n">native</span> <span class="n">stack</span> <span class="nl">frames</span><span class="p">:</span>
-       <span class="nl">properties</span><span class="p">:</span>
-       <span class="n">associated</span> <span class="n">Java</span> <span class="kr">thread</span><span class="o">:</span>
-        <span class="nl">name</span><span class="p">:</span>          <span class="n">main</span>
-        <span class="n">Thread</span> <span class="nl">object</span><span class="p">:</span> <span class="n">java</span><span class="o">/</span><span class="n">lang</span><span class="o">/</span><span class="n">Thread</span> <span class="p">@</span> <span class="mh">0x2ffd1e08</span>
-        <span class="nl">Priority</span><span class="p">:</span>      <span class="mi">5</span>
-        <span class="n">Thread</span><span class="p">.</span><span class="nl">State</span><span class="p">:</span>  <span class="n">RUNNABLE</span>
-        <span class="n">JVMTI</span> <span class="nl">state</span><span class="p">:</span>   <span class="n">ALIVE</span> <span class="n">RUNNABLE</span>
-        <span class="n">Java</span> <span class="n">stack</span> <span class="nl">frames</span><span class="p">:</span>
-         <span class="nl">bp</span><span class="p">:</span> <span class="mh">0x0000000000085b28</span>  <span class="nl">method</span><span class="p">:</span> <span class="kt">void</span> <span class="n">com</span><span class="o">/</span><span class="n">ibm</span><span class="o">/</span><span class="n">jvm</span><span class="o">/</span><span class="n">Dump</span><span class="p">.</span><span class="n">SystemDumpImpl</span><span class="p">()</span>  <span class="p">(</span><span class="n">Native</span> <span class="n">Method</span><span class="p">)</span>
-          <span class="nl">objects</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">no</span> <span class="n">objects</span> <span class="k">in</span> <span class="n">this</span> <span class="n">frame</span><span class="o">&gt;</span>
-         <span class="nl">bp</span><span class="p">:</span> <span class="mh">0x0000000000085b40</span>  <span class="nl">method</span><span class="p">:</span> <span class="kt">void</span> <span class="n">com</span><span class="o">/</span><span class="n">ibm</span><span class="o">/</span><span class="n">jvm</span><span class="o">/</span><span class="n">Dump</span><span class="p">.</span><span class="n">SystemDump</span><span class="p">()</span>  <span class="nl">source</span><span class="p">:</span> <span class="n">Dump</span><span class="p">.</span><span class="nl">java</span><span class="p">:</span><span class="mi">41</span>
-          <span class="nl">objects</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">no</span> <span class="n">objects</span> <span class="k">in</span> <span class="n">this</span> <span class="n">frame</span><span class="o">&gt;</span>
-         <span class="nl">bp</span><span class="p">:</span> <span class="mh">0x0000000000085b68</span>  <span class="nl">method</span><span class="p">:</span> <span class="kt">void</span> <span class="n">mySystemDump</span><span class="p">.</span><span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[])</span>  <span class="nl">source</span><span class="p">:</span> <span class="n">mySystemDump</span><span class="p">.</span><span class="nl">java</span><span class="p">:</span><span class="mi">29</span>
-          <span class="nl">objects</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">no</span> <span class="n">objects</span> <span class="k">in</span> <span class="n">this</span> <span class="n">frame</span><span class="o">&gt;</span>
-    <span class="o">===</span><span class="n">Lines</span> <span class="n">Removed</span><span class="o">===</span>
+       native stack sections:
+       native stack frames:
+       properties:
+       associated Java thread:
+        name:          main
+        Thread object: java/lang/Thread @ 0x2ffd1e08
+        Priority:      5
+        Thread.State:  RUNNABLE
+        JVMTI state:   ALIVE RUNNABLE
+        Java stack frames:
+         bp: 0x0000000000085b28  method: void com/ibm/jvm/Dump.SystemDumpImpl()  (Native Method)
+          objects: &lt;no objects in this frame&gt;
+         bp: 0x0000000000085b40  method: void com/ibm/jvm/Dump.SystemDump()  source: Dump.java:41
+          objects: &lt;no objects in this frame&gt;
+         bp: 0x0000000000085b68  method: void mySystemDump.main(String[])  source: mySystemDump.java:29
+          objects: &lt;no objects in this frame&gt;
+    ===Lines Removed===
 
-        <span class="nl">name</span><span class="p">:</span>          <span class="n">GC</span> <span class="n">Slave</span>
-        <span class="kt">id</span><span class="o">:</span>            <span class="mi">16860</span>
-        <span class="n">Thread</span> <span class="nl">object</span><span class="p">:</span> <span class="n">java</span><span class="o">/</span><span class="n">lang</span><span class="o">/</span><span class="n">Thread</span> <span class="p">@</span> <span class="mh">0x3001b980</span>
-        <span class="nl">Priority</span><span class="p">:</span>      <span class="mi">5</span>
-        <span class="n">Thread</span><span class="p">.</span><span class="nl">State</span><span class="p">:</span>  <span class="n">WAITING</span>
-        <span class="n">JVMTI</span> <span class="nl">state</span><span class="p">:</span>   <span class="n">ALIVE</span> <span class="n">WAITING</span> <span class="n">WAITING_INDEFINITELY</span> <span class="n">IN_OBJECT_WAIT</span>
-          <span class="n">waiting</span> <span class="n">to</span> <span class="n">be</span> <span class="n">notified</span> <span class="nl">on</span><span class="p">:</span> <span class="s">&quot;MM_ParallelDispatcher::slaveThread&quot;</span> <span class="n">with</span> <span class="n">ID</span> <span class="mh">0x1004cbc8</span> <span class="n">owner</span> <span class="nl">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">unowned</span><span class="o">&gt;</span>
-        <span class="n">Java</span> <span class="n">stack</span> <span class="nl">frames</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">no</span> <span class="n">frames</span> <span class="n">to</span> <span class="n">print</span><span class="o">&gt;</span>
+        name:          GC Slave
+        id:            16860
+        Thread object: java/lang/Thread @ 0x3001b980
+        Priority:      5
+        Thread.State:  WAITING
+        JVMTI state:   ALIVE WAITING WAITING_INDEFINITELY IN_OBJECT_WAIT
+          waiting to be notified on: &quot;MM_ParallelDispatcher::slaveThread&quot; with ID 0x1004cbc8 owner name: &lt;unowned&gt;
+        Java stack frames: &lt;no frames to print&gt;
 
-        <span class="nl">name</span><span class="p">:</span>          <span class="n">GC</span> <span class="n">Slave</span>
-        <span class="kt">id</span><span class="o">:</span>            <span class="mi">16861</span>
-        <span class="n">Thread</span> <span class="nl">object</span><span class="p">:</span> <span class="n">java</span><span class="o">/</span><span class="n">lang</span><span class="o">/</span><span class="n">Thread</span> <span class="p">@</span> <span class="mh">0x3001c180</span>
-        <span class="nl">Priority</span><span class="p">:</span>      <span class="mi">5</span>
-        <span class="n">Thread</span><span class="p">.</span><span class="nl">State</span><span class="p">:</span>  <span class="n">WAITING</span>
-        <span class="n">JVMTI</span> <span class="nl">state</span><span class="p">:</span>   <span class="n">ALIVE</span> <span class="n">WAITING</span> <span class="n">WAITING_INDEFINITELY</span> <span class="n">IN_OBJECT_WAIT</span>
-          <span class="n">waiting</span> <span class="n">to</span> <span class="n">be</span> <span class="n">notified</span> <span class="nl">on</span><span class="p">:</span> <span class="s">&quot;MM_ParallelDispatcher::slaveThread&quot;</span> <span class="n">with</span> <span class="n">ID</span> <span class="mh">0x1004cbc8</span> <span class="n">owner</span> <span class="nl">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">unowned</span><span class="o">&gt;</span>
-        <span class="n">Java</span> <span class="n">stack</span> <span class="nl">frames</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">no</span> <span class="n">frames</span> <span class="n">to</span> <span class="n">print</span><span class="o">&gt;</span>
+        name:          GC Slave
+        id:            16861
+        Thread object: java/lang/Thread @ 0x3001c180
+        Priority:      5
+        Thread.State:  WAITING
+        JVMTI state:   ALIVE WAITING WAITING_INDEFINITELY IN_OBJECT_WAIT
+          waiting to be notified on: &quot;MM_ParallelDispatcher::slaveThread&quot; with ID 0x1004cbc8 owner name: &lt;unowned&gt;
+        Java stack frames: &lt;no frames to print&gt;
 
-        <span class="nl">name</span><span class="p">:</span>          <span class="n">Signal</span> <span class="n">Dispatcher</span>
-        <span class="kt">id</span><span class="o">:</span>            <span class="mi">16847</span>
-        <span class="n">Thread</span> <span class="nl">object</span><span class="p">:</span> <span class="n">com</span><span class="o">/</span><span class="n">ibm</span><span class="o">/</span><span class="n">misc</span><span class="o">/</span><span class="n">SignalDispatcher</span> <span class="p">@</span> <span class="mh">0x3000f268</span>
-        <span class="nl">Priority</span><span class="p">:</span>      <span class="mi">5</span>
-        <span class="n">Thread</span><span class="p">.</span><span class="nl">State</span><span class="p">:</span>  <span class="n">RUNNABLE</span>
-        <span class="n">JVMTI</span> <span class="nl">state</span><span class="p">:</span>   <span class="n">ALIVE</span> <span class="n">RUNNABLE</span>
-        <span class="n">Java</span> <span class="n">stack</span> <span class="nl">frames</span><span class="p">:</span>
-         <span class="nl">bp</span><span class="p">:</span> <span class="mh">0x00000000000df748</span>  <span class="nl">method</span><span class="p">:</span> <span class="kt">int</span> <span class="n">com</span><span class="o">/</span><span class="n">ibm</span><span class="o">/</span><span class="n">misc</span><span class="o">/</span><span class="n">SignalDispatcher</span><span class="p">.</span><span class="n">waitForSignal</span><span class="p">()</span>  <span class="p">(</span><span class="n">Native</span> <span class="n">Method</span><span class="p">)</span>
-          <span class="nl">objects</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">no</span> <span class="n">objects</span> <span class="k">in</span> <span class="n">this</span> <span class="n">frame</span><span class="o">&gt;</span>
-         <span class="nl">bp</span><span class="p">:</span> <span class="mh">0x00000000000df788</span>  <span class="nl">method</span><span class="p">:</span> <span class="kt">void</span> <span class="n">com</span><span class="o">/</span><span class="n">ibm</span><span class="o">/</span><span class="n">misc</span><span class="o">/</span><span class="n">SignalDispatcher</span><span class="p">.</span><span class="n">run</span><span class="p">()</span>  <span class="nl">source</span><span class="p">:</span> <span class="n">SignalDispatcher</span><span class="p">.</span><span class="nl">java</span><span class="p">:</span><span class="mi">54</span>
-          <span class="nl">objects</span><span class="p">:</span> <span class="mh">0x30015828</span> <span class="mh">0x30015828</span>
-    <span class="o">===</span><span class="n">Lines</span> <span class="n">Removed</span><span class="o">===</span>
+        name:          Signal Dispatcher
+        id:            16847
+        Thread object: com/ibm/misc/SignalDispatcher @ 0x3000f268
+        Priority:      5
+        Thread.State:  RUNNABLE
+        JVMTI state:   ALIVE RUNNABLE
+        Java stack frames:
+         bp: 0x00000000000df748  method: int com/ibm/misc/SignalDispatcher.waitForSignal()  (Native Method)
+          objects: &lt;no objects in this frame&gt;
+         bp: 0x00000000000df788  method: void com/ibm/misc/SignalDispatcher.run()  source: SignalDispatcher.java:54
+          objects: 0x30015828 0x30015828
+    ===Lines Removed===
 
 
-    <span class="o">&gt;</span> <span class="n">info</span> <span class="n">heap</span> <span class="o">*</span>
+    &gt; info heap *
 
-             <span class="n">Heap</span> <span class="err">#</span><span class="mi">1</span><span class="o">:</span>  <span class="n">Generational</span><span class="p">@</span><span class="n">fff78303d30</span>
-              <span class="n">Section</span> <span class="err">#</span><span class="mi">1</span><span class="o">:</span>  <span class="n">Heap</span> <span class="n">extent</span> <span class="n">at</span> <span class="mh">0x100d0000</span> <span class="p">(</span><span class="mh">0x300000</span> <span class="n">bytes</span><span class="p">)</span>
-               <span class="nl">Size</span><span class="p">:</span>        <span class="mi">3145728</span> <span class="n">bytes</span>
-               <span class="nl">Shared</span><span class="p">:</span>      <span class="nb">false</span>
-               <span class="nl">Executable</span><span class="p">:</span>  <span class="nb">false</span>
-               <span class="n">Read</span> <span class="nl">Only</span><span class="p">:</span>   <span class="nb">false</span>
-              <span class="n">Section</span> <span class="err">#</span><span class="mi">2</span><span class="o">:</span>  <span class="n">Heap</span> <span class="n">extent</span> <span class="n">at</span> <span class="mh">0x2ffd0000</span> <span class="p">(</span><span class="mh">0x80000</span> <span class="n">bytes</span><span class="p">)</span>
-               <span class="nl">Size</span><span class="p">:</span>        <span class="mi">524288</span> <span class="n">bytes</span>
-               <span class="nl">Shared</span><span class="p">:</span>      <span class="nb">false</span>
-               <span class="nl">Executable</span><span class="p">:</span>  <span class="nb">false</span>
-               <span class="n">Read</span> <span class="nl">Only</span><span class="p">:</span>   <span class="nb">false</span>
-              <span class="n">Section</span> <span class="err">#</span><span class="mi">3</span><span class="o">:</span>  <span class="n">Heap</span> <span class="n">extent</span> <span class="n">at</span> <span class="mh">0x30050000</span> <span class="p">(</span><span class="mh">0x80000</span> <span class="n">bytes</span><span class="p">)</span>
-               <span class="nl">Size</span><span class="p">:</span>        <span class="mi">524288</span> <span class="n">bytes</span>
-               <span class="nl">Shared</span><span class="p">:</span>      <span class="nb">false</span>
-               <span class="nl">Executable</span><span class="p">:</span>  <span class="nb">false</span>
-               <span class="n">Read</span> <span class="nl">Only</span><span class="p">:</span>   <span class="nb">false</span>
+             Heap #1:  Generational@fff78303d30
+              Section #1:  Heap extent at 0x100d0000 (0x300000 bytes)
+               Size:        3145728 bytes
+               Shared:      false
+               Executable:  false
+               Read Only:   false
+              Section #2:  Heap extent at 0x2ffd0000 (0x80000 bytes)
+               Size:        524288 bytes
+               Shared:      false
+               Executable:  false
+               Read Only:   false
+              Section #3:  Heap extent at 0x30050000 (0x80000 bytes)
+               Size:        524288 bytes
+               Shared:      false
+               Executable:  false
+               Read Only:   false
 
-    <span class="o">&gt;</span> <span class="n">info</span> <span class="k">class</span> <span class="n">java</span><span class="o">/</span><span class="n">lang</span><span class="o">/</span><span class="n">String</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">java</span><span class="o">/</span><span class="n">lang</span><span class="o">/</span><span class="n">String</span>
+    &gt; info class java/lang/String
+    name = java/lang/String
 
-            <span class="n">ID</span> <span class="o">=</span> <span class="mh">0x37c00</span>    <span class="n">superID</span> <span class="o">=</span> <span class="mh">0x30300</span>
-            <span class="n">classLoader</span> <span class="o">=</span> <span class="mh">0x2ffe9b58</span>    <span class="nl">modifiers</span><span class="p">:</span> <span class="n">public</span> <span class="n">final</span>
+            ID = 0x37c00    superID = 0x30300
+            classLoader = 0x2ffe9b58    modifiers: public final
 
-            <span class="n">number</span> <span class="n">of</span> <span class="nl">instances</span><span class="p">:</span>     <span class="mi">2146</span>
-            <span class="n">total</span> <span class="n">size</span> <span class="n">of</span> <span class="nl">instances</span><span class="p">:</span> <span class="mi">51504</span> <span class="n">bytes</span>
+            number of instances:     2146
+            total size of instances: 51504 bytes
 
-    <span class="n">Inheritance</span> <span class="n">chain</span><span class="p">....</span>
-            <span class="n">java</span><span class="o">/</span><span class="n">lang</span><span class="o">/</span><span class="n">Object</span>
-               <span class="n">java</span><span class="o">/</span><span class="n">lang</span><span class="o">/</span><span class="n">String</span>
+    Inheritance chain....
+            java/lang/Object
+               java/lang/String
 
-    <span class="n">Fields</span><span class="p">......</span>
-              <span class="k">static</span> <span class="n">fields</span> <span class="k">for</span> <span class="s">&quot;java/lang/String&quot;</span>
-                <span class="n">private</span> <span class="k">static</span> <span class="n">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="o">-</span><span class="mi">6849794470754667710</span> <span class="p">(</span><span class="mh">0xa0f0a4387a3bb342</span><span class="p">)</span>
-                <span class="n">public</span> <span class="k">static</span> <span class="n">final</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Comparator</span> <span class="n">CASE_INSENSITIVE_ORDER</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">object</span><span class="o">&gt;</span> <span class="p">@</span> <span class="mh">0x2ffd0278</span>
-                <span class="n">private</span> <span class="k">static</span> <span class="n">final</span> <span class="kt">char</span><span class="p">[]</span> <span class="n">ascii</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">object</span><span class="o">&gt;</span> <span class="p">@</span> <span class="mh">0x2ffd02c8</span>
-                <span class="n">private</span> <span class="k">static</span> <span class="n">String</span><span class="p">[]</span> <span class="n">stringArray</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">object</span><span class="o">&gt;</span> <span class="p">@</span> <span class="mh">0x2ffd0298</span>
-                <span class="n">private</span> <span class="k">static</span> <span class="n">final</span> <span class="kt">int</span> <span class="n">stringArraySize</span> <span class="o">=</span> <span class="mi">10</span> <span class="p">(</span><span class="mh">0xa</span><span class="p">)</span>
-                <span class="k">static</span> <span class="n">boolean</span> <span class="n">enableCopy</span> <span class="o">=</span> <span class="nb">false</span>
-                <span class="n">private</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">seed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">126504465</span> <span class="p">(</span><span class="mh">0xfffffffff875b1ef</span><span class="p">)</span>
-                <span class="n">private</span> <span class="k">static</span> <span class="kt">char</span><span class="p">[]</span> <span class="n">startCombiningAbove</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">object</span><span class="o">&gt;</span> <span class="p">@</span> <span class="mh">0x100d0c40</span>
-                <span class="n">private</span> <span class="k">static</span> <span class="kt">char</span><span class="p">[]</span> <span class="n">endCombiningAbove</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">object</span><span class="o">&gt;</span> <span class="p">@</span> <span class="mh">0x100d0cc0</span>
-                <span class="n">private</span> <span class="k">static</span> <span class="n">final</span> <span class="kt">char</span><span class="p">[]</span> <span class="n">upperValues</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">object</span><span class="o">&gt;</span> <span class="p">@</span> <span class="mh">0x100d0d40</span>
-                <span class="n">private</span> <span class="k">static</span> <span class="n">final</span> <span class="n">java</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">ObjectStreamField</span><span class="p">[]</span> <span class="n">serialPersistentFields</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">object</span><span class="o">&gt;</span> <span class="p">@</span> <span class="mh">0x2ffd0920</span>
+    Fields......
+              static fields for &quot;java/lang/String&quot;
+                private static final long serialVersionUID = -6849794470754667710 (0xa0f0a4387a3bb342)
+                public static final java.util.Comparator CASE_INSENSITIVE_ORDER = &lt;object&gt; @ 0x2ffd0278
+                private static final char[] ascii = &lt;object&gt; @ 0x2ffd02c8
+                private static String[] stringArray = &lt;object&gt; @ 0x2ffd0298
+                private static final int stringArraySize = 10 (0xa)
+                static boolean enableCopy = false
+                private static int seed = -126504465 (0xfffffffff875b1ef)
+                private static char[] startCombiningAbove = &lt;object&gt; @ 0x100d0c40
+                private static char[] endCombiningAbove = &lt;object&gt; @ 0x100d0cc0
+                private static final char[] upperValues = &lt;object&gt; @ 0x100d0d40
+                private static final java.io.ObjectStreamField[] serialPersistentFields = &lt;object&gt; @ 0x2ffd0920
 
-              <span class="n">non</span><span class="o">-</span><span class="k">static</span> <span class="n">fields</span> <span class="k">for</span> <span class="s">&quot;java/lang/String&quot;</span>
-                <span class="n">private</span> <span class="n">final</span> <span class="kt">char</span><span class="p">[]</span> <span class="n">value</span>
-                <span class="n">private</span> <span class="n">final</span> <span class="kt">int</span> <span class="n">offset</span>
-                <span class="n">private</span> <span class="n">final</span> <span class="kt">int</span> <span class="n">count</span>
-                <span class="n">private</span> <span class="kt">int</span> <span class="n">hashCode</span>
-                <span class="n">private</span> <span class="kt">int</span> <span class="n">hashCode32</span>
+              non-static fields for &quot;java/lang/String&quot;
+                private final char[] value
+                private final int offset
+                private final int count
+                private int hashCode
+                private int hashCode32
 
-    <span class="n">Methods</span><span class="p">......</span>
+    Methods......
 
-    <span class="n">Bytecode</span> <span class="n">range</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="o">:</span>  <span class="n">private</span> <span class="k">static</span> <span class="n">native</span> <span class="kt">int</span> <span class="n">getSeed</span><span class="p">()</span>
-    <span class="n">Bytecode</span> <span class="n">range</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="n">fff76d8ce48</span> <span class="o">--</span> <span class="nl">fff76d8ce5e</span><span class="p">:</span>  <span class="n">public</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">init</span><span class="o">&gt;</span><span class="p">()</span>
-    <span class="n">Bytecode</span> <span class="n">range</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="n">fff76d8ce88</span> <span class="o">--</span> <span class="nl">fff76d8cecd</span><span class="p">:</span>  <span class="n">private</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">init</span><span class="o">&gt;</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> <span class="kt">char</span><span class="p">)</span>
-    <span class="n">Bytecode</span> <span class="n">range</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="n">fff76d8cf10</span> <span class="o">--</span> <span class="nl">fff76d8cf19</span><span class="p">:</span>  <span class="n">public</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">init</span><span class="o">&gt;</span><span class="p">(</span><span class="n">byte</span><span class="p">[])</span>
-    <span class="n">Bytecode</span> <span class="n">range</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="n">fff76d8cf40</span> <span class="o">--</span> <span class="nl">fff76d8cf4a</span><span class="p">:</span>  <span class="n">public</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">init</span><span class="o">&gt;</span><span class="p">(</span><span class="n">byte</span><span class="p">[],</span> <span class="kt">int</span><span class="p">)</span>
-    <span class="n">Bytecode</span> <span class="n">range</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="n">fff76d8cf7c</span> <span class="o">--</span> <span class="nl">fff76d8cfb5</span><span class="p">:</span>  <span class="n">public</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">init</span><span class="o">&gt;</span><span class="p">(</span><span class="n">byte</span><span class="p">[],</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span>
-    <span class="n">Bytecode</span> <span class="n">range</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="n">fff76d8cff8</span> <span class="o">--</span> <span class="nl">fff76d8d065</span><span class="p">:</span>  <span class="n">public</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">init</span><span class="o">&gt;</span><span class="p">(</span><span class="n">byte</span><span class="p">[],</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span>
-    <span class="n">Bytecode</span> <span class="n">range</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="n">fff76d8d0c4</span> <span class="o">--</span> <span class="nl">fff76d8d10c</span><span class="p">:</span>  <span class="n">public</span> <span class="kt">void</span> <span class="o">&lt;</span><span class="n">init</span><span class="o">&gt;</span><span class="p">(</span><span class="n">byte</span><span class="p">[],</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n">String</span><span class="p">)</span>
-    <span class="o">===</span><span class="n">Lines</span> <span class="n">Removed</span><span class="o">===</span>
+    Bytecode range(s): :  private static native int getSeed()
+    Bytecode range(s): fff76d8ce48 -- fff76d8ce5e:  public void &lt;init&gt;()
+    Bytecode range(s): fff76d8ce88 -- fff76d8cecd:  private void &lt;init&gt;(String, char)
+    Bytecode range(s): fff76d8cf10 -- fff76d8cf19:  public void &lt;init&gt;(byte[])
+    Bytecode range(s): fff76d8cf40 -- fff76d8cf4a:  public void &lt;init&gt;(byte[], int)
+    Bytecode range(s): fff76d8cf7c -- fff76d8cfb5:  public void &lt;init&gt;(byte[], int, int)
+    Bytecode range(s): fff76d8cff8 -- fff76d8d065:  public void &lt;init&gt;(byte[], int, int, int)
+    Bytecode range(s): fff76d8d0c4 -- fff76d8d10c:  public void &lt;init&gt;(byte[], int, int, String)
+    ===Lines Removed===
 
-    <span class="o">&gt;</span> <span class="n">whatis</span>  <span class="mh">0x2ffd0298</span>
-            <span class="n">heap</span> <span class="err">#</span><span class="mi">1</span> <span class="o">-</span> <span class="nl">name</span><span class="p">:</span> <span class="n">Generational</span><span class="p">@</span><span class="n">fff78303d30</span>
-                    <span class="mh">0x2ffd0298</span> <span class="n">is</span> <span class="n">within</span> <span class="n">heap</span> <span class="nl">segment</span><span class="p">:</span> <span class="mf">2ff</span><span class="n">d0000</span> <span class="o">--</span> <span class="mi">30050000</span>
-                    <span class="mh">0x2ffd0298</span> <span class="n">is</span> <span class="n">the</span> <span class="n">start</span> <span class="n">of</span> <span class="n">an</span> <span class="n">object</span> <span class="n">of</span> <span class="n">type</span> <span class="p">[</span><span class="n">Ljava</span><span class="o">/</span><span class="n">lang</span><span class="o">/</span><span class="n">String</span><span class="p">;</span>
-</pre></div>
-
+    &gt; whatis  0x2ffd0298
+            heap #1 - name: Generational@fff78303d30
+                    0x2ffd0298 is within heap segment: 2ffd0000 -- 30050000
+                    0x2ffd0298 is the start of an object of type [Ljava/lang/String;
+</code></pre>
 
 <!-- ==== END OF TOPIC ==== tool_jdmpview.md ==== -->
                 
@@ -4664,7 +4650,7 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="tool_jextract/" title="Dump extractor" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="dump_systemdump/" title="System dump" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -4673,7 +4659,7 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            Dump extractor
+                            System dump
                           </span>
                         </div>
                       </a>
