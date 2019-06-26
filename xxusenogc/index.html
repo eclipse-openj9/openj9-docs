@@ -3172,8 +3172,9 @@ reclaimed through garbage collection.</p>
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>This policy can be useful for test purposes and for short-lived applications. When the limit is reached an <code>OutOfMemory</code> error is generated and the VM shuts down. This policy can also be enabled with the <a href="../xgcpolicy/"><code>-Xgcpolicy:nogc</code></a> option.</p>
+<p>This policy can be useful for test purposes and for short-lived applications. When the limit is reached an <code>OutOfMemory</code> error is generated and the VM shuts down.</p>
 <p>The <code>-XX:-UseNoGC</code> option turns off a previously enabled <code>-XX:+UseNoGC</code> option.</p>
+<p>This policy can also be enabled with the <code>-Xgcpolicy:nogc</code> option. See <a href="../xgcpolicy/#nogc"><code>-Xgcpolicy:nogc</code></a> for more details about this policy and when it is appropriate to use it.</p>
 <!-- ==== END OF TOPIC ==== xxusenogc.md ==== -->
                 
                   
