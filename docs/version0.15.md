@@ -50,7 +50,7 @@
 
 ### Performance improvements for JVMTI watched fields
 
- OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which, when enabled, turned on experimental JIT operations to improve the performance of JVMTI watched fields. Following successful results, this option is now enabled by default. Currently, performance improvements are enabled only on x86 platforms (Windows&reg;, macOS&reg;, and Linux).
+ OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which, when enabled, turned on experimental JIT operations to improve the performance of JVMTI watched fields. Following successful results, this option is now enabled by default. This option is now also supported on z/OS&reg; and Linux for IBM Z&reg;, in addition to x86 platforms (Windows&reg;, macOS&reg;, and Linux).
 
 ### Support for pause-less garbage collection on IBM Z systems
 

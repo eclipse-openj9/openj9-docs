@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]JITInlineWatches
 
-**(x86: Linux&reg;, macOS&reg;, and Windows&reg; only)**
+**(Not supported on AIX&reg;)**
 
 This option controls JIT operations that relate to JVMTI watched fields.
 
