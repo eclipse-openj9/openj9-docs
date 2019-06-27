@@ -102,7 +102,7 @@ pages:
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 
     - "Release notes" :
-        - "Version 0.15.0"                                                       : version0.15.md      
+        - "Version 0.15.0"                                                       : version0.15.md
         - "Version 0.14.2"                                                       : version0.14.2.md
         - "Version 0.14.0"                                                       : version0.14.md
         - "Version 0.13.0"                                                       : version0.13.md
@@ -143,6 +143,7 @@ pages:
 
         - "Tools" : 
 #              3rd party tools topic for IBM monitoring & diag tools & Eclipse MA (take from New to OpenJ9), then...
+            - "Dump extractor"                                                   : tool_jextract.md
             - "Dump viewer"                                                      : tool_jdmpview.md
             - "Trace formatter"                                                  : tool_traceformat.md
             - "Option builder"                                                   : tool_builder.md
@@ -152,7 +153,7 @@ pages:
         
         - "Interfaces" :
             - "JVMTI"                                                            : interface_jvmti.md
-#            - "MXbeans"                                                          : interface_mxbeans.md
+#            - "MXBeans"                                                          : interface_mxbeans.md
             - "DTFJ"                                                             : interface_dtfj.md
 
     - "Command-line options" :
@@ -178,7 +179,7 @@ pages:
             - "-Dfile.encoding"                                                  : dfileencoding.md
             - "-Djava.compiler"                                                  : djavacompiler.md
             - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
-            - "-Djdk.nativeChaCha20"                                             : djdknativechacha20.md            
+            - "-Djdk.nativeChaCha20"                                             : djdknativechacha20.md
             - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
             - "-Djdk.nativeDigest"                                               : djdknativedigest.md
             - "-Djdk.nativeGCM"                                                  : djdknativegcm.md
@@ -334,6 +335,7 @@ pages:
             - "-XX:ShareClassesEnableBCI"                                        : xxshareclassesenablebci.md
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
             - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
+            - "-XX:[+|-]TransparentHugePage"                                     : xxtransparenthugepage.md
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
             - "-XX:[+|-]UseContainerSupport"                                     : xxusecontainersupport.md
             - "-XX:[+|-]UseNoGC"                                                 : xxusenogc.md

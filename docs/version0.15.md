@@ -32,6 +32,7 @@
 - [Support for pause-less garbage collection on IBM Z systems](#support-for-pause-less-garbage-collection-on-ibm-z-systems)
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [ChaCha20 algorithm support for OpenSSL](#chacha20-algorithm-support-for-openssl)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
+- [Support for Transparent HugePage](#support-for-transparent-hugepage)
 - [Removal of -Xdiagnosticscollector option](#removal-of-xdiagnosticscollector-option)
 
 
@@ -63,6 +64,10 @@ The ChaCha20 and ChaCha20-Poly1305 algorithms can now use OpenSSL on Java 11. Fo
 ### Support for OpenJDK HotSpot options
 
 For compatibility, the [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md) OpenJDK Hotspot option is now supported by OpenJ9.
+
+### Support for Transparent HugePage
+
+The VM now supports the allocation of huge pages on Linux when you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting. To enable this feature, set [`-XX:+TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. This option is currently not enabled by default.
 
 ### Removal of -Xdiagnosticscollector option
 This option was redundant and has now been removed. If you try to use this option on the command line, the VM outputs this error message:
