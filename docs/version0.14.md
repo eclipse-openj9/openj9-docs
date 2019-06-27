@@ -36,7 +36,7 @@ The following new features and notable changes since v.0.13.0 are included in th
 - [New experimental option to improve the performance of JVMTI watched fields](#new-experimental-option-to-improve-the-performance-of-jvmti-watched-fields)
 - [New option to prevent a network query being used to determine host name and IP address](#new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address)
 - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
-- [Change to the default native stack size on 64-bit z/OS&reg;](change-to-the-default-native-stack-size-on-64-bit-zos)
+- [Change to the default native stack size on 64-bit z/OS&reg;](#change-to-the-default-native-stack-size-on-64-bit-zos)
 
 ## Features and changes
 
