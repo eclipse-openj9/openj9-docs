@@ -24,9 +24,7 @@
 
 # -Xiss / -Xss / -Xssi
 
-Determines the size and behavior of the stack size for Java&trade; threads. 
-
-To increase the maximum number of threads your system can support, reduce the maximum native stack size.
+Determines the size and behavior of the stack size for Java&trade; threads.
 
 If you exceed the maximum Java thread stack size, a `java/lang/OutOfMemoryError` message is reported.
 
@@ -55,6 +53,3 @@ See [Default settings for the OpenJ9 VM](openj9_defaults.md) for more about defa
 <!-- ==== END OF TOPIC ==== xss.md ==== -->
 <!-- ==== END OF TOPIC ==== xssi.md ==== -->
 <!-- ==== END OF TOPIC ==== xiss.md ==== -->
-
-
-
