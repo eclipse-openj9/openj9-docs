@@ -33,6 +33,7 @@
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [ChaCha20 algorithm support for OpenSSL](#chacha20-algorithm-support-for-openssl)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [Support for Transparent HugePage](#support-for-transparent-hugepage)
+- [Removal of -Xdiagnosticscollector option](#removal-of-xdiagnosticscollector-option)
 
 
 ## Features and changes
@@ -50,7 +51,7 @@
 
 ### Performance improvements for JVMTI watched fields
 
- OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which, when enabled, turned on experimental JIT operations to improve the performance of JVMTI watched fields. Following successful results, this option is now enabled by default. Currently, performance improvements are enabled only on x86 platforms (Windows&reg;, macOS&reg;, and Linux).
+ OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which, when enabled, turned on experimental JIT operations to improve the performance of JVMTI watched fields. Following successful results, this option is now enabled by default. This option is now also supported on z/OS&reg; and Linux for IBM Z&reg;, in addition to x86 platforms (Windows&reg;, macOS&reg;, and Linux).
 
 ### Support for pause-less garbage collection on IBM Z systems
 
@@ -67,6 +68,11 @@ For compatibility, the [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md) OpenJ
 ### Support for Transparent HugePage
 
 The VM now supports the allocation of huge pages on Linux when you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting. To enable this feature, set [`-XX:+TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. This option is currently not enabled by default.
+
+### Removal of -Xdiagnosticscollector option
+This option was redundant and has now been removed. If you try to use this option on the command line, the VM outputs this error message:
+
+`JVMJ9VM007E Command-line option unrecognised: -Xdiagnosticscollector`
 
 <!--## Full release information
 
