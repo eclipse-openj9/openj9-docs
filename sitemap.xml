@@ -111,6 +111,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_jextract/</loc>
+     <lastmod>2019-06-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/tool_jdmpview/</loc>
      <lastmod>2019-06-27</lastmod>
      <changefreq>daily</changefreq>
@@ -997,6 +1002,11 @@
     </url>
     <url>
      <loc>https://www.eclipse.org/openj9/docs/xxstacktraceinthrowable/</loc>
+     <lastmod>2019-06-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/xxtransparenthugepage/</loc>
      <lastmod>2019-06-27</lastmod>
      <changefreq>daily</changefreq>
     </url>

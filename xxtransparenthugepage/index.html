@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxenablecpumonitor/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxtransparenthugepage/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-XX:[+|-]EnableCPUMonitor -  </title>
+        <title>-XX:[+|-]TransparentHugePage -  </title>
       
     
     
@@ -134,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-xx91-93enablecpumonitor" tabindex="1" class="md-skip">
+      <a href="../#-xx-transparenthugepage" tabindex="1" class="md-skip">
         
       </a>
     
@@ -2544,63 +2544,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -XX:[+|-]EnableCPUMonitor
-      </label>
-    
-    <a href="./" title="-XX:[+|-]EnableCPUMonitor" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../xxenablecpumonitor/" title="-XX:[+|-]EnableCPUMonitor" class="md-nav__link">
       -XX:[+|-]EnableCPUMonitor
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explanation" title="Explanation" class="md-nav__link">
-    Explanation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" title="See also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2968,11 +2916,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../xxtransparenthugepage/" title="-XX:[+|-]TransparentHugePage" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        -XX:[+|-]TransparentHugePage
+      </label>
+    
+    <a href="./" title="-XX:[+|-]TransparentHugePage" class="md-nav__link md-nav__link--active">
       -XX:[+|-]TransparentHugePage
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3169,20 +3155,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#explanation" title="Explanation" class="md-nav__link">
-    Explanation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" title="See also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
       
       
       
@@ -3200,7 +3172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xxenablecpumonitor.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xxtransparenthugepage.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3228,12 +3200,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xx91-93enablecpumonitor">-XX:[+|-]EnableCPUMonitor</h1>
-<p>This option relates to the information about the CPU usage of thread categories that is available with the <code>com.ibm.lang.management.JvmCpuMonitorMXBean</code> application programming interface.</p>
-<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> This option might not be supported in subsequent releases.</p>
+<h1 id="-xx-transparenthugepage">-XX:[+|-]TransparentHugePage</h1>
+<p><strong>(Linux&reg; on x86, POWER&reg;, or IBM Z&reg; systems only)</strong></p>
+<p>If Transparent Huge Pages (THP) are set to <code>madvise</code> on your system, this option, when enabled, promotes all memory allocated to huge pages. If THP is set to
+<code>always</code> or <code>never</code>, this option is ignored.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:[+|-]EnableCPUMonitor
-</code></pre>
 <table>
 <thead>
 <tr>
@@ -3244,25 +3215,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </thead>
 <tbody>
 <tr>
-<td><code>-XX:+EnableCPUMonitor</code></td>
+<td><code>-XX:+TransparentHugePage</code></td>
 <td>Enable</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td><code>-XX:-EnableCPUMonitor</code></td>
+<td><code>-XX:-TransparentHugePage</code></td>
 <td>Disable</td>
-<td align="center"></td>
+<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
 </tr>
 </tbody>
 </table>
-<h2 id="explanation">Explanation</h2>
-<p>The <code>-XX:+EnableCPUMonitor</code> option enables CPU monitoring, which allows a JMX bean to track CPU usage on a per thread basis and attributes the usage against different categories. For more information, see the <code>JvmCpuMonitorMXBean</code> interface in the <code>com.ibm.lang.management</code> API documentation.</p>
-<p>To turn off CPU monitoring, set the <code>-XX:-EnableCPUMonitor</code> option on the command line.</p>
-<h2 id="see-also">See also</h2>
-<ul>
-<li><a href="../xxreducecpumonitoroverhead/">-XX:[+|-]ReduceCPUMonitorOverhead</a></li>
-</ul>
-<!-- ==== END OF TOPIC ==== xxenablecpumonitor.md ==== -->
+<!-- ==== END OF TOPIC ==== xxtransparenthugepage.md ==== -->
                 
                   
                 
@@ -3305,7 +3269,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="xxdisclaimjitscratch/" title="-XX:[+|-]DisclaimJitScratch" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="xxstacktraceinthrowable/" title="-XX:-StackTraceInThrowable" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3314,19 +3278,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -XX:[+|-]DisclaimJitScratch
+                            -XX:-StackTraceInThrowable
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="xxhandlesigxfsz/" title="-XX:[+|-]handleSIGXFSZ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="xxusecompressedoops/" title="-XX:[+|-]UseCompressedOops" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            -XX:[+|-]handleSIGXFSZ
+                            -XX:[+|-]UseCompressedOops
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">
