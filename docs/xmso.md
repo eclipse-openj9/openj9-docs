@@ -24,7 +24,7 @@
 
 # -Xmso
 
-Sets the stack size for operating system threads.
+Sets the native stack size for operating system threads.
 
 You can use the `-verbose:sizes` option to find out the values that the VM is currently using.
 
