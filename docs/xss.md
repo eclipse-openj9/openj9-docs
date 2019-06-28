@@ -30,6 +30,7 @@ If you exceed the maximum Java thread stack size, a `java/lang/OutOfMemoryError`
 
 You can use the `-verbose:sizes` option to find out the values that the VM is currently using.
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** These options relate to the Java stack only. There is a separate, native stack for operating system threads, for which you use a different option (see the link in the [See also](#see-also) section).
 
 ## Syntax
 
@@ -45,7 +46,7 @@ See [Default settings for the OpenJ9 VM](openj9_defaults.md) for more about defa
 
 ## See also
 
-- [`-Xmso`](xmso.md) (Initial stack size for operating system threads)
+- [`-Xmso`](xmso.md) (Native stack size for operating system threads)
 
 
 
