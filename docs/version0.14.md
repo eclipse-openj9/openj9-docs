@@ -89,7 +89,7 @@ By default, a network query is used to determine the host name and IP address fo
 On all platforms, the format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache, rather than re-creating or reusing an existing cache. To save space, all existing shared caches can be removed unless they are in use by an earlier release. For more information about destroying a shared classes cache, see [`-Xshareclasses`](xshareclasses.md).
 
 ### Change to the default native stack size on 64-bit z/OS
-The default stack size for operating system threads on 64-bit z/OS is changed from 384 KB to 1 MB. For more information about this setting, see [`-Xmso`](xmso.md).
+The default stack size for operating system threads on 64-bit z/OS is changed from 384 KB to the operating system minimum of 1 MB. For more information about this setting, see [`-Xmso`](xmso.md).
 
 
 ## Full release information
