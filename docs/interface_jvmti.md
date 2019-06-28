@@ -28,7 +28,7 @@ The Java&trade; Virtual Machine Tool Interface (JVMTI) is a two-way interface th
 
 ## Overview
 
-The JVMTI allows third parties to develop debugging, profiling, and monitoring tools for the VM. The interface contains mechanisms for the agent to notify the VM about the kinds of information it requires, and also provides a means of receiving relevant notifications. 
+The JVMTI allows third parties to develop debugging, profiling, and monitoring tools for the VM. The interface contains mechanisms for the agent to notify the VM about the kinds of information it requires, and also provides a means of receiving relevant notifications.
 
 Several agents can be attached to a VM at any one time.
 
@@ -40,13 +40,11 @@ or
 
     -agentpath:<path-to-agent>=<options>
 
-In the example that follows (see [Sample JVMTI agent](sample-jvmti-agent)), the directory containing the `jdwp` library is assumed to  be on the library path. If you require a specific library, such as `jdwp`, with your JVMTI agent, you can specify the path at startup, for example:
+In the example that follows (see [Sample JVMTI agent](#sample-jvmti-agent)), the directory containing the `jdwp` library is assumed to  be on the library path. If you require a specific library, such as `jdwp`, with your JVMTI agent, you can specify the path at startup, for example:
 
     -agentlib:jdwp=<options>
 
 For more information about JVMTI, see [https://docs.oracle.com/javase/8/docs/technotes/guides/management/index.html](https://docs.oracle.com/javase/8/docs/technotes/guides/management/index.html).
-
-For advice on porting JVMPI-based profilers to JVMTI, see [http://www.oracle.com/technetwork/articles/javase/jvmpitransition-138768.html](http://www.oracle.com/technetwork/articles/javase/jvmpitransition-138768.html).
 
 For a guide about writing a JVMTI agent, see [http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html](http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html).
 
@@ -67,7 +65,7 @@ OpenJ9 extensions to the JVMTI allow a JVMTI agent to query or automatically tri
 |Search for and remove a shared class cache                                       |[`IterateSharedCaches`](#iteratesharedcaches), [`DestroySharedCache`](#destroysharedcache)|
 |Subscribe to and unsubscribe from verbose garbage collection (GC) data logging   |[`RegisterVerboseGCSubscriber`](#registerverbosegcsubscriber), [`DeregisterVerboseGCSubscriber`](#deregisterverbosegcsubscriber)|
 
-The definitions that you need when you write a JVMTI agent are provided in the header files `jvmti.h` and `ibmjvmti.h`. These files are in `sdk/include`.
+The definitions that you need when you write a JVMTI agent are provided in the header files `jvmti.h` and `ibmjvmti.h`, in the  `include` directory.
 
 ## Sample JVMTI agent
 
@@ -158,11 +156,11 @@ DumpStartCallback(jvmtiEnv *jvmti_env, char* label, char* event, char* detail, .
 
 </details>
 
-The sample JVMTI agent consists of two functions, `Agent_OnLoad()` and `DumpStartCallback()`: 
+The sample JVMTI agent consists of two functions, `Agent_OnLoad()` and `DumpStartCallback()`:
 
 ### `Agent_OnLoad()`
 
-This function is called by the VM when the agent is loaded at itialization is complete. The sample agent obtains access to the JVMTI interface by using the JNI Invocation API function `GetEnv()`. The agent calls the APIs `GetExtensionEvents()` and `GetExtensionFunctions()` to find the JVMTI extensions that are supported by the VM. These APIs provide access to the list of extensions available in the `jvmtiExtensionEventInfo` and `jvmtiExtensionFunctionInfo` structures. The sample uses an extension event and an extension function in the following way:
+This function is called by the VM when the agent is loaded at VM startup, which allows the JVMTI agent to modify VM behavior before initialization is complete. The sample agent obtains access to the JVMTI interface by using the JNI Invocation API function `GetEnv()`. The agent calls the APIs `GetExtensionEvents()` and `GetExtensionFunctions()` to find the JVMTI extensions that are supported by the VM. These APIs provide access to the list of extensions available in the `jvmtiExtensionEventInfo` and `jvmtiExtensionFunctionInfo` structures. The sample uses an extension event and an extension function in the following way:
 
 **Extension event:** The sample JVMTI agent searches for the extension event `VmDumpStart` in the list of `jvmtiExtensionEventInfo` structures, by using the identifier `COM_IBM_VM_DUMP_START` provided in `ibmjvmti.h`. When the event is found, the JVMTI agent calls the JVMTI interface `SetExtensionEventCallback()` to enable the event, providing a function `DumpStartCallback()` that is called when the event is triggered.
 
@@ -200,7 +198,7 @@ The following sections provide reference information for the OpenJ9 extensions t
 
 ### `GetOSThreadID`
 
-You can **get the OS thread ID** by using the `GetOSThreadID()` API:
+You can get the OS thread ID by using the `GetOSThreadID()` API:
 
     jvmtiError GetOSThreadID(jvmtiEnv* jvmti_env, jthread thread, jlong * threadid_ptr);
 
@@ -208,7 +206,7 @@ You can **get the OS thread ID** by using the `GetOSThreadID()` API:
 
 - `jvmti_env`: A pointer to the JVMTI environment.
 - `thread`: The thread for which the ID is required.
-- `threadid_ptr`: A pointer to a variable, used to return the thread ID that corresponds to the thread specified by the thread parameter.
+- `threadid_ptr`: A pointer to a variable, used to return the thread ID that corresponds to the thread specified by the `thread` parameter.
 
 **Returns**
 
@@ -217,7 +215,7 @@ You can **get the OS thread ID** by using the `GetOSThreadID()` API:
 `JVMTI_ERROR_INVALID_ENVIRONMENT`: The `jvmti_env` parameter is invalid.  
 `JVMTI_ERROR_INVALID_THREAD`: The thread is not valid.  
 `JVMTI_ERROR_THREAD_NOT_ALIVE`: The VM state of the thread is not started or has died.  
-`JVMTI_ERROR_UNATTACHED_THREAD`: The current thread is not attached to the VM. 
+`JVMTI_ERROR_UNATTACHED_THREAD`: The current thread is not attached to the VM.
 `JVMTI_ERROR_WRONG_PHASE`: The extension has been called outside the JVMTI start or live phase.
 
 **Identifiers**
@@ -231,11 +229,11 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_GET_OS_THREAD_ID`
 
 ### `QueryVmDump`
 
-You can **query the VM dump options** that are set for a VM by using the `QueryVmDump()` API:
+You can query the VM dump options that are set for a VM by using the `QueryVmDump()` API:
 
     jvmtiError QueryVmDump(jvmtiEnv* jvmti_env, jint buffer_size, void* options_buffer, jint* data_size_ptr)
 
-This extension returns a set of dump option specifications as ASCII strings. The syntax of the option string is the same as the -Xdump command-line option, with the initial `-Xdump:` omitted. See [-Xdump](xdump.md). The option strings are separated by newline characters. If the memory buffer is too small to contain the current VM dump option strings, you can expect the following results:
+This extension returns a set of dump option specifications as ASCII strings. The syntax of the option string is the same as the `-Xdump` command-line option, with the initial `-Xdump:` omitted. See [-Xdump](xdump.md). The option strings are separated by newline characters. If the memory buffer is too small to contain the current VM dump option strings, you can expect the following results:
 
 - The error message `JVMTI_ERROR_ILLEGAL_ARGUMENT` is returned.
 - The variable for `data_size_ptr` is set to the required buffer size.
@@ -250,9 +248,9 @@ This extension returns a set of dump option specifications as ASCII strings. The
 **Returns**
 
 `JVMTI_ERROR_NONE`: Success  
-`JVMTI_ERROR_NULL_POINTER`: The options_buffer or data_size_ptr parameters are null.  
+`JVMTI_ERROR_NULL_POINTER`: The `options_buffer` or `data_size_ptr` parameters are null.  
 `JVMTI_ERROR_OUT_OF_MEMORY`: There is insufficient system memory to process the request.  
-`JVMTI_ERROR_INVALID_ENVIRONMENT`: The jvmti_env parameter is invalid.  
+`JVMTI_ERROR_INVALID_ENVIRONMENT`: The `jvmti_env` parameter is invalid.  
 `JVMTI_ERROR_WRONG_PHASE`: The extension has been called outside the JVMTI live phase.  
 `JVMTI_ERROR_NOT_AVAILABLE`: The dump configuration is locked because a dump is in progress.  
 `JVMTI_ERROR_ILLEGAL_ARGUMENT`: The supplied memory buffer in `options_buffer` is too small.
@@ -268,7 +266,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_QUERY_VM_DUMP`
 
 ### `SetVmDump`
 
-You can **set VM dump options** by using the `SetVmDump()` API:
+You can set VM dump options by using the `SetVmDump()` API:
 
     jvmtiError SetVmDump(jvmtiEnv* jvmti_env, char* option)
 
@@ -287,7 +285,7 @@ When dumps are in progress, the dump configuration is locked, and calls to `SetV
 `JVMTI_ERROR_NONE`: Success.  
 `JVMTI_ERROR_NULL_POINTER`: The parameter option is null.  
 `JVMTI_ERROR_OUT_OF_MEMORY`: There is insufficient system memory to process the request.  
-`JVMTI_ERROR_INVALID_ENVIRONMENT`: The jvmti_env parameter is invalid.  
+`JVMTI_ERROR_INVALID_ENVIRONMENT`: The `jvmti_env` parameter is invalid.  
 `JVMTI_ERROR_WRONG_PHASE`: The extension has been called outside the JVMTI live phase.  
 `JVMTI_ERROR_NOT_AVAILABLE`: The dump configuration is locked because a dump is in progress.  
 `JVMTI_ERROR_ILLEGAL_ARGUMENT`: The parameter option contains an invalid `-Xdump` string.
@@ -303,7 +301,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_SET_VM_DUMP`
 
 ### `TriggerVmDump`
 
-You can **trigger a VM dump** and specify the type of dump you want by using the `TriggerVmDump()` API:
+You can trigger a VM dump and specify the type of dump you want by using the `TriggerVmDump()` API:
 
     jvmtiError TriggerVmDump(jvmtiEnv* jvmti_env, char* option)
 
@@ -330,7 +328,7 @@ Choose the type of dump required by specifying an ASCII string that contains one
 `JVMTI_ERROR_NONE`: Success.  
 `JVMTI_ERROR_NULL_POINTER`: The option parameter is null.  
 `JVMTI_ERROR_OUT_OF_MEMORY`: There is insufficient system memory to process the request.  
-`JVMTI_ERROR_INVALID_ENVIRONMENT`: The jvmti_env parameter is invalid.  
+`JVMTI_ERROR_INVALID_ENVIRONMENT`: The `jvmti_env` parameter is invalid.  
 `JVMTI_ERROR_WRONG_PHASE`: The extension has been called outside the JVMTI live phase.  
 `JVMTI_ERROR_NOT_AVAILABLE`: The dump configuration is locked because a dump is in progress.
 
@@ -345,7 +343,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_TRIGGER_VM_DUMP`
 
 ### `ResetVmDump`
 
-You can **reset VM dump options** to the values at VM initialization by using the `ResetVmDump()` API:
+You can reset VM dump options to the values at VM initialization by using the `ResetVmDump()` API:
 
     jvmtiError ResetVmDump(jvmtiEnv* jvmti_env)
 
@@ -357,7 +355,7 @@ You can **reset VM dump options** to the values at VM initialization by using th
 
 `JVMTI_ERROR_NONE`: Success.  
 `JVMTI_ERROR_OUT_OF_MEMORY`: There is insufficient system memory to process the request.  
-`JVMTI_ERROR_INVALID_ENVIRONMENT`: The jvmti_env parameter is invalid.  
+`JVMTI_ERROR_INVALID_ENVIRONMENT`: The `jvmti_env` parameter is invalid.  
 `JVMTI_ERROR_WRONG_PHASE`: The extension has been called outside the JVMTI live phase.  
 `JVMTI_ERROR_NOT_AVAILABLE`: The dump configuration is locked because a dump is in progress.
 
@@ -372,7 +370,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_RESET_VM_DUMP`
 
 ### `VMDumpStart`
 
-The following **JVMTI event function is called when a VM dump starts**:
+The following JVMTI event function is called when a VM dump starts:
 
     void JNICALL VMDumpStart(jvmtiEnv *jvmti_env, JNIEnv* jni_env, char* label, char* event, char* detail)
 
@@ -398,7 +396,7 @@ None
 
 ### `VMDumpEnd`
 
-The following **JVMTI event function is called when a VM dump ends**:
+The following JVMTI event function is called when a VM dump ends:
 
     void JNICALL VMDumpEnd(jvmtiEnv *jvmti_env, JNIEnv* jni_env, char* label, char* event, char* detail)
 
@@ -424,7 +422,7 @@ None
 
 ### `SetVmTrace`
 
-You can **set VM trace options** by using the `SetVmTrace()` API:
+You can set VM trace options by using the `SetVmTrace()` API:
 
     jvmtiError SetVmTrace(jvmtiEnv* jvmti_env, char* option)
 
@@ -456,7 +454,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_SET_VM_TRACE`
 
 ### `RegisterTracePointSubscriber`
 
-You can **subscribe to VM tracepoints** by using the `RegisterTracePointSubscriber()` API:
+You can subscribe to VM tracepoints by using the `RegisterTracePointSubscriber()` API:
 
     jvmtiError RegisterTracePointSubscriber(jvmtiEnv* jvmti_env, char *description, jvmtiTraceSubscriber subscriber, jvmtiTraceAlarm alarm, void *userData, void **subscriptionID)
 
@@ -464,8 +462,8 @@ You can **subscribe to VM tracepoints** by using the `RegisterTracePointSubscrib
 
 - `jvmti_env`: A pointer to the JVMTI environment.
 - `description`: An ASCII character string that describes the subscriber.
-- `subscriber`: A function of type [`jvmtiTraceSubscriber`](#jvmtitracesubscriberfunction).
-- `alarm`: A function pointer of type [`jvmtiTraceAlarm`](#jvmtitracealarmfunction).
+- `subscriber`: A function of type [`jvmtiTraceSubscriber`](#jvmtitracesubscriber-function).
+- `alarm`: A function pointer of type [`jvmtiTraceAlarm`](#jvmtitracealarm-function).
 - `user_data`: A pointer to user data. This pointer is passed to the subscriber and alarm functions each time these functions are called. This pointer can be a null value.
 - `subscription_id`: A pointer to a subscription identifier. This pointer is returned by the `RegisterTracePointSubscriber` call if successful. The value must be supplied to a future call to the `DeregisterTracePointSubscriber` API, which is used to unsubscribe from the VM tracepoint.
 
@@ -490,9 +488,9 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_REGISTER_TRACEPOINT_SUBSCRI
 
         typedef jvmtiError (*jvmtiTraceSubscriber)(jvmtiEnv *jvmti_env, void *record, jlong length, void *user_data);
 
-    The subscriber function must be of type `jvmtiTraceSubscriber`, which is declared in `ibmjvmti.h`. 
+    The subscriber function must be of type `jvmtiTraceSubscriber`, which is declared in `ibmjvmti.h`.
 
-    This function is called with each tracepoint record that is selected through the `-Xtrace:external` option. 
+    This function is called with each tracepoint record that is selected through the `-Xtrace:external` option.
 
     The tracepoint record that is supplied to the subscriber function is valid only for the duration of the function. If the subscriber wants to save the data, the data must be copied elsewhere.
 
@@ -525,7 +523,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_REGISTER_TRACEPOINT_SUBSCRI
 
 ### `DeregisterTracePointSubscriber`
 
-You can **unsubscribe from VM tracepoints** by using the `DeregisterTracePointSubscriber()` API:
+You can unsubscribe from VM tracepoints by using the `DeregisterTracePointSubscriber()` API:
 
     jvmtiError DeregisterTracePointSubscriber(jvmtiEnv* jvmti_env, void *userData, void *subscription_id)
 
@@ -555,7 +553,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_DEREGISTER_TRACEPOINT_SUBSC
 
 ### `GetMemoryCategories`
 
-You can **query runtime environment native memory categories** by using the `GetMemoryCategories()` API:
+You can query runtime environment native memory categories by using the `GetMemoryCategories()` API:
 
     jvmtiError GetMemoryCategories(jvmtiEnv* env, jint version, jint max_categories, jvmtiMemoryCategory * categories_buffer, jint * written_count_ptr, jint * total_categories_ptr);
 
@@ -593,11 +591,11 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_GET_MEMORY_CATEGORIES`
 
 ### `QueryVmLogOptions`
 
-You can **query VM log options** by using the `QueryVmLogOptions()` API:
+You can query VM log options by using the `QueryVmLogOptions()` API:
 
     jvmtiError QueryVmLogOptions(jvmtiEnv* jvmti_env, jint buffer_size, void* options, jint* data_size_ptr)
 
-This extension returns the current log options as an ASCII string. The syntax of the string is the same as the `-Xlog` command-line option, with the initial `-Xlog:` omitted. For example, the string "error,warn" indicates that the VM is set to log error and warning messages only. For more information, see [`-Xlog`](xlog.md). 
+This extension returns the current log options as an ASCII string. The syntax of the string is the same as the `-Xlog` command-line option, with the initial `-Xlog:` omitted. For example, the string "error,warn" indicates that the VM is set to log error and warning messages only. For more information, see [`-Xlog`](xlog.md).
 
 **Parameters**
 
@@ -625,7 +623,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_QUERY_VM_LOG_OPTIONS`
 
 ### `SetVmLogOptions`
 
-You can **set VM log options** by using the `SetVmLogOptions()` API:
+You can set VM log options by using the `SetVmLogOptions()` API:
 
     jvmtiError SetVmLogOptions(jvmtiEnv* jvmti_env, char* options_buffer)
 
@@ -641,7 +639,7 @@ The log option is passed in as an ASCII character string. Use the same syntax as
 `JVMTI_ERROR_NONE`: Success.  
 `JVMTI_ERROR_NULL_POINTER`: The parameter option is null.  
 `JVMTI_ERROR_OUT_OF_MEMORY`: There is insufficient system memory to process the request.  
-`JVMTI_ERROR_INVALID_ENVIRONMENT`: The *`jvmti_env`* parameter is invalid.  
+`JVMTI_ERROR_INVALID_ENVIRONMENT`: The `jvmti_env` parameter is invalid.  
 `JVMTI_ERROR_WRONG_PHASE`: The extension has been called outside the JVMTI live phase.  
 `JVMTI_ERROR_ILLEGAL_ARGUMENT`: The parameter option contains an invalid `-Xlog` string.
 
@@ -656,7 +654,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_SET_VM_LOG_OPTIONS`
 
 ### `IterateSharedCaches`
 
-You can **search for shared class caches** that exist in a specified cache directory by using the `IterateSharedCaches()` API:
+You can search for shared class caches that exist in a specified cache directory by using the `IterateSharedCaches()` API:
 
     jvmtiError IterateSharedCaches(jvmtiEnv* env, jint version, const char *cacheDir, jint flags, jboolean useCommandLineValues, jvmtiIterateSharedCachesCallback callback, void *user_data);
 
@@ -685,12 +683,12 @@ Information about the caches is returned in a structure that is populated by a u
 
 `JVMTI_ERROR_NONE`: Success.  
 `JVMTI_ERROR_OUT_OF_MEMORY`: There is insufficient system memory to process the request.  
-`JVMTI_ERROR_INVALID_ENVIRONMENT`: The env parameter is not valid.  
+`JVMTI_ERROR_INVALID_ENVIRONMENT`: The `env` parameter is not valid.  
 `JVMTI_ERROR_WRONG_PHASE`: The extension has been called outside the JVMTI live phase.  
 `JVMTI_ERROR_UNSUPPORTED_VERSION`: The `version` parameter is not valid.  
 `JVMTI_ERROR_NULL_POINTER`: The `callback` parameter is null.  
 `JVMTI_ERROR_NOT_AVAILABLE`: The shared classes feature is not enabled in the VM.  
-`JVMTI_ERROR_ILLEGAL_ARGUMENT`: The flags parameter is not valid.  
+`JVMTI_ERROR_ILLEGAL_ARGUMENT`: The `flags` parameter is not valid.  
 `JVMTI_ERROR_INTERNAL`: This error is returned when the `jvmtiIterateSharedCachesCallback` returns `JNI_ERR`.
 
 **Identifiers**
@@ -723,25 +721,27 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_ITERATE_SHARED_CACHES`
         jint os_semid;         // the OS shared semaphore ID associated with a non-persistent cache, -1 otherwise
         jint modLevel;         // one of:
                                //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA5
-                               //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA6 
+                               //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA6
                                //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA7
-                               //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA8 
-        jint addrMode;         // the address mode of the VM creating the shared cache: includes additional 
-                               // information on whether it is a 64-bit compressedRefs cache when 
+                               //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA8
+                               //   COM_IBM_SHARED_CACHE_MODLEVEL_JAVA9
+                               //   from Java 10: the version number of the Java level on which the shared cache is created
+        jint addrMode;         // the address mode of the VM creating the shared cache: includes additional
+                               // information on whether it is a 64-bit compressedRefs cache when
                                // COM_IBM_ITERATE_SHARED_CACHES_VERSION_3 or later is specified.
         jboolean isCorrupt;    // if the cache is corrupted
         jlong cacheSize;       // the total usable shared class cache size, or -1 when isCompatible is false
         jlong freeBytes;       // the number of free bytes in the shared class cache, or -1 when isCompatible is false
-        jlong lastDetach;      // the last detach time specified in milliseconds since 00:00:00 on 1 January 1970 UTC, 
+        jlong lastDetach;      // the last detach time specified in milliseconds since 00:00:00 on 1 January 1970 UTC,
                                // or -1 when the last detach time is not available
         jint cacheType;        // the type of the cache
         jlong softMaxBytes;    // the soft limit for the available space in the cache
         } jvmtiSharedCacheInfo;
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
-    
+
     - The field `cacheType` is included when `COM_IBM_ITERATE_SHARED_CACHES_VERSION_2` or later is specified.
-    
+
     - `jvmtiSharedCacheInfo.addrMode` encodes both address mode and the compressed reference mode when `COM_IBM_ITERATE_SHARED_CACHES_VERSION_3` or later is specified. In this case, use the following set of macros to access the address mode and compressed reference mode:
 
     : To get the address mode, use:
@@ -760,7 +760,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_ITERATE_SHARED_CACHES`
             `COM_IBM_ITERATE_SHARED_CACHES_UNKNOWN_COMPRESSED_POINTERS_MODE`  
             `COM_IBM_ITERATE_SHARED_CACHES_COMPRESSED_POINTERS_MODE`  
             `COM_IBM_ITERATE_SHARED_CACHES_NON_COMPRESSED_POINTERS_MODE`  
-    
+
     - The field `softMaxBytes` is included when `COM_IBM_ITERATE_SHARED_CACHES_VERSION_4` or later is specified.
 
 ---
@@ -769,7 +769,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_ITERATE_SHARED_CACHES`
 
 ### `DestroySharedCache`
 
-You can **remove a shared class cache** by using the `DestroySharedCache()` API:
+You can remove a shared class cache by using the `DestroySharedCache()` API:
 
     jvmtiError DestroySharedCache(jvmtiEnv *env, const char *cacheDir, const char *name, jint persistence, jboolean useCommandLineValues, jint *internalErrorCode);
 
@@ -782,7 +782,7 @@ This extension removes a named shared class cache of a given persistence type, i
 **Parameters**
 
 - `env`: A pointer to the JVMTI environment.
-- `cacheDir`: When the value of useCommandLineValues is `false`, specify the absolute path of the directory for the shared class cache. If the value is `null`, the platform-dependent default is used.
+- `cacheDir`: When the value of `useCommandLineValues` is `false`, specify the absolute path of the directory for the shared class cache. If the value is `null`, the platform-dependent default is used.
 - `cacheName`: When the value of `useCommandLineValues` is `false`, specify the name of the cache to be removed. If the value is `null`, the platform-dependent default is used.
 - `persistence`: When the value of `useCommandLineValues` is false, specify the type of cache to remove. This parameter must have one of the following values:  
     `PERSISTENCE_DEFAULT` (The default value for the platform).  
@@ -802,7 +802,7 @@ This extension removes a named shared class cache of a given persistence type, i
 `JVMTI_ERROR_INVALID_ENVIRONMENT`: The `env` parameter is not valid.  
 `JVMTI_ERROR_WRONG_PHASE`: The extension has been called outside the JVMTI live phase.  
 `JVMTI_ERROR_NOT_AVAILABLE`: The shared classes feature is not enabled in the VM.  
-`JVMTI_ERROR_ILLEGAL_ARGUMENT`: The `persistence` parameter is not valid. 
+`JVMTI_ERROR_ILLEGAL_ARGUMENT`: The `persistence` parameter is not valid.
 `JVMTI_ERROR_INTERNAL`: Failed to remove any existing cache with the given name. See the value of the `internalErrorCode` parameter for more information about the failure.
 
 **Identifiers**
@@ -816,14 +816,14 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_DESTROY_SHARED_CACHE`
 
 ### `RegisterVerboseGCSubscriber`
 
-You can **subscribe to verbose garbage collection (GC) data logging** by using the `RegisterVerboseGCSubscriber()` API:
+You can subscribe to verbose garbage collection (GC) data logging by using the `RegisterVerboseGCSubscriber()` API:
 
     jvmtiError RegisterVerboseGCSubscriber(jvmtiEnv* jvmti_env, char *description, jvmtiVerboseGCSubscriber subscriber, jvmtiVerboseGCAlarm alarm, void *user_data, void **subscription_id)
 
 **Parameters**
 
 - `jvmti_env`: A pointer to the JVMTI environment.
-- `description`: A ASCII character string that describes the subscriber.
+- `description`: An ASCII character string that describes the subscriber.
 - `subscriber`: A function of type [`jvmtiVerboseGCSubscriber`](#jvmtiverbosegcsubscriberfunction).
 - `alarm`: A function pointer of type [`jvmtiVerboseGCAlarm`](#jvmtiverbosegcalarmfunction).
 - `user_data`: A pointer to user data. This pointer is passed to the subscriber and alarm functions each time these functions are called. This pointer can be a null value.
@@ -850,12 +850,12 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_REGISTER_VERBOSEGC_SUBSCRIB
 
         typedef jvmtiError (*jvmtiVerboseGCSubscriber)(jvmtiEnv *jvmti_env, const char *record, jlong length, void *user_data);
 
-    The subscriber function must be of type `jvmtiVerboseGCSubscriber`, which is declared in `ibmjvmti.h`. 
-    
-    This function is called with each record of verbose logging data produced by the VM. 
-    
-    The verbose logging record supplied to the subscriber function is valid only for the duration of the function. If the subscriber wants to save the data, the data must be copied elsewhere. 
-    
+    The subscriber function must be of type `jvmtiVerboseGCSubscriber`, which is declared in `ibmjvmti.h`.
+
+    This function is called with each record of verbose logging data produced by the VM.
+
+    The verbose logging record supplied to the subscriber function is valid only for the duration of the function. If the subscriber wants to save the data, the data must be copied elsewhere.
+
     If the subscriber function returns an error, the alarm function is called, and the subscription is deregistered.
 
     **Subscriber function parameters**
@@ -886,7 +886,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_REGISTER_VERBOSEGC_SUBSCRIB
 
 ### `DeregisterVerboseGCSubscriber`
 
-You can **unsubscribe from verbose Garbage Collection (GC) data logging** by using the `DeregisterVerboseGCSubscriber()` API:
+You can unsubscribe from verbose Garbage Collection (GC) data logging by using the `DeregisterVerboseGCSubscriber()` API:
 
     jvmtiError DeregisterVerboseGCSubscriber(jvmtiEnv* jvmti_env, void *userData, void *subscription_id)
 
@@ -895,7 +895,7 @@ After the `DeregisterVerboseGCSubscriber()` API is called, no further calls are 
 **Parameters**
 
 - `jvmti_env`: A pointer to the JVMTI environment.
-- `subscription_id`: The subscription identifier that is returned by the call to the [RegisterVerboseGCSubscriber()](#registerverbosegcsubscriber) API. 
+- `subscription_id`: The subscription identifier that is returned by the call to the [RegisterVerboseGCSubscriber()](#registerverbosegcsubscriber) API.
 
 **Returns**
 
