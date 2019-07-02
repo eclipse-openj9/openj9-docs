@@ -33,6 +33,7 @@
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [ChaCha20 algorithm support for OpenSSL](#chacha20-algorithm-support-for-openssl)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [Support for Transparent HugePage](#support-for-transparent-hugepage)
+-  ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for low-overhead heap profiling (JEP 331)](#support-for-low-overhead-heap-profiling)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 - [Removal of -Xdiagnosticscollector option](#removal-of-xdiagnosticscollector-option)
 
 
@@ -68,6 +69,17 @@ For compatibility, the [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md) OpenJ
 ### Support for Transparent HugePage
 
 The VM now supports the allocation of huge pages on Linux when you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting. To enable this feature, set [`-XX:+TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. This option is currently not enabled by default.
+
+###  ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for low-overhead heap profiling
+
+[JEP 331](http://openjdk.java.net/jeps/331) provides a mechanism for sampling Java heap allocations with a low overhead via
+the JVM Tool Interface (JVMTI).
+
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** JEP 331 is implemented for OpenJ9 with the following limitations:
+
+- The `balanced` and `metronome` garbage collection policies are not supported.
+- The JEP331 JVMTI agent and the Health Center agent both set a sampling interval, which by default is different. If both agents are used at the same time the Health Center agent will get incorrect results, unless the sampling intervals are adjusted to use the same value.
+![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 
 ### Removal of -Xdiagnosticscollector option
 This option was redundant and has now been removed. If you try to use this option on the command line, the VM outputs this error message:
