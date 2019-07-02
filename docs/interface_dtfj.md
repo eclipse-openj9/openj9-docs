@@ -26,6 +26,8 @@
 
 The Diagnostic Tool Framework for Java&trade; (DTFJ) is a Java application programming interface (API) that is used to support the building of Java diagnostic tools. DTFJ works with data from a system dump or a Java dump.
 
+On Linux and AIX® operating systems, you can get more information from a system dump if you also have copies of executable files and libraries. You can run the `jextract` utility provided in the SDK to collect these files into a single archive for use in subsequent problem diagnosis. For more information, see [Dump extractor](tool_jextract.md).
+
 The DTFJ API helps diagnostic tools access the following information:  
 
 - Memory locations stored in the dump (System dumps only)
@@ -39,7 +41,7 @@ The DTFJ API helps diagnostic tools access the following information:
 - Details of the Java version that was being used
 - The command line that launched the VM
 
-If your DTFJ application requests information that is not available in the Java dump, the API will return null or throw a DataUnavailable exception. You might need to adapt DTFJ applications written to process system dumps to make them work with Java dumps.
+If your DTFJ application requests information that is not available in the Java dump, the API will return null or throw a `DataUnavailable` exception. You might need to adapt DTFJ applications written to process system dumps to make them work with Java dumps.
 
 DTFJ is implemented in pure Java and tools written using DTFJ can be cross-platform. Therefore, you can analyze a dump taken from one workstation on another (remote and more convenient) machine. For example, a dump produced on an AIX® Power® system can be analyzed on a Windows laptop.
 
@@ -54,6 +56,20 @@ The diagram that follows illustrates the DTFJ interface. The starting point for 
 ### Working with a system dump
 
 The following example shows how to work with a system dump. In this example, the only section of code that ties the dump to a particular implementation of DTFJ is the generation of the factory class. Change the factory if you want to use a different implementation.
+
+If there is a problem with the file that is passed to the `getImage()` method, an `IOException` is thrown and an appropriate message is issued. If a missing file is passed to the example shown, the following output is produced:
+
+````
+Could not find/use required file(s)
+java.io.FileNotFoundException: core_file.xml (The system cannot find the file specified.)
+        at java.io.FileInputStream.open(Native Method)
+        at java.io.FileInputStream.<init>(FileInputStream.java:135)
+        at com.ibm.dtfj.image.j9.ImageFactory.getImage(ImageFactory.java:47)
+        at com.ibm.dtfj.image.j9.ImageFactory.getImage(ImageFactory.java:35)
+        at DTFJEX1.main(DTFJEX1.java:23)Copy
+````
+
+In this case, the DTFJ implementation is expecting a dump file to exist. Different errors are caught if the file existed but was not recognized as a valid dump file.
 
 <details>
   <summary>Example of working with a system dump</summary>
