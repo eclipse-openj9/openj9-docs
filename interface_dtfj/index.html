@@ -3270,6 +3270,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="diagnostic-tool-framework-for-java">Diagnostic Tool Framework for Java</h1>
 <p>The Diagnostic Tool Framework for Java&trade; (DTFJ) is a Java application programming interface (API) that is used to support the building of Java diagnostic tools. DTFJ works with data from a system dump or a Java dump.</p>
+<p>On Linux and AIX® operating systems, you can get more information from a system dump if you also have copies of executable files and libraries. You can run the <code>jextract</code> utility provided in the SDK to collect these files into a single archive for use in subsequent problem diagnosis. For more information, see <a href="../tool_jextract/">Dump extractor</a>.</p>
 <p>The DTFJ API helps diagnostic tools access the following information:  </p>
 <ul>
 <li>Memory locations stored in the dump (System dumps only)</li>
@@ -3283,7 +3284,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Details of the Java version that was being used</li>
 <li>The command line that launched the VM</li>
 </ul>
-<p>If your DTFJ application requests information that is not available in the Java dump, the API will return null or throw a DataUnavailable exception. You might need to adapt DTFJ applications written to process system dumps to make them work with Java dumps.</p>
+<p>If your DTFJ application requests information that is not available in the Java dump, the API will return null or throw a <code>DataUnavailable</code> exception. You might need to adapt DTFJ applications written to process system dumps to make them work with Java dumps.</p>
 <p>DTFJ is implemented in pure Java and tools written using DTFJ can be cross-platform. Therefore, you can analyze a dump taken from one workstation on another (remote and more convenient) machine. For example, a dump produced on an AIX® Power® system can be analyzed on a Windows laptop.</p>
 <p>API documentation for the DTFJ interface can be found here: <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.dtfj/index.html">Application programming reference: DTFJ</a></p>
 <h2 id="using-the-dtfj-interface">Using the DTFJ interface</h2>
@@ -3291,6 +3292,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The diagram that follows illustrates the DTFJ interface. The starting point for working with a dump is to obtain an <code>Image</code> instance by using the <code>ImageFactory</code> class supplied with the concrete implementation of the API.</p>
 <h3 id="working-with-a-system-dump">Working with a system dump</h3>
 <p>The following example shows how to work with a system dump. In this example, the only section of code that ties the dump to a particular implementation of DTFJ is the generation of the factory class. Change the factory if you want to use a different implementation.</p>
+<p>If there is a problem with the file that is passed to the <code>getImage()</code> method, an <code>IOException</code> is thrown and an appropriate message is issued. If a missing file is passed to the example shown, the following output is produced:</p>
+<pre><code>Could not find/use required file(s)
+java.io.FileNotFoundException: core_file.xml (The system cannot find the file specified.)
+        at java.io.FileInputStream.open(Native Method)
+        at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:135)
+        at com.ibm.dtfj.image.j9.ImageFactory.getImage(ImageFactory.java:47)
+        at com.ibm.dtfj.image.j9.ImageFactory.getImage(ImageFactory.java:35)
+        at DTFJEX1.main(DTFJEX1.java:23)Copy
+</code></pre>
+
+<p>In this case, the DTFJ implementation is expecting a dump file to exist. Different errors are caught if the file existed but was not recognized as a valid dump file.</p>
 <p><details>
   <summary>Example of working with a system dump</summary></p>
 <pre><code>import java.io.File;
