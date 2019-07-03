@@ -131,6 +131,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_jmap/</loc>
+     <lastmod>2019-07-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/tool_jps/</loc>
      <lastmod>2019-07-03</lastmod>
      <changefreq>daily</changefreq>

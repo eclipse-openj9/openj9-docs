@@ -442,6 +442,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-java-memory-map-tool" title="New Java memory map tool" class="md-nav__link">
+    New Java memory map tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#removal-of-xdiagnosticscollector-option" title="Removal of -Xdiagnosticscollector option" class="md-nav__link">
     Removal of -Xdiagnosticscollector option
   </a>
@@ -779,6 +786,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li class="md-nav__item">
     <a href="../tool_builder/" title="Option builder" class="md-nav__link">
       Option builder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jmap/" title="Java memory map (jmap) tool" class="md-nav__link">
+      Java memory map (jmap) tool
     </a>
   </li>
 
@@ -3252,6 +3271,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-java-memory-map-tool" title="New Java memory map tool" class="md-nav__link">
+    New Java memory map tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#removal-of-xdiagnosticscollector-option" title="Removal of -Xdiagnosticscollector option" class="md-nav__link">
     Removal of -Xdiagnosticscollector option
   </a>
@@ -3317,6 +3343,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><img alt="Start of content that applies only to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#chacha20-algorithm-support-for-openssl">ChaCha20 algorithm support for OpenSSL</a><img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><a href="#support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</a></li>
 <li><a href="#support-for-transparent-hugepage">Support for Transparent HugePage</a></li>
+<li><a href="#new-java-memory-map-tool">New Java memory map (jmap) tool</a></li>
 <li><a href="#removal-of-xdiagnosticscollector-option">Removal of -Xdiagnosticscollector option</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -3338,6 +3365,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>For compatibility, the <a href="../xxonoutofmemoryerror/"><code>-XX:OnOutOfMemoryError</code></a> OpenJDK Hotspot option is now supported by OpenJ9.</p>
 <h3 id="support-for-transparent-hugepage">Support for Transparent HugePage</h3>
 <p>The VM now supports the allocation of huge pages on Linux when you use the <code>madvise</code> (<code>/sys/kernel/mm/transparent_hugepage/enabled</code>) setting. To enable this feature, set <a href="../xxtransparenthugepage/"><code>-XX:+TransparentHugePage</code></a> on the command line when you start your application. This option is currently not enabled by default.</p>
+<h3 id="new-java-memory-map-tool">New Java memory map tool</h3>
+<p>The Java memory map (jmap) tool is similar to the HotSpot tool of the same name, and can be used to print statistics about classes on the heap, including the number of objects and their aggregate size. For usage information, see <a href="../tool_jmap/">Java memory map (jmap) tool</a>.</p>
 <h3 id="removal-of-xdiagnosticscollector-option">Removal of -Xdiagnosticscollector option</h3>
 <p>This option was redundant and has now been removed. If you try to use this option on the command line, the VM outputs this error message:</p>
 <p><code>JVMJ9VM007E Command-line option unrecognised: -Xdiagnosticscollector</code></p>
