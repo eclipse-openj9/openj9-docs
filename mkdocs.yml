@@ -123,7 +123,7 @@ pages:
 
     - "Diagnostics" :
 
-        - "Tools and data"                                                       : diag_overview.md   
+        - "Tools and data"                                                       : diag_overview.md
 
         - "Dumps" :
 #          Move dump agents, events, xdump builder from -Xdump (link to -Xdump for detail) then...
@@ -141,16 +141,17 @@ pages:
 #            - "Application trace"                                                :   trace_aplication.md  (to be written)
 #            - "Method trace"                                                     :   trace_method.md  (to be written)
 
-        - "Tools" : 
+        - "Tools" :
 #              3rd party tools topic for IBM monitoring & diag tools & Eclipse MA (take from New to OpenJ9), then...
             - "Dump extractor"                                                   : tool_jextract.md
             - "Dump viewer"                                                      : tool_jdmpview.md
             - "Trace formatter"                                                  : tool_traceformat.md
             - "Option builder"                                                   : tool_builder.md
+            - "Java memory map (jmap) tool"                                      : tool_jmap.md
             - "Java process status (jps)"                                        : tool_jps.md
             - "Java stack (jstack) tool"                                         : tool_jstack.md
-            - "Switching to OpenJ9"                                              : tool_migration.md        
-        
+            - "Switching to OpenJ9"                                              : tool_migration.md
+
         - "Interfaces" :
             - "JVMTI"                                                            : interface_jvmti.md
 #            - "MXBeans"                                                          : interface_mxbeans.md
