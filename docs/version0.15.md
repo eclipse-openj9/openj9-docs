@@ -74,6 +74,9 @@ This option was redundant and has now been removed. If you try to use this optio
 
 `JVMJ9VM007E Command-line option unrecognised: -Xdiagnosticscollector`
 
+### Heuristics for compaction during idle GC
+OpenJ9 now automatically compacts the heap when certain triggers are met during idle GC. As a result of this change, [`-XX:[+|-]IdleTuningCompactOnIdle`](xxidletuningcompactonidle.md) has been deprecated.
+
 <!--## Full release information
 
 To see a complete list of changes between Eclipse OpenJ9 V0.14.0 and V0.15.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.15/0.15.md).-->

@@ -48,8 +48,8 @@ If you set `-XX:IdleTuningMinFreeHeapOnIdle=10`, no more than 90% of the free me
 ## See also
 
 - [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md)
-- [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md)
 - [-XX:\[+|-\]IdleTuningGcOnIdle](xxidletuninggconidle.md)
+- [-XX:\[+|-\]IdleTuningCompactOnIdle \(deprecated\)](xxidletuningcompactonidle.md)
 
 
 <!-- ==== END OF TOPIC ==== xxidletuningminfreeheaponidle.md ==== -->
