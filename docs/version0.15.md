@@ -34,6 +34,8 @@
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [Support for Transparent HugePage](#support-for-transparent-hugepage)
 - [Removal of -Xdiagnosticscollector option](#removal-of-xdiagnosticscollector-option)
+- [Change in behaviour of -XX:\[+|-\]IdleTuningCompactOnIdle](#change-in-behaviour-of-xx:idletuningcompactonidle)
+- [Addition of heuristics for compaction during idle GC](#heuristics-for-compaction-during-idle-gc)
 
 
 ## Features and changes
@@ -73,6 +75,9 @@ The VM now supports the allocation of huge pages on Linux when you use the `madv
 This option was redundant and has now been removed. If you try to use this option on the command line, the VM outputs this error message:
 
 `JVMJ9VM007E Command-line option unrecognised: -Xdiagnosticscollector`
+
+### Change in behaviour of -XX:IdleTuningCompactOnIdle
+-XX:[+|-]IdleTuningCompactOnIdle is now no longer effective when -XX:+IdleTuningGcOnIdle is not specified.
 
 ### Heuristics for compaction during idle GC
 OpenJ9 now automatically compacts the heap when certain triggers are met during idle GC. As a result of this change, [`-XX:[+|-]IdleTuningCompactOnIdle`](xxidletuningcompactonidle.md) has been deprecated.
