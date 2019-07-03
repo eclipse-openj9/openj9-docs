@@ -21,7 +21,7 @@ range of platforms. For information about the platforms and minimum operating sy
 
 If you obtain binaries from the AdoptOpenJDK community, the following pre-requisites are required:
 
-- ![Start of content that applies only to Java 12](cr/java12.png) OpenJDK binaries for Linux and AIX platforms from the AdoptOpenJDK community no longer bundle the OpenSSL cryptographic library. The library is expected to be found on the system path. If you want to use OpenSSL cryptographic acceleration, you must install OpenSSL 1.0.2 or 1.1.X on your system. If the library is not found on the system path, the in-built Java crytographic implementation is used instead, which performs less well.  
+- OpenJDK binaries for Linux and AIX platforms from the AdoptOpenJDK community no longer bundle the OpenSSL cryptographic library. The library is expected to be found on the system path. If you want to use OpenSSL cryptographic acceleration, you must install OpenSSL 1.0.2 or 1.1.X on your system. If the library is not found on the system path, the in-built Java crytographic implementation is used instead, which performs less well.  
 - ![Start of content that applies only to Java 8](cr/java8.png) On Linux systems, the `fontconfig.x86_64` package should be installed to avoid a `NullPointerException` error when the AWT font subsystem is initialized. Work is ongoing at the AdoptOpenJDK project to fix this issue for their OpenJDK binaries.
 
 
