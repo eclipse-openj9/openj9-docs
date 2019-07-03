@@ -33,6 +33,7 @@
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [ChaCha20 algorithm support for OpenSSL](#chacha20-algorithm-support-for-openssl)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [Support for Transparent HugePage](#support-for-transparent-hugepage)
+- [New Java memory map (jmap) tool](#new-java-memory-map-tool)
 - [Removal of -Xdiagnosticscollector option](#removal-of-xdiagnosticscollector-option)
 
 
@@ -68,6 +69,10 @@ For compatibility, the [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md) OpenJ
 ### Support for Transparent HugePage
 
 The VM now supports the allocation of huge pages on Linux when you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting. To enable this feature, set [`-XX:+TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. This option is currently not enabled by default.
+
+### New Java memory map tool
+
+The Java memory map (jmap) tool is similar to the HotSpot tool of the same name, and can be used to print statistics about classes on the heap, including the number of objects and their aggregate size. For usage information, see [Java memory map (jmap) tool](tool_jmap.md).
 
 ### Removal of -Xdiagnosticscollector option
 This option was redundant and has now been removed. If you try to use this option on the command line, the VM outputs this error message:
