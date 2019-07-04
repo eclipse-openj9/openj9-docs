@@ -428,6 +428,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#openssl-digest-algorithm-disabled" title="OpenSSL Digest algorithm disabled" class="md-nav__link">
+    OpenSSL Digest algorithm disabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#support-for-openjdk-hotspot-options" title="Support for OpenJDK HotSpot options" class="md-nav__link">
     Support for OpenJDK HotSpot options
   </a>
@@ -3257,6 +3264,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#openssl-digest-algorithm-disabled" title="OpenSSL Digest algorithm disabled" class="md-nav__link">
+    OpenSSL Digest algorithm disabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#support-for-openjdk-hotspot-options" title="Support for OpenJDK HotSpot options" class="md-nav__link">
     Support for OpenJDK HotSpot options
   </a>
@@ -3341,6 +3355,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#performance-improvements-for-jvmti-watched-fields">Performance improvements for JVMTI watched fields</a></li>
 <li><a href="#support-for-pause-less-garbage-collection-on-ibm-z-systems">Support for pause-less garbage collection on IBM Z systems</a></li>
 <li><img alt="Start of content that applies only to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#chacha20-algorithm-support-for-openssl">ChaCha20 algorithm support for OpenSSL</a><img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></li>
+<li><img alt="Start of content that applies only to Java 12)" src="../cr/java12.png" /> <a href="#openssl-digest-algorithm-disabled">OpenSSL Digest algorithm disabled</a><img alt="End of content that applies only to Java 12" src="../cr/java_close.png" /></li>
 <li><a href="#support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</a></li>
 <li><a href="#support-for-transparent-hugepage">Support for Transparent HugePage</a></li>
 <li><a href="#new-java-memory-map-tool">New Java memory map (jmap) tool</a></li>
@@ -3361,6 +3376,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Support for Concurrent scavenge mode is now extended to Linux on IBM Z&reg; systems and z/OS&reg;. For more information, see <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a>.</p>
 <h3 id="chacha20-algorithm-support-for-openssl"><img alt="Start of content that applies only to Java 11 (LTS)" src="../cr/java11.png" /> ChaCha20 algorithm support for OpenSSL</h3>
 <p>The ChaCha20 and ChaCha20-Poly1305 algorithms can now use OpenSSL on Java 11. For more information, see <a href="../djdknativechacha20/"><code>-Djdk.nativeChaCha20</code></a>. <img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></p>
+<h3 id="openssl-digest-algorithm-disabled"><img alt="Start of content that applies only to Java 12)" src="../cr/java12.png" /> OpenSSL Digest algorithm disabled</h3>
+<p>Due to issue <a href="https://github.com/eclipse/openj9/issues/5611">#5611</a>, the Digest algorithm is disabled. This algorithm was disabled
+for Java 8 and 11 in release 0.14.2, which did not support Java 12.</p>
 <h3 id="support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</h3>
 <p>For compatibility, the <a href="../xxonoutofmemoryerror/"><code>-XX:OnOutOfMemoryError</code></a> OpenJDK Hotspot option is now supported by OpenJ9.</p>
 <h3 id="support-for-transparent-hugepage">Support for Transparent HugePage</h3>
