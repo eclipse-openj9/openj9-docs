@@ -31,6 +31,7 @@
 - [Performance improvements for JVMTI watched fields](#performance-improvements-for-jvmti-watched-fields)
 - [Support for pause-less garbage collection on IBM Z systems](#support-for-pause-less-garbage-collection-on-ibm-z-systems)
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [ChaCha20 algorithm support for OpenSSL](#chacha20-algorithm-support-for-openssl)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
+- ![Start of content that applies only to Java 12)](cr/java12.png) [OpenSSL Digest algorithm disabled](#openssl-digest-algorithm-disabled)![End of content that applies only to Java 12](cr/java_close.png)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [Support for Transparent HugePage](#support-for-transparent-hugepage)
 - [New Java memory map (jmap) tool](#new-java-memory-map-tool)
@@ -61,6 +62,11 @@ Support for Concurrent scavenge mode is now extended to Linux on IBM Z&reg; syst
 ### ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) ChaCha20 algorithm support for OpenSSL
 
 The ChaCha20 and ChaCha20-Poly1305 algorithms can now use OpenSSL on Java 11. For more information, see [`-Djdk.nativeChaCha20`](djdknativechacha20.md). ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
+
+### ![Start of content that applies only to Java 12)](cr/java12.png) OpenSSL Digest algorithm disabled
+
+Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is disabled. This algorithm was disabled
+for Java 8 and 11 in release 0.14.2, which did not support Java 12.
 
 ### Support for OpenJDK HotSpot options
 
