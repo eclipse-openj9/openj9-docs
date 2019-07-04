@@ -122,7 +122,7 @@ pages:
 
     - "Diagnostics" :
 
-        - "Tools and data"                                                       : diag_overview.md
+        - "Overview"                                                             : diag_overview.md
 
         - "Dumps" :
 #          Move dump agents, events, xdump builder from -Xdump (link to -Xdump for detail) then...
