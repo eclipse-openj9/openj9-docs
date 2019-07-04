@@ -103,15 +103,14 @@ pages:
 
     - "Release notes" :
         - "Version 0.15.0"                                                       : version0.15.md
-        - "Version 0.14.2"                                                       : version0.14.2.md
         - "Version 0.14.0"                                                       : version0.14.md
         - "Version 0.13.0"                                                       : version0.13.md
-        - "Version 0.12.1"                                                       : version0.12.1.md
-        - "Version 0.12.0"                                                       : version0.12.md
-        - "Version 0.11.0"                                                       : version0.11.md
-        - "Version 0.10.0"                                                       : version0.10.md
-        - "Version 0.9.0"                                                        : version0.9.md
-        - "Version 0.8.0"                                                        : version0.8.md
+        - "Earlier releases" :
+            - "Version 0.12.0"                                                   : version0.12.md
+            - "Version 0.11.0"                                                   : version0.11.md
+            - "Version 0.10.0"                                                   : version0.10.md
+            - "Version 0.9.0"                                                    : version0.9.md
+            - "Version 0.8.0"                                                    : version0.8.md
 
     - "Garbage Collection"                                                       : gc.md
 
