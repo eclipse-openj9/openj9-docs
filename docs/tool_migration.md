@@ -28,14 +28,26 @@ OpenJ9 provides the following tools, which might differ in behavior from the Hot
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** For information about HotSpot equivalences and differences for items other than tools, see [New to OpenJ9?](openj9_newuser.md)
 
+#### Java memory map tool (`jmap`)
+
+Displays information about classes on the heap, including the number of objects and their aggregate size. The main differences from the HotSpot `jmap` tool are as follows:
+
+- Uses the Attach API.
+- Displays information only for local processes that are owned by the current user, due to security considerations. You can display information for remote processes by using `ssh user@host jmap <option> <vmid>`, where `<vmid>` is the Attach API virtual machine identifier for the Java process.
+- Does not support displaying data from core dumps; use [Dump viewer](tool_jdmpview.md) instead.
+- Does not include a `-F` option to force a dump of an unresponsive process. User `kill -QUIT <pid>` instead, where `<pid>` is the process
+identifier.
+
+For more information, see [`jmap`](tool_jmap.md).
+
 #### Java process status (`jps`)
 
 Displays information about running Java<sup>&trade;</sup> processes. The main differences from the HotSpot `jps` tool are as follows:
 
-- Runs on Windows&reg;, AIX&reg;, and z/OS&reg;
-- Uses the Attach API
-- Shows processes on the current host only
-- There is no `-V` option
+- Runs on Windows&reg;, AIX&reg;, and z/OS&reg;, as well as Linux&reg;.
+- Uses the Attach API.
+- Shows processes on the current host only.
+- There is no `-V` option.
 
 For more information, see [`Java process status`](tool_jps.md).
 
