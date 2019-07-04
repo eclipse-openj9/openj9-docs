@@ -449,6 +449,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#support-for-low-overhead-heap-profiling" title="Support for low-overhead heap profiling" class="md-nav__link">
+    Support for low-overhead heap profiling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-java-memory-map-tool" title="New Java memory map tool" class="md-nav__link">
     New Java memory map tool
   </a>
@@ -3285,6 +3292,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#support-for-low-overhead-heap-profiling" title="Support for low-overhead heap profiling" class="md-nav__link">
+    Support for low-overhead heap profiling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-java-memory-map-tool" title="New Java memory map tool" class="md-nav__link">
     New Java memory map tool
   </a>
@@ -3358,6 +3372,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><img alt="Start of content that applies only to Java 12)" src="../cr/java12.png" /> <a href="#openssl-digest-algorithm-disabled">OpenSSL Digest algorithm disabled</a><img alt="End of content that applies only to Java 12" src="../cr/java_close.png" /></li>
 <li><a href="#support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</a></li>
 <li><a href="#support-for-transparent-hugepage">Support for Transparent HugePage</a></li>
+<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#support-for-low-overhead-heap-profiling">Support for low-overhead heap profiling (JEP 331)</a><img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><a href="#new-java-memory-map-tool">New Java memory map (jmap) tool</a></li>
 <li><a href="#removal-of-xdiagnosticscollector-option">Removal of -Xdiagnosticscollector option</a></li>
 </ul>
@@ -3383,6 +3398,15 @@ for Java 8 and 11 in release 0.14.2, which did not support Java 12.</p>
 <p>For compatibility, the <a href="../xxonoutofmemoryerror/"><code>-XX:OnOutOfMemoryError</code></a> OpenJDK Hotspot option is now supported by OpenJ9.</p>
 <h3 id="support-for-transparent-hugepage">Support for Transparent HugePage</h3>
 <p>The VM now supports the allocation of huge pages on Linux when you use the <code>madvise</code> (<code>/sys/kernel/mm/transparent_hugepage/enabled</code>) setting. To enable this feature, set <a href="../xxtransparenthugepage/"><code>-XX:+TransparentHugePage</code></a> on the command line when you start your application. This option is currently not enabled by default.</p>
+<h3 id="support-for-low-overhead-heap-profiling"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> Support for low-overhead heap profiling</h3>
+<p><a href="http://openjdk.java.net/jeps/331">JEP 331</a> provides a mechanism for sampling Java heap allocations with a low overhead via
+the JVM Tool Interface (JVMTI).</p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restrictions:</strong> JEP 331 is implemented for OpenJ9 with the following limitations:</p>
+<ul>
+<li>The <code>balanced</code> and <code>metronome</code> garbage collection policies are not supported.</li>
+<li>The JEP331 JVMTI agent and the Health Center agent both set a sampling interval, which by default is different. If both agents are used at the same time the Health Center agent will get incorrect results, unless the sampling intervals are adjusted to use the same value.
+<img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></li>
+</ul>
 <h3 id="new-java-memory-map-tool">New Java memory map tool</h3>
 <p>The Java memory map (jmap) tool is similar to the HotSpot tool of the same name, and can be used to print statistics about classes on the heap, including the number of objects and their aggregate size. For usage information, see <a href="../tool_jmap/">Java memory map (jmap) tool</a>.</p>
 <h3 id="removal-of-xdiagnosticscollector-option">Removal of -Xdiagnosticscollector option</h3>
