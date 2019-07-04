@@ -26,7 +26,8 @@
 
 This option enables or disables OpenSSL native cryptographic support for the Digest algorithm.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is currently disabled. ![End of content that applies only to Java 8 and 11 (LTS)](cr/java_close_lts.png)
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** ![Start of content that applies to Java 8 (LTS) and later](cr/java8plus.png) Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is currently disabled.
+This option cannot be used to turn on Digest support. ![End of content that applies to Java 8 and later](cr/java_close_lts.png)
 
 ## Syntax
 
@@ -34,12 +35,14 @@ This option enables or disables OpenSSL native cryptographic support for the Dig
 
 | Setting              | value    | Default                                                                        |
 |----------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeDigest` | true     | ![Start of content that applies to Java 12 (LTS)](cr/java12.png)<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-Djdk.nativeDigest` | false    |                                                                                |
+| `-Djdk.nativeDigest` | true     |                                                                                |
+| `-Djdk.nativeDigest` | false    | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 
-OpenSSL support is enabled by default for the Digest algorithm. If you want to turn off this algorithm only, set this option to `false`. To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
+<!--OpenSSL support is enabled by default for the Digest algorithm. If you want to turn off this algorithm only, set this option to `false`.-->
+
+ To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
 
 
 
