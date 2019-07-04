@@ -198,6 +198,8 @@ You can use tokens to add context to dump file names and directories, and to pas
 | %home | Java home directory                                                                                                           |
 | %last | Last dump                                                                                                                     |
 | %job  | Job name (z/OS only)                                                                                                          |
+| %jobid| Job ID (z/OS only)                                                                                                            |
+| %asid | Address space ID (z/OS only)                                                                                                  |
 | &DS   | Dump Section. An incrementing sequence number used for splitting TDUMP files to be less than 2 GB in size. (z/OS 64-bit only) |
 
 ### Merging -Xdump agents
