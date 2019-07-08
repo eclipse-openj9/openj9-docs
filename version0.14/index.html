@@ -488,6 +488,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#change-to-the-default-native-stack-size-on-64-bit-zos" title="Change to the default native stack size on 64-bit z/OS" class="md-nav__link">
+    Change to the default native stack size on 64-bit z/OS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#full-release-information" title="Full release information" class="md-nav__link">
     Full release information
   </a>
@@ -3379,6 +3386,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#change-to-the-default-native-stack-size-on-64-bit-zos" title="Change to the default native stack size on 64-bit z/OS" class="md-nav__link">
+    Change to the default native stack size on 64-bit z/OS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#full-release-information" title="Full release information" class="md-nav__link">
     Full release information
   </a>
@@ -3495,6 +3509,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#new-experimental-option-to-improve-the-performance-of-jvmti-watched-fields">New experimental option to improve the performance of JVMTI watched fields</a></li>
 <li><a href="#new-option-to-prevent-a-network-query-being-used-to-determine-host-name-and-ip-address">New option to prevent a network query being used to determine host name and IP address</a></li>
 <li><a href="#changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</a></li>
+<li><a href="#change-to-the-default-native-stack-size-on-64-bit-zos">Change to the default native stack size on 64-bit z/OS&reg;</a></li>
 </ul>
 <h3 id="features-and-changes">Features and changes</h3>
 <h4 id="binaries-and-supported-environments">Binaries and supported environments</h4>
@@ -3525,6 +3540,8 @@ JIT operations that are intended to improve the performance of JVMTI watched fie
 <p>By default, a network query is used to determine the host name and IP address for troubleshooting purposes. To avoid your program waiting to time out if a nameserver cannot be contacted, you can now prevent the query from being performed. For more information, see <a href="../xxreadipinfoforras/"><code>-XX:[+|-]ReadIPInfoForRAS</code></a>.</p>
 <h4 id="changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</h4>
 <p>On all platforms, the format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache, rather than re-creating or reusing an existing cache. To save space, all existing shared caches can be removed unless they are in use by an earlier release. For more information about destroying a shared classes cache, see <a href="../xshareclasses/"><code>-Xshareclasses</code></a>.</p>
+<h3 id="change-to-the-default-native-stack-size-on-64-bit-zos">Change to the default native stack size on 64-bit z/OS</h3>
+<p>The default stack size for operating system threads on 64-bit z/OS is changed from 384 KB to the operating system minimum of 1 MB. For more information about this setting, see <a href="../xmso/"><code>-Xmso</code></a>.</p>
 <h3 id="full-release-information">Full release information</h3>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.13.0 and V0.14.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.14/0.14.md">Release notes</a>.</p>
 <h2 id="version-0142">Version 0.14.2</h2>

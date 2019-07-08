@@ -3241,9 +3241,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xmso">-Xmso</h1>
-<p>Sets the initial stack size for operating system threads.</p>
+<p>Sets the native stack size for operating system threads.</p>
 <p>You can use the <code>-verbose:sizes</code> option to find out the values that the VM is currently using.</p>
-<p>If you exceed the maximum value, a <code>java/lang/StackOverflowError</code> message is reported.</p>
+<p>When a native method makes a call into the VM, the VM calculates whether the memory required for the call will exceed the <code>-Xmso</code> value. If so, a <code>java/lang/StackOverflowError</code> error is thrown.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Java methods and native methods run on two different stacks and the VM handles switching between them for JNI calls. Each stack is sized using separate options; this option applies to the native stack only. For the Java stack option, see the link in the <a href="#see-also">See also</a> section.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -Xmso&lt;size&gt;
 </code></pre>
@@ -3252,7 +3253,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Default values vary by platform. See <a href="../openj9_defaults/">Default settings for the OpenJ9 VM</a>.</p>
 <h2 id="see-also">See also</h2>
 <ul>
-<li><a href="../xss/"><code>-Xiss/-Xss/-Xssi</code></a> (Stack size and behavior of Java&trade; threads)</li>
+<li><a href="../xss/"><code>-Xiss/-Xss/-Xssi</code></a> (stack size and increment for Java&trade; threads)</li>
 </ul>
 <!-- ==== END OF TOPIC ==== xmso.md ==== -->
                 
