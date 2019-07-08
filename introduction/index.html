@@ -416,6 +416,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-jlink" title="Using Jlink" class="md-nav__link">
+    Using Jlink
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
     Troubleshooting
   </a>
@@ -3295,6 +3302,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-jlink" title="Using Jlink" class="md-nav__link">
+    Using Jlink
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
     Troubleshooting
   </a>
@@ -3411,6 +3425,9 @@ system properties are available for tuning the implementation.</p>
 <p>Runtime options are specified on the command line and include system properties, standard options, nonstandard (<strong>-X</strong>) options, and <strong>-XX</strong> options. For a detailed list of runtime options, see <a href="../cmdline_specifying/">OpenJ9 command-line options</a></p>
 <h2 id="default-settings">Default settings</h2>
 <p>If you do not specify any options on the command line at run time, the OpenJ9 VM starts with default settings that define how it operates. For more information about these settings, see <a href="../openj9_defaults/">Default settings for the OpenJ9 VM</a>.</p>
+<h2 id="using-jlink"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> Using Jlink</h2>
+<p>On Java 11 and later, you can use the <code>jlink</code> utility to create a custom OpenJ9 runtime image, which allows you to optimize image size.
+If you do not require translations from the English language, the translation files can be removed to further optimize the size. You can achieve this by specifying the <code>--exclude-files=**java_**.properties</code> option when you run <code>jlink</code>. The default English <code>java.properties</code> file is unaffected.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>The OpenJ9 diagnostic component contains extensive features to assist with problem determination. Diagnostic data is produced under default conditions, but can also be controlled by starting the VM with the <a href="../xdump/">-Xdump option</a> or using the <code>com.ibm.jvm.Dump</code> API. You can also trace Java applications, methods, and VM operations by using the <a href="../xtrace/">-Xtrace option</a>.</p>
 <p>To get started, read <a href="../diag_overview/">Diagnostic tools and data</a>.</p>
