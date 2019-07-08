@@ -24,13 +24,13 @@
 
 # -Xiss / -Xss / -Xssi
 
-Determines the size and behavior of the stack size for Java&trade; threads.
+Sets the stack size and increment for Java&trade; threads.
 
 If you exceed the maximum Java thread stack size, a `java/lang/OutOfMemoryError` message is reported.
 
 You can use the `-verbose:sizes` option to find out the values that the VM is currently using.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** These options relate to the Java stack only. There is a separate, native stack for operating system threads, for which you use a different option (see the link in the [See also](#see-also) section).
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Java methods and native methods run on two different stacks and the VM handles switching between them for JNI calls. Each stack is sized using separate options; these options apply to the Java stack only. For the native stack option, see the link in the [See also](#see-also) section.
 
 ## Syntax
 

@@ -28,9 +28,9 @@ Sets the native stack size for operating system threads.
 
 You can use the `-verbose:sizes` option to find out the values that the VM is currently using.
 
-When your application makes a JNI call, the VM calculates whether the memory required for the call will exceed the `-Xmso` value. If so, a `java/lang/StackOverflowError` error is thrown.
+When a native method makes a call into the VM, the VM calculates whether the memory required for the call will exceed the `-Xmso` value. If so, a `java/lang/StackOverflowError` error is thrown.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This option relates to the native stack only. There is a separate, Java&trade; stack for Java threads, for which you use different options (see the link in the [See also](#see-also) section).
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Java methods and native methods run on two different stacks and the VM handles switching between them for JNI calls. Each stack is sized using separate options; this option applies to the native stack only. For the Java stack option, see the link in the [See also](#see-also) section.
 
 ## Syntax
 
