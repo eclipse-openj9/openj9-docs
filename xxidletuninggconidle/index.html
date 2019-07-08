@@ -3228,7 +3228,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="-xx91-93idletuninggconidle">-XX:[+|-]IdleTuningGcOnIdle</h1>
 <p><strong>(Linux&reg; only)</strong></p>
-<p>This option controls whether a garbage collection cycle takes place when the state of the OpenJ9 VM is set to idle.</p>
+<p>This option controls whether a garbage collection cycle takes place when the state of the OpenJ9 VM is set to idle. Compaction of the heap is also attempted during the idle GC when certain triggers are met.</p>
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restrictions:</strong> This option applies only to Linux&reg; architectures when the Generational Concurrent (<code>gencon</code>) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]IdleTuningGcOnIdle
@@ -3257,7 +3257,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 </tbody>
 </table>
-<p>The default depends on whether or not the OpenJ9 VM is running in a docker container. As indicated in the table, when the VM is running in a container and the state is set to idle, this option causes the VM to release free memory pages in the object heap without resizing the Java&trade; heap. The pages are reclaimed by the operating system, which reduces the physical memory footprint of the VM. In a container environment, the VM also attempts to compact the object heap before releasing memory by default, which is controlled by the <code>-XX:[+|-]IdleTuningCompactOnIdle</code> option.</p>
+<p>The default depends on whether or not the OpenJ9 VM is running in a docker container. As indicated in the table, when the VM is running in a container and the state is set to idle, this option causes the VM to release free memory pages in the object heap without resizing the Java&trade; heap and attempts to compact the heap after the garbage collection cycle if certain heuristics are triggered. The pages are reclaimed by the operating system, which reduces the physical memory footprint of the VM.</p>
 <p>If your application is not running in a container and you want to enable idle-tuning, set the <code>-XX:+IdleTuningGcOnIdle</code> option on the command line when you start your application.</p>
 <p>When enabled, the <code>-XX:+IdleTuningGcOnIdle</code> option is used with the <code>-XX:IdleTuningMinIdleWaitTime</code> and <code>-XX:IdleTuningMinFreeHeapOnIdle</code> options. If values for these options are not explicitly specified, the VM sets the following defaults:</p>
 <ul>
@@ -3268,7 +3268,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li><a href="../xxidletuningminidlewaittime/">-XX:IdleTuningMinIdleWaitTime</a></li>
 <li><a href="../xxidletuningminfreeheaponidle/">-XX:IdleTuningMinFreeHeapOnIdle</a></li>
-<li><a href="../xxidletuningcompactonidle/">-XX:[+|-]IdleTuningCompactOnIdle</a></li>
+<li><a href="../xxidletuningcompactonidle/">-XX:[+|-]IdleTuningCompactOnIdle (deprecated)</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xxidletuninggconidle.md ==== -->
                 

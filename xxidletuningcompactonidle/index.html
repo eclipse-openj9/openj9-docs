@@ -3229,7 +3229,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h1 id="-xx91-93idletuningcompactonidle">-XX:[+|-]IdleTuningCompactOnIdle</h1>
 <p><strong>(Linux&reg; only)</strong></p>
 <p>This option controls garbage collection processing with compaction when the state of the OpenJ9 VM is set to idle.</p>
-<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restrictions:</strong> This option applies only to Linux&reg; architectures when the Generational Concurrent (<code>gencon</code>) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.</p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restrictions:</strong><br />
+1. This option was deprecated in release 0.15.0 and will be removed in the future. 
+2. This option applies only to Linux&reg; architectures when the Generational Concurrent (<code>gencon</code>) garbage collection policy is in use. 
+3. This option is not effective if the object heap is configured to use large pages. 
+4. This option is not effective if <a href="../xxidletuninggconidle/">XX:+IdleTuningGcOnIdle</a> is not specified.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]IdleTuningCompactOnIdle
 </code></pre>
@@ -3258,7 +3262,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tbody>
 </table>
 <p>The default depends on whether or not the OpenJ9 VM is running in a container. As indicated in the table, when the VM is running in a container and the state is set to idle, the VM attempts to compact the object heap following a garbage collection cycle. The garbage collection cycle is controlled by the <code>-XX:+IdleTuningGcOnIdle</code> option, which is also enabled by default when the OpenJ9 VM is running inside a container.</p>
-<p>If your application is not running in a container and you want to enable compaction as part of the idle-tuning process, set the <code>-XX:+IdleTuningCompactOnIdle</code> option on the command line when you start your application.</p>
+<p>If your application is not running in a container and you want compaction to be attempted every time idle GC happens as part of the idle-tuning process, set the <code>-XX:+IdleTuningCompactOnIdle</code> option on the command line when you start your application.</p>
 <p>The <code>-XX:+IdleTuningCompactOnIdle</code> option can be used with the <code>-XX:+IdleTuningMinIdleWaitTime</code>, which controls the amount of time that the VM must be idle before an idle state is set. If a value for the <code>-XX:+IdleTuningMinIdleWaitTime</code> option is not explicitly specified, the VM sets a default value of 180 seconds.</p>
 <h2 id="see-also">See also</h2>
 <ul>

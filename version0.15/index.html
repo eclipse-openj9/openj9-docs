@@ -469,6 +469,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-behaviour-of-xxidletuningcompactonidle" title="Change in behaviour of -XX:IdleTuningCompactOnIdle" class="md-nav__link">
+    Change in behaviour of -XX:IdleTuningCompactOnIdle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heuristics-for-compaction-during-idle-gc" title="Heuristics for compaction during idle GC" class="md-nav__link">
+    Heuristics for compaction during idle GC
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3312,6 +3326,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-behaviour-of-xxidletuningcompactonidle" title="Change in behaviour of -XX:IdleTuningCompactOnIdle" class="md-nav__link">
+    Change in behaviour of -XX:IdleTuningCompactOnIdle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heuristics-for-compaction-during-idle-gc" title="Heuristics for compaction during idle GC" class="md-nav__link">
+    Heuristics for compaction during idle GC
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3375,6 +3403,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#support-for-low-overhead-heap-profiling">Support for low-overhead heap profiling (JEP 331)</a><img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><a href="#new-java-memory-map-tool">New Java memory map (jmap) tool</a></li>
 <li><a href="#removal-of-xdiagnosticscollector-option">Removal of -Xdiagnosticscollector option</a></li>
+<li><a href="#change-in-behaviour-of-xx:idletuningcompactonidle">Change in behaviour of -XX:[+|-]IdleTuningCompactOnIdle</a></li>
+<li><a href="#heuristics-for-compaction-during-idle-gc">Addition of heuristics for compaction during idle GC</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3412,6 +3442,10 @@ the JVM Tool Interface (JVMTI).</p>
 <h3 id="removal-of-xdiagnosticscollector-option">Removal of -Xdiagnosticscollector option</h3>
 <p>This option was redundant and has now been removed. If you try to use this option on the command line, the VM outputs this error message:</p>
 <p><code>JVMJ9VM007E Command-line option unrecognised: -Xdiagnosticscollector</code></p>
+<h3 id="change-in-behaviour-of-xxidletuningcompactonidle">Change in behaviour of -XX:IdleTuningCompactOnIdle</h3>
+<p>-XX:[+|-]IdleTuningCompactOnIdle is now no longer effective when -XX:+IdleTuningGcOnIdle is not specified.</p>
+<h3 id="heuristics-for-compaction-during-idle-gc">Heuristics for compaction during idle GC</h3>
+<p>OpenJ9 now automatically compacts the heap when certain triggers are met during idle GC. As a result of this change, <a href="../xxidletuningcompactonidle/"><code>-XX:[+|-]IdleTuningCompactOnIdle</code></a> has been deprecated.</p>
 <!--## Full release information
 
 To see a complete list of changes between Eclipse OpenJ9 V0.14.0 and V0.15.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.15/0.15.md).-->
