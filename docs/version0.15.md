@@ -37,6 +37,8 @@
 -  ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for low-overhead heap profiling (JEP 331)](#support-for-low-overhead-heap-profiling)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 - [New Java memory map (jmap) tool](#new-java-memory-map-tool)
 - [Removal of -Xdiagnosticscollector option](#removal-of-xdiagnosticscollector-option)
+- [Change in behaviour of -XX:\[+|-\]IdleTuningCompactOnIdle](#change-in-behaviour-of-xx:idletuningcompactonidle)
+- [Addition of heuristics for compaction during idle GC](#heuristics-for-compaction-during-idle-gc)
 
 
 ## Features and changes
@@ -96,6 +98,12 @@ The Java memory map (jmap) tool is similar to the HotSpot tool of the same name,
 This option was redundant and has now been removed. If you try to use this option on the command line, the VM outputs this error message:
 
 `JVMJ9VM007E Command-line option unrecognised: -Xdiagnosticscollector`
+
+### Change in behaviour of -XX:IdleTuningCompactOnIdle
+-XX:[+|-]IdleTuningCompactOnIdle is now no longer effective when -XX:+IdleTuningGcOnIdle is not specified.
+
+### Heuristics for compaction during idle GC
+OpenJ9 now automatically compacts the heap when certain triggers are met during idle GC. As a result of this change, [`-XX:[+|-]IdleTuningCompactOnIdle`](xxidletuningcompactonidle.md) has been deprecated.
 
 <!--## Full release information
 

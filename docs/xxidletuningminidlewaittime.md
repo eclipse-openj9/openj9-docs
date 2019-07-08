@@ -49,10 +49,8 @@ Setting the value to 0 disables this feature, which causes the following idle tu
 
 ## See also
 
--   [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md)
 -   [-XX:\[+|-\]IdleTuningGcOnIdle](xxidletuninggconidle.md)
 -   [-XX:IdleTuningMinFreeHeapOnIdle](xxidletuningminfreeheaponidle.md#xxidletuningminfreeheaponidle)
-
-
+-   [-XX:\[+|-\]IdleTuningCompactOnIdle \(deprecated\)](xxidletuningcompactonidle.md)
 
 <!-- ==== END OF TOPIC ==== xxidletuningminidlewaittime.md ==== -->
