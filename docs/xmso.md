@@ -24,12 +24,13 @@
 
 # -Xmso
 
-
-Sets the initial stack size for operating system threads.
+Sets the native stack size for operating system threads.
 
 You can use the `-verbose:sizes` option to find out the values that the VM is currently using.
 
-If you exceed the maximum value, a `java/lang/StackOverflowError` message is reported.
+When a native method makes a call into the VM, the VM calculates whether the memory required for the call will exceed the `-Xmso` value. If so, a `java/lang/StackOverflowError` error is thrown.
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Java methods and native methods run on two different stacks and the VM handles switching between them for JNI calls. Each stack is sized using separate options; this option applies to the native stack only. For the Java stack option, see the link in the [See also](#see-also) section.
 
 ## Syntax
 
@@ -43,7 +44,7 @@ Default values vary by platform. See [Default settings for the OpenJ9 VM](openj9
 
 ## See also
 
-- [`-Xiss/-Xss/-Xssi`](xss.md) (Stack size and behavior of Java&trade; threads)
+- [`-Xiss/-Xss/-Xssi`](xss.md) (stack size and increment for Java&trade; threads)
 
 
 <!-- ==== END OF TOPIC ==== xmso.md ==== -->
