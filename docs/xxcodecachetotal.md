@@ -30,7 +30,7 @@ This option is an alias for the [`-Xcodecachetotal`](xcodecachetotal.md) option.
 
         -XX:codecachetotal=<size>
 
-: See [Using -X command-line options](x_jvm_commands) for more information about specifying the `<size>` parameter.
+: See [Using -X command-line options](x_jvm_commands.md) for more information about specifying the `<size>` parameter.
 
 
 
