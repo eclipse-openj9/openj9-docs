@@ -3174,7 +3174,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p><code>&lt;vmid&gt;</code> is the Attach API virtual machine identifier for the Java process. This ID is typically the same as
 the operating system <em>process ID</em>, unless you specified the <code>-Dcom.ibm.tools.attach.id</code> system property when you started the process.</p>
 <p>VMID is shown in <code>jps</code> or other Attach API-based tools. Multiple VMIDs can be specified, separated by a space.</p>
-<p>If you do not specify a VMID, the command reads input from <code>stdin</code>. You can therefore get information for all processes by piping the output of the <a href="jps.md"><code>jps</code></a> command to <code>jmap</code>:</p>
+<p>If you do not specify a VMID, the command reads input from <code>stdin</code>. You can therefore get information for all processes by piping the output of the <a href="../tool_jps/"><code>jps</code></a> command to <code>jmap</code>:</p>
 <p><code>jps -q | jmap -histo</code></p>
 <p>IDs of dead processes are silently ignored.</p>
 <p>On its own, <code>jmap</code> prints help information. To obtain memory information, a <code>-histo</code> argument must be supplied, where the available <code>&lt;options&gt;</code> are as follows:    </p>
