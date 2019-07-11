@@ -33,7 +33,7 @@ the operating system *process ID*, unless you specified the `-Dcom.ibm.tools.att
 
 VMID is shown in `jps` or other Attach API-based tools. Multiple VMIDs can be specified, separated by a space.
 
-If you do not specify a VMID, the command reads input from `stdin`. You can therefore get information for all processes by piping the output of the [`jps`](jps.md) command to `jmap`:
+If you do not specify a VMID, the command reads input from `stdin`. You can therefore get information for all processes by piping the output of the [`jps`](tool_jps.md) command to `jmap`:
 
   `jps -q | jmap -histo`
 
