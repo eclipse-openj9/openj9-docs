@@ -36,6 +36,7 @@
 - [Support for Transparent HugePage](#support-for-transparent-hugepage)
 -  ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for low-overhead heap profiling (JEP 331)](#support-for-low-overhead-heap-profiling)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 - [New Java memory map (jmap) tool](#new-java-memory-map-tool)
+- [Automatically setting an initial heap size](#automatically-setting-an-initial-heap-size)
 - [Removal of -Xdiagnosticscollector option](#removal-of-xdiagnosticscollector-option)
 - [Change in behaviour of -XX:\[+|-\]IdleTuningCompactOnIdle](#change-in-behaviour-of-xxidletuningcompactonidle)
 - [Addition of heuristics for compaction during idle GC](#heuristics-for-compaction-during-idle-gc)
@@ -93,6 +94,12 @@ the JVM Tool Interface (JVMTI).
 ### New Java memory map tool
 
 The Java memory map (jmap) tool is similar to the HotSpot tool of the same name, and can be used to print statistics about classes on the heap, including the number of objects and their aggregate size. For usage information, see [Java memory map (jmap) tool](tool_jmap.md).
+
+### Automatically setting an initial heap size
+
+OpenJ9 can now learn and set an appropriate initial heap size for an application as an alternative to a user manually sizing and setting an `-Xms` value. The VM records the size of the heap when startup processing ends, writing this data to the shared classes cache. An average value is set over a few restarts, helping to ensure that the value used for the initial heap size is as accurate as possible. The heap size recorded is specific to the application command line, therefore a different hint is stored for every unique command line.
+
+To turn on this behavior, set the [`-XX:+UseGCStartupHints`](xxusegcstartuphints.md) option on the command line when you start your application.
 
 ### Removal of -Xdiagnosticscollector option
 This option was redundant and has now been removed. If you try to use this option on the command line, the VM outputs this error message:

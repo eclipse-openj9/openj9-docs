@@ -338,6 +338,7 @@ pages:
             - "-XX:[+|-]TransparentHugePage"                                     : xxtransparenthugepage.md
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
             - "-XX:[+|-]UseContainerSupport"                                     : xxusecontainersupport.md
+            - "-XX:[+|-]UseGCStartupHints"                                       : xxusegcstartuphints.md
             - "-XX:[+|-]UseNoGC"                                                 : xxusenogc.md
             - "-XX:[+|-]VerboseVerification"                                     : xxverboseverification.md
             - "-XX:[+|-]VMLockClassLoader"                                       : xxvmlockclassloader.md
