@@ -463,6 +463,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#automatically-setting-an-initial-heap-size" title="Automatically setting an initial heap size" class="md-nav__link">
+    Automatically setting an initial heap size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#removal-of-xdiagnosticscollector-option" title="Removal of -Xdiagnosticscollector option" class="md-nav__link">
     Removal of -Xdiagnosticscollector option
   </a>
@@ -3092,6 +3099,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxusegcstartuphints/" title="-XX:[+|-]UseGCStartupHints" class="md-nav__link">
+      -XX:[+|-]UseGCStartupHints
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxusenogc/" title="-XX:[+|-]UseNoGC" class="md-nav__link">
       -XX:[+|-]UseNoGC
     </a>
@@ -3320,6 +3339,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#automatically-setting-an-initial-heap-size" title="Automatically setting an initial heap size" class="md-nav__link">
+    Automatically setting an initial heap size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#removal-of-xdiagnosticscollector-option" title="Removal of -Xdiagnosticscollector option" class="md-nav__link">
     Removal of -Xdiagnosticscollector option
   </a>
@@ -3402,6 +3428,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#support-for-transparent-hugepage">Support for Transparent HugePage</a></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#support-for-low-overhead-heap-profiling">Support for low-overhead heap profiling (JEP 331)</a><img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><a href="#new-java-memory-map-tool">New Java memory map (jmap) tool</a></li>
+<li><a href="#automatically-setting-an-initial-heap-size">Automatically setting an initial heap size</a></li>
 <li><a href="#removal-of-xdiagnosticscollector-option">Removal of -Xdiagnosticscollector option</a></li>
 <li><a href="#change-in-behaviour-of-xxidletuningcompactonidle">Change in behaviour of -XX:[+|-]IdleTuningCompactOnIdle</a></li>
 <li><a href="#heuristics-for-compaction-during-idle-gc">Addition of heuristics for compaction during idle GC</a></li>
@@ -3439,6 +3466,9 @@ the JVM Tool Interface (JVMTI).</p>
 </ul>
 <h3 id="new-java-memory-map-tool">New Java memory map tool</h3>
 <p>The Java memory map (jmap) tool is similar to the HotSpot tool of the same name, and can be used to print statistics about classes on the heap, including the number of objects and their aggregate size. For usage information, see <a href="../tool_jmap/">Java memory map (jmap) tool</a>.</p>
+<h3 id="automatically-setting-an-initial-heap-size">Automatically setting an initial heap size</h3>
+<p>OpenJ9 can now learn and set an appropriate initial heap size for an application as an alternative to a user manually sizing and setting an <code>-Xms</code> value. The VM records the size of the heap when startup processing ends, writing this data to the shared classes cache. An average value is set over a few restarts, helping to ensure that the value used for the initial heap size is as accurate as possible. The heap size recorded is specific to the application command line, therefore a different hint is stored for every unique command line.</p>
+<p>To turn on this behavior, set the <a href="../xxusegcstartuphints/"><code>-XX:+UseGCStartupHints</code></a> option on the command line when you start your application.</p>
 <h3 id="removal-of-xdiagnosticscollector-option">Removal of -Xdiagnosticscollector option</h3>
 <p>This option was redundant and has now been removed. If you try to use this option on the command line, the VM outputs this error message:</p>
 <p><code>JVMJ9VM007E Command-line option unrecognised: -Xdiagnosticscollector</code></p>

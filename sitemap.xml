@@ -1016,6 +1016,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/xxusegcstartuphints/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/xxusenogc/</loc>
      <lastmod>2019-07-11</lastmod>
      <changefreq>daily</changefreq>

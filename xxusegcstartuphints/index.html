@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxinitialrampercentage/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxusegcstartuphints/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-XX:MaxRAMPercentage -  </title>
+        <title>-XX:[+|-]UseGCStartupHints -  </title>
       
     
     
@@ -134,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-xxinitialrampercentage-xxmaxrampercentage" tabindex="1" class="md-skip">
+      <a href="../#-xx91-93usegcstartuphints" tabindex="1" class="md-skip">
         
       </a>
     
@@ -2690,7 +2690,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
-    <a href="./" title="-XX:InitialRAMPercentage" class="md-nav__link">
+    <a href="../xxinitialrampercentage/" title="-XX:InitialRAMPercentage" class="md-nav__link">
       -XX:InitialRAMPercentage
     </a>
   </li>
@@ -2772,49 +2772,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -XX:MaxRAMPercentage
-      </label>
-    
-    <a href="./" title="-XX:MaxRAMPercentage" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../xxinitialrampercentage/" title="-XX:MaxRAMPercentage" class="md-nav__link">
       -XX:MaxRAMPercentage
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" title="Syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3002,11 +2964,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../xxusegcstartuphints/" title="-XX:[+|-]UseGCStartupHints" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        -XX:[+|-]UseGCStartupHints
+      </label>
+    
+    <a href="./" title="-XX:[+|-]UseGCStartupHints" class="md-nav__link md-nav__link--active">
       -XX:[+|-]UseGCStartupHints
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3196,7 +3196,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xxinitialrampercentage.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xxusegcstartuphints.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3224,33 +3224,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xxinitialrampercentage-xxmaxrampercentage">-XX:InitialRAMPercentage / -XX:MaxRAMPercentage</h1>
-<p>These Oracle Hotspot options can be used to specify the initial and maximum size of the Java heap as a percentage of the total memory available to the VM. The options are recognized by OpenJ9 and provided for compatibility.</p>
+<h1 id="-xx91-93usegcstartuphints">-XX:[+|-]UseGCStartupHints</h1>
+<p>When this option is enabled, the VM calculates, over several application restarts, an appropriate startup heap size for your application. You can therefore use this option instead of calculating and setting an <code>-Xms</code> value yourself. Setting an initial size for the heap that is larger than the default helps to avoid frequent garbage collections during the startup phase of an application.</p>
 <h2 id="syntax">Syntax</h2>
+<pre><code>    -XX:[+|-]UseGCStartupHints
+</code></pre>
 <table>
 <thead>
 <tr>
 <th>Setting</th>
 <th>Effect</th>
+<th align="center">Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>-XX:InitialRAMPercentage=N</code></td>
-<td>Set initial heap size as a percentage of total memory</td>
+<td><code>-XX:+UseGCStartupHints</code></td>
+<td>Enable</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td><code>-XX:MaxRAMPercentage=N</code></td>
-<td>Set maximum heap size as a percentage of total memory</td>
+<td><code>-XX:-UseGCStartupHints</code></td>
+<td>Disable</td>
+<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
 </tr>
 </tbody>
 </table>
-<dl>
-<dd>Where N is a value between 0 and 100, which can be of type "double". For example, 12.3456.</dd>
-</dl>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> If you set a value for <a href="../xms/"><code>-Xms</code></a>, these options are ignored.</p>
-<p>If your application is running in a container and you have specified <a href="../xxusecontainersupport/"><code>-XX:+UseContainerSupport</code></a>, both the default heap size for containers, the <code>-XX:InitialRAMPercentage</code> option, and the <code>-XX:MaxRAMPercentage</code> option are based on the available container memory.</p>
-<!-- ==== END OF TOPIC ==== xxinitialrampercentage.md ==== -->
+<p>When enabled, the VM records the heap size when a <em>startup complete</em> event occurs, storing the value into the shared classes cache.
+On subsequent restarts, the garbage collector (GC) reads this value early in startup processing and expands the heap to an appropriate
+value. For accuracy and stability, averages are taken over a few restarts to stabilize the value used. The heap size recorded is specific to the application command line,
+therefore a different hint is stored for every unique command line.</p>
+<p>You can check the value used by the garbage collector for heap expansion by inspecting verbose GC output. The following example shows heap expansion based on hints from the previous run when using the <code>gencon</code> policy:</p>
+<pre><code>&lt;heap-resize id=&quot;2&quot; type=&quot;expand&quot; space=&quot;nursery&quot; amount=&quot;205258752&quot; count=&quot;1&quot; timems=&quot;0.328&quot; reason=&quot;hint from previous runs&quot; timestamp=&quot;2019-06-05T13:26:32.021&quot; /&gt;
+&lt;heap-resize id=&quot;3&quot; type=&quot;expand&quot; space=&quot;tenure&quot; amount=&quot;692649984&quot; count=&quot;1&quot; timems=&quot;0.326&quot; reason=&quot;hint from previous runs&quot; timestamp=&quot;2019-06-05T13:26:32.022&quot; /&gt;
+</code></pre>
+
+<p>The final value stored to the shared cache is not recorded in the verbose GC output.</p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> This feature is not currently available with the Balanced GC policy.</p>
+<!-- ==== END OF TOPIC ==== xxusegcstartuphints.md ==== -->
                 
                   
                 
@@ -3293,7 +3304,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="xxinitialheapsize/" title="-XX:MaxHeapSize" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="xxusecontainersupport/" title="-XX:[+|-]UseContainerSupport" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3302,19 +3313,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -XX:MaxHeapSize
+                            -XX:[+|-]UseContainerSupport
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="xxonoutofmemoryerror/" title="-XX:OnOutOfMemoryError" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="xxusenogc/" title="-XX:[+|-]UseNoGC" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            -XX:OnOutOfMemoryError
+                            -XX:[+|-]UseNoGC
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">
