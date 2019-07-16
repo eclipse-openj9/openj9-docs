@@ -490,8 +490,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-shared-classes-behavior-for-checking-timestamps-of-jar-or-zip-files" title="Change in shared classes behavior for checking timestamps of jar or zip files" class="md-nav__link">
+    Change in shared classes behavior for checking timestamps of jar or zip files
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-release-information" title="Full release information" class="md-nav__link">
+    Full release information
+  </a>
   
 </li>
       
@@ -3366,8 +3380,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-shared-classes-behavior-for-checking-timestamps-of-jar-or-zip-files" title="Change in shared classes behavior for checking timestamps of jar or zip files" class="md-nav__link">
+    Change in shared classes behavior for checking timestamps of jar or zip files
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-release-information" title="Full release information" class="md-nav__link">
+    Full release information
+  </a>
   
 </li>
       
@@ -3432,6 +3460,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#removal-of-xdiagnosticscollector-option">Removal of -Xdiagnosticscollector option</a></li>
 <li><a href="#change-in-behaviour-of-xxidletuningcompactonidle">Change in behaviour of -XX:[+|-]IdleTuningCompactOnIdle</a></li>
 <li><a href="#heuristics-for-compaction-during-idle-gc">Addition of heuristics for compaction during idle GC</a></li>
+<li><a href="#change-in-shared-classes-behavior-for-checking-timestamps-of-jar-or-zip-files">Change in shared classes behavior for checking timestamps of <code>jar</code> or <code>zip</code> files</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3476,10 +3505,11 @@ the JVM Tool Interface (JVMTI).</p>
 <p>-XX:[+|-]IdleTuningCompactOnIdle is now no longer effective when -XX:+IdleTuningGcOnIdle is not specified.</p>
 <h3 id="heuristics-for-compaction-during-idle-gc">Heuristics for compaction during idle GC</h3>
 <p>OpenJ9 now automatically compacts the heap when certain triggers are met during idle garbage collection (GC). As a result of this change, <a href="../xxidletuningcompactonidle/"><code>-XX:[+|-]IdleTuningCompactOnIdle</code></a> is deprecated.</p>
-<!--## Full release information
-
-To see a complete list of changes between Eclipse OpenJ9 V0.14.0 and V0.15.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.15/0.15.md).-->
-
+<h3 id="change-in-shared-classes-behavior-for-checking-timestamps-of-jar-or-zip-files">Change in shared classes behavior for checking timestamps of <code>jar</code> or <code>zip</code> files</h3>
+<p>In earlier releases, the shared classes cache checks timestamps of <code>jar</code> or <code>zip</code> files every time a class is loaded and reloads a class if the timestamp has changed. This behavior is now changed; timestamps are checked only when <code>zip</code> or <code>jar</code> files are added to class loaders and used for the first time to look for a class, which can improve class-loading performance. If <code>jar</code> or <code>zip</code> files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. To revert to the behavior of earlier releases, set the <a href="../xshareclasses/#checkurltimestamps"><code>-Xshareclasses:checkURLTimestamps</code></a> option on the command line when you start your application.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Multiple <code>-Xshareclasses:</code> options are not combined, only the last one is used.</p>
+<h2 id="full-release-information">Full release information</h2>
+<p>To see a complete list of changes between Eclipse OpenJ9 V0.14.0 and V0.15.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.15/0.15.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->
                 
                   
