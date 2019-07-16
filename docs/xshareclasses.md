@@ -153,6 +153,14 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 The option `enableBCI` is enabled by default. However, if you use the `cacheRetransformed` option, this option forces cache creation into `-Xshareclasses:disableBCI` mode.
 
+### `checkURLTimestamps`
+
+        -Xshareclasses:checkURLTimestamps
+
+: Causes timestamps of `jar` or `zip` files to be checked every time a class is loaded. If a timestamp has changed, the class is loaded from the `jar` or `zip` file and not from the shared cache. This sub-option is not enabled by default and reflects the legacy behavior of the shared classes cache.
+
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The timestamp of a bootstrap `jar` or `zip` file is checked once when it is used for the first time to load a class.
+
 ### `destroy` (Cache utility)
 
         -Xshareclasses:destroy
@@ -344,6 +352,15 @@ case, the VM continues without using shared classes.
         -Xshareclasses:noBootclasspath
 
 :   Disables the storage of classes that are loaded by the bootstrap class loader in the shared classes cache. Often used with the `SharedClassURLFilter` API to control exactly which classes are cached. For more information about shared class filtering, see [Using the SharedClassHelper API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_class.html).
+
+### `nocheckURLTimestamps`
+
+        -Xshareclasses:nocheckURLTimestamps
+
+:   Timestamps of `jar` or `zip` files are checked only when they are added to a class loader and used for the first time to look up a class. This is the default
+behavior, which can improve the performance of class loading from the shared classes cache, especially on Windows systems. To revert to the behavior of the shared classes cache in earlier releases, use the [`CheckURLTimeStamps`](xshareclasses.md#checkurltimestamps) sub-option.
+
+: <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** When the `nocheckURLTimestamps` sub-option is used (default), if `jar` or `zip` files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. If this scenario occurs, use the `checkURLTimestamps` option.
 
 ### `nojitdata`
 

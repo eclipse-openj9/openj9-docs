@@ -40,6 +40,7 @@
 - [Removal of -Xdiagnosticscollector option](#removal-of-xdiagnosticscollector-option)
 - [Change in behaviour of -XX:\[+|-\]IdleTuningCompactOnIdle](#change-in-behaviour-of-xxidletuningcompactonidle)
 - [Addition of heuristics for compaction during idle GC](#heuristics-for-compaction-during-idle-gc)
+- [Change in shared classes behavior for checking timestamps of `jar` or `zip` files](#change-in-shared-classes-behavior-for-checking-timestamps-of-jar-or-zip-files)
 
 
 ## Features and changes
@@ -112,8 +113,14 @@ This option was redundant and has now been removed. If you try to use this optio
 ### Heuristics for compaction during idle GC
 OpenJ9 now automatically compacts the heap when certain triggers are met during idle garbage collection (GC). As a result of this change, [`-XX:[+|-]IdleTuningCompactOnIdle`](xxidletuningcompactonidle.md) is deprecated.
 
-<!--## Full release information
+### Change in shared classes behavior for checking timestamps of `jar` or `zip` files
 
-To see a complete list of changes between Eclipse OpenJ9 V0.14.0 and V0.15.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.15/0.15.md).-->
+In earlier releases, the shared classes cache checks timestamps of `jar` or `zip` files every time a class is loaded and reloads a class if the timestamp has changed. This behavior is now changed; timestamps are checked only when `zip` or `jar` files are added to class loaders and used for the first time to look for a class, which can improve class-loading performance. If `jar` or `zip` files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. To revert to the behavior of earlier releases, set the [`-Xshareclasses:checkURLTimestamps`](xshareclasses.md#checkurltimestamps) option on the command line when you start your application.
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Multiple `-Xshareclasses:` options are not combined, only the last one is used.
+
+## Full release information
+
+To see a complete list of changes between Eclipse OpenJ9 V0.14.0 and V0.15.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.15/0.15.md).
 
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->
