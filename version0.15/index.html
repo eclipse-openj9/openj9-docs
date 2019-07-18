@@ -63,7 +63,7 @@
     
     
       
-        <title>Version 0.15.0 -  </title>
+        <title>Version 0.15.1 -  </title>
       
     
     
@@ -134,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#whats-new-in-version-0150" tabindex="1" class="md-skip">
+      <a href="../#whats-new-in-version-0151" tabindex="1" class="md-skip">
         
       </a>
     
@@ -374,11 +374,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Version 0.15.0
+        Version 0.15.1
       </label>
     
-    <a href="./" title="Version 0.15.0" class="md-nav__link md-nav__link--active">
-      Version 0.15.0
+    <a href="./" title="Version 0.15.1" class="md-nav__link md-nav__link--active">
+      Version 0.15.1
     </a>
     
       
@@ -3444,7 +3444,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="whats-new-in-version-0150">What's new in version 0.15.0</h1>
+<h1 id="whats-new-in-version-0151">What's new in version 0.15.1</h1>
 <p>The following new features and notable changes since v.0.14.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
@@ -3509,7 +3509,7 @@ the JVM Tool Interface (JVMTI).</p>
 <p>In earlier releases, the shared classes cache checks timestamps of <code>jar</code> or <code>zip</code> files every time a class is loaded and reloads a class if the timestamp has changed. This behavior is now changed; timestamps are checked only when <code>zip</code> or <code>jar</code> files are added to class loaders and used for the first time to look for a class, which can improve class-loading performance. If <code>jar</code> or <code>zip</code> files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. To revert to the behavior of earlier releases, set the <a href="../xshareclasses/#checkurltimestamps"><code>-Xshareclasses:checkURLTimestamps</code></a> option on the command line when you start your application.</p>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Multiple <code>-Xshareclasses:</code> options are not combined, only the last one is used.</p>
 <h2 id="full-release-information">Full release information</h2>
-<p>To see a complete list of changes between Eclipse OpenJ9 V0.14.0 and V0.15.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.15/0.15.md">Release notes</a>.</p>
+<p>To see a complete list of changes between Eclipse OpenJ9 V0.14.0 and V0.15.1 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.15/0.15.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->
                 
                   
