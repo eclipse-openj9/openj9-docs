@@ -171,7 +171,7 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
 : This policy handles only memory allocation and heap expansion, but doesn't reclaim any memory. If the available Java heap becomes exhausted, an `OutOfMemoryError` exception is triggered and the VM stops.
 
-    Because there is no GC pause and most overheads on allocations are eliminated, the impact on runtime performance is minimized. This policy therefore provides benfits for "garbage-free" applications. See "When to use `nogc`" below for possible use cases.
+    Because there is no GC pause and most overheads on allocations are eliminated, the impact on runtime performance is minimized. This policy therefore provides benfits for "garbage-free" applications. See the following section, "When to use nogc", for some possible use cases.
 
     You should be especially careful when using any of the following techniques with `nogc` because memory is never released under this policy:  
     - Finalization  
@@ -188,15 +188,13 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
     Testing during development
 
-    - GC performance. Use `nogc` to provide a baseline when testing the performance of other GC policies, including the provision of a latency baseline for low-latency.
+    - GC performance. Use `nogc` as a baseline when testing the performance of other GC policies, including the provision of a low-latency baseline.
 
-    - Application memory. Use `nogc` to test your settings for allocated memory, use [`-Xmx`](xms.md) to set the heap size that should not be exceeded. If your application tries to exceed your memory limit, it will crash with a heap dump.
-
-    - VM interface. Use `nogc` to help with VM interface to the GC; the `nogc` policy is the minimum implementation possible and so provides a simple test case.
+    - Application memory. Use `nogc` to test your settings for allocated memory. If you use [`-Xmx`](xms.md) to set the heap size that should not be exceeded, then your application will crash with a heap dump if it tries to exceed your memory limit.
 
     Running applications with minimal or no GC requrements
 
-    - You might use `nogc` when an application is so short lived that allocated memory is never exhausted and running a full GC cycle is therfore a waste of resources.
+    - You might use `nogc` when an application is so short lived that allocated memory is never exhausted and running a full GC cycle is therefore a waste of resources.
     
     - Similarly, when memory application is well understood or where there is rarely memory to be reclaimed, you might prefer to avoid unnecessary GC cycles and rely on a failover mechanism to occasionally restart the VM as necessary.
 
