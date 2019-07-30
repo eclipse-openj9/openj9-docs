@@ -32,8 +32,8 @@ When this option is enabled, the VM calculates, over several application restart
 
 | Setting                            | Effect  | Default                                                                            |
 |------------------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+UseGCStartupHints` | Enable  |                                                                                              |
-| `-XX:-UseGCStartupHints` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>               |
+| `-XX:+UseGCStartupHints` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-UseGCStartupHints` | Disable |               |
 
 When enabled, the VM records the heap size when a *startup complete* event occurs, storing the value into the shared classes cache.
 On subsequent restarts, the garbage collector (GC) reads this value early in startup processing and expands the heap to an appropriate
