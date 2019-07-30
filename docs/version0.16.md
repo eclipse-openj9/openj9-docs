@@ -23,7 +23,7 @@
 -->
 
 
-# What's new in version 0.6
+# What's new in version 0.16
 
  The following new features and notable changes since v.0.15.2 are included in this release:
 
