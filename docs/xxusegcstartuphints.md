@@ -32,8 +32,8 @@ When this option is enabled, the VM calculates, over several application restart
 
 | Setting                            | Effect  | Default                                                                            |
 |------------------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+UseGCStartupHints` | Enable  |                                                                                              |
-| `-XX:-UseGCStartupHints` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>               |
+| `-XX:+UseGCStartupHints` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-UseGCStartupHints` | Disable |               |
 
 When enabled, the VM records the heap size when a *startup complete* event occurs, storing the value into the shared classes cache.
 On subsequent restarts, the garbage collector (GC) reads this value early in startup processing and expands the heap to an appropriate
@@ -48,6 +48,11 @@ You can check the value used by the garbage collector for heap expansion by insp
 ```
 
 The final value stored to the shared cache is not recorded in the verbose GC output.
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+
+- When enabled, this option overrides any initial heap size that is specified on the command line, for example by using the [`-Xms`](xms.md) option.
+- Because the shared classes cache is used to store heap size information, this option does not work if [shared classes](shrc.md) are disabled.
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This feature is not currently available with the Balanced GC policy.
 
