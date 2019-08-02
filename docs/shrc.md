@@ -37,16 +37,17 @@ Memory footprint is reduced by sharing common classes between applications that 
 
 ## Enabling class data sharing
 
-You enable class data sharing by setting the `-Xshareclasses` option on the command line when you start your application. By default, OpenJ9 always shares both the bootstrap and application classes that are loaded by the default system class loader.
+Class data sharing is enabled by default for bootstrap classes only (the equivalent of specifying `-Xshareclasses:bootClassesOnly,nonFatal,silent`), unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, for example you can change the name and location of the default shared classes cache.
 
-<!--
-  Class data sharing is enabled by default for bootstrap classes only, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including the name and location of the default shared classes cache. Trace point `j9shr.2271` is activated if the default cache cannot be started, so you can enable this trace point to determine whether the default cache started successfully. You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it. Note that if you have multiple VMs and you do not change the default shared classes behavior, the VMs will share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and recreated; for more information, see the following section about best practices. -->
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you have multiple VMs and you do not change the default shared classes behavior, the VMs will share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and recreated; for more information, see the following section about best practices.
 
-The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing you to specify where to create the cache, how much space to allocate for AOT code and more. You can also set the cache size by using the [-Xscmx](xscmx.md) option.
+Trace point `j9shr.2271` is activated if the default cache cannot be started, so you can enable this trace point to determine whether the default cache started successfully.
+
+You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it.
 
 ## Best practices for using `-Xshareclasses`
 
-When you explicitly set the [-Xshareclasses](xshareclasses.md) option, it is good practice to set a number of parameters on the option:
+The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing you to specify where to create the cache, how much space to allocate for AOT code and more. You can also set the cache size by using the [-Xscmx](xscmx.md) option. When shared classes is enabled, it is good practice to specify some of the cache behavior:
 
 - Set an application-specific cache name ([`-Xshareclasses:name=<name>`](xshareclasses.md#name)).
 

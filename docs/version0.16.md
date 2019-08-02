@@ -28,6 +28,7 @@
  The following new features and notable changes since v.0.15.2 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [Some class data sharing is enabled by default](#some-class-data-sharing-is-enabled-by-default)
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
 
 
@@ -45,6 +46,10 @@ OpenJDK 13 with Eclipse OpenJ9 is not a long term support (LTS) release.
 The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK community are for Eclipse OpenJ9 release 0.15.2. Features mentioned in these release notes are not available in these builds. Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 0.16.0, testing at the project is not complete and therefore support for any of these features is not available.
 
  To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+ ### Some class data sharing is enabled by default
+
+ Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [Class Data Sharing](shrc.md).
 
 ### Automatic setting of initial heap size is enabled by default
 
