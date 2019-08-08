@@ -29,14 +29,13 @@
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
-
-
+- [Option to share anonymous classes](#option-to-share-anonymous-classes)
 
 ## Features and changes
 
 ### Binaries and supported environments
 
- OpenJ9 release 0.16.0 supports OpenJDK 13, which is available from the AdoptOpenJDK community at the following link:
+OpenJ9 release 0.16.0 supports OpenJDK 13, which is available from the AdoptOpenJDK community at the following link:
 
 - [OpenJDK version 13](https://adoptopenjdk.net/archive.html?variant=openjdk13&jvmVariant=openj9)
 
@@ -44,11 +43,28 @@ OpenJDK 13 with Eclipse OpenJ9 is not a long term support (LTS) release.
 
 The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK community are for Eclipse OpenJ9 release 0.15.2. Features mentioned in these release notes are not available in these builds. Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 0.16.0, testing at the project is not complete and therefore support for any of these features is not available.
 
- To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
 ### Automatic setting of initial heap size is enabled by default
 
- OpenJ9 version 0.15.1 introduced the [`-XX:[+|-]UseGCStartupHints`](xxusegcstartuphints.md) option, which, when enabled, turned on the automatic learning and setting of an appropriate heap size for an application. This option is now enabled by default.
+OpenJ9 version 0.15.1 introduced the [`-XX:[+|-]UseGCStartupHints`](xxusegcstartuphints.md) option, which, when enabled, turned on the automatic learning and setting of an appropriate heap size for an application. This option is now enabled by default.
+
+### Option to share anonymous classes
+
+Prior to version 0.16.0, anonymous classes were not stored in the shared class cache. They are now stored there by default, which means they are available for ahead-of-time (AOT) compilation, potentially improving startup performance. A new command, [-XX:[+|-]ShareAnonymousClasses](xxshareanonymousclasses.md), is introduced that enables you to stop anonymous classes being stored in the shared class cache.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Full release information
 
