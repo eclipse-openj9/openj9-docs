@@ -29,6 +29,7 @@
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
+- [Performance improvements for JVMTI watched fields on Power Systems](#performance-improvements-for-jvmti-watched-fields)
 
 
 
@@ -49,6 +50,10 @@ The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK c
 ### Automatic setting of initial heap size is enabled by default
 
  OpenJ9 version 0.15.1 introduced the [`-XX:[+|-]UseGCStartupHints`](xxusegcstartuphints.md) option, which, when enabled, turned on the automatic learning and setting of an appropriate heap size for an application. This option is now enabled by default.
+
+### Performance improvements for JVMTI watched fields on Power Systems
+
+OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which turns on JIT operations to improve the performance of JVMTI watched fields. This option, which was enabled by default in version 0.15.1, is now also supported on AIX&reg; and Linux on Power Systems&trade;.
 
 ## Full release information
 
