@@ -363,6 +363,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../version0.16/" title="Version 0.16.0" class="md-nav__link">
+      Version 0.16.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../version0.15/" title="Version 0.15.1" class="md-nav__link">
       Version 0.15.1
     </a>
@@ -400,13 +412,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
     
-    <label class="md-nav__link" for="nav-5-4">
+    <label class="md-nav__link" for="nav-5-5">
       Earlier releases
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-4">
+      <label class="md-nav__title" for="nav-5-5">
         Earlier releases
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -3241,12 +3253,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <tr>
 <td><code>-XX:+UseGCStartupHints</code></td>
 <td>Enable</td>
-<td align="center"></td>
+<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
 </tr>
 <tr>
 <td><code>-XX:-UseGCStartupHints</code></td>
 <td>Disable</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -3260,6 +3272,11 @@ therefore a different hint is stored for every unique command line.</p>
 </code></pre>
 
 <p>The final value stored to the shared cache is not recorded in the verbose GC output.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
+<ul>
+<li>When enabled, this option overrides any initial heap size that is specified on the command line, for example by using the <a href="../xms/"><code>-Xms</code></a> option.</li>
+<li>Because the shared classes cache is used to store heap size information, this option does not work if <a href="../shrc/">shared classes</a> are disabled.</li>
+</ul>
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> This feature is not currently available with the Balanced GC policy.</p>
 <!-- ==== END OF TOPIC ==== xxusegcstartuphints.md ==== -->
                 
