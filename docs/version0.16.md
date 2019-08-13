@@ -29,7 +29,7 @@
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
-- [Performance improvements for JVMTI watched fields on Power Systems](#performance-improvements-for-jvmti-watched-fields)
+- [Performance improvements for JVMTI watched fields on Power Systems](#performance-improvements-for-jvmti-watched-fields-on-power-systems)
 
 
 
