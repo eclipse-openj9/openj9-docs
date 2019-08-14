@@ -29,7 +29,8 @@
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
-- [Option to share anonymous classes](#option-to-share-anonymous-classes)
+- [Option to share VM anonymous classes](#option-to-share-vm-anonymous-classes)
+- [Performance improvements for JVMTI watched fields on Power Systems](#performance-improvements-for-jvmti-watched-fields-on-power-systems)
 
 ## Features and changes
 
@@ -49,22 +50,13 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 OpenJ9 version 0.15.1 introduced the [`-XX:[+|-]UseGCStartupHints`](xxusegcstartuphints.md) option, which, when enabled, turned on the automatic learning and setting of an appropriate heap size for an application. This option is now enabled by default.
 
-### Option to share anonymous classes
+### Option to share VM anonymous classes
+ 
+Prior to version 0.16.0, anonymous classes, those created by `Unsafe.defineAnonymousClass`, were not stored in the shared classes cache. They are now stored there by default, which means they are available for ahead-of-time (AOT) compilation, potentially improving startup performance. A new command, [-XX:[+|-]ShareAnonymousClasses](xxshareanonymousclasses.md), is introduced that enables you to stop anonymous classes being stored in the shared classes cache.
 
-Prior to version 0.16.0, anonymous classes were not stored in the shared class cache. They are now stored there by default, which means they are available for ahead-of-time (AOT) compilation, potentially improving startup performance. A new command, [-XX:[+|-]ShareAnonymousClasses](xxshareanonymousclasses.md), is introduced that enables you to stop anonymous classes being stored in the shared class cache.
+### Performance improvements for JVMTI watched fields on Power Systems
 
-
-
-
-
-
-
-
-
-
-
-
-
+OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which turns on JIT operations to improve the performance of JVMTI watched fields. This option, which was enabled by default in version 0.15.1, is now also supported on AIX&reg; and Linux on Power Systems&trade;.
 
 ## Full release information
 
