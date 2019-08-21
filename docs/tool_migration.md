@@ -28,6 +28,15 @@ OpenJ9 provides the following tools, which might differ in behavior from the Hot
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** For information about HotSpot equivalences and differences for items other than tools, see [New to OpenJ9?](openj9_newuser.md)
 
+#### Java command tool (`jcmd`)
+
+Runs diagnostic commands on a specified VM or VMs. The main differences from the HotSpot jcmd tool are as follows:
+
+- There is no `-f` option to read commands from a file.
+- There is no option to select VMs by main class instead of `VMID`.
+- Specifying `0` as a `VMID` to target all VMs is not supported.
+- There is no `Perfcounter.print` option for displaying performance counters for the target VM.
+
 #### Java memory map tool (`jmap`)
 
 Displays information about classes on the heap, including the number of objects and their aggregate size. The main differences from the HotSpot `jmap` tool are as follows:

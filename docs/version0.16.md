@@ -30,6 +30,7 @@
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
 - [Performance improvements for JVMTI watched fields on Power Systems](#performance-improvements-for-jvmti-watched-fields-on-power-systems)
+- [New Java command (`jcmd`) tool](#new-jcmd-tool)
 
 
 
@@ -54,6 +55,10 @@ The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK c
 ### Performance improvements for JVMTI watched fields on Power Systems
 
 OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which turns on JIT operations to improve the performance of JVMTI watched fields. This option, which was enabled by default in version 0.15.1, is now also supported on AIX&reg; and Linux on Power Systems&trade;.
+
+### New jcmd tool
+
+For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the `jcmd` tool, for running diagnostic commands on a VM. For more information, see [Java command tool](tool_jcmd.md).
 
 ## Full release information
 
