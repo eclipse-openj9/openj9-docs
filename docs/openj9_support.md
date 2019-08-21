@@ -37,24 +37,22 @@ the corresponding new OpenJDK feature release (ie: 11, 12, ...).
 
 The following table summarizes which JDK levels are expected to be supported by which Eclipse OpenJ9 releases,
 along with projected release dates. All future dates and support expectations are predictions that might change
-depending on how the OpenJDK and OpenJ9 projects evolve over time. Note also that columns may be removed from
-this table over time.
+depending on how the OpenJDK and OpenJ9 projects evolve over time. To keep this table concise, some rows and
+columns will be removed over time.
 
 
 ## Eclipse OpenJ9 releases
 
-| OpenJ9 release  | Release date        | JDK8 (LTS)| JDK11 (LTS) | JDK12   | JDK13    |
-|-----------------|---------------------|-----------|-------------|---------|----------|
-| v0.8.0          | March 2018          | Yes       |             |         |          |
-| v0.9.0          | August 2018         | Yes       |             |         |          |
-| v0.10.0         | September 2018      | No        | Yes(\*2)    |         |          |
-| v0.11.0         | October 2018        | Yes       | Yes         |         |          |
-| v0.12.0         | January 2019        | Yes       | Yes         |         |          |
-| v0.13.0         | March 2019          | No        | No          | Yes(\*2)|          |
-| v0.14.0         | April 2019          | Yes       | Yes         | Yes     |          |
-| v0.15.0         | July 2019           | Yes       | Yes         | Yes     |          |
-| v0.16.0         | September 2019 (\*1)| No        | No          | No      | Yes(\*2) |
-| v0.17.0         | October 2019 (\*1)  | Yes       | Yes         | No      | Yes      |
+| OpenJ9 release  | Release date        | JDK8 (LTS)| JDK11 (LTS) | JDK12    | JDK13     | JDK14     |
+|-----------------|---------------------|-----------|-------------|----------|-----------|-----------|
+| v0.12.0         | January 2019        | Yes       | Yes         |          |           |           |
+| v0.13.0         | March 2019          | No        | No          | Yes (\*2)|           |           |
+| v0.14.0         | April 2019          | Yes       | Yes         | Yes      |           |           |
+| v0.15.0         | July 2019           | Yes       | Yes         | Yes      |           |           |
+| v0.16.0         | September 2019      | No        | No          | No       | Yes (\*2) |           |
+| v0.17.0         | October 2019 (\*1)  | Yes       | Yes         | No       | Yes       |           |
+| v0.18.0         | January 2020 (\*1)  | Yes       | Yes         | No       | Yes       |           |
+| v0.19.0         | March 2020 (\*1)    | No        | No          | No       | No        | Yes (\*2) |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
@@ -195,6 +193,48 @@ minimum glibc version 2.12 are expected to function without problems.
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
+### OpenJDK 13
+
+<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
+platform support might vary, depending on their build environment. Check the AdoptOpenJDK [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
+
+OpenJDK13 binaries are supported on the minimum operating system levels shown in the following tables:
+
+
+| Linux                                 |  x64   |  ppc64le   | Z64  |
+|---------------------------------------|--------|------------|------|
+| Centos 6.9                            |   Y    |     Y      |  N   |
+| Centos 7.4                            |   Y    |     Y      |  N   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
+| RHEL 7.4                              |   Y    |     Y      |  Y   |
+| SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
+| Ubuntu 16.04                          |   Y    |     Y      |  Y   |
+| Ubuntu 18.04                          |   Y    |     Y      |  Y   |
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Not all of these distributions are tested, but Linux distributions that have a
+minimum glibc version 2.12 are expected to function without problems.
+
+| Windows                    |  x64   |
+|----------------------------|--------|
+| Windows 7 SP1              |   Y    |
+| Windows 8                  |   Y    |
+| Windows 8.1                |   Y    |
+| Windows 10                 |   Y    |
+| Windows Server 2012        |   Y    |
+| Windows Server 2012 R2     |   Y    |
+| Windows Server 2016        |   Y    |
+
+| macOS                   |   x64    |
+|-------------------------|----------|
+| OS X 10.9.0+            |    Y     |
+
+| AIX          |  ppc64   |
+|--------------|----------|
+| AIX 7.1 TL4  |    Y     |
+| AIX 7.2      |    Y     |
+
+When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
+
 
 ## Build environments
 
@@ -224,6 +264,17 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 | AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |
 
 ### OpenJDK 12
+
+| Platform                    | Operating system         |  Compiler                       |
+|-----------------------------|--------------------------|---------------------------------|
+| Linux x86 64-bit            | Ubuntu 16.04             | gcc 7.3                         |
+| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
+| Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 7.4                         |
+| Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
+| macOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
+| AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |
+
+### OpenJDK 13
 
 | Platform                    | Operating system         |  Compiler                       |
 |-----------------------------|--------------------------|---------------------------------|
