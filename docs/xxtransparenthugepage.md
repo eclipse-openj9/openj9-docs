@@ -24,16 +24,15 @@
 
 # -XX:[+|-]TransparentHugePage
 
-**(Linux&reg; on x86, POWER&reg;, or IBM Z&reg; systems only)**
+**(Linux&reg; on x86, POWER&reg;, and IBM Z&reg; systems only)**
 
-If Transparent Huge Pages (THP) are set to `madvise` on your system, this option, when enabled, promotes all memory allocated to huge pages. If THP is set to
-`always` or `never`, this option is ignored.
+If Transparent Huge Pages (THP) is set to `madvise` on your system, this option, when enabled, promotes all memory allocated to huge pages. On systems without THP, or if THP is set to `always` or `never` on your system, this option is ignored.
 
 ## Syntax
 
-| Setting                    | Effect  | Default                                                                            |
-|----------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+TransparentHugePage` | Enable  |                                                                                    |
-| `-XX:-TransparentHugePage` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>|                                                                                    
+| Setting                    | Effect  | Default                                                                                                  |
+|----------------------------|---------|--------------------------------------------------------------------------------------------------------|
+| `-XX:+TransparentHugePage` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> (Linux on x86)            |
+| `-XX:-TransparentHugePage` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> (POWER and IBM Z systems) |                                                                                    
 
 <!-- ==== END OF TOPIC ==== xxtransparenthugepage.md ==== -->
