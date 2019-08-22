@@ -24,21 +24,21 @@
 
 # Java command (`jcmd`) tool
 
-Use the `jcmd` tool to run diagnostic commands on a specified VM or VMs.
+Use the `jcmd` tool to run diagnostic commands on a specified VM.
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Running diagnostic commands can significantly affect the performance of the target VM.
 
 The command syntax is as follows:
 
-    jcmd [<options] [<vmid> <arguments>]
+    jcmd [<options>] [<vmid> <arguments>]
 
 Where:
 
 - The available `<options>` are:    
-    - `-J`: supplies arguments to the Java VM that is running the `jps` command. You can use multiple `-J` options, for example: `jps -J-Xmx10m -J-Dcom.ibm.tools.attach.enable=yes`
+    - `-J`: supplies arguments to the Java VM that is running the `jcmd` command. You can use multiple `-J` options, for example: `jcmd -J-Xmx10m -J-Dcom.ibm.tools.attach.enable=yes`
     - `-h`: prints the `jcmd` help
 
-- `VMID` is the Attach API virtual machine identifier for the Java VM process. This ID is often, but not always, the same as the operating system *process ID*. One example where the ID might be different is if you specified the system property `-Dcom.ibm.tools.attach.id` when you started the process. You can use the [`jps`](tool_jps.md) command to find the VMID. You can specify multiple VMIDs, separated by a space. VMIDs of dead processes are silently ignored.
+- `<vmid>` is the Attach API virtual machine identifier for the Java VM process. This ID is often, but not always, the same as the operating system *process ID*. One example where the ID might be different is if you specified the system property `-Dcom.ibm.tools.attach.id` when you started the process. You can use the [`jps`](tool_jps.md) command to find the VMID.
 
 - The available `arguments` are:
 
@@ -48,7 +48,11 @@ Where:
 
 For example:
 
-  `jcmd 31452 Dump.heap`
+```
+jcmd 31452 Thread.print
+jcmd 31452 help Dump.heap
+jcmd 31452 Dump.heap myHeapDump
+```
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9. For information about the differences between these two implementations, see [Switching to OpenJ9](tool_migration.md).
 

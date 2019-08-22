@@ -30,7 +30,7 @@
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
 - [Performance improvements for JVMTI watched fields on Power Systems](#performance-improvements-for-jvmti-watched-fields-on-power-systems)
-- [New Java command (`jcmd`) tool](#new-jcmd-tool)
+- [New Java&trade; diagnostic command (`jcmd`) tool](#new-jcmd-tool)
 
 
 
@@ -58,7 +58,7 @@ OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewa
 
 ### New jcmd tool
 
-For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the `jcmd` tool, for running diagnostic commands on a VM. For more information, see [Java command tool](tool_jcmd.md).
+For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the `jcmd` tool  for running diagnostic commands on a VM. For more information, see [Java command tool](tool_jcmd.md).
 
 ## Full release information
 

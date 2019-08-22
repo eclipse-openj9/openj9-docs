@@ -28,21 +28,21 @@ OpenJ9 provides the following tools, which might differ in behavior from the Hot
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** For information about HotSpot equivalences and differences for items other than tools, see [New to OpenJ9?](openj9_newuser.md)
 
-#### Java command tool (`jcmd`)
+#### Java diagnostic command tool (`jcmd`)
 
-Runs diagnostic commands on a specified VM or VMs. The main differences from the HotSpot jcmd tool are as follows:
+Runs diagnostic commands on a specified VM. The main difference from the HotSpot `jcmd` tool is that the following options are not currently supported:
 
-- There is no `-f` option to read commands from a file.
-- There is no option to select VMs by main class instead of `VMID`.
-- Specifying `0` as a `VMID` to target all VMs is not supported.
-- There is no `Perfcounter.print` option for displaying performance counters for the target VM.
+- The `-f` option to read commands from a file.
+- The `Perfcounter.print` option for displaying performance counters for the target VM.
+- Selecting VMs by main class instead of VMID.
+- Specifying `0` as a VMID to target all VMs.
 
 #### Java memory map tool (`jmap`)
 
 Displays information about classes on the heap, including the number of objects and their aggregate size. The main differences from the HotSpot `jmap` tool are as follows:
 
 - Uses the Attach API.
-- Displays information only for local processes that are owned by the current user, due to security considerations. You can display information for remote processes by using `ssh user@host jmap <option> <vmid>`, where `<vmid>` is the Attach API virtual machine identifier for the Java process.
+- Displays information only for local processes that are owned by the current user, due to security considerations. You can display information for remote processes by using `ssh user@host jmap <option> <vmid>`, where `<vmid>` is the Attach API virtual machine identifier for the Java&trade; process.
 - Does not support displaying data from core dumps; use [Dump viewer](tool_jdmpview.md) instead.
 - Does not include a `-F` option to force a dump of an unresponsive process. User `kill -QUIT <pid>` instead, where `<pid>` is the process
 identifier.
@@ -51,7 +51,7 @@ For more information, see [`jmap`](tool_jmap.md).
 
 #### Java process status (`jps`)
 
-Displays information about running Java<sup>&trade;</sup> processes. The main differences from the HotSpot `jps` tool are as follows:
+Displays information about running Java processes. The main differences from the HotSpot `jps` tool are as follows:
 
 - Runs on Windows&reg;, AIX&reg;, and z/OS&reg;, as well as Linux&reg;.
 - Uses the Attach API.
