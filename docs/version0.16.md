@@ -49,7 +49,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 ### Some class data sharing is enabled by default
 
-Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior. For more information, see [Class Data Sharing](shrc.md).
+Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including using `-Xshareclasses:none` to disable all class data sharing. For more information, see [Class Data Sharing](shrc.md).
 
 ### Automatic setting of initial heap size is enabled by default
 
