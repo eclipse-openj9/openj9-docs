@@ -25,7 +25,7 @@
 
 # What's new in version 0.16
 
- The following new features and notable changes since v.0.15.2 are included in this release:
+ The following new features and notable changes since v.0.15.1 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
@@ -58,7 +58,7 @@ OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewa
 
 ### New jcmd tool
 
-For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the `jcmd` tool  for running diagnostic commands on a VM. For more information, see [Java command tool](tool_jcmd.md).
+For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the `jcmd` tool  for running diagnostic commands on a VM. For more information, see [Java diagnostic command tool](tool_jcmd.md).
 
 ## Full release information
 

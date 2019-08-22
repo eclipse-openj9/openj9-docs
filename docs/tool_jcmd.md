@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Java command (`jcmd`) tool
+# Java diagnostic command (`jcmd`) tool
 
 Use the `jcmd` tool to run diagnostic commands on a specified VM.
 
@@ -38,7 +38,7 @@ Where:
     - `-J`: supplies arguments to the Java VM that is running the `jcmd` command. You can use multiple `-J` options, for example: `jcmd -J-Xmx10m -J-Dcom.ibm.tools.attach.enable=yes`
     - `-h`: prints the `jcmd` help
 
-- `<vmid>` is the Attach API virtual machine identifier for the Java VM process. This ID is often, but not always, the same as the operating system *process ID*. One example where the ID might be different is if you specified the system property `-Dcom.ibm.tools.attach.id` when you started the process. You can use the [`jps`](tool_jps.md) command to find the VMID.
+- `<vmid>` is the Attach API virtual machine identifier for the Java&trade; VM process. This ID is often, but not always, the same as the operating system *process ID*. One example where the ID might be different is if you specified the system property `-Dcom.ibm.tools.attach.id` when you started the process. You can use the [`jps`](tool_jps.md) command to find the VMID.
 
 - The available `arguments` are:
 
@@ -46,7 +46,7 @@ Where:
     - `help <command>`: shows help information for the specified diagnostic command
     - `<command> [<command_arguments>]`: runs the specified diagnostic command, with optional command arguments
 
-For example:
+Examples:
 
 ```
 jcmd 31452 Thread.print
