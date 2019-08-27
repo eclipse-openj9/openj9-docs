@@ -3115,6 +3115,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#openjdk-13" title="OpenJDK 13" class="md-nav__link">
+    OpenJDK 13
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3145,6 +3152,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#openjdk-12_1" title="OpenJDK 12" class="md-nav__link">
     OpenJDK 12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openjdk-13_1" title="OpenJDK 13" class="md-nav__link">
+    OpenJDK 13
   </a>
   
 </li>
@@ -3286,6 +3300,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#openjdk-13" title="OpenJDK 13" class="md-nav__link">
+    OpenJDK 13
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3316,6 +3337,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#openjdk-12_1" title="OpenJDK 12" class="md-nav__link">
     OpenJDK 12
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openjdk-13_1" title="OpenJDK 13" class="md-nav__link">
+    OpenJDK 13
   </a>
   
 </li>
@@ -3382,8 +3410,8 @@ a single JDK level.  These releases will occur in March and September with the i
 the corresponding new OpenJDK feature release (ie: 11, 12, ...).</p>
 <p>The following table summarizes which JDK levels are expected to be supported by which Eclipse OpenJ9 releases,
 along with projected release dates. All future dates and support expectations are predictions that might change
-depending on how the OpenJDK and OpenJ9 projects evolve over time. Note also that columns may be removed from
-this table over time.</p>
+depending on how the OpenJDK and OpenJ9 projects evolve over time. To keep this table concise, some rows and
+columns will be removed over time.</p>
 <h2 id="eclipse-openj9-releases">Eclipse OpenJ9 releases</h2>
 <table>
 <thead>
@@ -3394,46 +3422,16 @@ this table over time.</p>
 <th>JDK11 (LTS)</th>
 <th>JDK12</th>
 <th>JDK13</th>
+<th>JDK14</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>v0.8.0</td>
-<td>March 2018</td>
-<td>Yes</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>v0.9.0</td>
-<td>August 2018</td>
-<td>Yes</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>v0.10.0</td>
-<td>September 2018</td>
-<td>No</td>
-<td>Yes(*2)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>v0.11.0</td>
-<td>October 2018</td>
-<td>Yes</td>
-<td>Yes</td>
-<td></td>
-<td></td>
-</tr>
 <tr>
 <td>v0.12.0</td>
 <td>January 2019</td>
 <td>Yes</td>
 <td>Yes</td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -3442,7 +3440,8 @@ this table over time.</p>
 <td>March 2019</td>
 <td>No</td>
 <td>No</td>
-<td>Yes(*2)</td>
+<td>Yes (*2)</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
@@ -3452,6 +3451,7 @@ this table over time.</p>
 <td>Yes</td>
 <td>Yes</td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>v0.15.0</td>
@@ -3460,14 +3460,16 @@ this table over time.</p>
 <td>Yes</td>
 <td>Yes</td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>v0.16.0</td>
-<td>September 2019 (*1)</td>
+<td>September 2019</td>
 <td>No</td>
 <td>No</td>
 <td>No</td>
-<td>Yes(*2)</td>
+<td>Yes (*2)</td>
+<td></td>
 </tr>
 <tr>
 <td>v0.17.0</td>
@@ -3476,6 +3478,25 @@ this table over time.</p>
 <td>Yes</td>
 <td>No</td>
 <td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>v0.18.0</td>
+<td>January 2020 (*1)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>v0.19.0</td>
+<td>March 2020 (*1)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes (*2)</td>
 </tr>
 </tbody>
 </table>
@@ -3909,6 +3930,137 @@ minimum glibc version 2.12 are expected to function without problems.</p>
 </tbody>
 </table>
 <p>When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.</p>
+<h3 id="openjdk-13">OpenJDK 13</h3>
+<p><i class="fa fa-bell" aria-hidden="true"></i> <strong>Important:</strong> If you obtain pre-built binaries from <a href="https://adoptopenjdk.net/index.html">AdoptOpenJDK.net</a>,
+platform support might vary, depending on their build environment. Check the AdoptOpenJDK <a href="https://adoptopenjdk.net/supported_platforms.html">Platform support matrix</a>.</p>
+<p>OpenJDK13 binaries are supported on the minimum operating system levels shown in the following tables:</p>
+<table>
+<thead>
+<tr>
+<th>Linux</th>
+<th>x64</th>
+<th>ppc64le</th>
+<th>Z64</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Centos 6.9</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Centos 7.4</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Red Hat Enterprise Linux (RHEL) 6.9</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>RHEL 7.4</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>SUSE Linux Enterprise Server (SLES) 12</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Ubuntu 16.04</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Ubuntu 18.04</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Not all of these distributions are tested, but Linux distributions that have a
+minimum glibc version 2.12 are expected to function without problems.</p>
+<table>
+<thead>
+<tr>
+<th>Windows</th>
+<th>x64</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 7 SP1</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Windows 8</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Windows 8.1</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Windows 10</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Windows Server 2012</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Windows Server 2012 R2</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Windows Server 2016</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>macOS</th>
+<th>x64</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS X 10.9.0+</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>AIX</th>
+<th>ppc64</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AIX 7.1 TL4</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>AIX 7.2</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.</p>
 <h2 id="build-environments">Build environments</h2>
 <p>The project build and test OpenJDK with OpenJ9 on a number of platforms. The operating system and compiler levels for the build systems are shown in the following tables.</p>
 <h3 id="openjdk-8_1">OpenJDK 8</h3>
@@ -4001,6 +4153,48 @@ minimum glibc version 2.12 are expected to function without problems.</p>
 </tbody>
 </table>
 <h3 id="openjdk-12_1">OpenJDK 12</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Operating system</th>
+<th>Compiler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux x86 64-bit</td>
+<td>Ubuntu 16.04</td>
+<td>gcc 7.3</td>
+</tr>
+<tr>
+<td>Linux on POWER LE 64-bit</td>
+<td>Ubuntu 16.04</td>
+<td>gcc 7.3</td>
+</tr>
+<tr>
+<td>Linux on IBM Z 64-bit</td>
+<td>Ubuntu 16.04</td>
+<td>gcc 7.4</td>
+</tr>
+<tr>
+<td>Windows x86 64-bit</td>
+<td>Windows Server 2012 R2</td>
+<td>Microsoft Visual Studio 2017</td>
+</tr>
+<tr>
+<td>macOS x86 64-bit</td>
+<td>macOS 10.13.5</td>
+<td>xcode/clang 9.4</td>
+</tr>
+<tr>
+<td>AIX POWER BE 64-bit</td>
+<td>AIX 7.1 TL04</td>
+<td>xlc/C++ 13.1.3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="openjdk-13_1">OpenJDK 13</h3>
 <table>
 <thead>
 <tr>
