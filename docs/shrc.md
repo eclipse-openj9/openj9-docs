@@ -37,11 +37,15 @@ Memory footprint is reduced by sharing common classes between applications that 
 
 ## Enabling class data sharing
 
-Class data sharing is enabled by default for bootstrap classes only (the equivalent of specifying `-Xshareclasses:bootClassesOnly,nonFatal,silent`), unless your application is running in a container. You can use the [`-Xshareclasses`](xshareclasses.md) option to change the default behavior, for example you can change the name and location of the default shared classes cache. To enable class data sharing for non-bootstrap classes as well, use `-Xshareclasses` without the `bootClassesOnly` suboption. You can also disable all class data sharing by using the `none` suboption.
+Class data sharing is enabled by default for bootstrap classes only (the equivalent of specifying `-Xshareclasses:bootClassesOnly,nonFatal,silent`), unless your application is running in a container. If you want to change the default behaviour, use the [`-Xshareclasses`](xshareclasses.md) option on the command line. For example:
+- You can change the name and location of the default shared classes cache.
+- You can enable messages about the default shared classes cache by using the default command line option without the `silent` suboption: `-Xshareclasses:bootClassesOnly,nonFatal`.
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you have multiple VMs and you do not change the default shared classes behavior, the VMs will share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and recreated; for more information, see the following section about best practices.
 
 You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it.
+
+You can enable class data sharing for non-bootstrap classes as well, by using `-Xshareclasses` without the `bootClassesOnly` suboption. You can also disable all class data sharing by using the `none` suboption.
 
 ## Best practices for using `-Xshareclasses`
 
