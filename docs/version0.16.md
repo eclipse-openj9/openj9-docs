@@ -57,6 +57,6 @@ OpenJ9 version 0.15.1 introduced the [`-XX:[+|-]UseGCStartupHints`](xxusegcstart
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 V0.15.2 and V0.16.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.16/0.16.md).
+To see a complete list of changes between Eclipse OpenJ9 V0.15.1 and V0.16.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.16/0.16.md).
 
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->
