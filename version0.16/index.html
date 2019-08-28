@@ -425,6 +425,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     Performance improvements for JVMTI watched fields on Power Systems
   </a>
   
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-jcmd-tool" title="New jcmd tool" class="md-nav__link">
+    New jcmd tool
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -790,6 +797,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li class="md-nav__item">
     <a href="../tool_builder/" title="Option builder" class="md-nav__link">
       Option builder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jcmd/" title="Java command (jcmd) tool" class="md-nav__link">
+      Java command (jcmd) tool
     </a>
   </li>
 
@@ -3270,6 +3289,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     Performance improvements for JVMTI watched fields on Power Systems
   </a>
   
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-jcmd-tool" title="New jcmd tool" class="md-nav__link">
+    New jcmd tool
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -3343,12 +3369,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="whats-new-in-version-016">What's new in version 0.16</h1>
-<p>The following new features and notable changes since v.0.15.2 are included in this release:</p>
+<p>The following new features and notable changes since v.0.15.1 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#some-class-data-sharing-is-enabled-by-default">Some class data sharing is enabled by default</a></li>
 <li><a href="#automatic-setting-of-initial-heap-size-is-enabled-by-default">Automatic setting of initial heap size is enabled by default</a></li>
 <li><a href="#performance-improvements-for-jvmti-watched-fields-on-power-systems">Performance improvements for JVMTI watched fields on Power Systems</a></li>
+<li><a href="#new-jcmd-tool">New Java&trade; diagnostic command (<code>jcmd</code>) tool</a></li>
 <li><a href="#changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -3366,6 +3393,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>OpenJ9 version 0.15.1 introduced the <a href="../xxusegcstartuphints/"><code>-XX:[+|-]UseGCStartupHints</code></a> option, which, when enabled, turned on the automatic learning and setting of an appropriate heap size for an application. This option is now enabled by default.</p>
 <h3 id="performance-improvements-for-jvmti-watched-fields-on-power-systems">Performance improvements for JVMTI watched fields on Power Systems</h3>
 <p>OpenJ9 version 0.14.0 introduced the <a href="../xxjitinlinewatches/"><code>-XX:[+|-]JITInlineWatches</code></a> option, which turns on JIT operations to improve the performance of JVMTI watched fields. This option, which was enabled by default in version 0.15.1, is now also supported on AIX&reg; and Linux on Power Systems&trade;.</p>
+<h3 id="new-jcmd-tool">New jcmd tool</h3>
+<p>For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the <code>jcmd</code> tool  for running diagnostic commands on a VM. For more information, see <a href="../tool_jcmd/">Java diagnostic command tool</a>.</p>
 <h4 id="changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</h4>
 <p>The format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache rather than re-creating or reusing an existing cache. To save space, you can remove all existing shared caches unless they are in use by an earlier release. As a result of the format change, a <code>layer</code> column now appears in the output of the <code>-Xshareclasses:listAllCaches</code> option. This change is to support a future enhancement.</p>
 <p>For more information about the <code>-Xshareclasses</code> option, including the <code>destroy</code> options that you can use to remove caches, see <a href="../xshareclasses/"><code>-Xshareclasses</code></a>.</p>
