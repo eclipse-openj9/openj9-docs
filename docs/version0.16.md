@@ -64,7 +64,7 @@ OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewa
 
 ### Linux&reg; on x86: Support for Transparent Huge Pages (THP)
 
-When you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting on Linux on x86 systems, THP is now enabled by default. To disable this feature, set [`-XX:-TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. The THP setting on other systems remains disabled by default but can be enabled by setting [`-XX:+TransparentHugePage`](xxtransparenthugepage.md).
+When you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting on Linux on x86 systems, THP is now enabled by default. To disable this feature, set [`-XX:-TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. The THP setting on other systems remains disabled by default when you use 'madvise', but can be enabled by setting [`-XX:+TransparentHugePage`](xxtransparenthugepage.md).
 
 ### Changes to the shared classes cache generation number
 
