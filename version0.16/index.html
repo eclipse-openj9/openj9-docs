@@ -418,6 +418,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     Performance improvements for JVMTI watched fields on Power Systems
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-the-shared-classes-cache-generation-number" title="Changes to the shared classes cache generation number" class="md-nav__link">
+    Changes to the shared classes cache generation number
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -3243,6 +3256,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     Performance improvements for JVMTI watched fields on Power Systems
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-the-shared-classes-cache-generation-number" title="Changes to the shared classes cache generation number" class="md-nav__link">
+    Changes to the shared classes cache generation number
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -3308,6 +3334,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#automatic-setting-of-initial-heap-size-is-enabled-by-default">Automatic setting of initial heap size is enabled by default</a></li>
 <li><a href="#performance-improvements-for-jvmti-watched-fields-on-power-systems">Performance improvements for JVMTI watched fields on Power Systems</a></li>
+<li><a href="#changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3322,6 +3349,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>OpenJ9 version 0.15.1 introduced the <a href="../xxusegcstartuphints/"><code>-XX:[+|-]UseGCStartupHints</code></a> option, which, when enabled, turned on the automatic learning and setting of an appropriate heap size for an application. This option is now enabled by default.</p>
 <h3 id="performance-improvements-for-jvmti-watched-fields-on-power-systems">Performance improvements for JVMTI watched fields on Power Systems</h3>
 <p>OpenJ9 version 0.14.0 introduced the <a href="../xxjitinlinewatches/"><code>-XX:[+|-]JITInlineWatches</code></a> option, which turns on JIT operations to improve the performance of JVMTI watched fields. This option, which was enabled by default in version 0.15.1, is now also supported on AIX&reg; and Linux on Power Systems&trade;.</p>
+<h4 id="changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</h4>
+<p>The format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache rather than re-creating or reusing an existing cache. To save space, you can remove all existing shared caches unless they are in use by an earlier release. As a result of the format change, a <code>layer</code> column now appears in the output of the <code>-Xshareclasses:listAllCaches</code> option. This change is to support a future enhancement.</p>
+<p>For more information about the <code>-Xshareclasses</code> option, including the <code>destroy</code> options that you can use to remove caches, see <a href="../xshareclasses/"><code>-Xshareclasses</code></a>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.15.2 and V0.16.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.16/0.16.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->
