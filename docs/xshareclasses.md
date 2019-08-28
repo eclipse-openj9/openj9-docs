@@ -22,16 +22,11 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-
-
-
-
-
 # -Xshareclasses
 
-You can use the `-Xshareclasses` option to enable class sharing. This option can take a number of parameters, some of which are cache utilities.
+Use the `-Xshareclasses` option to enable, disable, or modify class sharing behavior. Class data sharing is enabled by default for bootstrap classes only (the equivalent of specifying `-Xshareclasses:bootClassesOnly,nonFatal,silent`), unless your application is running in a container.
 
-Cache utilities perform the required operation on the specified cache, without starting the VM. You can combine multiple suboptions, which are separated by commas, but the cache utilities are mutually exclusive.
+This option can take a number of parameters, some of which are cache utilities. Cache utilities perform the required operation on the specified cache, without starting the VM. You can combine multiple suboptions, which are separated by commas, but the cache utilities are mutually exclusive.
 
 When you are running cache utilities, the message `Could not create the Java virtual machine` is expected. Cache utilities do not create the virtual machine.
 
