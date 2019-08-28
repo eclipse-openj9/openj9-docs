@@ -3977,8 +3977,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xshareclasses">-Xshareclasses</h1>
-<p>You can use the <code>-Xshareclasses</code> option to enable class sharing. This option can take a number of parameters, some of which are cache utilities.</p>
-<p>Cache utilities perform the required operation on the specified cache, without starting the VM. You can combine multiple suboptions, which are separated by commas, but the cache utilities are mutually exclusive.</p>
+<p>Use the <code>-Xshareclasses</code> option to enable, disable, or modify class sharing behavior. Class data sharing is enabled by default for bootstrap classes only (the equivalent of specifying <code>-Xshareclasses:bootClassesOnly,nonFatal,silent</code>), unless your application is running in a container.</p>
+<p>This option can take a number of parameters, some of which are cache utilities. Cache utilities perform the required operation on the specified cache, without starting the VM. You can combine multiple suboptions, which are separated by commas, but the cache utilities are mutually exclusive.</p>
 <p>When you are running cache utilities, the message <code>Could not create the Java virtual machine</code> is expected. Cache utilities do not create the virtual machine.</p>
 <p>Some cache utilities can work with caches from previous Java&trade; versions or caches that are created by virtual machines (VMs) with different bit-widths. These caches are referred to as <em>"incompatible"</em> caches.</p>
 <p>See also the <a href="../shrc/">Class data sharing</a> topic, which includes some <a href="../shrc/#best-practices-for-using-xshareclasses">best practices for using <code>-Xshareclasses</code></a>.</p>
