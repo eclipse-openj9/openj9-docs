@@ -38,6 +38,7 @@ Memory footprint is reduced by sharing common classes between applications that 
 ## Enabling class data sharing
 
 Class data sharing is enabled by default for bootstrap classes only (the equivalent of specifying `-Xshareclasses:bootClassesOnly,nonFatal,silent`), unless your application is running in a container. If you want to change the default behaviour, use the [`-Xshareclasses`](xshareclasses.md) option on the command line. For example:
+
 - You can change the name and location of the default shared classes cache.
 - You can enable messages about the default shared classes cache by using the default command line option without the `silent` suboption: `-Xshareclasses:bootClassesOnly,nonFatal`.
 
