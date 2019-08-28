@@ -147,6 +147,7 @@ pages:
             - "Dump viewer"                                                      : tool_jdmpview.md
             - "Trace formatter"                                                  : tool_traceformat.md
             - "Option builder"                                                   : tool_builder.md
+            - "Java command (jcmd) tool"                                         : tool_jcmd.md
             - "Java memory map (jmap) tool"                                      : tool_jmap.md
             - "Java process status (jps)"                                        : tool_jps.md
             - "Java stack (jstack) tool"                                         : tool_jstack.md
