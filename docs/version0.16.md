@@ -32,8 +32,8 @@ The following new features and notable changes since v.0.15.1 are included in th
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
 - [Performance improvements for JVMTI watched fields on Power Systems](#performance-improvements-for-jvmti-watched-fields-on-power-systems)
 - [Linux on x86: Support for Transparent Huge Pages (THP)](#linux-on-x86-support-for-transparent-huge-pages-thp)
+- [New Java&trade; diagnostic command (`jcmd`) tool](#new-jcmd-tool)
 - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
-
 
 
 ## Features and changes
@@ -63,15 +63,18 @@ OpenJ9 version 0.15.1 introduced the [`-XX:[+|-]UseGCStartupHints`](xxusegcstart
 OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which turns on JIT operations to improve the performance of JVMTI watched fields. This option, which was enabled by default in version 0.15.1, is now also supported on AIX&reg; and Linux on Power Systems&trade;.
 
 ### Linux&reg; on x86: Support for Transparent Huge Pages (THP)
+ 
+When you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting on Linux on x86 systems, THP is now enabled by default. To disable this feature, set [`-XX:-TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. The THP setting on other systems remains disabled by default when you use `madvise`, but can be enabled by setting [`-XX:+TransparentHugePage`](xxtransparenthugepage.md).
 
-When you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting on Linux on x86 systems, THP is now enabled by default. To disable this feature, set [`-XX:-TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. The THP setting on other systems remains disabled by default when you use 'madvise', but can be enabled by setting [`-XX:+TransparentHugePage`](xxtransparenthugepage.md).
+### New jcmd tool
 
-### Changes to the shared classes cache generation number
+For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the `jcmd` tool  for running diagnostic commands on a VM. For more information, see [Java diagnostic command tool](tool_jcmd.md).
+
+#### Changes to the shared classes cache generation number
 
 The format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache rather than re-creating or reusing an existing cache. To save space, you can remove all existing shared caches unless they are in use by an earlier release. As a result of the format change, a `layer` column now appears in the output of the `-Xshareclasses:listAllCaches` option. This change is to support a future enhancement.
 
 For more information about the `-Xshareclasses` option, including the `destroy` options that you can use to remove caches, see [`-Xshareclasses`](xshareclasses.md).
-
 
 ## Full release information
 
