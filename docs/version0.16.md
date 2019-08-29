@@ -25,13 +25,14 @@
 
 # What's new in version 0.16
 
- The following new features and notable changes since v.0.15.1 are included in this release:
+The following new features and notable changes since v.0.15.1 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Some class data sharing is enabled by default](#some-class-data-sharing-is-enabled-by-default)
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
 - [Option to share VM anonymous classes](#option-to-share-vm-anonymous-classes)
 - [Performance improvements for JVMTI watched fields on Power Systems](#performance-improvements-for-jvmti-watched-fields-on-power-systems)
+- [Linux on x86: Support for Transparent Huge Pages (THP)](#linux-on-x86-support-for-transparent-huge-pages-thp)
 - [New Java&trade; diagnostic command (`jcmd`) tool](#new-jcmd-tool)
 - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
 
@@ -65,6 +66,10 @@ Prior to version 0.16.0, anonymous classes, those created by `Unsafe.defineAnony
 
 OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which turns on JIT operations to improve the performance of JVMTI watched fields. This option, which was enabled by default in version 0.15.1, is now also supported on AIX&reg; and Linux on Power Systems&trade;.
 
+### Linux&reg; on x86: Support for Transparent Huge Pages (THP)
+ 
+When you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting on Linux on x86 systems, THP is now enabled by default. To disable this feature, set [`-XX:-TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. The THP setting on other systems remains disabled by default when you use `madvise`, but can be enabled by setting [`-XX:+TransparentHugePage`](xxtransparenthugepage.md).
+
 ### New jcmd tool
 
 For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the `jcmd` tool  for running diagnostic commands on a VM. For more information, see [Java diagnostic command tool](tool_jcmd.md).
@@ -78,5 +83,6 @@ For more information about the `-Xshareclasses` option, including the `destroy` 
 ## Full release information
 
 To see a complete list of changes between Eclipse OpenJ9 V0.15.1 and V0.16.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.16/0.16.md).
+
 
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->

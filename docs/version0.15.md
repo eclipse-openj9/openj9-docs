@@ -33,7 +33,7 @@
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [ChaCha20 algorithm support for OpenSSL](#chacha20-algorithm-support-for-openssl)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 - ![Start of content that applies only to Java 12)](cr/java12.png) [OpenSSL Digest algorithm disabled](#openssl-digest-algorithm-disabled)![End of content that applies only to Java 12](cr/java_close.png)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
-- [Support for Transparent HugePage](#support-for-transparent-hugepage)
+- [Support for Transparent Huge Pages (THP)](#support-for-transparent-huge-pages-thp)
 -  ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for low-overhead heap profiling (JEP 331)](#support-for-low-overhead-heap-profiling)![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 - [New Java memory map (jmap) tool](#new-java-memory-map-tool)
 - [Automatically setting an initial heap size](#automatically-setting-an-initial-heap-size)
@@ -79,7 +79,7 @@ for Java 8 and 11 in release 0.14.2, which did not support Java 12.
 
 For compatibility, the [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md) OpenJDK Hotspot option is now supported by OpenJ9.
 
-### Support for Transparent HugePage
+### Support for Transparent Huge Pages (THP)
 
 The VM now supports the allocation of huge pages on Linux when you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting. To enable this feature, set [`-XX:+TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. This option is currently not enabled by default.
 
