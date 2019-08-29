@@ -304,6 +304,7 @@ pages:
             - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
+            - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
