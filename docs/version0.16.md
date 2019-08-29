@@ -25,12 +25,15 @@
 
 # What's new in version 0.16
 
- The following new features and notable changes since v.0.15.2 are included in this release:
+ The following new features and notable changes since v.0.15.1 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [Some class data sharing is enabled by default](#some-class-data-sharing-is-enabled-by-default)
 - [Automatic setting of initial heap size is enabled by default](#automatic-setting-of-initial-heap-size-is-enabled-by-default)
 - [Option to share VM anonymous classes](#option-to-share-vm-anonymous-classes)
 - [Performance improvements for JVMTI watched fields on Power Systems](#performance-improvements-for-jvmti-watched-fields-on-power-systems)
+- [New Java&trade; diagnostic command (`jcmd`) tool](#new-jcmd-tool)
+- [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
 
 ## Features and changes
 
@@ -46,6 +49,10 @@ The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK c
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+### Some class data sharing is enabled by default
+
+Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including using `-Xshareclasses:none` to disable all class data sharing. For more information, see [Class data sharing](shrc.md).
+
 ### Automatic setting of initial heap size is enabled by default
 
 OpenJ9 version 0.15.1 introduced the [`-XX:[+|-]UseGCStartupHints`](xxusegcstartuphints.md) option, which, when enabled, turned on the automatic learning and setting of an appropriate heap size for an application. This option is now enabled by default.
@@ -58,8 +65,18 @@ Prior to version 0.16.0, anonymous classes, those created by `Unsafe.defineAnony
 
 OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which turns on JIT operations to improve the performance of JVMTI watched fields. This option, which was enabled by default in version 0.15.1, is now also supported on AIX&reg; and Linux on Power Systems&trade;.
 
+### New jcmd tool
+
+For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the `jcmd` tool  for running diagnostic commands on a VM. For more information, see [Java diagnostic command tool](tool_jcmd.md).
+
+### Changes to the shared classes cache generation number
+
+The format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache rather than re-creating or reusing an existing cache. To save space, you can remove all existing shared caches unless they are in use by an earlier release. As a result of the format change, a `layer` column now appears in the output of the `-Xshareclasses:listAllCaches` option. This change is to support a future enhancement.
+
+For more information about the `-Xshareclasses` option, including the `destroy` options that you can use to remove caches, see [`-Xshareclasses`](xshareclasses.md).
+
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 V0.15.2 and V0.16.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.16/0.16.md).
+To see a complete list of changes between Eclipse OpenJ9 V0.15.1 and V0.16.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.16/0.16.md).
 
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->
