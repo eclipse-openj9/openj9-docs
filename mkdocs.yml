@@ -333,6 +333,7 @@ pages:
             - "-XX:[+|-]ReduceCPUMonitorOverhead"                                : xxreducecpumonitoroverhead.md
             - "-XX:[+|-]RuntimeInstrumentation"                                  : xxruntimeinstrumentation.md
             - "-XXsetHWPrefetch"                                                 : xxsethwprefetch.md
+            - "-XX:[+|-]ShareAnonymousClasses"                                   : xxshareanonymousclasses.md
             - "-XX:ShareClassesDisableBCI"                                       : xxshareclassesenablebci.md         #redirect
             - "-XX:ShareClassesEnableBCI"                                        : xxshareclassesenablebci.md
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
