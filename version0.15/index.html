@@ -454,8 +454,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#support-for-transparent-hugepage" title="Support for Transparent HugePage" class="md-nav__link">
-    Support for Transparent HugePage
+  <a href="#support-for-transparent-huge-pages-thp" title="Support for Transparent Huge Pages (THP)" class="md-nav__link">
+    Support for Transparent Huge Pages (THP)
   </a>
   
 </li>
@@ -3368,8 +3368,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#support-for-transparent-hugepage" title="Support for Transparent HugePage" class="md-nav__link">
-    Support for Transparent HugePage
+  <a href="#support-for-transparent-huge-pages-thp" title="Support for Transparent Huge Pages (THP)" class="md-nav__link">
+    Support for Transparent Huge Pages (THP)
   </a>
   
 </li>
@@ -3489,7 +3489,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><img alt="Start of content that applies only to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#chacha20-algorithm-support-for-openssl">ChaCha20 algorithm support for OpenSSL</a><img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><img alt="Start of content that applies only to Java 12)" src="../cr/java12.png" /> <a href="#openssl-digest-algorithm-disabled">OpenSSL Digest algorithm disabled</a><img alt="End of content that applies only to Java 12" src="../cr/java_close.png" /></li>
 <li><a href="#support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</a></li>
-<li><a href="#support-for-transparent-hugepage">Support for Transparent HugePage</a></li>
+<li><a href="#support-for-transparent-huge-pages-thp">Support for Transparent Huge Pages (THP)</a></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#support-for-low-overhead-heap-profiling">Support for low-overhead heap profiling (JEP 331)</a><img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><a href="#new-java-memory-map-tool">New Java memory map (jmap) tool</a></li>
 <li><a href="#automatically-setting-an-initial-heap-size">Automatically setting an initial heap size</a></li>
@@ -3518,7 +3518,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 for Java 8 and 11 in release 0.14.2, which did not support Java 12.</p>
 <h3 id="support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</h3>
 <p>For compatibility, the <a href="../xxonoutofmemoryerror/"><code>-XX:OnOutOfMemoryError</code></a> OpenJDK Hotspot option is now supported by OpenJ9.</p>
-<h3 id="support-for-transparent-hugepage">Support for Transparent HugePage</h3>
+<h3 id="support-for-transparent-huge-pages-thp">Support for Transparent Huge Pages (THP)</h3>
 <p>The VM now supports the allocation of huge pages on Linux when you use the <code>madvise</code> (<code>/sys/kernel/mm/transparent_hugepage/enabled</code>) setting. To enable this feature, set <a href="../xxtransparenthugepage/"><code>-XX:+TransparentHugePage</code></a> on the command line when you start your application. This option is currently not enabled by default.</p>
 <h3 id="support-for-low-overhead-heap-profiling"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> Support for low-overhead heap profiling</h3>
 <p><a href="http://openjdk.java.net/jeps/331">JEP 331</a> provides a mechanism for sampling Java heap allocations with a low overhead via

@@ -435,6 +435,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#linux-on-x86-support-for-transparent-huge-pages-thp" title="Linux&reg; on x86: Support for Transparent Huge Pages (THP)" class="md-nav__link">
+    Linux&reg; on x86: Support for Transparent Huge Pages (THP)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-jcmd-tool" title="New jcmd tool" class="md-nav__link">
     New jcmd tool
   </a>
@@ -3312,6 +3319,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#linux-on-x86-support-for-transparent-huge-pages-thp" title="Linux&reg; on x86: Support for Transparent Huge Pages (THP)" class="md-nav__link">
+    Linux&reg; on x86: Support for Transparent Huge Pages (THP)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-jcmd-tool" title="New jcmd tool" class="md-nav__link">
     New jcmd tool
   </a>
@@ -3390,6 +3404,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#automatic-setting-of-initial-heap-size-is-enabled-by-default">Automatic setting of initial heap size is enabled by default</a></li>
 <li><a href="#option-to-share-vm-anonymous-classes">Option to share VM anonymous classes</a></li>
 <li><a href="#performance-improvements-for-jvmti-watched-fields-on-power-systems">Performance improvements for JVMTI watched fields on Power Systems</a></li>
+<li><a href="#linux-on-x86-support-for-transparent-huge-pages-thp">Linux on x86: Support for Transparent Huge Pages (THP)</a></li>
 <li><a href="#new-jcmd-tool">New Java&trade; diagnostic command (<code>jcmd</code>) tool</a></li>
 <li><a href="#changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</a></li>
 </ul>
@@ -3410,6 +3425,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Prior to version 0.16.0, anonymous classes, those created by <code>Unsafe.defineAnonymousClass</code>, were not stored in the shared classes cache. They are now stored there by default, which means they are available for ahead-of-time (AOT) compilation, potentially improving startup performance. A new command, <a href="../xxshareanonymousclasses/">-XX:[+|-]ShareAnonymousClasses</a>, is introduced that enables you to stop anonymous classes being stored in the shared classes cache.</p>
 <h3 id="performance-improvements-for-jvmti-watched-fields-on-power-systems">Performance improvements for JVMTI watched fields on Power Systems</h3>
 <p>OpenJ9 version 0.14.0 introduced the <a href="../xxjitinlinewatches/"><code>-XX:[+|-]JITInlineWatches</code></a> option, which turns on JIT operations to improve the performance of JVMTI watched fields. This option, which was enabled by default in version 0.15.1, is now also supported on AIX&reg; and Linux on Power Systems&trade;.</p>
+<h3 id="linux-on-x86-support-for-transparent-huge-pages-thp">Linux&reg; on x86: Support for Transparent Huge Pages (THP)</h3>
+<p>When you use the <code>madvise</code> (<code>/sys/kernel/mm/transparent_hugepage/enabled</code>) setting on Linux on x86 systems, THP is now enabled by default. To disable this feature, set <a href="../xxtransparenthugepage/"><code>-XX:-TransparentHugePage</code></a> on the command line when you start your application. The THP setting on other systems remains disabled by default when you use <code>madvise</code>, but can be enabled by setting <a href="../xxtransparenthugepage/"><code>-XX:+TransparentHugePage</code></a>.</p>
 <h3 id="new-jcmd-tool">New jcmd tool</h3>
 <p>For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the <code>jcmd</code> tool  for running diagnostic commands on a VM. For more information, see <a href="../tool_jcmd/">Java diagnostic command tool</a>.</p>
 <h3 id="changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</h3>

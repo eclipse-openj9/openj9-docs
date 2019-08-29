@@ -3261,28 +3261,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xx-transparenthugepage">-XX:[+|-]TransparentHugePage</h1>
-<p><strong>(Linux&reg; on x86, POWER&reg;, or IBM Z&reg; systems only)</strong></p>
-<p>If Transparent Huge Pages (THP) are set to <code>madvise</code> on your system, this option, when enabled, promotes all memory allocated to huge pages. If THP is set to
-<code>always</code> or <code>never</code>, this option is ignored.</p>
+<p><strong>(Linux&reg; systems only (x86, POWER&reg;, and IBM Z&reg;)</strong></p>
+<p>If Transparent Huge Pages (THP) is set to <code>madvise</code> on your system, this option, when enabled, promotes all memory allocated to huge pages. On systems without THP, or if THP is set to <code>always</code> or <code>never</code> on your system, this option is ignored.</p>
 <h2 id="syntax">Syntax</h2>
 <table>
 <thead>
 <tr>
 <th>Setting</th>
 <th>Effect</th>
-<th align="center">Default</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>-XX:+TransparentHugePage</code></td>
 <td>Enable</td>
-<td align="center"></td>
+<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> (x86 systems)</td>
 </tr>
 <tr>
 <td><code>-XX:-TransparentHugePage</code></td>
 <td>Disable</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
+<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> (POWER and IBM Z systems)</td>
 </tr>
 </tbody>
 </table>
