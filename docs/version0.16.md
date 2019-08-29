@@ -35,6 +35,7 @@ The following new features and notable changes since v.0.15.1 are included in th
 - [Linux on x86: Support for Transparent Huge Pages (THP)](#linux-on-x86-support-for-transparent-huge-pages-thp)
 - [New Java&trade; diagnostic command (`jcmd`) tool](#new-jcmd-tool)
 - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
+- [![Start of content that applies to Java 13 and later](cr/java13plus.png) The `-Xverify:none` and `-noverify` options are deprecated](#the-xverifynone-and-noverify-options-are-deprecated)
 
 ## Features and changes
 
@@ -80,9 +81,12 @@ The format of classes that are stored in the shared classes cache is changed, wh
 
 For more information about the `-Xshareclasses` option, including the `destroy` options that you can use to remove caches, see [`-Xshareclasses`](xshareclasses.md).
 
+### ![Start of content that applies to Java 13 and later](cr/java13plus.png) The `-Xverify:none` and `-noverify` options are deprecated
+
+The option [`-Xverify:none`](xverify.md) (and its equivalent `-noverify`) is deprecated in Java 13. Both options might be removed in a future release. OpenJ9 issues a warning if these options are used in Java 13 and later versions. ![End of content that applies only to Java 13](cr/java_close.png)
+
 ## Full release information
 
 To see a complete list of changes between Eclipse OpenJ9 V0.15.1 and V0.16.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.16/0.16.md).
-
 
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->
