@@ -98,7 +98,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
     - On Windows&trade; systems, `<directory>` is the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
     - On other operating systems, `<directory>` is the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`.
 
-: On AIX, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
+: On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
 
 : Nonpersistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a `javasharedresources` subdirectory of the `cacheDir` specified. Do not move or delete control files in this directory. The `listAllCaches` utility, the `destroyAll` utility, and the `expire` suboption work only in the scope of a given `cacheDir`.
 
@@ -136,7 +136,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 | The cache directory is a new directory and you do not specify the `groupAccess` suboption | 0700 |
 | The cache directory already exists and is not `/tmp/javasharedresources` | Unchanged |
 
-: †On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
+: †On z/OS&reg; systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
 
 : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
@@ -184,7 +184,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 ### `destroyAllSnapshots` (Cache utility)
 
-: **(AIX, Linux, macOS, and z/OS only)**
+: **(Not Windows)**
 
         -Xshareclasses:destroyAllSnapshots
 
@@ -192,7 +192,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 ### `destroySnapshot` (Cache utility)
 
-: **(AIX, Linux, macOS, and z/OS only)**
+: **(Not Windows)**
 
         -Xshareclasses:destroySnapshot
 
@@ -236,7 +236,7 @@ case, the VM continues without using shared classes.
 
 ### `groupAccess`
 
-: **(AIX, Linux, macOS, and z/OS only)**
+: **(Not Windows)**
 
         -Xshareclasses:groupAccess
 
@@ -288,8 +288,6 @@ case, the VM continues without using shared classes.
 
 ### `listAllCaches` (Cache utility)
 
-: **(AIX, Linux, macOS, and z/OS only)**
-
         -Xshareclasses:listAllCaches
 
 : Lists all the compatible and incompatible caches, and snapshots that exist in the specified cache directory. If you do not specify `cacheDir`, the default directory is used. Summary information, such as Java version and current usage, is displayed for each cache.
@@ -332,7 +330,7 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:name=<name>
 
-:   Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, `destroy`. Use the `listAllCaches` utility to show which named caches are currently available. If you do not specify a name, the default name *"sharedcc\_%u"* is used. "%u" in the cache name inserts the current user name. On AIX, Linux, macOS, and z/OS systems, you can specify *"%g"* in the cache name to insert the current group name.
+:   Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, `destroy`. Use the `listAllCaches` utility to show which named caches are currently available. If you do not specify a name, the default name *"sharedcc\_%u"* is used. "%u" in the cache name inserts the current user name. On operating systems other than Windows, you can specify *"%g"* in the cache name to insert the current group name.
 
 : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to explicitly specify a cache for your application. This avoids the application sharing a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application. Note that you cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
@@ -428,7 +426,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
 ### `restoreFromSnapshot` (Cache utility)
 
-: **(AIX, Linux, macOS, and z/OS only)**
+: **(Not Windows)**
 
         -Xshareclasses:restoreFromSnapshot
 
@@ -468,7 +466,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
 ### `snapshotCache` (Cache utility)
 
-: **(AIX, Linux, macOS, and z/OS only)**
+: **(Not Windows)**
 
         -Xshareclasses:snapshotCache
 
