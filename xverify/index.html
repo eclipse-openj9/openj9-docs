@@ -3289,11 +3289,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 <tr>
 <td><code>-Xverify:none</code></td>
-<td>Disables the verifier. &nbsp; <strong>Note:</strong> This is not a supported configuration. If you encounter problems with the verifier turned off, remove this option and try to reproduce the problem.</td>
+<td>Disables the verifier. &nbsp; <strong>Note:</strong> This is not a supported configuration and, as noted, is deprecated in Java 13 and later versions. If you encounter problems with the verifier turned off, remove this option and try to reproduce the problem.</td>
 <td align="center"></td>
 </tr>
 </tbody>
 </table>
+<p><img alt="Start of content that applies to Java 13 and later" src="../cr/java13plus.png" /> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The option <code>-Xverify:none</code> (and its equivalent <code>-noverify</code>) is deprecated in Java 13. Both options might be removed in a future release. OpenJ9 issues a warning if these options are used in Java 13 and later versions. <img alt="End of content that applies only to Java 13" src="../cr/java_close.png" /></p>
 <!-- ==== END OF TOPIC ==== xverify.md ==== -->
                 
                   
