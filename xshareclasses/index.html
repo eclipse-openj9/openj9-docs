@@ -4073,7 +4073,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </dd>
 <dd>
-<p>On AIX, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.</p>
+<p>On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.</p>
 </dd>
 <dd>
 <p>Nonpersistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a <code>javasharedresources</code> subdirectory of the <code>cacheDir</code> specified. Do not move or delete control files in this directory. The <code>listAllCaches</code> utility, the <code>destroyAll</code> utility, and the <code>expire</code> suboption work only in the scope of a given <code>cacheDir</code>.</p>
@@ -4141,7 +4141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tbody>
 </table>
 <dl>
-<dd>†On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.</dd>
+<dd>†On z/OS&reg; systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.</dd>
 <dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See <a href="../shrc/#best-practices-for-using-xshareclasses">Class data sharing: Best practices for using <code>-Xshareclasses</code></a>.</dd>
 </dl>
 <h3 id="cacheretransformed"><code>cacheRetransformed</code></h3>
@@ -4189,7 +4189,7 @@ cannot verify that the shared memory was created by the VM.
 </ul>
 <h3 id="destroyallsnapshots-cache-utility"><code>destroyAllSnapshots</code> (Cache utility)</h3>
 <dl>
-<dd><strong>(AIX, Linux, macOS, and z/OS only)</strong><pre><code>-Xshareclasses:destroyAllSnapshots
+<dd><strong>(Not Windows)</strong><pre><code>-Xshareclasses:destroyAllSnapshots
 </code></pre>
 </dd>
 <dd>
@@ -4198,7 +4198,7 @@ cannot verify that the shared memory was created by the VM.
 </dl>
 <h3 id="destroysnapshot-cache-utility"><code>destroySnapshot</code> (Cache utility)</h3>
 <dl>
-<dd><strong>(AIX, Linux, macOS, and z/OS only)</strong><pre><code>-Xshareclasses:destroySnapshot
+<dd><strong>(Not Windows)</strong><pre><code>-Xshareclasses:destroySnapshot
 </code></pre>
 </dd>
 <dd>
@@ -4241,7 +4241,7 @@ case, the VM continues without using shared classes.</dd>
 </dl>
 <h3 id="groupaccess"><code>groupAccess</code></h3>
 <dl>
-<dd><strong>(AIX, Linux, macOS, and z/OS only)</strong><pre><code>-Xshareclasses:groupAccess
+<dd><strong>(Not Windows)</strong><pre><code>-Xshareclasses:groupAccess
 </code></pre>
 </dd>
 <dd>
@@ -4296,13 +4296,10 @@ with shared class cache.
 <dd>To revalidate an AOT method, see the <code>revalidateAotMethods</code> suboption. Use the <code>findAotMethod</code> suboption to determine which AOT methods match the method specifications. To learn more about the syntax to use for <code>&lt;method_specification&gt;</code>, including how to specify more than one method, see <a href="#method-specification-syntax">Method specification syntax</a>.</dd>
 </dl>
 <h3 id="listallcaches-cache-utility"><code>listAllCaches</code> (Cache utility)</h3>
-<dl>
-<dd><strong>(AIX, Linux, macOS, and z/OS only)</strong><pre><code>-Xshareclasses:listAllCaches
+<pre><code>    -Xshareclasses:listAllCaches
 </code></pre>
-</dd>
-<dd>
-<p>Lists all the compatible and incompatible caches, and snapshots that exist in the specified cache directory. If you do not specify <code>cacheDir</code>, the default directory is used. Summary information, such as Java version and current usage, is displayed for each cache.</p>
-</dd>
+<dl>
+<dd>Lists all the compatible and incompatible caches, and snapshots that exist in the specified cache directory. If you do not specify <code>cacheDir</code>, the default directory is used. Summary information, such as Java version and current usage, is displayed for each cache.</dd>
 </dl>
 <h3 id="mprotect"><code>mprotect</code></h3>
 <dl>
@@ -4346,7 +4343,7 @@ with shared class cache.
 <pre><code>    -Xshareclasses:name=&lt;name&gt;
 </code></pre>
 <dl>
-<dd>Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, <code>destroy</code>. Use the <code>listAllCaches</code> utility to show which named caches are currently available. If you do not specify a name, the default name <em>"sharedcc_%u"</em> is used. "%u" in the cache name inserts the current user name. On AIX, Linux, macOS, and z/OS systems, you can specify <em>"%g"</em> in the cache name to insert the current group name.</dd>
+<dd>Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, <code>destroy</code>. Use the <code>listAllCaches</code> utility to show which named caches are currently available. If you do not specify a name, the default name <em>"sharedcc_%u"</em> is used. "%u" in the cache name inserts the current user name. On operating systems other than Windows, you can specify <em>"%g"</em> in the cache name to insert the current group name.</dd>
 <dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> It is good practice to explicitly specify a cache for your application. This avoids the application sharing a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application. Note that you cannot change the size of a default cache that already exists by using the <a href="../xscmx/"><code>-Xscmx</code></a> option, as that option has no effect on a pre-existing cache. See <a href="../shrc/#best-practices-for-using-xshareclasses">Class data sharing: Best practices for using <code>-Xshareclasses</code></a>.</dd>
 </dl>
 <h3 id="noaot"><code>noaot</code></h3>
@@ -4432,7 +4429,7 @@ behavior, which can improve the performance of class loading from the shared cla
 </dl>
 <h3 id="restorefromsnapshot-cache-utility"><code>restoreFromSnapshot</code> (Cache utility)</h3>
 <dl>
-<dd><strong>(AIX, Linux, macOS, and z/OS only)</strong><pre><code>-Xshareclasses:restoreFromSnapshot
+<dd><strong>(Not Windows)</strong><pre><code>-Xshareclasses:restoreFromSnapshot
 </code></pre>
 </dd>
 <dd>
@@ -4474,7 +4471,7 @@ behavior, which can improve the performance of class loading from the shared cla
 </dl>
 <h3 id="snapshotcache-cache-utility"><code>snapshotCache</code> (Cache utility)</h3>
 <dl>
-<dd><strong>(AIX, Linux, macOS, and z/OS only)</strong><pre><code>-Xshareclasses:snapshotCache
+<dd><strong>(Not Windows)</strong><pre><code>-Xshareclasses:snapshotCache
 </code></pre>
 </dd>
 <dd>
