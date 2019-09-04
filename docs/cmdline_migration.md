@@ -44,11 +44,12 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-Xmx`](xms.md)                                                 | Specifies the maximum size of the object memory allocation pool. (Equivalent to `-XX:MaxHeapSize`)                                           |
 | [`-Xnoclassgc`](xclassgc.md)                                     | Disables class garbage collection (GC).                                                                                                      |
 | [`-Xrs`](xrs.md)                                                 | Prevents the OpenJ9 run time environment from handling signals.                                                                              |
-| [`-Xss`](xss.md)                                                 | Sets the Java&trade; thread stack size. (Equivalent to `-XX:ThreadStackSize`). <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Unlike HotSpot, this option applies only to the Java stack. OpenJ9 has a separate native stack for operating system threads (see [`-Xmso`](xmso.md))                                                                      |
+| [`-Xss`](xss.md)                                                 | Sets the Java&trade; thread stack size. (Equivalent to `-XX:ThreadStackSize`). <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Unlike HotSpot, this option applies only to the Java stack. OpenJ9 has a separate native stack for operating system threads (see [`-Xmso`](xmso.md))  |
 | [`-Xverify:mode`](xverify.md)                                    | Enables or disables the verifier.                                                                                                            |
+| [`-XX:[+|-]CompactStrings`](xxcompactstrings.md)                 | Enables/disables `String` compression                                                                                                        |
 | [`-XX:[+|-]DisableExplicitGC`](xxdisableexplicitgc.md)           | Enables/disables `System.gc()` calls. (Alias for [`-Xdisableexplicitgc` / `-Xenableexplicitgc`](xenableexplicitgc.md))                       |
 | [`-XX:[+|-]HeapDumpOnOutOfMemory`](xxheapdumponoutofmemory.md)   | Enables/disables dumps on out-of-memory conditions.                                                                                          |
-| [`-XX:HeapDumpPath`](xxheapdumppath.md)                          | Specifies a directory for all VM dumps including heap dumps, javacores, and system dumps. (Alias for [`-Xdump:directory`](xdump.md#syntax))    |
+| [`-XX:HeapDumpPath`](xxheapdumppath.md)                          | Specifies a directory for all VM dumps including heap dumps, javacores, and system dumps. (Alias for [`-Xdump:directory`](xdump.md#syntax))  |
 | [`-XX:[+|-]IgnoreUnrecognizedVMOptions`](xxignoreunrecognizedvmoptions.md) | Specifies whether to ignore unrecognized top-level VM options |                                                       |
 | [`-XX:InitialHeapSize`](xxinitialheapsize.md)                    | Sets the initial size of the heap. (Alias for [`-Xms`](xms.md))                                                                              |
 | [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md)          | Sets the initial size of the Java heap as a percentage of total memory.                                                                              |
@@ -58,6 +59,13 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md)              | Sets the maximum size of the Java heap as a percentage of total memory.                                                                     |
 | [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md)               | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
 | [`-XX:[+|-]UseContainerSupport`](xxusecontainersupport.md)           | Sets a larger fraction of memory to the Java heap when the VM detects that it is running in a container.                                 |
+
+
+
+
+-XX:[+|-]CompactStrings
+
+
 
 
 ## Equivalent options
