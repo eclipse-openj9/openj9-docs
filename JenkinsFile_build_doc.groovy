@@ -28,6 +28,7 @@ HTTP = 'https://'
 OPENJ9_REPO = 'github.com/eclipse/openj9-docs'
 OPENJ9_STAGING_REPO = 'github.com/eclipse/openj9-docs-staging'
 ECLIPSE_REPO = 'ssh://genie.openj9@git.eclipse.org:29418/www.eclipse.org/openj9/docs.git'
+SSH_CREDENTIAL_ID = 'git.eclipse.org-bot-ssh'
 
 BUILD_DIR = 'built_doc'
 CREDENTIAL_ID = 'b6987280-6402-458f-bdd6-7affc2e360d4'
@@ -116,55 +117,35 @@ timeout(time: 6, unit: 'HOURS') {
                             sh 'mkdocs build -v'
                         }
                     }
-                        // If we're pushing to Github, no need to switch over to master node
-                        if ((params.BUILD_TYPE == "PR") || (params.BUILD_TYPE == "MERGE")) {
-                            stage("Push Doc") {
-                                dir('push_repo') {
-                                    git branch: PUSH_BRANCH, url: "${HTTP}${PUSH_REPO}"
-                                    if (params.BUILD_TYPE == "PR") {
-                                        dir("${ghprbPullId}") {
-                                            copy_built_doc(BUILD_DIR)
-                                            push_doc_with_cred(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
-                                        }
-                                    } else {
+                    // If we're pushing to Github, use https user/password
+                    // If we're pushing to Eclipse, use eclipse ssh key
+                    stage("Push Doc") {
+                        dir('push_repo') {
+                            if ((params.BUILD_TYPE == "PR") || (params.BUILD_TYPE == "MERGE")) {
+                                git branch: PUSH_BRANCH, url: "${HTTP}${PUSH_REPO}"
+                                if (params.BUILD_TYPE == "PR") {
+                                    dir("${ghprbPullId}") {
                                         copy_built_doc(BUILD_DIR)
                                         push_doc_with_cred(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
-                                        // Set status on the Github commit for merge builds
-                                        setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
                                     }
+                                } else {
+                                    copy_built_doc(BUILD_DIR)
+                                    push_doc_with_cred(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
+                                    // Set status on the Github commit for merge builds
+                                    setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
                                 }
-                            }
-                        } else {
-                            dir(BUILD_DIR) {
-                                sh "tar -zcf ${ARCHIVE} site/"
-                                stash includes: "${ARCHIVE}", name: 'doc'
-                            }
-                        }
-                } // Exit container, no need to cleanWs()
-            }
-
-            if (params.BUILD_TYPE == "RELEASE") {
-                node('master') {
-                    stage('Push Doc') {
-                        try {
-                            dir(BUILD_DIR) {
-                                unstash 'doc'
-                                sh "tar -zxf ${ARCHIVE}"
-                            }
-
-                            dir('eclipse') {
+                            } else { // RELEASE
                                 git branch: PUSH_BRANCH, url: PUSH_REPO
                                 copy_built_doc(BUILD_DIR)
-                                push_doc(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
+                                sshagent(credentials:["${SSH_CREDENTIAL_ID}"]) {
+                                    push_doc(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
+                                }
+                                // Set status on the Github commit for merge builds
+                                setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
                             }
-
-                            // Set status on the Github commit for merge builds
-                            setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
-                        } finally {
-                            cleanWs()
                         }
                     }
-                }
+                } // Exit container, no need to cleanWs()
             }
         } catch(e) {
             if (!params.ghprbPullId) {
