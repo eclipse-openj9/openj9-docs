@@ -36,6 +36,7 @@ The following new features and notable changes since v.0.15.1 are included in th
 - [New Java&trade; diagnostic command (`jcmd`) tool](#new-jcmd-tool)
 - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
 - [![Start of content that applies to Java 13 and later](cr/java13plus.png) The `-Xverify:none` and `-noverify` options are deprecated](#the-xverifynone-and-noverify-options-are-deprecated)
+- [![Start of content that applies to Java 8 and later](cr/java8plus.png) Implementation of compact strings](#implementation-of-compact-strings)
 
 ## Features and changes
 
@@ -84,6 +85,10 @@ For more information about the `-Xshareclasses` option, including the `destroy` 
 ### ![Start of content that applies to Java 13 and later](cr/java13plus.png) The `-Xverify:none` and `-noverify` options are deprecated
 
 The option [`-Xverify:none`](xverify.md) (and its equivalent `-noverify`) is deprecated in Java 13. Both options might be removed in a future release. OpenJ9 issues a warning if these options are used in Java 13 and later versions. ![End of content that applies only to Java 13](cr/java_close.png)
+
+### ![Start of content that applies only to Java 8 and later](cr/java8plus.png) Implementation of compact strings
+
+When enabled, the [`-XX[+|-]CompactStrings`](xxcompactstrings.md) option causes an ISO8859-1 (also known as Latin-1) character representation to be used internally for `String` objects, thus making heap space savings. Full API compatibility is preserved. ![End of content that applies only to Java 8 and later](cr/java_close_lts.png)
 
 ## Full release information
 
