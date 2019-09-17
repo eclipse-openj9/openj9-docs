@@ -71,7 +71,7 @@ OpenJDK uses the in-built Java cryptographic implementation by default. However,
 typically provide better performance. OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and
 Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.0.x and V1.1.x implementations are currently supported for the Digest, CBC, GCM, and RSA algorithms. The OpenSSL V1.1.x implementation is also supported for the ChaCha20 and ChaCha20-Poly1305 algorithms.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** ![Start of content that applies to Java 8 and later](cr/java8plus.png) Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is currently disabled. ![End of content that applies to Java 8 and later)](cr/java_close_lts.png)
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png)![Start of content that applies to Java 11 (LTS)](cr/java11.png)![Start of content that applies to Java 12](cr/java12.png) Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is currently disabled. ![End of content that applies to Java 8, 11, and 12)](cr/java_close_lts.png)
 
 On Linux and AIX platforms, the OpenSSL 1.0.x or 1.1.x library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On other platforms, the OpenSSL 1.1.x library is currently bundled with the binaries from AdoptOpenJDK.
 
