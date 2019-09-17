@@ -62,10 +62,10 @@ switch (params.BUILD_TYPE) {
         PUSH_BRANCH = 'master'
         REFSPEC = "+refs/heads/*:refs/remotes/origin/*"
         GET_SHA = true
-        if (!params.RELEASE_TAG) {
-            error("Must specify what release tag to push to Eclipse")
+        if (!params.RELEASE_BRANCH) {
+            error("Must specify what release branch to push to Eclipse")
         }
-        CLONE_BRANCH = "refs/tags/${RELEASE_TAG}"
+        CLONE_BRANCH = "refs/heads/${RELEASE_BRANCH}"
         SERVER = 'Eclipse'
         break
     default:
