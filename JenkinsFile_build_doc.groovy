@@ -75,11 +75,12 @@ switch (params.BUILD_TYPE) {
 
 timeout(time: 6, unit: 'HOURS') {
     timestamps {
-        try {
-            node('hw.arch.x86&&sw.tool.docker') {
+        node('hw.arch.x86&&sw.tool.docker') {
+            try {
                 def TMP_DESC = (currentBuild.description) ? currentBuild.description + "<br>" : ""
                 currentBuild.description = TMP_DESC + "<a href=${JENKINS_URL}computer/${NODE_NAME}>${NODE_NAME}</a>"
-                docker.image("${NAMESPACE}/${CONTAINER_NAME}:latest").inside {
+
+                docker.image("${NAMESPACE}/${CONTAINER_NAME}:latest").inside() {
                     stage('Build Doc') {
                         dir(BUILD_DIR) {
                             checkout changelog: false, poll: false,
@@ -119,9 +120,9 @@ timeout(time: 6, unit: 'HOURS') {
                     }
                     // If we're pushing to Github, use https user/password
                     // If we're pushing to Eclipse, use eclipse ssh key
-                    stage("Push Doc") {
-                        dir('push_repo') {
-                            if ((params.BUILD_TYPE == "PR") || (params.BUILD_TYPE == "MERGE")) {
+                    if ((params.BUILD_TYPE == "PR") || (params.BUILD_TYPE == "MERGE")) {
+                        stage("Push Doc") {
+                            dir('push_repo') {
                                 git branch: PUSH_BRANCH, url: "${HTTP}${PUSH_REPO}"
                                 if (params.BUILD_TYPE == "PR") {
                                     dir("${ghprbPullId}") {
@@ -134,28 +135,43 @@ timeout(time: 6, unit: 'HOURS') {
                                     // Set status on the Github commit for merge builds
                                     setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
                                 }
-                            } else { // RELEASE
-                                git branch: PUSH_BRANCH, url: PUSH_REPO, credentialsId: SSH_CREDENTIAL_ID
-                                copy_built_doc(BUILD_DIR)
-                                sshagent(credentials:["${SSH_CREDENTIAL_ID}"]) {
-                                    push_doc(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
-                                }
-                                // Set status on the Github commit for merge builds
-                                setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
                             }
                         }
+                    } else { // RELEASE
+                        dir(BUILD_DIR) {
+                            sh "tar -zcf ${ARCHIVE} site/"
+                            stash includes: "${ARCHIVE}", name: 'doc'
+                        }
                     }
-                } // Exit container, no need to cleanWs()
-            }
-        } catch(e) {
-            if (!params.ghprbPullId) {
-                node('worker') {
-                    // Set status on the Github commit for merge builds
+                } // Exit container
+
+                if (params.BUILD_TYPE == "RELEASE") {
+                    stage("Push Doc") {
+                        dir(BUILD_DIR) {
+                            unstash 'doc'
+                            sh "tar -zxf ${ARCHIVE}"
+                        }
+                        dir('eclipse') {
+                            git branch: PUSH_BRANCH, url: PUSH_REPO, credentialsId: SSH_CREDENTIAL_ID
+                            copy_built_doc(BUILD_DIR)
+                            sshagent(credentials:["${SSH_CREDENTIAL_ID}"]) {
+                                push_doc(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
+                            }
+                        }
+                        // Set status on the Github commit for release builds
+                        setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
+                    }
+                }
+            } catch(e) {
+                if (!params.ghprbPullId) {
+                    // Set status on the Github commit for non PR builds
                     setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'FAILURE', 'Failed to build and push doc')
                     slackSend channel: '#jenkins', color: 'danger', message: "Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
                 }
+                throw e
+            } finally {
+                cleanWs()
             }
-            throw e
         }
     }
 }
@@ -174,7 +190,7 @@ def push_doc(REPO, BRANCH, SHA) {
     sh "git status"
     STATUS = sh (script: 'git status --porcelain', returnStdout: true).trim()
     if ("x${STATUS}" != "x") {
-        sh 'git config user.name "Eclipse OpenJ9 Bot"'
+        sh 'git config user.name "genie-openj9"'
         sh 'git config user.email "openj9-bot@eclipse.org"'
         sh 'git add .'
         sh "git commit -m 'Generated from commit: ${SHA}'"
