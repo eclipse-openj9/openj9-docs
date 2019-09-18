@@ -135,7 +135,7 @@ timeout(time: 6, unit: 'HOURS') {
                                     setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
                                 }
                             } else { // RELEASE
-                                git branch: PUSH_BRANCH, url: PUSH_REPO
+                                git branch: PUSH_BRANCH, url: PUSH_REPO, credentialsId: SSH_CREDENTIAL_ID
                                 copy_built_doc(BUILD_DIR)
                                 sshagent(credentials:["${SSH_CREDENTIAL_ID}"]) {
                                     push_doc(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
