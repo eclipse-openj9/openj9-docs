@@ -3326,11 +3326,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </table>
 <h2 id="explanation">Explanation</h2>
 <p>OpenSSL support is enabled by default for the Digest, CBC, GCM, RSA, and ChaCha20 and ChaCha20-Poly1305 algorithms. If you want to turn off the OpenSSL implementation, set this option to <code>false</code>.</p>
-<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong>  <img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> <img alt="Start of content that applies to Java 12 (LTS)" src="../cr/java12.png" /> The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java 8 or 12. <img alt="End of content that applies only to Java 8 and 12 (LTS)" src="../cr/java_close_lts.png" /></p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong>  <img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java 8. <img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" /></p>
 <p>If you want to turn off the algorithms individually, use the following system properties:</p>
 <ul>
 <li><a href="../djdknativecbc/"><code>-Djdk.nativeCBC</code></a></li>
-<li><a href="../djdknativechacha20/"><code>-Djdk.nativeChaCha20</code></a> (<img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> <img alt="Start of content that applies to Java 12 (LTS)" src="../cr/java12.png" /> Not supported on Java 8 or 12. <img alt="End of content that applies only to Java 8 and 12 (LTS)" src="../cr/java_close_lts.png" />)</li>
+<li><a href="../djdknativechacha20/"><code>-Djdk.nativeChaCha20</code></a> (<img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> Not supported on Java 8. <img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" />)</li>
 <li><a href="../djdknativegcm/"><code>-Djdk.nativeGCM</code></a></li>
 <li><a href="../djdknativersa/"><code>-Djdk.nativeRSA</code></a></li>
 <li><a href="../djdknativedigest/"><code>-Djdk.nativeDigest</code></a></li>
