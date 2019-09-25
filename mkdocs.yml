@@ -102,11 +102,12 @@ pages:
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 
     - "Release notes" :
+        - "Version 0.17.0"                                                       : version0.17.md
         - "Version 0.16.0"                                                       : version0.16.md    
         - "Version 0.15.1"                                                       : version0.15.md
         - "Version 0.14.0"                                                       : version0.14.md
-        - "Version 0.13.0"                                                       : version0.13.md
         - "Earlier releases" :
+            - "Version 0.13.0"                                                   : version0.13.md        
             - "Version 0.12.0"                                                   : version0.12.md
             - "Version 0.11.0"                                                   : version0.11.md
             - "Version 0.10.0"                                                   : version0.10.md
