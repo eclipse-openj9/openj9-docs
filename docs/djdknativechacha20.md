@@ -28,7 +28,7 @@ This option enables or disables OpenSSL native cryptographic support for the Cha
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
 
-- ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 12](cr/java12.png) These algorithms are not supported on Java 8 or 12. ![End of content that applies only to Java 8 and 12](cr/java_close_lts.png)
+- ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8. ![End of content that applies only to Java 8](cr/java_close_lts.png)
 - These algorithms are not supported on OpenSSL 1.0.x.
 
 

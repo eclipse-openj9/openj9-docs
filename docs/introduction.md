@@ -78,8 +78,9 @@ system properties are available for tuning the implementation.
 
 Each algorithm can be disabled individually by setting the following system properties on the command line:
 
+
 - To turn off **Digest**, set `-Djdk.nativeDigest=false`
-- To turn off **ChaCha20** and **ChaCha20-Poly1305**, set `-Djdk.nativeChaCha20=false`. <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 12 (LTS)](cr/java12.png) These algorithms are not supported on Java 8 or 12![End of content that applies only to Java 8 and 12 (LTS)](cr/java_close_lts.png)
+- To turn off **ChaCha20** and **ChaCha20-Poly1305**, set `-Djdk.nativeChaCha20=false`. <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 - To turn off **CBC**, set `-Djdk.nativeCBC=false`
 - To turn off **GCM**, set `-Djdk.nativeGCM=false`
 - To turn off **RSA**, set `-Djdk.nativeRSA=false`
@@ -94,7 +95,7 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow 
 
 - [OpenJDK 8 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V8.md).
 - [OpenJDK 11 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
-- [OpenJDK 12 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V12.md).
+- [OpenJDK 13 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V13.md).
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you obtain an OpenJDK with OpenJ9 build from [AdoptOpenJDK](https://adoptopenjdk.net/) that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgements apply in accordance with the license terms:
 
