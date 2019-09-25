@@ -152,7 +152,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
         -Xshareclasses:checkURLTimestamps
 
-: Causes timestamps of `jar` or `zip` files to be checked every time a class is loaded. If a timestamp has changed, the class is loaded from the `jar` or `zip` file and not from the shared cache. This sub-option is not enabled by default and reflects the legacy behavior of the shared classes cache.
+: Causes timestamps of `jar` or `zip` files to be checked every time a class is loaded. If a timestamp has changed, the class is loaded from the `jar` or `zip` file and not from the shared cache. This suboption is not enabled by default and reflects the legacy behavior of the shared classes cache.
 
 : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The timestamp of a bootstrap `jar` or `zip` file is checked once when it is used for the first time to load a class.
 
@@ -351,9 +351,9 @@ case, the VM continues without using shared classes.
         -Xshareclasses:nocheckURLTimestamps
 
 :   Timestamps of `jar` or `zip` files are checked only when they are added to a class loader and used for the first time to look up a class. This is the default
-behavior, which can improve the performance of class loading from the shared classes cache, especially on Windows systems. To revert to the behavior of the shared classes cache in earlier releases, use the [`CheckURLTimeStamps`](xshareclasses.md#checkurltimestamps) sub-option.
+behavior, which can improve the performance of class loading from the shared classes cache, especially on Windows systems. To revert to the behavior of the shared classes cache in earlier releases, use the [`CheckURLTimeStamps`](xshareclasses.md#checkurltimestamps) suboption.
 
-: <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** When the `nocheckURLTimestamps` sub-option is used (default), if `jar` or `zip` files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. If this scenario occurs, use the `checkURLTimestamps` option.
+: <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** When the `nocheckURLTimestamps` suboption is used (default), if `jar` or `zip` files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. If this scenario occurs, use the `checkURLTimestamps` option.
 
 ### `nojitdata`
 
@@ -383,6 +383,14 @@ behavior, which can improve the performance of class loading from the shared cla
 :   Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a nonpersistent cache. z/OS supports only nonpersistent caches.
 
 :   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a nonpersistent cache.
+
+### `noPersistentDiskSpaceCheck`
+
+        -Xshareclasses:noPersistentDiskSpaceCheck
+
+:   Instructs the VM not to check for available storage on the file system before creating a persistent shared classes cache. This option prevents an error on file systems that do not support the checking of free space, where a value of 0 is returned and a shared cache cannot be created. Regardless of whether you choose to set this option, if there isn't enough disk space available when the VM writes to the shared cache memory, a **SIGBUG** or **SIGSEGV** signal occurs and the VM ends.
+
+:   If you are using the [`readonly`](#readonly) suboption, the VM does not check the available disk space, so you do not need to set the `noPersistentDiskSpaceCheck` suboption.
 
 ### `persistent`
 

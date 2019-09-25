@@ -28,6 +28,7 @@
 The following new features and notable changes since v.0.16 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [New shared classes cache suboption](#new-shared-classes-cache-suboption)
 - [Digest algorithm is re-enabled](#digest-algorithm-is-re-enabled)
 
 ## Features and changes
@@ -41,6 +42,11 @@ OpenJ9 release 0.17.0 supports OpenJDK 8, 11, and 13. Binaries are available fro
 - [OpenJDK version 13](https://adoptopenjdk.net/archive.html?variant=openjdk13&jvmVariant=openj9)
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### New shared classes cache suboption
+
+When creating a persistent shared classes cache, the OpenJ9 VM checks that there is sufficient disk space available on the file
+system. For file systems that do not support the checking of free space, you can set the `-Xshareclasses:noPersistentDiskSpaceCheck` option, which causes the VM to skip the space checking operation. If there isn't enough disk space available when the cache is written, a **SIGBUG** or **SIGSEGV** signal occurs and the VM ends. For more information, see the [-Xshareclasses:noPersistentDiskSpaceCheck](xshareclasses.md#nopersistentdiskspacecheck) option.
 
 ### Digest algorithm is re-enabled
 
