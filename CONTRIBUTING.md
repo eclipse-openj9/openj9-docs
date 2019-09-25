@@ -133,8 +133,8 @@ The user documentation supports the configuration, tuning, and diagnosis of the 
 - ![Java 8 icon](docs/cr/java8.png) - For content that applies only to an OpenJDK version 8.
 - ![Java 11 icon](docs/cr/java11.png) - For content that applies only to an OpenJDK version 11.
 - ![Java 11 and later icon](docs/cr/java11plus.png) -  For content that applies to an OpenJDK version 11 or later version.
-- ![Java 12 icon](docs/cr/java12.png) - For content that applies only to an OpenJDK version 12.
-- ![Java 12 and later icon](docs/cr/java12plus.png) -  For content that applies to an OpenJDK version 12 or later version.
+- ![Java 13 icon](docs/cr/java13.png) - For content that applies only to an OpenJDK version 13.
+- ![Java 13 and later icon](docs/cr/java13plus.png) -  For content that applies to an OpenJDK version 13 or later version.
 
 Different colors are used for the icons to differentiate long term service (LTS) releases from feature releases. For accessibility reasons it is important to use alternative text with these icons that differentiates an LTS release.
 
@@ -151,7 +151,7 @@ Here are some examples:
 ```
 
 ```
-![Start of content that applies only to Java 10 and later](cr/java10plus.png) This sentence applies only to Java 9 or later runtime environments that include the OpenJ9 VM. ![End of content that applies only to Java 10 and later](cr/java_close.png)
+![Start of content that applies only to Java 13 and later](cr/java13plus.png) This sentence applies only to Java 13 or later runtime environments that include the OpenJ9 VM. ![End of content that applies only to Java 13 and later](cr/java_close.png)
 ```
 
 ### Using images
@@ -185,7 +185,7 @@ Font-awesome icons are also used in option tables to indicate defaults. The foll
 
 Note that these require an extra `<span>`, which is used by screen readers.
 
-For examples that embed Java version icons such as ![Java 8 icon](docs/cr/java8.png) and ![Java 12 and later icon](docs/cr/java12plus.png), see [Which OpenJDK version?](#which-openjdk-version?).
+For examples that embed Java version icons such as ![Java 8 icon](docs/cr/java8.png) and ![Java 13 and later icon](docs/cr/java13plus.png), see [Which OpenJDK version?](#which-openjdk-version?).
 
 ### Accessibility
 

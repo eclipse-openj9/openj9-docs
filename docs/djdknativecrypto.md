@@ -43,12 +43,12 @@ OpenSSL support is enabled by default for the Digest, CBC, GCM, RSA, and ChaCha2
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
 
 -  ![Start of content that applies to Java 8 (LTS)](cr/java8.png)![Start of content that applies to Java 11 (LTS)](cr/java11.png)![Start of content that applies to Java 12](cr/java12.png) Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is currently disabled. ![End of content that applies to Java 8, 11, and 12)](cr/java_close_lts.png)
--  ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 12 (LTS)](cr/java12.png) The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java 8 or 12. ![End of content that applies only to Java 8 and 12 (LTS)](cr/java_close_lts.png)
+-  ![Start of content that applies to Java 8 (LTS)](cr/java8.png) The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java 8. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
 If you want to turn off the algorithms individually, use the following system properties:
 
 - [`-Djdk.nativeCBC`](djdknativecbc.md)
-- [`-Djdk.nativeChaCha20`](djdknativechacha20.md) (![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 12 (LTS)](cr/java12.png) Not supported on Java 8 or 12. ![End of content that applies only to Java 8 and 12 (LTS)](cr/java_close_lts.png))
+- [`-Djdk.nativeChaCha20`](djdknativechacha20.md) (![Start of content that applies to Java 8 (LTS)](cr/java8.png) Not supported on Java 8. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png))
 - [`-Djdk.nativeGCM`](djdknativegcm.md)
 - [`-Djdk.nativeRSA`](djdknativersa.md)
 - [`-Djdk.nativeDigest`](djdknativedigest.md)
