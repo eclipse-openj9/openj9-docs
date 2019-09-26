@@ -28,7 +28,7 @@
 The following new features and notable changes since v.0.16 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [New shared classes cache suboptions for layered caches](#new-shared-classes-cache-suboptions-for-creating-layered-caches)
+- [New shared classes cache suboptions for layered caches](#new-shared-classes-cache-suboptions-for-layered-caches)
 - [New shared classes cache suboption to skip disk space check](#new-shared-classes-cache-suboption-to-skip-disk-space-check)
 - [Option to share 'Unsafe' classes](#option-to-share-unsafe-classes)
 - [Digest algorithm is re-enabled](#digest-algorithm-is-re-enabled)
@@ -51,7 +51,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 **(Experimental, 64-bit only)**
 
-Two suboptions, `createLayer` and `layer=<number>`, are available for creating layered caches in a container. You can use these suboptions to save space when building a Docker container, for example. Instead of a cache being duplicated into higher layers of the container, the cache is layered such that each container layer contains a cache that builds on the cache in the layer below. For more information, see [`-Xshareclasses:createLayer`](xshareclasses.md#createlayer).
+Two new suboptions, `createLayer` and `layer=<number>`, are available for creating layered caches in a container. You can use these suboptions to save space when building a Docker container, for example. Instead of a cache being duplicated into higher layers of the container, the cache is layered such that each container layer contains a cache that builds on the cache in the layer below. For more information, see [`-Xshareclasses:createLayer`](xshareclasses.md#createlayer).
 
 A new suboption, [`destroyAllLayers`](xshareclasses.md#destroyAllLayers), is available for destroying all the layers of a layered cache.
 

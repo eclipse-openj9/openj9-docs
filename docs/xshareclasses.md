@@ -156,7 +156,9 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The timestamp of a bootstrap `jar` or `zip` file is checked once when it is used for the first time to load a class.
 
-### `createLayer` (Experimental, 64-bit only)
+### `createLayer`
+
+**(Experimental, 64-bit only)**
 
         -Xshareclasses:createLayer
 
@@ -165,36 +167,33 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 : If you are building a Docker container, you can use this suboption to create caches that build on caches in lower layers inside the container. Because each cache builds on the cache in the layer below, rather than duplicating it, space is saved in the image.
 
 : The following example shows a Docker container with four layers:
+
 1. The lowest layer is a Ubuntu Docker image.
 2. The next layer is an OpenJ9 Docker image that is built on the Ubuntu image. As part of this image, the `-Xshareclasses:name=Cache1` suboption is used to create a cache called Cache1. The layer number assigned to this cache is 0. The `listAllCaches` suboption shows the cache and the layer number:
 
-  ```
-  java -Xshareclasses:listAllCaches
-  ...
-  Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
+        java -Xshareclasses:listAllCaches
+        ...
+        Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
 
-  Compatible shared caches
-  Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019                       
-  ```
+        Compatible shared caches
+        Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019                       
 
 3. The next layer up is an Open Liberty Docker image that is built on the OpenJ9 image. As part of this image, the `-Xhsareclasses:name=Cache1,createLayer` suboption is used to create another cache called Cache1. Because the `createLayer` suboption is specified, this new cache is a layered cache, which builds on Cache1 in the previous container layer. The layer number assigned to the new cache is 1. Note that this number relates to the cache layers not the container layers.
 
 4. In the same way, another layer is added for an Open Liberty Java application, and another layered cache is created to add to Cache1. The `listAllCaches` suboption now shows all the caches and their layers:
 
-  ```
-  java -Xshareclasses:listAllCaches
-  ...
-  Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
+        java -Xshareclasses:listAllCaches
+        ...
+        Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
 
-  Compatible shared caches
-  Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019   
-  Cache1                  Java8 64-bit  persistent      cr              1                                         Mon Sep 23 11:46:25 2019
-  Cache1                  Java8 64-bit  persistent      cr              2                                         In use                     
-  ```
+        Compatible shared caches
+        Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019   
+        Cache1                  Java8 64-bit  persistent      cr              1                                         Mon Sep 23 11:46:25 2019
+        Cache1                  Java8 64-bit  persistent      cr              2                                         In use                     
 
 : The caches are created in the same directory. When you use the `-Xshareclasses:name=Cache1` suboption in future Java commands, all the caches are started. Only the cache in the container layer is writable. The caches in the lower layers are read only, because modifying them would invalidate all the caches in the layers above.
 
-If there are multiple VMs in a race condition while creating a layered cache, more than one new layered cache could be created. To avoid this situation, you can instead use the `-Xshareclasses:layer=<number>` suboption to create a new layered cache.
+: If there are multiple VMs in a race condition while creating a layered cache, more than one new layered cache can be created. To avoid this situation, you can instead use the [`-Xshareclasses:layer=<number>`](xshareclasses.md#layer) suboption to create a new layered cache.
 
 ### `destroy` (Cache utility)
 
@@ -222,7 +221,9 @@ If there are multiple VMs in a race condition while creating a layered cache, mo
 
 - Persistent caches that are still in use continue to exist even when you use this option, but they are unlinked from the file system so they are not visible to new VM invocations. If you update the VM then restart an application for which a persistent shared cache already exists, the VM unlinks the existing cache and creates a new cache. Because the unlinked caches are not visible to new VMs, you cannot find them by using the `-Xshareclasses:listAllCaches` option, and you cannot use the `-Xshareclasses:printStats` option on them. You can therefore have multiple unlinked caches that consume file system space until they are no longer in use.
 
-### `destroyAllLayers` (Experimental, 64-bit only)
+### `destroyAllLayers`
+
+**(Experimental, 64-bit only)**
 
         -Xshareclasses:destroyAllLayers
 
