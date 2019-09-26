@@ -2586,6 +2586,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#nopersistentdiskspacecheck" title="noPersistentDiskSpaceCheck" class="md-nav__link">
+    noPersistentDiskSpaceCheck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#persistent" title="persistent" class="md-nav__link">
     persistent
   </a>
@@ -3868,6 +3875,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#nopersistentdiskspacecheck" title="noPersistentDiskSpaceCheck" class="md-nav__link">
+    noPersistentDiskSpaceCheck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#persistent" title="persistent" class="md-nav__link">
     persistent
   </a>
@@ -4191,7 +4205,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre><code>    -Xshareclasses:checkURLTimestamps
 </code></pre>
 <dl>
-<dd>Causes timestamps of <code>jar</code> or <code>zip</code> files to be checked every time a class is loaded. If a timestamp has changed, the class is loaded from the <code>jar</code> or <code>zip</code> file and not from the shared cache. This sub-option is not enabled by default and reflects the legacy behavior of the shared classes cache.</dd>
+<dd>Causes timestamps of <code>jar</code> or <code>zip</code> files to be checked every time a class is loaded. If a timestamp has changed, the class is loaded from the <code>jar</code> or <code>zip</code> file and not from the shared cache. This suboption is not enabled by default and reflects the legacy behavior of the shared classes cache.</dd>
 <dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The timestamp of a bootstrap <code>jar</code> or <code>zip</code> file is checked once when it is used for the first time to load a class.</dd>
 </dl>
 <h3 id="destroy-cache-utility"><code>destroy</code> (Cache utility)</h3>
@@ -4399,8 +4413,8 @@ with shared class cache.
 </code></pre>
 <dl>
 <dd>Timestamps of <code>jar</code> or <code>zip</code> files are checked only when they are added to a class loader and used for the first time to look up a class. This is the default
-behavior, which can improve the performance of class loading from the shared classes cache, especially on Windows systems. To revert to the behavior of the shared classes cache in earlier releases, use the <a href="./#checkurltimestamps"><code>CheckURLTimeStamps</code></a> sub-option.</dd>
-<dd><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> When the <code>nocheckURLTimestamps</code> sub-option is used (default), if <code>jar</code> or <code>zip</code> files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. If this scenario occurs, use the <code>checkURLTimestamps</code> option.</dd>
+behavior, which can improve the performance of class loading from the shared classes cache, especially on Windows systems. To revert to the behavior of the shared classes cache in earlier releases, use the <a href="./#checkurltimestamps"><code>CheckURLTimeStamps</code></a> suboption.</dd>
+<dd><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> When the <code>nocheckURLTimestamps</code> suboption is used (default), if <code>jar</code> or <code>zip</code> files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. If this scenario occurs, use the <code>checkURLTimestamps</code> option.</dd>
 </dl>
 <h3 id="nojitdata"><code>nojitdata</code></h3>
 <pre><code>    -Xshareclasses:nojitdata
@@ -4427,6 +4441,13 @@ behavior, which can improve the performance of class loading from the shared cla
 <dl>
 <dd>Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the <code>nonpersistent</code> suboption when you run utilities such as <code>destroy</code> on a nonpersistent cache. z/OS supports only nonpersistent caches.</dd>
 <dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On macOS systems, you must set <code>kern.sysv.shmmax</code> and <code>kern.sysv.shmall</code> when using a nonpersistent cache.</dd>
+</dl>
+<h3 id="nopersistentdiskspacecheck"><code>noPersistentDiskSpaceCheck</code></h3>
+<pre><code>    -Xshareclasses:noPersistentDiskSpaceCheck
+</code></pre>
+<dl>
+<dd>Instructs the VM not to check for available storage on the file system before creating a persistent shared classes cache. This option prevents an error on file systems that do not support the checking of free space, where a value of 0 is returned and a shared cache cannot be created. Regardless of whether you choose to set this option, if there isn't enough disk space available when the VM writes to the shared cache memory, a <strong>SIGBUG</strong> or <strong>SIGSEGV</strong> signal occurs and the VM ends.</dd>
+<dd>If you are using the <a href="#readonly"><code>readonly</code></a> suboption, the VM does not check the available disk space, so you do not need to set the <code>noPersistentDiskSpaceCheck</code> suboption.</dd>
 </dl>
 <h3 id="persistent"><code>persistent</code></h3>
 <pre><code>    -Xshareclasses:persistent
