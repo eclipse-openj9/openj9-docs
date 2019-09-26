@@ -40,6 +40,8 @@ OpenJ9 release 0.17.0 supports OpenJDK 8, 11, and 13. Binaries are available fro
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 - [OpenJDK version 13](https://adoptopenjdk.net/archive.html?variant=openjdk13&jvmVariant=openj9)
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The last release of OpenJDK 8 and 11 from AdoptOpenJDK is Eclipse OpenJ9 0.15.1. To read about other features and changes in the VM since 0.15.1, check the [Version 0.16.0](version0.16.md) release notes too.
+
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
 ### Digest algorithm is re-enabled
