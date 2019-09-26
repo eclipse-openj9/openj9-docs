@@ -413,6 +413,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#option-to-share-unsafe-classes" title="Option to share 'Unsafe' classes" class="md-nav__link">
+    Option to share 'Unsafe' classes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3041,6 +3048,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxshareunsafeclasses/" title="-XX:[+|-]ShareUnsafeClasses" class="md-nav__link">
+      -XX:[+|-]ShareUnsafeClasses
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxstacktraceinthrowable/" title="-XX:-StackTraceInThrowable" class="md-nav__link">
       -XX:-StackTraceInThrowable
     </a>
@@ -3279,6 +3298,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#option-to-share-unsafe-classes" title="Option to share 'Unsafe' classes" class="md-nav__link">
+    Option to share 'Unsafe' classes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3341,6 +3367,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#digest-algorithm-is-re-enabled">Digest algorithm is re-enabled</a></li>
+<li><a href="#option-to-share-unsafe-classes">Option to share 'Unsafe' classes</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3353,6 +3380,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="digest-algorithm-is-re-enabled">Digest algorithm is re-enabled</h3>
 <p>Issue <a href="https://github.com/eclipse/openj9/issues/5611">#5611</a> is fixed, so support for the Digest algorithm is re-enabled. For more information about this support, see <a href="../introduction/#cryptographic-operations">Cryptographic operations</a>.</p>
+<h3 id="option-to-share-unsafe-classes">Option to share 'Unsafe' classes</h3>
+<p>Classes created through <code>Unsafe.defineClass</code> are now stored by default in the shared classes cache. You can use the <code>-XX:-ShareUnsafeClasses</code> option to change the default behavior. For more information, see <a href="../xxshareunsafeclasses/">-XX:[+|-]ShareUnsafeClasses</a>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.16 and V0.17.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.17/0.17.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.17.md ==== -->
