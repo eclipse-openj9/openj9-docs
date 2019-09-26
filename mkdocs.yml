@@ -339,6 +339,7 @@ pages:
             - "-XX:ShareClassesDisableBCI"                                       : xxshareclassesenablebci.md         #redirect
             - "-XX:ShareClassesEnableBCI"                                        : xxshareclassesenablebci.md
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
+            - "-XX:[+|-]ShareUnsafeClasses"                                      : xxshareunsafeclasses.md
             - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
             - "-XX:[+|-]TransparentHugePage"                                     : xxtransparenthugepage.md
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md

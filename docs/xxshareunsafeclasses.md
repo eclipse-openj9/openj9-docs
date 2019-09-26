@@ -22,20 +22,20 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -XX:[+|-]ShareAnonymousClasses
+# -XX:[+|-]ShareUnsafeClasses
 
-This option enables and disables the storage of VM anonymous classes, those created by `Unsafe.defineAnonymousClass`, in the shared classes cache.
+This option enables and disables the storage of VM classes created through `Unsafe.defineClass` in the shared classes cache.
  
-The option is enabled by default, which means that anonymous classes are stored in the shared classes cache and are therefore available for ahead-of-time (AOT) compilation, potentially improving startup performance.
+The option is enabled by default, which means that unsafe classes are stored in the shared classes cache and are therefore available for ahead-of-time (AOT) compilation, potentially improving startup performance.
 
 ## Syntax
 
-        -XX:[+|-]ShareAnonymousClasses
+        -XX:[+|-]ShareUnsafeClasses
 
 | Setting                      | Effect  | Default                                                                        |
 |------------------------------|---------|:------------------------------------------------------------------------------:|
-| `-XX:+ShareAnonymousClasses` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-XX:-ShareAnonymousClasses` | Disable |                                                                                |
+| `-XX:[+]ShareUnsafeClasses`  | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:[-]ShareUnsafeClasses`  | Disable |                                                                                |
 
 
 ## See also
@@ -43,8 +43,8 @@ The option is enabled by default, which means that anonymous classes are stored 
 - [AOT compiler](aot.md)
 - [Class data sharing](shrc.md)
 - [-Xshareclasses](xshareclasses.md)
-- [-XX:[+|-]ShareUnsafeClasses](xxshareunsafeclasses.md)
+- [-XX:[+|-]ShareAnonymousClasses](xxshareanonymousclasses.md)
 
 
 
-<!-- ==== END OF TOPIC ==== xxshareanonymousclasses.md ==== -->
+<!-- ==== END OF TOPIC ==== xxshareunsafeclasses.md ==== -->
