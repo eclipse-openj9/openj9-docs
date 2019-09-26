@@ -164,9 +164,11 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : Creates layered caches inside a container. This suboption is experimental; do not use it in a production environment.
 
-: If you are building a Docker container, you can use this suboption to create caches that build on caches in lower layers inside the container. Because each cache builds on the cache in the layer below, rather than duplicating it, space is saved in the image.
+: If you are building a Docker container, you can use this suboption to create caches that build on other caches in lower layers inside the container. Because each cache builds on the cache in the layer below, rather than duplicating it, space is saved in the image.
 
 : The following example shows a Docker container with four layers:
+
+: ![This diagram is explained in the surrounding text](./cr/shrc_layers.jpg "Docker container with layered caches")
 
 1. The lowest layer is a Ubuntu Docker image.
 2. The next layer is an OpenJ9 Docker image that is built on the Ubuntu image. As part of this image, the `-Xshareclasses:name=Cache1` suboption is used to create a cache called Cache1. The layer number assigned to this cache is 0. The `listAllCaches` suboption shows the cache and the layer number:
@@ -227,11 +229,9 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
         -Xshareclasses:destroyAllLayers
 
-: Destroys all shared cache layers that are specified by the `name` suboption. For example, `-Xshareclasses:name=Cache1,destroyAllLayers` destroys all layers of the cache called `Cache1`. For more information about layered caches, see the [`createLayer`](xshareclasses.md#createlayer) suboption.
+: Destroys all shared cache layers that are specified by the `name` suboption. For example, `-Xshareclasses:name=Cache1,destroyAllLayers` destroys all layers of the cache called `Cache1`. If you use the `destroy` suboption on a layered cache, for example `-Xshareclasses:name=Cache1,destroy`, only the top layer of the cache is destroyed.
 
-: If you use the `destroy` suboption on a layered cache, for example `-Xshareclasses:name=Cache1,destroy`, only the top layer of the cache is destroyed.
-
-
+: For more information about layered caches, see the [`createLayer`](xshareclasses.md#createlayer) suboption.
 
 ### `destroyAllSnapshots` (Cache utility)
 
