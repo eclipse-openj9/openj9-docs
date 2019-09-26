@@ -28,9 +28,10 @@
 The following new features and notable changes since v.0.16 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [New shared classes cache suboption](#new-shared-classes-cache-suboption)
-- [Digest algorithm is re-enabled](#digest-algorithm-is-re-enabled)
+- [New shared classes cache suboptions for layered caches](#new-shared-classes-cache-suboptions-for-creating-layered-caches)
+- [New shared classes cache suboption to skip disk space check](#new-shared-classes-cache-suboption-to-skip-disk-space-check)
 - [Option to share 'Unsafe' classes](#option-to-share-unsafe-classes)
+- [Digest algorithm is re-enabled](#digest-algorithm-is-re-enabled)
 
 ## Features and changes
 
@@ -46,19 +47,28 @@ OpenJ9 release 0.17.0 supports OpenJDK 8, 11, and 13. Binaries are available fro
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### New shared classes cache suboption
+### New shared classes cache suboptions for layered caches
+
+**(Experimental, 64-bit only)**
+
+Two suboptions, `createLayer` and `layer=<number>`, are available for creating layered caches in a container. You can use these suboptions to save space when building a Docker container, for example. Instead of a cache being duplicated into higher layers of the container, the cache is layered such that each container layer contains a cache that builds on the cache in the layer below. For more information, see [`-Xshareclasses:createLayer`](xshareclasses.md#createlayer).
+
+A new suboption, [`destroyAllLayers`](xshareclasses.md#destroyAllLayers), is available for destroying all the layers of a layered cache.
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Because these suboptions are experimental, do not use them in a production environment.
+
+### New shared classes cache suboption to skip disk space check
 
 When creating a persistent shared classes cache, the OpenJ9 VM checks that there is sufficient disk space available on the file
 system. For file systems that do not support the checking of free space, you can set the `-Xshareclasses:noPersistentDiskSpaceCheck` option, which causes the VM to skip the space checking operation. If there isn't enough disk space available when the cache is written, a **SIGBUG** or **SIGSEGV** signal occurs and the VM ends. For more information, see the [-Xshareclasses:noPersistentDiskSpaceCheck](xshareclasses.md#nopersistentdiskspacecheck) option.
-
-### Digest algorithm is re-enabled
-
-Issue [#5611](https://github.com/eclipse/openj9/issues/5611) is fixed, so support for the Digest algorithm is re-enabled. For more information about this support, see [Cryptographic operations]( introduction.md#cryptographic-operations).
 
 ### Option to share 'Unsafe' classes
 
 Classes created through `Unsafe.defineClass` are now stored by default in the shared classes cache. You can use the `-XX:-ShareUnsafeClasses` option to change the default behavior. For more information, see [-XX:[+|-]ShareUnsafeClasses](xxshareunsafeclasses.md).
 
+### Digest algorithm is re-enabled
+
+Issue [#5611](https://github.com/eclipse/openj9/issues/5611) is fixed, so support for the Digest algorithm is re-enabled. For more information about this support, see [Cryptographic operations]( introduction.md#cryptographic-operations).
 
 ## Full release information
 
