@@ -193,7 +193,9 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
         Cache1                  Java8 64-bit  persistent      cr              1                                         Mon Sep 23 11:46:25 2019
         Cache1                  Java8 64-bit  persistent      cr              2                                         In use                     
 
-: The caches are created in the same directory. When you use the `-Xshareclasses:name=Cache1` suboption in future Java commands, all the caches are started. Only the cache in the container layer is writable. The caches in the lower layers are read only, because modifying them would invalidate all the caches in the layers above.
+: The caches are created in the same directory.
+
+: When you use the `-Xshareclasses:name=Cache1` suboption in future Java commands, all the caches are started, however only the cache in the container layer is writable. The caches in the lower layers are read only, because modifying them would invalidate all the caches in the layers above.
 
 : If there are multiple VMs in a race condition while creating a layered cache, more than one new layered cache can be created. To avoid this situation, you can instead use the [`-Xshareclasses:layer=<number>`](xshareclasses.md#layer) suboption to create a new layered cache.
 
@@ -336,13 +338,15 @@ case, the VM continues without using shared classes.
 
 : To revalidate an AOT method, see the `revalidateAotMethods` suboption. Use the `findAotMethod` suboption to determine which AOT methods match the method specifications. To learn more about the syntax to use for `<method_specification>`, including how to specify more than one method, see [Method specification syntax](#method-specification-syntax).
 
-### `layer` (Experimental, 64-bit only)
+### `layer`
+
+(Experimental, 64-bit only)
 
         -Xshareclasses:layer=<number>
 
 : Creates layered caches inside a container. This suboption is experimental; do not use it in production.
 
-: This suboption has the same effect as the `createLayer` suboption, but with the added ability to specify the layer number. For more information, see [`createLayer`](xshareclasses.md#createLayer).
+: This suboption has the same effect as the `createLayer` suboption, but with the added ability to specify the layer number. For more information, see [`createLayer`](xshareclasses.md#createlayer).
 
 ### `listAllCaches` (Cache utility)
 
