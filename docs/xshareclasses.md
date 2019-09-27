@@ -333,7 +333,7 @@ case, the VM continues without using shared classes.
 
 3. The next Docker layer up is an Open Liberty image that is built on the OpenJ9 image. As part of this image, the `-Xshareclasses:name=Cache1,layer=1` suboption is used to create another cache called Cache1. Because the `layer=1` suboption is specified, this new cache is a layered cache, which builds on `Cache1` in the previous container layer. (Open Liberty starts two VMs, so if you instead use the `createLayer` suboption here, two layered caches are created, with layer numbers of 1 and 2.) Note that cache layers are different from, and independent of, container layers.  
 
-4. In the same way, another layer is added for an Open Liberty Java application, and another layered cache is created to add to `Cache1`. The `listAllCaches` suboption now shows all the caches and their layers:
+4. In the same way, another Docker layer is added for an Open Liberty Java application, and another layered cache is created to add to `Cache1`. The `listAllCaches` suboption now shows all the caches and their layers:
 
         java -Xshareclasses:listAllCaches
         ...
