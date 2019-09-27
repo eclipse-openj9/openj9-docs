@@ -31,6 +31,7 @@ The following new features and notable changes since v.0.16 are included in this
 - [New shared classes cache suboptions for layered caches](#new-shared-classes-cache-suboptions-for-layered-caches)
 - [New shared classes cache suboption to skip disk space check](#new-shared-classes-cache-suboption-to-skip-disk-space-check)
 - [Option to share 'Unsafe' classes](#option-to-share-unsafe-classes)
+- [Option to record class relationships in the verifier](#option-to-record-class-relationships-in-the-verifier)
 - [Digest algorithm is re-enabled](#digest-algorithm-is-re-enabled)
 
 ## Features and changes
@@ -65,6 +66,10 @@ system. For file systems that do not support the checking of free space, you can
 ### Option to share 'Unsafe' classes
 
 Classes created through `Unsafe.defineClass` are now stored by default in the shared classes cache. You can use the `-XX:-ShareUnsafeClasses` option to change the default behavior. For more information, see [-XX:[+|-]ShareUnsafeClasses](xxshareunsafeclasses.md).
+
+### Option to record class relationships in the verifier
+
+A new command line option `-XX:+ClassRelationshipVerifier` allows you to record class relationships in the verifier, which avoids unnecessary class loading and reduces VM startup time. This is a new approach to bytecode verification that delays validating the relationships between classes until the classes are required to be loaded for a program's execution thus loading only those classes that are needed. For more information, see [-XX:[+|-]ClassRelationshipVerifier](xxclassrelationshipverifier.md).
 
 ### Digest algorithm is re-enabled
 

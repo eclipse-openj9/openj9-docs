@@ -450,7 +450,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:noPersistentDiskSpaceCheck
 
-:   Instructs the VM not to check for available storage on the file system before creating a persistent shared classes cache. This option prevents an error on file systems that do not support the checking of free space, where a value of 0 is returned and a shared cache cannot be created. Regardless of whether you choose to set this option, if there isn't enough disk space available when the VM writes to the shared cache memory, a **SIGBUG** or **SIGSEGV** signal occurs and the VM ends.
+:   Instructs the VM not to check for available storage on the file system before creating a persistent shared classes cache. This option prevents an error on file systems that do not support the checking of free space, where a value of 0 is returned and a shared cache cannot be created. Regardless of whether you choose to set this option, if there isn't enough disk space available when the VM writes to the shared cache memory, a **SIGBUS** or **SIGSEGV** signal occurs and the VM ends.
 
 :   If you are using the [`readonly`](#readonly) suboption, the VM does not check the available disk space, so you do not need to set the `noPersistentDiskSpaceCheck` suboption.
 

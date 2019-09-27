@@ -34,6 +34,8 @@ As described in the [Oracle "Non-Standard Options" documentation](https://docs.o
 
 Oracle recommend that you use this flag when you are developing new code because stricter checks will become the default in future releases.
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You cannot use this setting in conjunction with [-XX:+ClassRelationshipVerifier](xxclassrelationshipverifier.md). 
+
 ## Default behavior
 
 By default, strict format checks are disabled.
