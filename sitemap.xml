@@ -846,6 +846,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/xxclassrelationshipverifier/</loc>
+     <lastmod>2019-09-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/xxcodecachetotal/</loc>
      <lastmod>2019-09-27</lastmod>
      <changefreq>daily</changefreq>
