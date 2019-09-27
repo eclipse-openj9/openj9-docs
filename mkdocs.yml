@@ -304,6 +304,7 @@ pages:
             - "Using -XX options"                                                : xx_jvm_commands.md
             - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
+            - "-XX:[+|-]ClassRelationshipVerifier"                               : xxclassrelationshipverifier.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
             - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
