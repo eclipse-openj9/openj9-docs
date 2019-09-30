@@ -200,7 +200,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : Destroys all shared cache layers that are specified by the `name` suboption. For example, `-Xshareclasses:name=Cache1,destroyAllLayers` destroys all layers of the cache called `Cache1`. If you use the `destroy` suboption on a layered cache, for example `-Xshareclasses:name=Cache1,destroy`, only the top layer of the cache is destroyed.
 
-: For more information about layered caches, see the [`createLayer`](xshareclasses.md#createlayer) suboption.
+: For more information about layered caches, see the [`layer`](xshareclasses.md#layer) suboption.
 
 ### `destroyAllSnapshots` (Cache utility)
 
