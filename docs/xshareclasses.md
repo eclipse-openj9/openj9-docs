@@ -156,6 +156,16 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The timestamp of a bootstrap `jar` or `zip` file is checked once when it is used for the first time to load a class.
 
+### `createLayer`
+
+**(Experimental, 64-bit only)**
+
+        -Xshareclasses:createLayer
+
+: Creates layered caches. This suboption is experimental; do not use it in a production environment.
+
+: If there are multiple VMs in a race condition while creating a layered cache, more than one new layered cache can be created. To avoid this situation, use the `-Xshareclasses:layer=<number>` suboption to create a new layered cache with a specific layer number. See [`layer`](xshareclasses.md#layer) for more information about layered caches.
+
 ### `destroy` (Cache utility)
 
         -Xshareclasses:destroy
@@ -181,6 +191,16 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 - Non-persistent caches can be destroyed only if all VMs that are using it have shut down and the user has sufficient permissions.
 
 - Persistent caches that are still in use continue to exist even when you use this option, but they are unlinked from the file system so they are not visible to new VM invocations. If you update the VM then restart an application for which a persistent shared cache already exists, the VM unlinks the existing cache and creates a new cache. Because the unlinked caches are not visible to new VMs, you cannot find them by using the `-Xshareclasses:listAllCaches` option, and you cannot use the `-Xshareclasses:printStats` option on them. You can therefore have multiple unlinked caches that consume file system space until they are no longer in use.
+
+### `destroyAllLayers`
+
+**(Experimental, 64-bit only)**
+
+        -Xshareclasses:destroyAllLayers
+
+: Destroys all shared cache layers that are specified by the `name` suboption. For example, `-Xshareclasses:name=Cache1,destroyAllLayers` destroys all layers of the cache called `Cache1`. If you use the `destroy` suboption on a layered cache, for example `-Xshareclasses:name=Cache1,destroy`, only the top layer of the cache is destroyed.
+
+: For more information about layered caches, see the [`layer`](xshareclasses.md#layer) suboption.
 
 ### `destroyAllSnapshots` (Cache utility)
 
@@ -285,6 +305,48 @@ case, the VM continues without using shared classes.
 
 : To revalidate an AOT method, see the `revalidateAotMethods` suboption. Use the `findAotMethod` suboption to determine which AOT methods match the method specifications. To learn more about the syntax to use for `<method_specification>`, including how to specify more than one method, see [Method specification syntax](#method-specification-syntax).
 
+### `layer`
+
+(Experimental, 64-bit only)
+
+        -Xshareclasses:layer=<number>
+
+: Creates layered caches. This suboption is experimental; do not use it in production.
+
+: This suboption has the same effect as the [`createLayer`](xshareclasses.md#createlayer) suboption, but with the added ability to specify the layer number.
+
+: One scenario where you might want to use a layered cache is if you are building a Docker image. Normally, writing to an existing shared cache in a lower image layer results in Docker duplicating the shared cache to the top layer (following the Docker [copy-on-write strategy](https://docs.docker.com/storage/storagedriver/#the-copy-on-write-cow-strategy)). With a layered cache, you can instead write into a new cache in the top layer. The new cache builds on the existing cache, so space is saved in the image.
+
+: The following example shows a Docker container with four layers:
+
+: ![This diagram is explained in the surrounding text](./cr/shrc_layers.jpg "Docker container with layered caches")
+
+1. The lowest layer is a Ubuntu Docker image.
+2. The next layer is an OpenJ9 Docker image that is built on the Ubuntu image. As part of this image, the `-Xshareclasses:name=Cache1` suboption is used to create a cache called `Cache1`. The layer number assigned to this cache is 0. The `listAllCaches` suboption shows the cache and the layer number:
+
+        java -Xshareclasses:listAllCaches
+        ...
+        Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
+
+        Compatible shared caches
+        Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019                       
+
+3. The next Docker layer up is an Open Liberty image that is built on the OpenJ9 image. As part of this image, the `-Xshareclasses:name=Cache1,layer=1` suboption is used to create another cache called Cache1. Because the `layer=1` suboption is specified, this new cache is a layered cache, which builds on `Cache1` in the previous container layer. (Open Liberty starts two VMs, so if you instead use the `createLayer` suboption here, two layered caches are created, with layer numbers of 1 and 2.) Note that cache layers are different from, and independent of, container layers.  
+
+4. In the same way, another Docker layer is added for an Open Liberty Java application, and another layered cache is created to add to `Cache1`. The `listAllCaches` suboption now shows all the caches and their layers:
+
+        java -Xshareclasses:listAllCaches
+        ...
+        Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
+
+        Compatible shared caches
+        Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019   
+        Cache1                  Java8 64-bit  persistent      cr              1                                         Mon Sep 23 11:46:25 2019
+        Cache1                  Java8 64-bit  persistent      cr              2                                         In use                     
+
+: The caches are created in the same directory.
+
+: When you use the `-Xshareclasses:name=Cache1` suboption in future Java commands, all the caches are started. The top-layer cache is started in read/write mode, and lower-layer caches are started in read-only mode. Modifying a lower-layer cache would invalidate all the caches in the layers above.
 
 ### `listAllCaches` (Cache utility)
 
