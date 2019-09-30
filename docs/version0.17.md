@@ -61,7 +61,7 @@ A new suboption, [`destroyAllLayers`](xshareclasses.md#destroyalllayers), is ava
 ### New shared classes cache suboption to skip disk space check
 
 When creating a persistent shared classes cache, the OpenJ9 VM checks that there is sufficient disk space available on the file
-system. For file systems that do not support the checking of free space, you can set the `-Xshareclasses:noPersistentDiskSpaceCheck` option, which causes the VM to skip the space checking operation. If there isn't enough disk space available when the cache is written, a **SIGBUG** or **SIGSEGV** signal occurs and the VM ends. For more information, see the [-Xshareclasses:noPersistentDiskSpaceCheck](xshareclasses.md#nopersistentdiskspacecheck) option.
+system. For file systems that do not support the checking of free space, you can set the `-Xshareclasses:noPersistentDiskSpaceCheck` option, which causes the VM to skip the space checking operation. If there isn't enough disk space available when the cache is written, a **SIGBUS** or **SIGSEGV** signal occurs and the VM ends. For more information, see the [-Xshareclasses:noPersistentDiskSpaceCheck](xshareclasses.md#nopersistentdiskspacecheck) option.
 
 ### Option to share 'Unsafe' classes
 
