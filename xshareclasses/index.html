@@ -2425,6 +2425,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#createlayer" title="createLayer" class="md-nav__link">
+    createLayer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#destroy-cache-utility" title="destroy (Cache utility)" class="md-nav__link">
     destroy (Cache utility)
   </a>
@@ -2434,6 +2441,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#destroyall-cache-utility" title="destroyAll (Cache utility)" class="md-nav__link">
     destroyAll (Cache utility)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroyalllayers" title="destroyAllLayers" class="md-nav__link">
+    destroyAllLayers
   </a>
   
 </li>
@@ -2504,6 +2518,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#invalidateaotmethods-cache-utility" title="invalidateAotMethods (Cache utility)" class="md-nav__link">
     invalidateAotMethods (Cache utility)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer" title="layer" class="md-nav__link">
+    layer
   </a>
   
 </li>
@@ -3726,6 +3747,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#createlayer" title="createLayer" class="md-nav__link">
+    createLayer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#destroy-cache-utility" title="destroy (Cache utility)" class="md-nav__link">
     destroy (Cache utility)
   </a>
@@ -3735,6 +3763,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#destroyall-cache-utility" title="destroyAll (Cache utility)" class="md-nav__link">
     destroyAll (Cache utility)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroyalllayers" title="destroyAllLayers" class="md-nav__link">
+    destroyAllLayers
   </a>
   
 </li>
@@ -3805,6 +3840,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#invalidateaotmethods-cache-utility" title="invalidateAotMethods (Cache utility)" class="md-nav__link">
     invalidateAotMethods (Cache utility)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer" title="layer" class="md-nav__link">
+    layer
   </a>
   
 </li>
@@ -4220,6 +4262,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <dd>Causes timestamps of <code>jar</code> or <code>zip</code> files to be checked every time a class is loaded. If a timestamp has changed, the class is loaded from the <code>jar</code> or <code>zip</code> file and not from the shared cache. This suboption is not enabled by default and reflects the legacy behavior of the shared classes cache.</dd>
 <dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The timestamp of a bootstrap <code>jar</code> or <code>zip</code> file is checked once when it is used for the first time to load a class.</dd>
 </dl>
+<h3 id="createlayer"><code>createLayer</code></h3>
+<p><strong>(Experimental, 64-bit only)</strong></p>
+<pre><code>    -Xshareclasses:createLayer
+</code></pre>
+<dl>
+<dd>Creates layered caches. This suboption is experimental; do not use it in a production environment.</dd>
+<dd>If there are multiple VMs in a race condition while creating a layered cache, more than one new layered cache can be created. To avoid this situation, use the <code>-Xshareclasses:layer=&lt;number&gt;</code> suboption to create a new layered cache with a specific layer number. See <a href="./#layer"><code>layer</code></a> for more information about layered caches.</dd>
+</dl>
 <h3 id="destroy-cache-utility"><code>destroy</code> (Cache utility)</h3>
 <pre><code>    -Xshareclasses:destroy
 </code></pre>
@@ -4249,6 +4299,14 @@ cannot verify that the shared memory was created by the VM.
 <p>Persistent caches that are still in use continue to exist even when you use this option, but they are unlinked from the file system so they are not visible to new VM invocations. If you update the VM then restart an application for which a persistent shared cache already exists, the VM unlinks the existing cache and creates a new cache. Because the unlinked caches are not visible to new VMs, you cannot find them by using the <code>-Xshareclasses:listAllCaches</code> option, and you cannot use the <code>-Xshareclasses:printStats</code> option on them. You can therefore have multiple unlinked caches that consume file system space until they are no longer in use.</p>
 </li>
 </ul>
+<h3 id="destroyalllayers"><code>destroyAllLayers</code></h3>
+<p><strong>(Experimental, 64-bit only)</strong></p>
+<pre><code>    -Xshareclasses:destroyAllLayers
+</code></pre>
+<dl>
+<dd>Destroys all shared cache layers that are specified by the <code>name</code> suboption. For example, <code>-Xshareclasses:name=Cache1,destroyAllLayers</code> destroys all layers of the cache called <code>Cache1</code>. If you use the <code>destroy</code> suboption on a layered cache, for example <code>-Xshareclasses:name=Cache1,destroy</code>, only the top layer of the cache is destroyed.</dd>
+<dd>For more information about layered caches, see the <a href="./#layer"><code>layer</code></a> suboption.</dd>
+</dl>
 <h3 id="destroyallsnapshots-cache-utility"><code>destroyAllSnapshots</code> (Cache utility)</h3>
 <dl>
 <dd><strong>(Not Windows)</strong><pre><code>-Xshareclasses:destroyAllSnapshots
@@ -4356,6 +4414,49 @@ with shared class cache.
 <dd>Modify the existing shared cache to invalidate the AOT methods that match the method specifications. Use this suboption to invalidate AOT methods that cause a failure in the application, without having to destroy the shared cache. Invalidated AOT methods remain in the shared cache, but are then excluded from being loaded. VMs that have not processed the methods, or new VMs that use the cache are not affected by the invalidated methods. The AOT methods are invalidated for the lifetime of the cache, but do not prevent the AOT methods from being compiled again if a new shared cache is created. To prevent AOT method compilation into a new shared cache, use the <code>-Xaot:exclude</code> option. For more information, see <a href="../xaot/#exclude">-Xaot</a>.</dd>
 <dd>To identify AOT problems, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_pd_diagnose.html">Diagnosing a JIT or AOT problem</a>.</dd>
 <dd>To revalidate an AOT method, see the <code>revalidateAotMethods</code> suboption. Use the <code>findAotMethod</code> suboption to determine which AOT methods match the method specifications. To learn more about the syntax to use for <code>&lt;method_specification&gt;</code>, including how to specify more than one method, see <a href="#method-specification-syntax">Method specification syntax</a>.</dd>
+</dl>
+<h3 id="layer"><code>layer</code></h3>
+<p>(Experimental, 64-bit only)</p>
+<pre><code>    -Xshareclasses:layer=&lt;number&gt;
+</code></pre>
+<dl>
+<dd>Creates layered caches. This suboption is experimental; do not use it in production.</dd>
+<dd>This suboption has the same effect as the <a href="./#createlayer"><code>createLayer</code></a> suboption, but with the added ability to specify the layer number.</dd>
+<dd>One scenario where you might want to use a layered cache is if you are building a Docker image. Normally, writing to an existing shared cache in a lower image layer results in Docker duplicating the shared cache to the top layer (following the Docker <a href="https://docs.docker.com/storage/storagedriver/#the-copy-on-write-cow-strategy">copy-on-write strategy</a>). With a layered cache, you can instead write into a new cache in the top layer. The new cache builds on the existing cache, so space is saved in the image.</dd>
+<dd>The following example shows a Docker container with four layers:</dd>
+<dd><img alt="This diagram is explained in the surrounding text" src="../cr/shrc_layers.jpg" title="Docker container with layered caches" /></dd>
+</dl>
+<ol>
+<li>The lowest layer is a Ubuntu Docker image.</li>
+<li>
+<p>The next layer is an OpenJ9 Docker image that is built on the Ubuntu image. As part of this image, the <code>-Xshareclasses:name=Cache1</code> suboption is used to create a cache called <code>Cache1</code>. The layer number assigned to this cache is 0. The <code>listAllCaches</code> suboption shows the cache and the layer number:</p>
+<pre><code>java -Xshareclasses:listAllCaches
+...
+Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
+
+Compatible shared caches
+Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019
+</code></pre>
+</li>
+<li>
+<p>The next Docker layer up is an Open Liberty image that is built on the OpenJ9 image. As part of this image, the <code>-Xshareclasses:name=Cache1,layer=1</code> suboption is used to create another cache called Cache1. Because the <code>layer=1</code> suboption is specified, this new cache is a layered cache, which builds on <code>Cache1</code> in the previous container layer. (Open Liberty starts two VMs, so if you instead use the <code>createLayer</code> suboption here, two layered caches are created, with layer numbers of 1 and 2.) Note that cache layers are different from, and independent of, container layers.  </p>
+</li>
+<li>
+<p>In the same way, another Docker layer is added for an Open Liberty Java application, and another layered cache is created to add to <code>Cache1</code>. The <code>listAllCaches</code> suboption now shows all the caches and their layers:</p>
+<pre><code>java -Xshareclasses:listAllCaches
+...
+Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
+
+Compatible shared caches
+Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019   
+Cache1                  Java8 64-bit  persistent      cr              1                                         Mon Sep 23 11:46:25 2019
+Cache1                  Java8 64-bit  persistent      cr              2                                         In use
+</code></pre>
+</li>
+</ol>
+<dl>
+<dd>The caches are created in the same directory.</dd>
+<dd>When you use the <code>-Xshareclasses:name=Cache1</code> suboption in future Java commands, all the caches are started. The top-layer cache is started in read/write mode, and lower-layer caches are started in read-only mode. Modifying a lower-layer cache would invalidate all the caches in the layers above.</dd>
 </dl>
 <h3 id="listallcaches-cache-utility"><code>listAllCaches</code> (Cache utility)</h3>
 <pre><code>    -Xshareclasses:listAllCaches

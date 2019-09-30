@@ -407,15 +407,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-shared-classes-cache-suboption" title="New shared classes cache suboption" class="md-nav__link">
-    New shared classes cache suboption
+  <a href="#new-shared-classes-cache-suboptions-for-layered-caches" title="New shared classes cache suboptions for layered caches" class="md-nav__link">
+    New shared classes cache suboptions for layered caches
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#digest-algorithm-is-re-enabled" title="Digest algorithm is re-enabled" class="md-nav__link">
-    Digest algorithm is re-enabled
+  <a href="#new-shared-classes-cache-suboption-to-skip-disk-space-check" title="New shared classes cache suboption to skip disk space check" class="md-nav__link">
+    New shared classes cache suboption to skip disk space check
   </a>
   
 </li>
@@ -430,6 +430,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#option-to-record-class-relationships-in-the-verifier" title="Option to record class relationships in the verifier" class="md-nav__link">
     Option to record class relationships in the verifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digest-algorithm-is-re-enabled" title="Digest algorithm is re-enabled" class="md-nav__link">
+    Digest algorithm is re-enabled
   </a>
   
 </li>
@@ -3318,15 +3325,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-shared-classes-cache-suboption" title="New shared classes cache suboption" class="md-nav__link">
-    New shared classes cache suboption
+  <a href="#new-shared-classes-cache-suboptions-for-layered-caches" title="New shared classes cache suboptions for layered caches" class="md-nav__link">
+    New shared classes cache suboptions for layered caches
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#digest-algorithm-is-re-enabled" title="Digest algorithm is re-enabled" class="md-nav__link">
-    Digest algorithm is re-enabled
+  <a href="#new-shared-classes-cache-suboption-to-skip-disk-space-check" title="New shared classes cache suboption to skip disk space check" class="md-nav__link">
+    New shared classes cache suboption to skip disk space check
   </a>
   
 </li>
@@ -3341,6 +3348,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#option-to-record-class-relationships-in-the-verifier" title="Option to record class relationships in the verifier" class="md-nav__link">
     Option to record class relationships in the verifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digest-algorithm-is-re-enabled" title="Digest algorithm is re-enabled" class="md-nav__link">
+    Digest algorithm is re-enabled
   </a>
   
 </li>
@@ -3406,10 +3420,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The following new features and notable changes since v.0.16 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
-<li><a href="#new-shared-classes-cache-suboption">New shared classes cache suboption</a></li>
-<li><a href="#digest-algorithm-is-re-enabled">Digest algorithm is re-enabled</a></li>
+<li><a href="#new-shared-classes-cache-suboptions-for-layered-caches">New shared classes cache suboptions for layered caches</a></li>
+<li><a href="#new-shared-classes-cache-suboption-to-skip-disk-space-check">New shared classes cache suboption to skip disk space check</a></li>
 <li><a href="#option-to-share-unsafe-classes">Option to share 'Unsafe' classes</a></li>
 <li><a href="#option-to-record-class-relationships-in-the-verifier">Option to record class relationships in the verifier</a></li>
+<li><a href="#digest-algorithm-is-re-enabled">Digest algorithm is re-enabled</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3421,15 +3436,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The last release of OpenJDK 8 and 11 from AdoptOpenJDK is Eclipse OpenJ9 0.15.1. To read about other features and changes in the VM since 0.15.1, check the <a href="../version0.16/">Version 0.16.0</a> release notes too.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
-<h3 id="new-shared-classes-cache-suboption">New shared classes cache suboption</h3>
+<h3 id="new-shared-classes-cache-suboptions-for-layered-caches">New shared classes cache suboptions for layered caches</h3>
+<p><strong>(Experimental, 64-bit only)</strong></p>
+<p>Two new suboptions, <code>createLayer</code> and <code>layer=&lt;number&gt;</code>, are available for creating layered caches, where a cache builds on another cache with the same name. You can use these suboptions to save space when building a Docker container, for example. For more information, see <a href="../xshareclasses/#layer"><code>-Xshareclasses:layer</code></a>.</p>
+<p>A new suboption, <a href="../xshareclasses/#destroyalllayers"><code>destroyAllLayers</code></a>, is available for destroying all the layers of a layered cache.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Because these suboptions are experimental, do not use them in a production environment.</p>
+<h3 id="new-shared-classes-cache-suboption-to-skip-disk-space-check">New shared classes cache suboption to skip disk space check</h3>
 <p>When creating a persistent shared classes cache, the OpenJ9 VM checks that there is sufficient disk space available on the file
 system. For file systems that do not support the checking of free space, you can set the <code>-Xshareclasses:noPersistentDiskSpaceCheck</code> option, which causes the VM to skip the space checking operation. If there isn't enough disk space available when the cache is written, a <strong>SIGBUS</strong> or <strong>SIGSEGV</strong> signal occurs and the VM ends. For more information, see the <a href="../xshareclasses/#nopersistentdiskspacecheck">-Xshareclasses:noPersistentDiskSpaceCheck</a> option.</p>
-<h3 id="digest-algorithm-is-re-enabled">Digest algorithm is re-enabled</h3>
-<p>Issue <a href="https://github.com/eclipse/openj9/issues/5611">#5611</a> is fixed, so support for the Digest algorithm is re-enabled. For more information about this support, see <a href="../introduction/#cryptographic-operations">Cryptographic operations</a>.</p>
 <h3 id="option-to-share-unsafe-classes">Option to share 'Unsafe' classes</h3>
 <p>Classes created through <code>Unsafe.defineClass</code> are now stored by default in the shared classes cache. You can use the <code>-XX:-ShareUnsafeClasses</code> option to change the default behavior. For more information, see <a href="../xxshareunsafeclasses/">-XX:[+|-]ShareUnsafeClasses</a>.</p>
 <h3 id="option-to-record-class-relationships-in-the-verifier">Option to record class relationships in the verifier</h3>
 <p>A new command line option <code>-XX:+ClassRelationshipVerifier</code> allows you to record class relationships in the verifier, which avoids unnecessary class loading and reduces VM startup time. This is a new approach to bytecode verification that delays validating the relationships between classes until the classes are required to be loaded for a program's execution thus loading only those classes that are needed. For more information, see <a href="../xxclassrelationshipverifier/">-XX:[+|-]ClassRelationshipVerifier</a>.</p>
+<h3 id="digest-algorithm-is-re-enabled">Digest algorithm is re-enabled</h3>
+<p>Issue <a href="https://github.com/eclipse/openj9/issues/5611">#5611</a> is fixed, so support for the Digest algorithm is re-enabled. For more information about this support, see <a href="../introduction/#cryptographic-operations">Cryptographic operations</a>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.16 and V0.17.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.17/0.17.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.17.md ==== -->
