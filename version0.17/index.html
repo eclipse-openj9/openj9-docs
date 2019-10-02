@@ -441,6 +441,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#direct-dump-reader-ddr-vm-restriction-removed" title="Direct Dump Reader (DDR) VM restriction removed" class="md-nav__link">
+    Direct Dump Reader (DDR) VM restriction removed
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3359,6 +3366,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#direct-dump-reader-ddr-vm-restriction-removed" title="Direct Dump Reader (DDR) VM restriction removed" class="md-nav__link">
+    Direct Dump Reader (DDR) VM restriction removed
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3425,6 +3439,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#option-to-share-unsafe-classes">Option to share 'Unsafe' classes</a></li>
 <li><a href="#option-to-record-class-relationships-in-the-verifier">Option to record class relationships in the verifier</a></li>
 <li><a href="#digest-algorithm-is-re-enabled">Digest algorithm is re-enabled</a></li>
+<li><a href="#direct-dump-reader-ddr-vm-restriction-removed">Direct Dump Reader (DDR) VM restriction removed</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3450,6 +3465,8 @@ system. For file systems that do not support the checking of free space, you can
 <p>A new command line option <code>-XX:+ClassRelationshipVerifier</code> allows you to record class relationships in the verifier, which avoids unnecessary class loading and reduces VM startup time. This is a new approach to bytecode verification that delays validating the relationships between classes until the classes are required to be loaded for a program's execution thus loading only those classes that are needed. For more information, see <a href="../xxclassrelationshipverifier/">-XX:[+|-]ClassRelationshipVerifier</a>.</p>
 <h3 id="digest-algorithm-is-re-enabled">Digest algorithm is re-enabled</h3>
 <p>Issue <a href="https://github.com/eclipse/openj9/issues/5611">#5611</a> is fixed, so support for the Digest algorithm is re-enabled. For more information about this support, see <a href="../introduction/#cryptographic-operations">Cryptographic operations</a>.</p>
+<h3 id="direct-dump-reader-ddr-vm-restriction-removed">Direct Dump Reader (DDR) VM restriction removed</h3>
+<p>Prior to this version, you had to use a 32-bit VM to look at a 32-bit core, and a 64-bit VM to look at a 64-bit core when using DDR. This restriction has now been removed.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.16 and V0.17.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.17/0.17.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.17.md ==== -->

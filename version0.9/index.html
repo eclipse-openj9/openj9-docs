@@ -3469,7 +3469,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#modifying-the-default-java-heap-size-for-applications-that-run-in-containers">A command line option is provided to automatically set a larger Java heap size for applications that run in containers.</a></li>
 <li><a href="#specifying-the-maximum-java-heap-size-as-a-percentage-value">You can now specify the maximum Java heap size as a percentage value.</a></li>
 <li><a href="#shared-classes-support-for-nested-jar-files">The shared classes feature now supports nested jar files.</a></li>
-<li><a href="Direct-Dump-Reader-enabled-on-linux">System dump data can now be read to help diagnose problems on Linux and Windows platforms.</a></li>
+<li><a href="#direct-dump-reader-enabled-on-linux-and-windows">System dump data can now be read to help diagnose problems on Linux and Windows platforms.</a></li>
 <li><a href="#changes-to-the-javalangstring-class">There are notable changes to the <code>java.lang.String</code> class.</a></li>
 <li><a href="#changes-to-the-SharedClassCacheInfo-class">There are notable changes to the <code>com.ibm.oti.shared.SharedClassCacheInfo</code> class.</a></li>
 </ul>
@@ -3550,7 +3550,7 @@ options are based on the available container memory.</p>
 <p>Direct Dump Reader (DDR) support is now enabled for the OpenJ9 VM on all Linux architectures and on Windows. The DDR code enables the VM to read system dump data by using the OpenJ9 Diagnostic Tool
 Framework for Java (DTFJ) API or the <a href="../tool_jdmpview/"><code>jdmpview</code></a> tool. If you use the <a href="https://www.eclipse.org/mat/">Eclipse Memory Analyzer Tool (MAT)</a>, you can also analyze OpenJ9 or IBM VMs by installing the DTFJ plugin.
 (Install from the Eclipse Help menu; Install New Software &gt; Work with "IBM Diagnostic Tool Framework for Java" &gt; IBM Monitoring and  Diagnostic Tools &gt; Diagnostic Tool Framework for Java)</p>
-<p>You must use a 32-bit JVM to look at a 32-bit core, and a 64-bit JVM to look at a 64-bit core. This restriction will be fixed in a later version of OpenJ9.</p>
+<p>You must use a 32-bit VM to look at a 32-bit core, and a 64-bit VM to look at a 64-bit core. This restriction will be fixed in a later version of OpenJ9.</p>
 <h3 id="changes-to-the-javalangstring-class">Changes to the <code>java.lang.String</code> class</h3>
 <p><img alt="Start of content that applies only to Java 9 and later" src="../cr/java9plus.png" /> To match the behavior of OpenJDK, <code>java.lang.String</code> no longer has a count field, which changes the way that <code>String.subString()</code> works compared to Java 8. <code>String.subString()</code> now copies the value array. Similarly, <code>StringBuffer</code> and <code>StringBuilder</code> do not share the value array with any <code>String</code> created by <code>toString()</code>.</p>
 <p>For performance and compatibility with the new String object layout, the OpenJ9 implementations of <code>StringBuffer</code> and <code>StringBuilder</code> have been deprecated in favor of the OpenJDK implementations.
