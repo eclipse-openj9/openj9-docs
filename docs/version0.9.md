@@ -33,7 +33,7 @@ The following new features and notable changes from v.0.8.0 are included in this
 - [A command line option is provided to automatically set a larger Java heap size for applications that run in containers.](#modifying-the-default-java-heap-size-for-applications-that-run-in-containers)
 - [You can now specify the maximum Java heap size as a percentage value.](#specifying-the-maximum-java-heap-size-as-a-percentage-value)
 - [The shared classes feature now supports nested jar files.](#shared-classes-support-for-nested-jar-files)
-- [System dump data can now be read to help diagnose problems on Linux and Windows platforms.](Direct-Dump-Reader-enabled-on-linux)
+- [System dump data can now be read to help diagnose problems on Linux and Windows platforms.](#direct-dump-reader-enabled-on-linux-and-windows)
 - [There are notable changes to the `java.lang.String` class.](#changes-to-the-javalangstring-class)
 - [There are notable changes to the `com.ibm.oti.shared.SharedClassCacheInfo` class.](#changes-to-the-SharedClassCacheInfo-class)
 
@@ -120,7 +120,7 @@ Direct Dump Reader (DDR) support is now enabled for the OpenJ9 VM on all Linux a
 Framework for Java (DTFJ) API or the [`jdmpview`](tool_jdmpview.md) tool. If you use the [Eclipse Memory Analyzer Tool (MAT)](https://www.eclipse.org/mat/), you can also analyze OpenJ9 or IBM VMs by installing the DTFJ plugin.
 (Install from the Eclipse Help menu; Install New Software > Work with "IBM Diagnostic Tool Framework for Java" > IBM Monitoring and  Diagnostic Tools > Diagnostic Tool Framework for Java)
 
-You must use a 32-bit JVM to look at a 32-bit core, and a 64-bit JVM to look at a 64-bit core. This restriction will be fixed in a later version of OpenJ9.
+You must use a 32-bit VM to look at a 32-bit core, and a 64-bit VM to look at a 64-bit core. This restriction will be fixed in a later version of OpenJ9.
 
 
 ### Changes to the `java.lang.String` class
