@@ -33,6 +33,7 @@ The following new features and notable changes since v.0.16 are included in this
 - [Option to share 'Unsafe' classes](#option-to-share-unsafe-classes)
 - [Option to record class relationships in the verifier](#option-to-record-class-relationships-in-the-verifier)
 - [Digest algorithm is re-enabled](#digest-algorithm-is-re-enabled)
+- [Direct Dump Reader (DDR) VM restriction removed](#direct-dump-reader-ddr-vm-restriction-removed)
 
 ## Features and changes
 
@@ -74,6 +75,10 @@ A new command line option `-XX:+ClassRelationshipVerifier` allows you to record 
 ### Digest algorithm is re-enabled
 
 Issue [#5611](https://github.com/eclipse/openj9/issues/5611) is fixed, so support for the Digest algorithm is re-enabled. For more information about this support, see [Cryptographic operations]( introduction.md#cryptographic-operations).
+
+### Direct Dump Reader (DDR) VM restriction removed
+
+Prior to this version, you had to use a 32-bit VM to look at a 32-bit core, and a 64-bit VM to look at a 64-bit core when using DDR. This restriction has now been removed.
 
 ## Full release information
 
