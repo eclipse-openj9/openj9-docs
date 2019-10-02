@@ -34,6 +34,7 @@ The following new features and notable changes since v.0.16 are included in this
 - [Option to record class relationships in the verifier](#option-to-record-class-relationships-in-the-verifier)
 - [Digest algorithm is re-enabled](#digest-algorithm-is-re-enabled)
 - [Direct Dump Reader (DDR) VM restriction removed](#direct-dump-reader-ddr-vm-restriction-removed)
+- [The format of the HOOKS section of a Java dump has changed](#the-format-of-the-hooks-section-of-a-java-dump-has-changed)
 
 ## Features and changes
 
@@ -79,6 +80,16 @@ Issue [#5611](https://github.com/eclipse/openj9/issues/5611) is fixed, so suppor
 ### Direct Dump Reader (DDR) VM restriction removed
 
 Prior to this version, you had to use a 32-bit VM to look at a 32-bit core, and a 64-bit VM to look at a 64-bit core when using DDR. This restriction has now been removed.
+
+### The format of the HOOKS section of a Java dump has changed
+
+The format of the `HOOKS` section of a Java dump, which shows internal VM event callbacks, has changed:
+
+- Recorded times have been changed from milliseconds to microseconds to provide increased precision.
+- A new field, `3HKTOTALTIME`, is included, which gives the total duration of previous events.
+- The hook data is now reset after after each Java dump.
+
+For more information and an example of the new format, see [Java dump: HOOKS](dump_javadump.md#hooks)
 
 ## Full release information
 

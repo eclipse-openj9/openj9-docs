@@ -28,7 +28,7 @@ Java dumps, sometimes referred to as *Java cores*, are produced when the VM ends
 
 If your Java application crashes or hangs, Java dumps can provide useful information to help you diagnose the root cause.
 
-- If your application crashes, Javadumps are generated automatically for the following types of failure:
+- If your application crashes, Java dumps are generated automatically for the following types of failure:
     - the VM receives an unexpected signal or an assertion failure
     - the VM runs out of memory
 - If your application hangs, you can trigger the generation of a Java dump by sending a SIGQUIT signal (`kill -3`) to the VM.
@@ -497,12 +497,15 @@ NULL
 
 ### HOOKS
 
-This section shows internal VM event callbacks, which are used for diagnosing performance problems in the VM. Multiple hook interfaces are listed, which include their individual hook events. The following example shows data for the `J9VMHookInterface`, including the call site location (source file:line number), start time, and duration of the last callback and the longest callback.
+This section shows internal VM event callbacks, which are used for diagnosing performance problems in the VM. Multiple hook interfaces are listed, which include their individual hook events.
+
+The following example shows data for the `J9VMHookInterface`, including the total time for all previous events, the call site location (&lt;source file&gt;:&lt;line number&gt;), start time, and duration of the last callback and the longest callback (all times measured in microseconds). The hook data is reset after each Java dump.
 
 ```
 NULL           ------------------------------------------------------------------------
-0SECTION       HOOK subcomponent dump routine
-NULL           ==============================
+SECTION HOOK   subcomponent dump routine
+NULL           =========================
+1NOTE          These data are reset every time a javacore is taken
 1HKINTERFACE   MM_OMRHookInterface
 NULL           ------------------------------------------------------------------------
 1HKINTERFACE   MM_PrivateHookInterface
@@ -512,15 +515,16 @@ NULL           -----------------------------------------------------------------
 1HKINTERFACE   J9VMHookInterface
 NULL           ------------------------------------------------------------------------
 2HKEVENTID     1
-3HKCALLCOUNT       18
+3HKCALLCOUNT       1239
+3HKTOTALTIME       219564us
 3HKLAST            Last Callback
-4HKCALLSITE           trcengine.c:392
-4HKSTARTTIME          Start Time: 2018-08-30T21:55:47.601
-4HKDURATION           DurationMs: 0
+4HKCALLSITE            trcengine.c:395
+4HKSTARTTIME           Start Time: 2019-10-18T00:15:14.664
+4HKDURATION            Duration : 16us
 3HKLONGST          Longest Callback
-4HKCALLSITE           trcengine.c:392
-4HKSTARTTIME          Start Time: 2018-08-30T21:55:47.460
-4HKDURATION           DurationMs: 1
+4HKCALLSITE            trcengine.c:395
+4HKSTARTTIME           Start Time: 2019-10-18T21:28:34.895
+4HKDURATION            Duration : 5012us
 NULL
 ...
 1HKINTERFACE   J9VMZipCachePoolHookInterface
@@ -528,17 +532,18 @@ NULL           -----------------------------------------------------------------
 1HKINTERFACE   J9JITHookInterface
 NULL           ------------------------------------------------------------------------
 2HKEVENTID     3
-3HKCALLCOUNT       65
+3HKCALLCOUNT       3113
+3HKTOTALTIME       4904us
 3HKLAST            Last Callback
-4HKCALLSITE           ../common/mgmtinit.c:191
-4HKSTARTTIME          Start Time: 2018-08-30T21:55:47.601
-4HKDURATION           DurationMs: 0
+4HKCALLSITE            common/mgmtinit.c:193
+4HKSTARTTIME           Start Time: 2019-10-18T16:04:15.320
+4HKDURATION            Duration : 3us
 3HKLONGST          Longest Callback
-4HKCALLSITE           ../common/mgmtinit.c:191
-4HKSTARTTIME          Start Time: 2018-08-30T21:55:47.486
-4HKDURATION           DurationMs: 0
-...
+4HKCALLSITE            common/mgmtinit.c:193
+4HKSTARTTIME           Start Time: 2019-10-18T16:37:17.633
+4HKDURATION            Duration : 27us
 NULL
+...
 ```
 
 ### SHARED CLASSES
