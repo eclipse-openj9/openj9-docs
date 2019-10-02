@@ -564,7 +564,6 @@ You can filter the **slow** event to change the time threshold from the default 
 ```
 
 #### allocation event
-**(Linux, macOS, and Windows only)**
 
 You must filter the **allocation** event to specify the size of objects that cause a trigger. You can set the filter size from zero up to the maximum value of a 32-bit pointer on 32-bit platforms, or the maximum value of a 64-bit pointer on 64-bit platforms. Setting the lower filter value to zero triggers a dump on all allocations.
 
