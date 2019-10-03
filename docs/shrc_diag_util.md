@@ -24,7 +24,7 @@
 
 # Shared classes cache diagnostic utilities
 
-These utilities display information about the contents of a shared classes cache. Run the utilities by specifying them as suboptions of `-Xshareclasses`. The utilities run on the default cache unless you specify a cache by adding the `name=<cache_name>` suboption.
+These utilities display information about the contents of a shared classes cache. Run the utilities by specifying them as suboptions of `-Xshareclasses`. The utilities run on the default cache unless you specify a cache by adding the `name=<cache_name>` suboption. For layered caches, some information is shown for the top layer cache only, and some is shown for all layers combined. To see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats).
 
 ## `printAllStats`
 
@@ -266,10 +266,10 @@ The following summary data is displayed:
 
 : The number of Classpaths, URLs, and Tokens stored is determined by a number of factors. For example, every time an element of a Classpath is updated, such as when a `.jar` file is rebuilt, a new Classpath is added to the cache. Additionally, if partitions or modification contexts are used, they are associated with the Classpath, URL, or Token. A Classpath, URL, or Token is stored for each unique combination of partition and modification context. For more information, see [SharedClassHelper partitions](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_partitions.html) and [Modification contexts](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_contexts.html).
 
-#### `# Zip caches`
+#### `Zip caches`
 : The number of .zip files that have entry caches stored in the shared cache.
 
-#### `# Stale classes`
+#### `Stale classes`
 : The number of classes that have been marked as "potentially stale" by the cache code, because of an operating system update. See [Understanding dynamic updates](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_dynamic.html).
 
 #### `% Stale classes`
