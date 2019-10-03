@@ -4579,7 +4579,6 @@ You can prevent the VM reverting to different dump locations by using the <code>
 </code></pre>
 
 <h4 id="allocation-event">allocation event</h4>
-<p><strong>(Linux, macOS, and Windows only)</strong></p>
 <p>You must filter the <strong>allocation</strong> event to specify the size of objects that cause a trigger. You can set the filter size from zero up to the maximum value of a 32-bit pointer on 32-bit platforms, or the maximum value of a 64-bit pointer on 64-bit platforms. Setting the lower filter value to zero triggers a dump on all allocations.</p>
 <p>For example, to trigger dumps on allocations greater than 5 Mb in size, use:</p>
 <pre><code>-Xdump:stack:events=allocation,filter=#5m
