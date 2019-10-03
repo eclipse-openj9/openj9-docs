@@ -33,7 +33,7 @@ These utilities display information about the contents of a shared classes cache
 -Xshareclasses:printAllStats,name=<cache_name>
 ```
 
-Displays the contents of the cache in chronological order. You can use this output to see the history of updates that were made to the cache. For layered caches, this utility displays the contents of the cache in each layer \(to see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats)).
+Displays the contents of the cache in chronological order. You can use this output to see the history of updates that were made to the cache.
 
 Each entry in the output starts with a VM ID, so you can see which VM wrote the associated data. Here are example entries for various types of cache data, with explanations:
 
@@ -120,7 +120,9 @@ Each entry in the output starts with a VM ID, so you can see which VM wrote the 
 -Xshareclasses:printStats=<data_type1>[+<data_type2>][...],name=<cache_name>
 ```
 
-Displays summary information about the cache. For layered caches, this utility displays information about the cache in each layer (to see information for the top layer cache only, use [`printTopLayerStats`](#printtoplayerstats)). You can request more detail about items of a specific data type that are stored in the shared cache by using `printStats=<data_type>`. Use the plus symbol (+) to separate the data types. For example, use `printStats=romclass+url,name=myCache` to see information about `ROMClass` and `URL` items in all the layer caches of the cache called `myCache`. The valid data types are as follows (case insensitive):
+Displays summary information about the cache. For layered caches, some information is shown for the top layer cache only, and some is shown for all layers combined. To see information for the top layer cache only, use [`printTopLayerStats`](#printtoplayerstats).
+
+You can request more detail about items of a specific data type that are stored in the shared cache by using `printStats=<data_type>`. Use the plus symbol (+) to separate the data types. For example, use `printStats=romclass+url,name=myCache` to see information about `ROMClass` and `URL` items in all the layer caches of the cache called `myCache`. The valid data types are as follows (case insensitive):
 
 -   `help` (displays the list of valid data types)
 -   `all` (equivalent to `printAllStats`)
@@ -136,62 +138,66 @@ Displays summary information about the cache. For layered caches, this utility d
 -   `stale`
 -   `startuphint`
 
-Example output with summary information only:
+Example output for a two-layer cache, with summary information only:
 
 ```
+Current statistics for top layer of cache "myCache":
+
 Cache created with:
         -Xnolinenumbers                      = false
         BCI Enabled                          = true
-        Restrict Classpaths                  = true
+        Restrict Classpaths                  = false
         Feature                              = cr
 
 Cache contains only classes with line numbers
 
-base address                         = 0x00007F44FC8EA000
-end address                          = 0x00007F44FD8CE000
-allocation pointer                   = 0x00007F44FCA1E650
+base address                         = 0x00007F394E20B000
+end address                          = 0x00007F394F1EF000
+allocation pointer                   = 0x00007F394E221EA0
 
+cache layer                          = 1
 cache size                           = 16776608
-softmx bytes                         = 8388608
-free bytes                           = 5638158
-ROMClass bytes                       = 1263184
-AOT bytes                            = 20164
+softmx bytes                         = 16776608
+free bytes                           = 15228964
 Reserved space for AOT bytes         = -1
 Maximum space for AOT bytes          = -1
-JIT data bytes                       = 1120
 Reserved space for JIT data bytes    = -1
 Maximum space for JIT data bytes     = -1
-Zip cache bytes                      = 1149512
-Data bytes                           = 114080
-Metadata bytes                       = 22348
-Metadata % used                      = 0%
 Class debug area size                = 1331200
-Class debug area used bytes          = 179434
-Class debug area % used              = 13%
+Class debug area used bytes          = 7728
+Class debug area % used              = 0%
 
-# ROMClasses                         = 433
-# AOT Methods                        = 12
+Cache is 9% full
+
+Cache is accessible to current user = true
+---------------------------------------------------------
+
+Current statistics for all layers of cache "myCache":
+
+ROMClass bytes                       = 1478240
+AOT bytes                            = 38544
+JIT data bytes                       = 416
+Zip cache bytes                      = 1134016
+Startup hint bytes                   = 0
+
+# ROMClasses                         = 510
+# AOT Methods                        = 15
 # Classpaths                         = 1
 # URLs                               = 0
 # Tokens                             = 0
 # Zip caches                         = 21
+# Startup hints                      = 0
 # Stale classes                      = 0
 % Stale classes                      = 0%
-
-Cache is 32% soft full
-
-Cache is accessible to current user = true
 ```
 
-The `Cache created with` section indicates the options that were used when the cache was created. `BCI Enabled` relates to the `-Xshareclasses:enableBCI` option (enabled by default) and `Restrict Classpaths` relates to the `-Xshareclasses:restrictClasspaths` option. `Feature = cr` indicates that the cache is a 64-bit compressed references cache, as listed in [Creating, populating, monitoring, and deleting a cache](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_admin.html).
+The `Cache created with` section indicates the options that were used when the cache was created. `BCI Enabled` relates to the [`-Xshareclasses:enableBCI`](xshareclasses.md#enablebci) option (enabled by default) and `Restrict Classpaths` relates to the [`-Xshareclasses:restrictClasspaths`](xshareclasses.md#restrictclasspaths) option. `Feature = cr` indicates that the cache is a 64-bit compressed references cache, as described in [Creating, populating, monitoring, and deleting a cache](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_admin.html).
 
 Line number information for classes in the cache is then shown with one of the following messages:
 
-|Message|Explanation|
-|-------|-----------|
-|`Cache contains only classes with line numbers`|VM line number processing was enabled for all the classes that were stored in this shared cache (the `-Xlinenumbers` option is enabled by default). All classes in the cache contain line numbers if the original classes contained line number data.|
-|`Cache contains only classes without line numbers`|The `-Xnolinenumbers` option was used to disable VM line number processing for all the classes that were stored in this shared cache, so none of the classes contain line numbers.|
-|`Cache contains classes with line numbers and classes without line numbers`|VM line number processing was enabled for some classes and disabled for others (the `-Xnolinenumbers` option was specified when some of the classes were added to the cache).|
+- `Cache contains only classes with line numbers` : VM line number processing was enabled for all the classes that were stored in this shared cache (the `-Xlinenumbers` option is enabled by default). All classes in the cache contain line numbers if the original classes contained line number data.
+- `Cache contains only classes without line numbers` : The `-Xnolinenumbers` option was used to disable VM line number processing for all the classes that were stored in this shared cache, so none of the classes contain line numbers.
+- `Cache contains classes with line numbers and classes without line numbers` : VM line number processing was enabled for some classes and disabled for others (the `-Xnolinenumbers` option was specified when some of the classes were added to the cache).
 
 The following summary data is displayed:
 
@@ -249,13 +255,13 @@ The following summary data is displayed:
 #### `Class debug area % used`
 : The percentage of the Class Debug Area that contains data.
 
-#### `# ROMClasses`
+#### `ROMClasses`
 : The number of classes in the cache. The cache stores `ROMClasses` \(the class data itself, which is read-only\) and information about the location from which the classes were loaded. This information is stored in different ways, depending on the Java `SharedClassHelper` API that was used to store the classes. For more information, see [Using the Java Helper API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper.html).
 
-#### `# AOT methods`
-: Optionally, `ROMClass` methods can be compiled and the AOT code stored in the cache. The `# AOT methods` information shows the total number of methods in the cache that have AOT code compiled for them. This number includes AOT code for stale classes.
+#### `AOT methods`
+: Optionally, `ROMClass` methods can be compiled and the AOT code stored in the cache. The `AOT methods` information shows the total number of methods in the cache that have AOT code compiled for them. This number includes AOT code for stale classes.
 
-#### `# Classpaths`, `URLs`, and `Tokens`
+#### `Classpaths`, `URLs`, and `Tokens`
 : The number of class paths, URLs, and tokens in the cache. Classes stored from a `SharedClassURLClasspathHelper` are stored with a Classpath. Classes stored using a `SharedClassURLHelper` are stored with a URL. Classes stored using a `SharedClassTokenHelper` are stored with a Token. Most class loaders, including the bootstrap and application class loaders, use a `SharedClassURLClasspathHelper`. The result is that it is most common to see class paths in the cache.
 
 : The number of Classpaths, URLs, and Tokens stored is determined by a number of factors. For example, every time an element of a Classpath is updated, such as when a `.jar` file is rebuilt, a new Classpath is added to the cache. Additionally, if partitions or modification contexts are used, they are associated with the Classpath, URL, or Token. A Classpath, URL, or Token is stored for each unique combination of partition and modification context. For more information, see [SharedClassHelper partitions](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_partitions.html) and [Modification contexts](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_contexts.html).
@@ -280,11 +286,62 @@ The following summary data is displayed:
 
         % soft Full = (('Soft max bytes' - 'Free Bytes') * 100) / ('Soft max  bytes')
 
-For more information about the soft maximum size, see [`-Xscmx`](xscmx.md).
+: For more information about the soft maximum size, see [`-Xscmx`](xscmx.md).
 
 #### `Cache is accessible to current user`
 : Whether the current user can access the cache.
 
 ## `printTopLayerStats`
 
-Use this utility with a layered cache. This utility works in the same way as `printStats`, but shows information for the top layer cache only.
+Use this utility with a layered cache. This utility works in the same way as `printStats`, but shows information for the top layer cache only. For example:
+
+```
+Current statistics for cache "Cache1":
+
+Cache created with:
+        -Xnolinenumbers                      = false
+        BCI Enabled                          = true
+        Restrict Classpaths                  = false
+        Feature                              = cr
+
+Cache contains only classes with line numbers
+
+base address                         = 0x00007F2812EEA000
+end address                          = 0x00007F2813ECE000
+allocation pointer                   = 0x00007F2812F00EA0
+
+cache size                           = 16776608
+softmx bytes                         = 16776608
+free bytes                           = 15228964
+Reserved space for AOT bytes         = -1
+Maximum space for AOT bytes          = -1
+Reserved space for JIT data bytes    = -1
+Maximum space for JIT data bytes     = -1
+Data bytes                           = 114080
+Metadata bytes                       = 1664
+Metadata % used                      = 0%
+Class debug area size                = 1331200
+Class debug area used bytes          = 7728
+Class debug area % used              = 0%
+ROMClass bytes                       = 93856
+AOT bytes                            = 6768
+JIT data bytes                       = 76
+Zip cache bytes                      = 0
+Startup hint bytes                   = 0
+stale bytes                          = 0
+
+# ROMClasses                         = 33
+# AOT Methods                        = 2
+# Classpaths                         = 0
+# URLs                               = 0
+# Tokens                             = 0
+# Zip caches                         = 0
+# Startup hints                      = 0
+# Stale classes                      = 0
+% Stale classes                      = 0%
+
+
+Cache is 9% full
+
+Cache is accessible to current user = true
+```

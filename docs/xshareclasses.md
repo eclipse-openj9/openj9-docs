@@ -468,13 +468,13 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:printAllStats
 
-:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for the cache in each layer (to see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats-cache-utility)). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see [Diagnostic cache utilities](shrc_diag_util.md).
+:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats-cache-utility)). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see [Diagnostic cache utilities](shrc_diag_util.md).
 
 ### `printStats` (Cache utility)
 
         -Xshareclasses:printStats=<data_type>[+<data_type>]
 
-:   Displays summary information for the cache that is specified by the [`name`](#name), [`cacheDir`](#cachedir), and [`nonpersistent`](#nonpersistent) suboptions. For layered caches, information is shown for the cache in each layer (to see information for the top layer cache only, use [`printTopLayerStats`](#printtoplayerstats-cache-utility)). The most useful information that is displayed is how full the cache is and how many classes it contains. Stale classes are classes that are updated on the file system and which the cache has therefore marked as "stale". Stale classes are not purged from the cache and can be reused. Use the `printStats=stale` option to list all the stale entries and stale bytes.
+:   Displays summary information for the cache that is specified by the [`name`](#name), [`cacheDir`](#cachedir), and [`nonpersistent`](#nonpersistent) suboptions. For layered caches, information is shown for all layers (to see information for the top layer cache only, use [`printTopLayerStats`](#printtoplayerstats-cache-utility)). The most useful information that is displayed is how full the cache is and how many classes it contains. Stale classes are classes that are updated on the file system and which the cache has therefore marked as "stale". Stale classes are not purged from the cache and can be reused. Use the `printStats=stale` option to list all the stale entries and stale bytes.
 
 : Specify one or more data types, which are separated by a plus symbol (+), to see more detailed information about the cache content. Data types include AOT data, class paths, and ROMMethods.
 
