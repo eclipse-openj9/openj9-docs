@@ -24,7 +24,7 @@
 
 # Shared classes cache diagnostic utilities
 
-These utilities display information about the contents of a shared classes cache. Run the utilities by specifying them as suboptions of `-Xshareclasses`. The utilities run on the default cache unless you specify a cache by adding the `name=<cache_name>` suboption. For layered caches, some information is shown for the top layer cache only, and some is shown for all layers combined. To see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats).
+These utilities display information about the contents of a shared classes cache. Run the utilities by specifying them as suboptions of `-Xshareclasses`. The utilities run on the default cache unless you specify a cache by adding the `name=<cache_name>` suboption.
 
 ## `printAllStats`
 
@@ -33,7 +33,7 @@ These utilities display information about the contents of a shared classes cache
 -Xshareclasses:printAllStats,name=<cache_name>
 ```
 
-Displays the contents of the cache in chronological order. You can use this output to see the history of updates that were made to the cache.
+Displays the contents of the cache in chronological order. You can use this output to see the history of updates that were made to the cache. For layered caches, some information is shown for the top layer cache only, and some is shown for all layers combined. To see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats).
 
 Each entry in the output starts with a VM ID, so you can see which VM wrote the associated data. Here are example entries for various types of cache data, with explanations:
 
