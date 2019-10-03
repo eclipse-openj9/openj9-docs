@@ -120,7 +120,9 @@ pages:
 
     - "AOT Compiler"                                                             : aot.md
 
-    - "Class data sharing"                                                       : shrc.md
+    - "Class data sharing" :
+        - "Overview"                                                             : shrc.md
+        - "Diagnostic cache utilities"                                           : shrc_diag_util.md
 
     - "Diagnostics" :
 
