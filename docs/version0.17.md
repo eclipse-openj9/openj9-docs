@@ -32,6 +32,7 @@ The following new features and notable changes since v.0.16 are included in this
 - [New shared classes cache suboption to skip disk space check](#new-shared-classes-cache-suboption-to-skip-disk-space-check)
 - [Option to share 'Unsafe' classes](#option-to-share-unsafe-classes)
 - [Option to record class relationships in the verifier](#option-to-record-class-relationships-in-the-verifier)
+- [Support for the IBM z15&reg; processor](#support-for-the-ibm-z15-processor)
 - [Digest algorithm is re-enabled](#digest-algorithm-is-re-enabled)
 - [Direct Dump Reader (DDR) VM restriction removed](#direct-dump-reader-ddr-vm-restriction-removed)
 - [The format of the HOOKS section of a Java dump has changed](#the-format-of-the-hooks-section-of-a-java-dump-has-changed)
@@ -72,6 +73,10 @@ Classes created through `Unsafe.defineClass` are now stored by default in the sh
 ### Option to record class relationships in the verifier
 
 A new command line option `-XX:+ClassRelationshipVerifier` allows you to record class relationships in the verifier, which avoids unnecessary class loading and reduces VM startup time. This is a new approach to bytecode verification that delays validating the relationships between classes until the classes are required to be loaded for a program's execution thus loading only those classes that are needed. For more information, see [-XX:[+|-]ClassRelationshipVerifier](xxclassrelationshipverifier.md).
+
+### Support for the IBM z15 processor
+
+This release adds JIT compiler support for exploiting z15 instructions.
 
 ### Digest algorithm is re-enabled
 
