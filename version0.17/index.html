@@ -448,6 +448,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-format-of-the-hooks-section-of-a-java-dump-has-changed" title="The format of the HOOKS section of a Java dump has changed" class="md-nav__link">
+    The format of the HOOKS section of a Java dump has changed
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3373,6 +3380,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-format-of-the-hooks-section-of-a-java-dump-has-changed" title="The format of the HOOKS section of a Java dump has changed" class="md-nav__link">
+    The format of the HOOKS section of a Java dump has changed
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3440,6 +3454,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#option-to-record-class-relationships-in-the-verifier">Option to record class relationships in the verifier</a></li>
 <li><a href="#digest-algorithm-is-re-enabled">Digest algorithm is re-enabled</a></li>
 <li><a href="#direct-dump-reader-ddr-vm-restriction-removed">Direct Dump Reader (DDR) VM restriction removed</a></li>
+<li><a href="#the-format-of-the-hooks-section-of-a-java-dump-has-changed">The format of the HOOKS section of a Java dump has changed</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3467,6 +3482,14 @@ system. For file systems that do not support the checking of free space, you can
 <p>Issue <a href="https://github.com/eclipse/openj9/issues/5611">#5611</a> is fixed, so support for the Digest algorithm is re-enabled. For more information about this support, see <a href="../introduction/#cryptographic-operations">Cryptographic operations</a>.</p>
 <h3 id="direct-dump-reader-ddr-vm-restriction-removed">Direct Dump Reader (DDR) VM restriction removed</h3>
 <p>Prior to this version, you had to use a 32-bit VM to look at a 32-bit core, and a 64-bit VM to look at a 64-bit core when using DDR. This restriction has now been removed.</p>
+<h3 id="the-format-of-the-hooks-section-of-a-java-dump-has-changed">The format of the HOOKS section of a Java dump has changed</h3>
+<p>The format of the <code>HOOKS</code> section of a Java dump, which shows internal VM event callbacks, has changed:</p>
+<ul>
+<li>Recorded times have been changed from milliseconds to microseconds to provide increased precision.</li>
+<li>A new field, <code>3HKTOTALTIME</code>, is included, which gives the total duration of previous events.</li>
+<li>The hook data is now reset after after each Java dump.</li>
+</ul>
+<p>For more information and an example of the new format, see <a href="../dump_javadump/#hooks">Java dump: HOOKS</a></p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.16 and V0.17.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.17/0.17.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.17.md ==== -->

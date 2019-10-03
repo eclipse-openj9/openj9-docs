@@ -3560,7 +3560,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Java dumps, sometimes referred to as <em>Java cores</em>, are produced when the VM ends unexpectedly because of an operating system signal, <code>OutOfMemoryError</code>, or a user-initiated keystroke combination. You can also generate a Java dump by calling the Dump API programmatically from your application or specifying the <code>-Xdump:java</code> option on the command line.</p>
 <p>If your Java application crashes or hangs, Java dumps can provide useful information to help you diagnose the root cause.</p>
 <ul>
-<li>If your application crashes, Javadumps are generated automatically for the following types of failure:<ul>
+<li>If your application crashes, Java dumps are generated automatically for the following types of failure:<ul>
 <li>the VM receives an unexpected signal or an assertion failure</li>
 <li>the VM runs out of memory</li>
 </ul>
@@ -4058,10 +4058,12 @@ NULL
 </code></pre>
 
 <h3 id="hooks">HOOKS</h3>
-<p>This section shows internal VM event callbacks, which are used for diagnosing performance problems in the VM. Multiple hook interfaces are listed, which include their individual hook events. The following example shows data for the <code>J9VMHookInterface</code>, including the call site location (source file:line number), start time, and duration of the last callback and the longest callback.</p>
+<p>This section shows internal VM event callbacks, which are used for diagnosing performance problems in the VM. Multiple hook interfaces are listed, which include their individual hook events.</p>
+<p>The following example shows data for the <code>J9VMHookInterface</code>, including the total time for all previous events, the call site location (&lt;source file&gt;:&lt;line number&gt;), start time, and duration of the last callback and the longest callback (all times measured in microseconds). The hook data is reset after each Java dump.</p>
 <pre><code>NULL           ------------------------------------------------------------------------
-0SECTION       HOOK subcomponent dump routine
-NULL           ==============================
+SECTION HOOK   subcomponent dump routine
+NULL           =========================
+1NOTE          These data are reset every time a javacore is taken
 1HKINTERFACE   MM_OMRHookInterface
 NULL           ------------------------------------------------------------------------
 1HKINTERFACE   MM_PrivateHookInterface
@@ -4071,15 +4073,16 @@ NULL           -----------------------------------------------------------------
 1HKINTERFACE   J9VMHookInterface
 NULL           ------------------------------------------------------------------------
 2HKEVENTID     1
-3HKCALLCOUNT       18
+3HKCALLCOUNT       1239
+3HKTOTALTIME       219564us
 3HKLAST            Last Callback
-4HKCALLSITE           trcengine.c:392
-4HKSTARTTIME          Start Time: 2018-08-30T21:55:47.601
-4HKDURATION           DurationMs: 0
+4HKCALLSITE            trcengine.c:395
+4HKSTARTTIME           Start Time: 2019-10-18T00:15:14.664
+4HKDURATION            Duration : 16us
 3HKLONGST          Longest Callback
-4HKCALLSITE           trcengine.c:392
-4HKSTARTTIME          Start Time: 2018-08-30T21:55:47.460
-4HKDURATION           DurationMs: 1
+4HKCALLSITE            trcengine.c:395
+4HKSTARTTIME           Start Time: 2019-10-18T21:28:34.895
+4HKDURATION            Duration : 5012us
 NULL
 ...
 1HKINTERFACE   J9VMZipCachePoolHookInterface
@@ -4087,17 +4090,18 @@ NULL           -----------------------------------------------------------------
 1HKINTERFACE   J9JITHookInterface
 NULL           ------------------------------------------------------------------------
 2HKEVENTID     3
-3HKCALLCOUNT       65
+3HKCALLCOUNT       3113
+3HKTOTALTIME       4904us
 3HKLAST            Last Callback
-4HKCALLSITE           ../common/mgmtinit.c:191
-4HKSTARTTIME          Start Time: 2018-08-30T21:55:47.601
-4HKDURATION           DurationMs: 0
+4HKCALLSITE            common/mgmtinit.c:193
+4HKSTARTTIME           Start Time: 2019-10-18T16:04:15.320
+4HKDURATION            Duration : 3us
 3HKLONGST          Longest Callback
-4HKCALLSITE           ../common/mgmtinit.c:191
-4HKSTARTTIME          Start Time: 2018-08-30T21:55:47.486
-4HKDURATION           DurationMs: 0
-...
+4HKCALLSITE            common/mgmtinit.c:193
+4HKSTARTTIME           Start Time: 2019-10-18T16:37:17.633
+4HKDURATION            Duration : 27us
 NULL
+...
 </code></pre>
 
 <h3 id="shared-classes">SHARED CLASSES</h3>
