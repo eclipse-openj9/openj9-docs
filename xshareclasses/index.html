@@ -547,10 +547,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
 
 
-  <li class="md-nav__item">
-    <a href="../shrc/" title="Class data sharing" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
       Class data sharing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Class data sharing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shrc/" title="Overview" class="md-nav__link">
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shrc_diag_util/" title="Diagnostic cache utilities" class="md-nav__link">
+      Diagnostic cache utilities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -2635,6 +2671,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#printtoplayerstats-cache-utility" title="printTopLayerStats (Cache utility)" class="md-nav__link">
+    printTopLayerStats (Cache utility)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#readonly" title="readonly" class="md-nav__link">
     readonly
   </a>
@@ -3957,6 +4000,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#printtoplayerstats-cache-utility" title="printTopLayerStats (Cache utility)" class="md-nav__link">
+    printTopLayerStats (Cache utility)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#readonly" title="readonly" class="md-nav__link">
     readonly
   </a>
@@ -4457,6 +4507,7 @@ Cache1                  Java8 64-bit  persistent      cr              2         
 <dl>
 <dd>The caches are created in the same directory.</dd>
 <dd>When you use the <code>-Xshareclasses:name=Cache1</code> suboption in future Java commands, all the caches are started. The top-layer cache is started in read/write mode, and lower-layer caches are started in read-only mode. Modifying a lower-layer cache would invalidate all the caches in the layers above.</dd>
+<dd><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> The <a href="../interface_jvmti/#jvmtisharedcacheinfo-structure"><code>jvmtiSharedCacheInfo.isCorrupt</code></a> field and the  <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.oti.shared/com/ibm/oti/shared/SharedClassCacheInfo.html#isCacheCorrupt--"><code>SharedClassCacheInfo.isCacheCorrupt()</code></a> method cannot detect a corrupted cache that has a layer number other than <code>0</code>. However, when a VM starts a layered cache directly, for example when you specify the <code>-Xshareclasses:name=&lt;cache_name&gt;</code> option on the command line, the VM detects any corruption and generates an error message as usual, regardless of the layer number of the cache.</dd>
 </dl>
 <h3 id="listallcaches-cache-utility"><code>listAllCaches</code> (Cache utility)</h3>
 <pre><code>    -Xshareclasses:listAllCaches
@@ -4573,15 +4624,21 @@ behavior, which can improve the performance of class loading from the shared cla
 <pre><code>    -Xshareclasses:printAllStats
 </code></pre>
 <dl>
-<dd>Displays detailed information about the contents of the cache that is specified in the <a href="#name"><code>name</code></a> suboption. If the name is not specified, statistics are displayed about the default cache. Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_out_printallstats.html">printAllStats utility</a>.</dd>
+<dd>Displays detailed information about the contents of the cache that is specified in the <a href="#name"><code>name</code></a> suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use <a href="#printtoplayerstats-cache-utility"><code>printTopLayerStats=all</code></a>). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see <a href="../shrc_diag_util/">Diagnostic cache utilities</a>.</dd>
 </dl>
 <h3 id="printstats-cache-utility"><code>printStats</code> (Cache utility)</h3>
 <pre><code>    -Xshareclasses:printStats=&lt;data_type&gt;[+&lt;data_type&gt;]
 </code></pre>
 <dl>
-<dd>Displays summary information for the cache that is specified by the <a href="#name"><code>name</code></a>, <a href="#cachedir"><code>cacheDir</code></a>, and <a href="#nonpersistent"><code>nonpersistent</code></a> suboptions. The most useful information that is displayed is how full the cache is and how many classes it contains. Stale classes are classes that are updated on the file system and which the cache has therefore marked as "stale". Stale classes are not purged from the cache and can be reused. Use the <code>printStats=stale</code> option to list all the stale entries and stale bytes.</dd>
+<dd>Displays summary information for the cache that is specified by the <a href="#name"><code>name</code></a>, <a href="#cachedir"><code>cacheDir</code></a>, and <a href="#nonpersistent"><code>nonpersistent</code></a> suboptions. For layered caches, information is shown for all layers (to see information for the top layer cache only, use <a href="#printtoplayerstats-cache-utility"><code>printTopLayerStats</code></a>). The most useful information that is displayed is how full the cache is and how many classes it contains. Stale classes are classes that are updated on the file system and which the cache has therefore marked as "stale". Stale classes are not purged from the cache and can be reused. Use the <code>printStats=stale</code> option to list all the stale entries and stale bytes.</dd>
 <dd>Specify one or more data types, which are separated by a plus symbol (+), to see more detailed information about the cache content. Data types include AOT data, class paths, and ROMMethods.</dd>
-<dd>For more information and for a full list of data types, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_out_printstats.html">printStats utility</a>.</dd>
+<dd>For more information and for a full list of data types, see <a href="../shrc_diag_util/">Diagnostic cache utilities</a>.</dd>
+</dl>
+<h3 id="printtoplayerstats-cache-utility"><code>printTopLayerStats</code> (Cache utility)</h3>
+<pre><code>    -Xshareclasses:printTopLayerStats=&lt;data_type&gt;[+&lt;data_type&gt;]
+</code></pre>
+<dl>
+<dd>Equivalent to <a href="#printstats-cache-utility"><code>printStats</code></a> but for the top layer cache only.</dd>
 </dl>
 <h3 id="readonly"><code>readonly</code></h3>
 <pre><code>    -Xshareclasses:readonly

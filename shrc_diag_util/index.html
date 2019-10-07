@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/aot/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/shrc_diag_util/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>AOT Compiler -  </title>
+        <title>Diagnostic cache utilities -  </title>
       
     
     
@@ -134,7 +134,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#ahead-of-time-aot-compiler" tabindex="1" class="md-skip">
+      <a href="../#shared-classes-cache-diagnostic-utilities" tabindex="1" class="md-skip">
         
       </a>
     
@@ -534,49 +534,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        AOT Compiler
-      </label>
-    
-    <a href="./" title="AOT Compiler" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../aot/" title="AOT Compiler" class="md-nav__link">
       AOT Compiler
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" title="See also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -584,10 +546,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
       Class data sharing
@@ -615,11 +579,306 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../shrc_diag_util/" title="Diagnostic cache utilities" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Diagnostic cache utilities
+      </label>
+    
+    <a href="./" title="Diagnostic cache utilities" class="md-nav__link md-nav__link--active">
       Diagnostic cache utilities
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#printallstats" title="printAllStats" class="md-nav__link">
+    printAllStats
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-paths" title="Class paths" class="md-nav__link">
+    Class paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#romclasses" title="ROMClasses" class="md-nav__link">
+    ROMClasses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aot-methods" title="AOT methods" class="md-nav__link">
+    AOT methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urls-and-tokens" title="URLs and tokens" class="md-nav__link">
+    URLs and tokens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-entry-caches" title="Zip entry caches" class="md-nav__link">
+    Zip entry caches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jit-data" title="JIT data" class="md-nav__link">
+    JIT data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printstats" title="printStats" class="md-nav__link">
+    printStats
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseaddress-and-endaddress" title="baseAddress and endAddress" class="md-nav__link">
+    baseAddress and endAddress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allocptr" title="allocPtr" class="md-nav__link">
+    allocPtr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-size-and-free-bytes" title="cache size and free bytes" class="md-nav__link">
+    cache size and free bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softmx-bytes" title="softmx bytes" class="md-nav__link">
+    softmx bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#romclass-bytes" title="ROMClass bytes" class="md-nav__link">
+    ROMClass bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aot-bytes" title="AOT bytes" class="md-nav__link">
+    AOT bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserved-space-for-aot-bytes" title="Reserved space for AOT bytes" class="md-nav__link">
+    Reserved space for AOT bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-space-for-aot-bytes" title="Maximum space for AOT bytes" class="md-nav__link">
+    Maximum space for AOT bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jit-data-bytes" title="JIT data bytes" class="md-nav__link">
+    JIT data bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserved-space-for-jit-data-bytes" title="Reserved space for JIT data bytes" class="md-nav__link">
+    Reserved space for JIT data bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-space-for-jit-data-bytes" title="Maximum space for JIT data bytes" class="md-nav__link">
+    Maximum space for JIT data bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-cache-bytes" title="Zip cache bytes" class="md-nav__link">
+    Zip cache bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-bytes" title="Data bytes" class="md-nav__link">
+    Data bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-bytes" title="Metadata bytes" class="md-nav__link">
+    Metadata bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-used" title="Metadata % used" class="md-nav__link">
+    Metadata % used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-debug-area-size" title="Class debug area size" class="md-nav__link">
+    Class debug area size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-debug-area-bytes-used" title="Class debug area bytes used" class="md-nav__link">
+    Class debug area bytes used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-debug-area-used" title="Class debug area % used" class="md-nav__link">
+    Class debug area % used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#romclasses_1" title="ROMClasses" class="md-nav__link">
+    ROMClasses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aot-methods_1" title="AOT methods" class="md-nav__link">
+    AOT methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classpaths-urls-and-tokens" title="Classpaths, URLs, and Tokens" class="md-nav__link">
+    Classpaths, URLs, and Tokens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-caches" title="Zip caches" class="md-nav__link">
+    Zip caches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stale-classes" title="Stale classes" class="md-nav__link">
+    Stale classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stale-classes_1" title="% Stale classes" class="md-nav__link">
+    % Stale classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-is-xxx-full" title="Cache is XXX% full" class="md-nav__link">
+    Cache is XXX% full
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-is-xxx-soft-full" title="Cache is XXX% soft full" class="md-nav__link">
+    Cache is XXX% soft full
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-is-accessible-to-current-user" title="Cache is accessible to current user" class="md-nav__link">
+    Cache is accessible to current user
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printtoplayerstats" title="printTopLayerStats" class="md-nav__link">
+    printTopLayerStats
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3289,8 +3548,265 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#see-also" title="See also" class="md-nav__link">
-    See also
+  <a href="#printallstats" title="printAllStats" class="md-nav__link">
+    printAllStats
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-paths" title="Class paths" class="md-nav__link">
+    Class paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#romclasses" title="ROMClasses" class="md-nav__link">
+    ROMClasses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aot-methods" title="AOT methods" class="md-nav__link">
+    AOT methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urls-and-tokens" title="URLs and tokens" class="md-nav__link">
+    URLs and tokens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-entry-caches" title="Zip entry caches" class="md-nav__link">
+    Zip entry caches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jit-data" title="JIT data" class="md-nav__link">
+    JIT data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printstats" title="printStats" class="md-nav__link">
+    printStats
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseaddress-and-endaddress" title="baseAddress and endAddress" class="md-nav__link">
+    baseAddress and endAddress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allocptr" title="allocPtr" class="md-nav__link">
+    allocPtr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-size-and-free-bytes" title="cache size and free bytes" class="md-nav__link">
+    cache size and free bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softmx-bytes" title="softmx bytes" class="md-nav__link">
+    softmx bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#romclass-bytes" title="ROMClass bytes" class="md-nav__link">
+    ROMClass bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aot-bytes" title="AOT bytes" class="md-nav__link">
+    AOT bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserved-space-for-aot-bytes" title="Reserved space for AOT bytes" class="md-nav__link">
+    Reserved space for AOT bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-space-for-aot-bytes" title="Maximum space for AOT bytes" class="md-nav__link">
+    Maximum space for AOT bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jit-data-bytes" title="JIT data bytes" class="md-nav__link">
+    JIT data bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserved-space-for-jit-data-bytes" title="Reserved space for JIT data bytes" class="md-nav__link">
+    Reserved space for JIT data bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-space-for-jit-data-bytes" title="Maximum space for JIT data bytes" class="md-nav__link">
+    Maximum space for JIT data bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-cache-bytes" title="Zip cache bytes" class="md-nav__link">
+    Zip cache bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-bytes" title="Data bytes" class="md-nav__link">
+    Data bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-bytes" title="Metadata bytes" class="md-nav__link">
+    Metadata bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-used" title="Metadata % used" class="md-nav__link">
+    Metadata % used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-debug-area-size" title="Class debug area size" class="md-nav__link">
+    Class debug area size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-debug-area-bytes-used" title="Class debug area bytes used" class="md-nav__link">
+    Class debug area bytes used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-debug-area-used" title="Class debug area % used" class="md-nav__link">
+    Class debug area % used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#romclasses_1" title="ROMClasses" class="md-nav__link">
+    ROMClasses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aot-methods_1" title="AOT methods" class="md-nav__link">
+    AOT methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classpaths-urls-and-tokens" title="Classpaths, URLs, and Tokens" class="md-nav__link">
+    Classpaths, URLs, and Tokens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip-caches" title="Zip caches" class="md-nav__link">
+    Zip caches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stale-classes" title="Stale classes" class="md-nav__link">
+    Stale classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stale-classes_1" title="% Stale classes" class="md-nav__link">
+    % Stale classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-is-xxx-full" title="Cache is XXX% full" class="md-nav__link">
+    Cache is XXX% full
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-is-xxx-soft-full" title="Cache is XXX% soft full" class="md-nav__link">
+    Cache is XXX% soft full
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-is-accessible-to-current-user" title="Cache is accessible to current user" class="md-nav__link">
+    Cache is accessible to current user
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printtoplayerstats" title="printTopLayerStats" class="md-nav__link">
+    printTopLayerStats
   </a>
   
 </li>
@@ -3312,7 +3828,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/aot.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/shrc_diag_util.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3340,16 +3856,354 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="ahead-of-time-aot-compiler">Ahead-Of-Time (AOT) compiler</h1>
-<p>The AOT compiler dynamically compiles Java methods into native AOT code at runtime and stores them in the shared classes cache. This activity enables the VM to start an application faster the next time it runs because it doesn't need to spend time interpreting Java methods. The VM automatically chooses which methods should be AOT-compiled based on heuristics that identify the start-up phase of large applications. AOT code is always used in combination with class data sharing and is enabled automatically when <code>-Xshareclasses</code> is set on the command line. When a cached AOT method is run it might also be optimized further by the Just-In-Time (JIT) compiler.</p>
-<p>If you want to turn off AOT compilation and disable the use of AOT-compiled code, set the <code>-Xnoaot</code> suboption. When the AOT compiler is disabled, the JIT compiles frequently used methods into native code. However, because the JIT compiler operates while the application is running, the startup time for an application will increase. </p>
-<h2 id="see-also">See also</h2>
+<h1 id="shared-classes-cache-diagnostic-utilities">Shared classes cache diagnostic utilities</h1>
+<p>These utilities display information about the contents of a shared classes cache. Run the utilities by specifying them as suboptions of <code>-Xshareclasses</code>. The utilities run on the default cache unless you specify a cache by adding the <code>name=&lt;cache_name&gt;</code> suboption.</p>
+<h2 id="printallstats"><code>printAllStats</code></h2>
+<pre><code>-Xshareclasses:printAllStats
+-Xshareclasses:printAllStats,name=&lt;cache_name&gt;
+</code></pre>
+
+<p>Displays the contents of the cache in chronological order. You can use this output to see the history of updates that were made to the cache. For layered caches, some information is shown for the top layer cache only, and some is shown for all layers combined. To see information for the top layer cache only, use <a href="#printtoplayerstats"><code>printTopLayerStats=all</code></a>.</p>
+<p>Each entry in the output starts with a VM ID, so you can see which VM wrote the associated data. Here are example entries for various types of cache data, with explanations:</p>
+<h3 id="class-paths">Class paths</h3>
+<dl>
+<dd>
+<p>This example shows one class path with 4 entries:</p>
+<pre><code>1: 0x2234FA6C CLASSPATH
+        /myVM/Apps/application1.jar
+        /myVM/Apps/application2.jar
+        /myVM/Apps/application3.jar
+        /myVM/Apps/application4.jar
+</code></pre>
 <ul>
-<li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_pd_diagnose.html">Diagnosing a JIT or AOT problem</a></li>
-<li><a href="../jit/">JIT compiler</a></li>
-<li><a href="../shrc/">Class data sharing</a></li>
+<li><code>1</code> : the ID of the VM that wrote this data.</li>
+<li><code>0x2234FA6C</code> : the address where this data is stored.</li>
+<li><code>CLASSPATH</code> : the type of data that was written.</li>
 </ul>
-<!-- ==== END OF TOPIC ==== aot.md ==== -->
+</dd>
+</dl>
+<h3 id="romclasses">ROMClasses</h3>
+<dl>
+<dd>
+<p>This example shows an entry for a single <code>ROMClass</code>:</p>
+<pre><code>1: 0x2234F7DC ROMCLASS: java/lang/Runnable at 0x213684A8
+        Index 1 in class path 0x2234FA6C
+</code></pre>
+<ul>
+<li><code>1</code> : the ID of the VM that wrote this data.</li>
+<li><code>0x2234F7DC</code> : the address where the metadata about the class is stored.</li>
+<li><code>ROMCLASS</code> : the type of data that was stored.</li>
+<li><code>java/lang/Runnable</code> : the name of the class.</li>
+<li><code>0x213684A8</code> : the address where the class was stored.</li>
+<li><code>Index 1</code> : the index in the class path where the class was loaded from.</li>
+<li><code>0x2234FA6C</code> : the address of the class path against which this class is stored.</li>
+</ul>
+</dd>
+<dd>
+<p>Stale classes are marked with <code>!STALE!</code>. Any partition or modification context that is used when the class is stored is also shown.</p>
+</dd>
+</dl>
+<h3 id="aot-methods">AOT methods</h3>
+<dl>
+<dd>
+<p>This example shows an entry for one AOT-compiled method:</p>
+<pre><code>1: 0x540FBA6A AOT: loadConvert
+        for ROMClass java/util/Properties at 0x52345174
+</code></pre>
+<ul>
+<li><code>1</code> : the ID of the VM that wrote this data.</li>
+<li><code>0x540FBA6A</code> : the address where the data is stored.</li>
+<li><code>AOT</code> : the type of data that was stored.</li>
+<li><code>loadConvert</code> : the method for which AOT-compiled code is stored.</li>
+<li><code>java/util/Properties</code> : the class that contains the method.</li>
+<li><code>0x52345174</code> : the address of the class that contains the method.</li>
+</ul>
+</dd>
+<dd>
+<p>Stale methods are marked with <code>!STALE!</code>.</p>
+</dd>
+</dl>
+<h3 id="urls-and-tokens">URLs and tokens</h3>
+<dl>
+<dd>A <code>Token</code> is a string that is passed to the Java™ <code>SharedClassHelper</code> API. The output for these data types has the same format as that for class paths, but with a single entry.</dd>
+</dl>
+<h3 id="zip-entry-caches">Zip entry caches</h3>
+<dl>
+<dd>
+<p>This example shows 4 separate entries for zip entry caches:</p>
+<pre><code>1: 0x042FE07C ZIPCACHE: luni-kernel.jar_347075_1272300300_1 Address: 0x042FE094 Size: 7898
+1: 0x042FA878 ZIPCACHE: luni.jar_598904_1272300546_1 Address: 0x042FA890 Size: 14195
+1: 0x042F71F8 ZIPCACHE: nio.jar_405359_1272300546_1 Address: 0x042F7210 Size: 13808
+1: 0x042F6D58 ZIPCACHE: annotation.jar_13417_1272300554_1 Address: 0x042F6D70 Size: 1023
+</code></pre>
+<ul>
+<li><code>1</code> : the ID of the VM that wrote this data.</li>
+<li><code>0x042FE07C</code> : the address where the metadata for the zip entry cache is stored.</li>
+<li><code>ZIPCACHE</code> : the type of data that was stored.</li>
+<li><code>luni-kernel.jar_347075_1272300300_1</code> : the name of the zip entry cache.</li>
+<li><code>0x042FE094</code> : the address where the data is stored.</li>
+<li><code>7898</code> : the size of the stored data, in bytes.</li>
+</ul>
+</dd>
+</dl>
+<h3 id="jit-data">JIT data</h3>
+<dl>
+<dd>Information about JIT data is shown in <code>JITPROFILE</code> and <code>JITHINT</code> entries. For example:<pre><code>1: 0xD6290368 JITPROFILE: getKeyHash Signature: ()I Address: 0xD55118C0
+for ROMClass java/util/Hashtable$Entry at 0xD5511640.
+2: 0xD6283848 JITHINT: loadClass Signature: (Ljava/lang/String;)Ljava/lang/Class; Address: 0xD5558F98
+for ROMClass com/ibm/oti/vm/BootstrapClassLoader at 0xD5558AE0.
+</code></pre>
+</dd>
+</dl>
+<h2 id="printstats"><code>printStats</code></h2>
+<pre><code>-Xshareclasses:printStats
+-Xshareclasses:printStats,name=&lt;cache_name&gt;
+-Xshareclasses:printStats=&lt;data_type1&gt;[+&lt;data_type2&gt;][...],name=&lt;cache_name&gt;
+</code></pre>
+
+<p>Displays summary information about the cache. For layered caches, some information is shown for the top layer cache only, and some is shown for all layers combined. To see information for the top layer cache only, use <a href="#printtoplayerstats"><code>printTopLayerStats</code></a>.</p>
+<p>You can request more detail about items of a specific data type that are stored in the shared cache by using <code>printStats=&lt;data_type&gt;</code>. Use the plus symbol (+) to separate the data types. For example, use <code>printStats=romclass+url,name=myCache</code> to see information about <code>ROMClass</code> and <code>URL</code> items in all the layer caches of the cache called <code>myCache</code>. The valid data types are as follows (case insensitive):</p>
+<ul>
+<li><code>help</code> (displays the list of valid data types)</li>
+<li><code>all</code> (equivalent to <code>printAllStats</code>)</li>
+<li><code>classpath</code></li>
+<li><code>url</code></li>
+<li><code>token</code></li>
+<li><code>romclass</code></li>
+<li><code>rommethod</code></li>
+<li><code>aot</code></li>
+<li><code>jitprofile</code></li>
+<li><code>jithint</code></li>
+<li><code>zipcache</code></li>
+<li><code>stale</code></li>
+<li><code>startuphint</code></li>
+</ul>
+<p>Example output for a two-layer cache, with summary information only:</p>
+<pre><code>Current statistics for top layer of cache &quot;myCache&quot;:
+
+Cache created with:
+        -Xnolinenumbers                      = false
+        BCI Enabled                          = true
+        Restrict Classpaths                  = false
+        Feature                              = cr
+
+Cache contains only classes with line numbers
+
+base address                         = 0x00007F394E20B000
+end address                          = 0x00007F394F1EF000
+allocation pointer                   = 0x00007F394E221EA0
+
+cache layer                          = 1
+cache size                           = 16776608
+softmx bytes                         = 16776608
+free bytes                           = 15228964
+Reserved space for AOT bytes         = -1
+Maximum space for AOT bytes          = -1
+Reserved space for JIT data bytes    = -1
+Maximum space for JIT data bytes     = -1
+Class debug area size                = 1331200
+Class debug area used bytes          = 7728
+Class debug area % used              = 0%
+
+Cache is 9% full
+
+Cache is accessible to current user = true
+---------------------------------------------------------
+
+Current statistics for all layers of cache &quot;myCache&quot;:
+
+ROMClass bytes                       = 1478240
+AOT bytes                            = 38544
+JIT data bytes                       = 416
+Zip cache bytes                      = 1134016
+Startup hint bytes                   = 0
+
+# ROMClasses                         = 510
+# AOT Methods                        = 15
+# Classpaths                         = 1
+# URLs                               = 0
+# Tokens                             = 0
+# Zip caches                         = 21
+# Startup hints                      = 0
+# Stale classes                      = 0
+% Stale classes                      = 0%
+</code></pre>
+
+<p>The <code>Cache created with</code> section indicates the options that were used when the cache was created. <code>BCI Enabled</code> relates to the <a href="../xshareclasses/#enablebci"><code>-Xshareclasses:enableBCI</code></a> option (enabled by default) and <code>Restrict Classpaths</code> relates to the <a href="../xshareclasses/#restrictclasspaths"><code>-Xshareclasses:restrictClasspaths</code></a> option. <code>Feature = cr</code> indicates that the cache is a 64-bit compressed references cache, as described in <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_admin.html">Creating, populating, monitoring, and deleting a cache</a>.</p>
+<p>Line number information for classes in the cache is then shown with one of the following messages:</p>
+<ul>
+<li><code>Cache contains only classes with line numbers</code> : VM line number processing was enabled for all the classes that were stored in this shared cache (the <code>-Xlinenumbers</code> option is enabled by default). All classes in the cache contain line numbers if the original classes contained line number data.</li>
+<li><code>Cache contains only classes without line numbers</code> : The <code>-Xnolinenumbers</code> option was used to disable VM line number processing for all the classes that were stored in this shared cache, so none of the classes contain line numbers.</li>
+<li><code>Cache contains classes with line numbers and classes without line numbers</code> : VM line number processing was enabled for some classes and disabled for others (the <code>-Xnolinenumbers</code> option was specified when some of the classes were added to the cache).</li>
+</ul>
+<p>The following summary data is displayed:</p>
+<h4 id="baseaddress-and-endaddress"><code>baseAddress</code> and <code>endAddress</code></h4>
+<dl>
+<dd>The boundary addresses of the shared memory area that contains the classes.</dd>
+</dl>
+<h4 id="allocptr"><code>allocPtr</code></h4>
+<dl>
+<dd>The address where <code>ROMClass</code> data is currently being allocated in the cache.</dd>
+</dl>
+<h4 id="cache-size-and-free-bytes"><code>cache size</code> and <code>free bytes</code></h4>
+<dl>
+<dd><code>cache size</code> shows the total size of the shared memory area in bytes, and <code>free bytes</code> shows the free bytes that remain.</dd>
+</dl>
+<h4 id="softmx-bytes"><code>softmx bytes</code></h4>
+<dl>
+<dd>The soft maximum size for the cache. For more information, see <a href="../xscmx/"><code>-Xscmx</code></a>.</dd>
+</dl>
+<h4 id="romclass-bytes"><code>ROMClass bytes</code></h4>
+<dl>
+<dd>The number of bytes of class data in the cache.</dd>
+</dl>
+<h4 id="aot-bytes"><code>AOT bytes</code></h4>
+<dl>
+<dd>The number of bytes of AOT-compiled code in the cache.</dd>
+</dl>
+<h4 id="reserved-space-for-aot-bytes"><code>Reserved space for AOT bytes</code></h4>
+<dl>
+<dd>The number of bytes reserved for AOT-compiled code in the cache.</dd>
+</dl>
+<h4 id="maximum-space-for-aot-bytes"><code>Maximum space for AOT bytes</code></h4>
+<dl>
+<dd>The maximum number of bytes of AOT-compiled code that can be stored in the cache.</dd>
+</dl>
+<h4 id="jit-data-bytes"><code>JIT data bytes</code></h4>
+<dl>
+<dd>The number of bytes of JIT-related data stored in the cache.</dd>
+</dl>
+<h4 id="reserved-space-for-jit-data-bytes"><code>Reserved space for JIT data bytes</code></h4>
+<dl>
+<dd>The number of bytes reserved for JIT-related data in the cache.</dd>
+</dl>
+<h4 id="maximum-space-for-jit-data-bytes"><code>Maximum space for JIT data bytes</code></h4>
+<dl>
+<dd>The maximum number of bytes of JIT-related data that can be stored in the cache.</dd>
+</dl>
+<h4 id="zip-cache-bytes"><code>Zip cache bytes</code></h4>
+<dl>
+<dd>The number of zip entry cache bytes stored in the cache.</dd>
+</dl>
+<h4 id="data-bytes"><code>Data bytes</code></h4>
+<dl>
+<dd>The number of bytes of non-class data stored by the VM.</dd>
+</dl>
+<h4 id="metadata-bytes"><code>Metadata bytes</code></h4>
+<dl>
+<dd>The number of bytes of data stored to describe the cached classes.</dd>
+</dl>
+<h4 id="metadata-used"><code>Metadata % used</code></h4>
+<dl>
+<dd>The proportion of metadata bytes to class bytes, which indicates how efficiently cache space is being used. The value shown does consider the <code>Class debug area size</code>.</dd>
+</dl>
+<h4 id="class-debug-area-size"><code>Class debug area size</code></h4>
+<dl>
+<dd>The size in bytes of the Class Debug Area. This area is reserved to store <code>LineNumberTable</code> and <code>LocalVariableTable</code> class attribute information.</dd>
+</dl>
+<h4 id="class-debug-area-bytes-used"><code>Class debug area bytes used</code></h4>
+<dl>
+<dd>The size in bytes of the Class Debug Area that contains data.</dd>
+</dl>
+<h4 id="class-debug-area-used"><code>Class debug area % used</code></h4>
+<dl>
+<dd>The percentage of the Class Debug Area that contains data.</dd>
+</dl>
+<h4 id="romclasses_1"><code>ROMClasses</code></h4>
+<dl>
+<dd>The number of classes in the cache. The cache stores <code>ROMClasses</code> (the class data itself, which is read-only) and information about the location from which the classes were loaded. This information is stored in different ways, depending on the Java <code>SharedClassHelper</code> API that was used to store the classes. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper.html">Using the Java Helper API</a>.</dd>
+</dl>
+<h4 id="aot-methods_1"><code>AOT methods</code></h4>
+<dl>
+<dd>Optionally, <code>ROMClass</code> methods can be compiled and the AOT code stored in the cache. The <code>AOT methods</code> information shows the total number of methods in the cache that have AOT code compiled for them. This number includes AOT code for stale classes.</dd>
+</dl>
+<h4 id="classpaths-urls-and-tokens"><code>Classpaths</code>, <code>URLs</code>, and <code>Tokens</code></h4>
+<dl>
+<dd>The number of class paths, URLs, and tokens in the cache. Classes stored from a <code>SharedClassURLClasspathHelper</code> are stored with a Classpath. Classes stored using a <code>SharedClassURLHelper</code> are stored with a URL. Classes stored using a <code>SharedClassTokenHelper</code> are stored with a Token. Most class loaders, including the bootstrap and application class loaders, use a <code>SharedClassURLClasspathHelper</code>. The result is that it is most common to see class paths in the cache.</dd>
+<dd>The number of Classpaths, URLs, and Tokens stored is determined by a number of factors. For example, every time an element of a Classpath is updated, such as when a <code>.jar</code> file is rebuilt, a new Classpath is added to the cache. Additionally, if partitions or modification contexts are used, they are associated with the Classpath, URL, or Token. A Classpath, URL, or Token is stored for each unique combination of partition and modification context. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_partitions.html">SharedClassHelper partitions</a> and <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_contexts.html">Modification contexts</a>.</dd>
+</dl>
+<h4 id="zip-caches"><code>Zip caches</code></h4>
+<dl>
+<dd>The number of .zip files that have entry caches stored in the shared cache.</dd>
+</dl>
+<h4 id="stale-classes"><code>Stale classes</code></h4>
+<dl>
+<dd>The number of classes that have been marked as "potentially stale" by the cache code, because of an operating system update. See <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_dynamic.html">Understanding dynamic updates</a>.</dd>
+</dl>
+<h4 id="stale-classes_1"><code>% Stale classes</code></h4>
+<dl>
+<dd>The percentage of classes in the cache that are stale.</dd>
+</dl>
+<h4 id="cache-is-xxx-full"><code>Cache is XXX% full</code></h4>
+<dl>
+<dd>The percentage of the cache that is currently used. This line is displayed only if the soft maximum size is not set. This value is calculated as follows:<pre><code>% Full = (('Cache Size' - 'Free Bytes') * 100) / ('Cache Size')
+</code></pre>
+</dd>
+</dl>
+<h4 id="cache-is-xxx-soft-full"><code>Cache is XXX% soft full</code></h4>
+<dl>
+<dd>The percentage of the soft maximum size that is currently used. This line is displayed only if the soft maximum size is set. The <code>free bytes</code> in the cache statistics means the free bytes within the soft maximum limit. This value is calculated as follows:<pre><code>% soft Full = (('Soft max bytes' - 'Free Bytes') * 100) / ('Soft max  bytes')
+</code></pre>
+</dd>
+<dd>
+<p>For more information about the soft maximum size, see <a href="../xscmx/"><code>-Xscmx</code></a>.</p>
+</dd>
+</dl>
+<h4 id="cache-is-accessible-to-current-user"><code>Cache is accessible to current user</code></h4>
+<dl>
+<dd>Whether the current user can access the cache.</dd>
+</dl>
+<h2 id="printtoplayerstats"><code>printTopLayerStats</code></h2>
+<p>Use this utility with a layered cache. This utility works in the same way as <code>printStats</code>, but shows information for the top layer cache only. For example:</p>
+<pre><code>Current statistics for cache &quot;Cache1&quot;:
+
+Cache created with:
+        -Xnolinenumbers                      = false
+        BCI Enabled                          = true
+        Restrict Classpaths                  = false
+        Feature                              = cr
+
+Cache contains only classes with line numbers
+
+base address                         = 0x00007F2812EEA000
+end address                          = 0x00007F2813ECE000
+allocation pointer                   = 0x00007F2812F00EA0
+
+cache size                           = 16776608
+softmx bytes                         = 16776608
+free bytes                           = 15228964
+Reserved space for AOT bytes         = -1
+Maximum space for AOT bytes          = -1
+Reserved space for JIT data bytes    = -1
+Maximum space for JIT data bytes     = -1
+Data bytes                           = 114080
+Metadata bytes                       = 1664
+Metadata % used                      = 0%
+Class debug area size                = 1331200
+Class debug area used bytes          = 7728
+Class debug area % used              = 0%
+ROMClass bytes                       = 93856
+AOT bytes                            = 6768
+JIT data bytes                       = 76
+Zip cache bytes                      = 0
+Startup hint bytes                   = 0
+stale bytes                          = 0
+
+# ROMClasses                         = 33
+# AOT Methods                        = 2
+# Classpaths                         = 0
+# URLs                               = 0
+# Tokens                             = 0
+# Zip caches                         = 0
+# Startup hints                      = 0
+# Stale classes                      = 0
+% Stale classes                      = 0%
+
+
+Cache is 9% full
+
+Cache is accessible to current user = true
+</code></pre>
                 
                   
                 
@@ -3392,7 +4246,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="jit/" title="JIT Compiler" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="shrc/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3401,13 +4255,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            JIT Compiler
+                            Overview
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="shrc/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="diag_overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">

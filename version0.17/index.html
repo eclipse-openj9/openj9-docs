@@ -663,10 +663,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
 
 
-  <li class="md-nav__item">
-    <a href="../shrc/" title="Class data sharing" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
       Class data sharing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Class data sharing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shrc/" title="Overview" class="md-nav__link">
+      Overview
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shrc_diag_util/" title="Diagnostic cache utilities" class="md-nav__link">
+      Diagnostic cache utilities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -3483,9 +3519,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="new-shared-classes-cache-suboptions-for-layered-caches">New shared classes cache suboptions for layered caches</h3>
 <p><strong>(Experimental, 64-bit only)</strong></p>
-<p>Two new suboptions, <code>createLayer</code> and <code>layer=&lt;number&gt;</code>, are available for creating layered caches, where a cache builds on another cache with the same name. You can use these suboptions to save space when building a Docker container, for example. For more information, see <a href="../xshareclasses/#layer"><code>-Xshareclasses:layer</code></a>.</p>
-<p>A new suboption, <a href="../xshareclasses/#destroyalllayers"><code>destroyAllLayers</code></a>, is available for destroying all the layers of a layered cache.</p>
+<p>New suboptions are available for creating layered caches, where a cache builds on another cache with the same name. You can use these suboptions to save space when building a Docker container, for example.</p>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Because these suboptions are experimental, do not use them in a production environment.</p>
+<p>The new options are:</p>
+<ul>
+<li><a href="../xshareclasses/#createlayer"><code>createLayer</code></a></li>
+<li><a href="../xshareclasses/#layer"><code>layer=&lt;number&gt;</code></a> (see this section for more information about layered caches)</li>
+<li><a href="../xshareclasses/#printtoplayerstats-cache-utility"><code>printTopLayerStats</code></a></li>
+<li><a href="../xshareclasses/#destroyalllayers"><code>destroyAllLayers</code></a></li>
+</ul>
 <h3 id="new-shared-classes-cache-suboption-to-skip-disk-space-check">New shared classes cache suboption to skip disk space check</h3>
 <p>When creating a persistent shared classes cache, the OpenJ9 VM checks that there is sufficient disk space available on the file
 system. For file systems that do not support the checking of free space, you can set the <code>-Xshareclasses:noPersistentDiskSpaceCheck</code> option, which causes the VM to skip the space checking operation. If there isn't enough disk space available when the cache is written, a <strong>SIGBUS</strong> or <strong>SIGSEGV</strong> signal occurs and the VM ends. For more information, see the <a href="../xshareclasses/#nopersistentdiskspacecheck">-Xshareclasses:noPersistentDiskSpaceCheck</a> option.</p>
