@@ -112,6 +112,13 @@ Each entry in the output starts with a VM ID, so you can see which VM wrote the 
         2: 0xD6283848 JITHINT: loadClass Signature: (Ljava/lang/String;)Ljava/lang/Class; Address: 0xD5558F98
         for ROMClass com/ibm/oti/vm/BootstrapClassLoader at 0xD5558AE0.
 
+### Startup hints
+: Information about startup hints is shown in `STARTUP HINTS KEY` and `STARTUP HINTS DETAIL`. For example:
+
+        1: 0x000000002237C6E0 STARTUP HINTS KEY: -Xoptionsfile=jre\bin\compressedrefs\options.default -Xlockword:mode=default -Xjcl:jclse29 -Dcom.ibm.oti.vm.bootstrap.library.path=jre\bin\compressedrefs;jre\bin -Djava.home=jre -Djava.ext.dirs=jre\lib\ext -Duser.dir=bin -Djava.class.path=. -Dsun.java.launcher=SUN_STANDARD Address: 0x000000002237C700 Size: 96
+        STARTUP HINTS DETAIL Flags: 1 DATA1: 1677721 DATA2: 5033165
+
+
 ## `printStats`
 
 ```
@@ -120,9 +127,9 @@ Each entry in the output starts with a VM ID, so you can see which VM wrote the 
 -Xshareclasses:printStats=<data_type1>[+<data_type2>][...],name=<cache_name>
 ```
 
-Displays summary information about the cache. For layered caches, some information is shown for the top layer cache only, and some is shown for all layers combined. To see information for the top layer cache only, use [`printTopLayerStats`](#printtoplayerstats).
+Displays summary information about the cache. For layered caches, `-Xshareclasses:printStats` shows some information for the top layer cache, and summary information (bytes and counts only) for all layers combined. To see information for the top layer cache only, use [`printTopLayerStats`](#printtoplayerstats).
 
-You can request more detail about items of a specific data type that are stored in the shared cache by using `printStats=<data_type>`. Use the plus symbol (+) to separate the data types. For example, use `printStats=romclass+url,name=myCache` to see information about `ROMClass` and `URL` items in all the layer caches of the cache called `myCache`. The valid data types are as follows (case insensitive):
+You can request more detail about items of a specific data type that are stored in the shared cache by using `printStats=<data_type>`. Use the plus symbol (+) to separate the data types. For example, use `printStats=romclass+url,name=myCache` to see information about `ROMClass` and `URL` items in all the layer caches of the cache called `Cache1`. The valid data types are as follows (case insensitive):
 
 -   `help` (displays the list of valid data types)
 -   `all` (equivalent to `printAllStats`)
@@ -138,10 +145,10 @@ You can request more detail about items of a specific data type that are stored 
 -   `stale`
 -   `startuphint`
 
-Example output for a two-layer cache, with summary information only:
+Example output for a traditional cache (no cache layers: `cache layer = 0`), with summary information only:
 
 ```
-Current statistics for top layer of cache "myCache":
+Current statistics for cache "Cache1":
 
 Cache created with:
         -Xnolinenumbers                      = false
@@ -151,37 +158,91 @@ Cache created with:
 
 Cache contains only classes with line numbers
 
-base address                         = 0x00007F394E20B000
-end address                          = 0x00007F394F1EF000
-allocation pointer                   = 0x00007F394E221EA0
+base address                         = 0x00007F60B807A000
+end address                          = 0x00007F60B905E000
+allocation pointer                   = 0x00007F60B81BE3A8
+
+cache layer                          = 0
+cache size                           = 16776608
+softmx bytes                         = 16776608
+free bytes                           = 12740572
+Reserved space for AOT bytes         = -1
+Maximum space for AOT bytes          = -1
+Reserved space for JIT data bytes    = -1
+Maximum space for JIT data bytes     = -1
+Metadata bytes                       = 30440
+Metadata % used                      = 0%
+Class debug area size                = 1331200
+Class debug area used bytes          = 189358
+Class debug area % used              = 14%
+
+ROMClass bytes                       = 1328040
+AOT bytes                            = 98404
+JIT data bytes                       = 168
+Zip cache bytes                      = 1133704
+Startup hint bytes                   = 0
+Data bytes                           = 114080
+
+# ROMClasses                         = 452
+# AOT Methods                        = 2
+# Classpaths                         = 1
+# URLs                               = 0
+# Tokens                             = 0
+# Zip caches                         = 21
+# Startup hints                      = 0
+# Stale classes                      = 0
+% Stale classes                      = 0%
+
+
+Cache is 24% full
+
+Cache is accessible to current user = true
+```
+
+Example output for a cache with 2 layers (`cache layer = 1`), with summary information only:
+
+```
+Current statistics for top layer of cache "Cache1":
+
+Cache created with:
+        -Xnolinenumbers                      = false
+        BCI Enabled                          = true
+        Restrict Classpaths                  = false
+        Feature                              = cr
+
+
+base address                         = 0x00007FCAB2766000
+end address                          = 0x00007FCAB374A000
+allocation pointer                   = 0x00007FCAB2766000
 
 cache layer                          = 1
 cache size                           = 16776608
 softmx bytes                         = 16776608
-free bytes                           = 15228964
+free bytes                           = 15299372
 Reserved space for AOT bytes         = -1
 Maximum space for AOT bytes          = -1
 Reserved space for JIT data bytes    = -1
 Maximum space for JIT data bytes     = -1
 Class debug area size                = 1331200
-Class debug area used bytes          = 7728
+Class debug area used bytes          = 0
 Class debug area % used              = 0%
 
-Cache is 9% full
+Cache is 8% full
 
 Cache is accessible to current user = true
 ---------------------------------------------------------
 
-Current statistics for all layers of cache "myCache":
+Current statistics for all layers of cache "Cache1":
 
-ROMClass bytes                       = 1478240
-AOT bytes                            = 38544
-JIT data bytes                       = 416
-Zip cache bytes                      = 1134016
+ROMClass bytes                       = 1328040
+AOT bytes                            = 128924
+JIT data bytes                       = 812
+Zip cache bytes                      = 1133704
 Startup hint bytes                   = 0
+Data bytes                           = 114080
 
-# ROMClasses                         = 510
-# AOT Methods                        = 15
+# ROMClasses                         = 452
+# AOT Methods                        = 20
 # Classpaths                         = 1
 # URLs                               = 0
 # Tokens                             = 0
@@ -204,8 +265,11 @@ The following summary data is displayed:
 #### `baseAddress` and `endAddress`
  : The boundary addresses of the shared memory area that contains the classes.
 
-#### `allocPtr`
+#### `allocation pointer`
  : The address where `ROMClass` data is currently being allocated in the cache.
+
+#### `cache layer`
+: The layer number that the cache stats relate to.
 
 #### `cache size` and `free bytes`
  : `cache size` shows the total size of the shared memory area in bytes, and `free bytes` shows the free bytes that remain.
@@ -237,11 +301,14 @@ The following summary data is displayed:
 #### `Zip cache bytes`
 : The number of zip entry cache bytes stored in the cache.
 
+#### `Startup hint bytes`
+: The number of bytes of data stored to describe startup hints.
+
 #### `Data bytes`
 : The number of bytes of non-class data stored by the VM.
 
 #### `Metadata bytes`
-: The number of bytes of data stored to describe the cached classes.
+: The number of bytes of data stored to describe the cached classes. **Note:** This field is available only in the top layer cache output or when a cache is not layered.
 
 #### `Metadata % used`
 : The proportion of metadata bytes to class bytes, which indicates how efficiently cache space is being used. The value shown does consider the `Class debug area size`.
@@ -269,8 +336,11 @@ The following summary data is displayed:
 #### `Zip caches`
 : The number of .zip files that have entry caches stored in the shared cache.
 
+#### `Startup hints`
+: The number of startup hints stored in the cache. There can be a startup hint for each unique set of command line options used to start the JVM.
+
 #### `Stale classes`
-: The number of classes that have been marked as "potentially stale" by the cache code, because of an operating system update. See [Understanding dynamic updates](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_dynamic.html).
+: The number of classes that have been marked as "potentially stale" by the cache code, because of a VM or Java application update. See [Understanding dynamic updates](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_dynamic.html).
 
 #### `% Stale classes`
 : The percentage of classes in the cache that are stale.
@@ -293,7 +363,9 @@ The following summary data is displayed:
 
 ## `printTopLayerStats`
 
-Use this utility with a layered cache. This utility works in the same way as `printStats`, but shows information for the top layer cache only. For example:
+Use this utility with a layered cache. This utility works in the same way as `printStats`. By default, this utility shows information for the top layer cache. To view statistics for a specific layer, use the `layer=<number>` option. For example, to show statistics for the second layer in a 2-layer cache, run `printTopLayerStats,layer=1`.
+
+Example output:
 
 ```
 Current statistics for cache "Cache1":
@@ -304,34 +376,34 @@ Cache created with:
         Restrict Classpaths                  = false
         Feature                              = cr
 
-Cache contains only classes with line numbers
 
-base address                         = 0x00007F2812EEA000
-end address                          = 0x00007F2813ECE000
-allocation pointer                   = 0x00007F2812F00EA0
+base address                         = 0x00007F234C054000
+end address                          = 0x00007F234D038000
+allocation pointer                   = 0x00007F234C054000
 
+cache layer                          = 1
 cache size                           = 16776608
 softmx bytes                         = 16776608
-free bytes                           = 15228964
+free bytes                           = 15299372
 Reserved space for AOT bytes         = -1
 Maximum space for AOT bytes          = -1
 Reserved space for JIT data bytes    = -1
 Maximum space for JIT data bytes     = -1
-Data bytes                           = 114080
-Metadata bytes                       = 1664
+Metadata bytes                       = 792
 Metadata % used                      = 0%
 Class debug area size                = 1331200
-Class debug area used bytes          = 7728
+Class debug area used bytes          = 0
 Class debug area % used              = 0%
-ROMClass bytes                       = 93856
-AOT bytes                            = 6768
-JIT data bytes                       = 76
+
+ROMClass bytes                       = 0
+AOT bytes                            = 30520
+JIT data bytes                       = 644
 Zip cache bytes                      = 0
 Startup hint bytes                   = 0
-stale bytes                          = 0
+Data bytes                           = 114080
 
-# ROMClasses                         = 33
-# AOT Methods                        = 2
+# ROMClasses                         = 0
+# AOT Methods                        = 18
 # Classpaths                         = 0
 # URLs                               = 0
 # Tokens                             = 0
@@ -341,7 +413,7 @@ stale bytes                          = 0
 % Stale classes                      = 0%
 
 
-Cache is 9% full
+Cache is 8% full
 
 Cache is accessible to current user = true
 ```
