@@ -348,6 +348,8 @@ case, the VM continues without using shared classes.
 
 : When you use the `-Xshareclasses:name=Cache1` suboption in future Java commands, all the caches are started. The top-layer cache is started in read/write mode, and lower-layer caches are started in read-only mode. Modifying a lower-layer cache would invalidate all the caches in the layers above.
 
+: <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** The [`jvmtiSharedCacheInfo.isCorrupt`](interface_jvmti.md#jvmtisharedcacheinfo-structure) field and the  [`SharedClassCacheInfo.isCacheCorrupt()`](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.oti.shared/com/ibm/oti/shared/SharedClassCacheInfo.html#isCacheCorrupt--) method cannot detect a corrupted cache that has a layer number other than `0`. However, when a VM starts a layered cache directly, for example when you specify the `-Xshareclasses:name=<cache_name>` option on the command line, the VM detects any corruption and generates an error message as usual, regardless of the layer number of the cache.
+
 ### `listAllCaches` (Cache utility)
 
         -Xshareclasses:listAllCaches
@@ -466,17 +468,23 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:printAllStats
 
-:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see [printAllStats utility](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_out_printallstats.html).
+:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats-cache-utility)). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see [Diagnostic cache utilities](shrc_diag_util.md).
 
 ### `printStats` (Cache utility)
 
         -Xshareclasses:printStats=<data_type>[+<data_type>]
 
-:   Displays summary information for the cache that is specified by the [`name`](#name), [`cacheDir`](#cachedir), and [`nonpersistent`](#nonpersistent) suboptions. The most useful information that is displayed is how full the cache is and how many classes it contains. Stale classes are classes that are updated on the file system and which the cache has therefore marked as "stale". Stale classes are not purged from the cache and can be reused. Use the `printStats=stale` option to list all the stale entries and stale bytes.
+:   Displays summary information for the cache that is specified by the [`name`](#name), [`cacheDir`](#cachedir), and [`nonpersistent`](#nonpersistent) suboptions. For layered caches, information is shown for all layers (to see information for the top layer cache only, use [`printTopLayerStats`](#printtoplayerstats-cache-utility)). The most useful information that is displayed is how full the cache is and how many classes it contains. Stale classes are classes that are updated on the file system and which the cache has therefore marked as "stale". Stale classes are not purged from the cache and can be reused. Use the `printStats=stale` option to list all the stale entries and stale bytes.
 
 : Specify one or more data types, which are separated by a plus symbol (+), to see more detailed information about the cache content. Data types include AOT data, class paths, and ROMMethods.
 
-: For more information and for a full list of data types, see [printStats utility](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_out_printstats.html).
+: For more information and for a full list of data types, see [Diagnostic cache utilities](shrc_diag_util.md).
+
+### `printTopLayerStats` (Cache utility)
+
+        -Xshareclasses:printTopLayerStats=<data_type>[+<data_type>]
+
+:   Equivalent to [`printStats`](#printstats-cache-utility) but for the top layer cache only.
 
 ### `readonly`
 

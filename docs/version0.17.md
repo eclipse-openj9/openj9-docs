@@ -55,11 +55,16 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 **(Experimental, 64-bit only)**
 
-Two new suboptions, `createLayer` and `layer=<number>`, are available for creating layered caches, where a cache builds on another cache with the same name. You can use these suboptions to save space when building a Docker container, for example. For more information, see [`-Xshareclasses:layer`](xshareclasses.md#layer).
-
-A new suboption, [`destroyAllLayers`](xshareclasses.md#destroyalllayers), is available for destroying all the layers of a layered cache.
+New suboptions are available for creating layered caches, where a cache builds on another cache with the same name. You can use these suboptions to save space when building a Docker container, for example.
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Because these suboptions are experimental, do not use them in a production environment.
+
+The new options are:
+
+- [`createLayer`](xshareclasses.md#createlayer)
+- [`layer=<number>`](xshareclasses.md#layer) (see this section for more information about layered caches)
+- [`printTopLayerStats`](xshareclasses.md#printtoplayerstats-cache-utility)
+- [`destroyAllLayers`](xshareclasses.md#destroyalllayers)
 
 ### New shared classes cache suboption to skip disk space check
 

@@ -640,6 +640,97 @@ NULL
 NULL
 ```
 
+The following example shows information for a layered cache:
+
+```
+NULL           ------------------------------------------------------------------------
+0SECTION       SHARED CLASSES subcomponent dump routine
+NULL           ========================================
+NULL
+1SCLTEXTCSTL   Cache Statistics for Top Layer
+NULL
+1SCLTEXTCRTW       Cache Created With
+NULL               ------------------
+NULL
+2SCLTEXTXNL            -Xnolinenumbers       = false
+2SCLTEXTBCI            BCI Enabled           = true
+2SCLTEXTBCI            Restrict Classpaths   = false
+NULL
+1SCLTEXTCSUM       Cache Summary
+NULL               ------------------
+NULL
+2SCLTEXTNLC            No line number content                    = false
+2SCLTEXTLNC            Line number content                       = false
+NULL
+2SCLTEXTRCS            ROMClass start address                    = 0x00007F0EDB567000
+2SCLTEXTRCE            ROMClass end address                      = 0x00007F0EDB567000
+2SCLTEXTMSA            Metadata start address                    = 0x00007F0EDC40241C
+2SCLTEXTCEA            Cache end address                         = 0x00007F0EDC54B000
+2SCLTEXTRTF            Runtime flags                             = 0x80102001ECA602BB
+2SCLTEXTCGN            Cache generation                          = 41
+NULL
+2SCLTEXTCLY            Cache layer                               = 1
+2SCLTEXTCSZ            Cache size                                = 16776608
+2SCLTEXTSMB            Softmx bytes                              = 16776608
+2SCLTEXTFRB            Free bytes                                = 15315996
+2SCLTEXTARB            Reserved space for AOT bytes              = -1
+2SCLTEXTAMB            Maximum space for AOT bytes               = -1
+2SCLTEXTJRB            Reserved space for JIT data bytes         = -1
+2SCLTEXTJMB            Maximum space for JIT data bytes          = -1
+2SCLTEXTRWB            ReadWrite bytes                           = 114080
+2SCLTEXTDAS            Class debug area size                     = 1331200
+2SCLTEXTDAU            Class debug area % used                   = 0%
+2SCLTEXTDAN            Class LineNumberTable bytes               = 0
+2SCLTEXTDAV            Class LocalVariableTable bytes            = 0
+NULL
+2SCLTEXTCPF            Cache is 8% full
+NULL
+1SCLTEXTCMST       Cache Memory Status
+NULL               ------------------
+1SCLTEXTCNTD           Cache Name                    Feature                  Memory type              Cache path
+NULL
+2SCLTEXTCMDT           Cache1                        CR                       Memory mapped file       /tmp/javasharedresources/C290M4F1A64P_Cache1_G41L01
+NULL
+1SCLTEXTCMST       Cache Lock Status
+NULL               ------------------
+1SCLTEXTCNTD           Lock Name                     Lock type                TID owning lock
+NULL
+2SCLTEXTCWRL           Cache write lock              File lock                Unowned
+2SCLTEXTCRWL           Cache read/write lock         File lock                Unowned
+NULL
+1SCLTEXTCSAL   Cache Statistics for All Layers
+NULL
+2SCLTEXTRCB            ROMClass bytes                            = 1459040
+2SCLTEXTAOB            AOT code bytes                            = 57624
+2SCLTEXTADB            AOT data bytes                            = 272
+2SCLTEXTAHB            AOT class hierarchy bytes                 = 1840
+2SCLTEXTATB            AOT thunk bytes                           = 632
+2SCLTEXTJHB            JIT hint bytes                            = 484
+2SCLTEXTJPB            JIT profile bytes                         = 0
+2SCLTEXTNOB            Java Object bytes                         = 0
+2SCLTEXTZCB            Zip cache bytes                           = 1134016
+2SCLTEXTSHB            Startup hint bytes                        = 0
+2SCLTEXTJCB            JCL data bytes                            = 0
+2SCLTEXTBDA            Byte data bytes                           = 0
+NULL
+2SCLTEXTNRC            Number ROMClasses                         = 503
+2SCLTEXTNAM            Number AOT Methods                        = 16
+2SCLTEXTNAD            Number AOT Data Entries                   = 1
+2SCLTEXTNAH            Number AOT Class Hierarchy                = 28
+2SCLTEXTNAT            Number AOT Thunks                         = 11
+2SCLTEXTNJH            Number JIT Hints                          = 15
+2SCLTEXTNJP            Number JIT Profiles                       = 0
+2SCLTEXTNCP            Number Classpaths                         = 1
+2SCLTEXTNUR            Number URLs                               = 0
+2SCLTEXTNTK            Number Tokens                             = 0
+2SCLTEXTNOJ            Number Java Objects                       = 0
+2SCLTEXTNZC            Number Zip Caches                         = 21
+2SCLTEXTNSH            Number Startup Hint Entries               = 0
+2SCLTEXTNJC            Number JCL Entries                        = 0
+2SCLTEXTNST            Number Stale classes                      = 0
+2SCLTEXTPST            Percent Stale classes                     = 0%
+```
+
 ### CLASSES
 
 The classes section shows information about class loaders. The first part is a summary that records each available class loader (`2CLTEXTCLLOADER`) followed by the number of libraries and classes that it loaded. This information is followed by a more detailed list of libraries (`1CLTEXTCLLIB`) and classes (`1CLTEXTCLLO`) that are loaded.
