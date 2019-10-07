@@ -420,7 +420,7 @@ For example, to create a Heap dump called `my.dmp` when a **vmstop** event is re
 java -Xdump:heap:events=vmstop,file=my.dmp
 ```
 
-When producing system dump files or CEEDUMPs on z/OS platforms, use the `dsn` option instead of the `file` option. For example:
+When producing system dump files on z/OS platforms, use the `dsn` option instead of the `file` option. For example:
 
 ```
 java -Xdump:system:events=vmstop,dsn=%uid.MYDUMP
@@ -471,7 +471,7 @@ If the dump file cannot be written to the selected location, the VM reverts to u
 2. The location specified by the `TMPDIR` environment variable.
 3. The `C:\Temp` on Windows operating systems, or the `/tmp` directory on other operating systems.
 
-This VM action does not apply to CEEDUMPs on z/OS operating systems that use the `dsn` option.
+This VM action does not apply to system dumps on z/OS operating systems that use the `dsn` option.
 You can prevent the VM reverting to different dump locations by using the `-Xdump:nofailover` option.
 
 
