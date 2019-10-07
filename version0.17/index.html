@@ -462,6 +462,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ludcl-caching-disabled-by-default" title="LUDCL caching disabled by default" class="md-nav__link">
+    LUDCL caching disabled by default
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3437,6 +3444,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ludcl-caching-disabled-by-default" title="LUDCL caching disabled by default" class="md-nav__link">
+    LUDCL caching disabled by default
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3506,6 +3520,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#digest-algorithm-is-re-enabled">Digest algorithm is re-enabled</a></li>
 <li><a href="#direct-dump-reader-ddr-vm-restriction-removed">Direct Dump Reader (DDR) VM restriction removed</a></li>
 <li><a href="#the-format-of-the-hooks-section-of-a-java-dump-has-changed">The format of the HOOKS section of a Java dump has changed</a></li>
+<li><a href="#ludcl-caching-disabled-by-default">LUDCL caching disabled by default</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3546,9 +3561,12 @@ system. For file systems that do not support the checking of free space, you can
 <ul>
 <li>Recorded times have been changed from milliseconds to microseconds to provide increased precision.</li>
 <li>A new field, <code>3HKTOTALTIME</code>, is included, which gives the total duration of previous events.</li>
-<li>The hook data is now reset after after each Java dump.</li>
+<li>The hook data is now reset after each Java dump.</li>
 </ul>
 <p>For more information and an example of the new format, see <a href="../dump_javadump/#hooks">Java dump: HOOKS</a></p>
+<h3 id="ludcl-caching-disabled-by-default">LUDCL caching disabled by default</h3>
+<p>By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This
+capability is controlled by the <a href="dcomibmenableclasscashing.md">-Dcom.ibm.enableClassCaching</a> system property and is now disabled by default. Versions of the documentation before 0.17.0 incorrectly identified this property as disabled by default when it was actually enabled by default in the VM.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.16 and V0.17.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.17/0.17.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.17.md ==== -->
