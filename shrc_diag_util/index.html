@@ -657,6 +657,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#startup-hints" title="Startup hints" class="md-nav__link">
+    Startup hints
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -678,8 +685,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#allocptr" title="allocPtr" class="md-nav__link">
-    allocPtr
+  <a href="#allocation-pointer" title="allocation pointer" class="md-nav__link">
+    allocation pointer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-layer" title="cache layer" class="md-nav__link">
+    cache layer
   </a>
   
 </li>
@@ -755,6 +769,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#startup-hint-bytes" title="Startup hint bytes" class="md-nav__link">
+    Startup hint bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-bytes" title="Data bytes" class="md-nav__link">
     Data bytes
   </a>
@@ -820,6 +841,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#zip-caches" title="Zip caches" class="md-nav__link">
     Zip caches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startup-hints_1" title="Startup hints" class="md-nav__link">
+    Startup hints
   </a>
   
 </li>
@@ -3597,6 +3625,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#startup-hints" title="Startup hints" class="md-nav__link">
+    Startup hints
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3618,8 +3653,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#allocptr" title="allocPtr" class="md-nav__link">
-    allocPtr
+  <a href="#allocation-pointer" title="allocation pointer" class="md-nav__link">
+    allocation pointer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-layer" title="cache layer" class="md-nav__link">
+    cache layer
   </a>
   
 </li>
@@ -3695,6 +3737,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#startup-hint-bytes" title="Startup hint bytes" class="md-nav__link">
+    Startup hint bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-bytes" title="Data bytes" class="md-nav__link">
     Data bytes
   </a>
@@ -3760,6 +3809,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#zip-caches" title="Zip caches" class="md-nav__link">
     Zip caches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startup-hints_1" title="Startup hints" class="md-nav__link">
+    Startup hints
   </a>
   
 </li>
@@ -3955,14 +4011,21 @@ for ROMClass com/ibm/oti/vm/BootstrapClassLoader at 0xD5558AE0.
 </code></pre>
 </dd>
 </dl>
+<h3 id="startup-hints">Startup hints</h3>
+<dl>
+<dd>Information about startup hints is shown in <code>STARTUP HINTS KEY</code> and <code>STARTUP HINTS DETAIL</code>. For example:<pre><code>1: 0x000000002237C6E0 STARTUP HINTS KEY: -Xoptionsfile=jre\bin\compressedrefs\options.default -Xlockword:mode=default -Xjcl:jclse29 -Dcom.ibm.oti.vm.bootstrap.library.path=jre\bin\compressedrefs;jre\bin -Djava.home=jre -Djava.ext.dirs=jre\lib\ext -Duser.dir=bin -Djava.class.path=. -Dsun.java.launcher=SUN_STANDARD Address: 0x000000002237C700 Size: 96
+STARTUP HINTS DETAIL Flags: 1 DATA1: 1677721 DATA2: 5033165
+</code></pre>
+</dd>
+</dl>
 <h2 id="printstats"><code>printStats</code></h2>
 <pre><code>-Xshareclasses:printStats
 -Xshareclasses:printStats,name=&lt;cache_name&gt;
 -Xshareclasses:printStats=&lt;data_type1&gt;[+&lt;data_type2&gt;][...],name=&lt;cache_name&gt;
 </code></pre>
 
-<p>Displays summary information about the cache. For layered caches, some information is shown for the top layer cache only, and some is shown for all layers combined. To see information for the top layer cache only, use <a href="#printtoplayerstats"><code>printTopLayerStats</code></a>.</p>
-<p>You can request more detail about items of a specific data type that are stored in the shared cache by using <code>printStats=&lt;data_type&gt;</code>. Use the plus symbol (+) to separate the data types. For example, use <code>printStats=romclass+url,name=myCache</code> to see information about <code>ROMClass</code> and <code>URL</code> items in all the layer caches of the cache called <code>myCache</code>. The valid data types are as follows (case insensitive):</p>
+<p>Displays summary information about the cache. For layered caches, <code>-Xshareclasses:printStats</code> shows some information for the top layer cache, and summary information (bytes and counts only) for all layers combined. To see information for the top layer cache only, use <a href="#printtoplayerstats"><code>printTopLayerStats</code></a>.</p>
+<p>You can request more detail about items of a specific data type that are stored in the shared cache by using <code>printStats=&lt;data_type&gt;</code>. Use the plus symbol (+) to separate the data types. For example, use <code>printStats=romclass+url,name=myCache</code> to see information about <code>ROMClass</code> and <code>URL</code> items in all the layer caches of the cache called <code>Cache1</code>. The valid data types are as follows (case insensitive):</p>
 <ul>
 <li><code>help</code> (displays the list of valid data types)</li>
 <li><code>all</code> (equivalent to <code>printAllStats</code>)</li>
@@ -3978,8 +4041,8 @@ for ROMClass com/ibm/oti/vm/BootstrapClassLoader at 0xD5558AE0.
 <li><code>stale</code></li>
 <li><code>startuphint</code></li>
 </ul>
-<p>Example output for a two-layer cache, with summary information only:</p>
-<pre><code>Current statistics for top layer of cache &quot;myCache&quot;:
+<p>Example output for a traditional cache (no cache layers: <code>cache layer = 0</code>), with summary information only:</p>
+<pre><code>Current statistics for cache &quot;Cache1&quot;:
 
 Cache created with:
         -Xnolinenumbers                      = false
@@ -3989,37 +4052,89 @@ Cache created with:
 
 Cache contains only classes with line numbers
 
-base address                         = 0x00007F394E20B000
-end address                          = 0x00007F394F1EF000
-allocation pointer                   = 0x00007F394E221EA0
+base address                         = 0x00007F60B807A000
+end address                          = 0x00007F60B905E000
+allocation pointer                   = 0x00007F60B81BE3A8
+
+cache layer                          = 0
+cache size                           = 16776608
+softmx bytes                         = 16776608
+free bytes                           = 12740572
+Reserved space for AOT bytes         = -1
+Maximum space for AOT bytes          = -1
+Reserved space for JIT data bytes    = -1
+Maximum space for JIT data bytes     = -1
+Metadata bytes                       = 30440
+Metadata % used                      = 0%
+Class debug area size                = 1331200
+Class debug area used bytes          = 189358
+Class debug area % used              = 14%
+
+ROMClass bytes                       = 1328040
+AOT bytes                            = 98404
+JIT data bytes                       = 168
+Zip cache bytes                      = 1133704
+Startup hint bytes                   = 0
+Data bytes                           = 114080
+
+# ROMClasses                         = 452
+# AOT Methods                        = 2
+# Classpaths                         = 1
+# URLs                               = 0
+# Tokens                             = 0
+# Zip caches                         = 21
+# Startup hints                      = 0
+# Stale classes                      = 0
+% Stale classes                      = 0%
+
+
+Cache is 24% full
+
+Cache is accessible to current user = true
+</code></pre>
+
+<p>Example output for a cache with 2 layers (<code>cache layer = 1</code>), with summary information only:</p>
+<pre><code>Current statistics for top layer of cache &quot;Cache1&quot;:
+
+Cache created with:
+        -Xnolinenumbers                      = false
+        BCI Enabled                          = true
+        Restrict Classpaths                  = false
+        Feature                              = cr
+
+
+base address                         = 0x00007FCAB2766000
+end address                          = 0x00007FCAB374A000
+allocation pointer                   = 0x00007FCAB2766000
 
 cache layer                          = 1
 cache size                           = 16776608
 softmx bytes                         = 16776608
-free bytes                           = 15228964
+free bytes                           = 15299372
 Reserved space for AOT bytes         = -1
 Maximum space for AOT bytes          = -1
 Reserved space for JIT data bytes    = -1
 Maximum space for JIT data bytes     = -1
 Class debug area size                = 1331200
-Class debug area used bytes          = 7728
+Class debug area used bytes          = 0
 Class debug area % used              = 0%
 
-Cache is 9% full
+Cache is 8% full
 
 Cache is accessible to current user = true
 ---------------------------------------------------------
 
-Current statistics for all layers of cache &quot;myCache&quot;:
+Current statistics for all layers of cache &quot;Cache1&quot;:
 
-ROMClass bytes                       = 1478240
-AOT bytes                            = 38544
-JIT data bytes                       = 416
-Zip cache bytes                      = 1134016
+ROMClass bytes                       = 1328040
+AOT bytes                            = 128924
+JIT data bytes                       = 812
+Zip cache bytes                      = 1133704
 Startup hint bytes                   = 0
+Data bytes                           = 114080
 
-# ROMClasses                         = 510
-# AOT Methods                        = 15
+# ROMClasses                         = 452
+# AOT Methods                        = 20
 # Classpaths                         = 1
 # URLs                               = 0
 # Tokens                             = 0
@@ -4041,9 +4156,13 @@ Startup hint bytes                   = 0
 <dl>
 <dd>The boundary addresses of the shared memory area that contains the classes.</dd>
 </dl>
-<h4 id="allocptr"><code>allocPtr</code></h4>
+<h4 id="allocation-pointer"><code>allocation pointer</code></h4>
 <dl>
 <dd>The address where <code>ROMClass</code> data is currently being allocated in the cache.</dd>
+</dl>
+<h4 id="cache-layer"><code>cache layer</code></h4>
+<dl>
+<dd>The layer number that the cache stats relate to.</dd>
 </dl>
 <h4 id="cache-size-and-free-bytes"><code>cache size</code> and <code>free bytes</code></h4>
 <dl>
@@ -4085,13 +4204,17 @@ Startup hint bytes                   = 0
 <dl>
 <dd>The number of zip entry cache bytes stored in the cache.</dd>
 </dl>
+<h4 id="startup-hint-bytes"><code>Startup hint bytes</code></h4>
+<dl>
+<dd>The number of bytes of data stored to describe startup hints.</dd>
+</dl>
 <h4 id="data-bytes"><code>Data bytes</code></h4>
 <dl>
 <dd>The number of bytes of non-class data stored by the VM.</dd>
 </dl>
 <h4 id="metadata-bytes"><code>Metadata bytes</code></h4>
 <dl>
-<dd>The number of bytes of data stored to describe the cached classes.</dd>
+<dd>The number of bytes of data stored to describe the cached classes. <strong>Note:</strong> This field is available only in the top layer cache output or when a cache is not layered.</dd>
 </dl>
 <h4 id="metadata-used"><code>Metadata % used</code></h4>
 <dl>
@@ -4126,9 +4249,13 @@ Startup hint bytes                   = 0
 <dl>
 <dd>The number of .zip files that have entry caches stored in the shared cache.</dd>
 </dl>
+<h4 id="startup-hints_1"><code>Startup hints</code></h4>
+<dl>
+<dd>The number of startup hints stored in the cache. There can be a startup hint for each unique set of command line options used to start the JVM.</dd>
+</dl>
 <h4 id="stale-classes"><code>Stale classes</code></h4>
 <dl>
-<dd>The number of classes that have been marked as "potentially stale" by the cache code, because of an operating system update. See <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_dynamic.html">Understanding dynamic updates</a>.</dd>
+<dd>The number of classes that have been marked as "potentially stale" by the cache code, because of a VM or Java application update. See <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_dynamic.html">Understanding dynamic updates</a>.</dd>
 </dl>
 <h4 id="stale-classes_1"><code>% Stale classes</code></h4>
 <dl>
@@ -4154,7 +4281,8 @@ Startup hint bytes                   = 0
 <dd>Whether the current user can access the cache.</dd>
 </dl>
 <h2 id="printtoplayerstats"><code>printTopLayerStats</code></h2>
-<p>Use this utility with a layered cache. This utility works in the same way as <code>printStats</code>, but shows information for the top layer cache only. For example:</p>
+<p>Use this utility with a layered cache. This utility works in the same way as <code>printStats</code>. By default, this utility shows information for the top layer cache. To view statistics for a specific layer, use the <code>layer=&lt;number&gt;</code> option. For example, to show statistics for the second layer in a 2-layer cache, run <code>printTopLayerStats,layer=1</code>.</p>
+<p>Example output:</p>
 <pre><code>Current statistics for cache &quot;Cache1&quot;:
 
 Cache created with:
@@ -4163,34 +4291,34 @@ Cache created with:
         Restrict Classpaths                  = false
         Feature                              = cr
 
-Cache contains only classes with line numbers
 
-base address                         = 0x00007F2812EEA000
-end address                          = 0x00007F2813ECE000
-allocation pointer                   = 0x00007F2812F00EA0
+base address                         = 0x00007F234C054000
+end address                          = 0x00007F234D038000
+allocation pointer                   = 0x00007F234C054000
 
+cache layer                          = 1
 cache size                           = 16776608
 softmx bytes                         = 16776608
-free bytes                           = 15228964
+free bytes                           = 15299372
 Reserved space for AOT bytes         = -1
 Maximum space for AOT bytes          = -1
 Reserved space for JIT data bytes    = -1
 Maximum space for JIT data bytes     = -1
-Data bytes                           = 114080
-Metadata bytes                       = 1664
+Metadata bytes                       = 792
 Metadata % used                      = 0%
 Class debug area size                = 1331200
-Class debug area used bytes          = 7728
+Class debug area used bytes          = 0
 Class debug area % used              = 0%
-ROMClass bytes                       = 93856
-AOT bytes                            = 6768
-JIT data bytes                       = 76
+
+ROMClass bytes                       = 0
+AOT bytes                            = 30520
+JIT data bytes                       = 644
 Zip cache bytes                      = 0
 Startup hint bytes                   = 0
-stale bytes                          = 0
+Data bytes                           = 114080
 
-# ROMClasses                         = 33
-# AOT Methods                        = 2
+# ROMClasses                         = 0
+# AOT Methods                        = 18
 # Classpaths                         = 0
 # URLs                               = 0
 # Tokens                             = 0
@@ -4200,7 +4328,7 @@ stale bytes                          = 0
 % Stale classes                      = 0%
 
 
-Cache is 9% full
+Cache is 8% full
 
 Cache is accessible to current user = true
 </code></pre>
