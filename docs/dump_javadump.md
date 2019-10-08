@@ -502,46 +502,35 @@ This section shows internal VM event callbacks, which are used for diagnosing pe
 The following example shows data for the `J9VMHookInterface`, including the total time for all previous events, the call site location (&lt;source file&gt;:&lt;line number&gt;), start time, and duration of the last callback and the longest callback (all times measured in microseconds). The hook data is reset after each Java dump.
 
 ```
+0SECTION       HOOK subcomponent dump routine
+NULL           ==============================
+1NOTE          This data is reset after writing each javacore file
 NULL           ------------------------------------------------------------------------
-SECTION HOOK   subcomponent dump routine
-NULL           =========================
-1NOTE          These data are reset every time a javacore is taken
 1HKINTERFACE   MM_OMRHookInterface
 NULL           ------------------------------------------------------------------------
-1HKINTERFACE   MM_PrivateHookInterface
-NULL           ------------------------------------------------------------------------
-1HKINTERFACE   MM_HookInterface
-NULL           ------------------------------------------------------------------------
-1HKINTERFACE   J9VMHookInterface
-NULL           ------------------------------------------------------------------------
 2HKEVENTID     1
-3HKCALLCOUNT       1239
-3HKTOTALTIME       219564us
+3HKCALLCOUNT       19
+3HKTOTALTIME       212us
 3HKLAST            Last Callback
 4HKCALLSITE            trcengine.c:395
-4HKSTARTTIME           Start Time: 2019-10-18T00:15:14.664
-4HKDURATION            Duration : 16us
+4HKSTARTTIME           Start Time: 2019-10-03T11:48:34.076
+4HKDURATION            Duration: 10us
 3HKLONGST          Longest Callback
 4HKCALLSITE            trcengine.c:395
-4HKSTARTTIME           Start Time: 2019-10-18T21:28:34.895
-4HKDURATION            Duration : 5012us
+4HKSTARTTIME           Start Time: 2019-10-03T11:48:34.391
+4HKDURATION            Duration: 50us
 NULL
-...
-1HKINTERFACE   J9VMZipCachePoolHookInterface
-NULL           ------------------------------------------------------------------------
-1HKINTERFACE   J9JITHookInterface
-NULL           ------------------------------------------------------------------------
-2HKEVENTID     3
-3HKCALLCOUNT       3113
-3HKTOTALTIME       4904us
+2HKEVENTID     2
+3HKCALLCOUNT       2
+3HKTOTALTIME       0us
 3HKLAST            Last Callback
-4HKCALLSITE            common/mgmtinit.c:193
-4HKSTARTTIME           Start Time: 2019-10-18T16:04:15.320
-4HKDURATION            Duration : 3us
+4HKCALLSITE            jvmtiHook.c:1654
+4HKSTARTTIME           Start Time: 2019-10-03T11:48:34.236
+4HKDURATION            Duration: 0us
 3HKLONGST          Longest Callback
-4HKCALLSITE            common/mgmtinit.c:193
-4HKSTARTTIME           Start Time: 2019-10-18T16:37:17.633
-4HKDURATION            Duration : 27us
+4HKCALLSITE            jvmtiHook.c:1654
+4HKSTARTTIME           Start Time: 2019-10-03T11:48:34.236
+4HKDURATION            Duration: 0us
 NULL
 ...
 ```
