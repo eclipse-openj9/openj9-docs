@@ -162,6 +162,6 @@ You can use the `-Xcheck` option to run checks during OpenJ9 virtual machine (VM
 
         -Xcheck:vm[:<option>]
 
-:   Performs additional checks on the VM. By default, no checking is performed. For more information, run `-Xcheck:vm``:help`.
+:   Performs additional checks on the VM. By default, no checking is performed. For more information, run `-Xcheck:vm:help`.
 
 <!-- ==== END OF TOPIC ==== xcheck.md ==== -->
