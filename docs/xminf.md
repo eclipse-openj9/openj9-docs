@@ -25,7 +25,7 @@
 # `-Xminf` / `-Xmaxf`
 
 
-Specifies the minimum and maximum proportion of the heap that must remain free after a global garbage collection cycle.
+Specifies the minimum and maximum proportion of the heap that must remain free after a global garbage collection (GC) cycle.
 
 If the free space is above or below these limits, the OpenJ9 VM attempts to adjust the heap size so that: `-Xminf` &le; free space &le; `-Xmaxf`.
 
@@ -33,8 +33,13 @@ If the free space is above or below these limits, the OpenJ9 VM attempts to adju
 
 | Setting        | Effect                 | Default |
 |----------------|------------------------|---------|
-|`-Xminf<value>` | Set minimum free space | 30      |
-|`-Xmaxf<value>` | Set maximum free space | 60      |
+|`-Xminf<value>` | Set minimum free space | 0.3     |
+|`-Xmaxf<value>` | Set maximum free space | 0.6     |
+
+The value range is 0.0 - 1.0.
+
+- For the `gencon` GC policy, the values apply only to the Tenure part of the heap and only at global GC points.
+- For the `optthruput` and `optavgpause` GC policies, these values apply to the whole heap at every GC point.
 
 ## See also
 
