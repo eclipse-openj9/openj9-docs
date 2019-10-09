@@ -3566,7 +3566,8 @@ system. For file systems that do not support the checking of free space, you can
 <p>For more information and an example of the new format, see <a href="../dump_javadump/#hooks">Java dump: HOOKS</a></p>
 <h3 id="ludcl-caching-disabled-by-default">LUDCL caching disabled by default</h3>
 <p>By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This
-capability is controlled by the <a href="dcomibmenableclasscashing.md">-Dcom.ibm.enableClassCaching</a> system property and is now disabled by default. Versions of the documentation before 0.17.0 incorrectly identified this property as disabled by default when it was actually enabled by default in the VM.</p>
+capability is controlled by the <a href="dcomibmenableclasscashing.md">-Dcom.ibm.enableClassCaching</a> system property and is now disabled by default due to <a href="https://github.com/eclipse/openj9/issues/7332">issue #7332</a>.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Versions of the documentation before 0.17.0 incorrectly identified this property as disabled by default when it was actually enabled by default in the VM.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 V0.16 and V0.17.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.17/0.17.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.17.md ==== -->
