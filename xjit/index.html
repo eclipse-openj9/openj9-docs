@@ -1008,8 +1008,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
-    <a href="../dcomibmlangmanagementosmxbeaniscputime100ns/" title="-Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns" class="md-nav__link">
-      -Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns
+    <a href="../dcomibmgpudisable/" title="-Dcom.ibm.gpu.disable" class="md-nav__link">
+      -Dcom.ibm.gpu.disable
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmgpuenable/" title="-Dcom.ibm.gpu.enable" class="md-nav__link">
+      -Dcom.ibm.gpu.enable
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmgpuverbose/" title="-Dcom.ibm.gpu.verbose" class="md-nav__link">
+      -Dcom.ibm.gpu.verbose
     </a>
   </li>
 
@@ -2201,6 +2225,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li class="md-nav__item">
   <a href="#disablermode64" title="disableRMODE64" class="md-nav__link">
     disableRMODE64
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enablegpu" title="enableGPU" class="md-nav__link">
+    enableGPU
   </a>
   
 </li>
@@ -3425,6 +3456,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#enablegpu" title="enableGPU" class="md-nav__link">
+    enableGPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exclude" title="exclude" class="md-nav__link">
     exclude
   </a>
@@ -3600,6 +3638,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td>Allows the JIT to allocate executable code caches above the 2 GB memory bar.</td>
 </tr>
 <tr>
+<td><a href="#enablegpu"><code>enableGPU</code>     </a></td>
+<td>Allows the JIT to offload certain processing tasks to a graphics processing unit (GPU)</td>
+</tr>
+<tr>
 <td><a href="#exclude"><code>exclude</code>       </a></td>
 <td>Excludes the specified method from compilation.</td>
 </tr>
@@ -3633,6 +3675,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </code></pre>
 <dl>
 <dd>From z/OS V2R3, residency mode for 64-bit applications (RMODE64) is enabled by default. This feature allows the JIT to allocate executable code caches above the 2 GB memory bar, which is the default behavior. Use this option to turn off this JIT behavior.</dd>
+</dl>
+<h3 id="enablegpu"><code>enableGPU</code></h3>
+<p><strong>(Windows (x86-64) or Linux (x86-64 and IBM POWER LE))</strong></p>
+<pre><code>    -Xjit:enableGPU
+</code></pre>
+<dl>
+<dd>Enables the JIT compiler to offload certain processing tasks to a graphics processing unit (GPU). The JIT determines which functions to offload based on performance heuristics. Systems must support NVIDIA Compute Unified Device Architecture (CUDA).  The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0.</dd>
+<dd>To troubleshoot operations between the JIT compiler and the GPU, use <code>-Xjit:enableGPU={verbose}</code>, which provides output showing the processing tasks that are offloaded and their status. To send this output to a file (<code>output.txt</code>), run <code>-Xjit:enableGPU={verbose},vlog=output.txt</code> when you start your application.</dd>
+<dd>The <code>-Xjit:enableGPU={enforce}</code> option can be used to ensure that all <code>Parallel().ForEach()</code> invocations that are recognized by the JIT are offloaded to the GPU. The <code>enforce</code> option stops the JIT checking performance heuristics to determine whether a data processing task might benefit from processing on the GPU instead of the CPU. This action helps you validate that operations between the JIT compiler and the GPU can proceed successfully. You can also include verbose logging by specifying <code>-Xjit:enableGPU={enforce|verbose}</code> for detailed information about the processing tasks.</dd>
 </dl>
 <h3 id="exclude"><code>exclude</code></h3>
 <pre><code>    -Xjit:exclude=&lt;method&gt;

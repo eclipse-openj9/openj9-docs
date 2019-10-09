@@ -211,7 +211,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://www.eclipse.org/openj9/docs/dcomibmlangmanagementosmxbeaniscputime100ns/</loc>
+     <loc>https://www.eclipse.org/openj9/docs/dcomibmgpudisable/</loc>
+     <lastmod>2019-10-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/dcomibmgpuenable/</loc>
+     <lastmod>2019-10-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.eclipse.org/openj9/docs/dcomibmgpuverbose/</loc>
      <lastmod>2019-10-09</lastmod>
      <changefreq>daily</changefreq>
     </url>

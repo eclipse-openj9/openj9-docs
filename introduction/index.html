@@ -396,6 +396,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#exploiting-gpus" title="Exploiting GPUs" class="md-nav__link">
+    Exploiting GPUs
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1120,8 +1127,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
-    <a href="../dcomibmlangmanagementosmxbeaniscputime100ns/" title="-Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns" class="md-nav__link">
-      -Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns
+    <a href="../dcomibmgpudisable/" title="-Dcom.ibm.gpu.disable" class="md-nav__link">
+      -Dcom.ibm.gpu.disable
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmgpuenable/" title="-Dcom.ibm.gpu.enable" class="md-nav__link">
+      -Dcom.ibm.gpu.enable
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmgpuverbose/" title="-Dcom.ibm.gpu.verbose" class="md-nav__link">
+      -Dcom.ibm.gpu.verbose
     </a>
   </li>
 
@@ -3414,6 +3445,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#exploiting-gpus" title="Exploiting GPUs" class="md-nav__link">
+    Exploiting GPUs
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3552,6 +3590,9 @@ system properties are available for tuning the implementation.</p>
 <li><em>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/).</em></li>
 <li><em>This product includes cryptographic software written by Eric Young (eay@cryptsoft.com).</em></li>
 </ul>
+<h3 id="exploiting-gpus">Exploiting GPUs</h3>
+<p>OpenJ9 provides the <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.cuda/index.html?view=kc">CUDA4J API</a> and the <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.gpu/index.html?view=kc">com.ibm.gpu API</a>, which allow you to develop applications that can take advantage of graphics processing unit (GPU) processing for suitable functions, such as code page conversion. You can also enable the JIT compiler to offload certain processing tasks to a GPU by specifying the <code>-Xjit:enableGPU</code> option on the command line. When enabled, the JIT compiler determines when to offload tasks based on performance heuristics.</p>
+<p>GPU processing is supported only on Windows (x86-64) and Linux (x86-64 and IBM Power LE) systems. For more information about enabling GPU processing, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.80.doc/docs/gpu_overview.html">Exploiting graphics processing units</a>.</p>
 <h2 id="runtime-options">Runtime options</h2>
 <p>Runtime options are specified on the command line and include system properties, standard options, nonstandard (<strong>-X</strong>) options, and <strong>-XX</strong> options. For a detailed list of runtime options, see <a href="../cmdline_specifying/">OpenJ9 command-line options</a></p>
 <h2 id="default-settings">Default settings</h2>
