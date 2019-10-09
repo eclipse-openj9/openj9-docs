@@ -47,6 +47,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 |-------------------------------------|-----------------------------------------------------------------------------------------|
 | [`count`         ](#count         ) | Forces compilation of methods on first invocation.                                      |
 | [`disableRMODE64`](#disablermode64) | Allows the JIT to allocate executable code caches above the 2 GB memory bar.            |
+| [`enableGPU`     ](#enablegpu     ) | Allows the JIT to offload certain processing tasks to a graphics processing unit (GPU)  |
 | [`exclude`       ](#exclude       ) | Excludes the specified method from compilation.                                         |
 | [`<limitFile>`   ](#limitfile     ) | Compile methods that are listed in the limit file.                                      |
 | [`optlevel`      ](#optlevel      ) | Forces the JIT compiler to compile all methods at a specific optimization level.        |
@@ -66,6 +67,18 @@ These parameters can be used to modify the behavior of `-Xjit`:
         -Xjit:disableRMODE64
 
 : From z/OS V2R3, residency mode for 64-bit applications (RMODE64) is enabled by default. This feature allows the JIT to allocate executable code caches above the 2 GB memory bar, which is the default behavior. Use this option to turn off this JIT behavior.
+
+### `enableGPU`
+
+**(Windows (x86-64) or Linux (x86-64 and IBM POWER LE))**
+
+        -Xjit:enableGPU
+
+: Enables the JIT compiler to offload certain processing tasks to a graphics processing unit (GPU). The JIT determines which functions to offload based on performance heuristics. Systems must support NVIDIA Compute Unified Device Architecture (CUDA).  The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0.
+
+: To troubleshoot operations between the JIT compiler and the GPU, use `-Xjit:enableGPU={verbose}`, which provides output showing the processing tasks that are offloaded and their status. To send this output to a file (`output.txt`), run `-Xjit:enableGPU={verbose},vlog=output.txt` when you start your application.
+
+: The `-Xjit:enableGPU={enforce}` option can be used to ensure that all `Parallel().ForEach()` invocations that are recognized by the JIT are offloaded to the GPU. The `enforce` option stops the JIT checking performance heuristics to determine whether a data processing task might benefit from processing on the GPU instead of the CPU. This action helps you validate that operations between the JIT compiler and the GPU can proceed successfully. You can also include verbose logging by specifying `-Xjit:enableGPU={enforce|verbose}` for detailed information about the processing tasks.
 
 ### `exclude`
 
