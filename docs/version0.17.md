@@ -105,7 +105,9 @@ For more information and an example of the new format, see [Java dump: HOOKS](du
 ### LUDCL caching disabled by default
 
 By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This
-capability is controlled by the [-Dcom.ibm.enableClassCaching](dcomibmenableclasscashing.md) system property and is now disabled by default. Versions of the documentation before 0.17.0 incorrectly identified this property as disabled by default when it was actually enabled by default in the VM.
+capability is controlled by the [-Dcom.ibm.enableClassCaching](dcomibmenableclasscashing.md) system property and is now disabled by default due to [issue #7332](https://github.com/eclipse/openj9/issues/7332).
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Versions of the documentation before 0.17.0 incorrectly identified this property as disabled by default when it was actually enabled by default in the VM.
 
 ## Full release information
 
