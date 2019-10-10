@@ -43,16 +43,16 @@ columns will be removed over time.
 
 ## Eclipse OpenJ9 releases
 
-| OpenJ9 release  | Release date        | JDK8 (LTS)| JDK11 (LTS) | JDK13     | JDK14     |
-|-----------------|---------------------|-----------|-------------|-----------|-----------|
-| v0.12.0         | January 2019        | Yes       | Yes         |           |           |
-| v0.13.0         | March 2019          | No        | No          |           |           |
-| v0.14.0         | April 2019          | Yes       | Yes         |           |           |
-| v0.15.0         | July 2019           | Yes       | Yes         |           |           |
-| v0.16.0         | September 2019      | No        | No          | Yes (\*2) |           |
-| v0.17.0         | October 2019        | Yes       | Yes         | Yes       |           |
-| v0.18.0         | January 2020 (\*1)  | Yes       | Yes         | Yes       |           |
-| v0.19.0         | March 2020 (\*1)    | No        | No          | No        | Yes (\*2) |
+| OpenJ9 release   | Release date        | JDK8 (LTS)| JDK11 (LTS) | JDK13     | JDK14     |
+|------------------|---------------------|-----------|-------------|-----------|-----------|
+| v 0.12.0         | January 2019        | Yes       | Yes         |           |           |
+| v 0.13.0         | March 2019          | No        | No          |           |           |
+| v 0.14.0         | April 2019          | Yes       | Yes         |           |           |
+| v 0.15.0         | July 2019           | Yes       | Yes         |           |           |
+| v 0.16.0         | September 2019      | No        | No          | Yes (\*2) |           |
+| v 0.17.0         | October 2019        | Yes       | Yes         | Yes       |           |
+| v 0.18.0         | January 2020 (\*1)  | Yes       | Yes         | Yes       |           |
+| v 0.19.0         | March 2020 (\*1)    | No        | No          | No        | Yes (\*2) |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 

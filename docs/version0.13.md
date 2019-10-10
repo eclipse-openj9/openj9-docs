@@ -25,7 +25,7 @@
 
 # What's new in version 0.13.0
 
-The following new features and notable changes since v.0.12.1 are included in this release:
+The following new features and notable changes since v 0.12.1 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies only to Java 12](cr/java12.png) [Support for OpenSSL 1.0.2](#support-for-openssl-102)
@@ -87,6 +87,6 @@ For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscave
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 V0.12.1 and V0.13.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.13/0.13.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.12.1 and v 0.13.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.13/0.13.md).
 
 <!-- ==== END OF TOPIC ==== version0.13.md ==== -->

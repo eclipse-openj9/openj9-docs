@@ -23,9 +23,9 @@
 -->
 
 
-# What's new in version 0.17
+# What's new in version 0.17.0
 
-The following new features and notable changes since v.0.16 are included in this release:
+The following new features and notable changes since v 0.16.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New shared classes cache suboptions for layered caches](#new-shared-classes-cache-suboptions-for-layered-caches)
@@ -105,12 +105,12 @@ For more information and an example of the new format, see [Java dump: HOOKS](du
 ### LUDCL caching disabled by default
 
 By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This
-capability is controlled by the [-Dcom.ibm.enableClassCaching](dcomibmenableclasscashing.md) system property and is now disabled by default due to [issue #7332](https://github.com/eclipse/openj9/issues/7332).
+capability is controlled by the [-Dcom.ibm.enableClassCaching](dcomibmenableclasscaching.md) system property and is now disabled by default due to [issue #7332](https://github.com/eclipse/openj9/issues/7332).
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Versions of the documentation before 0.17.0 incorrectly identified this property as disabled by default when it was actually enabled by default in the VM.
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 V0.16 and V0.17.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.17/0.17.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.16 and v 0.17.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.17/0.17.md).
 
 <!-- ==== END OF TOPIC ==== version0.17.md ==== -->

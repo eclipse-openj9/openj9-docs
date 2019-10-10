@@ -52,8 +52,8 @@ Complete platform support information for OpenJ9 can be found in [Supported envi
 ### Idle tuning feature
 
 The idle tuning feature in OpenJ9 keeps your memory footprint small by releasing unused memory back to the
-operating system. Prior to Eclipse v0.9.0 this feature was available only on Linux x86 architectures with the
-`gencon` garbage collection policy. From v0.9.0, this feature is now available on Linux for IBM POWER&reg; and IBM Z&reg; architectures.
+operating system. Prior to Eclipse v 0.9.0 this feature was available only on Linux x86 architectures with the
+`gencon` garbage collection policy. From v 0.9.0, this feature is now available on Linux for IBM POWER&reg; and IBM Z&reg; architectures.
 For more information about this feature, see the following command line options, which control this
 behavior:
 
@@ -137,5 +137,5 @@ For performance and compatibility with the new String object layout, the OpenJ9 
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 V0.8.0 and V0.9.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.9/0.9.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.8.0 and v 0.9.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.9/0.9.md).
 <!-- ==== END OF TOPIC ==== cmdline_general.md ==== -->
