@@ -25,7 +25,7 @@
 
 # What's new in version 0.11.0
 
-The following new features and notable changes since v.0.10.0 are included in this release:
+The following new features and notable changes since v 0.10.0 are included in this release:
 
 - [New binaries and changes to supported environments.](#binaries-and-supported-environments)
 - ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) [OpenSSL is now supported for improved native cryptographic performance](#openssl-is-now-supported-for-improved-native-cryptographic-performance)
@@ -117,5 +117,6 @@ For compatibility, the following OpenJDK Hotspot options are now supported by Op
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 V0.10.0 and V0.11.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.11/0.11.md).
-<!-- ==== END OF TOPIC ==== cmdline_general.md ==== -->
+To see a complete list of changes between Eclipse OpenJ9 v 0.10.0 and v 0.11.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.11/0.11.md).
+
+<!-- ==== END OF TOPIC ==== version0.11.md ==== -->
