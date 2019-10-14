@@ -3683,7 +3683,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <dl>
 <dd>Enables the JIT compiler to offload certain processing tasks to a graphics processing unit (GPU). The JIT determines which functions to offload based on performance heuristics. Systems must support NVIDIA Compute Unified Device Architecture (CUDA).  The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0.</dd>
 <dd>To troubleshoot operations between the JIT compiler and the GPU, use <code>-Xjit:enableGPU={verbose}</code>, which provides output showing the processing tasks that are offloaded and their status. To send this output to a file (<code>output.txt</code>), run <code>-Xjit:enableGPU={verbose},vlog=output.txt</code> when you start your application.</dd>
-<dd>The <code>-Xjit:enableGPU={enforce}</code> option can be used to ensure that all <code>Parallel().ForEach()</code> invocations that are recognized by the JIT are offloaded to the GPU. The <code>enforce</code> option stops the JIT checking performance heuristics to determine whether a data processing task might benefit from processing on the GPU instead of the CPU. This action helps you validate that operations between the JIT compiler and the GPU can proceed successfully. You can also include verbose logging by specifying <code>-Xjit:enableGPU={enforce|verbose}</code> for detailed information about the processing tasks.</dd>
 </dl>
 <h3 id="exclude"><code>exclude</code></h3>
 <pre><code>    -Xjit:exclude=&lt;method&gt;
