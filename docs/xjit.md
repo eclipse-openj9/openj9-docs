@@ -78,8 +78,6 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : To troubleshoot operations between the JIT compiler and the GPU, use `-Xjit:enableGPU={verbose}`, which provides output showing the processing tasks that are offloaded and their status. To send this output to a file (`output.txt`), run `-Xjit:enableGPU={verbose},vlog=output.txt` when you start your application.
 
-: The `-Xjit:enableGPU={enforce}` option can be used to ensure that all `Parallel().ForEach()` invocations that are recognized by the JIT are offloaded to the GPU. The `enforce` option stops the JIT checking performance heuristics to determine whether a data processing task might benefit from processing on the GPU instead of the CPU. This action helps you validate that operations between the JIT compiler and the GPU can proceed successfully. You can also include verbose logging by specifying `-Xjit:enableGPU={enforce|verbose}` for detailed information about the processing tasks.
-
 ### `exclude`
 
         -Xjit:exclude=<method>
