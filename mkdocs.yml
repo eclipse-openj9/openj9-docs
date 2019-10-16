@@ -177,6 +177,7 @@ pages:
             - "-Dcom.ibm.gpu.disable"                                            : dcomibmgpudisable.md
             - "-Dcom.ibm.gpu.enable"                                             : dcomibmgpuenable.md
             - "-Dcom.ibm.gpu.verbose"                                            : dcomibmgpuverbose.md
+            - "-Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns"   : dcomibmlangmanagementosmxbeaniscputime100ns.md
             - "-Dcom.ibm.lang.management.verbose"                                : dcomibmlangmanagementverbose.md
             - "-Dcom.ibm.tools.attach.directory"                                 : dcomibmtoolsattachdirectory.md
             - "-Dcom.ibm.tools.attach.displayName"                               : dcomibmtoolsattachdisplayname.md
