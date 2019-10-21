@@ -67,6 +67,7 @@ switch (params.BUILD_TYPE) {
         }
         CLONE_BRANCH = "refs/heads/${RELEASE_BRANCH}"
         SERVER = 'Eclipse'
+        ZIP_FILENAME="${RELEASE_BRANCH}.zip"
         break
     default:
         error("Unknown BUILD_TYPE:'${params.BUILD_TYPE}'")
@@ -127,11 +128,11 @@ timeout(time: 6, unit: 'HOURS') {
                                 if (params.BUILD_TYPE == "PR") {
                                     dir("${ghprbPullId}") {
                                         copy_built_doc(BUILD_DIR)
-                                        push_doc_with_cred(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
+                                        push_doc_with_cred(PUSH_REPO, PUSH_BRANCH, "Generated from commit: ${MERGE_COMMIT}")
                                     }
                                 } else {
                                     copy_built_doc(BUILD_DIR)
-                                    push_doc_with_cred(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
+                                    push_doc_with_cred(PUSH_REPO, PUSH_BRANCH, "Generated from commit: ${MERGE_COMMIT}")
                                     // Set status on the Github commit for merge builds
                                     setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
                                 }
@@ -141,6 +142,25 @@ timeout(time: 6, unit: 'HOURS') {
                         dir(BUILD_DIR) {
                             sh "tar -zcf ${ARCHIVE} site/"
                             stash includes: "${ARCHIVE}", name: 'doc'
+
+                            // Cleanup and rebuild the Doc for push to Github repo as a downlaodable zip.
+                            // Build, save zip file, cleanup and checkout master branch, bring back zip file and commit/push.
+                            sh """
+                                git clean -ffxd
+                                git status
+                                sed -i "s|site_dir: 'site'|use_directory_urls: false\\nsite_dir: 'site'|" mkdocs.yml
+                                mkdocs build -v
+                                cd site
+                                zip -r ${ZIP_FILENAME} *
+                                mv ${ZIP_FILENAME} ${WORKSPACE}/
+                                cd ..
+                                git clean -ffxd
+                                git reset --hard
+                                git status
+                                git checkout master
+                                mv ${WORKSPACE}/${ZIP_FILENAME} downloads/
+                            """
+                            push_doc_with_cred(OPENJ9_REPO, 'master', "Add zip download of ${RELEASE_BRANCH} release user documentation")
                         }
                     }
                 } // Exit container
@@ -155,7 +175,7 @@ timeout(time: 6, unit: 'HOURS') {
                             git branch: PUSH_BRANCH, url: PUSH_REPO, credentialsId: SSH_CREDENTIAL_ID
                             copy_built_doc(BUILD_DIR)
                             sshagent(credentials:["${SSH_CREDENTIAL_ID}"]) {
-                                push_doc(PUSH_REPO, PUSH_BRANCH, MERGE_COMMIT)
+                                push_doc(PUSH_REPO, PUSH_BRANCH, "Generated from commit: ${MERGE_COMMIT}")
                             }
                         }
                         // Set status on the Github commit for release builds
@@ -181,19 +201,19 @@ def copy_built_doc(DIR) {
     sh "cp -r ${WORKSPACE}/${DIR}/site/* ."
 }
 
-def push_doc_with_cred(REPO, BRANCH, SHA){
+def push_doc_with_cred(REPO, BRANCH, MESSAGE){
     withCredentials([usernamePassword(credentialsId: CREDENTIAL_ID, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-        push_doc("${HTTP}${USERNAME}:${PASSWORD}@${REPO}", BRANCH, SHA)
+        push_doc("${HTTP}${USERNAME}:${PASSWORD}@${REPO}", BRANCH, MESSAGE)
     }
 }
-def push_doc(REPO, BRANCH, SHA) {
+def push_doc(REPO, BRANCH, MESSAGE) {
     sh "git status"
     STATUS = sh (script: 'git status --porcelain', returnStdout: true).trim()
     if ("x${STATUS}" != "x") {
         sh 'git config user.name "genie-openj9"'
         sh 'git config user.email "openj9-bot@eclipse.org"'
         sh 'git add .'
-        sh "git commit -m 'Generated from commit: ${SHA}'"
+        sh "git commit -sm '${MESSAGE}'"
         sh "git push ${REPO} ${BRANCH}"
     }
 }
