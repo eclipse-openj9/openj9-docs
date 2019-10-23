@@ -28,6 +28,7 @@
 The following new features and notable changes since v 0.17.0 are included in this release:
 
 - [jextract now available on macOS for OpenJDK version 8](#jextract-now-available-on-macos-for-openjdk-version-8)
+- [New shared classes cache suboption to turn off timestamp checking](#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking)
 - [Add more changes here...](#add-more-changes-here)
 
 
@@ -36,6 +37,10 @@ The following new features and notable changes since v 0.17.0 are included in th
 ### jextract now available on macOS for OpenJDK version 8
 
 The [`jextract` tool](tool_jextract.md) is now available on macOS&reg; platforms (as well as AIX&reg; and Linux&trade;) for _all_ current versions of OpenJDK: 8, 11, and 13.
+
+### New shared classes cache suboption to turn off timestamp checking
+
+You can set the `-Xshareclasses:noTimestampChecks` option to turn off timestamp checking in shared classes. For more information, see the [-Xshareclasses:noTimestampChecks](xshareclasses.md#notimestampchecks) option.
 
 ### Add more changes here...
 
