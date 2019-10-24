@@ -31,13 +31,9 @@ To find out the large page sizes available and the current setting, use the `-ve
 
 ## Syntax
 
-AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade;:
+AIX&reg;, Linux&reg;, macOS&reg;, Windows&trade; and Z/OS&reg;:
 
         -Xlp:objectheap:pagesize=<size>[,strict|warn]
-
-z/OS&reg;:
-
-        -Xlp:objectheap:pagesize=<size>[,strict|warn][,pageable|nonpageable]
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
@@ -60,6 +56,8 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
     - On other architectures, the VM uses the default operating system page size.
 
 : On macOS, the default page size is 4 KB.
+
+: On Z/OS&reg If both 1M pageable, and nonpageable large pages are available then 1M pageable large pages will be used by default if [non]pageable is not specified.
 
 ### `strict` | `warn`
 
