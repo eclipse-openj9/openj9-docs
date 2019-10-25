@@ -410,6 +410,12 @@ case, the VM continues without using shared classes.
 
 :   Disables the storage of classes that are loaded by the bootstrap class loader in the shared classes cache. Often used with the `SharedClassURLFilter` API to control exactly which classes are cached. For more information about shared class filtering, see [Using the SharedClassHelper API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_class.html).
 
+### `noTimestampChecks`
+
+        -Xshareclasses:noTimestampChecks
+
+:   Turns off timestamp checking when finding classes in the shared cache. Use this option only when you know there are no updates to the classes from the class paths or module paths in your application. Otherwise, obsolete classes might be loaded from the shared cache. If this happens, remove the `noTimestampChecks` option.
+
 ### `nocheckURLTimestamps`
 
         -Xshareclasses:nocheckURLTimestamps
