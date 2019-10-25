@@ -2656,6 +2656,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#notimestampchecks" title="noTimestampChecks" class="md-nav__link">
+    noTimestampChecks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#nocheckurltimestamps" title="nocheckURLTimestamps" class="md-nav__link">
     nocheckURLTimestamps
   </a>
@@ -3985,6 +3992,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#notimestampchecks" title="noTimestampChecks" class="md-nav__link">
+    noTimestampChecks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#nocheckurltimestamps" title="nocheckURLTimestamps" class="md-nav__link">
     nocheckURLTimestamps
   </a>
@@ -4619,6 +4633,12 @@ Cache1                  Java8 64-bit  persistent      cr              2         
 </code></pre>
 <dl>
 <dd>Disables the storage of classes that are loaded by the bootstrap class loader in the shared classes cache. Often used with the <code>SharedClassURLFilter</code> API to control exactly which classes are cached. For more information about shared class filtering, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_class.html">Using the SharedClassHelper API</a>.</dd>
+</dl>
+<h3 id="notimestampchecks"><code>noTimestampChecks</code></h3>
+<pre><code>    -Xshareclasses:noTimestampChecks
+</code></pre>
+<dl>
+<dd>Turns off timestamp checking when finding classes in the shared cache. Use this option only when you know there are no updates to the classes from the class paths or module paths in your application. Otherwise, obsolete classes might be loaded from the shared cache. If this happens, remove the <code>noTimestampChecks</code> option.</dd>
 </dl>
 <h3 id="nocheckurltimestamps"><code>nocheckURLTimestamps</code></h3>
 <pre><code>    -Xshareclasses:nocheckURLTimestamps
