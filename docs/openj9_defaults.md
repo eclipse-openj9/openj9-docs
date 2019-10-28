@@ -81,7 +81,7 @@ The last 2 columns show whether the default setting can be changed by a command-
 |Maximum stack size for Java Threads **(32-bit)**. Use `-Xss<size>`  |320 KB    |320 KB    |N/A              |320 KB           |320 KB    |<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>| <i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span> |
 |Maximum stack size for Java Threads **(64-bit)**. Use `-Xss<size>`  |1024 KB   |1024 KB   |1024 KB          |1024 KB          |1024 KB   |<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>| <i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span> |
 |Stack size for OS Threads **(32-bit)**. Use `-Xmso<size>`           |256 KB    |256 KB    |N/A              |32 KB            |256 KB    |<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>| <i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span> |
-|Stack size for OS Threads **(64-bit)**. Use `-Xmso<size>`           |256 KB    |256 KB    |256 KB           |256 KB           |1 MB    |<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>| <i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span> |
+|Stack size for OS Threads **(64-bit)**. Use `-Xmso<size>`           |256 KB    |256 KB    |256 KB           |256 KB           |1 MB      |<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>| <i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span> |
 |Initial heap size. Use `-Xms<size>`                           |8 MB      |8 MB      |8 MB             |8 MB             |8 MB      |<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>| <i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span> |
 |Maximum Java heap size. Use `-Xmx<size>`                      |See **Notes**|See **Notes**|See **Notes**|See **Notes**|See **Notes**|<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>| <i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span> |
 |Page size for the Java object heap and code cache (For restrictions, see the `-Xlp:codecache` and `-Xlp:objectheap` options).|Operating system default                                                           |Architecture: x86: 2MB, IBM Z&reg;: 1MB, Other architectures: Operating system default |4 KB        | Operating system default | 1M pageable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>  | <i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span>                                                                                                                                                                                                                                                                            
@@ -89,7 +89,7 @@ The last 2 columns show whether the default setting can be changed by a command-
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
-The default value of `-Xmx` depends on the version of Java.
+The default value of [`-Xmx`](xms.md) depends on the version of Java.
 
 - ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) The value is half the available memory with a minimum of 16MB and a maximum of 512 MB. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
