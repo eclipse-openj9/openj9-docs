@@ -31,6 +31,7 @@ The following new features and notable changes since v 0.17.0 are included in th
 - [New shared classes cache suboption to turn off timestamp checking](#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking)
 - [`-Xmso` 1 MB minimum value on z/OS 64-bit](#-xmso-1-mb-minimum-value-on-zos-64-bit)
 - [Add new Xdump exit agent and ExitOnOutOfMemoryError option](#add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option)
+- [LUDCL caching enabled by default](#ludcl-caching-enabled-by-default)
 - [Add more changes here...](#add-more-changes-here)
 
 
@@ -55,6 +56,10 @@ The new Xdump agent "exit" shuts down the VM when the specified event occurs. Th
 OpenJ9 now supports the HotSpot option `-XX:[+-]ExitOnOutOfMemoryError`. You can set this option to have the VM shut down when a java.lang.OutOfMemory error is thrown by the VM or in Java code. See the [-XX:[+-]ExitOnOutOfMemoryError](xxexitonoutofmemory.md) option.
 
 The Xdump "exit" agent is used in the implementation of `-XX:[+-]ExitOnOutOfMemoryError`.
+
+### LUDCL caching enabled by default
+By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This
+capability is controlled by the [-Dcom.ibm.enableClassCaching](dcomibmenableclasscaching.md) system property and is now enabled by default. This feature was disabled for the 0.17.0 release due to [issue #7332](https://github.com/eclipse/openj9/issues/7332) which has now been resolved.
 
 ### Add more changes here...
 
