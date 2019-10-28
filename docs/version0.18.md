@@ -30,6 +30,7 @@ The following new features and notable changes since v 0.17.0 are included in th
 - [jextract now available on macOS for OpenJDK version 8](#jextract-now-available-on-macos-for-openjdk-version-8)
 - [New shared classes cache suboption to turn off timestamp checking](#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking)
 - [`-Xmso` 1 MB minimum value on z/OS 64-bit](#-xmso-1-mb-minimum-value-on-zos-64-bit)
+- [New Java&trade; statistics monitoring (`jstat`) tool](#new-jstat-tool)
 - [Add more changes here...](#add-more-changes-here)
 
 
@@ -46,6 +47,10 @@ You can set the `-Xshareclasses:noTimestampChecks` option to turn off timestamp 
 ### `-Xmso` 1 MB minimum value on z/OS 64-bit
 
 On z/OS 64-bit, [`-Xmso`](xmso.md) has a 1 MB minimum value, to match the minimum stack space provided by the operating system. If you set a value smaller than 1 MB, the value is ignored.
+
+### New jstat tool
+
+For compatibility with the reference implementation, OpenJ9 now includes an independent implementation of the `jstat` tool for retrieving statistics on a VM. For more information, see [Java statistics monitoring tool](tool_jstat.md).
 
 ### Add more changes here...
 

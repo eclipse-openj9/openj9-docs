@@ -71,5 +71,10 @@ Displays information about Java stack traces and thread information for processe
 
 For more information, see [`jstack`](tool_jstack.md).
 
+#### Java statistics monitoring (`jstat`) tool
+
+Displays information about Java statistics for processes. The main difference from the HotSpot `jstat` tool is that this tool only provides the number of classes loaded and the number of class unloaded.
+
+For more information, see [`jstat`](tool_jstat.md).
 
 <!-- ==== END OF TOPIC ==== tools_migration.md ==== -->
