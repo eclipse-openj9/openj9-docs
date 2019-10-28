@@ -66,8 +66,8 @@ Use **pip** to install the other components, reusing the **requirements.txt** fi
 
 Next:
 
-- Fork the repository: https://github.ibm.com/runtimes/openj9-docs
-- Clone the repository: `git clone git@github.ibm.com:<your_github_account>/openj9-docs.git`
+- Fork the repository: https://github.com/eclipse/openj9-docs
+- Clone the repository: `git clone git@github.com:<your_github_account>/openj9-docs.git`
 
 If you are working on a Windows<sup>&trade;</sup> system, set the following Git configuration, which allows you to edit with Windows line endings (CRLF), but converts to Unix-style endings (LF) when you push changes:
 
