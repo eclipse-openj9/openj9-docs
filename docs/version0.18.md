@@ -30,6 +30,7 @@ The following new features and notable changes since v 0.17.0 are included in th
 - [jextract now available on macOS for OpenJDK version 8](#jextract-now-available-on-macos-for-openjdk-version-8)
 - [New shared classes cache suboption to turn off timestamp checking](#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking)
 - [`-Xmso` 1 MB minimum value on z/OS 64-bit](#-xmso-1-mb-minimum-value-on-zos-64-bit)
+- [Add new Xdump exit agent and ExitOnOutOfMemoryError option](#add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option)
 - [Add more changes here...](#add-more-changes-here)
 
 
@@ -46,6 +47,14 @@ You can set the `-Xshareclasses:noTimestampChecks` option to turn off timestamp 
 ### `-Xmso` 1 MB minimum value on z/OS 64-bit
 
 On z/OS 64-bit, [`-Xmso`](xmso.md) has a 1 MB minimum value, to match the minimum stack space provided by the operating system. If you set a value smaller than 1 MB, the value is ignored.
+
+### Add new Xdump exit agent and ExitOnOutOfMemoryError option
+
+The new Xdump agent "exit" shuts down the VM when the specified event occurs. The "exit" agent is at priority level 0 and "tool" agent has been moved to priority level 1 to aid in mimicking the behavior of HotSpot options. See [Xdump dump agents](xdump.md#dump-agents) for more about agents.
+
+OpenJ9 now supports the HotSpot option `-XX:[+-]ExitOnOutOfMemoryError`. You can set this option to have the VM shut down when a java.lang.OutOfMemory error is thrown by the VM or in Java code. See the [-XX:[+-]ExitOnOutOfMemoryError](xxexitonoutofmemory.md) option.
+
+The Xdump "exit" agent is used in the implementation of `-XX:[+-]ExitOnOutOfMemoryError`.
 
 ### Add more changes here...
 
