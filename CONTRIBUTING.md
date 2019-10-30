@@ -253,7 +253,10 @@ When you've made the changes that you want to contribute, build and preview the 
 ## Submitting a contribution
 
 When you are happy with your changes, create a pull request, following the guidelines for submitting a contribution to OpenJ9 [here](https://github.com/eclipse/openj9/blob/master/CONTRIBUTING.md).
+
 In particular, if your changes address an issue, quote the issue number in the commit message.
+
+If there is still work to be done (either in the docs or in the code) after you create your pull request, add a "WIP" prefix to the title.
 
 ### Previewing pull requests
 
@@ -272,8 +275,12 @@ _(whitelisted users only)_
 
 Project committers are responsible for checking pull requests and merging changes.
 
-When PR requests are merged, the documentation is published to the gh-pages branch of the https://github.com/eclipse/openj9-docs repository as part of the "current working draft" at the following URL:
+Pull requests must not be merged before the code PRs are merged. Before merging, make sure that there is not work continuing (usually indicated by a "WIP" prefix on the pull request title).
+
+When pull requests are merged, the documentation is published to the gh-pages branch of the https://github.com/eclipse/openj9-docs repository as part of the "current working draft" at the following URL:
 
 https://eclipse.github.io/openj9-docs
 
-When released, the latest version of Eclipse OpenJ9 is published to https://www.eclipse.org/openj9/docs.
+When released, the latest version of Eclipse OpenJ9 is published at:
+
+https://www.eclipse.org/openj9/docs
