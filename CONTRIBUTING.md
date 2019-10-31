@@ -102,7 +102,7 @@ The key configuration file for the documentation is the `/mkdocs.yml` file, whic
 Under `pages:` in the `.yml` file, topics are added and indented to reflect their position in the table of contents. Care must be taken to preserve the indentation when making changes to this file.
 
 If you want to add a new file, see [Document files](#document-files) about file naming, and follow the existing structure and layout when you add a reference to it in the `.yml` file.
-Insert new options in the appropriate position in the list, which is typically arranged in alphabetical order.
+Insert new options in the appropriate position in the list, which is typically arranged in alphabetical order within a section.
 
 **Note:** From version 1.0 of MkDocs, the `pages:` section is renamed to `nav:`
 
@@ -128,7 +128,7 @@ Some examples:
 
 For consistency across the user documentation, there are a few style guidelines that you should follow.
 These are not set in stone, so if you have any suggestions or concerns, open up a discussion in the [Slack channel](https://openj9.slack.com/).
-Join the channel [here](https://www.eclipse.org/openj9/oj9_joinslack.html).
+If you haven't done so already, [join the channel](https://www.eclipse.org/openj9/oj9_joinslack.html).
 
 Generally, follow the style and structure of existing topics.
 If you are creating a new topic, you might find it helpful to copy a similar existing topic and modify it. (Don't forget to modify the file name in the footer!)
@@ -245,7 +245,7 @@ The accessibility of the documentation to users with disabilities is important t
 
 ## Testing your changes locally
 
-When you've made the changes that you want to contribute, build and preview the website. If you set up an MkDocs environment locally, follow these steps:
+When you've made the changes that you want to contribute, build and preview the website. If you have [set up an MkDocs environment locally](#setting-up-a-local-mkdocs-environment), follow these steps:
 
 - Run `mkdocs serve`.
 - Open a browser and view the following URL: http://127.0.0.1:8008 (specifically, the URL set in the `dev_addr:` section of the `mkdocs.yml` file.
@@ -256,7 +256,7 @@ When you are happy with your changes, create a pull request, following the guide
 
 In particular, if your changes address an issue, quote the issue number in the commit message.
 
-If there is still work to be done (either in the docs or in the code) after you create your pull request, add a "WIP" prefix to the title.
+If work is ongoing, or if there is further work to be done after you create your pull request, (either in the docs or in the code) add a "WIP" (Work In Progress) prefix to the title.
 
 ### Previewing pull requests
 
@@ -275,7 +275,9 @@ _(whitelisted users only)_
 
 Project committers are responsible for checking pull requests and merging changes.
 
-Pull requests must not be merged before the code PRs are merged. Before merging, make sure that there is not work continuing (usually indicated by a "WIP" prefix on the pull request title).
+Documentation pull requests must not be merged before code pull requests are merged in case subsequent code changes alter the documented behavior.
+
+Before merging, check with the developers involved and make sure that there is not work still to be done. This is usually indicated by a "WIP" prefix on the pull request title.
 
 When pull requests are merged, the documentation is published to the gh-pages branch of the https://github.com/eclipse/openj9-docs repository as part of the "current working draft" at the following URL:
 
