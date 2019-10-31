@@ -199,7 +199,7 @@ Here are some examples:
 
 In each topic, the _first occurence only_ of trademarked names should be marked appropriately. Here are some examples that you might come across: 
 
-AIX&reg;, Hotspot&trade;, IBM&reg;, IBM z15&reg;, Java&trade;, Linux&reg;, Linux on IBM Z&reg;, Linux on Power Systems&trade;, macOS&reg;, MVS&trade;, OpenJ9 VM Language Environment&reg;, Oracle&reg;, Windows&trade;, z/OS&reg;.
+AIX&reg;, IBM&reg;, IBM z15&reg;, Java&trade;, Linux&reg;, Linux on IBM Z&reg;, Linux on Power Systems&trade;, macOS&reg;, MVS&trade;, OpenJ9 VM Language Environment&reg;, Oracle&reg;, Windows&trade;, z/OS&reg;.
 
 Mark trademarks&trade; with `&trade;` (as in `Java&trade;`) and registered trademarks&reg; with `&reg;` (as in `Linux&reg;`).
 
