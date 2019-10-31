@@ -135,7 +135,7 @@ If you haven't done so already, [join the channel](https://www.eclipse.org/openj
 Generally, follow the style and structure of existing topics.
 If you are creating a new topic, you might find it helpful to copy a similar existing topic and modify it. (Don't forget to modify the file name in the footer!)
 
-However you create a new topic, you must ensure that the header comment with copyright and license information is copied exactly as it is from an existing topic.
+However you create a new topic, you must ensure that the header comment with copyright and license information is copied exactly as it is from an existing topic. _Do not_ change either of the copyright dates, even for a new topic; the dates refer to the complete documentation set, not to individual files and so should be the same in all topics.
 
 ### Writing tips
 
