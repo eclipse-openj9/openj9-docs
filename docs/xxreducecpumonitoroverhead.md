@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]ReduceCPUMonitorOverhead
 
-**(AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; only)**
+**(AIX&reg;, Linux&trade;, macOS&reg;, and Windows&trade; only)**
 
 This option relates to the CPU usage of thread categories that can be obtained with the `com.ibm.lang.management.JvmCpuMonitorMXBean` application programming interface. This option affects the way that the VM records the amount of CPU usage of non-Garbage Collection (GC) threads that do work on behalf of GC.
 

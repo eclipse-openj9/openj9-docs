@@ -33,7 +33,7 @@ Although the OpenJ9 virtual machine (VM) recognizes many environment variables, 
 To show the current environment, run:
 
 -   `set` (Windows&trade;)
--   `env` (AIX&reg;, Linux&reg;, and macOS&reg;)
+-   `env` (AIX&reg;, Linux&trade;, and macOS&reg;)
 -   `set` (z/OS&reg;)
 
 To show a particular environment variable, run:

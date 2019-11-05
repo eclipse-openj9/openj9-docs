@@ -37,7 +37,7 @@ Controls the behavior of the garbage collector by specifying different garbage c
 |---------------------------------------------------------------------------|----------|
 | [`balanced`](#balanced)                                                   |          |
 | [`gencon`](#gencon)                                                       | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| [`metronome`](#metronome-aix-linux-only) (AIX&reg;, Linux&reg; x86 only)  |          |
+| [`metronome`](#metronome-aix-linux-only) (AIX&reg;, Linux&trade; x86 only)  |          |
 | [`nogc`](#nogc)                                                           |          |
 | [`optavgpause`](#optavgpause)                                             |          |
 | [`optthruput`](#optthruput)                                               |          |

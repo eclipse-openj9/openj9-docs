@@ -89,7 +89,7 @@ For more information about AIX logging, see: [Error-logging overview](http://www
 
 ### Finding Linux messages
 
-On Linux&reg;, messages are logged by the **syslog** daemon. To find where messages are logged, check the syslog configuration file.
+On Linux&trade;, messages are logged by the **syslog** daemon. To find where messages are logged, check the syslog configuration file.
 
 ### Finding macOS messages
 

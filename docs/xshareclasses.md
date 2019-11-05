@@ -42,7 +42,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
   - For 64-bit platforms, the default size is 300 MB, with a "soft" maximum limit for the initial size of the cache (`-Xscmx`) of 64MB, with the following exceptions:
     - For a persistent cache, if the free disk space is less than 6 GB, the default size is set to 64 MB and an `-Xscmx` size is not set.
-    - For a non-persistent cache on Linux&reg; or macOS&reg; systems, the cache size is limited by the maximum amount of memory that can be reserved by a process (`SHMMAX`). If `SHMMAX` is less than 300MB, the default shared cache size is set to equal `SHMMAX`. If `SHMMAX` is greater than 80 MB, `-Xscmx` is set to 64 MB. If `SHMMAX` is less than 80MB an `-Xscmx` size is not set.
+    - For a non-persistent cache on Linux&trade; or macOS&reg; systems, the cache size is limited by the maximum amount of memory that can be reserved by a process (`SHMMAX`). If `SHMMAX` is less than 300MB, the default shared cache size is set to equal `SHMMAX`. If `SHMMAX` is greater than 80 MB, `-Xscmx` is set to 64 MB. If `SHMMAX` is less than 80MB an `-Xscmx` size is not set.
   - For other platforms, the default size is 16MB.
 
 ## Parameters

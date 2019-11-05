@@ -35,7 +35,7 @@ You can use the `-Xcheck` option to run checks during OpenJ9 virtual machine (VM
 | Parameter                |  Effect                                                                                                        |
 |--------------------------|----------------------------------------------------------------------------------------------------------------|
 | [`classpath`](#classpath)| Checks the classpath and reports errors such as a missing directory or JAR file.                               |
-| [`dump`](#dump)          | Checks the operating system for settings that might truncate system dumps. (AIX&reg; and Linux&reg; only)|
+| [`dump`](#dump)          | Checks the operating system for settings that might truncate system dumps. (AIX&reg; and Linux&trade; only)|
 | [`gc`](#gc)              | Runs additional checks on garbage collection.                                                                  |
 | [`jni`](#jni)            | Runs additional checks for JNI functions.                                                                      |
 | [`memory`](#memory)      | Identifies memory leaks inside the VM using strict checks that cause the VM to exit on failure.                |

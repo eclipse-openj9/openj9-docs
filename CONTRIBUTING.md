@@ -155,7 +155,7 @@ Make your contributions valuable to all users, including those who have English 
 Although OpenJ9 supports a number of platforms and architectures, there might be different configuration and tuning options, or different default behavior.
 When adding content to the user documentation that does not apply to all environments, call it out. For example:
 
-      **(Linux&reg; only)**
+      **(Linux&trade; only)**
 
 If content is not marked it should apply to any platform.
 
@@ -199,9 +199,9 @@ Here are some examples:
 
 In each topic, the _first occurence only_ of trademarked names should be marked appropriately. Here are some examples that you might come across: 
 
-AIX&reg;, IBM&reg;, IBM z15&reg;, Java&trade;, Linux&reg;, Linux on IBM Z&reg;, Linux on Power Systems&trade;, macOS&reg;, MVS&trade;, OpenJ9 VM Language Environment&reg;, Oracle&reg;, Windows&trade;, z/OS&reg;.
+AIX&reg;, IBM&reg;, IBM z15&reg;, Java&trade;, Linux&trade;, Linux on IBM Z&reg;, Linux on Power Systems&trade;, macOS&reg;, MVS&trade;, OpenJ9 VM Language Environment&reg;, Oracle&reg;, Windows&trade;, z/OS&reg;.
 
-Mark trademarks&trade; with `&trade;` (as in `Java&trade;`) and registered trademarks&reg; with `&reg;` (as in `Linux&reg;`).
+Mark trademarks&trade; with `&trade;` (as in `Java&trade;`) and registered trademarks&reg; with `&reg;` (as in `Linux&trade;`).
 
 ### Using images
 

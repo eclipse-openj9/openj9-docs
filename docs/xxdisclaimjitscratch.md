@@ -26,7 +26,7 @@
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This option is deprecated; the option is accepted but ignored.
 
-**(Linux&reg; only)**
+**(Linux&trade; only)**
 
 The `-XX:+DisclaimJitScratch` option signals to the operating system to discard temporary physical memory that is consumed by the JIT compilation threads.
 

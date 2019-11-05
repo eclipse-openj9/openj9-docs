@@ -24,7 +24,7 @@
 
 # -XX:IdleTuningMinFreeHeapOnIdle
 
-**(Linux&reg; only)**
+**(Linux&trade; only)**
 
 This option controls the percentage of free memory pages in the object heap that can be released when the OpenJ9 VM is in an idle state.
 
