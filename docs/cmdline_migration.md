@@ -48,6 +48,7 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-Xverify:mode`](xverify.md)                                    | Enables or disables the verifier.                                                                                                            |
 | [`-XX:[+|-]CompactStrings`](xxcompactstrings.md)                 | Enables/disables `String` compression                                                                                                        |
 | [`-XX:[+|-]DisableExplicitGC`](xxdisableexplicitgc.md)           | Enables/disables `System.gc()` calls. (Alias for [`-Xdisableexplicitgc` / `-Xenableexplicitgc`](xenableexplicitgc.md))                       |
+| [`-XX:[+|-]ExitOnOutOfMemory`](xxexitonoutofmemory.md)   | Triggers VM shut down on out-of-memory conditions.                                                                                          |
 | [`-XX:[+|-]HeapDumpOnOutOfMemory`](xxheapdumponoutofmemory.md)   | Enables/disables dumps on out-of-memory conditions.                                                                                          |
 | [`-XX:HeapDumpPath`](xxheapdumppath.md)                          | Specifies a directory for all VM dumps including heap dumps, javacores, and system dumps. (Alias for [`-Xdump:directory`](xdump.md#syntax))  |
 | [`-XX:[+|-]IgnoreUnrecognizedVMOptions`](xxignoreunrecognizedvmoptions.md) | Specifies whether to ignore unrecognized top-level VM options |                                                       |
