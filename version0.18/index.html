@@ -421,6 +421,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option" title="Add new Xdump exit agent and ExitOnOutOfMemoryError option" class="md-nav__link">
+    Add new Xdump exit agent and ExitOnOutOfMemoryError option
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#add-more-changes-here" title="Add more changes here..." class="md-nav__link">
     Add more changes here...
   </a>
@@ -2791,6 +2798,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxexitonoutofmemory/" title="-XX:[+|-]ExitOnOutOfMemory" class="md-nav__link">
+      -XX:[+|-]ExitOnOutOfMemory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxhandlesigxfsz/" title="-XX:[+|-]handleSIGXFSZ" class="md-nav__link">
       -XX:[+|-]handleSIGXFSZ
     </a>
@@ -3409,6 +3428,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option" title="Add new Xdump exit agent and ExitOnOutOfMemoryError option" class="md-nav__link">
+    Add new Xdump exit agent and ExitOnOutOfMemoryError option
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#add-more-changes-here" title="Add more changes here..." class="md-nav__link">
     Add more changes here...
   </a>
@@ -3478,6 +3504,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#jextract-now-available-on-macos-for-openjdk-version-8">jextract now available on macOS for OpenJDK version 8</a></li>
 <li><a href="#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking">New shared classes cache suboption to turn off timestamp checking</a></li>
 <li><a href="#-xmso-1-mb-minimum-value-on-zos-64-bit"><code>-Xmso</code> 1 MB minimum value on z/OS 64-bit</a></li>
+<li><a href="#add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option">Add new Xdump exit agent and ExitOnOutOfMemoryError option</a></li>
 <li><a href="#add-more-changes-here">Add more changes here...</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -3487,6 +3514,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>You can set the <code>-Xshareclasses:noTimestampChecks</code> option to turn off timestamp checking in shared classes. For more information, see the <a href="../xshareclasses/#notimestampchecks">-Xshareclasses:noTimestampChecks</a> option.</p>
 <h3 id="-xmso-1-mb-minimum-value-on-zos-64-bit"><code>-Xmso</code> 1 MB minimum value on z/OS 64-bit</h3>
 <p>On z/OS 64-bit, <a href="../xmso/"><code>-Xmso</code></a> has a 1 MB minimum value, to match the minimum stack space provided by the operating system. If you set a value smaller than 1 MB, the value is ignored.</p>
+<h3 id="add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option">Add new Xdump exit agent and ExitOnOutOfMemoryError option</h3>
+<p>The new Xdump agent "exit" shuts down the VM when the specified event occurs. The "exit" agent is at priority level 0 and "tool" agent has been moved to priority level 1 to aid in mimicking the behavior of HotSpot options. See <a href="../xdump/#dump-agents">Xdump dump agents</a> for more about agents.</p>
+<p>OpenJ9 now supports the HotSpot option <code>-XX:[+-]ExitOnOutOfMemoryError</code>. You can set this option to have the VM shut down when a java.lang.OutOfMemory error is thrown by the VM or in Java code. See the <a href="../xxexitonoutofmemory/">-XX:[+-]ExitOnOutOfMemoryError</a> option.</p>
+<p>The Xdump "exit" agent is used in the implementation of <code>-XX:[+-]ExitOnOutOfMemoryError</code>.</p>
 <h3 id="add-more-changes-here">Add more changes here...</h3>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.17.0 and v 0.18.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.18/0.18.md">Release notes</a>.</p>
