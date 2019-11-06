@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]IgnoreUnrecognizedVMOptions
 
-This Oracle option affects the behavior of the Hotspot JVM when it finds an unrecognized top-level option at startup. This option is implemented in the OpenJ9 VM for compatibility.
+This Oracle option affects the behavior of the HotSpot JVM when it finds an unrecognized top-level option at startup. This option is implemented in the OpenJ9 VM for compatibility.
 
 ## Syntax
 

@@ -24,14 +24,14 @@
 
 # -XX:\[+|-\]IdleTuningCompactOnIdle
 
-**(Linux&trade; only)**
+**(Linux&reg; only)**
 
 This option controls garbage collection processing with compaction when the state of the OpenJ9 VM is set to idle.
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
   
 1. This option was deprecated in release 0.15.0 and will be removed in the future.
-2. This option applies only to Linux&trade; architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use.
+2. This option applies only to Linux&reg; architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use.
 3. This option is not effective if the object heap is configured to use large pages.
 4. This option is not effective if [XX:+IdleTuningGcOnIdle](xxidletuninggconidle.md) is not specified.
 

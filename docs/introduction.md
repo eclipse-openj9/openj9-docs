@@ -26,7 +26,7 @@
 
 OpenJ9 is a high performance, scalable, Java&trade; virtual machine (VM) implementation that is fully compliant with the [Java Virtual Machine Specification](https://docs.oracle.com/javase/specs/index.html).
 
-At run time, the VM interprets the Java bytecode that is compiled by the Java compiler. The VM acts as a translator between the language and the underlying operating system and hardware. A Java program requires a specific VM to run on a particular platform, such as Linux&trade;, z/OS&reg;, or Windows&trade;.
+At run time, the VM interprets the Java bytecode that is compiled by the Java compiler. The VM acts as a translator between the language and the underlying operating system and hardware. A Java program requires a specific VM to run on a particular platform, such as Linux&reg;, z/OS&reg;, or Windows&trade;.
 
 This reference material provides information about the VM configuration and tuning options, together with the default settings.
 

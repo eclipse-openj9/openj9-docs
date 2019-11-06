@@ -24,7 +24,7 @@
 
 # Dump extractor (`jextract`)
 
-**(AIX&reg;, Linux&trade;, macOS&reg;)**
+**(AIX&reg;, Linux&reg;, macOS&reg;)**
 
 On some operating systems, copies of executable files and libraries are required for a full analysis of a core dump (you can get some information from the dump without these files, but not as much). Run the `jextract` utility to collect these extra files and package them into an archive file along with the core dump. To analyze the output, use the [dump viewer (`jdmpview`)](tool_jdmpview.md).
 

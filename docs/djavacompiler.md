@@ -24,7 +24,7 @@
 
 # -Djava.compiler
 
-This Oracle Hotspot property is used for loading a JIT compiler from a named, native library. This option can be used on the command line to specify the JIT compiler for the OpenJ9 VM.
+This Oracle HotSpot property is used for loading a JIT compiler from a named, native library. This option can be used on the command line to specify the JIT compiler for the OpenJ9 VM.
 
 ## Syntax
 

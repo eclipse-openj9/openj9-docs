@@ -24,7 +24,7 @@
 
 # -XX:[+|-]DisableExplicitGC
 
-This Hotspot option is recognized by OpenJ9 for compatibility. See [‑Xenableexplicitgc.md / ‑Xdisableexplicitgc](xenableexplicitgc.md) for details.
+This HotSpot option is recognized by OpenJ9 for compatibility. See [‑Xenableexplicitgc.md / ‑Xdisableexplicitgc](xenableexplicitgc.md) for details.
 
 ## Syntax
 
