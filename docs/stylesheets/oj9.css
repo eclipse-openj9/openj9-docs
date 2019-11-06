@@ -47,15 +47,15 @@
 }
 
 /*
-[data-md-color-accent=cyan] .md-nav__link:focus, 
-[data-md-color-accent=cyan] .md-nav__link:hover, 
-[data-md-color-accent=cyan] .md-typeset .footnote li:hover .footnote-backref:hover, 
-[data-md-color-accent=cyan] .md-typeset .footnote li:target .footnote-backref, 
-[data-md-color-accent=cyan] .md-typeset [id] .headerlink:focus, 
-[data-md-color-accent=cyan] .md-typeset [id]:hover .headerlink:hover, 
+[data-md-color-accent=cyan] .md-nav__link:focus,
+[data-md-color-accent=cyan] .md-nav__link:hover,
+[data-md-color-accent=cyan] .md-typeset .footnote li:hover .footnote-backref:hover,
+[data-md-color-accent=cyan] .md-typeset .footnote li:target .footnote-backref,
+[data-md-color-accent=cyan] .md-typeset [id] .headerlink:focus,
+[data-md-color-accent=cyan] .md-typeset [id]:hover .headerlink:hover,
 [data-md-color-accent=cyan] .md-typeset [id]:target .headerlink,
 */
-[data-md-color-accent=cyan] .md-typeset .md-clipboard:active:before, 
+[data-md-color-accent=cyan] .md-typeset .md-clipboard:active:before,
 [data-md-color-accent=cyan] .md-typeset .md-clipboard:hover:before {
   color: #da7a08;                      /* orange - Eclipse button: hover */
 }
@@ -171,8 +171,6 @@ margin-top: 5rem;
   padding-left: 1rem;
   margin: 0;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .egg {
@@ -264,12 +262,12 @@ div .md-footer-copyright__highlight p {
   text-align: center;
 }
 .md-footer-copyright1 {
-  text-align: left; 
-  font-size: 1.3rem; 
+  text-align: left;
+  font-size: 1.3rem;
   padding: 1rem 5rem 0 5rem;
 }
 .md-footer-social1 {
-  
+
 }
 .md-footer-eclipse1 {
   padding: 1rem 0 1rem 0;
@@ -281,8 +279,8 @@ div .md-footer-copyright__highlight p {
 .md-footer-links1 .dark-link {
   padding-left: .4rem;
 }
-      
-      
+
+
 .md-footer-power1 {
   text-align: right;
   font-size: 1.3rem;
@@ -300,7 +298,7 @@ i.fa-chevron-circle-right {
 }
 
 .md-footer-copyright__highlight {
-  color: #333; /* color of footer text 
+  color: #333; /* color of footer text
 }
 
 .md-footer-copyright {
@@ -401,12 +399,12 @@ aside p:first-child {
 
 /* CHECK MARKS (tick and cross) */
 
-.fa-check {  
+.fa-check {
   color: #407471;  /* cyan - dark */
   opacity: 0.8;
 }
 
-.fa-times {  
+.fa-times {
   color: #744043;  /* red - dark */
   opacity: 0.8;
 }
