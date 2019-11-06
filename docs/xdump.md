@@ -106,6 +106,7 @@ An exception is the "tool" agent, which can be used to trigger external processe
 | snap                      | Take a snap of the trace buffers, which contain tracepoint data.                                       |
 | ceedump                   | LE CEEDUMP dumps are z/OS&reg; formatted summary system dumps that show stack traces for each thread that is in the VM process, together with register information and a short dump of storage for each register. |
 | jit                       | JIT compiler dumps contain diagnostic data in a binary format.                                         |
+| exit                       | Shut down the VM.                                                                                     |
 
 ### Default dump agents
 
