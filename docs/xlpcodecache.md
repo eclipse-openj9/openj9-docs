@@ -32,7 +32,7 @@ To find out the large page sizes available and the current setting, use the `-ve
 
 ## Syntax
 
-AIX&reg;, Linux&trade;, macOS&reg;, and Windows&trade;:
+AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade;:
 
         -Xlp:codecache:pagesize=<size>
 

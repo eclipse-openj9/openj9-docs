@@ -30,7 +30,7 @@ The following new features and notable changes since v 0.17.0 are included in th
 - [jextract now available on macOS for OpenJDK version 8](#jextract-now-available-on-macos-for-openjdk-version-8)
 - [New shared classes cache suboption to turn off timestamp checking](#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking)
 - [`-Xmso` 1 MB minimum value on z/OS 64-bit](#-xmso-1-mb-minimum-value-on-zos-64-bit)
-- [-XX:+TransparentHugePage is enabled by default on Linux&trade; POWER&reg; and IBM Z&reg; systems](#-XXTransparentHugePage-is-enabled-by-default-on-Linux-POWER-and-IBM-Z-systems)
+- [-XX:+TransparentHugePage is enabled by default on more Linux systems](#xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems)
 - [Add new Xdump exit agent and ExitOnOutOfMemoryError option](#add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option)
 - [Add more changes here...](#add-more-changes-here)
 
@@ -39,7 +39,7 @@ The following new features and notable changes since v 0.17.0 are included in th
 
 ### jextract now available on macOS for OpenJDK version 8
 
-The [`jextract` tool](tool_jextract.md) is now available on macOS&reg; platforms (as well as AIX&reg; and Linux&trade;) for _all_ current versions of OpenJDK: 8, 11, and 13.
+The [`jextract` tool](tool_jextract.md) is now available on macOS&reg; platforms (as well as AIX&reg; and Linux&reg;) for _all_ current versions of OpenJDK: 8, 11, and 13.
 
 ### New shared classes cache suboption to turn off timestamp checking
 
@@ -49,9 +49,9 @@ You can set the `-Xshareclasses:noTimestampChecks` option to turn off timestamp 
 
 On z/OS 64-bit, [`-Xmso`](xmso.md) has a 1 MB minimum value, to match the minimum stack space provided by the operating system. If you set a value smaller than 1 MB, the value is ignored.
 
-### -XX:+TransparentHugePage is enabled by default on Linux&trade; POWER&reg; and IBM Z&reg; systems
+### [-XX:+TransparentHugePage is enabled by default on more Linux systems
 
-On Linux systems for POWER and IBM Z, [-XX:+TransparentHugePage](xxtransparenthugepage.md) is enabled by default. This option takes affect only when Transparent Huge Pages (THP) is set to `madvise` on your system. When transparent huge pages are used, application footprint might increase.
+[-XX:+TransparentHugePage](xxtransparenthugepage.md) is enabled by default on Linux&reg; systems for POWER and IBM Z as well as x86 systems. This option takes affect only when Transparent Huge Pages (THP) is set to `madvise` on your system. When transparent Huge Pages are used, your application footprint might increase.
 
 ### Add new Xdump exit agent and ExitOnOutOfMemoryError option
 

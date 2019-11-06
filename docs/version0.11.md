@@ -110,7 +110,7 @@ OpenJ9 allows both positive and negative identity hashcodes, which can be proble
 
 ### Support for OpenJDK HotSpot options
 
-For compatibility, the following OpenJDK Hotspot options are now supported by OpenJ9:
+For compatibility, the following OpenJDK HotSpot options are now supported by OpenJ9:
 
 - [-XX:MaxHeapSize](xxinitialheapsize.md)
 - [-XX:InitialHeapSize](xxinitialheapsize.md)

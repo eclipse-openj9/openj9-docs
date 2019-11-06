@@ -74,7 +74,7 @@ platform support might vary, depending on their build environment. Check the Ado
 
 OpenJDK8 binaries are supported on the minimum operating system levels shown in the following tables:
 
-| Linux&trade;                            |   x32  |  x64   | ppc64le    | Z31  | Z64 |
+| Linux&reg;                            |   x32  |  x64   | ppc64le    | Z31  | Z64 |
 |---------------------------------------|--------|--------|------------|------|------|
 | Centos 6.9                            |   Y    |   Y    |     Y      |   N  |  N   |
 | Centos 7.4                            |   Y    |   Y    |     Y      |   N  |  N   |

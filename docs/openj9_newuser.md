@@ -29,7 +29,7 @@ The Eclipse OpenJ9 virtual machine (VM) implements the [Java Virtual Machine Spe
 
 ## Command-line options
 
-Although OpenJ9 implements its own command-line interface, many Hotspot options are recognized and accepted by the VM for compatibility. Any `-XX:` options that are not recognized by the VM are ignored by default, which prevents an application failing to start. You can turn off this behavior with the [-XX:-IgnoreUnrecognizedXXColonOptions](xxignoreunrecognizedxxcolonoptions.md) option.
+Although OpenJ9 implements its own command-line interface, many HotSpot options are recognized and accepted by the VM for compatibility. Any `-XX:` options that are not recognized by the VM are ignored by default, which prevents an application failing to start. You can turn off this behavior with the [-XX:-IgnoreUnrecognizedXXColonOptions](xxignoreunrecognizedxxcolonoptions.md) option.
 
 For a list of compatible options, see [Switching to OpenJ9](cmdline_migration.md) in the Command-line options section.
 
@@ -93,7 +93,7 @@ for memory leaks and to reduce memory consumption. For more information about DT
 
 If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, you might make use of certain `com.sun.management` interfaces. Although OpenJ9 implements some of these interfaces, a few are specific to the HotSpot VM. The following table indicates alternative classes or mechanisms that you can use for equivalent function in OpenJ9:
 
-| Hotspot-specific classes   | Alternatives for OpenJ9  |
+| HotSpot-specific classes   | Alternatives for OpenJ9  |
 |----------------------------|--------------------------|
 |`HotSpotDiagnosticMXBean`   | `OpenJ9DiagnosticsMXBean` (for heap dumps)|
 |`MissionControl`            | Use Health Center        |
@@ -106,4 +106,4 @@ If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, you 
 
 ## Other differences
 
-This topic describes the differences between the HotSpot VM and the Eclipse OpenJ9 VM. Therefore, if you are currently using an OpenJDK with the default Hotspot VM and you want to switch to using an OpenJDK with the OpenJ9 VM, these are the only differences you might be concerned about. If however, you are using an Oracle JDK, you might want to learn about differences between other components that make up an Oracle JDK or an OpenJDK from the AdoptOpenJDK community. For more information, read the [Migration guide](https://adoptopenjdk.net/migration.html).
+This topic describes the differences between the HotSpot VM and the Eclipse OpenJ9 VM. Therefore, if you are currently using an OpenJDK with the default HotSpot VM and you want to switch to using an OpenJDK with the OpenJ9 VM, these are the only differences you might be concerned about. If however, you are using an Oracle JDK, you might want to learn about differences between other components that make up an Oracle JDK or an OpenJDK from the AdoptOpenJDK community. For more information, read the [Migration guide](https://adoptopenjdk.net/migration.html).

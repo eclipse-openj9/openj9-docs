@@ -24,7 +24,7 @@
 
 # -XX:ActiveProcessorCount
 
-This Hotspot option is recognized by OpenJ9 for compatibility. Use this option to override the number of CPUs that the VM automatically detects and uses when creating threads for various subsystems.
+This HotSpot option is recognized by OpenJ9 for compatibility. Use this option to override the number of CPUs that the VM automatically detects and uses when creating threads for various subsystems.
 
 ## Syntax
 

@@ -24,7 +24,7 @@
 
 # -XX:HeapDumpPath
 
-This Hotspot option is recognized by OpenJ9 for compatibility, and you can use it as an alias for [`-Xdump:directory=<path>`](xdump.md#syntax).
+This HotSpot option is recognized by OpenJ9 for compatibility, and you can use it as an alias for [`-Xdump:directory=<path>`](xdump.md#syntax).
 
 This option sets the directory for all VM dumps including heap dumps, Java&trade; dumps, and system dumps.
 

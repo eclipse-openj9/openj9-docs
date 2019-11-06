@@ -27,7 +27,7 @@
 
 You can use this option to control the output of verbose diagnostic data that relates to verification.
 
-The Oracle documentation to support this option is no longer available, because it is no longer used by the Hotspot VM. An explanation is provided here.
+The Oracle documentation to support this option is no longer available, because it is no longer used by the HotSpot VM. An explanation is provided here.
 
 ## Syntax
 

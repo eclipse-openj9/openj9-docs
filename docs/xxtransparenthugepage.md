@@ -24,9 +24,9 @@
 
 # -XX:[+|-]TransparentHugePage
 
-**(Linux&trade; systems only (x86, POWER&reg;, and IBM Z&reg;)**
+**(Linux&reg; systems only: x86, POWER&reg;, and IBM Z&reg;)**
 
-If Transparent Huge Pages (THP) is set to `madvise` on your system, this option, when enabled, promotes all memory allocated to huge pages. On systems without THP, or if THP is set to `always` or `never` on your system, this option is ignored. When transparent huge pages are used, application footprint might increase.
+If Transparent Huge Pages (THP) is set to `madvise` on your system, this option, when enabled, promotes all memory allocated to huge pages. On systems without THP, or if THP is set to `always` or `never` on your system, this option is ignored. When transparent huge pages are used, your application footprint might increase.
 
 ## Syntax
 

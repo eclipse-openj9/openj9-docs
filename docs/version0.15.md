@@ -77,7 +77,7 @@ for Java 8 and 11 in release 0.14.2, which did not support Java 12.
 
 ### Support for OpenJDK HotSpot options
 
-For compatibility, the [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md) OpenJDK Hotspot option is now supported by OpenJ9.
+For compatibility, the [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md) OpenJDK HotSpot option is now supported by OpenJ9.
 
 ### Support for Transparent Huge Pages (THP)
 

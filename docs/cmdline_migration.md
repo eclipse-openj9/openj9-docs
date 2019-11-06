@@ -30,7 +30,7 @@ If you are already familiar with HotSpot command-line options but want the advan
 
 ## Compatible options
 
-You can use the following command-line options in OpenJ9, just as you did in Hotspot; you can continue to use the HotSpot option in OpenJ9 without having to change your code:
+You can use the following command-line options in OpenJ9, just as you did in HotSpot; you can continue to use the HotSpot option in OpenJ9 without having to change your code:
 
 | Option                                                           | Usage                                                                                                                                        |
 |------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,18 +48,18 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-Xverify:mode`](xverify.md)                                    | Enables or disables the verifier.                                                                                                            |
 | [`-XX:[+|-]CompactStrings`](xxcompactstrings.md)                 | Enables/disables `String` compression                                                                                                        |
 | [`-XX:[+|-]DisableExplicitGC`](xxdisableexplicitgc.md)           | Enables/disables `System.gc()` calls. (Alias for [`-Xdisableexplicitgc` / `-Xenableexplicitgc`](xenableexplicitgc.md))                       |
-| [`-XX:[+|-]ExitOnOutOfMemory`](xxexitonoutofmemory.md)   | Triggers VM shut down on out-of-memory conditions.                                                                                          |
+| [`-XX:[+|-]ExitOnOutOfMemory`](xxexitonoutofmemory.md)           | Triggers VM shutdown on out-of-memory conditions.                                                                                            |
 | [`-XX:[+|-]HeapDumpOnOutOfMemory`](xxheapdumponoutofmemory.md)   | Enables/disables dumps on out-of-memory conditions.                                                                                          |
 | [`-XX:HeapDumpPath`](xxheapdumppath.md)                          | Specifies a directory for all VM dumps including heap dumps, javacores, and system dumps. (Alias for [`-Xdump:directory`](xdump.md#syntax))  |
-| [`-XX:[+|-]IgnoreUnrecognizedVMOptions`](xxignoreunrecognizedvmoptions.md) | Specifies whether to ignore unrecognized top-level VM options |                                                       |
+| [`-XX:[+|-]IgnoreUnrecognizedVMOptions`](xxignoreunrecognizedvmoptions.md) | Specifies whether to ignore unrecognized top-level VM options |                                                                    |
 | [`-XX:InitialHeapSize`](xxinitialheapsize.md)                    | Sets the initial size of the heap. (Alias for [`-Xms`](xms.md))                                                                              |
-| [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md)          | Sets the initial size of the Java heap as a percentage of total memory.                                                                              |
-| [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md)                                          | Runs specified commands when a `java.lang.OutOfMemoryError` is thrown. (Equivalent to `-Xdump:tool:events=systhrow,filter=java/lang/OutOfMemoryError,exec=`) |
-| [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md)            | Sets a limit on the amount of memory that can be reserved for all direct byte buffers.                                                                 |
+| [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md)          | Sets the initial size of the Java heap as a percentage of total memory.                                                                      |
+| [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md)              | Runs specified commands when a `java.lang.OutOfMemoryError` is thrown. (Equivalent to `-Xdump:tool:events=systhrow,filter=java/lang/OutOfMemoryError,exec=`) |
+| [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md)            | Sets a limit on the amount of memory that can be reserved for all direct byte buffers.                                                       |
 | [`-XX:MaxHeapSize`    ](xxinitialheapsize.md)                    | Specifies the maximum size of the object memory allocation pool. (Alias for [`-Xmx`](xms.md))                                                |
-| [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md)              | Sets the maximum size of the Java heap as a percentage of total memory.                                                                     |
-| [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md)               | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
-| [`-XX:[+|-]UseContainerSupport`](xxusecontainersupport.md)           | Sets a larger fraction of memory to the Java heap when the VM detects that it is running in a container.                                 |
+| [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md)              | Sets the maximum size of the Java heap as a percentage of total memory.                                                                      |
+| [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md)           | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
+| [`-XX:[+|-]UseContainerSupport`](xxusecontainersupport.md)       | Sets a larger fraction of memory to the Java heap when the VM detects that it is running in a container.                                     |
 
 
 
@@ -71,7 +71,7 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 
 ## Equivalent options
 
-These Hotspot command-line options have equivalents in OpenJ9 that are not specified in the same way, but perform a related function:
+These HotSpot command-line options have equivalents in OpenJ9 that are not specified in the same way, but perform a related function:
 
 | HotSpot Option          | OpenJ9 Option                                    | Usage                                                            |
 |-------------------------|--------------------------------------------------|------------------------------------------------------------------|                                                                        
@@ -82,13 +82,13 @@ These Hotspot command-line options have equivalents in OpenJ9 that are not speci
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
-1. Hotspot uses `-Xcomp` to force compilation of methods on first invocation. However, this option is deprecated. Whilst it can be used for compatibility, using `-Xjit:count=0` is preferred.
+1. HotSpot uses `-Xcomp` to force compilation of methods on first invocation. However, this option is deprecated. Whilst it can be used for compatibility, using `-Xjit:count=0` is preferred.
 
-2. Hotspot uses `-Xgc` to both select policies and configure them; OpenJ9 uses `-Xgcpolicy` to select policies, reserving `-Xgc` for configuration.
+2. HotSpot uses `-Xgc` to both select policies and configure them; OpenJ9 uses `-Xgcpolicy` to select policies, reserving `-Xgc` for configuration.
 
-3. In Hotspot, NUMA awareness is turned off by default and is turned on by using the `-XX:+UseNUMA` option. Conversely, the OpenJ9 VM automatically enables NUMA awareness and uses `-Xnuma:none` to turn it *off*.
-    - If you were previously using Hotspot in its default mode, you must now explicitly turn off NUMA awareness in OpenJ9.
-    - If you are used to using `-XX:+UseNUMA` in Hotspot, you no longer need to explicitly turn on NUMA awareness; it's on by default.
+3. In HotSpot, NUMA awareness is turned off by default and is turned on by using the `-XX:+UseNUMA` option. Conversely, the OpenJ9 VM automatically enables NUMA awareness and uses `-Xnuma:none` to turn it *off*.
+    - If you were previously using HotSpot in its default mode, you must now explicitly turn off NUMA awareness in OpenJ9.
+    - If you are used to using `-XX:+UseNUMA` in HotSpot, you no longer need to explicitly turn on NUMA awareness; it's on by default.
 
 
 <!-- ==== END OF TOPIC ==== cmdline_migration.md ==== -->

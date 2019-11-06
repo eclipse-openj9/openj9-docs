@@ -41,7 +41,7 @@ Options that change the behavior of the Garbage Collector (GC).
 | [`minContractPercent`          ](#mincontractpercent          ) | Sets the minimum percentage of the heap that can be contracted at any given time.                         |
 | [`maxContractPercent`          ](#maxcontractpercent          ) | Sets the maximum percentage of the heap that can be contracted at any given time.                         |
 | [`overrideHiresTimerCheck`     ](#overridehirestimercheck     ) | Overrides GC operating system checks for timer resolution.                                                |
-| [`preferredHeapBase`           ](#preferredheapbase           ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&trade;, macOS&reg;, and Windows&trade; only) |
+| [`preferredHeapBase`           ](#preferredheapbase           ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; only) |
 | [`scvNoAdaptiveTenure`         ](#scvnoadaptivetenure         ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                               |
 | [`scvTenureAge`                ](#scvtenureage                ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                           |
 | [`stdGlobalCompactToSatisfyAllocate`](#stdglobalcompacttosatisfyallocate) | Prevents the GC from performing a compaction unless absolutely required. |
