@@ -3431,7 +3431,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <dd>
 <p>If you specify the <code>sync</code> parameter:</p>
 <ul>
-<li><strong>On AIX&reg;, Linux&trade;, macOS&reg;, and z/OS&reg; systems:</strong> Disables signal handling in the VM for <code>SIGSEGV</code>, <code>SIGFPE</code>, <code>SIGBUS</code>, <code>SIGILL</code>, <code>SIGTRAP</code>, and <code>SIGABRT</code> signals. However, the VM still handles the <code>SIGQUIT</code> and <code>SIGTERM</code> signals, among others.</li>
+<li><strong>On AIX&reg;, Linux&reg;, macOS&reg;, and z/OS&reg; systems:</strong> Disables signal handling in the VM for <code>SIGSEGV</code>, <code>SIGFPE</code>, <code>SIGBUS</code>, <code>SIGILL</code>, <code>SIGTRAP</code>, and <code>SIGABRT</code> signals. However, the VM still handles the <code>SIGQUIT</code> and <code>SIGTERM</code> signals, among others.</li>
 <li><strong>On Windows&trade; systems:</strong> Hardware exceptions are not handled by the OpenJ9 VM when this option is specified. However, the Windows CTRL_BREAK_EVENT signal, triggered by the Ctrl-Break key combination, is still handled by the VM.</li>
 </ul>
 <p><strong>Linux and macOS systems</strong> always use the <code>SIGUSR1</code> signal.</p>

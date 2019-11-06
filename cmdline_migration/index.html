@@ -3420,7 +3420,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>If you are already familiar with HotSpot command-line options but want the advantages of OpenJ9, the following information will prove helpful. In all cases, check individual topics for minor discrepancies in the way these options might work.</p>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> For information about HotSpot equivalences and differences for items other than command-line options, see <a href="../openj9_newuser/">New to OpenJ9?</a></p>
 <h2 id="compatible-options">Compatible options</h2>
-<p>You can use the following command-line options in OpenJ9, just as you did in Hotspot; you can continue to use the HotSpot option in OpenJ9 without having to change your code:</p>
+<p>You can use the following command-line options in OpenJ9, just as you did in HotSpot; you can continue to use the HotSpot option in OpenJ9 without having to change your code:</p>
 <table>
 <thead>
 <tr>
@@ -3487,7 +3487,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 <tr>
 <td><a href="../xxexitonoutofmemory/"><code>-XX:[+|-]ExitOnOutOfMemory</code></a></td>
-<td>Triggers VM shut down on out-of-memory conditions.</td>
+<td>Triggers VM shutdown on out-of-memory conditions.</td>
 </tr>
 <tr>
 <td><a href="../xxheapdumponoutofmemory/"><code>-XX:[+|-]HeapDumpOnOutOfMemory</code></a></td>
@@ -3537,7 +3537,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </table>
 <p>-XX:[+|-]CompactStrings</p>
 <h2 id="equivalent-options">Equivalent options</h2>
-<p>These Hotspot command-line options have equivalents in OpenJ9 that are not specified in the same way, but perform a related function:</p>
+<p>These HotSpot command-line options have equivalents in OpenJ9 that are not specified in the same way, but perform a related function:</p>
 <table>
 <thead>
 <tr>
@@ -3572,16 +3572,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
 <ol>
 <li>
-<p>Hotspot uses <code>-Xcomp</code> to force compilation of methods on first invocation. However, this option is deprecated. Whilst it can be used for compatibility, using <code>-Xjit:count=0</code> is preferred.</p>
+<p>HotSpot uses <code>-Xcomp</code> to force compilation of methods on first invocation. However, this option is deprecated. Whilst it can be used for compatibility, using <code>-Xjit:count=0</code> is preferred.</p>
 </li>
 <li>
-<p>Hotspot uses <code>-Xgc</code> to both select policies and configure them; OpenJ9 uses <code>-Xgcpolicy</code> to select policies, reserving <code>-Xgc</code> for configuration.</p>
+<p>HotSpot uses <code>-Xgc</code> to both select policies and configure them; OpenJ9 uses <code>-Xgcpolicy</code> to select policies, reserving <code>-Xgc</code> for configuration.</p>
 </li>
 <li>
-<p>In Hotspot, NUMA awareness is turned off by default and is turned on by using the <code>-XX:+UseNUMA</code> option. Conversely, the OpenJ9 VM automatically enables NUMA awareness and uses <code>-Xnuma:none</code> to turn it <em>off</em>.</p>
+<p>In HotSpot, NUMA awareness is turned off by default and is turned on by using the <code>-XX:+UseNUMA</code> option. Conversely, the OpenJ9 VM automatically enables NUMA awareness and uses <code>-Xnuma:none</code> to turn it <em>off</em>.</p>
 <ul>
-<li>If you were previously using Hotspot in its default mode, you must now explicitly turn off NUMA awareness in OpenJ9.</li>
-<li>If you are used to using <code>-XX:+UseNUMA</code> in Hotspot, you no longer need to explicitly turn on NUMA awareness; it's on by default.</li>
+<li>If you were previously using HotSpot in its default mode, you must now explicitly turn off NUMA awareness in OpenJ9.</li>
+<li>If you are used to using <code>-XX:+UseNUMA</code> in HotSpot, you no longer need to explicitly turn on NUMA awareness; it's on by default.</li>
 </ul>
 </li>
 </ol>

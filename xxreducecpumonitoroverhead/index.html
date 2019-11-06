@@ -3419,7 +3419,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xx91-93reducecpumonitoroverhead">-XX:[+|-]ReduceCPUMonitorOverhead</h1>
-<p><strong>(AIX&reg;, Linux&trade;, macOS&reg;, and Windows&trade; only)</strong></p>
+<p><strong>(AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; only)</strong></p>
 <p>This option relates to the CPU usage of thread categories that can be obtained with the <code>com.ibm.lang.management.JvmCpuMonitorMXBean</code> application programming interface. This option affects the way that the VM records the amount of CPU usage of non-Garbage Collection (GC) threads that do work on behalf of GC.</p>
 <p>Most GC policies require non-GC threads to do some GC housekeeping work in proportion to the amount of memory allocation that they do. Ideally the exact amount of CPU time that the thread spends doing this housekeeping work should be accounted for in the GC thread category. However there is an overhead that is associated with maintaining the CPU usage data in the correct thread category.</p>
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> This option is not supported on z/OS&reg;. If you attempt to use this option, the following message is generated:</p>
