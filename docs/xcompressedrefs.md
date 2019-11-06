@@ -44,7 +44,7 @@ Compressed references are enabled by default when [`-Xmx`](xms.md) &le; 57 GB.
 
 **z/OS&reg;:** This threshold value assumes that you have [APAR OA49416](http://www.ibm.com/support/docview.wss?uid=isg1OA49416) installed. If you do not have the APAR installed, the threshold value is 25 GB.
 
-**AIX&reg; and Linux&reg;:** For the metronome garbage collection policy, the threshold is 25 GB.
+**AIX&reg; and Linux&trade;:** For the metronome garbage collection policy, the threshold is 25 GB.
 
 ## See also
 

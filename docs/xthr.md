@@ -45,7 +45,7 @@
 
 : When a large number of threads try to acquire a Java&trade; monitor, throughput of an application can be reduced. This issue is known as high contention. If high contention occurs when the Java `wait` and `notify` features are regularly used, you can use `-Xthr:fastNotify` to increase throughput. However, `-Xthr:noFastNotify` is the default setting, because it is faster in all other scenarios.
 
-### `cfsYield` | `noCfsYield` (Linux&reg; only)
+### `cfsYield` | `noCfsYield` (Linux&trade; only)
 
         -Xthr:cfsYield
         -Xthr:noCfsYield

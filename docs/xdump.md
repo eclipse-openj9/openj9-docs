@@ -57,7 +57,7 @@ The following options can be used to control the production of diagnostic data:
 | `-Xdump:dynamic`             | Enable support for pluggable agents                                                                                                                         |
 | `-Xdump:nofailover`          | Discards dumps when the default or specified dump location is full.                                                                                         |
 | `-Xdump:directory=<path>`    | Specifies a directory for all dump types to be written to. This directory path is prefixed to the path of all non-absolute dump file names, including the file names for the default dump agents. |
-| `-Xdump:suspendwith=<offset>`| Modifies the signal that is used to suspend VM threads while a dump file is being written. Use `<offset>` to change the default signal number. (Linux&reg; only) |
+| `-Xdump:suspendwith=<offset>`| Modifies the signal that is used to suspend VM threads while a dump file is being written. Use `<offset>` to change the default signal number. (Linux&trade; only) |
 | `-Xdump:<agent>:<suboptions>`| Provides detailed suboptions per dump agent that provide more granular control.                                                                             |
 
 Dump agents can be configured at a very granular level by specifying suboptions. The `<events>` suboption is the prime trigger mechanism. The full set of suboptions are listed in the following table:

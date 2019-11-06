@@ -53,7 +53,7 @@ For more information, see [`jmap`](tool_jmap.md).
 
 Displays information about running Java processes. The main differences from the HotSpot `jps` tool are as follows:
 
-- Runs on Windows&reg;, AIX&reg;, and z/OS&reg;, as well as Linux&reg;.
+- Runs on Windows&reg;, AIX&reg;, and z/OS&reg;, as well as Linux&trade;.
 - Uses the Attach API.
 - Shows processes on the current host only.
 - There is no `-V` option.

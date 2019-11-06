@@ -59,7 +59,7 @@ The last 2 columns show whether the default setting can be changed by a command-
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
-1. On AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade;: Enabled for **-Xmx** values &le; 57 GB, otherwise disabled.</p>
+1. On AIX&reg;, Linux&trade;, macOS&reg;, and Windows&trade;: Enabled for **-Xmx** values &le; 57 GB, otherwise disabled.</p>
 
     On z/OS&reg;: Enabled for **-Xmx** values &le; 25 GB, otherwise disabled. With [APAR OA49416](http://www.ibm.com/support/docview.wss?uid=isg1OA49416), enabled for **-Xmx** values &le; 57 GB.
 

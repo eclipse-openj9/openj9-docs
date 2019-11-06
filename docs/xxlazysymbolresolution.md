@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]LazySymbolResolution
 
-**(Linux&reg; and macOS&reg; only)**
+**(Linux&trade; and macOS&reg; only)**
 
 This option affects the timing of symbol resolution for functions in user native libraries.
 
