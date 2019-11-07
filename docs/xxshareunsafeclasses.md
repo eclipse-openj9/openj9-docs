@@ -34,8 +34,8 @@ The option is enabled by default, which means that unsafe classes are stored in 
 
 | Setting                      | Effect  | Default                                                                        |
 |------------------------------|---------|:------------------------------------------------------------------------------:|
-| `-XX:[+]ShareUnsafeClasses`  | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-XX:[-]ShareUnsafeClasses`  | Disable |                                                                                |
+| `-XX:+ShareUnsafeClasses`    | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-ShareUnsafeClasses`    | Disable |                                                                                |
 
 
 ## See also

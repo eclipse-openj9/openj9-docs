@@ -197,7 +197,9 @@ Here are some examples:
 
 ### Trademarks
 
-In each topic, the _first occurence only_ of trademarked names should be marked appropriately. Here are some examples that you might come across: 
+In each topic, the _first occurence only_ of trademarked terms should be marked appropriately. Avoid including trademark symbols in titles, headings, etc., unless the term appears nowhere else in the topic.
+
+Here are some examples that you might come across: 
 
 AIX&reg;, IBM&reg;, IBM z15&reg;, Java&trade;, Linux&reg;, Linux on IBM Z&reg;, Linux on Power Systems&trade;, macOS&reg;, MVS&trade;, OpenJ9 VM Language Environment&reg;, Oracle&reg;, Windows&trade;, z/OS&reg;.
 
