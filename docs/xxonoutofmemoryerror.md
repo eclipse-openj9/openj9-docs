@@ -24,7 +24,7 @@
 
 # -XX:OnOutOfMemoryError
 
-You can use this Oracle Hotspot option to run commands when a `java.lang.OutOfMemoryError` is thrown. This option is recognized by OpenJ9 and provided for compatibility.
+You can use this Oracle HotSpot option to run commands when a `java.lang.OutOfMemoryError` is thrown. This option is recognized by OpenJ9 and provided for compatibility.
 
 ## Syntax
 

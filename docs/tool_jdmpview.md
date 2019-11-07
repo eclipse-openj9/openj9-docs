@@ -42,7 +42,7 @@ The dump viewer is useful for diagnosing `OutOfMemoryError` exceptions in Java&t
 |          Input option   |  Explanation                                                                                           |
 |-------------------------|--------------------------------------------------------------------------------------------------------|
 | `-core <core file>`     | Specifies a dump file.                                                                                 |
-| `-zip <zip file>`       | Specifies a compressed file containing the core file and associated XML file (produced by the [dump extractor (`jextract`)](tool_jextract.md) tool on AIX&reg;, Linux&trade;, and macOS&reg; systems). |
+| `-zip <zip file>`       | Specifies a compressed file containing the core file and associated XML file (produced by the [dump extractor (`jextract`)](tool_jextract.md) tool on AIX&reg;, Linux&reg;, and macOS&reg; systems). |
 | `-notemp`               | By default, when you specify a file by using the `-zip` option, the contents are extracted to a temporary directory before processing. Use the `-notemp` option to prevent this extraction step, and run all subsequent commands in memory. |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The `-core` option can be used with the `-zip` option to specify the core and XML files in the compressed file. Without these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.  

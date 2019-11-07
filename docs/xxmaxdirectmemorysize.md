@@ -25,7 +25,7 @@
 # -XX:MaxDirectMemorySize
 
 
-This Oracle Hotspot option sets a limit on the amount of memory that can be reserved for all Direct Byte Buffers.
+This Oracle HotSpot option sets a limit on the amount of memory that can be reserved for all Direct Byte Buffers.
 
 ## Syntax
 

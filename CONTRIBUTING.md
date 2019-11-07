@@ -26,14 +26,16 @@
 
 This short guide will help you if you want to make a contribution to the Eclipse OpenJ9 user documentation.
 
-If you don't want to contribute directly by modifying the documentation yourself, but you have a suggestion or want to report an error, please raise an issue in this repository.
+**Note:** There is a short video presentation explaining the process for contributing to the OpenJ9 documentation. (Save and open the [`.zip` file](process/Contributing.to.OpenJ9.docs.zip) in the `/process` directory to view the `.mp4` video.) You can also view the [PowerPoint presentation](process/openj9-doc-contibutions.pptx) used in that video. (Either save the file to view locally, or click "View raw".)
+
+:white_circle: If you don't want to contribute directly by modifying the documentation yourself, but you have a suggestion or want to report an error, please raise an issue in this repository.
 The following templates are available to help you provide the correct information for someone else to handle any changes:
 
 - [General documentation enhancements / ideas for improvements](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-enhancement.md)
 - [Documentation errors or inaccuracies](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-error.md)
 - [New content as a result of code changes at the Eclipse OpenJ9 repo](https://github.com/eclipse/openj9-docs/issues/new?template=new-documentation-change.md)
 
-If you want to contribute to the documentation, we recommend that you install a local test environment for editing and previewing your changes.
+:white_circle: If you want to contribute to the documentation, we recommend that you install a local test environment for editing and previewing your changes.
 The user documentation is authored in Markdown and built into HTML using [Mkdocs](http://www.mkdocs.org/), with a [mkdocs-material](https://github.com/squidfunk/mkdocs-material) theme.
 To get started, follow the guidance in the following sections:
 
@@ -66,8 +68,8 @@ Use **pip** to install the other components, reusing the **requirements.txt** fi
 
 Next:
 
-- Fork the repository: https://github.ibm.com/runtimes/openj9-docs
-- Clone the repository: `git clone git@github.ibm.com:<your_github_account>/openj9-docs.git`
+- Fork the repository: https://github.com/eclipse/openj9-docs
+- Clone the repository: `git clone git@github.com:<your_github_account>/openj9-docs.git`
 
 If you are working on a Windows<sup>&trade;</sup> system, set the following Git configuration, which allows you to edit with Windows line endings (CRLF), but converts to Unix-style endings (LF) when you push changes:
 
@@ -102,7 +104,7 @@ The key configuration file for the documentation is the `/mkdocs.yml` file, whic
 Under `pages:` in the `.yml` file, topics are added and indented to reflect their position in the table of contents. Care must be taken to preserve the indentation when making changes to this file.
 
 If you want to add a new file, see [Document files](#document-files) about file naming, and follow the existing structure and layout when you add a reference to it in the `.yml` file.
-Insert new options in the appropriate position in the list, which is typically arranged in alphabetical order.
+Insert new options in the appropriate position in the list, which is typically arranged in alphabetical order within a section.
 
 **Note:** From version 1.0 of MkDocs, the `pages:` section is renamed to `nav:`
 
@@ -128,12 +130,12 @@ Some examples:
 
 For consistency across the user documentation, there are a few style guidelines that you should follow.
 These are not set in stone, so if you have any suggestions or concerns, open up a discussion in the [Slack channel](https://openj9.slack.com/).
-Join the channel [here](https://www.eclipse.org/openj9/oj9_joinslack.html).
+If you haven't done so already, [join the channel](https://www.eclipse.org/openj9/oj9_joinslack.html).
 
 Generally, follow the style and structure of existing topics.
 If you are creating a new topic, you might find it helpful to copy a similar existing topic and modify it. (Don't forget to modify the file name in the footer!)
 
-However you create a new topic, you must ensure that the header comment with copyright and license information is copied exactly as it is from an existing topic.
+However you create a new topic, you must ensure that the header comment with copyright and license information is copied exactly as it is from an existing topic. _Do not_ change either of the copyright dates, even for a new topic; the dates refer to the complete documentation set, not to individual files and so should be the same in all topics.
 
 ### Writing tips
 
@@ -197,7 +199,7 @@ Here are some examples:
 
 In each topic, the _first occurence only_ of trademarked names should be marked appropriately. Here are some examples that you might come across: 
 
-AIX&reg;, Hotspot&trade;, IBM&reg;, IBM z15&reg;, Java&trade;, Linux&reg;, Linux on IBM Z&reg;, Linux on Power Systems&trade;, macOS&reg;, MVS&trade;, OpenJ9 VM Language Environment&reg;, Oracle&reg;, Windows&trade;, z/OS&reg;.
+AIX&reg;, IBM&reg;, IBM z15&reg;, Java&trade;, Linux&reg;, Linux on IBM Z&reg;, Linux on Power Systems&trade;, macOS&reg;, MVS&trade;, OpenJ9 VM Language Environment&reg;, Oracle&reg;, Windows&trade;, z/OS&reg;.
 
 Mark trademarks&trade; with `&trade;` (as in `Java&trade;`) and registered trademarks&reg; with `&reg;` (as in `Linux&reg;`).
 
@@ -245,7 +247,7 @@ The accessibility of the documentation to users with disabilities is important t
 
 ## Testing your changes locally
 
-When you've made the changes that you want to contribute, build and preview the website. If you set up an MkDocs environment locally, follow these steps:
+When you've made the changes that you want to contribute, build and preview the website. If you have [set up an MkDocs environment locally](#setting-up-a-local-mkdocs-environment), follow these steps:
 
 - Run `mkdocs serve`.
 - Open a browser and view the following URL: http://127.0.0.1:8008 (specifically, the URL set in the `dev_addr:` section of the `mkdocs.yml` file.
@@ -253,7 +255,10 @@ When you've made the changes that you want to contribute, build and preview the 
 ## Submitting a contribution
 
 When you are happy with your changes, create a pull request, following the guidelines for submitting a contribution to OpenJ9 [here](https://github.com/eclipse/openj9/blob/master/CONTRIBUTING.md).
+
 In particular, if your changes address an issue, quote the issue number in the commit message.
+
+If work is ongoing, or if there is further work to be done after you create your pull request, (either in the docs or in the code) add a "WIP" (Work In Progress) prefix to the title.
 
 ### Previewing pull requests
 
@@ -272,8 +277,14 @@ _(whitelisted users only)_
 
 Project committers are responsible for checking pull requests and merging changes.
 
-When PR requests are merged, the documentation is published to the gh-pages branch of the https://github.com/eclipse/openj9-docs repository as part of the "current working draft" at the following URL:
+Documentation pull requests must not be merged before code pull requests are merged in case subsequent code changes alter the documented behavior.
+
+Before merging, check with the developers involved and make sure that there is not work still to be done. This is usually indicated by a "WIP" prefix on the pull request title.
+
+When pull requests are merged, the documentation is published to the gh-pages branch of the https://github.com/eclipse/openj9-docs repository as part of the "current working draft" at the following URL:
 
 https://eclipse.github.io/openj9-docs
 
-When released, the latest version of Eclipse OpenJ9 is published to https://www.eclipse.org/openj9/docs.
+When released, the latest version of Eclipse OpenJ9 is published at:
+
+https://www.eclipse.org/openj9/docs

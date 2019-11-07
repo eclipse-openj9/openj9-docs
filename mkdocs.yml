@@ -317,6 +317,7 @@ pages:
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
+            - "-XX:[+|-]ExitOnOutOfMemory"                                       : xxexitonoutofmemory.md
             - "-XX:[+|-]handleSIGXFSZ"                                           : xxhandlesigxfsz.md
             - "-XX:[+|-]HeapDumpOnOutOfMemory"                                   : xxheapdumponoutofmemory.md
             - "-XX:HeapDumpPath"                                                 : xxheapdumppath.md
