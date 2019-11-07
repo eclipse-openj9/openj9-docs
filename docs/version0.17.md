@@ -48,6 +48,12 @@ OpenJ9 release 0.17.0 supports OpenJDK 8, 11, and 13. Binaries are available fro
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 - [OpenJDK version 13](https://adoptopenjdk.net/archive.html?variant=openjdk13&jvmVariant=openj9)
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The Windows&reg; and macOS&reg; binaries from the AdoptOpenJDK community for OpenJDK 8, 11, and 13 have been updated to OpenSSL v1.1.1d. Look for the following release names to identify these packages:
+
+- OpenJDK 8: `jdk8u232-b09.1_openj9-0.17.0`
+- OpenJDK 11: `jdk-11.0.5+10.1_openj9-0.17.0`
+- OpenjDK 13: `jdk-13.0.1+9.1_openj9-0.17.0)`
+
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The last release of OpenJDK 8 and 11 from AdoptOpenJDK is Eclipse OpenJ9 0.15.1. To read about other features and changes in the VM since 0.15.1, check the [Version 0.16.0](version0.16.md) release notes too.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
