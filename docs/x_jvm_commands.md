@@ -28,7 +28,7 @@
 Use these options to configure the OpenJ9 virtual machine (VM). Unlike standard options, options prefixed with `-X` are nonstandard and are typically unique to a Java&trade; virtual
 machine implementation. However, in some cases, `-X` option names are common to different VM implementations and might have the same function.
 
-For options that take a `<size>` parameter, suffix the number with "k" or "K" to indicate kilobytes, "m" or "M" to indicate megabytes, or "g" or "G" to indicate gigabytes.
+For options that take a `<size>` parameter, add a suffix to the size value: "k" or "K" to indicate kilobytes, "m" or "M" to indicate megabytes, "g" or "G" to indicate gigabytes, or "t" or "T" to indicate terabytes.
 
 For example, to set the `-Xmx` value to 16 MB, you can specify `-Xmx16M`, `-Xmx16m`, `-Xmx16384K`, `-Xmx16384k`, or `-Xmx16777216` on the command line.
 

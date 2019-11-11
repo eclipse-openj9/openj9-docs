@@ -27,9 +27,9 @@
 Java&trade; VM command-line options that are specified with `-XX:` are not checked for validity. If the VM does not recognize the option, the option is ignored. These options can therefore be used across different VM versions without ensuring a particular level of the VM.  If you want
 to turn off this behavior to test whether your -XX options are valid, use the [-XX:-IgnoreUnrecognizedXXColonOptions](xxignoreunrecognizedxxcolonoptions.md) option.
 
-For options that take a `<size>` parameter, add a suffix to the size value: "k" or "K" to indicate kilobytes, "m" or "M" to indicate megabytes, or "g" or "G" to indicate gigabytes.
+For options that take a `<size>` parameter, add a suffix to the size value: "k" or "K" to indicate kilobytes, "m" or "M" to indicate megabytes, "g" or "G" to indicate gigabytes, or "t" or "T" to indicate terabytes.
 
-For example, to set the `-Xmx` value to 16 MB, you can specify `-Xmx16M`, `-Xmx16m`, `-Xmx16384K`, or `Xmx16384k` on the command line.
+For example, to set the `-XX:MaxDirectMemorySize` value to 16 MB, you can specify `-XX:MaxDirectMemorySize16M`, `-XX:MaxDirectMemorySize16m`, `-XX:MaxDirectMemorySize16384K`, or `XX:MaxDirectMemorySize16384k` on the command line.
 
 
 
