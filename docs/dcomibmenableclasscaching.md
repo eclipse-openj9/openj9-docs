@@ -32,8 +32,8 @@ Setting this property to `true` enables caching of the Latest User Defined Class
 
 | Setting      | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
-| true         | Enable  |                                                                                    |
-| false        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| true         | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| false        | Disable |                                                                                    |
 
 ## Explanation
 
