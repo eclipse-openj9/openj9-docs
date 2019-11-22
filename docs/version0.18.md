@@ -34,6 +34,7 @@ The following new features and notable changes since v 0.17.0 are included in th
 - [Add new Xdump exit agent and ExitOnOutOfMemoryError option](#add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option)
 - [LUDCL caching enabled by default](#ludcl-caching-enabled-by-default)
 - [Terabytes suffix support for -X and -XX options that take a size](#terabytes-suffix-support-for-x-and-xx-options-that-take-a-size)
+- [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
 - [Add more changes here...](#add-more-changes-here)
 
 
@@ -67,8 +68,14 @@ The Xdump "exit" agent is used in the implementation of `-XX:[+-]ExitOnOutOfMemo
 By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This
 capability is controlled by the [-Dcom.ibm.enableClassCaching](dcomibmenableclasscaching.md) system property and is now enabled by default. This feature was disabled for the 0.17.0 release due to [issue #7332](https://github.com/eclipse/openj9/issues/7332) which has now been resolved.
 
+
 ### Terabytes suffix support for -X and -XX options that take a size
+
 OpenJ9 now supports 't' and 'T' suffixes (indicating terabytes) for -X and -XX options that take a `<size>` parameter.
+
+#### Improved support for pause-less garbage collection
+
+Support for Concurrent scavenge mode is now extended to macOS&reg;. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
 
 ### Add more changes here...
 
