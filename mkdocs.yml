@@ -155,6 +155,7 @@ pages:
             - "Java memory map (jmap) tool"                                      : tool_jmap.md
             - "Java process status (jps)"                                        : tool_jps.md
             - "Java stack (jstack) tool"                                         : tool_jstack.md
+            - "Java statistics monitoring (jstat) tool"                          : tool_jstat.md
             - "Switching to OpenJ9"                                              : tool_migration.md
 
         - "Interfaces" :
