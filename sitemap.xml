@@ -161,6 +161,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/tool_jstat/</loc>
+     <lastmod>2019-11-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/tool_migration/</loc>
      <lastmod>2019-11-26</lastmod>
      <changefreq>daily</changefreq>
