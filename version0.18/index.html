@@ -428,8 +428,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems" title="[-XX:+TransparentHugePage is enabled by default on more Linux systems" class="md-nav__link">
-    [-XX:+TransparentHugePage is enabled by default on more Linux systems
+  <a href="#-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems" title="-XX:+TransparentHugePage is enabled by default on more Linux systems" class="md-nav__link">
+    -XX:+TransparentHugePage is enabled by default on more Linux systems
   </a>
   
 </li>
@@ -453,8 +453,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     Terabytes suffix support for -X and -XX options that take a size
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#improved-support-for-pause-less-garbage-collection" title="Improved support for pause-less garbage collection" class="md-nav__link">
@@ -463,8 +462,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#-xgcnoconcurrentscavenge-option" title="-Xgc:noConcurrentScavenge option" class="md-nav__link">
+    -Xgc:noConcurrentScavenge option
+  </a>
   
 </li>
         
@@ -3488,8 +3489,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems" title="[-XX:+TransparentHugePage is enabled by default on more Linux systems" class="md-nav__link">
-    [-XX:+TransparentHugePage is enabled by default on more Linux systems
+  <a href="#-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems" title="-XX:+TransparentHugePage is enabled by default on more Linux systems" class="md-nav__link">
+    -XX:+TransparentHugePage is enabled by default on more Linux systems
   </a>
   
 </li>
@@ -3513,8 +3514,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     Terabytes suffix support for -X and -XX options that take a size
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#improved-support-for-pause-less-garbage-collection" title="Improved support for pause-less garbage collection" class="md-nav__link">
@@ -3523,8 +3523,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#-xgcnoconcurrentscavenge-option" title="-Xgc:noConcurrentScavenge option" class="md-nav__link">
+    -Xgc:noConcurrentScavenge option
+  </a>
   
 </li>
         
@@ -3599,11 +3601,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking">New shared classes cache suboption to turn off timestamp checking</a></li>
 <li><a href="#-xmso-1-mb-minimum-value-on-zos-64-bit"><code>-Xmso</code> 1 MB minimum value on z/OS 64-bit</a></li>
 <li><a href="#new-jstat-tool">New Java&trade; statistics monitoring (<code>jstat</code>) tool</a></li>
-<li><a href="#xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems">-XX:+TransparentHugePage is enabled by default on more Linux systems</a></li>
+<li><a href="#-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems">-XX:+TransparentHugePage is enabled by default on more Linux systems</a></li>
 <li><a href="#add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option">Add new Xdump exit agent and ExitOnOutOfMemoryError option</a></li>
 <li><a href="#ludcl-caching-enabled-by-default">LUDCL caching enabled by default</a></li>
 <li><a href="#terabytes-suffix-support-for-x-and-xx-options-that-take-a-size">Terabytes suffix support for -X and -XX options that take a size</a></li>
 <li><a href="#improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</a></li>
+<li><a href="#-xgcnoconcurrentscavenge-option"><code>-Xgc:noConcurrentScavenge</code> option</a></li>
 <li><a href="#add-more-changes-here">Add more changes here...</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -3615,7 +3618,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>On z/OS 64-bit, <a href="../xmso/"><code>-Xmso</code></a> has a 1 MB minimum value, to match the minimum stack space provided by the operating system. If you set a value smaller than 1 MB, the value is ignored.</p>
 <h3 id="new-jstat-tool">New jstat tool</h3>
 <p>For compatibility with the HotSpot implementation, OpenJ9 now includes an independent implementation of the <code>jstat</code> tool for retrieving statistics on a VM. For more information, see <a href="../tool_jstat/">Java statistics monitoring tool</a>.</p>
-<h3 id="-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems">[-XX:+TransparentHugePage is enabled by default on more Linux systems</h3>
+<h3 id="-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems"><code>-XX:+TransparentHugePage</code> is enabled by default on more Linux systems</h3>
 <p><a href="../xxtransparenthugepage/">-XX:+TransparentHugePage</a> is enabled by default on Linux&reg; systems for POWER and IBM Z as well as x86 systems. This option takes affect only when Transparent Huge Pages (THP) is set to <code>madvise</code> on your system. When transparent Huge Pages are used, your application footprint might increase.</p>
 <h3 id="add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option">Add new Xdump exit agent and ExitOnOutOfMemoryError option</h3>
 <p>The new Xdump agent "exit" shuts down the VM when the specified event occurs. The "exit" agent is at priority level 0 and "tool" agent has been moved to priority level 1 to aid in mimicking the behavior of HotSpot options. See <a href="../xdump/#dump-agents">Xdump dump agents</a> for more about agents.</p>
@@ -3626,8 +3629,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 capability is controlled by the <a href="../dcomibmenableclasscaching/">-Dcom.ibm.enableClassCaching</a> system property and is now enabled by default. This feature was disabled for the 0.17.0 release due to <a href="https://github.com/eclipse/openj9/issues/7332">issue #7332</a> which has now been resolved.</p>
 <h3 id="terabytes-suffix-support-for-x-and-xx-options-that-take-a-size">Terabytes suffix support for -X and -XX options that take a size</h3>
 <p>OpenJ9 now supports 't' and 'T' suffixes (indicating terabytes) for -X and -XX options that take a <code>&lt;size&gt;</code> parameter.</p>
-<h4 id="improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</h4>
+<h3 id="improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</h3>
 <p>Support for Concurrent scavenge mode is now extended to macOS&reg;. For more information, see <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a>.</p>
+<h3 id="-xgcnoconcurrentscavenge-option"><code>-Xgc:noConcurrentScavenge</code> option</h3>
+<p>The previously undocumented option <a href="../xgc/#noconcurrentscavenge"><code>-Xgc:noConcurrentScavenge</code></a> disables pause-less garbage collection.</p>
 <h3 id="add-more-changes-here">Add more changes here...</h3>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.17.0 and v 0.18.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.18/0.18.md">Release notes</a>.</p>

@@ -1730,6 +1730,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#noconcurrentscavenge" title="noConcurrentScavenge" class="md-nav__link">
+    noConcurrentScavenge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#overridehirestimercheck" title="overrideHiresTimerCheck" class="md-nav__link">
     overrideHiresTimerCheck
   </a>
@@ -3540,6 +3547,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#noconcurrentscavenge" title="noConcurrentScavenge" class="md-nav__link">
+    noConcurrentScavenge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#overridehirestimercheck" title="overrideHiresTimerCheck" class="md-nav__link">
     overrideHiresTimerCheck
   </a>
@@ -3667,43 +3681,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </thead>
 <tbody>
 <tr>
-<td><a href="#concurrentscavenge"><code>concurrentScavenge</code>          </a></td>
+<td><a href="#concurrentscavenge"><code>concurrentScavenge</code>               </a></td>
 <td>Enables a garbage collection (GC) mode with less pause times.</td>
 </tr>
 <tr>
-<td><a href="#dnssexpectedtimeratiomaximum"><code>dnssExpectedTimeRatioMaximum</code></a></td>
+<td><a href="#dnssexpectedtimeratiomaximum"><code>dnssExpectedTimeRatioMaximum</code>     </a></td>
 <td>Sets the maximum time to spend on GC of the nursery area.</td>
 </tr>
 <tr>
-<td><a href="#dnssexpectedtimeratiominimum"><code>dnssExpectedTimeRatioMinimum</code></a></td>
+<td><a href="#dnssexpectedtimeratiominimum"><code>dnssExpectedTimeRatioMinimum</code>     </a></td>
 <td>Sets the minimum time to spend on GC of the nursery area.</td>
 </tr>
 <tr>
-<td><a href="#excessivegcratio"><code>excessiveGCratio</code>            </a></td>
+<td><a href="#excessivegcratio"><code>excessiveGCratio</code>                 </a></td>
 <td>Sets a boundary value beyond which GC is deemed to be excessive.</td>
 </tr>
 <tr>
-<td><a href="#mincontractpercent"><code>minContractPercent</code>          </a></td>
+<td><a href="#mincontractpercent"><code>minContractPercent</code>               </a></td>
 <td>Sets the minimum percentage of the heap that can be contracted at any given time.</td>
 </tr>
 <tr>
-<td><a href="#maxcontractpercent"><code>maxContractPercent</code>          </a></td>
+<td><a href="#maxcontractpercent"><code>maxContractPercent</code>               </a></td>
 <td>Sets the maximum percentage of the heap that can be contracted at any given time.</td>
 </tr>
 <tr>
-<td><a href="#overridehirestimercheck"><code>overrideHiresTimerCheck</code>     </a></td>
+<td><a href="#overridehirestimercheck"><code>overrideHiresTimerCheck</code>          </a></td>
 <td>Overrides GC operating system checks for timer resolution.</td>
 </tr>
 <tr>
-<td><a href="#preferredheapbase"><code>preferredHeapBase</code>           </a></td>
+<td><a href="#noconcurrentscavenge"><code>noConcurrentScavenge</code>             </a></td>
+<td>Disables concurrent scavenge.</td>
+</tr>
+<tr>
+<td><a href="#preferredheapbase"><code>preferredHeapBase</code>                </a></td>
 <td>Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; only)</td>
 </tr>
 <tr>
-<td><a href="#scvnoadaptivetenure"><code>scvNoAdaptiveTenure</code>         </a></td>
+<td><a href="#scvnoadaptivetenure"><code>scvNoAdaptiveTenure</code>              </a></td>
 <td>Turns off the adaptive tenure age in the generational concurrent GC policy.</td>
 </tr>
 <tr>
-<td><a href="#scvtenureage"><code>scvTenureAge</code>                </a></td>
+<td><a href="#scvtenureage"><code>scvTenureAge</code>                     </a></td>
 <td>Sets the initial scavenger tenure age in the generational concurrent GC policy.</td>
 </tr>
 <tr>
@@ -3711,19 +3729,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td>Prevents the GC from performing a compaction unless absolutely required.</td>
 </tr>
 <tr>
-<td><a href="#tlhincrementsize"><code>tlhIncrementSize</code>            </a></td>
-<td>Sets the size of the thread local heap (TLH).  increment</td>
+<td><a href="#tlhincrementsize"><code>tlhIncrementSize</code>                 </a></td>
+<td>Sets the size of the thread local heap (TLH) increment.</td>
 </tr>
 <tr>
-<td><a href="#tlhinitialsize"><code>tlhInitialSize</code>              </a></td>
-<td>Sets the initial size of the thread local. heap</td>
+<td><a href="#tlhinitialsize"><code>tlhInitialSize</code>                   </a></td>
+<td>Sets the initial size of the thread local heap.</td>
 </tr>
 <tr>
-<td><a href="#tlhmaximumsize"><code>tlhMaximumSize</code>              </a></td>
-<td>Sets the maximum size of the thread local. heap</td>
+<td><a href="#tlhmaximumsize"><code>tlhMaximumSize</code>                   </a></td>
+<td>Sets the maximum size of the thread local heap.</td>
 </tr>
 <tr>
-<td><a href="#verboseformat"><code>verboseFormat</code>               </a></td>
+<td><a href="#verboseformat"><code>verboseFormat</code>                    </a></td>
 <td>Sets the verbose GC format.</td>
 </tr>
 </tbody>
@@ -3734,7 +3752,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </code></pre>
 <dl>
 <dd>
-<p>This option supports pause-less garbage collection mode when you use the Generational Concurrent (<a href="../xgcpolicy/"><code>gencon</code></a>) garbage collection policy (the default policy).</p>
+<p>This option supports pause-less garbage collection mode when you use the Generational Concurrent (<a href="../xgcpolicy/#gencon"><code>gencon</code></a>) garbage collection policy (the default policy).</p>
 <p>If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications.</p>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note: Linux on Z and z/OS</strong></p>
 <p>This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode.</p>
@@ -3885,6 +3903,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </dd>
 <dd>
 <p>The maximum percentage of the heap that can be contracted at any given time. For example, <code>-Xgc:maxContractPercent=20</code> causes the heap to contract by as much as 20%.</p>
+</dd>
+</dl>
+<h3 id="noconcurrentscavenge"><code>noConcurrentScavenge</code></h3>
+<pre><code>    -Xgc:noConcurrentScavenge
+</code></pre>
+<dl>
+<dd>
+<p>This option disables pause-less garbage collection that you might have enabled with the <a href="#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a> option when using the Generational Concurrent (<a href="../xgcpolicy/#gencon"><code>gencon</code></a>) garbage collection policy (the default policy).</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> No concurrent scavenge is the default state, but the <code>noConcurrentScavenge</code> option is useful as it will disable concurrent scavenge even if it has been enabled by a previous option; the right-most option always takes precedence. </p>
 </dd>
 </dl>
 <h3 id="overridehirestimercheck"><code>overrideHiresTimerCheck</code></h3>
