@@ -31,11 +31,12 @@ The following new features and notable changes since v 0.17.0 are included in th
 - [New shared classes cache suboption to turn off timestamp checking](#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking)
 - [`-Xmso` 1 MB minimum value on z/OS 64-bit](#-xmso-1-mb-minimum-value-on-zos-64-bit)
 - [New Java&trade; statistics monitoring (`jstat`) tool](#new-jstat-tool)
-- [-XX:+TransparentHugePage is enabled by default on more Linux systems](#xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems)
+- [-XX:+TransparentHugePage is enabled by default on more Linux systems](#-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems)
 - [Add new Xdump exit agent and ExitOnOutOfMemoryError option](#add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option)
 - [LUDCL caching enabled by default](#ludcl-caching-enabled-by-default)
 - [Terabytes suffix support for -X and -XX options that take a size](#terabytes-suffix-support-for-x-and-xx-options-that-take-a-size)
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
+- [`-Xgc:noConcurrentScavenge` option](#-xgcnoconcurrentscavenge-option)
 - [Add more changes here...](#add-more-changes-here)
 
 
@@ -57,7 +58,7 @@ On z/OS 64-bit, [`-Xmso`](xmso.md) has a 1 MB minimum value, to match the minimu
 
 For compatibility with the HotSpot implementation, OpenJ9 now includes an independent implementation of the `jstat` tool for retrieving statistics on a VM. For more information, see [Java statistics monitoring tool](tool_jstat.md).
 
-### [-XX:+TransparentHugePage is enabled by default on more Linux systems
+### `-XX:+TransparentHugePage` is enabled by default on more Linux systems
 
 [-XX:+TransparentHugePage](xxtransparenthugepage.md) is enabled by default on Linux&reg; systems for POWER and IBM Z as well as x86 systems. This option takes affect only when Transparent Huge Pages (THP) is set to `madvise` on your system. When transparent Huge Pages are used, your application footprint might increase.
 
@@ -78,9 +79,13 @@ capability is controlled by the [-Dcom.ibm.enableClassCaching](dcomibmenableclas
 
 OpenJ9 now supports 't' and 'T' suffixes (indicating terabytes) for -X and -XX options that take a `<size>` parameter.
 
-#### Improved support for pause-less garbage collection
+### Improved support for pause-less garbage collection
 
 Support for Concurrent scavenge mode is now extended to macOS&reg;. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
+
+### `-Xgc:noConcurrentScavenge` option
+
+The previously undocumented option [`-Xgc:noConcurrentScavenge`](xgc.md#noconcurrentscavenge) disables pause-less garbage collection.
 
 ### Add more changes here...
 

@@ -32,23 +32,24 @@ Options that change the behavior of the Garbage Collector (GC).
 
 ## Parameters
 
-| Parameter                                                       | Effect                                                                                                    |
-|-----------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| [`concurrentScavenge`          ](#concurrentscavenge          ) | Enables a garbage collection (GC) mode with less pause times.                                             |
-| [`dnssExpectedTimeRatioMaximum`](#dnssexpectedtimeratiomaximum) | Sets the maximum time to spend on GC of the nursery area.                                                 |
-| [`dnssExpectedTimeRatioMinimum`](#dnssexpectedtimeratiominimum) | Sets the minimum time to spend on GC of the nursery area.                                                 |
-| [`excessiveGCratio`            ](#excessivegcratio            ) | Sets a boundary value beyond which GC is deemed to be excessive.                                          |
-| [`minContractPercent`          ](#mincontractpercent          ) | Sets the minimum percentage of the heap that can be contracted at any given time.                         |
-| [`maxContractPercent`          ](#maxcontractpercent          ) | Sets the maximum percentage of the heap that can be contracted at any given time.                         |
-| [`overrideHiresTimerCheck`     ](#overridehirestimercheck     ) | Overrides GC operating system checks for timer resolution.                                                |
-| [`preferredHeapBase`           ](#preferredheapbase           ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; only) |
-| [`scvNoAdaptiveTenure`         ](#scvnoadaptivetenure         ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                               |
-| [`scvTenureAge`                ](#scvtenureage                ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                           |
-| [`stdGlobalCompactToSatisfyAllocate`](#stdglobalcompacttosatisfyallocate) | Prevents the GC from performing a compaction unless absolutely required. |
-| [`tlhIncrementSize`            ](#tlhincrementsize            ) | Sets the size of the thread local heap (TLH).  increment                                                   |
-| [`tlhInitialSize`              ](#tlhinitialsize              ) | Sets the initial size of the thread local. heap                                                            |
-| [`tlhMaximumSize`              ](#tlhmaximumsize              ) | Sets the maximum size of the thread local. heap                                                            |
-| [`verboseFormat`               ](#verboseformat               ) | Sets the verbose GC format.                                                                               |
+| Parameter                                                                 | Effect                                                                                                    |
+|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| [`concurrentScavenge`               ](#concurrentscavenge               ) | Enables a garbage collection (GC) mode with less pause times.                                             |
+| [`dnssExpectedTimeRatioMaximum`     ](#dnssexpectedtimeratiomaximum     ) | Sets the maximum time to spend on GC of the nursery area.                                                 |
+| [`dnssExpectedTimeRatioMinimum`     ](#dnssexpectedtimeratiominimum     ) | Sets the minimum time to spend on GC of the nursery area.                                                 |
+| [`excessiveGCratio`                 ](#excessivegcratio                 ) | Sets a boundary value beyond which GC is deemed to be excessive.                                          |
+| [`minContractPercent`               ](#mincontractpercent               ) | Sets the minimum percentage of the heap that can be contracted at any given time.                         |
+| [`maxContractPercent`               ](#maxcontractpercent               ) | Sets the maximum percentage of the heap that can be contracted at any given time.                         |
+| [`overrideHiresTimerCheck`          ](#overridehirestimercheck          ) | Overrides GC operating system checks for timer resolution.                                                |
+| [`noConcurrentScavenge`             ](#noconcurrentscavenge             ) | Disables concurrent scavenge.                                                                             |
+| [`preferredHeapBase`                ](#preferredheapbase                ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; only) |
+| [`scvNoAdaptiveTenure`              ](#scvnoadaptivetenure              ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                               |
+| [`scvTenureAge`                     ](#scvtenureage                     ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                           |
+| [`stdGlobalCompactToSatisfyAllocate`](#stdglobalcompacttosatisfyallocate) | Prevents the GC from performing a compaction unless absolutely required.                                  |
+| [`tlhIncrementSize`                 ](#tlhincrementsize                 ) | Sets the size of the thread local heap (TLH) increment.                                                   |
+| [`tlhInitialSize`                   ](#tlhinitialsize                   ) | Sets the initial size of the thread local heap.                                                           |
+| [`tlhMaximumSize`                   ](#tlhmaximumsize                   ) | Sets the maximum size of the thread local heap.                                                           |
+| [`verboseFormat`                    ](#verboseformat                    ) | Sets the verbose GC format.                                                                               |
 
 ### `concurrentScavenge`
 
@@ -56,7 +57,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
         -Xgc:concurrentScavenge
 
-: This option supports pause-less garbage collection mode when you use the Generational Concurrent ([`gencon`](xgcpolicy.md)) garbage collection policy (the default policy).
+: This option supports pause-less garbage collection mode when you use the Generational Concurrent ([`gencon`](xgcpolicy.md#gencon)) garbage collection policy (the default policy).
 
     If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications.
 
@@ -134,6 +135,14 @@ Options that change the behavior of the Garbage Collector (GC).
   | `<n>`         | [percentage]   | -                     |
 
 : The maximum percentage of the heap that can be contracted at any given time. For example, `-Xgc:maxContractPercent=20` causes the heap to contract by as much as 20%.
+
+### `noConcurrentScavenge`
+
+        -Xgc:noConcurrentScavenge
+
+: This option disables pause-less garbage collection that you might have enabled with the [`-Xgc:concurrentScavenge`](#concurrentscavenge) option when using the Generational Concurrent ([`gencon`](xgcpolicy.md#gencon)) garbage collection policy (the default policy).
+
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** No concurrent scavenge is the default state, but the `noConcurrentScavenge` option is useful as it will disable concurrent scavenge even if it has been enabled by a previous option; the right-most option always takes precedence. 
 
 ### `overrideHiresTimerCheck`
 
