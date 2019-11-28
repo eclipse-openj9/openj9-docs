@@ -103,17 +103,14 @@ Where:
 
 `JAVA_DUMP_OPTS` is parsed by taking the leftmost occurrence of each condition, so duplicates are ignored. The following setting produces a system dump for the first error condition only:
 
-    :::java
     ONERROR(SYSDUMP[1]),ONERROR(JAVADUMP)
 
 Also, the `ONANYSIGNAL` condition is parsed before all others, so
 
-    :::java
     ONINTERRUPT(NONE),ONANYSIGNAL(SYSDUMP)
 
 has the same effect as
 
-    :::java
     ONANYSIGNAL(SYSDUMP),ONINTERRUPT(NONE)
 
 
