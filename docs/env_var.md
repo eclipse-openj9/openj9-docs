@@ -103,17 +103,14 @@ Where:
 
 `JAVA_DUMP_OPTS` is parsed by taking the leftmost occurrence of each condition, so duplicates are ignored. The following setting produces a system dump for the first error condition only:
 
-    :::java
     ONERROR(SYSDUMP[1]),ONERROR(JAVADUMP)
 
 Also, the `ONANYSIGNAL` condition is parsed before all others, so
 
-    :::java
     ONINTERRUPT(NONE),ONANYSIGNAL(SYSDUMP)
 
 has the same effect as
 
-    :::java
     ONANYSIGNAL(SYSDUMP),ONINTERRUPT(NONE)
 
 
@@ -158,15 +155,15 @@ The preferred mechanism for controlling the production of Java dumps is by using
 
 The preferred mechanism for controlling the production of Java dumps is by using the `-Xdump:heap` option. However, these legacy environment variables are preserved and can still be used.
 
-| Environment Variable           | Usage Information                                                                                                          |
-|--------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-|`IBM_HEAPDUMP=[TRUE|FALSE]`     | Setting this option to `TRUE` enables heap dump production by using signals.                                               |
-|`IBM_HEAP_DUMP=[TRUE|FALSE]`    |  Setting this option to `TRUE` enables heap dump production by using signals.                                               |
-|`IBM_HEAPDUMPDIR=<directory>`   | The default location into which the heap dump is written. On z/OS, the `_CEE_DMPTARG` environment variable is used instead.                             |
+| Environment Variable                  | Usage Information                                                                                                          |
+|---------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+|`IBM_HEAPDUMP=[TRUE|FALSE]`            | Setting this option to `TRUE` enables heap dump production by using signals.                                               |
+|`IBM_HEAP_DUMP=[TRUE|FALSE]`           |  Setting this option to `TRUE` enables heap dump production by using signals.                                               |
+|`IBM_HEAPDUMPDIR=<directory>`          | The default location into which the heap dump is written. On z/OS, the `_CEE_DMPTARG` environment variable is used instead.                             |
 |`IBM_HEAPDUMP_OUTOFMEMORY=[TRUE|FALSE]`| Controls the generation of a heap dump when an out-of-memory exception is thrown. When not set, a heap dump is generated when an out-of-memory exception is thrown but not caught and handled by the application. Set to TRUE to generate a dump when an out-of-memory exception is thrown, even if it is handled by the application. Set to FALSE to disable heap dump for an out-of-memory exception.                                                   |
-|`IBM_JAVA_HEAPDUMP_TEST`        | Use this environment variable to cause the VM to generate both PHD and text versions of heap dumps. Equivalent to `opts=PHD+CLASSIC` on the `-Xdump:heap` option.|
-|`IBM_JAVA_HEAPDUMP_TEXT`        | Use this environment variable to cause the VM to generate a text (human readable) Heap dump. Equivalent to `opts=CLASSIC` on the `-Xdump:heap` option.|
-|`TMPDIR=<directory>`            | This variable specifies an alternative temporary directory. This directory is used only when Java dumps and heap dumps cannot be written to their target directories, or the current working directory. The default is `/tmp` (`C:\temp` for Windows).|
+|`IBM_JAVA_HEAPDUMP_TEST`               | Use this environment variable to cause the VM to generate both PHD and text versions of heap dumps. Equivalent to `opts=PHD+CLASSIC` on the `-Xdump:heap` option.|
+|`IBM_JAVA_HEAPDUMP_TEXT`               | Use this environment variable to cause the VM to generate a text (human readable) Heap dump. Equivalent to `opts=CLASSIC` on the `-Xdump:heap` option.|
+|`TMPDIR=<directory>`                   | This variable specifies an alternative temporary directory. This directory is used only when Java dumps and heap dumps cannot be written to their target directories, or the current working directory. The default is `/tmp` (`C:\temp` for Windows).|
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You can use the dump agent `JAVA_DUMP_OPTS` variable to control the conditions under which Heap dumps are produced.
 
