@@ -308,7 +308,7 @@ The following summary data is displayed:
 : The number of bytes of non-class data stored by the VM.
 
 #### `Metadata bytes`
-: The number of bytes of data stored to describe the cached classes. **Note:** This field is available only in the top layer cache output or when a cache is not layered.
+: The number of bytes of data stored to describe the cached classes. <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This field is available only in the top layer cache output or when a cache is not layered.
 
 #### `Metadata % used`
 : The proportion of metadata bytes to class bytes, which indicates how efficiently cache space is being used. The value shown does consider the `Class debug area size`.
@@ -417,3 +417,6 @@ Cache is 8% full
 
 Cache is accessible to current user = true
 ```
+
+
+<!-- ==== END OF TOPIC ==== shrc_diag_util.md ==== -->

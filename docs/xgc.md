@@ -53,7 +53,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
 ### `concurrentScavenge`
 
-**(64-bit: Windows, AIX, Linux (x86, POWER&reg;, or IBM Z&reg;), macOS&reg;, and z/OS&reg;)**
+**(64-bit only)**
 
         -Xgc:concurrentScavenge
 
@@ -137,6 +137,8 @@ Options that change the behavior of the Garbage Collector (GC).
 : The maximum percentage of the heap that can be contracted at any given time. For example, `-Xgc:maxContractPercent=20` causes the heap to contract by as much as 20%.
 
 ### `noConcurrentScavenge`
+
+**(64-bit only)**
 
         -Xgc:noConcurrentScavenge
 

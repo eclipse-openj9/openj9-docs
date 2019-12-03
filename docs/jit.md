@@ -131,16 +131,18 @@ The information section is followed by a sequence of lines that describe the met
 
 Here is a typical line from the verbose log:
 
-`+ (cold) sun/reflect/Reflection.getCallerClass()Ljava/lang/Class; @ 00007FCACED1303C-00007FCACED13182 OrdinaryMethod - Q_SZ=0 Q_SZI=0 QW=1 j9m=00000000011E7EA8 bcsz=2 JNI compThread=0 CpuLoad=2%(2%avg) JvmCpu=0%`
+```
++ (cold) sun/reflect/Reflection.getCallerClass()Ljava/lang/Class; @ 00007FCACED1303C-00007FCACED13182 OrdinaryMethod - Q_SZ=0 Q_SZI=0 QW=1 j9m=00000000011E7EA8 bcsz=2 JNI compThread=0 CpuLoad=2%(2%avg) JvmCpu=0%
+```
 
 In this example:
 
-- The method compiled is sun/reflect/Reflection.getCallerClass()Ljava/lang/Class.
-- The + indicates that this method is successfully compiled. Failed compilations are marked by a !.
-- (cold) tells you the optimization level that was applied. Other examples may be (warm) or (scorching).
-- 00007FCACED1303C-00007FCACED13182 is the code range where the compiled code was generated.
-- Q values provide information about the state of the compilation queues when the compilation occurred.
-- bcsz shows the bytecode size. In this case it is small because this is a native method, so the JIT is simply providing an accelerated JNI transition into the native getCallerClass method.
+- The method compiled is `sun/reflect/Reflection.getCallerClass()Ljava/lang/Class`.
+- The `+` indicates that this method is successfully compiled. Failed compilations are marked by a `!`.
+- `(cold)` tells you the optimization level that was applied. Other examples might be `(warm)` or `(scorching)`.
+- `00007FCACED1303C-00007FCACED13182` is the code range where the compiled code was generated.
+- `Q` values provide information about the state of the compilation queues when the compilation occurred.
+- `bcsz` shows the bytecode size. In this case it is small because this is a native method, so the JIT is simply providing an accelerated JNI transition into the native `getCallerClass` method.
 
 Each line of output represents a method that is compiled.
 

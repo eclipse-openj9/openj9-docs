@@ -106,7 +106,7 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow 
 
 OpenJ9 provides the [CUDA4J API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.cuda/index.html?view=kc) and the [com.ibm.gpu API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.gpu/index.html?view=kc), which allow you to develop applications that can take advantage of graphics processing unit (GPU) processing for suitable functions, such as code page conversion. You can also enable the JIT compiler to offload certain processing tasks to a GPU by specifying the `-Xjit:enableGPU` option on the command line. When enabled, the JIT compiler determines when to offload tasks based on performance heuristics.
 
-GPU processing is supported only on Windows (x86-64) and Linux (x86-64 and IBM Power LE) systems. For more information about enabling GPU processing, see [Exploiting graphics processing units](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.80.doc/docs/gpu_overview.html).
+GPU processing is supported only on Windows (x86-64) and Linux (x86-64 and IBM Power LE) systems. For more information about enabling GPU processing, see [Exploiting graphics processing units](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/gpu_overview.html).
 
 ## Runtime options
 
@@ -128,4 +128,4 @@ The OpenJ9 diagnostic component contains extensive features to assist with probl
 To get started, read [Diagnostic tools and data](diag_overview.md).
 
 
-<!-- ==== END OF TOPIC ==== index.md ==== -->
+<!-- ==== END OF TOPIC ==== introduction.md ==== -->
