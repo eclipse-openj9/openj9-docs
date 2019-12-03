@@ -143,7 +143,7 @@
   font-weight: 600;
 }
 .md-typeset h3 code {
-  font-size: 1.9rem;
+  font-size: 0.95rem;
 }
 
 .md-nav__title {
@@ -162,8 +162,8 @@ margin-top: 5rem;
 /* HEADER */
 
 .md-header {
-  height: 4.8rem;
-  padding: .3rem 0rem 5rem 0rem;
+  height: 2.4rem;
+  padding: .15rem 0rem 2.5rem 0rem;
 }
 
 /* Logo in the header - container */
@@ -174,7 +174,7 @@ margin-top: 5rem;
 }
 
 .egg {
-  height: 4rem;
+  height: 2rem;
   transition: opacity .4s;
   position: absolute;
   top: 50%;
@@ -225,7 +225,7 @@ margin-top: 5rem;
 
 @media only screen and (min-width: 76.25em) {
   .md-sidebar__inner {
-    border-right: .2rem solid rgba(0,0,0,.1);
+    border-right: .1rem solid rgba(0,0,0,.1);
   }
 }
 
@@ -245,7 +245,7 @@ html .md-footer-meta.md-typeset a:hover {
 }
 
 .md-footer-social__link:before {
-    font-size: 3rem;
+    font-size: 1.5rem;
 }
 .md-footer-social__link:hover:before {
   color: #da7a08;                      /* orange - Eclipse button: hover */
@@ -253,9 +253,9 @@ html .md-footer-meta.md-typeset a:hover {
 
 
 div .md-footer-copyright__highlight p {
-	font-size:1.9rem;
+	font-size:0.95rem;
 	-webkit-margin-before: 0rem;
-	-webkit-margin-after : .6rem;
+	-webkit-margin-after : .3rem;
 }
 
 .md-footer-meta.md-typeset {
@@ -263,28 +263,28 @@ div .md-footer-copyright__highlight p {
 }
 .md-footer-copyright1 {
   text-align: left; 
-  font-size: 1.3rem; 
-  padding: 1rem 5rem 0 5rem;
+  font-size: 0.75rem; 
+  padding: 0.5rem 2.5rem 0 2.5rem;
 }
 .md-footer-social1 {
   
 }
 .md-footer-eclipse1 {
-  padding: 1rem 0 1rem 0;
+  padding: 0.5rem 0 0.5rem 0;
 }
 .md-footer-links1 {
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   color: rgba(0,0,0,.5);
 }
 .md-footer-links1 .dark-link {
-  padding-left: .4rem;
+  padding-left: .2rem;
 }
       
       
 .md-footer-power1 {
   text-align: right;
-  font-size: 1.3rem;
-  padding: 0 5rem 0 5rem;
+  font-size: 0.65rem;
+  padding: 0 2.5rem 0 2.5rem;
 }
 
 
@@ -327,12 +327,12 @@ i.fa-chevron-circle-right {
 }
 
 .md-footer-nav__link {
-  padding-top: 3rem;
+  padding-top: 1.5rem;
 }
 
 .md-footer-nav__button {
   margin-left: 0;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   padding-left: 0;
   padding-right: 0;
 }
@@ -356,17 +356,17 @@ i.fa-chevron-circle-right {
 
 aside {
   background-color: #ddffee;
-  padding: 0 0 .3rem 0;
+  padding: 0 0 .15rem 0;
   margin: 0 0 0 0;
 }
 aside p {
-  padding: 0rem .8rem 0rem 1rem;
-  font-size: 1.3rem;
+  padding: 0rem .4rem 0rem 0.5rem;
+  font-size: 0.65rem;
   }
 aside p:first-child {
-  padding: .6rem .8rem .6rem 1rem;
+  padding: .3rem .4rem .3rem 0.5rem;
   background-color: #bbffcc;
-  font-size: 1.5rem;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 
@@ -378,8 +378,8 @@ aside p:first-child {
 /* TABLES */
 
 .md-typeset table:not([class]) th {
-  min-width: 10rem;
-  padding: .4rem 1.6rem;
+  min-width: 5rem;
+  padding: .2rem 0.8rem;
   background-color: #888888;
   color: #fff;
   vertical-align: top;
@@ -392,8 +392,8 @@ aside p:first-child {
 }
 
 .md-typeset table:not([class]) td {
-  padding: .5rem 1.6rem;
-  border-top: .1rem solid rgba(0,0,0,.07);
+  padding: .25rem 0.8rem;
+  border-top: .05rem solid rgba(0,0,0,.07);
   vertical-align: top;
 }
 
@@ -425,7 +425,7 @@ body > div > main > div > div.md-sidebar.md-sidebar--secondary > div > div > nav
 
 /* Just tweak in-line icons a bit! */
 img {
-	vertical-align: -.2rem;
+	vertical-align: -.1rem;
 }
 
 
