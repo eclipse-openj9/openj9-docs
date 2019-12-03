@@ -81,6 +81,7 @@ timeout(time: 6, unit: 'HOURS') {
                 def TMP_DESC = (currentBuild.description) ? currentBuild.description + "<br>" : ""
                 currentBuild.description = TMP_DESC + "<a href=${JENKINS_URL}computer/${NODE_NAME}>${NODE_NAME}</a>"
 
+                docker.image("${NAMESPACE}/${CONTAINER_NAME}:latest").pull()
                 docker.image("${NAMESPACE}/${CONTAINER_NAME}:latest").inside() {
                     stage('Build Doc') {
                         dir(BUILD_DIR) {
