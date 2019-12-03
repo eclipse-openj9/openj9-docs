@@ -32,8 +32,6 @@ To find out the large page sizes available and the current setting, use the `-ve
 
 ## Syntax
 
-AIX&reg;, Linux&reg;, macOS&reg;, Windows&trade; and Z/OS&reg;:
-
         -Xlp:codecache:pagesize=<size>
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
