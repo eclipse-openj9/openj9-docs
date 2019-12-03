@@ -3554,15 +3554,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>This section also shows the AOT and JIT options that are in force. The last few lines detail the start time of the compilation activity, how much free physical memory is available to the process, and the CPU entitlement.</p>
 <p>The information section is followed by a sequence of lines that describe the methods that are being compiled, as well as other events significant to the operation of the JIT compiler.</p>
 <p>Here is a typical line from the verbose log:</p>
-<p><code>+ (cold) sun/reflect/Reflection.getCallerClass()Ljava/lang/Class; @ 00007FCACED1303C-00007FCACED13182 OrdinaryMethod - Q_SZ=0 Q_SZI=0 QW=1 j9m=00000000011E7EA8 bcsz=2 JNI compThread=0 CpuLoad=2%(2%avg) JvmCpu=0%</code></p>
+<pre><code>+ (cold) sun/reflect/Reflection.getCallerClass()Ljava/lang/Class; @ 00007FCACED1303C-00007FCACED13182 OrdinaryMethod - Q_SZ=0 Q_SZI=0 QW=1 j9m=00000000011E7EA8 bcsz=2 JNI compThread=0 CpuLoad=2%(2%avg) JvmCpu=0%
+</code></pre>
+
 <p>In this example:</p>
 <ul>
-<li>The method compiled is sun/reflect/Reflection.getCallerClass()Ljava/lang/Class.</li>
-<li>The + indicates that this method is successfully compiled. Failed compilations are marked by a !.</li>
-<li>(cold) tells you the optimization level that was applied. Other examples may be (warm) or (scorching).</li>
-<li>00007FCACED1303C-00007FCACED13182 is the code range where the compiled code was generated.</li>
-<li>Q values provide information about the state of the compilation queues when the compilation occurred.</li>
-<li>bcsz shows the bytecode size. In this case it is small because this is a native method, so the JIT is simply providing an accelerated JNI transition into the native getCallerClass method.</li>
+<li>The method compiled is <code>sun/reflect/Reflection.getCallerClass()Ljava/lang/Class</code>.</li>
+<li>The <code>+</code> indicates that this method is successfully compiled. Failed compilations are marked by a <code>!</code>.</li>
+<li><code>(cold)</code> tells you the optimization level that was applied. Other examples might be <code>(warm)</code> or <code>(scorching)</code>.</li>
+<li><code>00007FCACED1303C-00007FCACED13182</code> is the code range where the compiled code was generated.</li>
+<li><code>Q</code> values provide information about the state of the compilation queues when the compilation occurred.</li>
+<li><code>bcsz</code> shows the bytecode size. In this case it is small because this is a native method, so the JIT is simply providing an accelerated JNI transition into the native <code>getCallerClass</code> method.</li>
 </ul>
 <p>Each line of output represents a method that is compiled.</p>
 <p>The following example requests information about the performance of JIT compiler threads, with output written to <code>vlogfile</code>.</p>

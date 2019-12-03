@@ -3620,16 +3620,13 @@ ON&lt;condition&gt;(&lt;agent&gt;[&lt;count&gt;],...),...)"
 <li><code>&lt;count&gt;</code> is the number of times to run the specified agent for the specified condition. This value is optional. By default, the agent runs every time that the condition occurs.</li>
 </ul>
 <p><code>JAVA_DUMP_OPTS</code> is parsed by taking the leftmost occurrence of each condition, so duplicates are ignored. The following setting produces a system dump for the first error condition only:</p>
-<pre><code>:::java
-ONERROR(SYSDUMP[1]),ONERROR(JAVADUMP)
+<pre><code>ONERROR(SYSDUMP[1]),ONERROR(JAVADUMP)
 </code></pre>
 <p>Also, the <code>ONANYSIGNAL</code> condition is parsed before all others, so</p>
-<pre><code>:::java
-ONINTERRUPT(NONE),ONANYSIGNAL(SYSDUMP)
+<pre><code>ONINTERRUPT(NONE),ONANYSIGNAL(SYSDUMP)
 </code></pre>
 <p>has the same effect as</p>
-<pre><code>:::java
-ONANYSIGNAL(SYSDUMP),ONINTERRUPT(NONE)
+<pre><code>ONANYSIGNAL(SYSDUMP),ONINTERRUPT(NONE)
 </code></pre>
 <p>If the <code>JAVA_DUMP_TOOL</code> environment variable is set, that variable is assumed to specify a valid executable name and is parsed for replaceable fields, such as <em>%pid</em>. If <em>%pid</em> is detected in the string, the string is replaced with the VM's own process ID. The tool that is specified by <code>JAVA_DUMP_TOOL</code> is run after any system dump or heap dump is taken, before anything else.</p>
 <p>The dump settings are applied in the following order. Settings later in the list take precedence:</p>
