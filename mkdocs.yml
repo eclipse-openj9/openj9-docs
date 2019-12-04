@@ -37,7 +37,7 @@ site_description: Eclipse OpenJ9 documentation
 
 # copyright: '© 2017, 2018 IBM Corp. and others'
 
-# google_analytics: ['UA-105616558-1', 'mkdocs.org']
+google_analytics: ['UA-105616558-3', 'mkdocs.org']
 
 # Build directories
 
