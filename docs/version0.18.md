@@ -27,26 +27,36 @@
 
 The following new features and notable changes since v 0.17.0 are included in this release:
 
-- [jextract now available on macOS for OpenJDK version 8](#jextract-now-available-on-macos-for-openjdk-version-8)
-- [New shared classes cache suboption to turn off timestamp checking](#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking)
-- [`-Xmso` 1 MB minimum value on z/OS 64-bit](#-xmso-1-mb-minimum-value-on-zos-64-bit)
-- [New Java&trade; statistics monitoring (`jstat`) tool](#new-jstat-tool)
-- [-XX:+TransparentHugePage is enabled by default on more Linux systems](#-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems)
-- [Add new Xdump exit agent and ExitOnOutOfMemoryError option](#add-new-xdump-exit-agent-and-exitonoutofmemoryerror-option)
+- [Binaries and supported environments](#binaries-and-supported-environments)
+- [`jextract` now available on macOS&reg; for OpenJDK version 8](#jextract-now-available-on-macos-for-openjdk-version-8)
+- [New shared-classes cache suboption to turn off timestamp checking](#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking)
+- [`-Xmso` 1 MB minimum value on z/OS&reg; 64-bit](#-xmso-1-mb-minimum-value-on-zos-64-bit)
+- [`jstat`: new Java&trade; statistics monitoring tool](#jstat-new-java-statistics-monitoring-tool)
+- [`-XX:+TransparentHugePage` is enabled by default on more Linux&reg; systems](#-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems)
+- [New exit dump agent and `ExitOnOutOfMemoryError` option](#new-exit-dump-agent-and-exitonoutofmemoryerror-option)
 - [LUDCL caching enabled by default](#ludcl-caching-enabled-by-default)
-- [Terabytes suffix support for -X and -XX options that take a size](#terabytes-suffix-support-for-x-and-xx-options-that-take-a-size)
+- [Terabytes suffix support for `-X` and `-XX` options that take a size](#terabytes-suffix-support-for-x-and-xx-options-that-take-a-size)
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
 - [`-Xgc:noConcurrentScavenge` option](#-xgcnoconcurrentscavenge-option)
-- [Add more changes here...](#add-more-changes-here)
 
 
 ## Features and changes
 
-### jextract now available on macOS for OpenJDK version 8
+### Binaries and supported environments
 
-The [`jextract` tool](tool_jextract.md) is now available on macOS&reg; platforms (as well as AIX&reg; and Linux&reg;) for _all_ current versions of OpenJDK: 8, 11, and 13.
+OpenJ9 release 0.18.0 supports OpenJDK 8, 11, and 13. Binaries are available from the AdoptOpenJDK community at the following links:
 
-### New shared classes cache suboption to turn off timestamp checking
+- [OpenJDK version 8](https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=openj9)
+- [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
+- [OpenJDK version 13](https://adoptopenjdk.net/archive.html?variant=openjdk13&jvmVariant=openj9)
+
+To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### `jextract` now available on macOS for OpenJDK version 8
+
+The [`jextract` tool](tool_jextract.md) is now available on macOS platforms (as well as AIX&reg; and Linux) for _all_ current versions of OpenJDK: 8, 11, and 13.
+
+### New shared-classes cache suboption to turn off timestamp checking
 
 You can set the `-Xshareclasses:noTimestampChecks` option to turn off timestamp checking in shared classes. For more information, see the [-Xshareclasses:noTimestampChecks](xshareclasses.md#notimestampchecks) option.
 
@@ -54,40 +64,35 @@ You can set the `-Xshareclasses:noTimestampChecks` option to turn off timestamp 
 
 On z/OS 64-bit, [`-Xmso`](xmso.md) has a 1 MB minimum value, to match the minimum stack space provided by the operating system. If you set a value smaller than 1 MB, the value is ignored.
 
-### New jstat tool
+### `jstat`: new Java statistics monitoring tool
 
 For compatibility with the HotSpot implementation, OpenJ9 now includes an independent implementation of the `jstat` tool for retrieving statistics on a VM. For more information, see [Java statistics monitoring tool](tool_jstat.md).
 
 ### `-XX:+TransparentHugePage` is enabled by default on more Linux systems
 
-[-XX:+TransparentHugePage](xxtransparenthugepage.md) is enabled by default on Linux&reg; systems for POWER and IBM Z as well as x86 systems. This option takes affect only when Transparent Huge Pages (THP) is set to `madvise` on your system. When transparent Huge Pages are used, your application footprint might increase.
+[-XX:+TransparentHugePage](xxtransparenthugepage.md) is enabled by default on Linux systems for POWER&reg; and IBM Z&reg; as well as x86 systems. This option takes affect only when Transparent Huge Pages (THP) is set to `madvise` on your system. When Transparent Huge Pages are used, your application footprint might increase.
 
-### Add new Xdump exit agent and ExitOnOutOfMemoryError option
+### New exit dump agent and `ExitOnOutOfMemoryError` option
 
-The new Xdump agent "exit" shuts down the VM when the specified event occurs. The "exit" agent is at priority level 0 and "tool" agent has been moved to priority level 1 to aid in mimicking the behavior of HotSpot options. See [Xdump dump agents](xdump.md#dump-agents) for more about agents.
+The new exit dump agent shuts down the VM when the specified event occurs. The exit agent is at priority level 0 and the tool agent has been moved to priority level 1 to aid in mimicking the behavior of HotSpot options. For more information about dump agents, see [`-Xdump`](xdump.md#dump-agents).
 
-OpenJ9 now supports the HotSpot option `-XX:[+-]ExitOnOutOfMemoryError`. You can set this option to have the VM shut down when a java.lang.OutOfMemory error is thrown by the VM or in Java code. See the [-XX:[+-]ExitOnOutOfMemoryError](xxexitonoutofmemory.md) option.
-
-The Xdump "exit" agent is used in the implementation of `-XX:[+-]ExitOnOutOfMemoryError`.
+OpenJ9 now supports the HotSpot option [`-XX:[+|-]ExitOnOutOfMemoryError`](xxexitonoutofmemory.md). You can set this option to have the VM shut down when a `java.lang.OutOfMemory` error is thrown by the VM or in Java code. The exit dump agent is used in the implementation of `-XX:[+|-]ExitOnOutOfMemoryError`.
 
 ### LUDCL caching enabled by default
-By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This
-capability is controlled by the [-Dcom.ibm.enableClassCaching](dcomibmenableclasscaching.md) system property and is now enabled by default. This feature was disabled for the 0.17.0 release due to [issue #7332](https://github.com/eclipse/openj9/issues/7332) which has now been resolved.
+By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This capability is controlled by the [`-Dcom.ibm.enableClassCaching`](dcomibmenableclasscaching.md) system property and is now enabled by default. This feature was disabled for the 0.17.0 release due to [issue #7332](https://github.com/eclipse/openj9/issues/7332) which has now been resolved.
 
 
-### Terabytes suffix support for -X and -XX options that take a size
+### Terabytes suffix support for `-X` and `-XX` options that take a size
 
-OpenJ9 now supports 't' and 'T' suffixes (indicating terabytes) for -X and -XX options that take a `<size>` parameter.
+OpenJ9 now supports 't' and 'T' suffixes (indicating terabytes) for `-X` and `-XX` options that take a `<size>` parameter.
 
 ### Improved support for pause-less garbage collection
 
-Support for Concurrent scavenge mode is now extended to macOS&reg;. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
+Support for Concurrent scavenge mode is now extended to macOS. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
 
 ### `-Xgc:noConcurrentScavenge` option
 
 The previously undocumented option [`-Xgc:noConcurrentScavenge`](xgc.md#noconcurrentscavenge) disables pause-less garbage collection.
-
-### Add more changes here...
 
 
 ## Full release information

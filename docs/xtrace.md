@@ -38,7 +38,7 @@ Use the <a href="https://www.eclipse.org/openj9/tools/xtrace_option_builder.html
 
     -Xtrace:<parameter>
 
-You can get help with `-Xtrace`by using the folowing options:
+You can get help with `-Xtrace`by using the following options:
 
 - `-Xtrace:help` &nbsp; Displays general trace help
 - `-Xtrace:what` &nbsp; Shows the current trace settings

@@ -51,7 +51,7 @@ columns will be removed over time.
 | v 0.15.0         | July 2019           | Yes       | Yes         |           |           |
 | v 0.16.0         | September 2019      | No        | No          | Yes (\*2) |           |
 | v 0.17.0         | October 2019        | Yes       | Yes         | Yes       |           |
-| v 0.18.0         | January 2020 (\*1)  | Yes       | Yes         | Yes       |           |
+| v 0.18.0         | January 2020        | Yes       | Yes         | Yes       |           |
 | v 0.19.0         | March 2020 (\*1)    | No        | No          | No        | Yes (\*2) |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**

@@ -203,7 +203,7 @@ You can use tokens to add context to dump file names and directories, and to pas
 | %asid | Address space ID (z/OS only)                                                                                                  |
 | &DS   | Dump Section. An incrementing sequence number used for splitting TDUMP files to be less than 2 GB in size. (z/OS 64-bit only) |
 
-### Merging -Xdump agents
+### Merging dump agents
 
 If you configure more than one dump agent, each responds to events according to its configuration. However, the internal structures representing the dump agent configuration might not match the command line, because dump agents are merged for efficiency. Two sets of options can be merged as long as none of the agent settings conflict. This means that the list of installed dump agents and their parameters produced by `-Xdump:what` might not be grouped in the same way as the original `-Xdump` options that configured them.
 
