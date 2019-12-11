@@ -1617,8 +1617,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#merging-xdump-agents" class="md-nav__link">
-    Merging -Xdump agents
+  <a href="#merging-dump-agents" class="md-nav__link">
+    Merging dump agents
   </a>
   
 </li>
@@ -3655,8 +3655,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#merging-xdump-agents" class="md-nav__link">
-    Merging -Xdump agents
+  <a href="#merging-dump-agents" class="md-nav__link">
+    Merging dump agents
   </a>
   
 </li>
@@ -4288,7 +4288,7 @@ Registered dump agents
 </tr>
 </tbody>
 </table>
-<h3 id="merging-xdump-agents">Merging -Xdump agents</h3>
+<h3 id="merging-dump-agents">Merging dump agents</h3>
 <p>If you configure more than one dump agent, each responds to events according to its configuration. However, the internal structures representing the dump agent configuration might not match the command line, because dump agents are merged for efficiency. Two sets of options can be merged as long as none of the agent settings conflict. This means that the list of installed dump agents and their parameters produced by <code>-Xdump:what</code> might not be grouped in the same way as the original <code>-Xdump</code> options that configured them.</p>
 <p>For example, you can use the following command to specify that a dump agent creates a Java dump file on class unload:</p>
 <pre><code>java -Xdump:java:events=unload -Xdump:what
