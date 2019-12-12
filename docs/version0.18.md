@@ -30,6 +30,7 @@ The following new features and notable changes since v 0.17.0 are included in th
 - [Binaries and supported environments](#binaries-and-supported-environments)
 - [`jextract` now available on macOS&reg; for OpenJDK version 8](#jextract-now-available-on-macos-for-openjdk-version-8)
 - [New shared-classes cache suboption to turn off timestamp checking](#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking)
+- [Removal of restriction on layered shared cache](#removal-of-restriction-on-layered-shared-cache)
 - [`-Xmso` 1 MB minimum value on z/OS&reg; 64-bit](#-xmso-1-mb-minimum-value-on-zos-64-bit)
 - [`jstat`: new Java&trade; statistics monitoring tool](#jstat-new-java-statistics-monitoring-tool)
 - [`-XX:+TransparentHugePage` is enabled by default on more Linux&reg; systems](#-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems)
@@ -59,6 +60,10 @@ The [`jextract` tool](tool_jextract.md) is now available on macOS platforms (as 
 ### New shared-classes cache suboption to turn off timestamp checking
 
 You can set the `-Xshareclasses:noTimestampChecks` option to turn off timestamp checking in shared classes. For more information, see the [-Xshareclasses:noTimestampChecks](xshareclasses.md#notimestampchecks) option.
+
+### Removal of restriction on layered shared cache
+
+In the previous release, there is a restriction that the [`jvmtiSharedCacheInfo.isCorrupt`](interface_jvmti.md#jvmtisharedcacheinfo-structure) field and the  [`SharedClassCacheInfo.isCacheCorrupt()`](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.oti.shared/com/ibm/oti/shared/SharedClassCacheInfo.html#isCacheCorrupt--) method cannot detect a corrupted cache that has a layer number other than `0`. This restriction is now removed.
 
 ### `-Xmso` 1 MB minimum value on z/OS 64-bit
 
