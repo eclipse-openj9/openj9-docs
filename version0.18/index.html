@@ -401,6 +401,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#removal-of-restriction-on-layered-shared-cache" class="md-nav__link">
+    Removal of restriction on layered shared cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-xmso-1-mb-minimum-value-on-zos-64-bit" class="md-nav__link">
     -Xmso 1 MB minimum value on z/OS 64-bit
   </a>
@@ -3462,6 +3469,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#removal-of-restriction-on-layered-shared-cache" class="md-nav__link">
+    Removal of restriction on layered shared cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-xmso-1-mb-minimum-value-on-zos-64-bit" class="md-nav__link">
     -Xmso 1 MB minimum value on z/OS 64-bit
   </a>
@@ -3580,6 +3594,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#binaries-and-supported-environments">Binaries and supported environments</a></li>
 <li><a href="#jextract-now-available-on-macos-for-openjdk-version-8"><code>jextract</code> now available on macOS&reg; for OpenJDK version 8</a></li>
 <li><a href="#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking">New shared-classes cache suboption to turn off timestamp checking</a></li>
+<li><a href="#removal-of-restriction-on-layered-shared-cache">Removal of restriction on layered shared cache</a></li>
 <li><a href="#-xmso-1-mb-minimum-value-on-zos-64-bit"><code>-Xmso</code> 1 MB minimum value on z/OS&reg; 64-bit</a></li>
 <li><a href="#jstat-new-java-statistics-monitoring-tool"><code>jstat</code>: new Java&trade; statistics monitoring tool</a></li>
 <li><a href="#-xxtransparenthugepage-is-enabled-by-default-on-more-linux-systems"><code>-XX:+TransparentHugePage</code> is enabled by default on more Linux&reg; systems</a></li>
@@ -3602,6 +3617,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The <a href="../tool_jextract/"><code>jextract</code> tool</a> is now available on macOS platforms (as well as AIX&reg; and Linux) for <em>all</em> current versions of OpenJDK: 8, 11, and 13.</p>
 <h3 id="new-shared-classes-cache-suboption-to-turn-off-timestamp-checking">New shared-classes cache suboption to turn off timestamp checking</h3>
 <p>You can set the <code>-Xshareclasses:noTimestampChecks</code> option to turn off timestamp checking in shared classes. For more information, see the <a href="../xshareclasses/#notimestampchecks">-Xshareclasses:noTimestampChecks</a> option.</p>
+<h3 id="removal-of-restriction-on-layered-shared-cache">Removal of restriction on layered shared cache</h3>
+<p>In the previous release, there is a restriction that the <a href="../interface_jvmti/#jvmtisharedcacheinfo-structure"><code>jvmtiSharedCacheInfo.isCorrupt</code></a> field and the  <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.oti.shared/com/ibm/oti/shared/SharedClassCacheInfo.html#isCacheCorrupt--"><code>SharedClassCacheInfo.isCacheCorrupt()</code></a> method cannot detect a corrupted cache that has a layer number other than <code>0</code>. This restriction is now removed.</p>
 <h3 id="-xmso-1-mb-minimum-value-on-zos-64-bit"><code>-Xmso</code> 1 MB minimum value on z/OS 64-bit</h3>
 <p>On z/OS 64-bit, <a href="../xmso/"><code>-Xmso</code></a> has a 1 MB minimum value, to match the minimum stack space provided by the operating system. If you set a value smaller than 1 MB, the value is ignored.</p>
 <h3 id="jstat-new-java-statistics-monitoring-tool"><code>jstat</code>: new Java statistics monitoring tool</h3>

@@ -4573,7 +4573,6 @@ Cache1                  Java8 64-bit  persistent      cr              2         
 <dl>
 <dd>The caches are created in the same directory.</dd>
 <dd>When you use the <code>-Xshareclasses:name=Cache1</code> suboption in future Java commands, all the caches are started. The top-layer cache is started in read/write mode, and lower-layer caches are started in read-only mode. Modifying a lower-layer cache would invalidate all the caches in the layers above.</dd>
-<dd><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> The <a href="../interface_jvmti/#jvmtisharedcacheinfo-structure"><code>jvmtiSharedCacheInfo.isCorrupt</code></a> field and the  <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.oti.shared/com/ibm/oti/shared/SharedClassCacheInfo.html#isCacheCorrupt--"><code>SharedClassCacheInfo.isCacheCorrupt()</code></a> method cannot detect a corrupted cache that has a layer number other than <code>0</code>. However, when a VM starts a layered cache directly, for example when you specify the <code>-Xshareclasses:name=&lt;cache_name&gt;</code> option on the command line, the VM detects any corruption and generates an error message as usual, regardless of the layer number of the cache.</dd>
 </dl>
 <h3 id="listallcaches-cache-utility"><code>listAllCaches</code> (Cache utility)</h3>
 <pre><code>    -Xshareclasses:listAllCaches
