@@ -348,8 +348,6 @@ case, the VM continues without using shared classes.
 
 : When you use the `-Xshareclasses:name=Cache1` suboption in future Java commands, all the caches are started. The top-layer cache is started in read/write mode, and lower-layer caches are started in read-only mode. Modifying a lower-layer cache would invalidate all the caches in the layers above.
 
-: <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** The [`jvmtiSharedCacheInfo.isCorrupt`](interface_jvmti.md#jvmtisharedcacheinfo-structure) field and the  [`SharedClassCacheInfo.isCacheCorrupt()`](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.oti.shared/com/ibm/oti/shared/SharedClassCacheInfo.html#isCacheCorrupt--) method cannot detect a corrupted cache that has a layer number other than `0`. However, when a VM starts a layered cache directly, for example when you specify the `-Xshareclasses:name=<cache_name>` option on the command line, the VM detects any corruption and generates an error message as usual, regardless of the layer number of the cache.
-
 ### `listAllCaches` (Cache utility)
 
         -Xshareclasses:listAllCaches
