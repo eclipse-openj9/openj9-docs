@@ -428,9 +428,10 @@ img {
 	vertical-align: -.1rem;
 }
 
-
-
-
 .md-nav__item, .md-nav__link {
 	white-space: nowrap;
+}
+
+.md-content__icon, .md-footer-nav__button, .md-header-nav__button, .md-nav__button, .md-nav__title:before, .md-search-result__article--document:before {
+  padding: .2rem;
 }
