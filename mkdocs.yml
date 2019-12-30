@@ -160,8 +160,8 @@ nav:
 
         - "Interfaces" :
             - "JVMTI"                                                            : interface_jvmti.md
-#            - "MXBeans"                                                          : interface_mxbeans.md
             - "DTFJ"                                                             : interface_dtfj.md
+            - "Language Management"                                              : interface_lang_management.md
 
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md

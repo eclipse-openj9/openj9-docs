@@ -111,9 +111,9 @@ OpenJ9 supports the Java Virtual Machine Tool Interface (JVMTI) and provides ext
 
 OpenJ9 includes the Diagnostic Tool Framework for Java (DTFJ) API. Custom applications can be written that use this API to access a wide range of information in a system dump or a Java dump. DTFJ can be used with the Eclipse Memory Analyzer Toolkit (MAT) to examine the Java object heap for memory leaks and to reduce memory consumption. For more information, see [Diagnostic Tool Framework for Java](interface_dtfj.md).
 
-### `java.lang.management` API
+### Language Management interface
 
-OpenJ9 provides MXBean additions and extensions to this standard API, which enables you to use tools such as JConsole to monitor and manage your Java applications. For more information, see [MBeans and MXBeans](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mxbeans.html) in the IBM® Knowledge Center.
+OpenJ9 provides MXBean additions and extensions to the standard `java.lang.management` API, which enables you to use tools such as JConsole to monitor and manage your Java applications. For more information, see [Language management interface](interface_lang_management.md).
 
 ### JPDA tools
 
