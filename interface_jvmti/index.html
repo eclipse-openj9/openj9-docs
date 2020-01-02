@@ -4429,6 +4429,7 @@ Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_SET_VM_LOG_
 <li><code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_2</code></li>
 <li><code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_3</code></li>
 <li><code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_4</code></li>
+<li><code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_5</code></li>
 </ul>
 </li>
 <li><code>cacheDir</code>: When the value of <code>useCommandLineValues</code> is <code>false</code>, specify the absolute path of the directory for the shared class cache. If the value is <code>null</code>, the platform-dependent default is used.</li>
@@ -4493,6 +4494,7 @@ jlong lastDetach;      // the last detach time specified in milliseconds since 0
                        // or -1 when the last detach time is not available
 jint cacheType;        // the type of the cache
 jlong softMaxBytes;    // the soft limit for the available space in the cache
+jint layer;            // the shared cache layer number
 } jvmtiSharedCacheInfo;
 </code></pre>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
@@ -4524,7 +4526,12 @@ jlong softMaxBytes;    // the soft limit for the available space in the cache
 </dd>
 </dl>
 <ul>
-<li>The field <code>softMaxBytes</code> is included when <code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_4</code> or later is specified.</li>
+<li>
+<p>The field <code>softMaxBytes</code> is included when <code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_4</code> or later is specified.</p>
+</li>
+<li>
+<p>The field <code>layer</code> is included when <code>COM_IBM_ITERATE_SHARED_CACHES_VERSION_5</code> or later is specified. If the shared cache does not have a layer number, the value for <code>layer</code> is <code>-1</code>.</p>
+</li>
 </ul>
 </dd>
 </dl>
