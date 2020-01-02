@@ -671,6 +671,7 @@ Information about the caches is returned in a structure that is populated by a u
     - `COM_IBM_ITERATE_SHARED_CACHES_VERSION_2`
     - `COM_IBM_ITERATE_SHARED_CACHES_VERSION_3`
     - `COM_IBM_ITERATE_SHARED_CACHES_VERSION_4`
+    - `COM_IBM_ITERATE_SHARED_CACHES_VERSION_5`
 - `cacheDir`: When the value of `useCommandLineValues` is `false`, specify the absolute path of the directory for the shared class cache. If the value is `null`, the platform-dependent default is used.
 - `flags`: Reserved for future use. The only value allowed is `COM_IBM_ITERATE_SHARED_CACHES_NO_FLAGS`.
 - `useCommandLineValues`: Set this value to `true` when you want to specify the cache directory on the command line. Set this value to `false` when you want to use the `cacheDir` parameter.
@@ -736,6 +737,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_ITERATE_SHARED_CACHES`
                                // or -1 when the last detach time is not available
         jint cacheType;        // the type of the cache
         jlong softMaxBytes;    // the soft limit for the available space in the cache
+        jint layer;            // the shared cache layer number
         } jvmtiSharedCacheInfo;
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
@@ -762,6 +764,8 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_ITERATE_SHARED_CACHES`
             `COM_IBM_ITERATE_SHARED_CACHES_NON_COMPRESSED_POINTERS_MODE`  
 
     - The field `softMaxBytes` is included when `COM_IBM_ITERATE_SHARED_CACHES_VERSION_4` or later is specified.
+
+    - The field `layer` is included when `COM_IBM_ITERATE_SHARED_CACHES_VERSION_5` or later is specified. If the shared cache does not have a layer number, the value for `layer` is `-1`.
 
 ---
 
