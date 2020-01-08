@@ -463,6 +463,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#support-for-openjdk-hotspot-options" class="md-nav__link">
+    Support for OpenJDK HotSpot options
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2791,6 +2798,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxconcgcthreads/" title="-XX:ConcGCThreads" class="md-nav__link">
+      -XX:ConcGCThreads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxcodecachetotal/" title="-XX:codecachetotal" class="md-nav__link">
       -XX:codecachetotal
     </a>
@@ -3105,6 +3124,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li class="md-nav__item">
     <a href="../xxpagealigndirectmemory/" title="-XX:[+|-]PageAlignDirectMemory" class="md-nav__link">
       -XX:[+|-]PageAlignDirectMemory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxparallelcmsthreads/" title="-XX:ParallelCMSThreads" class="md-nav__link">
+      -XX:ParallelCMSThreads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxparallelgcthreads/" title="-XX:ParallelGCThreads" class="md-nav__link">
+      -XX:ParallelGCThreads
     </a>
   </li>
 
@@ -3543,6 +3586,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#support-for-openjdk-hotspot-options" class="md-nav__link">
+    Support for OpenJDK HotSpot options
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3615,6 +3665,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#terabytes-suffix-support-for-x-and-xx-options-that-take-a-size">Terabytes suffix support for <code>-X</code> and <code>-XX</code> options that take a size</a></li>
 <li><a href="#improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</a></li>
 <li><a href="#-xgcnoconcurrentscavenge-option"><code>-Xgc:noConcurrentScavenge</code> option</a></li>
+<li><a href="#support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3648,6 +3699,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Support for Concurrent scavenge mode is now extended to macOS. For more information, see <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a>.</p>
 <h3 id="-xgcnoconcurrentscavenge-option"><code>-Xgc:noConcurrentScavenge</code> option</h3>
 <p>The previously undocumented option <a href="../xgc/#noconcurrentscavenge"><code>-Xgc:noConcurrentScavenge</code></a> disables pause-less garbage collection.</p>
+<h3 id="support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</h3>
+<p>For compatibility, the following OpenJDK Hotspot options are now supported by OpenJ9:</p>
+<ul>
+<li><a href="../xxparallelgcthreads/">-XX:ParallelGCThreads</a></li>
+<li><a href="../xxconcgcthreads/">-XX:ConcGCThreads</a></li>
+<li><a href="../xxparallelcmsthreads/">-XX:ParallelCMSThreads</a></li>
+</ul>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.17.0 and v 0.18.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.18/0.18.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.18.md ==== -->

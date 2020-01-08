@@ -2701,6 +2701,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxconcgcthreads/" title="-XX:ConcGCThreads" class="md-nav__link">
+      -XX:ConcGCThreads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxcodecachetotal/" title="-XX:codecachetotal" class="md-nav__link">
       -XX:codecachetotal
     </a>
@@ -3015,6 +3027,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li class="md-nav__item">
     <a href="../xxpagealigndirectmemory/" title="-XX:[+|-]PageAlignDirectMemory" class="md-nav__link">
       -XX:[+|-]PageAlignDirectMemory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxparallelcmsthreads/" title="-XX:ParallelCMSThreads" class="md-nav__link">
+      -XX:ParallelCMSThreads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxparallelgcthreads/" title="-XX:ParallelGCThreads" class="md-nav__link">
+      -XX:ParallelGCThreads
     </a>
   </li>
 
@@ -3482,6 +3518,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td>Enables or disables the verifier.</td>
 </tr>
 <tr>
+<td><a href="../xxconcgcthreads/"><code>-XX:ConcGCThreads</code></a></td>
+<td>Configures the number of GC mutator background threads.</td>
+</tr>
+<tr>
 <td><a href="../xxcompactstrings/"><code>-XX:[+|-]CompactStrings</code></a></td>
 <td>Enables/disables <code>String</code> compression</td>
 </tr>
@@ -3530,6 +3570,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td>Sets the maximum size of the Java heap as a percentage of total memory.</td>
 </tr>
 <tr>
+<td><a href="../xxparallelcmsthreads/"><code>-XX:ParallelCMSThreads</code></a></td>
+<td>Configures the number of GC mutator background threads.</td>
+</tr>
+<tr>
+<td><a href="../xxparallelgcthreads/"><code>-XX:ParallelGCThreads</code></a></td>
+<td>Configures the number of GC threads.</td>
+</tr>
+<tr>
 <td><a href="../xxusecompressedoops/"><code>-XX:[+|-]UseCompressedOops</code></a></td>
 <td>Disables compressed references in 64-bit JVMs. (See also <a href="../xcompressedrefs/"><code>-Xcompressedrefs</code></a>)</td>
 </tr>
@@ -3560,11 +3608,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td><code>-Xgc</code></td>
 <td><a href="../xgcpolicy/"><code>-Xgcpolicy</code></a><strong><sup>2</sup></strong></td>
 <td>Configuring your garbage collection policy.</td>
-</tr>
-<tr>
-<td><code>-XX:ParallelGCThreads</code></td>
-<td><a href="../xgcthreads/"><code>-Xgcthreads</code></a></td>
-<td>Configure number of GC threads.</td>
 </tr>
 <tr>
 <td><code>-XX:+UseNUMA</code></td>
