@@ -46,6 +46,7 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-Xrs`](xrs.md)                                                 | Prevents the OpenJ9 run time environment from handling signals.                                                                              |
 | [`-Xss`](xss.md)                                                 | Sets the Java&trade; thread stack size. (Equivalent to `-XX:ThreadStackSize`). <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Unlike HotSpot, this option applies only to the Java stack. OpenJ9 has a separate native stack for operating system threads (see [`-Xmso`](xmso.md))  |
 | [`-Xverify:mode`](xverify.md)                                    | Enables or disables the verifier.                                                                                                            |
+| [`-XX:ConcGCThreads`](xxconcgcthreads.md)                        | Configures the number of GC mutator background threads.                                                                                         |
 | [`-XX:[+|-]CompactStrings`](xxcompactstrings.md)                 | Enables/disables `String` compression                                                                                                        |
 | [`-XX:[+|-]DisableExplicitGC`](xxdisableexplicitgc.md)           | Enables/disables `System.gc()` calls. (Alias for [`-Xdisableexplicitgc` / `-Xenableexplicitgc`](xenableexplicitgc.md))                       |
 | [`-XX:[+|-]ExitOnOutOfMemory`](xxexitonoutofmemory.md)           | Triggers VM shutdown on out-of-memory conditions.                                                                                            |
@@ -57,9 +58,11 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md)              | Runs specified commands when a `java.lang.OutOfMemoryError` is thrown. (Equivalent to `-Xdump:tool:events=systhrow,filter=java/lang/OutOfMemoryError,exec=`) |
 | [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md)            | Sets a limit on the amount of memory that can be reserved for all direct byte buffers.                                                       |
 | [`-XX:MaxHeapSize`    ](xxinitialheapsize.md)                    | Specifies the maximum size of the object memory allocation pool. (Alias for [`-Xmx`](xms.md))                                                |
-| [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md)              | Sets the maximum size of the Java heap as a percentage of total memory.                                                                      |
-| [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md)           | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
-| [`-XX:[+|-]UseContainerSupport`](xxusecontainersupport.md)       | Sets a larger fraction of memory to the Java heap when the VM detects that it is running in a container.                                     |
+| [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md)              | Sets the maximum size of the Java heap as a percentage of total memory.                                                                     |
+| [`-XX:ParallelCMSThreads`](xxparallelcmsthreads.md)                | Configures the number of GC mutator background threads.                                                                                        |
+| [`-XX:ParallelGCThreads`](xxparallelgcthreads.md)                | Configures the number of GC threads.                                                                                                                |
+| [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md)               | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
+| [`-XX:[+|-]UseContainerSupport`](xxusecontainersupport.md)           | Sets a larger fraction of memory to the Java heap when the VM detects that it is running in a container.                                 |
 
 
 
@@ -77,7 +80,6 @@ These HotSpot command-line options have equivalents in OpenJ9 that are not speci
 |-------------------------|--------------------------------------------------|------------------------------------------------------------------|                                                                        
 | `-Xcomp`                | [`-Xjit:count=0`](xjit.md#count)**<sup>1</sup>** | `-Xcomp` disables interpreted method invocations.                |
 | `-Xgc`                  | [`-Xgcpolicy`](xgcpolicy.md)**<sup>2</sup>**     | Configuring your garbage collection policy.                      |
-| `-XX:ParallelGCThreads` | [`-Xgcthreads`](xgcthreads.md)                   | Configure number of GC threads.                                  |
 | `-XX:+UseNUMA`          | [`-Xnuma:none`](xnumanone.md)**<sup>3</sup>**    | Controls non-uniform memory architecture (NUMA) awareness.       |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**

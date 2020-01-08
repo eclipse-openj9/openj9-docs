@@ -39,6 +39,7 @@ The following new features and notable changes since v 0.17.0 are included in th
 - [Terabytes suffix support for `-X` and `-XX` options that take a size](#terabytes-suffix-support-for-x-and-xx-options-that-take-a-size)
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
 - [`-Xgc:noConcurrentScavenge` option](#-xgcnoconcurrentscavenge-option)
+- [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 
 
 ## Features and changes
@@ -99,6 +100,13 @@ Support for Concurrent scavenge mode is now extended to macOS. For more informat
 
 The previously undocumented option [`-Xgc:noConcurrentScavenge`](xgc.md#noconcurrentscavenge) disables pause-less garbage collection.
 
+### Support for OpenJDK HotSpot options
+
+For compatibility, the following OpenJDK Hotspot options are now supported by OpenJ9:
+
+- [-XX:ParallelGCThreads](xxparallelgcthreads.md)
+- [-XX:ConcGCThreads](xxconcgcthreads.md)
+- [-XX:ParallelCMSThreads](xxparallelcmsthreads.md)
 
 ## Full release information
 

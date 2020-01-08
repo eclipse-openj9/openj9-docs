@@ -312,6 +312,7 @@ nav:
             - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
             - "-XX:[+|-]ClassRelationshipVerifier"                               : xxclassrelationshipverifier.md
+            - "-XX:ConcGCThreads"                                                : xxconcgcthreads.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
             - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
@@ -339,6 +340,8 @@ nav:
             - "-XX:OnOutOfMemoryError"                                           : xxonoutofmemoryerror.md
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
+            - "-XX:ParallelCMSThreads"                                           : xxparallelcmsthreads.md
+            - "-XX:ParallelGCThreads"                                            : xxparallelgcthreads.md
             - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md
             - "-XX:[+|-]ReadIPInfoForRAS"                                        : xxreadipinfoforras.md
             - "-XX:[+|-]ReduceCPUMonitorOverhead"                                : xxreducecpumonitoroverhead.md
