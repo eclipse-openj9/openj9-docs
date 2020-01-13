@@ -34,6 +34,7 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 
 | Option                                                           | Usage                                                                                                                                        |
 |------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) [`-Djava.lang.string.substring.nocopy=true`](djavalangstringsubstringnocopy.md) |  Avoid String sharing by String.substring(). ![End of content that applies only to Java 8](cr/java_close_lts.png)                                                                                                       |
 | [`-X`](x.md)                                                     | Displays help on nonstandard options.                                                                                                        |
 | [`-Xbootclasspath`](xbootclasspath.md)                           | Specifies the search path for bootstrap classes and resources.                                                                               |
 | [`-Xcheck:jni`](xcheck.md)                                       | Runs additional checks for JNI functions during VM startup.                                                                                  |
