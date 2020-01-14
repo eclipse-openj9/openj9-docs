@@ -40,6 +40,7 @@ The following new features and notable changes since v 0.17.0 are included in th
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
 - [`-Xgc:noConcurrentScavenge` option](#-xgcnoconcurrentscavenge-option)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
+- [Shared classes cache suboptions for layered caches no longer experimental](#shared-classes-cache-suboptions-for-layered-caches-no-longer-experimental)
 
 
 ## Features and changes
@@ -107,6 +108,17 @@ For compatibility, the following OpenJDK Hotspot options are now supported by Op
 - [-XX:ParallelGCThreads](xxparallelgcthreads.md)
 - [-XX:ConcGCThreads](xxconcgcthreads.md)
 - [-XX:ParallelCMSThreads](xxparallelcmsthreads.md)
+
+### Shared classes cache suboptions for layered caches no longer experimental
+
+The suboptions for creating layered caches are no longer marked experimental.
+
+The new options are:
+
+- [`createLayer`](xshareclasses.md#createlayer)
+- [`layer=<number>`](xshareclasses.md#layer) (see this section for more information about layered caches)
+- [`printTopLayerStats`](xshareclasses.md#printtoplayerstats-cache-utility)
+- [`destroyAllLayers`](xshareclasses.md#destroyalllayers)
 
 ## Full release information
 
