@@ -28,6 +28,7 @@
 The following new features and notable changes since v 0.17.0 are included in this release:
 
 - [Binaries and supported environments](#binaries-and-supported-environments)
+- [Technical preview of JITServer technology](#technical-preview-of-jitserver-technology)
 - [`jextract` now available on macOS&reg; for OpenJDK version 8](#jextract-now-available-on-macos-for-openjdk-version-8)
 - [New shared-classes cache suboption to turn off timestamp checking](#new-shared-classes-cache-suboption-to-turn-off-timestamp-checking)
 - [Removal of restriction on layered shared cache](#removal-of-restriction-on-layered-shared-cache)
@@ -53,6 +54,12 @@ OpenJ9 release 0.18.0 supports OpenJDK 8, 11, and 13. Binaries are available fro
 - [OpenJDK version 13](https://adoptopenjdk.net/archive.html?variant=openjdk13&jvmVariant=openj9)
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### Technical preview of JITServer technology
+
+A technical preview of JITServer technology is included in this release. It's currently available for OpenJDK 8 and OpenJDK 11 running on Linux on x86-64.
+
+JITServer technology decouples the JIT compiler from the VM and lets the JIT compiler run remotely in its own process. This mechanism prevents your Java application suffering possible negative effects due to CPU and memory consumption caused by JIT compilation. This technology can improve quality of service, robustness, and even performance of Java applications. For more information, see [JITServer technology](jitserver.md).
 
 ### `jextract` now available on macOS for OpenJDK version 8
 
@@ -107,6 +114,7 @@ For compatibility, the following OpenJDK Hotspot options are now supported by Op
 - [-XX:ParallelGCThreads](xxparallelgcthreads.md)
 - [-XX:ConcGCThreads](xxconcgcthreads.md)
 - [-XX:ParallelCMSThreads](xxparallelcmsthreads.md)
+
 
 ## Full release information
 
