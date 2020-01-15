@@ -4427,11 +4427,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The timestamp of a bootstrap <code>jar</code> or <code>zip</code> file is checked once when it is used for the first time to load a class.</dd>
 </dl>
 <h3 id="createlayer"><code>createLayer</code></h3>
-<p><strong>(Experimental, 64-bit only)</strong></p>
+<p><strong>(64-bit only)</strong></p>
 <pre><code>    -Xshareclasses:createLayer
 </code></pre>
 <dl>
-<dd>Creates layered caches. This suboption is experimental; do not use it in a production environment.</dd>
+<dd>Creates layered caches.</dd>
 <dd>If there are multiple VMs in a race condition while creating a layered cache, more than one new layered cache can be created. To avoid this situation, use the <code>-Xshareclasses:layer=&lt;number&gt;</code> suboption to create a new layered cache with a specific layer number. See <a href="./#layer"><code>layer</code></a> for more information about layered caches.</dd>
 </dl>
 <h3 id="destroy-cache-utility"><code>destroy</code> (Cache utility)</h3>
@@ -4464,7 +4464,7 @@ cannot verify that the shared memory was created by the VM.
 </li>
 </ul>
 <h3 id="destroyalllayers"><code>destroyAllLayers</code></h3>
-<p><strong>(Experimental, 64-bit only)</strong></p>
+<p><strong>(64-bit only)</strong></p>
 <pre><code>    -Xshareclasses:destroyAllLayers
 </code></pre>
 <dl>
@@ -4580,11 +4580,11 @@ with shared class cache.
 <dd>To revalidate an AOT method, see the <code>revalidateAotMethods</code> suboption. Use the <code>findAotMethod</code> suboption to determine which AOT methods match the method specifications. To learn more about the syntax to use for <code>&lt;method_specification&gt;</code>, including how to specify more than one method, see <a href="#method-specification-syntax">Method specification syntax</a>.</dd>
 </dl>
 <h3 id="layer"><code>layer</code></h3>
-<p>(Experimental, 64-bit only)</p>
+<p>(64-bit only)</p>
 <pre><code>    -Xshareclasses:layer=&lt;number&gt;
 </code></pre>
 <dl>
-<dd>Creates layered caches. This suboption is experimental; do not use it in production.</dd>
+<dd>Creates layered caches.</dd>
 <dd>This suboption has the same effect as the <a href="./#createlayer"><code>createLayer</code></a> suboption, but with the added ability to specify the layer number.</dd>
 <dd>One scenario where you might want to use a layered cache is if you are building a Docker image. Normally, writing to an existing shared cache in a lower image layer results in Docker duplicating the shared cache to the top layer (following the Docker <a href="https://docs.docker.com/storage/storagedriver/#the-copy-on-write-cow-strategy">copy-on-write strategy</a>). With a layered cache, you can instead write into a new cache in the top layer. The new cache builds on the existing cache, so space is saved in the image.</dd>
 <dd>The following example shows a Docker container with four layers:</dd>
