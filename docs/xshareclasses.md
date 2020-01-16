@@ -158,11 +158,11 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 ### `createLayer`
 
-**(Experimental, 64-bit only)**
+**(64-bit only)**
 
         -Xshareclasses:createLayer
 
-: Creates layered caches. This suboption is experimental; do not use it in a production environment.
+: Creates layered caches.
 
 : If there are multiple VMs in a race condition while creating a layered cache, more than one new layered cache can be created. To avoid this situation, use the `-Xshareclasses:layer=<number>` suboption to create a new layered cache with a specific layer number. See [`layer`](xshareclasses.md#layer) for more information about layered caches.
 
@@ -194,7 +194,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 ### `destroyAllLayers`
 
-**(Experimental, 64-bit only)**
+**(64-bit only)**
 
         -Xshareclasses:destroyAllLayers
 
@@ -307,11 +307,11 @@ case, the VM continues without using shared classes.
 
 ### `layer`
 
-(Experimental, 64-bit only)
+(64-bit only)
 
         -Xshareclasses:layer=<number>
 
-: Creates layered caches. This suboption is experimental; do not use it in production.
+: Creates layered caches.
 
 : This suboption has the same effect as the [`createLayer`](xshareclasses.md#createlayer) suboption, but with the added ability to specify the layer number.
 
