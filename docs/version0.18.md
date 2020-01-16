@@ -42,6 +42,7 @@ The following new features and notable changes since v 0.17.0 are included in th
 - [`-Xgc:noConcurrentScavenge` option](#-xgcnoconcurrentscavenge-option)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [Shared classes cache suboptions for layered caches no longer experimental](#shared-classes-cache-suboptions-for-layered-caches-no-longer-experimental)
+- [`-Djava.lang.string.substring.nocopy` option](#-djavalangstringsubstringnocopy-option)
 
 
 ## Features and changes
@@ -126,6 +127,10 @@ The new options are:
 - [`layer=<number>`](xshareclasses.md#layer) (see this section for more information about layered caches)
 - [`printTopLayerStats`](xshareclasses.md#printtoplayerstats-cache-utility)
 - [`destroyAllLayers`](xshareclasses.md#destroyalllayers)
+
+### `-Djava.lang.string.substring.nocopy` option
+
+The previously undocumented Java 8 option [`-Djava.lang.string.substring.nocopy=true`](djavalangstringsubstringnocopy.md) avoids String sharing by String.substring(), which is the same behavior as the Oracle Hotspot VM.
 
 ## Full release information
 

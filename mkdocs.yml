@@ -189,6 +189,7 @@ nav:
             - "-Dcom.ibm.tools.attach.timeout"                                   : dcomibmtoolsattachtimeout.md
             - "-Dfile.encoding"                                                  : dfileencoding.md
             - "-Djava.compiler"                                                  : djavacompiler.md
+            - "-Djava.lang.string.substring.nocopy"                              : djavalangstringsubstringnocopy.md
             - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
             - "-Djdk.nativeChaCha20"                                             : djdknativechacha20.md
             - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
