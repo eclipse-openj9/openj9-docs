@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/messages_intro/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/jitserver/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>OpenJ9 messages -  </title>
+        <title>JITServer (tech. preview) -  </title>
       
     
     
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#openj9-vm-messages" tabindex="1" class="md-skip">
+      <a href="../#jitserver-technology-technical-preview" tabindex="1" class="md-skip">
         
       </a>
     
@@ -526,11 +526,97 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../jitserver/" title="JITServer (tech. preview)" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        JITServer (tech. preview)
+      </label>
+    
+    <a href="./" title="JITServer (tech. preview)" class="md-nav__link md-nav__link--active">
       JITServer (tech. preview)
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-jitserver-technology" class="md-nav__link">
+    Using JITServer technology
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#launch-openj9-in-client-mode" class="md-nav__link">
+    Launch OpenJ9 in client mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch-openj9-in-server-mode" class="md-nav__link">
+    Launch OpenJ9 in server mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-jitserver-technology" class="md-nav__link">
+    Configuring JITServer technology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-issues" class="md-nav__link">
+    Security issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-an-sdk-with-jitserver-technology" class="md-nav__link">
+    Building an SDK with JITServer technology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -3250,12 +3336,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
     <label class="md-nav__link" for="nav-13">
        Reference
@@ -3307,104 +3391,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        OpenJ9 messages
-      </label>
-    
-    <a href="./" title="OpenJ9 messages" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../messages_intro/" title="OpenJ9 messages" class="md-nav__link">
       OpenJ9 messages
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#message-categories" class="md-nav__link">
-    Message categories
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finding-logged-messages" class="md-nav__link">
-    Finding logged messages
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#finding-aix-messages" class="md-nav__link">
-    Finding AIX messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding-linux-messages" class="md-nav__link">
-    Finding Linux messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding-macos-messages" class="md-nav__link">
-    Finding macOS messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding-windows-messages" class="md-nav__link">
-    Finding Windows messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding-zos-messages" class="md-nav__link">
-    Finding z/OS messages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#obtaining-detailed-message-descriptions" class="md-nav__link">
-    Obtaining detailed message descriptions
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3458,51 +3449,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#message-categories" class="md-nav__link">
-    Message categories
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finding-logged-messages" class="md-nav__link">
-    Finding logged messages
+  <a href="#using-jitserver-technology" class="md-nav__link">
+    Using JITServer technology
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#finding-aix-messages" class="md-nav__link">
-    Finding AIX messages
+  <a href="#launch-openj9-in-client-mode" class="md-nav__link">
+    Launch OpenJ9 in client mode
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#finding-linux-messages" class="md-nav__link">
-    Finding Linux messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding-macos-messages" class="md-nav__link">
-    Finding macOS messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding-windows-messages" class="md-nav__link">
-    Finding Windows messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finding-zos-messages" class="md-nav__link">
-    Finding z/OS messages
+  <a href="#launch-openj9-in-server-mode" class="md-nav__link">
+    Launch OpenJ9 in server mode
   </a>
   
 </li>
@@ -3513,8 +3476,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
-  <a href="#obtaining-detailed-message-descriptions" class="md-nav__link">
-    Obtaining detailed message descriptions
+  <a href="#configuring-jitserver-technology" class="md-nav__link">
+    Configuring JITServer technology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-issues" class="md-nav__link">
+    Security issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-an-sdk-with-jitserver-technology" class="md-nav__link">
+    Building an SDK with JITServer technology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
   </a>
   
 </li>
@@ -3536,7 +3520,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/messages_intro.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/jitserver.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3564,72 +3548,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="openj9-vm-messages">OpenJ9 VM messages</h1>
-<p>Messages are issued by the OpenJ9 virtual machine (VM) in response to certain conditions. Understanding what the messages
-mean can help you with problem determination.</p>
-<h2 id="message-categories">Message categories</h2>
-<p>There are three main categories of message:</p>
-<dl>
-<dt><strong>Information</strong></dt>
-<dd>Information messages provide information about VM processing. For example, a dump information message is typically issued when a dump agent requests a dump.</dd>
-<dt><strong>Warning</strong></dt>
-<dd>Warning messages are issued by the VM to indicate conditions that might need user intervention.</dd>
-<dt><strong>Error</strong></dt>
-<dd>Error messages are issued by the VM when normal processing cannot proceed, because of unexpected conditions.</dd>
-</dl>
-<p>OpenJ9 virtual machine messages have the following format:</p>
-<pre><code>    JVM&lt;type&gt;&lt;number&gt;&lt;code&gt;
-</code></pre>
-
-<p>where:</p>
+<h1 id="jitserver-technology-technical-preview">JITServer technology (technical preview)</h1>
+<p><img alt="Start of content that applies to Java 8 and later" src="../cr/java8.png" />
+<img alt="Start of content that applies to Java 11 and later" src="../cr/java11.png" /><br />
+<strong>Linux&reg; on x86-64 only</strong></p>
+<p>JITServer technology decouples the JIT compiler from the VM and lets the JIT compiler run remotely in its own process. This mechanism prevents your Java&trade; application suffering possible negative effects due to CPU and memory consumption caused by JIT compilation.</p>
+<p>This technology can improve quality of service, robustness, and even performance of Java applications. We recommend trying this technology if the following criteria are met:</p>
 <ul>
-<li><code>JVM</code> is a standard prefix.</li>
-<li><code>&lt;type&gt;</code> refers to the VM subcomponent that issued the message.</li>
-<li><code>&lt;number&gt;</code> is a unique numerical number.</li>
-<li><code>&lt;code&gt;</code> is one of the following codes:<ul>
-<li><code>I</code> - Information message</li>
-<li><code>W</code> - Warning message</li>
-<li><code>E</code> - Error message</li>
+<li>Your Java application is required to compile many methods using JIT in a relatively short time.</li>
+<li>The application is running in an enviroment with limited CPU or memory, which can worsen interference from the JIT compiler.</li>
+<li>The network latency between JITServer and client VM is relatively low.</li>
 </ul>
-</li>
+<p>For more details about JITServer technology, its pros and cons, and when best to use it, see the blog <a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a>.</p>
+<h2 id="using-jitserver-technology">Using JITServer technology</h2>
+<p>JITServer technology is not enabled by default: you must explicitly invoke it. Running OpenJ9 without either of the following options launches it as a regular VM with embedded JIT compilation.</p>
+<h3 id="launch-openj9-in-client-mode">Launch OpenJ9 in client mode</h3>
+<p>Use the following command-line option to launch OpenJ9 in client mode. In this mode, the VM sends compilation requests to an available JITServer. The client operates as a regular VM with its own JIT compiler if a server is not available.</p>
+<pre><code> -XX:+UseJITServer
+</code></pre>
+<h3 id="launch-openj9-in-server-mode">Launch OpenJ9 in server mode</h3>
+<p>Use the following command to start a JITServer process that listens for incoming compilation requests:</p>
+<pre><code>jitserver
+</code></pre>
+<h2 id="configuring-jitserver-technology">Configuring JITServer technology</h2>
+<p>You can use the following command line options to further configure the JITServer and the client VM processes:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Effect</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-XX:JITServerPort=&lt;port&gt;</code></td>
+<td>Specifies the port the server listens to for compilation requests</td>
+<td><code>38400</code></td>
+</tr>
+<tr>
+<td><code>-XX:JITServerAddress=&lt;address&gt;</code></td>
+<td>Specifies the name or IP of the server</td>
+<td><code>localhost</code></td>
+</tr>
+<tr>
+<td><code>-XX:JITServerTimeout=&lt;timeout&gt;</code></td>
+<td>Specifies a timeout value in milliseconds for socket operations</td>
+<td>(<strong>Note 1</strong>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note 1:</strong> The timeout default is 30000 ms for the JITServer process, and 2000 ms when OpenJ9 is launched as a client VM. You might need to increase the latter value if network latency is large.</p>
+<h2 id="security-issues">Security issues</h2>
+<p>You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x or 1.1.x. To enable encryption, specify the private key (<code>&lt;key&gt;.pem</code>) and the certificate (<code>&lt;cert&gt;.pem</code>) at the server:</p>
+<pre><code>-XX:JITServerSSLKey=&lt;key&gt;.pem -XX:JITServerSSLCert=&lt;cert&gt;.pem
+</code></pre>
+<p>and use the certificate at the client:</p>
+<pre><code>-XX:JITServerSSLRootCerts=&lt;cert&gt;.pem
+</code></pre>
+<p>For more details and further discussion about security considerations, see <a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a>.</p>
+<h2 id="building-an-sdk-with-jitserver-technology">Building an SDK with JITServer technology</h2>
+<p>If you want to build a JDK with JITServer technology for yourself, see Appendix A of <a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a>.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../jit/">The JIT compiler</a></li>
 </ul>
-<p>These messages can help you with problem determination.</p>
-<p>By default, all error and some information messages are routed to the system log and also written to <code>stderr</code> or <code>stdout</code>. The specific information messages are <code>JVMDUMP039I</code>, <code>JVMDUMP032I</code>, and <code>JVMDUMP033I</code>, which provide valuable additional information about dumps produced by the VM. To route additional message types to the system log, or turn off message logging to the system log, use the <code>-Xlog</code> option. The <code>-Xlog</code> option does not affect messages written to the standard error stream (stderr). See <a href="../cmdline_specifying/">OpenJ9 command-line options</a>.</p>
-<h2 id="finding-logged-messages">Finding logged messages</h2>
-<p>Logged messages can be found in different locations, according to platform.</p>
-<h3 id="finding-aix-messages">Finding AIX messages</h3>
-<p>On AIX&reg;, messages are logged by the syslog daemon (<code>/usr/sbin/syslogd</code>). Logged messages are written to the syslog file that is configured in <code>/etc/syslog.conf</code>. If the syslog daemon is not running, logged messages are lost.</p>
-<p>You can redirect messages from the syslog daemon to the AIX error log facility by performing the following configuration steps:</p>
-<ol>
-<li>Set up a redirect in the file <code>syslog.conf</code> so that syslog messages are sent to the error log, by adding the following line:</li>
-</ol>
-<pre><code>        user.debug errlog
-</code></pre>
-
-<ol start="2">
-<li>If <strong>syslogd</strong> is already running, reload the updated configuration by running the following command:</li>
-</ol>
-<pre><code>        refresh -s syslogd
-</code></pre>
-
-<ol start="3">
-<li>The updated configuration is used each time <strong>syslogd</strong> starts. 4.  Use the AIX <strong>errpt</strong> command or the System Management Interface Tool (SMIT) to read the messages sent to the error log.</li>
-</ol>
-<p>For more information about AIX logging, see: <a href="http://www.ibm.com/support/knowledgecenter/ssw_aix_61/com.ibm.aix.genprogc/logoverview.htm">Error-logging overview</a>.</p>
-<h3 id="finding-linux-messages">Finding Linux messages</h3>
-<p>On Linux&reg;, messages are logged by the <strong>syslog</strong> daemon. To find where messages are logged, check the syslog configuration file.</p>
-<h3 id="finding-macos-messages">Finding macOS messages</h3>
-<p>On macOS&reg;, messages are logged by the <strong>syslog</strong> daemon. However, on Sierra and High Sierra, syslog does not work. If <code>/var/log/system.log</code> is not available, <code>Console.app</code> can be used instead. </p>
-<h3 id="finding-windows-messages">Finding Windows messages</h3>
-<p>On Windows&trade;, messages are logged in the application events section of the event viewer.</p>
-<h3 id="finding-zos-messages">Finding z/OS messages</h3>
-<p>On z/OS&reg;, messages are sent to the operator console. To see the messages, go from the <strong>ispf</strong> panel to the <strong>sdsf</strong> panel, then open the <strong>log</strong> panel.</p>
-<h2 id="obtaining-detailed-message-descriptions">Obtaining detailed message descriptions</h2>
-<p>Detailed message information is available to help with problem diagnosis.</p>
-<p>Understanding the warning or error message issued by the VM can help you diagnose problems. All warning and error messages issued by the VM are listed by type in the messages guide: <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.messages/diag/appendixes/messages/messages.html">IBM&reg; VM messages</a>.</p>
-<p>The messages, error codes, and exit codes in this guide apply to multiple versions of the VM.</p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> If the VM fills all available memory, the message number might be produced without a description for the error that caused the problem. Look for the message number in the relevant section of the J9 VM  Messages guide to see the message description and the additional information provided.</p>
-<!-- ==== END OF TOPIC ==== messages_intro.md ==== -->
+<!-- ==== END OF TOPIC ==== jitserver.md ==== -->
                 
                   
                 
@@ -3672,7 +3656,7 @@ mean can help you with problem determination.</p>
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="openj9_directories/" title="Directory conventions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="jit/" title="JIT Compiler" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3681,19 +3665,19 @@ mean can help you with problem determination.</p>
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            Directory conventions
+                            JIT Compiler
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="env_var/" title="Environment variables" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="aot/" title="AOT Compiler" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            Environment variables
+                            AOT Compiler
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">
