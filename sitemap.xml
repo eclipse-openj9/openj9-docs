@@ -291,6 +291,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/djavalangstringsubstringnocopy/</loc>
+     <lastmod>2020-01-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/djdknativecbc/</loc>
      <lastmod>2020-01-16</lastmod>
      <changefreq>daily</changefreq>

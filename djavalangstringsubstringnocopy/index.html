@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xcheck/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/djavalangstringsubstringnocopy/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-Xcheck -  </title>
+        <title>-Djava.lang.string.substring.nocopy -  </title>
       
     
     
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-xcheck" tabindex="1" class="md-skip">
+      <a href="../#-djavalangstringsubstringnocopy" tabindex="1" class="md-skip">
         
       </a>
     
@@ -955,10 +955,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4" checked>
     
     <label class="md-nav__link" for="nav-12-4">
       System property options
@@ -1178,11 +1180,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../djavalangstringsubstringnocopy/" title="-Djava.lang.string.substring.nocopy" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        -Djava.lang.string.substring.nocopy
+      </label>
+    
+    <a href="./" title="-Djava.lang.string.substring.nocopy" class="md-nav__link md-nav__link--active">
       -Djava.lang.string.substring.nocopy
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1267,12 +1307,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-5" type="checkbox" id="nav-12-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-5" type="checkbox" id="nav-12-5">
     
     <label class="md-nav__link" for="nav-12-5">
       JVM -X options
@@ -1384,104 +1422,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -Xcheck
-      </label>
-    
-    <a href="./" title="-Xcheck" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../xcheck/" title="-Xcheck" class="md-nav__link">
       -Xcheck
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#classpath" class="md-nav__link">
-    classpath
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dump" class="md-nav__link">
-    dump
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc" class="md-nav__link">
-    gc
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jni" class="md-nav__link">
-    jni
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#memory" class="md-nav__link">
-    memory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm" class="md-nav__link">
-    vm
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3478,61 +3423,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#classpath" class="md-nav__link">
-    classpath
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dump" class="md-nav__link">
-    dump
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc" class="md-nav__link">
-    gc
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jni" class="md-nav__link">
-    jni
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#memory" class="md-nav__link">
-    memory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm" class="md-nav__link">
-    vm
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -3550,12 +3440,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xcheck.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/djavalangstringsubstringnocopy.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
                 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2020, 2020 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -3578,165 +3468,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xcheck">-Xcheck</h1>
-<p>You can use the <code>-Xcheck</code> option to run checks during OpenJ9 virtual machine (VM) startup, such as memory checks or checks on JNI functions.</p>
+<h1 id="-djavalangstringsubstringnocopy">-Djava.lang.string.substring.nocopy</h1>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> This system property is supported only on Java&trade; 8. String sharing cannot be enabled on Java 11 and later.</p>
+<p><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> Setting this property to <code>true</code> avoids sharing a String object when substring() is used to subset a String beginning from offset zero. Avoiding sharing is compatible with the Oracle Hotspot VM.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -Xcheck:&lt;parameter&gt;
+<pre><code>    -Djava.lang.string.substring.nocopy=[true|false]
 </code></pre>
-<h2 id="parameters">Parameters</h2>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Setting</th>
 <th>Effect</th>
+<th align="center">Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="#classpath"><code>classpath</code></a></td>
-<td>Checks the classpath and reports errors such as a missing directory or JAR file.</td>
+<td>true</td>
+<td>No sharing</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td><a href="#dump"><code>dump</code></a></td>
-<td>Checks the operating system for settings that might truncate system dumps. (AIX&reg; and Linux&reg; only)</td>
-</tr>
-<tr>
-<td><a href="#gc"><code>gc</code></a></td>
-<td>Runs additional checks on garbage collection.</td>
-</tr>
-<tr>
-<td><a href="#jni"><code>jni</code></a></td>
-<td>Runs additional checks for JNI functions.</td>
-</tr>
-<tr>
-<td><a href="#memory"><code>memory</code></a></td>
-<td>Identifies memory leaks inside the VM using strict checks that cause the VM to exit on failure.</td>
-</tr>
-<tr>
-<td><a href="#vm"><code>vm</code></a></td>
-<td>Performs additional checks on the VM.</td>
+<td>false</td>
+<td>Sharing</td>
+<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
 </tr>
 </tbody>
 </table>
-<h3 id="classpath"><code>classpath</code></h3>
-<pre><code>    -Xcheck:classpath
-</code></pre>
-<dl>
-<dd>Checks the classpath and reports errors such as a missing directory or JAR file.</dd>
-</dl>
-<h3 id="dump"><code>dump</code></h3>
-<p><strong>AIX and Linux only</strong></p>
-<pre><code>    -Xcheck:dump
-</code></pre>
-<dl>
-<dd>
-<p>Checks operating system settings during VM startup. Messages are issued if the operating system has settings that might truncate system dumps.</p>
-<p>On <strong>AIX</strong> systems, the following messages are possible:</p>
-<ul>
-<li><code>JVMJ9VM133W The system core size hard ulimit is set to &lt;value&gt;, system dumps may be truncated</code></li>
-</ul>
-<dl>
-<dd>This message indicates that the AIX operating system user limit is set to restrict the size of system dumps to the value indicated. If a system dump is produced by the VM it might be truncated, and therefore of greatly reduced value in investigating the cause of crashes and other issues. For more information about how to set user limits on AIX, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html">Setting system resource limits on AIX and Linux systems</a>.</dd>
-</dl>
-<ul>
-<li><code>JVMJ9VM134W The system fullcore option is set to FALSE, system dumps may be truncated</code></li>
-</ul>
-<dl>
-<dd>This message indicates that the AIX operating system <code>Enable full CORE dump</code>option is set to <em>FALSE</em>. This setting might result in truncated system dumps. For more information about how to set this option correctly on AIX, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html">Setting system resource limits on AIX and Linux systems</a>.</dd>
-</dl>
-<p><!--<img alt="Linux" src="cr/_lnx.png" /> -->On <strong>Linux</strong> systems, the following messages are possible:</p>
-<ul>
-<li><code>JVMJ9VM133W The system core size hard ulimit is set to &lt;value&gt;, system dumps may be truncated.</code></li>
-</ul>
-<dl>
-<dd>This message indicates that the Linux operating system user limit is set to restrict the size of system dumps to the value indicated. If a system dump is produced by the VM, it might be truncated and therefore of greatly reduced value in investigating the cause of crashes and other issues. Review the documentation that is provided for your operating system to correctly configure the value for <code>ulimits</code>. For further information, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html">Setting system resource limits on AIX and Linux systems</a>.</dd>
-</dl>
-<ul>
-<li><code>JVMJ9VM135W /proc/sys/kernel/core_pattern setting "|/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e" specifies that core dumps are to be piped to an external program. The JVM may be unable to locate core dumps and rename them.</code></li>
-</ul>
-<dl>
-<dd>This message means that an external program, <strong>abrt-hook-ccpp</strong>, is configured in the operating system to intercept any system dump files that are generated. This program is part of the Automatic Bug Reporting Tool (ABRT).</dd>
-<dd>For more information, see <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-abrt">Automatic Bug Reporting Tool</a>. This tool might interfere with the VM's system dump file processing by renaming or truncating system dumps. Review the configuration of the ABRT tool and messages that are written by the tool in<code>/var/log/messages</code>. If problems occur when generating system dumps from the VM, consider disabling ABRT.</dd>
-</dl>
-<ul>
-<li><code>JVMJ9VM135W /proc/sys/kernel/core_pattern setting "|/usr/share/apport/apport %p %s %c" specifies that core dumps are to be piped to an external program. The JVM may be unable to locate core dumps and rename them.</code></li>
-</ul>
-<dl>
-<dd>This message means that an external program, <strong>apport</strong>, is configured in the operating system to intercept any system dump files that are generated. For more information about this tool, see: <a href="https://wiki.ubuntu.com/Apport">Apport</a> The tool might interfere with the VM's system dump file processing by renaming or truncating system dumps. Review the configuration of the Apport tool and messages that are written by the tool in <code>/var/log/apport.log</code>. If problems occur when generating system dumps from the VM, consider disabling the Apport tool.</dd>
-</dl>
-<ul>
-<li><code>JVMJ9VM136W "/proc/sys/kernel/core_pattern setting "/tmp/cores/core.%e.%p.%h.%t " specifies a format string for renaming core dumps. The JVM may be unable to locate core dumps and rename them.</code></li>
-</ul>
-<dl>
-<dd>This message indicates that the Linux <code>/proc/sys/kernel/core_pattern</code> option is set to rename system dumps. The tokens that are used in the operating system dump name might interfere with the VM's system dump file processing, in particular with file names specified in the VM <code>-Xdump</code> options. If problems occur when generating system dumps from the VM, consider changing the <code>/proc/sys/kernel/core_pattern</code> setting to the default value of <code>core</code>.</dd>
-</dl>
-</dd>
-</dl>
-<h3 id="gc"><code>gc</code></h3>
-<pre><code>    -Xcheck:gc[:help][:&lt;scan options&gt;][:&lt;verify options&gt;][:&lt;misc options&gt;]
-</code></pre>
-<dl>
-<dd>Runs additional checks on garbage collection. By default, no checks are made. There are many scan, verify, and miscellaneous suboptions available. If you do not specify any, all possible scan and verify suboptions are run, plus the miscellaneous verbose and check suboptions. For more information, see the output of <code>-Xcheck:gc:help</code>.</dd>
-</dl>
-<h3 id="jni"><code>jni</code></h3>
-<pre><code>    -Xcheck:jni[:help][:&lt;option&gt;]
-</code></pre>
-<dl>
-<dd>Runs additional checks for JNI functions. By default, no checks are made. For more information, see the output of <code>-Xcheck:jni:help</code>.</dd>
-</dl>
-<h3 id="memory"><code>memory</code></h3>
-<pre><code>    -Xcheck:memory[:&lt;option&gt;]
-</code></pre>
-<dl>
-<dd>Identifies memory leaks inside the VM by using strict checks that cause the VM to exit on failure.</dd>
-<dd><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> You cannot include <code>-Xcheck:memory</code> in the options file (see <a href="../xoptionsfile/"><code>-Xoptionsfile</code></a>).</dd>
-<dd>
-<p>The available parameters are as follows:</p>
-<dl>
-<dt><code>:all</code></dt>
-<dd><strong>(Default if no options specified)</strong> Enables checking of all allocated and freed blocks on every free and allocate call. This check of the heap is the most thorough. It typically causes the VM to exit on nearly all memory-related problems soon after they are caused. This option has the greatest affect on performance.</dd>
-<dt><code>:callsite=&lt;number_of_allocations&gt;</code></dt>
-<dd>
-<p>Displays callsite information every <code>&lt;number_of_allocations&gt;</code>. De-allocations are not counted. Callsite information is presented in a table with separate information for each callsite. Statistics include:</p>
-<ul>
-<li>The number and size of allocation and free requests since the last report.</li>
-<li>The number of the allocation request responsible for the largest allocation from each site.</li>
-</ul>
-<p>Callsites are presented as <code>sourcefile:linenumber</code> for C code and assembly function name for assembler code.</p>
-<p>Callsites that do not provide callsite information are accumulated into an "unknown" entry.</p>
-</dd>
-<dt><code>:failat=&lt;number_of_allocations&gt;</code></dt>
-<dd>
-<p>Causes memory allocation to fail (return NULL) after <code>&lt;number_of_allocations&gt;</code>. For example, setting <code>&lt;number_of_allocations&gt;</code> to 13 causes the 14th allocation to return NULL. De-allocations are not counted. Use this option to ensure that VM code reliably handles allocation failures. This option is useful for checking allocation site behavior rather than setting a specific allocation limit.</p>
-</dd>
-<dt><code>:ignoreUnknownBlocks</code></dt>
-<dd>Ignores attempts to free memory that was not allocated using the <code>-Xcheck:memory</code> tool. Instead, the <strong>-Xcheck:memory</strong> statistics that are printed out at the end of a run indicates the number of <em>"unknown"</em> blocks that were freed.</dd>
-<dt><code>:mprotect=[top|bottom]</code></dt>
-<dd>Locks pages of memory on supported platforms, causing the program to stop if padding before or after the allocated block is accessed for reads or writes. An extra page is locked on each side of the block returned to the user.</dd>
-<dd>If you do not request an exact multiple of one page of memory, a region on one side of your memory is not locked. The <code>top</code> and <code>bottom</code> options control which side of the memory area is locked. <code>top</code> aligns your memory blocks to the top of the page (lower address), so buffer underruns result in an application failure. <code>bottom</code> aligns your memory blocks to the bottom of the page (higher address) so buffer overruns result in an application failure.</dd>
-<dd>Standard padding scans detect buffer underruns when using <code>top</code> and buffer overruns when using <code>bottom</code>.</dd>
-<dt><code>:nofree</code></dt>
-<dd>Keeps a list of blocks that are already used instead of freeing memory. This list, and the list of currently allocated blocks, is checked for memory corruption on every allocation and deallocation. Use this option to detect a dangling pointer (a pointer that is "dereferenced" after its target memory is freed). This option cannot be reliably used with long-running applications (such as WebSphere&reg; Application Server), because <em>"freed"</em> memory is never reused or released by the VM.</dd>
-<dt><code>:noscan</code></dt>
-<dd>Checks for blocks that are not freed. This option has little effect on performance, but memory corruption is not detected. This option is compatible only with <code>subAllocator</code>, <code>callsite</code>, and <code>callsitesmall</code>.</dd>
-<dt><code>:quick</code></dt>
-<dd>Enables block padding only and is used to detect basic heap corruption. Every allocated block is padded with sentinel bytes, which are verified on every allocate and free. Block padding is faster than the default of checking every block, but is not as effective.</dd>
-<dt><code>:skipto=&lt;number_of_allocations&gt;</code></dt>
-<dd>Causes the program to check only on allocations that occur after <code>&lt;number_of_allocations&gt;</code>. De-allocations are not counted. Use this option to speed up VM startup when early allocations are not causing the memory problem. The VM performs approximately 250+ allocations during startup.</dd>
-<dt><code>:subAllocator[=&lt;size_in_MB&gt;]</code></dt>
-<dd>Allocates a dedicated and contiguous region of memory for all VM allocations. This option helps to determine if user JNI code or the VM is responsible for memory corruption. Corruption in the VM <code>subAllocator</code> heap suggests that the VM is causing the problem; corruption in the user-allocated memory suggests that user code is corrupting memory. Typically, user and VM allocated memory are interleaved.</dd>
-<dt><code>:zero</code></dt>
-<dd>Newly allocated blocks are set to 0 instead of being filled with the <code>0xE7E7xxxxxxxxE7E7</code> pattern. Setting these blocks to 0 helps you to determine whether a callsite is expecting zeroed memory, in which case the allocation request is followed by <code>memset(pointer, 0, size)</code>.</dd>
-</dl>
-</dd>
-</dl>
-<h3 id="vm"><code>vm</code></h3>
-<pre><code>    -Xcheck:vm[:&lt;option&gt;]
-</code></pre>
-<dl>
-<dd>Performs additional checks on the VM. By default, no checking is performed. For more information, run <code>-Xcheck:vm:help</code>.</dd>
-</dl>
-<!-- ==== END OF TOPIC ==== xcheck.md ==== -->
+<!-- ==== END OF TOPIC ==== djavalangstringsubstringnocopy.md ==== -->
                 
                   
                 
@@ -3779,7 +3538,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="xceehdlr/" title="-XCEEHDLR" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="djavacompiler/" title="-Djava.compiler" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3788,19 +3547,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -XCEEHDLR
+                            -Djava.compiler
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="xclassgc/" title="-Xclassgc" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="djdknativecbc/" title="-Djdk.nativeCBC" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            -Xclassgc
+                            -Djdk.nativeCBC
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">
