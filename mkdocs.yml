@@ -118,6 +118,7 @@ nav:
     - "Garbage Collection"                                                       : gc.md
 
     - "JIT Compiler"                                                             : jit.md
+    - "JITServer (tech. preview)"                                                : jitserver.md
 
     - "AOT Compiler"                                                             : aot.md
 
