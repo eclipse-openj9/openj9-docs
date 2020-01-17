@@ -42,7 +42,7 @@ For normal operation, certain environment variables must be set at the operating
 - If your application allocates a large amount of memory and frequently accesses that memory, you might want to enable large page support on your system. See [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
 - Configuring Dynamic LPAR support on AIX systems.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On macOS&reg; systems, you must set the DYLD_LIBRARY_PATH environment variable to indicate where to find shared libraries. In addition, to ensure there are sufficient resources for your application, you might need to increase system limits by using `launchctl`, `ulimit`, or `kern.<VARIABLES>`. For further instructions, refer to the documentation for your macOS release.  
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On macOS&reg; systems, you must set the DYLD_LIBRARY_PATH environment variable to indicate where to find shared libraries. In addition, to ensure there are sufficient resources for your application, you might need to increase system limits by using `launchctl`, `ulimit`, or `kern.<VARIABLES>`. For further instructions, refer to the documentation for your macOS release.
 
 ## Performance tuning
 
@@ -57,7 +57,7 @@ You can share class data between running VMs, which can reduce the startup time 
 ### Native data operations
 If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator API.
 
-### Cloud optimizations  
+### Cloud optimizations
 To improve the performance of applications that run in containers, try setting the following tuning options:
 
   - Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For more information, see [Class Data Sharing](shrc.md) and [AOT Compiler](aot.md).
@@ -107,6 +107,8 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow 
 OpenJ9 provides the [CUDA4J API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.cuda/index.html?view=kc) and the [com.ibm.gpu API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.gpu/index.html?view=kc), which allow you to develop applications that can take advantage of graphics processing unit (GPU) processing for suitable functions, such as code page conversion. You can also enable the JIT compiler to offload certain processing tasks to a GPU by specifying the `-Xjit:enableGPU` option on the command line. When enabled, the JIT compiler determines when to offload tasks based on performance heuristics.
 
 GPU processing is supported only on Windows (x86-64) and Linux (x86-64 and IBM Power LE) systems. For more information about enabling GPU processing, see [Exploiting graphics processing units](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/gpu_overview.html).
+
+Special consideration is needed when using the WDDM driver model for GPUs on Windows. Using the WDDM driver model means the GPU is also used as a display device and as such is subject to the [Timeout Detection and Recovery (TDR) mechanism](https://docs.microsoft.com/en-us/windows-hardware/drivers/display/timeout-detection-and-recovery) of Windows. If you are running demanding GPU workloads, you should increase the timeout from the default 2 seconds. More detail may be found in [NVIDIA's Installation Guide for Windows](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#driver-model).
 
 ## Runtime options
 
