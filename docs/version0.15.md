@@ -50,6 +50,7 @@
  OpenJ9 release 0.15.0 and 0.15.1 supports OpenJDK 8, 11, and 12.
 
  Binaries are available from the AdoptOpenJDK community at the following links:
+
 - [OpenJDK version 8](https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=openj9)
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 - [OpenJDK version 12](https://adoptopenjdk.net/archive.html?variant=openjdk12&jvmVariant=openj9)
