@@ -110,11 +110,45 @@ A special mode of the `gencon` policy is known as *Concurrent Scavenge* (`-Xgc:c
 
 For more information about enabling Concurrent Scavenge, see the [-Xgc:concurrentScavenge](xgc.md#concurrentscavenge) option.
 
+### Balanced policy
+This GC policy is available through the command line option`-Xgcpolicy:balanced`. The `balanced` collector aims to even out pause times and reduce the overhead of some of the costlier operations typically associated with garbage collection. It divides the Java heap into regions, which are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global collections by matching object allocation and survival rates. If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance, particularly on large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER platforms).
+
+The `balanced` collector evens out pause times across GC operations based on the amount of work that is being generated. This can be affected by object allocation rates, object survival rates, and fragmentation levels within the heap. Be aware that this smoothing of pause times is a best effort rather than a real-time guarantee. Pause times are not guaranteed to be bound to a certain maximum nor does the technology provide utilization guarantees.
+
+AS mentioned before, `balanced` GC policy divides the heap into regions. During the JVM startup, the garbage collector divides the heap memory into equal-sized regions, and these region delineations remain static for the lifetime of the JVM. Regions are the basic unit of garbage collection and allocation operations. For example, when the heap is expanded or contracted, the memory committed or released will correspond to a number of regions. Although the Java heap is a contiguous range of memory addresses, any region within that range can be committed or released as required. This enables the `balanced` collector to contract the heap more dynamically and aggressively than other garbage collectors, which typically require the committed portion of the heap to be contiguous.
+
+Regions impose a maximum object size. Objects are always allocated within the bounds of a single region. Arrays which cannot fit within a single region are represented using a discontiguous format known as *arraylets*, which is described later. With the exception of arraylets, objects are never permitted to span regions. The region size is always a power of two (for example, 512KB, 1MB, 2MB, 4MB, and so on). The region size is selected at startup based on the maximum heap size. The collector chooses the smallest power of two which will result in less than 2048 regions, with a minimum region size of 512KB. Except for small heaps (less than about 512MB) the JVM aims to have between 1024 and 2047 regions. 
+
+![The diagram is explained in the surrounding text](./cr/balanced_GC_regions.png "Region structure and characteristics found in the object heap")
+
+#### Arraylets
+Most objects are easily contained within the minimum region size of 512KB. However, some large arrays might require more memory than is available in a single region. In order to support such large arrays the `balanced` collector uses an arraylet representation for large arrays. Arraylets have a spine, which contains the class pointer and size, and leaves which contain the data associated with the array. The spine also contains arrayoids which are pointers to the respective arraylet leaves as shown in the following diagram.
+
+![The diagram is explained in the surrounding text](./cr/arrayalet_diagram.png "Arraylet diagram")
+
+There are a number of advantages of using arraylets. Due to heap fragmentation over time, other collector policies might be forced to run a global garbage collection and defragmentation (compaction) phase in order to recover sufficient contiguous memory to allocate a large array. By removing the requirement that large arrays be allocated in contiguous memory, the `balanced` garbage collector is more likely to be able to satisfy such an allocation without requiring unscheduled garbage collection, and more likely still to be able to do so without a global defragmentation operation. Additionally, the `balanced` collector never needs to move an arraylet leaf once it has been allocated. The cost of relocating an array is limited to the cost of relocating the spine, so large arrays do not contribute to higher defragmentation times.
+
+Arraylets were introduced so that arrays were more cleverly stored in the heap for `balanced` and `metronome` GC policies (both are region based garbage collectors). However, there are a few drawbacks when using them. One of those is when Java Native Interface (JNI) is used. In short, JNI allows Java programs to call native code (e.g. C, C++) giving more flexibility to the program and functions that it can use. 
+
+JNI critical is used when the programmer wants direct addressability of the object. To do that, JNI needs the object to be in a contiguous region of memory, or at least make it think the object is in a contiguous region. For that to happen, JNI critical creates a temporary array on the size of total elements in the original array. It then copies element by element to this temporary array. After the JNI critical is done it copies everything back, again element by element from the temporary array to the arraylet. This operation is quite expensive. Double mapping arraylets was introduced to solve these problems.
+
+#### Double Mapping
+The concept of double mapping is to make a large array, which is divided across the heap in different chunks, look like a contiguous array.
+
+For double mapping to happen we leverage the system's virtual memory. Virtual memory address space on 64-bit systems is very large, 64 bits worth in fact, compared to 32 bits in the 32-bit systems counterpart. However, physical memory is limited to a size much smaller in most cases. Using more virtual memory address space does not really cost the application anything, but using more physical memory would. Therefore, instead of using more physical memory and perform expensive copies, we map two different virtual memory addresses to the same physical memory address.
+
+![The diagram is explained in the surrounding text](./cr/arraylet_doublemap.png "Arraylet double mapping diagram")
+
+With double mapping, whenever JNI or JIT uses arraylets, they don't need to create and/or copy element by element to a temporary array. The double mapping is created as soon as the array in the Java program is instantiated. Therefore, JNI and JIT only need to reference the contiguous memory double mapped mirror of the original array. By doing so, it saves a lot of time because the contiguous view of the array, which is chucked in its arraylet leaves, is already created and only needs to be referenced by JNI or JIT. Modifications made to the contiguous representation of the arraylet are reflected on the discontiguous one and vice-versa.
+
+Double mapping is enabled by default. If one wishes to disable it, use the command line option `-Xgc:disableArrayletDoubleMapping`.
+
+*Note:* Double mapping is only supported in Linux systems. Also, double mapping can not be supported if the object heap happens to be allocated in Large (Huge) Pages. In such systems double mapping will be ignored even if requested explicitly. Please use the [`-Xlp:objectheap:pagesize`](xlpobjectheap.md#-Xlp:objectheap) option to configure the object heap in small pages (for example [`-Xlp:objectheap:pagesize=4k`](xlpobjectheap.md#-Xlp:objectheap) ). Use [`-verbose:sizes`](xlpobjectheap.md#-Xlp:objectheap) to see the page sizes available in the system.
+
 ### Other policies
 
 OpenJ9 has the following alternative GC policies:
 
-- `-Xgcpolicy:balanced` divides the Java heap into regions, which are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global collections by matching object allocation and survival rates. If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance, particularly on large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER platforms).
 - `-Xgcpolicy:metronome` is designed for applications that require precise response times. Garbage collection occurs in small interruptible steps to avoid stop-the-world pauses. This policy is available only on x86 Linux and AIX platforms.
 - `-Xgcpolicy:nogc` handles only memory allocation and heap expansion, but doesn't reclaim any memory. The GC impact on runtime performance is therefore minimized, but if the available Java heap becomes exhausted, an `OutOfMemoryError` exception is triggered and the VM stops.
 - `-Xgcpolicy:optavgpause` uses concurrent mark and sweep phases, which means that pause times are reduced when compared to optthruput, but at the expense of some performance throughput.
