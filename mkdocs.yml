@@ -366,6 +366,7 @@ nav:
     - " Reference" :
         - "Supported environments"                                                : openj9_support.md
         - "Default settings"                                                      : openj9_defaults.md
+        - "Signal handling"                                                       : openj9_signals.md
         - "Directory conventions"                                                 : openj9_directories.md
         - "OpenJ9 messages"                                                       : messages_intro.md
         - "Environment variables"                                                 : env_var.md
