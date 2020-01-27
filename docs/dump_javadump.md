@@ -620,6 +620,7 @@ NULL
 2SCLTEXTNTK        Number Tokens                             = 0
 2SCLTEXTNOJ        Number Java Objects                       = 0
 2SCLTEXTNZC        Number Zip Caches                         = 5
+2SCLTEXTNSH        Number Startup Hint Entries               = 0
 2SCLTEXTNJC        Number JCL Entries                        = 0
 2SCLTEXTNST        Number Stale classes                      = 0
 2SCLTEXTPST        Percent Stale classes                     = 0%
