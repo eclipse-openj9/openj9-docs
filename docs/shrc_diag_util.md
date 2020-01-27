@@ -118,6 +118,10 @@ Each entry in the output starts with a VM ID, so you can see which VM wrote the 
         1: 0x000000002237C6E0 STARTUP HINTS KEY: -Xoptionsfile=jre\bin\compressedrefs\options.default -Xlockword:mode=default -Xjcl:jclse29 -Dcom.ibm.oti.vm.bootstrap.library.path=jre\bin\compressedrefs;jre\bin -Djava.home=jre -Djava.ext.dirs=jre\lib\ext -Duser.dir=bin -Djava.class.path=. -Dsun.java.launcher=SUN_STANDARD Address: 0x000000002237C700 Size: 96
         STARTUP HINTS DETAIL Flags: 1 DATA1: 1677721 DATA2: 5033165
 
+### CRV Snippets
+: Information about Class Relationship Verifier (CRV) snippets is shown in `CRV SNIPPET KEY`. For example:
+
+        1: 0x000000001CA23BD0 CRV SNIPPET KEY: Foo Address: 0x000000001CA23BF0 Size: 43
 
 ## `printStats`
 
@@ -144,6 +148,7 @@ You can request more detail about items of a specific data type that are stored 
 -   `zipcache`
 -   `stale`
 -   `startuphint`
+-   `crvsnippet`
 
 Example output for a traditional cache (no cache layers: `cache layer = 0`), with summary information only:
 
@@ -181,6 +186,7 @@ AOT bytes                            = 98404
 JIT data bytes                       = 168
 Zip cache bytes                      = 1133704
 Startup hint bytes                   = 0
+CRV Snippet bytes                    = 0
 Data bytes                           = 114080
 
 # ROMClasses                         = 452
@@ -190,6 +196,7 @@ Data bytes                           = 114080
 # Tokens                             = 0
 # Zip caches                         = 21
 # Startup hints                      = 0
+# CRV Snippets                       = 0
 # Stale classes                      = 0
 % Stale classes                      = 0%
 
@@ -239,6 +246,7 @@ AOT bytes                            = 128924
 JIT data bytes                       = 812
 Zip cache bytes                      = 1133704
 Startup hint bytes                   = 0
+CRV Snippet bytes                    = 0
 Data bytes                           = 114080
 
 # ROMClasses                         = 452
@@ -248,6 +256,7 @@ Data bytes                           = 114080
 # Tokens                             = 0
 # Zip caches                         = 21
 # Startup hints                      = 0
+# CRV Snippets                       = 0
 # Stale classes                      = 0
 % Stale classes                      = 0%
 ```
@@ -304,6 +313,9 @@ The following summary data is displayed:
 #### `Startup hint bytes`
 : The number of bytes of data stored to describe startup hints.
 
+#### `CRV Snippet bytes`
+: The number of bytes of data stored to describe Class Relationship Verifier Snippets.
+
 #### `Data bytes`
 : The number of bytes of non-class data stored by the VM.
 
@@ -338,6 +350,9 @@ The following summary data is displayed:
 
 #### `Startup hints`
 : The number of startup hints stored in the cache. There can be a startup hint for each unique set of command line options used to start the JVM.
+
+#### `CRV Snippets`
+: The number of Class Relationship Verifier Snippets stored in the cache. There can be a snippet stored for each class relationship asserted in an application's bytecodes.
 
 #### `Stale classes`
 : The number of classes that have been marked as "potentially stale" by the cache code, because of a VM or Java application update. See [Understanding dynamic updates](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_dynamic.html).
@@ -400,6 +415,7 @@ AOT bytes                            = 30520
 JIT data bytes                       = 644
 Zip cache bytes                      = 0
 Startup hint bytes                   = 0
+CRV Snippet bytes                    = 0
 Data bytes                           = 114080
 
 # ROMClasses                         = 0
@@ -409,6 +425,7 @@ Data bytes                           = 114080
 # Tokens                             = 0
 # Zip caches                         = 0
 # Startup hints                      = 0
+# CRV Snippets                       = 0
 # Stale classes                      = 0
 % Stale classes                      = 0%
 

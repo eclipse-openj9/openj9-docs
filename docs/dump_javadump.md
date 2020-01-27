@@ -599,6 +599,7 @@ NULL
 2SCLTEXTNOB        Java Object bytes                         = 0
 2SCLTEXTZCB        Zip cache bytes                           = 919328
 2SCLTEXTSHB        Startup hint bytes                        = 0
+2SCLTEXTCSB        CRV Snippet bytes                         = 0
 2SCLTEXTRWB        ReadWrite bytes                           = 114080
 2SCLTEXTJCB        JCL data bytes                            = 0
 2SCLTEXTBDA        Byte data bytes                           = 0
@@ -621,6 +622,7 @@ NULL
 2SCLTEXTNOJ        Number Java Objects                       = 0
 2SCLTEXTNZC        Number Zip Caches                         = 5
 2SCLTEXTNSH        Number Startup Hint Entries               = 0
+2SCLTEXTNCS        Number CRV Snippets                       = 0
 2SCLTEXTNJC        Number JCL Entries                        = 0
 2SCLTEXTNST        Number Stale classes                      = 0
 2SCLTEXTPST        Percent Stale classes                     = 0%
@@ -712,6 +714,7 @@ NULL
 2SCLTEXTNOB            Java Object bytes                         = 0
 2SCLTEXTZCB            Zip cache bytes                           = 1134016
 2SCLTEXTSHB            Startup hint bytes                        = 0
+2SCLTEXTCSB            CRV Snippet bytes                         = 0
 2SCLTEXTJCB            JCL data bytes                            = 0
 2SCLTEXTBDA            Byte data bytes                           = 0
 NULL
@@ -728,6 +731,7 @@ NULL
 2SCLTEXTNOJ            Number Java Objects                       = 0
 2SCLTEXTNZC            Number Zip Caches                         = 21
 2SCLTEXTNSH            Number Startup Hint Entries               = 0
+2SCLTEXTNCS            Number CRV Snippets                       = 0
 2SCLTEXTNJC            Number JCL Entries                        = 0
 2SCLTEXTNST            Number Stale classes                      = 0
 2SCLTEXTPST            Percent Stale classes                     = 0%
