@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2020, 2020 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -XX:[+|-]ClassRelationshipVerifier
+# -XX:[+|-]ClassRelationshipVerifierIgnoreSCC
 
 This option enables and disables the recording of class relationships in the verifier to delay validation until triggered by class loading.
 
@@ -30,16 +30,16 @@ This option enables and disables the recording of class relationships in the ver
 
 ## Syntax
 
-        -XX:[+|-]ClassRelationshipVerifier
+        -XX:[+|-]ClassRelationshipVerifierIgnoreSCC
 
-| Setting                          | Effect  | Default                                                                        |
-|----------------------------------|---------|:------------------------------------------------------------------------------:|
-| `-XX:+ClassRelationshipVerifier` | Enable  |                                                                                |
-| `-XX:-ClassRelationshipVerifier` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| Setting                                   | Effect  | Default                                                                        |
+|-------------------------------------------|---------|:------------------------------------------------------------------------------:|
+| `-XX:+ClassRelationshipVerifierIgnoreSCC` | Enable  |                                                                                |
+| `-XX:-ClassRelationshipVerifierIgnoreSCC` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 ## Explanation
 
-When enabled, this option delays validating the relationships between classes until the classes are required to be loaded during program execution. In this way, classes that are not required, are never loaded thus reducing VM startup time. This option leverages the Shared Classes Cache (SCC) in its implementation. To use the Class Relationship Verifier without the SCC, use option [`-XX:+ClassRelationshipVerifierIgnoreSCC`](xxclassrelationshipverifierignorescc.md) instead.
+When enabled, this option delays validating the relationships between classes until the classes are required to be loaded during program execution. In this way, classes that are not required, are never loaded thus reducing VM startup time. This option provides the same functionality as [`-XX:+ClassRelationshipVerifier`](xxclassrelationshipverifier.md), except that it ignores the Shared Classes Cache in its implementation.
 
 A verify error is thrown if validation fails.
 

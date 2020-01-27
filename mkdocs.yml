@@ -314,6 +314,7 @@ nav:
             - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
             - "-XX:[+|-]ClassRelationshipVerifier"                               : xxclassrelationshipverifier.md
+            - "-XX:[+|-]ClassRelationshipVerifierIgnoreSCC"                      : xxclassrelationshipverifierignorescc.md
             - "-XX:ConcGCThreads"                                                : xxconcgcthreads.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
             - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
