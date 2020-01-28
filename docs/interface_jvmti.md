@@ -828,8 +828,8 @@ You can subscribe to verbose garbage collection (GC) data logging by using the `
 
 - `jvmti_env`: A pointer to the JVMTI environment.
 - `description`: An ASCII character string that describes the subscriber.
-- `subscriber`: A function of type [`jvmtiVerboseGCSubscriber`](#jvmtiverbosegcsubscriberfunction).
-- `alarm`: A function pointer of type [`jvmtiVerboseGCAlarm`](#jvmtiverbosegcalarmfunction).
+- `subscriber`: A function of type [`jvmtiVerboseGCSubscriber`](#jvmtiverbosegcsubscriber-function).
+- `alarm`: A function pointer of type [`jvmtiVerboseGCAlarm`](#jvmtiverbosegcalarm-function).
 - `user_data`: A pointer to user data. This pointer is passed to the subscriber and alarm functions each time these functions are called. This pointer can be a null value.
 - `subscription_id`: A pointer to a subscription identifier. This pointer is returned by the `RegisterVerboseGCSubscriber` call if successful. The value must be supplied to a future call to `DeregisterVerboseGCSubscriber` API, which is used to unsubscribe from verbose GC data logging.
 
