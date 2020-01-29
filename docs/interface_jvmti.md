@@ -46,7 +46,7 @@ In the example that follows (see [Sample JVMTI agent](#sample-jvmti-agent)), the
 
 For more information about JVMTI, see [https://docs.oracle.com/javase/8/docs/technotes/guides/management/index.html](https://docs.oracle.com/javase/8/docs/technotes/guides/management/index.html).
 
-For a guide about writing a JVMTI agent, see [http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html](http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html).
+For a guide about writing a JVMTI agent, see [http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html](https://www.oracle.com/technetwork/articles/javase/jvmti-136367.html).
 
 ## OpenJ9 extensions
 

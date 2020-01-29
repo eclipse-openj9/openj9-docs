@@ -61,7 +61,7 @@ The last 2 columns show whether the default setting can be changed by a command-
 
 1. On AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade;: Enabled for **-Xmx** values &le; 57 GB, otherwise disabled.</p>
 
-    On z/OS&reg;: Enabled for **-Xmx** values &le; 25 GB, otherwise disabled. With [APAR OA49416](http://www.ibm.com/support/docview.wss?uid=isg1OA49416), enabled for **-Xmx** values &le; 57 GB.
+    On z/OS&reg;: Enabled for **-Xmx** values &le; 25 GB, otherwise disabled. With [APAR OA49416](https://www.ibm.com/support/docview.wss?uid=isg1OA49416), enabled for **-Xmx** values &le; 57 GB.
 
 2. AOT is not used by the VM unless shared classes are also enabled.
 

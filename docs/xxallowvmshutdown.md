@@ -24,7 +24,7 @@
 
 # -XXallowvmshutdown
 
-This option is provided as a workaround for applications that cannot shut down cleanly, as described in [APAR IZ59734](http://www.ibm.com/support/docview.wss?uid=swg1IZ59734).
+This option is provided as a workaround for applications that cannot shut down cleanly, as described in [APAR IZ59734](https://www.ibm.com/support/docview.wss?uid=swg1IZ59734).
 
 ## Syntax
 

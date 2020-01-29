@@ -48,7 +48,7 @@ On z/OS&reg; systems, the following default applies:
 
 ## Explanation
 
-A useful reference for information about the Java&trade; Attach API can be found at [http://docs.oracle.com/javase/8/docs/technotes/guides/attach/index.html](http://docs.oracle.com/javase/8/docs/technotes/guides/attach/index.html). The following extract is taken from the Oracle documentation:
+A useful reference for information about the Java&trade; Attach API can be found at [http://docs.oracle.com/javase/8/docs/technotes/guides/attach/index.html](https://docs.oracle.com/javase/8/docs/technotes/guides/attach/index.html). The following extract is taken from the Oracle documentation:
 
 > The Attach API is an extension that provides a mechanism to attach to a Java virtual machine. A tool written in the Java Language, uses this API to attach to a target  virtual machine and load its tool agent into that virtual machine.
 

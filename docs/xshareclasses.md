@@ -230,7 +230,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : This option is enabled by default.
 
-: Allows a JVMTI `ClassFileLoadHook` event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about this option, see [Using the JVMTI ClassFileLoadHook with cached classes](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/diag/tools/shcpd_rbm_jvmti_mod.html). This option is incompatible with the [`cacheRetransformed`](#cacheretransformed) option. Using the two options together causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this
+: Allows a JVMTI `ClassFileLoadHook` event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about this option, see [Using the JVMTI ClassFileLoadHook with cached classes](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_jvmti_mod.html). This option is incompatible with the [`cacheRetransformed`](#cacheretransformed) option. Using the two options together causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this
 case, the VM continues without using shared classes.
 
 : A cache that is created without the `enableBCI` suboption cannot be reused with the `enableBCI` suboption. Attempting to do so causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this case, the VM continues without using shared classes. A cache that is created with the `enableBCI` suboption can be reused without specifying this suboption. In this case, the VM detects that the cache was created with the `enableBCI` suboption and uses the cache in this mode.
@@ -574,7 +574,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:verboseAOT
 
-:   Enables verbose output when compiled AOT code is being found or stored in the cache. AOT code is generated heuristically. You might not see any AOT code that is generated at all for a small application. You can disable AOT caching by using the `noaot` suboption. See the [Messages Guide](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/messages_intro.html) for a list of the messages produced.
+:   Enables verbose output when compiled AOT code is being found or stored in the cache. AOT code is generated heuristically. You might not see any AOT code that is generated at all for a small application. You can disable AOT caching by using the `noaot` suboption. See the [VM Messages Guide](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.messages/diag/appendixes/messages/messages.html) for a list of the messages produced.
 
 ### `verboseHelper`
 
