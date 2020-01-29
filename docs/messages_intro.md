@@ -85,7 +85,7 @@ You can redirect messages from the syslog daemon to the AIX error log facility b
 
 3.  The updated configuration is used each time **syslogd** starts. 4.  Use the AIX **errpt** command or the System Management Interface Tool (SMIT) to read the messages sent to the error log.
 
-For more information about AIX logging, see: [Error-logging overview](http://www.ibm.com/support/knowledgecenter/ssw_aix_61/com.ibm.aix.genprogc/logoverview.htm).
+For more information about AIX logging, see: [Error-logging overview](https://www.ibm.com/support/knowledgecenter/ssw_aix_72/generalprogramming/logoverview.html).
 
 ### Finding Linux messages
 
@@ -93,7 +93,7 @@ On Linux&reg;, messages are logged by the **syslog** daemon. To find where messa
 
 ### Finding macOS messages
 
-On macOS&reg;, messages are logged by the **syslog** daemon. However, on Sierra and High Sierra, syslog does not work. If `/var/log/system.log` is not available, `Console.app` can be used instead. 
+On macOS&reg;, messages are logged by the **syslog** daemon. However, on Sierra and High Sierra, syslog does not work. If `/var/log/system.log` is not available, `Console.app` can be used instead.
 
 ### Finding Windows messages
 

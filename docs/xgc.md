@@ -70,7 +70,7 @@ Options that change the behavior of the Garbage Collector (GC).
     Operating systems:
 
     - z/OS V2R3
-    - z/OS V2R2 and [APAR OA51643](http://www.ibm.com/support/docview.wss?uid=isg1OA51643).
+    - z/OS V2R2 and [APAR OA51643](https://www.ibm.com/support/docview.wss?uid=isg1OA51643).
     - RHEL 7.5 (minimum kernel level 4.14)
     - Ubuntu 18.04 (minimum kernel level 4.15)
 
@@ -144,7 +144,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
 : This option disables pause-less garbage collection that you might have enabled with the [`-Xgc:concurrentScavenge`](#concurrentscavenge) option when using the Generational Concurrent ([`gencon`](xgcpolicy.md#gencon)) garbage collection policy (the default policy).
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** No concurrent scavenge is the default state, but the `noConcurrentScavenge` option is useful as it will disable concurrent scavenge even if it has been enabled by a previous option; the right-most option always takes precedence. 
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** No concurrent scavenge is the default state, but the `noConcurrentScavenge` option is useful as it will disable concurrent scavenge even if it has been enabled by a previous option; the right-most option always takes precedence.
 
 ### `overrideHiresTimerCheck`
 

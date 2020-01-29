@@ -35,9 +35,4 @@ Help > Install New Software > Work with "IBM Diagnostic Tool Framework for Java"
 ```
 
 
-
-## See also
-
-- [Using system dumps and the dump viewer](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/systemdump_viewer_overview.html)
-
 <!-- ==== END OF TOPIC ==== dump_systemdump.md ==== -->
