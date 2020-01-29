@@ -4651,8 +4651,8 @@ Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_DESTROY_SHA
 <ul>
 <li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
 <li><code>description</code>: An ASCII character string that describes the subscriber.</li>
-<li><code>subscriber</code>: A function of type <a href="#jvmtiverbosegcsubscriberfunction"><code>jvmtiVerboseGCSubscriber</code></a>.</li>
-<li><code>alarm</code>: A function pointer of type <a href="#jvmtiverbosegcalarmfunction"><code>jvmtiVerboseGCAlarm</code></a>.</li>
+<li><code>subscriber</code>: A function of type <a href="#jvmtiverbosegcsubscriber-function"><code>jvmtiVerboseGCSubscriber</code></a>.</li>
+<li><code>alarm</code>: A function pointer of type <a href="#jvmtiverbosegcalarm-function"><code>jvmtiVerboseGCAlarm</code></a>.</li>
 <li><code>user_data</code>: A pointer to user data. This pointer is passed to the subscriber and alarm functions each time these functions are called. This pointer can be a null value.</li>
 <li><code>subscription_id</code>: A pointer to a subscription identifier. This pointer is returned by the <code>RegisterVerboseGCSubscriber</code> call if successful. The value must be supplied to a future call to <code>DeregisterVerboseGCSubscriber</code> API, which is used to unsubscribe from verbose GC data logging.</li>
 </ul>
