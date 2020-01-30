@@ -343,6 +343,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../version0.19/" title="Version 0.19.0" class="md-nav__link">
+      Version 0.19.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../version0.18/" title="Version 0.18.1" class="md-nav__link">
       Version 0.18.1
     </a>
@@ -360,6 +372,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </a>
   </li>
 
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Earlier releases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Earlier releases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -384,25 +415,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </a>
   </li>
 
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
-    
-    <label class="md-nav__link" for="nav-5-5">
-      Earlier releases
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-5">
-        Earlier releases
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
         
           
           
@@ -4524,7 +4536,7 @@ cannot verify that the shared memory was created by the VM.
 </code></pre>
 <dl>
 <dd>This option is enabled by default.</dd>
-<dd>Allows a JVMTI <code>ClassFileLoadHook</code> event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about this option, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.lnx.80.doc/diag/tools/shcpd_rbm_jvmti_mod.html">Using the JVMTI ClassFileLoadHook with cached classes</a>. This option is incompatible with the <a href="#cacheretransformed"><code>cacheRetransformed</code></a> option. Using the two options together causes the VM to end with an error message, unless <a href="#nonfatal"><code>-Xshareclasses:nonfatal</code></a> is specified. In this
+<dd>Allows a JVMTI <code>ClassFileLoadHook</code> event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about this option, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_jvmti_mod.html">Using the JVMTI ClassFileLoadHook with cached classes</a>. This option is incompatible with the <a href="#cacheretransformed"><code>cacheRetransformed</code></a> option. Using the two options together causes the VM to end with an error message, unless <a href="#nonfatal"><code>-Xshareclasses:nonfatal</code></a> is specified. In this
 case, the VM continues without using shared classes.</dd>
 <dd>A cache that is created without the <code>enableBCI</code> suboption cannot be reused with the <code>enableBCI</code> suboption. Attempting to do so causes the VM to end with an error message, unless <a href="#nonfatal"><code>-Xshareclasses:nonfatal</code></a> is specified. In this case, the VM continues without using shared classes. A cache that is created with the <code>enableBCI</code> suboption can be reused without specifying this suboption. In this case, the VM detects that the cache was created with the <code>enableBCI</code> suboption and uses the cache in this mode.</dd>
 </dl>
@@ -4870,7 +4882,7 @@ behavior, which can improve the performance of class loading from the shared cla
 <pre><code>    -Xshareclasses:verboseAOT
 </code></pre>
 <dl>
-<dd>Enables verbose output when compiled AOT code is being found or stored in the cache. AOT code is generated heuristically. You might not see any AOT code that is generated at all for a small application. You can disable AOT caching by using the <code>noaot</code> suboption. See the <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/messages_intro.html">Messages Guide</a> for a list of the messages produced.</dd>
+<dd>Enables verbose output when compiled AOT code is being found or stored in the cache. AOT code is generated heuristically. You might not see any AOT code that is generated at all for a small application. You can disable AOT caching by using the <code>noaot</code> suboption. See the <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.messages/diag/appendixes/messages/messages.html">VM Messages Guide</a> for a list of the messages produced.</dd>
 </dl>
 <h3 id="verbosehelper"><code>verboseHelper</code></h3>
 <pre><code>    -Xshareclasses:verboseHelper
