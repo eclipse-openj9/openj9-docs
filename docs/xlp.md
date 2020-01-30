@@ -52,7 +52,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
     The VM supports the use of large pages only to back the Java object heap shared memory segments. The VM uses `shmget()` with the SHM_LGPG and SHM_PIN flags to allocate large pages. The `-Xlp` option replaces the environment variable `IBM_JAVA_LARGE_PAGE_SIZE`, which is now ignored if set.
 
-    For more information about configuring AIX support for large pages, see [Large pages](https://www.ibm.com/support/knowledgecenter/ssw_aix_72/com.ibm.aix.performance/large_page_ovw.htm) in the AIX product documentation.
+    For more information about configuring AIX support for large pages, see [Large pages](https://www.ibm.com/support/knowledgecenter/ssw_aix_72/performance/large_page_ovw.html) in the AIX product documentation.
 
 ### Linux&reg;
 

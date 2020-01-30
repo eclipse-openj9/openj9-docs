@@ -46,7 +46,7 @@ In the example that follows (see [Sample JVMTI agent](#sample-jvmti-agent)), the
 
 For more information about JVMTI, see [https://docs.oracle.com/javase/8/docs/technotes/guides/management/index.html](https://docs.oracle.com/javase/8/docs/technotes/guides/management/index.html).
 
-For a guide about writing a JVMTI agent, see [http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html](http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html).
+For a guide about writing a JVMTI agent, see [http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html](https://www.oracle.com/technetwork/articles/javase/jvmti-136367.html).
 
 ## OpenJ9 extensions
 
@@ -828,8 +828,8 @@ You can subscribe to verbose garbage collection (GC) data logging by using the `
 
 - `jvmti_env`: A pointer to the JVMTI environment.
 - `description`: An ASCII character string that describes the subscriber.
-- `subscriber`: A function of type [`jvmtiVerboseGCSubscriber`](#jvmtiverbosegcsubscriberfunction).
-- `alarm`: A function pointer of type [`jvmtiVerboseGCAlarm`](#jvmtiverbosegcalarmfunction).
+- `subscriber`: A function of type [`jvmtiVerboseGCSubscriber`](#jvmtiverbosegcsubscriber-function).
+- `alarm`: A function pointer of type [`jvmtiVerboseGCAlarm`](#jvmtiverbosegcalarm-function).
 - `user_data`: A pointer to user data. This pointer is passed to the subscriber and alarm functions each time these functions are called. This pointer can be a null value.
 - `subscription_id`: A pointer to a subscription identifier. This pointer is returned by the `RegisterVerboseGCSubscriber` call if successful. The value must be supplied to a future call to `DeregisterVerboseGCSubscriber` API, which is used to unsubscribe from verbose GC data logging.
 

@@ -91,8 +91,6 @@ minimum glibc version 2.12 are expected to function without problems.
 
 | Windows&reg;               |  x32   |  x64  |
 |----------------------------|--------|-------|
-| Windows 7 SP1              |   Y    |   Y   |
-| Windows 8                  |   Y    |   Y   |
 | Windows 8.1                |   Y    |   Y   |
 | Windows 10                 |   Y    |   Y   |
 | Windows Server 2012        |   Y    |   Y   |
@@ -134,8 +132,6 @@ minimum glibc version 2.12 are expected to function without problems.
 
 | Windows                    |  x64   |
 |----------------------------|--------|
-| Windows 7 SP1              |   Y    |
-| Windows 8                  |   Y    |
 | Windows 8.1                |   Y    |
 | Windows 10                 |   Y    |
 | Windows Server 2012        |   Y    |
@@ -177,8 +173,6 @@ minimum glibc version 2.12 are expected to function without problems.
 
 | Windows                    |  x64   |
 |----------------------------|--------|
-| Windows 7 SP1              |   Y    |
-| Windows 8                  |   Y    |
 | Windows 8.1                |   Y    |
 | Windows 10                 |   Y    |
 | Windows Server 2012        |   Y    |

@@ -37,7 +37,7 @@ Controls the behavior of the garbage collector by specifying different garbage c
 |---------------------------------------------------------------------------|----------|
 | [`balanced`](#balanced)                                                   |          |
 | [`gencon`](#gencon)                                                       | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| [`metronome`](#metronome-aix-linux-only) (AIX&reg;, Linux&reg; x86 only)  |          |
+| [`metronome`](#metronome-aix-linux-x86-only) (AIX&reg;, Linux&reg; x86 only)  |          |
 | [`nogc`](#nogc)                                                           |          |
 | [`optavgpause`](#optavgpause)                                             |          |
 | [`optthruput`](#optthruput)                                               |          |
@@ -179,7 +179,7 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
     - Weak, soft, and phantom references
 
     This policy can also be enabled with the [`-XX:+UseNoGC`](xxusenogc.md) option.
-    
+
     Further details are available at [JEP 318: Epsilon: A No-Op Garbage Collector](http://openjdk.java.net/jeps/318).
 
 ####When to use nogc
@@ -195,7 +195,7 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
     Running applications with minimal or no GC requrements
 
     - You might use `nogc` when an application is so short lived that allocated memory is never exhausted and running a full GC cycle is therefore a waste of resources.
-    
+
     - Similarly, when memory application is well understood or where there is rarely memory to be reclaimed, you might prefer to avoid unnecessary GC cycles and rely on a failover mechanism to occasionally restart the VM as necessary.
 
 
