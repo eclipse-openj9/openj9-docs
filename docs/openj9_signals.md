@@ -26,7 +26,7 @@
 
 Signals used by the OpenJ9 VM include the following types:
 
-- Exceptions (Exc): Raised synchronously by the operating system whenever an unrecoverable condition occurs (not applicable on Windows systems)
+- Exceptions (Exc): Raised synchronously by the operating system whenever an unrecoverable condition occurs (not applicable on Windows systems).
 - Errors (Err): Raised by the OpenJ9 VM when an unrecoverable condition occurs.
 - Interrupts (Int): Raised asynchronously from outside a VM process to request a VM exit.
 - Controls (Con): Other signals that are used by the VM for control purposes.
