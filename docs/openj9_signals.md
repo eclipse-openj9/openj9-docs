@@ -33,7 +33,7 @@ Signals used by the OpenJ9 VM include the following types:
 
 For exceptions and errors, if the VM cannot handle the condition and recover, dumps are produced and a controlled shut down sequence takes place. Interrupts also cause the VM to enter a controlled shut down sequence, but without generating dumps. The shutdown sequence is equivalent to calling `System.exit()`, which results in the following steps:
 
-1. The VM calls the equivalent application signal handler
+1. The VM calls the equivalent application signal handler.
 2. The VM calls any hooks installed by the application (unexpected shutdown hooks for exceptions or errors, shutdown or exit hooks for interrupts)
 3. The VM does any final clean up
 
