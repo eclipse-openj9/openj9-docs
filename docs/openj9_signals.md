@@ -35,7 +35,7 @@ For exceptions and errors, if the VM cannot handle the condition and recover, du
 
 1. The VM calls the equivalent application signal handler.
 2. The VM calls any hooks installed by the application (unexpected shutdown hooks for exceptions or errors, shutdown or exit hooks for interrupts).
-3. The VM does any final clean up
+3. The VM does any final clean up.
 
 Control signals are used for internal control purposes and do not cause the VM to end.
 
