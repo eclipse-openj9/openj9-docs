@@ -68,7 +68,7 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
-- use of `SIGRTMIN` is configurable with the `-Xdump:suspendwith=<num>` option
+- The use of `SIGRTMIN` is configurable with the `-Xdump:suspendwith=<num>` option.
 
 ## Signals on macOS
 
