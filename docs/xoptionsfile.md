@@ -54,6 +54,7 @@ The options file does not support these options:
 - [`-Xcompressedrefs`](xcompressedrefs.md)
 - [`-Xcheck:memory`](xcheck.md#memory)
 - [`-Xoptionsfile`](xoptionsfile.md)
+- `-XshowSettings`
 
 Although you cannot use `-Xoptionsfile` recursively within an options file, you can use `-Xoptionsfile` multiple times on the same command line to load more than one options files.
 
