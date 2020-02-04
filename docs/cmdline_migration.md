@@ -34,7 +34,6 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 
 | Option                                                           | Usage                                                                                                                                        |
 |------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) [`-Djava.lang.string.substring.nocopy=true`](djavalangstringsubstringnocopy.md) |  Avoid String sharing by String.substring(). ![End of content that applies only to Java 8](cr/java_close_lts.png)                                                                                                       |
 | [`-X`](x.md)                                                     | Displays help on nonstandard options.                                                                                                        |
 | [`-Xbootclasspath`](xbootclasspath.md)                           | Specifies the search path for bootstrap classes and resources.                                                                               |
 | [`-Xcheck:jni`](xcheck.md)                                       | Runs additional checks for JNI functions during VM startup.                                                                                  |
@@ -68,11 +67,6 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 
 
 
--XX:[+|-]CompactStrings
-
-
-
-
 ## Equivalent options
 
 These HotSpot command-line options have equivalents in OpenJ9 that are not specified in the same way, but perform a related function:
@@ -92,6 +86,16 @@ These HotSpot command-line options have equivalents in OpenJ9 that are not speci
 3. In HotSpot, NUMA awareness is turned off by default and is turned on by using the `-XX:+UseNUMA` option. Conversely, the OpenJ9 VM automatically enables NUMA awareness and uses `-Xnuma:none` to turn it *off*.
     - If you were previously using HotSpot in its default mode, you must now explicitly turn off NUMA awareness in OpenJ9.
     - If you are used to using `-XX:+UseNUMA` in HotSpot, you no longer need to explicitly turn on NUMA awareness; it's on by default.
+
+
+## Creating compatible behavior
+
+You can set the following options to make OpenJ9 behave in the same way as Hotspot.
+
+| Option                                                           | Usage                                                                                                                                        |
+|------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) [`-Djava.lang.string.substring.nocopy=true`](djavalangstringsubstringnocopy.md) |  Avoid String sharing by String.substring(). ![End of content that applies only to Java 8](cr/java_close_lts.png) |
+| [`-Xnuma:none`](xnumanone.md)                                                     | Disable non-uniform memory architecture (NUMA) awareness.       |
 
 
 <!-- ==== END OF TOPIC ==== cmdline_migration.md ==== -->
