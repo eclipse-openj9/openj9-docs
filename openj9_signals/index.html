@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxshareanonymousclasses/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/openj9_signals/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-XX:[+|-]ShareAnonymousClasses -  </title>
+        <title>Signal handling -  </title>
       
     
     
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-xx-shareanonymousclasses" tabindex="1" class="md-skip">
+      <a href="../#signal-handling" tabindex="1" class="md-skip">
         
       </a>
     
@@ -910,12 +910,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
     <label class="md-nav__link" for="nav-12">
       Command-line options
@@ -2623,12 +2621,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-6" type="checkbox" id="nav-12-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-6" type="checkbox" id="nav-12-6">
     
     <label class="md-nav__link" for="nav-12-6">
       JVM -XX options
@@ -3112,56 +3108,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -XX:[+|-]ShareAnonymousClasses
-      </label>
-    
-    <a href="./" title="-XX:[+|-]ShareAnonymousClasses" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../xxshareanonymousclasses/" title="-XX:[+|-]ShareAnonymousClasses" class="md-nav__link">
       -XX:[+|-]ShareAnonymousClasses
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3323,10 +3274,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" checked>
     
     <label class="md-nav__link" for="nav-13">
        Reference
@@ -3366,11 +3319,84 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../openj9_signals/" title="Signal handling" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Signal handling
+      </label>
+    
+    <a href="./" title="Signal handling" class="md-nav__link md-nav__link--active">
       Signal handling
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#signals-on-linux" class="md-nav__link">
+    Signals on Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals-on-macos" class="md-nav__link">
+    Signals on macOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals-on-windows" class="md-nav__link">
+    Signals on Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals-on-zos" class="md-nav__link">
+    Signals on z/OS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals-on-aix" class="md-nav__link">
+    Signals on AIX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-chaining" class="md-nav__link">
+    Signal chaining
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3448,15 +3474,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
+  <a href="#signals-on-linux" class="md-nav__link">
+    Signals on Linux
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
+  <a href="#signals-on-macos" class="md-nav__link">
+    Signals on macOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals-on-windows" class="md-nav__link">
+    Signals on Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals-on-zos" class="md-nav__link">
+    Signals on z/OS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals-on-aix" class="md-nav__link">
+    Signals on AIX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signal-chaining" class="md-nav__link">
+    Signal chaining
   </a>
   
 </li>
@@ -3478,7 +3532,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xxshareanonymousclasses.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/openj9_signals.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3506,41 +3560,489 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xx-shareanonymousclasses">-XX:[+|-]ShareAnonymousClasses</h1>
-<p>This option enables and disables the storage of VM anonymous classes, those created by <code>Unsafe.defineAnonymousClass</code>, in the shared classes cache.</p>
-<p>The option is enabled by default, which means that anonymous classes are stored in the shared classes cache and are therefore available for ahead-of-time (AOT) compilation, potentially improving startup performance.</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:[+|-]ShareAnonymousClasses
-</code></pre>
+<h1 id="signal-handling">Signal handling</h1>
+<p>Signals used by the OpenJ9 VM include the following types:</p>
+<ul>
+<li>Exceptions (Exc): Raised synchronously by the operating system whenever an unrecoverable condition occurs (not applicable on Windows systems).</li>
+<li>Errors (Err): Raised by the OpenJ9 VM when an unrecoverable condition occurs.</li>
+<li>Interrupts (Int): Raised asynchronously from outside a VM process to request a VM exit.</li>
+<li>Controls (Con): Other signals that are used by the VM for control purposes.</li>
+</ul>
+<p>For exceptions and errors, if the VM cannot handle the condition and recover, dumps are produced and a controlled shut down sequence takes place. Interrupts also cause the VM to enter a controlled shut down sequence, but without generating dumps. The shutdown sequence is equivalent to calling <code>System.exit()</code>, which results in the following steps:</p>
+<ol>
+<li>The VM calls the equivalent application signal handler.</li>
+<li>The VM calls any hooks installed by the application (unexpected shutdown hooks for exceptions or errors, shutdown or exit hooks for interrupts).</li>
+<li>The VM does any final clean up.</li>
+</ol>
+<p>Control signals are used for internal control purposes and do not cause the VM to end.</p>
+<p>The VM takes control of any signals for Java threads. For non-Java threads, the VM passes control to an application handler, if one is installed. If the application does not install a signal handler, or signal chaining is turned off, the signal is either ignored or the default action is taken. Signal chaining is controlled by the <a href="../xsigchain/">-Xsigchain / -Xnosigchain</a> command-line option.</p>
+<p>The signals relevant to each platform are detailed in the sections that follow.</p>
+<p>When reading each table, a number supplied after the signal name is the standard numerical value for that signal.</p>
+<p>Note that certain signals on VM threads cause OpenJ9 to shutdown. An application signal handler should not attempt to recover from these signals unless it no longer requires the VM.</p>
+<h2 id="signals-on-linux">Signals on Linux</h2>
 <table>
 <thead>
 <tr>
-<th>Setting</th>
-<th>Effect</th>
-<th align="center">Default</th>
+<th>Signal</th>
+<th>Type</th>
+<th>Description</th>
+<th>Option to disable signal</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>-XX:+ShareAnonymousClasses</code></td>
-<td>Enable</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
+<td><code>SIGBUS (7)</code></td>
+<td>Exc</td>
+<td>Incorrect memory access (data misalignment)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
-<td><code>-XX:-ShareAnonymousClasses</code></td>
-<td>Disable</td>
-<td align="center"></td>
+<td><code>SIGSEV (11)</code></td>
+<td>Exc</td>
+<td>Incorrect memory access (write to inaccessible area)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGILL (4)</code></td>
+<td>Exc</td>
+<td>Illegal instruction (attempt to call unknown machine instruction)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGFPE (8)</code></td>
+<td>Exc</td>
+<td>Floating point exception (divide by zero)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGABRT (6)</code></td>
+<td>Err</td>
+<td>Abnormal termination, raised by the VM when a VM fault is detected</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGINT (2)</code></td>
+<td>Int</td>
+<td>Interactive attention (CTRL-C), VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGTERM (15)</code></td>
+<td>Int</td>
+<td>Termination request, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGHUP (1)</code></td>
+<td>Int</td>
+<td>Hang up, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGQUIT (3)</code></td>
+<td>Con</td>
+<td>Quit signal from a terminal, which triggers a Java dump by default</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGTRAP (5)</code></td>
+<td>Con</td>
+<td>Used by the JIT</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGRTMIN (34)</code></td>
+<td>Con</td>
+<td>Used by the VM for thread introspection</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>SIGRTMIN +1 (35)</code></td>
+<td>Con</td>
+<td>Used by the VM for Runtime Instrumentation (Linux for IBM Z systems only)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>SIGRTMAX -2 (62)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.net</code> class library code</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>SIGCHLD (17)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.lang.Process</code> implementation</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<h2 id="see-also">See also</h2>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
 <ul>
-<li><a href="../aot/">AOT compiler</a></li>
-<li><a href="../shrc/">Class data sharing</a></li>
-<li><a href="../xshareclasses/">-Xshareclasses</a></li>
-<li><a href="../xxshareunsafeclasses/">-XX:[+|-]ShareUnsafeClasses</a></li>
+<li>The use of <code>SIGRTMIN</code> is configurable with the <code>-Xdump:suspendwith=&lt;num&gt;</code> option.</li>
 </ul>
-<!-- ==== END OF TOPIC ==== xxshareanonymousclasses.md ==== -->
+<h2 id="signals-on-macos">Signals on macOS</h2>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Type</th>
+<th>Description</th>
+<th>Option to disable signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGBUS (10)</code></td>
+<td>Exc</td>
+<td>Incorrect memory access (data misalignment)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGSEV (11)</code></td>
+<td>Exc</td>
+<td>Incorrect memory access (write to inaccessible area)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGILL (4)</code></td>
+<td>Exc</td>
+<td>Illegal instruction (attempt to call unknown machine instruction))</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGFPE (8)</code></td>
+<td>Exc</td>
+<td>Floating point exception (divide by zero)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGABRT (6)</code></td>
+<td>Err</td>
+<td>Abnormal termination, raised by the VM when a VM fault is detected</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGINT (2)</code></td>
+<td>Int</td>
+<td>Interactive attention (CTRL-C), VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGTERM (15)</code></td>
+<td>Int</td>
+<td>Termination request, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGHUP (1)</code></td>
+<td>Int</td>
+<td>Hang up, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGQUIT (3)</code></td>
+<td>Con</td>
+<td>Quit signal from a terminal, which triggers a Java dump by default</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGTRAP (5)</code></td>
+<td>Con</td>
+<td>Used by the JIT</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGCHLD (20)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.lang.Process</code> implementation</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>SIGUSR1 (30)</code></td>
+<td>Con</td>
+<td>Used by the VM for thread introspection</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>SIGIO (23)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.net</code> class library code</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="signals-on-windows">Signals on Windows</h2>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Type</th>
+<th>Description</th>
+<th>Option to disable signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGINT (2)</code></td>
+<td>Int</td>
+<td>Interactive attention (CTRL-C), VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGTERM (15)</code></td>
+<td>Int</td>
+<td>Termination request, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGBREAK</code></td>
+<td>Con</td>
+<td>A break signal from a terminal. By default, this triggers a Java dump</td>
+<td><code>-Xrs</code></td>
+</tr>
+</tbody>
+</table>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
+<p>The following mechanisms are used by OpenJ9 for signal handling:</p>
+<ul>
+<li>structured exception handling (32-bit VM only)</li>
+<li><code>AddVectoredExceptionHandler()</code> API (64-bit JVM only)</li>
+<li><code>SetConsoleCtrlHandler()</code> applicable</li>
+</ul>
+<p>All mechanisms can be disabled by using the <code>-Xrs</code> option. However, only structured exception handling and the use of the <code>AddVectoredExceptionHandler()</code> API can be disabled  by using the <code>-Xrs:sync</code> option. The option <code>-Xnosigchain</code>, which turns off signal handler chaining, is ignored on Windows systems.</p>
+<h2 id="signals-on-zos">Signals on z/OS</h2>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Type</th>
+<th>Description</th>
+<th>Option to disable signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGBUS (10)</code></td>
+<td>Exc</td>
+<td>Incorrect memory access (data misalignment)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGSEV (11)</code></td>
+<td>Exc</td>
+<td>Incorrect memory access (write to inaccessible area)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGILL (4)</code></td>
+<td>Exc</td>
+<td>Illegal instruction (attempt to call unknown machine instruction))</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGFPE (8)</code></td>
+<td>Exc</td>
+<td>Floating point exception (divide by zero)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGABRT (3)</code></td>
+<td>Err</td>
+<td>Abnormal termination, raised by the VM when a VM fault is detected</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGINT (2)</code></td>
+<td>Int</td>
+<td>Interactive attention (CTRL-C), VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGTERM (15)</code></td>
+<td>Int</td>
+<td>Termination request, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGHUP (1)</code></td>
+<td>Int</td>
+<td>Hang up, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGQUIT (24)</code></td>
+<td>Con</td>
+<td>Quit signal from a terminal, triggers a Java dump by default</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGTRAP (26)</code></td>
+<td>Con</td>
+<td>Used by the JIT</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGCHLD (20)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.lang.Process</code> implementation</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>SIGUSR1 (16)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.net</code> class library code</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="signals-on-aix">Signals on AIX</h2>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Type</th>
+<th>Description</th>
+<th>Option to disable signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGBUS (10)</code></td>
+<td>Exc</td>
+<td>Incorrect memory access (data misalignment)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGSEV (11)</code></td>
+<td>Exc</td>
+<td>Incorrect memory access (write to inaccessible area)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGILL (4)</code></td>
+<td>Exc</td>
+<td>Illegal instruction (attempt to call unknown machine instruction))</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGFPE (8)</code></td>
+<td>Exc</td>
+<td>Floating point exception (divide by zero)</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGABRT (6)</code></td>
+<td>Err</td>
+<td>Abnormal termination, raised by the VM when a VM fault is detected</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGINT (2)</code></td>
+<td>Int</td>
+<td>Interactive attention (CTRL-C), VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGTERM (15)</code></td>
+<td>Int</td>
+<td>Termination request, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGHUP (1)</code></td>
+<td>Int</td>
+<td>Hang up, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGQUIT (3)</code></td>
+<td>Con</td>
+<td>Triggers a Java dump by default</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>No Name (40)</code></td>
+<td>Con</td>
+<td>Used by the VM for control purposes</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGRECONFIG (58)</code></td>
+<td>Con</td>
+<td>Reserved to detect changes to resources (CPUs, processing capacity, or physical memory)</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGTRAP (5)</code></td>
+<td>Con</td>
+<td>Used by the JIT</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGRTMIN (50)</code></td>
+<td>Con</td>
+<td>Used by the VM for thread introspection</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>SIGRTMAX -1 (56)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.net</code> class library code</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>SIGCHLD (20)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.lang.Process</code> implementation</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
+<ul>
+<li>VM performance is affected if you install a signal handler for SIGTRAP (5) or SIGRECONFIG (58) because these signals are used for internal control purposes.</li>
+<li>If you want to generate floating point exceptions, use the following call in your code to generate a <code>SIGFPE</code> signal: <code>fp_trap( P_TRAP_SYNC)</code>. Although you can use the C compiler <code>-qflttrap</code> setting to generate <code>SIGTRAP</code> signals to trap floating point exceptions, this mechanism can affect the JIT compiler.</li>
+</ul>
+<h2 id="signal-chaining">Signal chaining</h2>
+<p>Signal chaining allows application code to interoperate with VM signal handling. By linking and loading a shared library, certain
+calls can be intercepted so that the application handlers do not replace the VM signal handlers. Instead, the application handlers
+are chained behind the VM handlers. If signals that are raised do not target the VM, the application handlers take over. Signals that
+can be chained include <code>signal()</code>, <code>sigset()</code>, and <code>sigaction()</code>.</p>
+<p>The following table shows the shared library that must be linked with the application that creates or embeds a VM, and the
+command line syntax to use with the compiler, where available:</p>
+<table>
+<thead>
+<tr>
+<th>Operating system</th>
+<th>Shared library</th>
+<th>Method for linking</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux, macOS, and z/OS</td>
+<td><code>libjsig.so</code></td>
+<td><code>gcc -L$JAVA_HOME/bin -ljsig -L$JAVA_HOME/lib/j9vm -ljvm &lt;java_application&gt;.c</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><code>jsig.dll</code></td>
+<td>Link the DLL with the application that creates or embeds a VM</td>
+</tr>
+<tr>
+<td>AIX</td>
+<td><code>libjsig.so</code></td>
+<td><code>cc_r [-q64] &lt;other_compile/link_parameter&gt; -L&lt;java_install_dir&gt; -ljsig -L&lt;java_install_dir&gt;/lib/j9vm -ljvm &lt;java_application&gt;.c</code></td>
+</tr>
+</tbody>
+</table>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On Linux, macOS, and z/OS systems, you can use the <code>LD_PRELOAD</code>
+environment variable as an alternative method to the command line for linking the shared library as shown in the following list:</p>
+<ul>
+<li>bash and ksh shells: <code>export LD_PRELOAD=$JAVA_HOME/lib/libjsig.so; &lt;java_application&gt;</code></li>
+<li>csh shell: <code>setenv LD_PRELOAD=$JAVA_HOME/lib/libjsig.so; &lt;java_application&gt;</code></li>
+</ul>
+<!-- ==== END OF TOPIC ==== openj9_signals.md ==== -->
                 
                   
                 
@@ -3583,7 +4085,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="xxsethwprefetch/" title="-XXsetHWPrefetch" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="openj9_defaults/" title="Default settings" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3592,19 +4094,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -XXsetHWPrefetch
+                            Default settings
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="xxshareclassesenablebci/" title="-XX:ShareClassesDisableBCI" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="openj9_directories/" title="Directory conventions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            -XX:ShareClassesDisableBCI
+                            Directory conventions
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">

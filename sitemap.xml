@@ -1151,6 +1151,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/openj9_signals/</loc>
+     <lastmod>2020-02-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/openj9_directories/</loc>
      <lastmod>2020-02-04</lastmod>
      <changefreq>daily</changefreq>
