@@ -346,6 +346,7 @@ nav:
             - "-XX:ParallelCMSThreads"                                           : xxparallelcmsthreads.md
             - "-XX:ParallelGCThreads"                                            : xxparallelgcthreads.md
             - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md
+            - "-XX:[+|-]PrintCodeCache"                                          : xxprintcodecache.md
             - "-XX:[+|-]ReadIPInfoForRAS"                                        : xxreadipinfoforras.md
             - "-XX:[+|-]ReduceCPUMonitorOverhead"                                : xxreducecpumonitoroverhead.md
             - "-XX:[+|-]RuntimeInstrumentation"                                  : xxruntimeinstrumentation.md
