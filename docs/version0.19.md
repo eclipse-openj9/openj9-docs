@@ -28,6 +28,7 @@
  The following new features and notable changes since v 0.18.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [Option to print code cache usage on stderr at JVM shutdown](#option-to-print-code-cache-usage-on-stderr-at-JVM-shutdown)
 - [xxxx](#xxxx)
 
 ## Features and changes
@@ -43,6 +44,10 @@ OpenJDK 14 with Eclipse OpenJ9 is not a long term support (LTS) release.
 The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK community are for Eclipse OpenJ9 release 0.18.0. Features mentioned in these release notes are not available in these builds. Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 0.18.0, testing at the project is not complete and therefore support for any of these features is not available.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### Option to print code cache usage on stderr at JVM shutdown
+
+A new command line option [-XX:+PrintCodeCache](xxprintcodecache.md) allows you to print the code cache memory usage on stderr at JVM shutdown.
 
 ### xxxx
 

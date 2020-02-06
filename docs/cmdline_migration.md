@@ -47,7 +47,7 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-Xrs`](xrs.md)                                                 | Prevents the OpenJ9 run time environment from handling signals.                                                                              |
 | [`-Xss`](xss.md)                                                 | Sets the Java&trade; thread stack size. (Equivalent to `-XX:ThreadStackSize`). <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Unlike HotSpot, this option applies only to the Java stack. OpenJ9 has a separate native stack for operating system threads (see [`-Xmso`](xmso.md))  |
 | [`-Xverify:mode`](xverify.md)                                    | Enables or disables the verifier.                                                                                                            |
-| [`-XX:ConcGCThreads`](xxconcgcthreads.md)                        | Configures the number of GC mutator background threads.                                                                                         |
+| [`-XX:ConcGCThreads`](xxconcgcthreads.md)                        | Configures the number of GC mutator background threads.                                                                                      |
 | [`-XX:[+|-]CompactStrings`](xxcompactstrings.md)                 | Enables/disables `String` compression                                                                                                        |
 | [`-XX:[+|-]DisableExplicitGC`](xxdisableexplicitgc.md)           | Enables/disables `System.gc()` calls. (Alias for [`-Xdisableexplicitgc` / `-Xenableexplicitgc`](xenableexplicitgc.md))                       |
 | [`-XX:[+|-]ExitOnOutOfMemory`](xxexitonoutofmemory.md)           | Triggers VM shutdown on out-of-memory conditions.                                                                                            |
@@ -56,19 +56,19 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-XX:[+|-]IgnoreUnrecognizedVMOptions`](xxignoreunrecognizedvmoptions.md) | Specifies whether to ignore unrecognized top-level VM options |                                                                    |
 | [`-XX:InitialHeapSize`](xxinitialheapsize.md)                    | Sets the initial size of the heap. (Alias for [`-Xms`](xms.md))                                                                              |
 | [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md)          | Sets the initial size of the Java heap as a percentage of total memory.                                                                      |
-| [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md)              | Runs specified commands when a `java.lang.OutOfMemoryError` is thrown. (Equivalent to `-Xdump:tool:events=systhrow,filter=java/lang/OutOfMemoryError,exec=`) |
 | [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md)            | Sets a limit on the amount of memory that can be reserved for all direct byte buffers.                                                       |
 | [`-XX:MaxHeapSize`    ](xxinitialheapsize.md)                    | Specifies the maximum size of the object memory allocation pool. (Alias for [`-Xmx`](xms.md))                                                |
-| [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md)              | Sets the maximum size of the Java heap as a percentage of total memory.                                                                     |
-| [`-XX:ParallelCMSThreads`](xxparallelcmsthreads.md)                | Configures the number of GC mutator background threads.                                                                                        |
-| [`-XX:ParallelGCThreads`](xxparallelgcthreads.md)                | Configures the number of GC threads.                                                                                                                |
-| [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md)               | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
-| [`-XX:[+|-]UseContainerSupport`](xxusecontainersupport.md)           | Sets a larger fraction of memory to the Java heap when the VM detects that it is running in a container.                                 |
+| [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md)              | Sets the maximum size of the Java heap as a percentage of total memory.                                                                      |
+| [`-XX:OnOutOfMemoryError`](xxonoutofmemoryerror.md)              | Runs specified commands when a `java.lang.OutOfMemoryError` is thrown. (Equivalent to `-Xdump:tool:events=systhrow,filter=java/lang/OutOfMemoryError,exec=`) |
+| [`-XX:ParallelCMSThreads`](xxparallelcmsthreads.md)              | Configures the number of GC mutator background threads.                                                                                      |
+| [`-XX:ParallelGCThreads`](xxparallelgcthreads.md)                | Configures the number of GC threads.                                                                                                         |
+| [`-XX:[+|-]PrintCodeCache`](xxprintcodecache.md)                 | Prints code cache usage when the application exits.                                                                                          |
+| [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md)           | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
+| [`-XX:[+|-]UseContainerSupport`](xxusecontainersupport.md)       | Sets a larger fraction of memory to the Java heap when the VM detects that it is running in a container.                                     |
 
 
 
 
--XX:[+|-]CompactStrings
 
 
 
