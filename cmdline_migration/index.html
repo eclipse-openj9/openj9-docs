@@ -3109,6 +3109,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxprintcodecache/" title="-XX:[+|-]PrintCodeCache" class="md-nav__link">
+      -XX:[+|-]PrintCodeCache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxreadipinfoforras/" title="-XX:[+|-]ReadIPInfoForRAS" class="md-nav__link">
       -XX:[+|-]ReadIPInfoForRAS
     </a>
@@ -3606,10 +3618,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td>Sets the initial size of the Java heap as a percentage of total memory.</td>
 </tr>
 <tr>
-<td><a href="../xxonoutofmemoryerror/"><code>-XX:OnOutOfMemoryError</code></a></td>
-<td>Runs specified commands when a <code>java.lang.OutOfMemoryError</code> is thrown. (Equivalent to <code>-Xdump:tool:events=systhrow,filter=java/lang/OutOfMemoryError,exec=</code>)</td>
-</tr>
-<tr>
 <td><a href="../xxmaxdirectmemorysize/"><code>-XX:MaxDirectMemorySize</code></a></td>
 <td>Sets a limit on the amount of memory that can be reserved for all direct byte buffers.</td>
 </tr>
@@ -3622,12 +3630,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td>Sets the maximum size of the Java heap as a percentage of total memory.</td>
 </tr>
 <tr>
+<td><a href="../xxonoutofmemoryerror/"><code>-XX:OnOutOfMemoryError</code></a></td>
+<td>Runs specified commands when a <code>java.lang.OutOfMemoryError</code> is thrown. (Equivalent to <code>-Xdump:tool:events=systhrow,filter=java/lang/OutOfMemoryError,exec=</code>)</td>
+</tr>
+<tr>
 <td><a href="../xxparallelcmsthreads/"><code>-XX:ParallelCMSThreads</code></a></td>
 <td>Configures the number of GC mutator background threads.</td>
 </tr>
 <tr>
 <td><a href="../xxparallelgcthreads/"><code>-XX:ParallelGCThreads</code></a></td>
 <td>Configures the number of GC threads.</td>
+</tr>
+<tr>
+<td><a href="../xxprintcodecache/"><code>-XX:[+|-]PrintCodeCache</code></a></td>
+<td>Prints code cache usage when the application exits.</td>
 </tr>
 <tr>
 <td><a href="../xxusecompressedoops/"><code>-XX:[+|-]UseCompressedOops</code></a></td>
@@ -3639,7 +3655,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 </tbody>
 </table>
-<p>-XX:[+|-]CompactStrings</p>
 <h2 id="equivalent-options">Equivalent options</h2>
 <p>These HotSpot command-line options have equivalents in OpenJ9 that are not specified in the same way, but perform a related function:</p>
 <table>
