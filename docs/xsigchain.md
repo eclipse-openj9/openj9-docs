@@ -34,5 +34,8 @@ Enables and disables signal handler chaining.
 |`-Xnosigchain` | Disable |                                                                                                                     |
 
 
-<!-- ==== END OF TOPIC ==== xsigchain.md ==== -->
+## See also
 
+- [Signal handling](openj9_signals.md)
+
+<!-- ==== END OF TOPIC ==== xsigchain.md ==== -->

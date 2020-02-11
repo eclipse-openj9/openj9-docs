@@ -33,6 +33,8 @@ Enables and disables VM signal handling code.
 | `-Xsigcatch`   | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 | `-Xnosigcatch` | Disable |                                                                                    |
 
+## See also
+
+- [Signal handling](openj9_signals.md)
 
 <!-- ==== END OF TOPIC ==== xsigcatch.md ==== -->
-
