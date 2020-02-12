@@ -102,6 +102,7 @@ nav:
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 
     - "Release notes" :
+        - "Overview"                                                             : openj9_releases.md
         - "Version 0.19.0"                                                       : version0.19.md
         - "Version 0.18.1"                                                       : version0.18.md
         - "Version 0.17.0"                                                       : version0.17.md
