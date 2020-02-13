@@ -191,6 +191,7 @@ nav:
             - "-Dfile.encoding"                                                  : dfileencoding.md
             - "-Djava.compiler"                                                  : djavacompiler.md
             - "-Djava.lang.string.substring.nocopy"                              : djavalangstringsubstringnocopy.md
+            - "-Djava.lang.stringBuffer.growAggressively"                        : djavalangstringbuffergrowaggressively.md
             - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
             - "-Djdk.nativeChaCha20"                                             : djdknativechacha20.md
             - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
