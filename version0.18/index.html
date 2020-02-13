@@ -2939,8 +2939,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
-    <a href="../xxexitonoutofmemory/" title="-XX:[+|-]ExitOnOutOfMemory" class="md-nav__link">
-      -XX:[+|-]ExitOnOutOfMemory
+    <a href="../xxexitonoutofmemoryerror/" title="-XX:[+|-]ExitOnOutOfMemoryError" class="md-nav__link">
+      -XX:[+|-]ExitOnOutOfMemoryError
     </a>
   </li>
 
@@ -3811,7 +3811,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p><a href="../xxtransparenthugepage/">-XX:+TransparentHugePage</a> is enabled by default on Linux systems for POWER&reg; and IBM Z&reg; as well as x86 systems. This option takes affect only when Transparent Huge Pages (THP) is set to <code>madvise</code> on your system. When Transparent Huge Pages are used, your application footprint might increase.</p>
 <h3 id="new-exit-dump-agent-and-exitonoutofmemoryerror-option">New exit dump agent and <code>ExitOnOutOfMemoryError</code> option</h3>
 <p>The new exit dump agent shuts down the VM when the specified event occurs. The exit agent is at priority level 0 and the tool agent has been moved to priority level 1 to aid in mimicking the behavior of HotSpot options. For more information about dump agents, see <a href="../xdump/#dump-agents"><code>-Xdump</code></a>.</p>
-<p>OpenJ9 now supports the HotSpot option <a href="../xxexitonoutofmemory/"><code>-XX:[+|-]ExitOnOutOfMemoryError</code></a>. You can set this option to have the VM shut down when a <code>java.lang.OutOfMemory</code> error is thrown by the VM or in Java code. The exit dump agent is used in the implementation of <code>-XX:[+|-]ExitOnOutOfMemoryError</code>.</p>
+<p>OpenJ9 now supports the HotSpot option <a href="../xxexitonoutofmemoryerror/"><code>-XX:[+|-]ExitOnOutOfMemoryError</code></a>. You can set this option to have the VM shut down when a <code>java.lang.OutOfMemory</code> error is thrown by the VM or in Java code. The exit dump agent is used in the implementation of <code>-XX:[+|-]ExitOnOutOfMemoryError</code>.</p>
 <h3 id="ludcl-caching-enabled-by-default">LUDCL caching enabled by default</h3>
 <p>By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This capability is controlled by the <a href="../dcomibmenableclasscaching/"><code>-Dcom.ibm.enableClassCaching</code></a> system property and is now enabled by default. This feature was disabled for the 0.17.0 release due to <a href="https://github.com/eclipse/openj9/issues/7332">issue #7332</a> which has now been resolved.</p>
 <h3 id="terabytes-suffix-support-for-x-and-xx-options-that-take-a-size">Terabytes suffix support for <code>-X</code> and <code>-XX</code> options that take a size</h3>
