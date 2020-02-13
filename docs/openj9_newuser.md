@@ -31,7 +31,7 @@ The Eclipse OpenJ9 virtual machine (VM) implements the [Java Virtual Machine Spe
 
 Although OpenJ9 implements its own command-line interface, many HotSpot options are recognized and accepted by the VM for compatibility. Any `-XX:` options that are not recognized by the VM are ignored by default, which prevents an application failing to start. You can turn off this behavior with the [-XX:-IgnoreUnrecognizedXXColonOptions](xxignoreunrecognizedxxcolonoptions.md) option.
 
-For a list of compatible options, see [Switching to OpenJ9](cmdline_migration.md) in the Command-line options section.
+For a list of compatible options, equivalent options, and options that need to be set for compatibility, see [Switching to OpenJ9](cmdline_migration.md).
 
 
 ## Garbage collection policies
