@@ -78,8 +78,8 @@ OpenJDK 8 binaries are supported on the minimum operating system levels shown in
 
 | Linux&reg;                            |   x32  |  x64   | ppc64le    | Z31  | Z64 |
 |---------------------------------------|--------|--------|------------|------|------|
-| Centos 6.9                            |   Y    |   Y    |     Y      |   N  |  N   |
-| Centos 7.4                            |   Y    |   Y    |     Y      |   N  |  N   |
+| CentOS 6.9                            |   Y    |   Y    |     Y      |   N  |  N   |
+| CentOS 7.4                            |   Y    |   Y    |     Y      |   N  |  N   |
 | Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |   Y    |     Y      |   Y  |  Y   |
 | RHEL 7.4                              |   Y    |   Y    |     Y      |   Y  |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |   Y    |     Y      |   Y  |  Y   |
@@ -119,8 +119,8 @@ OpenJDK 11 binaries are supported on the minimum operating system levels shown i
 
 | Linux                                 |  x64   |  ppc64le   | Z64  |
 |---------------------------------------|--------|------------|------|
-| Centos 6.9                            |   Y    |     Y      |  N   |
-| Centos 7.4                            |   Y    |     Y      |  N   |
+| CentOS 6.9                            |   Y    |     Y      |  N   |
+| CentOS 7.4                            |   Y    |     Y      |  N   |
 | Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
 | RHEL 7.4                              |   Y    |     Y      |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
@@ -160,8 +160,8 @@ OpenJDK 13 binaries are supported on the minimum operating system levels shown i
 
 | Linux                                 |  x64   |  ppc64le   | Z64  |
 |---------------------------------------|--------|------------|------|
-| Centos 6.9                            |   Y    |     Y      |  N   |
-| Centos 7.4                            |   Y    |     Y      |  N   |
+| CentOS 6.9                            |   Y    |     Y      |  N   |
+| CentOS 7.4                            |   Y    |     Y      |  N   |
 | Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
 | RHEL 7.4                              |   Y    |     Y      |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
@@ -203,8 +203,8 @@ OpenJDK 14 binaries are supported on the minimum operating system levels shown i
 
 | Linux                                 |  x64   |  ppc64le   | Z64  |
 |---------------------------------------|--------|------------|------|
-| Centos 6.9                            |   Y    |     Y      |  N   |
-| Centos 7.4                            |   Y    |     Y      |  N   |
+| CentOS 6.9                            |   Y    |     Y      |  N   |
+| CentOS 7.4                            |   Y    |     Y      |  N   |
 | Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
 | RHEL 7.4                              |   Y    |     Y      |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
@@ -244,7 +244,7 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 
 | Platform                                    | Operating system          |  Compiler                       |
 |---------------------------------------------|---------------------------|---------------------------------|
-| Linux x86 64-bit                            | Ubuntu 16.04              | gcc 7.3                         |
+| Linux x86 64-bit                            | CentOS 6.10               | gcc 7.3                         |
 | Linux on POWER&reg; LE 64-bit               | Ubuntu 16.04              | gcc 7.3                         |
 | Linux on IBM Z&reg; 64-bit                  | Ubuntu 16.04              | gcc 7.4                         |
 | Windows x86 32-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2010 SP1|
@@ -256,7 +256,7 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 
 | Platform                    | Operating system         |  Compiler                       |
 |-----------------------------|--------------------------|---------------------------------|
-| Linux x86 64-bit            | Ubuntu 16.04             | gcc 7.3                         |
+| Linux x86 64-bit            | CentOS 6.10              | gcc 7.3                         |
 | Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
 | Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 7.4                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
@@ -267,7 +267,7 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 
 | Platform                    | Operating system         |  Compiler                       |
 |-----------------------------|--------------------------|---------------------------------|
-| Linux x86 64-bit            | Ubuntu 16.04             | gcc 7.3                         |
+| Linux x86 64-bit            | CentOS 6.10              | gcc 7.3                         |
 | Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
 | Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 7.4                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
@@ -279,7 +279,7 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 
 | Platform                    | Operating system         |  Compiler                       |
 |-----------------------------|--------------------------|---------------------------------|
-| Linux x86 64-bit            | Ubuntu 16.04             | gcc 7.3                         |
+| Linux x86 64-bit            | CentOS 6.10              | gcc 7.3                         |
 | Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
 | Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 7.4                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
