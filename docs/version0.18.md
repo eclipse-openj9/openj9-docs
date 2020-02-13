@@ -94,7 +94,7 @@ For compatibility with the HotSpot implementation, OpenJ9 now includes an indepe
 
 The new exit dump agent shuts down the VM when the specified event occurs. The exit agent is at priority level 0 and the tool agent has been moved to priority level 1 to aid in mimicking the behavior of HotSpot options. For more information about dump agents, see [`-Xdump`](xdump.md#dump-agents).
 
-OpenJ9 now supports the HotSpot option [`-XX:[+|-]ExitOnOutOfMemoryError`](xxexitonoutofmemory.md). You can set this option to have the VM shut down when a `java.lang.OutOfMemory` error is thrown by the VM or in Java code. The exit dump agent is used in the implementation of `-XX:[+|-]ExitOnOutOfMemoryError`.
+OpenJ9 now supports the HotSpot option [`-XX:[+|-]ExitOnOutOfMemoryError`](xxexitonoutofmemoryerror.md). You can set this option to have the VM shut down when a `java.lang.OutOfMemory` error is thrown by the VM or in Java code. The exit dump agent is used in the implementation of `-XX:[+|-]ExitOnOutOfMemoryError`.
 
 ### LUDCL caching enabled by default
 By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This capability is controlled by the [`-Dcom.ibm.enableClassCaching`](dcomibmenableclasscaching.md) system property and is now enabled by default. This feature was disabled for the 0.17.0 release due to [issue #7332](https://github.com/eclipse/openj9/issues/7332) which has now been resolved.
