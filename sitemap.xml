@@ -301,6 +301,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/djavalangstringbuffergrowaggressively/</loc>
+     <lastmod>2020-02-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/djdknativecbc/</loc>
      <lastmod>2020-02-13</lastmod>
      <changefreq>daily</changefreq>

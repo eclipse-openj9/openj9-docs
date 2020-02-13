@@ -394,6 +394,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size" class="md-nav__link">
+    StringBuffer and StringBuilder above 1 G grow to the maximum size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xxxx" class="md-nav__link">
     xxxx
   </a>
@@ -1266,6 +1273,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li class="md-nav__item">
     <a href="../djavalangstringsubstringnocopy/" title="-Djava.lang.string.substring.nocopy" class="md-nav__link">
       -Djava.lang.string.substring.nocopy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djavalangstringbuffergrowaggressively/" title="-Djava.lang.stringBuffer.growAggressively" class="md-nav__link">
+      -Djava.lang.stringBuffer.growAggressively
     </a>
   </li>
 
@@ -3507,6 +3526,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size" class="md-nav__link">
+    StringBuffer and StringBuilder above 1 G grow to the maximum size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xxxx" class="md-nav__link">
     xxxx
   </a>
@@ -3575,6 +3601,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#option-to-print-code-cache-usage-on-stderr-at-JVM-shutdown">Option to print code cache usage on stderr at JVM shutdown</a></li>
+<li><a href="stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size"><img alt="Start of content that applies to Java 8" src="../cr/java8.png" /> <code>StringBuffer</code> and <code>StringBuilder</code> above 1 G grow to the maximum size</a></li>
 <li><a href="#xxxx">xxxx</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -3588,6 +3615,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="option-to-print-code-cache-usage-on-stderr-at-jvm-shutdown">Option to print code cache usage on stderr at JVM shutdown</h3>
 <p>A new command line option <a href="../xxprintcodecache/">-XX:+PrintCodeCache</a> allows you to print the code cache memory usage on stderr at JVM shutdown.</p>
+<h3 id="stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size"><img alt="Start of content that applies to Java 8" src="../cr/java8.png" /> <code>StringBuffer</code> and <code>StringBuilder</code> above 1 G grow to the maximum size</h3>
+<p>For Java 8 only, <code>StringBuffer</code> and <code>StringBuilder</code> grow differently when sized at 1 G <code>char[]</code> or larger. They immediately grow to the maximum possible size, similarly to Java 11 and later. Revert to the behavior of growing only as much as necessary to accommodate the <code>String</code> being added via the <a href="../djavalangstringbuffergrowaggressively/"><code>-Djava.lang.stringBuffer.growAggressively=false</code></a> option.</p>
 <h3 id="xxxx">xxxx</h3>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.18.0 and v 0.19.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.19/0.19.md">Release notes</a>.</p>
