@@ -997,6 +997,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creating-compatible-behavior" class="md-nav__link">
+    Creating compatible behavior
+  </a>
+  
+</li>
+      
       
       
       
@@ -3471,6 +3478,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creating-compatible-behavior" class="md-nav__link">
+    Creating compatible behavior
+  </a>
+  
+</li>
+      
       
       
       
@@ -3529,10 +3543,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> <a href="../djavalangstringsubstringnocopy/"><code>-Djava.lang.string.substring.nocopy=true</code></a></td>
-<td>Avoid String sharing by String.substring(). <img alt="End of content that applies only to Java 8" src="../cr/java_close_lts.png" /></td>
-</tr>
 <tr>
 <td><a href="../x/"><code>-X</code></a></td>
 <td>Displays help on nonstandard options.</td>
@@ -3699,6 +3709,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 </ol>
+<h2 id="creating-compatible-behavior">Creating compatible behavior</h2>
+<p>You can set the following options to make OpenJ9 behave in the same way as Hotspot.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> <a href="../djavalangstringsubstringnocopy/"><code>-Djava.lang.string.substring.nocopy=true</code></a></td>
+<td>Avoid String sharing by String.substring(). <img alt="End of content that applies only to Java 8" src="../cr/java_close_lts.png" /></td>
+</tr>
+<tr>
+<td><a href="../xnumanone/"><code>-Xnuma:none</code></a></td>
+<td>Disable non-uniform memory architecture (NUMA) awareness.</td>
+</tr>
+</tbody>
+</table>
 <!-- ==== END OF TOPIC ==== cmdline_migration.md ==== -->
                 
                   
