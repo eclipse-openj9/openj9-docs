@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -XX:\[+|-\]ExitOnOutOfMemory
+# -XX:\[+|-\]ExitOnOutOfMemoryError
 
 This HotSpot option is recognized by OpenJ9. You can use the option to trigger a VM shut down on out-of-memory conditions.
 
@@ -30,12 +30,12 @@ This HotSpot option is recognized by OpenJ9. You can use the option to trigger a
 
 ## Syntax
 
-        -XX:[+|-]ExitOnOutOfMemory
+        -XX:[+|-]ExitOnOutOfMemoryError
 
-| Setting                      | Effect  | Default                                                                        |
-|------------------------------|---------|:------------------------------------------------------------------------------:|
-| `-XX:+ExitOnOutOfMemory`     | Enable  |                                                                                |
-| `-XX:-ExitOnOutOfMemory`     | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| Setting                           | Effect  | Default                                                                        |
+|-----------------------------------|---------|:------------------------------------------------------------------------------:|
+| `-XX:+ExitOnOutOfMemoryError`     | Enable  |                                                                                |
+| `-XX:-ExitOnOutOfMemoryError`     | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 
-<!-- ==== END OF TOPIC ==== xxexitonoutofmemory.md ==== -->
+<!-- ==== END OF TOPIC ==== xxexitonoutofmemoryerror.md ==== -->
