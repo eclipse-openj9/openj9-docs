@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxusecompressedoops/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/openj9_releases/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-XX:[+|-]UseCompressedOops -  </title>
+        <title>Overview -  </title>
       
     
     
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-xx91-93usecompressedoops" tabindex="1" class="md-skip">
+      <a href="../#overview" tabindex="1" class="md-skip">
         
       </a>
     
@@ -322,10 +322,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Release notes
@@ -341,11 +343,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../openj9_releases/" title="Overview" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
       Overview
     </a>
+    
   </li>
 
         
@@ -922,12 +933,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
     <label class="md-nav__link" for="nav-12">
       Command-line options
@@ -2647,12 +2656,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-6" type="checkbox" id="nav-12-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-6" type="checkbox" id="nav-12-6">
     
     <label class="md-nav__link" for="nav-12-6">
       JVM -XX options
@@ -3232,49 +3239,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -XX:[+|-]UseCompressedOops
-      </label>
-    
-    <a href="./" title="-XX:[+|-]UseCompressedOops" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../xxusecompressedoops/" title="-XX:[+|-]UseCompressedOops" class="md-nav__link">
       -XX:[+|-]UseCompressedOops
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3473,22 +3442,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
   
   
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3500,7 +3453,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xxusecompressedoops.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/openj9_releases.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3528,35 +3481,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xx91-93usecompressedoops">-XX:[+|-]UseCompressedOops</h1>
-<p><strong>(64-bit only)</strong></p>
-<p>This Oracle HotSpot option enables or disables compressed references in 64-bit JVMs. The option is recognized by the OpenJ9 VM and is provided to help when porting applications from the HotSpot JVM to the OpenJ9 VM. This option might not be supported in subsequent releases.</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:[+|-]UseCompressedOops
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Effect</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-XX:+UseCompressedOops</code></td>
-<td>Enable</td>
-<td></td>
-</tr>
-<tr>
-<td><code>-XX:-UseCompressedOops</code></td>
-<td>Disable</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>The <code>-XX:+UseCompressedOops</code> option is similar to specifying <code>-Xcompressedrefs</code>. Compressed references are used by default when the maximum memory size for an application is set above a platform-specific value. For more information, see <a href="../xcompressedrefs/"><code>-Xcompressedrefs</code></a>.  </p>
-<!-- ==== END OF TOPIC ==== xxusecompressedoops.md ==== -->
+<h1 id="overview">Overview</h1>
+<p>New releases of OpenJ9 are set to coincide with critical patch updates and new versions of the Java&trade; SE class libraries. To learn more about when these releases take place, and the OpenJ9 support lifecycle, see <a href="https://www.eclipse.org/openj9/docs/openj9_support/">Supported environments</a>.</p>
+<p>If you are interested in the content of future releases, plans are published in the <a href="https://projects.eclipse.org/projects/technology.openj9">Eclipse OpenJ9 project page</a>.</p>
+<p>High level information about the features and changes in final releases of OpenJ9 can be found in the topics that follow.</p>
+<!-- ==== END OF TOPIC ==== openj9_releases.md ==== -->
                 
                   
                 
@@ -3599,7 +3528,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="xxtransparenthugepage/" title="-XX:[+|-]TransparentHugePage" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="openj9_newuser/" title="New to OpenJ9?" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3608,19 +3537,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -XX:[+|-]TransparentHugePage
+                            New to OpenJ9?
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="xxusecontainersupport/" title="-XX:[+|-]UseContainerSupport" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="version0.19/" title="Version 0.19.0" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            -XX:[+|-]UseContainerSupport
+                            Version 0.19.0
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">
