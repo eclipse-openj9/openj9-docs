@@ -44,4 +44,8 @@ Disabling signal handling in the OpenJ9 VM reduces performance by approximately 
 
     **Linux and macOS systems** always use the `SIGUSR1` signal.
 
+## See also
+
+- [Signal handling](openj9_signals.md)
+
 <!-- ==== END OF TOPIC ==== xrs.md ==== -->
