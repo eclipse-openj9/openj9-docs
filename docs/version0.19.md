@@ -29,7 +29,7 @@
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Option to print code cache usage on stderr at JVM shutdown](#option-to-print-code-cache-usage-on-stderr-at-JVM-shutdown)
-- [![Start of content that applies to Java 8](cr/java8.png) `StringBuffer` and `StringBuilder` above 1 G grow to the maximum size](stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size)
+- [![Start of content that applies to Java 8](cr/java8.png) `StringBuffer` and `StringBuilder` above 1 G grow to the maximum size](#stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size)
 - [xxxx](#xxxx)
 
 ## Features and changes
