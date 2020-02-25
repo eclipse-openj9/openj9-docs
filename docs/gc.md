@@ -110,8 +110,6 @@ A special mode of the `gencon` policy is known as *Concurrent Scavenge* (`-Xgc:c
 
 For more information about enabling Concurrent Scavenge, see the [-Xgc:concurrentScavenge](xgc.md#concurrentscavenge) option.
 
-<!-- Inclusion of 'Balanced policy' is postponed to a later release. 
-
 ### Balanced policy
 
 The Balanced GC policy ([`-Xgcpolicy:balanced`](xgcpolicy.md#balanced)) evens out pause times and reduces the overhead of some of the costlier operations typically associated with garbage collection. It divides the Java heap into regions, which are managed individually to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates. 
@@ -159,14 +157,12 @@ Double mapping is enabled by default. If you want to disable it, use the command
 - Use the [`-Xlp:objectheap:pagesize`](xlpobjectheap.md#pagesize) option to configure the object heap in small pages; for example, `-Xlp:objectheap:pagesize=4k`.
 - Use the [`-verbose:sizes`](cmdline_general.md) option to see the page sizes available in the system.
 
--->
 
 
 ### Other policies
 
 OpenJ9 has the following alternative GC policies:
 
-- [`-Xgcpolicy:balanced`](xgcpolicy.md#balanced) divides the Java heap into regions, which are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global collections by matching object allocation and survival rates. If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance, particularly on large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER platforms).
 - [`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-aix-linux-x86-only) is designed for applications that require precise response times. Garbage collection occurs in small interruptible steps to avoid stop-the-world pauses. This policy is available only on x86 Linux and AIX platforms.
 - [`-Xgcpolicy:nogc`](xgcpolicy.md#nogc) handles only memory allocation and heap expansion, but doesn't reclaim any memory. The GC impact on runtime performance is therefore minimized, but if the available Java heap becomes exhausted, an `OutOfMemoryError` exception is triggered and the VM stops.
 - [`-Xgcpolicy:optavgpause`](xgcpolicy.md#optavgpause) uses concurrent mark and sweep phases, which means that pause times are reduced when compared to optthruput, but at the expense of some performance throughput.
