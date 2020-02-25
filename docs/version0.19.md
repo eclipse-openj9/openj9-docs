@@ -29,8 +29,7 @@
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Option to print code cache usage on stderr at JVM shutdown](#option-to-print-code-cache-usage-on-stderr-at-JVM-shutdown)
-- [![Start of content that applies to Java 8](cr/java8.png) `StringBuffer` and `StringBuilder` above 1 G grow to the maximum size](stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size)
-- [Balanced GC uses double mapping of arraylets by default on Linux systems](#balanced-gc-policy-uses-double-mapping-of-arraylets-by-default-on-linux-systems)
+- [![Start of content that applies to Java 8](cr/java8.png) `StringBuffer` and `StringBuilder` above 1 G grow to the maximum size](#stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size)
 
 ## Features and changes
 
@@ -53,10 +52,6 @@ A new command line option [-XX:+PrintCodeCache](xxprintcodecache.md) allows you 
 ### ![Start of content that applies to Java 8](cr/java8.png) `StringBuffer` and `StringBuilder` above 1 G grow to the maximum size
 
 For Java 8 only, `StringBuffer` and `StringBuilder` grow differently when sized at 1 G `char[]` or larger. They immediately grow to the maximum possible size, similarly to Java 11 and later. Revert to the behavior of growing only as much as necessary to accommodate the `String` being added via the [`-Djava.lang.stringBuffer.growAggressively=false`](djavalangstringbuffergrowaggressively.md) option.
-
-### Balanced GC uses double mapping of arraylets by default on Linux systems
-
-The Balanced GC uses a region-based policy to increase the efficiency of garbage collection. To support large arrays that require more memory than is available in a single region, the Balanced GC uses an arraylet representation that splits the array between several (not necessarily contiguous) regions. However, when JNI is being used, all the elements of the array must normally be copied to a temporary contiguous array. To avoid this overhead, a second set of contiguous virtual memory addresses can be mapped to the original physical memory addresses. Double mapping is enabled by default on Linux systems. To learn more about arraylets and double mapping, see  [Garbage collection: Balanced policy](gc.md#balanced-policy).
 
 ## Full release information
 
