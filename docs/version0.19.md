@@ -30,7 +30,6 @@
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Option to print code cache usage on stderr at JVM shutdown](#option-to-print-code-cache-usage-on-stderr-at-JVM-shutdown)
 - [![Start of content that applies to Java 8](cr/java8.png) `StringBuffer` and `StringBuilder` above 1 G grow to the maximum size](#stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size)
-- [xxxx](#xxxx)
 
 ## Features and changes
 
@@ -53,9 +52,6 @@ A new command line option [-XX:+PrintCodeCache](xxprintcodecache.md) allows you 
 ### ![Start of content that applies to Java 8](cr/java8.png) `StringBuffer` and `StringBuilder` above 1 G grow to the maximum size
 
 For Java 8 only, `StringBuffer` and `StringBuilder` grow differently when sized at 1 G `char[]` or larger. They immediately grow to the maximum possible size, similarly to Java 11 and later. Revert to the behavior of growing only as much as necessary to accommodate the `String` being added via the [`-Djava.lang.stringBuffer.growAggressively=false`](djavalangstringbuffergrowaggressively.md) option.
-
-### xxxx
-
 
 ## Full release information
 
