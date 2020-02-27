@@ -152,50 +152,6 @@ minimum glibc version 2.12 are expected to function without problems.
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
 
-### OpenJDK 13
-
-<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
-platform support might vary, depending on their build environment. Check the AdoptOpenJDK [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
-
-OpenJDK 13 binaries are supported on the minimum operating system levels shown in the following tables:
-
-
-| Linux                                 |  x64   |  ppc64le   | Z64  |
-|---------------------------------------|--------|------------|------|
-| CentOS 6.9                            |   Y    |     N      |  N   |
-| CentOS 7.4                            |   Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     N      |  Y   |
-| RHEL 7.4                              |   Y    |     Y      |  Y   |
-| SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
-| Ubuntu 16.04                          |   Y    |     Y      |  Y   |
-| Ubuntu 18.04                          |   Y    |     Y      |  Y   |
-
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Not all of these distributions are tested, but Linux distributions that have a
-minimum glibc version 2.12 are expected to function without problems.
-
-| Windows                    |  x64   |
-|----------------------------|--------|
-| Windows 8.1                |   Y    |
-| Windows 10                 |   Y    |
-| Windows Server 2012        |   Y    |
-| Windows Server 2012 R2     |   Y    |
-| Windows Server 2016        |   Y    |
-| Windows Server 2019        |   Y    |
-
-| macOS                   |   x64    |
-|-------------------------|----------|
-| OS X 10.9.0+            |    Y     |
-
-| AIX          |  ppc64   |
-|--------------|----------|
-| AIX 7.1 TL4  |    Y     |
-| AIX 7.2      |    Y     |
-
-<i class="fa fa-bell" aria-hidden="true"></i> **Important:** AIX OpenJ9 builds require the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018)
-
-When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
-
-
 ### OpenJDK 14
 
 <i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
@@ -248,8 +204,8 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 
 | Platform                                    | Operating system          |  Compiler                       |
 |---------------------------------------------|---------------------------|---------------------------------|
-| Linux x86 64-bit                            | CentOS 6.10               | gcc 7.3                         |
-| Linux on POWER&reg; LE 64-bit               | Ubuntu 16.04              | gcc 7.3                         |
+| Linux x86 64-bit                            | CentOS 6.10               | gcc 7.5                         |
+| Linux on POWER&reg; LE 64-bit               | Ubuntu 16.04              | gcc 7.5                         |
 | Linux on IBM Z&reg; 64-bit                  | RHEL 7.7                  | gcc 7.5                         |
 | Windows x86 32-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2010 SP1|
 | Windows x86 64-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2010 SP1|
@@ -260,31 +216,19 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 
 | Platform                    | Operating system         |  Compiler                       |
 |-----------------------------|--------------------------|---------------------------------|
-| Linux x86 64-bit            | CentOS 6.10              | gcc 7.3                         |
-| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
+| Linux x86 64-bit            | CentOS 6.10              | gcc 7.5                         |
+| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.5                         |
 | Linux on IBM Z 64-bit       | RHEL 7.7                 | gcc 7.5                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
 | macOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
 | AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |
 
-### OpenJDK 13
-
-| Platform                    | Operating system         |  Compiler                       |
-|-----------------------------|--------------------------|---------------------------------|
-| Linux x86 64-bit            | CentOS 6.10              | gcc 7.3                         |
-| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
-| Linux on IBM Z 64-bit       | Ubuntu 16.04             | gcc 7.4                         |
-| Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
-| macOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
-| AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 16.1.0                  |
-
-
 ### OpenJDK 14
 
 | Platform                    | Operating system         |  Compiler                       |
 |-----------------------------|--------------------------|---------------------------------|
-| Linux x86 64-bit            | CentOS 6.10              | gcc 7.3                         |
-| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.3                         |
+| Linux x86 64-bit            | CentOS 6.10              | gcc 7.5                         |
+| Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.5                         |
 | Linux on IBM Z 64-bit       | RHEL 7.7                 | gcc 7.5                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
 | macOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
