@@ -78,9 +78,9 @@ OpenJDK 8 binaries are supported on the minimum operating system levels shown in
 
 | Linux&reg;                            |   x32  |  x64   | ppc64le    | Z31  | Z64 |
 |---------------------------------------|--------|--------|------------|------|------|
-| CentOS 6.9                            |   Y    |   Y    |     Y      |   N  |  N   |
+| CentOS 6.9                            |   Y    |   Y    |     N      |   N  |  N   |
 | CentOS 7.4                            |   Y    |   Y    |     Y      |   N  |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |   Y    |     Y      |   Y  |  Y   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |   Y    |     N      |   Y  |  Y   |
 | RHEL 7.4                              |   Y    |   Y    |     Y      |   Y  |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |   Y    |     Y      |   Y  |  Y   |
 | Ubuntu 16.04                          |   Y    |   Y    |     Y      |   N  |  Y   |
@@ -119,9 +119,9 @@ OpenJDK 11 binaries are supported on the minimum operating system levels shown i
 
 | Linux                                 |  x64   |  ppc64le   | Z64  |
 |---------------------------------------|--------|------------|------|
-| CentOS 6.9                            |   Y    |     Y      |  N   |
+| CentOS 6.9                            |   Y    |     N      |  N   |
 | CentOS 7.4                            |   Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     N      |  Y   |
 | RHEL 7.4                              |   Y    |     Y      |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
 | Ubuntu 16.04                          |   Y    |     Y      |  Y   |
@@ -160,9 +160,9 @@ OpenJDK 13 binaries are supported on the minimum operating system levels shown i
 
 | Linux                                 |  x64   |  ppc64le   | Z64  |
 |---------------------------------------|--------|------------|------|
-| CentOS 6.9                            |   Y    |     Y      |  N   |
+| CentOS 6.9                            |   Y    |     N      |  N   |
 | CentOS 7.4                            |   Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     N      |  Y   |
 | RHEL 7.4                              |   Y    |     Y      |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
 | Ubuntu 16.04                          |   Y    |     Y      |  Y   |
@@ -203,9 +203,9 @@ OpenJDK 14 binaries are supported on the minimum operating system levels shown i
 
 | Linux                                 |  x64   |  ppc64le   | Z64  |
 |---------------------------------------|--------|------------|------|
-| CentOS 6.9                            |   Y    |     Y      |  N   |
+| CentOS 6.9                            |   Y    |     N      |  N   |
 | CentOS 7.4                            |   Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     Y      |  Y   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     N      |  Y   |
 | RHEL 7.4                              |   Y    |     Y      |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
 | Ubuntu 16.04                          |   Y    |     Y      |  Y   |
