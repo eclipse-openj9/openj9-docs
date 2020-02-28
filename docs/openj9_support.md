@@ -96,6 +96,7 @@ minimum glibc version 2.12 are expected to function without problems.
 | Windows Server 2012        |   Y    |   Y   |
 | Windows Server 2012 R2     |   Y    |   Y   |
 | Windows Server 2016        |   Y    |   Y   |
+| Windows Server 2019        |   Y    |   Y   |
 
 | macOS&reg;              |   x64    |
 |-------------------------|----------|
@@ -137,6 +138,7 @@ minimum glibc version 2.12 are expected to function without problems.
 | Windows Server 2012        |   Y    |
 | Windows Server 2012 R2     |   Y    |
 | Windows Server 2016        |   Y    |
+| Windows Server 2019        |   Y    |
 
 | macOS                   |   x64    |
 |-------------------------|----------|
@@ -178,6 +180,7 @@ minimum glibc version 2.12 are expected to function without problems.
 | Windows Server 2012        |   Y    |
 | Windows Server 2012 R2     |   Y    |
 | Windows Server 2016        |   Y    |
+| Windows Server 2019        |   Y    |
 
 | macOS                   |   x64    |
 |-------------------------|----------|
@@ -221,6 +224,7 @@ minimum glibc version 2.12 are expected to function without problems.
 | Windows Server 2012        |   Y    |
 | Windows Server 2012 R2     |   Y    |
 | Windows Server 2016        |   Y    |
+| Windows Server 2019        |   Y    |
 
 | macOS                   |   x64    |
 |-------------------------|----------|
