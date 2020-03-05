@@ -38,7 +38,6 @@ You can set this option on the command line, then modify it at run time by using
 
 For example, you might set the initial heap size to 1 GB and the maximum heap size to 8 GB. You might set a smaller value, such as 2 GB, for `-Xsoftmx`, to limit the heap size that is used initially:
 
-    :::java
     -Xms1g -Xsoftmx2g -Xmx8g
 
 You can then use the `com.ibm.lang.management` API from within a Java application to increase the `-Xsoftmx` value during run time, as load increases. This change allows the application to use more memory than you specified initially.

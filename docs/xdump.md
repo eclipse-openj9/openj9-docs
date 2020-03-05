@@ -291,7 +291,7 @@ The following table shows the events that are available as dump agent triggers:
 | **vmstart**     | The virtual machine is started.                                             | Not applicable                                                 |
 | **vmstop**      | The virtual machine stops.                                                  | Exit code; for example, `filter=#129..#192#-42#255`            |
 | **load**        | A class is loaded.                                                          | Class name; for example, `filter=java/lang/String`             |
-| **unload**      | A class us unloaded.                                                        | Not applicable                                                 |
+| **unload**      | A class is unloaded.                                                        | Not applicable                                                 |
 | **throw**       | An exception is thrown explicitly in Java code. Use 'systhrow' for unexpected VM exceptions.                                                     | Exception class name; for example, `filter=java/lang/OutOfMem*`|
 | **catch**       | An exception is caught.                                                     | Exception class name; for example, `filter=*Memory*`           |
 | **uncaught**    | A Java exception is not caught by the application.                          | Exception class name; for example, `filter=*MemoryError`       |
