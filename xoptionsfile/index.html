@@ -3598,19 +3598,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 <p>Although you cannot use <code>-Xoptionsfile</code> recursively within an options file, you can use <code>-Xoptionsfile</code> multiple times on the same command line to load more than one options files.</p>
 <p>Some options use quoted strings as parameters. Do not split quoted strings over multiple lines using the forward slash line continuation character (\). The Yen symbol (¥) is not supported as a line continuation character. For example, the following example is not valid in an options file:</p>
-<pre><code>:::java
--Xevents=vmstop,exec="cmd /c \
+<pre><code>-Xevents=vmstop,exec="cmd /c \
 echo %pid has finished."
 </code></pre>
 <p>The following example is valid in an options file:</p>
-<pre><code>:::java
--Xevents=vmstop, \
+<pre><code>-Xevents=vmstop, \
 exec="cmd /c echo %pid has finished."
 </code></pre>
 <h2 id="example">Example</h2>
 <p>Here is an example of an options file:</p>
-<pre><code>:::java
-#My options file
+<pre><code>#My options file
 -X&lt;option1&gt;
 -X&lt;option2&gt;=\
 &lt;value1&gt;,\

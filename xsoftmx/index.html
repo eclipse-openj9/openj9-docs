@@ -3551,8 +3551,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Use the <a href="../xms/"><code>-Xmx</code></a> option to set a "hard" limit for the maximum size of the heap. By default, <code>-Xsoftmx</code> is set to the same value as <code>-Xmx</code>. The value of <code>-Xms</code> must be less than, or equal to, the value of <code>-Xsoftmx</code>. See the introduction to this topic for more information about specifying <em>&lt;size&gt;</em> parameters.</p>
 <p>You can set this option on the command line, then modify it at run time by using the <code>MemoryMXBean.setMaxHeapSize()</code> method in the <code>com.ibm.lang.management</code> API. By using this API, Java applications can dynamically monitor and adjust the heap size as required. This function can be useful in virtualized or cloud environments, for example, where the available memory might change dynamically to meet business needs. When you use the API, you must specify the value in bytes, such as <code>2147483648</code> instead of <code>2g</code>.</p>
 <p>For example, you might set the initial heap size to 1 GB and the maximum heap size to 8 GB. You might set a smaller value, such as 2 GB, for <code>-Xsoftmx</code>, to limit the heap size that is used initially:</p>
-<pre><code>:::java
--Xms1g -Xsoftmx2g -Xmx8g
+<pre><code>-Xms1g -Xsoftmx2g -Xmx8g
 </code></pre>
 <p>You can then use the <code>com.ibm.lang.management</code> API from within a Java application to increase the <code>-Xsoftmx</code> value during run time, as load increases. This change allows the application to use more memory than you specified initially.</p>
 <p>If you reduce the <code>-Xsoftmx</code> value, the garbage collector attempts to respect the new limit. However, the ability to shrink the heap depends on a number of factors. There is no guarantee that a decrease in the heap size will occur. If or when the heap shrinks to less than the new limit, the heap will not grow beyond that limit.</p>
