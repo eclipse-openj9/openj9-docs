@@ -35,7 +35,7 @@ This Oracle HotSpot option prints the code cache memory usage when the applicati
 | `-XX:+PrintCodeCache`        | Enable  |                                                                                    |
 | `-XX:-PrintCodeCache`        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
 
-As discussed in the Oracle documentation, the code cache usage can be shown when the application exits, by specifying `–XX:+PrintCodeCache` on the java launcher command line. The output looks similar to the following: 
+As discussed in the Oracle documentation, the code cache usage can be shown when the application exits, by specifying `–XX:+PrintCodeCache` on the Java launcher command line. The output looks similar to the following: 
 
 ```
 CodeCache: size=262144Kb used=454Kb max_used=457Kb free=261690Kb

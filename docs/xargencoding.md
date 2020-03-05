@@ -40,7 +40,6 @@ To do this, use the `-Xargencoding` command-line option.
 
 : You can use Unicode escape sequences in the argument list that you pass to this option. To specify a Unicode character, use escape sequences in the form `\u####`, where `#` is a hexadecimal digit (0-9, A-F). For example, to specify a class that is called `HelloWorld` and use Unicode encoding for both capital letters, use this command:
 
-        :::java
         java -Xargencoding \u0048ello\u0057orld
 
 ### `utf8`

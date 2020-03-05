@@ -60,13 +60,11 @@ Although you cannot use `-Xoptionsfile` recursively within an options file, you 
 
 Some options use quoted strings as parameters. Do not split quoted strings over multiple lines using the forward slash line continuation character (\\). The Yen symbol (¥) is not supported as a line continuation character. For example, the following example is not valid in an options file:
 
-    :::java
     -Xevents=vmstop,exec="cmd /c \
     echo %pid has finished."
 
 The following example is valid in an options file:
 
-    :::java
     -Xevents=vmstop, \
     exec="cmd /c echo %pid has finished."
 
@@ -74,7 +72,6 @@ The following example is valid in an options file:
 
 Here is an example of an options file:
 
-    :::java
     #My options file
     -X<option1>
     -X<option2>=\

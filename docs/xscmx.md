@@ -54,7 +54,6 @@ You can change the soft maximum size by using the `-Xshareclasses:adjustsoftmx=<
 
 For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the `-Xscmx` option, to limit the data stored in the cache:
 
-    :::java
     -XX:SharedCacheHardLimit=64m -Xscmx16m
 
 You can then use the `com.ibm.lang.management` API from within a Java application to increase the soft maximum value during run time, as load increases. This change allows the application to use more shared cache space than you specified initially.
