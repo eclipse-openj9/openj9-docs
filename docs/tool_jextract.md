@@ -37,13 +37,7 @@ where:
 - `<core file name>` is the name of the system dump.
 - `<zip_file>` is the name you want to give to the processed file. If you do not specify a name, output is written to `<core file name>.zip` by default. The output is written to the same directory as the core file.
 
-If you are analyzing a dump from a VM that used [`-Xcompressedrefs`](xcompressedrefs.md), include the `-J-Xcompressedrefs` parameter to run `jextract` using compressed references.
-
-: <i class="fa fa-exclamation-triangle"></i> **Restriction: ** You must run `jextract` using the same VM level, on the same system that produced the system dump. If you run `jextract` on a VM level that is different from the one on which the dump was produced you see the following messages:
-
-        J9RAS.buildID is incorrect (found e8801ed67d21c6be, expecting eb4173107d21c673).
-        This version of jextract is incompatible with this dump.
-        Failure detected during jextract, see previous message(s).
+: <i class="fa fa-exclamation-triangle"></i> **Restriction: ** You must run `jextract` on the same system that produced the system dump in order to collect the correct executables and libraries referenced in the system dump. You should also run `jextract` using the same VM level, to avoid any problems.
 
 ## See also
 
