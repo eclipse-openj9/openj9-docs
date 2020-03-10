@@ -3554,14 +3554,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><code>&lt;zip_file&gt;</code> is the name you want to give to the processed file. If you do not specify a name, output is written to <code>&lt;core file name&gt;.zip</code> by default. The output is written to the same directory as the core file.</li>
 </ul>
 <dl>
-<dt>If you are analyzing a dump from a VM that used <a href="../xcompressedrefs/"><code>-Xcompressedrefs</code></a>, include the <code>-J-Xcompressedrefs</code> parameter to run <code>jextract</code> using compressed references.</dt>
-<dd>
-<p><i class="fa fa-exclamation-triangle"></i> <strong>Restriction: </strong> You must run <code>jextract</code> using the same VM level, on the same system that produced the system dump. If you run <code>jextract</code> on a VM level that is different from the one on which the dump was produced you see the following messages:</p>
-<pre><code>J9RAS.buildID is incorrect (found e8801ed67d21c6be, expecting eb4173107d21c673).
-This version of jextract is incompatible with this dump.
-Failure detected during jextract, see previous message(s).
-</code></pre>
-</dd>
+<dd><i class="fa fa-exclamation-triangle"></i> <strong>Restriction: </strong> You must run <code>jextract</code> on the same system that produced the system dump in order to collect the correct executables and libraries referenced in the system dump. You should also run <code>jextract</code> using the same VM level, to avoid any problems.</dd>
 </dl>
 <h2 id="see-also">See also</h2>
 <ul>
