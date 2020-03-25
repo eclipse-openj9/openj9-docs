@@ -28,6 +28,7 @@
 The following new features and notable changes since v 0.19.0 are included in this release:
 
 - [Binaries and supported environments](#binaries-and-supported-environments)
+- [ExitOnOutOfMemoryError option behavior update](#exitonoutofmemoryerror-option-behavior-update)
 - [Xxx](#xxx)
 
 
@@ -42,6 +43,10 @@ OpenJ9 releases 0.20.0 supports OpenJDK 8, 11, and 14. Binaries are available fr
 - [OpenJDK version 14](https://adoptopenjdk.net/archive.html?variant=openjdk14&jvmVariant=openj9)
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### ExitOnOutOfMemoryError option behavior update
+
+The `-XX:[+-]ExitOnOutOfMemoryError` option has been updated to exit on VM OutOfMemoryErrors only instead of both VM and Java thrown errors to match the Hotspot option. See [-XX:[+-]ExitOnOutOfMemoryError](xxexitonoutofmemory.md) for more details about this option.
 
 ### Xxx
 
