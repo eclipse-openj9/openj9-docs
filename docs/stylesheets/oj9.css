@@ -25,8 +25,9 @@
 
 
 [data-md-color-primary=cyan] .md-header {
-  background-color: #353434;
-  background-image: url(../cr/bg-d.png);
+  height: 4rem;
+  padding-top: 1rem;
+  background-color: #434343;
 }
 
 [data-md-color-primary=cyan] .md-typeset a {
@@ -232,23 +233,23 @@ margin-top: 5rem;
 /* FOOTER CSS */
 
 .md-footer-meta {
-  color: #4c4c4c;
-  background-color: #dddddd;
+  color: white;
+  background-color: #434343;
 /*   background-image: url(../cr/bg-lg.png); */
 }
 
 html .md-footer-meta.md-typeset a {
-  color: #af6e3d;                      /* dark orange - Eclipse link: visited */
+  color: white;                      /* dark orange - Eclipse link: visited */
 }
 html .md-footer-meta.md-typeset a:hover {
-  color: #da7a08;                      /* orange - Eclipse button: hover */
+  color: white;                      /* orange - Eclipse button: hover */
 }
 
 .md-footer-social__link:before {
     font-size: 1.5rem;
 }
 .md-footer-social__link:hover:before {
-  color: #da7a08;                      /* orange - Eclipse button: hover */
+  color: white;                      /* orange - Eclipse button: hover */
 }
 
 
@@ -319,11 +320,11 @@ i.fa-chevron-circle-right {
 }
 
 .md-footer-nav__inner > a.md-footer-nav__link div { /* Previous and Next topic buttons */
-  color: #1a1a1a;
+  color: white;
 }
 
 .md-footer-nav__direction {
-  color: #757575;
+  color: white;
 }
 
 .md-footer-nav__link {
@@ -434,4 +435,33 @@ img {
 
 .md-content__icon, .md-footer-nav__button, .md-header-nav__button, .md-nav__button, .md-nav__title:before, .md-search-result__article--document:before {
   padding: .2rem;
+}
+
+.md-sidebar__inner {
+  margin-top: 2rem;
+}
+
+.md-container {
+  margin-top: 0.5rem;
+}
+
+
+
+.md-source {
+  margin-left:6rem;
+  width: inherit;
+}
+
+.md-search__icon[for=__search]:before {
+  margin-left: 6rem;
+}
+
+@media only screen and (min-width: 60em) {
+  .md-search__input {
+    margin-left: 6rem;
+  }
+}
+
+.fa-chevron-circle-right:before {
+  color: white;
 }
