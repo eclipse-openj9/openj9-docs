@@ -272,15 +272,44 @@ div .md-footer-copyright__highlight p {
 }
 .md-footer-eclipse1 {
   padding: 0.5rem 0 0.5rem 0;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 .md-footer-links1 {
   font-size: 0.8rem;
   color: rgba(0,0,0,.5);
+  margin-top: 0.5rem;
+
 }
-.md-footer-links1 .dark-link {
+.md-footer-links1 {
   padding-left: .2rem;
 }
-      
+
+.left {
+  float:left;
+}
+
+.right {
+  float: right;
+}
+
+.dark-link {
+  margin:1rem;
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+}
+  
+.horizontal-line{
+  height: 2px;
+  background-color: var(--theme-ui-colors-secondary,#5DA7A3);
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 16px;
+}
       
 .md-footer-power1 {
   text-align: right;
