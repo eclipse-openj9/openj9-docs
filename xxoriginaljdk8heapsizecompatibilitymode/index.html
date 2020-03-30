@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/openj9_defaults/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxoriginaljdk8heapsizecompatibilitymode/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>Default settings -  </title>
+        <title>Xxoriginaljdk8heapsizecompatibilitymode -  </title>
       
     
     
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#default-settings-for-the-openj9-vm" tabindex="1" class="md-skip">
+      <a href="../#-xx91-93originaljdk8heapsizecompatibilitymode" tabindex="1" class="md-skip">
         
       </a>
     
@@ -3322,12 +3322,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
     <label class="md-nav__link" for="nav-13">
        Reference
@@ -3355,20 +3353,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Default settings" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../openj9_defaults/" title="Default settings" class="md-nav__link">
       Default settings
     </a>
-    
   </li>
 
         
@@ -3454,6 +3443,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
   
   
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3465,12 +3470,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/openj9_defaults.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xxoriginaljdk8heapsizecompatibilitymode.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
                 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2020, 2020 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -3493,358 +3498,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="default-settings-for-the-openj9-vm">Default settings for the OpenJ9 VM</h1>
-<p>The following tables provide a quick reference to the default settings for the VM when it is first installed.</p>
-<p>The last 2 columns show whether the default setting can be changed by a command-line parameter or an environment variable. Note that if both are set, the command-line parameter always takes precedence.</p>
+<h1 id="-xx91-93originaljdk8heapsizecompatibilitymode">-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode</h1>
+<p><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> The default value for the maximum heap size (-Xmx) is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. In OpenJ9 0.18.0 and earlier releases the default is half the available memory with a minimum of 16 MB and a maximum of 512 MB. Enable this option to revert to the earlier default value. </p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Note:</strong> This option is deprecated.</p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> This option is supported only on Java&trade; 8. it is ignored on Java&trade; 11+.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code>-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>VM setting</th>
-<th>Default</th>
-<th align="center">Command line</th>
-<th align="center">Env. variable</th>
+<th>Setting</th>
+<th>Effect</th>
+<th align="center">Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Javadump</td>
-<td>Enabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
+<td>-XX:+OriginalJDK8HeapSizeCompatibilityMode</td>
+<td>Enable</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td>Heapdump</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>System dump</td>
-<td>Enabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Snap traces</td>
-<td>Enabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>JIT dump</td>
-<td>Enabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Verbose output</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Compressed references</td>
-<td>(See <strong>Note 1</strong>)</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Boot classpath search</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>JNI checks</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Remote debugging</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Strict conformance checks</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Quickstart</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Remote debug info server</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Reduced signaling</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Signal handler chaining</td>
-<td>Enabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Classpath</td>
-<td>Not set</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Class data sharing</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Accessibility support</td>
-<td>Enabled</td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>JIT compiler</td>
-<td>Enabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>AOT compiler (See <strong>Note 2</strong>)</td>
-<td>Enabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>JIT debug options</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Java2D max size of fonts with algorithmic bold</td>
-<td>14 point</td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Java2D use rendered bitmaps in scalable fonts</td>
-<td>Enabled</td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Java2D freetype font rasterizing</td>
-<td>Enabled</td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Java2D use AWT fonts</td>
-<td>Disabled</td>
-<td align="center"><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
+<td>-XX:-OriginalJDK8HeapSizeCompatibilityMode</td>
+<td>Disable</td>
 <td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
 </tr>
 </tbody>
 </table>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
-<ol>
-<li>
-<p>On AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade;: Enabled for <strong>-Xmx</strong> values &le; 57 GB, otherwise disabled.</p></p>
-<p>On z/OS&reg;: Enabled for <strong>-Xmx</strong> values &le; 25 GB, otherwise disabled. With <a href="https://www.ibm.com/support/docview.wss?uid=isg1OA49416">APAR OA49416</a>, enabled for <strong>-Xmx</strong> values &le; 57 GB.</p>
-</li>
-<li>
-<p>AOT is not used by the VM unless shared classes are also enabled.</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>VM setting</th>
-<th>AIX</th>
-<th>Linux</th>
-<th>macOS</th>
-<th>Windows</th>
-<th>z/OS</th>
-<th>Command line</th>
-<th>Env. variable</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Default locale</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
-<td>N/A</td>
-<td>None</td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Time to wait before starting plug-in</td>
-<td>N/A</td>
-<td>Zero</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>N/A</td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Temporary directory</td>
-<td><code>/tmp</code></td>
-<td><code>/tmp</code></td>
-<td><code>/tmp</code></td>
-<td><code>c:\temp</code></td>
-<td><code>/tmp</code></td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Plug-in redirection</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
-<td>N/A</td>
-<td>None</td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>IM switching</td>
-<td>Disabled</td>
-<td>Disabled</td>
-<td>Disabled</td>
-<td>N/A</td>
-<td>Disabled</td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>IM modifiers</td>
-<td>Disabled</td>
-<td>Disabled</td>
-<td>Disabled</td>
-<td>N/A</td>
-<td>Disabled</td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Thread model</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>Native</td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td>Initial stack size for Java Threads <strong>(32/64-bit)</strong>. Use <code>-Xiss&lt;size&gt;</code></td>
-<td>2 KB</td>
-<td>2 KB</td>
-<td>2 KB</td>
-<td>2 KB</td>
-<td>2 KB</td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Maximum stack size for Java Threads <strong>(32-bit)</strong>. Use <code>-Xss&lt;size&gt;</code></td>
-<td>320 KB</td>
-<td>320 KB</td>
-<td>N/A</td>
-<td>320 KB</td>
-<td>320 KB</td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Maximum stack size for Java Threads <strong>(64-bit)</strong>. Use <code>-Xss&lt;size&gt;</code></td>
-<td>1024 KB</td>
-<td>1024 KB</td>
-<td>1024 KB</td>
-<td>1024 KB</td>
-<td>1024 KB</td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Stack size for OS Threads <strong>(32-bit)</strong>. Use <code>-Xmso&lt;size&gt;</code></td>
-<td>256 KB</td>
-<td>256 KB</td>
-<td>N/A</td>
-<td>32 KB</td>
-<td>256 KB</td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Stack size for OS Threads <strong>(64-bit)</strong>. Use <code>-Xmso&lt;size&gt;</code></td>
-<td>256 KB</td>
-<td>256 KB</td>
-<td>256 KB</td>
-<td>256 KB</td>
-<td>1 MB</td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Initial heap size. Use <code>-Xms&lt;size&gt;</code></td>
-<td>8 MB</td>
-<td>8 MB</td>
-<td>8 MB</td>
-<td>8 MB</td>
-<td>8 MB</td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Maximum Java heap size. Use <code>-Xmx&lt;size&gt;</code></td>
-<td>See <strong>Notes</strong></td>
-<td>See <strong>Notes</strong></td>
-<td>See <strong>Notes</strong></td>
-<td>See <strong>Notes</strong></td>
-<td>See <strong>Notes</strong></td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-<tr>
-<td>Page size for the Java object heap and code cache (For restrictions, see the <code>-Xlp:codecache</code> and <code>-Xlp:objectheap</code> options).</td>
-<td>Operating system default</td>
-<td>Architecture: x86: 2MB, IBM Z&reg;: 1MB, Other architectures: Operating system default</td>
-<td>4 KB</td>
-<td>Operating system default</td>
-<td>1M pageable</td>
-<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
-<td><i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span></td>
-</tr>
-</tbody>
-</table>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
-<p>The default value of <a href="../xms/"><code>-Xmx</code></a> :</p>
-<ul>
-<li>
-<p>The value is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB.</p>
-</li>
-<li>
-<p><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> If you have set the <a href="../xxoriginaljdk8heapsizecompatibilitymode/">-XX:+OriginalJDK8HeapSizeCompatibilityMode</a> option for compatibility with earlier releases, the value is half the available memory with a minimum of 16 MB and a maximum of 512 MB. <img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" /></p>
-</li>
-</ul>
-<p><em>Available memory</em> is defined as being the smallest of two values: The real or <em>physical</em> memory or the <em>RLIMIT_AS</em> value.</p>
                 
                   
                 
@@ -3881,44 +3562,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
-              
-                <div class="md-footer-nav">
-                  <nav class="md-footer-nav__inner md-grid">
-<!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
-                    <img alt="" src="../cr/rule.png"> [!-- Separator --]
-                    
-                      <a href="openj9_support/" title="Supported environments" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-                        <div class="md-flex__cell md-flex__cell--shrink">
-                          <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-                        </div>
-                        <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                          <span class="md-flex__ellipsis">
-                            <span class="md-footer-nav__direction">
-                              Previous
-                            </span>
-                            Supported environments
-                          </span>
-                        </div>
-                      </a>
-                    
-                    
-                      <a href="openj9_signals/" title="Signal handling" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-                        <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-                          <span class="md-flex__ellipsis">
-                            <span class="md-footer-nav__direction">
-                              Next
-                            </span>
-                            Signal handling
-                          </span>
-                        </div>
-                        <div class="md-flex__cell md-flex__cell--shrink">
-                          <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-                        </div>
-                      </a>
-                    
--->
-                  </nav>
-                </div>
               
               
             </article>
