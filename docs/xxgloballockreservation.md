@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]GlobalLockReservation
 
-**(Power only)**
+**(AIX and Linux on Power systems only)**
 
 The `-XX:+GlobalLockReservation` option enables an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects.
 
@@ -38,19 +38,21 @@ The `-XX:+GlobalLockReservation` option enables an optimization targeted towards
 |`-XX:+GlobalLockReservation`| Enable |                                                                                |
 |`-XX:-GlobalLockReservation`| Disable| <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
-This optimization is targeted towards applications with lots of uncontended locked objects that are being locked just to be safe. When enabled, heuristics are used to try and determine when an object will be exclusively locked by a single thread so that faster, more specialized code can be used for locking the object. Negative performance side effects may occur if the heuristics used get things wrong but functional correctness should still be maintained.
+This optimization is targeted towards applications with lots of uncontended locked objects that are being locked just to be safe. When enabled, heuristics are used to try and determine when an object will be exclusively locked by a single thread so that faster, more specialized code can be used for locking the object. If the heuristics incorrectly identify an object as a target for the optimization, performance might be adversely affected.
 
 The `-XX:-GlobalLockReservation` option turns off a previously enabled `-XX:+GlobalLockReservation` option.
 
 ## Parameters
 
-| Parameter                                                     | Effect                                                                                          |
-|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| [`reservedTransitionThreshold`](#reservedtransitionthreshold) | Advanced tuning parameter. Changes amount of time spent analyzing an object.                    |
-| [`reservedAbsoluteThreshold`  ](#reservedabsolutethreshold  ) | Advanced tuning parameter. Changes amount of time spent analyzing a class for compatibility.    |
-| [`minimumReservedRatio`       ](#minimumreservedratio       ) | Advanced tuning parameter. Changes aggression level for marking a class as highly compatible.   |
-| [`cancelAbsoluteThreshold`    ](#cancelabsolutethreshold    ) | Advanced tuning parameter. Changes amount of time spent analyzing a class for incompatibility.  |
-| [`minimumLearningRatio`       ](#minimumlearningratio       ) | Advanced tuning parameter. Changes aggression level for marking a class as highly incompatible. |
+Advanced tuning parameters are shown in the following table:
+
+| Parameter                                                     | Effect                                                               |
+|---------------------------------------------------------------|----------------------------------------------------------------------|
+| [`reservedTransitionThreshold`](#reservedtransitionthreshold) | Changes amount of time spent analyzing an object.                    |
+| [`reservedAbsoluteThreshold`  ](#reservedabsolutethreshold  ) | Changes amount of time spent analyzing a class for compatibility.    |
+| [`minimumReservedRatio`       ](#minimumreservedratio       ) | Changes aggression level for marking a class as highly compatible.   |
+| [`cancelAbsoluteThreshold`    ](#cancelabsolutethreshold    ) | Changes amount of time spent analyzing a class for incompatibility.  |
+| [`minimumLearningRatio`       ](#minimumlearningratio       ) | Changes aggression level for marking a class as highly incompatible. |
 
 
 ### reservedTransitionThreshold
@@ -60,7 +62,7 @@ The `-XX:-GlobalLockReservation` option turns off a previously enabled `-XX:+Glo
   |---------------|----------------|-----------------------|
   | `<value>`     | number         | 1                     |
 
-: Number of times an object is locked by the same thread before it is considered reserved minus 2. So, with the default value of 1 and object can be reserved the third time it is locked. Value can be 0-3 inclusive. Values of 4 or higher are treated as infinity.
+: Number of times an object is locked by the same thread before it is considered reserved minus a value of 2. So, with a default value of 1, an object can be reserved the third time it is locked. `<value>` can be 0-3 inclusive. Values of 4 or higher are treated as infinity.
 
 ### reservedAbsoluteThreshold
         -XX:+GlobalLockReservation:reservedAbsoluteThreshold=<value>
@@ -69,7 +71,7 @@ The `-XX:-GlobalLockReservation` option turns off a previously enabled `-XX:+Glo
   |---------------|----------------|-----------------------|
   | `<value>`     | number         | 10                    |
 
-: Minimum number of objects of a class that get reserved before the class can be considered highly compatible and objects of that class will get reserved the first time they are locked. Values of 65536 or higher are treated as infinity.
+: Minimum number of objects of a class that get reserved before the class can be considered highly compatible. Objects of that class are reserved the first time they are locked. Values of 65536 or higher are treated as infinity.
 
 ### minimumReservedRatio
         -XX:+GlobalLockReservation:minimumReservedRatio=<value>
@@ -87,7 +89,7 @@ The `-XX:-GlobalLockReservation` option turns off a previously enabled `-XX:+Glo
   |---------------|----------------|-----------------------|
   | `<value>`     | number         | 10                    |
 
-: Minimum number of objects of a class that get converted to flat before the class can be considered highly incompatible and objects of that class will never be reserved. Values of 65536 or higher are treated as infinity.
+: Minimum number of objects of a class that get converted to flat before the class can be considered highly incompatible. Objects of that class are never reserved. Values of 65536 or higher are treated as infinity.
 
 ### minimumLearningRatio
         -XX:+GlobalLockReservation:minimumLearningRatio=<value>

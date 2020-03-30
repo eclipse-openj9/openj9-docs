@@ -325,6 +325,7 @@ nav:
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
             - "-XX:[+|-]ExitOnOutOfMemoryError"                                  : xxexitonoutofmemoryerror.md
+            - "-XX:[+|-]GlobalLockReservation"                                   : xxgloballockreservation.md
             - "-XX:[+|-]handleSIGXFSZ"                                           : xxhandlesigxfsz.md
             - "-XX:[+|-]HeapDumpOnOutOfMemory"                                   : xxheapdumponoutofmemory.md
             - "-XX:HeapDumpPath"                                                 : xxheapdumppath.md
