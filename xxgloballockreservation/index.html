@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/dcomibmtoolsattachdirectory/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxgloballockreservation/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-Dcom.ibm.tools.attach.directory -  </title>
+        <title>-XX:[+|-]GlobalLockReservation -  </title>
       
     
     
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-dcomibmtoolsattachdirectory" tabindex="1" class="md-skip">
+      <a href="../#-xx91-93globallockreservation" tabindex="1" class="md-skip">
         
       </a>
     
@@ -991,12 +991,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4">
     
     <label class="md-nav__link" for="nav-12-4">
       System property options
@@ -1132,56 +1130,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -Dcom.ibm.tools.attach.directory
-      </label>
-    
-    <a href="./" title="-Dcom.ibm.tools.attach.directory" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../dcomibmtoolsattachdirectory/" title="-Dcom.ibm.tools.attach.directory" class="md-nav__link">
       -Dcom.ibm.tools.attach.directory
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2706,10 +2659,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-6" type="checkbox" id="nav-12-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-6" type="checkbox" id="nav-12-6" checked>
     
     <label class="md-nav__link" for="nav-12-6">
       JVM -XX options
@@ -2857,11 +2812,97 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../xxgloballockreservation/" title="-XX:[+|-]GlobalLockReservation" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        -XX:[+|-]GlobalLockReservation
+      </label>
+    
+    <a href="./" title="-XX:[+|-]GlobalLockReservation" class="md-nav__link md-nav__link--active">
       -XX:[+|-]GlobalLockReservation
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reservedtransitionthreshold" class="md-nav__link">
+    reservedTransitionThreshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reservedabsolutethreshold" class="md-nav__link">
+    reservedAbsoluteThreshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimumreservedratio" class="md-nav__link">
+    minimumReservedRatio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelabsolutethreshold" class="md-nav__link">
+    cancelAbsoluteThreshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimumlearningratio" class="md-nav__link">
+    minimumLearningRatio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3515,9 +3556,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
+  <a href="#parameters" class="md-nav__link">
+    Parameters
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reservedtransitionthreshold" class="md-nav__link">
+    reservedTransitionThreshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reservedabsolutethreshold" class="md-nav__link">
+    reservedAbsoluteThreshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimumreservedratio" class="md-nav__link">
+    minimumReservedRatio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelabsolutethreshold" class="md-nav__link">
+    cancelAbsoluteThreshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimumlearningratio" class="md-nav__link">
+    minimumLearningRatio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3538,7 +3620,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/dcomibmtoolsattachdirectory.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xxgloballockreservation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3566,11 +3648,73 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-dcomibmtoolsattachdirectory">-Dcom.ibm.tools.attach.directory</h1>
-<p>Specify a different common directory for Attach API working files.</p>
+<h1 id="-xx91-93globallockreservation">-XX:[+|-]GlobalLockReservation</h1>
+<p><strong>(AIX and Linux on Power systems only)</strong></p>
+<p>The <code>-XX:+GlobalLockReservation</code> option enables an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -Dcom.ibm.tools.attach.directory=&lt;directory_name&gt;
+<pre><code>    -XX:[+|-]GlobalLockReservation
+    -XX:+GlobalLockReservation:&lt;parameter&gt;
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Effect</th>
+<th align="center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-XX:+GlobalLockReservation</code></td>
+<td>Enable</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><code>-XX:-GlobalLockReservation</code></td>
+<td>Disable</td>
+<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
+</tr>
+</tbody>
+</table>
+<p>This optimization is targeted towards applications with lots of uncontended locked objects that are being locked just to be safe. When enabled, heuristics are used to try and determine when an object will be exclusively locked by a single thread so that faster, more specialized code can be used for locking the object. If the heuristics incorrectly identify an object as a target for the optimization, performance might be adversely affected.</p>
+<p>The <code>-XX:-GlobalLockReservation</code> option turns off a previously enabled <code>-XX:+GlobalLockReservation</code> option.</p>
+<h2 id="parameters">Parameters</h2>
+<p>Advanced tuning parameters are shown in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#reservedtransitionthreshold"><code>reservedTransitionThreshold</code></a></td>
+<td>Changes amount of time spent analyzing an object.</td>
+</tr>
+<tr>
+<td><a href="#reservedabsolutethreshold"><code>reservedAbsoluteThreshold</code>  </a></td>
+<td>Changes amount of time spent analyzing a class for compatibility.</td>
+</tr>
+<tr>
+<td><a href="#minimumreservedratio"><code>minimumReservedRatio</code>       </a></td>
+<td>Changes aggression level for marking a class as highly compatible.</td>
+</tr>
+<tr>
+<td><a href="#cancelabsolutethreshold"><code>cancelAbsoluteThreshold</code>    </a></td>
+<td>Changes amount of time spent analyzing a class for incompatibility.</td>
+</tr>
+<tr>
+<td><a href="#minimumlearningratio"><code>minimumLearningRatio</code>       </a></td>
+<td>Changes aggression level for marking a class as highly incompatible.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reservedtransitionthreshold">reservedTransitionThreshold</h3>
+<pre><code>    -XX:+GlobalLockReservation:reservedTransitionThreshold=&lt;value&gt;
+</code></pre>
+<dl>
+<dd>
 <table>
 <thead>
 <tr>
@@ -3581,23 +3725,122 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </thead>
 <tbody>
 <tr>
-<td><code>&lt;directory_name&gt;</code></td>
-<td>[string]</td>
-<td><code>.com_ibm_tools_attach</code></td>
+<td><code>&lt;value&gt;</code></td>
+<td>number</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
-<p>To change the value for <code>directory_name</code>, specify a different directory name. If the directory does not exist, it is created. However, if a
-parent directory is specified, it must exist.</p>
-<h2 id="see-also">See also</h2>
-<ul>
-<li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html">Support for the Java&trade; Attach API</a></li>
-<li><a href="../dcomibmtoolsattachenable/">-Dcom.ibm.tools.attach.enable</a></li>
-<li><a href="../dcomibmtoolsattachdisplayname/">-Dcom.ibm.tools.attach.displayName</a></li>
-<li><a href="../dcomibmtoolsattachid/">-Dcom.ibm.tools.attach.id</a></li>
-<li><a href="../dcomibmtoolsattachtimeout/">-Dcom.ibm.tools.attach.timeout</a></li>
-</ul>
-<!-- ==== END OF TOPIC ==== dcomibmtoolsattachenable.md ==== -->
+</dd>
+<dd>
+<p>Number of times an object is locked by the same thread before it is considered reserved minus a value of 2. So, with a default value of 1, an object can be reserved the third time it is locked. <code>&lt;value&gt;</code> can be 0-3 inclusive. Values of 4 or higher are treated as infinity.</p>
+</dd>
+</dl>
+<h3 id="reservedabsolutethreshold">reservedAbsoluteThreshold</h3>
+<pre><code>    -XX:+GlobalLockReservation:reservedAbsoluteThreshold=&lt;value&gt;
+</code></pre>
+<dl>
+<dd>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;value&gt;</code></td>
+<td>number</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dd>
+<p>Minimum number of objects of a class that get reserved before the class can be considered highly compatible. Objects of that class are reserved the first time they are locked. Values of 65536 or higher are treated as infinity.</p>
+</dd>
+</dl>
+<h3 id="minimumreservedratio">minimumReservedRatio</h3>
+<pre><code>    -XX:+GlobalLockReservation:minimumReservedRatio=&lt;value&gt;
+</code></pre>
+<dl>
+<dd>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;value&gt;</code></td>
+<td>number</td>
+<td>1024</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dd>
+<p>Minimum ratio of reserved objects to flat objects before a class can be considered highly compatible. Values of 65536 or higher are treated as infinity.</p>
+</dd>
+</dl>
+<h3 id="cancelabsolutethreshold">cancelAbsoluteThreshold</h3>
+<pre><code>    -XX:+GlobalLockReservation:cancelAbsoluteThreshold=&lt;value&gt;
+</code></pre>
+<dl>
+<dd>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;value&gt;</code></td>
+<td>number</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dd>
+<p>Minimum number of objects of a class that get converted to flat before the class can be considered highly incompatible. Objects of that class are never reserved. Values of 65536 or higher are treated as infinity.</p>
+</dd>
+</dl>
+<h3 id="minimumlearningratio">minimumLearningRatio</h3>
+<pre><code>    -XX:+GlobalLockReservation:minimumLearningRatio=&lt;value&gt;
+</code></pre>
+<dl>
+<dd>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;value&gt;</code></td>
+<td>number</td>
+<td>256</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dd>
+<p>Minimum ratio of reserved objects to flat objects to prevent class from being considered highly incompatible. Values of 65536 or higher are treated as infinity.</p>
+</dd>
+</dl>
+<!-- ==== END OF TOPIC ==== xxgloballockreservation.md ==== -->
                 
                   
                 
@@ -3640,7 +3883,7 @@ parent directory is specified, it must exist.</p>
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="dcomibmlangmanagementverbose/" title="-Dcom.ibm.lang.management.verbose" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="xxexitonoutofmemoryerror/" title="-XX:[+|-]ExitOnOutOfMemoryError" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3649,19 +3892,19 @@ parent directory is specified, it must exist.</p>
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -Dcom.ibm.lang.management.verbose
+                            -XX:[+|-]ExitOnOutOfMemoryError
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="dcomibmtoolsattachdisplayname/" title="-Dcom.ibm.tools.attach.displayName" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="xxhandlesigxfsz/" title="-XX:[+|-]handleSIGXFSZ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            -Dcom.ibm.tools.attach.displayName
+                            -XX:[+|-]handleSIGXFSZ
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">
