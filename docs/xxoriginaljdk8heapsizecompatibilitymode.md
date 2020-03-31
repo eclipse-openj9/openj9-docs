@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2020, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2020 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -24,11 +24,9 @@
 
 # -XX:\[+|-\]OriginalJDK8HeapSizeCompatibilityMode
 
-![Start of content that applies only to Java 8 (LTS)](cr/java8.png) The default value for the maximum heap size (-Xmx) is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. In OpenJ9 0.18.0 and earlier releases the default is half the available memory with a minimum of 16 MB and a maximum of 512 MB. Enable this option to revert to the earlier default value. 
+![Start of content that applies only to Java 8 (LTS)](cr/java8.png) The default value for the maximum heap size (`-Xmx`) is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. In OpenJ9 0.18.0 and earlier releases the default is half the available memory with a minimum of 16 MB and a maximum of 512 MB. Enable this option to revert to the earlier default value.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Note:** This option is deprecated.
-
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This option is supported only on Java&trade; 8. it is ignored on Java&trade; 11+.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This option is supported only on Java&trade; 8. It is ignored on Java 11 and later versions.
 
 ## Syntax
 
@@ -38,3 +36,5 @@
 |---------------------------------------------|------------|:----------------------------------------------------------------------------------:|
 | -XX:+OriginalJDK8HeapSizeCompatibilityMode  | Enable     |                                                                                    |
 | -XX:-OriginalJDK8HeapSizeCompatibilityMode  | Disable    | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+
+![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
