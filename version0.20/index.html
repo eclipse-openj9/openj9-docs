@@ -406,8 +406,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-globallockreservation-option-added" class="md-nav__link">
-    New GlobalLockReservation option added
+  <a href="#new-xx-globallockreservation-option-added" class="md-nav__link">
+    New -XX:[+|-]GlobalLockReservation option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-to-default-maximum-heap-size-for-java-8" class="md-nav__link">
+    Change to default maximum heap size for Java 8
   </a>
   
 </li>
@@ -3555,8 +3562,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-globallockreservation-option-added" class="md-nav__link">
-    New GlobalLockReservation option added
+  <a href="#new-xx-globallockreservation-option-added" class="md-nav__link">
+    New -XX:[+|-]GlobalLockReservation option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-to-default-maximum-heap-size-for-java-8" class="md-nav__link">
+    Change to default maximum heap size for Java 8
   </a>
   
 </li>
@@ -3622,7 +3636,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li><a href="#binaries-and-supported-environments">Binaries and supported environments</a></li>
 <li><a href="#-xx-exitonoutofmemoryerror-option-behavior-update"><code>-XX:[+|-]ExitOnOutOfMemoryError</code> option behavior update</a></li>
-<li><a href="#new-globallockreservation-option-added">New GlobalLockReservation option added</a></li>
+<li><a href="#new-xx-globallockreservation-option-added">New <code>-XX:[+|-]GlobalLockReservation</code> option added</a></li>
+<li><img alt="Start of content that applies to Java 8" src="../cr/java8.png" /> <a href="#change-to-default-maximum-heap-size-for-java-8">Change to default maximum heap size for Java 8</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3635,9 +3650,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="-xx-exitonoutofmemoryerror-option-behavior-update"><code>-XX:[+|-]ExitOnOutOfMemoryError</code> option behavior update</h3>
 <p>The <code>-XX:[+|-]ExitOnOutOfMemoryError</code> option is updated to exit only on VM <code>OutOfMemoryErrors</code> instead of both VM and Java&trade; thrown errors to match the Hotspot option. See <a href="xxexitonoutofmemory.md"><code>-XX:[+|-]ExitOnOutOfMemoryError</code></a> for more details about this option.</p>
-<h3 id="new-globallockreservation-option-added">New GlobalLockReservation option added</h3>
+<h3 id="new-xx-globallockreservation-option-added">New <code>-XX:[+|-]GlobalLockReservation</code> option added</h3>
 <p><strong>(AIX and Linux on Power systems only)</strong></p>
-<p><code>-XX:[+|-]GlobalLockReservation</code> has been added as a new option. This option enables a new optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. See <a href="../xxgloballockreservation/">-XX:[+|-]GlobalLockReservation</a> for more details about this option.</p>
+<p>Option <code>-XX:[+|-]GlobalLockReservation</code> enables a new optimization targeted towards more efficient handling of locking and unlocking Java  objects. See <a href="../xxgloballockreservation/"><code>-XX:[+|-]GlobalLockReservation</code></a> for more details about this option.</p>
+<h3 id="change-to-default-maximum-heap-size-for-java-8"><img alt="Start of content that applies to Java 8" src="../cr/java8.png" /> Change to default maximum heap size for Java 8</h3>
+<p>For consistency with Java 11, the default maximum heap size (<code>-Xmx</code>) is changed to be 25% of the available memory with a maximum of 25 GB.
+Where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. If you want to revert to the default setting in earlier releases of OpenJ9, use the <a href="../xxoriginaljdk8heapsizecompatibilitymode/">-XX:+OriginalJDK8HeapSizeCompatibilityMode</a> option.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.19.0 and v 0.20.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.20/0.20.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.20.md ==== -->

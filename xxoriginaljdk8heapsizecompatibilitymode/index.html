@@ -3487,7 +3487,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
                 
                 <!--
-* Copyright (c) 2020, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2020 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -3511,9 +3511,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xx91-93originaljdk8heapsizecompatibilitymode">-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode</h1>
-<p><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> The default value for the maximum heap size (-Xmx) is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. In OpenJ9 0.18.0 and earlier releases the default is half the available memory with a minimum of 16 MB and a maximum of 512 MB. Enable this option to revert to the earlier default value. </p>
-<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Note:</strong> This option is deprecated.</p>
-<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> This option is supported only on Java&trade; 8. it is ignored on Java&trade; 11+.</p>
+<p><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> The default value for the maximum heap size (<code>-Xmx</code>) is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. In OpenJ9 0.18.0 and earlier releases the default is half the available memory with a minimum of 16 MB and a maximum of 512 MB. Enable this option to revert to the earlier default value.</p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> This option is supported only on Java&trade; 8. It is ignored on Java 11 and later versions.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode
 </code></pre>
@@ -3538,6 +3537,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 </tbody>
 </table>
+<p><img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" /></p>
                 
                   
                 
