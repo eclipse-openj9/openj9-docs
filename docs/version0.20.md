@@ -1,4 +1,4 @@
-<!--
+-<!--
 * Copyright (c) 2017, 2020 IBM Corp. and others
 *
 * This program and the accompanying materials are made
@@ -28,16 +28,16 @@
 The following new features and notable changes since v 0.19.0 are included in this release:
 
 - [Binaries and supported environments](#binaries-and-supported-environments)
-- [ExitOnOutOfMemoryError option behavior update](#exitonoutofmemoryerror-option-behavior-update)
+- [`-XX:[+|-]ExitOnOutOfMemoryError` option behavior update](#-xx-exitonoutofmemoryerror-option-behavior-update)
 - [New GlobalLockReservation option added](#new-globallockreservation-option-added)
-- [Xxx](#xxx)
+
 
 
 ## Features and changes
 
 ### Binaries and supported environments
 
-OpenJ9 releases 0.20.0 supports OpenJDK 8, 11, and 14. Binaries are available from the AdoptOpenJDK community at the following links:
+OpenJ9 release 0.20.0 supports OpenJDK 8, 11, and 14. Binaries are available from the AdoptOpenJDK community at the following links:
 
 - [OpenJDK version 8](https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=openj9)
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
@@ -45,18 +45,16 @@ OpenJ9 releases 0.20.0 supports OpenJDK 8, 11, and 14. Binaries are available fr
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### ExitOnOutOfMemoryError option behavior update
 
-The `-XX:[+-]ExitOnOutOfMemoryError` option has been updated to exit on VM OutOfMemoryErrors only instead of both VM and Java thrown errors to match the Hotspot option. See [-XX:[+-]ExitOnOutOfMemoryError](xxexitonoutofmemoryerror.md) for more details about this option.
+### `-XX:[+|-]ExitOnOutOfMemoryError` option behavior update
+
+The `-XX:[+|-]ExitOnOutOfMemoryError` option is updated to exit only on VM `OutOfMemoryErrors` instead of both VM and Java&trade; thrown errors to match the Hotspot option. See [`-XX:[+|-]ExitOnOutOfMemoryError`](xxexitonoutofmemory.md) for more details about this option.
 
 ### New GlobalLockReservation option added
 
 **(AIX and Linux on Power systems only)**
 
 `-XX:[+|-]GlobalLockReservation` has been added as a new option. This option enables a new optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. See [-XX:[+|-]GlobalLockReservation](xxgloballockreservation.md) for more details about this option.
-
-
-### Xxx
 
 
 ## Full release information
