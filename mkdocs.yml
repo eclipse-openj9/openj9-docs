@@ -96,7 +96,7 @@ markdown_extensions:
 # "pages:" --> "nav:" for MkDocs 1.0
 nav:
 
-    - "About"                                                                    : index.md
+    - "About the docs"                                                           : index.md
     - "AdoptOpenJDK builds"                                                      : adoptopenjdk.md
     - "Getting started"                                                          : introduction.md
     - "New to OpenJ9?"                                                           : openj9_newuser.md

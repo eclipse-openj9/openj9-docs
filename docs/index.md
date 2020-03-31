@@ -30,7 +30,7 @@ This user documentation supports the configuration, tuning, and diagnosis of the
 
 ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) This sentence applies only to Java 8 binaries that include the OpenJ9 VM. Icons for LTS releases are this colour. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
-![Start of content that applies only to Java 13 and later](cr/java13plus.png) This sentence applies only to Java 13 or later binaries that include the OpenJ9 VM. Icons for feature releases are this colour. ![End of content that applies only to Java 13 or later](cr/java_close.png)
+![Start of content that applies only to Java 14 and later](cr/java14plus.png) This sentence applies only to Java 14 or later binaries that include the OpenJ9 VM. Icons for feature releases are this colour. ![End of content that applies only to Java 14 or later](cr/java_close.png)
 
 To see which Java releases are LTS releases and which are feature releases, and for information about release cadence, supported platforms, and build environments, see [Supported environments](openj9_support.md).
 

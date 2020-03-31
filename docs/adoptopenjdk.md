@@ -8,7 +8,7 @@ following links:
 
 - [OpenJDK8 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk8&jvmVariant=openj9)
 - [OpenJDK11 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk11&jvmVariant=openj9)
-- [OpenJDK13 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk13&jvmVariant=openj9)
+- [OpenJDK14 with OpenJ9](https://adoptopenjdk.net/releases.html?variant=openjdk14&jvmVariant=openj9)
 
 Nightly builds of OpenJDK with OpenJ9 are also available from the project.
 
