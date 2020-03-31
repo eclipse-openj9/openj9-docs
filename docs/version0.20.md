@@ -29,6 +29,8 @@ The following new features and notable changes since v 0.19.0 are included in th
 
 - [Binaries and supported environments](#binaries-and-supported-environments)
 - [`-XX:[+|-]ExitOnOutOfMemoryError` option behavior update](#-xx-exitonoutofmemoryerror-option-behavior-update)
+- [New GlobalLockReservation option added](#new-globallockreservation-option-added)
+
 
 
 ## Features and changes
@@ -43,9 +45,17 @@ OpenJ9 release 0.20.0 supports OpenJDK 8, 11, and 14. Binaries are available fro
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+
 ### `-XX:[+|-]ExitOnOutOfMemoryError` option behavior update
 
 The `-XX:[+|-]ExitOnOutOfMemoryError` option is updated to exit only on VM `OutOfMemoryErrors` instead of both VM and Java&trade; thrown errors to match the Hotspot option. See [`-XX:[+|-]ExitOnOutOfMemoryError`](xxexitonoutofmemory.md) for more details about this option.
+
+### New GlobalLockReservation option added
+
+**(AIX and Linux on Power systems only)**
+
+`-XX:[+|-]GlobalLockReservation` has been added as a new option. This option enables a new optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. See [-XX:[+|-]GlobalLockReservation](xxgloballockreservation.md) for more details about this option.
+
 
 ## Full release information
 
