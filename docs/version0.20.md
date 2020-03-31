@@ -29,7 +29,8 @@ The following new features and notable changes since v 0.19.0 are included in th
 
 - [Binaries and supported environments](#binaries-and-supported-environments)
 - [`-XX:[+|-]ExitOnOutOfMemoryError` option behavior update](#-xx-exitonoutofmemoryerror-option-behavior-update)
-- [New GlobalLockReservation option added](#new-globallockreservation-option-added)
+- [New `-XX:[+|-]GlobalLockReservation` option added](#new-xx-globallockreservation-option-added)
+- ![Start of content that applies to Java 8](cr/java8.png) [Change to default maximum heap size for Java 8](#change-to-default-maximum-heap-size-for-java-8)
 
 
 
@@ -50,12 +51,16 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 The `-XX:[+|-]ExitOnOutOfMemoryError` option is updated to exit only on VM `OutOfMemoryErrors` instead of both VM and Java&trade; thrown errors to match the Hotspot option. See [`-XX:[+|-]ExitOnOutOfMemoryError`](xxexitonoutofmemory.md) for more details about this option.
 
-### New GlobalLockReservation option added
+### New `-XX:[+|-]GlobalLockReservation` option added
 
 **(AIX and Linux on Power systems only)**
 
-`-XX:[+|-]GlobalLockReservation` has been added as a new option. This option enables a new optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. See [-XX:[+|-]GlobalLockReservation](xxgloballockreservation.md) for more details about this option.
+Option `-XX:[+|-]GlobalLockReservation` enables a new optimization targeted towards more efficient handling of locking and unlocking Java  objects. See [`-XX:[+|-]GlobalLockReservation`](xxgloballockreservation.md) for more details about this option.
 
+### ![Start of content that applies to Java 8](cr/java8.png) Change to default maximum heap size for Java 8
+
+For consistency with Java 11, the default maximum heap size (`-Xmx`) is changed to be 25% of the available memory with a maximum of 25 GB.
+Where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. If you want to revert to the default setting in earlier releases of OpenJ9, use the [-XX:+OriginalJDK8HeapSizeCompatibilityMode](xxoriginaljdk8heapsizecompatibilitymode.md) option.
 
 ## Full release information
 
