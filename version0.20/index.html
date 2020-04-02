@@ -419,6 +419,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jcmd-dump-with-default-settings" class="md-nav__link">
+    Jcmd dump with default settings
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3575,6 +3582,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jcmd-dump-with-default-settings" class="md-nav__link">
+    Jcmd dump with default settings
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3638,6 +3652,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#-xx-exitonoutofmemoryerror-option-behavior-update"><code>-XX:[+|-]ExitOnOutOfMemoryError</code> option behavior update</a></li>
 <li><a href="#new-xx-globallockreservation-option-added">New <code>-XX:[+|-]GlobalLockReservation</code> option added</a></li>
 <li><img alt="Start of content that applies to Java 8" src="../cr/java8.png" /> <a href="#change-to-default-maximum-heap-size-for-java-8">Change to default maximum heap size for Java 8</a></li>
+<li><a href="#jcmd-dump-with-default-settings">Jcmd dump with default settings</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3656,6 +3671,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h3 id="change-to-default-maximum-heap-size-for-java-8"><img alt="Start of content that applies to Java 8" src="../cr/java8.png" /> Change to default maximum heap size for Java 8</h3>
 <p>For consistency with Java 11, the default maximum heap size (<code>-Xmx</code>) is changed to be 25% of the available memory with a maximum of 25 GB.
 Where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. If you want to revert to the default setting in earlier releases of OpenJ9, use the <a href="../xxoriginaljdk8heapsizecompatibilitymode/">-XX:+OriginalJDK8HeapSizeCompatibilityMode</a> option.</p>
+<h3 id="jcmd-dump-with-default-settings">Jcmd dump with default settings</h3>
+<p>Jcmd <code>Dump</code> command now supports default settings when the dump request doesn't have <code>:file=name</code> option which is similar with <code>Java -Xdump</code> default settings.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.19.0 and v 0.20.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.20/0.20.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.20.md ==== -->
