@@ -31,6 +31,7 @@ The following new features and notable changes since v 0.19.0 are included in th
 - [`-XX:[+|-]ExitOnOutOfMemoryError` option behavior update](#-xx-exitonoutofmemoryerror-option-behavior-update)
 - [New `-XX:[+|-]GlobalLockReservation` option added](#new-xx-globallockreservation-option-added)
 - ![Start of content that applies to Java 8](cr/java8.png) [Change to default maximum heap size for Java 8](#change-to-default-maximum-heap-size-for-java-8)
+- [Jcmd dump with default settings](#jcmd-dump-with-default-settings)
 
 
 
@@ -61,6 +62,11 @@ Option `-XX:[+|-]GlobalLockReservation` enables a new optimization targeted towa
 
 For consistency with Java 11, the default maximum heap size (`-Xmx`) is changed to be 25% of the available memory with a maximum of 25 GB.
 Where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. If you want to revert to the default setting in earlier releases of OpenJ9, use the [-XX:+OriginalJDK8HeapSizeCompatibilityMode](xxoriginaljdk8heapsizecompatibilitymode.md) option.
+
+### Jcmd dump with default settings
+
+Jcmd `Dump` command now supports default settings when the dump request doesn't have `:file=name` option which is similar with `Java -Xdump` default settings.
+
 
 ## Full release information
 
