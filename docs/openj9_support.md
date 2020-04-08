@@ -118,18 +118,20 @@ platform support might vary, depending on their build environment. Check the Ado
 OpenJDK 11 binaries are supported on the minimum operating system levels shown in the following tables:
 
 
-| Linux                                 |  x64   |  ppc64le   | Z64  |
-|---------------------------------------|--------|------------|------|
-| CentOS 6.9                            |   Y    |     N      |  N   |
-| CentOS 7.4                            |   Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     N      |  Y   |
-| RHEL 7.4                              |   Y    |     Y      |  Y   |
-| SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
-| Ubuntu 16.04                          |   Y    |     Y      |  Y   |
-| Ubuntu 18.04                          |   Y    |     Y      |  Y   |
+| Linux (**Note 1**)                    | AArch64 (**Note 2**)    | x64   |  ppc64le   | Z64  |
+|---------------------------------------|-------------------------|-------|------------|------|
+| CentOS 6.9                            |    N                    |  Y    |     N      |  N   |
+| CentOS 7.4                            |    Y                    |  Y    |     Y      |  N   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |    N                    |  Y    |     N      |  Y   |
+| RHEL 7.4                              |    Y                    |  Y    |     Y      |  Y   |
+| SUSE Linux Enterprise Server (SLES) 12|    N                    |  Y    |     Y      |  Y   |
+| Ubuntu 16.04                          |    Y                    |  Y    |     Y      |  Y   |
+| Ubuntu 18.04                          |    Y                    |  Y    |     Y      |  Y   |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Not all of these distributions are tested, but Linux distributions that have a
-minimum glibc version 2.12 are expected to function without problems.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+
+1. Not all of these distributions are tested, but Linux distributions that have a minimum glibc version 2.12 are expected to function without problems.
+2. Only limited support for the 64-bit ARM architecture is currently available. For a list of known issues, see the [Release notes](https://github.com/eclipse/openj9/tree/master/doc/release-notes) for the latest version of Eclipse OpenJ9.
 
 | Windows                    |  x64   |
 |----------------------------|--------|
@@ -217,6 +219,7 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 | Platform                    | Operating system         |  Compiler                       |
 |-----------------------------|--------------------------|---------------------------------|
 | Linux x86 64-bit            | CentOS 6.10              | gcc 7.5                         |
+| Linux on ARM 64-bit         | CentOS 7                 | gcc 7.4                         |
 | Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.5                         |
 | Linux on IBM Z 64-bit       | RHEL 7.7                 | gcc 7.5                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
