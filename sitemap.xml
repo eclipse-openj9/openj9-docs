@@ -1051,6 +1051,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/xxoriginaljdk8heapsizecompatibilitymode/</loc>
+     <lastmod>2020-04-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/xxnosuballoc32bitmem/</loc>
      <lastmod>2020-04-09</lastmod>
      <changefreq>daily</changefreq>

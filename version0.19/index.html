@@ -3145,6 +3145,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxoriginaljdk8heapsizecompatibilitymode/" title="-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode" class="md-nav__link">
+      -XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxnosuballoc32bitmem/" title="-XXnosuballoc32bitmem" class="md-nav__link">
       -XXnosuballoc32bitmem
     </a>
@@ -3664,7 +3676,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The following new features and notable changes since v 0.18.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
-<li><a href="#option-to-print-code-cache-usage-to-stderr-at-VM-shutdown">Option to print code cache usage to <code>stderr</code> at VM shutdown</a></li>
+<li><a href="#option-to-print-code-cache-usage-to-stderr-at-vm-shutdown">Option to print code cache usage to <code>stderr</code> at VM shutdown</a></li>
 <li><a href="#stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size"><img alt="Start of content that applies to Java 8" src="../cr/java8.png" /> <code>StringBuffer</code> and <code>StringBuilder</code> above 1 G grow to the maximum size</a></li>
 <li><a href="#jpackage-packaging-tool-platform-support"><img alt="Start of content that applies to Java 14+" src="../cr/java14plus.png" /> <strong>jpackage</strong> packaging tool platform support</a></li>
 <li><a href="#extended-messages-for-nullpointerexception-not-yet-implemented"><img alt="Start of content that applies to Java 14+" src="../cr/java14plus.png" /> Extended messages for <code>NullPointerException</code> not yet implemented</a></li>
@@ -3679,7 +3691,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>OpenJDK 14 with Eclipse OpenJ9 is not a long term support (LTS) release.</p>
 <p>The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK community are for Eclipse OpenJ9 release 0.18.0. Features mentioned in these release notes are not available in these builds. Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 0.19.0, testing at the project is not complete and therefore support for any of these features is not available.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
-<h3 id="option-to-print-code-cache-usage-to-stderr-at-vm-shutdown">Option to print code cache usage to stderr at VM shutdown</h3>
+<h3 id="option-to-print-code-cache-usage-to-stderr-at-vm-shutdown">Option to print code cache usage to <code>stderr</code> at VM shutdown</h3>
 <p>A new command line option <a href="../xxprintcodecache/">-XX:+PrintCodeCache</a> allows you to print the code cache memory usage to <code>stderr</code> when the VM shuts down.</p>
 <h3 id="stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size"><img alt="Start of content that applies to Java 8" src="../cr/java8.png" /> <code>StringBuffer</code> and <code>StringBuilder</code> above 1 G grow to the maximum size</h3>
 <p>A 1 G <code>char[]</code> or larger <code>StringBuffer</code> and <code>StringBuilder</code> now immediately grows to the maximum possible size for <i>all</i> current versions of Java, including Java 8. For Java 8 only, you can revert to the previous behavior of growing only as much as necessary to accommodate the <code>String</code> being added, by using the option, <a href="../djavalangstringbuffergrowaggressively/"><code>-Djava.lang.stringBuffer.growAggressively=false</code></a>.</p>

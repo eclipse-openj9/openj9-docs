@@ -399,6 +399,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#limited-support-for-64-bit-linux-on-arm" class="md-nav__link">
+    Limited support for 64-bit Linux on ARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-xx-exitonoutofmemoryerror-option-behavior-update" class="md-nav__link">
     -XX:[+|-]ExitOnOutOfMemoryError option behavior update
   </a>
@@ -3138,6 +3145,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxoriginaljdk8heapsizecompatibilitymode/" title="-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode" class="md-nav__link">
+      -XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxnosuballoc32bitmem/" title="-XXnosuballoc32bitmem" class="md-nav__link">
       -XXnosuballoc32bitmem
     </a>
@@ -3562,6 +3581,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#limited-support-for-64-bit-linux-on-arm" class="md-nav__link">
+    Limited support for 64-bit Linux on ARM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-xx-exitonoutofmemoryerror-option-behavior-update" class="md-nav__link">
     -XX:[+|-]ExitOnOutOfMemoryError option behavior update
   </a>
@@ -3622,7 +3648,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 
 -->
                 
-                <p>-<!--
+                <!--
 * Copyright (c) 2017, 2020 IBM Corp. and others
 *
 * This program and the accompanying materials are made
@@ -3644,11 +3670,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 *
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
---></p>
+-->
+
 <h1 id="whats-new-in-version-0200">What's new in version 0.20.0</h1>
 <p>The following new features and notable changes since v 0.19.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">Binaries and supported environments</a></li>
+<li><img alt="Start of content that applies to Java 11" src="../cr/java11.png" /> <a href="#limited-support-for-64-bit-linux-on-arm">Limited support for 64-bit Linux on ARM</a></li>
 <li><a href="#-xx-exitonoutofmemoryerror-option-behavior-update"><code>-XX:[+|-]ExitOnOutOfMemoryError</code> option behavior update</a></li>
 <li><a href="#new-xx-globallockreservation-option-added">New <code>-XX:[+|-]GlobalLockReservation</code> option added</a></li>
 <li><img alt="Start of content that applies to Java 8" src="../cr/java8.png" /> <a href="#change-to-default-maximum-heap-size-for-java-8">Change to default maximum heap size for Java 8</a></li>
@@ -3663,6 +3691,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk14&amp;jvmVariant=openj9">OpenJDK version 14</a></li>
 </ul>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="limited-support-for-64-bit-linux-on-arm"><img alt="Start of content that applies to Java 11" src="../cr/java11.png" /> Limited support for 64-bit Linux on ARM</h3>
+<p>Limited support is available in this release for the 64-bit ARM (AArch64) architecture. An early access build on OpenJDK 11 is available from the
+<a href="https://adoptopenjdk.net/archive.html?variant=openjdk11&amp;jvmVariant=openj9">AdoptOpenJDK community</a>. See the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.20/0.20.md">OpenJ9 release notes</a> for any known issues that are still being worked on before this
+platform is fully supported.  </p>
 <h3 id="-xx-exitonoutofmemoryerror-option-behavior-update"><code>-XX:[+|-]ExitOnOutOfMemoryError</code> option behavior update</h3>
 <p>The <code>-XX:[+|-]ExitOnOutOfMemoryError</code> option is updated to exit only on VM <code>OutOfMemoryErrors</code> instead of both VM and Java&trade; thrown errors to match the Hotspot option. See <a href="../xxexitonoutofmemoryerror/"><code>-XX:[+|-]ExitOnOutOfMemoryError</code></a> for more details about this option.</p>
 <h3 id="new-xx-globallockreservation-option-added">New <code>-XX:[+|-]GlobalLockReservation</code> option added</h3>

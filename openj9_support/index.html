@@ -3050,6 +3050,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxoriginaljdk8heapsizecompatibilitymode/" title="-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode" class="md-nav__link">
+      -XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxnosuballoc32bitmem/" title="-XXnosuballoc32bitmem" class="md-nav__link">
       -XXnosuballoc32bitmem
     </a>
@@ -3965,7 +3977,8 @@ platform support might vary, depending on their build environment. Check the Ado
 <table>
 <thead>
 <tr>
-<th>Linux</th>
+<th>Linux (<strong>Note 1</strong>)</th>
+<th>AArch64 (<strong>Note 2</strong>)</th>
 <th>x64</th>
 <th>ppc64le</th>
 <th>Z64</th>
@@ -3974,6 +3987,7 @@ platform support might vary, depending on their build environment. Check the Ado
 <tbody>
 <tr>
 <td>CentOS 6.9</td>
+<td>N</td>
 <td>Y</td>
 <td>N</td>
 <td>N</td>
@@ -3982,10 +3996,12 @@ platform support might vary, depending on their build environment. Check the Ado
 <td>CentOS 7.4</td>
 <td>Y</td>
 <td>Y</td>
+<td>Y</td>
 <td>N</td>
 </tr>
 <tr>
 <td>Red Hat Enterprise Linux (RHEL) 6.9</td>
+<td>N</td>
 <td>Y</td>
 <td>N</td>
 <td>Y</td>
@@ -3995,9 +4011,11 @@ platform support might vary, depending on their build environment. Check the Ado
 <td>Y</td>
 <td>Y</td>
 <td>Y</td>
+<td>Y</td>
 </tr>
 <tr>
 <td>SUSE Linux Enterprise Server (SLES) 12</td>
+<td>N</td>
 <td>Y</td>
 <td>Y</td>
 <td>Y</td>
@@ -4007,17 +4025,22 @@ platform support might vary, depending on their build environment. Check the Ado
 <td>Y</td>
 <td>Y</td>
 <td>Y</td>
+<td>Y</td>
 </tr>
 <tr>
 <td>Ubuntu 18.04</td>
 <td>Y</td>
 <td>Y</td>
 <td>Y</td>
+<td>Y</td>
 </tr>
 </tbody>
 </table>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Not all of these distributions are tested, but Linux distributions that have a
-minimum glibc version 2.12 are expected to function without problems.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
+<ol>
+<li>Not all of these distributions are tested, but Linux distributions that have a minimum glibc version 2.12 are expected to function without problems.</li>
+<li>Only limited support for the 64-bit ARM architecture is currently available. For a list of known issues, see the <a href="https://github.com/eclipse/openj9/tree/master/doc/release-notes">Release notes</a> for the latest version of Eclipse OpenJ9.</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -4276,6 +4299,11 @@ minimum glibc version 2.12 are expected to function without problems.</p>
 <td>Linux x86 64-bit</td>
 <td>CentOS 6.10</td>
 <td>gcc 7.5</td>
+</tr>
+<tr>
+<td>Linux on ARM 64-bit</td>
+<td>CentOS 7</td>
+<td>gcc 7.4</td>
 </tr>
 <tr>
 <td>Linux on POWER LE 64-bit</td>
