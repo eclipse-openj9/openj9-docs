@@ -977,6 +977,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#info-mod" class="md-nav__link">
+    info mod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#info-heap" class="md-nav__link">
     info heap
   </a>
@@ -4013,6 +4020,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#info-mod" class="md-nav__link">
+    info mod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#info-heap" class="md-nav__link">
     info heap
   </a>
@@ -4194,7 +4208,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The dump viewer is useful for diagnosing <code>OutOfMemoryError</code> exceptions in Java&trade; applications. For problems like general protection faults (GPF), system abends, and SIGSEVs, a system debugger such as <strong>gdb</strong> (Linux) provides more information.</p>
 <h2 id="syntax">Syntax</h2>
 <h3 id="starting-the-dump-viewer">Starting the dump viewer</h3>
-<p><code>jdmpview (-core &lt;core file&gt; | -zip &lt;zip file&gt;) [-notemp]</code></p>
+<p><code>jdmpview [-J&lt;vm option&gt;] (-core &lt;core file&gt; | -zip &lt;zip file&gt;) [-notemp]</code></p>
 <table>
 <thead>
 <tr>
@@ -4209,15 +4223,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 <tr>
 <td><code>-zip &lt;zip file&gt;</code></td>
-<td>Specifies a compressed file containing the core file and associated XML file (produced by the <a href="../tool_jextract/">dump extractor (<code>jextract</code>)</a> tool on AIX&reg;, Linux&reg;, and macOS&reg; systems).</td>
+<td>Specifies a compressed file containing the core file (produced by the <a href="../tool_jextract/">dump extractor (<code>jextract</code>)</a> tool on AIX&reg;, Linux&reg;, and macOS&reg; systems).</td>
 </tr>
 <tr>
 <td><code>-notemp</code></td>
 <td>By default, when you specify a file by using the <code>-zip</code> option, the contents are extracted to a temporary directory before processing. Use the <code>-notemp</code> option to prevent this extraction step, and run all subsequent commands in memory.</td>
 </tr>
+<tr>
+<td><code>-J-Dcom.ibm.j9ddr.path.mapping=&lt;mappings&gt;</code></td>
+<td>The variable <code>&lt;mappings&gt;</code> is a list of native library mappings of the form <code>old-path=new-path</code>, separated by a colon (':').</td>
+</tr>
+<tr>
+<td><code>-J-Dcom.ibm.j9ddr.library.path=&lt;path&gt;</code></td>
+<td>The variable <code>&lt;path&gt;</code> is a list of paths to search for native libraries, separated by a colon (':').</td>
+</tr>
 </tbody>
 </table>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The <code>-core</code> option can be used with the <code>-zip</code> option to specify the core and XML files in the compressed file. Without these options, <code>jdmpview</code> shows multiple contexts, one for each source file that it identified in the compressed file.  </p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The <code>-core</code> option can be used with the <code>-zip</code> option to specify the core file in the compressed file. Without these options, <code>jdmpview</code> shows multiple contexts, one for each source file that it identified in the compressed file.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On AIX and Linux, some <code>jdmpview</code> commands need to locate the native libraries that are referenced by the core. For example, commands that relate to callsites. First, check the list of native libraries by running <code>jdmpview</code> on a core with the <code>info mod</code> parameter. If the libraries are not in the original locations, ensure that <code>jdmpview</code> can locate them by specifying the path mapping (<code>-J-Dcom.ibm.j9ddr.path.mapping=&lt;mappings&gt;</code>) and library path (<code>-J-Dcom.ibm.j9ddr.library.path=&lt;path&gt;</code>) options specified on the <code>jdmpview</code> command line.  </p>
 <p>On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to <code>jdmpview</code>, or you can supply a fully qualified MVS&trade; data set name. For example:</p>
 <pre><code>&gt; jdmpview -core USER1.JVM.TDUMP.SSHD6.D070430.T092211
 DTFJView version 4.28.3, using DTFJ version 1.11.28004
@@ -4595,6 +4618,10 @@ The `sort` option allows the list of classes to be sorted by name (default), by 
 </code></pre>
 <dl>
 <dd>Displays a summary list of memory sections in the process address space, with start and end address, size, and properties. If an address parameter is specified, the results show details of only the memory section containing the address. If <code>-verbose</code> is specified, full details of the properties of each memory section are displayed. The <code>-sort</code> option allows the list of memory sections to be sorted by size or by start address (default).</dd>
+</dl>
+<h3 id="info-mod">info mod</h3>
+<dl>
+<dd>Displays a list of native library modules in the process address space, which includes file paths and other information about each module.</dd>
 </dl>
 <h3 id="info-heap">info heap</h3>
 <pre><code>    info heap [*|&lt;heap_name&gt;*]
