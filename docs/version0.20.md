@@ -1,4 +1,4 @@
--<!--
+<!--
 * Copyright (c) 2017, 2020 IBM Corp. and others
 *
 * This program and the accompanying materials are made
@@ -28,6 +28,7 @@
 The following new features and notable changes since v 0.19.0 are included in this release:
 
 - [Binaries and supported environments](#binaries-and-supported-environments)
+- ![Start of content that applies to Java 11](cr/java11.png) [Limited support for 64-bit Linux on ARM](#limited-support-for-64-bit-linux-on-arm)
 - [`-XX:[+|-]ExitOnOutOfMemoryError` option behavior update](#-xx-exitonoutofmemoryerror-option-behavior-update)
 - [New `-XX:[+|-]GlobalLockReservation` option added](#new-xx-globallockreservation-option-added)
 - ![Start of content that applies to Java 8](cr/java8.png) [Change to default maximum heap size for Java 8](#change-to-default-maximum-heap-size-for-java-8)
@@ -47,6 +48,11 @@ OpenJ9 release 0.20.0 supports OpenJDK 8, 11, and 14. Binaries are available fro
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+###  ![Start of content that applies to Java 11](cr/java11.png) Limited support for 64-bit Linux on ARM
+
+Limited support is available in this release for the 64-bit ARM (AArch64) architecture. An early access build on OpenJDK 11 is available from the
+[AdoptOpenJDK community](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9). See the [OpenJ9 release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.20/0.20.md) for any known issues that are still being worked on before this
+platform is fully supported.  
 
 ### `-XX:[+|-]ExitOnOutOfMemoryError` option behavior update
 

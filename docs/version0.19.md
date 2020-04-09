@@ -28,7 +28,7 @@
  The following new features and notable changes since v 0.18.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [Option to print code cache usage to `stderr` at VM shutdown](#option-to-print-code-cache-usage-to-stderr-at-VM-shutdown)
+- [Option to print code cache usage to `stderr` at VM shutdown](#option-to-print-code-cache-usage-to-stderr-at-vm-shutdown)
 - [![Start of content that applies to Java 8](cr/java8.png) `StringBuffer` and `StringBuilder` above 1 G grow to the maximum size](#stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size)
 - [![Start of content that applies to Java 14+](cr/java14plus.png) **jpackage** packaging tool platform support](#jpackage-packaging-tool-platform-support)
 - [![Start of content that applies to Java 14+](cr/java14plus.png) Extended messages for `NullPointerException` not yet implemented](#extended-messages-for-nullpointerexception-not-yet-implemented)
@@ -48,7 +48,7 @@ The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK c
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### Option to print code cache usage to stderr at VM shutdown
+### Option to print code cache usage to `stderr` at VM shutdown
 
 A new command line option [-XX:+PrintCodeCache](xxprintcodecache.md) allows you to print the code cache memory usage to `stderr` when the VM shuts down.
 
