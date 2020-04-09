@@ -328,6 +328,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#building-your-own-binaries" class="md-nav__link">
+    Building your own binaries
+  </a>
+  
+</li>
+      
       
       
       
@@ -3517,6 +3524,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#building-your-own-binaries" class="md-nav__link">
+    Building your own binaries
+  </a>
+  
+</li>
+      
       
       
       
@@ -3556,8 +3570,10 @@ range of platforms. For information about the platforms and minimum operating sy
 <ul>
 <li>From Eclipse OpenJ9 release 0.13.0, OpenJDK binaries for Linux and AIX platforms from the AdoptOpenJDK community no longer bundle the OpenSSL cryptographic library. The library is expected to be found on the system path. If you want to use OpenSSL cryptographic acceleration, you must install OpenSSL 1.0.2 or 1.1.X on your system. If the library is not found on the system path, the in-built Java crytographic implementation is used instead, which performs less well.  </li>
 <li><img alt="Start of content that applies only to Java 8" src="../cr/java8.png" /> On Linux systems, the <code>fontconfig.x86_64</code> package should be installed to avoid a <code>NullPointerException</code> error when the AWT font subsystem is initialized. Work is ongoing at the AdoptOpenJDK project to fix this issue for their OpenJDK binaries.</li>
-<li>From Eclipse OpenJ9 release 0.16.0 (OpenJDK 13) and release 0.17.0 (OpenJDK 8 and 11), CUDA is now enabled on Windows (x86-64) and Linux (x86-64 and IBM POWER LE) platforms, which allows you to offload certain Java application processing tasks to a general purpose graphics processing unit (GPU). To take advantage of this feature, your system must support NVIDIA Compute Unified Device Architecture (CUDA). The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0. </li>
+<li>From Eclipse OpenJ9 release 0.16.0 (OpenJDK 13) and release 0.17.0 (OpenJDK 8 and 11), CUDA is now enabled on Windows (x86-64) and Linux (x86-64 and IBM POWER LE) platforms, which allows you to offload certain Java application processing tasks to a general purpose graphics processing unit (GPU). To take advantage of this feature, your system must support NVIDIA Compute Unified Device Architecture (CUDA). The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0.</li>
 </ul>
+<h2 id="building-your-own-binaries">Building your own binaries</h2>
+<p>If you want to build your own binaries of OpenJDK with OpenJ9, a complete set of build instructions for several platforms can be found in the <a href="https://github.com/eclipse/openj9/tree/master/doc/build-instructions">OpenJ9 GitHub repository</a>.  </p>
 <!-- ==== END OF TOPIC ==== adoptopenjdk.md ==== -->
                 
                   
