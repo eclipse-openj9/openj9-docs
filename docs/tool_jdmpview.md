@@ -44,8 +44,8 @@ The dump viewer is useful for diagnosing `OutOfMemoryError` exceptions in Java&t
 | `-core <core file>`     | Specifies a dump file.                                                                                 |
 | `-zip <zip file>`       | Specifies a compressed file containing the core file (produced by the [dump extractor (`jextract`)](tool_jextract.md) tool on AIX&reg;, Linux&reg;, and macOS&reg; systems). |
 | `-notemp`               | By default, when you specify a file by using the `-zip` option, the contents are extracted to a temporary directory before processing. Use the `-notemp` option to prevent this extraction step, and run all subsequent commands in memory. |
-| `-J-Dcom.ibm.j9ddr.path.mapping=<mappings>` | The variable `<mappings>` is a list of native library mappings of the form `old-path=new-path`, separated by a colon (':'). |
-| `-J-Dcom.ibm.j9ddr.library.path=<path>` | The variable `<path>` is a list of paths to search for native libraries, separated by a colon (':'). |
+| `-J-Dcom.ibm.j9ddr.path.mapping=<mappings>` | The variable `<mappings>` is a list of native library mappings of the form `old-path=new-path`, using the usual path separator (a semi-colon (';') on Windows, and a colon (':') on other platforms). |
+| `-J-Dcom.ibm.j9ddr.library.path=<path>` | The variable `<path>` is a list of paths to search for native libraries, using the usual path separator (a semi-colon (';') on Windows, and a colon (':') on other platforms). |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The `-core` option can be used with the `-zip` option to specify the core file in the compressed file. Without these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.
 
