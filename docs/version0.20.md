@@ -23,7 +23,7 @@
 -->
 
 
-# What's new in version 0.20.0
+# What's new in version 0.20.1
 
 The following new features and notable changes since v 0.19.0 are included in this release:
 
@@ -40,11 +40,13 @@ The following new features and notable changes since v 0.19.0 are included in th
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.20.0 supports OpenJDK 8, 11, and 14. Binaries are available from the AdoptOpenJDK community at the following links:
+OpenJ9 releases 0.20.0 and 0.20.1 support OpenJDK 8, 11, and 14. Binaries are available from the AdoptOpenJDK community at the following links:
 
 - [OpenJDK version 8](https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=openj9)
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 - [OpenJDK version 14](https://adoptopenjdk.net/archive.html?variant=openjdk14&jvmVariant=openj9)
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** macOS binaries at AdoptOpenJDK that are labeled 0.20.1 include updates for [Apple Notarization](https://appleinsider.com/articles/19/12/23/apple-will-enforce-app-notarization-for-macos-catalina-in-february).
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -75,6 +77,6 @@ The Java diagnostic command (`jcmd`) tool no longer requires a filename when use
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.19.0 and v 0.20.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.20/0.20.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.19.0 and v 0.20.1 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.20/0.20.md).
 
 <!-- ==== END OF TOPIC ==== version0.20.md ==== -->
