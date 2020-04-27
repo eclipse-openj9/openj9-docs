@@ -91,9 +91,7 @@ minimum glibc version 2.12 are expected to function without problems.
 
 | Windows&reg;               |  x32   |  x64  |
 |----------------------------|--------|-------|
-| Windows 8.1                |   Y    |   Y   |
 | Windows 10                 |   Y    |   Y   |
-| Windows Server 2012        |   Y    |   Y   |
 | Windows Server 2012 R2     |   Y    |   Y   |
 | Windows Server 2016        |   Y    |   Y   |
 | Windows Server 2019        |   Y    |   Y   |
@@ -135,9 +133,7 @@ OpenJDK 11 binaries are supported on the minimum operating system levels shown i
 
 | Windows                    |  x64   |
 |----------------------------|--------|
-| Windows 8.1                |   Y    |
 | Windows 10                 |   Y    |
-| Windows Server 2012        |   Y    |
 | Windows Server 2012 R2     |   Y    |
 | Windows Server 2016        |   Y    |
 | Windows Server 2019        |   Y    |
@@ -177,9 +173,7 @@ minimum glibc version 2.12 are expected to function without problems.
 
 | Windows                    |  x64   |
 |----------------------------|--------|
-| Windows 8.1                |   Y    |
 | Windows 10                 |   Y    |
-| Windows Server 2012        |   Y    |
 | Windows Server 2012 R2     |   Y    |
 | Windows Server 2016        |   Y    |
 | Windows Server 2019        |   Y    |
