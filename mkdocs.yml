@@ -103,11 +103,12 @@ nav:
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.21.0"                                                       : version0.21.md
         - "Version 0.20.0"                                                       : version0.20.md
         - "Version 0.19.0"                                                       : version0.19.md
         - "Version 0.18.1"                                                       : version0.18.md
-        - "Version 0.17.0"                                                       : version0.17.md
         - "Earlier releases" :
+            - "Version 0.17.0"                                                   : version0.17.md
             - "Version 0.16.0"                                                   : version0.16.md
             - "Version 0.15.1"                                                   : version0.15.md
             - "Version 0.14.0"                                                   : version0.14.md
