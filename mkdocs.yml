@@ -119,8 +119,15 @@ nav:
             - "Version 0.9.0"                                                    : version0.9.md
             - "Version 0.8.0"                                                    : version0.8.md
 
-    - "Garbage Collection"                                                       : gc.md
-
+    - "Garbage collection"                                                       : gc.md
+    - "GC policies" :
+#        - "Kim Briggs"                                                          : gc_briggs.md
+        - "gencon (default)"                                                     : gc_gencon.md
+        - "balanced"                                                             : gc_balanced.md
+        - "metronome"                                                            : gc_metronome.md
+        - "optimized"                                                                 : gc_opt.md
+        - "nogc"                                                                 : gc_nogc.md
+    
     - "JIT Compiler"                                                             : jit.md
     - "JITServer (tech. preview)"                                                : jitserver.md
 

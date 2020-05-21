@@ -76,6 +76,37 @@ To prevent applications running out of memory, objects in the Java heap that are
 
 Eclipse OpenJ9 has a number of GC policies designed around different types of applications and workloads. Picking the right policy very much depends on your usage and performance goals.
 
+
+
+
+### Garbage collection policies
+
+OpenJ9 provides several different GC policies, each one specialized for operation with a specific heap configuration and one or more collectors. These policies are summarized in the followng table. Follow the links to read more about individual policies:
+
+| GC Policy                          | Heap Configuration              | Collectors                         |
+|------------------------------------|---------------------------------|------------------------------------|
+| [`Gencon     `](gc_gencon.md)      | Generational (nursery/tenure)   | Scavenger, Concurrent Mark, Global |
+| [`Balanced   `](gc_balanced.md)    | Generational (multiple regions) | Incremental Generational           |
+| [`OptAvgPause`](gc_optavgpause.md) | Flat                            | Concurrent Mark, Global            |
+| [`OptThruput `](gc_optthruput.md)  | Flat                            | Global                             |
+| [`Metronome  `](gc_metronome.md)   | Segregated                      | Realtime                           |
+
+All OpenJ9 GC policies support compressed references on 64-bit platforms, which compresses heap pointers to 32 bits if the total heap size does not exceed 63 GB. Applications that require more heap space can forgo compressed pointers and select any heap size within the bounds imposed by the operating system and available system RAM.
+
+OpenJ9 Java applications can determine the initial and maximum sizes of the heap for any policy by using the [`-Xms`](xmn.md) and [`-Xmx`](xmn.md) command line options to set the initial and maximum heap extent.
+
+### Policy selection and tuning
+
+The selection of an appropriate GC policy and tuning the heap is primarily guided by the application dynamics and observation of how the application interacts with the heap during startup and at steady state. To help with this, all OpenJ9 GC policies are instrumented to collect a wide range of GC-related metric data for reporting in a GC log.
+
+To enable GC logging for the OpenJ9 Java runtime, include the `-verbose:gc` command line option. (See [Standard command-line options](cmdline_general.md).) The instrumented metric data can then be interactively visualized when the GC log is loaded into the [Garbage Collector and Memory Visualizer (GCMV) plugin for Eclipse](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv). OpenJ9 Java GC logs can also be analyzed by some online services, such as [GCEasy](https://gceasy.io/).
+
+
+
+
+<!--
+
+
 ### Generational Concurrent policy
 
 If you have a transactional application, with many short lived objects, the Generational Concurrent GC policy ([`-Xgcpolicy:gencon`](xgcpolicy.md#gencon)) is probably best suited, which aims to minimize GC pause times without compromising throughput. This is the default policy employed by the VM, so if you want to use it you don't need to specify it on the command line when you start your application.
@@ -110,8 +141,6 @@ A special mode of the `gencon` policy is known as *Concurrent Scavenge* (`-Xgc:c
 
 For more information about enabling Concurrent Scavenge, see the [-Xgc:concurrentScavenge](xgc.md#concurrentscavenge) option.
 
-<!-- Inclusion of 'Balanced policy' is postponed to a later release. 
-
 ### Balanced policy
 
 The Balanced GC policy ([`-Xgcpolicy:balanced`](xgcpolicy.md#balanced)) evens out pause times and reduces the overhead of some of the costlier operations typically associated with garbage collection. It divides the Java heap into regions, which are managed individually to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates. 
@@ -131,48 +160,27 @@ Most objects are easily contained within the minimum region size of 512 KB. Howe
 
 Arraylets have a **spine**, which contains the class pointer and size, and **leaves**, which contain the data associated with the array. The spine also contains **arrayoids** which are pointers to the respective arraylet leaves, as shown in the following diagram.
 
-![The diagram is explained in the surrounding text](./cr/arrayalet_diagram.png "Arraylet diagram")
+![The diagram is explained in the surrounding text](./cr/arraylet_diagram.png "Arraylet diagram")
 
 There are a number of advantages to using arraylets. 
 
 - Because the heap tends to fragment over time, other collector policies might be forced to run a global garbage collection and defragmentation (compaction) phase to recover sufficient contiguous memory to allocate a large array. By removing the requirement for large arrays to be allocated in contiguous memory, the Balanced GC is more likely to be able to satisfy such an allocation without requiring unscheduled garbage collection, particularly a global defragmentation operation. 
 - Additionally, the Balanced GC never needs to move an arraylet leaf once it has been allocated. The cost of relocating an array is therefore limited to the cost of relocating the spine, so large arrays do not contribute to higher defragmentation times.
 
-However, arraylets can slow down processing when the Java Native Interface (JNI) is being used. JNI provides flexibility by enabling Java programs to call native code; for example C or C++. If direct addressability to the inside of an object is needed, a JNI critical section can be used. But that requires the object to be in a contiguous region of memory, or at least _appear_ to be so. The JNI therefore creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.
-
-#### Double Mapping
-
-**(Linux&reg; only)**
-
-Double mapping of arraylets solves the problems caused when using JNI with arraylets on Linux systems. Double mapping makes a large array, which is divided across the heap in different chunks, look like a contiguous array by making use of the system's virtual memory. 
-
-The virtual memory address space on 64-bit systems is very large whereas physical memory is typically much more limited. Using more virtual memory address space is not a significant overhead for the application compared with using more physical memory. There is therefore a saving in resources by using two different virtual memory addresses mapped to the same physical memory address instead of using more physical memory and creating temporary arrays.
-
-![The diagram is explained in the surrounding text](./cr/arraylet_doublemap.png "Arraylet double mapping diagram")
-
-The double mapping is created as soon as an array in a Java program is instantiated and the double-mapped mirror of the original array, which now appears to be in contiguous memory, can be referenced immediately. Modifications made to the contiguous representation of the arraylet are reflected on the discontiguous version and vice-versa.
-
-Double mapping is enabled by default. If you want to disable it, use the command line option [`-Xgc:disableArrayletDoubleMapping`](xgc.md#disablearrayletdoublemapping).
-
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Double mapping cannot be supported if the object heap is allocated in Large (Huge) Pages. In such systems double mapping is ignored even if requested explicitly.
-
-- Use the [`-Xlp:objectheap:pagesize`](xlpobjectheap.md#pagesize) option to configure the object heap in small pages; for example, `-Xlp:objectheap:pagesize=4k`.
-- Use the [`-verbose:sizes`](cmdline_general.md) option to see the page sizes available in the system.
-
--->
-
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Despite the general advantage of using arraylets, they can slow down processing when the Java Native Interface (JNI) is being used: JNI provides flexibility by enabling Java programs to call native code; for example C or C++. If direct addressability to the inside of an object is needed, a JNI critical section can be used. But that requires the object to be in a contiguous region of memory, or at least _appear_ to be so. The JNI therefore creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.
 
 ### Other policies
 
-OpenJ9 has the following alternative GC policies:
+OpenJ9 also has the following GC policies:
 
-- [`-Xgcpolicy:balanced`](xgcpolicy.md#balanced) divides the Java heap into regions, which are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global collections by matching object allocation and survival rates. If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance, particularly on large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER platforms).
 - [`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-aix-linux-x86-only) is designed for applications that require precise response times. Garbage collection occurs in small interruptible steps to avoid stop-the-world pauses. This policy is available only on x86 Linux and AIX platforms.
 - [`-Xgcpolicy:nogc`](xgcpolicy.md#nogc) handles only memory allocation and heap expansion, but doesn't reclaim any memory. The GC impact on runtime performance is therefore minimized, but if the available Java heap becomes exhausted, an `OutOfMemoryError` exception is triggered and the VM stops.
 - [`-Xgcpolicy:optavgpause`](xgcpolicy.md#optavgpause) uses concurrent mark and sweep phases, which means that pause times are reduced when compared to optthruput, but at the expense of some performance throughput.
 - [`-Xgcpolicy:optthruput`](xgcpolicy.md#optthruput) is optimized for throughput by disabling the concurrent mark phase, which means that applications will stop for long pauses while garbage collection takes place. You might consider using this policy when high application throughput, rather than short garbage collection pauses, is the main performance goal.
 
 For more information about these garbage collection policies and options, see [-Xgcpolicy](xgcpolicy.md).
+
+-->
 
 ## Troubleshooting
 
