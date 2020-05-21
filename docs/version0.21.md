@@ -29,7 +29,7 @@ The following new features and notable changes since v 0.20.0 are included in th
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New feature...](#feature-title)
-
+- [New `-XX:[+|-]HandleSIGABRT` option added](#new--xx-handlesigabrt-option-added)
 
 ## Features and changes
 
@@ -47,6 +47,10 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 ### New feature...
 
 Feature details............
+
+### New `-XX:[+|-]HandleSIGABRT` option added
+
+Option `-XX:[+|-]HandleSIGABRT` affects the handling of the operating system signal `SIGABRT`. See [`-XX:[+|-]HandleSIGABRT`](xxhandlesigabrt.md) for more details about this option.
 
 ## Full release information
 
