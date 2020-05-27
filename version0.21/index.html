@@ -405,6 +405,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#update-to-noclassdeffounderror-exception-message" class="md-nav__link">
+    Update to NoClassDefFoundError exception message
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3571,6 +3578,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#update-to-noclassdeffounderror-exception-message" class="md-nav__link">
+    Update to NoClassDefFoundError exception message
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3633,6 +3647,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#feature-title">New feature...</a></li>
+<li><a href="#update-to-noclassdeffounderror-exception-message">Update to <code>NoClassDefFoundError</code> exception message</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3645,6 +3660,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="new-feature">New feature...</h3>
 <p>Feature details............</p>
+<h3 id="update-to-noclassdeffounderror-exception-message">Update to <code>NoClassDefFoundError</code> exception message</h3>
+<p>The class names printed in a <code>NoClassDefFoundError</code> exception message have been updated to match the same order as reported by Hotspot.</p>
+<p>For example, in the following exception message:</p>
+<pre><code>java.lang.NoClassDefFoundError: mypackage/Main (wrong name: Main)
+</code></pre>
+
+<p><code>mypackage/Main</code> was the class name encountered by the VM in the <code>.class</code> file, but "wrong name" <code>Main</code> was the provided class name. Prior to this update to the exception message, the encountered class name and the provided class name were swapped in the <code>NoClassDefFoundError</code> exception message.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.20.0 and v 0.21.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.21/0.21.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.21.md ==== -->
