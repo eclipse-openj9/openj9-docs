@@ -29,6 +29,7 @@ The following new features and notable changes since v 0.20.0 are included in th
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New feature...](#feature-title)
+- [Update to `NoClassDefFoundError` exception message](#update-to-noclassdeffounderror-exception-message)
 
 
 ## Features and changes
@@ -47,6 +48,16 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 ### New feature...
 
 Feature details............
+
+### Update to `NoClassDefFoundError` exception message
+
+The class names printed in a `NoClassDefFoundError` exception message have been updated to match the same order as reported by Hotspot.
+
+For example, in the following exception message:
+```
+java.lang.NoClassDefFoundError: mypackage/Main (wrong name: Main)
+```
+`mypackage/Main` was the class name encountered by the VM in the `.class` file, but "wrong name" `Main` was the provided class name. Prior to this update to the exception message, the encountered class name and the provided class name were swapped in the `NoClassDefFoundError` exception message.
 
 ## Full release information
 
