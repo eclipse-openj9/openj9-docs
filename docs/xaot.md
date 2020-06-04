@@ -40,7 +40,7 @@ Startup performance can be improved by using the shared AOT code to provide nati
 
 ## Default behavior
 
-The AOT compiler is enabled by default, but is only active when [shared classes](xshareclasses.md) are enabled. By default, shared classes are disabled so that no AOT activity occurs.
+The AOT compiler is enabled by default, but is only active when [shared classes](xshareclasses.md) are enabled.
 
 When the AOT compiler is active, the compiler selects the methods to be AOT compiled with the primary goal of improving startup time.
 
