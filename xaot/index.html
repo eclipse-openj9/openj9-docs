@@ -3763,7 +3763,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>In a VM without an AOT compiler or with the AOT compiler disabled, the JIT compiler selectively compiles frequently used methods into optimized native code. There is a time cost associated with compiling methods because the JIT compiler operates while the application is running. Because methods begin by being interpreted and most JIT compilations occur during startup, startup times can be increased.</p>
 <p>Startup performance can be improved by using the shared AOT code to provide native code without compiling. There is a small time cost to load the AOT code for a method from the shared data cache and bind it into a running program. The time cost is low compared to the time it takes the JIT compiler to compile that method.</p>
 <h2 id="default-behavior">Default behavior</h2>
-<p>The AOT compiler is enabled by default, but is only active when <a href="../xshareclasses/">shared classes</a> are enabled. By default, shared classes are disabled so that no AOT activity occurs.</p>
+<p>The AOT compiler is enabled by default, but is only active when <a href="../xshareclasses/">shared classes</a> are enabled.</p>
 <p>When the AOT compiler is active, the compiler selects the methods to be AOT compiled with the primary goal of improving startup time.</p>
 <h2 id="syntax">Syntax</h2>
 <table>
