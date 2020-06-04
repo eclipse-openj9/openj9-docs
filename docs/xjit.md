@@ -59,7 +59,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
         -Xjit:count=<n>
 
-: : Specifies the number of times, `<n>`, a method is called before it is compiled. For example, setting `count=0` forces the JIT compiler to compile everything on first execution, which is useful for problem determination.
+: Specifies the number of times, `<n>`, a method is called before it is compiled. For example, setting `count=0` forces the JIT compiler to compile everything on first execution, which is useful for problem determination.
 
 ### `disableRMODE64`
 
@@ -91,7 +91,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
     However, `-Xjit:exclude={test/sample/MyClass.testMethod()*}` excludes the method regardless of return type.  
     Similarly, `-Xjit:exclude={*}` excludes _all_ methods.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `exclude` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`.
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `exclude` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:exclude`, AOT compilation is also prevented and the methods specified are always interpreted.
 
 ### `limit`
 
@@ -99,7 +99,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Only the Java methods specified are included when code is compiled or loaded from the shared classes cache. `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xjit:exclude`](#exclude) for details).
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `limit` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`.
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `limit` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limit`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
 
 ### `limitFile`
 
@@ -107,7 +107,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Compile only the methods that are listed on lines `<m>` to `<n>` in the specified limit file, where the limit file is a verbose log that you generated with the `-Xjit:verbose,vlog=<vlog_filename>` option. Methods that are not listed in the limit file and methods that are listed on lines outside the range are not compiled.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `limitFile` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`.
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `limitFile` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limitFile`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
 
 ### `optlevel`
 
@@ -141,11 +141,10 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Shows the methods that are inlined.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Suboptions can be chained together by using a  `|` character. When used, you must enclose the full option name in single quotes (') to avoid the shell misinterpreting these characters as pipe commands. For example:
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Suboptions can be chained together by using a pipe (`|`) symbol. When used, you must enclose the full option name in single quotation marks (`'`) to avoid the shell misinterpreting these characters as pipe commands. For example:
 
-```
-java '-Xjit:verbose={compileStart|compileEnd|inlining}' -version
-```
+        java '-Xjit:verbose={compileStart|compileEnd|inlining}' -version
+
 
 ### `vlog`
         -Xjit:vlog=<vlog_filename>

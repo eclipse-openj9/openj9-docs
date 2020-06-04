@@ -213,7 +213,7 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 | Platform                    | Operating system         |  Compiler                       |
 |-----------------------------|--------------------------|---------------------------------|
 | Linux x86 64-bit            | CentOS 6.10              | gcc 7.5                         |
-| Linux on ARM 64-bit         | CentOS 7                 | gcc 7.4                         |
+| Linux on ARM 64-bit         | CentOS 7                 | gcc 7.5                         |
 | Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.5                         |
 | Linux on IBM Z 64-bit       | RHEL 7.7                 | gcc 7.5                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
