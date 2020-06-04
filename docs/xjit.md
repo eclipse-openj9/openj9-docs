@@ -45,11 +45,12 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 | Parameter                           | Effect                                                                                  |
 |-------------------------------------|-----------------------------------------------------------------------------------------|
-| [`count`         ](#count         ) | Forces compilation of methods on first invocation.                                      |
+| [`count`         ](#count         ) | Specifies the number of times a method is called before it is compiled.                 |
 | [`disableRMODE64`](#disablermode64) | Allows the JIT to allocate executable code caches above the 2 GB memory bar.            |
 | [`enableGPU`     ](#enablegpu     ) | Allows the JIT to offload certain processing tasks to a graphics processing unit (GPU)  |
 | [`exclude`       ](#exclude       ) | Excludes the specified method from compilation.                                         |
-| [`<limitFile>`   ](#limitfile     ) | Compile methods that are listed in the limit file.                                      |
+| [`limit`         ](#limit         ) | Includes the specified method in compilation.                                           |
+| [`limitFile`     ](#limitfile     ) | Compile methods that are listed in the limit file.                                      |
 | [`optlevel`      ](#optlevel      ) | Forces the JIT compiler to compile all methods at a specific optimization level.        |
 | [`verbose`       ](#verbose       ) | Reports information about the JIT and AOT compiler configuration and method compilation.|
 | [`vlog`          ](#vlog          ) | Sends verbose output to a file.                                                         |
@@ -58,7 +59,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
         -Xjit:count=<n>
 
-: where `<n>` is the number of times a method is called before it is compiled. For example, setting `count=0` forces the JIT compiler to compile everything on first execution, which is useful for problem determination.
+: : Specifies the number of times, `<n>`, a method is called before it is compiled. For example, setting `count=0` forces the JIT compiler to compile everything on first execution, which is useful for problem determination.
 
 ### `disableRMODE64`
 
@@ -80,15 +81,33 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 ### `exclude`
 
-        -Xjit:exclude=<method>
+        -Xjit:exclude={<method>}
 
 : Excludes the specified method from compilation.
+
+    `<method_name>` is a regular expression that determines the method or methods that are to be excluded. Specify as much of the full package, class and method as necessary. 
+    
+    For example, `-Xjit:exclude={test/sample/MyClass.testMethod()V}` excludes the single method specified.  
+    However, `-Xjit:exclude={test/sample/MyClass.testMethod()*}` excludes the method regardless of return type.  
+    Similarly, `-Xjit:exclude={*}` excludes _all_ methods.
+
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `exclude` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`.
+
+### `limit`
+
+        -Xjit:limit={<method_name>}
+
+: Only the Java methods specified are included when code is compiled or loaded from the shared classes cache. `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xjit:exclude`](#exclude) for details).
+
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `limit` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`.
 
 ### `limitFile`
 
         -Xjit:limitFile=(<vlog_filename>, <m>, <n>)
 
 : Compile only the methods that are listed on lines `<m>` to `<n>` in the specified limit file, where the limit file is a verbose log that you generated with the `-Xjit:verbose,vlog=<vlog_filename>` option. Methods that are not listed in the limit file and methods that are listed on lines outside the range are not compiled.
+
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `limitFile` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`.
 
 ### `optlevel`
 
@@ -131,7 +150,7 @@ java '-Xjit:verbose={compileStart|compileEnd|inlining}' -version
 ### `vlog`
         -Xjit:vlog=<vlog_filename>
 
-: Sends verbose output to a file, of the format `<vlog_filename>.<date>.<time>.<JVM_process_ID>`, which is created in your current directory. Running the command multiple times produces multiple distinct versions of this file. If you do not specify this parameter, the output is sent to the standard error output stream (STDERR). This type of log file can be used with the `limitFile` suboption to target the compilation of specific methods.
+: Sends verbose output to a file, of the format `<vlog_filename>.<date>.<time>.<JVM_process_ID>`, which is created in your current directory. Running the command multiple times produces multiple distinct versions of this file. If you do not specify this parameter, the output is sent to the standard error output stream (STDERR). This type of log file can be used with the [`limitFile`](#limitfile) suboption to target the compilation of specific methods.
 
 ## Examples
 
@@ -169,7 +188,7 @@ java '-Xjit:verbose={compileStart|compileEnd|inlining},count=5,vlog=vlogfile' -X
 ## See also
 
 - [Diagnosing a JIT or AOT problem](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_pd_diagnose.html)
-
+- [-Xaot](xaot.md)
 
 <!-- ==== END OF TOPIC ==== xjit.md ==== -->
 <!-- ==== END OF TOPIC ==== xnojit.md ==== -->

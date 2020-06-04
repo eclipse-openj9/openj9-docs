@@ -40,17 +40,21 @@ Startup performance can be improved by using the shared AOT code to provide nati
 
 ## Default behavior
 
-The AOT compiler is enabled by default, but is only active when [shared classes](xshareclasses.md) are enabled. By default, shared classes are disabled so that no AOT activity occurs.
+The AOT compiler is enabled by default, but is only active when [shared classes](xshareclasses.md) are enabled.
+
+<!--
+The AOT compiler is enabled by default, but is only active when shared classes are enabled. By default, shared classes are enabled for bootstrap classes. To change this behavior, use the [-XshareClasses](xshareclasses.md) option.
+-->
 
 When the AOT compiler is active, the compiler selects the methods to be AOT compiled with the primary goal of improving startup time.
 
 ## Syntax
 
-| Setting      | Action      | Default                                                                            |
-|--------------|-------------|:----------------------------------------------------------------------------------:|
-|`-Xaot`       | Enable AOT  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-|`-Xaot:<parameter>[=<value>]{,<parameter>[=<value>]}` | Enable AOT with modifications |                          |
-|`-Xnoaot`     | Disable AOT |                                                                                    |
+| Setting                                              | Action                        | Default |
+|------------------------------------------------------|-------------------------------|:-------:|
+|`-Xaot`                                               | Enable AOT                    | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+|`-Xaot:<parameter>[=<value>]{,<parameter>[=<value>]}` | Enable AOT with modifications |         |
+|`-Xnoaot`                                             | Disable AOT                   |         |
 
 
 ## Parameters for `-Xaot`
@@ -59,53 +63,20 @@ When the AOT compiler is active, the compiler selects the methods to be AOT comp
 
     You can concatenate several parameters by using commas.
 
-| Parameter                        |  Effect                                                                                                        |
-|----------------------------------|----------------------------------------------------------------------------------------------------------------|
-| [`count`](#count)                | The number of times a method is called before it is compiled or loaded from an existing shared class cache.    |
-| [`exclude`](#exclude)            | The method you want to exclude when AOT code is compiled or loaded from the shared classes cache.              |
-| [`limitFile`](#limitfile)        | Compile or load only the methods listed in the specified limit file.                                           |
-| [`loadExclude`](#loadexclude)    | Do not load specified methods.                                                                                 |
-| [`loadLimit`](#loadlimit)        | Load specified methods only.                                                                                   |
-| [`loadLimitFile`](#loadlimitfile)| Load only the methods listed in the specified limit file).                                                     |
-| [`verbose`](#verbose)            | Reports information about the AOT and JIT compiler configuration and method compilation.                       |
+| Parameter                        | Effect                                                                                    |
+|----------------------------------|-------------------------------------------------------------------------------------------|
+| [`verbose`      ](#verbose      )| Reports information about the AOT and JIT compiler configuration and method compilation.  |
+| *Compile and load*:              |
+| [`count`        ](#count        )| Specifies the number of times a method is called before it is compiled or loaded.         |
+| [`exclude`      ](#exclude      )| Excludes specified methods when AOT code is compiled or loaded.                           |
+| [`limit`        ](#limit        )| Includes specified methods when AOT code is compiled or loaded.                           |
+| [`limitFile`    ](#limitfile    )| Compiles or loads only the methods listed in the specified limit file.                    |
+| *Load only*:                     |
+| [`loadExclude`  ](#loadexclude  )| Excludes specified methods when AOT code is loaded.                                       |
+| [`loadLimit`    ](#loadlimit    )| Includes specified methods when AOT code is compiled or loaded.                           |
+| [`loadLimitFile`](#loadlimitfile)| Loads only the methods listed in the specified limit file.                                |
 
-### `count`
 
-        -Xaot:count=<n>
-
-: where `<n>` is the number of times a method is called before it is compiled or loaded from an existing shared class cache. For example, setting `-Xaot:count=0` forces the AOT compiler to compile everything on first execution.
-
-### `exclude`
-
-        -Xaot:exclude=<method>
-
-: where `<method>` is the Java method you want to exclude when AOT code is compiled or loaded from the shared classes cache.
-
-    Use this option if the method causes the program to fail.
-
-### `limitFile`
-
-        -Xaot:limitFile=(<filename>,<m>,<n>)
-
-: Compile or load only the methods listed on lines `<m>` to `<n>` in the specified limit file (`<filename>`). Methods not listed in the limit file and methods listed on lines outside the range are not compiled or loaded.
-
-### `loadExclude`
-
-        -Xaot:loadExclude=<method_prefix>
-
-: Do not load methods beginning with `<method_prefix>`.
-
-### `loadLimit`
-
-        -Xaot:loadLimit=<method_prefix>
-
-: Load methods beginning with `<method_prefix>` only.
-
-### `loadLimitFile`
-
-        -Xaot:loadLimitFile=(<filename>,<m>,<n>)
-
-: Load only the methods listed on lines `<m>` to `<n>` in the specified limit file (`<filename>`). Methods not listed in the limit file and methods listed on lines outside the range are not loaded.
 
 ### `verbose`
 
@@ -113,10 +84,71 @@ When the AOT compiler is active, the compiler selects the methods to be AOT comp
 
 : Reports information about the AOT and JIT compiler configuration and method compilation.
 
+---
+
+**The following options affect both compilation and loading from the shared class cache.**
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `exclude`, `limit`, and `limitFile` have the same behavior regardless of whether they're specified on [`-Xjit`](xjit.md) or `-Xaot`. That is, they filter what the compiler is allowed to compile (AOT or otherwise). In consequence, if you specify `-Xaot:exclude={...}`, JIT compilation is also prevented and those methods are always interpreted.
+
+### `count`
+
+        -Xaot:count=<n>
+
+: Specifies the number of times, `<n>`, a method is called before it is compiled or loaded from an existing shared class cache. Setting `-Xaot:count=0` forces the AOT compiler to compile everything on first execution, which is useful for problem determination.
+
+### `exclude`
+
+        -Xaot:exclude={<method_name>}
+
+: Excludes a Java method when AOT code is compiled or loaded from the shared classes cache. Use this option if the method causes the program to fail.
+
+    `<method_name>` is a regular expression that determines the method or methods that are to be excluded. Specify as much of the full package, class and method as necessary. 
+    
+    For example, `-Xaot:exclude={test/sample/MyClass.testMethod()V}` excludes the single method specified.  
+    However, `-Xaot:exclude={test/sample/MyClass.testMethod()*}` excludes the method regardless of return type.  
+    Similarly, `-Xaot:exclude={*}` excludes _all_ methods.
+
+### `limit`
+
+        -Xaot:limit={<method_name>}
+
+: Only the Java methods specified are included when AOT code is compiled or loaded from the shared classes cache. `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xaot:exclude`](#exclude) for details).
+
+### `limitFile`
+
+        -Xaot:limitFile=(<filename>,<m>,<n>)
+
+: Compiles or loads only the methods listed on lines `<m>` to, and including, `<n>` in the specified limit file, `<filename>`. Methods not listed in the limit file and methods listed on lines outside the range are not compiled or loaded.
+
+---
+
+**The following options affect loading from the shared class cache.**
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `loadExclude`, `loadLimit`, and `loadLimitFile` must only be specified on -Xaot; they do not have an equivalent on [`-Xjit`](xjit.md). These options filter what AOT code the compiler is allowed to load from the shared class cache.  In consequence, the compiler does a JIT compilation instead.
+
+### `loadExclude`
+
+        -Xaot:loadExclude={<method_name>}
+
+: Excludes Java methods when AOT code is loaded from the shared classes cache. `<method_name>` is a regular expression that determines the method or methods that are to be excluded (see [`-Xaot:exclude`](#exclude) for details). This option does _not_ prevent the method from being compiled.
+
+### `loadLimit`
+
+        -Xaot:loadLimit={<method_name>}
+
+: Only the Java methods specified are included when AOT code is loaded from the shared classes cache. `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xaot:exclude`](#exclude) for details).
+
+### `loadLimitFile`
+
+        -Xaot:loadLimitFile=(<filename>,<m>,<n>)
+
+: Loads only the methods listed on lines `<m>` to, and including, `<n>` in the specified limit file, `<filename>`. Methods not listed in the limit file and methods listed on lines outside the range are not loaded.
+
 
 ## See also
 
 - [-Xquickstart](xquickstart.md)
+- [`-Xjit`](xjit.md)
 
 
 
