@@ -64,6 +64,7 @@ extra_css:
   - 'stylesheets/oj9.css'
 
 extra_javascript:
+  - javascripts/oj9.js
 
 extra_templates:
 
@@ -379,5 +380,13 @@ nav:
         - "Directory conventions"                                                 : openj9_directories.md
         - "OpenJ9 messages"                                                       : messages_intro.md
         - "Environment variables"                                                 : env_var.md
+        - "JDK 8 API documentation" : 
+          - "CUDA4J"                                                              : api-cuda.md
+          - "Data access acceleration"                                            : api-daa.md
+          - "GPU"                                                                 : api-gpu.md
+          - "JVM diagnostic utilities"                                            : api-jvm.md
+          - "Shared classes"                                                      : api-shrc.md
+          - "Monitoring and management"                                           : api-langmgmt.md
+        - "JDK 11 API documentation"                                              : api-jdk11.md  
 
     - "Legal"                                                                     : legal.md
