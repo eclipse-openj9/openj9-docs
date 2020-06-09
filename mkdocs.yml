@@ -239,7 +239,6 @@ nav:
             - "-Xgcpolicy"                                                       : xgcpolicy.md
             - "-Xgcthreads"                                                      : xgcthreads.md
             - "-Xgcworkpackets"                                                  : xgcworkpackets.md
-            - "-Xifa"                                                            : xifa.md
             - "-Xint"                                                            : xint.md
             - "-Xiss"                                                            : xss.md                             # redirect
             - "-Xjit"                                                            : xjit.md
