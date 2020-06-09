@@ -30,6 +30,7 @@ The following new features and notable changes since v 0.20.0 are included in th
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:[+|-]HandleSIGABRT` option added](#new--xx-handlesigabrt-option-added)
 - [Update to `NoClassDefFoundError` exception message](#update-to-noclassdeffounderror-exception-message)
+- [OSX shared libraries version updated](#osx-shared-libraries-version-updated)
 
 ## Features and changes
 
@@ -57,6 +58,9 @@ java.lang.NoClassDefFoundError: mypackage/Main (wrong name: Main)
 ```
 `mypackage/Main` was the class name encountered by the VM in the `.class` file, but "wrong name" `Main` was the provided class name. Prior to this update to the exception message, the encountered class name and the provided class name were swapped in the `NoClassDefFoundError` exception message.
 
+### OSX shared libraries version updated
+
+The version information for shared libraries on OSX has been updated from 0.0.0 to 1.0.0. If an application has linked against a shared library from a previous OpenJ9 release, it needs to be re-linked against the new release. Failure to re-link causes an error `Incompatible library version`, `requires version 0.0.0`.
 
 ## Full release information
 
