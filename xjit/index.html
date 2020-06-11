@@ -2344,6 +2344,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#limit" class="md-nav__link">
+    limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#limitfile" class="md-nav__link">
     limitFile
   </a>
@@ -3678,6 +3685,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#limit" class="md-nav__link">
+    limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#limitfile" class="md-nav__link">
     limitFile
   </a>
@@ -3839,7 +3853,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <tbody>
 <tr>
 <td><a href="#count"><code>count</code>         </a></td>
-<td>Forces compilation of methods on first invocation.</td>
+<td>Specifies the number of times a method is called before it is compiled.</td>
 </tr>
 <tr>
 <td><a href="#disablermode64"><code>disableRMODE64</code></a></td>
@@ -3854,7 +3868,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td>Excludes the specified method from compilation.</td>
 </tr>
 <tr>
-<td><a href="#limitfile"><code>&lt;limitFile&gt;</code>   </a></td>
+<td><a href="#limit"><code>limit</code>         </a></td>
+<td>Includes the specified method in compilation.</td>
+</tr>
+<tr>
+<td><a href="#limitfile"><code>limitFile</code>     </a></td>
 <td>Compile methods that are listed in the limit file.</td>
 </tr>
 <tr>
@@ -3875,7 +3893,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <pre><code>    -Xjit:count=&lt;n&gt;
 </code></pre>
 <dl>
-<dd>where <code>&lt;n&gt;</code> is the number of times a method is called before it is compiled. For example, setting <code>count=0</code> forces the JIT compiler to compile everything on first execution, which is useful for problem determination.</dd>
+<dd>Specifies the number of times, <code>&lt;n&gt;</code>, a method is called before it is compiled. For example, setting <code>count=0</code> forces the JIT compiler to compile everything on first execution, which is useful for problem determination.</dd>
 </dl>
 <h3 id="disablermode64"><code>disableRMODE64</code></h3>
 <p><strong>(z/OS&reg; only)</strong></p>
@@ -3893,16 +3911,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <dd>To troubleshoot operations between the JIT compiler and the GPU, use <code>-Xjit:enableGPU={verbose}</code>, which provides output showing the processing tasks that are offloaded and their status. To send this output to a file (<code>output.txt</code>), run <code>-Xjit:enableGPU={verbose},vlog=output.txt</code> when you start your application.</dd>
 </dl>
 <h3 id="exclude"><code>exclude</code></h3>
-<pre><code>    -Xjit:exclude=&lt;method&gt;
+<pre><code>    -Xjit:exclude={&lt;method&gt;}
 </code></pre>
 <dl>
-<dd>Excludes the specified method from compilation.</dd>
+<dd>
+<p>Excludes the specified method from compilation.</p>
+<p><code>&lt;method_name&gt;</code> is a regular expression that determines the method or methods that are to be excluded. Specify as much of the full package, class and method as necessary. </p>
+<p>For example, <code>-Xjit:exclude={test/sample/MyClass.testMethod()V}</code> excludes the single method specified.<br />
+However, <code>-Xjit:exclude={test/sample/MyClass.testMethod()*}</code> excludes the method regardless of return type.<br />
+Similarly, <code>-Xjit:exclude={*}</code> excludes <em>all</em> methods.</p>
+</dd>
+<dd>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> <code>exclude</code> has the same effect regardless of whether it is specified on <a href="../xaot/"><code>-Xaot</code></a> or <code>-Xjit</code>. In consequence, if you specify <code>-Xjit:exclude</code>, AOT compilation is also prevented and the methods specified are always interpreted.</p>
+</dd>
+</dl>
+<h3 id="limit"><code>limit</code></h3>
+<pre><code>    -Xjit:limit={&lt;method_name&gt;}
+</code></pre>
+<dl>
+<dd>Only the Java methods specified are included when code is compiled or loaded from the shared classes cache. <code>&lt;method_name&gt;</code> is a regular expression that determines the method or methods that are to be included (see <a href="#exclude"><code>-Xjit:exclude</code></a> for details).</dd>
+<dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> <code>limit</code> has the same effect regardless of whether it is specified on <a href="../xaot/"><code>-Xaot</code></a> or <code>-Xjit</code>. In consequence, if you specify <code>-Xjit:limit</code>, AOT compilation is also restricted to those methods specified; other methods are always interpreted.</dd>
 </dl>
 <h3 id="limitfile"><code>limitFile</code></h3>
 <pre><code>    -Xjit:limitFile=(&lt;vlog_filename&gt;, &lt;m&gt;, &lt;n&gt;)
 </code></pre>
 <dl>
 <dd>Compile only the methods that are listed on lines <code>&lt;m&gt;</code> to <code>&lt;n&gt;</code> in the specified limit file, where the limit file is a verbose log that you generated with the <code>-Xjit:verbose,vlog=&lt;vlog_filename&gt;</code> option. Methods that are not listed in the limit file and methods that are listed on lines outside the range are not compiled.</dd>
+<dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> <code>limitFile</code> has the same effect regardless of whether it is specified on <a href="../xaot/"><code>-Xaot</code></a> or <code>-Xjit</code>. In consequence, if you specify <code>-Xjit:limitFile</code>, AOT compilation is also restricted to those methods specified; other methods are always interpreted.</dd>
 </dl>
 <h3 id="optlevel"><code>optlevel</code></h3>
 <pre><code>    -Xjit:optlevel=[noOpt|cold|warm|hot|veryHot|scorching]
@@ -3940,16 +3975,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <dd>
 <p>Shows the methods that are inlined.</p>
 </dd>
-</dl>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Suboptions can be chained together by using a  <code>|</code> character. When used, you must enclose the full option name in single quotes (') to avoid the shell misinterpreting these characters as pipe commands. For example:</p>
+<dd>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Suboptions can be chained together by using a pipe (<code>|</code>) symbol. When used, you must enclose the full option name in single quotation marks (<code>'</code>) to avoid the shell misinterpreting these characters as pipe commands. For example:</p>
 <pre><code>java '-Xjit:verbose={compileStart|compileEnd|inlining}' -version
 </code></pre>
-
+</dd>
+</dl>
 <h3 id="vlog"><code>vlog</code></h3>
 <pre><code>    -Xjit:vlog=&lt;vlog_filename&gt;
 </code></pre>
 <dl>
-<dd>Sends verbose output to a file, of the format <code>&lt;vlog_filename&gt;.&lt;date&gt;.&lt;time&gt;.&lt;JVM_process_ID&gt;</code>, which is created in your current directory. Running the command multiple times produces multiple distinct versions of this file. If you do not specify this parameter, the output is sent to the standard error output stream (STDERR). This type of log file can be used with the <code>limitFile</code> suboption to target the compilation of specific methods.</dd>
+<dd>Sends verbose output to a file, of the format <code>&lt;vlog_filename&gt;.&lt;date&gt;.&lt;time&gt;.&lt;JVM_process_ID&gt;</code>, which is created in your current directory. Running the command multiple times produces multiple distinct versions of this file. If you do not specify this parameter, the output is sent to the standard error output stream (STDERR). This type of log file can be used with the <a href="#limitfile"><code>limitFile</code></a> suboption to target the compilation of specific methods.</dd>
 </dl>
 <h2 id="examples">Examples</h2>
 <h3 id="generating-a-jit-verbose-log">Generating a JIT verbose log</h3>
@@ -3977,6 +4013,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_pd_diagnose.html">Diagnosing a JIT or AOT problem</a></li>
+<li><a href="../xaot/">-Xaot</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xjit.md ==== -->
 
