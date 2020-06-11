@@ -412,6 +412,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#osx-shared-libraries-version-updated" class="md-nav__link">
+    OSX shared libraries version updated
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3585,6 +3592,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#osx-shared-libraries-version-updated" class="md-nav__link">
+    OSX shared libraries version updated
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3648,6 +3662,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#new--xx-handlesigabrt-option-added">New <code>-XX:[+|-]HandleSIGABRT</code> option added</a></li>
 <li><a href="#update-to-noclassdeffounderror-exception-message">Update to <code>NoClassDefFoundError</code> exception message</a></li>
+<li><a href="#osx-shared-libraries-version-updated">OSX shared libraries version updated</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3667,6 +3682,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </code></pre>
 
 <p><code>mypackage/Main</code> was the class name encountered by the VM in the <code>.class</code> file, but "wrong name" <code>Main</code> was the provided class name. Prior to this update to the exception message, the encountered class name and the provided class name were swapped in the <code>NoClassDefFoundError</code> exception message.</p>
+<h3 id="osx-shared-libraries-version-updated">OSX shared libraries version updated</h3>
+<p>The version information for shared libraries on OSX has been updated from 0.0.0 to 1.0.0. If an application has linked against a shared library from a previous OpenJ9 release, it needs to be re-linked against the new release. Failure to re-link causes an error <code>Incompatible library version</code>, <code>requires version 0.0.0</code>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.20.0 and v 0.21.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.21/0.21.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.21.md ==== -->
