@@ -1,0 +1,3666 @@
+<!--
+* Copyright (c) 2017, 2020 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Eclipse OpenJ9 documentation">
+      
+      
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.21/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="">
+      
+        <meta name="lang:clipboard.copied" content="">
+      
+        <meta name="lang:search.language" content="">
+      
+        <meta name="lang:search.pipeline.stopwords" content="">
+      
+        <meta name="lang:search.pipeline.trimmer" content="">
+      
+        <meta name="lang:search.result.none" content="">
+      
+        <meta name="lang:search.result.one" content="">
+      
+        <meta name="lang:search.result.other" content="">
+      
+        <meta name="lang:search.tokenizer" content="">
+      
+      <link rel="shortcut icon" href="../cr/oj9logo_img9.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Version0.21 -  </title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#00bcd4">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../stylesheets/oj9.css">
+    
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f (https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore%28j,f) );
+})(window,document,'script','dataLayer','GTM-5WLCZXC');</script>
+<!-- End Google Tag Manager -->  
+  </head>
+  
+    
+    
+    <body dir="" data-md-color-primary="cyan" data-md-color-accent="cyan">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#whats-new-in-version-0210" tabindex="1" class="md-skip">
+        
+      </a>
+    
+    
+      <!--
+* Copyright (c) 2017, 2020 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+-->
+<header class="md-header" data-md-component="header">
+    <nav class="md-header-nav md-grid">
+      <div class="md-flex">
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-header-nav__button md-logo">
+            
+              <img src="../cr/openj9_6b.png">
+            
+          </a>
+        </div>
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+        </div>
+        <div class="md-flex__cell md-flex__cell--stretch">
+          <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          </div>
+        </div>
+        <div class="md-flex__cell md-flex__cell--shrink">
+          
+            
+              <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+              
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+            
+          
+        </div>
+        
+          <div class="md-flex__cell md-flex__cell--shrink">
+            <div class="md-header-nav__source">
+              
+
+
+  
+
+<a href="https://github.com/eclipse/openj9-docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+            </div>
+          </div>
+        
+  
+        <!-- Eclipse Incubator link -->
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <a href="http://wiki.eclipse.org/Development_Resources/Process_Guidelines/What_is_Incubation" target="_blank"><img class="egg" src="../cr/egg-incubation.png" alt="Eclipse Incubation"></a>
+        </div>  
+  
+      </div>
+    </nav>
+  </header>
+  
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-nav__button md-logo">
+      
+        <img src="../cr/openj9_6b.png" width="48" height="48">
+      
+    </a>
+     
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/eclipse/openj9-docs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../adoptopenjdk/" title="AdoptOpenJDK builds" class="md-nav__link">
+      AdoptOpenJDK builds
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../openj9_newuser/" title="New to OpenJ9?" class="md-nav__link">
+      New to OpenJ9?
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Release notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Release notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version0.17/" title="Version 0.17.0" class="md-nav__link">
+      Version 0.17.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version0.16/" title="Version 0.16.0" class="md-nav__link">
+      Version 0.16.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version0.15/" title="Version 0.15.1" class="md-nav__link">
+      Version 0.15.1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version0.14/" title="Version 0.14.0" class="md-nav__link">
+      Version 0.14.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Earlier releases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Earlier releases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version0.13/" title="Version 0.13.0" class="md-nav__link">
+      Version 0.13.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version0.12/" title="Version 0.12.0" class="md-nav__link">
+      Version 0.12.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version0.11/" title="Version 0.11.0" class="md-nav__link">
+      Version 0.11.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version0.10/" title="Version 0.10.0" class="md-nav__link">
+      Version 0.10.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version0.9/" title="Version 0.9.0" class="md-nav__link">
+      Version 0.9.0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version0.8/" title="Version 0.8.0" class="md-nav__link">
+      Version 0.8.0
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../gc/" title="Garbage Collection" class="md-nav__link">
+      Garbage Collection
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../jit/" title="JIT Compiler" class="md-nav__link">
+      JIT Compiler
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../aot/" title="AOT Compiler" class="md-nav__link">
+      AOT Compiler
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Class data sharing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Class data sharing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shrc/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shrc_diag_util/" title="Diagnostic cache utilities" class="md-nav__link">
+      Diagnostic cache utilities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Diagnostics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Diagnostics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../diag_overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-2" type="checkbox" id="nav-10-2">
+    
+    <label class="md-nav__link" for="nav-10-2">
+      Dumps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-2">
+        Dumps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dump_javadump/" title="Java dump" class="md-nav__link">
+      Java dump
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dump_heapdump/" title="Heap dump" class="md-nav__link">
+      Heap dump
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dump_systemdump/" title="System dump" class="md-nav__link">
+      System dump
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-3" type="checkbox" id="nav-10-3">
+    
+    <label class="md-nav__link" for="nav-10-3">
+      Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-3">
+        Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jextract/" title="Dump extractor" class="md-nav__link">
+      Dump extractor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jdmpview/" title="Dump viewer" class="md-nav__link">
+      Dump viewer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_traceformat/" title="Trace formatter" class="md-nav__link">
+      Trace formatter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_builder/" title="Option builder" class="md-nav__link">
+      Option builder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jcmd/" title="Java command (jcmd) tool" class="md-nav__link">
+      Java command (jcmd) tool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jmap/" title="Java memory map (jmap) tool" class="md-nav__link">
+      Java memory map (jmap) tool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jps/" title="Java process status (jps)" class="md-nav__link">
+      Java process status (jps)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_jstack/" title="Java stack (jstack) tool" class="md-nav__link">
+      Java stack (jstack) tool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tool_migration/" title="Switching to OpenJ9" class="md-nav__link">
+      Switching to OpenJ9
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10-4" type="checkbox" id="nav-10-4">
+    
+    <label class="md-nav__link" for="nav-10-4">
+      Interfaces
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-10-4">
+        Interfaces
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../interface_jvmti/" title="JVMTI" class="md-nav__link">
+      JVMTI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../interface_dtfj/" title="DTFJ" class="md-nav__link">
+      DTFJ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Command-line options
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Command-line options
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmdline_specifying/" title="Specifying options" class="md-nav__link">
+      Specifying options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmdline_general/" title="Standard options" class="md-nav__link">
+      Standard options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cmdline_migration/" title="Switching to OpenJ9" class="md-nav__link">
+      Switching to OpenJ9
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4">
+    
+    <label class="md-nav__link" for="nav-11-4">
+      System property options
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-4">
+        System property options
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../d_jvm_commands/" title="Using System properties" class="md-nav__link">
+      Using System properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmenableclasscaching/" title="-Dcom.ibm.enableClassCaching" class="md-nav__link">
+      -Dcom.ibm.enableClassCaching
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmenablelegacydumpsecurity/" title="-Dcom.ibm.enableLegacyDumpSecurity" class="md-nav__link">
+      -Dcom.ibm.enableLegacyDumpSecurity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmenablelegacylogsecurity/" title="-Dcom.ibm.enableLegacyLogSecurity" class="md-nav__link">
+      -Dcom.ibm.enableLegacyLogSecurity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmenablelegacytracesecurity/" title="-Dcom.ibm.enableLegacyTraceSecurity" class="md-nav__link">
+      -Dcom.ibm.enableLegacyTraceSecurity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmlangmanagementosmxbeaniscputime100ns/" title="-Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns" class="md-nav__link">
+      -Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmlangmanagementverbose/" title="-Dcom.ibm.lang.management.verbose" class="md-nav__link">
+      -Dcom.ibm.lang.management.verbose
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmtoolsattachdirectory/" title="-Dcom.ibm.tools.attach.directory" class="md-nav__link">
+      -Dcom.ibm.tools.attach.directory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmtoolsattachdisplayname/" title="-Dcom.ibm.tools.attach.displayName" class="md-nav__link">
+      -Dcom.ibm.tools.attach.displayName
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmtoolsattachenable/" title="-Dcom.ibm.tools.attach.enable" class="md-nav__link">
+      -Dcom.ibm.tools.attach.enable
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmtoolsattachid/" title="-Dcom.ibm.tools.attach.id" class="md-nav__link">
+      -Dcom.ibm.tools.attach.id
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dcomibmtoolsattachtimeout/" title="-Dcom.ibm.tools.attach.timeout" class="md-nav__link">
+      -Dcom.ibm.tools.attach.timeout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dfileencoding/" title="-Dfile.encoding" class="md-nav__link">
+      -Dfile.encoding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djavacompiler/" title="-Djava.compiler" class="md-nav__link">
+      -Djava.compiler
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djdknativecbc/" title="-Djdk.nativeCBC" class="md-nav__link">
+      -Djdk.nativeCBC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djdknativechacha20/" title="-Djdk.nativeChaCha20" class="md-nav__link">
+      -Djdk.nativeChaCha20
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djdknativecrypto/" title="-Djdk.nativeCrypto" class="md-nav__link">
+      -Djdk.nativeCrypto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djdknativedigest/" title="-Djdk.nativeDigest" class="md-nav__link">
+      -Djdk.nativeDigest
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djdknativegcm/" title="-Djdk.nativeGCM" class="md-nav__link">
+      -Djdk.nativeGCM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../djdknativersa/" title="-Djdk.nativeRSA" class="md-nav__link">
+      -Djdk.nativeRSA
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-5" type="checkbox" id="nav-11-5">
+    
+    <label class="md-nav__link" for="nav-11-5">
+      JVM -X options
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-5">
+        JVM -X options
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../x_jvm_commands/" title="Using -X options" class="md-nav__link">
+      Using -X options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../x/" title="-X" class="md-nav__link">
+      -X
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xaggressive/" title="-Xaggressive" class="md-nav__link">
+      -Xaggressive
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xalwaysclassgc/" title="-Xalwaysclassgc" class="md-nav__link">
+      -Xalwaysclassgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xaot/" title="-Xaot" class="md-nav__link">
+      -Xaot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xargencoding/" title="-Xargencoding" class="md-nav__link">
+      -Xargencoding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xbootclasspath/" title="-Xbootclasspath" class="md-nav__link">
+      -Xbootclasspath
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xceehdlr/" title="-XCEEHDLR" class="md-nav__link">
+      -XCEEHDLR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcheck/" title="-Xcheck" class="md-nav__link">
+      -Xcheck
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xclassgc/" title="-Xclassgc" class="md-nav__link">
+      -Xclassgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcodecache/" title="-Xcodecache" class="md-nav__link">
+      -Xcodecache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcodecachetotal/" title="-Xcodecachetotal" class="md-nav__link">
+      -Xcodecachetotal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcomp/" title="-Xcomp" class="md-nav__link">
+      -Xcomp
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcompactexplicitgc/" title="-Xcompactexplicitgc" class="md-nav__link">
+      -Xcompactexplicitgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcompactgc/" title="-Xcompactgc" class="md-nav__link">
+      -Xcompactgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcompilationthreads/" title="-XcompilationThreads" class="md-nav__link">
+      -XcompilationThreads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcompressedrefs/" title="-Xcompressedrefs" class="md-nav__link">
+      -Xcompressedrefs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xconcurrentbackground/" title="-Xconcurrentbackground" class="md-nav__link">
+      -Xconcurrentbackground
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xconcurrentlevel/" title="-Xconcurrentlevel" class="md-nav__link">
+      -Xconcurrentlevel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xconcurrentslack/" title="-Xconcurrentslack" class="md-nav__link">
+      -Xconcurrentslack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xconmeter/" title="-Xconmeter" class="md-nav__link">
+      -Xconmeter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xenableexcessivegc/" title="-Xdisableexcessivegc" class="md-nav__link">
+      -Xdisableexcessivegc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xenableexplicitgc/" title="-Xdisableexplicitgc" class="md-nav__link">
+      -Xdisableexplicitgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xdisablejavadump/" title="-Xdisablejavadump" class="md-nav__link">
+      -Xdisablejavadump
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xenablestringconstantgc/" title="-Xdisablestringconstantgc" class="md-nav__link">
+      -Xdisablestringconstantgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xdump/" title="-Xdump" class="md-nav__link">
+      -Xdump
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xenableexcessivegc/" title="-Xenableexcessivegc" class="md-nav__link">
+      -Xenableexcessivegc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xenableexplicitgc/" title="-Xenableexplicitgc" class="md-nav__link">
+      -Xenableexplicitgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xenablestringconstantgc/" title="-Xenablestringconstantgc" class="md-nav__link">
+      -Xenablestringconstantgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xfastresolve/" title="-Xfastresolve" class="md-nav__link">
+      -Xfastresolve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xfuture/" title="-Xfuture" class="md-nav__link">
+      -Xfuture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xgc/" title="-Xgc" class="md-nav__link">
+      -Xgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xgcsplitheap/" title="-Xgc:splitheap" class="md-nav__link">
+      -Xgc:splitheap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xgcpolicy/" title="-Xgcpolicy" class="md-nav__link">
+      -Xgcpolicy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xgcthreads/" title="-Xgcthreads" class="md-nav__link">
+      -Xgcthreads
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xgcworkpackets/" title="-Xgcworkpackets" class="md-nav__link">
+      -Xgcworkpackets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xifa/" title="-Xifa" class="md-nav__link">
+      -Xifa
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xint/" title="-Xint" class="md-nav__link">
+      -Xint
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xss/" title="-Xiss" class="md-nav__link">
+      -Xiss
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xjit/" title="-Xjit" class="md-nav__link">
+      -Xjit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xjni/" title="-Xjni" class="md-nav__link">
+      -Xjni
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xlinenumbers/" title="-Xlinenumbers" class="md-nav__link">
+      -Xlinenumbers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xloa/" title="-Xloa" class="md-nav__link">
+      -Xloa
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xloaminimum/" title="-Xloainitial" class="md-nav__link">
+      -Xloainitial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xloaminimum/" title="-Xloamaximum" class="md-nav__link">
+      -Xloamaximum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xloaminimum/" title="-Xloaminimum" class="md-nav__link">
+      -Xloaminimum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xlockreservation/" title="-XlockReservation" class="md-nav__link">
+      -XlockReservation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xlockword/" title="-Xlockword" class="md-nav__link">
+      -Xlockword
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xlog/" title="-Xlog" class="md-nav__link">
+      -Xlog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xlp/" title="-Xlp" class="md-nav__link">
+      -Xlp
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xlpcodecache/" title="-Xlp:codecache" class="md-nav__link">
+      -Xlp:codecache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xlpobjectheap/" title="-Xlp:objectheap" class="md-nav__link">
+      -Xlp:objectheap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmine/" title="-Xmaxe" class="md-nav__link">
+      -Xmaxe
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xminf/" title="-Xmaxf" class="md-nav__link">
+      -Xmaxf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmint/" title="-Xmaxt" class="md-nav__link">
+      -Xmaxt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmca/" title="-Xmca" class="md-nav__link">
+      -Xmca
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmca/" title="-Xmco" class="md-nav__link">
+      -Xmco
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmcrs/" title="-Xmcrs" class="md-nav__link">
+      -Xmcrs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmine/" title="-Xmine" class="md-nav__link">
+      -Xmine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xminf/" title="-Xminf" class="md-nav__link">
+      -Xminf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmint/" title="-Xmint" class="md-nav__link">
+      -Xmint
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmn/" title="-Xmn" class="md-nav__link">
+      -Xmn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmn/" title="-Xmns" class="md-nav__link">
+      -Xmns
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmn/" title="-Xmnx" class="md-nav__link">
+      -Xmnx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmo/" title="-Xmo" class="md-nav__link">
+      -Xmo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmo/" title="-Xmoi" class="md-nav__link">
+      -Xmoi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmo/" title="-Xmos" class="md-nav__link">
+      -Xmos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmo/" title="-Xmox" class="md-nav__link">
+      -Xmox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmr/" title="-Xmr" class="md-nav__link">
+      -Xmr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmr/" title="-Xmrx" class="md-nav__link">
+      -Xmrx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xms/" title="-Xms" class="md-nav__link">
+      -Xms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xmso/" title="-Xmso" class="md-nav__link">
+      -Xmso
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xms/" title="-Xmx" class="md-nav__link">
+      -Xmx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xaot/" title="-Xnoaot" class="md-nav__link">
+      -Xnoaot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xclassgc/" title="-Xnoclassgc" class="md-nav__link">
+      -Xnoclassgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcompactexplicitgc/" title="-Xnocompactexplicitgc" class="md-nav__link">
+      -Xnocompactexplicitgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcompactgc/" title="-Xnocompactgc" class="md-nav__link">
+      -Xnocompactgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcompressedrefs/" title="-Xnocompressedrefs" class="md-nav__link">
+      -Xnocompressedrefs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xjit/" title="-Xnojit" class="md-nav__link">
+      -Xnojit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xlinenumbers/" title="-Xnolinenumbers" class="md-nav__link">
+      -Xnolinenumbers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xloa/" title="-Xnoloa" class="md-nav__link">
+      -Xnoloa
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xsigcatch/" title="-Xnosigcatch" class="md-nav__link">
+      -Xnosigcatch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xsigchain/" title="-Xnosigchain" class="md-nav__link">
+      -Xnosigchain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xnumanone/" title="-Xnuma:none" class="md-nav__link">
+      -Xnuma:none
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xoptionsfile/" title="-Xoptionsfile" class="md-nav__link">
+      -Xoptionsfile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xquickstart/" title="-Xquickstart" class="md-nav__link">
+      -Xquickstart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xrs/" title="-Xrs" class="md-nav__link">
+      -Xrs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xsamplingexpirationtime/" title="-XsamplingExpirationTime" class="md-nav__link">
+      -XsamplingExpirationTime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xscdmx/" title="-Xscdmx" class="md-nav__link">
+      -Xscdmx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xscminaot/" title="-Xscmaxaot" class="md-nav__link">
+      -Xscmaxaot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xscminjitdata/" title="-Xscmaxjitdata" class="md-nav__link">
+      -Xscmaxjitdata
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xscminaot/" title="-Xscminaot" class="md-nav__link">
+      -Xscminaot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xscminjitdata/" title="-Xscminjitdata" class="md-nav__link">
+      -Xscminjitdata
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xscmx/" title="-Xscmx" class="md-nav__link">
+      -Xscmx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xshareclasses/" title="-Xshareclasses" class="md-nav__link">
+      -Xshareclasses
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xsigcatch/" title="-Xsigcatch" class="md-nav__link">
+      -Xsigcatch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xsigchain/" title="-Xsigchain" class="md-nav__link">
+      -Xsigchain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xsignal/" title="-Xsignal" class="md-nav__link">
+      -Xsignal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xsoftmx/" title="-Xsoftmx" class="md-nav__link">
+      -Xsoftmx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xsoftrefthreshold/" title="-Xsoftrefthreshold" class="md-nav__link">
+      -Xsoftrefthreshold
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xss/" title="-Xss" class="md-nav__link">
+      -Xss
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xss/" title="-Xssi" class="md-nav__link">
+      -Xssi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xtgc/" title="-Xtgc" class="md-nav__link">
+      -Xtgc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xthr/" title="-Xthr" class="md-nav__link">
+      -Xthr
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xtlhprefetch/" title="-XtlhPrefetch" class="md-nav__link">
+      -XtlhPrefetch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xtrace/" title="-Xtrace" class="md-nav__link">
+      -Xtrace
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xtunevirtualized/" title="-Xtune:virtualized" class="md-nav__link">
+      -Xtune:virtualized
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xverbosegclog/" title="-Xverbosegclog" class="md-nav__link">
+      -Xverbosegclog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xverify/" title="-Xverify" class="md-nav__link">
+      -Xverify
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xzero/" title="-Xzero" class="md-nav__link">
+      -Xzero
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-6" type="checkbox" id="nav-11-6">
+    
+    <label class="md-nav__link" for="nav-11-6">
+      JVM -XX options
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-6">
+        JVM -XX options
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xx_jvm_commands/" title="Using -XX options" class="md-nav__link">
+      Using -XX options
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxactiveprocessorcount/" title="-XXActiveProcessorCount" class="md-nav__link">
+      -XXActiveProcessorCount
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxallowvmshutdown/" title="-XXallowvmshutdown" class="md-nav__link">
+      -XXallowvmshutdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxclassrelationshipverifier/" title="-XX:[+|-]ClassRelationshipVerifier" class="md-nav__link">
+      -XX:[+|-]ClassRelationshipVerifier
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxcodecachetotal/" title="-XX:codecachetotal" class="md-nav__link">
+      -XX:codecachetotal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxcompactstrings/" title="-XX:[+|-]CompactStrings" class="md-nav__link">
+      -XX:[+|-]CompactStrings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxdisableexplicitgc/" title="-XX:[+|-]DisableExplicitGC" class="md-nav__link">
+      -XX:[+|-]DisableExplicitGC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxdisclaimjitscratch/" title="-XX:[+|-]DisclaimJitScratch" class="md-nav__link">
+      -XX:[+|-]DisclaimJitScratch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxenablecpumonitor/" title="-XX:[+|-]EnableCPUMonitor" class="md-nav__link">
+      -XX:[+|-]EnableCPUMonitor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxhandlesigxfsz/" title="-XX:[+|-]handleSIGXFSZ" class="md-nav__link">
+      -XX:[+|-]handleSIGXFSZ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxheapdumponoutofmemory/" title="-XX:[+|-]HeapDumpOnOutOfMemory" class="md-nav__link">
+      -XX:[+|-]HeapDumpOnOutOfMemory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxheapdumppath/" title="-XX:HeapDumpPath" class="md-nav__link">
+      -XX:HeapDumpPath
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxheapmanagementmxbeancompatibility/" title="-XX:[+|-]HeapManagementMXBeanCompatibility" class="md-nav__link">
+      -XX:[+|-]HeapManagementMXBeanCompatibility
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxidletuningcompactonidle/" title="-XX:[+|-]IdleTuningCompactOnIdle" class="md-nav__link">
+      -XX:[+|-]IdleTuningCompactOnIdle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxidletuninggconidle/" title="-XX:[+|-]IdleTuningGcOnIdle" class="md-nav__link">
+      -XX:[+|-]IdleTuningGcOnIdle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxidletuningminfreeheaponidle/" title="-XX:IdleTuningMinFreeHeapOnIdle" class="md-nav__link">
+      -XX:IdleTuningMinFreeHeapOnIdle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxidletuningminidlewaittime/" title="-XX:IdleTuningMinIdleWaitTime" class="md-nav__link">
+      -XX:IdleTuningMinIdleWaitTime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxignoreunrecognizedvmoptions/" title="-XX:[+|-]IgnoreUnrecognizedVMOptions" class="md-nav__link">
+      -XX:[+|-]IgnoreUnrecognizedVMOptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxignoreunrecognizedxxcolonoptions/" title="-XX:[+|-]IgnoreUnrecognizedXXColonOptions" class="md-nav__link">
+      -XX:[+|-]IgnoreUnrecognizedXXColonOptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxinitialrampercentage/" title="-XX:InitialRAMPercentage" class="md-nav__link">
+      -XX:InitialRAMPercentage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxinitialheapsize/" title="-XX:InitialHeapSize" class="md-nav__link">
+      -XX:InitialHeapSize
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxinterleavememory/" title="-XX:[+|-]InterleaveMemory" class="md-nav__link">
+      -XX:[+|-]InterleaveMemory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxjitinlinewatches/" title="-XX:[+|-]JITInlineWatches" class="md-nav__link">
+      -XX:[+|-]JITInlineWatches
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxlazysymbolresolution/" title="-XX:[+|-]LazySymbolResolution" class="md-nav__link">
+      -XX:[+|-]LazySymbolResolution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxmaxdirectmemorysize/" title="-XX:MaxDirectMemorySize" class="md-nav__link">
+      -XX:MaxDirectMemorySize
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxinitialheapsize/" title="-XX:MaxHeapSize" class="md-nav__link">
+      -XX:MaxHeapSize
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxinitialrampercentage/" title="-XX:MaxRAMPercentage" class="md-nav__link">
+      -XX:MaxRAMPercentage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxonoutofmemoryerror/" title="-XX:OnOutOfMemoryError" class="md-nav__link">
+      -XX:OnOutOfMemoryError
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxnosuballoc32bitmem/" title="-XXnosuballoc32bitmem" class="md-nav__link">
+      -XXnosuballoc32bitmem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxpagealigndirectmemory/" title="-XX:[+|-]PageAlignDirectMemory" class="md-nav__link">
+      -XX:[+|-]PageAlignDirectMemory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxpositiveidentityhash/" title="-XX:[+|-]PositiveIdentityHash" class="md-nav__link">
+      -XX:[+|-]PositiveIdentityHash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxreadipinfoforras/" title="-XX:[+|-]ReadIPInfoForRAS" class="md-nav__link">
+      -XX:[+|-]ReadIPInfoForRAS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxreducecpumonitoroverhead/" title="-XX:[+|-]ReduceCPUMonitorOverhead" class="md-nav__link">
+      -XX:[+|-]ReduceCPUMonitorOverhead
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxruntimeinstrumentation/" title="-XX:[+|-]RuntimeInstrumentation" class="md-nav__link">
+      -XX:[+|-]RuntimeInstrumentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxsethwprefetch/" title="-XXsetHWPrefetch" class="md-nav__link">
+      -XXsetHWPrefetch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxshareanonymousclasses/" title="-XX:[+|-]ShareAnonymousClasses" class="md-nav__link">
+      -XX:[+|-]ShareAnonymousClasses
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxshareclassesenablebci/" title="-XX:ShareClassesDisableBCI" class="md-nav__link">
+      -XX:ShareClassesDisableBCI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxshareclassesenablebci/" title="-XX:ShareClassesEnableBCI" class="md-nav__link">
+      -XX:ShareClassesEnableBCI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxsharedcachehardlimit/" title="-XX:SharedCacheHardLimit" class="md-nav__link">
+      -XX:SharedCacheHardLimit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxshareunsafeclasses/" title="-XX:[+|-]ShareUnsafeClasses" class="md-nav__link">
+      -XX:[+|-]ShareUnsafeClasses
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxstacktraceinthrowable/" title="-XX:-StackTraceInThrowable" class="md-nav__link">
+      -XX:-StackTraceInThrowable
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxtransparenthugepage/" title="-XX:[+|-]TransparentHugePage" class="md-nav__link">
+      -XX:[+|-]TransparentHugePage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxusecompressedoops/" title="-XX:[+|-]UseCompressedOops" class="md-nav__link">
+      -XX:[+|-]UseCompressedOops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxusecontainersupport/" title="-XX:[+|-]UseContainerSupport" class="md-nav__link">
+      -XX:[+|-]UseContainerSupport
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxusegcstartuphints/" title="-XX:[+|-]UseGCStartupHints" class="md-nav__link">
+      -XX:[+|-]UseGCStartupHints
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxusenogc/" title="-XX:[+|-]UseNoGC" class="md-nav__link">
+      -XX:[+|-]UseNoGC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxverboseverification/" title="-XX:[+|-]VerboseVerification" class="md-nav__link">
+      -XX:[+|-]VerboseVerification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxvmlockclassloader/" title="-XX:[+|-]VMLockClassLoader" class="md-nav__link">
+      -XX:[+|-]VMLockClassLoader
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+       Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+         Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openj9_support/" title="Supported environments" class="md-nav__link">
+      Supported environments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openj9_defaults/" title="Default settings" class="md-nav__link">
+      Default settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openj9_directories/" title="Directory conventions" class="md-nav__link">
+      Directory conventions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../messages_intro/" title="OpenJ9 messages" class="md-nav__link">
+      OpenJ9 messages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../env_var/" title="Environment variables" class="md-nav__link">
+      Environment variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      API documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        API documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13-2" type="checkbox" id="nav-13-2">
+    
+    <label class="md-nav__link" for="nav-13-2">
+      Java 8 API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-13-2">
+        Java 8 API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-conditionhandling/" title="Condition exception handling" class="md-nav__link">
+      Condition exception handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-cuda/" title="CUDA4J" class="md-nav__link">
+      CUDA4J
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-daa/" title="Data access acceleration" class="md-nav__link">
+      Data access acceleration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-dtfj/" title="DTFJ" class="md-nav__link">
+      DTFJ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-gpu/" title="GPU" class="md-nav__link">
+      GPU
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-jvm/" title="JVM diagnostic utilities" class="md-nav__link">
+      JVM diagnostic utilities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-langmgmt/" title="Monitoring and management" class="md-nav__link">
+      Monitoring and management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-shrc/" title="Shared classes" class="md-nav__link">
+      Shared classes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../api-jdk11/" title="Java 11 API" class="md-nav__link">
+      Java 11 API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../legal/" title="Legal" class="md-nav__link">
+      Legal
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-changes" class="md-nav__link">
+    Features and changes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    Binaries and supported environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-xx-handlesigabrt-option-added" class="md-nav__link">
+    New -XX:[+|-]HandleSIGABRT option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-to-noclassdeffounderror-exception-message" class="md-nav__link">
+    Update to NoClassDefFoundError exception message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-release-information" class="md-nav__link">
+    Full release information
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+<!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
+                
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/version0.21.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+-->
+                
+                <!--
+* Copyright (c) 2017, 2020 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+-->
+
+<h1 id="whats-new-in-version-0210">What's new in version 0.21.0</h1>
+<p>The following new features and notable changes since v 0.20.0 are included in this release:</p>
+<ul>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#new--xx-handlesigabrt-option-added">New <code>-XX:[+|-]HandleSIGABRT</code> option added</a></li>
+<li><a href="#update-to-noclassdeffounderror-exception-message">Update to <code>NoClassDefFoundError</code> exception message</a></li>
+</ul>
+<h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>OpenJ9 release 0.21.0 supports OpenJDK 8, 11, and 14. Binaries are available from the AdoptOpenJDK community at the following links:</p>
+<ul>
+<li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk8&amp;jvmVariant=openj9">OpenJDK version 8</a></li>
+<li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk11&amp;jvmVariant=openj9">OpenJDK version 11</a></li>
+<li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk14&amp;jvmVariant=openj9">OpenJDK version 14</a></li>
+</ul>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="new-xx-handlesigabrt-option-added">New <code>-XX:[+|-]HandleSIGABRT</code> option added</h3>
+<p>Option <code>-XX:[+|-]HandleSIGABRT</code> affects the handling of the operating system signal <code>SIGABRT</code>. See <a href="../xxhandlesigabrt/"><code>-XX:[+|-]HandleSIGABRT</code></a> for more details about this option.</p>
+<h3 id="update-to-noclassdeffounderror-exception-message">Update to <code>NoClassDefFoundError</code> exception message</h3>
+<p>The class names printed in a <code>NoClassDefFoundError</code> exception message have been updated to match the same order as reported by Hotspot.</p>
+<p>For example, in the following exception message:</p>
+<pre><code>java.lang.NoClassDefFoundError: mypackage/Main (wrong name: Main)
+</code></pre>
+
+<p><code>mypackage/Main</code> was the class name encountered by the VM in the <code>.class</code> file, but "wrong name" <code>Main</code> was the provided class name. Prior to this update to the exception message, the encountered class name and the provided class name were swapped in the <code>NoClassDefFoundError</code> exception message.</p>
+<h2 id="full-release-information">Full release information</h2>
+<p>To see a complete list of changes between Eclipse OpenJ9 v 0.20.0 and v 0.21.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.21/0.21.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.21.md ==== -->
+                
+                  
+                
+              
+<!--
+              
+                
+
+
+              
+-->
+              <!-- This block was originally in the theme's 'footer.html' partial file. It has been moved here in part to resolve issues with the footer being too large. -->
+              
+                <!--
+* Copyright (c) 2017, 2018 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+-->
+              
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        <!--
+* Copyright (c) 2017, 2020 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+-->
+<cite></cite>
+<footer class="md-footer">
+
+  <div class="md-footer-meta md-typeset">
+    
+
+    
+      <!--
+* Copyright (c) 2017, 2020 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+-->
+
+  <div class="md-footer-social1">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/eclipse/openj9" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://openj9.slack.com" class="md-footer-social__link fa fa-slack"></a>
+    
+      <a href="https://twitter.com/openj9" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://stackoverflow.com/search?q=OpenJ9" class="md-footer-social__link fa fa-stack-overflow"></a>
+    
+  </div>
+
+    
+
+    <div class="md-footer-eclipse1">OpenJ9 is an Eclipse Incubator project.</div>
+
+    <div class="md-footer-links1">
+      <span class="no-wrap"><i class="fa fa-chevron-circle-right f_mini" aria-hidden="true"></i><a class="dark-link" href="http://www.eclipse.org">Eclipse Foundation website</a></span>
+      &nbsp; <span class="no-wrap"><i class="fa fa-chevron-circle-right f_mini" aria-hidden="true"></i><a class="dark-link" href="http://www.eclipse.org/legal/privacy.php">Privacy policy</a></span>
+      &nbsp; <span class="no-wrap"><i class="fa fa-chevron-circle-right f_mini" aria-hidden="true"></i><a class="dark-link" href="http://www.eclipse.org/legal/termsofuse.php">Website terms of use</a></span>
+      &nbsp; <span class="no-wrap"><i class="fa fa-chevron-circle-right f_mini" aria-hidden="true"></i><a class="dark-link" href="http://www.eclipse.org/legal/copyright.php">Copyright agent</a></span>
+      &nbsp; <span class="no-wrap"><i class="fa fa-chevron-circle-right f_mini" aria-hidden="true"></i><a class="dark-link" href="http://www.eclipse.org/legal">Legal</a></span>
+    </div>
+
+    <div class="md-footer-power1">
+      powered by
+      <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+      and
+      <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+      Material for MkDocs</a><br/><br/>
+    </div>
+
+  </div>
+
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      
+        
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../javascripts/oj9.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
