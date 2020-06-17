@@ -28,9 +28,10 @@
 The following new features and notable changes since v 0.20.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [New `-XX:[+|-]HandleSIGABRT` option added](#new--xx-handlesigabrt-option-added)
+- [New `-XX:[+|-]HandleSIGABRT` option added](#new-xx-handlesigabrt-option-added)
 - [Update to `NoClassDefFoundError` exception message](#update-to-noclassdeffounderror-exception-message)
 - [OSX shared libraries version updated](#osx-shared-libraries-version-updated)
+- [New `-XX:[+|-]PrintFlagsFinal` option added](#new-xx-printflagsfinal-option-added)
 
 ## Features and changes
 
@@ -61,6 +62,10 @@ java.lang.NoClassDefFoundError: mypackage/Main (wrong name: Main)
 ### OSX shared libraries version updated
 
 The version information for shared libraries on OSX has been updated from 0.0.0 to 1.0.0. If an application has linked against a shared library from a previous OpenJ9 release, it needs to be re-linked against the new release. Failure to re-link causes an error `Incompatible library version`, `requires version 0.0.0`.
+
+### New `-XX:[+|-]PrintFlagsFinal` option added
+
+This release provides an initial implementation of the `-XX:[+|-]PrintFlagsFinal` option. It is currently incomplete and outputs only a subset of parameters. Over time, we expect more options to be added to the output. See [`-XX:[+|-]PrintFlagsFinal`](xxprintflagsfinal.md) for more details about this option.
 
 ## Full release information
 
