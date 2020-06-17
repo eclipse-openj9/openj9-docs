@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2019 IBM Corp. and others
+# Copyright (c) 2017, 2020 IBM Corp. and others
 #
 # This program and the accompanying materials are made
 # available under the terms of the Eclipse Public License 2.0
@@ -37,7 +37,7 @@ site_description: Eclipse OpenJ9 documentation
 
 # copyright: '© 2017, 2018 IBM Corp. and others'
 
-# google_analytics: ['UA-105616558-1', 'mkdocs.org']
+google_analytics: ['UA-105616558-3', 'mkdocs.org']
 
 # Build directories
 
@@ -55,7 +55,6 @@ theme:
 #    static_templates:
 #        - sitemap.html
 #    include_sidebar: false
- #  extra_templates: [api.html]
 
 docs_dir: 'docs'
 
@@ -67,8 +66,7 @@ extra_css:
 extra_javascript:
   - javascripts/oj9.js
 
-#extra_templates:
-#  - [api.html]
+extra_templates:
 
 extra:
     version: 1.0
@@ -96,21 +94,26 @@ markdown_extensions:
 
 # Documentation layout
 
-# nav:   # "pages:" --> "nav:" for MkDocs 1.0
-pages:
+# "pages:" --> "nav:" for MkDocs 1.0
+nav:
 
-    - "About"                                                                    : index.md
+    - "About the docs"                                                           : index.md
     - "AdoptOpenJDK builds"                                                      : adoptopenjdk.md
     - "Getting started"                                                          : introduction.md
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 
     - "Release notes" :
-        - "Version 0.17.0"                                                       : version0.17.md
-        - "Version 0.16.0"                                                       : version0.16.md    
-        - "Version 0.15.1"                                                       : version0.15.md
-        - "Version 0.14.0"                                                       : version0.14.md
+        - "Overview"                                                             : openj9_releases.md
+        - "Version 0.21.0"                                                       : version0.21.md
+        - "Version 0.20.0"                                                       : version0.20.md
+        - "Version 0.19.0"                                                       : version0.19.md
+        - "Version 0.18.1"                                                       : version0.18.md
         - "Earlier releases" :
-            - "Version 0.13.0"                                                   : version0.13.md        
+            - "Version 0.17.0"                                                   : version0.17.md
+            - "Version 0.16.0"                                                   : version0.16.md
+            - "Version 0.15.1"                                                   : version0.15.md
+            - "Version 0.14.0"                                                   : version0.14.md
+            - "Version 0.13.0"                                                   : version0.13.md
             - "Version 0.12.0"                                                   : version0.12.md
             - "Version 0.11.0"                                                   : version0.11.md
             - "Version 0.10.0"                                                   : version0.10.md
@@ -120,6 +123,7 @@ pages:
     - "Garbage Collection"                                                       : gc.md
 
     - "JIT Compiler"                                                             : jit.md
+    - "JITServer (tech. preview)"                                                : jitserver.md
 
     - "AOT Compiler"                                                             : aot.md
 
@@ -157,12 +161,13 @@ pages:
             - "Java memory map (jmap) tool"                                      : tool_jmap.md
             - "Java process status (jps)"                                        : tool_jps.md
             - "Java stack (jstack) tool"                                         : tool_jstack.md
+            - "Java statistics monitoring (jstat) tool"                          : tool_jstat.md
             - "Switching to OpenJ9"                                              : tool_migration.md
 
         - "Interfaces" :
             - "JVMTI"                                                            : interface_jvmti.md
-#            - "MXBeans"                                                          : interface_mxbeans.md
             - "DTFJ"                                                             : interface_dtfj.md
+            - "Language Management"                                              : interface_lang_management.md
 
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md
@@ -177,6 +182,9 @@ pages:
             - "-Dcom.ibm.enableLegacyDumpSecurity"                               : dcomibmenablelegacydumpsecurity.md
             - "-Dcom.ibm.enableLegacyLogSecurity"                                : dcomibmenablelegacylogsecurity.md
             - "-Dcom.ibm.enableLegacyTraceSecurity"                              : dcomibmenablelegacytracesecurity.md
+            - "-Dcom.ibm.gpu.disable"                                            : dcomibmgpudisable.md
+            - "-Dcom.ibm.gpu.enable"                                             : dcomibmgpuenable.md
+            - "-Dcom.ibm.gpu.verbose"                                            : dcomibmgpuverbose.md
             - "-Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns"   : dcomibmlangmanagementosmxbeaniscputime100ns.md
             - "-Dcom.ibm.lang.management.verbose"                                : dcomibmlangmanagementverbose.md
             - "-Dcom.ibm.tools.attach.directory"                                 : dcomibmtoolsattachdirectory.md
@@ -186,6 +194,8 @@ pages:
             - "-Dcom.ibm.tools.attach.timeout"                                   : dcomibmtoolsattachtimeout.md
             - "-Dfile.encoding"                                                  : dfileencoding.md
             - "-Djava.compiler"                                                  : djavacompiler.md
+            - "-Djava.lang.string.substring.nocopy"                              : djavalangstringsubstringnocopy.md
+            - "-Djava.lang.stringBuffer.growAggressively"                        : djavalangstringbuffergrowaggressively.md
             - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
             - "-Djdk.nativeChaCha20"                                             : djdknativechacha20.md
             - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
@@ -230,7 +240,6 @@ pages:
             - "-Xgcpolicy"                                                       : xgcpolicy.md
             - "-Xgcthreads"                                                      : xgcthreads.md
             - "-Xgcworkpackets"                                                  : xgcworkpackets.md
-            - "-Xifa"                                                            : xifa.md
             - "-Xint"                                                            : xint.md
             - "-Xiss"                                                            : xss.md                             # redirect
             - "-Xjit"                                                            : xjit.md
@@ -310,12 +319,16 @@ pages:
             - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
             - "-XX:[+|-]ClassRelationshipVerifier"                               : xxclassrelationshipverifier.md
+            - "-XX:ConcGCThreads"                                                : xxconcgcthreads.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
             - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
+            - "-XX:[+|-]ExitOnOutOfMemoryError"                                  : xxexitonoutofmemoryerror.md
+            - "-XX:[+|-]GlobalLockReservation"                                   : xxgloballockreservation.md
             - "-XX:[+|-]handleSIGXFSZ"                                           : xxhandlesigxfsz.md
+            - "-XX:[+|-]handleSIGABRT"                                           : xxhandlesigabrt.md
             - "-XX:[+|-]HeapDumpOnOutOfMemory"                                   : xxheapdumponoutofmemory.md
             - "-XX:HeapDumpPath"                                                 : xxheapdumppath.md
             - "-XX:[+|-]HeapManagementMXBeanCompatibility"                       : xxheapmanagementmxbeancompatibility.md
@@ -334,9 +347,13 @@ pages:
             - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
             - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
             - "-XX:OnOutOfMemoryError"                                           : xxonoutofmemoryerror.md
+            - "-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode"                   : xxoriginaljdk8heapsizecompatibilitymode.md
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
+            - "-XX:ParallelCMSThreads"                                           : xxparallelcmsthreads.md
+            - "-XX:ParallelGCThreads"                                            : xxparallelgcthreads.md
             - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md
+            - "-XX:[+|-]PrintCodeCache"                                          : xxprintcodecache.md
             - "-XX:[+|-]ReadIPInfoForRAS"                                        : xxreadipinfoforras.md
             - "-XX:[+|-]ReduceCPUMonitorOverhead"                                : xxreducecpumonitoroverhead.md
             - "-XX:[+|-]RuntimeInstrumentation"                                  : xxruntimeinstrumentation.md
@@ -358,6 +375,7 @@ pages:
     - " Reference" :
         - "Supported environments"                                                : openj9_support.md
         - "Default settings"                                                      : openj9_defaults.md
+        - "Signal handling"                                                       : openj9_signals.md
         - "Directory conventions"                                                 : openj9_directories.md
         - "OpenJ9 messages"                                                       : messages_intro.md
         - "Environment variables"                                                 : env_var.md
