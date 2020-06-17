@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/dcomibmgpuenable/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxprintflagsfinal/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-Dcom.ibm.gpu.enable -  </title>
+        <title>-XX:[+|-]PrintFlagsFinal -  </title>
       
     
     
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-dcomibmgpuenable" tabindex="1" class="md-skip">
+      <a href="../#-xx91-93printflagsfinal" tabindex="1" class="md-skip">
         
       </a>
     
@@ -1003,12 +1003,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4">
     
     <label class="md-nav__link" for="nav-12-4">
       System property options
@@ -1096,63 +1094,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -Dcom.ibm.gpu.enable
-      </label>
-    
-    <a href="./" title="-Dcom.ibm.gpu.enable" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../dcomibmgpuenable/" title="-Dcom.ibm.gpu.enable" class="md-nav__link">
       -Dcom.ibm.gpu.enable
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    Explanation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2713,10 +2659,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-6" type="checkbox" id="nav-12-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-6" type="checkbox" id="nav-12-6" checked>
     
     <label class="md-nav__link" for="nav-12-6">
       JVM -XX options
@@ -3200,11 +3148,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../xxprintflagsfinal/" title="-XX:[+|-]PrintFlagsFinal" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        -XX:[+|-]PrintFlagsFinal
+      </label>
+    
+    <a href="./" title="-XX:[+|-]PrintFlagsFinal" class="md-nav__link md-nav__link--active">
       -XX:[+|-]PrintFlagsFinal
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3558,15 +3551,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    Explanation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
+  <a href="#example" class="md-nav__link">
+    Example
   </a>
   
 </li>
@@ -3588,7 +3574,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/dcomibmgpuenable.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9-docs/edit/master/docs/xxprintflagsfinal.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3616,40 +3602,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-dcomibmgpuenable">-Dcom.ibm.gpu.enable</h1>
-<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> This system property is supported only on Java&trade; 11 and later</p>
-<p>Use this system property to control the type of processing that can be offloaded to a graphics processing unit (GPU) when processing requirements meet a specific threshold. This feature can improve the performance of certain Java functions.</p>
+<h1 id="-xx91-93printflagsfinal">-XX:[+|-]PrintFlagsFinal</h1>
+<p>When enabled, this option outputs the values of a subset of configuration parameters in a format compatible with that produced by Hotspot. The parameters currently output are those expected by various software projects and packages.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -Dcom.ibm.gpu.enable=[all|sort]
+<pre><code>    -XX:[+|-]PrintFlagsFinal
 </code></pre>
 <table>
 <thead>
 <tr>
 <th>Setting</th>
 <th>Effect</th>
+<th align="center">Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>all</td>
-<td>Turns on GPU processing for all possible Java functions.</td>
+<td><code>-XX:+PrintFlagsFinal</code></td>
+<td>Enable</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td>sort</td>
-<td>Turns on GPU processing only for the Java <code>sort()</code> function.</td>
+<td><code>-XX:-PrintFlagsFinal</code></td>
+<td>Disable</td>
+<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
 </tr>
 </tbody>
 </table>
-<p>By default, this property is not set.</p>
-<h2 id="explanation">Explanation</h2>
-<p>Because establishing and completing communication with a GPU incurs an additional overhead, not all processing requirements benefit from being offloaded to the GPU. When set, this property enables GPU processing for any array that meets a minimum size.</p>
-<h2 id="see-also">See also</h2>
-<ul>
-<li><a href="../introduction/#exploiting-gpus">Exploiting GPUs</a></li>
-<li><a href="../dcomibmgpudisable/">-Dcom.ibm.gpu.disable</a></li>
-<li><a href="../dcomibmgpuverbose/">-Dcom.ibm.gpu.verbose</a></li>
-</ul>
-<!-- ==== END OF TOPIC ==== dcomibmgpuenable.md ==== -->
+<h2 id="example">Example</h2>
+<p>Here is an example of typical output from <code>-XX:+PrintFlagsFinal</code>:</p>
+<pre><code>[Global flags]
+   size_t MaxHeapSize              = 4294967296          {product} {ergonomic}
+ uint64_t MaxDirectMemorySize      = 3758096384          {product} {ergonomic}
+</code></pre>
+
+<!-- ==== END OF TOPIC ==== xxprintflagsfinal.md ==== -->
                 
                   
                 
@@ -3692,7 +3678,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Ignore all this to remove previous/next links in footer, but leave nav block else lose highlighting in LH navigation
                     <img alt="" src="../cr/rule.png"> [!-- Separator --]
                     
-                      <a href="dcomibmgpudisable/" title="-Dcom.ibm.gpu.disable" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                      <a href="xxprintcodecache/" title="-XX:[+|-]PrintCodeCache" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
                         <div class="md-flex__cell md-flex__cell--shrink">
                           <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
                         </div>
@@ -3701,19 +3687,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="md-footer-nav__direction">
                               Previous
                             </span>
-                            -Dcom.ibm.gpu.disable
+                            -XX:[+|-]PrintCodeCache
                           </span>
                         </div>
                       </a>
                     
                     
-                      <a href="dcomibmgpuverbose/" title="-Dcom.ibm.gpu.verbose" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                      <a href="xxreadipinfoforras/" title="-XX:[+|-]ReadIPInfoForRAS" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
                         <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                           <span class="md-flex__ellipsis">
                             <span class="md-footer-nav__direction">
                               Next
                             </span>
-                            -Dcom.ibm.gpu.verbose
+                            -XX:[+|-]ReadIPInfoForRAS
                           </span>
                         </div>
                         <div class="md-flex__cell md-flex__cell--shrink">
