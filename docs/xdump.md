@@ -303,7 +303,7 @@ The following table shows the events that are available as dump agent triggers:
 | **slow**        | A thread takes longer than 50ms to respond to an internal VM request.       | Time taken; for example, filter=#300ms will trigger when a thread takes longer than 300ms to respond to an internal VM request.|
 | **allocation**  | A Java object is allocated with a size matching the given filter specification.| Object size; a filter must be supplied. For example, filter=#5m will trigger on objects larger than 5 Mb. Ranges are also supported; for example, filter=#256k..512k will trigger on objects between 256 Kb and 512 Kb in size.|
 | **traceassert** | An internal error occurs in the VM.                                         | Not applicable                                                 |
-| **corruptcache**| The VM finds that the shared class cache is corrupt.                        | Not applicable                                                 |
+| **corruptcache**| The VM finds that the shared classes cache is corrupt.                      | Not applicable                                                 |
 | **excessivegc** | An excessive amount of time is being spent in the garbage collector.        | Not applicable                                                 |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The **gpf**, **traceassert**, and **abort** events cannot trigger a heap dump, prepare the heap (request=prepwalk), or compact the heap (request=compact).

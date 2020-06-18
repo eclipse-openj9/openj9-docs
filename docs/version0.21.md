@@ -29,9 +29,9 @@ The following new features and notable changes since v 0.20.0 are included in th
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:[+|-]HandleSIGABRT` option added](#new-xx-handlesigabrt-option-added)
-- [Update to `NoClassDefFoundError` exception message](#update-to-noclassdeffounderror-exception-message)
-- [OSX shared libraries version updated](#osx-shared-libraries-version-updated)
 - [New `-XX:[+|-]PrintFlagsFinal` option added](#new-xx-printflagsfinal-option-added)
+- [Update to `NoClassDefFoundError` exception message](#update-to-noclassdeffounderror-exception-message)
+- [macOS&reg; shared libraries version updated](#macos-shared-libraries-version-updated)
 
 ## Features and changes
 
@@ -45,27 +45,28 @@ OpenJ9 release 0.21.0 supports OpenJDK 8, 11, and 14. Binaries are available fro
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+
 ### New `-XX:[+|-]HandleSIGABRT` option added
 
 Option `-XX:[+|-]HandleSIGABRT` affects the handling of the operating system signal `SIGABRT`. See [`-XX:[+|-]HandleSIGABRT`](xxhandlesigabrt.md) for more details about this option.
 
+### New `-XX:[+|-]PrintFlagsFinal` option added
+
+This release provides an initial implementation of the `-XX:[+|-]PrintFlagsFinal` option. It is currently incomplete and outputs only a subset of parameters. Over time, we expect more options to be added to the output. See [`-XX:[+|-]PrintFlagsFinal`](xxprintflagsfinal.md) for more details about this option.
+
 ### Update to `NoClassDefFoundError` exception message
 
-The class names printed in a `NoClassDefFoundError` exception message have been updated to match the same order as reported by Hotspot.
+The order in which class names are printed in a `NoClassDefFoundError` exception message now matches the output reported by Hotspot.
 
 For example, in the following exception message:
 ```
 java.lang.NoClassDefFoundError: mypackage/Main (wrong name: Main)
 ```
-`mypackage/Main` was the class name encountered by the VM in the `.class` file, but "wrong name" `Main` was the provided class name. Prior to this update to the exception message, the encountered class name and the provided class name were swapped in the `NoClassDefFoundError` exception message.
+`mypackage/Main` is the class name encountered by the VM in the `.class` file, but "wrong name" `Main` was the provided class name. Prior to this update to the exception message, the encountered class name and the provided class name were swapped in the `NoClassDefFoundError` exception message.
 
-### OSX shared libraries version updated
+### macOS shared libraries version updated
 
-The version information for shared libraries on OSX has been updated from 0.0.0 to 1.0.0. If an application has linked against a shared library from a previous OpenJ9 release, it needs to be re-linked against the new release. Failure to re-link causes an error `Incompatible library version`, `requires version 0.0.0`.
-
-### New `-XX:[+|-]PrintFlagsFinal` option added
-
-This release provides an initial implementation of the `-XX:[+|-]PrintFlagsFinal` option. It is currently incomplete and outputs only a subset of parameters. Over time, we expect more options to be added to the output. See [`-XX:[+|-]PrintFlagsFinal`](xxprintflagsfinal.md) for more details about this option.
+The version information for shared libraries on macOS has been updated from 0.0.0 to 1.0.0. If an application has linked against a shared library from a previous OpenJ9 release, it needs to be re-linked against the new release. Failure to re-link causes an error `Incompatible library version`, `requires version 0.0.0`.
 
 ## Full release information
 

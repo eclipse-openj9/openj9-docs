@@ -43,6 +43,6 @@ When enabled, the VM handles the signal `SIGABRT` and generates the various dump
 
 When the option is disabled, the VM does not handle the signal `SIGABRT`. Generally, this signal is handled by the default operating system handler.
 
-`-XX:+HandleSIGABRT` is not supported with [`-Xrs`](xrs.md). An error is thrown if both options are enabled together. To resolve this error, one of the options should be disabled.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Do not use the `-XX:+HandleSIGABRT` and [`-Xrs`](xrs.md) options together. An error is thrown if both options are enabled. To resolve this error, one of the options should be disabled.
 
-<!-- ==== END OF TOPIC ==== xxhandlesigxfsz.md ==== -->
+<!-- ==== END OF TOPIC ==== xxhandlesigabrt.md ==== -->

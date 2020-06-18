@@ -24,7 +24,7 @@
 
 # -Xscmx
 
-For a new shared class cache, specifies either:
+For a new shared classes cache, specifies either:
 
 - the actual size of the cache, if the `-XX:SharedCacheHardLimit` option is not present
 - the soft maximum size of the cache, if used with the `-XX:SharedCacheHardLimit` option
@@ -46,7 +46,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 ### Setting a soft maximum size
 
-If you specify the `-Xscmx` option with the [-XX:SharedCacheHardLimit](xxsharedcachehardlimit.md) option, the `-Xscmx` option sets the *soft maximum size* of a new shared class cache, and the `-XX:SharedCacheHardLimit` option sets the actual maximum size. The value of the `-Xscmx` option must therefore not exceed the value of `-XX:SharedCacheHardLimit`.
+If you specify the `-Xscmx` option with the [-XX:SharedCacheHardLimit](xxsharedcachehardlimit.md) option, the `-Xscmx` option sets the *soft maximum size* of a new shared classes cache, and the `-XX:SharedCacheHardLimit` option sets the actual maximum size. The value of the `-Xscmx` option must therefore not exceed the value of `-XX:SharedCacheHardLimit`.
 
 When the soft maximum limit is reached, no more data can be added into the shared cache, unless there is reserved AOT or JIT data space. If such reserved space exists, AOT or JIT data can still be added into the reserved space. The reserved AOT and JIT data spaces are counted as used space within the soft maximum size, so the soft maximum size should not be less than the minimum reserved space for AOT and JIT data if you specify the [-Xscminaot](xscminaot.md) or [-Xscminjitdata](xscminjitdata.md) options.
 

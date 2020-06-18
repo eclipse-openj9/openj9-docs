@@ -25,7 +25,7 @@
 # -XX:SharedCacheHardLimit
 
 
-Specifies the size for a new shared class cache. Use this option together with the `-Xscmx` option to set actual and soft maximum size limits respectively.
+Specifies the size for a new shared classes cache. Use this option together with the `-Xscmx` option to set actual and soft maximum size limits respectively.
 
 ## Syntax
 
@@ -37,9 +37,9 @@ Specifies the size for a new shared class cache. Use this option together with t
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
-When you use this option with the `-Xscmx` option, the `-Xscmx` option sets the soft maximum size, and the `-XX:SharedCacheHardLimit` option sets the actual size, of a new shared class cache. For more information, see [-Xscmx](xscmx.md#xscmx "For a new shared class cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option). In earlier releases, the default cache size is platform-dependent.").
+When you use this option with the `-Xscmx` option, the `-Xscmx` option sets the soft maximum size, and the `-XX:SharedCacheHardLimit` option sets the actual size, of a new shared classes cache. For more information, see [-Xscmx](xscmx.md#xscmx "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option). In earlier releases, the default cache size is platform-dependent.").
 
-If you use this option without the `-Xscmx` option, the behavior is the same as using the `-Xscmx` option by itself; both options set the actual size of the shared class cache.
+If you use this option without the `-Xscmx` option, the behavior is the same as using the `-Xscmx` option by itself; both options set the actual size of the shared classes cache.
 
 For more information about cache sizes, see [Cache size limits](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_cache_size.html).
 
@@ -53,7 +53,7 @@ The following settings, when used together, set the soft maximum size of the sha
 
 ## See also
 
-- [-Xscmx](xscmx.md#xscmx "For a new shared class cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option). In earlier releases, the default cache size is platform-dependent.")
+- [-Xscmx](xscmx.md#xscmx "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option). In earlier releases, the default cache size is platform-dependent.")
 
 
 <!-- ==== END OF TOPIC ==== xxsharedcachehardlimit.md ==== -->

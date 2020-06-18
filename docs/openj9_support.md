@@ -59,7 +59,7 @@ columns will be removed over time.
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
 - (\*1): These OpenJ9 releases are expected, in line with our support statement.
-- (\*2): These OpenJ9 releases are the feature releases that only support the new OpenJDK release.
+- (\*2): These OpenJ9 releases are the feature releases that support only the new OpenJDK release.
 
 For any issues or limitations of an Eclipse OpenJ9 release, read the [release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/).
 
