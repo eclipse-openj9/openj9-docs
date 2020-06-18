@@ -3811,7 +3811,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xscmx">-Xscmx</h1>
-<p>For a new shared class cache, specifies either:</p>
+<p>For a new shared classes cache, specifies either:</p>
 <ul>
 <li>the actual size of the cache, if the <code>-XX:SharedCacheHardLimit</code> option is not present</li>
 <li>the soft maximum size of the cache, if used with the <code>-XX:SharedCacheHardLimit</code> option
@@ -3826,7 +3826,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>See <a href="../x_jvm_commands/">Using -X command-line options</a> for more information about the <code>&lt;size&gt;</code> parameter.</p>
 <h2 id="explanation">Explanation</h2>
 <h3 id="setting-a-soft-maximum-size">Setting a soft maximum size</h3>
-<p>If you specify the <code>-Xscmx</code> option with the <a href="../xxsharedcachehardlimit/">-XX:SharedCacheHardLimit</a> option, the <code>-Xscmx</code> option sets the <em>soft maximum size</em> of a new shared class cache, and the <code>-XX:SharedCacheHardLimit</code> option sets the actual maximum size. The value of the <code>-Xscmx</code> option must therefore not exceed the value of <code>-XX:SharedCacheHardLimit</code>.</p>
+<p>If you specify the <code>-Xscmx</code> option with the <a href="../xxsharedcachehardlimit/">-XX:SharedCacheHardLimit</a> option, the <code>-Xscmx</code> option sets the <em>soft maximum size</em> of a new shared classes cache, and the <code>-XX:SharedCacheHardLimit</code> option sets the actual maximum size. The value of the <code>-Xscmx</code> option must therefore not exceed the value of <code>-XX:SharedCacheHardLimit</code>.</p>
 <p>When the soft maximum limit is reached, no more data can be added into the shared cache, unless there is reserved AOT or JIT data space. If such reserved space exists, AOT or JIT data can still be added into the reserved space. The reserved AOT and JIT data spaces are counted as used space within the soft maximum size, so the soft maximum size should not be less than the minimum reserved space for AOT and JIT data if you specify the <a href="../xscminaot/">-Xscminaot</a> or <a href="../xscminjitdata/">-Xscminjitdata</a> options.</p>
 <p>You can change the soft maximum size by using the <code>-Xshareclasses:adjustsoftmx=&lt;size&gt;</code> option or the <code>MemoryMXBean.setSharedClassCacheSoftmxBytes()</code> method in the <code>com.ibm.lang.management</code> API. By using this API, Java&trade; applications can dynamically monitor and adjust the cache soft maximum size as required. This function can be useful in virtualized or cloud environments, for example, where the shared cache size might change dynamically to meet business needs.</p>
 <p>For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the <code>-Xscmx</code> option, to limit the data stored in the cache:</p>

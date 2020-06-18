@@ -3799,8 +3799,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 id="explanation">Explanation</h2>
 <p>When enabled, the VM handles the signal <code>SIGABRT</code> and generates the various dump files. </p>
 <p>When the option is disabled, the VM does not handle the signal <code>SIGABRT</code>. Generally, this signal is handled by the default operating system handler.</p>
-<p><code>-XX:+HandleSIGABRT</code> is not supported with <a href="../xrs/"><code>-Xrs</code></a>. An error is thrown if both options are enabled together. To resolve this error, one of the options should be disabled.</p>
-<!-- ==== END OF TOPIC ==== xxhandlesigxfsz.md ==== -->
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Do not use the <code>-XX:+HandleSIGABRT</code> and <a href="../xrs/"><code>-Xrs</code></a> options together. An error is thrown if both options are enabled. To resolve this error, one of the options should be disabled.</p>
+<!-- ==== END OF TOPIC ==== xxhandlesigabrt.md ==== -->
                 
                   
                 
