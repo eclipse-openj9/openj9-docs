@@ -62,7 +62,7 @@ OpenJ9 extensions to the JVMTI allow a JVMTI agent to query or automatically tri
 |Subscribe to and unsubscribe from VM tracepoints                                 |[`RegisterTracePointSubscriber`](#registertracepointsubscriber), [`DeregisterTracePointSubscriber`](#deregistertracepointsubscriber)|
 |Query runtime environment native memory categories                               |[`GetMemoryCategories`](#getmemorycategories)|
 |Query and set VM log options                                                     |[`QueryVmLogOptions`](#queryvmlogoptions), [`SetVmLogOptions`](#setvmlogoptions)|
-|Search for and remove a shared class cache                                       |[`IterateSharedCaches`](#iteratesharedcaches), [`DestroySharedCache`](#destroysharedcache)|
+|Search for and remove a shared classes cache                                     |[`IterateSharedCaches`](#iteratesharedcaches), [`DestroySharedCache`](#destroysharedcache)|
 |Subscribe to and unsubscribe from verbose garbage collection (GC) data logging   |[`RegisterVerboseGCSubscriber`](#registerverbosegcsubscriber), [`DeregisterVerboseGCSubscriber`](#deregisterverbosegcsubscriber)|
 
 The definitions that you need when you write a JVMTI agent are provided in the header files `jvmti.h` and `ibmjvmti.h`, in the  `include` directory.
@@ -654,7 +654,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_SET_VM_LOG_OPTIONS`
 
 ### `IterateSharedCaches`
 
-You can search for shared class caches that exist in a specified cache directory by using the `IterateSharedCaches()` API:
+You can search for shared classes caches that exist in a specified cache directory by using the `IterateSharedCaches()` API:
 
     jvmtiError IterateSharedCaches(jvmtiEnv* env, jint version, const char *cacheDir, jint flags, jboolean useCommandLineValues, jvmtiIterateSharedCachesCallback callback, void *user_data);
 
@@ -672,7 +672,7 @@ Information about the caches is returned in a structure that is populated by a u
     - `COM_IBM_ITERATE_SHARED_CACHES_VERSION_3`
     - `COM_IBM_ITERATE_SHARED_CACHES_VERSION_4`
     - `COM_IBM_ITERATE_SHARED_CACHES_VERSION_5`
-- `cacheDir`: When the value of `useCommandLineValues` is `false`, specify the absolute path of the directory for the shared class cache. If the value is `null`, the platform-dependent default is used.
+- `cacheDir`: When the value of `useCommandLineValues` is `false`, specify the absolute path of the directory for the shared classes cache. If the value is `null`, the platform-dependent default is used.
 - `flags`: Reserved for future use. The only value allowed is `COM_IBM_ITERATE_SHARED_CACHES_NO_FLAGS`.
 - `useCommandLineValues`: Set this value to `true` when you want to specify the cache directory on the command line. Set this value to `false` when you want to use the `cacheDir` parameter.
 - `callback`: A function pointer to a user provided callback routine `jvmtiIterateSharedCachesCallback`.
@@ -731,8 +731,8 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_ITERATE_SHARED_CACHES`
                                // information on whether it is a 64-bit compressedRefs cache when
                                // COM_IBM_ITERATE_SHARED_CACHES_VERSION_3 or later is specified.
         jboolean isCorrupt;    // if the cache is corrupted
-        jlong cacheSize;       // the total usable shared class cache size, or -1 when isCompatible is false
-        jlong freeBytes;       // the number of free bytes in the shared class cache, or -1 when isCompatible is false
+        jlong cacheSize;       // the total usable shared classes cache size, or -1 when isCompatible is false
+        jlong freeBytes;       // the number of free bytes in the shared classes cache, or -1 when isCompatible is false
         jlong lastDetach;      // the last detach time specified in milliseconds since 00:00:00 on 1 January 1970 UTC,
                                // or -1 when the last detach time is not available
         jint cacheType;        // the type of the cache
@@ -773,11 +773,11 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_ITERATE_SHARED_CACHES`
 
 ### `DestroySharedCache`
 
-You can remove a shared class cache by using the `DestroySharedCache()` API:
+You can remove a shared classes cache by using the `DestroySharedCache()` API:
 
     jvmtiError DestroySharedCache(jvmtiEnv *env, const char *cacheDir, const char *name, jint persistence, jboolean useCommandLineValues, jint *internalErrorCode);
 
-This extension removes a named shared class cache of a given persistence type, in a given directory. You can specify the cache name, persistence type, and directory in one of these ways:
+This extension removes a named shared classes cache of a given persistence type, in a given directory. You can specify the cache name, persistence type, and directory in one of these ways:
 
 - Set `useCommandLineValues` to `true` and specify the values on the command line. If a value is not available, the default values for the platform are used.
 
@@ -786,13 +786,13 @@ This extension removes a named shared class cache of a given persistence type, i
 **Parameters**
 
 - `env`: A pointer to the JVMTI environment.
-- `cacheDir`: When the value of `useCommandLineValues` is `false`, specify the absolute path of the directory for the shared class cache. If the value is `null`, the platform-dependent default is used.
+- `cacheDir`: When the value of `useCommandLineValues` is `false`, specify the absolute path of the directory for the shared classes cache. If the value is `null`, the platform-dependent default is used.
 - `cacheName`: When the value of `useCommandLineValues` is `false`, specify the name of the cache to be removed. If the value is `null`, the platform-dependent default is used.
 - `persistence`: When the value of `useCommandLineValues` is false, specify the type of cache to remove. This parameter must have one of the following values:  
     `PERSISTENCE_DEFAULT` (The default value for the platform).  
     `PERSISTENT`  
     `NONPERSISTENT`  
-- `useCommandLineValues`: Set this value to `true` when you want to specify the shared class cache name, persistence type, and directory on the command line. Set this value to `false` when you want to use the `cacheDir`, `persistence`, and `cacheName` parameters instead.
+- `useCommandLineValues`: Set this value to `true` when you want to specify the shared classes cache name, persistence type, and directory on the command line. Set this value to `false` when you want to use the `cacheDir`, `persistence`, and `cacheName` parameters instead.
 - `internalErrorCode`: If not `null`, this value is set to one of the following constants when `JVMTI_ERROR_INTERNAL` is returned:  
     - `COM_IBM_DESTROYED_ALL_CACHE`: Set when `JVMTI_ERROR_NONE is` returned.
     - `COM_IBM_DESTROYED_NONE`: Set when the function fails to remove any caches.  
