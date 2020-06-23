@@ -28,6 +28,7 @@
 The following new features and notable changes since v 0.21.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [New `-XX:[+|-]PortableSharedCache` option added](#new-xx-portablesharedcache-option-added)
 
 
 ## Features and changes
@@ -44,6 +45,9 @@ The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK c
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+### New `-XX:[+|-]PortableSharedCache` option added
+
+This option enables AOT compiled code to be generated based on a chosen set of processor features that maximizes its portability across machines. It is currently supported only on x86. The feature is turned on by default in Docker containers and can be disabled with `-XX:-PortableSharedCache`. For more information, see [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md).
 
 ## Full release information
 
