@@ -44,6 +44,8 @@ For normal operation, certain environment variables must be set at the operating
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On macOS&reg; systems, you must set the DYLD_LIBRARY_PATH environment variable to indicate where to find shared libraries. In addition, to ensure there are sufficient resources for your application, you might need to increase system limits by using `launchctl`, `ulimit`, or `kern.<VARIABLES>`. For further instructions, refer to the documentation for your macOS release.
 
+<i class="fa fa-bell" aria-hidden="true"></i> **Important:** AIX builds for JDK 14 or later require the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018).
+
 ## Performance tuning
 
 OpenJ9 is configured to start with a set of default options that provide the optimal runtime environment for Java applications with typical workloads. However, if your application is atypical, you can improve performance by tuning the OpenJ9 VM. You can also improve performance by enabling hardware features or using specific APIs in your application code.
