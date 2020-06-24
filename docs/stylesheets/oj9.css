@@ -519,3 +519,7 @@ img {
     font-size: 0.8rem;
   }
 }
+
+.footer a:hover {
+  color: #5DA7A3;
+}
