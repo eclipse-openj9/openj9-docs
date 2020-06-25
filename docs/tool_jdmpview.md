@@ -36,16 +36,20 @@ The dump viewer is useful for diagnosing `OutOfMemoryError` exceptions in Java&t
 
 ### Starting the dump viewer
 
-`jdmpview (-core <core file> | -zip <zip file>) [-notemp]`
+`jdmpview [-J<vm option>] (-core <core file> | -zip <zip file>) [-notemp]`
 
 
 |          Input option   |  Explanation                                                                                           |
 |-------------------------|--------------------------------------------------------------------------------------------------------|
 | `-core <core file>`     | Specifies a dump file.                                                                                 |
-| `-zip <zip file>`       | Specifies a compressed file containing the core file and associated XML file (produced by the [dump extractor (`jextract`)](tool_jextract.md) tool on AIX&reg;, Linux&reg;, and macOS&reg; systems). |
+| `-zip <zip file>`       | Specifies a compressed file containing the core file (produced by the [dump extractor (`jextract`)](tool_jextract.md) tool on AIX&reg;, Linux&reg;, and macOS&reg; systems). |
 | `-notemp`               | By default, when you specify a file by using the `-zip` option, the contents are extracted to a temporary directory before processing. Use the `-notemp` option to prevent this extraction step, and run all subsequent commands in memory. |
+| `-J-Dcom.ibm.j9ddr.path.mapping=<mappings>` | The variable `<mappings>` is a list of native library mappings of the form `old-path=new-path`, using the usual path separator (a semi-colon (';') on Windows, and a colon (':') on other platforms). |
+| `-J-Dcom.ibm.j9ddr.library.path=<path>` | The variable `<path>` is a list of paths to search for native libraries, using the usual path separator (a semi-colon (';') on Windows, and a colon (':') on other platforms). |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The `-core` option can be used with the `-zip` option to specify the core and XML files in the compressed file. Without these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.  
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The `-core` option can be used with the `-zip` option to specify the core file in the compressed file. Without these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On AIX and Linux, some `jdmpview` commands need to locate the native libraries that are referenced by the core. For example, commands that relate to callsites. First, check the list of native libraries by running `jdmpview` on a core with the `info mod` parameter. If the libraries are not in the original locations, ensure that `jdmpview` can locate them by specifying the path mapping (`-J-Dcom.ibm.j9ddr.path.mapping=<mappings>`) and library path (`-J-Dcom.ibm.j9ddr.library.path=<path>`) options specified on the `jdmpview` command line.  
 
 On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to `jdmpview`, or you can supply a fully qualified MVS&trade; data set name. For example:
 
@@ -440,6 +444,10 @@ If a class name is passed to info class, the following information is shown abou
         info mmap [<address>] [-verbose] [-sort:<size>|<address>]
 
 : Displays a summary list of memory sections in the process address space, with start and end address, size, and properties. If an address parameter is specified, the results show details of only the memory section containing the address. If `-verbose` is specified, full details of the properties of each memory section are displayed. The `-sort` option allows the list of memory sections to be sorted by size or by start address (default).
+
+### info mod
+
+: Displays a list of native library modules in the process address space, which includes file paths and other information about each module.
 
 ### info heap
 

@@ -75,7 +75,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
         -Xshareclasses:adjustsoftmx=<size>
 
-: Adjusts the soft maximum size of the cache. When you use the `-Xshareclasses:verbose` option, the VM writes to the console the number of bytes that are not stored due to the current setting of the soft maximum size. For more information about the soft maximum size, see [-Xscmx](xscmx.md "For a new shared class cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option).").
+: Adjusts the soft maximum size of the cache. When you use the `-Xshareclasses:verbose` option, the VM writes to the console the number of bytes that are not stored due to the current setting of the soft maximum size. For more information about the soft maximum size, see [-Xscmx](xscmx.md "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option).").
 
 ### `allowClasspaths`
 
@@ -252,7 +252,7 @@ case, the VM continues without using shared classes.
         -Xshareclasses:findAotMethods=<method_specification>
         -Xshareclasses:findAotMethods=help
 
-: Print the AOT methods in the shared cache that match the method specifications. Methods that are already invalidated are indicated in the output. Use this suboption to check which AOT methods in the shared class cache would be invalidated by using the same method specifications with the `invalidateAotMethods` suboption. To learn more about the syntax to use for `<method_specification>`, including how to specify more than one method, see [Method specification syntax](#method-specification-syntax).
+: Print the AOT methods in the shared classes cache that match the method specifications. Methods that are already invalidated are indicated in the output. Use this suboption to check which AOT methods in the shared classes cache would be invalidated by using the same method specifications with the `invalidateAotMethods` suboption. To learn more about the syntax to use for `<method_specification>`, including how to specify more than one method, see [Method specification syntax](#method-specification-syntax).
 
 ### `groupAccess`
 
@@ -275,11 +275,11 @@ case, the VM continues without using shared classes.
 
         JVMSHRC759W Failed to set group access permission as requested by the
         'groupAccess' sub-option on the semaphore control file associated
-        with shared class cache.
+es        with shared classes cache.
 
         JVMSHRC760W Failed to set group access permission as requested by the
         'groupAccess' sub-option on the shared memory control file associated
-        with shared class cache.
+        with shared classes cache.
 
 : This message can occur in combination with the `snapshotCache` suboption:
 
@@ -366,7 +366,7 @@ case, the VM continues without using shared classes.
 
 : where:
 
-    - `default`: By default, the memory pages that contain the cache are always protected, unless a specific page is being updated. This protection helps prevent accidental or deliberate corruption to the cache. The cache header is not protected by default because this protection has a performance cost. On Linux, macOS, and Windows systems, after the startup phase, the Java virtual machine (VM) protects partially filled pages whenever new data is added to the shared class cache in the following sequence:
+    - `default`: By default, the memory pages that contain the cache are always protected, unless a specific page is being updated. This protection helps prevent accidental or deliberate corruption to the cache. The cache header is not protected by default because this protection has a performance cost. On Linux, macOS, and Windows systems, after the startup phase, the Java virtual machine (VM) protects partially filled pages whenever new data is added to the shared classes cache in the following sequence:
         - The VM changes the memory protection of any partially filled pages to read/write.
         - The VM adds the data to the cache.
         - The VM changes the memory protection of any partially filled pages to read only.

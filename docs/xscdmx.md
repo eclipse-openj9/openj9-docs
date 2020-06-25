@@ -24,7 +24,7 @@
 
 # -Xscdmx 
 
-Use the `-Xscdmx` option to control the size of the class debug area when you create a shared class cache.
+Use the `-Xscdmx` option to control the size of the class debug area when you create a shared classes cache.
 
 ## Syntax
 
@@ -34,7 +34,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 ## Explanation
 
-The `-Xscdmx` option works in a similar way to the [`-Xscmx`](xscmx.md) option, which is used to control the overall size of the shared class cache. The size of `-Xscdmx` must be smaller than the size of `-Xscmx`. By default, the size of the class debug area is a percentage of the free class data bytes in a newly created or empty cache.
+The `-Xscdmx` option works in a similar way to the [`-Xscmx`](xscmx.md) option, which is used to control the overall size of the shared classes cache. The size of `-Xscdmx` must be smaller than the size of `-Xscmx`. By default, the size of the class debug area is a percentage of the free class data bytes in a newly created or empty cache.
 
 A class debug area is still created if you use the [`-Xnolinenumbers`](xlinenumbers.md) option with the `-Xscdmx` option on the command line.
 

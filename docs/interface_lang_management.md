@@ -35,7 +35,7 @@ tables list the MXBeans by package and describe the monitoring or management cap
 |---------------------------|--------------------------------------------------------------------------------------------------------------|
 | `GarbageCollectorMXBean`    | Discovers Garbage Collection (GC) operations (collection times, compactions, heap memory usage, and freed memory). |
 | `JvmCpuMonitorMXBean`       | Discovers CPU consumption by category (GC, JIT, or other threads).                                             |
-| `MemoryMXBean`              | Discovers memory usage (minimum and maximum heap sizes, and shared class cache sizes).               |
+| `MemoryMXBean`              | Discovers memory usage (minimum and maximum heap sizes, and shared classes cache sizes).             |
 | `MemoryPoolMXBean`          | Discovers memory pool usage for specific GC policies.                                                         |
 | `OperatingSystemMXBean`     | Discovers information about the operating system (memory, CPU capacity/utilization).                         |
 | `RuntimeMXBean`             | Discovers information about the runtime environment (CPU load, Java process ID, and VM state)                |

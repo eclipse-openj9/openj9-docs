@@ -235,7 +235,7 @@ Font-awesome icons are also used in option tables to indicate defaults. The foll
 
 Note that these require an extra `<span>`, which is used by screen readers.
 
-For examples that embed Java version icons such as ![Java 8 icon](docs/cr/java8.png) and ![Java 13 and later icon](docs/cr/java13plus.png), see [Which OpenJDK version?](#which-openjdk-version?).
+For examples that embed Java version icons such as ![Java 8 icon](docs/cr/java8.png) and ![Java 14 and later icon](docs/cr/java14plus.png), see [Which OpenJDK version?](#which-openjdk-version?).
 
 ### Accessibility
 

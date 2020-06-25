@@ -80,7 +80,7 @@ The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing y
 
 ## Support for custom class loaders
 
-Classes are shared by the bootstrap class loader internally in the OpenJ9 VM. If you are using a custom class loader, you can use the Java Helper API to find and store classes in the shared class cache.
+Classes are shared by the bootstrap class loader internally in the OpenJ9 VM. If you are using a custom class loader, you can use the Java Helper API to find and store classes in the shared classes cache.
 
 For more information, see [Using the Java Helper API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper.html).
 

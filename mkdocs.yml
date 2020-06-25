@@ -64,6 +64,7 @@ extra_css:
   - 'stylesheets/oj9.css'
 
 extra_javascript:
+  - javascripts/oj9.js
 
 extra_templates:
 
@@ -96,17 +97,19 @@ markdown_extensions:
 # "pages:" --> "nav:" for MkDocs 1.0
 nav:
 
-    - "About"                                                                    : index.md
+    - "About the docs"                                                           : index.md
     - "AdoptOpenJDK builds"                                                      : adoptopenjdk.md
     - "Getting started"                                                          : introduction.md
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.21.0"                                                       : version0.21.md
+        - "Version 0.20.0"                                                       : version0.20.md
         - "Version 0.19.0"                                                       : version0.19.md
         - "Version 0.18.1"                                                       : version0.18.md
-        - "Version 0.17.0"                                                       : version0.17.md
         - "Earlier releases" :
+            - "Version 0.17.0"                                                   : version0.17.md
             - "Version 0.16.0"                                                   : version0.16.md
             - "Version 0.15.1"                                                   : version0.15.md
             - "Version 0.14.0"                                                   : version0.14.md
@@ -237,7 +240,6 @@ nav:
             - "-Xgcpolicy"                                                       : xgcpolicy.md
             - "-Xgcthreads"                                                      : xgcthreads.md
             - "-Xgcworkpackets"                                                  : xgcworkpackets.md
-            - "-Xifa"                                                            : xifa.md
             - "-Xint"                                                            : xint.md
             - "-Xiss"                                                            : xss.md                             # redirect
             - "-Xjit"                                                            : xjit.md
@@ -324,7 +326,9 @@ nav:
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
             - "-XX:[+|-]ExitOnOutOfMemoryError"                                  : xxexitonoutofmemoryerror.md
+            - "-XX:[+|-]GlobalLockReservation"                                   : xxgloballockreservation.md
             - "-XX:[+|-]handleSIGXFSZ"                                           : xxhandlesigxfsz.md
+            - "-XX:[+|-]handleSIGABRT"                                           : xxhandlesigabrt.md
             - "-XX:[+|-]HeapDumpOnOutOfMemory"                                   : xxheapdumponoutofmemory.md
             - "-XX:HeapDumpPath"                                                 : xxheapdumppath.md
             - "-XX:[+|-]HeapManagementMXBeanCompatibility"                       : xxheapmanagementmxbeancompatibility.md
@@ -343,12 +347,14 @@ nav:
             - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
             - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
             - "-XX:OnOutOfMemoryError"                                           : xxonoutofmemoryerror.md
+            - "-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode"                   : xxoriginaljdk8heapsizecompatibilitymode.md
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
             - "-XX:ParallelCMSThreads"                                           : xxparallelcmsthreads.md
             - "-XX:ParallelGCThreads"                                            : xxparallelgcthreads.md
             - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md
             - "-XX:[+|-]PrintCodeCache"                                          : xxprintcodecache.md
+            - "-XX:[+|-]PrintFlagsFinal"                                         : xxprintflagsfinal.md
             - "-XX:[+|-]ReadIPInfoForRAS"                                        : xxreadipinfoforras.md
             - "-XX:[+|-]ReduceCPUMonitorOverhead"                                : xxreducecpumonitoroverhead.md
             - "-XX:[+|-]RuntimeInstrumentation"                                  : xxruntimeinstrumentation.md
@@ -374,5 +380,18 @@ nav:
         - "Directory conventions"                                                 : openj9_directories.md
         - "OpenJ9 messages"                                                       : messages_intro.md
         - "Environment variables"                                                 : env_var.md
+        
+    - "API documentation" :
+        - "Overview"                                                             : api-overview.md
+        - "Java 8 API" : 
+            - "Condition exception handling"                                      : api-conditionhandling.md
+            - "CUDA4J"                                                            : api-cuda.md
+            - "Data access acceleration"                                          : api-daa.md
+            - "DTFJ"                                                              : api-dtfj.md
+            - "GPU"                                                               : api-gpu.md
+            - "JVM diagnostic utilities"                                          : api-jvm.md
+            - "Monitoring and management"                                         : api-langmgmt.md
+            - "Shared classes"                                                    : api-shrc.md
+        - "Java 11 API"                                                           : api-jdk11.md             
 
     - "Legal"                                                                     : legal.md

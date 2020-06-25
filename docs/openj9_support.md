@@ -53,13 +53,13 @@ columns will be removed over time.
 | v 0.17.0         | October 2019        | Yes       | Yes         | Yes       |           |
 | v 0.18.0         | January 2020        | Yes       | Yes         | Yes       |           |
 | v 0.19.0         | March 2020          | No        | No          | No        | Yes (\*2) |
-| v 0.20.0         | April 2020 (\*1)    | Yes       | Yes         | No        | Yes       |
-| v 0.21.0         | July 2020 (\*1)     | Yes       | Yes         | No        | Yes       |
+| v 0.20.0         | April 2020          | Yes       | Yes         | No        | Yes       |
+| v 0.21.0         | July 2020           | Yes       | Yes         | No        | Yes       |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
 - (\*1): These OpenJ9 releases are expected, in line with our support statement.
-- (\*2): These OpenJ9 releases are the feature releases that only support the new OpenJDK release.
+- (\*2): These OpenJ9 releases are the feature releases that support only the new OpenJDK release.
 
 For any issues or limitations of an Eclipse OpenJ9 release, read the [release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/).
 
@@ -91,9 +91,7 @@ minimum glibc version 2.12 are expected to function without problems.
 
 | Windows&reg;               |  x32   |  x64  |
 |----------------------------|--------|-------|
-| Windows 8.1                |   Y    |   Y   |
 | Windows 10                 |   Y    |   Y   |
-| Windows Server 2012        |   Y    |   Y   |
 | Windows Server 2012 R2     |   Y    |   Y   |
 | Windows Server 2016        |   Y    |   Y   |
 | Windows Server 2019        |   Y    |   Y   |
@@ -118,24 +116,24 @@ platform support might vary, depending on their build environment. Check the Ado
 OpenJDK 11 binaries are supported on the minimum operating system levels shown in the following tables:
 
 
-| Linux                                 |  x64   |  ppc64le   | Z64  |
-|---------------------------------------|--------|------------|------|
-| CentOS 6.9                            |   Y    |     N      |  N   |
-| CentOS 7.4                            |   Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     N      |  Y   |
-| RHEL 7.4                              |   Y    |     Y      |  Y   |
-| SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
-| Ubuntu 16.04                          |   Y    |     Y      |  Y   |
-| Ubuntu 18.04                          |   Y    |     Y      |  Y   |
+| Linux (**Note 1**)                    | AArch64 (**Note 2**)    | x64   |  ppc64le   | Z64  |
+|---------------------------------------|-------------------------|-------|------------|------|
+| CentOS 6.9                            |    N                    |  Y    |     N      |  N   |
+| CentOS 7.4                            |    Y                    |  Y    |     Y      |  N   |
+| Red Hat Enterprise Linux (RHEL) 6.9   |    N                    |  Y    |     N      |  Y   |
+| RHEL 7.4                              |    Y                    |  Y    |     Y      |  Y   |
+| SUSE Linux Enterprise Server (SLES) 12|    N                    |  Y    |     Y      |  Y   |
+| Ubuntu 16.04                          |    Y                    |  Y    |     Y      |  Y   |
+| Ubuntu 18.04                          |    Y                    |  Y    |     Y      |  Y   |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Not all of these distributions are tested, but Linux distributions that have a
-minimum glibc version 2.12 are expected to function without problems.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+
+1. Not all of these distributions are tested, but Linux distributions that have a minimum glibc version 2.12 are expected to function without problems.
+2. Only limited support for the 64-bit ARM architecture is currently available. For a list of known issues, see the [Release notes](https://github.com/eclipse/openj9/tree/master/doc/release-notes) for the latest version of Eclipse OpenJ9.
 
 | Windows                    |  x64   |
 |----------------------------|--------|
-| Windows 8.1                |   Y    |
 | Windows 10                 |   Y    |
-| Windows Server 2012        |   Y    |
 | Windows Server 2012 R2     |   Y    |
 | Windows Server 2016        |   Y    |
 | Windows Server 2019        |   Y    |
@@ -175,9 +173,7 @@ minimum glibc version 2.12 are expected to function without problems.
 
 | Windows                    |  x64   |
 |----------------------------|--------|
-| Windows 8.1                |   Y    |
 | Windows 10                 |   Y    |
-| Windows Server 2012        |   Y    |
 | Windows Server 2012 R2     |   Y    |
 | Windows Server 2016        |   Y    |
 | Windows Server 2019        |   Y    |
@@ -217,6 +213,7 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 | Platform                    | Operating system         |  Compiler                       |
 |-----------------------------|--------------------------|---------------------------------|
 | Linux x86 64-bit            | CentOS 6.10              | gcc 7.5                         |
+| Linux on ARM 64-bit         | CentOS 7                 | gcc 7.5                         |
 | Linux on POWER LE 64-bit    | Ubuntu 16.04             | gcc 7.5                         |
 | Linux on IBM Z 64-bit       | RHEL 7.7                 | gcc 7.5                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |

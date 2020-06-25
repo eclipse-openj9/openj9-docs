@@ -89,11 +89,10 @@ The last 2 columns show whether the default setting can be changed by a command-
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
-The default value of [`-Xmx`](xms.md) depends on the version of Java.
+The default value of [`-Xmx`](xms.md) :
 
-- ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) The value is half the available memory with a minimum of 16MB and a maximum of 512 MB. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+- The value is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB.
 
-
-- ![Start of content that applies only to Java 11 and later](cr/java11plus.png) The value is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. ![End of content that applies only to Java 11 and later](cr/java_close.png)
+- ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) If you have set the [-XX:+OriginalJDK8HeapSizeCompatibilityMode](xxoriginaljdk8heapsizecompatibilitymode.md) option for compatibility with earlier releases, the value is half the available memory with a minimum of 16 MB and a maximum of 512 MB. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
 *Available memory* is defined as being the smallest of two values: The real or *physical* memory or the *RLIMIT_AS* value.

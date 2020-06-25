@@ -39,8 +39,8 @@ The contents of the options file are recorded in the `ENVINFO` section of a Java
 
 At startup, the VM automatically adds `-Xoptionsfile=<path>/options.default` at the beginning of the command line, where `<path>` is the path to the VM directory.
 
-![Start of content that applies only to Java 8 (LTS)](cr/java8.png) `<path>` is the VM directory, as show in [Directory conventions](openj9_directories.md).![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)  
-![Start of content that applies only to Java 11 and later](cr/java11plus.png) `<path>` is the `<java_home>/lib` directory, where `<java_home>` is the directory for your runtime environment.![End of content that applies only to Java 11 or later](cr/java_close.png)
+![Start of content that applies only to Java 8 (LTS)](cr/java8.png) `<path>` is the VM directory, as shown in [Directory conventions](openj9_directories.md). ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)  
+![Start of content that applies only to Java 11 and later](cr/java11plus.png) `<path>` is the `<java_home>/lib` directory, where `<java_home>` is the directory for your runtime environment. ![End of content that applies only to Java 11 or later](cr/java_close.png)
 
 The file `options.default` is empty but can be updated with any options that you want to specify at run time.
 
