@@ -25,60 +25,26 @@
 
 # Garbage collection
 
-The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on
-an area of memory that is reserved for VM processing called the Java heap. The Allocator assigns areas of the Java heap
-for Java objects. Objects are considered as *live* when they have a chain of references to them that start from root references,
-such as those found in thread stacks. When that reference or pointer no longer exists, the objects are considered as *garbage*. The role of the Garbage Collector is to manage the storage in the Java heap and reclaim memory by removing garbage.
+The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on an area of memory that is reserved for VM processing called the Java&trade; heap.
 
-## The Allocator
-
-The Allocator is a component of memory management that is typically overshadowed by the task of garbage collection. However,
-it is a critical, if not small part, of the overall process. The Allocator manages pools of free memory and how the free memory
-is consumed. It is also responsible for allocating areas of storage in the Java heap for objects at the request of applications,
-class libraries, or the VM. Every allocation requires a *heap lock* to stop concurrent threads trying to access the same area of memory at the same time. When an object is allocated, the heap lock is released. If there is insufficient space to allocate the object, allocation fails, the heap lock is released, and the GC is called. If the GC manages to recover some space on the heap, the Allocator can resume operations. If the GC does not
-recover enough space, it returns an `OutOfMemoryError` exception.
-
-Acquiring a heap lock for every allocation would be an intensive operation with a knock on impact to performance. To get around this
-problem, small objects are allocated to thread local heaps (TLH).
-
-### Thread local heaps (TLH)
-
-To improve performance, allocation caches are reserved in the heap for different threads. These allocation caches are known as
-thread local heaps (TLH) and allow each thread to allocate memory from its cache without acquiring the heap lock. A TLH is typically
-used for small objects of less than 512 bytes (768 bytes on 64-bit VMs) although larger objects can be allocated from the cache if
-there is sufficient space.
-
-If a thread allocates a lot of objects, the allocator gives that thread a larger TLH to reduce contention on the heap lock.
-
-A TLH is predefined with an initial default size of 2 KB. On every TLH refresh, the requested size for that thread
-is increased by an increment (default 4 KB). The requested size can grow up to a predefined maximum (default 128 KB).
-
-After every GC cycle, the TLH requested size for each thread is reduced, sometimes by as much as 50%, to take account of threads that
-reduce their allocation rate and no longer need large TLHs.
-
-For very inactive threads, the requested size can even drop below the initial value, down to the predefined minimum (512/768 bytes).
-For very active threads, the maximum TLH requested size might be reached before the next GC occurs.
-
-Larger TLHs can help reduce heap lock contention, but might also reduce heap utilisation and increase heap fragmentation.
-
-The following options control the requested TLH size:
-
-- [`-Xgc:tlhMaximumSize=<bytes>`](xgc.md#tlhmaximumsize)
-- [`-Xgc:tlhInitialSize=<bytes>`](xgc.md#tlhinitialsize)
-- [`-Xgc:tlhIncrementSize=<bytes>`](xgc.md#tlhincrementsize)
-
-Typically, when the maximum TLH size is increased, you should also increase the increment proportionally, so that active threads can
-reach the maximum requested TLH size more quickly.
+The Allocator assigns areas of the Java heap for Java objects. See [Memory allocation](allocator.md) for more information about the Allocator.
 
 ## Garbage collection
 
-To prevent applications running out of memory, objects in the Java heap that are no longer required must be reclaimed. This process is known as garbage collection (GC). When garbage is collected, the garbage collector must obtain exclusive access to the heap, which causes an application to pause while the clean up is done. This pause is often referred to as a *stop-the-world* pause because an application must halt until the process completes. In general, the first step in the GC process is to mark the objects that are reachable, which means they are still in use. The next step is to sweep away the unmarked objects to reclaim memory. The last step, which isn't always required unless the heap has become very fragmented, is to compact the heap.
+To prevent applications running out of memory, objects in the Java heap that are no longer required must be reclaimed. This process is known as garbage collection.
 
-Eclipse OpenJ9 has a number of GC policies designed around different types of applications and workloads. Picking the right policy very much depends on your usage and performance goals.
+When garbage is collected, the garbage collector must obtain exclusive access to the heap, which causes an application to pause while the clean up is done. This pause is often referred to as a *stop-the-world* pause because an application must halt until the process completes. In general, the first step in the GC process is to mark the objects that are reachable, which means they are still in use. The next step is to sweep away the unmarked objects to reclaim memory. The last step, which isn't always required unless the heap has become very fragmented, is to compact the heap.
 
-### Generational Concurrent policy
+## Garbage collection policies
 
-If you have a transactional application, with many short lived objects, the Generational Concurrent GC policy ([`-Xgcpolicy:gencon`](xgcpolicy.md#gencon)) is probably best suited, which aims to minimize GC pause times without compromising throughput. This is the default policy employed by the VM, so if you want to use it you don't need to specify it on the command line when you start your application.
+Eclipse OpenJ9 has a number of GC policies designed around different types of applications and workloads. Picking the right policy very much depends on your usage and performance goals. 
+
+For more information about these garbage collection policies and options, see [-Xgcpolicy](xgcpolicy.md).
+
+
+### `gencon` policy
+
+If you have a transactional application, with many short lived objects, the Generational Concurrent GC policy ([`-Xgcpolicy:gencon`](xgcpolicy.md#gencon)) is probably the most suitable. The `gencon` policy aims to minimize GC pause times without compromising throughput. This is the default policy employed by the VM, so if you want to use it you don't need to specify it on the command line when you start your application.
 
 With the `gencon` policy, the Java heap is divided into two main areas, the *nursery* area, where new objects are created and the *tenure* area, where objects are moved if they have reached *tenure age*.
 
@@ -161,18 +127,26 @@ Double mapping is enabled by default. If you want to disable it, use the command
 
 -->
 
+### `balanced` policy
 
-### Other policies
+[`-Xgcpolicy:balanced`](xgcpolicy.md#balanced) divides the Java heap into regions, which are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global collections by matching object allocation and survival rates. If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance, particularly on large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER platforms).
 
-OpenJ9 has the following alternative GC policies:
+### `metronome` policy
 
-- [`-Xgcpolicy:balanced`](xgcpolicy.md#balanced) divides the Java heap into regions, which are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global collections by matching object allocation and survival rates. If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance, particularly on large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER platforms).
-- [`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-aix-linux-x86-only) is designed for applications that require precise response times. Garbage collection occurs in small interruptible steps to avoid stop-the-world pauses. This policy is available only on x86 Linux and AIX platforms.
-- [`-Xgcpolicy:nogc`](xgcpolicy.md#nogc) handles only memory allocation and heap expansion, but doesn't reclaim any memory. The GC impact on runtime performance is therefore minimized, but if the available Java heap becomes exhausted, an `OutOfMemoryError` exception is triggered and the VM stops.
-- [`-Xgcpolicy:optavgpause`](xgcpolicy.md#optavgpause) uses concurrent mark and sweep phases, which means that pause times are reduced when compared to optthruput, but at the expense of some performance throughput.
-- [`-Xgcpolicy:optthruput`](xgcpolicy.md#optthruput) is optimized for throughput by disabling the concurrent mark phase, which means that applications will stop for long pauses while garbage collection takes place. You might consider using this policy when high application throughput, rather than short garbage collection pauses, is the main performance goal.
+[`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-aix-linux-x86-only) is designed for applications that require precise response times. Garbage collection occurs in small interruptible steps to avoid stop-the-world pauses. This policy is available only on x86 Linux and AIX platforms.
 
-For more information about these garbage collection policies and options, see [-Xgcpolicy](xgcpolicy.md).
+### `optavgpause` policy
+
+[`-Xgcpolicy:optavgpause`](xgcpolicy.md#optavgpause) uses concurrent mark and sweep phases, which means that pause times are reduced when compared to `optthruput`, but at the expense of some performance throughput.
+
+### `optthruput` policy
+
+[`-Xgcpolicy:optthruput`](xgcpolicy.md#optthruput) is optimized for throughput by disabling the concurrent mark phase, which means that applications will stop for long pauses while garbage collection takes place. You might consider using this policy when high application throughput, rather than short garbage collection pauses, is the main performance goal.
+
+### `nogc` policy
+
+[`-Xgcpolicy:nogc`](xgcpolicy.md#nogc) handles only memory allocation and heap expansion, but doesn't reclaim any memory. The GC impact on runtime performance is therefore minimized, but if the available Java heap becomes exhausted, an `OutOfMemoryError` exception is triggered and the VM stops.
+
 
 ## Troubleshooting
 

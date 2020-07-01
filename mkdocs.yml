@@ -120,12 +120,14 @@ nav:
             - "Version 0.9.0"                                                    : version0.9.md
             - "Version 0.8.0"                                                    : version0.8.md
 
-    - "Garbage Collection"                                                       : gc.md
+    - Memory management :
+        - "Memory allocation"                                                    : allocator.md
+        - "Garbage collection"                                                   : gc.md
 
-    - "JIT Compiler"                                                             : jit.md
+    - "JIT compiler"                                                             : jit.md
     - "JITServer (tech. preview)"                                                : jitserver.md
 
-    - "AOT Compiler"                                                             : aot.md
+    - "AOT compiler"                                                             : aot.md
 
     - "Class data sharing" :
         - "Overview"                                                             : shrc.md
