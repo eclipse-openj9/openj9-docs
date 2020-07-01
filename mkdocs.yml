@@ -124,6 +124,7 @@ nav:
         - "Memory allocation"                                                    : allocator.md
         - "Garbage collection"                                                   : gc.md
 
+
     - "JIT compiler"                                                             : jit.md
     - "JITServer (tech. preview)"                                                : jitserver.md
 
