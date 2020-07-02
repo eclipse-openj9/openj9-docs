@@ -48,7 +48,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 ### New `-XX:[+|-]HandleSIGABRT` option added
 
-Option `-XX:[+|-]HandleSIGABRT` affects the handling of the operating system signal `SIGABRT`. See [`-XX:[+|-]HandleSIGABRT`](xxhandlesigabrt.md) for more details about this option.
+This option affects the handling of the operating system signal `SIGABRT`. For compatibility with the reference implementation, set `-XX:-HandleSIGABRT`. For more information, see [`-XX:[+|-]HandleSIGABRT`](xxhandlesigabrt.md). 
 
 ### New `-XX:[+|-]PrintFlagsFinal` option added
 
