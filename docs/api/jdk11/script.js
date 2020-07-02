@@ -147,14 +147,3 @@ function updateModuleFrame(pFrame, cFrame) {
     top.packageFrame.location = pFrame;
     top.classFrame.location = cFrame;
 }
-
-window.onload = function () {
-    if (document.getElementById("api") !== null ) {
-        document.getElementsByClassName('md-content')[0].style.marginRight="auto";
-        this.console.log("Here 1")
-    } else {
-        document.getElementsByClassName('md-content')[0].style.marginRight="12.1rem";
-        this.console.log("Here 2")
-    }
-     
-}
