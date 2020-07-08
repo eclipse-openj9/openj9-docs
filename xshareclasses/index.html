@@ -4883,7 +4883,7 @@ case, the VM continues without using shared classes.</dd>
 <p>On AIX, Linux, and macOS systems, if a user creates a cache by specifying the <code>groupAccess</code> suboption, other users in the same group must also specify this suboption to be granted access to the same cache.</p>
 </dd>
 <dd>
-<p>It is recommended to use <a href="#cacheDir"><code>cacheDir</code></a> to set a location for the cache. If necessary, use <a href="#cacheDirPerm"><code>cacheDirPerm</code></a> to ensure that the cache directory permissions are set appropriately. The default directory for a cache is <code>/tmp/javasharedresources</code> when <code>groupAccess</code> is specified. Some systems may clear the contents of the <code>/tmp</code> directory on a reboot, removing the shared cache. </p>
+<p>When <code>groupAccess</code> is specified, the default directory for a cache is <code>/tmp/javasharedresources</code>. Some systems might clear the content of the <code>/tmp</code> directory on a reboot, removing the shared cache. To avoid that problem, you are therefore recommended to use <a href="#cachedir"><code>cacheDir</code></a> to set a different location for the cache. If necessary, use <a href="#cachedirperm"><code>cacheDirPerm</code></a> to ensure that the cache directory permissions are set appropriately.</p>
 </dd>
 <dd>
 <p>In certain situations, warning messages might be generated when the <code>groupAccess</code> suboption is used.</p>

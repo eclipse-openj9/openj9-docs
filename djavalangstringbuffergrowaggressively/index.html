@@ -3794,7 +3794,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="-djavalangstringbuffergrowaggressively">-Djava.lang.stringBuffer.growAggressively</h1>
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> This system property is supported only on Java&trade; 8.</p>
-<p><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> Setting this property to <code>false</code> reverts to the behavior (OpenJ9 0.18 and earlier) of growing a 1 G <code>char[]</code> or larger <code>StringBuffer</code> or <code>StringBuilder</code> only as much as necessary to accommodate the <code>String</code> being added. The default behavior is to immediately grow to the maximum possible size, similarly to Java 11 and later. The default behavior is compatible with the Oracle Hotspot VM.</p>
+<p><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> Setting this property to <code>false</code> reverts to the behavior (OpenJ9 0.18 and earlier) of growing a 1 G <code>char[]</code> or larger <code>StringBuffer</code> or <code>StringBuilder</code> only as much as necessary to accommodate the <code>String</code> being added. The default behavior is to immediately grow to the maximum possible size, similarly to Java 11 and later. The default behavior is compatible with the Oracle HotSpot VM.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -Djava.lang.stringBufferAndBuilder.growAggressively=[true|false]
 </code></pre>
