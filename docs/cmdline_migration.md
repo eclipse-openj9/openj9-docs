@@ -90,7 +90,7 @@ These HotSpot command-line options have equivalents in OpenJ9 that are not speci
 
 ## Creating compatible behavior
 
-You can set the following options to make OpenJ9 behave in the same way as Hotspot.
+You can set the following options to make OpenJ9 behave in the same way as HotSpot.
 
 | Option                                                           | Usage                                                                                                                                        |
 |------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|

@@ -56,7 +56,7 @@ This release provides an initial implementation of the `-XX:[+|-]PrintFlagsFinal
 
 ### Update to `NoClassDefFoundError` exception message
 
-The order in which class names are printed in a `NoClassDefFoundError` exception message now matches the output reported by Hotspot.
+The order in which class names are printed in a `NoClassDefFoundError` exception message now matches the output reported by HotSpot.
 
 For example, in the following exception message:
 ```

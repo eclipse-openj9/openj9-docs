@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]PrintFlagsFinal
 
-When enabled, this option outputs the values of a subset of configuration parameters in a format compatible with that produced by Hotspot. The parameters currently output are those expected by various software projects and packages.
+When enabled, this option outputs the values of a subset of configuration parameters in a format compatible with that produced by HotSpot. The parameters currently output are those expected by various software projects and packages.
 
 ## Syntax
 

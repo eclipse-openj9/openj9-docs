@@ -114,7 +114,7 @@ The previously undocumented option [`-Xgc:noConcurrentScavenge`](xgc.md#noconcur
 
 ### Support for OpenJDK HotSpot options
 
-For compatibility, the following OpenJDK Hotspot options are now supported by OpenJ9:
+For compatibility, the following OpenJDK HotSpot options are now supported by OpenJ9:
 
 - [-XX:ParallelGCThreads](xxparallelgcthreads.md)
 - [-XX:ConcGCThreads](xxconcgcthreads.md)
@@ -133,7 +133,7 @@ The new options are:
 
 ### `-Djava.lang.string.substring.nocopy` option
 
-The previously undocumented Java 8 option [`-Djava.lang.string.substring.nocopy=true`](djavalangstringsubstringnocopy.md) avoids String sharing by String.substring(), which is the same behavior as the Oracle Hotspot VM.
+The previously undocumented Java 8 option [`-Djava.lang.string.substring.nocopy=true`](djavalangstringsubstringnocopy.md) avoids String sharing by String.substring(), which is the same behavior as the Oracle HotSpot VM.
 
 ## Full release information
 
