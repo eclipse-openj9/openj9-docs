@@ -69,6 +69,7 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
 - The use of `SIGRTMIN` is configurable with the `-Xdump:suspendwith=<num>` option.
+- The handling of `SIGABRT` is configurable with the `-XX[+|-]handleSIGABRT` option.
 
 ## Signals on macOS
 
@@ -87,6 +88,11 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 | `SIGCHLD (20)`    | Con  | Used by the `java.lang.Process` implementation                     | - |
 | `SIGUSR1 (30)`    | Con  | Used by the VM for thread introspection                                       | - |
 | `SIGIO (23)`      | Con  | Used by the `java.net` class library code                                        | - |
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:**
+
+- The handling of `SIGABRT` is configurable with the `-XX[+|-]handleSIGABRT` option.
+
 
 ## Signals on Windows
 
@@ -124,6 +130,10 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 | `SIGCHLD (20)`    | Con  | Used by the `java.lang.Process` implementation                     | - |
 | `SIGUSR1 (16)`    | Con  | Used by the `java.net` class library code                          | - |
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+
+- The handling of `SIGABRT` is configurable with the `-XX[+|-]handleSIGABRT` option.
+
 ## Signals on AIX
 
 | Signal            | Type | Description                                                        | Option to disable signal   |
@@ -148,6 +158,7 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 
 - VM performance is affected if you install a signal handler for SIGTRAP (5) or SIGRECONFIG (58) because these signals are used for internal control purposes.
 - If you want to generate floating point exceptions, use the following call in your code to generate a `SIGFPE` signal: `fp_trap( P_TRAP_SYNC)`. Although you can use the C compiler `-qflttrap` setting to generate `SIGTRAP` signals to trap floating point exceptions, this mechanism can affect the JIT compiler.
+- The handling of `SIGABRT` is configurable with the `-XX[+|-]handleSIGABRT` option.
 
 ## Signal chaining
 

@@ -329,8 +329,8 @@ nav:
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
             - "-XX:[+|-]ExitOnOutOfMemoryError"                                  : xxexitonoutofmemoryerror.md
             - "-XX:[+|-]GlobalLockReservation"                                   : xxgloballockreservation.md
-            - "-XX:[+|-]handleSIGXFSZ"                                           : xxhandlesigxfsz.md
-            - "-XX:[+|-]handleSIGABRT"                                           : xxhandlesigabrt.md
+            - "-XX:[+|-]HandleSIGXFSZ"                                           : xxhandlesigxfsz.md
+            - "-XX:[+|-]HandleSIGABRT"                                           : xxhandlesigabrt.md
             - "-XX:[+|-]HeapDumpOnOutOfMemory"                                   : xxheapdumponoutofmemory.md
             - "-XX:HeapDumpPath"                                                 : xxheapdumppath.md
             - "-XX:[+|-]HeapManagementMXBeanCompatibility"                       : xxheapmanagementmxbeancompatibility.md
@@ -382,10 +382,10 @@ nav:
         - "Directory conventions"                                                 : openj9_directories.md
         - "OpenJ9 messages"                                                       : messages_intro.md
         - "Environment variables"                                                 : env_var.md
-        
+
     - "API documentation" :
         - "Overview"                                                             : api-overview.md
-        - "Java 8 API" : 
+        - "Java 8 API" :
             - "Condition exception handling"                                      : api-conditionhandling.md
             - "CUDA4J"                                                            : api-cuda.md
             - "Data access acceleration"                                          : api-daa.md
@@ -394,6 +394,6 @@ nav:
             - "JVM diagnostic utilities"                                          : api-jvm.md
             - "Monitoring and management"                                         : api-langmgmt.md
             - "Shared classes"                                                    : api-shrc.md
-        - "Java 11 API"                                                           : api-jdk11.md             
+        - "Java 11 API"                                                           : api-jdk11.md
 
     - "Legal"                                                                     : legal.md
