@@ -2858,8 +2858,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
-    <a href="../xxhandlesigxfsz/" title="-XX:[+|-]handleSIGXFSZ" class="md-nav__link">
-      -XX:[+|-]handleSIGXFSZ
+    <a href="../xxhandlesigxfsz/" title="-XX:[+|-]HandleSIGXFSZ" class="md-nav__link">
+      -XX:[+|-]HandleSIGXFSZ
     </a>
   </li>
 
@@ -2870,8 +2870,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
-    <a href="../xxhandlesigabrt/" title="-XX:[+|-]handleSIGABRT" class="md-nav__link">
-      -XX:[+|-]handleSIGABRT
+    <a href="../xxhandlesigabrt/" title="-XX:[+|-]HandleSIGABRT" class="md-nav__link">
+      -XX:[+|-]HandleSIGABRT
     </a>
   </li>
 
@@ -3993,6 +3993,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
 <ul>
 <li>The use of <code>SIGRTMIN</code> is configurable with the <code>-Xdump:suspendwith=&lt;num&gt;</code> option.</li>
+<li>The handling of <code>SIGABRT</code> is configurable with the <code>-XX[+|-]handleSIGABRT</code> option.</li>
 </ul>
 <h2 id="signals-on-macos">Signals on macOS</h2>
 <table>
@@ -4085,6 +4086,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 </tbody>
 </table>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong></p>
+<ul>
+<li>The handling of <code>SIGABRT</code> is configurable with the <code>-XX[+|-]handleSIGABRT</code> option.</li>
+</ul>
 <h2 id="signals-on-windows">Signals on Windows</h2>
 <table>
 <thead>
@@ -4209,6 +4214,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 </tbody>
 </table>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
+<ul>
+<li>The handling of <code>SIGABRT</code> is configurable with the <code>-XX[+|-]handleSIGABRT</code> option.</li>
+</ul>
 <h2 id="signals-on-aix">Signals on AIX</h2>
 <table>
 <thead>
@@ -4316,6 +4325,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li>VM performance is affected if you install a signal handler for SIGTRAP (5) or SIGRECONFIG (58) because these signals are used for internal control purposes.</li>
 <li>If you want to generate floating point exceptions, use the following call in your code to generate a <code>SIGFPE</code> signal: <code>fp_trap( P_TRAP_SYNC)</code>. Although you can use the C compiler <code>-qflttrap</code> setting to generate <code>SIGTRAP</code> signals to trap floating point exceptions, this mechanism can affect the JIT compiler.</li>
+<li>The handling of <code>SIGABRT</code> is configurable with the <code>-XX[+|-]handleSIGABRT</code> option.</li>
 </ul>
 <h2 id="signal-chaining">Signal chaining</h2>
 <p>Signal chaining allows application code to interoperate with VM signal handling. By linking and loading a shared library, certain
