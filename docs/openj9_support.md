@@ -184,7 +184,7 @@ minimum glibc version 2.12 are expected to function without problems.
 | AIX 7.1 TL4  |    Y     |
 | AIX 7.2      |    Y     |
 
-<i class="fa fa-bell" aria-hidden="true"></i> **Important:** AIX OpenJ9 builds require the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018)
+<i class="fa fa-bell" aria-hidden="true"></i> **Important:** AIX OpenJ9 builds require the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018).
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
