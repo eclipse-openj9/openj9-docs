@@ -435,7 +435,3 @@ img {
 .md-content__icon, .md-footer-nav__button, .md-header-nav__button, .md-nav__button, .md-nav__title:before, .md-search-result__article--document:before {
   padding: .2rem;
 }
-
-.md-sidebar.md-sidebar--secondary{
-  z-index: -9999999;
-}
