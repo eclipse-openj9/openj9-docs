@@ -67,7 +67,7 @@ Lower the invocation threshold
 
 Turn off inlining
 
-: Inlining is a complex process that generates larger and more complex code. To eliminate errors caused by these operations, use the `disableImlining` suboption.
+: Inlining is a complex process that generates larger and more complex code. To eliminate errors caused by these operations, use the `disableInlining` suboption.
 
 Decrease the optimization levels
 
