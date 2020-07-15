@@ -76,7 +76,7 @@ You can set the `-Xshareclasses:noTimestampChecks` option to turn off timestamp 
 
 ### Removal of restriction on layered shared cache
 
-In the previous release, there is a restriction that the [`jvmtiSharedCacheInfo.isCorrupt`](interface_jvmti.md#jvmtisharedcacheinfo-structure) field and the  [`SharedClassCacheInfo.isCacheCorrupt()`](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.oti.shared/com/ibm/oti/shared/SharedClassCacheInfo.html#isCacheCorrupt--) method cannot detect a corrupted cache that has a layer number other than `0`. This restriction is now removed.
+In the previous release, there is a restriction that the [`jvmtiSharedCacheInfo.isCorrupt`](interface_jvmti.md#jvmtisharedcacheinfo-structure) field and the `SharedClassCacheInfo.isCacheCorrupt()` method cannot detect a corrupted cache that has a layer number other than `0`. This restriction is now removed. See the [Shared classes API documentation](api-shrc.md). <!-- Link to API -->
 
 ### `-Xmso` 1 MB minimum value on z/OS 64-bit
 

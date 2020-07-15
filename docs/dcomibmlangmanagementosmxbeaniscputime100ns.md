@@ -47,7 +47,6 @@ The default value for this property is `false`.
 
 ## See also
 
-- [com.ibm.lang.management API documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.lang.management/index.html)
-
+- [Monitoring and management API documentation](api-langmgmt.md) <!-- Link to API -->
 
 <!-- ==== END OF TOPIC ==== dcomibmlangmanagementosmxbeaniscputime100ns.md ==== -->

@@ -28,6 +28,8 @@
 The following new features and notable changes since v 0.20.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [Application Programming Interface (API) documentation](#application-programming-interface-api-documentation)
+- [Performance improvements](#performance-improvements)
 - [New `-XX:[+|-]HandleSIGABRT` option added](#new-xx-handlesigabrt-option-added)
 - [New `-XX:[+|-]PrintFlagsFinal` option added](#new-xx-printflagsfinal-option-added)
 - [Update to `NoClassDefFoundError` exception message](#update-to-noclassdeffounderror-exception-message)
@@ -45,6 +47,18 @@ OpenJ9 release 0.21.0 supports OpenJDK 8, 11, and 14. Binaries are available fro
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+
+### Application Programming Interface (API) documentation
+
+API documentation that applies to OpenJ9 can now be found in this user documentation for both JDK 8 and JDK 11. The documentation includes links to Oracle API documentation for information that is not specific to OpenJ9. See [API overview](api-overview.md).
+
+### Performance improvements
+
+- If the [-Xtune:virtualized](xtunevirtualized.md) command line option is used, the default JIT scratch memory limit is now reduced from 256 MB to 16 MB. This reduces the peak from JIT compilation activity, allowing you to size containers more easily, based on the particular application's memory usage.
+
+- If the JIT is running in a container and no swap space is defined, the JIT dynamically adjusts its scratch memory consumption based on the amount of free physical memory available, to avoid out-of-memory (OOM) occurrences.
+
+- Several performance features were added to the AArch64 JIT compiler implementation that led to a throughput improvement on multiple applications of at least 20%. The most notable improvements were seen in global register allocation, recompilation (without profiling), CUDA support, concurrent scavenge GC policy, and the inlined code sequence for object allocations.
 
 ### New `-XX:[+|-]HandleSIGABRT` option added
 
