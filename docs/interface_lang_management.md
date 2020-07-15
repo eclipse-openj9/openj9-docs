@@ -59,10 +59,8 @@ tables list the MXBeans by package and describe the monitoring or management cap
 | `OpenJ9DiagnosticsMXBean`   | Configures and dynamically triggers dump agents.                                                              |
 
 
-For more information about using these MXBeans, read the API documentation. For Java 8, see
-[OpenJ9 Language Management API documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.lang.management/index.html).
+For more information about using these MXBeans, read the API documentation. For Java 8, see the [OpenJ9 Language Management API documentation](api-langmgmt.md). <!-- Link to API -->
 
----
 
 <!-- ==================================================================================================== -->
 

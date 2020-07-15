@@ -45,7 +45,7 @@ If your DTFJ application requests information that is not available in the Java 
 
 DTFJ is implemented in pure Java and tools written using DTFJ can be cross-platform. Therefore, you can analyze a dump taken from one workstation on another (remote and more convenient) machine. For example, a dump produced on an AIX® Power® system can be analyzed on a Windows laptop.
 
-API documentation for the DTFJ interface can be found here: [Application programming reference: DTFJ](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.dtfj/index.html)
+See the [DTFJ API documentation](api-dtfj.md). <!-- Link to API -->
 
 ## Using the DTFJ interface
 
