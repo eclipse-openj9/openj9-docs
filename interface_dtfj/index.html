@@ -3878,7 +3878,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 <p>If your DTFJ application requests information that is not available in the Java dump, the API will return null or throw a <code>DataUnavailable</code> exception. You might need to adapt DTFJ applications written to process system dumps to make them work with Java dumps.</p>
 <p>DTFJ is implemented in pure Java and tools written using DTFJ can be cross-platform. Therefore, you can analyze a dump taken from one workstation on another (remote and more convenient) machine. For example, a dump produced on an AIX® Power® system can be analyzed on a Windows laptop.</p>
-<p>API documentation for the DTFJ interface can be found here: <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.dtfj/index.html">Application programming reference: DTFJ</a></p>
+<p>See the <a href="../api-dtfj/">DTFJ API documentation</a>. <!-- Link to API --></p>
 <h2 id="using-the-dtfj-interface">Using the DTFJ interface</h2>
 <p>To create applications that use DTFJ, you must use the DTFJ interface. Implementations of this interface have been written that work with system dumps and Java dumps.</p>
 <p>The diagram that follows illustrates the DTFJ interface. The starting point for working with a dump is to obtain an <code>Image</code> instance by using the <code>ImageFactory</code> class supplied with the concrete implementation of the API.</p>

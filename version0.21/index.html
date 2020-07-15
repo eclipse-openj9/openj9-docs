@@ -399,6 +399,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#application-programming-interface-api-documentation" class="md-nav__link">
+    Application Programming Interface (API) documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-improvements" class="md-nav__link">
+    Performance improvements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-xx-handlesigabrt-option-added" class="md-nav__link">
     New -XX:[+|-]HandleSIGABRT option added
   </a>
@@ -3802,6 +3816,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#application-programming-interface-api-documentation" class="md-nav__link">
+    Application Programming Interface (API) documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-improvements" class="md-nav__link">
+    Performance improvements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-xx-handlesigabrt-option-added" class="md-nav__link">
     New -XX:[+|-]HandleSIGABRT option added
   </a>
@@ -3890,6 +3918,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The following new features and notable changes since v 0.20.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#application-programming-interface-api-documentation">Application Programming Interface (API) documentation</a></li>
+<li><a href="#performance-improvements">Performance improvements</a></li>
 <li><a href="#new-xx-handlesigabrt-option-added">New <code>-XX:[+|-]HandleSIGABRT</code> option added</a></li>
 <li><a href="#new-xx-printflagsfinal-option-added">New <code>-XX:[+|-]PrintFlagsFinal</code> option added</a></li>
 <li><a href="#update-to-noclassdeffounderror-exception-message">Update to <code>NoClassDefFoundError</code> exception message</a></li>
@@ -3904,6 +3934,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk14&amp;jvmVariant=openj9">OpenJDK version 14</a></li>
 </ul>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="application-programming-interface-api-documentation">Application Programming Interface (API) documentation</h3>
+<p>API documentation that applies to OpenJ9 can now be found in this user documentation for both JDK 8 and JDK 11. The documentation includes links to Oracle API documentation for information that is not specific to OpenJ9. See <a href="../api-overview/">API overview</a>.</p>
+<h3 id="performance-improvements">Performance improvements</h3>
+<ul>
+<li>
+<p>If the <a href="../xtunevirtualized/">-Xtune:virtualized</a> command line option is used, the default JIT scratch memory limit is now reduced from 256 MB to 16 MB. This reduces the peak from JIT compilation activity, allowing you to size containers more easily, based on the particular application's memory usage.</p>
+</li>
+<li>
+<p>If the JIT is running in a container and no swap space is defined, the JIT dynamically adjusts its scratch memory consumption based on the amount of free physical memory available, to avoid out-of-memory (OOM) occurrences.</p>
+</li>
+<li>
+<p>Several performance features were added to the AArch64 JIT compiler implementation that led to a throughput improvement on multiple applications of at least 20%. The most notable improvements were seen in global register allocation, recompilation (without profiling), CUDA support, concurrent scavenge GC policy, and the inlined code sequence for object allocations.</p>
+</li>
+</ul>
 <h3 id="new-xx-handlesigabrt-option-added">New <code>-XX:[+|-]HandleSIGABRT</code> option added</h3>
 <p>This option affects the handling of the operating system signal <code>SIGABRT</code>. For compatibility with the reference implementation, set <code>-XX:-HandleSIGABRT</code>. For more information, see <a href="../xxhandlesigabrt/"><code>-XX:[+|-]HandleSIGABRT</code></a>. </p>
 <h3 id="new-xx-printflagsfinal-option-added">New <code>-XX:[+|-]PrintFlagsFinal</code> option added</h3>
