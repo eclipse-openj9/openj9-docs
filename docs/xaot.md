@@ -42,7 +42,7 @@ Startup performance can be improved by using the shared AOT code to provide nati
 
 ## Default behavior
 
-The AOT compiler is enabled by default, but is only active for classes found in the shared classes cache (see [Class data sharing](shrc.md)). Class data sharing is enabled by default for bootstrap classes, but you can use the [`-Xshareclasses`](xshareclasses.md) option to modify the behavior of the shared classes cache.
+The AOT compiler is enabled by default, but is only active for classes that are found in the shared classes cache. See [Class data sharing](shrc.md) for information about the shared classes cache, how class sharing is enabled, and what options are available to modify class sharing behavior. 
 
 ## Syntax
 
