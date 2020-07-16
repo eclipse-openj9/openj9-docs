@@ -25,6 +25,6 @@
 # DTFJ API documentation
 
 <div id="api" data-role="content">
-	<iframe scrolling="no" src="../api/jdk8/platform/dtfj/index.html?view=embed" title="API viewer" name="apiframe" allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="min-height:80vh; width: 100%;">
+	<iframe src="../api/jdk8/platform/dtfj/index.html?view=embed" title="API viewer" name="apiframe" allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="min-height:80vh; width: 100%;">
 	</iframe>
 </div>
