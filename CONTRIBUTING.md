@@ -275,7 +275,7 @@ the staged draft of your documentation, visit the following URL, substituting &l
      
 ## Accepting contributions
 
-_(whitelisted users only)_
+_(approved users only)_
 
 Project committers are responsible for checking pull requests and merging changes.
 
