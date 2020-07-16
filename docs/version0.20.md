@@ -56,7 +56,7 @@ platform is fully supported.
 
 ### `-XX:[+|-]ExitOnOutOfMemoryError` option behavior update
 
-The `-XX:[+|-]ExitOnOutOfMemoryError` option is updated to exit only on VM `OutOfMemoryErrors` instead of both VM and Java&trade; thrown errors to match the Hotspot option. See [`-XX:[+|-]ExitOnOutOfMemoryError`](xxexitonoutofmemoryerror.md) for more details about this option.
+The `-XX:[+|-]ExitOnOutOfMemoryError` option is updated to exit only on VM `OutOfMemoryErrors` instead of both VM and Java&trade; thrown errors to match the HotSpot option. See [`-XX:[+|-]ExitOnOutOfMemoryError`](xxexitonoutofmemoryerror.md) for more details about this option.
 
 ### New `-XX:[+|-]GlobalLockReservation` option added
 

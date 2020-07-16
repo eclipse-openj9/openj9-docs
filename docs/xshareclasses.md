@@ -264,6 +264,8 @@ case, the VM continues without using shared classes.
 
 : On AIX, Linux, and macOS systems, if a user creates a cache by specifying the `groupAccess` suboption, other users in the same group must also specify this suboption to be granted access to the same cache.
 
+: When `groupAccess` is specified, the default directory for a cache is `/tmp/javasharedresources`. Some systems might clear the content of the `/tmp` directory on a reboot, removing the shared cache. To avoid that problem, you are therefore recommended to use [`cacheDir`](#cachedir) to set a different location for the cache. If necessary, use [`cacheDirPerm`](#cachedirperm) to ensure that the cache directory permissions are set appropriately.
+
 : In certain situations, warning messages might be generated when the `groupAccess` suboption is used.
 
 : This message can occur when persistent caches are used:
@@ -275,7 +277,7 @@ case, the VM continues without using shared classes.
 
         JVMSHRC759W Failed to set group access permission as requested by the
         'groupAccess' sub-option on the semaphore control file associated
-es        with shared classes cache.
+        with shared classes cache.
 
         JVMSHRC760W Failed to set group access permission as requested by the
         'groupAccess' sub-option on the shared memory control file associated

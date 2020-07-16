@@ -42,8 +42,13 @@ For normal operation, certain environment variables must be set at the operating
 - If your application allocates a large amount of memory and frequently accesses that memory, you might want to enable large page support on your system. See [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
 - Configuring Dynamic LPAR support on AIX systems.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On macOS&reg; systems, you must set the DYLD_LIBRARY_PATH environment variable to indicate where to find shared libraries. In addition, to ensure there are sufficient resources for your application, you might need to increase system limits by using `launchctl`, `ulimit`, or `kern.<VARIABLES>`. For further instructions, refer to the documentation for your macOS release.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:** 
 
+1. On macOS&reg; systems, you must set the DYLD_LIBRARY_PATH environment variable to indicate where to find shared libraries. In addition, to ensure there are sufficient resources for your application, you might need to increase system limits by using `launchctl`, `ulimit`, or `kern.<VARIABLES>`. For further instructions, refer to the documentation for your macOS release.
+
+2. On AIX systems, the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018) is required to run JDK 14 or later.
+ 
+ 
 ## Performance tuning
 
 OpenJ9 is configured to start with a set of default options that provide the optimal runtime environment for Java applications with typical workloads. However, if your application is atypical, you can improve performance by tuning the OpenJ9 VM. You can also improve performance by enabling hardware features or using specific APIs in your application code.
@@ -104,7 +109,8 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow 
 
 ### Exploiting GPUs
 
-OpenJ9 provides the [CUDA4J API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.cuda/index.html?view=kc) and the [com.ibm.gpu API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.api.80.doc/com.ibm.gpu/index.html?view=kc), which allow you to develop applications that can take advantage of graphics processing unit (GPU) processing for suitable functions, such as code page conversion. You can also enable the JIT compiler to offload certain processing tasks to a GPU by specifying the `-Xjit:enableGPU` option on the command line. When enabled, the JIT compiler determines when to offload tasks based on performance heuristics.
+OpenJ9 provides both the [CUDA4J API](api-cuda.md) <!-- Link to API --> and the [GPU API](api-gpu.md), <!-- Link to API -->
+which enables you to develop applications that can take advantage of graphics processing unit (GPU) processing for suitable functions, such as code page conversion. You can also enable the JIT compiler to offload certain processing tasks to a GPU by specifying the [`-Xjit:enableGPU`](xjit.md#enablegpu) option on the command line. When enabled, the JIT compiler determines when to offload tasks based on performance heuristics.
 
 GPU processing is supported only on Windows (x86-64) and Linux (x86-64 and IBM Power LE) systems. For more information about enabling GPU processing, see [Exploiting graphics processing units](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/gpu_overview.html).
 
