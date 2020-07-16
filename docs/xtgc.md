@@ -39,7 +39,7 @@ Provides garbage collection tracing options.
 
         -Xtgc:backtrace
 
-: Before a garbage collection, a single line is printed containing the name of the master thread for garbage collection, as well as the value of the `osThread` slot in the `J9VMThread` structure.
+: Before a garbage collection, a single line is printed containing the name of the main thread for garbage collection, as well as the value of the `osThread` slot in the `J9VMThread` structure.
 
 ### `compaction`
 
