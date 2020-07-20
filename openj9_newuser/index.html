@@ -3927,7 +3927,7 @@ options, dump agents, and AttachAPI.</p>
 <li><strong><a href="../interface_dtfj/">DTFJ interface</a>:</strong> The Diagnostic Tool Framework for Java (DTFJ) API allows custom applications to be written that can access a wide
 range of information in a system dump or a Java dump. DTFJ can be used with the Eclipse Memory Analyzer Toolkit (MAT) to examine the Java object heap
 for memory leaks and to reduce memory consumption. For more information about DTFJ, see <a href="../interface_dtfj/">Diagnostic Tool Framework for Java</a>.</li>
-<li><strong>java.lang.management API:</strong> OpenJ9 provides MXBean additions and extensions to this standard API, which enables you to use tools such as JConsole to monitor and manage your Java applications. For more information, see <a href="../interface_lang_management/">Language management interface</a>.</li>
+<li><strong><a href="../api-langmgmt/">java.lang.management API</a>:</strong> OpenJ9 provides MXBean additions and extensions to this standard API, which enables you to use tools such as JConsole to monitor and manage your Java applications. For more information, see <a href="../interface_lang_management/">Language management interface</a>.</li>
 </ul>
 <p>If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, you might make use of certain <code>com.sun.management</code> interfaces. Although OpenJ9 implements some of these interfaces, a few are specific to the HotSpot VM. The following table indicates alternative classes or mechanisms that you can use for equivalent function in OpenJ9:</p>
 <table>
@@ -3965,6 +3965,7 @@ for memory leaks and to reduce memory consumption. For more information about DT
 </tbody>
 </table>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> OpenJ9 implements the following <code>com.sun.management</code> interfaces: <code>GarbageCollectorMXBean</code>, <code>GarbageCollectionNotificationInfo</code>, <code>GcInfo</code>, <code>OperatingSystemMXBean</code>, <code>UnixOperatingSystemMXBean</code>.</p>
+<p>For information about OpenJ9 application programming interfaces, see <a href="../api-overview/">API documentation</a>.</p>
 <h2 id="other-differences">Other differences</h2>
 <p>This topic describes the differences between the HotSpot VM and the Eclipse OpenJ9 VM. Therefore, if you are currently using an OpenJDK with the default HotSpot VM and you want to switch to using an OpenJDK with the OpenJ9 VM, these are the only differences you might be concerned about. If however, you are using an Oracle JDK, you might want to learn about differences between other components that make up an Oracle JDK or an OpenJDK from the AdoptOpenJDK community. For more information, read the <a href="https://adoptopenjdk.net/migration.html">Migration guide</a>.</p>
                 
