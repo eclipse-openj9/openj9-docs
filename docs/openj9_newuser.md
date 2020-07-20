@@ -89,7 +89,7 @@ OpenJ9 provides the following interfaces, which can be used for monitoring and d
 - **[DTFJ interface](interface_dtfj.md):** The Diagnostic Tool Framework for Java (DTFJ) API allows custom applications to be written that can access a wide
 range of information in a system dump or a Java dump. DTFJ can be used with the Eclipse Memory Analyzer Toolkit (MAT) to examine the Java object heap
 for memory leaks and to reduce memory consumption. For more information about DTFJ, see [Diagnostic Tool Framework for Java](interface_dtfj.md).
-- **java.lang.management API:** OpenJ9 provides MXBean additions and extensions to this standard API, which enables you to use tools such as JConsole to monitor and manage your Java applications. For more information, see [Language management interface](interface_lang_management.md).
+- **[java.lang.management API](api-langmgmt.md):** OpenJ9 provides MXBean additions and extensions to this standard API, which enables you to use tools such as JConsole to monitor and manage your Java applications. For more information, see [Language management interface](interface_lang_management.md).
 
 If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, you might make use of certain `com.sun.management` interfaces. Although OpenJ9 implements some of these interfaces, a few are specific to the HotSpot VM. The following table indicates alternative classes or mechanisms that you can use for equivalent function in OpenJ9:
 
@@ -103,6 +103,8 @@ If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, you 
 |`DiagnosticCommandMBean`    | None                     |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** OpenJ9 implements the following `com.sun.management` interfaces: `GarbageCollectorMXBean`, `GarbageCollectionNotificationInfo`, `GcInfo`, `OperatingSystemMXBean`, `UnixOperatingSystemMXBean`.
+
+For information about OpenJ9 application programming interfaces, see [API documentation](api-overview.md).
 
 ## Other differences
 

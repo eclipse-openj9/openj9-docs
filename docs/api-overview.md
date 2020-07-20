@@ -24,7 +24,9 @@
 
 # API documentation
 
-This documentation applies to the OpenJ9 API. The documentation includes links to Oracle API documentation.
+The Eclipse OpenJ9 VM provides supplementary application programming interfaces and extensions, which can be used to improve performance, assist with problem determination, or help monitor and manage the OpenJ9 VM.
+
+The OpenJ9 API documentation includes links to the API documentation for the Java&trade; SE and JDK reference implementation.
 
 
 <!-- ==== END OF TOPIC ==== api-overview.md ==== -->
