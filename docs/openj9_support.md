@@ -33,7 +33,7 @@ Eclipse OpenJ9 against a supported OpenJDK level, with fixes being delivered in 
 
 In order to track the OpenJDK 6 month release cadence, OpenJ9 also produces two releases a year that support only
 a single JDK level.  These releases will occur in March and September with the intention of supporting only
-the corresponding new OpenJDK feature release (ie: 11, 13, ...).
+the corresponding new OpenJDK feature release (ie: 11, 15, ...).
 
 The following table summarizes which JDK levels are expected to be supported by which Eclipse OpenJ9 releases,
 along with projected release dates. All future dates and support expectations are predictions that might change
@@ -48,7 +48,7 @@ columns will be removed over time.
 | v 0.19.0       | March 2020          | No        | No          | Yes (\*2) |           |
 | v 0.20.0       | April 2020          | Yes       | Yes         | Yes       |           |
 | v 0.21.0       | July 2020           | Yes       | Yes         | Yes       |           |
-| v 0.22.0       | September 2020 (\*1)| No        | No          | No        | Yes (\*2) |
+| v 0.22.0       | September 2020      | No        | No          | No        | Yes (\*2) |
 | v 0.23.0       | October 2020 (\*1)  | Yes       | Yes         | No        | Yes       |
 | v 0.24.0       | January 2021 (\*1)  | Yes       | Yes         | No        | Yes       |
 
@@ -147,19 +147,17 @@ OpenJDK 11 binaries are supported on the minimum operating system levels shown i
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
 
-### OpenJDK 14
+### OpenJDK 15
 
 <i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
 platform support might vary, depending on their build environment. Check the AdoptOpenJDK [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
 
-OpenJDK 14 binaries are supported on the minimum operating system levels shown in the following tables:
+OpenJDK 15 binaries are supported on the minimum operating system levels shown in the following tables:
 
 
 | Linux                                 |  x64   |  ppc64le   | Z64  |
 |---------------------------------------|--------|------------|------|
-| CentOS 6.9                            |   Y    |     N      |  N   |
 | CentOS 7.4                            |   Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.9   |   Y    |     N      |  Y   |
 | RHEL 7.4                              |   Y    |     Y      |  Y   |
 | SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
 | Ubuntu 16.04                          |   Y    |     Y      |  Y   |
@@ -217,7 +215,7 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 | macOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
 | AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |
 
-### OpenJDK 14
+### OpenJDK 15
 
 | Platform                    | Operating system         |  Compiler                       |
 |-----------------------------|--------------------------|---------------------------------|
