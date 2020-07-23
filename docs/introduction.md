@@ -60,7 +60,21 @@ OpenJ9 includes several garbage collection policies. To learn more about these p
 You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Class Data Sharing](shrc.md).
 
 ### Native data operations
-If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator API.
+If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator (DAA) API.
+
+The following functions are provided:
+
+- Arithmetic, comparison, shifting, and validation operations for packed decimal data.
+- Conversion operations between different binary coded decimal and Java binary types.
+- Marshalling operations: marshalling and unmarshalling Java binary types, such as `short`, `int`, `long`, `float`, and `double`, to and from byte arrays.
+
+You can gain a number of benefits by using the APIs provided:
+
+- Improved application performance by avoiding object creation and intermediate processing, which can also put pressure on the Java heap.
+- Hardware acceleration by automatically exploiting available hardware features on specific platforms.
+- Platform independence for applications that are developed to take advantage of Data Access Acceleration.
+
+For more information, see the [API documentation](api-overview.md).
 
 ### Cloud optimizations
 To improve the performance of applications that run in containers, try setting the following tuning options:
