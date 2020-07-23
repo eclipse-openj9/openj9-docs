@@ -42,13 +42,13 @@ For normal operation, certain environment variables must be set at the operating
 - If your application allocates a large amount of memory and frequently accesses that memory, you might want to enable large page support on your system. See [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
 - Configuring Dynamic LPAR support on AIX systems.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:** 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
 1. On macOS&reg; systems, you must set the DYLD_LIBRARY_PATH environment variable to indicate where to find shared libraries. In addition, to ensure there are sufficient resources for your application, you might need to increase system limits by using `launchctl`, `ulimit`, or `kern.<VARIABLES>`. For further instructions, refer to the documentation for your macOS release.
 
 2. On AIX systems, the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018) is required to run JDK 14 or later.
- 
- 
+
+
 ## Performance tuning
 
 OpenJ9 is configured to start with a set of default options that provide the optimal runtime environment for Java applications with typical workloads. However, if your application is atypical, you can improve performance by tuning the OpenJ9 VM. You can also improve performance by enabling hardware features or using specific APIs in your application code.
@@ -100,7 +100,7 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow 
 
 - [OpenJDK 8 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V8.md).
 - [OpenJDK 11 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
-- [OpenJDK 14 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V14.md).
+- [OpenJDK 15 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V15.md).
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you obtain an OpenJDK with OpenJ9 build from [AdoptOpenJDK](https://adoptopenjdk.net/) that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgements apply in accordance with the license terms:
 
