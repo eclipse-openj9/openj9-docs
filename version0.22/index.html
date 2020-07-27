@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xdump/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.22/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-Xdump -  </title>
+        <title>Version 0.22.0 -  </title>
       
     
     
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-xdump" tabindex="1" class="md-skip">
+      <a href="../#whats-new-in-version-0220" tabindex="1" class="md-skip">
         
       </a>
     
@@ -317,10 +317,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Release notes
@@ -348,11 +350,69 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../version0.22/" title="Version 0.22.0" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Version 0.22.0
+      </label>
+    
+    <a href="./" title="Version 0.22.0" class="md-nav__link md-nav__link--active">
       Version 0.22.0
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-changes" class="md-nav__link">
+    Features and changes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    Binaries and supported environments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-release-information" class="md-nav__link">
+    Full release information
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -989,12 +1049,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
     <label class="md-nav__link" for="nav-12">
       Command-line options
@@ -1370,12 +1428,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-5" type="checkbox" id="nav-12-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-5" type="checkbox" id="nav-12-5">
     
     <label class="md-nav__link" for="nav-12-5">
       JVM -X options
@@ -1691,323 +1747,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -Xdump
-      </label>
-    
-    <a href="./" title="-Xdump" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../xdump/" title="-Xdump" class="md-nav__link">
       -Xdump
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#xdump-option-builder" class="md-nav__link">
-    Xdump Option Builder
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-agents" class="md-nav__link">
-    Dump agents
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#default-dump-agents" class="md-nav__link">
-    Default dump agents
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dump-agent-tokens" class="md-nav__link">
-    Dump agent tokens
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merging-dump-agents" class="md-nav__link">
-    Merging dump agents
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-events" class="md-nav__link">
-    Dump events
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#help" class="md-nav__link">
-    help
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#noneltoptionsgt" class="md-nav__link">
-    none:&lt;options&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#defaults" class="md-nav__link">
-    defaults
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eventslteventgt" class="md-nav__link">
-    events=&lt;event&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execltcommandgt" class="md-nav__link">
-    exec=&lt;command&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fileltfilenamegt" class="md-nav__link">
-    file=&lt;filename&gt;
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#writing-to-stdoutstderr" class="md-nav__link">
-    Writing to STDOUT/STDERR
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tokens" class="md-nav__link">
-    Tokens
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#file-location" class="md-nav__link">
-    File location
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filterltfiltergt" class="md-nav__link">
-    filter=&lt;filter&gt;
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wildcards" class="md-nav__link">
-    Wildcards
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#class-loading-and-exception-events" class="md-nav__link">
-    Class loading and exception events
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vmstop-event" class="md-nav__link">
-    vmstop event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slow-event" class="md-nav__link">
-    slow event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#allocation-event" class="md-nav__link">
-    allocation event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-events" class="md-nav__link">
-    Other events
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msg_filterltfiltergt" class="md-nav__link">
-    msg_filter=&lt;filter&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optsltoptionsgt" class="md-nav__link">
-    opts=&lt;options&gt;
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#heap-dumps" class="md-nav__link">
-    Heap dumps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zos-system-dumps" class="md-nav__link">
-    z/OS system dumps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tool-dumps" class="md-nav__link">
-    Tool dumps
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prioritylt0-999gt" class="md-nav__link">
-    priority=&lt;0-999&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rangeltrangesgt" class="md-nav__link">
-    range=&lt;ranges&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requestltrequestsgt" class="md-nav__link">
-    request=&lt;requests&gt;
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-output" class="md-nav__link">
-    Dump output
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#system-dumps-on-linux" class="md-nav__link">
-    System dumps on Linux
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -4022,44 +3766,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#xdump-option-builder" class="md-nav__link">
-    Xdump Option Builder
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-agents" class="md-nav__link">
-    Dump agents
+  <a href="#features-and-changes" class="md-nav__link">
+    Features and changes
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#default-dump-agents" class="md-nav__link">
-    Default dump agents
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dump-agent-tokens" class="md-nav__link">
-    Dump agent tokens
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merging-dump-agents" class="md-nav__link">
-    Merging dump agents
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    Binaries and supported environments
   </a>
   
 </li>
@@ -4070,234 +3786,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
-  <a href="#dump-events" class="md-nav__link">
-    Dump events
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#help" class="md-nav__link">
-    help
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#noneltoptionsgt" class="md-nav__link">
-    none:&lt;options&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#defaults" class="md-nav__link">
-    defaults
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eventslteventgt" class="md-nav__link">
-    events=&lt;event&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execltcommandgt" class="md-nav__link">
-    exec=&lt;command&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fileltfilenamegt" class="md-nav__link">
-    file=&lt;filename&gt;
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#writing-to-stdoutstderr" class="md-nav__link">
-    Writing to STDOUT/STDERR
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tokens" class="md-nav__link">
-    Tokens
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#file-location" class="md-nav__link">
-    File location
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filterltfiltergt" class="md-nav__link">
-    filter=&lt;filter&gt;
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wildcards" class="md-nav__link">
-    Wildcards
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#class-loading-and-exception-events" class="md-nav__link">
-    Class loading and exception events
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vmstop-event" class="md-nav__link">
-    vmstop event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slow-event" class="md-nav__link">
-    slow event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#allocation-event" class="md-nav__link">
-    allocation event
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-events" class="md-nav__link">
-    Other events
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#msg_filterltfiltergt" class="md-nav__link">
-    msg_filter=&lt;filter&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optsltoptionsgt" class="md-nav__link">
-    opts=&lt;options&gt;
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#heap-dumps" class="md-nav__link">
-    Heap dumps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zos-system-dumps" class="md-nav__link">
-    z/OS system dumps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tool-dumps" class="md-nav__link">
-    Tool dumps
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prioritylt0-999gt" class="md-nav__link">
-    priority=&lt;0-999&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rangeltrangesgt" class="md-nav__link">
-    range=&lt;ranges&gt;
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#requestltrequestsgt" class="md-nav__link">
-    request=&lt;requests&gt;
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dump-output" class="md-nav__link">
-    Dump output
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#system-dumps-on-linux" class="md-nav__link">
-    System dumps on Linux
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
+  <a href="#full-release-information" class="md-nav__link">
+    Full release information
   </a>
   
 </li>
@@ -4319,7 +3809,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9/edit/master/docs/xdump.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9/edit/master/docs/version0.22.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -4347,927 +3837,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xdump">-Xdump</h1>
-<p>OpenJ9 produces various types of diagnostic information for analysis when different events occur, such as a general protection fault. The dumps produced are controlled by dump agents, which are initialized when the OpenJ9 virtual machine (VM) starts. The default settings for the dump agents are sufficient for most cases. However, you can use the <code>-Xdump</code> option on the command line to fine tune the dump agent settings. For example, you can use the <code>-Xdump</code> option to add and remove dump agents for various VM events, update default dump settings, and limit the number of dumps that are produced.</p>
-<p>A large set of options and suboptions are available for controlling dumps, which provides a lot of flexibility.</p>
-<h2 id="xdump-option-builder">Xdump Option Builder</h2>
-<p>Use the <a href="https://www.eclipse.org/openj9/tools/xdump_option_builder.html" target="_blank">Xdump Option Builder tool</a> to help you specify the correct options and avoid incompatibilities.</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -Xdump:&lt;parameter&gt;
-</code></pre>
-<p>The following table lists the help options for <code>-Xdump</code>, which provide usage and configuration information:</p>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-Xdump:help</code></td>
-<td>Displays general dump help.</td>
-</tr>
-<tr>
-<td><code>-Xdump:events</code></td>
-<td>Lists available trigger events.</td>
-</tr>
-<tr>
-<td><code>-Xdump:request</code></td>
-<td>Lists additional VM requests.</td>
-</tr>
-<tr>
-<td><code>-Xdump:tokens</code></td>
-<td>Lists recognized label tokens.</td>
-</tr>
-<tr>
-<td><code>-Xdump:what</code></td>
-<td>Shows registered agents on startup.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:help</code></td>
-<td>Displays dump agent usage information.</td>
-</tr>
-</tbody>
-</table>
-<p>The following options can be used to control the production of diagnostic data:  </p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-Xdump:none</code></td>
-<td>Removes all default dump agents and any preceding dump options.</td>
-</tr>
-<tr>
-<td><code>-Xdump:dynamic</code></td>
-<td>Enable support for pluggable agents</td>
-</tr>
-<tr>
-<td><code>-Xdump:nofailover</code></td>
-<td>Discards dumps when the default or specified dump location is full.</td>
-</tr>
-<tr>
-<td><code>-Xdump:directory=&lt;path&gt;</code></td>
-<td>Specifies a directory for all dump types to be written to. This directory path is prefixed to the path of all non-absolute dump file names, including the file names for the default dump agents.</td>
-</tr>
-<tr>
-<td><code>-Xdump:suspendwith=&lt;offset&gt;</code></td>
-<td>Modifies the signal that is used to suspend VM threads while a dump file is being written. Use <code>&lt;offset&gt;</code> to change the default signal number. (Linux&reg; only)</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:&lt;suboptions&gt;</code></td>
-<td>Provides detailed suboptions per dump agent that provide more granular control.</td>
-</tr>
-</tbody>
-</table>
-<p>Dump agents can be configured at a very granular level by specifying suboptions. The <code>&lt;events&gt;</code> suboption is the prime trigger mechanism. The full set of suboptions are listed in the following table:</p>
-<table>
-<thead>
-<tr>
-<th>Dump agent suboptions</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:none</code></td>
-<td>Removes the dump agent.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:defaults</code></td>
-<td>Prints the default options for the dump agent.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:events=&lt;events&gt;</code></td>
-<td>Triggers a dump agent when a specific event occurs.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:exec=&lt;command&gt;</code></td>
-<td>Starts an external application for the dump agent.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:file=&lt;filename&gt;</code></td>
-<td>Specifies where to write the dump for the dump agent.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:filter=&lt;filter&gt;</code></td>
-<td>Filters dumps by wildcards or events.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:msg_filter=&lt;filter&gt;</code></td>
-<td>Filters on text strings within an exception message.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:opts=&lt;options&gt;</code></td>
-<td>Used by specific dump agents to select the type of dump file to produce.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:priority=&lt;0-999&gt;</code></td>
-<td>Specifies the priority that the dump agents run in.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:range=&lt;ranges&gt;</code></td>
-<td>Starts and stops a dump agent on a particular occurrence of a VM.</td>
-</tr>
-<tr>
-<td><code>-Xdump:&lt;agent&gt;:request=&lt;requests&gt;</code></td>
-<td>Asks the VM to prepare the state before starting the dump agent.</td>
-</tr>
-</tbody>
-</table>
-<p>You can have multiple <code>-Xdump</code> options on the command line. You can also have multiple dump types triggered by multiple events. For example, the following command turns off the creation of heap dump files, and creates a dump agent that produces a heap dump file and a Java&trade; dump file when either a <strong>vmstart</strong> or <strong>vmstop</strong> event occurs:</p>
-<pre><code>java -Xdump:heap:none -Xdump:heap+java:events=vmstart+vmstop -mp . -m &lt;class&gt; [args...]
-</code></pre>
-
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Multiple suboptions that follow an <code>Xdump</code> suboption must be split with a comma (,), for example:</p>
-<pre><code>java -Xdump:java:events=vmstart,file=/STDERR/ -version
-</code></pre>
-
-<p>For more detailed information on the these parameters and suboptions, including examples, see <a href="#parameters">Parameters</a>.</p>
-<h2 id="dump-agents">Dump agents</h2>
-<p>A dump agent performs diagnostic tasks when triggered. Most dump agents save information on the state of the VM in some form of dump or trace file for later analysis.
-An exception is the "tool" agent, which can be used to trigger external processes when specific events occur.</p>
-<table>
-<thead>
-<tr>
-<th>Dump agent</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>stack</td>
-<td>Stack dumps are very basic dumps in which the status and Java stack of the thread is written to stderr.</td>
-</tr>
-<tr>
-<td>console</td>
-<td>Console dumps are very basic dumps, in which the status of every Java thread is written to stderr.</td>
-</tr>
-<tr>
-<td>system</td>
-<td>System dumps capture the raw process image or address space of an application.</td>
-</tr>
-<tr>
-<td>tool</td>
-<td>The tool option allows external processes to be started when an event occurs.</td>
-</tr>
-<tr>
-<td>java</td>
-<td>Java dumps are an internally generated and formatted analysis of the VM, giving information that includes the Java threads present, the classes loaded, and heap statistics.</td>
-</tr>
-<tr>
-<td>heap</td>
-<td>Heap dumps capture all object instances in the heap, including each object address, type or class name, size, and references to other objects.</td>
-</tr>
-<tr>
-<td>snap</td>
-<td>Take a snap of the trace buffers, which contain tracepoint data.</td>
-</tr>
-<tr>
-<td>ceedump</td>
-<td>LE CEEDUMP dumps are z/OS&reg; formatted summary system dumps that show stack traces for each thread that is in the VM process, together with register information and a short dump of storage for each register.</td>
-</tr>
-<tr>
-<td>jit</td>
-<td>JIT compiler dumps contain diagnostic data in a binary format.</td>
-</tr>
-<tr>
-<td>exit</td>
-<td>Shut down the VM.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="default-dump-agents">Default dump agents</h3>
-<p>During VM initialization a set of dump agents are added by default. You can override this set of dump agents using <code>-Xdump</code> on the command line. To show the registered dump agents, user the <code>Xdump:what</code> option on the command line. The following sample output shows the default dump agents that are in place on a Linux system:</p>
-<pre><code>java -Xdump:what
-
-Registered dump agents
-----------------------
--Xdump:system:
-    events=gpf+abort+traceassert+corruptcache,
-    label=/home/user/core.%Y%m%d.%H%M%S.%pid.%seq.dmp,
-    range=1..0,
-    priority=999,
-    request=serial
-----------------------
--Xdump:system:
-    events=systhrow,
-    filter=java/lang/OutOfMemoryError,
-    label=/home/user/core.%Y%m%d.%H%M%S.%pid.%seq.dmp,
-    range=1..1,
-    priority=999,
-    request=exclusive+compact+prepwalk
-----------------------
--Xdump:heap:
-    events=systhrow,
-    filter=java/lang/OutOfMemoryError,
-    label=/home/user/heapdump.%Y%m%d.%H%M%S.%pid.%seq.phd,
-    range=1..4,
-    priority=500,
-    request=exclusive+compact+prepwalk,
-    opts=PHD
-----------------------
--Xdump:java:
-    events=gpf+user+abort+traceassert+corruptcache,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..0,
-    priority=400,
-    request=exclusive+preempt
-----------------------
--Xdump:java:
-    events=systhrow,
-    filter=java/lang/OutOfMemoryError,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..4,
-    priority=400,
-    request=exclusive+preempt
-----------------------
--Xdump:snap:
-    events=gpf+abort+traceassert+corruptcache,
-    label=/home/user/Snap.%Y%m%d.%H%M%S.%pid.%seq.trc,
-    range=1..0,
-    priority=300,
-    request=serial
-----------------------
--Xdump:snap:
-    events=systhrow,
-    filter=java/lang/OutOfMemoryError,
-    label=/home/user/Snap.%Y%m%d.%H%M%S.%pid.%seq.trc,
-    range=1..4,
-    priority=300,
-    request=serial
-----------------------
--Xdump:jit:
-    events=gpf+abort,
-    label=/home/user/jitdump.%Y%m%d.%H%M%S.%pid.%seq.dmp,
-    range=1..0,
-    priority=200,
-    request=serial
-----------------------
-</code></pre>
-
-<h3 id="dump-agent-tokens">Dump agent tokens</h3>
-<p>You can use tokens to add context to dump file names and directories, and to pass command-line arguments to the tool agent. The tokens available are listed in the following table:</p>
-<table>
-<thead>
-<tr>
-<th>Token</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>%Y</td>
-<td>Year (4 digits)</td>
-</tr>
-<tr>
-<td>%y</td>
-<td>Year (2 digits)</td>
-</tr>
-<tr>
-<td>%m</td>
-<td>Month (2 digits)</td>
-</tr>
-<tr>
-<td>%d</td>
-<td>Day of the month (2 digits)</td>
-</tr>
-<tr>
-<td>%H</td>
-<td>Hour ( 2 digits)</td>
-</tr>
-<tr>
-<td>%M</td>
-<td>Minute (2 digits)</td>
-</tr>
-<tr>
-<td>%S</td>
-<td>Second (2 digits)</td>
-</tr>
-<tr>
-<td>%pid</td>
-<td>Process ID</td>
-</tr>
-<tr>
-<td>%uid</td>
-<td>User name</td>
-</tr>
-<tr>
-<td>%seq</td>
-<td>Dump counter</td>
-</tr>
-<tr>
-<td>%tick</td>
-<td>msec counter</td>
-</tr>
-<tr>
-<td>%home</td>
-<td>Java home directory</td>
-</tr>
-<tr>
-<td>%last</td>
-<td>Last dump</td>
-</tr>
-<tr>
-<td>%job</td>
-<td>Job name (z/OS only)</td>
-</tr>
-<tr>
-<td>%jobid</td>
-<td>Job ID (z/OS only)</td>
-</tr>
-<tr>
-<td>%asid</td>
-<td>Address space ID (z/OS only)</td>
-</tr>
-<tr>
-<td>&amp;DS</td>
-<td>Dump Section. An incrementing sequence number used for splitting TDUMP files to be less than 2 GB in size. (z/OS 64-bit only)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="merging-dump-agents">Merging dump agents</h3>
-<p>If you configure more than one dump agent, each responds to events according to its configuration. However, the internal structures representing the dump agent configuration might not match the command line, because dump agents are merged for efficiency. Two sets of options can be merged as long as none of the agent settings conflict. This means that the list of installed dump agents and their parameters produced by <code>-Xdump:what</code> might not be grouped in the same way as the original <code>-Xdump</code> options that configured them.</p>
-<p>For example, you can use the following command to specify that a dump agent creates a Java dump file on class unload:</p>
-<pre><code>java -Xdump:java:events=unload -Xdump:what
-</code></pre>
-
-<p>This command does not create a new agent, as can be seen in the results from the <code>-Xdump:what</code> option.</p>
-<pre><code>...
-----------------------
--Xdump:java:
-    events=gpf+user+abort+unload+traceassert+corruptcache,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..0,
-    priority=400,
-    request=exclusive+preempt
-----------------------
-</code></pre>
-
-<p>The configuration is merged with the existing Java dump agent for events <strong>gpf</strong>, <strong>user</strong>, <strong>abort</strong>, <strong>traceassert</strong>, and <strong>corruptcache</strong>, because none of the specified options for the new unload agent conflict with those for the existing agent.</p>
-<p>In the previous example, if one of the parameters for the unload agent is changed so that it conflicts with the existing agent, then it cannot be merged. For example, the following command specifies a different priority, forcing a separate agent to be created:</p>
-<pre><code>java -Xdump:java:events=unload,priority=100 -Xdump:what
-</code></pre>
-
-<p>The results of the <code>-Xdump:what</code> option in the command are as follows.</p>
-<pre><code>...
-----------------------
--Xdump:java:
-    events=unload,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..0,
-    priority=100,
-    request=exclusive+preempt
-----------------------
--Xdump:java:
-    events=gpf+user+abort+traceassert+corruptcache,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..0,
-    priority=400,
-    request=exclusive+preempt
-----------------------
-</code></pre>
-
-<p>To merge dump agents, the <em>request</em>, <em>filter</em>, <em>opts</em>, <em>label</em>, and <em>range</em> parameters must match exactly. If you specify multiple agents that filter on the same string, but keep all other parameters the same, the agents are merged. For example:</p>
-<pre><code>java -Xdump:none -Xdump:java:events=uncaught,filter=java/lang/NullPointerException -Xdump:java:events=unload,filter=java/lang/NullPointerException -Xdump:what
-</code></pre>
-
-<p>The results of this command are as follows:</p>
-<pre><code>Registered dump agents
-----------------------
--Xdump:java:
-    events=unload+uncaught,
-    filter=java/lang/NullPointerException,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
-    range=1..0,
-    priority=400,
-    request=exclusive+preempt
-----------------------
-</code></pre>
-
-<h2 id="dump-events">Dump events</h2>
-<p>Dump agents are triggered by events occurring during operation of the OpenJ9 VM. Some events can be filtered to improve the relevance of the output.</p>
-<p>The following table shows the events that are available as dump agent triggers:</p>
-<table>
-<thead>
-<tr>
-<th>Event</th>
-<th>Triggered when....</th>
-<th>Filters on ....</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>gpf</strong></td>
-<td>A General Protection Fault (GPF) occurs.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>user</strong></td>
-<td>The VM receives the SIGQUIT (Linux, macOS&reg;, AIX&reg;, z/OS) or SIGBREAK (Windows&trade;) signal from the operating system.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>abort</strong></td>
-<td>The VM receives the SIGABRT signal from the operating system.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>vmstart</strong></td>
-<td>The virtual machine is started.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>vmstop</strong></td>
-<td>The virtual machine stops.</td>
-<td>Exit code; for example, <code>filter=#129..#192#-42#255</code></td>
-</tr>
-<tr>
-<td><strong>load</strong></td>
-<td>A class is loaded.</td>
-<td>Class name; for example, <code>filter=java/lang/String</code></td>
-</tr>
-<tr>
-<td><strong>unload</strong></td>
-<td>A class is unloaded.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>throw</strong></td>
-<td>An exception is thrown explicitly in Java code. Use 'systhrow' for unexpected VM exceptions.</td>
-<td>Exception class name; for example, <code>filter=java/lang/OutOfMem*</code></td>
-</tr>
-<tr>
-<td><strong>catch</strong></td>
-<td>An exception is caught.</td>
-<td>Exception class name; for example, <code>filter=*Memory*</code></td>
-</tr>
-<tr>
-<td><strong>uncaught</strong></td>
-<td>A Java exception is not caught by the application.</td>
-<td>Exception class name; for example, <code>filter=*MemoryError</code></td>
-</tr>
-<tr>
-<td><strong>systhrow</strong></td>
-<td>A Java exception is about to be thrown by the VM. This is different from the 'throw' event because it is only triggered for error conditions detected internally in the VM.</td>
-<td>Exception class name; for example, <code>filter=java/lang/OutOfMem*</code>.</td>
-</tr>
-<tr>
-<td><strong>thrstart</strong></td>
-<td>A new thread is started.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>blocked</strong></td>
-<td>A thread becomes blocked.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>thrstop</strong></td>
-<td>A thread stops.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>fullgc</strong></td>
-<td>A garbage collection cycle is started.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>slow</strong></td>
-<td>A thread takes longer than 50ms to respond to an internal VM request.</td>
-<td>Time taken; for example, filter=#300ms will trigger when a thread takes longer than 300ms to respond to an internal VM request.</td>
-</tr>
-<tr>
-<td><strong>allocation</strong></td>
-<td>A Java object is allocated with a size matching the given filter specification.</td>
-<td>Object size; a filter must be supplied. For example, filter=#5m will trigger on objects larger than 5 Mb. Ranges are also supported; for example, filter=#256k..512k will trigger on objects between 256 Kb and 512 Kb in size.</td>
-</tr>
-<tr>
-<td><strong>traceassert</strong></td>
-<td>An internal error occurs in the VM.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>corruptcache</strong></td>
-<td>The VM finds that the shared classes cache is corrupt.</td>
-<td>Not applicable</td>
-</tr>
-<tr>
-<td><strong>excessivegc</strong></td>
-<td>An excessive amount of time is being spent in the garbage collector.</td>
-<td>Not applicable</td>
-</tr>
-</tbody>
-</table>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The <strong>gpf</strong>, <strong>traceassert</strong>, and <strong>abort</strong> events cannot trigger a heap dump, prepare the heap (request=prepwalk), or compact the heap (request=compact).</p>
-<h2 id="parameters">Parameters</h2>
-<p><code>-Xdump:&lt;agent&gt;:&lt;suboptions&gt;</code> descriptions and examples.</p>
-<h3 id="help"><code>help</code></h3>
-<p>To print usage information for a specific dump agent, use <code>-Xdump:&lt;agent&gt;:help</code></p>
-<h3 id="noneltoptionsgt"><code>none:&lt;options&gt;</code></h3>
-<p>Use the <code>-Xdump:none</code> option to add and remove dump agents for various VM events, update default dump settings (such as the dump name), and limit the number of dumps that are produced.</p>
-<p>The option can be used to affect all agents by specifying <code>-Xdump:none:&lt;options&gt;</code> or specific agents by specifying <code>-Xdump:&lt;agent&gt;:none:&lt;suboptions&gt;</code></p>
-<p>where <code>&lt;suboptions&gt;</code> is one of the following control types:</p>
+<h1 id="whats-new-in-version-0220">What's new in version 0.22.0</h1>
+<p>The following new features and notable changes since v 0.21.0 are included in this release:</p>
 <ul>
-<li><code>events=&lt;event&gt;</code></li>
-<li><code>exec=&lt;command&gt;</code></li>
-<li><code>file=&lt;filename&gt;</code></li>
-<li><code>filter=&lt;filter&gt;</code></li>
-<li><code>opts=&lt;options&gt;</code></li>
-<li><code>priority=&lt;0-999&gt;</code></li>
-<li><code>range=&lt;ranges&gt;</code></li>
-<li><code>request=&lt;requests&gt;</code></li>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 </ul>
-<p>Explanations for these suboptions are provided elsewhere in this topic.</p>
-<p>To remove all default dump agents and any preceding dump options, use <code>-Xdump:none</code>. Use this option so that you can subsequently specify a completely new dump configuration.</p>
-<p>You can also remove dump agents of a particular type. Here are some examples:</p>
-<p>To turn off all heap dumps (including default agents) but leave Java dumps enabled, use the following option:</p>
-<pre><code>-Xdump:java+heap:events=vmstop -Xdump:heap:none
-</code></pre>
-
-<p>To turn off all dump agents for corruptcache events:</p>
-<pre><code>-Xdump:none:events=corruptcache
-</code></pre>
-
-<p>To turn off just system dumps for corruptcache events:</p>
-<pre><code>-Xdump:system:none:events=corruptcache
-</code></pre>
-
-<p>To turn off all dumps when a <code>java/lang/OutOfMemory</code> error is thrown:</p>
-<pre><code>-Xdump:none:events=systhrow,filter=java/lang/OutOfMemoryError
-</code></pre>
-
-<p>To turn off just system dumps when a <code>java/lang/OutOfMemory</code> error is thrown:</p>
-<pre><code>-Xdump:system:none:events=systhrow,filter=java/lang/OutOfMemoryError
-</code></pre>
-
-<p>If you remove all dump agents by using <code>-Xdump:none</code> with no further <code>-Xdump</code> options, the VM still provides these basic diagnostic outputs:</p>
+<h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>OpenJ9 release 0.22.0 supports OpenJDK 15. Binaries are available from the AdoptOpenJDK community at the following link:</p>
 <ul>
-<li>If a user signal (kill -QUIT) is sent to the VM, a brief listing of the Java threads including their stacks, status, and monitor information is written to stderr.</li>
-<li>If a crash occurs, information about the location of the crash, VM options, and native and Java stack traces are written to stderr. A system dump file is also written to the user's home directory.</li>
+<li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk15&amp;jvmVariant=openj9">OpenJDK version 15</a></li>
 </ul>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Removing dump agents and specifying a new dump configuration can require a long set of command-line options. To reuse command-line options, save the new dump configuration in a file and use the <code>-Xoptionsfile</code> option. For more information, see <a href="../xoptionsfile/">-Xoptionsfile</a>.</p>
-<h3 id="defaults"><code>defaults</code></h3>
-<p>Each dump type has default options. To view the default options for a particular dump type, use <code>-Xdump:&lt;agent&gt;:defaults</code>.</p>
-<p>You can change the default options at run time. For example, you can direct Java dump files into a separate directory for each process, and guarantee unique files by adding a sequence number to the file name using:</p>
-<pre><code>-Xdump:java:defaults:file=dumps/%pid/javacore-%seq.txt`
-</code></pre>
-
-<p>Or, for example, on z/OS, you can add the jobname to the Java dump file name using:</p>
-<pre><code>-Xdump:java:defaults:file=javacore.%job.%H%M%S.txt
-</code></pre>
-
-<p>This option does not add a Java dump agent; it updates the default settings for Java dump agents. Further Java dump agents will then create dump files using this specification for filenames, unless overridden.</p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Changing the defaults for a dump type will also affect the default agents for that dump type added by the VM during initialization. For example if you change the default file name for Java dump files, that will change the file name used by the default Java dump agents. However, changing the default range option will not change the range used by the default Java dump agents, because those agents override the range option with specific values.</p>
-<h3 id="eventslteventgt"><code>events=&lt;event&gt;</code></h3>
-<p>To trigger a dump as a result of an event, use the <code>-Xdump:&lt;agent&gt;:events=&lt;event&gt;</code> suboption. For a list of possible events, see <a href="#dump-events">Dump events</a>.</p>
-<p>For example, the following command instructs the VM to create a dump agent at startup that produces a Heap dump whenever the <em>vmstop</em> event happens:</p>
-<pre><code>-Xdump:heap:events=vmstop
-</code></pre>
-
-<h3 id="execltcommandgt"><code>exec=&lt;command&gt;</code></h3>
-<p>The exec suboption is used by the tool dump agent to specify an external application to start. You can set a specific command to run for a particular dump agent with the following command:</p>
-<pre><code>-Xdump:&lt;agent&gt;:exec=&lt;command&gt;
-</code></pre>
-
-<h3 id="fileltfilenamegt"><code>file=&lt;filename&gt;</code></h3>
-<p>The file suboption specifies where the diagnostics information is written for the specified dump type. The syntax is <code>-Xdump:&lt;agent&gt;:file=&lt;filename&gt;</code>.</p>
-<p>For example, to create a Heap dump called <code>my.dmp</code> when a <strong>vmstop</strong> event is received, use:</p>
-<pre><code>java -Xdump:heap:events=vmstop,file=my.dmp
-</code></pre>
-
-<p>When producing system dump files on z/OS platforms, use the <code>dsn</code> option instead of the <code>file</code> option. For example:</p>
-<pre><code>java -Xdump:system:events=vmstop,dsn=%uid.MYDUMP
-</code></pre>
-
-<h4 id="writing-to-stdoutstderr">Writing to <code>STDOUT</code>/<code>STDERR</code></h4>
-<p>Add one of the following options to write a Java dump file to STDOUT or STDERR respectively:</p>
-<pre><code>-Xdump:java:file=/STDOUT/
--Xdump:java:file=/STDERR/
-</code></pre>
-
-<ul>
-<li>The keywords <code>/STDOUT/</code> and <code>/STDERR/</code> are <em>not</em> case sensitive; <code>/stdout/</code> and <code>/stderr/</code> are equivalent.</li>
-<li>By common convention, you can use a dash (<code>-</code>) to refer to STDOUT:<pre><code>-Xdump:java:file=-
-</code></pre>
-</li>
-</ul>
-<h4 id="tokens">Tokens</h4>
-<p>You can use tokens to add context to dump file names. For a list of tokens, see <a href="#dump-agent-tokens">Dump agent tokens</a>.</p>
-<h4 id="file-location">File location</h4>
-<p>The location for the dump file is selected from the following options, in this order:</p>
-<ol>
-<li>The location specified by the <code>-Xdump:&lt;agent&gt;:file</code> suboption on the command line (if that location includes a path). This location applies to the specified dump agent type only.</li>
-<li>The location specified by the <code>-Xdump:directory</code> option on the command line. This location applies to all dump agent types.</li>
-<li>
-<p>The location specified by the relevant environment variable:</p>
-<table>
-<thead>
-<tr>
-<th>Dump agent type</th>
-<th>z/OS operating systems</th>
-<th>Other operating systems</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Java dumps</td>
-<td><code>_CEE_DMPTARG</code></td>
-<td><code>IBM_JAVACOREDIR</code></td>
-</tr>
-<tr>
-<td>Heap dumps</td>
-<td><code>_CEE_DMPTARG</code></td>
-<td><code>IBM_HEAPDUMPDIR</code></td>
-</tr>
-<tr>
-<td>System dumps</td>
-<td><code>JAVA_DUMP_TDUMP_PATTERN</code></td>
-<td><code>IBM_COREDIR</code></td>
-</tr>
-<tr>
-<td>JIT dumps</td>
-<td><code>_CEE_DMPTARG</code></td>
-<td><code>IBM_COREDIR</code></td>
-</tr>
-<tr>
-<td>Snap traces</td>
-<td><code>_CEE_DMPTARG</code></td>
-<td><code>IBM_COREDIR</code></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>The current working directory of the OpenJ9 VM process.</p>
-</li>
-</ol>
-<p>If the directory does not exist, it is created.</p>
-<p>If the dump file cannot be written to the selected location, the VM reverts to using the following locations, in this order:</p>
-<ol>
-<li>On Windows platforms only, the system default location is <code>C:\WINDOWS</code>.</li>
-<li>The location specified by the <code>TMPDIR</code> environment variable.</li>
-<li>The <code>C:\Temp</code> on Windows operating systems, or the <code>/tmp</code> directory on other operating systems.</li>
-</ol>
-<p>This VM action does not apply to system dumps on z/OS operating systems that use the <code>dsn</code> option.
-You can prevent the VM reverting to different dump locations by using the <code>-Xdump:nofailover</code> option.</p>
-<h3 id="filterltfiltergt"><code>filter=&lt;filter&gt;</code></h3>
-<p>Some VM events occur thousands of times during the lifetime of an application. Dump agents can use filters and ranges to avoid producing an excessive number of dump files. The following syntax must be used:</p>
-<pre><code>-Xdump:&lt;agent&gt;:filter=&lt;filter&gt;
-</code></pre>
-
-<h4 id="wildcards">Wildcards</h4>
-<p>You can use a wildcard in your exception event filter by placing an asterisk only at the beginning or end of the filter. The following command does not work because the second asterisk is not at the end:</p>
-<pre><code>-Xdump:java:events=throw,filter=*InvalidArgumentException#*.myVirtualMethod
-</code></pre>
-
-<p>To fix the problem, change this filter to the following string:</p>
-<pre><code>-Xdump:java:events=throw,filter=*InvalidArgumentException#MyApplication.*
-</code></pre>
-
-<h4 id="class-loading-and-exception-events">Class loading and exception events</h4>
-<p>You can filter class loading (<strong>load</strong>) and exception (<strong>throw</strong>, <strong>catch</strong>, <strong>uncaught</strong>, <strong>systhrow</strong>) events by the name of the class that is being loaded, thrown or caught. For example:</p>
-<pre><code>-Xdump:java:events=load,filter=java/lang/String
--Xdump:java:events=throw,filter=java/lang/ArrayStoreException
--Xdump:java:events=catch,filter=java/lang/NullPointerException
-</code></pre>
-
-<p>In addition, you can filter <strong>throw</strong>, <strong>uncaught</strong>, and <strong>systhrow</strong> exception events by the name of the method that throws the exception. The name of the parent class must include the full package name, using the forward slash (/) as a separator. Use a dot (.) to separate the method name from the class name. You can use an asterisk (*) as a wildcard character, to include all methods (optional portions are shown in brackets). For example:</p>
-<pre><code>-Xdump:java:events=throw,filter=ExceptionClassName[#com/ibm/ThrowingClassName.throwingMethodName[#stackFrameOffset]]
-</code></pre>
-
-<p>For example, to trigger a Java dump when method <code>MyApplication.myMethod()</code> throws a <code>NullPointerException</code> exception, use the following syntax:</p>
-<pre><code>-Xdump:java:events=throw,filter=java/lang/NullPointerException#com/ibm/MyApplication.myMethod
-</code></pre>
-
-<p>The stack frame offset allows you to filter on the name of a method that calls the throwing method. This option is useful if the exception is being thrown from a general purpose or utility class. For example, to trigger a Java dump when a method called by <code>MyApplication.main()</code> throws a <code>NullPointerException</code>, use the following syntax:</p>
-<pre><code>-Xdump:java:events=throw,filter=java/lang/NullPointerException#com/ibm/MyApplication.main#1
-</code></pre>
-
-<p>The default value of the stack frame offset is zero.</p>
-<p>You can filter the <strong>catch</strong> exception events by Java method name (optional portions are shown in brackets). For example:</p>
-<pre><code>-Xdump:java:events=catch,filter=ExceptionClassName[#com/ibm/CatchingClassName.catchingMethodName]
-</code></pre>
-
-<p>You can filter <strong>throw</strong>, <strong>uncaught</strong>, and <strong>systhrowexception</strong> events by Java method name (optional portions are shown in brackets):</p>
-<pre><code>-Xdump:java:events=throw,filter=ExceptionClassName[#com/ibm/ThrowingClassName.throwingMethodName[#stackFrameOffset]]
-</code></pre>
-
-<p>You can filter the <strong>catch</strong> exception events by Java method name (optional portions are shown in brackets):</p>
-<pre><code>-Xdump:java:events=catch,filter=ExceptionClassName[#com/ibm/CatchingClassName.catchingMethodName]
-</code></pre>
-
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The filters apply to the stacktrace and fire every time the same exception is rethrown, which might result in multiple Java core files.</p>
-<h4 id="vmstop-event">vmstop event</h4>
-<p>You can filter the VM shut down event (<strong>vmstop</strong>) by using one or more exit codes:</p>
-<pre><code>-Xdump:java:events=vmstop,filter=#129..192#-42#255
-</code></pre>
-
-<h4 id="slow-event">slow event</h4>
-<p>You can filter the <strong>slow</strong> event to change the time threshold from the default of 50 ms:</p>
-<pre><code>-Xdump:java:events=slow,filter=#300ms
-</code></pre>
-
-<h4 id="allocation-event">allocation event</h4>
-<p>You must filter the <strong>allocation</strong> event to specify the size of objects that cause a trigger. You can set the filter size from zero up to the maximum value of a 32-bit pointer on 32-bit platforms, or the maximum value of a 64-bit pointer on 64-bit platforms. Setting the lower filter value to zero triggers a dump on all allocations.</p>
-<p>For example, to trigger dumps on allocations greater than 5 Mb in size, use:</p>
-<pre><code>-Xdump:stack:events=allocation,filter=#5m
-</code></pre>
-
-<p>To trigger dumps on allocations between 256Kb and 512Kb in size, use:</p>
-<pre><code>-Xdump:stack:events=allocation,filter=#256k..512k
-</code></pre>
-
-<h4 id="other-events">Other events</h4>
-<p>If you apply a filter to an event that does not support filtering, the filter is ignored.</p>
-<h3 id="msg_filterltfiltergt"><code>msg_filter=&lt;filter&gt;</code></h3>
-<p>You can use the msg_filter suboption to filter on text strings within an exception message, allowing you to reduce the number of dump files produced. This option is supported only for the following events: <strong>throw</strong>, <strong>catch</strong>, <strong>systhrow</strong>, and <strong>uncaught</strong>.</p>
-<p>Use the following syntax to include message filtering in your dump output:</p>
-<pre><code>-Xdump:&lt;agent&gt;:events=&lt;event&gt;,msg_filter=&lt;filter&gt;`
-</code></pre>
-
-<p>where <code>&lt;filter&gt;</code> is a text string from the exceptions that you want to include in the dump file. This suboption supports asterisks as wild cards.</p>
-<p>The following example filters <code>java/lang/VerifyError</code> exceptions that contains the text string <em>class format</em>:</p>
-<pre><code>-Xdump:java:events=throw,filter=java/lang/VerifyError,msg_filter=*class format*
-</code></pre>
-
-<h3 id="optsltoptionsgt"><code>opts=&lt;options&gt;</code></h3>
-<p>The full syntax is <code>-Xdump:&lt;agent&gt;:opts=&lt;options&gt;</code>.</p>
-<p>The heap dump agent uses this suboption to specify the type of file to produce. On z/OS, the system dump agent uses this suboption to specify the type of dump to produce.</p>
-<h4 id="heap-dumps">Heap dumps</h4>
-<p>You can specify a PHD heap dump file (PHD), a classic text heap dump file (CLASSIC), or both. The default is a PHD file. For example:</p>
-<pre><code>-Xdump:heap:opts=PHD  
--Xdump:heap:opts=CLASSIC
--Xdump:heap:opts=PHD+CLASSIC
-</code></pre>
-
-<h4 id="zos-system-dumps">z/OS system dumps</h4>
-<p>You can specify a system transaction dump (IEATDUMP), an LE dump (CEEDUMP), or both. The default is an IEADUMP file. For example:</p>
-<pre><code>-Xdump:system:opts=IEATDUMP
--Xdump:system:opts=CEEDUMP
--Xdump:system:opts=IEATDUMP+CEEDUMP
-</code></pre>
-
-<p>The ceedump agent is the preferred way to specify LE dumps, for example:</p>
-<pre><code>-Xdump:ceedump:events=gpf
-</code></pre>
-
-<h4 id="tool-dumps">Tool dumps</h4>
-<p>The tool dump agent supports two suboptions that can be specified using the <code>opts</code> subption. You can run the external process asynchronously with opts=ASYNC. You can also specify a delay in milliseconds that produces a pause after starting the command. These two options can be used independently or together. The following examples show different options for starting a new process that runs <code>myProgram</code>:</p>
-<pre><code>-Xdump:tool:events=vmstop,exec=myProgram
-</code></pre>
-
-<p>Without the <code>opts</code> suboption, the tool dump agent starts the process, and waits for the process to end before continuing.</p>
-<pre><code>-Xdump:tool:events=vmstop,exec=myProgram,opts=ASYNC
-</code></pre>
-
-<p>When <code>opts=ASYNC</code> is specified, the tool dump agent starts the process, and continues without waiting for the new process to end.</p>
-<pre><code>-Xdump:tool:events=vmstop,exec=myProgram,opts=WAIT1000
-</code></pre>
-
-<p>This option starts the process, waits for the process to end, and then waits a further 1 second (1000 milliseconds) before continuing.</p>
-<pre><code>-Xdump:tool:events=vmstop,exec=myProgram,opts=ASYNC+WAIT10000
-</code></pre>
-
-<p>Finally the last example starts the process and waits for 10 seconds before continuing, whether the process is still running or not. This last form is useful if you are starting a process that does not end, but requires time to initialize properly.</p>
-<h3 id="prioritylt0-999gt"><code>priority=&lt;0-999&gt;</code></h3>
-<p>One event can generate multiple dump files. The agents that produce each dump file run sequentially and their order is determined by the priority keyword set for each agent. The full syntax for this command is <code>-Xdump:&lt;agent&gt;:priority=&lt;0-999&gt;</code>.</p>
-<p>Examination of the output from <code>-Xdump:what</code> shows that a <strong>gpf</strong> event produces a snap trace, a Java dump file, and a system dump file. In this example, the system dump runs first, with priority 999. The snap dump runs second, with priority 500. The Java dump runs last, with priority 10:</p>
-<pre><code>-Xdump:heap:events=vmstop,priority=123
-</code></pre>
-
-<p>The maximum value allowed for priority is 999. Higher priority dump agents are started first.</p>
-<p>If you do not specifically set a priority, default values are taken based on the dump type. The default priority and the other default values for a particular type of dump, can be displayed by using <code>-Xdump:&lt;type&gt;:defaults</code>. For example:</p>
-<pre><code>java -Xdump:heap:defaults -version
-</code></pre>
-
-<p>Default <code>-Xdump:heap</code> settings:</p>
-<pre><code>  events=gpf+user
-  filter=
-  file=/home/user/heapdump.%Y%m%d.%H%M%S.%pid.phd
-  range=1..0
-  priority=500
-  request=exclusive+compact+prepwalk
-  opts=PHD
-</code></pre>
-
-<h3 id="rangeltrangesgt"><code>range=&lt;ranges&gt;</code></h3>
-<p>You can start and stop dump agents on a particular occurrence of a VM event by using the <code>range</code> suboption: <code>-Xdump:&lt;agent&gt;:range=&lt;ranges&gt;</code></p>
-<p>For example:</p>
-<pre><code>-Xdump:java:events=fullgc,range=100..200
-</code></pre>
-
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> range=1..0 against an event means "on every occurrence".</p>
-<p>The VM default dump agents have the range suboption set to 1..0 for all events except systhrow. Most systhrow events with <code>filter=java/lang/OutOfMemoryError</code> have the range suboption set to 1..4, which limits the number of dump files produced on <code>OutOfMemory</code> conditions to a maximum of 4. For more information, see <a href="#default-dump-agents">Default dump agents</a>.</p>
-<p>If you add a new dump agent and do not specify the range, a default of 1..0 is used.</p>
-<h3 id="requestltrequestsgt"><code>request=&lt;requests&gt;</code></h3>
-<p>Use the request suboption to ask the VM to prepare the state before starting the dump agent: <code>-Xdump:&lt;agent&gt;:request=&lt;requests&gt;</code></p>
-<p>The available suboptions are listed in the following table:</p>
-<table>
-<thead>
-<tr>
-<th>suboption value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>exclusive</td>
-<td>Request exclusive access to the VM.</td>
-</tr>
-<tr>
-<td>compact</td>
-<td>Run garbage collection. This option removes all unreachable objects from the heap before the dump file is generated.</td>
-</tr>
-<tr>
-<td>prepwalk</td>
-<td>Prepare the heap for walking. You must also specify exclusive when you use this option.</td>
-</tr>
-<tr>
-<td>serial</td>
-<td>Suspend other dumps until this dump is finished.</td>
-</tr>
-<tr>
-<td>preempt</td>
-<td>Applies to the Java dump agent and controls whether native threads in the process are forcibly pre-empted in order to collect stack traces. If this option is not specified, only Java stack traces are collected in the Java dump.</td>
-</tr>
-</tbody>
-</table>
-<p>You can specify more than one request option by using <strong>+</strong>. For example:</p>
-<pre><code>-Xdump:heap:request=exclusive+compact+prepwalk
-</code></pre>
-
-<p>The VM exclusive access mechanism allows a VM thread to halt the activity of other VM threads in a controlled way by using internal VM locks. When the <code>request=exclusive</code> option is specified for a dump agent, the VM thread that is producing the dump waits for threads that are running Java code to halt, and for garbage collection operations to complete, before the dump file is written. This process helps ensure that the dump has consistent data. When the dump is complete, the mechanism allows the other threads to resume.</p>
-<p>By default, only system dumps for <code>OutOfMemoryError</code> exceptions request exclusive access. Other system dump events typically result from a crash. In these cases, exclusive access is not requested because acquiring locks during a crash can be problematic.</p>
-<p>If system dumps are requested by using the <code>com.ibm.jvm.Dump.SystemDump()</code> API, the default system dump agent settings are used, and exclusive access is not requested. However, if you intend to use the system dump file for Java heap memory analysis, use the following option to request exclusive access when the dump is taken:</p>
-<pre><code>-Xdump:system:defaults:request=exclusive+compact+prepwalk
-</code></pre>
-
-<p>These settings avoid capturing a dump file with in-flight data during garbage collection.
-As an alternative, you can use the <code>com.ibm.jvm.Dump.triggerDump()</code> API and specify <code>request=exclusive+compact+prepwalk</code> on the API call.</p>
-<p>For more information about the <code>com.ibm.jvm.Dump API</code>, see the API reference information.</p>
-<p>The default setting of the <code>request</code> suboption for Java dump files is <code>request=exclusive+preempt</code>. To change the settings so that Java dump files are produced without pre-empting threads to collect native stack traces, use the following option:</p>
-<pre><code>-Xdump:java:request=exclusive
-</code></pre>
-
-<p>In general, the default request options are sufficient.</p>
-<h2 id="dump-output">Dump output</h2>
-<p>Dump output is written to different files, depending on the type of dump and the platform. File names include a time stamp.</p>
-<table>
-<thead>
-<tr>
-<th>Dump type</th>
-<th>File name  (AIX, Linux, macOS, Windows)</th>
-<th>File name (z/OS)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>System dump</td>
-<td>core.%Y%m%d.%H%M%S.%pid.dmp</td>
-<td>%uid.JVM.TDUMP.%job.D%Y%m%d.T%H%M%S (31-bit),  %uid.JVM.%job.D%y%m%d.T%H%M%S.X&amp;DS (64-bit) See <strong>Note</strong></td>
-</tr>
-<tr>
-<td>Java dump</td>
-<td>javacore.%Y%m%d.%H%M%S.%pid.%seq.txt</td>
-<td>javacore.%Y%m%d.%H%M%S.%pid.%seq.txt</td>
-</tr>
-<tr>
-<td>Heap dump</td>
-<td>heapdump.%Y%m%d.%H%M%S.%pid.phd</td>
-<td>heapdump.%Y%m%d.T%H%M%S.phd</td>
-</tr>
-<tr>
-<td>JIT dump</td>
-<td>jitdump%Y%m%d.%H%M%S.%pid.%seq.dmp</td>
-<td>jitdump%Y%m%d.%H%M%S.%pid.%seq.dmp</td>
-</tr>
-<tr>
-<td>LE CEEDUMP</td>
-<td>-</td>
-<td>CEEDUMP.%Y%m%d.%H%M%S.%pid See <strong>Note</strong></td>
-</tr>
-</tbody>
-</table>
-<p>The tokens used in this table, for example <code>%Y</code>, are described in <a href="#dump-agent-tokens">Dump agent tokens</a>.</p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On z/OS, the system dump file name can be set with the <code>JAVA_DUMP_TDUMP_PATTERN</code> environment variable. The CEEDUMP, which is not produced by default, is stored in the directory specified by
-<code>_CEE_DMPTARG</code> or the current directory if <code>_CEE_DMPTARG</code> is not specified.</p>
-<h3 id="system-dumps-on-linux">System dumps on Linux</h3>
-<p>Linux does not provide an operating system API for generating a system dump from a running process. The VM produces system dumps on Linux by using the fork() API to start an identical process to the parent VM process. The VM then generates a SIGSEGV signal in the child process. The SIGSEGV signal causes Linux to create a system dump for the child process. The parent VM processes and renames the system dump, as required, by the <code>-Xdump</code> options, and might add additional data into the dump file.</p>
-<p>The system dump file for the child process contains an exact copy of the memory areas used in the parent. The <a href="../tool_jdmpview/">dump viewer</a> can obtain information about the Java threads, classes, and heap from the system dump. However, the dump viewer, and other system dump debuggers show only the single native thread that was running in the child process.</p>
-<p>You can use the Linux <code>kernel.core_pattern</code> setting to specify the name and path for system dumps. The VM dump agents override the Linux system dump name and path by renaming the dump as specified in the <code>-Xdump</code> options. If the <code>kernel.core_pattern</code> setting specifies a different file system to the <code>-Xdump</code> options, the VM dump agents might be unable to change the file path. In this case the VM renames the dump file, but leaves the file path unchanged. You can find the dump file name and location in the JVMDUMP010I message.</p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> If you use the <code>%t</code> specifier in the <code>kernel.core_pattern</code> setting, the VM does not rename the dump. The VM cannot determine the exact time that Linux generated the core file, and therefore cannot be certain which Linux dump file is the correct one to rename.</p>
-<h2 id="see-also">See also</h2>
-<ul>
-<li><a href="../xtrace/"><code>-Xtrace</code></a></li>
-<li><a href="../xdisablejavadump/"><code>-Xdisablejavadump</code></a></li>
-</ul>
-<!-- ==== END OF TOPIC ==== xdump.md ==== -->
+<p>OpenJDK 15 with Eclipse OpenJ9 is not a long term support (LTS) release.</p>
+<p>The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK community are for Eclipse OpenJ9 release 0.21.0. Features mentioned in these release notes are not available in these builds. Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 0.22.0, testing at the project is not complete and therefore support for any of these features is not available.</p>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h2 id="full-release-information">Full release information</h2>
+<p>To see a complete list of changes between Eclipse OpenJ9 v 0.21.0 and v 0.22.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.22/0.22.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.22.md ==== -->
                 
                   
                 
