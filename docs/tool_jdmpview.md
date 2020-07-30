@@ -706,22 +706,22 @@ User input is prefaced by a greater than symbol (>).
           objects: <no objects in this frame>
     ===Lines Removed===
 
-        name:          GC Slave
+        name:          GC Worker
         id:            16860
         Thread object: java/lang/Thread @ 0x3001b980
         Priority:      5
         Thread.State:  WAITING
         JVMTI state:   ALIVE WAITING WAITING_INDEFINITELY IN_OBJECT_WAIT
-          waiting to be notified on: "MM_ParallelDispatcher::slaveThread" with ID 0x1004cbc8 owner name: <unowned>
+          waiting to be notified on: "MM_ParallelDispatcher::workerThread" with ID 0x1004cbc8 owner name: <unowned>
         Java stack frames: <no frames to print>
 
-        name:          GC Slave
+        name:          GC Worker
         id:            16861
         Thread object: java/lang/Thread @ 0x3001c180
         Priority:      5
         Thread.State:  WAITING
         JVMTI state:   ALIVE WAITING WAITING_INDEFINITELY IN_OBJECT_WAIT
-          waiting to be notified on: "MM_ParallelDispatcher::slaveThread" with ID 0x1004cbc8 owner name: <unowned>
+          waiting to be notified on: "MM_ParallelDispatcher::workerThread" with ID 0x1004cbc8 owner name: <unowned>
         Java stack frames: <no frames to print>
 
         name:          Signal Dispatcher
