@@ -3286,6 +3286,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxportablesharedcache/" title="-XX:[+|-]PortableSharedCache" class="md-nav__link">
+      -XX:[+|-]PortableSharedCache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxpositiveidentityhash/" title="-XX:[+|-]PositiveIdentityHash" class="md-nav__link">
       -XX:[+|-]PositiveIdentityHash
     </a>
@@ -3991,7 +4003,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h3 id="class-data-sharing">Class data sharing</h3>
 <p>You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see <a href="../shrc/">Class Data Sharing</a>.</p>
 <h3 id="native-data-operations">Native data operations</h3>
-<p>If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator API.</p>
+<p>If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator (DAA) API.</p>
+<p>The following functions are provided:</p>
+<ul>
+<li>Arithmetic, comparison, shifting, and validation operations for packed decimal data.</li>
+<li>Conversion operations between different binary coded decimal and Java binary types.</li>
+<li>Marshalling operations: marshalling and unmarshalling Java binary types, such as <code>short</code>, <code>int</code>, <code>long</code>, <code>float</code>, and <code>double</code>, to and from byte arrays.</li>
+</ul>
+<p>You can gain a number of benefits by using the APIs provided:</p>
+<ul>
+<li>Improved application performance by avoiding object creation and intermediate processing, which can also put pressure on the Java heap.</li>
+<li>Hardware acceleration by automatically exploiting available hardware features on specific platforms.</li>
+<li>Platform independence for applications that are developed to take advantage of Data Access Acceleration.</li>
+</ul>
+<p>For more information, see the <a href="../api-overview/">API documentation</a>.</p>
 <h3 id="cloud-optimizations">Cloud optimizations</h3>
 <p>To improve the performance of applications that run in containers, try setting the following tuning options:</p>
 <ul>
