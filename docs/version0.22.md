@@ -29,6 +29,7 @@ The following new features and notable changes since v 0.21.0 are included in th
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:[+|-]PortableSharedCache` option added](#new-xx-portablesharedcache-option-added)
+- [Methods in `com.ibm.lang.management.MemoryMXBean` deprecated and replaced](#methods-in-comibmlangmanagementmemorymxbean-deprecated-and-replaced)
 
 
 ## Features and changes
@@ -48,6 +49,12 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 ### New `-XX:[+|-]PortableSharedCache` option added
 
 This option enables AOT compiled code to be generated based on a chosen set of processor features that maximizes its portability across machines. It is currently supported only on x86. The feature is turned on by default in Docker containers and can be disabled with `-XX:-PortableSharedCache`. For more information, see [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md).
+
+### Methods in `com.ibm.lang.management.MemoryMXBean` deprecated and replaced
+
+The methods `com.ibm.lang.management.MemoryMXBean.getGCMasterThreadCpuUsed()` and `com.ibm.lang.management.MemoryMXBean.getGCSlaveThreadsCpuUsed()` are deprecated for removal in Java 16. The recommended methods to be used are `com.ibm.lang.management.MemoryMXBean.getGCMainThreadCpuUsed()` and `com.ibm.lang.management.MemoryMXBean.getGCWorkerThreadsCpuUsed()` respectively.
+
+For more information see Java 8: [`com.ibm.lang.management.MemoryMXBean`](api/jdk8/jre/management/extension/com/ibm/lang/management/MemoryMXBean.html) and for Java 11: [`com.ibm.lang.management.MemoryMXBean`](api/jdk11/jdk.management/com/ibm/lang/management/MemoryMXBean.html)
 
 ## Full release information
 
