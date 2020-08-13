@@ -34,16 +34,19 @@ Specify a different common directory for Attach API working files.
 |--------------------|-----------------|----------------------------|
 | `<directory_name>` | [string]        | `.com_ibm_tools_attach`    |
 
-To change the value for `directory_name`, specify a different directory name. If the directory does not exist, it is created. However, if a
-parent directory is specified, it must exist.
+To change the value for `directory_name`, specify a different directory name. If the directory does not exist, it is created. However, if a parent directory is specified, it must exist.
 
 
 ## See also
 
-- [Support for the Java&trade; Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html)
-- [-Dcom.ibm.tools.attach.enable](dcomibmtoolsattachenable.md)
+- [Java&trade; Attach API](attachapi.md)
+- [-Dcom.ibm.tools.attach.command_timeout](dcomibmtoolsattachcommand_timeout.md)
 - [-Dcom.ibm.tools.attach.displayName](dcomibmtoolsattachdisplayname.md)
+- [-Dcom.ibm.tools.attach.enable](dcomibmtoolsattachenable.md)
 - [-Dcom.ibm.tools.attach.id](dcomibmtoolsattachid.md)
+- [-Dcom.ibm.tools.attach.logging](dcomibmtoolsattachlogging.md)
+- [-Dcom.ibm.tools.attach.log.name](dcomibmtoolsattachlogname.md)
+- [-Dcom.ibm.tools.attach.shutdown_timeout](dcomibmtoolsattachshutdown_timeout.md)
 - [-Dcom.ibm.tools.attach.timeout](dcomibmtoolsattachtimeout.md)
 
 

@@ -28,21 +28,25 @@ Change the default display name for the target virtual machine.
 
 ## Syntax
 
-        -Dcom.ibm.tools.attach.displayName=<display_name>
+        -Dcom.ibm.tools.attach.displayName=<my_display_name>
 
 
 | Setting          | Value   | Default                                                     |
 |------------------|---------|-------------------------------------------------------------|
-| `<display_name>` | [string]| The command line invocation used to start the application   |
+| `<my_display_name>` | [string]| The command line invocation used to start the application   |
 
-To change the value for `<display_name>`, enter a character string of your choice.
+To change the value for `<my_display_name>` that is recorded by an agent, enter a character string of your choice.
 
 ## See also
 
-- [Support for the Java&trade; Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html)
-- [-Dcom.ibm.tools.attach.enable](dcomibmtoolsattachenable.md)
+- [Java&trade; Attach API](attachapi.md)
+- [-Dcom.ibm.tools.attach.command_timeout](dcomibmtoolsattachcommand_timeout.md)
 - [-Dcom.ibm.tools.attach.directory](dcomibmtoolsattachdirectory.md)
+- [-Dcom.ibm.tools.attach.enable](dcomibmtoolsattachenable.md)
 - [-Dcom.ibm.tools.attach.id](dcomibmtoolsattachid.md)
+- [-Dcom.ibm.tools.attach.logging](dcomibmtoolsattachlogging.md)
+- [-Dcom.ibm.tools.attach.log.name](dcomibmtoolsattachlogname.md)
+- [-Dcom.ibm.tools.attach.shutdown_timeout](dcomibmtoolsattachshutdown_timeout.md)
 - [-Dcom.ibm.tools.attach.timeout](dcomibmtoolsattachtimeout.md)
 
 

@@ -22,28 +22,23 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Dcom.ibm.tools.attach.timeout
+# -Dcom.ibm.tools.attach.command_timeout
 
-Specify a time that an application should wait when attempting to connect to a target virtual machine (VM) before ending.
+Specify the timeout for sending a command to the target VM after the initial attachment.
 
 ## Syntax
 
-        -Dcom.ibm.tools.attach.timeout=<ms>
+        -Dcom.ibm.tools.attach.command_timeout=<ms>
 
 | Setting | Value                          | Default                          |
 |---------|--------------------------------|----------------------------------|
-| `<ms>`  | [1 millisecond or greater]     | 120000 milliseconds (120 seconds)|
+| `<ms>`  | [1 millisecond or greater]     | 0 milliseconds (no timeout)      |
 
-## Example
 
-To timeout after 60 seconds, specify:
-
-`-Dcom.ibm.tools.attach.timeout=60000`
 
 ## See also
 
 - [Java&trade; Attach API](attachapi.md)
-- [-Dcom.ibm.tools.attach.command_timeout](dcomibmtoolsattachcommand_timeout.md)
 - [-Dcom.ibm.tools.attach.directory](dcomibmtoolsattachdirectory.md)
 - [-Dcom.ibm.tools.attach.displayName](dcomibmtoolsattachdisplayname.md)
 - [-Dcom.ibm.tools.attach.enable](dcomibmtoolsattachenable.md)
@@ -51,6 +46,7 @@ To timeout after 60 seconds, specify:
 - [-Dcom.ibm.tools.attach.logging](dcomibmtoolsattachlogging.md)
 - [-Dcom.ibm.tools.attach.log.name](dcomibmtoolsattachlogname.md)
 - [-Dcom.ibm.tools.attach.shutdown_timeout](dcomibmtoolsattachshutdown_timeout.md)
+- [-Dcom.ibm.tools.attach.timeout](dcomibmtoolsattachtimeout.md)
 
 
-<!-- ==== END OF TOPIC ==== dcomibmtoolsattachtimeout.md ==== -->
+<!-- ==== END OF TOPIC ==== dcomibmtoolsattachcommand_timeout.md ==== -->
