@@ -328,6 +328,7 @@ nav:
             - "Using -XX options"                                                : xx_jvm_commands.md
             - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
+            - "-XX:[+|-]AlwaysPreTouch"                                          : xxalwayspretouch.md
             - "-XX:[+|-]ClassRelationshipVerifier"                               : xxclassrelationshipverifier.md
             - "-XX:ConcGCThreads"                                                : xxconcgcthreads.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
