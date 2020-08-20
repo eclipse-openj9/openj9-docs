@@ -28,7 +28,9 @@
 <meta name="keywords" content="getSharedClassCacheFreeSpace()">
 <meta name="keywords" content="getGCMode()">
 <meta name="keywords" content="getGCMasterThreadCpuUsed()">
+<meta name="keywords" content="getGCMainThreadCpuUsed()">
 <meta name="keywords" content="getGCSlaveThreadsCpuUsed()">
+<meta name="keywords" content="getGCWorkerThreadsCpuUsed()">
 <meta name="keywords" content="getMaximumGCThreads()">
 <meta name="keywords" content="getCurrentGCThreads()">
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
@@ -44,7 +46,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -167,151 +169,164 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getGCMasterThreadCpuUsed--">getGCMasterThreadCpuUsed</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Returns the amount of CPU time spent in the GC by the master thread, in milliseconds.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getGCMainThreadCpuUsed--">getGCMainThreadCpuUsed</a></span>()</code>
+<div class="block">Returns the amount of CPU time spent in the GC by the main thread, in milliseconds.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getGCMode--">getGCMode</a></span>()</code>
 <div class="block">Returns the current GC mode as a human-readable string.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getGCSlaveThreadsCpuUsed--">getGCSlaveThreadsCpuUsed</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Returns the total amount of CPU time spent in the GC by all slave threads, in milliseconds.</div>
 </td>
+<tr id="i5" class="rowColor">
+  <td class="colFirst"><code>long</code></td>
+  <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getGCWorkerThreadsCpuUsed--">getGCWorkerThreadsCpuUsed</a></span>()</code>
+  <div class="block">Returns the total amount of CPU time spent in the GC by all worker threads, in milliseconds.</div>
+  </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getMaxHeapSize--">getMaxHeapSize</a></span>()</code>
 <div class="block">Get the current maximum heap size in bytes.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getMaxHeapSizeLimit--">getMaxHeapSizeLimit</a></span>()</code>
 <div class="block">Get the maximum size in bytes to which the max heap size could be
  increased in the currently running VM.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getMaximumGCThreads--">getMaximumGCThreads</a></span>()</code>
 <div class="block">Returns the maximum number of GC worker threads.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getMinHeapSize--">getMinHeapSize</a></span>()</code>
 <div class="block">Get the minimum heap size in bytes.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getSharedClassCacheFreeSpace--">getSharedClassCacheFreeSpace</a></span>()</code>
 <div class="block">Returns the <b>free space</b> in bytes of the cache that the JVM is
  currently connected to.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getSharedClassCacheMaxAotBytes--">getSharedClassCacheMaxAotBytes</a></span>()</code>
 <div class="block">Returns the maximum space allowed for AOT data of the cache that the JVM is currently
  connected to.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getSharedClassCacheMaxAotUnstoredBytes--">getSharedClassCacheMaxAotUnstoredBytes</a></span>()</code>
 <div class="block">Returns the bytes which are not stored into the shared classes cache due to the current setting of maximum space allowed for AOT data.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getSharedClassCacheMaxJitDataBytes--">getSharedClassCacheMaxJitDataBytes</a></span>()</code>
 <div class="block">Returns the maximum space allowed for JIT data of the cache that the JVM is currently
  connected to.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getSharedClassCacheMaxJitDataUnstoredBytes--">getSharedClassCacheMaxJitDataUnstoredBytes</a></span>()</code>
 <div class="block">Returns the bytes which are not stored into the shared classes cache due to the current setting of maximum space allowed for JIT data.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getSharedClassCacheMinAotBytes--">getSharedClassCacheMinAotBytes</a></span>()</code>
 <div class="block">Returns the minimum space reserved for AOT data of the cache that the JVM is currently
  connected to.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getSharedClassCacheMinJitDataBytes--">getSharedClassCacheMinJitDataBytes</a></span>()</code>
 <div class="block">Returns the minimum space reserved for JIT data of the cache that the JVM is currently
  connected to.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getSharedClassCacheSize--">getSharedClassCacheSize</a></span>()</code>
 <div class="block">Returns the total size in bytes of the cache that the JVM is currently
  connected to.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getSharedClassCacheSoftmxBytes--">getSharedClassCacheSoftmxBytes</a></span>()</code>
 <div class="block">Returns the softmx size in bytes of the cache that the JVM is currently
  connected to.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#getSharedClassCacheSoftmxUnstoredBytes--">getSharedClassCacheSoftmxUnstoredBytes</a></span>()</code>
 <div class="block">Returns the bytes which are not stored into the shared classes cache due to the current setting of softmx in shared classes.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#isSetMaxHeapSizeSupported--">isSetMaxHeapSizeSupported</a></span>()</code>
 <div class="block">Query whether the VM supports runtime reconfiguration of the
  maximum heap size through the setMaxHeapSize() call.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#setMaxHeapSize-long-">setMaxHeapSize</a></span>(long&nbsp;size)</code>
 <div class="block">Set the current maximum heap size to <code>size</code>.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#setSharedClassCacheMaxAotBytes-long-">setSharedClassCacheMaxAotBytes</a></span>(long&nbsp;value)</code>
 <div class="block">Set the maximum shared classes cache space allowed for AOT data to <code>value</code> bytes.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#setSharedClassCacheMaxJitDataBytes-long-">setSharedClassCacheMaxJitDataBytes</a></span>(long&nbsp;value)</code>
 <div class="block">Set the maximum shared classes cache space allowed for JIT data to <code>value</code> bytes.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#setSharedClassCacheMinAotBytes-long-">setSharedClassCacheMinAotBytes</a></span>(long&nbsp;value)</code>
 <div class="block">Set the minimum shared classes cache space reserved for AOT data to <code>value</code> bytes.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#setSharedClassCacheMinJitDataBytes-long-">setSharedClassCacheMinJitDataBytes</a></span>(long&nbsp;value)</code>
 <div class="block">Set the minimum shared classes cache space reserved for JIT data to <code>value</code> bytes.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/MemoryMXBean.html#setSharedClassCacheSoftmxBytes-long-">setSharedClassCacheSoftmxBytes</a></span>(long&nbsp;value)</code>
 <div class="block">Set the shared class softmx size to <code>value</code>.</div>
@@ -713,8 +728,24 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
 <ul class="blockList">
 <li class="blockList">
 <h4>getGCMasterThreadCpuUsed</h4>
-<pre>long&nbsp;getGCMasterThreadCpuUsed()</pre>
-<div class="block">Returns the amount of CPU time spent in the GC by the master thread, in milliseconds.</div>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang">@Deprecated</a>
+long&nbsp;getGCMasterThreadCpuUsed()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns the amount of CPU time spent in the GC by the master thread, in milliseconds. Deprecated to be removed in Java 16. Use <a href="#getGCMainThreadCpuUsed">getGCMainThreadCpuUsed</a></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>CPU time used in milliseconds</dd>
+</dl>
+</li>
+</ul>
+<a name="getGCMainThreadCpuUsed--" id="getGCMainThreadCpuUsed">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGCMainThreadCpuUsed</h4>
+<pre>long&nbsp;getGCMainThreadCpuUsed()</pre>
+<div class="block">Returns the amount of CPU time spent in the GC by the main thread, in milliseconds.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>CPU time used in milliseconds</dd>
@@ -727,8 +758,24 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
 <ul class="blockList">
 <li class="blockList">
 <h4>getGCSlaveThreadsCpuUsed</h4>
-<pre>long&nbsp;getGCSlaveThreadsCpuUsed()</pre>
-<div class="block">Returns the total amount of CPU time spent in the GC by all slave threads, in milliseconds.</div>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang">@Deprecated</a>
+long&nbsp;getGCSlaveThreadsCpuUsed()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns the total amount of CPU time spent in the GC by all slave threads, in milliseconds. Deprecated to be removed in Java 16. Use <a href="#getGCWorkerThreadsCpuUsed">getGCWorkerThreadsCpuUsed</a></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>CPU time used in milliseconds</dd>
+</dl>
+</li>
+</ul>
+<a name="getGCWorkerThreadsCpuUsed--" id="getGCWorkerThreadsCpuUsed">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGCWorkerThreadsCpuUsed</h4>
+<pre>long&nbsp;getGCWorkerThreadsCpuUsed()</pre>
+<div class="block">Returns the total amount of CPU time spent in the GC by all worker threads, in milliseconds.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>CPU time used in milliseconds</dd>

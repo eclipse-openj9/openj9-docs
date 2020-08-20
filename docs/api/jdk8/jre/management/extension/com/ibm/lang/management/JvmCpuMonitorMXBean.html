@@ -135,7 +135,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
      <li>CPU usage information notes:
        <ol>
          <li>Unattached native threads are not reflected.
-         <li>Finalizer slave threads are considered as "Application" threads.
+         <li>Finalizer worker threads are considered as "Application" threads.
          <li>Threads of any category that participate in GC activity are accounted for in the "GC" category for the duration of the
              activity if the -XX:-ReduceCPUMonitorOverhead is specified. See the user guide for more information on this option.
          <li>If the application thread switches categories, the CPU usage is measured against each category for the duration of

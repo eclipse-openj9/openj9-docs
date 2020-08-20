@@ -28,7 +28,9 @@
 <meta name="keywords" content="getSharedClassCacheFreeSpace()">
 <meta name="keywords" content="getGCMode()">
 <meta name="keywords" content="getGCMasterThreadCpuUsed()">
+<meta name="keywords" content="getGCMainThreadCpuUsed()">
 <meta name="keywords" content="getGCSlaveThreadsCpuUsed()">
+<meta name="keywords" content="getGCWorkerThreadsCpuUsed()">
 <meta name="keywords" content="getMaximumGCThreads()">
 <meta name="keywords" content="getCurrentGCThreads()">
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
@@ -53,7 +55,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -200,31 +202,47 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCMasterThreadCpuUsed()">getGCMasterThreadCpuUsed</a></span>()</code></th>
 <td class="colLast">
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Returns the amount of CPU time spent in the GC by the master thread, in milliseconds.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCMainThreadCpuUsed()">getGCMainThreadCpuUsed</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the amount of CPU time spent in the GC by the main thread, in milliseconds.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCMode()">getGCMode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the current GC mode as a human-readable string.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCSlaveThreadsCpuUsed()">getGCSlaveThreadsCpuUsed</a></span>()</code></th>
 <td class="colLast">
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
 <div class="block">Returns the total amount of CPU time spent in the GC by all slave threads, in milliseconds.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>long</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCWorkerThreadsCpuUsed()">getGCWorkerThreadsCpuUsed</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the total amount of CPU time spent in the GC by all worker threads, in milliseconds.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMaxHeapSize()">getMaxHeapSize</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the current maximum heap size in bytes.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMaxHeapSizeLimit()">getMaxHeapSizeLimit</a></span>()</code></th>
 <td class="colLast">
@@ -232,21 +250,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  increased in the currently running VM.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMaximumGCThreads()">getMaximumGCThreads</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the maximum number of GC worker threads.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMinHeapSize()">getMinHeapSize</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the minimum heap size in bytes.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedClassCacheFreeSpace()">getSharedClassCacheFreeSpace</a></span>()</code></th>
 <td class="colLast">
@@ -254,7 +272,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  currently connected to.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedClassCacheMaxAotBytes()">getSharedClassCacheMaxAotBytes</a></span>()</code></th>
 <td class="colLast">
@@ -262,14 +280,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  connected to.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedClassCacheMaxAotUnstoredBytes()">getSharedClassCacheMaxAotUnstoredBytes</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the bytes which are not stored into the shared classes cache due to the current setting of maximum space allowed for AOT data.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedClassCacheMaxJitDataBytes()">getSharedClassCacheMaxJitDataBytes</a></span>()</code></th>
 <td class="colLast">
@@ -277,14 +295,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  connected to.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedClassCacheMaxJitDataUnstoredBytes()">getSharedClassCacheMaxJitDataUnstoredBytes</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the bytes which are not stored into the shared classes cache due to the current setting of maximum space allowed for JIT data.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedClassCacheMinAotBytes()">getSharedClassCacheMinAotBytes</a></span>()</code></th>
 <td class="colLast">
@@ -292,7 +310,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  connected to.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedClassCacheMinJitDataBytes()">getSharedClassCacheMinJitDataBytes</a></span>()</code></th>
 <td class="colLast">
@@ -300,7 +318,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  connected to.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedClassCacheSize()">getSharedClassCacheSize</a></span>()</code></th>
 <td class="colLast">
@@ -308,7 +326,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  connected to.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedClassCacheSoftmxBytes()">getSharedClassCacheSoftmxBytes</a></span>()</code></th>
 <td class="colLast">
@@ -316,14 +334,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  connected to.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSharedClassCacheSoftmxUnstoredBytes()">getSharedClassCacheSoftmxUnstoredBytes</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the bytes which are not stored into the shared classes cache due to the current setting of softmx in shared classes.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSetMaxHeapSizeSupported()">isSetMaxHeapSizeSupported</a></span>()</code></th>
 <td class="colLast">
@@ -331,42 +349,42 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  maximum heap size through the setMaxHeapSize() call.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMaxHeapSize(long)">setMaxHeapSize</a></span>&#8203;(long&nbsp;size)</code></th>
 <td class="colLast">
 <div class="block">Set the current maximum heap size to <code>size</code>.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSharedClassCacheMaxAotBytes(long)">setSharedClassCacheMaxAotBytes</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the maximum shared classes cache space allowed for AOT data to <code>value</code> bytes.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSharedClassCacheMaxJitDataBytes(long)">setSharedClassCacheMaxJitDataBytes</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the maximum shared classes cache space allowed for JIT data to <code>value</code> bytes.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSharedClassCacheMinAotBytes(long)">setSharedClassCacheMinAotBytes</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the minimum shared classes cache space reserved for AOT data to <code>value</code> bytes.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSharedClassCacheMinJitDataBytes(long)">setSharedClassCacheMinJitDataBytes</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
 <div class="block">Set the minimum shared classes cache space reserved for JIT data to <code>value</code> bytes.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setSharedClassCacheSoftmxBytes(long)">setSharedClassCacheSoftmxBytes</a></span>&#8203;(long&nbsp;value)</code></th>
 <td class="colLast">
@@ -771,8 +789,24 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <ul class="blockList">
 <li class="blockList">
 <h4>getGCMasterThreadCpuUsed</h4>
-<pre class="methodSignature">long&nbsp;getGCMasterThreadCpuUsed()</pre>
-<div class="block">Returns the amount of CPU time spent in the GC by the master thread, in milliseconds.</div>
+<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang">@Deprecated</a>
+long&nbsp;getGCMasterThreadCpuUsed()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns the amount of CPU time spent in the GC by the master thread, in milliseconds. Deprecated to be removed in Java 16. Use <a href="#getGCMainThreadCpuUsed()">getGCMainThreadCpuUsed</a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>CPU time used in milliseconds</dd>
+</dl>
+</li>
+</ul>
+<a id="getGCMainThreadCpuUsed()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGCMainThreadCpuUsed</h4>
+<pre class="methodSignature">long&nbsp;getGCMainThreadCpuUsed()</pre>
+<div class="block">Returns the amount of CPU time spent in the GC by the main thread, in milliseconds.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>CPU time used in milliseconds</dd>
@@ -785,14 +819,30 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <ul class="blockList">
 <li class="blockList">
 <h4>getGCSlaveThreadsCpuUsed</h4>
-<pre class="methodSignature">long&nbsp;getGCSlaveThreadsCpuUsed()</pre>
-<div class="block">Returns the total amount of CPU time spent in the GC by all slave threads, in milliseconds.</div>
+<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang">@Deprecated</a>
+long&nbsp;getGCSlaveThreadsCpuUsed()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Returns the total amount of CPU time spent in the GC by all slave threads, in milliseconds. Deprecated to be removed in Java 16. Use <a href="#getGCWorkerThreadsCpuUsed()">getGCWorkerThreadsCpuUsed</a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>CPU time used in milliseconds</dd>
 </dl>
 </li>
 </ul>
+<a id="getGCWorkerThreadsCpuUsed()">
+  <!--   -->
+  </a>
+  <ul class="blockList">
+  <li class="blockList">
+  <h4>getGCWorkerThreadsCpuUsed</h4>
+  <pre class="methodSignature">long&nbsp;getGCWorkerThreadsCpuUsed()</pre>
+  <div class="block">Returns the total amount of CPU time spent in the GC by all worker threads, in milliseconds.</div>
+  <dl>
+  <dt><span class="returnLabel">Returns:</span></dt>
+  <dd>CPU time used in milliseconds</dd>
+  </dl>
+  </li>
+  </ul>
 <a id="getMaximumGCThreads()">
 <!--   -->
 </a>

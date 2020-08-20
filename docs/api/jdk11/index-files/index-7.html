@@ -1867,10 +1867,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dd>
 <dt><span class="memberNameLink"><a href="../jdk.management/com/sun/management/GarbageCollectionNotificationInfo.html#getGcInfo()">getGcInfo()</a></span> - Method in class com.sun.management.<a href="../jdk.management/com/sun/management/GarbageCollectionNotificationInfo.html" title="class in com.sun.management">GarbageCollectionNotificationInfo</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="../jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCMainThreadCpuUsed()">getGCMainThreadCpuUsed()</a></span> - Method in interface com.ibm.lang.management.<a href="../jdk.management/com/ibm/lang/management/MemoryMXBean.html" title="interface in com.ibm.lang.management">MemoryMXBean</a></dt>
+<dd>
+<div class="block">Returns the amount of CPU time spent in the GC by the main thread, in milliseconds.</div>
+</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="../jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCMasterThreadCpuUsed()">getGCMasterThreadCpuUsed()</a></span> - Method in interface com.ibm.lang.management.<a href="../jdk.management/com/ibm/lang/management/MemoryMXBean.html" title="interface in com.ibm.lang.management">MemoryMXBean</a></dt>
 <dd>
 <div class="block">Returns the amount of CPU time spent in the GC by the master thread, in milliseconds.</div>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <code>getGCMainThreadCpuUsed()</code> instead.</div>
+</div>
 </dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="../jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCMode()">getGCMode()</a></span> - Method in interface com.ibm.lang.management.<a href="../jdk.management/com/ibm/lang/management/MemoryMXBean.html" title="interface in com.ibm.lang.management">MemoryMXBean</a></dt>
 <dd>
 <div class="block">Returns the current GC mode as a human-readable string.</div>
@@ -1880,7 +1889,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="../jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCSlaveThreadsCpuUsed()">getGCSlaveThreadsCpuUsed()</a></span> - Method in interface com.ibm.lang.management.<a href="../jdk.management/com/ibm/lang/management/MemoryMXBean.html" title="interface in com.ibm.lang.management">MemoryMXBean</a></dt>
 <dd>
 <div class="block">Returns the total amount of CPU time spent in the GC by all slave threads, in milliseconds.</div>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span>
+<div class="deprecationComment">Use <code>getGCWorkerThreadsCpuUsed()</code> instead.</div>
+</div>
 </dd>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="../jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCWorkerThreadsCpuUsed()">getGCWorkerThreadsCpuUsed()</a></span> - Method in interface com.ibm.lang.management.<a href="../jdk.management/com/ibm/lang/management/MemoryMXBean.html" title="interface in com.ibm.lang.management">MemoryMXBean</a></dt>
+<dd>
+<div class="block">Returns the total amount of CPU time spent in the GC by all worker threads, in milliseconds.</div>
+</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="../openj9.cuda/com/ibm/cuda/CudaModule.html#getGlobal(java.lang.String)">getGlobal(String)</a></span> - Method in class com.ibm.cuda.<a href="../openj9.cuda/com/ibm/cuda/CudaModule.html" title="class in com.ibm.cuda">CudaModule</a></dt>
 <dd>
 <div class="block">Returns the global variable of the specified name from this module.</div>
