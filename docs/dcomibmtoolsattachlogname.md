@@ -22,23 +22,20 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Dcom.ibm.tools.attach.timeout
+# -Dcom.ibm.tools.attach.log.name
 
-Specify a time that an application should wait when attempting to connect to a target virtual machine (VM) before ending.
+Specify the path and prefix for the log files.
 
 ## Syntax
 
-        -Dcom.ibm.tools.attach.timeout=<ms>
+        -Dcom.ibm.tools.attach.log.name=<path/prefix>
 
-| Setting | Value                          | Default                          |
-|---------|--------------------------------|----------------------------------|
-| `<ms>`  | [1 millisecond or greater]     | 120000 milliseconds (120 seconds)|
+| Setting                 | Value           |  Default                   |
+|-------------------------|-----------------|----------------------------|
+| `<path/prefix>`         | [string]        | VM process directory       |
 
-## Example
+By default, when `-Dcom.ibm.tools.attach.logging=true` is set, timestamped log files are written to the current directory for the running VM. Use the  `-Dcom.ibm.tools.attach.log.name` option to change the path and prefix for the logfiles.
 
-To timeout after 60 seconds, specify:
-
-`-Dcom.ibm.tools.attach.timeout=60000`
 
 ## See also
 
@@ -49,8 +46,8 @@ To timeout after 60 seconds, specify:
 - [-Dcom.ibm.tools.attach.enable](dcomibmtoolsattachenable.md)
 - [-Dcom.ibm.tools.attach.id](dcomibmtoolsattachid.md)
 - [-Dcom.ibm.tools.attach.logging](dcomibmtoolsattachlogging.md)
-- [-Dcom.ibm.tools.attach.log.name](dcomibmtoolsattachlogname.md)
 - [-Dcom.ibm.tools.attach.shutdown_timeout](dcomibmtoolsattachshutdown_timeout.md)
+- [-Dcom.ibm.tools.attach.timeout](dcomibmtoolsattachtimeout.md)
 
 
-<!-- ==== END OF TOPIC ==== dcomibmtoolsattachtimeout.md ==== -->
+<!-- ==== END OF TOPIC ==== dcomibmtoolsattachlogname.md ==== -->

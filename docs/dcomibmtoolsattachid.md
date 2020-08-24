@@ -24,24 +24,28 @@
 
 # -Dcom.ibm.tools.attach.id
 
-Specify a different target virtual machine (VM) to attach to.
+Specify a different virtual machine (VM) identifier.
 
 ## Syntax
 
-        -Dcom.ibm.tools.attach.id=<process_ID>
+        -Dcom.ibm.tools.attach.id=<my_vm_ID>
 
 |  Setting         | Value    | Default                  |
 |------------------|----------|--------------------------|
-| `<process_ID>`   | [string] | Target VM process ID     |
+| `<my_vm_ID>`   | [string] | Target VM process ID     |
 
-To use a different target, change the value for `<process_ID>`.
+To change the VM identifier recorded by an agent, change the value for `<my_vm_ID>`. The string must start with an alphabetic character. The remaining characters must be alphanumeric or underscore. Case-sensitivity is system dependent. If the VM identifier is already in use, the attach API modifies it to create a unique value.
 
 ## See also
 
-- [Support for the Java&trade; Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html)
-- [-Dcom.ibm.tools.attach.enable](dcomibmtoolsattachenable.md)
-- [-Dcom.ibm.tools.attach.displayName](dcomibmtoolsattachdisplayname.md)
+- [Java&trade; Attach API](attachapi.md)
+- [-Dcom.ibm.tools.attach.command_timeout](dcomibmtoolsattachcommand_timeout.md)
 - [-Dcom.ibm.tools.attach.directory](dcomibmtoolsattachdirectory.md)
+- [-Dcom.ibm.tools.attach.displayName](dcomibmtoolsattachdisplayname.md)
+- [-Dcom.ibm.tools.attach.enable](dcomibmtoolsattachenable.md)
+- [-Dcom.ibm.tools.attach.logging](dcomibmtoolsattachlogging.md)
+- [-Dcom.ibm.tools.attach.log.name](dcomibmtoolsattachlogname.md)
+- [-Dcom.ibm.tools.attach.shutdown_timeout](dcomibmtoolsattachshutdown_timeout.md)
 - [-Dcom.ibm.tools.attach.timeout](dcomibmtoolsattachtimeout.md)
 
 

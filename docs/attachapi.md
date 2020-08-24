@@ -1,0 +1,104 @@
+# Java Attach API
+
+With the Attach API, your application can connect to a running VM and load an agent into that VM to run tasks. The typical use case for this feature is to load an agent that can be used to monitor the application that's running in the target VM.
+
+For example, if you wanted to start monitoring an application that is already running with the Attach API enabled, you could use a tool such as the [IBM Health Center](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/introduction.html). In this case, a Health Center agent can start in its own VM and attach to the target VM where the application  is running to start recording and sending data to the Health Center client.
+
+The OpenJ9 implementation of the Attach API is equivalent to the reference implementation. However, you can only use the Attach API to connect to another OpenJ9 VM.
+
+When you run a Java application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on  z/OS,
+processes that use the default z/OS OMVS segment cannot enable the Attach API.
+
+To enable or disable the Attach API, use the [`-Dcom.ibm.tools.attach.enable=[yes|no]`](comibmtoolsattachenable.md) command line option.
+
+## Securing the Attach API
+
+Because the Attach API can be used to connect to a running application, you must control access to it to ensure that only
+authorized users or processes can use it. Disable the Attach API if you do not intend to use it.
+
+On Windows systems, the Attach API uses the system temporary directory, which is typically `C:\Documents and Settings\<userid>\Local Settings\Temp`.
+The Attach API creates a common subdirectory, which is `.com_ibm_tools_attach` by default. Because files and directories in the system temporary directory are handled by Windows security, only the process owner can connect to their processes.
+
+On UNIX systems, the Attach API uses `/tmp` and creates a common subdirectory, which is `.com_ibm_tools_attach` by default. The common subdirectory must be on a local drive, not a network drive. Security is handled by POSIX file permissions. The Attach API directory must be owned by `root` user and must have read, write, and execute file permissions for `user`, `group`, and `other` (`drwxrwxrwx`). The sticky bit is set so that only the owner and `root` can delete or rename files or directories within it. A process using the Java Attach API must be owned by the same UNIX user ID as the target process.
+
+```
+~/tmp $ ls -al
+total 0
+drwxr-xr-x   3 user_a staff    96  6 Aug 17:11 .
+drwxr-xr-x+ 89 user_a staff  2848  6 Aug 17:11 ..
+drwxrwxrwx+  7 root   staff   224  6 Aug 17:22 .com_ibm_tools_attach
+```
+
+In the default Attach API directory you can find certain files that start with an underscore `_*`, which are involved in synchronization.
+These files can be owned by any user but must have read and write permissions set. The files are empty and are automatically re-created if deleted.
+When your application attaches to a VM, a process directory is created.
+
+```
+~/tmp/.com_ibm_tools_attach $ ls -l
+total 3
+-rw-rw-rw-  1 user_a  staff    0  6 Aug 17:12 _attach_lock
+-rw-rw-rw-  1 user_a  staff    0  6 Aug 17:12 _master
+-rw-rw-rw-  1 user_a  staff    0  6 Aug 17:12 _notifier
+drwx--x--x  6 user_b  staff  192  6 Aug 17:21 process_a
+```
+
+The files in the subdirectory for a process, with the exception of a lock file, are accessible only by the owner of a process. The permissions
+for these files are `rwxr-xr-x` with the exception of the `attachNotificationSync` file, as shown in the following example.
+
+```
+~/tmp/.com_ibm_tools_attach/process_a $ ls -l
+total 4
+-rwxrw-rw-  1 user_b  staff  0  6 Aug 17:18 attachNotificationSync
+-rwxr-xr-x  1 user_b  staff  0  6 Aug 17:21 file_a
+-rwxr-xr-x  1 user_b  staff  0  6 Aug 17:21 file_b
+-rwxr-xr-x  1 user_b  staff  0  6 Aug 17:21 file_c
+```
+
+**Notes for z/OS:**
+
+- z/OS systems must also set POSIX permissions on files and cannot rely on RACF&reg; or system level security to protect applications.
+- To avoid z/OS console messages reporting security violations in `/tmp`, add a security exception or specify a different common subdirectory by setting the `com.ibm.tools.attach.directory` system property.
+
+## Configuring
+
+A number of system properties are available to configure the Attach API when you start a Java application, as shown in the following table:
+
+| System property                                                                                             |    Description                                                           |
+|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| [`-Dcom.ibm.tools.attach.directory=<directory_name>`](dcomibmtoolsattachdirectory.md)                       | Specify a different common directory for Attach API working files.       |
+| [`-Dcom.ibm.tools.attach.displayName=<my_display_name>`](dcomibmtoolsattachdisplayname.md)                  | Change the display name recorded by an agent                             |
+| [`-Dcom.ibm.tools.attach.id=<my_vm_ID>`](dcomibmtoolsattachid.md)                                           | Change the VM identifier recorded by an agent                            |
+| [`-Dcom.ibm.tools.attach.timeout=<value_in_milliseconds>`](dcomibmtoolsattachtimeout.md)                    | Change the connection timeout                                            |
+| [`-Dcom.ibm.tools.attach.shutdown_timeout=<value_in_milliseconds>`](dcomibmtoolsattachshutdown_timeout.md)  | Specify the timeout for ending the Attach API wait loop thread           |
+| [`-Dcom.ibm.tools.attach.command_timeout=<value_in_milliseconds>`](dcomibmtoolsattachcommand_timeout.md)    | Specify the timeout for sending a command to the target VM after initial attachment   |
+
+
+To learn more about each property, click the link in the table.
+
+## Troubleshooting
+
+Here are some problems that you might encounter:
+
+- `com.sun.tools.attach.AgentLoadException`
+- `com.sun.tools.attach.AgentInitializationException`
+- `com.sun.tools.attach.AgentNotSupportedException`
+- `com.sun.tools.attach.AttachOperationFailedException`
+- `java.io.IOException`
+
+Exceptions from agents on the target VM go to `stderr` or `stdout` for the target VM. These exceptions are not reported in the output of the attaching VM.
+
+The following problems are common:
+
+- On Unix systems, the file permissions are incorrectly set. Resolve these issues by reading and complying with [Securing the Attach API](#securing-the-attach-api).
+- The common directory is deleted, the contents of the common directory are deleted, or permissions of the common directory or subdirectories are changed.
+- The system temporary directory is full or inaccessible and the Attach API cannot initialize. Try specifying a different directory in which to create the common subdirectory by using the `-Dcom.ibm.tools.attach.directory` system property.
+
+If you have checked for these potential issues but you are still experiencing problems, a number of command line system properties are available to help narrow down the cause. These options are shown in the following table:
+
+| System property                                                                                             |    Description                                                           |
+|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| [`-Dcom.ibm.tools.attach.logging=<yes|no>`](dcomibmtoolsattachlogging.md)                                   | Turn on tracing of attach API events                                     |
+| [`-Dcom.ibm.tools.attach.log.name=<my_log_name>`](dcomibmtoolsattachlogname.md)                             | Specify the path and prefix for the log files                            |
+
+
+To learn more about each property, click the link in the table.

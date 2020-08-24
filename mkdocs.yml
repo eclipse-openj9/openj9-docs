@@ -135,6 +135,8 @@ nav:
         - "Overview"                                                             : shrc.md
         - "Diagnostic cache utilities"                                           : shrc_diag_util.md
 
+    - "Java Attach API"                                                          : attachapi.md
+
     - "Diagnostics" :
 
         - "Overview"                                                             : diag_overview.md
@@ -191,10 +193,14 @@ nav:
             - "-Dcom.ibm.gpu.verbose"                                            : dcomibmgpuverbose.md
             - "-Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns"   : dcomibmlangmanagementosmxbeaniscputime100ns.md
             - "-Dcom.ibm.lang.management.verbose"                                : dcomibmlangmanagementverbose.md
+            - "-Dcom.ibm.tools.attach.command_timeout"                           : dcomibmtoolsattachcommand_timeout.md
             - "-Dcom.ibm.tools.attach.directory"                                 : dcomibmtoolsattachdirectory.md
             - "-Dcom.ibm.tools.attach.displayName"                               : dcomibmtoolsattachdisplayname.md
             - "-Dcom.ibm.tools.attach.enable"                                    : dcomibmtoolsattachenable.md
             - "-Dcom.ibm.tools.attach.id"                                        : dcomibmtoolsattachid.md
+            - "-Dcom.ibm.tools.attach.logging"                                   : dcomibmtoolsattachlogging.md
+            - "-Dcom.ibm.tools.attach.log.name"                                  : dcomibmtoolsattachlogname.md
+            - "-Dcom.ibm.tools.attach.shutdown_timeout"                          : dcomibmtoolsattachshutdown_timeout.md
             - "-Dcom.ibm.tools.attach.timeout"                                   : dcomibmtoolsattachtimeout.md
             - "-Dfile.encoding"                                                  : dfileencoding.md
             - "-Djava.compiler"                                                  : djavacompiler.md
