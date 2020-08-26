@@ -3874,8 +3874,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <h1 id="java-attach-api">Java Attach API</h1>
 <p>With the Attach API, your application can connect to a running VM and load an agent into that VM to run tasks. The typical use case for this feature is to load an agent that can be used to monitor the application that's running in the target VM.</p>
 <p>For example, if you wanted to start monitoring an application that is already running with the Attach API enabled, you could use a tool such as the <a href="https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/introduction.html">IBM Health Center</a>. In this case, a Health Center agent can start in its own VM and attach to the target VM where the application  is running to start recording and sending data to the Health Center client.</p>
-<p>The OpenJ9 implementation of the Attach API is equivalent to the reference implementation. However, you can only use the Attach API to connect to another OpenJ9 VM.</p>
-<p>When you run a Java application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on  z/OS,
+<p>The OpenJ9 implementation of the Attach API is equivalent to the reference implementation (API documentation is available on the <a href="https://docs.oracle.com/javase/8/docs/jdk/api/attach/spec/index.html">Oracle website</a>). However, you can only use the Attach API to connect to another OpenJ9 VM.</p>
+<p>When you run a Java&trade; application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on  z/OS,
 processes that use the default z/OS OMVS segment cannot enable the Attach API.</p>
 <p>To enable or disable the Attach API, use the <a href="comibmtoolsattachenable.md"><code>-Dcom.ibm.tools.attach.enable=[yes|no]</code></a> command line option.</p>
 <h2 id="securing-the-attach-api">Securing the Attach API</h2>
@@ -3955,7 +3955,7 @@ total 4
 </table>
 <p>To learn more about each property, click the link in the table.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
-<p>Here are some problems that you might encounter:</p>
+<p>Problems with the Attach API generate one of the following exceptions:</p>
 <ul>
 <li><code>com.sun.tools.attach.AgentLoadException</code></li>
 <li><code>com.sun.tools.attach.AgentInitializationException</code></li>
@@ -3964,11 +3964,14 @@ total 4
 <li><code>java.io.IOException</code></li>
 </ul>
 <p>Exceptions from agents on the target VM go to <code>stderr</code> or <code>stdout</code> for the target VM. These exceptions are not reported in the output of the attaching VM.</p>
-<p>The following problems are common:</p>
+<p>Here are some problems that you might encounter:</p>
 <ul>
-<li>On Unix systems, the file permissions are incorrectly set. Resolve these issues by reading and complying with <a href="#securing-the-attach-api">Securing the Attach API</a>.</li>
-<li>The common directory is deleted, the contents of the common directory are deleted, or permissions of the common directory or subdirectories are changed.</li>
+<li>On Unix systems, the file permissions are incorrectly set, causing access issues. Resolve these issues by reading and complying with <a href="#securing-the-attach-api">Securing the Attach API</a>. Also check that the Attach API is not disabled.</li>
+<li>The common directory is deleted, the contents of the common directory are deleted, or permissions of the common directory or subdirectories are changed. As a result, the source VM might not be able list target VMs or attach to them. Deletion of the common directory can also cause semaphore leaks.</li>
 <li>The system temporary directory is full or inaccessible and the Attach API cannot initialize. Try specifying a different directory in which to create the common subdirectory by using the <code>-Dcom.ibm.tools.attach.directory</code> system property.</li>
+<li>A short delay between the start of the target VM and the initialization of the Attach API process can cause an <code>AttachNotSupportedException: No provider for virtual machine id</code> issue when the <code>VirtualMachine.attach(String id)</code> method is called.</li>
+<li>The target process is overloaded, suspended, or no longer running, or the port that is used to connect to the target is subject to a wait time (use the <code>netstat -a</code> command to check for ports in the <code>TIME_WAIT</code> state). These situations can cause an <code>AttachNotSupportedException</code> when the <code>attach</code> method is called.</li>
+<li>A JVMTI agent is corrupt or attempts to run an operation that is not available after the VM starts. These situations can cause an <code>AgentLoadException</code> or <code>AgentInitializationException</code> when one of the following methods is called: <code>loadAgent()</code>, <code>loadAgentLibrary()</code>, or <code>loadAgentPath()</code>. Depending on the method invoked, try loading the agent at VM startup by using one of the following command-line options <code>-javaagent</code>, <code>-agentlib</code>, or <code>-agentpath</code>. For more information about these options, see <a href="../interface_jvmti/">Java Virtual Machine Tool Interface</a>.</li>
 </ul>
 <p>If you have checked for these potential issues but you are still experiencing problems, a number of command line system properties are available to help narrow down the cause. These options are shown in the following table:</p>
 <table>
