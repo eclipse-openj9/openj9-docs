@@ -4,7 +4,7 @@ With the Attach API, your application can connect to a running VM and load an ag
 
 For example, if you wanted to start monitoring an application that is already running with the Attach API enabled, you could use a tool such as the [IBM Health Center](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/introduction.html). In this case, a Health Center agent can start in its own VM and attach to the target VM where the application  is running to start recording and sending data to the Health Center client.
 
-The OpenJ9 implementation of the Attach API is equivalent to the reference implementation. However, you can only use the Attach API to connect to another OpenJ9 VM.
+The OpenJ9 implementation of the Attach API is equivalent to the reference implementation (API documentation is available on the [Oracle website](https://docs.oracle.com/javase/8/docs/jdk/api/attach/spec/index.html)). However, you can only use the Attach API to connect to another OpenJ9 VM.
 
 When you run a Java&trade; application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on  z/OS,
 processes that use the default z/OS OMVS segment cannot enable the Attach API.
@@ -90,7 +90,7 @@ Exceptions from agents on the target VM go to `stderr` or `stdout` for the targe
 Here are some problems that you might encounter:
 
 - On Unix systems, the file permissions are incorrectly set, causing access issues. Resolve these issues by reading and complying with [Securing the Attach API](#securing-the-attach-api). Also check that the Attach API is not disabled.
-- The common directory is deleted, the contents of the common directory are deleted, or permissions of the common directory or subdirectories are changed. As a result, the source VM might not be able list target VMs or attach to them. Deletion of the common directory can also cause semaphore leaks. The extra, unused shared semaphores have keys beginning `0xal`; you can delete these semaphores if no Java processes are running.
+- The common directory is deleted, the contents of the common directory are deleted, or permissions of the common directory or subdirectories are changed. As a result, the source VM might not be able list target VMs or attach to them. Deletion of the common directory can also cause semaphore leaks.
 - The system temporary directory is full or inaccessible and the Attach API cannot initialize. Try specifying a different directory in which to create the common subdirectory by using the `-Dcom.ibm.tools.attach.directory` system property.
 - A short delay between the start of the target VM and the initialization of the Attach API process can cause an `AttachNotSupportedException: No provider for virtual machine id` issue when the `VirtualMachine.attach(String id)` method is called.
 - The target process is overloaded, suspended, or no longer running, or the port that is used to connect to the target is subject to a wait time (use the `netstat -a` command to check for ports in the `TIME_WAIT` state). These situations can cause an `AttachNotSupportedException` when the `attach` method is called.
