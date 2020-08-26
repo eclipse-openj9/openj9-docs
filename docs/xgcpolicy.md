@@ -33,17 +33,26 @@ Controls the behavior of the garbage collector by specifying different garbage c
 
 ## Parameters
 
-| Parameter                                                                 | Default  |
-|---------------------------------------------------------------------------|----------|
-| [`balanced`](#balanced)                                                   |          |
-| [`gencon`](#gencon)                                                       | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| [`metronome`](#metronome-aix-linux-x86-only) (AIX&reg;, Linux&reg; x86 only)  |          |
-| [`nogc`](#nogc)                                                           |          |
-| [`optavgpause`](#optavgpause)                                             |          |
-| [`optthruput`](#optthruput)                                               |          |
+| Parameter                                                                    | Default |
+|------------------------------------------------------------------------------|---------|
+| [`gencon`](#gencon)                                                          | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| [`balanced`](#balanced)                                                      |         |
+| [`metronome`](#metronome-aix-linux-x86-only) (AIX&reg;, Linux&reg; x86 only) |         |
+| [`optavgpause`](#optavgpause)                                                |         |
+| [`optthruput`](#optthruput)                                                  |         |
+| [`nogc`](#nogc)                                                              |         |
 
 
 Specify the garbage collection policy that you want the OpenJ9 VM to use:
+
+### `gencon`
+
+        -Xgcpolicy:gencon
+
+: The generational concurrent policy (default) uses a concurrent mark phase combined with generational garbage collection to help minimize the time that is spent in any garbage collection pause. This policy is particularly useful for applications with many short-lived objects, such as transactional applications. Pause times can be significantly shorter than with the `optthruput` policy, while still producing good throughput. Heap fragmentation is also reduced.
+
+: To learn more about this policy and how it works, see [Garbage collection: 'gencon' policy](gc.md#gencon-policy-default).
+
 
 ### `balanced`
 
@@ -53,9 +62,10 @@ Specify the garbage collection policy that you want the OpenJ9 VM to use:
 
 : If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance. If you are using large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), the balanced policy might further improve application throughput.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you are using the balanced GC policy in a Docker container that uses the default `seccomp` Docker profile, you must start the container with `--security-opt seccomp=unconfined` to exploit NUMA characteristics. These options are not required if you are running in Kubernetes, because `unconfined` is set by default (see [Seccomp]( https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp)).
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you are using the balanced GC policy in a Docker container that uses the default `seccomp` Docker profile, you must start the container with `--security-opt seccomp=unconfined` to exploit NUMA characteristics. These options are not required if you are running in Kubernetes, because `unconfined` is set by default (see [Seccomp]( https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp)).
 
-    For more information about this policy, including when to use it, see [Balanced Garbage Collection policy](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_balanced.html).
+: To learn about this policy and how it works, see [Garbage collection: 'balanced' policy](gc.md#balanced-policy).
+
 
 #### Defaults and options
 
@@ -120,12 +130,6 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 - `-Xnopartialcompactgc` (deprecated)
 - `-Xpartialcompactgc` (deprecated)
 
-### `gencon`
-
-        -Xgcpolicy:gencon
-
-: The generational concurrent policy (default) uses a concurrent mark phase combined with generational garbage collection to help minimize the time that is spent in any garbage collection pause. This policy is particularly useful for applications with many short-lived objects, such as transactional applications. Pause times can be significantly shorter than with the `optthruput` policy, while still producing good throughput. Heap fragmentation is also reduced.
-
 ### `metronome` (AIX, Linux x86 only)
 
         -Xgcpolicy:metronome
@@ -165,6 +169,19 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 `-Xmx<size>`
 : Specifies the Java heap size. Unlike other garbage collection strategies, the real-time Metronome GC does not support heap expansion. There is not an initial or maximum heap size option. You can specify only the maximum heap size.
 
+### `optavgpause`
+
+        -Xgcpolicy:optavgpause
+
+: The "optimize for pause time" policy uses concurrent mark and concurrent sweep phases. Pause times are shorter than with `optthruput`, but application throughput is reduced because some garbage collection work is taking place while the application is running. Consider using this policy if you have a large heap size (available on 64-bit platforms), because this policy limits the effect of increasing heap size on the length of the garbage collection pause. However, if your application uses many short-lived objects, the `gencon` policy might produce better performance.
+
+### `optthruput`
+
+        -Xgcpolicy:optthruput
+
+: The "optimize for throughput" policy disables the concurrent mark phase. The application stops during global garbage collection, so long pauses can occur. This configuration is typically used for large-heap applications when high application throughput, rather than short garbage collection pauses, is the main performance goal. If your application cannot tolerate long garbage collection pauses, consider using another policy, such as `gencon`.
+
+
 ### `nogc`
 
         -Xgcpolicy:nogc
@@ -197,19 +214,6 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
     - You might use `nogc` when an application is so short lived that allocated memory is never exhausted and running a full GC cycle is therefore a waste of resources.
 
     - Similarly, when memory application is well understood or where there is rarely memory to be reclaimed, you might prefer to avoid unnecessary GC cycles and rely on a failover mechanism to occasionally restart the VM as necessary.
-
-
-### `optavgpause`
-
-        -Xgcpolicy:optavgpause
-
-: The "optimize for pause time" policy uses concurrent mark and concurrent sweep phases. Pause times are shorter than with `optthruput`, but application throughput is reduced because some garbage collection work is taking place while the application is running. Consider using this policy if you have a large heap size (available on 64-bit platforms), because this policy limits the effect of increasing heap size on the length of the garbage collection pause. However, if your application uses many short-lived objects, the `gencon` policy might produce better performance.
-
-### `optthruput`
-
-        -Xgcpolicy:optthruput
-
-: The "optimize for throughput" policy disables the concurrent mark phase. The application stops during global garbage collection, so long pauses can occur. This configuration is typically used for large-heap applications when high application throughput, rather than short garbage collection pauses, is the main performance goal. If your application cannot tolerate long garbage collection pauses, consider using another policy, such as `gencon`.
 
 
 

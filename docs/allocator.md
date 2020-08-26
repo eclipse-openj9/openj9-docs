@@ -33,7 +33,9 @@ See [Garbage collection](gc.md) for more information about the GC.
 
 The Allocator assigns areas of the Java heap for Java objects. Objects are considered as *live* when they have a chain of references to them that start from root references, such as those found in thread stacks. When that reference or pointer no longer exists, the objects are considered as *garbage*.
 
-The Allocator is a component of memory management that is typically overshadowed by the task of garbage collection. However, it is a critical, if not small part, of the overall process. The Allocator manages pools of free memory and how the free memory is consumed. It is also responsible for allocating areas of storage in the Java heap for objects at the request of applications, class libraries, or the VM. Every allocation requires a *heap lock* to stop concurrent threads trying to access the same area of memory at the same time. When an object is allocated, the heap lock is released. If there is insufficient space to allocate the object, allocation fails, the heap lock is released, and the GC is called. If the GC manages to recover some space on the heap, the Allocator can resume operations. If the GC does not recover enough space, it returns an `OutOfMemoryError` exception.
+The Allocator manages pools of free memory and how the free memory is consumed. It is also responsible for allocating areas of storage in the Java heap for objects at the request of applications, class libraries, or the VM.
+
+Every allocation requires a *heap lock* to stop concurrent threads trying to access the same area of memory at the same time. When an object is allocated, the heap lock is released. If there is insufficient space to allocate the object, allocation fails, the heap lock is released, and the GC is called. If the GC manages to recover some space on the heap, the Allocator can resume operations. If the GC does not recover enough space, it returns an `OutOfMemoryError` exception.
 
 Acquiring a heap lock for every allocation would be an intensive operation with a knock on impact to performance. To get around this problem, small objects are allocated to thread local heaps (TLH).
 
