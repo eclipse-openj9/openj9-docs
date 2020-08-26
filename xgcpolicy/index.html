@@ -1891,6 +1891,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#gencon" class="md-nav__link">
+    gencon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#balanced" class="md-nav__link">
     balanced
   </a>
@@ -1907,13 +1914,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gencon" class="md-nav__link">
-    gencon
-  </a>
   
 </li>
         
@@ -1938,6 +1938,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#optavgpause" class="md-nav__link">
+    optavgpause
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optthruput" class="md-nav__link">
+    optthruput
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#nogc" class="md-nav__link">
     nogc
   </a>
@@ -1954,20 +1968,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optavgpause" class="md-nav__link">
-    optavgpause
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optthruput" class="md-nav__link">
-    optthruput
-  </a>
   
 </li>
         
@@ -3929,6 +3929,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#gencon" class="md-nav__link">
+    gencon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#balanced" class="md-nav__link">
     balanced
   </a>
@@ -3945,13 +3952,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gencon" class="md-nav__link">
-    gencon
-  </a>
   
 </li>
         
@@ -3976,6 +3976,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#optavgpause" class="md-nav__link">
+    optavgpause
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optthruput" class="md-nav__link">
+    optthruput
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#nogc" class="md-nav__link">
     nogc
   </a>
@@ -3992,20 +4006,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optavgpause" class="md-nav__link">
-    optavgpause
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optthruput" class="md-nav__link">
-    optthruput
-  </a>
   
 </li>
         
@@ -4074,19 +4074,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </thead>
 <tbody>
 <tr>
-<td><a href="#balanced"><code>balanced</code></a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="#gencon"><code>gencon</code></a></td>
 <td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
 </tr>
 <tr>
-<td><a href="#metronome-aix-linux-x86-only"><code>metronome</code></a> (AIX&reg;, Linux&reg; x86 only)</td>
+<td><a href="#balanced"><code>balanced</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="#nogc"><code>nogc</code></a></td>
+<td><a href="#metronome-aix-linux-x86-only"><code>metronome</code></a> (AIX&reg;, Linux&reg; x86 only)</td>
 <td></td>
 </tr>
 <tr>
@@ -4097,19 +4093,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <td><a href="#optthruput"><code>optthruput</code></a></td>
 <td></td>
 </tr>
+<tr>
+<td><a href="#nogc"><code>nogc</code></a></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p>Specify the garbage collection policy that you want the OpenJ9 VM to use:</p>
+<h3 id="gencon"><code>gencon</code></h3>
+<pre><code>    -Xgcpolicy:gencon
+</code></pre>
+<dl>
+<dd>The generational concurrent policy (default) uses a concurrent mark phase combined with generational garbage collection to help minimize the time that is spent in any garbage collection pause. This policy is particularly useful for applications with many short-lived objects, such as transactional applications. Pause times can be significantly shorter than with the <code>optthruput</code> policy, while still producing good throughput. Heap fragmentation is also reduced.</dd>
+<dd>To learn more about this policy and how it works, see <a href="../gc/#gencon-policy-default">Garbage collection: 'gencon' policy</a>.</dd>
+</dl>
 <h3 id="balanced"><code>balanced</code></h3>
 <pre><code>    -Xgcpolicy:balanced
 </code></pre>
 <dl>
 <dd>The balanced policy policy uses mark, sweep, compact and generational style garbage collection. The concurrent mark phase is disabled; concurrent garbage collection technology is used, but not in the way that concurrent mark is implemented for other policies. The <code>balanced</code> policy uses a region-based layout for the Java&trade; heap. These regions are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The policy tries to avoid global collections by matching object allocation and survival rates.</dd>
-<dd>
-<p>If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance. If you are using large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), the balanced policy might further improve application throughput.</p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> If you are using the balanced GC policy in a Docker container that uses the default <code>seccomp</code> Docker profile, you must start the container with <code>--security-opt seccomp=unconfined</code> to exploit NUMA characteristics. These options are not required if you are running in Kubernetes, because <code>unconfined</code> is set by default (see <a href="https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp">Seccomp</a>).</p>
-<p>For more information about this policy, including when to use it, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_balanced.html">Balanced Garbage Collection policy</a>.</p>
-</dd>
+<dd>If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance. If you are using large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), the balanced policy might further improve application throughput.</dd>
+<dd><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> If you are using the balanced GC policy in a Docker container that uses the default <code>seccomp</code> Docker profile, you must start the container with <code>--security-opt seccomp=unconfined</code> to exploit NUMA characteristics. These options are not required if you are running in Kubernetes, because <code>unconfined</code> is set by default (see <a href="https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp">Seccomp</a>).</dd>
+<dd>To learn about this policy and how it works, see <a href="../gc/#balanced-policy">Garbage collection: 'balanced' policy</a>.</dd>
 </dl>
 <h4 id="defaults-and-options">Defaults and options</h4>
 <p>The initial heap size is <em>Xmx/1024</em>, rounded down to the nearest power of 2, where <em>Xmx</em> is the maximum heap size available. You can override this value by specifying the <code>-Xms</code> option on the command line.</p>
@@ -4171,12 +4176,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><code>-Xnopartialcompactgc</code> (deprecated)</li>
 <li><code>-Xpartialcompactgc</code> (deprecated)</li>
 </ul>
-<h3 id="gencon"><code>gencon</code></h3>
-<pre><code>    -Xgcpolicy:gencon
-</code></pre>
-<dl>
-<dd>The generational concurrent policy (default) uses a concurrent mark phase combined with generational garbage collection to help minimize the time that is spent in any garbage collection pause. This policy is particularly useful for applications with many short-lived objects, such as transactional applications. Pause times can be significantly shorter than with the <code>optthruput</code> policy, while still producing good throughput. Heap fragmentation is also reduced.</dd>
-</dl>
 <h3 id="metronome-aix-linux-x86-only"><code>metronome</code> (AIX, Linux x86 only)</h3>
 <pre><code>    -Xgcpolicy:metronome
 </code></pre>
@@ -4209,6 +4208,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </dd>
 <dt><code>-Xmx&lt;size&gt;</code></dt>
 <dd>Specifies the Java heap size. Unlike other garbage collection strategies, the real-time Metronome GC does not support heap expansion. There is not an initial or maximum heap size option. You can specify only the maximum heap size.</dd>
+</dl>
+<h3 id="optavgpause"><code>optavgpause</code></h3>
+<pre><code>    -Xgcpolicy:optavgpause
+</code></pre>
+<dl>
+<dd>The "optimize for pause time" policy uses concurrent mark and concurrent sweep phases. Pause times are shorter than with <code>optthruput</code>, but application throughput is reduced because some garbage collection work is taking place while the application is running. Consider using this policy if you have a large heap size (available on 64-bit platforms), because this policy limits the effect of increasing heap size on the length of the garbage collection pause. However, if your application uses many short-lived objects, the <code>gencon</code> policy might produce better performance.</dd>
+</dl>
+<h3 id="optthruput"><code>optthruput</code></h3>
+<pre><code>    -Xgcpolicy:optthruput
+</code></pre>
+<dl>
+<dd>The "optimize for throughput" policy disables the concurrent mark phase. The application stops during global garbage collection, so long pauses can occur. This configuration is typically used for large-heap applications when high application throughput, rather than short garbage collection pauses, is the main performance goal. If your application cannot tolerate long garbage collection pauses, consider using another policy, such as <code>gencon</code>.</dd>
 </dl>
 <h3 id="nogc"><code>nogc</code></h3>
 <pre><code>    -Xgcpolicy:nogc
@@ -4248,18 +4259,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
 </ul>
 </dd>
-</dl>
-<h3 id="optavgpause"><code>optavgpause</code></h3>
-<pre><code>    -Xgcpolicy:optavgpause
-</code></pre>
-<dl>
-<dd>The "optimize for pause time" policy uses concurrent mark and concurrent sweep phases. Pause times are shorter than with <code>optthruput</code>, but application throughput is reduced because some garbage collection work is taking place while the application is running. Consider using this policy if you have a large heap size (available on 64-bit platforms), because this policy limits the effect of increasing heap size on the length of the garbage collection pause. However, if your application uses many short-lived objects, the <code>gencon</code> policy might produce better performance.</dd>
-</dl>
-<h3 id="optthruput"><code>optthruput</code></h3>
-<pre><code>    -Xgcpolicy:optthruput
-</code></pre>
-<dl>
-<dd>The "optimize for throughput" policy disables the concurrent mark phase. The application stops during global garbage collection, so long pauses can occur. This configuration is typically used for large-heap applications when high application throughput, rather than short garbage collection pauses, is the main performance goal. If your application cannot tolerate long garbage collection pauses, consider using another policy, such as <code>gencon</code>.</dd>
 </dl>
 <!-- ==== END OF TOPIC ==== xgcpolicy.md ==== -->
                 

@@ -626,16 +626,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
-  <a href="#gc-policies" class="md-nav__link">
-    GC policies
+  <a href="#garbage-collection-policies" class="md-nav__link">
+    Garbage collection policies
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gencon-policy" class="md-nav__link">
-    gencon policy
+  <a href="#policy-selection-and-tuning" class="md-nav__link">
+    Policy selection and tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gencon-policy-default" class="md-nav__link">
+    gencon policy (default)
   </a>
   
     <nav class="md-nav">
@@ -657,6 +664,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <a href="#balanced-policy" class="md-nav__link">
     balanced policy
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arraylets-dealing-with-large-arrays" class="md-nav__link">
+    Arraylets: dealing with large arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3900,16 +3920,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
-  <a href="#gc-policies" class="md-nav__link">
-    GC policies
+  <a href="#garbage-collection-policies" class="md-nav__link">
+    Garbage collection policies
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gencon-policy" class="md-nav__link">
-    gencon policy
+  <a href="#policy-selection-and-tuning" class="md-nav__link">
+    Policy selection and tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gencon-policy-default" class="md-nav__link">
+    gencon policy (default)
   </a>
   
     <nav class="md-nav">
@@ -3931,6 +3958,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <a href="#balanced-policy" class="md-nav__link">
     balanced policy
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arraylets-dealing-with-large-arrays" class="md-nav__link">
+    Arraylets: dealing with large arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4024,10 +4064,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The Allocator assigns areas of the Java heap for Java objects. See <a href="../allocator/">Memory allocation</a> for more information about the Allocator.</p>
 <h2 id="the-garbage-collector">The garbage collector</h2>
 <p>To prevent applications running out of memory, objects in the Java heap that are no longer required must be reclaimed. This process is known as garbage collection. When garbage is collected, the garbage collector must obtain exclusive access to the heap, which causes an application to pause while the clean up is done. This pause is often referred to as a <em>stop-the-world</em> pause because an application must halt until the process completes. In general, the first step in the GC process is to mark the objects that are reachable, which means they are still in use. The next step is to sweep away the unmarked objects to reclaim memory. The last step, which isn't always required unless the heap has become very fragmented, is to compact the heap.</p>
-<h2 id="gc-policies">GC policies</h2>
-<p>Eclipse OpenJ9 has a number of GC policies designed around different types of applications and workloads. Picking the right policy very much depends on your usage and performance goals. For more information about these garbage collection policies and options, see <a href="../xgcpolicy/">-Xgcpolicy</a>.</p>
-<h3 id="gencon-policy"><code>gencon</code> policy</h3>
-<p>If you have a transactional application, with many short lived objects, the Generational Concurrent GC policy (<a href="../xgcpolicy/#gencon"><code>-Xgcpolicy:gencon</code></a>) is probably best suited, which aims to minimize GC pause times without compromising throughput. This is the default policy employed by the VM, so if you want to use it you don't need to specify it on the command line when you start your application.</p>
+<h2 id="garbage-collection-policies">Garbage collection policies</h2>
+<p>OpenJ9 provides several different GC policies, each one specialized for operation with a specific heap configuration and one or more collectors. These policies are summarized in the followng table. Follow the links to read more about individual policies:</p>
+<table>
+<thead>
+<tr>
+<th>GC Policy</th>
+<th>Heap Configuration</th>
+<th>Collectors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#gencon-policy-default"><code>gencon</code></a> (default)</td>
+<td>Generational (nursery/tenure)</td>
+<td>Scavenger, Concurrent Mark, Global</td>
+</tr>
+<tr>
+<td><a href="#balanced-policy"><code>balanced</code></a></td>
+<td>Generational (multiple regions)</td>
+<td>Incremental Generational</td>
+</tr>
+<tr>
+<td><a href="#metronome-policy"><code>metronome</code></a></td>
+<td>Segregated</td>
+<td>Realtime</td>
+</tr>
+<tr>
+<td><a href="#optavgpause-policy"><code>optavgpause</code></a></td>
+<td>Flat</td>
+<td>Concurrent Mark, Global</td>
+</tr>
+<tr>
+<td><a href="#optthruput-policy"><code>optthruput</code></a></td>
+<td>Flat</td>
+<td>Global</td>
+</tr>
+<tr>
+<td><a href="#nogc-policy"><code>nogc</code></a></td>
+<td>--</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<p>All OpenJ9 GC policies support compressed references on 64-bit platforms, which compresses heap pointers to 32 bits if the total heap size does not exceed 63 GB. Applications that require more heap space can forgo compressed pointers and select any heap size within the bounds imposed by the operating system and available system RAM.</p>
+<p>OpenJ9 Java applications can determine the initial and maximum sizes of the heap for any policy by using the <a href="../xms/"><code>-Xms</code></a> and <a href="../xms/"><code>-Xmx</code></a> command line options to set the initial and maximum heap extent.</p>
+<h3 id="policy-selection-and-tuning">Policy selection and tuning</h3>
+<p>The selection of an appropriate GC policy and tuning the heap is primarily guided by the application dynamics and observation of how the application interacts with the heap during startup and at steady state. To help with this, all OpenJ9 GC policies are instrumented to collect a wide range of GC-related metric data for reporting in a GC log.</p>
+<p>To enable GC logging for the OpenJ9 Java runtime, include the <code>-verbose:gc</code> command line option. (See <a href="../cmdline_general/">Standard command-line options</a>.) The instrumented metric data can then be interactively visualized when the GC log is loaded into the <a href="https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv">Garbage Collector and Memory Visualizer (GCMV) plugin for Eclipse</a>. OpenJ9 Java GC logs can also be analyzed by some online services, such as <a href="https://gceasy.io/">GCEasy</a>.</p>
+<h3 id="gencon-policy-default"><code>gencon</code> policy (default)</h3>
+<p>The Generational Concurrent GC policy (<a href="../xgcpolicy/#gencon"><code>-Xgcpolicy:gencon</code></a>) is probably best suited if you have a transactional application, with many short lived objects. This policy aims to minimize GC pause times without compromising throughput. This is the default policy employed by the VM, so if you want to use it you don't need to specify it on the command line when you start your application.</p>
 <p>With the <code>gencon</code> policy, the Java heap is divided into two main areas, the <em>nursery</em> area, where new objects are created and the <em>tenure</em> area, where objects are moved if they have reached <em>tenure age</em>.</p>
 <p>The <em>nursery</em> area is subdivided into two further areas, the <em>allocate</em> space and the <em>survivor</em> space. The GC process is illustrated in the following diagram, which shows a sequence of 4 main events:</p>
 <p><img alt="The diagram is explained in the surrounding text" src="../cr/gencon_java_heap.jpg" title="Object allocation" /></p>
@@ -4042,7 +4128,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Within the <em>tenure</em> area, new objects are allocated into the small object area (SOA), which is illustrated in the earlier diagram (see 3.). A large object area (LOA) is set aside for objects greater than 64 KB that cannot be allocated into the SOA to minimize fragmentation. The LOA is allocated by default but is reduced and removed after a few GC cycles if it isn't populated. To prevent the creation of an LOA, you can specify the <a href="../xloa/"><code>-Xnoloa</code></a> option on the command line when you start your application. When the <em>tenure</em> area is close to full a global GC is triggered.</p>
 <p>The local GC scavenge reduces pause times by freqently reclaiming memory in the <em>nursery</em> area which, for a transactional application with many short-lived objects, has the most recyclable space. However, over time the <em>tenure</em> area might become full. So, whilst a local GC scavenge process is operating on the <em>nursery</em> area, a concurrent global GC process also runs alongside normal program execution to mark and remove unreachable objects from the <em>tenure</em> area. These two GC approaches combine to provide a good trade-off between shorter pause times and consistent throughput.</p>
 <h4 id="concurrent-scavenge">Concurrent Scavenge</h4>
-<p>A special mode of the <code>gencon</code> policy is known as <em>Concurrent Scavenge</em> (<code>-Xgc:concurrentScavenge</code>), which aims to minimize the time spent in stop-the-world pauses by collecting nursery garbage in parallel with running application threads. This mode can be enabled with hardware-based support and software-based support.</p>
+<p>A special mode of the <code>gencon</code> policy is known as <em>Concurrent Scavenge</em>, which aims to minimize the time spent in stop-the-world pauses by collecting nursery garbage in parallel with running application threads. To enable Concurrent Scavenge, see <a href="../xgc/#concurrentscavenge">-Xgc:concurrentScavenge</a>.</p>
+<p>This mode can be enabled with hardware-based support and software-based support: </p>
 <ul>
 <li>
 <p><strong>Hardware-based support: (Linux on IBM Z&reg; and z/OS&reg;)</strong> This mode works on the IBM z14™ and later mainframe system with the Guarded Storage (GS) Facility. The GS Facility provides hardware-based support to detect when potentially stale references to objects are accessed by an application. This means that the garbage collector can start processing objects in parts of the heap without halting an application because the GS Facility is on hand to spot accesses to an object and send a notification. The object that was ready to be swept away can be moved, and references to it can be reset. You can read more about this mode in the following blog posts:</p>
@@ -4055,9 +4142,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p><strong>Software-based support: (64-bit: Linux on (x86-64, POWER, IBM Z&reg;), AIX&reg;, macOS&reg;, and z/OS&reg;)</strong> With software-based support, <em>Concurrent Scavenge</em> can be enabled without any pre-requisite hardware although the performance throughput is not as good as hardware-based support.</p>
 </li>
 </ul>
-<p>For more information about enabling Concurrent Scavenge, see the <a href="../xgc/#concurrentscavenge">-Xgc:concurrentScavenge</a> option.</p>
 <h3 id="balanced-policy"><code>balanced</code> policy</h3>
-<p><a href="../xgcpolicy/#balanced"><code>-Xgcpolicy:balanced</code></a> divides the Java heap into regions, which are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global collections by matching object allocation and survival rates. If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance, particularly on large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER platforms).</p>
+<p>The Balanced GC policy (<a href="../xgcpolicy/#balanced"><code>-Xgcpolicy:balanced</code></a>) evens out pause times and reduces the overhead of some of the costlier operations typically associated with garbage collection. It divides the Java heap into regions, which are managed individually to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates. </p>
+<ul>
+<li>
+<p>If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance. </p>
+</li>
+<li>
+<p>If you are using large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), the Balanced policy might further improve application throughput. </p>
+</li>
+</ul>
+<p>However, even though pause times are typically evened out across GC operations, actual pause times are affected by object allocation rates, object survival rates, and fragmentation levels within the heap, and cannot therefore be bound to a certain maximum nor can a certain utilization level be guaranteed. </p>
+<p>During VM startup, the GC divides the heap memory into regions of equal size. These regions remain static for the lifetime of the VM and are the basic unit of garbage collection and allocation operations. For example, when the heap is expanded or contracted, the memory committed or released corresponds to a certain number of regions. Although the Java heap is a contiguous range of memory addresses, any region within that range can be committed or released as required. This enables the Balanced GC to contract the heap more dynamically and aggressively than other garbage collectors, which typically require the committed portion of the heap to be contiguous.</p>
+<p>Regions impose a maximum object size. Objects are always allocated within the bounds of a single region and are never permitted to span regions. The region size is always a power of two; for example, 512 KB, 1 MB, and so on (where KB is 2<sup>10</sup> bytes and MB is 2<sup>20</sup> bytes). The region size is selected at startup based on the maximum heap size. The collector chooses the smallest power of two which will result in less than 2048 regions, with a minimum region size of 512 KB. Except for small heaps (less than about 512 MB) the VM aims to have between 1024 and 2047 regions. </p>
+<p>For further information see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_balanced.html">Balanced Garbage Collection policy</a>.</p>
+<!--
+![The diagram is explained in the surrounding text](./cr/balanced_gc_regions1.png "Region structure and characteristics found in the object heap")
+-->
+
+<h4 id="arraylets-dealing-with-large-arrays">Arraylets: dealing with large arrays</h4>
+<p>Most objects are easily contained within the minimum region size of 512 KB. However, some large arrays might require more memory than is available in a single region. To support such arrays, the Balanced GC uses an <strong>arraylet</strong> representation to more effectively store large arrays in the heap. (Arraylets are also used by the Metronome GC; both Balanced and Metronome GC policies are region-based garbage collectors.)</p>
+<p>Arraylets have a <strong>spine</strong>, which contains the class pointer and size, and <strong>leaves</strong>, which contain the data associated with the array. The spine also contains <strong>arrayoids</strong> which are pointers to the respective arraylet leaves, as shown in the following diagram.</p>
+<p><img alt="The diagram is explained in the surrounding text" src="../cr/arraylet_diagram1.png" title="Arraylet diagram" /></p>
+<p>There are a number of advantages to using arraylets. </p>
+<ul>
+<li>
+<p>Because the heap tends to fragment over time, other collector policies might be forced to run a global garbage collection and defragmentation (compaction) phase to recover sufficient contiguous memory to allocate a large array. By removing the requirement for large arrays to be allocated in contiguous memory, the Balanced GC is more likely to be able to satisfy such an allocation without requiring unscheduled garbage collection, particularly a global defragmentation operation. </p>
+</li>
+<li>
+<p>Additionally, the Balanced GC never needs to move an arraylet leaf once it has been allocated. The cost of relocating an array is therefore limited to the cost of relocating the spine, so large arrays do not contribute to higher defragmentation times.</p>
+</li>
+</ul>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Despite the general advantage of using arraylets, they can slow down processing when the Java Native Interface (JNI) is being used. The JNI provides flexibility by enabling Java programs to call native code; for example C or C++, and if direct addressability to the inside of an object is needed, a JNI critical section can be used. However, that requires the object to be in a contiguous region of memory, or at least <em>appear</em> to be so. The JNI therefore creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.</p>
 <h3 id="metronome-policy"><code>metronome</code> policy</h3>
 <p><a href="../xgcpolicy/#metronome-aix-linux-x86-only"><code>-Xgcpolicy:metronome</code></a> is designed for applications that require precise response times. Garbage collection occurs in small interruptible steps to avoid stop-the-world pauses. This policy is available only on x86 Linux and AIX platforms.</p>
 <h3 id="optavgpause-policy"><code>optavgpause</code> policy</h3>
