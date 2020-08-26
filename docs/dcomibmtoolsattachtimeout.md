@@ -32,9 +32,9 @@ Specify a time that an application should wait when attempting to connect to a t
 
 | Setting | Value                          | Default                          |
 |---------|--------------------------------|----------------------------------|
-| `<ms>`  | [500 milliseconds or greater]     | 120000 milliseconds (120 seconds)|
+| `<ms>`  | [501 milliseconds or greater]     | 120000 milliseconds (120 seconds)|
 
-If you specify a value less than 500 milliseconds, no connection attempt is made.
+If you specify a value of 500 milliseconds or lower, no connection attempt is made.
 
 ## Example
 
