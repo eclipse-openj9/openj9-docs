@@ -3932,6 +3932,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>When <a href="../xxinitialrampercentage/"><code>-XX:MaxRAMPercentage</code> / <code>-XX:InitialRAMPercentage</code></a> are used with <code>-XX:+UseContainerSupport</code>, the corresponding heap setting is determined based on the memory limit of the container. For example, to set the maximum heap size to 80% of the container memory, specify the following options:</p>
 <pre><code>-XX:+UseContainerSupport -XX:MaxRAMPercentage=80
 </code></pre>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> If you set a value for <a href="../xms/"><code>-Xms</code></a>, the <code>-XX:InitialRAMPercentage</code> option is ignored.
+If you set a value for <a href="../xms/"><code>-Xmx</code></a>, the <code>-XX:MaxRAMPercentage</code> option is ignored.</p>
 <!-- ==== END OF TOPIC ==== xxusecontainersupport.md ==== -->
                 
                   

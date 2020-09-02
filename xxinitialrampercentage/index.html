@@ -3895,7 +3895,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <dl>
 <dd>Where N is a value between 0 and 100, which can be of type "double". For example, 12.3456.</dd>
 </dl>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> If you set a value for <a href="../xms/"><code>-Xms</code></a>, these options are ignored.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> If you set a value for <a href="../xms/"><code>-Xms</code></a>, the <code>-XX:InitialRAMPercentage</code> option is ignored.
+If you set a value for <a href="../xms/"><code>-Xmx</code></a>, the <code>-XX:MaxRAMPercentage</code> option is ignored.</p>
 <p>If your application is running in a container and you have specified <a href="../xxusecontainersupport/"><code>-XX:+UseContainerSupport</code></a>, both the default heap size for containers, the <code>-XX:InitialRAMPercentage</code> option, and the <code>-XX:MaxRAMPercentage</code> option are based on the available container memory.</p>
 <!-- ==== END OF TOPIC ==== xxinitialrampercentage.md ==== -->
                 
