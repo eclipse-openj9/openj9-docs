@@ -30,7 +30,7 @@ The following new features and notable changes since v 0.21.0 are included in th
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:[+|-]PortableSharedCache` option added](#new-xx-portablesharedcache-option-added)
 - [Methods in `com.ibm.lang.management.MemoryMXBean` deprecated and replaced](#methods-in-comibmlangmanagementmemorymxbean-deprecated-and-replaced)
-- [![Start of content that applies to AIX Java 15+](cr/java15plus.png) JDK15 (AIX) java.lang.System.mapLibraryNamepublic() returns library names with .so suffix](#new-jdk15-aix-java-lang-system-maplibrarynamepublic-returns-library-names-with-so-suffix)
+- [![Start of content that applies to AIX Java 15+](cr/java15plus.png) JDK15 (AIX) java.lang.System.mapLibraryName() returns library names with .so suffix](#new-jdk15-aix-java-lang-system-mapLibraryName-returns-library-names-with-so-suffix)
 
 
 ## Features and changes
@@ -57,9 +57,9 @@ The methods `com.ibm.lang.management.MemoryMXBean.getGCMasterThreadCpuUsed()` an
 
 For more information see Java 8: [`com.ibm.lang.management.MemoryMXBean`](api/jdk8/jre/management/extension/com/ibm/lang/management/MemoryMXBean.html) and for Java 11: [`com.ibm.lang.management.MemoryMXBean`](api/jdk11/jdk.management/com/ibm/lang/management/MemoryMXBean.html)
 
-### ![Start of content that applies to AIX Java 15+](cr/java15plus.png) JDK15 (AIX) java.lang.System.mapLibraryNamepublic() returns library names with .so suffix
+### ![Start of content that applies to AIX Java 15+](cr/java15plus.png) JDK15 (AIX) java.lang.System.mapLibraryName() returns library names with .so suffix
 
-`java.lang.System.mapLibraryNamepublic(libname)` returns a platform-specific string representing a native library with `.so` suffix at `JDK15+` `AIX`.
+`java.lang.System.mapLibraryName(libname)` returns a platform-specific string representing a native library with `.so` suffix at `JDK15+` `AIX`.
 
 ## Full release information
 
