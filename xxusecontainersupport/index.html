@@ -3922,6 +3922,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 </tbody>
 </table>
+<p>The default heap size also limit to 25GB, which is the limit of heap size for 3-bit shift of <a href="../xcompressedrefs/">Compressed References</a>, in order to prevent silent switching to 4-bit shift <a href="../xcompressedrefs/">Compressed References</a> with possible performance penalties. Using <a href="../xms/"><code>-Xmx</code></a> option or <a href="../xxinitialrampercentage/"><code>-XX:MaxRAMPercentage</code></a> can overwrite the 25GB limit.</p>
 <p>The default heap size for containers takes affect only when the following conditions are met:</p>
 <ol>
 <li>The application is running in a container environment.</li>
