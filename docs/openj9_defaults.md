@@ -93,9 +93,9 @@ The default value of [`-Xmx`](xms.md) :
 
 - The value is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB.
 
-- If the VM is running in a container **(Linux&reg; only)** and [UseContainerSupport](xxusecontainersupport.md) is enabled, The value is 75% of the Container memory limit with a maximum of 25GB. However, where there is less 1G of Container memory limit, the value set is 50% of Container memory limit; If Container memory limit is between 1GB and 2GB, the value set is Container memory limit - 512 MB.
+- On Linux&reg; sytems, if the VM is running in a container and [`-XX:+UseContainerSupport](xxusecontainersupport.md) is enabled, the value is 75% of the container memory limit, with a maximum of 25 GB. However, if the container memory limit is less than 1 GB, the value is 50% of the container memory limit. If the container memory limit is between 1GB and 2GB, the value is the container memory limit minus 512 MB.
 
-- The default value is capped at 25GB, which is the limit of heap size for 3-bit shift of [Compressed References](xcompressedrefs.md), in order to prevent silent switching to 4-bit shift [Compressed References](xcompressedrefs.md) with possible performance penalties. Using [`-Xmx`](xms.md) option can overwrite the 25GB limit.
+- The default value is capped at 25 GB, which is the limit of heap size for 3-bit shift of compressed references (see [-Xcompressedrefs](xcompressedrefs.md)), to prevent silent switching to 4-bit shift of compressed references, which has possible performance penalties. You can use the [`-Xmx`](xms.md) option to overwrite the 25 GB limit.
 
 - ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) If you have set the [-XX:+OriginalJDK8HeapSizeCompatibilityMode](xxoriginaljdk8heapsizecompatibilitymode.md) option for compatibility with earlier releases, the value is half the available memory with a minimum of 16 MB and a maximum of 512 MB. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 

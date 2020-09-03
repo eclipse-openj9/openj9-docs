@@ -51,7 +51,7 @@ The following table shows the values that are used when `-XX:+UseContainerSuppor
 | Greater than 2 GB                     | 75% *&lt;size&gt;*      |
 
 
-The default heap size also limit to 25GB, which is the limit of heap size for 3-bit shift of [Compressed References](xcompressedrefs.md), in order to prevent silent switching to 4-bit shift [Compressed References](xcompressedrefs.md) with possible performance penalties. Using [`-Xmx`](xms.md) option or [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md) can overwrite the 25GB limit.
+The default heap size is capped at 25 GB, which is the limit of heap size for 3-bit shift of compressed references (see [-Xcompressedrefs](xcompressedrefs.md)), to prevent silent switching to 4-bit shift of compressed references, which has possible performance penalties. You can use the [`-Xmx`](xms.md) option or the [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md) option to overwrite the 25 GB limit.
 
 The default heap size for containers takes affect only when the following conditions are met:
 
