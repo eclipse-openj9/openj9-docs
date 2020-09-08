@@ -24,9 +24,9 @@
 
 # -XX:\[+|-\]PortableSharedCache
 
-This option enables AOT compiled code to be generated based on a chosen set of processor features (features present in the Intel Sandy Bridge microarchitecture) that maximizes its portability across machines. It is currently supported only on x86. The feature is turned on by default in Docker containers and can be disabled with `-XX:-PortableSharedCache`. To enable the portable shared cache feature outside Docker containers, `-XX:+PortableSharedCache` needs to be specified for the initial Java Virtual Machine instance (when the creation of the Shared Class Cache happens) as well as for every subsequent instance that make use of the same Shared Class Cache.
+This option enables AOT compiled code to be generated based on a chosen set of processor features (features present in the Intel&reg; Sandy Bridge microarchitecture) that maximizes its portability across machines. It is currently supported only on x86. The feature is turned on by default in Docker containers but can be disabled with `-XX:-PortableSharedCache`. To enable the portable shared cache feature outside Docker containers, `-XX:+PortableSharedCache` needs to be specified for the initial Java Virtual Machine instance (when the creation of the Shared Class Cache happens) as well as for every subsequent instance that makes use of the same Shared Class Cache.
 
-This option is especially useful for Java applications deployed on the cloud in the form of Docker containers as it allows the Shared Class Cache to be portable across processors with different microarchitectures and across Java Virtual Machines with different heap sizes.
+This option is especially useful for applications deployed on the cloud in the form of Docker containers, as it allows the Shared Class Cache to be portable across processors with different microarchitectures and across VMs with different heap sizes.
 
 ## Syntax
 
