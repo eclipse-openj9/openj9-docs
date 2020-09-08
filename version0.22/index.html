@@ -408,8 +408,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#jdk15-aix-javalangsystemmaplibraryname-returns-library-names-with-so-suffix" class="md-nav__link">
-    JDK15 (AIX) java.lang.System.mapLibraryName() returns library names with .so suffix
+  <a href="#javalangsystemmaplibraryname-string-suffix" class="md-nav__link">
+    java.lang.System.mapLibraryName() string suffix
   </a>
   
 </li>
@@ -3888,8 +3888,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#jdk15-aix-javalangsystemmaplibraryname-returns-library-names-with-so-suffix" class="md-nav__link">
-    JDK15 (AIX) java.lang.System.mapLibraryName() returns library names with .so suffix
+  <a href="#javalangsystemmaplibraryname-string-suffix" class="md-nav__link">
+    java.lang.System.mapLibraryName() string suffix
   </a>
   
 </li>
@@ -3957,7 +3957,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#new-xx-portablesharedcache-option-added">New <code>-XX:[+|-]PortableSharedCache</code> option added</a></li>
 <li><a href="#methods-in-comibmlangmanagementmemorymxbean-deprecated-and-replaced">Methods in <code>com.ibm.lang.management.MemoryMXBean</code> deprecated and replaced</a></li>
-<li><a href="#new-jdk15-aix-java-lang-system-mapLibraryName-returns-library-names-with-so-suffix"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> JDK15 (AIX) java.lang.System.mapLibraryName() returns library names with .so suffix</a></li>
+<li><a href="#javalangsystemmaplibraryname-string-suffix"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> <code>java.lang.System.mapLibraryName()</code> string suffix</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3966,15 +3966,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk15&amp;jvmVariant=openj9">OpenJDK version 15</a></li>
 </ul>
 <p>OpenJDK 15 with Eclipse OpenJ9 is not a long term support (LTS) release.</p>
-<p>The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK community are for Eclipse OpenJ9 release 0.21.0. Features mentioned in these release notes are not available in these builds. Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 0.22.0, testing at the project is not complete and therefore support for any of these features is not available.</p>
+<p>The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK community are for Eclipse OpenJ9 release 0.21.0. Features mentioned in these release notes are not available in these Java 8 and 11 builds. Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 0.22.0, testing at the project is not complete and therefore support for any of these features is not available.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="new-xx-portablesharedcache-option-added">New <code>-XX:[+|-]PortableSharedCache</code> option added</h3>
 <p>This option enables AOT compiled code to be generated based on a chosen set of processor features that maximizes its portability across machines. It is currently supported only on x86. The feature is turned on by default in Docker containers and can be disabled with <code>-XX:-PortableSharedCache</code>. For more information, see <a href="../xxportablesharedcache/"><code>-XX:[+|-]PortableSharedCache</code></a>.</p>
 <h3 id="methods-in-comibmlangmanagementmemorymxbean-deprecated-and-replaced">Methods in <code>com.ibm.lang.management.MemoryMXBean</code> deprecated and replaced</h3>
 <p>The methods <code>com.ibm.lang.management.MemoryMXBean.getGCMasterThreadCpuUsed()</code> and <code>com.ibm.lang.management.MemoryMXBean.getGCSlaveThreadsCpuUsed()</code> are deprecated for removal in Java 16. The recommended methods to be used are <code>com.ibm.lang.management.MemoryMXBean.getGCMainThreadCpuUsed()</code> and <code>com.ibm.lang.management.MemoryMXBean.getGCWorkerThreadsCpuUsed()</code> respectively.</p>
 <p>For more information see Java 8: <a href="../api/jdk8/jre/management/extension/com/ibm/lang/management/MemoryMXBean.html"><code>com.ibm.lang.management.MemoryMXBean</code></a> and for Java 11: <a href="../api/jdk11/jdk.management/com/ibm/lang/management/MemoryMXBean.html"><code>com.ibm.lang.management.MemoryMXBean</code></a></p>
-<h3 id="jdk15-aix-javalangsystemmaplibraryname-returns-library-names-with-so-suffix"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> JDK15 (AIX) java.lang.System.mapLibraryName() returns library names with .so suffix</h3>
-<p><code>java.lang.System.mapLibraryName(libname)</code> returns a platform-specific string representing a native library with <code>.so</code> suffix at <code>JDK15+</code> <code>AIX</code>.</p>
+<h3 id="javalangsystemmaplibraryname-string-suffix"><img alt="Start of content that applies to Java 15+" src="../cr/java15plus.png" /> <code>java.lang.System.mapLibraryName()</code> string suffix</h3>
+<p>On AIX&reg; systems, <code>java.lang.System.mapLibraryName(libname)</code> returns a representation of a native library in a platform-specific string with a <code>.so</code> suffix.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.21.0 and v 0.22.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.22/0.22.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.22.md ==== -->
