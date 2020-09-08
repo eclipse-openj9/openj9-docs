@@ -313,10 +313,12 @@ $(function() {
                     }
                 } else if (ui.item.category === catSearchTags) {
                     url += ui.item.u;
+                }
+                if (top !== window) {
+                    parent.classFrame.location = pathtoroot + url;
+                } else {
+                    window.location.href = pathtoroot + url;
                 } 
-                
-                window.location.href = pathtoroot + url;
-
                 $("#search").focus();
             }
         }
