@@ -24,17 +24,25 @@
 
 # -XX:\[+|-\]PortableSharedCache
 
-This option enables AOT compiled code to be generated based on a chosen set of processor features (features present in the Intel&reg; Sandy Bridge microarchitecture) that maximizes its portability across machines. It is currently supported only on x86. The feature is turned on by default in Docker containers but can be disabled with `-XX:-PortableSharedCache`. To enable the portable shared cache feature outside Docker containers, `-XX:+PortableSharedCache` needs to be specified for the initial Java Virtual Machine instance (when the creation of the Shared Class Cache happens) as well as for every subsequent instance that makes use of the same Shared Class Cache.
+**(x86 only)**
 
-This option is especially useful for applications deployed on the cloud in the form of Docker containers, as it allows the Shared Class Cache to be portable across processors with different microarchitectures and across VMs with different heap sizes.
+Use this command line option to choose whether AOT code should be generated using an older processor (Intel&reg; Sandybridge) feature set on the x86 platform, which therefore allows the AOT code to be portable; it can be run on any Intel Sandybridge or newer processor without you having to choose a machine with a suitably old processor for generating the AOT code.
+
+This feature is particularly relevant for packaging a shared classes cache into a container image (for example, applications deployed on the cloud in the form of Docker containers) because the processor on which the container image is built is likely to be different from the processor on which the container is deployed. 
 
 ## Syntax
 
         -XX:[+|-]PortableSharedCache
 
-| Setting                            | Effect  | Default                                                                            |
-|------------------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+PortableSharedCache`         | Enable  |                                                                                    |
-| `-XX:-PortableSharedCache`         | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| Setting                            | Effect  | Default               |
+|------------------------------------|---------|:---------------------:|
+| `-XX:+PortableSharedCache`         | Enable  | See notes that follow |
+| `-XX:-PortableSharedCache`         | Disable |                       |
+
+### Default settings
+
+This option is _enabled_ by default in containers. To disable the option in a container, specify `-XX:-PortableSharedCache`.
+
+The option is _disabled_ by default outside containers. To enable the option outside a container, specify `-XX:+PortableSharedCache` for the initial JVM instance (when the creation of the shared class cache happens) as well as for every subsequent instance that makes use of the same shared class cache.
 
 <!-- ==== END OF TOPIC ==== xxportablesharedcache.md ==== -->
