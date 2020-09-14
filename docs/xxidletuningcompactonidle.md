@@ -39,14 +39,7 @@ This option controls garbage collection processing with compaction when the stat
 
         -XX:[+|-]IdleTuningCompactOnIdle
 
-| Setting                        | Effect  | Default  | Default when running in a docker container                                 |
-|--------------------------------|---------|:--------:|:--------------------------------------------------------------------------:|
-| `-XX:+IdleTuningCompactOnIdle` | Enable  |  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
-| `-XX:-IdleTuningCompactOnIdle` | Disable |  <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>   |   |
-
-The default depends on whether or not the OpenJ9 VM is running in a container. As indicated in the table, when the VM is running in a container and the state is set to idle, the VM attempts to compact the object heap following a garbage collection cycle. The garbage collection cycle is controlled by the `-XX:+IdleTuningGcOnIdle` option, which is also enabled by default when the OpenJ9 VM is running inside a container.
-
-If your application is not running in a container and you want compaction to be attempted every time idle GC happens as part of the idle-tuning process, set the `-XX:+IdleTuningCompactOnIdle` option on the command line when you start your application.
+Forces Heap compaction during Global GC when entering idle state. As of release 0.15, compaction is triggered by internal heuristics that look into the amount of fragmented pages and typically there is no need to force compaction. For releases 0.15-0.22, compaction would still be forced, if VM was running in container environment.
 
 The `-XX:+IdleTuningCompactOnIdle` option can be used with the `-XX:+IdleTuningMinIdleWaitTime`, which controls the amount of time that the VM must be idle before an idle state is set. If a value for the `-XX:+IdleTuningMinIdleWaitTime` option is not explicitly specified, the VM sets a default value of 180 seconds.
 
