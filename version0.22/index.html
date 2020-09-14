@@ -394,6 +394,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#performance-improvements" class="md-nav__link">
+    Performance improvements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-xx-portablesharedcache-option-added" class="md-nav__link">
     New -XX:[+|-]PortableSharedCache option added
   </a>
@@ -3874,6 +3881,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#performance-improvements" class="md-nav__link">
+    Performance improvements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-xx-portablesharedcache-option-added" class="md-nav__link">
     New -XX:[+|-]PortableSharedCache option added
   </a>
@@ -3955,6 +3969,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The following new features and notable changes since v 0.21.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#performance-improvements">Performance improvements</a></li>
 <li><a href="#new-xx-portablesharedcache-option-added">New <code>-XX:[+|-]PortableSharedCache</code> option added</a></li>
 <li><a href="#methods-in-comibmlangmanagementmemorymxbean-deprecated-and-replaced">Methods in <code>com.ibm.lang.management.MemoryMXBean</code> deprecated and replaced</a></li>
 <li><a href="#javalangsystemmaplibraryname-string-suffix"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> <code>java.lang.System.mapLibraryName()</code> string suffix</a></li>
@@ -3968,8 +3983,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>OpenJDK 15 with Eclipse OpenJ9 is not a long term support (LTS) release.</p>
 <p>The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK community are for Eclipse OpenJ9 release 0.21.0. Features mentioned in these release notes are not available in these Java 8 and 11 builds. Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 0.22.0, testing at the project is not complete and therefore support for any of these features is not available.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="performance-improvements">Performance improvements</h3>
+<p>The performance of zero initializing Java heap memory improved on the IBM Z&reg; platform because of a change to use <code>memset</code> instead of an outdated handcrafted assembly sequence in the JVM.</p>
 <h3 id="new-xx-portablesharedcache-option-added">New <code>-XX:[+|-]PortableSharedCache</code> option added</h3>
-<p>This option enables AOT compiled code to be generated based on a chosen set of processor features that maximizes its portability across machines. It is currently supported only on x86. The feature is turned on by default in Docker containers and can be disabled with <code>-XX:-PortableSharedCache</code>. For more information, see <a href="../xxportablesharedcache/"><code>-XX:[+|-]PortableSharedCache</code></a>.</p>
+<p>On x86 only, the <code>-XX:[+|-]PortableSharedCache</code> option enables you to choose whether AOT code should be generated using an older processor (Intel&reg; Sandybridge) feature set, which therefore allows the AOT code to be portable. This feature is particularly relevant for packaging a shared classes cache into a container image (for example, applications deployed on the cloud in the form of Docker containers) because the processor on which the container image is built is likely to be different from the processor on which the container is deployed. For more information, see <a href="../xxportablesharedcache/"><code>-XX:[+|-]PortableSharedCache</code></a>.</p>
 <h3 id="methods-in-comibmlangmanagementmemorymxbean-deprecated-and-replaced">Methods in <code>com.ibm.lang.management.MemoryMXBean</code> deprecated and replaced</h3>
 <p>The methods <code>com.ibm.lang.management.MemoryMXBean.getGCMasterThreadCpuUsed()</code> and <code>com.ibm.lang.management.MemoryMXBean.getGCSlaveThreadsCpuUsed()</code> are deprecated for removal in Java 16. The recommended methods to be used are <code>com.ibm.lang.management.MemoryMXBean.getGCMainThreadCpuUsed()</code> and <code>com.ibm.lang.management.MemoryMXBean.getGCWorkerThreadsCpuUsed()</code> respectively.</p>
 <p>For more information see Java 8: <a href="../api/jdk8/jre/management/extension/com/ibm/lang/management/MemoryMXBean.html"><code>com.ibm.lang.management.MemoryMXBean</code></a> and for Java 11: <a href="../api/jdk11/jdk.management/com/ibm/lang/management/MemoryMXBean.html"><code>com.ibm.lang.management.MemoryMXBean</code></a></p>

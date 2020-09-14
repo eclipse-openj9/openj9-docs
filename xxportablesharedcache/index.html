@@ -3260,6 +3260,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     Syntax
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-settings" class="md-nav__link">
+    Default settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -3824,6 +3837,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     Syntax
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-settings" class="md-nav__link">
+    Default settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -3872,8 +3898,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xx91-93portablesharedcache">-XX:[+|-]PortableSharedCache</h1>
-<p>This option enables AOT compiled code to be generated based on a chosen set of processor features (features present in the Intel&reg; Sandy Bridge microarchitecture) that maximizes its portability across machines. It is currently supported only on x86. The feature is turned on by default in Docker containers but can be disabled with <code>-XX:-PortableSharedCache</code>. To enable the portable shared cache feature outside Docker containers, <code>-XX:+PortableSharedCache</code> needs to be specified for the initial Java Virtual Machine instance (when the creation of the Shared Class Cache happens) as well as for every subsequent instance that makes use of the same Shared Class Cache.</p>
-<p>This option is especially useful for applications deployed on the cloud in the form of Docker containers, as it allows the Shared Class Cache to be portable across processors with different microarchitectures and across VMs with different heap sizes.</p>
+<p><strong>(x86 only)</strong></p>
+<p>Use this command line option to choose whether AOT code should be generated using an older processor (Intel&reg; Sandybridge) feature set on the x86 platform, which therefore allows the AOT code to be portable; it can be run on any Intel Sandybridge or newer processor without you having to choose a machine with a suitably old processor for generating the AOT code.</p>
+<p>This feature is particularly relevant for packaging a shared classes cache into a container image (for example, applications deployed on the cloud in the form of Docker containers) because the processor on which the container image is built is likely to be different from the processor on which the container is deployed. </p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]PortableSharedCache
 </code></pre>
@@ -3889,15 +3916,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <tr>
 <td><code>-XX:+PortableSharedCache</code></td>
 <td>Enable</td>
-<td align="center"></td>
+<td align="center">See notes that follow</td>
 </tr>
 <tr>
 <td><code>-XX:-PortableSharedCache</code></td>
 <td>Disable</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
+<h3 id="default-settings">Default settings</h3>
+<p>This option is <em>enabled</em> by default in containers. To disable the option in a container, specify <code>-XX:-PortableSharedCache</code>.</p>
+<p>The option is <em>disabled</em> by default outside containers. To enable the option outside a container, specify <code>-XX:+PortableSharedCache</code> for the initial JVM instance (when the creation of the shared class cache happens) as well as for every subsequent instance that makes use of the same shared class cache.</p>
 <!-- ==== END OF TOPIC ==== xxportablesharedcache.md ==== -->
                 
                   
