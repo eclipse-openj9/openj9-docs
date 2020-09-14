@@ -28,6 +28,7 @@
 The following new features and notable changes since v 0.21.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [Performance improvements](#performance-improvements)
 - [New `-XX:[+|-]PortableSharedCache` option added](#new-xx-portablesharedcache-option-added)
 - [Methods in `com.ibm.lang.management.MemoryMXBean` deprecated and replaced](#methods-in-comibmlangmanagementmemorymxbean-deprecated-and-replaced)
 - [![Start of content that applies to AIX Java 15+](cr/java15plus.png) `java.lang.System.mapLibraryName()` string suffix](#javalangsystemmaplibraryname-string-suffix)
@@ -47,9 +48,13 @@ The latest builds of OpenJDK with OpenJ9 for Java 8 and 11 at the AdoptOpenJDK c
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+### Performance improvements
+
+The performance of zero initializing Java heap memory improved on the IBM Z&reg; platform because of a change to use `memset` instead of an outdated handcrafted assembly sequence in the JVM.
+
 ### New `-XX:[+|-]PortableSharedCache` option added
 
-This option enables AOT compiled code to be generated based on a chosen set of processor features that maximizes its portability across machines. It is currently supported only on x86. The feature is turned on by default in Docker containers and can be disabled with `-XX:-PortableSharedCache`. For more information, see [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md).
+On x86 only, the `-XX:[+|-]PortableSharedCache` option enables you to choose whether AOT code should be generated using an older processor (Intel&reg; Sandybridge) feature set, which therefore allows the AOT code to be portable. This feature is particularly relevant for packaging a shared classes cache into a container image (for example, applications deployed on the cloud in the form of Docker containers) because the processor on which the container image is built is likely to be different from the processor on which the container is deployed. For more information, see [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md).
 
 ### Methods in `com.ibm.lang.management.MemoryMXBean` deprecated and replaced
 
