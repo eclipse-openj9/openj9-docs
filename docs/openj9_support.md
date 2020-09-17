@@ -155,16 +155,18 @@ platform support might vary, depending on their build environment. Check the Ado
 OpenJDK 15 binaries are supported on the minimum operating system levels shown in the following tables:
 
 
-| Linux                                 |  x64   |  ppc64le   | Z64  |
-|---------------------------------------|--------|------------|------|
-| CentOS 7.6                            |   Y    |     Y      |  N   |
-| RHEL 7.6                              |   Y    |     Y      |  Y   |
-| SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
-| Ubuntu 16.04                          |   Y    |     Y      |  Y   |
-| Ubuntu 18.04                          |   Y    |     Y      |  Y   |
+| Linux (**Note 1**)                    | AArch64 (**Note 2**) |  x64   |  ppc64le   | Z64  |
+|---------------------------------------|----------------------|--------|------------|------|
+| CentOS 7.6                            |    Y                 |   Y    |     Y      |  N   |
+| RHEL 7.6                              |    Y                 |   Y    |     Y      |  Y   |
+| SUSE Linux Enterprise Server (SLES) 12|    N                 |   Y    |     Y      |  Y   |
+| Ubuntu 16.04                          |    Y                 |   Y    |     Y      |  Y   |
+| Ubuntu 18.04                          |    Y                 |   Y    |     Y      |  Y   |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Not all of these distributions are tested, but Linux distributions that have a
-minimum glibc version 2.17 are expected to function without problems.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+
+1. Not all of these distributions are tested, but Linux distributions that have a minimum glibc version 2.17 are expected to function without problems.
+2. Only limited support for the 64-bit ARM architecture is currently available. For a list of known issues, see the [Release notes](https://github.com/eclipse/openj9/tree/master/doc/release-notes) for the latest version of Eclipse OpenJ9.
 
 | Windows                    |  x64   |
 |----------------------------|--------|
