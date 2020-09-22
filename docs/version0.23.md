@@ -27,22 +27,27 @@
 
 The following new features and notable changes since v 0.22.0 are included in this release:
 
+- [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [`-XX:[+|-]PortableSharedCache` option behavior update](#-xx-portablesharedcache-option-behavior-update)
 
 ## Features and changes
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.20.0 supports OpenJDK 8, 11, and 14. Binaries are available from the AdoptOpenJDK community at the following links:
+OpenJ9 release 0.23.0 supports OpenJDK 8, 11, and 15. Binaries are available from the AdoptOpenJDK community at the following links:
 
 - [OpenJDK version 8](https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=openj9)
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
-- [OpenJDK version 14](https://adoptopenjdk.net/archive.html?variant=openjdk14&jvmVariant=openj9)
+- [OpenJDK version 15](https://adoptopenjdk.net/archive.html?variant=openjdk15&jvmVariant=openj9)
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-
 ### `-XX:[+|-]PortableSharedCache` option behavior update
+
 The `-XX:[+|-]PortableSharedCache` option is updated to improve the portability of AOT-compiled code further. This update allows AOT-compiled code to be portable across OpenJ9 VMs that use compressed references and have a heap size of 1 MB to 28 GB when this option is enabled. This option might introduce a small (1-2%) steady-state throughput penalty when compressed references are used and the heap size is between 1 MB and 3 GB. See [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md) for more details about this option.
 
+## Full release information
+
+To see a complete list of changes between Eclipse OpenJ9 v 0.22.0 and v 0.23.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.23/0.23.md).
 
 <!-- ==== END OF TOPIC ==== version0.23.md ==== -->
