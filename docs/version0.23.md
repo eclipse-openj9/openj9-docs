@@ -28,7 +28,7 @@
 The following new features and notable changes since v 0.22.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [`-XX:[+|-]PortableSharedCache` option behavior update](-xx-portablesharedcache-option-behavior-update)
+- [`-XX:[+|-]PortableSharedCache` option behavior update](xx-portablesharedcache-option-behavior-update)
 
 ## Features and changes
 
