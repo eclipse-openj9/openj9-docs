@@ -28,7 +28,7 @@
 The following new features and notable changes since v 0.22.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-
+- [`-XX:[+|-]PortableSharedCache` option behavior update](-xx-portablesharedcache-option-behavior-update)
 
 ## Features and changes
 
@@ -42,7 +42,9 @@ OpenJ9 release 0.23.0 supports OpenJDK 8, 11, and 15. Binaries are available fro
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+### `-XX:[+|-]PortableSharedCache` option behavior update
 
+The `-XX:[+|-]PortableSharedCache` option is updated to improve the portability of AOT-compiled code further. This update allows AOT-compiled code to be portable across OpenJ9 VMs that use compressed references and have a heap size of 1 MB to 28 GB when this option is enabled. This option might introduce a small (1-2%) steady-state throughput penalty when compressed references are used and the heap size is between 1 MB and 3 GB. See [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md) for more details about this option.
 
 ## Full release information
 
