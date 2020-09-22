@@ -24,11 +24,17 @@
 
 # -XX:\[+|-\]PortableSharedCache
 
-**(x86 only)**
+**(x86 platforms only)**
 
-Use this command line option to choose whether AOT code should be generated using an older processor (Intel&reg; Sandybridge) feature set on the x86 platform, which therefore allows the AOT code to be portable; it can be run on any Intel Sandybridge or newer processor without you having to choose a machine with a suitably old processor for generating the AOT code.
+Use this command line option to choose whether AOT-compiled code should be portable.
 
-This feature is particularly relevant for packaging a shared classes cache into a container image (for example, applications deployed on the cloud in the form of Docker containers) because the processor on which the container image is built is likely to be different from the processor on which the container is deployed. 
+This option, when enabled, increases the portability of AOT-compiled code, in the following ways:
+- The code is generated based on a particular set of processor features (present in the Intel® Sandy Bridge microarchitecture) that ensures the AOT-compiled code to be portable across any Intel Sandybridge or newer processor.
+- The code is generated to be portable across OpenJ9 VMs that use compressed references and have a heap size of 1 MB to 28 GB (previously, AOT-compiled code could not be shared between VMs that use compressed references and that have different heap sizes). This feature might introduce a small (1-2%) steady-state throughput penalty when compressed references are used and the heap size is between 1 MB and 3 GB.
+
+This feature is particularly relevant for packaging a shared classes cache into a container image (for example, applications deployed on the cloud in the form of Docker containers) due to the following reasons:
+- The processor on which the container image is built is likely to be different from the processor on which the container is deployed. 
+- In a multi-layered container image where the shared classes cache is multi-layered as well, the AOT-compiled code in shared classes cache will likely come from multiple OpenJ9 VMs with different heap size requirements.
 
 ## Syntax
 
