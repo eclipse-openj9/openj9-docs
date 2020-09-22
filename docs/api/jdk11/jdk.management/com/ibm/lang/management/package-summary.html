@@ -14,8 +14,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -118,7 +117,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management">CpuLoadCalculationConstants</a></th>
 <td class="colLast">
-<div class="block">Constants used by getProcessCpuLoad() and getSystemCpuLoad() methods.</div>
+<div class="block">Constants used by <code>com.ibm.lang.managementOperatingSystemMXBean#getProcessCpuLoad()</code> and
+ <a href="OperatingSystemMXBean.html#getSystemCpuLoad()"><code>OperatingSystemMXBean.getSystemCpuLoad()</code></a> methods.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -131,7 +131,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="GarbageCollectorMXBean.html" title="interface in com.ibm.lang.management">GarbageCollectorMXBean</a></th>
 <td class="colLast">
-<div class="block">The IBM-specific interface for managing and monitoring the virtual machine's
+<div class="block">The OpenJ9 extension interface for managing and monitoring the virtual machine's
  garbage collection functionality.</div>
 </td>
 </tr>
@@ -145,7 +145,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="MemoryMXBean.html" title="interface in com.ibm.lang.management">MemoryMXBean</a></th>
 <td class="colLast">
-<div class="block">The IBM-specific interface for monitoring the virtual machine's memory
+<div class="block">The OpenJ9 extension interface for monitoring the virtual machine's memory
  management system.</div>
 </td>
 </tr>
@@ -158,19 +158,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="OperatingSystemMXBean.html" title="interface in com.ibm.lang.management">OperatingSystemMXBean</a></th>
 <td class="colLast">
-<div class="block">IBM specific platform management interface for the Operating System on which the Java Virtual Machine is running.</div>
+<div class="block">OpenJ9 platform management extension interface for the Operating System on which the Java Virtual Machine is running.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <th class="colFirst" scope="row"><a href="RuntimeMXBean.html" title="interface in com.ibm.lang.management">RuntimeMXBean</a></th>
 <td class="colLast">
-<div class="block">The IBM-specific interface for the runtime system of the virtual machine.</div>
+<div class="block">The OpenJ9 extension interface for the runtime system of the virtual machine.</div>
 </td>
 </tr>
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="ThreadMXBean.html" title="interface in com.ibm.lang.management">ThreadMXBean</a></th>
 <td class="colLast">
-<div class="block">Class represents IBM specific interface to the ThreadMXBean.</div>
+<div class="block">The OpenJ9 extension interface to <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/ThreadMXBean.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank"><code>ThreadMXBean</code></a>.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -248,7 +248,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="RuntimeMXBean.VMIdleStates.html" title="enum in com.ibm.lang.management">RuntimeMXBean.VMIdleStates</a></th>
 <td class="colLast">
-<div class="block">enum type defines the different states of the VM Idle</div>
+<div class="block">Defines the different states of <a href="RuntimeMXBean.html#getVMIdleState()"><code>RuntimeMXBean.getVMIdleState()</code></a>.</div>
 </td>
 </tr>
 </tbody>
@@ -327,7 +327,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

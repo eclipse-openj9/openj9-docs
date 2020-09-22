@@ -13,8 +13,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -188,7 +187,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="rowColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../NodeGPF.html" title="class in com.ibm.jvm.j9.dump.indexsupport">NodeGPF</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Example:
+ &lt;gpf failingThread="0x806a600" nativeFailingThread="0xb7e286c0"&gt;
+ J9Generic_Signal_Number=00000004 Signal_Number=0000000b Error_Value=00000000 Signal_Code=00000001
+ Handler1=B7DADB8F Handler2=B7D7B0C6 InaccessibleAddress=FFFFFFFB
+ EDI=083639B0 ESI=09010101 EAX=96C5879E EBX=082EACDC
+ ECX=00000000 EDX=00000000
+ EIP=96C587A1 ES=C010007B DS=C010007B ESP=BFAB3634
+ EFlags=00210246 CS=00000073 SS=0000007B EBP=BFAB3634
+ Module=/tmp/rtj_jextract/jre/bin/libgptest.so
+ Module_base_address=96C58000 Symbol=Java_VMBench_GPTests_GPTest_gpWrite
+ Symbol_address=96C5879E
+ &lt;/gpf&gt;</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
@@ -213,12 +225,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../NodeJ9Dump.html" title="class in com.ibm.jvm.j9.dump.indexsupport">NodeJ9Dump</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Example:
+ &lt;j9dump endian="little" size="32" version="2.3" stamp="20060714_07189_lHdSMR" uuid="16994021750723430015" format="1.1" arch="x86" cpus="2" memory="1593016320" osname="Linux" osversion="2.6.15-1-686-smp" environ="0x80569c0"&gt;</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="../NodeJavaVM.html" title="class in com.ibm.jvm.j9.dump.indexsupport">NodeJavaVM</a></span></code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Example:
+ &lt;javavm id="0x805fd90"&gt;</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
@@ -376,7 +394,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

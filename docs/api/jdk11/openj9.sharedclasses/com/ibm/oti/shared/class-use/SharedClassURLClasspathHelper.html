@@ -13,8 +13,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -110,7 +109,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tbody>
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="#com.ibm.oti.shared">com.ibm.oti.shared</a></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">The OpenJ9 shared classes API, a persistent share which can contain classes, precompiled code (AOT),
+ JIT data, and other data used to improve start up performance and reduce memory footprint.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -132,16 +134,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../SharedClassURLClasspathHelper.html" title="interface in com.ibm.oti.shared">SharedClassURLClasspathHelper</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">SharedClassHelperFactory.</span><code><span class="memberNameLink"><a href="../SharedClassHelperFactory.html#getURLClasspathHelper(java.lang.ClassLoader,java.net.URL%5B%5D)">getURLClasspathHelper</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassLoader.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">ClassLoader</a>&nbsp;loader,
-                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html?is-external=true" target="_blank" title="class or interface in java.net" class="externalLink">URL</a>[]&nbsp;classpath)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">SharedClassHelperFactory.</span><code><span class="memberNameLink"><a href="../SharedClassHelperFactory.html#getURLClasspathHelper(java.lang.ClassLoader,java.net.URL%5B%5D)">getURLClasspathHelper</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">ClassLoader</a>&nbsp;loader,
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html?is-external=true" title="class or interface in java.net" class="externalLink" target="_blank">URL</a>[]&nbsp;classpath)</code></th>
 <td class="colLast">
 <div class="block">Returns a SharedClassURLClasspathHelper for a given ClassLoader.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../SharedClassURLClasspathHelper.html" title="interface in com.ibm.oti.shared">SharedClassURLClasspathHelper</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">SharedClassHelperFactory.</span><code><span class="memberNameLink"><a href="../SharedClassHelperFactory.html#getURLClasspathHelper(java.lang.ClassLoader,java.net.URL%5B%5D,com.ibm.oti.shared.SharedClassFilter)">getURLClasspathHelper</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassLoader.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">ClassLoader</a>&nbsp;loader,
-                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html?is-external=true" target="_blank" title="class or interface in java.net" class="externalLink">URL</a>[]&nbsp;classpath,
+<th class="colSecond" scope="row"><span class="typeNameLabel">SharedClassHelperFactory.</span><code><span class="memberNameLink"><a href="../SharedClassHelperFactory.html#getURLClasspathHelper(java.lang.ClassLoader,java.net.URL%5B%5D,com.ibm.oti.shared.SharedClassFilter)">getURLClasspathHelper</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">ClassLoader</a>&nbsp;loader,
+                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html?is-external=true" title="class or interface in java.net" class="externalLink" target="_blank">URL</a>[]&nbsp;classpath,
                      <a href="../SharedClassFilter.html" title="interface in com.ibm.oti.shared">SharedClassFilter</a>&nbsp;filter)</code></th>
 <td class="colLast">
 <div class="block">Returns a SharedClassURLClasspathHelper for a given ClassLoader.</div>
@@ -203,7 +205,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

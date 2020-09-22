@@ -13,8 +13,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -138,6 +137,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colLast"></td>
 </tr>
 <tr class="rowColor">
+<th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCMasterThreadCpuUsed()">com.ibm.lang.management.MemoryMXBean.getGCMasterThreadCpuUsed()</a></th>
+<td class="colLast">
+<div class="deprecationComment">renamed to getGCMainThreadCpuUsed</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCSlaveThreadsCpuUsed()">com.ibm.lang.management.MemoryMXBean.getGCSlaveThreadsCpuUsed()</a></th>
+<td class="colLast">
+<div class="deprecationComment">renamed to getGCWorkerThreadsCpuUsed</div>
+</td>
+</tr>
+<tr class="rowColor">
 <th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getProcessCpuTimeByNS()">com.ibm.lang.management.OperatingSystemMXBean.getProcessCpuTimeByNS()</a></th>
 <td class="colLast"></td>
 </tr>
@@ -153,21 +164,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/RuntimeMXBean.html#getProcessID()">com.ibm.lang.management.RuntimeMXBean.getProcessID()</a></th>
 <td class="colLast">
 <div class="deprecationComment">As of Java 10. Use 
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/RuntimeMXBean.html?is-external=true#getPid()" title="class or interface in java.lang.management" class="externalLink"><code>getPid()</code></a> instead.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCMasterThreadCpuUsed()">com.ibm.lang.management.MemoryMXBean.getGCMasterThreadCpuUsed()</a></th>
-<td class="colLast">
-<div class="deprecationComment">As of Java 16. Use 
-  <a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCMainThreadCpuUsed()" title="class or interface in java.lang.management" class="externalLink"><code>getGCMainThreadCpuUsed()</code></a> instead.</div>
-</td>
-</tr>
-<tr class="altColor">
-<th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCSlaveThreadsCpuUsed()">com.ibm.lang.management.MemoryMXBean.getGCSlaveThreadsCpuUsed()</a></th>
-<td class="colLast">
-<div class="deprecationComment">As of Java 16. Use 
-  <a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCWorkerThreadsCpuUsed()" title="class or interface in java.lang.management" class="externalLink"><code>getGCWorkerThreadsCpuUsed()</code></a> instead.</div>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/RuntimeMXBean.html?is-external=true#getPid()" title="class or interface in java.lang.management" class="externalLink" target="_blank"><code>getPid()</code></a> instead.</div>
 </td>
 </tr>
 </tbody>
@@ -266,6 +263,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colLast"></td>
 </tr>
 <tr class="rowColor">
+<th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCMasterThreadCpuUsed()">com.ibm.lang.management.MemoryMXBean.getGCMasterThreadCpuUsed()</a></th>
+<td class="colLast">
+<div class="deprecationComment">renamed to getGCMainThreadCpuUsed</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCSlaveThreadsCpuUsed()">com.ibm.lang.management.MemoryMXBean.getGCSlaveThreadsCpuUsed()</a></th>
+<td class="colLast">
+<div class="deprecationComment">renamed to getGCWorkerThreadsCpuUsed</div>
+</td>
+</tr>
+<tr class="rowColor">
 <th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getProcessCpuTimeByNS()">com.ibm.lang.management.OperatingSystemMXBean.getProcessCpuTimeByNS()</a></th>
 <td class="colLast"></td>
 </tr>
@@ -281,7 +290,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/RuntimeMXBean.html#getProcessID()">com.ibm.lang.management.RuntimeMXBean.getProcessID()</a></th>
 <td class="colLast">
 <div class="deprecationComment">As of Java 10. Use 
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/RuntimeMXBean.html?is-external=true#getPid()" title="class or interface in java.lang.management" class="externalLink"><code>getPid()</code></a> instead.</div>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/RuntimeMXBean.html?is-external=true#getPid()" title="class or interface in java.lang.management" class="externalLink" target="_blank"><code>getPid()</code></a> instead.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -294,20 +303,6 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colDeprecatedItemName" scope="row"><a href="openj9.sharedclasses/com/ibm/oti/shared/SharedClassHelperFactory.html#findHelperForClassLoader(java.lang.ClassLoader)">com.ibm.oti.shared.SharedClassHelperFactory.findHelperForClassLoader&#8203;(ClassLoader)</a></th>
 <td class="colLast">
 <div class="deprecationComment">Use findHelpersForClassLoader(ClassLoader loader) instead.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCMasterThreadCpuUsed()">com.ibm.lang.management.MemoryMXBean.getGCMasterThreadCpuUsed()</a></th>
-<td class="colLast">
-<div class="deprecationComment">As of Java 16. Use 
-  <a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCMainThreadCpuUsed()" title="class or interface in java.lang.management" class="externalLink"><code>getGCMainThreadCpuUsed()</code></a> instead.</div>
-</td>
-</tr>
-<tr class="altColor">
-<th class="colDeprecatedItemName" scope="row"><a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCSlaveThreadsCpuUsed()">com.ibm.lang.management.MemoryMXBean.getGCSlaveThreadsCpuUsed()</a></th>
-<td class="colLast">
-<div class="deprecationComment">As of Java 16. Use 
-  <a href="jdk.management/com/ibm/lang/management/MemoryMXBean.html#getGCWorkerThreadsCpuUsed()" title="class or interface in java.lang.management" class="externalLink"><code>getGCWorkerThreadsCpuUsed()</code></a> instead.</div>
 </td>
 </tr>
 </tbody>
@@ -363,7 +358,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>
