@@ -26,6 +26,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/version0.23/</loc>
+     <lastmod>2020-09-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/version0.22/</loc>
      <lastmod>2020-09-22</lastmod>
      <changefreq>daily</changefreq>
