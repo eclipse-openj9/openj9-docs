@@ -21,8 +21,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -132,7 +131,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
 <li>com.sun.management.GarbageCollectionNotificationInfo</li>
@@ -144,16 +143,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeDataView.html?is-external=true" target="_blank" title="class or interface in javax.management.openmbean" class="externalLink">CompositeDataView</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeDataView.html?is-external=true" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank">CompositeDataView</a></code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">GarbageCollectionNotificationInfo</span>
-extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">Object</a>
-implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeDataView.html?is-external=true" target="_blank" title="class or interface in javax.management.openmbean" class="externalLink">CompositeDataView</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a>
+implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeDataView.html?is-external=true" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank">CompositeDataView</a></pre>
 <div class="block">Information about a garbage collection.
 
  <p>
- A garbage collection notification is emitted by <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/GarbageCollectorMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink"><code>GarbageCollectorMXBean</code></a>
+ A garbage collection notification is emitted by <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/GarbageCollectorMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank"><code>GarbageCollectorMXBean</code></a>
  when the Java virtual machine completes a garbage collection action.
  The notification emitted will contain the garbage collection notification
  information about the status of the memory:
@@ -167,11 +166,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
  </ul>
 
  <p>
- A <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeData.html?is-external=true" target="_blank" title="class or interface in javax.management.openmbean" class="externalLink"><code>CompositeData</code></a> representing
+ A <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeData.html?is-external=true" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank"><code>CompositeData</code></a> representing
  the <code>GarbageCollectionNotificationInfo</code> object
  is stored in the
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/Notification.html?is-external=true#setUserData(java.lang.Object)" title="class or interface in javax.management" class="externalLink">userdata</a>
- of a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/Notification.html?is-external=true" target="_blank" title="class or interface in javax.management" class="externalLink">notification</a>.
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/Notification.html?is-external=true#setUserData(java.lang.Object)" title="class or interface in javax.management" class="externalLink" target="_blank">userdata</a>
+ of a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/Notification.html?is-external=true" title="class or interface in javax.management" class="externalLink" target="_blank">notification</a>.
  The <a href="#from(javax.management.openmbean.CompositeData)"><code>from</code></a> method is provided to convert from
  a <code>CompositeData</code> to a <code>GarbageCollectionNotificationInfo</code>
  object. For example:
@@ -220,7 +219,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#GARBAGE_COLLECTION_NOTIFICATION">GARBAGE_COLLECTION_NOTIFICATION</a></span></code></th>
 <td class="colLast">
 <div class="block">Notification type denoting that the Java virtual machine has completed a garbage collection cycle.</div>
@@ -244,9 +243,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,com.sun.management.GcInfo)">GarbageCollectionNotificationInfo</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;gcName,
-                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;gcAction,
-                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;gcCause,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,com.sun.management.GcInfo)">GarbageCollectionNotificationInfo</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;gcName,
+                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;gcAction,
+                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;gcCause,
                                  <a href="GcInfo.html" title="class in com.sun.management">GcInfo</a>&nbsp;gcInfo)</code></th>
 <td class="colLast">
 <div class="block">Creates a new <code>GarbageCollectionNotificationInfo</code> instance.</div>
@@ -272,19 +271,19 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static <a href="GarbageCollectionNotificationInfo.html" title="class in com.sun.management">GarbageCollectionNotificationInfo</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#from(javax.management.openmbean.CompositeData)">from</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeData.html?is-external=true" target="_blank" title="class or interface in javax.management.openmbean" class="externalLink">CompositeData</a>&nbsp;cd)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#from(javax.management.openmbean.CompositeData)">from</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeData.html?is-external=true" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank">CompositeData</a>&nbsp;cd)</code></th>
 <td class="colLast">
 <div class="block">Returns a <code>GarbageCollectionNotificationInfo</code> object represented by the
  given <code>CompositeData</code>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGcAction()">getGcAction</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGcCause()">getGcCause</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -294,13 +293,13 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGcName()">getGcName</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeData.html?is-external=true" target="_blank" title="class or interface in javax.management.openmbean" class="externalLink">CompositeData</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toCompositeData(javax.management.openmbean.CompositeType)">toCompositeData</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeType.html?is-external=true" target="_blank" title="class or interface in javax.management.openmbean" class="externalLink">CompositeType</a>&nbsp;ct)</code></th>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeData.html?is-external=true" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank">CompositeData</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toCompositeData(javax.management.openmbean.CompositeType)">toCompositeData</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeType.html?is-external=true" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank">CompositeType</a>&nbsp;ct)</code></th>
 <td class="colLast">
 <div class="block">Return the <code>CompositeData</code> representation of this
  <code>GarbageCollectionNotificationInfo</code>.</div>
@@ -311,8 +310,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods declared in class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<h3>Methods declared in class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink" target="_blank">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink" target="_blank">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink" target="_blank">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink" target="_blank">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink" target="_blank">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink" target="_blank">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink" target="_blank">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink" target="_blank">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink" target="_blank">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink" target="_blank">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink" target="_blank">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -336,7 +335,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <ul class="blockListLast">
 <li class="blockList">
 <h4>GARBAGE_COLLECTION_NOTIFICATION</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a> GARBAGE_COLLECTION_NOTIFICATION</pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a> GARBAGE_COLLECTION_NOTIFICATION</pre>
 <div class="block">Notification type denoting that the Java virtual machine has completed a garbage collection cycle.
  This notification is emitted by a GarbageCollectorMXBean. The value of this notification type is
  "com.ibm.lang.management.gc.notification" which matches RI naming for compatibility.</div>
@@ -362,9 +361,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <ul class="blockListLast">
 <li class="blockList">
 <h4>GarbageCollectionNotificationInfo</h4>
-<pre>public&nbsp;GarbageCollectionNotificationInfo&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;gcName,
-                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;gcAction,
-                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;gcCause,
+<pre>public&nbsp;GarbageCollectionNotificationInfo&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;gcName,
+                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;gcAction,
+                                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;gcCause,
                                          <a href="GcInfo.html" title="class in com.sun.management">GcInfo</a>&nbsp;gcInfo)</pre>
 <div class="block">Creates a new <code>GarbageCollectionNotificationInfo</code> instance.</div>
 <dl>
@@ -392,7 +391,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <ul class="blockList">
 <li class="blockList">
 <h4>getGcName</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getGcName()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getGcName()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the name of the garbage collector used to perform the collection.</dd>
@@ -405,7 +404,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <ul class="blockList">
 <li class="blockList">
 <h4>getGcAction</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getGcAction()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getGcAction()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the the action of the performed by the garbage collector</dd>
@@ -418,7 +417,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <ul class="blockList">
 <li class="blockList">
 <h4>getGcCause</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getGcCause()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getGcCause()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the cause of the garbage collection</dd>
@@ -444,7 +443,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <ul class="blockList">
 <li class="blockList">
 <h4>from</h4>
-<pre class="methodSignature">public static&nbsp;<a href="GarbageCollectionNotificationInfo.html" title="class in com.sun.management">GarbageCollectionNotificationInfo</a>&nbsp;from&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeData.html?is-external=true" target="_blank" title="class or interface in javax.management.openmbean" class="externalLink">CompositeData</a>&nbsp;cd)</pre>
+<pre class="methodSignature">public static&nbsp;<a href="GarbageCollectionNotificationInfo.html" title="class in com.sun.management">GarbageCollectionNotificationInfo</a>&nbsp;from&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeData.html?is-external=true" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank">CompositeData</a>&nbsp;cd)</pre>
 <div class="block">Returns a <code>GarbageCollectionNotificationInfo</code> object represented by the
  given <code>CompositeData</code>.
  The given <code>CompositeData</code> must contain the following attributes:
@@ -481,7 +480,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
      by <code>cd</code> if <code>cd</code> is not <code>null</code>;
      <code>null</code> otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if <code>cd</code> does not
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - if <code>cd</code> does not
      represent a <code>GarbageCollectionNotificationInfo</code> object</dd>
 </dl>
 </li>
@@ -492,12 +491,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toCompositeData</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeData.html?is-external=true" target="_blank" title="class or interface in javax.management.openmbean" class="externalLink">CompositeData</a>&nbsp;toCompositeData&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeType.html?is-external=true" target="_blank" title="class or interface in javax.management.openmbean" class="externalLink">CompositeType</a>&nbsp;ct)</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeData.html?is-external=true" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank">CompositeData</a>&nbsp;toCompositeData&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeType.html?is-external=true" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank">CompositeType</a>&nbsp;ct)</pre>
 <div class="block"><p>Return the <code>CompositeData</code> representation of this
  <code>GarbageCollectionNotificationInfo</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeDataView.html?is-external=true#toCompositeData(javax.management.openmbean.CompositeType)" title="class or interface in javax.management.openmbean" class="externalLink">toCompositeData</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeDataView.html?is-external=true" target="_blank" title="class or interface in javax.management.openmbean" class="externalLink">CompositeDataView</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeDataView.html?is-external=true#toCompositeData(javax.management.openmbean.CompositeType)" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank">toCompositeData</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/openmbean/CompositeDataView.html?is-external=true" title="class or interface in javax.management.openmbean" class="externalLink" target="_blank">CompositeDataView</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>ct</code> - the <code>CompositeType</code> that the caller expects.
  This parameter is ignored and can be null.</dd>
@@ -577,7 +576,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.mana
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

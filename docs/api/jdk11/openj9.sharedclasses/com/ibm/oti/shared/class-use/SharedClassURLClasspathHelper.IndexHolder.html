@@ -13,8 +13,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -110,7 +109,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tbody>
 <tr class="altColor">
 <th class="colFirst" scope="row"><a href="#com.ibm.oti.shared">com.ibm.oti.shared</a></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">The OpenJ9 shared classes API, a persistent share which can contain classes, precompiled code (AOT),
+ JIT data, and other data used to improve start up performance and reduce memory footprint.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -132,7 +134,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>byte[]</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">SharedClassURLClasspathHelper.</span><code><span class="memberNameLink"><a href="../SharedClassURLClasspathHelper.html#findSharedClass(java.lang.String,com.ibm.oti.shared.SharedClassURLClasspathHelper.IndexHolder)">findSharedClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;className,
+<th class="colSecond" scope="row"><span class="typeNameLabel">SharedClassURLClasspathHelper.</span><code><span class="memberNameLink"><a href="../SharedClassURLClasspathHelper.html#findSharedClass(java.lang.String,com.ibm.oti.shared.SharedClassURLClasspathHelper.IndexHolder)">findSharedClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;className,
                <a href="../SharedClassURLClasspathHelper.IndexHolder.html" title="interface in com.ibm.oti.shared">SharedClassURLClasspathHelper.IndexHolder</a>&nbsp;indexFoundAt)</code></th>
 <td class="colLast">
 <div class="block">Finds a class in the shared cache by using the class name given (implicitly using the caller's classpath).</div>
@@ -140,8 +142,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">SharedClassURLClasspathHelper.</span><code><span class="memberNameLink"><a href="../SharedClassURLClasspathHelper.html#findSharedClass(java.lang.String,java.lang.String,com.ibm.oti.shared.SharedClassURLClasspathHelper.IndexHolder)">findSharedClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;partition,
-               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;className,
+<th class="colSecond" scope="row"><span class="typeNameLabel">SharedClassURLClasspathHelper.</span><code><span class="memberNameLink"><a href="../SharedClassURLClasspathHelper.html#findSharedClass(java.lang.String,java.lang.String,com.ibm.oti.shared.SharedClassURLClasspathHelper.IndexHolder)">findSharedClass</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;partition,
+               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;className,
                <a href="../SharedClassURLClasspathHelper.IndexHolder.html" title="interface in com.ibm.oti.shared">SharedClassURLClasspathHelper.IndexHolder</a>&nbsp;indexFoundAt)</code></th>
 <td class="colLast">
 <div class="block">Finds a class in the shared cache by using the class name and partition given (implicitly using the caller's classpath).</div>
@@ -203,7 +205,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>
