@@ -318,7 +318,7 @@ $(function() {
                     parent.classFrame.location = pathtoroot + url;
                 } else {
                     window.location.href = pathtoroot + url;
-                } 
+                }
                 $("#search").focus();
             }
         }

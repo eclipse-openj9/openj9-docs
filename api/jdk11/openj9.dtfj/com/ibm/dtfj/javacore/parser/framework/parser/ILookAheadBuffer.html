@@ -22,8 +22,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -194,7 +193,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#match(java.lang.String)">match</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;type)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#match(java.lang.String)">match</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;type)</code></th>
 <td class="colLast">
 <div class="block">Matches a given type to the token type found at the first element of the buffer.</div>
 </td>
@@ -234,7 +233,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>match</h4>
-<pre class="methodSignature">boolean&nbsp;match&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;type)</pre>
+<pre class="methodSignature">boolean&nbsp;match&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;type)</pre>
 <div class="block">Matches a given type to the token type found at the first element of the buffer.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -251,13 +250,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>consume</h4>
 <pre class="methodSignature">void&nbsp;consume()
-      throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" target="_blank" title="class or interface in java.io" class="externalLink">IOException</a>,
+      throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a>,
              <a href="../scanner/ScannerException.html" title="class in com.ibm.dtfj.javacore.parser.framework.scanner">ScannerException</a></pre>
 <div class="block">Consumes the first element of the buffer.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../scanner/ScannerException.html" title="class in com.ibm.dtfj.javacore.parser.framework.scanner">ScannerException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" target="_blank" title="class or interface in java.io" class="externalLink">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -281,9 +280,9 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>lookAhead</h4>
 <pre class="methodSignature"><a href="../scanner/IParserToken.html" title="interface in com.ibm.dtfj.javacore.parser.framework.scanner">IParserToken</a>&nbsp;lookAhead&#8203;(int&nbsp;depth)
-                throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" target="_blank" title="class or interface in java.io" class="externalLink">IOException</a>,
+                throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a>,
                        <a href="../scanner/ScannerException.html" title="class in com.ibm.dtfj.javacore.parser.framework.scanner">ScannerException</a>,
-                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IndexOutOfBoundsException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IndexOutOfBoundsException</a></pre>
+                       <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IndexOutOfBoundsException</a></pre>
 <div class="block">Looks ahead by a depth amount. The lowest depth to look ahead is 1. Note that in some cases,
  a lookahead may be attempted on an earlier error condition that lead to an empty buffer (e.g., 
  an exception was thrown during a fill process, and although more tokens may remain in the
@@ -293,11 +292,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>depth</code> - to lookahead</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>token at specified lookahead depth or <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IndexOutOfBoundsException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink"><code>IndexOutOfBoundsException</code></a>.</dd>
+<dd>token at specified lookahead depth or <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>IndexOutOfBoundsException</code></a>.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../scanner/ScannerException.html" title="class in com.ibm.dtfj.javacore.parser.framework.scanner">ScannerException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" target="_blank" title="class or interface in java.io" class="externalLink">IOException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IndexOutOfBoundsException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IndexOutOfBoundsException</a></code> - if depth is outside the depth range of the buffer. Minimum depth is always 1.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IndexOutOfBoundsException</a></code> - if depth is outside the depth range of the buffer. Minimum depth is always 1.</dd>
 </dl>
 </li>
 </ul>
@@ -326,12 +325,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>init</h4>
 <pre class="methodSignature">void&nbsp;init()
-   throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" target="_blank" title="class or interface in java.io" class="externalLink">IOException</a>,
+   throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a>,
           <a href="../scanner/ScannerException.html" title="class in com.ibm.dtfj.javacore.parser.framework.scanner">ScannerException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../scanner/ScannerException.html" title="class in com.ibm.dtfj.javacore.parser.framework.scanner">ScannerException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" target="_blank" title="class or interface in java.io" class="externalLink">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -342,7 +341,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>setLookAheadDepth</h4>
 <pre class="methodSignature">void&nbsp;setLookAheadDepth&#8203;(int&nbsp;depth)
-                throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" target="_blank" title="class or interface in java.io" class="externalLink">IOException</a>,
+                throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a>,
                        <a href="../scanner/ScannerException.html" title="class in com.ibm.dtfj.javacore.parser.framework.scanner">ScannerException</a></pre>
 <div class="block">Depth of the lookahead can be changed after creation.
  <br>
@@ -358,7 +357,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>depth</code> - to change</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../scanner/ScannerException.html" title="class in com.ibm.dtfj.javacore.parser.framework.scanner">ScannerException</a></code> - as increasing the current depth of the buffer requires to fill the buffer to the new length</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" target="_blank" title="class or interface in java.io" class="externalLink">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -433,7 +432,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

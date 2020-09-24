@@ -41,8 +41,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -55,8 +54,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var data = {"i0":6,"i1":6,"i2":38,"i3":6,"i4":38,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":6,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -156,7 +155,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">MemoryMXBean</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">PlatformManagedObject</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">MemoryMXBean</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">PlatformManagedObject</a></code></dd>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
@@ -164,8 +163,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">MemoryMXBean</span>
-extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">MemoryMXBean</a></pre>
-<div class="block">The IBM-specific interface for monitoring the virtual machine's memory
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">MemoryMXBean</a></pre>
+<div class="block">The OpenJ9 extension interface for monitoring the virtual machine's memory
  management system.</div>
 <dl>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -185,7 +184,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -200,21 +199,23 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCMasterThreadCpuUsed()">getGCMasterThreadCpuUsed</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCMainThreadCpuUsed()">getGCMainThreadCpuUsed</a></span>()</code></th>
 <td class="colLast">
-<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Returns the amount of CPU time spent in the GC by the master thread, in milliseconds.</div>
+<div class="block">Returns the amount of CPU time spent in the GC by the main thread, in
+ milliseconds.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCMainThreadCpuUsed()">getGCMainThreadCpuUsed</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCMasterThreadCpuUsed()">getGCMasterThreadCpuUsed</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the amount of CPU time spent in the GC by the main thread, in milliseconds.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecationComment">renamed to getGCMainThreadCpuUsed</div>
+</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCMode()">getGCMode</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the current GC mode as a human-readable string.</div>
@@ -224,15 +225,17 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCSlaveThreadsCpuUsed()">getGCSlaveThreadsCpuUsed</a></span>()</code></th>
 <td class="colLast">
-<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Returns the total amount of CPU time spent in the GC by all slave threads, in milliseconds.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecationComment">renamed to getGCWorkerThreadsCpuUsed</div>
+</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getGCWorkerThreadsCpuUsed()">getGCWorkerThreadsCpuUsed</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the total amount of CPU time spent in the GC by all worker threads, in milliseconds.</div>
+<div class="block">Returns the total amount of CPU time spent in the GC by all worker threads,
+ in milliseconds.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -396,15 +399,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.management.MemoryMXBean">
 <!--   -->
 </a>
-<h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">MemoryMXBean</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#gc()" title="class or interface in java.lang.management" class="externalLink">gc</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#getHeapMemoryUsage()" title="class or interface in java.lang.management" class="externalLink">getHeapMemoryUsage</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#getNonHeapMemoryUsage()" title="class or interface in java.lang.management" class="externalLink">getNonHeapMemoryUsage</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#getObjectPendingFinalizationCount()" title="class or interface in java.lang.management" class="externalLink">getObjectPendingFinalizationCount</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#isVerbose()" title="class or interface in java.lang.management" class="externalLink">isVerbose</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#setVerbose(boolean)" title="class or interface in java.lang.management" class="externalLink">setVerbose</a></code></li>
+<h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">MemoryMXBean</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#gc()" title="class or interface in java.lang.management" class="externalLink" target="_blank">gc</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#getHeapMemoryUsage()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getHeapMemoryUsage</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#getNonHeapMemoryUsage()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getNonHeapMemoryUsage</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#getObjectPendingFinalizationCount()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getObjectPendingFinalizationCount</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#isVerbose()" title="class or interface in java.lang.management" class="externalLink" target="_blank">isVerbose</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/MemoryMXBean.html?is-external=true#setVerbose(boolean)" title="class or interface in java.lang.management" class="externalLink" target="_blank">setVerbose</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.management.PlatformManagedObject">
 <!--   -->
 </a>
-<h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">PlatformManagedObject</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true#getObjectName()" title="class or interface in java.lang.management" class="externalLink">getObjectName</a></code></li>
+<h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">PlatformManagedObject</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true#getObjectName()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getObjectName</a></code></li>
 </ul>
 </li>
 </ul>
@@ -482,10 +485,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>size</code> - new -Xsoftmx value in bytes</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">UnsupportedOperationException</a></code> - if this operation is not supported.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if input value <code>size</code> is either less than
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">UnsupportedOperationException</a></code> - if this operation is not supported.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - if input value <code>size</code> is either less than
              getMinHeapSize() or greater than getMaxHeapSizeLimit().</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink"><code>SecurityManager</code></a> is being used and the caller
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>SecurityManager</code></a> is being used and the caller
              does not have the <code>ManagementPermission</code> value
              of "control".</dd>
 </dl>
@@ -613,8 +616,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>whether the requested operation has been completed.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if input value <code>value</code> is less than 0.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink"><code>SecurityManager</code></a> is being used and the caller
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - if input value <code>value</code> is less than 0.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>SecurityManager</code></a> is being used and the caller
              does not have the <code>ManagementPermission</code> value
              of "control".</dd>
 </dl>
@@ -636,8 +639,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>whether the requested operation has been completed.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if input value <code>value</code> is less than 0.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink"><code>SecurityManager</code></a> is being used and the caller
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - if input value <code>value</code> is less than 0.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>SecurityManager</code></a> is being used and the caller
              does not have the <code>ManagementPermission</code> value
              of "control".</dd>
 </dl>
@@ -659,8 +662,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>whether the requested operation has been completed.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if input value <code>value</code> is less than 0.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink"><code>SecurityManager</code></a> is being used and the caller
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - if input value <code>value</code> is less than 0.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>SecurityManager</code></a> is being used and the caller
              does not have the <code>ManagementPermission</code> value
              of "control".</dd>
 </dl>
@@ -682,8 +685,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>whether the requested operation has been completed.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if input value <code>value</code> is less than 0.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink"><code>SecurityManager</code></a> is being used and the caller
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - if input value <code>value</code> is less than 0.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>SecurityManager</code></a> is being used and the caller
              does not have the <code>ManagementPermission</code> value
              of "control".</dd>
 </dl>
@@ -705,8 +708,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>whether the requested operation has been completed.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if input value <code>value</code> is less than 0.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink"><code>SecurityManager</code></a> is being used and the caller
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - if input value <code>value</code> is less than 0.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">SecurityException</a></code> - if a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityManager.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>SecurityManager</code></a> is being used and the caller
              does not have the <code>ManagementPermission</code> value
              of "control".</dd>
 </dl>
@@ -775,7 +778,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <ul class="blockList">
 <li class="blockList">
 <h4>getGCMode</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getGCMode()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getGCMode()</pre>
 <div class="block">Returns the current GC mode as a human-readable string.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -789,10 +792,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <ul class="blockList">
 <li class="blockList">
 <h4>getGCMasterThreadCpuUsed</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang">@Deprecated</a>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink" target="_blank">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink" target="_blank">since</a>="15")
 long&nbsp;getGCMasterThreadCpuUsed()</pre>
-<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Returns the amount of CPU time spent in the GC by the master thread, in milliseconds. Deprecated to be removed in Java 16. Use <a href="#getGCMainThreadCpuUsed()">getGCMainThreadCpuUsed</a>.</div>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecationComment">renamed to getGCMainThreadCpuUsed</div>
+</div>
+<div class="block">Returns the amount of CPU time spent in the GC by the master thread, in
+ milliseconds.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>CPU time used in milliseconds</dd>
@@ -806,7 +813,8 @@ long&nbsp;getGCMasterThreadCpuUsed()</pre>
 <li class="blockList">
 <h4>getGCMainThreadCpuUsed</h4>
 <pre class="methodSignature">long&nbsp;getGCMainThreadCpuUsed()</pre>
-<div class="block">Returns the amount of CPU time spent in the GC by the main thread, in milliseconds.</div>
+<div class="block">Returns the amount of CPU time spent in the GC by the main thread, in
+ milliseconds.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>CPU time used in milliseconds</dd>
@@ -819,10 +827,14 @@ long&nbsp;getGCMasterThreadCpuUsed()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getGCSlaveThreadsCpuUsed</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang">@Deprecated</a>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink" target="_blank">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink" target="_blank">since</a>="15")
 long&nbsp;getGCSlaveThreadsCpuUsed()</pre>
-<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
-<div class="block">Returns the total amount of CPU time spent in the GC by all slave threads, in milliseconds. Deprecated to be removed in Java 16. Use <a href="#getGCWorkerThreadsCpuUsed()">getGCWorkerThreadsCpuUsed</a>.</div>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecationComment">renamed to getGCWorkerThreadsCpuUsed</div>
+</div>
+<div class="block">Returns the total amount of CPU time spent in the GC by all slave threads, in
+ milliseconds.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>CPU time used in milliseconds</dd>
@@ -830,19 +842,20 @@ long&nbsp;getGCSlaveThreadsCpuUsed()</pre>
 </li>
 </ul>
 <a id="getGCWorkerThreadsCpuUsed()">
-  <!--   -->
-  </a>
-  <ul class="blockList">
-  <li class="blockList">
-  <h4>getGCWorkerThreadsCpuUsed</h4>
-  <pre class="methodSignature">long&nbsp;getGCWorkerThreadsCpuUsed()</pre>
-  <div class="block">Returns the total amount of CPU time spent in the GC by all worker threads, in milliseconds.</div>
-  <dl>
-  <dt><span class="returnLabel">Returns:</span></dt>
-  <dd>CPU time used in milliseconds</dd>
-  </dl>
-  </li>
-  </ul>
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGCWorkerThreadsCpuUsed</h4>
+<pre class="methodSignature">long&nbsp;getGCWorkerThreadsCpuUsed()</pre>
+<div class="block">Returns the total amount of CPU time spent in the GC by all worker threads,
+ in milliseconds.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>CPU time used in milliseconds</dd>
+</dl>
+</li>
+</ul>
 <a id="getMaximumGCThreads()">
 <!--   -->
 </a>
@@ -942,7 +955,7 @@ long&nbsp;getGCSlaveThreadsCpuUsed()</pre>
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

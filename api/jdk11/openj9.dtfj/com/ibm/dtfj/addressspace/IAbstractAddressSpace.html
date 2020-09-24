@@ -13,6 +13,7 @@
 <meta name="keywords" content="getLongAt()">
 <meta name="keywords" content="getIntAt()">
 <meta name="keywords" content="getShortAt()">
+<meta name="keywords" content="getByteOrder()">
 <meta name="keywords" content="getByteAt()">
 <meta name="keywords" content="getPointerAt()">
 <meta name="keywords" content="getBytesAt()">
@@ -27,8 +28,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -41,7 +41,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -191,25 +191,32 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/ByteOrder.html?is-external=true" title="class or interface in java.nio" class="externalLink" target="_blank">ByteOrder</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getByteOrder()">getByteOrder</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Return the byte order of this address space.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBytesAt(int,long,byte%5B%5D)">getBytesAt</a></span>&#8203;(int&nbsp;asid,
           long&nbsp;address,
           byte[]&nbsp;buffer)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIntAt(int,long)">getIntAt</a></span>&#8203;(int&nbsp;asid,
         long&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLongAt(int,long)">getLongAt</a></span>&#8203;(int&nbsp;asid,
          long&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMemoryBytes(long,int)">getMemoryBytes</a></span>&#8203;(long&nbsp;vaddr,
               int&nbsp;size)</code></th>
@@ -218,36 +225,36 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  by the JExtract natives.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util" class="externalLink">Iterator</a></code></td>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Iterator</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMemoryRanges()">getMemoryRanges</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPointerAt(int,long)">getPointerAt</a></span>&#8203;(int&nbsp;asid,
             long&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getShortAt(int,long)">getShortAt</a></span>&#8203;(int&nbsp;asid,
           long&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isExecutable(int,long)">isExecutable</a></span>&#8203;(int&nbsp;asid,
             long&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isReadOnly(int,long)">isReadOnly</a></span>&#8203;(int&nbsp;asid,
           long&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isShared(int,long)">isShared</a></span>&#8203;(int&nbsp;asid,
         long&nbsp;address)</code></th>
@@ -276,7 +283,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getMemoryRanges</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util" class="externalLink">Iterator</a>&nbsp;getMemoryRanges()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Iterator</a>&nbsp;getMemoryRanges()</pre>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>An iterator of the MemoryRange objects making up the address space</dd>
@@ -405,6 +412,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 </li>
 </ul>
+<a id="getByteOrder()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getByteOrder</h4>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/ByteOrder.html?is-external=true" title="class or interface in java.nio" class="externalLink" target="_blank">ByteOrder</a>&nbsp;getByteOrder()</pre>
+<div class="block">Return the byte order of this address space.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the byte order of this address space</dd>
+</dl>
+</li>
+</ul>
 <a id="getByteAt(int,long)">
 <!--   -->
 </a>
@@ -435,8 +456,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                   long&nbsp;address)
            throws <a href="../corereaders/MemoryAccessException.html" title="class in com.ibm.dtfj.corereaders">MemoryAccessException</a></pre>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>asid</code> - an address space ID</dd>
+<dd><code>address</code> - a byte-offset into the asid</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the pointer stored at address in asid</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../corereaders/MemoryAccessException.html" title="class in com.ibm.dtfj.corereaders">MemoryAccessException</a></code></dd>
+<dd><code><a href="../corereaders/MemoryAccessException.html" title="class in com.ibm.dtfj.corereaders">MemoryAccessException</a></code> - if the memory cannot be read</dd>
 </dl>
 </li>
 </ul>
@@ -451,8 +477,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                byte[]&nbsp;buffer)
         throws <a href="../corereaders/MemoryAccessException.html" title="class in com.ibm.dtfj.corereaders">MemoryAccessException</a></pre>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>asid</code> - an address space ID</dd>
+<dd><code>address</code> - a byte-offset into the asid</dd>
+<dd><code>buffer</code> - a byte array to receive the bytes</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of bytes read into buffer</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../corereaders/MemoryAccessException.html" title="class in com.ibm.dtfj.corereaders">MemoryAccessException</a></code></dd>
+<dd><code><a href="../corereaders/MemoryAccessException.html" title="class in com.ibm.dtfj.corereaders">MemoryAccessException</a></code> - if the memory cannot be read</dd>
 </dl>
 </li>
 </ul>
@@ -583,7 +615,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>
