@@ -9,7 +9,7 @@ The OpenJ9 implementation of the Attach API is equivalent to the reference imple
 When you run a Java&trade; application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on  z/OS,
 processes that use the default z/OS OMVS segment cannot enable the Attach API.
 
-To enable or disable the Attach API, use the [`-Dcom.ibm.tools.attach.enable=[yes|no]`](comibmtoolsattachenable.md) command line option.
+To enable or disable the Attach API, use the [`-Dcom.ibm.tools.attach.enable=[yes|no]`](dcomibmtoolsattachenable.md) command line option.
 
 ## Securing the Attach API
 
