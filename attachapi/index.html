@@ -3889,7 +3889,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The OpenJ9 implementation of the Attach API is equivalent to the reference implementation (API documentation is available on the <a href="https://docs.oracle.com/javase/8/docs/jdk/api/attach/spec/index.html">Oracle website</a>). However, you can only use the Attach API to connect to another OpenJ9 VM.</p>
 <p>When you run a Java&trade; application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on  z/OS,
 processes that use the default z/OS OMVS segment cannot enable the Attach API.</p>
-<p>To enable or disable the Attach API, use the <a href="comibmtoolsattachenable.md"><code>-Dcom.ibm.tools.attach.enable=[yes|no]</code></a> command line option.</p>
+<p>To enable or disable the Attach API, use the <a href="../dcomibmtoolsattachenable/"><code>-Dcom.ibm.tools.attach.enable=[yes|no]</code></a> command line option.</p>
 <h2 id="securing-the-attach-api">Securing the Attach API</h2>
 <p>Because the Attach API can be used to connect to a running application, you must control access to it to ensure that only
 authorized users or processes can use it. Disable the Attach API if you do not intend to use it.</p>
