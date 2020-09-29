@@ -130,17 +130,50 @@ There are a number of advantages to using arraylets.
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Despite the general advantage of using arraylets, they can slow down processing when the Java Native Interface (JNI) is being used. The JNI provides flexibility by enabling Java programs to call native code; for example C or C++, and if direct addressability to the inside of an object is needed, a JNI critical section can be used. However, that requires the object to be in a contiguous region of memory, or at least _appear_ to be so. The JNI therefore creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.
 
 
-### `metronome` policy
-
-[`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-aix-linux-x86-only) is designed for applications that require precise response times. Garbage collection occurs in small interruptible steps to avoid stop-the-world pauses. This policy is available only on x86 Linux and AIX platforms.
-
 ### `optavgpause` policy
 
-[`-Xgcpolicy:optavgpause`](xgcpolicy.md#optavgpause) uses concurrent mark and sweep phases, which means that pause times are reduced when compared to optthruput, but at the expense of some performance throughput.
+[`-Xgcpolicy:optavgpause`](xgcpolicy.md#optavgpause) uses the global collector to manage a flat heap comprised of a single region and to compact the heap if the heap becomes fragmented. The global collector is started preemptively so that the cycle finishes before the heap is completely exhausted. By anticipating global collections and initiating some marking before the stop-the-world global collection phase, the `optavgpause` policy reduces the likelihood of long interruptions of service due to GC activity and pause times are reduced when compared to `optthruput` though at the expense of some performance throughput.
+
+#### When to use
+
+You are likely to find that in many situations, the default [`gencon` policy](#gencon-policy-default) offers better performance than `optavgpause`. However, the `optavgpause` policy lacks a generational write barrier (though it does have a write barrier to support concurrent mark, and might therefore be of benefit with benefit workloads that have a costly generational barrier; for example, in situations that frequently change large and old reference arrays.
+
+An additional potential problem with generation GCs is that they split the heap so that a very large object in a worst case might not fit in either of the 2 areas, while there is enough total free memory, or in better case, allocation may succeed but require additional GC cycles and copying of objects (relative to non-generational GC) to accommodate large enough contiguous free space.
+
+Overall, `optavgpause`, along with `optthruput`, is best suited to short-lived applications and to long-running services involving concurrent sessions that have short lifespans. Short-lived applications with adequate heap sizes usually complete without compaction, and the flat heap fragments more slowly when session-bound objects are allocated and drop out of the live set in short overlapping clusters.
+
 
 ### `optthruput` policy
 
-[`-Xgcpolicy:optthruput`](xgcpolicy.md#optthruput) is optimized for throughput by disabling the concurrent mark phase, which means that applications will stop for long pauses while garbage collection takes place. You might consider using this policy when high application throughput, rather than short garbage collection pauses, is the main performance goal.
+[`-Xgcpolicy:optthruput`](xgcpolicy.md#optthruput) uses the global collector to manage a flat heap comprised of a single region and to compact the heap if the heap becomes fragmented. The global collector runs to mark and sweep the heap when the heap is exhausted, which means that applications stop for long pauses while garbage collection takes place.
+
+#### When to use
+
+You might consider using this policy when your application can tolerate longer GC pauses to obtain better overall throughput. However, you are likely to find that in many situations, the default [`gencon` policy](#gencon-policy-default) offers better performance than `optthruput`. Nevertheless, the `optthruput` policy is free of any object access barriers (unlike `gencon` that has a write barrier to support concurrent mark, and a generational write barrier) and in some workloads, the cost of those barriers might be high enough to make this policy preferable.
+
+An additional potential problem with generation GCs is that they split the heap so that a very large object in a worst case might not fit in either of the 2 areas, while there is enough total free memory, or in better case, allocation may succeed but require additional GC cycles and copying of objects (relative to non-generational GC) to accommodate large enough contiguous free space.
+
+Overall, `optthruput`, along with `optavgpause`, is best suited to short-lived applications and to long-running services involving concurrent sessions that have short lifespans. Short-lived applications with adequate heap sizes usually complete without compaction, and the flat heap fragments more slowly when session-bound objects are allocated and drop out of the live set in short overlapping clusters.
+
+
+### `metronome` policy
+
+**(Linux on x86-64 and AIX platforms only)**
+
+[`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-aix-linux-x86-only) is designed for applications that require a precise upper bound on collection pause times as well as specified application utilization: the proportion of time that the application is permitted to use, with the remainder being devoted to GC. The realtime GC runs in short interruptible bursts to avoid long stop-the-world pauses.
+
+The realtime heap is allocated as a contiguous range of RAM partitioned into small regions of equal size, usually about 64 KB. There is no dynamic heap resizing when you use the `metronome` policy. The heap is always fully expanded even if [`-Xms`](xms.md) is not set to [`-Xmx`](xms.md).
+
+As with the `balanced` GC policy, arrays are represented as arraylets with a spine pointing to a series of regions containing the array elements (see [Arraylets: dealing with large arrays](#arraylets-dealing-with-large-arrays) for more information). Note that JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing.
+
+Each region of the heap is either empty, or contains only objects in one of 16 size classes, or an arraylet. This organization improves the use of available heap space, reducing the need for heap compaction and defragmentation, and providing more precise control over the *incremental sweep* operation.
+
+Although high application utilization is desirable for optimal throughput, the GC must be able to keep up with the application's memory  allocation rate. 
+
+A higher utilization typically requires a larger heap because the GC isn't allowed to run as much as a lower utilization would permit. The relationship between utilization and heap size is highly application dependent, and striking an appropriate balance requires iterative experimentation with the application and VM parameters. You might need to adjust heap size or pause time or target utilization to achieve an acceptable runtime configuration.
+
+See [`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-aix-linux-x86-only) for details of the configuration parameters you can set.
+
 
 ### `nogc` policy
 
