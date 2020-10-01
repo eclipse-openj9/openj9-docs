@@ -8,6 +8,7 @@
 <meta name="keywords" content="com.ibm.dtfj.image.ImageAddressSpace interface">
 <meta name="keywords" content="getCurrentProcess()">
 <meta name="keywords" content="getProcesses()">
+<meta name="keywords" content="getByteOrder()">
 <meta name="keywords" content="getPointer()">
 <meta name="keywords" content="getImageSections()">
 <meta name="keywords" content="getID()">
@@ -20,8 +21,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -34,7 +34,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -164,42 +164,49 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/ByteOrder.html?is-external=true" title="class or interface in java.nio" class="externalLink" target="_blank">ByteOrder</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getByteOrder()">getByteOrder</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Return the byte order of this address space.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="ImageProcess.html" title="interface in com.ibm.dtfj.image">ImageProcess</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCurrentProcess()">getCurrentProcess</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the process within this address space that caused the image to be created.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getID()">getID</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the system wide identifier for the address space</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util" class="externalLink">Iterator</a></code></td>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Iterator</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getImageSections()">getImageSections</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the raw memory in the address space.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="ImagePointer.html" title="interface in com.ibm.dtfj.image">ImagePointer</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getPointer(long)">getPointer</a></span>&#8203;(long&nbsp;address)</code></th>
 <td class="colLast">
 <div class="block">A factory method for creating pointers into this address space.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util" class="externalLink">Iterator</a></code></td>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Iterator</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProcesses()">getProcesses</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the set of processes within the address space.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html?is-external=true" target="_blank" title="class or interface in java.util" class="externalLink">Properties</a></code></td>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Properties</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProperties()">getProperties</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the OS specific properties for this address space.</div>
@@ -244,7 +251,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getProcesses</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util" class="externalLink">Iterator</a>&nbsp;getProcesses()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Iterator</a>&nbsp;getProcesses()</pre>
 <div class="block">Get the set of processes within the address space.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -253,6 +260,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="ImageProcess.html" title="interface in com.ibm.dtfj.image"><code>ImageProcess</code></a>, 
 <a href="CorruptData.html" title="interface in com.ibm.dtfj.image"><code>CorruptData</code></a></dd>
+</dl>
+</li>
+</ul>
+<a id="getByteOrder()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getByteOrder</h4>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/ByteOrder.html?is-external=true" title="class or interface in java.nio" class="externalLink" target="_blank">ByteOrder</a>&nbsp;getByteOrder()</pre>
+<div class="block">Return the byte order of this address space.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the byte order of this address space</dd>
 </dl>
 </li>
 </ul>
@@ -278,7 +299,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getImageSections</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util" class="externalLink">Iterator</a>&nbsp;getImageSections()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Iterator</a>&nbsp;getImageSections()</pre>
 <div class="block">Get the raw memory in the address space.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -294,7 +315,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>getID</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getID()
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getID()
       throws <a href="DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
              <a href="CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
 <div class="block">Gets the system wide identifier for the address space</div>
@@ -315,7 +336,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProperties</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html?is-external=true" target="_blank" title="class or interface in java.util" class="externalLink">Properties</a>&nbsp;getProperties()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Properties.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Properties</a>&nbsp;getProperties()</pre>
 <div class="block">Gets the OS specific properties for this address space.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -396,7 +417,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

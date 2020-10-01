@@ -34,7 +34,7 @@ Specify a different common directory for Attach API working files.
 |--------------------|-----------------|----------------------------|
 | `<directory_name>` | [string]        | `.com_ibm_tools_attach`    |
 
-To change the value for `directory_name`, specify a different directory name. If the directory does not exist, it is created. However, if a parent directory is specified, it must exist.
+To change the value for `directory_name`, specify a different directory name. If the directory does not exist, it is created. However, if a parent directory is specified, it must exist. The common directory must be on a local drive, not a network drive.
 
 
 ## See also

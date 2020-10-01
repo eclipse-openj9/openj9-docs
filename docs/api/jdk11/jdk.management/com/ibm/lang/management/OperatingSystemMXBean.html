@@ -34,8 +34,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -149,7 +148,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink">OperatingSystemMXBean</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">OperatingSystemMXBean</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">PlatformManagedObject</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">PlatformManagedObject</a></code></dd>
 </dl>
 <dl>
 <dt>All Known Subinterfaces:</dt>
@@ -161,17 +160,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">OperatingSystemMXBean</span>
-extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink">OperatingSystemMXBean</a></pre>
-<div class="block">IBM specific platform management interface for the Operating System on which the Java Virtual Machine is running. 
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></pre>
+<div class="block">OpenJ9 platform management extension interface for the Operating System on which the Java Virtual Machine is running. 
  <br>
  <table border="1">
  <caption><b>Usage example for the <a href="OperatingSystemMXBean.html" title="interface in com.ibm.lang.management"><code>OperatingSystemMXBean</code></a></b></caption>
  <tr> <td> <pre>
  <code>
-  ...
-     com.ibm.lang.management.OperatingSystemMXBean osmxbean = null;
-    osmxbean = (com.ibm.lang.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-   ...
+ ...
+ com.ibm.lang.management.OperatingSystemMXBean osmxbean = null;
+ osmxbean = (com.ibm.lang.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+ ...
  </code>
  </pre></td></tr></table></div>
 <dl>
@@ -220,10 +219,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.manageme
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHardwareModel()">getHardwareModel</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Instantiates and returns an instance of a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink"><code>String</code></a> object containing
+<div class="block">Instantiates and returns an instance of a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>String</code></a> object containing
  hardware model information</div>
 </td>
 </tr>
@@ -374,15 +373,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.manageme
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.management.OperatingSystemMXBean">
 <!--   -->
 </a>
-<h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">OperatingSystemMXBean</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true#getArch()" title="class or interface in java.lang.management" class="externalLink">getArch</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true#getAvailableProcessors()" title="class or interface in java.lang.management" class="externalLink">getAvailableProcessors</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true#getName()" title="class or interface in java.lang.management" class="externalLink">getName</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true#getSystemLoadAverage()" title="class or interface in java.lang.management" class="externalLink">getSystemLoadAverage</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true#getVersion()" title="class or interface in java.lang.management" class="externalLink">getVersion</a></code></li>
+<h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true#getArch()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getArch</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true#getAvailableProcessors()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getAvailableProcessors</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true#getName()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getName</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true#getSystemLoadAverage()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getSystemLoadAverage</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html?is-external=true#getVersion()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getVersion</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.management.PlatformManagedObject">
 <!--   -->
 </a>
-<h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">PlatformManagedObject</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true#getObjectName()" title="class or interface in java.lang.management" class="externalLink">getObjectName</a></code></li>
+<h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">PlatformManagedObject</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true#getObjectName()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getObjectName</a></code></li>
 </ul>
 </li>
 </ul>
@@ -410,7 +409,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.manageme
 <div class="block">Returns the total available physical memory on the system in bytes.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getTotalPhysicalMemorySize()" title="class or interface in com.sun.management" class="externalLink">getTotalPhysicalMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink">OperatingSystemMXBean</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getTotalPhysicalMemorySize()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getTotalPhysicalMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the total available physical memory on the system in bytes.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -424,8 +423,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.manageme
 <ul class="blockList">
 <li class="blockList">
 <h4>getTotalPhysicalMemory</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink">forRemoval</a>=true,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink">since</a>="1.8")
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink" target="_blank">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink" target="_blank">since</a>="1.8")
 long&nbsp;getTotalPhysicalMemory()</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 <div class="block">Deprecated: use getTotalPhysicalMemorySize()</div>
@@ -470,7 +469,7 @@ long&nbsp;getTotalPhysicalMemory()</pre>
  com.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns is set to "true".</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getProcessCpuTime()" title="class or interface in com.sun.management" class="externalLink">getProcessCpuTime</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink">OperatingSystemMXBean</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getProcessCpuTime()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getProcessCpuTime</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>process cpu time.</dd>
 </dl>
@@ -482,8 +481,8 @@ long&nbsp;getTotalPhysicalMemory()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getProcessCpuTimeByNS</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink">forRemoval</a>=true,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink">since</a>="1.8")
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink" target="_blank">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink" target="_blank">since</a>="1.8")
 long&nbsp;getProcessCpuTimeByNS()</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 <div class="block">Deprecated. Use getProcessCpuTime()</div>
@@ -509,7 +508,7 @@ long&nbsp;getProcessCpuTimeByNS()</pre>
  utilities such as Unix "top" or Windows task manager.</p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getSystemCpuLoad()" title="class or interface in com.sun.management" class="externalLink">getSystemCpuLoad</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink">OperatingSystemMXBean</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getSystemCpuLoad()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getSystemCpuLoad</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A value between 0 and 1.0, or a negative error code from
          <a href="CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a> in case
@@ -540,7 +539,7 @@ long&nbsp;getProcessCpuTimeByNS()</pre>
  </ul></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getFreePhysicalMemorySize()" title="class or interface in com.sun.management" class="externalLink">getFreePhysicalMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink">OperatingSystemMXBean</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getFreePhysicalMemorySize()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getFreePhysicalMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>amount of physical memory available in bytes.</dd>
 </dl>
@@ -561,7 +560,7 @@ long&nbsp;getProcessCpuTimeByNS()</pre>
  </ul></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getCommittedVirtualMemorySize()" title="class or interface in com.sun.management" class="externalLink">getCommittedVirtualMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink">OperatingSystemMXBean</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getCommittedVirtualMemorySize()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getCommittedVirtualMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>amount of virtual memory used by the process in bytes.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -575,8 +574,8 @@ long&nbsp;getProcessCpuTimeByNS()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getProcessVirtualMemorySize</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink">forRemoval</a>=true,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink">since</a>="1.8")
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink" target="_blank">forRemoval</a>=true,
+            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink" target="_blank">since</a>="1.8")
 long&nbsp;getProcessVirtualMemorySize()</pre>
 <div class="deprecationBlock"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 <div class="block">Deprecated.  Use getCommittedVirtualMemorySize()</div>
@@ -630,7 +629,7 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <div class="block">Returns the total amount of swap space in bytes.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getTotalSwapSpaceSize()" title="class or interface in com.sun.management" class="externalLink">getTotalSwapSpaceSize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink">OperatingSystemMXBean</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getTotalSwapSpaceSize()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getTotalSwapSpaceSize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the total amount of swap space in bytes.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -648,7 +647,7 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <div class="block">Returns the amount of free swap space in bytes.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getFreeSwapSpaceSize()" title="class or interface in com.sun.management" class="externalLink">getFreeSwapSpaceSize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink">OperatingSystemMXBean</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getFreeSwapSpaceSize()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getFreeSwapSpaceSize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the amount of free swap space in bytes.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
@@ -677,7 +676,7 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
  <a href="CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getProcessCpuLoad()" title="class or interface in com.sun.management" class="externalLink">getProcessCpuLoad</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" target="_blank" title="class or interface in com.sun.management" class="externalLink">OperatingSystemMXBean</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getProcessCpuLoad()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getProcessCpuLoad</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A value between 0 and 1.0, or a negative error code from
          <a href="CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a> in case
@@ -698,7 +697,7 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <li class="blockList">
 <h4>retrieveTotalProcessorUsage</h4>
 <pre class="methodSignature"><a href="ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>&nbsp;retrieveTotalProcessorUsage&#8203;(<a href="ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>&nbsp;procObj)
-                                    throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">NullPointerException</a>,
+                                    throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">NullPointerException</a>,
                                            <a href="ProcessorUsageRetrievalException.html" title="class in com.ibm.lang.management">ProcessorUsageRetrievalException</a></pre>
 <div class="block">Returns an updated <a href="ProcessorUsage.html" title="class in com.ibm.lang.management"><code>ProcessorUsage</code></a> object that represents the
  current snapshot of Processor usage statistics. The snapshot is the aggregate of all
@@ -709,7 +708,7 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The updated <a href="ProcessorUsage.html" title="class in com.ibm.lang.management"><code>ProcessorUsage</code></a> object.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - if a null reference is passed as parameter.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">NullPointerException</a></code> - if a null reference is passed as parameter.</dd>
 <dd><code><a href="ProcessorUsageRetrievalException.html" title="class in com.ibm.lang.management">ProcessorUsageRetrievalException</a></code> - if it failed obtaining Processor usage statistics.
 
  <p>In case of an exception, the handler code might use toString() on the exception code
@@ -750,9 +749,9 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <li class="blockList">
 <h4>retrieveProcessorUsage</h4>
 <pre class="methodSignature"><a href="ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>[]&nbsp;retrieveProcessorUsage&#8203;(<a href="ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>[]&nbsp;procArray)
-                                 throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">NullPointerException</a>,
+                                 throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">NullPointerException</a>,
                                         <a href="ProcessorUsageRetrievalException.html" title="class in com.ibm.lang.management">ProcessorUsageRetrievalException</a>,
-                                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></pre>
+                                        <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></pre>
 <div class="block">Returns an updated array of <a href="ProcessorUsage.html" title="class in com.ibm.lang.management"><code>ProcessorUsage</code></a> objects
  that represent the current snapshot of individual Processor usage times.</div>
 <dl>
@@ -761,9 +760,9 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The updated array of <a href="ProcessorUsage.html" title="class in com.ibm.lang.management"><code>ProcessorUsage</code></a> objects.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - if a null reference is passed as parameter.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">NullPointerException</a></code> - if a null reference is passed as parameter.</dd>
 <dd><code><a href="ProcessorUsageRetrievalException.html" title="class in com.ibm.lang.management">ProcessorUsageRetrievalException</a></code> - if it failed obtaining Processor usage statistics.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">IllegalArgumentException</a></code> - if array provided has insufficient entries and there are more 
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - if array provided has insufficient entries and there are more 
                    Processors to report on.
 
  <p>In case of an exception, the handler code might use toString() on the exception code
@@ -803,7 +802,7 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <li class="blockList">
 <h4>retrieveMemoryUsage</h4>
 <pre class="methodSignature"><a href="MemoryUsage.html" title="class in com.ibm.lang.management">MemoryUsage</a>&nbsp;retrieveMemoryUsage&#8203;(<a href="MemoryUsage.html" title="class in com.ibm.lang.management">MemoryUsage</a>&nbsp;memObj)
-                         throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">NullPointerException</a>,
+                         throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">NullPointerException</a>,
                                 <a href="MemoryUsageRetrievalException.html" title="class in com.ibm.lang.management">MemoryUsageRetrievalException</a></pre>
 <div class="block">Returns an updated <a href="MemoryUsage.html" title="class in com.ibm.lang.management"><code>MemoryUsage</code></a> object that represents the
  current snapshot of Memory usage statistics.</div>
@@ -813,7 +812,7 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The updated <a href="MemoryUsage.html" title="class in com.ibm.lang.management"><code>MemoryUsage</code></a> object.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">NullPointerException</a></code> - if a null reference is passed as parameter.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">NullPointerException</a></code> - if a null reference is passed as parameter.</dd>
 <dd><code><a href="MemoryUsageRetrievalException.html" title="class in com.ibm.lang.management">MemoryUsageRetrievalException</a></code> - if it failed obtaining Memory usage statistics.
 
  <p>In case of an exception, the handler code might use toString() on the exception code
@@ -852,15 +851,15 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getHardwareModel</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getHardwareModel()
-                 throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">UnsupportedOperationException</a></pre>
-<div class="block">Instantiates and returns an instance of a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink"><code>String</code></a> object containing
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getHardwareModel()
+                 throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">UnsupportedOperationException</a></pre>
+<div class="block">Instantiates and returns an instance of a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>String</code></a> object containing
  hardware model information</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The new <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink"><code>String</code></a> object or NULL in case of an error.</dd>
+<dd>The new <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>String</code></a> object or NULL in case of an error.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">UnsupportedOperationException</a></code> - if the operation is not implemented on this platform. 
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">UnsupportedOperationException</a></code> - if the operation is not implemented on this platform. 
  UnsupportedOperationException will also be thrown if the operation is implemented but it 
  cannot be performed because the system does not satisfy all the requirements, for example,
  an OS service is not installed.</dd>
@@ -876,13 +875,13 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <li class="blockList">
 <h4>isHardwareEmulated</h4>
 <pre class="methodSignature">boolean&nbsp;isHardwareEmulated()
-                    throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">UnsupportedOperationException</a></pre>
+                    throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">UnsupportedOperationException</a></pre>
 <div class="block">Identify whether the underlying hardware is being emulated</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>True if it is possible to identify that the hardware is being emulated. False otherwise.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">UnsupportedOperationException</a></code> - if the emulated status cannot be determined</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">UnsupportedOperationException</a></code> - if the emulated status cannot be determined</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
 <dd>1.7</dd>
 </dl>
@@ -977,7 +976,7 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

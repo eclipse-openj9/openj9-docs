@@ -4,12 +4,12 @@ With the Attach API, your application can connect to a running VM and load an ag
 
 For example, if you wanted to start monitoring an application that is already running with the Attach API enabled, you could use a tool such as the [IBM Health Center](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/introduction.html). In this case, a Health Center agent can start in its own VM and attach to the target VM where the application  is running to start recording and sending data to the Health Center client.
 
-The OpenJ9 implementation of the Attach API is equivalent to the reference implementation. However, you can only use the Attach API to connect to another OpenJ9 VM.
+The OpenJ9 implementation of the Attach API is equivalent to the reference implementation (API documentation is available on the [Oracle website](https://docs.oracle.com/javase/8/docs/jdk/api/attach/spec/index.html)). However, you can only use the Attach API to connect to another OpenJ9 VM.
 
-When you run a Java application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on  z/OS,
+When you run a Java&trade; application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on  z/OS,
 processes that use the default z/OS OMVS segment cannot enable the Attach API.
 
-To enable or disable the Attach API, use the [`-Dcom.ibm.tools.attach.enable=[yes|no]`](comibmtoolsattachenable.md) command line option.
+To enable or disable the Attach API, use the [`-Dcom.ibm.tools.attach.enable=[yes|no]`](dcomibmtoolsattachenable.md) command line option.
 
 ## Securing the Attach API
 
@@ -77,7 +77,7 @@ To learn more about each property, click the link in the table.
 
 ## Troubleshooting
 
-Here are some problems that you might encounter:
+Problems with the Attach API generate one of the following exceptions:
 
 - `com.sun.tools.attach.AgentLoadException`
 - `com.sun.tools.attach.AgentInitializationException`
@@ -87,11 +87,14 @@ Here are some problems that you might encounter:
 
 Exceptions from agents on the target VM go to `stderr` or `stdout` for the target VM. These exceptions are not reported in the output of the attaching VM.
 
-The following problems are common:
+Here are some problems that you might encounter:
 
-- On Unix systems, the file permissions are incorrectly set. Resolve these issues by reading and complying with [Securing the Attach API](#securing-the-attach-api).
-- The common directory is deleted, the contents of the common directory are deleted, or permissions of the common directory or subdirectories are changed.
+- On Unix systems, the file permissions are incorrectly set, causing access issues. Resolve these issues by reading and complying with [Securing the Attach API](#securing-the-attach-api). Also check that the Attach API is not disabled.
+- The common directory is deleted, the contents of the common directory are deleted, or permissions of the common directory or subdirectories are changed. As a result, the source VM might not be able list target VMs or attach to them. Deletion of the common directory can also cause semaphore leaks.
 - The system temporary directory is full or inaccessible and the Attach API cannot initialize. Try specifying a different directory in which to create the common subdirectory by using the `-Dcom.ibm.tools.attach.directory` system property.
+- A short delay between the start of the target VM and the initialization of the Attach API process can cause an `AttachNotSupportedException: No provider for virtual machine id` issue when the `VirtualMachine.attach(String id)` method is called.
+- The target process is overloaded, suspended, or no longer running, or the port that is used to connect to the target is subject to a wait time (use the `netstat -a` command to check for ports in the `TIME_WAIT` state). These situations can cause an `AttachNotSupportedException` when the `attach` method is called.
+- A JVMTI agent is corrupt or attempts to run an operation that is not available after the VM starts. These situations can cause an `AgentLoadException` or `AgentInitializationException` when one of the following methods is called: `loadAgent()`, `loadAgentLibrary()`, or `loadAgentPath()`. Depending on the method invoked, try loading the agent at VM startup by using one of the following command-line options `-javaagent`, `-agentlib`, or `-agentpath`. For more information about these options, see [Java Virtual Machine Tool Interface](interface_jvmti.md).
 
 If you have checked for these potential issues but you are still experiencing problems, a number of command line system properties are available to help narrow down the cause. These options are shown in the following table:
 

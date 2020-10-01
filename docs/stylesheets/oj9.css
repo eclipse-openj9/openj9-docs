@@ -25,8 +25,8 @@
 
 
 [data-md-color-primary=cyan] .md-header {
-  height: 4rem;
-  padding-top: 1rem;
+  height: 3rem;
+  padding-top: 0.3rem;
   background-color: #434343;
 }
 

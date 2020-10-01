@@ -24,17 +24,31 @@
 
 # -XX:\[+|-\]PortableSharedCache
 
-This option enables AOT compiled code to be generated based on a chosen set of processor features (features present in the Intel Sandy Bridge microarchitecture) that maximizes its portability across machines. It is currently supported only on x86. The feature is turned on by default in Docker containers and can be disabled with `-XX:-PortableSharedCache`. To enable the portable shared cache feature outside Docker containers, `-XX:+PortableSharedCache` needs to be specified for the initial Java Virtual Machine instance (when the creation of the Shared Class Cache happens) as well as for every subsequent instance that make use of the same Shared Class Cache.
+**(x86 platforms only)**
 
-This option is especially useful for Java applications deployed on the cloud in the form of Docker containers as it allows the Shared Class Cache to be portable across processors with different microarchitectures and across Java Virtual Machines with different heap sizes.
+Use this command line option to choose whether AOT-compiled code should be portable.
+
+This option, when enabled, increases the portability of AOT-compiled code, in the following ways:
+- The code is generated based on a particular set of processor features (present in the Intel® Sandy Bridge microarchitecture) that ensures the AOT-compiled code to be portable across any Intel Sandybridge or newer processor.
+- The code is generated to be portable across OpenJ9 VMs that use compressed references and have a heap size of 1 MB to 28 GB (previously, AOT-compiled code could not be shared between VMs that use compressed references and that have different heap sizes). This feature might introduce a small (1-2%) steady-state throughput penalty when compressed references are used and the heap size is between 1 MB and 3 GB.
+
+This feature is particularly relevant for packaging a shared classes cache into a container image (for example, applications deployed on the cloud in the form of Docker containers) due to the following reasons:
+- The processor on which the container image is built is likely to be different from the processor on which the container is deployed. 
+- In a multi-layered container image where the shared classes cache is multi-layered as well, the AOT-compiled code in shared classes cache will likely come from multiple OpenJ9 VMs with different heap size requirements.
 
 ## Syntax
 
         -XX:[+|-]PortableSharedCache
 
-| Setting                            | Effect  | Default                                                                            |
-|------------------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+PortableSharedCache`         | Enable  |                                                                                    |
-| `-XX:-PortableSharedCache`         | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| Setting                            | Effect  | Default               |
+|------------------------------------|---------|:---------------------:|
+| `-XX:+PortableSharedCache`         | Enable  | See notes that follow |
+| `-XX:-PortableSharedCache`         | Disable |                       |
+
+### Default settings
+
+This option is _enabled_ by default in containers. To disable the option in a container, specify `-XX:-PortableSharedCache`.
+
+The option is _disabled_ by default outside containers. To enable the option outside a container, specify `-XX:+PortableSharedCache` for the initial JVM instance (when the creation of the shared class cache happens) as well as for every subsequent instance that makes use of the same shared class cache.
 
 <!-- ==== END OF TOPIC ==== xxportablesharedcache.md ==== -->

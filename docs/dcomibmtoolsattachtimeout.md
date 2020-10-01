@@ -32,13 +32,16 @@ Specify a time that an application should wait when attempting to connect to a t
 
 | Setting | Value                          | Default                          |
 |---------|--------------------------------|----------------------------------|
-| `<ms>`  | [1 millisecond or greater]     | 120000 milliseconds (120 seconds)|
+| `<ms>`  | [501 milliseconds or greater]     | 120000 milliseconds (120 seconds)|
+
+If you specify a value of 500 milliseconds or lower, no connection attempt is made.
 
 ## Example
 
 To timeout after 60 seconds, specify:
 
 `-Dcom.ibm.tools.attach.timeout=60000`
+
 
 ## See also
 

@@ -50,6 +50,9 @@ The following table shows the values that are used when `-XX:+UseContainerSuppor
 | 1 GB - 2 GB                           | *&lt;size&gt;* - 512 MB |
 | Greater than 2 GB                     | 75% *&lt;size&gt;*      |
 
+
+The default heap size is capped at 25 GB, which is the limit of heap size for 3-bit shift of compressed references (see [-Xcompressedrefs](xcompressedrefs.md)), to prevent silent switching to 4-bit shift of compressed references, which has possible performance penalties. You can use the [`-Xmx`](xms.md) option or the [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md) option to overwrite the 25 GB limit.
+
 The default heap size for containers takes affect only when the following conditions are met:
 
 1. The application is running in a container environment.
@@ -62,6 +65,7 @@ When [`-XX:MaxRAMPercentage` / `-XX:InitialRAMPercentage`](xxinitialrampercentag
 
     -XX:+UseContainerSupport -XX:MaxRAMPercentage=80
 
-
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you set a value for [`-Xms`](xms.md), the `-XX:InitialRAMPercentage` option is ignored.
+If you set a value for [`-Xmx`](xms.md), the `-XX:MaxRAMPercentage` option is ignored.
 
 <!-- ==== END OF TOPIC ==== xxusecontainersupport.md ==== -->

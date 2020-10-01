@@ -43,14 +43,16 @@ columns will be removed over time.
 
 ## Eclipse OpenJ9 releases
 
-| OpenJ9 release | Release date        | JDK8 (LTS)| JDK11 (LTS) | JDK14     | JDK15     |
-|----------------|---------------------|-----------|-------------|-----------|-----------|
-| v 0.19.0       | March 2020          | No        | No          | Yes (\*2) |           |
-| v 0.20.0       | April 2020          | Yes       | Yes         | Yes       |           |
-| v 0.21.0       | July 2020           | Yes       | Yes         | Yes       |           |
-| v 0.22.0       | September 2020      | No        | No          | No        | Yes (\*2) |
-| v 0.23.0       | October 2020 (\*1)  | Yes       | Yes         | No        | Yes       |
-| v 0.24.0       | January 2021 (\*1)  | Yes       | Yes         | No        | Yes       |
+| OpenJ9 release | Release date        | JDK8 (LTS)| JDK11 (LTS) | JDK14     | JDK15     | JDK16     |
+|----------------|---------------------|-----------|-------------|-----------|-----------|-----------|
+| v 0.19.0       | March 2020          | No        | No          | Yes (\*2) |           |           |
+| v 0.20.0       | April 2020          | Yes       | Yes         | Yes       |           |           |
+| v 0.21.0       | July 2020           | Yes       | Yes         | Yes       |           |           |
+| v 0.22.0       | September 2020      | No        | No          | No        | Yes (\*2) |           |
+| v 0.23.0       | October 2020        | Yes       | Yes         | No        | Yes       |           |
+| v 0.24.0       | January 2021 (\*1)  | Yes       | Yes         | No        | Yes       |           |
+| v 0.25.0       | March 2021 (\*1)    | No        | No          | No        | No        | Yes (\*2) |
+| v 0.26.0       | April 2021 (\*1)    | Yes       | Yes         | No        | No        | Yes       |
 
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
@@ -155,16 +157,18 @@ platform support might vary, depending on their build environment. Check the Ado
 OpenJDK 15 binaries are supported on the minimum operating system levels shown in the following tables:
 
 
-| Linux                                 |  x64   |  ppc64le   | Z64  |
-|---------------------------------------|--------|------------|------|
-| CentOS 7.6                            |   Y    |     Y      |  N   |
-| RHEL 7.6                              |   Y    |     Y      |  Y   |
-| SUSE Linux Enterprise Server (SLES) 12|   Y    |     Y      |  Y   |
-| Ubuntu 16.04                          |   Y    |     Y      |  Y   |
-| Ubuntu 18.04                          |   Y    |     Y      |  Y   |
+| Linux (**Note 1**)                    | AArch64 (**Note 2**) |  x64   |  ppc64le   | Z64  |
+|---------------------------------------|----------------------|--------|------------|------|
+| CentOS 7.6                            |    Y                 |   Y    |     Y      |  N   |
+| RHEL 7.6                              |    Y                 |   Y    |     Y      |  Y   |
+| SUSE Linux Enterprise Server (SLES) 12|    N                 |   Y    |     Y      |  Y   |
+| Ubuntu 16.04                          |    Y                 |   Y    |     Y      |  Y   |
+| Ubuntu 18.04                          |    Y                 |   Y    |     Y      |  Y   |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Not all of these distributions are tested, but Linux distributions that have a
-minimum glibc version 2.17 are expected to function without problems.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+
+1. Not all of these distributions are tested, but Linux distributions that have a minimum glibc version 2.17 are expected to function without problems.
+2. Only limited support for the 64-bit ARM architecture is currently available. For a list of known issues, see the [Release notes](https://github.com/eclipse/openj9/tree/master/doc/release-notes) for the latest version of Eclipse OpenJ9.
 
 | Windows                    |  x64   |
 |----------------------------|--------|
