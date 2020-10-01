@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxprintcodecache/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxalwayspretouch/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>-XX:[+|-]PrintCodeCache -  </title>
+        <title>-XX:[+|-]AlwaysPreTouch -  </title>
       
     
     
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#-xx91-93printcodecache" tabindex="1" class="md-skip">
+      <a href="../#-xx91-93alwayspretouch" tabindex="1" class="md-skip">
         
       </a>
     
@@ -2831,11 +2831,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../xxalwayspretouch/" title="-XX:[+|-]AlwaysPreTouch" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        -XX:[+|-]AlwaysPreTouch
+      </label>
+    
+    <a href="./" title="-XX:[+|-]AlwaysPreTouch" class="md-nav__link md-nav__link--active">
       -XX:[+|-]AlwaysPreTouch
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3275,49 +3313,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        -XX:[+|-]PrintCodeCache
-      </label>
-    
-    <a href="./" title="-XX:[+|-]PrintCodeCache" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../xxprintcodecache/" title="-XX:[+|-]PrintCodeCache" class="md-nav__link">
       -XX:[+|-]PrintCodeCache
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">On this page ...</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3867,7 +3867,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9/edit/master/docs/xxprintcodecache.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9/edit/master/docs/xxalwayspretouch.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3895,43 +3895,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xx91-93printcodecache">-XX:[+|-]PrintCodeCache</h1>
-<p>This Oracle HotSpot option prints the code cache memory usage when the application exits. This option is recognized by OpenJ9 and provided for compatibility.</p>
+<h1 id="-xx91-93alwayspretouch">-XX:[+|-]AlwaysPreTouch</h1>
+<p>This Oracle HotSpot option enables or disables the committing of memory during initial heap inflation or heap expansion.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:[+|-]PrintCodeCache
+<pre><code>    -XX:[+|-]AlwaysPreTouch
 </code></pre>
 <table>
 <thead>
 <tr>
 <th>Setting</th>
 <th>Effect</th>
-<th align="center">Default</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>-XX:+PrintCodeCache</code></td>
+<td><code>-XX:+AlwaysPreTouch</code></td>
 <td>Enable</td>
-<td align="center"></td>
+<td></td>
 </tr>
 <tr>
-<td><code>-XX:-PrintCodeCache</code></td>
+<td><code>-XX:-AlwaysPreTouch</code></td>
 <td>Disable</td>
-<td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
+<td><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
 </tr>
 </tbody>
 </table>
-<p>As discussed in the Oracle documentation, the code cache usage can be shown when the application exits, by specifying <code>–XX:+PrintCodeCache</code> on the Java launcher command line. The output looks similar to the following: </p>
-<pre><code>CodeCache: size=262144Kb used=454Kb max_used=457Kb free=261690Kb
-</code></pre>
-
-<ul>
-<li><code>size</code>: The maximum size of the code cache.</li>
-<li><code>used</code>: The amount of code cache memory actually in use.</li>
-<li><code>max_used</code>: The high water mark for code cache usage.</li>
-<li><code>free</code>: <code>size</code> minus <code>used</code>.</li>
-</ul>
-<!-- ==== END OF TOPIC ==== xxprintcodecache.md ==== -->
+<!-- ==== END OF TOPIC ==== xxalwayspretouch.md ==== -->
                 
                   
                 

@@ -400,6 +400,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#support-for-openjdk-hotspot-options" class="md-nav__link">
+    Support for OpenJDK HotSpot options
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2896,6 +2903,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xxalwayspretouch/" title="-XX:[+|-]AlwaysPreTouch" class="md-nav__link">
+      -XX:[+|-]AlwaysPreTouch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xxclassrelationshipverifier/" title="-XX:[+|-]ClassRelationshipVerifier" class="md-nav__link">
       -XX:[+|-]ClassRelationshipVerifier
     </a>
@@ -3878,6 +3897,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#support-for-openjdk-hotspot-options" class="md-nav__link">
+    Support for OpenJDK HotSpot options
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3940,6 +3966,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#-xx-portablesharedcache-option-behavior-update"><code>-XX:[+|-]PortableSharedCache</code> option behavior update</a></li>
+<li><a href="#support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -3952,6 +3979,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="-xx-portablesharedcache-option-behavior-update"><code>-XX:[+|-]PortableSharedCache</code> option behavior update</h3>
 <p>The <code>-XX:[+|-]PortableSharedCache</code> option is updated to improve the portability of AOT-compiled code further. This update allows AOT-compiled code to be portable across OpenJ9 VMs that use compressed references and have a heap size of 1 MB to 28 GB when this option is enabled. This option might introduce a small (1-2%) steady-state throughput penalty when compressed references are used and the heap size is between 1 MB and 3 GB. See <a href="../xxportablesharedcache/"><code>-XX:[+|-]PortableSharedCache</code></a> for more details about this option.</p>
+<h3 id="support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</h3>
+<p>For compatibility, the following OpenJDK HotSpot options are now supported by OpenJ9:</p>
+<ul>
+<li><a href="../xxalwayspretouch/"><code>-XX:[+|-]AlwaysPreTouch</code></a></li>
+</ul>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.22.0 and v 0.23.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.23/0.23.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.23.md ==== -->
