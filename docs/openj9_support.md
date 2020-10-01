@@ -50,7 +50,7 @@ columns will be removed over time.
 | v 0.21.0       | July 2020           | Yes       | Yes         | Yes       |           |           |
 | v 0.22.0       | September 2020      | No        | No          | No        | Yes (\*2) |           |
 | v 0.23.0       | October 2020        | Yes       | Yes         | No        | Yes       |           |
-| v 0.24.0       | January 2021 (\*1)  | Yes       | Yes         | No        | Yes       |           |
+| v 0.24.0       | January 2021        | Yes       | Yes         | No        | Yes       |           |
 | v 0.25.0       | March 2021 (\*1)    | No        | No          | No        | No        | Yes (\*2) |
 | v 0.26.0       | April 2021 (\*1)    | Yes       | Yes         | No        | No        | Yes       |
 
