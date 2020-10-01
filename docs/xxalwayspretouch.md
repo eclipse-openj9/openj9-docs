@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]AlwaysPreTouch
 
-This Oracle HotSpot option enables or disables committing of memory during initial heap inflation or heap expansion.
+This Oracle HotSpot option enables or disables the committing of memory during initial heap inflation or heap expansion.
 
 ## Syntax
 
@@ -33,6 +33,6 @@ This Oracle HotSpot option enables or disables committing of memory during initi
 | Setting                  | Effect | Default                                                          |
 |--------------------------|--------|------------------------------------------------------------------|
 |`-XX:+AlwaysPreTouch`     | Enable |                                                                  |
-|`-XX:-AlwaysPreTouch`     | Disable|                                                                  |
+|`-XX:-AlwaysPreTouch`     | Disable| <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
 
 <!-- ==== END OF TOPIC ==== xxalwayspretouch.md ==== -->
