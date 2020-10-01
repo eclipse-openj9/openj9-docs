@@ -29,6 +29,7 @@ The following new features and notable changes since v 0.22.0 are included in th
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [`-XX:[+|-]PortableSharedCache` option behavior update](#-xx-portablesharedcache-option-behavior-update)
+- [`-XX:[+|-]IdleTuningCompactOnIdle` option now inactive](#-xx-idletuningcompactonidle-option-now-inactive)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 
 ## Features and changes
@@ -47,11 +48,16 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 The `-XX:[+|-]PortableSharedCache` option is updated to improve the portability of AOT-compiled code further. This update allows AOT-compiled code to be portable across OpenJ9 VMs that use compressed references and have a heap size of 1 MB to 28 GB when this option is enabled. This option might introduce a small (1-2%) steady-state throughput penalty when compressed references are used and the heap size is between 1 MB and 3 GB. See [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md) for more details about this option.
 
+### `-XX:[+|-]IdleTuningCompactOnIdle` option now inactive
+
+Setting the `-XX:[+|-]IdleTuningCompactOnIdle` option now has no effect. A compaction is triggered by internal heuristics that look into the number of fragmented pages. Typically there is no need to force a compaction. This option was deprecated in release 0.15.0, and will be removed in the future. See [`-XX:[+|-]IdleTuningCompactOnIdle`](xxidletuningcompactonidle.md) for details about this option.
+
 ### Support for OpenJDK HotSpot options
 
 For compatibility, the following OpenJDK HotSpot options are now supported by OpenJ9:
 
 - [`-XX:[+|-]AlwaysPreTouch`](xxalwayspretouch.md)
+
 
 ## Full release information
 

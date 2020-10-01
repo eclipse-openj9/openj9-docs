@@ -49,7 +49,7 @@ If you set `-XX:IdleTuningMinFreeHeapOnIdle=10`, no more than 90% of the free me
 
 - [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md)
 - [-XX:\[+|-\]IdleTuningGcOnIdle](xxidletuninggconidle.md)
-- [-XX:\[+|-\]IdleTuningCompactOnIdle \(deprecated\)](xxidletuningcompactonidle.md)
+- [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md) (From OpenJ9 version 0.23.0 this option has no effect.)
 
 
 <!-- ==== END OF TOPIC ==== xxidletuningminfreeheaponidle.md ==== -->
