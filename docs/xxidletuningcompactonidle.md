@@ -26,14 +26,16 @@
 
 **(Linux&reg; only)**
 
-This option controls garbage collection processing with compaction when the state of the OpenJ9 VM is set to idle.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Warning:** From OpenJ9 version 0.23.0 this option has no effect.
+
+In versions of OpenJ9 before 0.23.0, this option controls garbage collection processing with compaction when the state of the OpenJ9 VM is set to idle.
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
   
-1. This option was deprecated in release 0.15.0 and will be removed in the future.
-2. This option applies only to Linux&reg; architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use.
+1. This option was deprecated in release 0.15.0 due to operational changes. A compaction is now triggered by internal heuristics that look into the number of fragmented pages. Typically there is no need to force a compaction. This option will be removed in the future.
+2. This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use.
 3. This option is not effective if the object heap is configured to use large pages.
-4. This option is not effective if [XX:+IdleTuningGcOnIdle](xxidletuninggconidle.md) is not specified.
+4. This option is not effective if [-XX:+IdleTuningGcOnIdle](xxidletuninggconidle.md) is not specified.
 
 ## Syntax
 
