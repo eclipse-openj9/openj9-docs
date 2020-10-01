@@ -3911,13 +3911,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="-xx91-93idletuningcompactonidle">-XX:[+|-]IdleTuningCompactOnIdle</h1>
 <p><strong>(Linux&reg; only)</strong></p>
-<p>This option controls garbage collection processing with compaction when the state of the OpenJ9 VM is set to idle.</p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Warning:</strong> From OpenJ9 version 0.23.0 this option has no effect.</p>
+<p>In versions of OpenJ9 before 0.23.0, this option controls garbage collection processing with compaction when the state of the OpenJ9 VM is set to idle.</p>
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restrictions:</strong></p>
 <ol>
-<li>This option was deprecated in release 0.15.0 and will be removed in the future.</li>
-<li>This option applies only to Linux&reg; architectures when the Generational Concurrent (<code>gencon</code>) garbage collection policy is in use.</li>
+<li>This option was deprecated in release 0.15.0 due to operational changes. A compaction is now triggered by internal heuristics that look into the number of fragmented pages. Typically there is no need to force a compaction. This option will be removed in the future.</li>
+<li>This option applies only to Linux architectures when the Generational Concurrent (<code>gencon</code>) garbage collection policy is in use.</li>
 <li>This option is not effective if the object heap is configured to use large pages.</li>
-<li>This option is not effective if <a href="../xxidletuninggconidle/">XX:+IdleTuningGcOnIdle</a> is not specified.</li>
+<li>This option is not effective if <a href="../xxidletuninggconidle/">-XX:+IdleTuningGcOnIdle</a> is not specified.</li>
 </ol>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]IdleTuningCompactOnIdle

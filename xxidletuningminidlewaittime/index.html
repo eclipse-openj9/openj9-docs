@@ -3911,7 +3911,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h1 id="-xxidletuningminidlewaittime">-XX:IdleTuningMinIdleWaitTime</h1>
 <p><strong> (Linux&reg; only) </strong></p>
-<p>When the OpenJ9 VM is idle, this option controls the minimum length of time that the VM must be idle before the state of the VM is set to idle. When the state changes to idle, a garbage collection cycle runs, the object heap is compacted, and free memory pages are released back to the operating system, which reduces the footprint of the VM. Garbage collection and compaction are controlled by the <code>-XX:+IdleTuningGcOnIdle</code> and <code>-XX:+IdleTuningCompactOnIdle</code> options, which are enabled by default when the OpenJ9 VM is running inside a docker container.</p>
+<p>When the OpenJ9 VM is idle, this option controls the minimum length of time that the VM must be idle before the state of the VM is set to idle. When the state changes to idle, a garbage collection cycle runs, the object heap is compacted, and free memory pages are released back to the operating system, which reduces the footprint of the VM. Garbage collection and compaction are controlled by the <code>-XX:+IdleTuningGcOnIdle</code> and <code>-XX:+IdleTuningCompactOnIdle</code> options, which are enabled by default when the OpenJ9 VM is running inside a docker container. (Note that from OpenJ9 version 0.23.0 the <code>-XX:+IdleTuningCompactOnIdle</code> option has no effect.)</p>
 <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restrictions:</strong> This option applies only to Linux architectures when the Generational Concurrent (<code>gencon</code>) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:IdleTuningMinIdleWaitTime=&lt;secs&gt;
@@ -3945,7 +3945,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li><a href="../xxidletuninggconidle/">-XX:[+|-]IdleTuningGcOnIdle</a></li>
 <li><a href="../xxidletuningminfreeheaponidle/#xxidletuningminfreeheaponidle">-XX:IdleTuningMinFreeHeapOnIdle</a></li>
-<li><a href="../xxidletuningcompactonidle/">-XX:[+|-]IdleTuningCompactOnIdle (deprecated)</a></li>
+<li><a href="../xxidletuningcompactonidle/">-XX:[+|-]IdleTuningCompactOnIdle</a> (From OpenJ9 version 0.23.0 this option has no effect.)</li>
 </ul>
 <!-- ==== END OF TOPIC ==== xxidletuningminidlewaittime.md ==== -->
                 
