@@ -32,6 +32,7 @@ The following new features and notable changes since v 0.22.0 are included in th
 - [`-XX:[+|-]IdleTuningCompactOnIdle` option now inactive](#-xx-idletuningcompactonidle-option-now-inactive)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 
+
 ## Features and changes
 
 ### Binaries and supported environments
@@ -58,10 +59,8 @@ For compatibility, the following OpenJDK HotSpot options are now supported by Op
 
 - [`-XX:[+|-]AlwaysPreTouch`](xxalwayspretouch.md)
 
-
 ## Full release information
 
 To see a complete list of changes between Eclipse OpenJ9 v 0.22.0 and v 0.23.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.23/0.23.md).
 
 <!-- ==== END OF TOPIC ==== version0.23.md ==== -->
-
