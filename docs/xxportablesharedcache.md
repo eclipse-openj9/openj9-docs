@@ -24,12 +24,10 @@
 
 # -XX:\[+|-\]PortableSharedCache
 
-**(x86 and s390 platforms only)**
-
 Use this command line option to choose whether AOT-compiled code should be portable.
 
 This option, when enabled, increases the portability of AOT-compiled code, in the following ways:
-- The code is generated based on a particular set of processor features that ensures the AOT-compiled code to be portable across processors of different microarchitectures. AOT-compiled code generated with this option is guaranteed to be portable across Intel® Sandy Bridge or newer microarchitectures on x86 platforms and IBM® z10 or newer microarchitectures on s390 platforms.
+- The code is generated based on a particular set of processor features that ensures the AOT-compiled code to be portable across processors of different microarchitectures. AOT-compiled code generated with this option is guaranteed to be portable across Intel® Sandy Bridge or newer microarchitectures on x86 platforms, IBM® z10 or newer microarchitectures on s390 platforms and IBM® POWER8 or newer microarchitectures on POWER platforms.
 - The code is generated to be portable across OpenJ9 VMs that use compressed references and have a heap size of 1 MB to 28 GB (previously, AOT-compiled code could not be shared between VMs that use compressed references and that have different heap sizes). This feature might introduce a small (1-2%) steady-state throughput penalty when compressed references are used and the heap size is between 1 MB and 3 GB.
 
 This feature is particularly relevant for packaging a shared classes cache into a container image (for example, applications deployed on the cloud in the form of Docker containers) due to the following reasons:
