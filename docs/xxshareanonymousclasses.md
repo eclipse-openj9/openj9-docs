@@ -24,8 +24,10 @@
 
 # -XX:[+|-]ShareAnonymousClasses
 
-This option enables and disables the storage of VM anonymous classes, those created by `Unsafe.defineAnonymousClass`, in the shared classes cache.
- 
+This option enables and disables the storage of VM anonymous classes, those created by `Unsafe.defineAnonymousClass`, in the shared classes cache. 
+
+In Java 15 and up, this option also enables and disables the storage of hidden classes in the shared classes cache.
+
 The option is enabled by default, which means that anonymous classes are stored in the shared classes cache and are therefore available for ahead-of-time (AOT) compilation, potentially improving startup performance.
 
 ## Syntax
