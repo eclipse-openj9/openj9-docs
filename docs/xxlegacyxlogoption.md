@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 * Copyright (c) 2017, 2020 IBM Corp. and others
 *
 * This program and the accompanying materials are made
@@ -22,9 +22,16 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xlog 
+# -XX:[+|-]LegacyXlogOption
 
-To control logging to the operating system message log, use [`-Xsyslog`](xsyslog.md). When [`-XX:-LegacyXlogOption`](xxlegacyxlogoption.md) is set, which is the default, the `-Xlog` option is not recognized. When `-XX:+LegacyXlogOption` is set, `-Xlog` is equivalent to `-Xsyslog`.
+Controls processing of the [`-Xlog`](xlog.md) option. When `-XX:-LegacyXlogOption` is set, which is the default, the `-Xlog` option is not recognized.
+When `-XX:+LegacyXlogOption` is set, the `-Xlog` option is equivalent to the [`-Xsyslog`](xsyslog.md) option. 
 
-<!-- ==== END OF TOPIC ==== xsyslog.md ==== -->
+## Syntax
 
+| Setting                  | Effect     | Default                                                                            |
+|--------------------------|------------|:----------------------------------------------------------------------------------:|
+| `-XX:+LegacyXlogOption` | Process -Xlog  |                                                                              |
+| `-XX:-LegacyXlogOption` | Ignore -Xlog   | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+
+<!-- ==== END OF TOPIC ==== xxdisableexplicitgc.md ==== -->

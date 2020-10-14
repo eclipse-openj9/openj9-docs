@@ -28,6 +28,7 @@
 The following new features and notable changes since v 0.23.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [`-Xsyslog` replaces `-Xlog` option by default](#xsyslog-replaces-xlog-option-by-default)
 
 ## Features and changes
 
@@ -40,6 +41,10 @@ OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15. Binaries are available fro
 - [OpenJDK version 15](https://adoptopenjdk.net/archive.html?variant=openjdk15&jvmVariant=openj9)
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### `-Xsyslog` replaces `-Xlog` option by default
+
+The [`-Xsyslog`](xsyslog.md) option is introduced which has the same behavior as the legacy OpenJ9 `-Xlog` option. By default the OpenJ9 legacy `-Xlog` option is no longer recognized. [`-XX:+LegacyXlogOption`](xxlegacyxlogoption.md) enables the legacy `-Xlog` option, which is equivalent to `-Xsyslog`. 
 
 
 ## Full release information
