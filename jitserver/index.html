@@ -3990,12 +3990,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h1 id="jitserver-technology-technical-preview">JITServer technology (technical preview)</h1>
 <p><img alt="Start of content that applies to Java 8 and later" src="../cr/java8.png" />
 <img alt="Start of content that applies to Java 11 and later" src="../cr/java11.png" /><br />
-<strong>Linux&reg; on x86-64 only</strong></p>
+<strong>Linux&reg; on x86, Linux on IBM Power&reg; systems, and Linux on IBM Z&reg; systems (64-bit only)</strong></p>
 <p>JITServer technology decouples the JIT compiler from the VM and lets the JIT compiler run remotely in its own process. This mechanism prevents your Java&trade; application suffering possible negative effects due to CPU and memory consumption caused by JIT compilation.</p>
 <p>This technology can improve quality of service, robustness, and even performance of Java applications. We recommend trying this technology if the following criteria are met:</p>
 <ul>
 <li>Your Java application is required to compile many methods using JIT in a relatively short time.</li>
-<li>The application is running in an enviroment with limited CPU or memory, which can worsen interference from the JIT compiler.</li>
+<li>The application is running in an environment with limited CPU or memory, which can worsen interference from the JIT compiler.</li>
 <li>The network latency between JITServer and client VM is relatively low.</li>
 </ul>
 <p>For more details about JITServer technology, its pros and cons, and when best to use it, see the blog <a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a>.</p>
