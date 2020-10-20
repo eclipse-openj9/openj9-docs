@@ -26,14 +26,14 @@
 
 ![Start of content that applies to Java 8 and later](cr/java8.png)
 ![Start of content that applies to Java 11 and later](cr/java11.png)  
-**Linux&reg; on x86-64 only**
+**Linux&reg; on x86, Linux on IBM Power&reg; systems, and Linux on IBM Z&reg; systems (64-bit only)**
 
 JITServer technology decouples the JIT compiler from the VM and lets the JIT compiler run remotely in its own process. This mechanism prevents your Java&trade; application suffering possible negative effects due to CPU and memory consumption caused by JIT compilation.
 
 This technology can improve quality of service, robustness, and even performance of Java applications. We recommend trying this technology if the following criteria are met:
 
 - Your Java application is required to compile many methods using JIT in a relatively short time.
-- The application is running in an enviroment with limited CPU or memory, which can worsen interference from the JIT compiler.
+- The application is running in an environment with limited CPU or memory, which can worsen interference from the JIT compiler.
 - The network latency between JITServer and client VM is relatively low.
 
 For more details about JITServer technology, its pros and cons, and when best to use it, see the blog [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/).
@@ -74,7 +74,7 @@ You can encrypt network communication between the client VM and JITServer by usi
 
 and use the certificate at the client:
 
-    -XX:JITServerSSLRootCerts=<cert>.pem 
+    -XX:JITServerSSLRootCerts=<cert>.pem
 
 For more details and further discussion about security considerations, see [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/).
 
