@@ -1,70 +1,93 @@
-<!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
-*
-* This program and the accompanying materials are made
-* available under the terms of the Eclipse Public License 2.0
-* which accompanies this distribution and is available at
-* https://www.eclipse.org/legal/epl-2.0/ or the Apache
-* License, Version 2.0 which accompanies this distribution and
-* is available at https://www.apache.org/licenses/LICENSE-2.0.
-*
-* This Source Code may also be made available under the
-* following Secondary Licenses when the conditions for such
-* availability set forth in the Eclipse Public License, v. 2.0
-* are satisfied: GNU General Public License, version 2 with
-* the GNU Classpath Exception [1] and GNU General Public
-* License, version 2 with the OpenJDK Assembly Exception [2].
-*
-* [1] https://www.gnu.org/software/classpath/license.html
-* [2] http://openjdk.java.net/legal/assembly-exception.html
-*
-* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
-* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
--->
 
 
 # Verbose garbage collection logs 
 
-Garbage collection logs are collected as soon as garbage collection is initialised.
+Garbage collection reclaims unused memory for reuse. When the heap is full, a request to create an object causes an an allocation failure to occur, and garbage collection is instigated.
 
-Verbose garbage collection output or log files contain information on garbage collection operations to assist with the following:
+Garbage collection is triggered in the following instances:
 
-- tuning 
-- troubleshooting.....
+- Calls to System.gc() 
+
+- Allocation failures
+
+- Completing concurrent collections (MEANING?) 
+
+- Decisions based on the cost of making resource allocations (MEANING?) 
+
+When verbose garbage collection (vgc) logs are enabled, the logs are collected as soon as [garbage collection](gc.md) is initialised.
+
+vgc logs contain information on garbage collection operations to assist with the following:
+
+- tuning of the gc
+- troubleshooting gc operations and policies
 - ADD
 
-The verbose garbage collection logs can be used with a variety of diagnostics tools and interfaces to provide monitoring and analysis capabilities.
+Verbose garbage collection log files can be fed into a variety of diagnostics tools and interfaces to provide monitoring and analysis capabilities.
 
-To help you understand how a Java dump can help you with problem diagnosis, this topic includes a few scenarios to help you interpret the data:
+By default, the information is printed to STDERR. To print the output to a file, use the [`-Xverbosegclog](Xverbosegclog.md) option. 
 
-1. Determining optimum initial and maximum heap sizes for your JVM. For more information see ()[mm_heapsizing_verbosegc.html]
-2. Tuning particular parameters for the type of garbage collection policy your JVM is using. ()[mm_gc_pd_mgc_verbose.html]
-3. 
+To help you understand how vgc logs can help you with tuning and troubleshooting, this topic includes a few scenarios to help you interpret the data:
 
+1. Configuring the garbage collection logs - using nonstandard options -XLog (AND/OR OTHER USEFUL NONSTANDARD OPTIONS)
+2. Determining optimum initial and maximum heap sizes for your JVM. For more information see ()[mm_heapsizing_verbosegc.html]
+3. Tuning particular parameters for the type of garbage collection policy your JVM is using. ()[mm_gc_pd_mgc_verbose.html]
+4. Troubleshooting the Metronome garbage collector (AIX and Linux only)
 
-*Note:* To perform further, detailed analysis, you can call one or more trace garbage collector (TGC) traces ('-XTgc' options). The  TGC traces collect more information than the '-verbose:gc' option. For more information, see ()[mm_gc_pd_tracing.html].
+*Note:* If vgc logs do not provide enough information to help you diagnose gc problems, or you require more granular information to perform finer tuning, you can call one or more trace garbage collector (TGC) traces (['-XTgc' options](xtgc.md)) to add further information to your vgc log output.
 
 ## How to generate a verbose garbage collection log
 
-You can generate a verbose garbage collection log file using the `-verbose:gc`command. 
+You can generate a verbose garbage collection log file using the `-verbose:gc` standard Java ^{TM} option and configure the ???  using options such as ???
 
-Alternatiely, to output the verbose gc log to a file, use the command `-Xverbosegclog` 
+by default,the output of `-verbose:gc` is printed to STDERR. To output the verbose garbage collection log to a file, you must instead use the use the option `-Xverbosegclog`.
 
-In addition, verbose garbage collection logs are triggered in the following instances TRUE?:
-
-- stop-the-world operations?
-- 
+To configure the metrics/xml tags outputted by the garbage collection log, add options to the unified logging feature `-Xlog`
 
 
-The following options can be used with the '-verbose:gc' command:
 
-ADD A TABLE HERE? OR SEE THE 
+The following nonstandard (or -X) options can be used with the '-verbose:gc' option:
 
+*ADD A TABLE HERE?  or simply point to the -X command parent topic?*
+
+*Add trace options here?)
 -Xgc: verboseGCCycleTime=N
+
 
 ## Verbose garbage collection log contents
 
-### Garbage Collection configuration
+The Verbose garbage collection logs summarise the configuration of your garbage collector, captured in the [`<INITIATISED>` tag section](./dump_gcdump.html#garbage-collection-configuration), and garbage collector events, which are recorded in sections that correspond to the individual operations, increments and cycles that make up that event. 
+
+Garbage collector events are logged within sections labelled by the type of collection used - either concurrent or [stop-the-world](./dump_gcdump.html#stop-the-world-operations) collectors.
+
+The logs capture details of the operations, increments and cycles tha make up each specific garbage collection event.
+
+A **gc cycle** is a set of gc increments which, when complete, result in reclaimed memory for reuse.
+
+Each gc increment consists of 1 or more gc operations.
+
+Some cycles consist of just 1 increment. This is the case for a type of stop-the-world garbage collection that only implements the scavenge operation to reclaim unused memory. During this operation, the gc traverses all object references (in the heap?/ in the nursery? Or ALSO in the tenure section?) and if the object is not live, the memory is reclaimed. 
+
+Conversely, other cycles consist of multiple operations, such as the mark-and-sweep cycle(?). WHERE DOES INCREMENT FIT IN? 
+
+MARK – collector traverses all object references and marks any that are live. 
+
+SWEEP – collector then traverses all object references again, reclaiming any objects that are not marked as live. 
+
+Other operations include: 
+
+COPY FORWARD – DOES WHAT? 
+
+COMPACT – defragmentation? 
+
+The verbose garbage collection logs also record other attributes of a collection such as:
+
+**Allocation failures** tags `<afstart>` and `<af-end>` 
+
+The following sections show sample results for different gc events.
+
+### Garbage Collection Configuration
+
+**Section tag:** `<INITIATISED>`
 
 When garbage collection is initialised, the verbose garbage collection log records the garbage collection configuration, including:
 - the garbage collection policy type
@@ -73,13 +96,24 @@ When garbage collection is initialised, the verbose garbage collection log recor
 
 ### stop-the-world operations
 
+**Section tags:** `<exclusive-start>` and `<exclusive-end>`
+
 During a stop-the-world  operation, an application is stopped so that the garbage collector has exclusive access to the JVM for actioning the freeing up of memory and memory compaction. The Verbose garbage collection log records the following information of the event:
 
 ### Garbage collection cycle
+**Section tags:** `<cycle-start>` and `<cycle-end>`
 
 A garbage collection cycle is WHAT IS THIS?
 
 ### Garbage collection increment
 
-## Scenarios
+**Section tags:** `<gc-start>`, `<gc-op>` and `<gc-end>`
+
+### Garbage collection operation
+
+**Section tag:** `<gc-op>`
+
+Global:
+
+Scavenge:
 
