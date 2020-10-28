@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -24,6 +24,10 @@
 
 # What's new in version 0.24.0
 
+The following new features and notable changes since v 0.23.0 are included in this release:
+
+- [New binaries and changes to supported environments](#binaries-and-supported-environments)
+
 ## Features and changes
 
 ### Binaries and supported environments
@@ -43,3 +47,6 @@ The `-XX:[+|-]PortableSharedCache` option is now supported on s390 and POWER pla
 ## Full release information
 
 To see a complete list of changes between Eclipse OpenJ9 v 0.23.0 and v 0.24.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.24/0.24.md).
+
+<!-- ==== END OF TOPIC ==== version0.24.md ==== -->
+
