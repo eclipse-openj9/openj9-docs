@@ -3925,16 +3925,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p><strong>(AIX&reg;, Linux&reg;, macOS&reg;)</strong></p>
 <p>On some operating systems, copies of executable files and libraries are required for a full analysis of a core dump (you can get some information from the dump without these files, but not as much). Run the <code>jextract</code> utility to collect these extra files and package them into an archive file along with the core dump. To analyze the output, use the <a href="../tool_jdmpview/">dump viewer (<code>jdmpview</code>)</a>.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    jextract &lt;core file name&gt; [&lt;zip_file&gt;]
+<pre><code>    jextract [-r] &lt;core file name&gt; [&lt;zip_file&gt;]
 </code></pre>
 <p>where:</p>
 <ul>
+<li><code>-r</code> forces the <code>jextract</code> utility to proceed when the system dump is created from an SDK with a different build ID. See <strong>Restriction</strong>.</li>
 <li><code>&lt;core file name&gt;</code> is the name of the system dump.</li>
 <li><code>&lt;zip_file&gt;</code> is the name you want to give to the processed file. If you do not specify a name, output is written to <code>&lt;core file name&gt;.zip</code> by default. The output is written to the same directory as the core file.</li>
 </ul>
-<dl>
-<dd><i class="fa fa-exclamation-triangle"></i> <strong>Restriction: </strong> You must run <code>jextract</code> on the same system that produced the system dump in order to collect the correct executables and libraries referenced in the system dump. You should also run <code>jextract</code> using the same VM level, to avoid any problems.</dd>
-</dl>
+<p><i class="fa fa-exclamation-triangle"></i> <strong>Restriction:</strong> You should run <code>jextract</code> on the same system that produced the system dump in order to collect the correct executables and libraries referenced in the system dump. You should also run <code>jextract</code> using the same VM level, to avoid any problems. From Eclipse OpenJ9 V0.24.0, the utility always checks that the build ID of the SDK that created the dump file matches the <code>jextract</code> build ID. Where these IDs do not match, the following exception is thrown:</p>
+<pre><code>J9RAS.buildID is incorrect (found XXX, expecting YYY). This version of jextract is incompatible with this dump (use '-r' option to relax this check).
+</code></pre>
+
+<p>To continue, despite the mismatch, use the <code>-r</code> option.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../tool_jdmpview/">Dump viewer (<code>jdmpview</code>)</a></li>
