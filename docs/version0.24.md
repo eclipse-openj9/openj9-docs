@@ -22,7 +22,6 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-
 # What's new in version 0.24.0
 
 The following new features and notable changes since v 0.23.0 are included in this release:
@@ -41,6 +40,9 @@ OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15. Binaries are available fro
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+### `-XX:[+|-]PortableSharedCache` option behavior update
+
+The `-XX:[+|-]PortableSharedCache` option is now supported on s390 and POWER platforms. AOT-compiled code generated with this option is guaranteed to be portable across IBM® z10 or newer microarchitectures on s390 platforms and IBM® POWER8 or newer microarchitectures on POWER platforms. See [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md) for more details about this option.
 
 ## Full release information
 
