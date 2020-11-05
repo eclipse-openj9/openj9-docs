@@ -27,6 +27,9 @@
 The following new features and notable changes since v 0.23.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [`-XX:[+|-]PortableSharedCache` option behavior update](#-xx-portablesharedcache-option-behavior-update)
+- [![Start of content that applies to AIX Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update](#-xx-shareanonymousclasses-option-behavior-update)
+
 
 ## Features and changes
 
@@ -42,7 +45,13 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 ### `-XX:[+|-]PortableSharedCache` option behavior update
 
-The `-XX:[+|-]PortableSharedCache` option is now supported on s390 and POWER platforms. AOT-compiled code generated with this option is guaranteed to be portable across IBM® z10 or newer microarchitectures on s390 platforms and IBM® POWER8 or newer microarchitectures on POWER platforms. See [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md) for more details about this option.
+The `-XX:[+|-]PortableSharedCache` option is now supported on s390 and POWER platforms. AOT-compiled code generated with this option is guaranteed to be portable across IBM&reg; z10 or newer microarchitectures on s390 platforms and IBM POWER8&reg; or newer microarchitectures on POWER platforms. See [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md) for more details about this option.
+
+
+### ![Start of content that applies to AIX Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update
+
+The `-XX:[+|-]ShareAnonymousClasses` option currently enables and disables the storage of VM anonymous classes in the shared classes cache. In OpenJDK 15 and later versions, this option now also enables and disables the storage of hidden classes in the shared classes cache. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
+
 
 ## Full release information
 
