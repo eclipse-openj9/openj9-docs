@@ -3979,7 +3979,7 @@ demonstrate long VM arguments in the manifest file
 </ul>
 </li>
 <li>
-<p>The <code>OPENJ9_JAVA_OPTIONS</code> environment variable. You can set command-line options using this environment variable. The options that you specify with this environment variable are added to the command line when a VM starts in that environment. The environment variable can contain multiple blank-delimited argument strings, but must not contain comments. For example:</p>
+<p>The <code>JAVA_OPTIONS</code> and <code>OPENJ9_JAVA_OPTIONS</code> environment variables. You can set command-line options using these environment variables. <code>JAVA_OPTIONS</code> is processed first and can be overridden by <code>OPENJ9_JAVA_OPTIONS</code>. The options that you specify with these environment variables are added to the command line when a VM starts in that environment. The environment variables can contain multiple blank-delimited argument strings, but must not contain comments. For example:</p>
 <ul>
 <li>
 <p>On Windows systems:</p>
