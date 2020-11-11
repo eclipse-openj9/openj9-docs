@@ -27,6 +27,7 @@
 The following new features and notable changes since v 0.23.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [Support the `JAVA_OPTIONS` environment variable](#support-the-java_options-environment-variable)
 
 ## Features and changes
 
@@ -40,9 +41,16 @@ OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15. Binaries are available fro
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+
+### Support the JAVA_OPTIONS environment variable
+
+Support the `JAVA_OPTIONS` environment variable for compatibility with Hotspot. `JAVA_OPTIONS` can be used to set command line options as described in [OpenJ9 command-line options](cmdline_specifying.md) and [Environment variables](env_var.md). Options specified in `JAVA_OPTIONS` can be overridden by `OPENJ9_JAVA_OPTIONS`.
+
+
 ### `-XX:[+|-]PortableSharedCache` option behavior update
 
 The `-XX:[+|-]PortableSharedCache` option is now supported on s390 and POWER platforms. AOT-compiled code generated with this option is guaranteed to be portable across IBM® z10 or newer microarchitectures on s390 platforms and IBM® POWER8 or newer microarchitectures on POWER platforms. See [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md) for more details about this option.
+
 
 ## Full release information
 
