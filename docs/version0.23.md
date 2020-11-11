@@ -33,6 +33,7 @@ The following new features and notable changes since v 0.22.0 are included in th
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [Extended platform support for the JITServer technology preview](#extended-platform-support-for-the-jitserver-technology-preview)
 
+
 ## Features and changes
 
 ### Binaries and supported environments
