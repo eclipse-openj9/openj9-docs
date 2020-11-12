@@ -416,6 +416,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#-xx-shareanonymousclasses-option-behavior-update" class="md-nav__link">
+    -XX:[+|-]ShareAnonymousClasses option behavior update
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3932,6 +3939,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#-xx-shareanonymousclasses-option-behavior-update" class="md-nav__link">
+    -XX:[+|-]ShareAnonymousClasses option behavior update
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3993,8 +4007,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The following new features and notable changes since v 0.23.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
-<li><a href="#xsyslog-replaces-xlog-option-by-default"><code>-Xsyslog</code> replaces <code>-Xlog</code> option by default</a></li>
+<li><a href="#-xsyslog-replaces-xlog-option-by-default"><code>-Xsyslog</code> replaces <code>-Xlog</code> option by default</a></li>
 <li><a href="#support-the-java_options-environment-variable">Support the <code>JAVA_OPTIONS</code> environment variable</a></li>
+<li><a href="#-xx-portablesharedcache-option-behavior-update"><code>-XX:[+|-]PortableSharedCache</code> option behavior update</a></li>
+<li><a href="#-xx-shareanonymousclasses-option-behavior-update"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> <code>-XX:[+|-]ShareAnonymousClasses</code> option behavior update</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -4010,7 +4026,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h3 id="support-the-java_options-environment-variable">Support the JAVA_OPTIONS environment variable</h3>
 <p>Support the <code>JAVA_OPTIONS</code> environment variable for compatibility with Hotspot. <code>JAVA_OPTIONS</code> can be used to set command line options as described in <a href="../cmdline_specifying/">OpenJ9 command-line options</a> and <a href="../env_var/">Environment variables</a>. Options specified in <code>JAVA_OPTIONS</code> can be overridden by <code>OPENJ9_JAVA_OPTIONS</code>.</p>
 <h3 id="-xx-portablesharedcache-option-behavior-update"><code>-XX:[+|-]PortableSharedCache</code> option behavior update</h3>
-<p>The <code>-XX:[+|-]PortableSharedCache</code> option is now supported on s390 and POWER platforms. AOT-compiled code generated with this option is guaranteed to be portable across IBM® z10 or newer microarchitectures on s390 platforms and IBM® POWER8 or newer microarchitectures on POWER platforms. See <a href="../xxportablesharedcache/"><code>-XX:[+|-]PortableSharedCache</code></a> for more details about this option.</p>
+<p>The <code>-XX:[+|-]PortableSharedCache</code> option is now supported on s390 and POWER platforms. AOT-compiled code generated with this option is guaranteed to be portable across IBM&reg; z10 or newer microarchitectures on s390 platforms and IBM POWER8&reg; or newer microarchitectures on POWER platforms. See <a href="../xxportablesharedcache/"><code>-XX:[+|-]PortableSharedCache</code></a> for more details about this option.</p>
+<h3 id="-xx-shareanonymousclasses-option-behavior-update"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> <code>-XX:[+|-]ShareAnonymousClasses</code> option behavior update</h3>
+<p>The <code>-XX:[+|-]ShareAnonymousClasses</code> option currently enables and disables the storage of VM anonymous classes in the shared classes cache. In OpenJDK 15 and later versions, this option now also enables and disables the storage of hidden classes in the shared classes cache. See <a href="../xxshareanonymousclasses/"><code>-XX:[+|-]ShareAnonymousClasses</code></a> for more details about this option.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.23.0 and v 0.24.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.24/0.24.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.24.md ==== -->
