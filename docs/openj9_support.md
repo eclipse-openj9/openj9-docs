@@ -43,17 +43,16 @@ columns will be removed over time.
 
 ## Eclipse OpenJ9 releases
 
-| OpenJ9 release | Release date        | JDK8 (LTS)| JDK11 (LTS) | JDK14     | JDK15     | JDK16     |
-|----------------|---------------------|-----------|-------------|-----------|-----------|-----------|
-| v 0.19.0       | March 2020          | No        | No          | Yes (\*2) |           |           |
-| v 0.20.0       | April 2020          | Yes       | Yes         | Yes       |           |           |
-| v 0.21.0       | July 2020           | Yes       | Yes         | Yes       |           |           |
-| v 0.22.0       | September 2020      | No        | No          | No        | Yes (\*2) |           |
-| v 0.23.0       | October 2020        | Yes       | Yes         | No        | Yes       |           |
-| v 0.24.0       | January 2021        | Yes       | Yes         | No        | Yes       |           |
-| v 0.25.0       | March 2021 (\*1)    | No        | No          | No        | No        | Yes (\*2) |
-| v 0.26.0       | April 2021 (\*1)    | Yes       | Yes         | No        | No        | Yes       |
-
+| OpenJ9 release | Release date        | JDK8 (LTS)| JDK11 (LTS) |  JDK15    | JDK16     | JDK17 (LTS)|
+|----------------|---------------------|-----------|-------------|-----------|-----------|------------|
+| v 0.21.0       | July 2020           | Yes       | Yes         |           |           |            |
+| v 0.22.0       | September 2020      | No        | No          | Yes (\*2) |           |            |
+| v 0.23.0       | October 2020        | Yes       | Yes         | Yes       |           |            |
+| v 0.24.0       | January 2021        | Yes       | Yes         | Yes       |           |            |
+| v 0.25.0       | March 2021 (\*1)    | No        | No          | No        | Yes (\*2) |            |
+| v 0.26.0       | April 2021 (\*1)    | Yes       | Yes         | No        | Yes       |            |
+| v 0.27.0       | July 2021 (\*1)     | Yes       | Yes         | No        | Yes       |            |
+| v 0.28.0       | September 2021 (\*1)| Yes       | Yes         | No        | No        | Yes (\*2)  |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
@@ -70,20 +69,21 @@ reasons the Eclipse OpenJ9 JVM does not currently run on every platform.
 
 ### OpenJDK 8
 
-<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
-platform support might vary, depending on their build environment. Check the AdoptOpenJDK [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
+<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html) or from other sources,
+platform support might vary, depending on the build environment. For AdoptOpenJDK, see the [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
 
-OpenJDK 8 binaries are supported on the minimum operating system levels shown in the following tables:
+OpenJDK 8 binaries are expected to function on the minimum operating system levels shown in the following tables:
 
-| Linux&reg;                            |   x32  |  x64   | ppc64le    | Z31  | Z64 |
-|---------------------------------------|--------|--------|------------|------|------|
-| CentOS 6.10                           |   Y    |   Y    |     N      |   N  |  N   |
-| CentOS 7.6                            |   Y    |   Y    |     Y      |   N  |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.10  |   Y    |   Y    |     N      |   N  |  N   |
-| RHEL 7.6                              |   Y    |   Y    |     Y      |   Y  |  Y   |
-| SUSE Linux Enterprise Server (SLES) 12|   Y    |   Y    |     Y      |   Y  |  Y   |
-| Ubuntu 16.04                          |   Y    |   Y    |     Y      |   N  |  Y   |
-| Ubuntu 18.04                          |   Y    |   Y    |     Y      |   N  |  Y   |
+| Linux&reg;                                |   x32  |  x64   | ppc64le    | Z31  | Z64 |
+|-------------------------------------------|--------|--------|------------|------|------|
+| CentOS 6.10                               |   Y    |   Y    |     N      |   N  |  N   |
+| CentOS 7.6                                |   Y    |   Y    |     Y      |   N  |  N   |
+| Red Hat Enterprise Linux (RHEL) 6.10      |   Y    |   Y    |     N      |   N  |  N   |
+| RHEL 7.6                                  |   Y    |   Y    |     Y      |   Y  |  Y   |
+| SUSE Linux Enterprise Server (SLES) 12 SP5|   Y    |   Y    |     Y      |   Y  |  Y   |
+| Ubuntu 16.04                              |   Y    |   Y    |     Y      |   N  |  Y   |
+| Ubuntu 18.04                              |   Y    |   Y    |     Y      |   N  |  Y   |
+| Ubuntu 20.04                              |   Y    |   Y    |     Y      |   N  |  Y   |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Not all of these distributions are tested, but Linux distributions that have a
 minimum glibc version 2.12 (x) or 2.17 (others) are expected to function without problems.
@@ -102,28 +102,29 @@ minimum glibc version 2.12 (x) or 2.17 (others) are expected to function without
 
 | AIX&reg;     |  ppc32   |  ppc64   |
 |--------------|----------|----------|
-| AIX 7.1 TL4  |    Y     |    Y     |
-| AIX 7.2      |    Y     |    Y     |
+| AIX 7.1 TL5  |    Y     |    Y     |
+| AIX 7.2 TL3  |    Y     |    Y     |
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
 ### OpenJDK 11
 
-<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
-platform support might vary, depending on their build environment. Check the AdoptOpenJDK [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
+<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html) or from other sources,
+platform support might vary, depending on the build environment. For AdoptOpenJDK, see the [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
 
-OpenJDK 11 binaries are supported on the minimum operating system levels shown in the following tables:
+OpenJDK 11 binaries are expected to function on the minimum operating system levels shown in the following tables:
 
 
-| Linux (**Note 1**)                    | AArch64 (**Note 2**)    | x64   |  ppc64le   | Z64  |
-|---------------------------------------|-------------------------|-------|------------|------|
-| CentOS 6.10                           |    N                    |  Y    |     N      |  N   |
-| CentOS 7.6                            |    Y                    |  Y    |     Y      |  N   |
-| Red Hat Enterprise Linux (RHEL) 6.10  |    N                    |  Y    |     N      |  N   |
-| RHEL 7.6                              |    Y                    |  Y    |     Y      |  Y   |
-| SUSE Linux Enterprise Server (SLES) 12|    N                    |  Y    |     Y      |  Y   |
-| Ubuntu 16.04                          |    Y                    |  Y    |     Y      |  Y   |
-| Ubuntu 18.04                          |    Y                    |  Y    |     Y      |  Y   |
+| Linux (**Note 1**)                        | AArch64 (**Note 2**)    | x64   |  ppc64le   | Z64  |
+|-------------------------------------------|-------------------------|-------|------------|------|
+| CentOS 6.10                               |    N                    |  Y    |     N      |  N   |
+| CentOS 7.6                                |    Y                    |  Y    |     Y      |  N   |
+| Red Hat Enterprise Linux (RHEL) 6.10      |    N                    |  Y    |     N      |  N   |
+| RHEL 7.6                                  |    Y                    |  Y    |     Y      |  Y   |
+| SUSE Linux Enterprise Server (SLES) 12 SP5|    N                    |  Y    |     Y      |  Y   |
+| Ubuntu 16.04                              |    Y                    |  Y    |     Y      |  Y   |
+| Ubuntu 18.04                              |    Y                    |  Y    |     Y      |  Y   |
+| Ubuntu 20.04                              |    Y                    |  Y    |     Y      |  Y   |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
@@ -143,27 +144,28 @@ OpenJDK 11 binaries are supported on the minimum operating system levels shown i
 
 | AIX          |  ppc64   |
 |--------------|----------|
-| AIX 7.1 TL4  |    Y     |
-| AIX 7.2      |    Y     |
+| AIX 7.1 TL5  |    Y     |
+| AIX 7.2 TL3  |    Y     |
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
 
 ### OpenJDK 15
 
-<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html),
-platform support might vary, depending on their build environment. Check the AdoptOpenJDK [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
+<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html) or from other sources,
+platform support might vary, depending on the build environment. For AdoptOpenJDK, see the [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
 
-OpenJDK 15 binaries are supported on the minimum operating system levels shown in the following tables:
+OpenJDK 15 binaries are expected to function on the minimum operating system levels shown in the following tables:
 
 
-| Linux (**Note 1**)                    | AArch64 (**Note 2**) |  x64   |  ppc64le   | Z64  |
-|---------------------------------------|----------------------|--------|------------|------|
-| CentOS 7.6                            |    Y                 |   Y    |     Y      |  N   |
-| RHEL 7.6                              |    Y                 |   Y    |     Y      |  Y   |
-| SUSE Linux Enterprise Server (SLES) 12|    N                 |   Y    |     Y      |  Y   |
-| Ubuntu 16.04                          |    Y                 |   Y    |     Y      |  Y   |
-| Ubuntu 18.04                          |    Y                 |   Y    |     Y      |  Y   |
+| Linux (**Note 1**)                        | AArch64 (**Note 2**) |  x64   |  ppc64le   | Z64  |
+|-------------------------------------------|----------------------|--------|------------|------|
+| CentOS 7.6                                |    Y                 |   Y    |     Y      |  N   |
+| RHEL 7.6                                  |    Y                 |   Y    |     Y      |  Y   |
+| SUSE Linux Enterprise Server (SLES) 12 SP5|    N                 |   Y    |     Y      |  Y   |
+| Ubuntu 16.04                              |    Y                 |   Y    |     Y      |  Y   |
+| Ubuntu 18.04                              |    Y                 |   Y    |     Y      |  Y   |
+| Ubuntu 20.04                              |    Y                 |   Y    |     Y      |  Y   |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
@@ -183,8 +185,8 @@ OpenJDK 15 binaries are supported on the minimum operating system levels shown i
 
 | AIX          |  ppc64   |
 |--------------|----------|
-| AIX 7.1 TL4  |    Y     |
-| AIX 7.2      |    Y     |
+| AIX 7.1 TL5  |    Y     |
+| AIX 7.2 TL3  |    Y     |
 
 <i class="fa fa-bell" aria-hidden="true"></i> **Important:** AIX OpenJ9 builds require the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018).
 
