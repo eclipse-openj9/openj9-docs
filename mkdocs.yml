@@ -126,6 +126,7 @@ nav:
     - "Memory management" :
         - "Memory allocation"                                                    : allocator.md
         - "Garbage collection"                                                   : gc.md
+            - "verbose garbage collection logs"                                  : gc_vgclog_intro.md
 
     - "JIT Compiler"                                                             : jit.md
     - "JITServer (tech. preview)"                                                : jitserver.md
