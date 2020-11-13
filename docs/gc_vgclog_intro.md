@@ -10,9 +10,7 @@ A garbage collection event is triggered in the following situations:
 
 - Available memory has decreased to a value that triggers a concurrent cycle to clean the heap or a region of the heap. 
 
-- Concurrent events that are part of a concurrent cycle are complete, which triggers the final STW event that completes concurrent cycle.   
-
-- Concurrent events that are part of a concurrent-incremental cycle are complete, which triggers the intermediate STW event that completes the incremental part of the cycle. 
+- Concurrent events that are part of a concurrent cycle are complete, which triggers an STW event that completes either an incremental or final part of the concurrent.
 
 Verbose garbage collection (vgc) logs contain information on garbage collection operations to assist with the following:  
 
