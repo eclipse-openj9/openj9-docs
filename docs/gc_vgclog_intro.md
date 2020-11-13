@@ -30,11 +30,11 @@ You can feed verbose gc log files into variety of diagnostic tools and interface
 
 ## How to generate a verbose garbage collection log 
 
-The output of `-verbose:gc` is printed to STDERR by default.  You can generate a verbose garbage collection log file using the `-verbose:gc` standard Java ^{TM} option with the ’-Xverbosegclog` non-standard option.  
+You can enable the verbose gc output by using the Java virtual machine standard command line option `-verbose:gc`. For more information about how to use OpenJ9 virtual machine command line options see [Specifying Options](./cmdlie_specifying).
 
-To configure the metrics/xml tags outputted by the garbage collection log, add options to the unified logging feature `-Xlog` 
+The output of `-verbose:gc` is printed to STDERR by default.  You can instead generate a verbose garbage collection log file using the `-verbose:gc` standard Java ^{TM} option with the ’-Xverbosegclog` non-standard option.  
 
-The following nonstandard (or -X) options can be used with the '-verbose:gc' option: 
+You can add other `-X` (nonstandard options) and `-XX` options to configure the information outputted by the garbage collection log. For example, ADD
 
 ## Vgc log contents 
 
@@ -58,7 +58,7 @@ The following table show the tagging used for the nested gc processes:
 | gc increment | `<gc-start>`, `<gc-end>`      | 1 or more gc increments make up a gc cycle                      |
 | gc operation | `<gc-op>`                     | 1 or more gc operations make up a gc increment. Examples of a gc operation include mark, sweep, scavenge.|
 
-**Note:** Gc operations are the smallest increment In vgc log. All details of a gc operation are logged using a single tag rather than a start and end tag.  
+**Note:** Gc operations are the smallest fragment in a vgc log. All details of a gc operation are logged using a single tag rather than a start and end tag.  
 
 ### Example: STW cycle  
  
