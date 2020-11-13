@@ -1,54 +1,78 @@
+<!--
+* Copyright (c) 2017, 2020 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+-->
+
 # Verbose Garbage Collection Logs 
 
-[Garbage collection](https://www.eclipse.org/openj9/docs/gc/)(gc) reclaims unused memory in the heap for reuse. During clean up of the heap, the verbose gc logs capture information about the different garbage collection operations involved in the garbage collection cycles, including GC initialization, stop-the-world processing, finalization, reference processing, and allocation failures. 
+[Garbage collection](https://www.eclipse.org/openj9/docs/gc/)(gc) reclaims unused memory in the heap for reuse. During cleanup of the heap, the verbose garbage collection (vgc) logs capture information about the different garbage collection operations that are involved in the garbage collection cycles. Gc operations include GC initialization, stop-the-world processing, finalization, reference processing, and allocation failures. 
 
 A garbage collection event is triggered in the following situations: 
 
-- The JVM makes a call to system.gc() to run a global STW gc. 
+- The JVM calls system.gc() to run a global STW gc. 
 
-- There is a memory allocation failure. Allocation failures are triggered when a request to allocate an object fails due to a region of the heap being full. 
+- A memory allocation failure. Allocation failures are triggered when a request to allocate an object fails due to a full region of the heap. 
 
-- Available memory has decreased to a value that triggers a concurrent cycle to clean the heap or a region of the heap. 
+- Decrease in available memory to a value that triggers a concurrent cycle to clean the heap or a region of the heap. 
 
 - Concurrent events that are part of a concurrent cycle are complete, which triggers an STW event that completes either an incremental or final part of the concurrent.
 
-Verbose garbage collection (vgc) logs contain information on garbage collection operations to assist with the following:  
+Verbose garbage collection (vgc) logs contain information on garbage collection operations to assist with the following actions:  
 
 - Tuning the performance of the garbage collectors 
 
-- Troubleshooting gc operations and policies. For example, analysing long pauses, or determining how free memory is divided in the heap before and after a gc cycle. 
+- Troubleshooting gc operations and policies. For example, analyzing long pauses, or determining how free memory is divided in the heap before and after a gc cycle. 
 
 When verbose garbage collection (vgc) logs are enabled, the logs are collected as soon as [garbage collection](gc.md) is initialized. 
  
 By default, the information is printed to STDERR. You can also [print to a file](dump_gcdump.html/#how-to-generate-a-verbonse-garbage-collection-log).
 
-You can feed verbose gc log files into variety of diagnostic tools and interfaces to visualise and analyse the garbage collection, such as the [Garbage Collection and memory visualiser extension for Eclipse](./https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv), or online services such as [GCEasy](./ https://gceasy.io/). 
+You can feed verbose gc log files into variety of diagnostic tools and interfaces to visualize and analyze the garbage collection, such as the [Garbage Collection and memory visualizer extension for Eclipse](./https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv), or online services such as [GCEasy](./ https://gceasy.io). 
 
-*Note:* If vgc logs do not provide enough information to help you diagnose gc problems, or you require more granular information to perform finer tuning, you can call one or more trace garbage collector (TGC) traces (['-XTgc' options](xtgc.md)) to add further information to your vgc log output. 
+**Note:** If vgc logs do not provide enough information to help you diagnose gc problems or perform finer tuning, you can add further information to the vgc log by calling one or more trace garbage collector (TGC) traces by using the (['-XTgc' option](xtgc.md)).
 
 ## How to generate a verbose garbage collection log 
 
-You can enable the verbose gc output by using the Java virtual machine standard command line option `-verbose:gc`. For more information about how to use OpenJ9 virtual machine command line options see [Specifying Options](./cmdlie_specifying).
+You can enable the verbose gc output by using the Java&trade; virtual machine standard command line option `-verbose:gc`. For more information, see [how to use OpenJ9 virtual machine command line option](./cmdline_specifying.md).
 
-The output of `-verbose:gc` is printed to STDERR by default.  You can instead generate a verbose garbage collection log file using the `-verbose:gc` standard Java ^{TM} option with the ’-Xverbosegclog` non-standard option.  
+The output of `-verbose:gc` is printed to STDERR by default. You can instead output the logs to a file by appending the `-Xverbosegclog` non-standard option.
 
-You can add other `-X` (nonstandard options) and `-XX` options to configure the information outputted by the garbage collection log. For example, ADD
+You can configure the vgc log output to be written to a succession of files, each logging a specified number of gc cycles, by specifying additional parameters of the `-Xverbosegclog` non-standard option. For more information, see the command-line option [xverbosegclog](./xverbosegclog.md).
 
 ## Vgc log contents 
 
 The Verbose garbage collection logs are output as XML and consist of:  
 
-- a summary of the configuration of your garbage collector policy and policy options, captured in the stanza beginning with the [`<INITIATISED>` tag](./dump_gcdump.html#garbage-collection-configuration) 
+- a summary of the configuration of your garbage collector policy and policy options, which are captured in the stanza beginning with the [`<INITIATISED>` tag](./dump_gcdump.html#garbage-collection-configuration) 
 
 - stanzas that contain information about the different garbage collection cycles run, including the gc increments and gc operations that made up the gc cycle. 
 
-The vgc logs are event-based, recording each STW event as it happens. Operations that are running concurrently with application threads are not logged. However, concurrent operations run as part of a concurrent cycle, and these concurrent cycles begin and finish with STW events. So you can locate and analyze aspects of the concurrent cycles in the vgc logs that run concurrent events.  (For some garbage collectors, the concurrent cycle also includes an intermediate STW event).  
+The vgc logs are event-based, recording each STW event as it happens. Operations that are running concurrently with application threads are not logged. However, concurrent operations run as part of a concurrent cycle, and these concurrent cycles begin and finish with STW events. So you can locate and analyze aspects of the concurrent cycles in the vgc logs that run concurrent events. (For some garbage collectors, the concurrent cycle also includes intermediate STW events).  
 
-The highest level stanzas in the vgc log represent gc cycles and begin with xml tags that define the kickoff event and reason. With the exception of some of the more complex gc algorithims (such as the global marking phase gc of the balanced policy), a gc cycle, when complete, generally results in reclaimed memory for reuse. Each cycle consists of 1 or more gc increments and gc operations.  
+The highest level stanzas in the vgc log represent gc cycles and begin with xml tags that define the kickoff event and reason. Except for some of the more complex gc algorithms (such as the global marking phase gc of the balanced policy), a gc cycle, when complete, generally results in reclaimed memory for reuse. Each cycle consists of 1 or more gc increments and gc operations.  
 
-Events that make up a garbage collector cycle are listed in the stanza in a linear fashion, but are ‘nested’ via the use of a start and end tag to identify the start and end of an event. Details of the event are recorded either within tags nested in the event and/or are supplied as XML tag attributes. 
+Events that make up a garbage collector cycle are listed in the stanza in a linear fashion, but are ‘nested’ by a start and end tag that identify the start and end of an event. Details of the event are recorded in the XML attributes associated with the tag and also within tags that are nested within the gc event's start and end tags.
 
-The following table show the tagging used for the nested gc processes: 
+The following table shows the tagging that is used for the nested gc processes: 
 
 | GC Process   | Start and end tag in vgc log  | Details                                                         |
 |--------------|-------------------------------|-----------------------------------------------------------------|
@@ -56,9 +80,9 @@ The following table show the tagging used for the nested gc processes:
 | gc increment | `<gc-start>`, `<gc-end>`      | 1 or more gc increments make up a gc cycle                      |
 | gc operation | `<gc-op>`                     | 1 or more gc operations make up a gc increment. Examples of a gc operation include mark, sweep, scavenge.|
 
-**Note:** Gc operations are the smallest fragment in a vgc log. All details of a gc operation are logged using a single tag rather than a start and end tag.  
+**Note:** Gc operations are the smallest fragment in a vgc log. All details of a gc operation are logged by using a single tag rather than a start and end tags.  
 
-### Example: STW cycle  
+### An example of an STW cycle 
  
 An example output from the vgc log for a simple STW cycle for gencon is displayed in fig 1. 
 ```
@@ -162,24 +186,24 @@ An example output from the vgc log for a simple STW cycle for gencon is displaye
 
 <exclusive-end id="13" timestamp="2020-10-18T13:27:09.635" durationms="31.984" /> 
 ```
-We can perform a basic analysis of this STW cycle by taking a look at a few tags and xml attributes.  
+You can analyze this STW cycle by inspecting a few tags and xml attributes.  
 
-`<exclusive-start>` The STW cycle stanza begins with a triggering event, represented for STW cycles with a <exclusive-start> tag. The triggering event for the other type of gc cycle, a concurrent cycle, is recorded by the <concurrent-kickoff> tag. 
-
-
-`<af-start>` The reason for the triggering of this gc cycle is recorded by the <af-start> tag, indicating an allocation failure.  
-
-`<cycle-start>` The beginning of the gc cycle itself is recorded by the <cycle-start> tag and contains the XML attribute ‘type=scavenge’ to describe the gc involved in this gc cycle.  
+**`<exclusive-start>`** The STW cycle stanza begins with a triggering event, represented for STW cycles with a <exclusive-start> tag. The triggering event for the other type of gc cycle, a concurrent cycle, is recorded by the <concurrent-kickoff> tag. 
 
 
-**“timestamp”** and **“id”** Each event logged in the gc cycle stanza is labelled with a timestamp and also an id xml attribute, which increases incrementally with each event, so that you can use the id to search for particular events. 
+**`<af-start>`** The reason for the triggering of this gc cycle is recorded by the <af-start> tag, indicating an allocation failure.  
 
-`<gc-start>` The `<gc-start>` tag logs the beginning of a gc increment, in this case of type ‘scavenge’, nested within the gc cycle. 
+**`<cycle-start>`** The beginning of the gc cycle itself is recorded by the <cycle-start> tag and contains the XML attribute ‘type=scavenge’ to describe the gc involved in this gc cycle.  
 
-`<gc-op>` Nested within the gc increment is the <gc-op> tag, which logs information about the individual gc ops that make up the gc increment. In this case, only 1 operation, the scavenge operation, makes up the gc increment, and only 1 gc increment makes up this STW Cycle. In particular, a scavenge operation evacuates the local area of the heap in a single operation and so a single operation makes up the whole gc cycle. 
+
+**`timestamp`** and **`id`** Each event that is logged in the gc cycle stanza is labeled with a `timestamp` and `id` xml attribute. The `id` attribute increases incrementally with each event so that you can use the id to search for particular events. 
+
+**`<gc-start>`** The `<gc-start>` tag logs the beginning of a gc increment, in this case of type ‘scavenge’, nested within the gc cycle. 
+
+**`<gc-op>`** Nested within the gc increment is the <gc-op> tag, which logs information about the individual gc ops that make up the gc increment. In this case, only one operation, the scavenge operation, makes up the gc increment, and only one gc increment makes up this STW Cycle. In particular, a scavenge operation evacuates the local area of the heap in a single operation and so a single operation makes up the whole gc cycle. 
  
-Alternatively, a gc algorithm can involve multiple gc operations, such as mark, sweep, compact, copy. For a common gc of mark-sweep, the gc increment consists of 2 operations, mark and sweep, and this increment may be accompanied by other gc increments to make up a gc cycle, ie. The reclaiming of memory from start to finish. 
- 
-So this example is of a STW cycle that is triggered by an allocation failure that runs a single gc scavenge operation.  
+A gc algorithm can also involve multiple gc operations, such as a combination of mark, sweep, compact, or copy. For a common gc of mark-sweep, the gc increment consists of two operations, mark and sweep. This increment might be accompanied by other gc increments to make up a gc cycle that reclaims memory.
 
-To further understand how to read the vgc logs, proceed to the next section (Using the vgc log to troubleshoot)[]. 
+
+<!-- Add link to topics for analysing logs and tag definitions once they have been created -->
+<!-- ==== END OF TOPIC ==== cmdline_specifying.md ==== -->
