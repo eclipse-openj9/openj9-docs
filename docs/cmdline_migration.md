@@ -39,6 +39,7 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-Xcheck:jni`](xcheck.md)                                       | Runs additional checks for JNI functions during VM startup.                                                                                  |
 | [`-Xfuture`](xfuture.md)                                         | Turns on strict class-file format checks.                                                                                                    |
 | [`-Xint`](xint.md)                                               | Runs an application in interpreted-only mode.                                                                                                |
+| [`-Xlog`](xlog.md)                                                | Some forms of `-Xlog` that enable GC logging are recognized. (Equivalent to [`-Xverbosegclog`](xverbosegclog.md)).
 | [`-Xmn`](xmn.md)                                                 | Sets the initial and maximum size of the new area when using -Xgcpolicy:gencon.                                                              |
 | [`-Xms`](xms.md)                                                 | Sets the initial size of the heap. (Equivalent to `-XX:InitialHeapSize`)                                                                     |
 | [`-Xmx`](xms.md)                                                 | Specifies the maximum size of the object memory allocation pool. (Equivalent to `-XX:MaxHeapSize`)                                           |

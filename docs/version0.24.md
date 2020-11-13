@@ -27,7 +27,7 @@
 The following new features and notable changes since v 0.23.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [`-Xsyslog` replaces `-Xlog` option by default](#-xsyslog-replaces-xlog-option-by-default)
+- [`-Xsyslog` replaces `-Xlog` option by default](#-xsyslog-replaces-xlog-option-by-default-xlog-behavior-change)
 - [Support the `JAVA_OPTIONS` environment variable](#support-the-java_options-environment-variable)
 - [`-XX:[+|-]PortableSharedCache` option behavior update](#-xx-portablesharedcache-option-behavior-update)
 - [![Start of content that applies to AIX Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update](#-xx-shareanonymousclasses-option-behavior-update)
@@ -45,9 +45,14 @@ OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15. Binaries are available fro
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### `-Xsyslog` replaces `-Xlog` option by default
+### `-Xsyslog` replaces `-Xlog` option by default, `-Xlog` behavior change
 
-The [`-Xsyslog`](xsyslog.md) option is introduced which has the same behavior as the legacy OpenJ9 `-Xlog` option. By default the OpenJ9 legacy `-Xlog` option is no longer recognized. [`-XX:+LegacyXlogOption`](xxlegacyxlogoption.md) enables the legacy `-Xlog` option, which is equivalent to `-Xsyslog`. 
+Following the introduction of [JEP 158](https://openjdk.java.net/jeps/158) and to avoid confusion with the reference implementation, the [`-Xsyslog`](xsyslog.md) option supersedes the OpenJ9 [`-Xlog`](xlog.md) option for message logging. A new option, [`-XX:[+|-]LegacyXlogOption`](xxlegacyxlogoption.md) controls how the `-Xlog` option is processed when set on the command line.
+
+- Setting `-XX:-LegacyXlogOption` (default) causes the JVM to process the `-Xsyslog` option and process the `-Xlog` option only for GC log requests (`-Xlog:gc[:stderr|:file=<filename>]`).
+  - If `-Xlog` GC log requests are set, these options are mapped to the equivalent OpenJ9 verbose GC command line options. For more information, see
+[`-Xlog`](xlog.md).
+- Setting `-XX:+LegacyXLogOption`, processes the `-Xlog` option as an equivalent option to `-Xsyslog`.
 
 
 ### Support the JAVA_OPTIONS environment variable
