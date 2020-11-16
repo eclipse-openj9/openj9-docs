@@ -70,7 +70,7 @@ The vgc logs are event-based, recording each STW event as it happens. Operations
 
 The highest level stanzas in the vgc log represent gc cycles and begin with xml tags that define the kickoff event and reason. Except for some of the more complex gc algorithms (such as the global marking phase gc of the balanced policy), a gc cycle, when complete, generally results in reclaimed memory for reuse. Each cycle consists of 1 or more gc increments and gc operations.  
 
-Events that make up a garbage collector cycle are listed in the stanza in a linear fashion, but are ‘nested’ by a start and end tag that identify the start rather thanand end of an event. Details of the event are recorded in the XML attributes associated with the tag and also within tags that are nested within the gc event's start and end tags.
+Events that make up a garbage collector cycle are listed in the stanza in a linear fashion, but are ‘nested’ by a start and end tag that identify the start and end of an event. Details of the event are recorded in the XML attributes associated with the tag and also within tags that are nested within the gc event's start and end tags.
 
 The following table shows the tagging that is used for the nested gc processes: 
 
@@ -84,7 +84,7 @@ The following table shows the tagging that is used for the nested gc processes:
 
 ### An example of an STW cycle 
  
-An example output from the vgc log for a simple STW cycle for gencon is displayed in fig 1. 
+This example shows output of a simple STW gc cycle from the vgc log of a gencon policy collection: 
 ```
 <exclusive-start id="2" timestamp="2020-10-18T13:27:09.603" intervalms="1913.853"> 
 
@@ -188,19 +188,17 @@ An example output from the vgc log for a simple STW cycle for gencon is displaye
 ```
 You can analyze this STW cycle by inspecting a few tags and xml attributes.  
 
-**`<exclusive-start>`** The STW cycle stanza begins with a triggering event, represented for STW cycles with a <exclusive-start> tag. The triggering event for the other type of gc cycle, a concurrent cycle, is recorded by the <concurrent-kickoff> tag. 
+- **`<exclusive-start>`** The STW cycle stanza begins with a triggering event, represented for STW cycles with a <exclusive-start> tag. The triggering event for the other type of gc cycle, a concurrent cycle, is recorded by the `<concurrent-kickoff>` tag.
 
+- **`<af-start>`** The reason for the triggering of this gc cycle is recorded by the `<af-start>` tag, indicating an allocation failure.  
 
-**`<af-start>`** The reason for the triggering of this gc cycle is recorded by the <af-start> tag, indicating an allocation failure.  
+- **`<cycle-start>`** The beginning of the gc cycle itself is recorded by the `<cycle-start>` tag and contains the XML attribute `type=scavenge` to describe the gc involved in this gc cycle.  
 
-**`<cycle-start>`** The beginning of the gc cycle itself is recorded by the <cycle-start> tag and contains the XML attribute ‘type=scavenge’ to describe the gc involved in this gc cycle.  
+- **`timestamp`** and **`id`** Each event that is logged in the gc cycle stanza is labeled with a `timestamp` and `id` xml attribute. The `id` attribute increases incrementally with each event so that you can use the id to search for particular events. 
 
+- **`<gc-start>`** The `<gc-start>` tag logs the beginning of a gc increment, in this case of type `scavenge`, nested within the gc cycle. 
 
-**`timestamp`** and **`id`** Each event that is logged in the gc cycle stanza is labeled with a `timestamp` and `id` xml attribute. The `id` attribute increases incrementally with each event so that you can use the id to search for particular events. 
-
-**`<gc-start>`** The `<gc-start>` tag logs the beginning of a gc increment, in this case of type ‘scavenge’, nested within the gc cycle. 
-
-**`<gc-op>`** Nested within the gc increment is the <gc-op> tag, which logs information about the individual gc ops that make up the gc increment. In this case, only one operation, the scavenge operation, makes up the gc increment, and only one gc increment makes up this STW Cycle. In particular, a scavenge operation evacuates the local area of the heap in a single operation and so a single operation makes up the whole gc cycle. 
+- **`<gc-op>`** Nested within the gc increment is the `<gc-op>` tag, which logs information about the individual gc ops that make up the gc increment. In this case, only one operation, the scavenge operation, makes up the gc increment, and only one gc increment makes up this STW Cycle. In particular, a scavenge operation evacuates the local area of the heap in a single operation and so a single operation makes up the whole gc cycle. 
  
 A gc algorithm can also involve multiple gc operations, such as a combination of mark, sweep, compact, or copy. For a common gc of mark-sweep, the gc increment consists of two operations, mark and sweep. This increment might be accompanied by other gc increments to make up a gc cycle that reclaims memory.
 
