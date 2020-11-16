@@ -70,7 +70,7 @@ The vgc logs are event-based, recording each STW event as it happens. Operations
 
 The highest level stanzas in the vgc log represent gc cycles and begin with xml tags that define the kickoff event and reason. Except for some of the more complex gc algorithms (such as the global marking phase gc of the balanced policy), a gc cycle, when complete, generally results in reclaimed memory for reuse. Each cycle consists of 1 or more gc increments and gc operations.  
 
-Events that make up a garbage collector cycle are listed in the stanza in a linear fashion, but are ‘nested’ by a start and end tag that identify the start and end of an event. Details of the event are recorded in the XML attributes associated with the tag and also within tags that are nested within the gc event's start and end tags.
+Events that make up a garbage collector cycle are listed in the stanza in a linear fashion, but are ‘nested’ by a start and end tag that identify the start rather thanand end of an event. Details of the event are recorded in the XML attributes associated with the tag and also within tags that are nested within the gc event's start and end tags.
 
 The following table shows the tagging that is used for the nested gc processes: 
 
@@ -80,7 +80,7 @@ The following table shows the tagging that is used for the nested gc processes:
 | gc increment | `<gc-start>`, `<gc-end>`      | 1 or more gc increments make up a gc cycle                      |
 | gc operation | `<gc-op>`                     | 1 or more gc operations make up a gc increment. Examples of a gc operation include mark, sweep, scavenge.|
 
-**Note:** Gc operations are the smallest fragment in a vgc log. All details of a gc operation are logged by using a single tag rather than a start and end tags.  
+**Note:** Gc operations are the smallest fragment in a vgc log. All details of a gc operation are logged by using a single tag rather than start and end tags.  
 
 ### An example of an STW cycle 
  
