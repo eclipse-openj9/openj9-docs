@@ -31,6 +31,8 @@ The following new features and notable changes since v 0.22.0 are included in th
 - [`-XX:[+|-]PortableSharedCache` option behavior update](#-xx-portablesharedcache-option-behavior-update)
 - [`-XX:[+|-]IdleTuningCompactOnIdle` option now inactive](#-xx-idletuningcompactonidle-option-now-inactive)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
+- [Extended platform support for the JITServer technology preview](#extended-platform-support-for-the-jitserver-technology-preview)
+
 
 ## Features and changes
 
@@ -58,10 +60,12 @@ For compatibility, the following OpenJDK HotSpot options are now supported by Op
 
 - [`-XX:[+|-]AlwaysPreTouch`](xxalwayspretouch.md)
 
+### Extended platform support for the JITServer technology preview
+
+Platform support for the JITServer technology preview is now extended to 64-bit Linux&reg; on IBM Power&reg; systems, and 64-bit Linux on IBM Z&reg; systems. JITServer decouples the JIT compiler from the OpenJ9 VM, freeing up CPU and memory for an application. JITServer runs in its own process, either locally or on a remote machine, where resources can be separately managed. This preview was initially introduced in Eclipse OpenJ9 V0.18.1 for Linux on 64-bit x86 systems. For more information, see [JITServer technology (technical preview)](jitserver.md).
 
 ## Full release information
 
 To see a complete list of changes between Eclipse OpenJ9 v 0.22.0 and v 0.23.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.23/0.23.md).
 
 <!-- ==== END OF TOPIC ==== version0.23.md ==== -->
-

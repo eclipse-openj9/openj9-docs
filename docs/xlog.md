@@ -24,68 +24,7 @@
 
 # -Xlog 
 
-Enables message logging. 
+To control logging to the operating system message log, use [`-Xsyslog`](xsyslog.md). When [`-XX:-LegacyXlogOption`](xxlegacyxlogoption.md) is set, which is the default, the `-Xlog` option is not recognized. When `-XX:+LegacyXlogOption` is set, `-Xlog` is equivalent to `-Xsyslog`.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Changes made to message logging using the `-Xlog` option do not affect messages written to the standard error stream (`stderr`).
-
-## Syntax
-
-        -Xlog:<parameter>{,<parameter>}
-
-## Parameters
-
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** The parameters `all`, `none` and `help` must be used on their own and cannot be combined. However, the other parameters can be grouped. For example, to include error, vital and warning messages use `-Xlog:error,vital,warn`. 
-
-For message details see [OpenJ9 VM messages](messages_intro.md#jvm-messages).
-
-### `help`
-
-        -Xlog:help
-
-: Gives details the available parameters. (This parameter cannot be combined with others.)
-
-### `error`
-
-        -Xlog:error
-
-: Turns on logging for all OpenJ9 VM error messages (default).
-
-### `vital`
-
-        -Xlog:vital
-
-: Turns on logging for selected information messages `JVMDUMP006I`, `JVMDUMP032I`, and `JVMDUMP033I`, which provide valuable additional information about dumps produced by the OpenJ9 VM (default).
-
-### `info`
-
-        -Xlog:info
-
-: Turns on logging for all OpenJ9 VM information messages.
-
-### `warn`
-
-        -Xlog:warn
-
-: Turns on logging for all OpenJ9 VM warning messages.
-
-### `config`
-
-        -Xlog:config
-
-: Turns on logging for all OpenJ9 VM configuration messages.
-
-### `all`
-
-        -Xlog:all
-
-: Turns on logging for all OpenJ9 VM messages. (This parameter cannot be combined with others.)
-
-### `none`
-
-        -Xlog:none
-
-: Turns off logging for all OpenJ9 VM messages. (This parameter cannot be combined with others.)
-
-
-<!-- ==== END OF TOPIC ==== xlog.md ==== -->
+<!-- ==== END OF TOPIC ==== xsyslog.md ==== -->
 
