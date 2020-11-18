@@ -25,8 +25,8 @@ import groovy.json.JsonSlurper;
 
 HTTP = 'https://'
 OPENJ9_STAGING_REPO = 'github.com/eclipse/openj9-docs-staging'
-CREDENTIAL_ID = 'b6987280-6402-458f-bdd6-7affc2e360d4'
-API_CRED = 'b87c83da-2209-4958-9666-6a5b0e9a071b'
+CREDENTIAL_ID = 'github-bot'
+API_CRED = 'github-bot-token'
 PUSH_BRANCH = 'master'
 
 def cleanupPrs = []
@@ -48,7 +48,7 @@ timeout(time: 6, unit: 'HOURS') {
                     prArray = prList.tokenize('\n')
                     println "PRs currently staged: ${prArray}"
 
-                    withCredentials([string(credentialsId: 'b87c83da-2209-4958-9666-6a5b0e9a071b', variable: 'token')]) {
+                    withCredentials([string(credentialsId: API_CRED, variable: 'token')]) {
                         for (pr in prArray) {
                             retry(3) {
                                 def prJSON = sh (returnStdout: true, script: "curl -u genie-openj9:${token} https://api.github.com/repos/eclipse/openj9-docs/pulls/${pr} 2>/dev/null").trim()
