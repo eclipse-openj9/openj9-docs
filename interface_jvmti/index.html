@@ -2962,6 +2962,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xsyslog/" title="-Xsyslog" class="md-nav__link">
+      -Xsyslog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xtgc/" title="-Xtgc" class="md-nav__link">
       -Xtgc
     </a>
@@ -3420,6 +3432,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li class="md-nav__item">
     <a href="../xxlazysymbolresolution/" title="-XX:[+|-]LazySymbolResolution" class="md-nav__link">
       -XX:[+|-]LazySymbolResolution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxlegacyxlogoption/" title="-XX:[+|-]LegacyXLogOption" class="md-nav__link">
+      -XX:[+|-]LegacyXLogOption
     </a>
   </li>
 
@@ -4870,7 +4894,7 @@ Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_GET_MEMORY_
 <p>You can query VM log options by using the <code>QueryVmLogOptions()</code> API:</p>
 <pre><code>jvmtiError QueryVmLogOptions(jvmtiEnv* jvmti_env, jint buffer_size, void* options, jint* data_size_ptr)
 </code></pre>
-<p>This extension returns the current log options as an ASCII string. The syntax of the string is the same as the <code>-Xlog</code> command-line option, with the initial <code>-Xlog:</code> omitted. For example, the string "error,warn" indicates that the VM is set to log error and warning messages only. For more information, see <a href="../xlog/"><code>-Xlog</code></a>.</p>
+<p>This extension returns the current log options as an ASCII string. The syntax of the string is the same as the <a href="../xsyslog/"><code>-Xsyslog</code></a> command-line option, with the initial <code>-Xsyslog:</code> omitted. For example, the string "error,warn" indicates that the VM is set to log error and warning messages only. For more information, see <a href="../xsyslog/"><code>-Xsyslog</code></a>.</p>
 <p><strong>Parameters</strong></p>
 <ul>
 <li><code>jvmti_env</code>: A pointer to the JVMTI environment.  </li>
@@ -4894,7 +4918,7 @@ Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_QUERY_VM_LO
 <p>You can set VM log options by using the <code>SetVmLogOptions()</code> API:</p>
 <pre><code>jvmtiError SetVmLogOptions(jvmtiEnv* jvmti_env, char* options_buffer)
 </code></pre>
-<p>The log option is passed in as an ASCII character string. Use the same syntax as the <code>-Xlog</code> command-line option, with the initial <code>-Xlog:</code> omitted. For example, to set the VM to log error and warning messages, pass in a string containing "error,warn". For more information, see <a href="../xlog/"><code>-Xlog</code></a>.</p>
+<p>The log option is passed in as an ASCII character string. Use the same syntax as the <a href="../xsyslog/"><code>-Xsyslog</code></a> command-line option, with the initial <code>-Xsyslog:</code> omitted. For example, to set the VM to log error and warning messages, pass in a string containing "error,warn". For more information, see <a href="../xsyslog/"><code>-Xsyslog</code></a>.</p>
 <p><strong>Parameters</strong></p>
 <ul>
 <li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
@@ -4906,7 +4930,7 @@ Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_QUERY_VM_LO
 <code>JVMTI_ERROR_OUT_OF_MEMORY</code>: There is insufficient system memory to process the request.<br />
 <code>JVMTI_ERROR_INVALID_ENVIRONMENT</code>: The <code>jvmti_env</code> parameter is invalid.<br />
 <code>JVMTI_ERROR_WRONG_PHASE</code>: The extension has been called outside the JVMTI live phase.<br />
-<code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code>: The parameter option contains an invalid <code>-Xlog</code> string.</p>
+<code>JVMTI_ERROR_ILLEGAL_ARGUMENT</code>: The parameter option contains an invalid <code>-Xsyslog</code> string.</p>
 <p><strong>Identifiers</strong></p>
 <p>JVMTI Extension Function identifier: <code>com.ibm.SetVmLogOptions</code><br />
 Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_SET_VM_LOG_OPTIONS</code></p>

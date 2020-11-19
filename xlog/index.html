@@ -2051,9 +2051,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        -Xlog
+      </label>
+    
     <a href="./" title="-Xlog" class="md-nav__link md-nav__link--active">
       -Xlog
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2700,6 +2736,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xsyslog/" title="-Xsyslog" class="md-nav__link">
+      -Xsyslog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xtgc/" title="-Xtgc" class="md-nav__link">
       -Xtgc
     </a>
@@ -3158,6 +3206,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li class="md-nav__item">
     <a href="../xxlazysymbolresolution/" title="-XX:[+|-]LazySymbolResolution" class="md-nav__link">
       -XX:[+|-]LazySymbolResolution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxlegacyxlogoption/" title="-XX:[+|-]LegacyXLogOption" class="md-nav__link">
+      -XX:[+|-]LegacyXLogOption
     </a>
   </li>
 
@@ -3825,6 +3885,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
   
   
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3865,7 +3948,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xlog">-Xlog</h1>
-<p>To control logging to the operating system message log, use <a href="../xsyslog/"><code>-Xsyslog</code></a>. When <a href="../xxlegacyxlogoption/"><code>-XX:-LegacyXlogOption</code></a> is set, which is the default, the <code>-Xlog</code> option is not recognized. When <code>-XX:+LegacyXlogOption</code> is set, <code>-Xlog</code> is equivalent to <code>-Xsyslog</code>.</p>
+<p>To control logging to the operating system message log, use <a href="../xsyslog/"><code>-Xsyslog</code></a>.
+- When <a href="../xxlegacyxlogoption/"><code>-XX:-LegacyXlogOption</code></a> is set, which is the default, the <code>-Xlog</code> option is processed for compatibility as described in the explanation.
+- When <code>-XX:+LegacyXlogOption</code> is set, <code>-Xlog</code> is equivalent to <code>-Xsyslog</code>.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code>    -Xlog:gc[:stderr|:file=&lt;filename&gt;]
+</code></pre>
+<h2 id="explanation">Explanation</h2>
+<p><code>-Xlog:gc</code> or <code>-Xlog:gc:stderr</code> is equivalent to <a href="../xverbosegclog/"><code>-Xverbosegclog</code></a>. <code>-Xlog:gc:file=&lt;filename&gt;</code> is equivalent to <code>-Xverbosegclog:&lt;filename&gt;</code>. The tokens <code>%p</code> and <code>%t</code> are recognized in the <code>&lt;filename&gt;</code> for compatibility. <code>%p</code> is replaced with the process ID and is equivalent to the <a href="../xdump/#dump-agent-tokens">dump agent token <code>%pid</code></a>. <code>%t</code> is replaced with the dump agent tokens <code>%Y-%m-%d_%H-%M-%S</code>.</p>
+<p>Other forms of <code>-Xlog</code> which should enable GC logging are also recognized, such as <code>-Xlog</code> or <code>-Xlog:all</code>, but since these options are intended to enable other forms of logging which are not supported, a warning is output <code>JVMJ9VM007W Command-line option unrecognised: &lt;option&gt;</code> in addition to enabling verbose GC logging . Similarly <code>-Xlog:gc:stdout</code> enables <code>-Xverbosegclog</code> but also outputs the warning. The <code>-Xverbosegclog</code> output goes to <code>stderr</code>, logging to <code>stdout</code> is not supported.</p>
 <!-- ==== END OF TOPIC ==== xsyslog.md ==== -->
                 
                   

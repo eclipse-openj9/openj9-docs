@@ -396,8 +396,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#-xsyslog-replaces-xlog-option-by-default" class="md-nav__link">
-    -Xsyslog replaces -Xlog option by default
+  <a href="#-xsyslog-replaces-xlog-option-by-default-xlog-behavior-change" class="md-nav__link">
+    -Xsyslog replaces -Xlog option by default, -Xlog behavior change
   </a>
   
 </li>
@@ -2775,6 +2775,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
+    <a href="../xsyslog/" title="-Xsyslog" class="md-nav__link">
+      -Xsyslog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../xtgc/" title="-Xtgc" class="md-nav__link">
       -Xtgc
     </a>
@@ -3233,6 +3245,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <li class="md-nav__item">
     <a href="../xxlazysymbolresolution/" title="-XX:[+|-]LazySymbolResolution" class="md-nav__link">
       -XX:[+|-]LazySymbolResolution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xxlegacyxlogoption/" title="-XX:[+|-]LegacyXLogOption" class="md-nav__link">
+      -XX:[+|-]LegacyXLogOption
     </a>
   </li>
 
@@ -3919,8 +3943,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#-xsyslog-replaces-xlog-option-by-default" class="md-nav__link">
-    -Xsyslog replaces -Xlog option by default
+  <a href="#-xsyslog-replaces-xlog-option-by-default-xlog-behavior-change" class="md-nav__link">
+    -Xsyslog replaces -Xlog option by default, -Xlog behavior change
   </a>
   
 </li>
@@ -4007,7 +4031,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The following new features and notable changes since v 0.23.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
-<li><a href="#-xsyslog-replaces-xlog-option-by-default"><code>-Xsyslog</code> replaces <code>-Xlog</code> option by default</a></li>
+<li><a href="#-xsyslog-replaces-xlog-option-by-default-xlog-behavior-change"><code>-Xsyslog</code> replaces <code>-Xlog</code> option by default</a></li>
 <li><a href="#support-the-java_options-environment-variable">Support the <code>JAVA_OPTIONS</code> environment variable</a></li>
 <li><a href="#-xx-portablesharedcache-option-behavior-update"><code>-XX:[+|-]PortableSharedCache</code> option behavior update</a></li>
 <li><a href="#-xx-shareanonymousclasses-option-behavior-update"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> <code>-XX:[+|-]ShareAnonymousClasses</code> option behavior update</a></li>
@@ -4021,8 +4045,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk15&amp;jvmVariant=openj9">OpenJDK version 15</a></li>
 </ul>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
-<h3 id="-xsyslog-replaces-xlog-option-by-default"><code>-Xsyslog</code> replaces <code>-Xlog</code> option by default</h3>
-<p>The <a href="../xsyslog/"><code>-Xsyslog</code></a> option is introduced which has the same behavior as the legacy OpenJ9 <code>-Xlog</code> option. By default the OpenJ9 legacy <code>-Xlog</code> option is no longer recognized. <a href="../xxlegacyxlogoption/"><code>-XX:+LegacyXlogOption</code></a> enables the legacy <code>-Xlog</code> option, which is equivalent to <code>-Xsyslog</code>. </p>
+<h3 id="-xsyslog-replaces-xlog-option-by-default-xlog-behavior-change"><code>-Xsyslog</code> replaces <code>-Xlog</code> option by default, <code>-Xlog</code> behavior change</h3>
+<p>Following the introduction of <a href="https://openjdk.java.net/jeps/158">JEP 158</a> and to avoid confusion with the reference implementation, the <a href="../xsyslog/"><code>-Xsyslog</code></a> option supersedes the OpenJ9 <a href="../xlog/"><code>-Xlog</code></a> option for message logging. A new option, <a href="../xxlegacyxlogoption/"><code>-XX:[+|-]LegacyXlogOption</code></a> controls how the <code>-Xlog</code> option is processed when set on the command line.</p>
+<ul>
+<li>Setting <code>-XX:-LegacyXlogOption</code> (default) causes the JVM to process the <code>-Xsyslog</code> option and process the <code>-Xlog</code> option only for GC log requests (<code>-Xlog:gc[:stderr|:file=&lt;filename&gt;]</code>).</li>
+<li>If <code>-Xlog</code> GC log requests are set, these options are mapped to the equivalent OpenJ9 verbose GC command line options. For more information, see
+<a href="../xlog/"><code>-Xlog</code></a>.</li>
+<li>Setting <code>-XX:+LegacyXLogOption</code>, processes the <code>-Xlog</code> option as an equivalent option to <code>-Xsyslog</code>.</li>
+</ul>
 <h3 id="support-the-java_options-environment-variable">Support the JAVA_OPTIONS environment variable</h3>
 <p>Support the <code>JAVA_OPTIONS</code> environment variable for compatibility with Hotspot. <code>JAVA_OPTIONS</code> can be used to set command line options as described in <a href="../cmdline_specifying/">OpenJ9 command-line options</a> and <a href="../env_var/">Environment variables</a>. Options specified in <code>JAVA_OPTIONS</code> can be overridden by <code>OPENJ9_JAVA_OPTIONS</code>.</p>
 <h3 id="-xx-portablesharedcache-option-behavior-update"><code>-XX:[+|-]PortableSharedCache</code> option behavior update</h3>
