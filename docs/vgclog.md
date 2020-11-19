@@ -62,7 +62,7 @@ The Verbose garbage collection logs are printed in XML format and consist of the
 
 - stanzas that contain information about the different garbage collection cycles run, including the GC increments and GC operations that made up the GC cycle. 
 
-The verbose GC logs are event-based, recording each *stop-the-world* event as it happens. Operations that are running concurrently with application threads are not logged. However, concurrent operations run as part of a concurrent cycle, and these concurrent cycles begin and finish with *stop-the-world* events. So you can locate and analyze aspects of the concurrent cycles in the verbose GC logs that run concurrent events. (For some garbage collectors, the concurrent cycle also includes intermediate *stop-the-world* events).  
+The verbose GC logs are event-based, recording each *stop-the-world* event as it happens. While *stop-the-world* cycles are fully logged, some aspects of concurrent cycles are also logged, even though operations that are running concurrently with application threads are not logged. Concurrent operations run as part of a concurrent cycle, and these concurrent cycles begin and finish with *stop-the-world* events - events which are logged. (For some garbage collectors, the concurrent cycle also includes intermediate *stop-the-world* events). In addition, for some types of concurrent collections, verbose GC logs also include information about when certain targets have been reached. 
 
 The highest level stanzas in the verbose GC log represent GC cycles and begin with xml tags that define the kickoff event and reason. Except for some of the more complex GC algorithms (such as the global marking phase GC of the balanced policy), a GC cycle, when complete, generally results in reclaimed memory for reuse. Each cycle consists of 1 or more GC increments and GC operations.  
 
@@ -186,7 +186,7 @@ You can analyze this *stop-the-world* cycle by inspecting a few tags and xml att
 
 - **`<exclusive-start>`** The *stop-the-world* cycle stanza begins with a triggering event, represented for *stop-the-world* cycles with a <exclusive-start> tag. The triggering event for the other type of GC cycle, a concurrent cycle, is recorded by the `<concurrent-kickoff>` tag.
 
-- **`<af-start>`** The reason for the triggering of this GC cycle is recorded by the `<af-start>` tag, indicating an allocation failure.  
+- **`<af-start>`** The reason for the triggering of this GC cycle is recorded by theso you can `<af-start>` tag, indicating an allocation failure.  
 
 - **`<cycle-start>`** The beginning of the GC cycle itself is recorded by the `<cycle-start>` tag and contains the XML attribute `type=scavenge` to describe the GC involved in this GC cycle.  
 
