@@ -595,7 +595,7 @@ You can query VM log options by using the `QueryVmLogOptions()` API:
 
     jvmtiError QueryVmLogOptions(jvmtiEnv* jvmti_env, jint buffer_size, void* options, jint* data_size_ptr)
 
-This extension returns the current log options as an ASCII string. The syntax of the string is the same as the [`-Xsyslog`](xsyslog.md) command-line option, with the initial `-Xsyslog:` omitted. For example, the string "error,warn" indicates that the VM is set to log error and warning messages only. For more information, see [`-Xsyslog`](xsyslog.md).
+This extension returns the current log options as an ASCII string. The syntax of the string is the same as the `-Xsyslog` command-line option, with the initial `-Xsyslog:` omitted. For example, the string "error,warn" indicates that the VM is set to log error and warning messages only. For more information, see [`-Xsyslog`](xsyslog.md).
 
 **Parameters**
 
@@ -627,7 +627,7 @@ You can set VM log options by using the `SetVmLogOptions()` API:
 
     jvmtiError SetVmLogOptions(jvmtiEnv* jvmti_env, char* options_buffer)
 
-The log option is passed in as an ASCII character string. Use the same syntax as the [`-Xsyslog`](xsyslog.md) command-line option, with the initial `-Xsyslog:` omitted. For example, to set the VM to log error and warning messages, pass in a string containing "error,warn". For more information, see [`-Xsyslog`](xsyslog.md).
+The log option is passed in as an ASCII character string. Use the same syntax as the `-Xsyslog` command-line option, with the initial `-Xsyslog:` omitted. For example, to set the VM to log error and warning messages, pass in a string containing "error,warn". For more information, see [`-Xsyslog`](xsyslog.md).
 
 **Parameters**
 
