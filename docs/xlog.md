@@ -24,7 +24,19 @@
 
 # -Xlog 
 
-To control logging to the operating system message log, use [`-Xsyslog`](xsyslog.md). When [`-XX:-LegacyXlogOption`](xxlegacyxlogoption.md) is set, which is the default, the `-Xlog` option is not recognized. When `-XX:+LegacyXlogOption` is set, `-Xlog` is equivalent to `-Xsyslog`.
+To control logging to the operating system message log, use [`-Xsyslog`](xsyslog.md).
+- When [`-XX:-LegacyXlogOption`](xxlegacyxlogoption.md) is set, which is the default, the `-Xlog` option is processed for compatibility as described in the explanation.
+- When `-XX:+LegacyXlogOption` is set, `-Xlog` is equivalent to `-Xsyslog`.
+
+## Syntax
+
+        -Xlog:gc[:stderr|:file=<filename>]
+
+## Explanation
+
+`-Xlog:gc` or `-Xlog:gc:stderr` is equivalent to [`-Xverbosegclog`](xverbosegclog.md). `-Xlog:gc:file=<filename>` is equivalent to `-Xverbosegclog:<filename>`. The tokens `%p` and `%t` are recognized in the `<filename>` for compatibility. `%p` is replaced with the process ID and is equivalent to the [dump agent token `%pid`](xdump.md#dump-agent-tokens). `%t` is replaced with the dump agent tokens `%Y-%m-%d_%H-%M-%S`.
+
+Other forms of `-Xlog` which should enable GC logging are also recognized, such as `-Xlog` or `-Xlog:all`, but since these options are intended to enable other forms of logging which are not supported, a warning is output `JVMJ9VM007W Command-line option unrecognised: <option>` in addition to enabling verbose GC logging . Similarly `-Xlog:gc:stdout` enables `-Xverbosegclog` but also outputs the warning. The `-Xverbosegclog` output goes to `stderr`, logging to `stdout` is not supported.
 
 <!-- ==== END OF TOPIC ==== xsyslog.md ==== -->
 

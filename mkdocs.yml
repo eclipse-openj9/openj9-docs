@@ -317,6 +317,7 @@ nav:
             - "-Xsoftrefthreshold"                                               : xsoftrefthreshold.md
             - "-Xss"                                                             : xss.md
             - "-Xssi"                                                            : xss.md                             # redirect
+            - "-Xsyslog"                                                         : xsyslog.md
             - "-Xtgc"                                                            : xtgc.md
             - "-Xthr"                                                            : xthr.md
             - "-XtlhPrefetch"                                                    : xtlhprefetch.md
@@ -356,6 +357,7 @@ nav:
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
             - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
+            - "-XX:[+|-]LegacyXLogOption"                                        : xxlegacyxlogoption.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
             - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
             - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
