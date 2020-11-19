@@ -4122,7 +4122,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="garbage-collection">Garbage collection</h1>
-<p>The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on an area of memory that is reserved for VM processing called the Java heap. </p>
+<p>The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on an area of memory that is reserved for VM processing called the Java heap.</p>
 <p>The Allocator assigns areas of the Java heap for Java objects. See <a href="../allocator/">Memory allocation</a> for more information about the Allocator.</p>
 <h2 id="the-garbage-collector">The garbage collector</h2>
 <p>To prevent applications running out of memory, objects in the Java heap that are no longer required must be reclaimed. This process is known as garbage collection. When garbage is collected, the garbage collector must obtain exclusive access to the heap, which causes an application to pause while the clean up is done. This pause is often referred to as a <em>stop-the-world</em> pause because an application must halt until the process completes. In general, the first step in the GC process is to mark the objects that are reachable, which means they are still in use. The next step is to sweep away the unmarked objects to reclaim memory. The last step, which isn't always required unless the heap has become very fragmented, is to compact the heap.</p>
@@ -4191,32 +4191,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The local GC scavenge reduces pause times by freqently reclaiming memory in the <em>nursery</em> area which, for a transactional application with many short-lived objects, has the most recyclable space. However, over time the <em>tenure</em> area might become full. So, whilst a local GC scavenge process is operating on the <em>nursery</em> area, a concurrent global GC process also runs alongside normal program execution to mark and remove unreachable objects from the <em>tenure</em> area. These two GC approaches combine to provide a good trade-off between shorter pause times and consistent throughput.</p>
 <h4 id="concurrent-scavenge">Concurrent Scavenge</h4>
 <p>A special mode of the <code>gencon</code> policy is known as <em>Concurrent Scavenge</em>, which aims to minimize the time spent in stop-the-world pauses by collecting nursery garbage in parallel with running application threads. To enable Concurrent Scavenge, see <a href="../xgc/#concurrentscavenge">-Xgc:concurrentScavenge</a>.</p>
-<p>This mode can be enabled with hardware-based support and software-based support: </p>
+<p>This mode can be enabled with hardware-based support and software-based support:</p>
 <ul>
 <li>
-<p><strong>Hardware-based support: (Linux on IBM Z&reg; and z/OS&reg;)</strong> This mode works on the IBM z14™ and later mainframe system with the Guarded Storage (GS) Facility. The GS Facility provides hardware-based support to detect when potentially stale references to objects are accessed by an application. This means that the garbage collector can start processing objects in parts of the heap without halting an application because the GS Facility is on hand to spot accesses to an object and send a notification. The object that was ready to be swept away can be moved, and references to it can be reset. You can read more about this mode in the following blog posts:</p>
-<ul>
-<li><a href="https://developer.ibm.com/javasdk/2017/09/18/reducing-garbage-collection-pause-times-concurrent-scavenge-guarded-storage-facility/">Reducing Garbage Collection pause times with Concurrent Scavenge and the Guarded Storage Facility</a></li>
-<li><a href="https://developer.ibm.com/javasdk/2017/09/25/concurrent-scavenge-using-guarded-storage-facility-works/">How Concurrent Scavenge using the Guarded Storage Facility Works</a></li>
-</ul>
+<p><strong>Hardware-based support: (Linux on IBM Z&reg; and z/OS&reg;)</strong> This mode works on the IBM z14™ and later mainframe system with the Guarded Storage (GS) Facility. The GS Facility provides hardware-based support to detect when potentially stale references to objects are accessed by an application. This means that the garbage collector can start processing objects in parts of the heap without halting an application because the GS Facility is on hand to spot accesses to an object and send a notification. The object that was ready to be swept away can be moved, and references to it can be reset.</p>
 </li>
 <li>
-<p><strong>Software-based support: (64-bit: Linux on (x86-64, POWER, IBM Z&reg;), AIX&reg;, macOS&reg;, and z/OS&reg;)</strong> With software-based support, <em>Concurrent Scavenge</em> can be enabled without any pre-requisite hardware although the performance throughput is not as good as hardware-based support.</p>
+<p><strong>Software-based support: (64-bit: Linux on (x86-64, POWER, IBM Z&reg;), AIX&reg;, macOS&reg;, and z/OS&reg;)</strong> With software-based support, Concurrent Scavenge can be enabled without any pre-requisite hardware although the performance throughput is not as good as hardware-based support.</p>
 </li>
 </ul>
+<p>More information about Concurrent Scavenge mode can be found in the blog post <a href="https://blog.openj9.org/2019/03/25/concurrent-scavenge-garbage-collection-policy/">Concurrent Scavenge Garbage Collection Policy</a>.</p>
 <h3 id="balanced-policy"><code>balanced</code> policy</h3>
-<p>The Balanced GC policy (<a href="../xgcpolicy/#balanced"><code>-Xgcpolicy:balanced</code></a>) evens out pause times and reduces the overhead of some of the costlier operations typically associated with garbage collection. It divides the Java heap into regions, which are managed individually to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates. </p>
+<p>The Balanced GC policy (<a href="../xgcpolicy/#balanced"><code>-Xgcpolicy:balanced</code></a>) evens out pause times and reduces the overhead of some of the costlier operations typically associated with garbage collection. It divides the Java heap into regions, which are managed individually to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates.</p>
 <ul>
 <li>
-<p>If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance. </p>
+<p>If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance.</p>
 </li>
 <li>
-<p>If you are using large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), the Balanced policy might further improve application throughput. </p>
+<p>If you are using large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), the Balanced policy might further improve application throughput.</p>
 </li>
 </ul>
-<p>However, even though pause times are typically evened out across GC operations, actual pause times are affected by object allocation rates, object survival rates, and fragmentation levels within the heap, and cannot therefore be bound to a certain maximum nor can a certain utilization level be guaranteed. </p>
+<p>However, even though pause times are typically evened out across GC operations, actual pause times are affected by object allocation rates, object survival rates, and fragmentation levels within the heap, and cannot therefore be bound to a certain maximum nor can a certain utilization level be guaranteed.</p>
 <p>During VM startup, the GC divides the heap memory into regions of equal size. These regions remain static for the lifetime of the VM and are the basic unit of garbage collection and allocation operations. For example, when the heap is expanded or contracted, the memory committed or released corresponds to a certain number of regions. Although the Java heap is a contiguous range of memory addresses, any region within that range can be committed or released as required. This enables the Balanced GC to contract the heap more dynamically and aggressively than other garbage collectors, which typically require the committed portion of the heap to be contiguous.</p>
-<p>Regions impose a maximum object size. Objects are always allocated within the bounds of a single region and are never permitted to span regions. The region size is always a power of two; for example, 512 KB, 1 MB, and so on (where KB is 2<sup>10</sup> bytes and MB is 2<sup>20</sup> bytes). The region size is selected at startup based on the maximum heap size. The collector chooses the smallest power of two which will result in less than 2048 regions, with a minimum region size of 512 KB. Except for small heaps (less than about 512 MB) the VM aims to have between 1024 and 2047 regions. </p>
+<p>Regions impose a maximum object size. Objects are always allocated within the bounds of a single region and are never permitted to span regions. The region size is always a power of two; for example, 512 KB, 1 MB, and so on (where KB is 2<sup>10</sup> bytes and MB is 2<sup>20</sup> bytes). The region size is selected at startup based on the maximum heap size. The collector chooses the smallest power of two which will result in less than 2048 regions, with a minimum region size of 512 KB. Except for small heaps (less than about 512 MB) the VM aims to have between 1024 and 2047 regions.</p>
 <p>For further information see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_balanced.html">Balanced Garbage Collection policy</a>.</p>
 <!--
 ![The diagram is explained in the surrounding text](./cr/balanced_gc_regions1.png "Region structure and characteristics found in the object heap")
@@ -4226,10 +4223,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Most objects are easily contained within the minimum region size of 512 KB. However, some large arrays might require more memory than is available in a single region. To support such arrays, the Balanced GC uses an <strong>arraylet</strong> representation to more effectively store large arrays in the heap. (Arraylets are also used by the Metronome GC; both Balanced and Metronome GC policies are region-based garbage collectors.)</p>
 <p>Arraylets have a <strong>spine</strong>, which contains the class pointer and size, and <strong>leaves</strong>, which contain the data associated with the array. The spine also contains <strong>arrayoids</strong> which are pointers to the respective arraylet leaves, as shown in the following diagram.</p>
 <p><img alt="The diagram is explained in the surrounding text" src="../cr/arraylet_diagram1.png" title="Arraylet diagram" /></p>
-<p>There are a number of advantages to using arraylets. </p>
+<p>There are a number of advantages to using arraylets.</p>
 <ul>
 <li>
-<p>Because the heap tends to fragment over time, other collector policies might be forced to run a global garbage collection and defragmentation (compaction) phase to recover sufficient contiguous memory to allocate a large array. By removing the requirement for large arrays to be allocated in contiguous memory, the Balanced GC is more likely to be able to satisfy such an allocation without requiring unscheduled garbage collection, particularly a global defragmentation operation. </p>
+<p>Because the heap tends to fragment over time, other collector policies might be forced to run a global garbage collection and defragmentation (compaction) phase to recover sufficient contiguous memory to allocate a large array. By removing the requirement for large arrays to be allocated in contiguous memory, the Balanced GC is more likely to be able to satisfy such an allocation without requiring unscheduled garbage collection, particularly a global defragmentation operation.</p>
 </li>
 <li>
 <p>Additionally, the Balanced GC never needs to move an arraylet leaf once it has been allocated. The cost of relocating an array is therefore limited to the cost of relocating the spine, so large arrays do not contribute to higher defragmentation times.</p>
