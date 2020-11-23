@@ -62,7 +62,7 @@ The Verbose garbage collection logs are printed in XML format and consist of the
 
 - stanzas that contain information about the different garbage collection cycles run, including the GC increments and GC operations that made up the GC cycle. 
 
-The verbose GC logs are event-based, recording each *stop-the-world* event as it happens. While *stop-the-world* cycles are fully logged, some aspects of concurrent cycles are also logged, even though operations that are running concurrently with application threads are not logged. Concurrent operations run as part of a concurrent cycle, and these concurrent cycles begin and finish with *stop-the-world* events - events which are logged. (For some garbage collectors, the concurrent cycle also includes intermediate *stop-the-world* events). In addition, for some types of concurrent collections, verbose GC logs also include information about when certain targets have been reached. 
+The verbose GC logs are event-based, recording each *stop-the-world* event as it happens. While *stop-the-world* cycles are fully logged, some aspects of concurrent cycles are also logged, even though operations that are running concurrently with application threads are not logged. Concurrent operations run as part of a concurrent cycle, and these concurrent cycles begin and finish with *stop-the-world* events - events that are logged. (For some garbage collectors, the concurrent cycle also includes intermediate *stop-the-world* events). In addition, for some types of concurrent collections, verbose GC logs also include information about when certain targets are reached. 
 
 The highest level stanzas in the verbose GC log represent GC cycles and begin with xml tags that define the kickoff event and reason. Except for some of the more complex GC algorithms (such as the global marking phase GC of the balanced policy), a GC cycle, when complete, generally results in reclaimed memory for reuse. Each cycle consists of 1 or more GC increments and GC operations.  
 
@@ -186,18 +186,222 @@ You can analyze this *stop-the-world* cycle by inspecting a few tags and xml att
 
 - **`<exclusive-start>`** The *stop-the-world* cycle stanza begins with a triggering event, represented for *stop-the-world* cycles with a <exclusive-start> tag. The triggering event for the other type of GC cycle, a concurrent cycle, is recorded by the `<concurrent-kickoff>` tag.
 
-- **`<af-start>`** The reason for the triggering of this GC cycle is recorded by theso you can `<af-start>` tag, indicating an allocation failure.  
+- **`<af-start>`** The reason for the triggering of this GC cycle is recorded by the `<af-start>` tag, which indicates that the triggering event is an allocation failure.
 
 - **`<cycle-start>`** The beginning of the GC cycle itself is recorded by the `<cycle-start>` tag and contains the XML attribute `type=scavenge` to describe the GC involved in this GC cycle.  
 
-- **`timestamp`**, **`id`**, and **`context-id`** Each event that is logged in the GC cycle stanza is labeled with a `timestamp` and `id` xml attribute. The `id` attribute increases incrementally with each event so that you can use the id to search for particular events. You can use the `context-id` attribute to identify GC events that are part of a GC increment, for example incremental GC events of an incremental-concurrent collection.
+- **`timestamp`**, **`id`**, and **`context-id`** Each event that is logged in the GC cycle stanza is labeled with a `timestamp`,`id`, and `context-id` XML attribute. The `id` attribute increases incrementally with each event. All gc increments, operations, and concurrent tags associate with a particular cycle have a `contxtid` value that matches the `id` value of the cycle. 
 
 - **`<gc-start>`** The `<gc-start>` tag logs the beginning of a GC increment, in this case of type `scavenge`, nested within the GC cycle. 
 
 - **`<gc-op>`** Nested within the GC increment is the `<gc-op>` tag, which logs information about the individual GC ops that make up the GC increment. In this case, only one operation, the scavenge operation, makes up the GC increment, and only one GC increment makes up this *stop-the-world* cycle. In particular, a scavenge operation evacuates the local area of the heap in a single operation and so a single operation makes up the whole GC cycle. 
- 
-A GC algorithm can also involve multiple GC operations, such as a combination of mark, sweep, compact, or copy. For a common GC of mark-sweep, the GC increment consists of two operations, mark and sweep. This increment might be accompanied by other GC increments to make up a GC cycle that reclaims memory.
+ A GC algorithm can also involve multiple GC operations, such as a combination of mark, sweep, compact, or copy. For a common GC of mark-sweep, the GC increment consists of two operations, mark and sweep. This increment might be accompanied by other GC increments to make up a GC cycle that reclaims memory.
+
+- **`'type'`** *Stop-the-world* and concurrent cycles can be solely local or global events, or can consist of a mixture of local and global operations. You can determine whether the cycles, increments, or operations are local or global from the XML attribute `“type”`. The gencon policy has two types of GC collection; global concurrent, and scavenge, which is a local operation.
 
 
 <!-- Add link to topics for analysing logs and tag definitions once they have been created -->
+
+## Using the verbose GC log to troubleshoot
+
+### *stop-the-world* cycles and concurrent cycles 
+
+Garbage collectors can be considered to implement two types of gc cycle - stop-the-world cycles and concurrent cycles. The first step in reading the verbose GC log is to understand how these different types of cycle are recorded. 
+
+Verbose GC logs only record *stop-the-world* events, which are events that involve pauses of the application threads of the JVM. *Stop-the-world* cycles consist solely of *stop-the-world* events so all events of a *stop-the-world* cycle are recorded in the verbose GC logs. For concurrent cycles, while some operations of concurrent cycles run at the same time as application threads, others run as *stop-the-world* events. In particular, concurrent cycles consist of: 
+
+- *stop-the-world* events that begin and complete the cycle, and sometimes intermediate events. 
+
+- Concurrent events that do not require exclusive access to the JVM, such as the collection of memory that is marked as garbage. 
+
+Because *stop-the-world* events run in both *stop-the-world* cycles and concurrent cycles, the verbose GC logs record useful information about both types of cycle. 
+ 
+You can locate the different types of gc cycle within the logs by searching for specific tags or `type` values. You can then identify all gc increments, operations and, if applicable, concurrent events by searching for a `contextid` value that is equal to the value of the cycle's `id` attribute. For example, in this example of part of a log output for a gencon policy garbage collection, you can identify the following features:
+
+- The [`scavenge` collector of gencon](gc.md#garbage-collection-policies) by searching for `type=”scavenge”`
+- - The beginning of the *stop-the-world* event by locating the `<exclusive-start>` tag
+- The GC increments associated with the GC cycle. The `id` value of the GC cycle start event is `id="16"`, so the associated GC increment, which is tagged `<gc-start>`, has a `contextid` value of `contextid="16"`.
+
+```
+<exclusive-start id="14" timestamp="2020-10-18T13:27:11.442" intervalms="1839.193"> 
+
+<response-info timems="0.034" idlems="0.034" threads="0" lastid="00000000014E2F00" lastname="LargeThreadPool-thread-21" /> 
+
+</exclusive-start> 
+
+<af-start id="15" threadId="00000000014E3880" totalBytesRequested="72" timestamp="2020-10-18T13:27:11.442" intervalms="1839.205" type="nursery" /> 
+
+<cycle-start id="16" type="scavenge" contextid="0" timestamp="2020-10-18T13:27:11.442" intervalms="1839.206" /> 
+
+<gc-start id="17" type="scavenge" contextid="16" timestamp="2020-10-18T13:27:11.442"> 
+
+<mem-info id="18" free="801095872" total="1073741824" percent="74"> 
+
+<mem type="nursery" free="0" total="268435456" percent="0"> 
+
+```
+
+The following example shows the beginning of a [concurrent global cycle for a gencon garbage collection](gc.md#garbage-collection-policies). This cycle can be located in the verbose GC logs by searching for the `<concurrent-kickoff>` tag, and also noting the `type="global"` tag. In this example, the `<concurrent-kickoff>` tag precedes an `<exclusive-start>` tag that marks the start of a *stop-the-world* event. Therefore, the following part of the log shows the *stop-the-world* event that begins the gencon’s concurrent global cycle collection:
+
+```
+<concurrent-kickoff id="12362" timestamp="2020-10-18T13:35:44.341"> 
+
+<kickoff reason="threshold reached" targetBytes="239014924" thresholdFreeBytes="33024922" remainingFree="32933776" tenureFreeBytes="42439200" nurseryFreeBytes="32933776" /> 
+
+</concurrent-kickoff> 
+
+<exclusive-start id="12363" timestamp="2020-10-18T13:35:44.344" intervalms="342.152"> 
+
+<response-info timems="0.135" idlems="0.068" threads="3" lastid="00000000015DE600" lastname="LargeThreadPool-thread-24" /> 
+
+</exclusive-start> 
+
+<cycle-start id="12364" type="global" contextid="0" timestamp="2020-10-18T13:35:44.344" intervalms="516655.052" /> 
+
+<exclusive-end id="12365" timestamp="2020-10-18T13:35:44.344" durationms="0.048" /> 
+
+```
+
+Finally, the following example from a balanced policy garbage collection log shows the start of a [concurrent global marking collection](gc.md#garbage-collection-policies), which can be identified by either:
+- searching for the `<concurrent-start>` tag, determining the `contextid` value and searching backwards in the log for the gc cycle with an `id` value that matches this `contextid` value
+- searching for `type="global mark phase"` to locate the GC cycle for the global marking collection. 
+
+```   
+
+<exclusive-start id="345" timestamp="2020-11-13T06:32:27.347" intervalms="494.235"> 
+
+<response-info timems="3.588" idlems="1.693" threads="3" lastid="000000000074FF00" lastname="RunDataWriter.1" /> 
+
+</exclusive-start> 
+
+<allocation-taxation id="346" taxation-threshold="402653184" timestamp="2020-11-13T06:32:27.348" intervalms="494.037" /> 
+
+<cycle-start id="347" type="global mark phase" contextid="0" timestamp="2020-11-13T06:32:27.348" intervalms="55328.929" /> 
+
+<gc-start id="348" type="global mark phase" contextid="347" timestamp="2020-11-13T06:32:27.348"> 
+
+<mem-info id="349" free="1147142144" total="3221225472" percent="35"> 
+
+<remembered-set count="1523648" freebytes="122683648" totalbytes="128778240" percent="95" regionsoverflowed="5" regionsstable="321" regionsrebuilding="0"/> 
+
+</mem-info> 
+
+</gc-start> 
+
+<gc-op id="350" type="mark increment" timems="49.623" contextid="347" timestamp="2020-11-13T06:32:27.398"> 
+
+<trace-info objectcount="3117114" scancount="3048551" scanbytes="83420400" /> 
+
+</gc-op> 
+
+<gc-end id="351" type="global mark phase" contextid="347" durationms="49.866" usertimems="344.000" systemtimems="40.000" stalltimems="9.352" timestamp="2020-11-13T06:32:27.398" activeThreads="8"> 
+
+<mem-info id="352" free="1147142144" total="3221225472" percent="35"> 
+
+<remembered-set count="1768768" freebytes="121703168" totalbytes="128778240" percent="94" regionsoverflowed="1" regionsstable="0" regionsrebuilding="326"/> 
+
+</mem-info> 
+
+</gc-end> 
+
+<concurrent-start id="353" type="GMP work packet processing" contextid="347" timestamp="2020-11-13T06:32:27.399"> 
+
+<concurrent-mark-start scanTarget="113512867" /> 
+
+</concurrent-start> 
+
+<exclusive-end id="354" timestamp="2020-11-13T06:32:27.399" durationms="52.216" /> 
+
+ 
+ 
+
+<concurrent-end id="355" type="GMP work packet processing" contextid="347" timestamp="2020-11-13T06:32:27.538"> 
+
+<concurrent-mark-end bytesScanned="113629324" reasonForTermination="Work target met" /> 
+
+</concurrent-end>
+```
+
+You can determine the following features by analyzing this portion of the log: 
+- The `<exclusive-start>` tag precedes the`<cycle-start>` tag, indicating that the concurrent global marking starts with a *stop-the-world* event.
+- The *stop-the-world* event consists of two operations; the mark increment operation and mark phase operation. After these 2 GC operations, a GMP work processing event starts as a concurrent event.
+- No *stop-the-world* events are running when the concurrent threads are running. Blank lines indicate that no *stop-the-world* events ran, so the placement of the blank line between the start and end concurrent event indicates that no interleaving occurred. For more information about how to interpret blank lines in the log and the interleaving of *stop-the-world* cycles and concurrent cycles, see the next section. 
+- The `ReasonForTermination` attribute indicates that the concurrent event ended because the work target was met. 
+
+
+
+### Interleaving of concurrent cycles and *stop-the-world* cycles  
+
+Concurrent cycles involve concurrent events that, by definition, can run during application threads or *stop-the-world* events. As such, *stop-the-world* cycles can appear in the logs in between the *stop-the-world* events of a concurrent cycle.   
+
+Blank lines occur when no *stop-the-world* event is running, so blank lines separate individual *stop-the-world* cycles. Blank lines can also exist within a concurrent cycle, separating the *stop-the-world* events of a particular concurrent cycle, and also separating *stop-the-world* cycles that interleave with the concurrent cycle’s *stop-the-world* events.  
+
+You can analyze any interleaving by locating the `<cycle-start>` and `<cycle-end>` tags that nest a cycle and the tags that log the concurrent events. Use the tags to locate the start and end of a concurrent cycle, and to determine whether a particular *stop-the-world* event is part of a *stop-the-world* cycle or concurrent cycle. 
+
+The concurrent gc cycles that are used by most gc policies in OpenJ9 consist of only two *stop-the-world* events; a kickoff *stop-the-world* event and a final collection *stop-the-world* event. Some policies, such as the balanced policy, also include intermediate *stop-the-world* events during the cycle. For example, the concurrent global mark cycle of the balanced policy can include intermediate *stop-the-world* "mark" GC increments.
+ 
+See [*stop-the-world* events of the Gencon policy gc](vgclog.md#stop-the-world-events-of-the-gencon-policy) for details of *stop-the-world* events and their associated verbose GC log tags. For more information about the verbose GC tags used for other GC gc policies, see [Verbose GC log XML tags and attributes](vgclog.md#xml-tags-and-attributes). 
+
+### Stop-the-world events of the Gencon policy 
+
+The OpenJ9 default policy is the [Gencon policy](./gc.md) and consists of two types of garbage collection – *scavenge* and *concurrent global mark*. You can also enable the non-default gencon *concurrent scavenge* collector. The concurrent cycle consists of two *stop-the-world* events - a kickoff event and a final collection event. 
+
+The different garbage collections can be located in the logs by searching for the following tags that are associated with *stop-the-world* events: 
+
+*stop-the-world* cycle or concurrent cycle| Gencon Collector | Local or global  | Stop-the-world event | concurrent tag |  Details |
+|----------------------|------------------|------------------|----------------------------|----------------|----------|
+| *stop-the-world* cycle | scavenge| local | scavenge | n/a  | Moves nursery objects by using one gc operation only |
+| concurrent cycle| concurrent global mark and sweep   | global | kickoff of concurrent cycle| `<concurrent-kickoff>`|First *stop-the-world* event of a concurrent cycle |
+|concurrent cycle | concurrent global mark and sweep | global | final collection of the cycle, which is a stop-the-world event | `<concurrent-collection-start>`,`<concurrent-collection-end>`  | Final *stop-the-world* GC event of a concurrent cycle|
+| concurrent cycle | concurrent scavenge | local |n/a |`<concurrent-collection-end>` | not enabled by default|   
+
+
+The *stop-the-world* events that are part of Gencon’s concurrent global cycle consist of the following gc operations:  
+
+
+| *stop-the-world* event of the concurrent cycle | GC operations|
+|-----------------------------------|--------------|
+| kickoff event| scavenge|
+| final collection stop-the-world event| tracing|
+| | RS-scan|
+| | card-cleaning|
+| | mark-and-sweep|
+
+**Note:** If two explicit global concurrent garbage collections are triggered in close succession, one of these concurrent collections processes a heap compaction. To prevent a compaction during a \system.gc() collection, you can specify the `-Xnocompactexplicitgc` option. 
+ 
+
+For more information about the tags, xml attributes and values that are used in verbose GC logs, see [verbose GC log XML tags and attributes](vgclog.md#xml-tags-and-attributes). 
+
+## Analyzing pauses in the VM 
+
+When you analyze the logs for particular events that require exclusive access to the VM, you are analyzing *stop-the-world* events. During a *stop-the-world* event, an application is stopped so that the GC has exclusive access to the VM for actioning the freeing up of memory and memory compaction.
+
+The following scenarios are examples of how you can use the verbose GC logs to troubleshoot and improve performance: 
+- You determine that your application’s performance is slow due to global collections that include compactions. The non-default balanced policy would be a better gc policy choice for your VM. 
+- The `“durationms”` value of the final *stop-the-world* event of a concurrent global GC cycle is long. You analyze the individual GC operations of a *stop-the-world* GC cycle to determine which operations are causing the biggest pauses. You modify the configuration of your GC to reduce this pause.
+
+The following table lists some tags that provide useful information for analyzing pauses in the VM. You can use these tags for the following actions:
+- determining where the longest pauses are during a GC.
+- determining how memory allocation in the heap is modified before and after particular GC increments and operations are complete. 
+
+
+| XML tag | useful attribute or nested XML tag| Details |
+|----------|----------------------------|--------|
+|all GC event tags | `timestamp` |time the event was logged|
+|various |  `timem"` | duration of the GC event | 
+|various | `durationms`| duration of a GC increment that contains multiple GC events |
+`<af-start>` | various | The XML tag contains a GC cycle that is triggered by an allocation failure|
+|various | `reason` | Reason for triggering the GC cycle or event within a GC cycle.|
+| various | `reasonForTermination`| Reason for ending a GC cycle, increment, or operation |
+|`<concurrent-trace-info>`| various| records why the final *stop-the-world* cycle of a concurrent collection was triggered|
+| `<concurrent-mark-start>`| `scan-target`| target bytes to be marked during the concurrent mark collection |
+|`<gc-start>`| `<mem-info>`|cumulative amount of free space and total space in the heap|
+|`<mem-info>`| `<mem>`| records division of available memory across the different areas of the heap by using attribute such as `mem-type`|
+
+
+<!-- ### Heap resizing --!>
+
+<!-- ## XML tags and attributes --!>
+ 
+
 <!-- ==== END OF TOPIC ==== cmdline_specifying.md ==== -->
