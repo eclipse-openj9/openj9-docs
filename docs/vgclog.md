@@ -42,7 +42,7 @@ Verbose GC logs contain information on garbage collection operations to assist w
 
 - Troubleshooting GC operations and policies. For example, analyzing long pauses, or determining how free memory is divided in the heap before and after a GC cycle. 
 
-Verbose GC logs, when enabled, begin capturing information as soon as garbage collection is initialized. By default, the information is printed to STDERR. The information can also be [printed to a file](dump_gcdump.html/#how-to-generate-a-verbonse-garbage-collection-log).
+Verbose GC logs, when enabled, begin capturing information as soon as garbage collection is initialized. By default, the information is printed to STDERR. The information can also be [printed to a file](vgclog.md#how-to-generate-a-verbonse-garbage-collection-log).
 
 To help you visualize and analyze the garbage collection, you can feed verbose GC log files into various diagnostic tools and interfaces. Examples include tools such as the [Garbage Collection and memory visualizer extension for Eclipse](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv), and online services such as [GCEasy](https://gceasy.io). 
 
@@ -50,7 +50,7 @@ To help you visualize and analyze the garbage collection, you can feed verbose G
 
 ## How to generate a verbose garbage collection log 
 
-You can enable verbose GC logs by specifying the `-verbose:gc` standard option when you start your application. For more information, see [standard command-line options](cmdline_general).
+You can enable verbose GC logs by specifying the `-verbose:gc` standard option when you start your application. For more information, see [standard command-line options](cmdline_general.md).
 
 The output of `-verbose:gc` is printed to STDERR by default. To print the log output to a file, append the `-Xverbosegclog` option. You can print the verbose GC log file to a succession of files, where each file logs a specified number of GC cycles, by using additional parameters of `-Xverbosegclog` option. For more information, see the command-line option [-Xverbosegclog](xverbosegclog.md).
 
@@ -58,7 +58,7 @@ The output of `-verbose:gc` is printed to STDERR by default. To print the log ou
 
 The Verbose garbage collection logs are printed in XML format and consist of the following sections:  
 
-- a summary of your GC configuration, which is captured in the stanza beginning with the [`<INITIATIZED>` tag](dump_gcdump.html#garbage-collection-configuration) 
+- a summary of your GC configuration, which is captured in the stanza beginning with the [`<INITIATIZED>` tag](vgclog.md#xml-tags-an-attributes) 
 
 - stanzas that contain information about the different garbage collection cycles run, including the GC increments and GC operations that made up the GC cycle. 
 
@@ -351,7 +351,7 @@ See [*stop-the-world* events of the Gencon policy gc](vgclog.md#stop-the-world-e
 
 ### Stop-the-world events of the Gencon policy 
 
-The OpenJ9 default policy is the [Gencon policy](./gc.md) and consists of two types of garbage collection – *scavenge* and *concurrent global mark*. You can also enable the non-default gencon *concurrent scavenge* collector. The concurrent cycle consists of two *stop-the-world* events - a kickoff event and a final collection event. 
+The OpenJ9 default policy is the [Gencon policy](gc.md#garbage-collection-policies) and consists of two types of garbage collection – *scavenge* and *concurrent global mark*. You can also enable the non-default gencon *concurrent scavenge* collector. The concurrent cycle consists of two *stop-the-world* events - a kickoff event and a final collection event. 
 
 The different garbage collections can be located in the logs by searching for the following tags that are associated with *stop-the-world* events: 
 
