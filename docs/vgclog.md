@@ -206,7 +206,13 @@ You can analyze this *stop-the-world* cycle by inspecting a few tags and xml att
 
 ### *Stop-the-world* cycles and concurrent cycles 
 
-Garbage collectors can be considered to implement two types of gc cycle - *stop-the-world* cycles and concurrent cycles. The first step in reading the verbose GC log is to understand how these different types of cycle are recorded. 
+Garbage collectors run collections as either a *stop-the-world* cycle, or as a concurrent cycle. For example, the gencon policy by default consists of the following collectors:
+
+- a [scavenger collector](gc.md#garbage-collection-policies), which uses a *stop-the-world* cycle to collect.
+
+- a [concurrent global mark and sweep collector](gc.md#garbage-collection-policies), which uses a concurrent cycle to collect.  
+
+The first step in reading the verbose GC log is to understand how these different types of cycle are recorded. 
 
 Verbose GC logs only record *stop-the-world* events, which are events that involve pauses of the application threads of the VM. *Stop-the-world* cycles consist solely of *stop-the-world* events so all events of a *stop-the-world* cycle are recorded in the verbose GC logs. For concurrent cycles, while some operations of concurrent cycles run at the same time as application threads, others run as *stop-the-world* events. In particular, concurrent cycles consist of: 
 
