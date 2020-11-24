@@ -204,13 +204,13 @@ You can analyze this *stop-the-world* cycle by inspecting a few tags and xml att
 
 ## Using the verbose GC log to troubleshoot
 
-### *stop-the-world* cycles and concurrent cycles 
+### *Stop-the-world* cycles and concurrent cycles 
 
-Garbage collectors can be considered to implement two types of gc cycle - stop-the-world cycles and concurrent cycles. The first step in reading the verbose GC log is to understand how these different types of cycle are recorded. 
+Garbage collectors can be considered to implement two types of gc cycle - *stop-the-world* cycles and concurrent cycles. The first step in reading the verbose GC log is to understand how these different types of cycle are recorded. 
 
-Verbose GC logs only record *stop-the-world* events, which are events that involve pauses of the application threads of the JVM. *Stop-the-world* cycles consist solely of *stop-the-world* events so all events of a *stop-the-world* cycle are recorded in the verbose GC logs. For concurrent cycles, while some operations of concurrent cycles run at the same time as application threads, others run as *stop-the-world* events. In particular, concurrent cycles consist of: 
+Verbose GC logs only record *stop-the-world* events, which are events that involve pauses of the application threads of the VM. *Stop-the-world* cycles consist solely of *stop-the-world* events so all events of a *stop-the-world* cycle are recorded in the verbose GC logs. For concurrent cycles, while some operations of concurrent cycles run at the same time as application threads, others run as *stop-the-world* events. In particular, concurrent cycles consist of: 
 
-- *stop-the-world* events that begin and complete the cycle, and sometimes intermediate events. 
+- *stop-the-world* events that begin and complete the cycle, and sometimes intermediate *stop-the-world* events. 
 
 - Concurrent events that do not require exclusive access to the JVM, such as the collection of memory that is marked as garbage. 
 
@@ -218,8 +218,10 @@ Because *stop-the-world* events run in both *stop-the-world* cycles and concurre
  
 You can locate the different types of gc cycle within the logs by searching for specific tags or `type` values. You can then identify all gc increments, operations and, if applicable, concurrent events by searching for a `contextid` value that is equal to the value of the cycle's `id` attribute. For example, in this example of part of a log output for a gencon policy garbage collection, you can identify the following features:
 
-- The [`scavenge` collector of gencon](gc.md#garbage-collection-policies) by searching for `type=”scavenge”`
-- - The beginning of the *stop-the-world* event by locating the `<exclusive-start>` tag
+- The [scavenge collector of gencon](gc.md#garbage-collection-policies) by searching for `type=”scavenge”`
+
+- The beginning of the *stop-the-world* event by locating the `<exclusive-start>` tag
+
 - The GC increments associated with the GC cycle. The `id` value of the GC cycle start event is `id="16"`, so the associated GC increment, which is tagged `<gc-start>`, has a `contextid` value of `contextid="16"`.
 
 ```
@@ -263,11 +265,12 @@ The following example shows the beginning of a [concurrent global cycle for a ge
 ```
 
 Finally, the following example from a balanced policy garbage collection log shows the start of a [concurrent global marking collection](gc.md#garbage-collection-policies), which can be identified by either:
-- searching for the `<concurrent-start>` tag, determining the `contextid` value and searching backwards in the log for the gc cycle with an `id` value that matches this `contextid` value
-- searching for `type="global mark phase"` to locate the GC cycle for the global marking collection. 
+
+- Searching for the `<concurrent-start>` tag, determining the `contextid` value and searching backwards in the log for the gc cycle with an `id` value that matches this `contextid` value.
+
+- Searching for `type="global mark phase"` to locate the GC cycle for the global marking collection. 
 
 ```   
-
 <exclusive-start id="345" timestamp="2020-11-13T06:32:27.347" intervalms="494.235"> 
 
 <response-info timems="3.588" idlems="1.693" threads="3" lastid="000000000074FF00" lastname="RunDataWriter.1" /> 
@@ -323,9 +326,13 @@ Finally, the following example from a balanced policy garbage collection log sho
 ```
 
 You can determine the following features by analyzing this portion of the log: 
+
 - The `<exclusive-start>` tag precedes the`<cycle-start>` tag, indicating that the concurrent global marking starts with a *stop-the-world* event.
+
 - The *stop-the-world* event consists of two operations; the mark increment operation and mark phase operation. After these 2 GC operations, a GMP work processing event starts as a concurrent event.
-- No *stop-the-world* events are running when the concurrent threads are running. Blank lines indicate that no *stop-the-world* events ran, so the placement of the blank line between the start and end concurrent event indicates that no interleaving occurred. For more information about how to interpret blank lines in the log and the interleaving of *stop-the-world* cycles and concurrent cycles, see the next section. 
+
+- No *stop-the-world* events are running when the concurrent threads are running. Blank lines indicate that no *stop-the-world* events ran, so the placement of the blank line between the start and end concurrent event indicates that no interleaving occurred. For more information about how to interpret blank lines in the log and the interleaving of *stop-the-world* cycles and concurrent cycles, see the following section [Interleaving of concurrent cycles and *stop-the-world* cycles](vgclog.md#interleaving-of-concurrent-cycles-and-stop-the-world-cycles). 
+
 - The `ReasonForTermination` attribute indicates that the concurrent event ended because the work target was met. 
 
 
@@ -372,17 +379,21 @@ The *stop-the-world* events that are part of Gencon’s concurrent global cycle 
 
 For more information about the tags, xml attributes and values that are used in verbose GC logs, see [verbose GC log XML tags and attributes](vgclog.md#xml-tags-and-attributes). 
 
-## Analyzing pauses in the VM 
+## Analyzing GC pauses 
 
 When you analyze the logs for particular events that require exclusive access to the VM, you are analyzing *stop-the-world* events. During a *stop-the-world* event, an application is stopped so that the GC has exclusive access to the VM for actioning the freeing up of memory and memory compaction.
 
 The following scenarios are examples of how you can use the verbose GC logs to troubleshoot and improve performance: 
+
 - You determine that your application’s performance is slow due to global collections that include compactions. The non-default balanced policy would be a better gc policy choice for your VM. 
+
 - The `“durationms”` value of the final *stop-the-world* event of a concurrent global GC cycle is long. You analyze the individual GC operations of a *stop-the-world* GC cycle to determine which operations are causing the biggest pauses. You modify the configuration of your GC to reduce this pause.
 
 The following table lists some tags that provide useful information for analyzing pauses in the VM. You can use these tags for the following actions:
-- determining where the longest pauses are during a GC.
-- determining how memory allocation in the heap is modified before and after particular GC increments and operations are complete. 
+
+- Determining where the longest pauses are during a GC.
+
+- Determining how memory allocation in the heap is modified before and after particular GC increments and operations are complete. 
 
 
 | XML tag | useful attribute or nested XML tag| Details |
@@ -398,8 +409,7 @@ The following table lists some tags that provide useful information for analyzin
 |`<gc-start>`| `<mem-info>`|cumulative amount of free space and total space in the heap|
 |`<mem-info>`| `<mem>`| records division of available memory across the different areas of the heap by using attribute such as `mem-type`|
 
-
-<!-- ### Heap resizing --!>
+<!-- ### Heap sizing using the verbose GC logs --!>
 
 <!-- ## XML tags and attributes --!>
  
