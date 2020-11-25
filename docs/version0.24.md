@@ -31,7 +31,7 @@ The following new features and notable changes since v 0.23.0 are included in th
 - [Support for the `JAVA_OPTIONS` environment variable](#support-for-the-java_options-environment-variable)
 - [`-XX:[+|-]PortableSharedCache` option behavior update](#-xx-portablesharedcache-option-behavior-update)
 - [![Start of content that applies to AIX Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update](#-xx-shareanonymousclasses-option-behavior-update)
-
+- [Additional parameters for `jcmd Dump` commands](#additional-parameters-for-jcmd-dump-commands)
 
 ## Features and changes
 
@@ -70,6 +70,15 @@ The `-XX:[+|-]PortableSharedCache` option is now supported on IBM Z&reg; and POW
 
 The `-XX:[+|-]ShareAnonymousClasses` option currently enables and disables the storage of VM anonymous classes in the shared classes cache. From OpenJDK 15, this option now enables and disables the storage of hidden classes in the shared classes cache. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
 
+
+### Additional parameters for `jcmd Dump` commands
+
+You can now include additional parameters for `jcmd Dump` commands. These are as follows:
+
+- `Dump.system`, `Dump.heap`, `Dump.java`, and `Dump.snap` accept an optional `request=<requests>` parameter.
+- `Dump.heap` accepts an optional `opts=<options>` parameter.
+
+These parameters, including the `<file path>` parameter, can be in any order. The default for both system and heap dumps is now: `request=exclusive+prepwalk`. For further details, refer to the following `-Xdump` suboptions: [`request=<requests>`](xdump.md#requestltrequestsgt) and [`opts=<options>`](xdump.md#optsltoptionsgt). And for more information about `jcmd`, see [Java diagnostic command (jcmd) tool](tool_jcmd.md).
 
 
 ## Full release information
