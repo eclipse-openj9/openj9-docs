@@ -3204,6 +3204,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
       
       
       
@@ -3888,6 +3895,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
       
       
       
@@ -3934,8 +3948,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xx-legacyxlogoption">-XX:[+|-]LegacyXlogOption</h1>
-<p>Controls processing of the <a href="../xlog/"><code>-Xlog</code></a> option. When <code>-XX:-LegacyXlogOption</code> is set, which is the default, the <code>-Xlog</code> option is not recognized.
-When <code>-XX:+LegacyXlogOption</code> is set, the <code>-Xlog</code> option is equivalent to the <a href="../xsyslog/"><code>-Xsyslog</code></a> option. </p>
+<p>Controls processing of the <code>-Xlog</code> option.</p>
 <h2 id="syntax">Syntax</h2>
 <table>
 <thead>
@@ -3948,17 +3961,23 @@ When <code>-XX:+LegacyXlogOption</code> is set, the <code>-Xlog</code> option is
 <tbody>
 <tr>
 <td><code>-XX:+LegacyXlogOption</code></td>
-<td>Process -Xlog</td>
+<td>Enable legacy <code>-Xlog</code> behavior</td>
 <td align="center"></td>
 </tr>
 <tr>
 <td><code>-XX:-LegacyXlogOption</code></td>
-<td>Ignore -Xlog</td>
+<td>Process <code>-Xlog</code> requests for GC logging</td>
 <td align="center"><i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span></td>
 </tr>
 </tbody>
 </table>
-<!-- ==== END OF TOPIC ==== xxdisableexplicitgc.md ==== -->
+<h2 id="explanation">Explanation</h2>
+<p>From Eclipse OpenJ9 0.24.0, the <code>-Xlog</code> option is replaced by the <a href="../xsyslog/"><code>-Xsyslog</code></a> option. The <code>-XX:[+|-]LegacyXlogOption</code> controls how the <code>-Xlog</code> option is processed.</p>
+<ul>
+<li>When <code>-XX:-LegacyXlogOption</code> is set, the <code>-Xlog</code> option is recognized only when a form of this option is run that requests garbage collection (GC) logging (for example, <code>-Xlog:gc[:stderr|:file=&lt;filename&gt;]</code>). For more information, see <a href="../xlog/"><code>-Xlog</code></a>.</li>
+<li>When <code>-XX:+LegacyXlogOption</code> is set, the legacy <code>-Xlog</code> behavior is enabled. When enabled, the option is equivalent to the <a href="../xsyslog/"><code>-Xsyslog</code></a> option. That is, the <code>-Xlog</code> option can be used with the parameters documented in <a href="../xsyslog/"><code>-Xsyslog</code></a>.</li>
+</ul>
+<!-- ==== END OF TOPIC ==== xxlegacyxlogoption.md ==== -->
                 
                   
                 

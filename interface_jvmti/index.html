@@ -4894,7 +4894,7 @@ Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_GET_MEMORY_
 <p>You can query VM log options by using the <code>QueryVmLogOptions()</code> API:</p>
 <pre><code>jvmtiError QueryVmLogOptions(jvmtiEnv* jvmti_env, jint buffer_size, void* options, jint* data_size_ptr)
 </code></pre>
-<p>This extension returns the current log options as an ASCII string. The syntax of the string is the same as the <a href="../xsyslog/"><code>-Xsyslog</code></a> command-line option, with the initial <code>-Xsyslog:</code> omitted. For example, the string "error,warn" indicates that the VM is set to log error and warning messages only. For more information, see <a href="../xsyslog/"><code>-Xsyslog</code></a>.</p>
+<p>This extension returns the current log options as an ASCII string. The syntax of the string is the same as the <code>-Xsyslog</code> command-line option, with the initial <code>-Xsyslog:</code> omitted. For example, the string "error,warn" indicates that the VM is set to log error and warning messages only. For more information, see <a href="../xsyslog/"><code>-Xsyslog</code></a>.</p>
 <p><strong>Parameters</strong></p>
 <ul>
 <li><code>jvmti_env</code>: A pointer to the JVMTI environment.  </li>
@@ -4918,7 +4918,7 @@ Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_QUERY_VM_LO
 <p>You can set VM log options by using the <code>SetVmLogOptions()</code> API:</p>
 <pre><code>jvmtiError SetVmLogOptions(jvmtiEnv* jvmti_env, char* options_buffer)
 </code></pre>
-<p>The log option is passed in as an ASCII character string. Use the same syntax as the <a href="../xsyslog/"><code>-Xsyslog</code></a> command-line option, with the initial <code>-Xsyslog:</code> omitted. For example, to set the VM to log error and warning messages, pass in a string containing "error,warn". For more information, see <a href="../xsyslog/"><code>-Xsyslog</code></a>.</p>
+<p>The log option is passed in as an ASCII character string. Use the same syntax as the <code>-Xsyslog</code> command-line option, with the initial <code>-Xsyslog:</code> omitted. For example, to set the VM to log error and warning messages, pass in a string containing "error,warn". For more information, see <a href="../xsyslog/"><code>-Xsyslog</code></a>.</p>
 <p><strong>Parameters</strong></p>
 <ul>
 <li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>

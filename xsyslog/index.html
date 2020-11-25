@@ -4072,13 +4072,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="-xsyslog">-Xsyslog</h1>
-<p>Enables Operating System message logging. </p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Changes made to message logging using the <code>-Xsyslog</code> option do not affect messages written to the standard error stream (<code>stderr</code>).</p>
+<p>Enables operating system message logging.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Notes:</strong></p>
+<ul>
+<li>Changes made to message logging by using the <code>-Xsyslog</code> option do not affect messages written to the standard error stream (<code>stderr</code>).</li>
+<li>This option replaces the OpenJ9 <a href="../xlog/"><code>-Xlog</code></a> option in Eclipse OpenJ9 version 0.24.0. If the <a href="../xxlegacyxlogoption/"><code>-XX:+LegacyXlogOption</code></a> is set, <code>-Xlog</code> behaves in the same way as <code>-Xsyslog</code> and with the same parameters.</li>
+</ul>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -Xsyslog:&lt;parameter&gt;{,&lt;parameter&gt;}
 </code></pre>
 <h2 id="parameters">Parameters</h2>
-<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> The parameters <code>all</code>, <code>none</code> and <code>help</code> must be used on their own and cannot be combined. However, the other parameters can be grouped. For example, to include error, vital and warning messages use <code>-Xsyslog:error,vital,warn</code>. </p>
+<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>Restriction:</strong> The parameters <code>all</code>, <code>none</code> and <code>help</code> must be used on their own and cannot be combined. However, the other parameters can be grouped. For example, to include error, vital and warning messages use <code>-Xsyslog:error,vital,warn</code>.</p>
 <p>For message details see <a href="../messages_intro/#jvm-messages">OpenJ9 VM messages</a>.</p>
 <h3 id="help"><code>help</code></h3>
 <pre><code>    -Xsyslog:help

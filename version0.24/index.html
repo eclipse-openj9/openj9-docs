@@ -396,15 +396,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#-xsyslog-replaces-xlog-option-by-default-xlog-behavior-change" class="md-nav__link">
-    -Xsyslog replaces -Xlog option by default, -Xlog behavior change
+  <a href="#changes-to-message-logging" class="md-nav__link">
+    Changes to message logging
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#support-the-java_options-environment-variable" class="md-nav__link">
-    Support the JAVA_OPTIONS environment variable
+  <a href="#support-for-the-java_options-environment-variable" class="md-nav__link">
+    Support for the JAVA_OPTIONS environment variable
   </a>
   
 </li>
@@ -3943,15 +3943,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#-xsyslog-replaces-xlog-option-by-default-xlog-behavior-change" class="md-nav__link">
-    -Xsyslog replaces -Xlog option by default, -Xlog behavior change
+  <a href="#changes-to-message-logging" class="md-nav__link">
+    Changes to message logging
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#support-the-java_options-environment-variable" class="md-nav__link">
-    Support the JAVA_OPTIONS environment variable
+  <a href="#support-for-the-java_options-environment-variable" class="md-nav__link">
+    Support for the JAVA_OPTIONS environment variable
   </a>
   
 </li>
@@ -4031,8 +4031,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The following new features and notable changes since v 0.23.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
-<li><a href="#-xsyslog-replaces-xlog-option-by-default-xlog-behavior-change"><code>-Xsyslog</code> replaces <code>-Xlog</code> option by default</a></li>
-<li><a href="#support-the-java_options-environment-variable">Support the <code>JAVA_OPTIONS</code> environment variable</a></li>
+<li><a href="#changes-to-message-logging">Changes to message logging</a></li>
+<li><a href="#support-for-the-java_options-environment-variable">Support for the <code>JAVA_OPTIONS</code> environment variable</a></li>
 <li><a href="#-xx-portablesharedcache-option-behavior-update"><code>-XX:[+|-]PortableSharedCache</code> option behavior update</a></li>
 <li><a href="#-xx-shareanonymousclasses-option-behavior-update"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> <code>-XX:[+|-]ShareAnonymousClasses</code> option behavior update</a></li>
 </ul>
@@ -4045,20 +4045,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk15&amp;jvmVariant=openj9">OpenJDK version 15</a></li>
 </ul>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
-<h3 id="-xsyslog-replaces-xlog-option-by-default-xlog-behavior-change"><code>-Xsyslog</code> replaces <code>-Xlog</code> option by default, <code>-Xlog</code> behavior change</h3>
-<p>Following the introduction of <a href="https://openjdk.java.net/jeps/158">JEP 158</a> and to avoid confusion with the reference implementation, the <a href="../xsyslog/"><code>-Xsyslog</code></a> option supersedes the OpenJ9 <a href="../xlog/"><code>-Xlog</code></a> option for message logging. A new option, <a href="../xxlegacyxlogoption/"><code>-XX:[+|-]LegacyXlogOption</code></a> controls how the <code>-Xlog</code> option is processed when set on the command line.</p>
+<h3 id="changes-to-message-logging">Changes to message logging</h3>
+<p><a href="https://openjdk.java.net/jeps/158">JEP 158</a> introduces the <code>-Xlog</code> option as a common logging system for all components of a Java virtual machine. To avoid confusion with the reference implementation, the <a href="../xsyslog/"><code>-Xsyslog</code></a> option replaces the existing OpenJ9 <a href="../xlog/"><code>-Xlog</code></a> option for message logging. For compatibility with the reference implementation, a limited set of <code>-Xlog</code> suboptions are supported.</p>
+<p>A new option, <a href="../xxlegacyxlogoption/"><code>-XX:[+|-]LegacyXlogOption</code></a>, controls how <code>-Xlog</code> is processed when set on the command line.</p>
 <ul>
-<li>Setting <code>-XX:-LegacyXlogOption</code> (default) causes the JVM to process the <code>-Xsyslog</code> option and process the <code>-Xlog</code> option only for GC log requests (<code>-Xlog:gc[:stderr|:file=&lt;filename&gt;]</code>).</li>
-<li>If <code>-Xlog</code> GC log requests are set, these options are mapped to the equivalent OpenJ9 verbose GC command line options. For more information, see
-<a href="../xlog/"><code>-Xlog</code></a>.</li>
-<li>Setting <code>-XX:+LegacyXLogOption</code>, processes the <code>-Xlog</code> option as an equivalent option to <code>-Xsyslog</code>.</li>
+<li>When <code>-XX:-LegacyXlogOption</code> is set, the <code>-Xlog</code> option is recognized when a form of this option  runs that requests garbage collection (GC) logging.<ul>
+<li>If any <code>-Xlog</code> GC log requests are set, these options are mapped to the equivalent OpenJ9 verbose GC command line options. For more information, see <a href="../xlog/"><code>-Xlog</code></a>.</li>
 </ul>
-<h3 id="support-the-java_options-environment-variable">Support the JAVA_OPTIONS environment variable</h3>
-<p>Support the <code>JAVA_OPTIONS</code> environment variable for compatibility with Hotspot. <code>JAVA_OPTIONS</code> can be used to set command line options as described in <a href="../cmdline_specifying/">OpenJ9 command-line options</a> and <a href="../env_var/">Environment variables</a>. Options specified in <code>JAVA_OPTIONS</code> can be overridden by <code>OPENJ9_JAVA_OPTIONS</code>.</p>
+</li>
+<li>Setting <code>-XX:+LegacyXLogOption</code> provides backward compatibility with the legacy <code>-Xlog</code> option, which can be specified on the command line with the parameters documented for the <code>-Xsyslog</code> option. That is, these options can be used interchangeably. If you rely on the legacy <code>-Xlog</code> option and cannot easily migrate to the <code>-Xsyslog</code> option, you must set this option on the command line.</li>
+</ul>
+<h3 id="support-for-the-java_options-environment-variable">Support for the <code>JAVA_OPTIONS</code> environment variable</h3>
+<p>For compatibility with the reference implementation, OpenJ9 now supports the <code>JAVA_OPTIONS</code> environment variable. This environment variable  can be used to set command line options, as described in <a href="../cmdline_specifying/">OpenJ9 command-line options</a> and <a href="../env_var/">Environment variables</a>. Options specified by <code>JAVA_OPTIONS</code> can be overridden by options specified by <code>OPENJ9_JAVA_OPTIONS</code>.</p>
 <h3 id="-xx-portablesharedcache-option-behavior-update"><code>-XX:[+|-]PortableSharedCache</code> option behavior update</h3>
-<p>The <code>-XX:[+|-]PortableSharedCache</code> option is now supported on s390 and POWER platforms. AOT-compiled code generated with this option is guaranteed to be portable across IBM&reg; z10 or newer microarchitectures on s390 platforms and IBM POWER8&reg; or newer microarchitectures on POWER platforms. See <a href="../xxportablesharedcache/"><code>-XX:[+|-]PortableSharedCache</code></a> for more details about this option.</p>
+<p>The <code>-XX:[+|-]PortableSharedCache</code> option is now supported on IBM Z&reg; and POWER&reg; platforms. AOT-compiled code that is generated with this option is guaranteed to be portable across IBM z10 or newer microarchitectures on IBM Z platforms and IBM POWER8&reg; or newer microarchitectures on POWER platforms. See <a href="../xxportablesharedcache/"><code>-XX:[+|-]PortableSharedCache</code></a> for more details about this option.</p>
 <h3 id="-xx-shareanonymousclasses-option-behavior-update"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> <code>-XX:[+|-]ShareAnonymousClasses</code> option behavior update</h3>
-<p>The <code>-XX:[+|-]ShareAnonymousClasses</code> option currently enables and disables the storage of VM anonymous classes in the shared classes cache. In OpenJDK 15 and later versions, this option now also enables and disables the storage of hidden classes in the shared classes cache. See <a href="../xxshareanonymousclasses/"><code>-XX:[+|-]ShareAnonymousClasses</code></a> for more details about this option.</p>
+<p>The <code>-XX:[+|-]ShareAnonymousClasses</code> option currently enables and disables the storage of VM anonymous classes in the shared classes cache. From OpenJDK 15, this option now enables and disables the storage of hidden classes in the shared classes cache. See <a href="../xxshareanonymousclasses/"><code>-XX:[+|-]ShareAnonymousClasses</code></a> for more details about this option.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.23.0 and v 0.24.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.24/0.24.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.24.md ==== -->
