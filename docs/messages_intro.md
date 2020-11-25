@@ -61,6 +61,9 @@ These messages can help you with problem determination.
 
 By default, all error and some information messages are routed to the system log and also written to `stderr` or `stdout`. The specific information messages are `JVMDUMP039I`, `JVMDUMP032I`, and `JVMDUMP033I`, which provide valuable additional information about dumps produced by the VM. To route additional message types to the system log, or turn off message logging to the system log, use the [`-Xsyslog`](xsyslog.md) option. The `-Xsyslog` option does not affect messages written to the standard error stream (stderr). See [OpenJ9 command-line options](cmdline_specifying.md).
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The `-Xsyslog` option replaces the `-Xlog` option in OpenJ9 version 0.24.0.
+
+
 ## Finding logged messages
 
 Logged messages can be found in different locations, according to platform.
