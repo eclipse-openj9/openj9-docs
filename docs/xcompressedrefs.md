@@ -48,7 +48,7 @@ Compressed references are enabled by default when [`-Xmx`](xms.md) &le; 57 GB.
 
 ## See also
 
-- [Compressed references](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_compressed_references.html)
+- [Compressed references](allocator.md#compressed-references)
 
 
 <!-- ==== END OF TOPIC ==== xcompressedrefs.md ==== -->
