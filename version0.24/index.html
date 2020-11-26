@@ -423,6 +423,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#additional-parameters-for-jcmd-dump-commands" class="md-nav__link">
+    Additional parameters for jcmd Dump commands
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3970,6 +3977,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#additional-parameters-for-jcmd-dump-commands" class="md-nav__link">
+    Additional parameters for jcmd Dump commands
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4035,6 +4049,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#support-for-the-java_options-environment-variable">Support for the <code>JAVA_OPTIONS</code> environment variable</a></li>
 <li><a href="#-xx-portablesharedcache-option-behavior-update"><code>-XX:[+|-]PortableSharedCache</code> option behavior update</a></li>
 <li><a href="#-xx-shareanonymousclasses-option-behavior-update"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> <code>-XX:[+|-]ShareAnonymousClasses</code> option behavior update</a></li>
+<li><a href="#additional-parameters-for-jcmd-dump-commands">Additional parameters for <code>jcmd Dump</code> commands</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -4061,6 +4076,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The <code>-XX:[+|-]PortableSharedCache</code> option is now supported on IBM Z&reg; and POWER&reg; platforms. AOT-compiled code that is generated with this option is guaranteed to be portable across IBM z10 or newer microarchitectures on IBM Z platforms and IBM POWER8&reg; or newer microarchitectures on POWER platforms. See <a href="../xxportablesharedcache/"><code>-XX:[+|-]PortableSharedCache</code></a> for more details about this option.</p>
 <h3 id="-xx-shareanonymousclasses-option-behavior-update"><img alt="Start of content that applies to AIX Java 15+" src="../cr/java15plus.png" /> <code>-XX:[+|-]ShareAnonymousClasses</code> option behavior update</h3>
 <p>The <code>-XX:[+|-]ShareAnonymousClasses</code> option currently enables and disables the storage of VM anonymous classes in the shared classes cache. From OpenJDK 15, this option now enables and disables the storage of hidden classes in the shared classes cache. See <a href="../xxshareanonymousclasses/"><code>-XX:[+|-]ShareAnonymousClasses</code></a> for more details about this option.</p>
+<h3 id="additional-parameters-for-jcmd-dump-commands">Additional parameters for <code>jcmd Dump</code> commands</h3>
+<p>You can now include additional parameters for <code>jcmd Dump</code> commands. These are as follows:</p>
+<ul>
+<li><code>Dump.system</code>, <code>Dump.heap</code>, <code>Dump.java</code>, and <code>Dump.snap</code> accept an optional <code>request=&lt;requests&gt;</code> parameter.</li>
+<li><code>Dump.heap</code> accepts an optional <code>opts=&lt;options&gt;</code> parameter.</li>
+</ul>
+<p>These parameters, including the <code>&lt;file path&gt;</code> parameter, can be in any order. The default for both system and heap dumps is now: <code>request=exclusive+prepwalk</code>. For further details, refer to the following <code>-Xdump</code> suboptions: <a href="../xdump/#requestltrequestsgt"><code>request=&lt;requests&gt;</code></a> and <a href="../xdump/#optsltoptionsgt"><code>opts=&lt;options&gt;</code></a>. And for more information about <code>jcmd</code>, see <a href="../tool_jcmd/">Java diagnostic command (jcmd) tool</a>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.23.0 and v 0.24.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.24/0.24.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.24.md ==== -->
