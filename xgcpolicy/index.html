@@ -1944,6 +1944,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#optavgpause" class="md-nav__link">
+    optavgpause
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optthruput" class="md-nav__link">
+    optthruput
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#metronome-aix-linux-x86-only" class="md-nav__link">
     metronome (AIX, Linux x86 only)
   </a>
@@ -1960,20 +1974,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optavgpause" class="md-nav__link">
-    optavgpause
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optthruput" class="md-nav__link">
-    optthruput
-  </a>
   
 </li>
         
@@ -4018,6 +4018,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
+  <a href="#optavgpause" class="md-nav__link">
+    optavgpause
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optthruput" class="md-nav__link">
+    optthruput
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#metronome-aix-linux-x86-only" class="md-nav__link">
     metronome (AIX, Linux x86 only)
   </a>
@@ -4034,20 +4048,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optavgpause" class="md-nav__link">
-    optavgpause
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optthruput" class="md-nav__link">
-    optthruput
-  </a>
   
 </li>
         
@@ -4181,10 +4181,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h4 id="defaults-and-options">Defaults and options</h4>
 <p>The initial heap size is <em>Xmx/1024</em>, rounded down to the nearest power of 2, where <em>Xmx</em> is the maximum heap size available. You can override this value by specifying the <code>-Xms</code> option on the command line.</p>
 <p>The following options can also be specified on the command line with <code>-Xgcpolicy:balanced</code>:</p>
+<!-- - `-Xalwaysclassgc` -->
+
+<!-- - `-Xclassgc`
+<!-- - `-Xcompactexplicitgc` -->
+
 <ul>
-<li><code>-Xalwaysclassgc</code></li>
-<li><code>-Xclassgc</code></li>
-<li><code>-Xcompactexplicitgc</code></li>
 <li><code>-Xdisableexcessivegc</code></li>
 <li><code>-Xdisableexplicitgc</code></li>
 <li><code>-Xenableexcessivegc</code></li>
@@ -4202,9 +4204,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><code>-Xmns&lt;size&gt;</code></li>
 <li><code>-Xmnx&lt;size&gt;</code></li>
 <li><code>-Xms&lt;size&gt;</code></li>
-<li><code>-Xmx&lt;size&gt;</code></li>
-<li><code>-Xnoclassgc</code></li>
-<li><code>-Xnocompactexplicitgc</code></li>
+<li><code>-Xmx&lt;size&gt;</code>
+<!-- - <code>-Xnoclassgc</code> -->
+<!-- - <code>-Xnocompactexplicitgc</code> --></li>
 <li><code>-Xnuma:none</code></li>
 <li><code>-Xsoftmx&lt;size&gt;</code></li>
 <li><code>-Xsoftrefthreshold&lt;number&gt;</code></li>
@@ -4212,10 +4214,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 <p>The behavior of the following options is different when specified with <code>-Xgcpolicy:balanced</code>:</p>
 <dl>
-<dt><code>-Xcompactgc</code></dt>
-<dd>Compaction occurs when a System.gc() call is received (default). Compaction always occurs on all other collection types.</dd>
-<dt><code>-Xnocompactgc</code></dt>
-<dd>Compaction does not occur when a System.gc() call is received. Compaction always occurs on all other collection types.</dd>
+<dt><a href="../xcompactgc/"><code>-Xcompactgc</code></a> (default)</dt>
+<dd>Forces compaction in each Global GC cycle.</dd>
+<dt><a href="../xcompactgc/"><code>-Xnocompactgc</code></a></dt>
+<dd>Disables internal compaction heuristics in Global GC cycles.</dd>
+<dt><a href="../xcompactexplicitgc/"><code>-Xcompactexplicitgc</code></a> (default)</dt>
+<dd>Forces compaction in Explicit Global GC cycles, such as those invoked by <code>System.gc()</code>. Compaction in implicit Global GC remains optional, triggered by internal heuristics.</dd>
+<dt><a href="../xcompactexplicitgc/"><code>-Xnocompactexplicitgc</code></a></dt>
+<dd>Disables compaction in Explicit Global GC cycles. Compaction in implicit Global GC remains optional, triggered by internal heuristics.</dd>
 </dl>
 <p>The following options are ignored when specified with <code>-Xgcpolicy:balanced</code>:</p>
 <ul>
@@ -4234,32 +4240,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><code>-Xmos&lt;size&gt;</code></li>
 <li><code>-Xmr&lt;size&gt;</code></li>
 <li><code>-Xmrx&lt;size&gt;</code></li>
-<li><code>-Xnoloa</code></li>
-<li><code>-Xnopartialcompactgc</code> (deprecated)</li>
-<li><code>-Xpartialcompactgc</code> (deprecated)</li>
+<li><code>-Xnoloa</code>
+<!-- - <code>-Xnopartialcompactgc</code> (deprecated) -->
+<!-- - <code>-Xpartialcompactgc</code> (deprecated) --></li>
 </ul>
+<h3 id="optavgpause"><code>optavgpause</code></h3>
+<pre><code>    -Xgcpolicy:optavgpause
+</code></pre>
+<dl>
+<dd>
+<p>The "optimize for pause time" policy uses concurrent mark and concurrent sweep phases. Pause times are shorter than with <code>optthruput</code>, but application throughput is reduced because some garbage collection work is taking place in the context of mutator (application) threads, and GC frequency is increased.</p>
+<p>Consider using this policy if you have a large heap size (available on 64-bit platforms), because this policy limits the effect of increasing heap size on the length of the garbage collection pause. However, if your application uses many short-lived objects, the <code>gencon</code> policy might produce better performance.</p>
+<p>For more information about this policy, see <a href="../gc/#optavgpause-policy">Garbage collection: 'optavgpause' policy</a>.</p>
+</dd>
+</dl>
+<h3 id="optthruput"><code>optthruput</code></h3>
+<pre><code>    -Xgcpolicy:optthruput
+</code></pre>
+<dl>
+<dd>
+<p>The "optimize for throughput" policy disables the concurrent mark phase. The application stops during global garbage collection, so long pauses can occur. </p>
+<p>This configuration is typically used for large-heap applications when high application throughput, rather than short garbage collection pauses, is the main performance goal. If your application cannot tolerate long garbage collection pauses, consider using another policy, such as <code>gencon</code>.</p>
+<p>For more information about this policy, see <a href="../gc/#optavgpause-policy">Garbage collection: 'optavgpause' policy</a>.</p>
+</dd>
+</dl>
 <h3 id="metronome-aix-linux-x86-only"><code>metronome</code> (AIX, Linux x86 only)</h3>
 <pre><code>    -Xgcpolicy:metronome
 </code></pre>
 <dl>
 <dd>
 <p>The metronome policy is an incremental, deterministic garbage collector with short pause times. Applications that are dependent on precise response times can take advantage of this technology by avoiding potentially long delays from garbage collection activity. The metronome policy is supported on specific hardware and operating system configurations.</p>
-<p>For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_mgc.html">Using the Metronome Garbage Collector</a>.</p>
+<p>For more information about this policy, see <a href="../gc/#metronome-policy">Garbage collection: 'metronome' policy</a>.
+<!-- <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_mgc.html">Using the Metronome Garbage Collector</a>. --></p>
 </dd>
 </dl>
 <h4 id="defaults-and-options_1">Defaults and options</h4>
 <dl>
 <dt><code>-Xgc:synchronousGCOnOOM | -Xgc:nosynchronousGCOnOOM</code></dt>
 <dd>One occasion when garbage collection occurs is when the heap runs out of memory. If there is no more free space in the heap, using <code>-Xgc:synchronousGCOnOOM</code> stops your application while garbage collection removes unused objects. If free space runs out again, consider decreasing the target utilization to allow garbage collection more time to complete. Setting <code>-Xgc:nosynchronousGCOnOOM</code> implies that when heap memory is full your application stops and issues an out-of-memory message. The default is <code>-Xgc:synchronousGCOnOOM</code>.</dd>
-<dt><code>-Xnoclassgc</code></dt>
-<dd>Disables class garbage collection. This option switches off garbage collection of storage associated with Java classes that are no longer being used by the OpenJ9 VM. The default behavior is -Xnoclassgc.</dd>
+<dt><code>-Xclassgc | -Xnoclassgc | -Xalwaysclassgc</code> </dt>
+<dd>
+<p><a href="../xclassgc/"><code>-Xnoclassgc</code></a> disables class garbage collection. This option switches off garbage collection of storage associated with Java classes that are no longer being used by the OpenJ9 VM. The default behavior is <a href="../xclassgc/"><code>-Xclassgc</code></a>, which heuristically decides which GC cycle will attempt to unload classes.</p>
+</dd>
+<dd>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Disabling class garbage collection is not recommended as this causes unlimited native memory growth, leading to out-of-memory errors.</p>
+</dd>
+<dd>
+<p><a href="../xalwaysclassgc/"><code>-Xalwaysclassgc</code></a> always performs dynamic class unloading checks during global garbage collection.</p>
+</dd>
 <dt><code>-Xgc:targetPauseTime=N</code></dt>
 <dd>Sets the garbage collection pause time, where N is the time in milliseconds. When this option is specified, the GC operates with pauses that do not exceed the value specified. If this option is not specified the default pause time is set to 3 milliseconds. For example, running with <code>-Xgc:targetPauseTime=20</code> causes the GC to pause for no longer than 20 milliseconds during GC operations.</dd>
 <dt><code>-Xgc:targetUtilization=N</code></dt>
 <dd>
 <p>Sets the application utilization to <code>N%</code>; the Garbage Collector attempts to use at most (100-N)% of each time interval. Reasonable values are in the range of 50-80%. Applications with low allocation rates might be able to run at 90%. The default is 70%.</p>
 <p>This example shows the maximum size of the heap memory is 30 MB. The garbage collector attempts to use 25% of each time interval because the target utilization for the application is 75%.</p>
-<p>java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test</p>
+<pre><code>java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
+</code></pre>
 </dd>
 <dt><code>-Xgc:threads=N</code></dt>
 <dd>Specifies the number of GC threads to run. The default is the number of processor cores available to the process. The maximum value you can specify is the number of processors available to the operating system.</dd>
@@ -4270,18 +4306,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </dd>
 <dt><code>-Xmx&lt;size&gt;</code></dt>
 <dd>Specifies the Java heap size. Unlike other garbage collection strategies, the real-time Metronome GC does not support heap expansion. There is not an initial or maximum heap size option. You can specify only the maximum heap size.</dd>
-</dl>
-<h3 id="optavgpause"><code>optavgpause</code></h3>
-<pre><code>    -Xgcpolicy:optavgpause
-</code></pre>
-<dl>
-<dd>The "optimize for pause time" policy uses concurrent mark and concurrent sweep phases. Pause times are shorter than with <code>optthruput</code>, but application throughput is reduced because some garbage collection work is taking place while the application is running. Consider using this policy if you have a large heap size (available on 64-bit platforms), because this policy limits the effect of increasing heap size on the length of the garbage collection pause. However, if your application uses many short-lived objects, the <code>gencon</code> policy might produce better performance.</dd>
-</dl>
-<h3 id="optthruput"><code>optthruput</code></h3>
-<pre><code>    -Xgcpolicy:optthruput
-</code></pre>
-<dl>
-<dd>The "optimize for throughput" policy disables the concurrent mark phase. The application stops during global garbage collection, so long pauses can occur. This configuration is typically used for large-heap applications when high application throughput, rather than short garbage collection pauses, is the main performance goal. If your application cannot tolerate long garbage collection pauses, consider using another policy, such as <code>gencon</code>.</dd>
 </dl>
 <h3 id="nogc"><code>nogc</code></h3>
 <pre><code>    -Xgcpolicy:nogc
