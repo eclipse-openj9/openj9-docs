@@ -73,9 +73,9 @@ The initial heap size is *Xmx/1024*, rounded down to the nearest power of 2, whe
 
 The following options can also be specified on the command line with `-Xgcpolicy:balanced`:
 
-- `-Xalwaysclassgc`
-- `-Xclassgc`
-- `-Xcompactexplicitgc`
+<!-- - `-Xalwaysclassgc` -->
+<!-- - `-Xclassgc`
+<!-- - `-Xcompactexplicitgc` -->
 - `-Xdisableexcessivegc`
 - `-Xdisableexplicitgc`
 - `-Xenableexcessivegc`
@@ -94,8 +94,8 @@ The following options can also be specified on the command line with `-Xgcpolicy
 - `-Xmnx<size>`
 - `-Xms<size>`
 - `-Xmx<size>`
-- `-Xnoclassgc`
-- `-Xnocompactexplicitgc`
+<!-- - `-Xnoclassgc` -->
+<!-- - `-Xnocompactexplicitgc` -->
 - `-Xnuma:none`
 - `-Xsoftmx<size>`
 - `-Xsoftrefthreshold<number>`
@@ -103,11 +103,17 @@ The following options can also be specified on the command line with `-Xgcpolicy
 
 The behavior of the following options is different when specified with `-Xgcpolicy:balanced`:
 
-`-Xcompactgc`
-: Compaction occurs when a System.gc() call is received (default). Compaction always occurs on all other collection types.
+[`-Xcompactgc`](xcompactgc.md) (default)
+: Forces compaction in each Global GC cycle.
 
-`-Xnocompactgc`
-: Compaction does not occur when a System.gc() call is received. Compaction always occurs on all other collection types.
+[`-Xnocompactgc`](xcompactgc.md)
+: Disables internal compaction heuristics in Global GC cycles.
+
+[`-Xcompactexplicitgc`](xcompactexplicitgc.md) (default)
+: Forces compaction in Explicit Global GC cycles, such as those invoked by `System.gc()`. Compaction in implicit Global GC remains optional, triggered by internal heuristics.
+
+[`-Xnocompactexplicitgc`](xcompactexplicitgc.md)
+: Disables compaction in Explicit Global GC cycles. Compaction in implicit Global GC remains optional, triggered by internal heuristics.
 
 The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
@@ -127,8 +133,31 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 - `-Xmr<size>`
 - `-Xmrx<size>`
 - `-Xnoloa`
-- `-Xnopartialcompactgc` (deprecated)
-- `-Xpartialcompactgc` (deprecated)
+<!-- - `-Xnopartialcompactgc` (deprecated) -->
+<!-- - `-Xpartialcompactgc` (deprecated) -->
+
+
+### `optavgpause`
+
+        -Xgcpolicy:optavgpause
+
+: The "optimize for pause time" policy uses concurrent mark and concurrent sweep phases. Pause times are shorter than with `optthruput`, but application throughput is reduced because some garbage collection work is taking place in the context of mutator (application) threads, and GC frequency is increased.
+
+    Consider using this policy if you have a large heap size (available on 64-bit platforms), because this policy limits the effect of increasing heap size on the length of the garbage collection pause. However, if your application uses many short-lived objects, the `gencon` policy might produce better performance.
+
+    For more information about this policy, see [Garbage collection: 'optavgpause' policy](gc.md#optavgpause-policy).
+
+
+### `optthruput`
+
+        -Xgcpolicy:optthruput
+
+: The "optimize for throughput" policy disables the concurrent mark phase. The application stops during global garbage collection, so long pauses can occur. 
+
+    This configuration is typically used for large-heap applications when high application throughput, rather than short garbage collection pauses, is the main performance goal. If your application cannot tolerate long garbage collection pauses, consider using another policy, such as `gencon`.
+
+    For more information about this policy, see [Garbage collection: 'optavgpause' policy](gc.md#optavgpause-policy).
+
 
 ### `metronome` (AIX, Linux x86 only)
 
@@ -136,15 +165,21 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
 : The metronome policy is an incremental, deterministic garbage collector with short pause times. Applications that are dependent on precise response times can take advantage of this technology by avoiding potentially long delays from garbage collection activity. The metronome policy is supported on specific hardware and operating system configurations.
 
-    For more information, see [Using the Metronome Garbage Collector](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_mgc.html).
+    For more information about this policy, see [Garbage collection: 'metronome' policy](gc.md#metronome-policy).
+<!-- [Using the Metronome Garbage Collector](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_mgc.html). -->
 
 #### Defaults and options
 
 `-Xgc:synchronousGCOnOOM | -Xgc:nosynchronousGCOnOOM`
 : One occasion when garbage collection occurs is when the heap runs out of memory. If there is no more free space in the heap, using `-Xgc:synchronousGCOnOOM` stops your application while garbage collection removes unused objects. If free space runs out again, consider decreasing the target utilization to allow garbage collection more time to complete. Setting `-Xgc:nosynchronousGCOnOOM` implies that when heap memory is full your application stops and issues an out-of-memory message. The default is `-Xgc:synchronousGCOnOOM`.
 
-`-Xnoclassgc`
-: Disables class garbage collection. This option switches off garbage collection of storage associated with Java classes that are no longer being used by the OpenJ9 VM. The default behavior is -Xnoclassgc.
+`-Xclassgc | -Xnoclassgc | -Xalwaysclassgc` 
+
+: [`-Xnoclassgc`](xclassgc.md) disables class garbage collection. This option switches off garbage collection of storage associated with Java classes that are no longer being used by the OpenJ9 VM. The default behavior is [`-Xclassgc`](xclassgc.md), which heuristically decides which GC cycle will attempt to unload classes.
+
+: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Disabling class garbage collection is not recommended as this causes unlimited native memory growth, leading to out-of-memory errors.
+
+: [`-Xalwaysclassgc`](xalwaysclassgc.md) always performs dynamic class unloading checks during global garbage collection.
 
 `-Xgc:targetPauseTime=N`
 : Sets the garbage collection pause time, where N is the time in milliseconds. When this option is specified, the GC operates with pauses that do not exceed the value specified. If this option is not specified the default pause time is set to 3 milliseconds. For example, running with `-Xgc:targetPauseTime=20` causes the GC to pause for no longer than 20 milliseconds during GC operations.
@@ -154,9 +189,7 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
     This example shows the maximum size of the heap memory is 30 MB. The garbage collector attempts to use 25% of each time interval because the target utilization for the application is 75%.
 
-
-      java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
-
+        java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
 
 `-Xgc:threads=N`
 : Specifies the number of GC threads to run. The default is the number of processor cores available to the process. The maximum value you can specify is the number of processors available to the operating system.
@@ -168,18 +201,6 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
 `-Xmx<size>`
 : Specifies the Java heap size. Unlike other garbage collection strategies, the real-time Metronome GC does not support heap expansion. There is not an initial or maximum heap size option. You can specify only the maximum heap size.
-
-### `optavgpause`
-
-        -Xgcpolicy:optavgpause
-
-: The "optimize for pause time" policy uses concurrent mark and concurrent sweep phases. Pause times are shorter than with `optthruput`, but application throughput is reduced because some garbage collection work is taking place while the application is running. Consider using this policy if you have a large heap size (available on 64-bit platforms), because this policy limits the effect of increasing heap size on the length of the garbage collection pause. However, if your application uses many short-lived objects, the `gencon` policy might produce better performance.
-
-### `optthruput`
-
-        -Xgcpolicy:optthruput
-
-: The "optimize for throughput" policy disables the concurrent mark phase. The application stops during global garbage collection, so long pauses can occur. This configuration is typically used for large-heap applications when high application throughput, rather than short garbage collection pauses, is the main performance goal. If your application cannot tolerate long garbage collection pauses, consider using another policy, such as `gencon`.
 
 
 ### `nogc`
@@ -214,11 +235,5 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
     - You might use `nogc` when an application is so short lived that allocated memory is never exhausted and running a full GC cycle is therefore a waste of resources.
 
     - Similarly, when memory application is well understood or where there is rarely memory to be reclaimed, you might prefer to avoid unnecessary GC cycles and rely on a failover mechanism to occasionally restart the VM as necessary.
-
-
-
-
-
-
 
 <!-- ==== END OF TOPIC ==== xgcpolicy.md ==== -->
