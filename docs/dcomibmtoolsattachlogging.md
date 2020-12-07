@@ -45,7 +45,7 @@ Turn on tracing and logging of Attach API events to help diagnose problems. One 
 
 ## See also
 
-- [Java Attach API](atttachapi.md)
+- [Java Attach API](attachapi.md)
 - [-Dcom.ibm.tools.attach.command_timeout](dcomibmtoolsattachcommand_timeout.md)
 - [-Dcom.ibm.tools.attach.directory](dcomibmtoolsattachdirectory.md)
 - [-Dcom.ibm.tools.attach.displayName](dcomibmtoolsattachdisplayname.md)

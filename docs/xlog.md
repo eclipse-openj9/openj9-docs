@@ -22,70 +22,46 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xlog 
+# -Xlog
 
-Enables message logging. 
-
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Changes made to message logging using the `-Xlog` option do not affect messages written to the standard error stream (`stderr`).
+This option is supported for better compatibility with the reference implementation. However, only forms of `-Xlog` that enable garbage collection (GC) logging are recognized. Note that the behavior of this option changed in Eclipse OpenJ9 0.24.0.
 
 ## Syntax
 
-        -Xlog:<parameter>{,<parameter>}
+        -Xlog[:<parameters>]
 
-## Parameters
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i>**Note:** In Eclipse OpenJ9 version 0.24.0, the [`-Xsyslog`](xsyslog.md) option replaced the existing OpenJ9 `-Xlog` option for message logging to avoid conflicts with the reference implementation. For backward compatibility, you can control the behavior of the `-Xlog` option with the [`-XX:[+|-]LegacyXlogOption`](xxlegacyxlogoption.md) option.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** The parameters `all`, `none` and `help` must be used on their own and cannot be combined. However, the other parameters can be grouped. For example, to include error, vital and warning messages use `-Xlog:error,vital,warn`. 
 
-For message details see [OpenJ9 VM messages](messages_intro.md#jvm-messages).
+## Explanation
 
-### `help`
+Use of the `-Xlog` option is supported for GC logging only. The following table describes the behavior of the option depending on what you specify on the command line.
 
-        -Xlog:help
+| `-Xlog` option type         | Behavior                                    |
+|-------------------------|--------------------------------------------------|
+| An option that returns GC data. For example `-Xlog:gc`                | An equivalent OpenJ9 GC logging option is enabled. See the next table for more details. |
+| An option that, in the reference implementation, returns GC data and also other data. For example: `-Xlog`, `-Xlog:all`, `-Xlog:gc+<other_tag>`, or  `-Xlog:gc:stdout` | An equivalent OpenJ9 GC logging option is enabled as before but because non-GC data is not supported, the following error message is also produced: <br/> `JVMJ9VM007W Command-line option unrecognised: <option>`      |
+| An option that, in the reference implementation, returns only non-GC data            | Non-GC data is not supported, so the following error message is produced: <br/> `JVMJ9VM007W Command-line option unrecognised: <option>` |   
 
-: Gives details the available parameters. (This parameter cannot be combined with others.)
+The following table shows some examples of the mapping between `-Xlog` parameters and the equivalent OpenJ9 GC parameters:
 
-### `error`
+| `-Xlog` parameter         | OpenJ9 GC equivalent                                 |
+|-------------------------|--------------------------------------------------|
+| `-Xlog:gc` <br/> `-Xlog:gc:stderr`                | `-verbose:gc` |
+| `-Xlog:gc:<filename>` <br/> `-Xlog:gc:file=<filename>` | `-Xverbosegclog:<updated_filename>`      |
 
-        -Xlog:error
 
-: Turns on logging for all OpenJ9 VM error messages (default).
+In the table, the value of `<filename>` can contain the following tokens, which are processed and passed to the `-Xverbosegclog` option as `<updated_filename>`:
 
-### `vital`
+- `%p` is replaced with the process ID (equivalent to [dump agent token `%pid`](xdump.md#dump-agent-tokens))
+- `%t` is replaced with the dump agent tokens `%Y-%m-%d_%H-%M-%S`.
 
-        -Xlog:vital
 
-: Turns on logging for selected information messages `JVMDUMP006I`, `JVMDUMP032I`, and `JVMDUMP033I`, which provide valuable additional information about dumps produced by the OpenJ9 VM (default).
+## See also
 
-### `info`
-
-        -Xlog:info
-
-: Turns on logging for all OpenJ9 VM information messages.
-
-### `warn`
-
-        -Xlog:warn
-
-: Turns on logging for all OpenJ9 VM warning messages.
-
-### `config`
-
-        -Xlog:config
-
-: Turns on logging for all OpenJ9 VM configuration messages.
-
-### `all`
-
-        -Xlog:all
-
-: Turns on logging for all OpenJ9 VM messages. (This parameter cannot be combined with others.)
-
-### `none`
-
-        -Xlog:none
-
-: Turns off logging for all OpenJ9 VM messages. (This parameter cannot be combined with others.)
+- [`-Xsyslog`](xsyslog.md)
+- [`-Xverbosegclog`](xverbosegclog.md)
+- [`-XX:[+|-]LegacyXlogOption`](xxlegacyxlogoption.md)
 
 
 <!-- ==== END OF TOPIC ==== xlog.md ==== -->
-

@@ -303,6 +303,8 @@ When `jdmpview` is started, many parameters can be used during the session to in
 
 : Lists all *expert* parameters that can be used in a session, with a brief description.
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The *expert* parameters are subject to change and not intended as a supported interface.
+
 ### cd
 
         cd <directory_name>

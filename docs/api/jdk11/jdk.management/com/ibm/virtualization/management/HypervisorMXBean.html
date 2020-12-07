@@ -16,8 +16,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -131,7 +130,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">PlatformManagedObject</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">PlatformManagedObject</a></code></dd>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
@@ -139,7 +138,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">HypervisorMXBean</span>
-extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">PlatformManagedObject</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">PlatformManagedObject</a></pre>
 <div class="block">This interface provides information on whether the current Operating System is running directly on physical hardware
  or running as a Guest (Virtual Machine (VM)/Logical Partition (LPAR)) on top of a Hypervisor.
  If the Operating System is running as a Guest, the interface provides information about the Hypervisor.
@@ -213,7 +212,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVendor()">getVendor</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the vendor of the Hypervisor if running in a virtualized environment.</div>
@@ -231,8 +230,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.management.PlatformManagedObject">
 <!--   -->
 </a>
-<h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" target="_blank" title="class or interface in java.lang.management" class="externalLink">PlatformManagedObject</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true#getObjectName()" title="class or interface in java.lang.management" class="externalLink">getObjectName</a></code></li>
+<h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">PlatformManagedObject</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true#getObjectName()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getObjectName</a></code></li>
 </ul>
 </li>
 </ul>
@@ -257,14 +256,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <li class="blockList">
 <h4>isEnvironmentVirtual</h4>
 <pre class="methodSignature">boolean&nbsp;isEnvironmentVirtual()
-                      throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">UnsupportedOperationException</a>,
+                      throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">UnsupportedOperationException</a>,
                              <a href="HypervisorInfoRetrievalException.html" title="class in com.ibm.virtualization.management">HypervisorInfoRetrievalException</a></pre>
 <div class="block">Indicates if the Operating System is running on a Hypervisor or not.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if running on a Hypervisor, false otherwise.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">UnsupportedOperationException</a></code> - if the underlying Hypervisor is unsupported.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">UnsupportedOperationException</a></code> - if the underlying Hypervisor is unsupported.</dd>
 <dd><code><a href="HypervisorInfoRetrievalException.html" title="class in com.ibm.virtualization.management">HypervisorInfoRetrievalException</a></code> - if there is an error during Hypervisor detection.</dd>
 </dl>
 </li>
@@ -275,7 +274,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getVendor</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;getVendor()</pre>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getVendor()</pre>
 <div class="block">Returns the vendor of the Hypervisor if running in a virtualized environment.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -355,7 +354,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

@@ -13,8 +13,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="../../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="../../../../../../jquery/jquery-ui.js"></script>
 </head>
 <body>
@@ -267,15 +266,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <td class="colFirst"><code><a href="../JavaThread.html" title="interface in com.ibm.dtfj.java">JavaThread</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">IJavaRuntimeBuilder.</span><code><span class="memberNameLink"><a href="../../javacore/builder/IJavaRuntimeBuilder.html#addJavaThread(com.ibm.dtfj.image.ImageThread,java.lang.String,long,long,long,long,java.lang.String,int,long,java.lang.String)">addJavaThread</a></span>&#8203;(<a href="../../image/ImageThread.html" title="interface in com.ibm.dtfj.image">ImageThread</a>&nbsp;imageThread,
-             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;name,
              long&nbsp;tid,
              long&nbsp;j9thread_t,
              long&nbsp;javaObjID,
              long&nbsp;jniEnv,
-             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;state,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;state,
              int&nbsp;priority,
              long&nbsp;blockingObjectAddress,
-             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;blockingObjectClassName)</code></th>
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;blockingObjectClassName)</code></th>
 <td class="colLast">
 <div class="block">Not available in a javacore: object ID and the java.lang.Thread class name associated with a thread.</div>
 </td>
@@ -293,11 +292,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <td class="colFirst"><code><a href="../JavaStackFrame.html" title="interface in com.ibm.dtfj.java">JavaStackFrame</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">IJavaRuntimeBuilder.</span><code><span class="memberNameLink"><a href="../../javacore/builder/IJavaRuntimeBuilder.html#addJavaStackFrame(com.ibm.dtfj.java.JavaThread,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int)">addJavaStackFrame</a></span>&#8203;(<a href="../JavaThread.html" title="interface in com.ibm.dtfj.java">JavaThread</a>&nbsp;javaThread,
-                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;className,
-                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;classFileName,
-                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;methodName,
-                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;methodType,
-                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;compilationLevel,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;className,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;classFileName,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;methodName,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;methodType,
+                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;compilationLevel,
                  int&nbsp;lineNumber)</code></th>
 <td class="colLast">
 <div class="block">Adds a java stack frame to a javathread.</div>
@@ -323,15 +322,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <tr class="altColor">
 <td class="colFirst"><code><a href="../JavaThread.html" title="interface in com.ibm.dtfj.java">JavaThread</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaRuntimeBuilder.</span><code><span class="memberNameLink"><a href="../../javacore/builder/javacore/JavaRuntimeBuilder.html#addJavaThread(com.ibm.dtfj.image.ImageThread,java.lang.String,long,long,long,long,java.lang.String,int,long,java.lang.String)">addJavaThread</a></span>&#8203;(<a href="../../image/ImageThread.html" title="interface in com.ibm.dtfj.image">ImageThread</a>&nbsp;imageThread,
-             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;name,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;name,
              long&nbsp;tid,
              long&nbsp;j9thread_t,
              long&nbsp;javaObjID,
              long&nbsp;jniEnv,
-             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;state,
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;state,
              int&nbsp;priority,
              long&nbsp;blockingObject,
-             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;blockingObjectClass)</code></th>
+             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;blockingObjectClass)</code></th>
 <td class="colLast">
 <div class="block">If successfully added a JavaThread, or updated an existing JavaThread, return the javathread, or otherwise
  throw an exception.</div>
@@ -467,7 +466,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 documentation.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

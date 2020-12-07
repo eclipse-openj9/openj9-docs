@@ -47,7 +47,7 @@ timeout(time: 6, unit: 'HOURS') {
 
                 // Push container to Dockerhub
                 stage('Push') {
-                    withCredentials([usernamePassword(credentialsId: '7fb9f8f0-14bf-469a-9132-91db4dd80c48', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                    withCredentials([usernamePassword(credentialsId: 'docker-login', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                         sh "docker login --username=\"${USER}\" --password=\"${PASS}\""
                     }
                     if (params.ghprbPullId) {

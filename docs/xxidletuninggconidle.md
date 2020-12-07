@@ -28,7 +28,7 @@
 
 This option controls whether a garbage collection cycle takes place when the state of the OpenJ9 VM is set to idle. Compaction of the heap is also attempted during the idle GC when certain triggers are met.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This option applies only to Linux&reg; architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
 
 ## Syntax
 
@@ -52,6 +52,6 @@ When enabled, the `-XX:+IdleTuningGcOnIdle` option is used with the `-XX:IdleTun
 
 - [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md)
 - [-XX:IdleTuningMinFreeHeapOnIdle](xxidletuningminfreeheaponidle.md)
-- [-XX:\[+|-\]IdleTuningCompactOnIdle \(deprecated\)](xxidletuningcompactonidle.md)
+- [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md) (From OpenJ9 version 0.23.0 this option has no effect.)
 
 <!-- ==== END OF TOPIC ==== xxidletuninggconidle.md ==== -->
