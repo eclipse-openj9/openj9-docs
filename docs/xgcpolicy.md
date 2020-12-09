@@ -64,7 +64,7 @@ Specify the garbage collection policy that you want the OpenJ9 VM to use:
 
 : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you are using the balanced GC policy in a Docker container that uses the default `seccomp` Docker profile, you must start the container with `--security-opt seccomp=unconfined` to exploit NUMA characteristics. These options are not required if you are running in Kubernetes, because `unconfined` is set by default (see [Seccomp]( https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp)).
 
-: To learn about this policy and how it works, see [Garbage collection: 'balanced' policy](gc.md#balanced-policy).
+: To learn more about this policy and how it works, see [Garbage collection: 'balanced' policy](gc.md#balanced-policy).
 
 
 #### Defaults and options
@@ -209,31 +209,19 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
 : This policy handles only memory allocation and heap expansion, but doesn't reclaim any memory. If the available Java heap becomes exhausted, an `OutOfMemoryError` exception is triggered and the VM stops.
 
-    Because there is no GC pause and most overheads on allocations are eliminated, the impact on runtime performance is minimized. This policy therefore provides benfits for "garbage-free" applications. See the following section, "When to use nogc", for some possible use cases.
+    Because there is no GC pause and most overheads on allocations are eliminated, the impact on runtime performance is minimized. This policy therefore provides benefits for "garbage-free" applications.
 
     You should be especially careful when using any of the following techniques with `nogc` because memory is never released under this policy:  
     - Finalization  
     - Direct memory access  
     - Weak, soft, and phantom references
 
-    This policy can also be enabled with the [`-XX:+UseNoGC`](xxusenogc.md) option.
+: To learn when to use this policy, see [Garbage collection: 'nogc' policy](gc.md#nogc-policy).
 
-    Further details are available at [JEP 318: Epsilon: A No-Op Garbage Collector](http://openjdk.java.net/jeps/318).
+This policy can also be enabled with the [`-XX:+UseNoGC`](xxusenogc.md) option.
 
-####When to use nogc
+Further details are available at [JEP 318: Epsilon: A No-Op Garbage Collector](http://openjdk.java.net/jeps/318).
 
-: For most Java applications, you should _not_ use `nogc`. However, there are some particular situations where it can be appropriate:
 
-    Testing during development
-
-    - GC performance. Use `nogc` as a baseline when testing the performance of other GC policies, including the provision of a low-latency baseline.
-
-    - Application memory. Use `nogc` to test your settings for allocated memory. If you use [`-Xmx`](xms.md) to set the heap size that should not be exceeded, then your application will crash with a heap dump if it tries to exceed your memory limit.
-
-    Running applications with minimal or no GC requrements
-
-    - You might use `nogc` when an application is so short lived that allocated memory is never exhausted and running a full GC cycle is therefore a waste of resources.
-
-    - Similarly, when memory application is well understood or where there is rarely memory to be reclaimed, you might prefer to avoid unnecessary GC cycles and rely on a failover mechanism to occasionally restart the VM as necessary.
 
 <!-- ==== END OF TOPIC ==== xgcpolicy.md ==== -->
