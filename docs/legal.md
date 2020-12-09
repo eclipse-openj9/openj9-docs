@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -38,7 +38,7 @@ See [Notices](https://github.com/eclipse/openj9-docs/blob/master/NOTICE.md)
 
 Eclipse OpenJ9 documentation is subject to the following copyright:
 
-    Copyright (c) 2017, 2020 IBM Corp.
+    Copyright (c) 2017, 2021 IBM Corp.
 
 ### Trademarks
 
