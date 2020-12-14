@@ -97,7 +97,7 @@ minimum glibc version 2.12 (x) or 2.17 (others) are expected to function without
 
 | macOS&reg;              |   x64    |
 |-------------------------|----------|
-| OS X&reg; 10.9.0+       |    Y     |
+| OS X&reg; 10.10.0+      |    Y     |
 
 
 | AIX&reg;     |  ppc32   |  ppc64   |
@@ -140,7 +140,7 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 
 | macOS                   |   x64    |
 |-------------------------|----------|
-| OS X 10.9.0+            |    Y     |
+| OS X 10.10.0+           |    Y     |
 
 | AIX          |  ppc64   |
 |--------------|----------|
@@ -181,7 +181,7 @@ OpenJDK 15 binaries are expected to function on the minimum operating system lev
 
 | macOS                   |   x64    |
 |-------------------------|----------|
-| OS X 10.9.0+            |    Y     |
+| OS X 10.10.0+           |    Y     |
 
 | AIX          |  ppc64   |
 |--------------|----------|
