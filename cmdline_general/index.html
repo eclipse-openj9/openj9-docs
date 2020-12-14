@@ -1070,9 +1070,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Standard options
+      </label>
+    
     <a href="./" title="Standard options" class="md-nav__link md-nav__link--active">
       Standard options
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#openj9-extensions" class="md-nav__link">
+    OpenJ9 extensions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -3847,6 +3876,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
   
   
+    <label class="md-nav__title" for="__toc">On this page ...</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#openj9-extensions" class="md-nav__link">
+    OpenJ9 extensions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3934,6 +3979,11 @@ Some of the common options supported are summarised in the following table:</p>
 <li><code>-verbose:stack</code>: Writes information to <code>stderr</code> describing the Java and C stack usage for each thread.</li>
 </ul>
 <p>For more information about standard options, see <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html#BABDJJFI">Oracle Java SE Standard Options</a></p>
+<h2 id="openj9-extensions">OpenJ9 extensions</h2>
+<p>OpenJ9 supports the following extension to the <code>-verbose</code> option:</p>
+<ul>
+<li><code>-verbose:stacktrace</code> : Writes either the module name or the <code>Classloader</code> name (with the code source location when available) to the end of each line of a Java stack trace.</li>
+</ul>
 <!-- ==== END OF TOPIC ==== cmdline_general.md ==== -->
                 
                   
