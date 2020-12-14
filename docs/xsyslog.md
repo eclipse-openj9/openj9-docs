@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -22,11 +22,14 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xsyslog 
+# -Xsyslog
 
-Enables Operating System message logging. 
+Enables operating system message logging.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Changes made to message logging using the `-Xsyslog` option do not affect messages written to the standard error stream (`stderr`).
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+
+- Changes made to message logging by using the `-Xsyslog` option do not affect messages written to the standard error stream (`stderr`).
+- This option replaces the OpenJ9 [`-Xlog`](xlog.md) option in Eclipse OpenJ9 version 0.24.0. If the [`-XX:+LegacyXlogOption`](xxlegacyxlogoption.md) is set, `-Xlog` behaves in the same way as `-Xsyslog` and with the same parameters.
 
 ## Syntax
 
@@ -34,7 +37,7 @@ Enables Operating System message logging.
 
 ## Parameters
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** The parameters `all`, `none` and `help` must be used on their own and cannot be combined. However, the other parameters can be grouped. For example, to include error, vital and warning messages use `-Xsyslog:error,vital,warn`. 
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** The parameters `all`, `none` and `help` must be used on their own and cannot be combined. However, the other parameters can be grouped. For example, to include error, vital and warning messages use `-Xsyslog:error,vital,warn`.
 
 For message details see [OpenJ9 VM messages](messages_intro.md#jvm-messages).
 
@@ -87,5 +90,5 @@ For message details see [OpenJ9 VM messages](messages_intro.md#jvm-messages).
 : Turns off logging for all OpenJ9 VM messages. (This parameter cannot be combined with others.)
 
 
-<!-- ==== END OF TOPIC ==== xsyslog.md ==== -->
 
+<!-- ==== END OF TOPIC ==== xsyslog.md ==== -->

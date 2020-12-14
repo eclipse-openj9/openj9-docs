@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2020 IBM Corp. and others
+# Copyright (c) 2017, 2021 IBM Corp. and others
 #
 # This program and the accompanying materials are made
 # available under the terms of the Eclipse Public License 2.0
@@ -317,6 +317,7 @@ nav:
             - "-Xsoftrefthreshold"                                               : xsoftrefthreshold.md
             - "-Xss"                                                             : xss.md
             - "-Xssi"                                                            : xss.md                             # redirect
+            - "-Xsyslog"                                                         : xsyslog.md
             - "-Xtgc"                                                            : xtgc.md
             - "-Xthr"                                                            : xthr.md
             - "-XtlhPrefetch"                                                    : xtlhprefetch.md
@@ -356,6 +357,7 @@ nav:
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
             - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
+            - "-XX:[+|-]LegacyXLogOption"                                        : xxlegacyxlogoption.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
             - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
             - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect

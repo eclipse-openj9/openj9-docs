@@ -1,5 +1,5 @@
 ﻿<!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -24,14 +24,21 @@
 
 # -XX:[+|-]LegacyXlogOption
 
-Controls processing of the [`-Xlog`](xlog.md) option. When `-XX:-LegacyXlogOption` is set, which is the default, the `-Xlog` option is not recognized.
-When `-XX:+LegacyXlogOption` is set, the `-Xlog` option is equivalent to the [`-Xsyslog`](xsyslog.md) option. 
+Controls processing of the `-Xlog` option.
 
 ## Syntax
 
-| Setting                  | Effect     | Default                                                                            |
-|--------------------------|------------|:----------------------------------------------------------------------------------:|
-| `-XX:+LegacyXlogOption` | Process -Xlog  |                                                                              |
-| `-XX:-LegacyXlogOption` | Ignore -Xlog   | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| Setting                 | Effect                                     | Default                                                                       |
+|-------------------------|--------------------------------------------|:-----------------------------------------------------------------------------:|
+| `-XX:+LegacyXlogOption` | Enable legacy `-Xlog` behavior             |                                                                               |
+| `-XX:-LegacyXlogOption` | Process `-Xlog` requests for GC logging    | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>|
 
-<!-- ==== END OF TOPIC ==== xxdisableexplicitgc.md ==== -->
+## Explanation
+
+From Eclipse OpenJ9 0.24.0, the `-Xlog` option is replaced by the [`-Xsyslog`](xsyslog.md) option. The `-XX:[+|-]LegacyXlogOption` controls how the `-Xlog` option is processed.
+
+- When `-XX:-LegacyXlogOption` is set, the `-Xlog` option is recognized only when a form of this option is run that requests garbage collection (GC) logging (for example, `-Xlog:gc[:stderr|:file=<filename>]`). For more information, see [`-Xlog`](xlog.md).
+- When `-XX:+LegacyXlogOption` is set, the legacy `-Xlog` behavior is enabled. When enabled, the option is equivalent to the [`-Xsyslog`](xsyslog.md) option. That is, the `-Xlog` option can be used with the parameters documented in [`-Xsyslog`](xsyslog.md).
+
+
+<!-- ==== END OF TOPIC ==== xxlegacyxlogoption.md ==== -->
