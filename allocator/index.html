@@ -641,8 +641,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#thread-local-heaps-tlh" class="md-nav__link">
-    Thread local heaps (TLH)
+  <a href="#allocation-caches" class="md-nav__link">
+    Allocation caches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soa-and-loa" class="md-nav__link">
+    SOA and LOA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compressed-references" class="md-nav__link">
+    Compressed references
   </a>
   
 </li>
@@ -3901,8 +3915,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#thread-local-heaps-tlh" class="md-nav__link">
-    Thread local heaps (TLH)
+  <a href="#allocation-caches" class="md-nav__link">
+    Allocation caches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soa-and-loa" class="md-nav__link">
+    SOA and LOA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compressed-references" class="md-nav__link">
+    Compressed references
   </a>
   
 </li>
@@ -3958,14 +3986,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 -->
 
 <h1 id="memory-allocation">Memory allocation</h1>
-<p>The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on an area of memory that is reserved for VM processing called the Java&trade; heap. </p>
+<p>The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on an area of memory that is reserved for VM processing called the Java&trade; heap.</p>
 <p>See <a href="../gc/">Garbage collection</a> for more information about the GC.</p>
 <h2 id="the-allocator">The Allocator</h2>
 <p>The Allocator assigns areas of the Java heap for Java objects. Objects are considered as <em>live</em> when they have a chain of references to them that start from root references, such as those found in thread stacks. When that reference or pointer no longer exists, the objects are considered as <em>garbage</em>.</p>
 <p>The Allocator manages pools of free memory and how the free memory is consumed. It is also responsible for allocating areas of storage in the Java heap for objects at the request of applications, class libraries, or the VM.</p>
 <p>Every allocation requires a <em>heap lock</em> to stop concurrent threads trying to access the same area of memory at the same time. When an object is allocated, the heap lock is released. If there is insufficient space to allocate the object, allocation fails, the heap lock is released, and the GC is called. If the GC manages to recover some space on the heap, the Allocator can resume operations. If the GC does not recover enough space, it returns an <code>OutOfMemoryError</code> exception.</p>
 <p>Acquiring a heap lock for every allocation would be an intensive operation with a knock on impact to performance. To get around this problem, small objects are allocated to thread local heaps (TLH).</p>
-<h3 id="thread-local-heaps-tlh">Thread local heaps (TLH)</h3>
+<h3 id="allocation-caches">Allocation caches</h3>
 <p>To improve performance, allocation caches are reserved in the heap for different threads. These allocation caches are known as thread local heaps (TLH) and allow each thread to allocate memory from its cache without acquiring the heap lock. A TLH is typically used for small objects of less than 512 bytes (768 bytes on 64-bit VMs) although larger objects can be allocated from the cache if there is sufficient space.</p>
 <p>If a thread allocates a lot of objects, the allocator gives that thread a larger TLH to reduce contention on the heap lock.</p>
 <p>A TLH is predefined with an initial default size of 2 KB. On every TLH refresh, the requested size for that thread
@@ -3983,6 +4011,23 @@ For very active threads, the maximum TLH requested size might be reached before 
 </ul>
 <p>Typically, when the maximum TLH size is increased, you should also increase the increment proportionally, so that active threads can
 reach the maximum requested TLH size more quickly.</p>
+<h3 id="soa-and-loa">SOA and LOA</h3>
+<p>Some GC policies subdivide areas of the heap for object allocation into the Small Object Area (SOA) and the Large Object Area (LOA).</p>
+<p>The allocator initially attempts to allocate objects in the SOA, regardless of size. If the allocation cannot be satisfied the following actions are possible, depending on object size:</p>
+<ul>
+<li>If the object is smaller than 64 KB, an allocation failure occurs, which triggers a GC action.</li>
+<li>If the object is larger than 64 KB, the allocator attempts to allocate the object in the LOA. If the allocation cannot be satisfied, an allocation failure occurs, which triggers a GC action.</li>
+</ul>
+<p>The GC action that is triggered by the allocation failure depends on the GC policy in force.</p>
+<p>The overall size of the LOA is calculated when the heap is initialized, and recalculated at the end of each global GC cycle. The GC can expand or shrink the LOA, depending on usage, to avoid allocation failures.</p>
+<p>You can control the size of the LOA by using the <code>-Xloainitial</code>, <code>-Xloaminimum</code>, and <code>-Xloamaximum</code> command line options (See <a href="../xloaminimum/">LOA sizing options</a>). If the LOA is not used, the GC shrinks the LOA after a few cycles, down to the value of <code>-Xloaminimum</code>. You can also specify <a href="../xloa/"><code>-Xnoloa</code></a> to prevent an LOA being created.</p>
+<p>An SOA and LOA are used by the OpenJ9 standard GC policies: <code>gencon</code>, <code>optavgpause</code> and <code>optthruput</code>. However, the <code>balanced</code> and <code>metronome</code> GC policies use a heap configuration that does not include the SOA or LOA. For more information about policies, see <a href="../gc/">Garbage collection policies</a>.</p>
+<h3 id="compressed-references">Compressed references</h3>
+<p>On 64-bit systems, the VM can use compressed references to decrease the size of Java objects and make better use of the available space in the Java heap. By storing objects in a 32-bit representation, the object size is identical to a 32-bit object, which occupies a smaller memory footprint. These 4 byte (32-bit) compressed references are converted to 64-bit values at runtime with minimal overhead. Smaller objects enable larger heap sizes that result in less frequent garbage collection and improve memory cache utilization. Overall, the performance of 64-bit applications that store compressed rather than uncompressed 64-bit object references is significantly improved.</p>
+<p>Compressed references are used by default when the maximum Java heap size is in the range 0 - 57 GB on AIX&reg;, Linux&reg;, and Windows&reg; systems. The upper limit is also 57 GB on z/OS&reg; systems that have APAR OA49416
+installed (25 GB without APAR OA49416). All GC policies observe these limits except for the <a href="../gc/#metronome-policy"><code>metronome</code></a> policy, which can only support a heap size of up to 25 GB with compressed references.</p>
+<p>When the VM uses compressed references, classes, threads, and monitors are stored in the lowest 4 GB of address space. However, this area of memory is also used by native libraries, the operating system, and for small Java heaps. If you receive native memory <code>OutOfMemoryError</code> exceptions in the lowest 4 GB when running with compressed references enabled, these errors might result from the lowest 4 GB of address space becoming full. Try specifying a large heap with the <a href="../xms/"><code>-Xmx</code></a> option, which puts the Java heap into a higher area of address space or using the <a href="../xmcrs/"><code>-Xmcrs</code></a> option to reserve space in the lowest 4 GB of address space for compressed references.</p>
+<p>To turn off compressed references, use the <a href="../xcompressedrefs/"><code>-Xnocompressedrefs</code></a> command-line option.</p>
 <!-- ==== END OF TOPIC ==== allocator.md ==== -->
                 
                   
