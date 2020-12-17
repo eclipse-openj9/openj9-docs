@@ -34,9 +34,6 @@ These Oracle&reg; HotSpot&trade; options set the initial/minimum Java&trade; hea
 - If you set a value for `-Xms`, the [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md) option is ignored.
 - If you set a value for `-Xmx`, the [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md) option is ignored.
 
-If you are allocating the Java heap with large pages, see also [-Xlp](xlp.md) and
-[More effective heap usage using compressed references](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_compressed_refs.html).
-
 You can also use the [`-Xmo`](xmo.md) option (not supported by the balanced garbage collection policy):  
 If the scavenger is enabled, `-Xms` &ge; `-Xmn` + `-Xmo`  
 If the scavenger is disabled, `-Xms` &ge; `-Xmo`  
