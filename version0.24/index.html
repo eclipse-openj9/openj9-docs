@@ -430,6 +430,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#update-to-compile-windows-java-8-with-vs2013" class="md-nav__link">
+    Update to compile Windows Java 8 with VS2013
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3984,6 +3991,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#update-to-compile-windows-java-8-with-vs2013" class="md-nav__link">
+    Update to compile Windows Java 8 with VS2013
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4059,6 +4073,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk11&amp;jvmVariant=openj9">OpenJDK version 11</a></li>
 <li><a href="https://adoptopenjdk.net/archive.html?variant=openjdk15&amp;jvmVariant=openj9">OpenJDK version 15</a></li>
 </ul>
+<p>Changes to build environments:
+- <a href="#update-to-compile-windows-java-8-with-vs2013">Update to compile Windows Java 8 with VS2013</a></p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="changes-to-message-logging">Changes to message logging</h3>
 <p><a href="https://openjdk.java.net/jeps/158">JEP 158</a> introduces the <code>-Xlog</code> option as a common logging system for all components of a Java virtual machine. To avoid confusion with the reference implementation, the <a href="../xsyslog/"><code>-Xsyslog</code></a> option replaces the existing OpenJ9 <a href="../xlog/"><code>-Xlog</code></a> option for message logging. For compatibility with the reference implementation, a limited set of <code>-Xlog</code> suboptions are supported.</p>
@@ -4083,6 +4099,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><code>Dump.heap</code> accepts an optional <code>opts=&lt;options&gt;</code> parameter.</li>
 </ul>
 <p>These parameters, including the <code>&lt;file path&gt;</code> parameter, can be in any order. The default for both system and heap dumps is now: <code>request=exclusive+prepwalk</code>. For further details, refer to the following <code>-Xdump</code> suboptions: <a href="../xdump/#requestltrequestsgt"><code>request=&lt;requests&gt;</code></a> and <a href="../xdump/#optsltoptionsgt"><code>opts=&lt;options&gt;</code></a>. And for more information about <code>jcmd</code>, see <a href="../tool_jcmd/">Java diagnostic command (jcmd) tool</a>.</p>
+<h3 id="update-to-compile-windows-java-8-with-vs2013">Update to compile Windows Java 8 with VS2013</h3>
+<p>Windows builds for Java 8 are compiled with Microsoft Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match. </p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.23.0 and v 0.24.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.24/0.24.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.24.md ==== -->
