@@ -204,8 +204,8 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 | Linux x86 64-bit                            | CentOS 6.10               | gcc 7.5                         |
 | Linux on POWER&reg; LE 64-bit               | CentOS 7.8                | gcc 7.5                         |
 | Linux on IBM Z&reg; 64-bit                  | RHEL 7.7                  | gcc 7.5                         |
-| Windows x86 32-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2010 SP1|
-| Windows x86 64-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2010 SP1|
+| Windows x86 32-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2013 Update 5 |
+| Windows x86 64-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2013 Update 5 |
 | macOS x86 64-bit                            | OSX 10.11                 | xcode/clang 4.6.3 and 7.2.1     |
 | AIX POWER BE 64-bit                         | AIX 7.1 TL04              | xlc/C++ 13.1.3                  |
 

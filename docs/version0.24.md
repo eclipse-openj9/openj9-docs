@@ -43,6 +43,9 @@ OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15. Binaries are available fro
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 - [OpenJDK version 15](https://adoptopenjdk.net/archive.html?variant=openjdk15&jvmVariant=openj9)
 
+Changes to build environments:
+- [Update to compile Windows Java 8 with VS2013](#update-to-compile-windows-java-8-with-vs2013)
+
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
 ### Changes to message logging
@@ -79,6 +82,11 @@ You can now include additional parameters for `jcmd Dump` commands. These are as
 - `Dump.heap` accepts an optional `opts=<options>` parameter.
 
 These parameters, including the `<file path>` parameter, can be in any order. The default for both system and heap dumps is now: `request=exclusive+prepwalk`. For further details, refer to the following `-Xdump` suboptions: [`request=<requests>`](xdump.md#requestltrequestsgt) and [`opts=<options>`](xdump.md#optsltoptionsgt). And for more information about `jcmd`, see [Java diagnostic command (jcmd) tool](tool_jcmd.md).
+
+
+### Update to compile Windows Java 8 with VS2013
+
+Windows builds for Java 8 are compiled with Microsoft Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match. 
 
 
 ## Full release information
