@@ -25,7 +25,7 @@
 
 # Memory allocation
 
-The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on an area of memory that is reserved for VM processing called the Java&trade; heap. 
+The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on an area of memory that is reserved for VM processing called the Java&trade; heap.
 
 See [Garbage collection](gc.md) for more information about the GC.
 
@@ -39,7 +39,7 @@ Every allocation requires a *heap lock* to stop concurrent threads trying to acc
 
 Acquiring a heap lock for every allocation would be an intensive operation with a knock on impact to performance. To get around this problem, small objects are allocated to thread local heaps (TLH).
 
-### Thread local heaps (TLH)
+### Allocation caches
 
 To improve performance, allocation caches are reserved in the heap for different threads. These allocation caches are known as thread local heaps (TLH) and allow each thread to allocate memory from its cache without acquiring the heap lock. A TLH is typically used for small objects of less than 512 bytes (768 bytes on 64-bit VMs) although larger objects can be allocated from the cache if there is sufficient space.
 
@@ -65,5 +65,32 @@ The following options control the requested TLH size:
 Typically, when the maximum TLH size is increased, you should also increase the increment proportionally, so that active threads can
 reach the maximum requested TLH size more quickly.
 
-<!-- ==== END OF TOPIC ==== allocator.md ==== -->
+### SOA and LOA
 
+Some GC policies subdivide areas of the heap for object allocation into the Small Object Area (SOA) and the Large Object Area (LOA).
+
+The allocator initially attempts to allocate objects in the SOA, regardless of size. If the allocation cannot be satisfied the following actions are possible, depending on object size:
+
+- If the object is smaller than 64 KB, an allocation failure occurs, which triggers a GC action.
+- If the object is larger than 64 KB, the allocator attempts to allocate the object in the LOA. If the allocation cannot be satisfied, an allocation failure occurs, which triggers a GC action.
+
+The GC action that is triggered by the allocation failure depends on the GC policy in force.
+
+The overall size of the LOA is calculated when the heap is initialized, and recalculated at the end of each global GC cycle. The GC can expand or shrink the LOA, depending on usage, to avoid allocation failures.
+
+You can control the size of the LOA by using the `-Xloainitial`, `-Xloaminimum`, and `-Xloamaximum` command line options (See [LOA sizing options](xloaminimum.md)). If the LOA is not used, the GC shrinks the LOA after a few cycles, down to the value of `-Xloaminimum`. You can also specify [`-Xnoloa`](xloa.md) to prevent an LOA being created.
+
+An SOA and LOA are used by the OpenJ9 standard GC policies: `gencon`, `optavgpause` and `optthruput`. However, the `balanced` and `metronome` GC policies use a heap configuration that does not include the SOA or LOA. For more information about policies, see [Garbage collection policies](gc.md).
+
+### Compressed references
+
+On 64-bit systems, the VM can use compressed references to decrease the size of Java objects and make better use of the available space in the Java heap. By storing objects in a 32-bit representation, the object size is identical to a 32-bit object, which occupies a smaller memory footprint. These 4 byte (32-bit) compressed references are converted to 64-bit values at runtime with minimal overhead. Smaller objects enable larger heap sizes that result in less frequent garbage collection and improve memory cache utilization. Overall, the performance of 64-bit applications that store compressed rather than uncompressed 64-bit object references is significantly improved.
+
+Compressed references are used by default when the maximum Java heap size is in the range 0 - 57 GB on AIX&reg;, Linux&reg;, and Windows&reg; systems. The upper limit is also 57 GB on z/OS&reg; systems that have APAR OA49416
+installed (25 GB without APAR OA49416). All GC policies observe these limits except for the [`metronome`](gc.md#metronome-policy) policy, which can only support a heap size of up to 25 GB with compressed references.
+
+When the VM uses compressed references, classes, threads, and monitors are stored in the lowest 4 GB of address space. However, this area of memory is also used by native libraries, the operating system, and for small Java heaps. If you receive native memory `OutOfMemoryError` exceptions in the lowest 4 GB when running with compressed references enabled, these errors might result from the lowest 4 GB of address space becoming full. Try specifying a large heap with the [`-Xmx`](xms.md) option, which puts the Java heap into a higher area of address space or using the [`-Xmcrs`](xmcrs.md) option to reserve space in the lowest 4 GB of address space for compressed references.
+
+To turn off compressed references, use the [`-Xnocompressedrefs`](xcompressedrefs.md) command-line option.
+
+<!-- ==== END OF TOPIC ==== allocator.md ==== -->
