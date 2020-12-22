@@ -30,7 +30,7 @@ The following new features and notable changes since v 0.23.0 are included in th
 - [Changes to message logging](#changes-to-message-logging)
 - [Support for the `JAVA_OPTIONS` environment variable](#support-for-the-java_options-environment-variable)
 - [`-XX:[+|-]PortableSharedCache` option behavior update](#-xx-portablesharedcache-option-behavior-update)
-- [![Start of content that applies to AIX Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update](#-xx-shareanonymousclasses-option-behavior-update)
+- [![Start of content that applies to Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update](#-xx-shareanonymousclasses-option-behavior-update)
 - [Additional parameters for `jcmd Dump` commands](#additional-parameters-for-jcmd-dump-commands)
 - [Change in behavior for the `jextract` utility](#change-in-behavior-for-the-jextract-utility)
 
@@ -70,7 +70,7 @@ For compatibility with the reference implementation, OpenJ9 now supports the `JA
 The `-XX:[+|-]PortableSharedCache` option is now supported on IBM Z&reg; and POWER&reg; platforms. AOT-compiled code that is generated with this option is guaranteed to be portable across IBM z10 or newer microarchitectures on IBM Z platforms and IBM POWER8&reg; or newer microarchitectures on POWER platforms. See [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md) for more details about this option.
 
 
-### ![Start of content that applies to AIX Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update
+### ![Start of content that applies to Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update
 
 The `-XX:[+|-]ShareAnonymousClasses` option currently enables and disables the storage of VM anonymous classes in the shared classes cache. From OpenJDK 15, this option now enables and disables the storage of hidden classes in the shared classes cache. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
 
