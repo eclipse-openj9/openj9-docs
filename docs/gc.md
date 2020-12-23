@@ -23,31 +23,15 @@
 -->
 
 
-# Garbage collection
+# Garbage collection policies
 
-The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on an area of memory that is reserved for VM processing called the Java heap.
-
-The Allocator assigns areas of the Java heap for Java objects. See [Memory allocation](allocator.md) for more information about the Allocator.
-
-## The garbage collector
-
-To prevent applications running out of memory, objects in the Java heap that are no longer required must be reclaimed. This process is known as garbage collection. When garbage is collected, the garbage collector must obtain exclusive access to the heap, which causes an application to pause while the clean up is done. This pause is often referred to as a *stop-the-world* (STW) pause because an application must halt until the process completes. In general, the first step in the GC process is to mark the objects that are reachable, which means they are still in use. The next step is to sweep away the unmarked objects to reclaim memory. The final step is to compact the heap if the heap is badly fragmented.
-
-## Garbage collection policies
-
-OpenJ9 provides several GC policies that are designed around different application workloads and service level agreements. Each GC policy consists of a set of characteristics and features that aim to optimize one or more performance aspects of a running application. These performance aspects include application throughput, memory footprint, average pause times, worst-case pause times, and startup time.
+OpenJ9 provides several garbage collection (GC) policies that are designed around different application workloads and service level agreements. Each GC policy consists of a set of characteristics and features that aim to optimize one or more performance aspects of a running application. These performance aspects include application throughput, memory footprint, average pause times, worst-case pause times, and startup time.
 
 Different policies require a Java heap that is configured in different ways in order to achieve different goals. The simplest configuration consists of a single area of memory, often referred to as a *flat* heap. Other configurations divide the heap into different areas or regions, which might contain objects of different ages (*generations*) or sizes.
 
-A GC cycle is a repeatable process that involves a set of GC operations. These operations process all or parts of the Java heap to complete a discrete function. For example, a *mark* operation traces all objects in the heap to determine which ones are reachable. A *sweep* operation runs to clear away unreachable objects. Together, a *mark* and *sweep*  operation are capable of reclaiming used memory as part of a GC cycle. Not all GC cycles include operations to reclaim memory. For example, the `balanced` policy involves a global cycle that includes only a *mark* operation; reclaiming the memory with a *sweep* operation occurs as part of a separate partial GC cycle.
+A GC cycle is a repeatable process that involves a set of GC operations. These operations process all or parts of the Java heap to complete a discrete function and are discussed in more detail in [GC operations](gc_overview.md#gc-operations).
 
-A GC operation might complete in one step, or it might involve phases. For example, a *mark* operation consists of the following 3 phases:
-
-- *Initial phase:* Identify all the root objects by running a root scan.
-- *Main phase:* From the identified list, recursively trace references. Reachable objects are marked.
-- *Final phase:* Process weakly reachable roots such as finalizable object lists, soft/weak references, monitor tables, and string tables.
-
-GC policies use different GC cycles to manage different aspects of the heap. For example, the `gencon` policy runs a partial GC cycle on the *nursery* area of the heap to complete a *scavenge* operation. At other times, `gencon` also runs a global GC on the entire Java heap to complete *mark* and *sweep* (and optionally *compact*) operations.  
+GC policies use different GC cycles to manage different aspects of the heap. For example, the `gencon` policy runs a partial GC cycle on the *nursery* area of the heap to complete a *scavenge* operation. At other times, `gencon` also runs a global GC cycle on the entire Java heap to complete *mark* and *sweep* (and optionally *compact*) operations.  
 
 GC cycles might be divided into increments that run over a period of time to reduce maximum pause times. These increments might involve *stop-the-world* (STW) pauses that must halt application threads to give certain GC operations exclusive access to the Java heap. Alternatively, increments might include GC operations that can run concurrently with application processing.
 
@@ -66,7 +50,7 @@ The following table shows the heap configuration and the GC cycles and operation
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** All OpenJ9 GC policies support compressed references on 64-bit platforms, which compresses heap pointers to 32 bits if the total heap size does not exceed the theoretical upper bound of 64 GB. Applications that require more heap space can select any heap size within the bounds imposed by the operating system and available system RAM, without using compressed references. For more information, see [compressed references](allocator.md#compressed-references).
 
 
-### Policy selection and tuning
+## Policy selection and tuning
 
 The default policy is the Generational Concurrent (`gencon`) GC policy, which suits a broad spectrum of applications. Choosing a different GC policy should be guided by the application dynamics and an observation of how the application interacts with the heap during startup and at steady state. To help with this analysis, all OpenJ9 GC policies are instrumented to collect a wide range of GC-related metric data for reporting in a GC log file.
 
@@ -74,13 +58,13 @@ To enable GC logging for the OpenJ9 Java runtime, include the `-verbose:gc` opti
 
 The following sections provide more information about each policy and when you might choose it for your application. To select a GC policy other than `gencon`, specify the [`-Xgcpolicy`](xgcpolicy.md) option on the command line. To adjust the initial and maximum size of the Java heap, use the [`-Xms` and `-Xmx`](xms.md) command line options. For generational GC policies, you can also set the [`-Xmn`, `-Xmns`, and `-Xmnx`](xmn.md) options.
 
-### `gencon` policy (default)
+## `gencon` policy (default)
 
 The Generational Concurrent GC policy ([`-Xgcpolicy:gencon`](xgcpolicy.md#gencon)) is probably best suited if you have a transactional application, with many short-lived objects. This policy aims to minimize GC pause times without compromising throughput. This is the default policy employed by the VM, so if you want to use it you don't need to specify it on the command line when you start your application.
 
 If your application requires the allocation of objects of very different sizes and liveness on the Java heap, you might experience heap fragmentation, which in turn might lead to global heap compaction. In these circumstances, the [Balanced GC policy](xgcpolicy.md#balanced-policy) might be more appropriate.
 
-#### GC operations
+### GC operations
 
 With the `gencon` policy, the Java heap is divided into two main areas, the *nursery* area, where new objects are created and the *tenure* area, where objects are moved if they have reached *tenure age*.
 
@@ -101,7 +85,7 @@ Within the *tenure* area, new objects are allocated into the small object area (
 
 The local GC scavenge reduces pause times by freqently reclaiming memory in the *nursery* area which, for a transactional application with many short-lived objects, has the most recyclable space. However, over time the *tenure* area might become full. So, whilst a local GC scavenge process is operating on the *nursery* area, a concurrent global GC process also runs alongside normal program execution to mark and remove unreachable objects from the *tenure* area. These two GC approaches combine to provide a good trade-off between shorter pause times and consistent throughput.
 
-#### Concurrent Scavenge
+### Concurrent Scavenge
 
 A special mode of the `gencon` policy is known as *Concurrent Scavenge*. This mode aims to further reduce the average time spent in *stop-the-world* (STW) pauses by collecting nursery garbage in parallel with running application threads. Whilst aiming to reduce the average time, this mode does not improve the worst case pause time when compared to running `gencon` without Concurrent Scavenge enabled.
 
@@ -115,11 +99,11 @@ This mode can be enabled with hardware-based support and software-based support:
 
 More information about Concurrent Scavenge mode can be found in the blog post [Concurrent Scavenge Garbage Collection Policy](https://blog.openj9.org/2019/03/25/concurrent-scavenge-garbage-collection-policy/).
 
-### `balanced` policy
+## `balanced` policy
 
 The Balanced GC policy ([`-Xgcpolicy:balanced`](xgcpolicy.md#balanced)) evens out pause times and reduces the overhead of some of the costlier operations that are typically associated with garbage collection, such as compaction and class unloading. The Java heap is divided into a large number of regions (1,000 - 2,000), which are managed individually by an incremental generational collector to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates.
 
-####  When to use
+###  When to use
 
 The Balanced policy suits applications that require large heaps (>64 Mb) on 64-bit platforms. This policy might be a good alternative for applications that experience unacceptable pause times with `gencon`.
 
@@ -130,7 +114,7 @@ The Balanced policy suits applications that require large heaps (>64 Mb) on 64-b
 
 However, even though pause times are typically evened out across GC operations, actual pause times are affected by object allocation rates, object survival rates, and fragmentation levels within the heap, and cannot therefore be bound to a certain maximum nor can a certain utilization level be guaranteed.
 
-#### GC operations
+### GC operations
 
 
 During VM startup, the GC divides the heap memory into regions of equal size. These regions remain static for the lifetime of the VM and are the basic unit of garbage collection and allocation operations. For example, when the heap is expanded or contracted, the memory committed or released corresponds to a certain number of regions. Although the Java heap is a contiguous range of memory addresses, any region within that range can be committed or released as required. This enables the Balanced GC to contract the heap more dynamically and aggressively than other garbage collectors, which typically require the committed portion of the heap to be contiguous.
@@ -151,7 +135,7 @@ With the `balanced` policy, a global GC cycle is sometimes required in addition 
 
 To learn about the default heap size and the tuning options that can be used with the `balanced` policy, see [`-Xgcpolicy:balanced`](xgcpolicy.md#balanced-defaults-and-options).
 
-#### Arraylets: dealing with large arrays
+### Arraylets: dealing with large arrays
 
 Most objects are easily contained within the minimum region size of 512 KB. However, some large arrays might require more memory than is available in a single region. To support such arrays, the `balanced` GC policy uses an **arraylet** representation to more effectively store large arrays in the heap. (Arraylets are also used by the `metronome` GC policy; both `balanced` and `metronome` GC policies are region-based garbage collectors.)
 
@@ -168,11 +152,11 @@ There are a number of advantages to using arraylets.
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Despite the general advantage of using arraylets, they can slow down processing when the Java Native Interface (JNI) is being used. The JNI provides flexibility by enabling Java programs to call native code; for example C or C++, and if direct addressability to the inside of an object is needed, a JNI critical section can be used. However, that requires the object to be in a contiguous region of memory, or at least _appear_ to be so. The JNI therefore creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.
 
 
-### `optavgpause` policy
+## `optavgpause` policy
 
 The *optimize for pause time* policy ([`-Xgcpolicy:optavgpause`](xgcpolicy.md#optavgpause)) uses a global GC to manage a *flat* heap comprised of a single area and to compact the heap if the heap becomes fragmented. The global GC cycle starts preemptively so that the cycle finishes before the heap is exhausted. By anticipating global collections and initiating some *mark* operations ahead of the collection phase, the `optavgpause` policy reduces GC pause times when compared to `optthruput`. However, the reduction in pause time comes at the expense of some performance throughput.
 
-#### When to use
+### When to use
 
 Consider using this policy if you have a large heap size (available on 64-bit platforms), because this policy limits the effect of increasing heap size on the length of the GC pause.
 
@@ -182,15 +166,15 @@ By using a *flat* heap, `optavgpause` avoids potential issues with very large ob
 
 Overall, `optavgpause`, along with `optthruput`, is best suited to short-lived applications and to long-running services that involve concurrent sessions with short lifespans. Short-lived applications with adequate heap sizes usually complete without compaction. The *flat* heap fragments more slowly when session-bound objects are allocated and drop out of the live set in short overlapping clusters.
 
-#### GC operations
+### GC operations
 
 The `optavgpause` policy requires a *flat* Java heap. A global GC cycle runs concurrent *mark-sweep* operations, optionally followed by *compact* operations. By running most operations concurrently with application threads, this strategy aims to reduce GC pause times as much as possible.
 
-### `optthruput` policy
+## `optthruput` policy
 
 The *optimize for throughput* policy ([`-Xgcpolicy:optthruput`](xgcpolicy.md#optthruput)) uses a global GC cycle to manage a *flat* heap that is comprised of a single area and to compact the heap if the heap becomes fragmented. The global collector runs *mark* and *sweep* operations when the heap is exhausted, which means that applications stop for long pauses while garbage collection takes place.
 
-#### When to use
+### When to use
 
 You might consider using this policy when a large heap application can tolerate longer GC pauses to obtain better overall throughput. Unlike `gencon`, the `optthruput` policy does not use object access barriers. In some workloads, the cost of these barriers might be high enough to make `optthruput` preferable. However, in many situations, the default [`gencon`](#gencon-policy-default) policy offers better performance.
 
@@ -198,21 +182,21 @@ By using a *flat* heap, `optthruput` avoids potential issues with very large obj
 
 Overall, `optthruput`, along with `optavgpause`, is best suited to short-lived applications and to long-running services that involve concurrent sessions with short lifespans. Short-lived applications with adequate heap sizes usually complete without compaction. The *flat* heap fragments more slowly when session-bound objects are allocated and drop out of the live set in short overlapping clusters.
 
-#### GC operations
+### GC operations
 
 The `optthruput` policy requires a *flat* Java heap. A  global GC cycle runs *mark-sweep* operations, optionally followed by *compact* operations. The cycle requires exclusive access to the heap, causing application threads to halt while operations take place. As such, long pauses can occur.
 
-### `metronome` policy
+## `metronome` policy
 
 **(Linux on x86-64 and AIX platforms only)**
 
 The metronome policy ([`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-aix-linux-x86-only)) is an incremental, deterministic garbage collector with short pause times. Applications that are dependent on precise response times can take advantage of this technology by avoiding potentially long delays from GC activity.
 
-#### When to use
+### When to use
 
 `metronome` is designed for applications that require a precise upper bound on collection pause times as well as specified application utilization: the proportion of time that the application is permitted to use, with the remainder being devoted to GC. The `metronome` GC runs in short interruptible bursts to avoid long *stop-the-world* (STW) pauses.
 
-#### GC operations
+### GC operations
 
 The Java heap is allocated as a contiguous range of memory, partitioned into small regions of equal size (~64 KB). The `metronome` policy does not dynamically resize the heap; the heap is always fully expanded, even if [`-Xms`](xms.md) is not set to [`-Xmx`](xms.md).
 
@@ -227,11 +211,11 @@ A higher utilization typically requires a larger heap because the GC isn't allow
 To learn about default options and tuning options that can be used with the `metronome` policy, see [`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-defaults-and-options).
 
 
-### `nogc` policy
+## `nogc` policy
 
 [`-Xgcpolicy:nogc`](xgcpolicy.md#nogc) handles only memory allocation and heap expansion, but doesn't reclaim any memory. The GC impact on runtime performance is therefore minimized, but if the available Java heap becomes exhausted, an `OutOfMemoryError` exception is triggered and the VM stops.
 
-#### When to use
+### When to use
 
 This policy is not suited to the majority of Java applications. However, the following use cases apply:
 
