@@ -29,10 +29,11 @@ The following new features and notable changes since v 0.23.0 are included in th
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Changes to message logging](#changes-to-message-logging)
 - [Support for the `JAVA_OPTIONS` environment variable](#support-for-the-java_options-environment-variable)
-- [`-XX:[+|-]PortableSharedCache` option behavior update](#-xx-portablesharedcache-option-behavior-update)
+- [`-XX:[+|-]PortableSharedCache` option support update](#-xx-portablesharedcache-option-support-update)
 - [![Start of content that applies to Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update](#-xx-shareanonymousclasses-option-behavior-update)
 - [Additional parameters for `jcmd Dump` commands](#additional-parameters-for-jcmd-dump-commands)
 - [Change in behavior for the `jextract` utility](#change-in-behavior-for-the-jextract-utility)
+- [New diagnostic suboption for `-Xcheck:jni` for fatal JNI errors](#new-diagnostic-suboption-for-xcheckjni-for-fatal-jni-errors)
 
 
 ## Features and changes
@@ -65,7 +66,7 @@ A new option, [`-XX:[+|-]LegacyXlogOption`](xxlegacyxlogoption.md), controls how
 For compatibility with the reference implementation, OpenJ9 now supports the `JAVA_OPTIONS` environment variable. This environment variable  can be used to set command line options, as described in [OpenJ9 command-line options](cmdline_specifying.md) and [Environment variables](env_var.md). Options specified by `JAVA_OPTIONS` can be overridden by options specified by `OPENJ9_JAVA_OPTIONS`.
 
 
-### `-XX:[+|-]PortableSharedCache` option behavior update
+### `-XX:[+|-]PortableSharedCache` option support update
 
 The `-XX:[+|-]PortableSharedCache` option is now supported on IBM Z&reg; and POWER&reg; platforms. AOT-compiled code that is generated with this option is guaranteed to be portable across IBM z10 or newer microarchitectures on IBM Z platforms and IBM POWER8&reg; or newer microarchitectures on POWER platforms. See [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md) for more details about this option.
 
@@ -90,6 +91,9 @@ These parameters, including the `<file path>` parameter, can be in any order. Th
 The `jextract` utility gathers relevant files following a system dump to assist with problem determination. It is important that the `jextract` utility is run from the same SDK that generated the dump. From this release, if the build ID of the `jextract` utility does not match the build ID of the SDK that is recorded in the system dump, an exception message is generated. To force `jextract` to continue, a new option is introduced. For more information, see [Dump extractor](tool_jextract.md).
 
 
+### New diagnostic suboption for `-Xcheck:jni` for fatal JNI errors
+
+A new `abortonerror` suboption for `-Xcheck:jni` provides diagnostic data when fatal JNI errors occur. For more information, run `-Xcheck:jni:help`.
 
 
 
