@@ -23,11 +23,10 @@
 -->
 
 
-# Memory allocation
+# Memory management overview
 
-The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on an area of memory that is reserved for VM processing called the Java&trade; heap.
+The process of managing memory in the VM is handled by the Allocator and the Garbage Collector. These components operate on an area of memory that is reserved for VM processing called the Java&trade; heap.
 
-See [Garbage collection](gc.md) for more information about the GC.
 
 ## The Allocator
 
@@ -93,4 +92,12 @@ When the VM uses compressed references, classes, threads, and monitors are store
 
 To turn off compressed references, use the [`-Xnocompressedrefs`](xcompressedrefs.md) command-line option.
 
-<!-- ==== END OF TOPIC ==== allocator.md ==== -->
+
+## The Garbage Collector
+
+To prevent applications running out of memory, objects in the Java heap that are no longer required must be reclaimed. This process is known as *garbage collection* (GC). When garbage is collected, the Garbage Collector must obtain exclusive access to the heap, which causes an application to pause while the clean up is done. This pause is often referred to as a *stop-the-world* (STW) pause because an application must halt until the process completes. In general, the first step in the GC process is to *mark* the objects that are reachable, which means they are still in use. The next step is to *sweep* away the unmarked objects to reclaim memory. The final step is to *compact* the heap if the heap is badly fragmented.
+
+OpenJ9 provides several GC policies that are used to manage garbage collection. For more information, see [Garbage collection policies](gc.md).
+
+
+<!-- ==== END OF TOPIC ==== gc_overview.md ==== -->
