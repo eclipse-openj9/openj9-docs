@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/allocator/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/gc_overview/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>Memory allocation -  </title>
+        <title>Overview -  </title>
       
     
     
@@ -119,7 +119,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#memory-allocation" tabindex="1" class="md-skip">
+      <a href="../#memory-management-overview" tabindex="1" class="md-skip">
         
       </a>
     
@@ -615,11 +615,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Memory allocation
+        Overview
       </label>
     
-    <a href="./" title="Memory allocation" class="md-nav__link md-nav__link--active">
-      Memory allocation
+    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
+      Overview
     </a>
     
       
@@ -666,6 +666,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-garbage-collector" class="md-nav__link">
+    The Garbage Collector
+  </a>
+  
+</li>
+      
       
       
       
@@ -683,8 +690,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
-    <a href="../gc/" title="Garbage collection" class="md-nav__link">
-      Garbage collection
+    <a href="../gc/" title="Garbage collection policies" class="md-nav__link">
+      Garbage collection policies
     </a>
   </li>
 
@@ -3940,6 +3947,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-garbage-collector" class="md-nav__link">
+    The Garbage Collector
+  </a>
+  
+</li>
+      
       
       
       
@@ -3957,7 +3971,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9/edit/master/docs/allocator.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9/edit/master/docs/gc_overview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
@@ -3985,9 +3999,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="memory-allocation">Memory allocation</h1>
-<p>The process of managing memory in the VM is handled by the Allocator and the Garbage Collector (GC). These components operate on an area of memory that is reserved for VM processing called the Java&trade; heap.</p>
-<p>See <a href="../gc/">Garbage collection</a> for more information about the GC.</p>
+<h1 id="memory-management-overview">Memory management overview</h1>
+<p>The process of managing memory in the VM is handled by the Allocator and the Garbage Collector. These components operate on an area of memory that is reserved for VM processing called the Java&trade; heap.</p>
 <h2 id="the-allocator">The Allocator</h2>
 <p>The Allocator assigns areas of the Java heap for Java objects. Objects are considered as <em>live</em> when they have a chain of references to them that start from root references, such as those found in thread stacks. When that reference or pointer no longer exists, the objects are considered as <em>garbage</em>.</p>
 <p>The Allocator manages pools of free memory and how the free memory is consumed. It is also responsible for allocating areas of storage in the Java heap for objects at the request of applications, class libraries, or the VM.</p>
@@ -4028,7 +4041,10 @@ reach the maximum requested TLH size more quickly.</p>
 installed (25 GB without APAR OA49416). All GC policies observe these limits except for the <a href="../gc/#metronome-policy"><code>metronome</code></a> policy, which can only support a heap size of up to 25 GB with compressed references.</p>
 <p>When the VM uses compressed references, classes, threads, and monitors are stored in the lowest 4 GB of address space. However, this area of memory is also used by native libraries, the operating system, and for small Java heaps. If you receive native memory <code>OutOfMemoryError</code> exceptions in the lowest 4 GB when running with compressed references enabled, these errors might result from the lowest 4 GB of address space becoming full. Try specifying a large heap with the <a href="../xms/"><code>-Xmx</code></a> option, which puts the Java heap into a higher area of address space or using the <a href="../xmcrs/"><code>-Xmcrs</code></a> option to reserve space in the lowest 4 GB of address space for compressed references.</p>
 <p>To turn off compressed references, use the <a href="../xcompressedrefs/"><code>-Xnocompressedrefs</code></a> command-line option.</p>
-<!-- ==== END OF TOPIC ==== allocator.md ==== -->
+<h2 id="the-garbage-collector">The Garbage Collector</h2>
+<p>To prevent applications running out of memory, objects in the Java heap that are no longer required must be reclaimed. This process is known as <em>garbage collection</em> (GC). When garbage is collected, the Garbage Collector must obtain exclusive access to the heap, which causes an application to pause while the clean up is done. This pause is often referred to as a <em>stop-the-world</em> (STW) pause because an application must halt until the process completes. In general, the first step in the GC process is to <em>mark</em> the objects that are reachable, which means they are still in use. The next step is to <em>sweep</em> away the unmarked objects to reclaim memory. The final step is to <em>compact</em> the heap if the heap is badly fragmented.</p>
+<p>OpenJ9 provides several GC policies that are used to manage garbage collection. For more information, see <a href="../gc/">Garbage collection policies</a>.</p>
+<!-- ==== END OF TOPIC ==== gc_overview.md ==== -->
                 
                   
                 

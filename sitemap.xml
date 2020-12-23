@@ -111,7 +111,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://www.eclipse.org/openj9/docs/allocator/</loc>
+     <loc>https://www.eclipse.org/openj9/docs/gc_overview/</loc>
      <lastmod>2020-12-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
