@@ -30,8 +30,10 @@ The following new features and notable changes since v 0.23.0 are included in th
 - [Changes to message logging](#changes-to-message-logging)
 - [Support for the `JAVA_OPTIONS` environment variable](#support-for-the-java_options-environment-variable)
 - [`-XX:[+|-]PortableSharedCache` option behavior update](#-xx-portablesharedcache-option-behavior-update)
-- [![Start of content that applies to AIX Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update](#-xx-shareanonymousclasses-option-behavior-update)
+- [![Start of content that applies to Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update](#-xx-shareanonymousclasses-option-behavior-update)
 - [Additional parameters for `jcmd Dump` commands](#additional-parameters-for-jcmd-dump-commands)
+- [Change in behavior for the `jextract` utility](#change-in-behavior-for-the-jextract-utility)
+
 
 ## Features and changes
 
@@ -43,8 +45,7 @@ OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15. Binaries are available fro
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 - [OpenJDK version 15](https://adoptopenjdk.net/archive.html?variant=openjdk15&jvmVariant=openj9)
 
-Changes to build environments:
-- [Update to compile Windows Java 8 with VS2013](#update-to-compile-windows-java-8-with-vs2013)
+Windows builds for Java 8 are now compiled with Microsoft Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -69,7 +70,7 @@ For compatibility with the reference implementation, OpenJ9 now supports the `JA
 The `-XX:[+|-]PortableSharedCache` option is now supported on IBM Z&reg; and POWER&reg; platforms. AOT-compiled code that is generated with this option is guaranteed to be portable across IBM z10 or newer microarchitectures on IBM Z platforms and IBM POWER8&reg; or newer microarchitectures on POWER platforms. See [`-XX:[+|-]PortableSharedCache`](xxportablesharedcache.md) for more details about this option.
 
 
-### ![Start of content that applies to AIX Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update
+### ![Start of content that applies to Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update
 
 The `-XX:[+|-]ShareAnonymousClasses` option currently enables and disables the storage of VM anonymous classes in the shared classes cache. From OpenJDK 15, this option now enables and disables the storage of hidden classes in the shared classes cache. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
 
@@ -84,9 +85,13 @@ You can now include additional parameters for `jcmd Dump` commands. These are as
 These parameters, including the `<file path>` parameter, can be in any order. The default for both system and heap dumps is now: `request=exclusive+prepwalk`. For further details, refer to the following `-Xdump` suboptions: [`request=<requests>`](xdump.md#requestltrequestsgt) and [`opts=<options>`](xdump.md#optsltoptionsgt). And for more information about `jcmd`, see [Java diagnostic command (jcmd) tool](tool_jcmd.md).
 
 
-### Update to compile Windows Java 8 with VS2013
+### Change in behavior for the `jextract` utility
 
-Windows builds for Java 8 are compiled with Microsoft Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match. 
+The `jextract` utility gathers relevant files following a system dump to assist with problem determination. It is important that the `jextract` utility is run from the same SDK that generated the dump. From this release, if the build ID of the `jextract` utility does not match the build ID of the SDK that is recorded in the system dump, an exception message is generated. To force `jextract` to continue, a new option is introduced. For more information, see [Dump extractor](tool_jextract.md).
+
+
+
+
 
 
 ## Full release information
