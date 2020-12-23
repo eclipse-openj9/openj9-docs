@@ -125,7 +125,8 @@ nav:
             - "Version 0.8.0"                                                    : version0.8.md
 
     - "Memory management" :
-        - "Overview"                                                             : gc_overview.md
+        - "Heap allocation"                                                      : allocation.md
+        - "Garbage collection"                                                   : gc_overview.md
         - "Garbage collection policies"                                          : gc.md
 
     - "JIT Compiler"                                                             : jit.md

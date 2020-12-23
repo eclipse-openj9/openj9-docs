@@ -23,196 +23,183 @@
 -->
 
 
-# Memory management overview
+# Garbage collection
 
-The process of managing memory in the VM is handled by the allocator and the garbage collector. These components operate on an area of memory that is reserved for VM processing called the Java&trade; heap.
-
-
-## The allocator
-
-The allocator assigns areas of the Java heap for Java objects. Objects are considered as *live* when they have a chain of references to them that start from root references, such as those found in thread stacks. When that reference or pointer no longer exists, the objects are considered as *garbage*.
-
-The allocator manages pools of free memory and how the free memory is consumed. It is also responsible for allocating areas of storage in the Java heap for objects at the request of applications, class libraries, or the VM.
-
-Every allocation requires a *heap lock* to stop concurrent threads trying to access the same area of memory at the same time. When an object is allocated, the heap lock is released. If there is insufficient space to allocate the object, allocation fails, the heap lock is released, and the GC is called. If the GC manages to recover some space on the heap, the allocator can resume operations. If the GC does not recover enough space, it returns an `OutOfMemoryError` exception.
-
-Acquiring a heap lock for every allocation would be an intensive operation with a knock on impact to performance. To get around this problem, small objects are allocated to allocation caches.
-
-### Allocation caches
-
-To improve performance, allocation caches are reserved in the heap for different threads. These allocation caches are known as thread local heaps (TLH) and allow each thread to allocate memory from its cache without acquiring the heap lock. A TLH is typically used for small objects of less than 512 bytes (768 bytes on 64-bit VMs) although larger objects can be allocated from the cache if there is sufficient space.
-
-If a thread allocates a lot of objects, the allocator gives that thread a larger TLH to reduce contention on the heap lock.
-
-A TLH is predefined with an initial default size of 2 KB. On every TLH refresh, the requested size for that thread
-is increased by an increment (default 4 KB). The requested size can grow up to a predefined maximum (default 128 KB).
-
-After every GC cycle, the TLH requested size for each thread is reduced, sometimes by as much as 50%, to take account of threads that
-reduce their allocation rate and no longer need large TLHs.
-
-For very inactive threads, the requested size can even drop below the initial value, down to the predefined minimum (512/768 bytes).
-For very active threads, the maximum TLH requested size might be reached before the next GC occurs.
-
-Larger TLHs can help reduce heap lock contention, but might also reduce heap utilisation and increase heap fragmentation.
-
-The following options control the requested TLH size:
-
-- [`-Xgc:tlhMaximumSize=<bytes>`](xgc.md#tlhmaximumsize)
-- [`-Xgc:tlhInitialSize=<bytes>`](xgc.md#tlhinitialsize)
-- [`-Xgc:tlhIncrementSize=<bytes>`](xgc.md#tlhincrementsize)
-
-Typically, when the maximum TLH size is increased, you should also increase the increment proportionally, so that active threads can
-reach the maximum requested TLH size more quickly.
-
-### SOA and LOA
-
-Some GC policies subdivide areas of the heap for object allocation into the Small Object Area (SOA) and the Large Object Area (LOA).
-
-The allocator initially attempts to allocate objects in the SOA, regardless of size. If the allocation cannot be satisfied the following actions are possible, depending on object size:
-
-- If the object is smaller than 64 KB, an allocation failure occurs, which triggers a GC action.
-- If the object is larger than 64 KB, the allocator attempts to allocate the object in the LOA. If the allocation cannot be satisfied, an allocation failure occurs, which triggers a GC action.
-
-The GC action that is triggered by the allocation failure depends on the GC policy in force.
-
-The overall size of the LOA is calculated when the heap is initialized, and recalculated at the end of each global GC cycle. The GC can expand or shrink the LOA, depending on usage, to avoid allocation failures.
-
-You can control the size of the LOA by using the `-Xloainitial`, `-Xloaminimum`, and `-Xloamaximum` command line options (See [LOA sizing options](xloaminimum.md)). If the LOA is not used, the GC shrinks the LOA after a few cycles, down to the value of `-Xloaminimum`. You can also specify [`-Xnoloa`](xloa.md) to prevent an LOA being created.
-
-An SOA and LOA are used by the OpenJ9 standard GC policies: `gencon`, `optavgpause` and `optthruput`. However, the `balanced` and `metronome` GC policies use a heap configuration that does not include the SOA or LOA. For more information about policies, see [Garbage collection policies](gc.md).
-
-### Compressed references
-
-On 64-bit systems, the VM can use compressed references to decrease the size of Java objects and make better use of the available space in the Java heap. By storing objects in a 32-bit representation, the object size is identical to a 32-bit object, which occupies a smaller memory footprint. These 4 byte (32-bit) compressed references are converted to 64-bit values at runtime with minimal overhead. Smaller objects enable larger heap sizes that result in less frequent garbage collection and improve memory cache utilization. Overall, the performance of 64-bit applications that store compressed rather than uncompressed 64-bit object references is significantly improved.
-
-Compressed references are used by default when the maximum Java heap size is in the range 0 - 57 GB on AIX&reg;, Linux&reg;, and Windows&reg; systems. The upper limit is also 57 GB on z/OS&reg; systems that have APAR OA49416
-installed (25 GB without APAR OA49416). All GC policies observe these limits except for the [`metronome`](gc.md#metronome-policy) policy, which can only support a heap size of up to 25 GB with compressed references.
-
-When the VM uses compressed references, classes, threads, and monitors are stored in the lowest 4 GB of address space. However, this area of memory is also used by native libraries, the operating system, and for small Java heaps. If you receive native memory `OutOfMemoryError` exceptions in the lowest 4 GB when running with compressed references enabled, these errors might result from the lowest 4 GB of address space becoming full. Try specifying a large heap with the [`-Xmx`](xms.md) option, which puts the Java heap into a higher area of address space or using the [`-Xmcrs`](xmcrs.md) option to reserve space in the lowest 4 GB of address space for compressed references.
-
-To turn off compressed references, use the [`-Xnocompressedrefs`](xcompressedrefs.md) command-line option.
-
-
-## The garbage collector
-
-To prevent applications running out of memory, objects in the Java heap that are no longer required must be reclaimed. This process is known as *garbage collection* (GC). When garbage is collected, the garbage collector must obtain exclusive access to the heap, which causes an application to pause while the clean up is done. This pause is often referred to as a *stop-the-world* (STW) pause because an application must halt until the process completes. In general, the first step in the GC process is to *mark* the objects that are reachable, which means they are still in use. The next step is to *sweep* away the unmarked objects to reclaim memory. The final step is to *compact* the heap if the heap is badly fragmented.
+To prevent applications running out of memory, objects in the Java heap that are no longer required must be reclaimed. This process is known as *garbage collection* (GC). When garbage is collected, the garbage collector must obtain exclusive access to the heap, which causes an application to pause while the cleanup is done. This pause is often referred to as a *stop-the-world* (STW) pause because an application must halt until the process completes. In general, the first step in the GC process is to *mark* the objects that are reachable, which means they are still in use. The next step is to *sweep* away the unmarked objects to reclaim memory. The final step is to *compact* the heap if the heap is badly fragmented.
 
 A GC cycle is a repeatable process that involves a set of GC operations. These operations process all or parts of the Java heap. When operating on the
 whole of the Java heap, the cycle is referred to as a *global GC cycle*; When operating on part of the heap, the cycle is referred to as a *partial GC cycle*.
 
 A global GC cycle can be triggered explicitly or implicitly according to the following rules:
 
-- A global GC cycle is triggered implicitly if it occurs because of internal mechanisms, such as an allocation failure or a taxation threshold being reached.
+- A global GC cycle is triggered implicitly if it occurs because of internal mechanisms, such as an allocation failure or a *taxation* threshold being reached.
 - A global GC cycle is triggered explicitly if it is started directly by an application calling `System.gc()` or indirectly, for example when requesting a heap dump.
 
 Partial GC cycles are triggered only implicitly under the control of a particular GC policy. For more information about the GC policies available with OpenJ9, see [Garbage collection policies](gc.md).
 
-### GC operations
+## GC operations
 
-GC operations run discrete functions on the Java heap. For example, a *mark* operation traces all objects in the heap to determine which ones are reachable. A *sweep* operation runs to clear away unreachable objects. Together, a *mark* and *sweep* operation are capable of reclaiming used memory as part of a GC cycle. Not all GC cycles include operations to reclaim memory. For example, the balanced GC policy involves a global cycle that includes only a *mark* operation; reclaiming the memory with a *sweep* operation occurs as part of a separate partial GC cycle.
+GC operations run discrete functions on the Java heap. For example, a mark operation traces all objects in the heap to determine which ones are reachable. A sweep operation runs to clear away unreachable objects. Together, a mark and sweep operation are capable of reclaiming used memory as part of a GC cycle. Not all GC cycles include operations to reclaim memory. For example, the `balanced` GC policy involves a global cycle that includes only a mark operation; reclaiming the memory with a sweep operation occurs as part of a separate partial GC cycle that *evacuates* younger regions and defragments older regions.
 
-A GC operation might complete in one step, or it might involve phases. For example, a mark operation consists of the 3 phases, as described in the following section.
+A GC operation might complete in one step, or it might involve multiple steps. For example, a mark operation consists of three steps, as described in the following section.
 
-#### GC *mark* operation
+### GC mark operation
 
-A *mark* operation identifies which objects on the Java heap are reachable from outside of the heap and which objects are unreachable. Reachable objects are in use and must be retained, whereas unreachable objects are not in use and can be cleared away as *garbage*.
+A mark operation identifies which objects on the Java heap are reachable from outside of the heap and which objects are unreachable. Reachable objects are in use and must be retained, whereas unreachable objects are not in use and can be cleared away as garbage.
 
-The process of marking involves a bit array called a *mark map* that is allocated by the VM at startup, based on the maximum heap size setting. Each bit in the *mark map* corresponds to 8 bytes of heap space. When an object is *marked*, its location in the heap is recorded by setting the appropriate bit in the *mark map*.
+The process of marking involves a bit array called a *mark map* that is allocated by the VM at startup, based on the maximum heap size setting. Each bit in the mark map corresponds to 8 bytes of heap space. When an object is *marked*, its location in the heap is recorded by setting the appropriate bit in the mark map.
 
-A *mark* operation can be broken down into the following phases:
+A mark operation can be broken down into the following steps:
 
-1. Initial phase
+1. Initial
 
-A root object is an object that is accessible from outside of the heap such as a stack, class static field, or JNI reference. For other objects in the heap to be reachable, they must retain a connection to a root object. In the initial phase, tracing identifies all root objects by running a root scan. Root objects are listed in work packets that can be processed for references to other objects in the heap.
+    A root object is an object that is accessible from outside of the heap such as a stack, class static field, or JNI reference. For other objects in the heap to be reachable, they must retain a connection from a root object. In the initial step, tracing identifies all root objects by running a root scan. Root objects are pushed onto a work stack for processing in the next step.
 
-2. Main phase
+2. Main
 
-The list of reachable root objects in each work packet is recursively traced for references to other objects in the heap. If reachable objects are found, the appropriate bit is set in the *mark map*.
+    The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap. Objects that are not marked are new objects and these are added to the work stack. If an object is reachable, the appropriate bit is set in the mark map.
 
-3. Final phase
+3. Final
 
-The final phase processes weakly reachable roots such as finalizable object lists, soft/weak references, monitor tables, and string tables. If reachable objects are found, the appropriate bit is set in the *mark map*.
+    The final step processes weakly reachable roots such as finalizable objects, weak references, monitor sets, and string sets. For more information about the processing of *soft*, *weak*, and *phantom* references, see [Weak reference processing](#weak-reference-processing).
 
-#### GC parallel *mark* operation
+In general, helper threads are used in parallel to speed up mark operations on the heap. The helper threads share the work stack with the application thread and are involved in identifying root objects, tracing objects in the heap, and updating the mark map. By default, the number of helper threads is based on the number of CPUs reported by the operating system. You can control the number of helper threads available by specifying the [-Xgcthreads](xgcthreads.md) command line option when starting your application.
 
-On a multi-processor system, helper threads can be used in parallel to speed up *mark* operations on the heap. The helper threads share the pool of work packets with the application thread and are involved in identifying root objects, tracing objects in the heap, and updating the *mark map*. By default, the number of helper threads is based on the number of CPUs reported by the operating system. You can control the number of helper threads available by specifying the [-Xgcthreads](xgcthreads.md) command line option when starting your application.
+In a verbose GC log, this operation is shown by the `<gc-op type="mark">` XML element. For more information, see [Verbose GC logs](vgclog.md).
 
-#### GC concurrent *mark* operation
+#### Concurrent mark processing
 
-A *mark* operation can run with exclusive access to the heap, which requires application threads to pause while processing takes place. Alternatively, it can run concurrently with application threads to avoid pauses in application processing.
+A mark operation can run with exclusive access to the heap, which requires application threads to pause while processing takes place. Alternatively, it can run concurrently with application threads to avoid pauses in application processing.
 
-With concurrent *mark* operations, the process of root scanning is handed over to application stack threads, which populate work packets with root objects in their stack. The root objects in each work packet are then traced by a background thread and by each application thread during a heap lock allocation to find reachable objects and update the *mark map*. Because the *mark* operation runs concurrently with application threads, any changes to objects that are already traced must be updated. This process works by using a write barrier that can flag the update and trigger a further scan of part of the heap.
+With concurrent mark, the process of root scanning is handed over to application stack threads, which populate the work stack with root objects in their stack. The root objects in the work stack are then traced by a background thread and by each application thread during a heap lock allocation to find reachable objects and update the mark map. Because the mark operation runs concurrently with application threads, any changes to objects that are already traced must be updated. This process works by using a write barrier that can flag the update and trigger a further scan of part of the heap.
 
-To track updates to objects, concurrent *mark* operations use single-byte *cards* in a *card table*. Each *card* corresponds to a 512-byte section of the Java heap. When an object is updated, the start address for the object in the heap is marked on the appropriate card. These cards are used to determine what must be retraced later in the GC cycle.
+To track updates to objects, concurrent mark operations use single-byte *cards* in a *card table*. Each card corresponds to a 512-byte section of the Java heap. When an object is updated, the start address for the object in the heap is marked on the appropriate card. These cards are used to determine what must be retraced later in the GC cycle.
 
-A GC cycle that includes concurrent *mark* operations aims to trace all reachable objects and complete processing at the same time as the heap is exhausted. Continuous adjustments are made to the start time of each cycle to get as close to heap exhaustion as possible. When the heap is exhausted a *sweep* operation is able to reclaim memory. This operation requires a *stop-the-world* (STW) pause. Before *sweep* operations start, the root objects are rescanned and the cards are checked to determine which areas of memory must be retraced.
-**Question: Are these marked now or in the next cycle?**
+A GC cycle that includes concurrent mark operations aims to trace all reachable objects and complete processing at the same time as the heap is exhausted. Continuous adjustments are made to the start time of each cycle to get as close to heap exhaustion as possible. When the heap is exhausted a sweep operation is able to reclaim memory. This operation requires a STW pause. Before sweep operations start, the root objects are rescanned and the cards are checked to determine which areas of memory must be retraced.
 
-An advantage of concurrent *mark* operations over STW *mark* operations is reduced pause times, because the garbage collector is able to identify garbage without halting application threads. Pause times are also more consistent because the collector is able to tune start times to maximize heap usage.
+An advantage of concurrent mark operations over STW mark operations is reduced pause times, because the garbage collector is able to identify garbage without halting application threads. Pause times are also more consistent because the collector is able to tune start times to maximize heap usage.
 
-Disadvantages of concurrent *mark* operations include the additional CPU for operating the write barrier and additional work for application threads to trace objects when requesting a heap lock.
+Disadvantages of concurrent mark operations include the additional CPU for operating the write barrier and additional work for application threads to trace objects when requesting a heap lock.
 
-Concurrent *mark* operations are used by the following GC policies:
+Concurrent mark operations are used by the [`gencon` GC policy](gc.md#gencon-policy-default) and the [`optavgpause` GC policy](gc.md#optavgpause-policy).
 
-- [`gencon`](gc.md#gencon-policy-default)
-- [`optavgpause`](gc.md#optavgpause-policy)
+#### Incremental concurrent mark processing
 
-#### GC incremental concurrent *mark* operation
+Incremental concurrent mark processing evens out pause times by avoiding global STW garbage collections. This type of marking is also known as the *global mark phase*, whereby mark operations take place incrementally across the entire heap. The global mark operations are interleaved with a partial GC cycle that is responsible for moving objects and clearing unreachable objects in the heap.
 
-Incremental concurrent mark operations are used in the `balanced` GC policy to even out pause times by avoiding global STW garbage collections. These operations are also known as the *global mark phase*, whereby *mark* operations take place incrementally across the entire heap. The global *mark* operations are interleaved with a partial GC cycle that is responsible for moving objects and clearing unreachable objects in the heap.
+These operations also use mark map in a card table to manage updates to objects that occur whilst mark operations are in progress. However, unlike the concurrent mark operations used by other policies, application threads are not involved in tracing objects; only background threads are used to trace objects and update the mark map.
 
-These operations also use *cards* in a *card table* to manage updates to objects that occur whilst *mark* operations are in progress. However, unlike the concurrent *mark* operations used by other policies, application threads are not involved in tracing objects; only background threads are used to trace objects and update the *cards*.
+Incremental concurrent mark operations are used by the [`balanced GC policy`](gc.md#balanced-policy).
 
-For more information about GC operations for the `balanced` GC policy, see [Garbage collection policies](gc.md#balanced-policy)
+### GC sweep operation
 
-#### GC *sweep* operation
+The purpose of a sweep operation is to identify memory that can be reclaimed for object allocation and update a central record, known as the *freelist*.
 
-The purpose of a *sweep* operation is to identify memory that can be reclaimed for object allocation and update a central record, known as the *freelist*.
+sweep operations occur in 2 steps:
 
-#### GC parallel *sweep* operation
+1. Initial
 
-Similar to the parallel *mark* operation, multiple helper threads can be used to *sweep* the Java heap to speed up processing times. Because these helper threads are the same ones that are used for parallel *mark* operations, the number of threads can be controlled by using the [-Xgcthreads](xgcthreads.md) option.
+    This step analyzes the mark map for free memory.
 
-Parallel *sweep* operations run on 256 KB sections of the heap. Each helper thread scans a section at a time. The results are stored and used to generate a *freelist* of empty regions.
+2. Final
 
-This GC operation is used on the `balanced` GC policy, where the heap is divided into thousands of regions.
+    Based on the analysis, the sections of the heap are connected to the freelist.
 
-#### GC concurrent *sweep* operation
+As with mark operations, multiple helper threads can be used to sweep the Java heap in parallel to speed up processing times. Because these helper threads are the same ones that are used for parallel mark operations, the number of threads can be controlled by using the [-Xgcthreads](xgcthreads.md) option.
 
-Concurrent *sweep* operations occur in 2 phases:
+Parallel sweep operations run on 256 KB sections of the heap. Each helper thread scans a section at a time. The results are stored and used to generate a freelist of empty regions.
 
-1. Initial phase
+In a verbose GC log, this operation is shown by the `<gc-op type="sweep">` XML element. For more information, see [Verbose GC logs](vgclog.md).
 
-This phase analyzes the *mark map* for free memory.
 
-2. Final phase
+#### Concurrent sweep processing
 
-Based on the analysis, the sections of the heap are connected to the *freelist*.
+Concurrent sweep processing works in tandem with concurrent mark processing and uses the same mark map. Concurrent sweep operations start after a STW collection and complete a section of the heap before concurrent mark operations continue.
 
-Concurrent *sweep* operations work in tandem with concurrent *mark* operations and use the same *mark map*. Concurrent *sweep* operations start after a STW collection and complete a section of the heap before concurrent *mark* operations continue.
+Concurrent sweep is used by the `optavgpause` GC policy.
 
-Concurrent *sweep* is used by the `optavgpause` GC policy.
+### GC scavenge operation
 
-#### GC *scavenge* operation
+A GC *scavenge* operation is triggered by an allocation failure in the *nursery* area of the heap. The operation occurs in the following 3 steps:
 
-A GC *scavenge* operation is used by the `gencon` policy to move an object in the heap to create space for new object allocations. The object is copied from the *nursery* area of the heap to the *tenure* area, which is reserved for older generations of objects.
+1. Initial
 
-#### GC *copy forward* operation
+    A root object is an object that is accessible from outside of the heap such as a stack, class static field, or JNI reference. For other objects in the heap to be reachable, they must retain a connection from a root object. In the initial step, tracing identifies all root objects by running a root scan. Root objects are pushed onto a work stack for processing in the next step.
 
-A GC *copy forward* operation is similar to a *scavenge* operation. The *copy forward* operation is used by the `balanced` GC Policy to move an object from a younger region to an older region in the heap. The operation aims to empty or *evacuate* fragmented regions that then become available for new object allocation.
+2. Main
 
-#### GC *classunloading* operation
+    The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap. If new objects are found, they are added to the work stack. If an object is reachable, it is copied from the *allocate* space to the *survivor* space in the nursery area or to the *tenure* area if the object has reached a particular age.
 
-#### GC *compact* operation
+3. Final
 
-Compaction of the heap is an expensive operation because when objects are moved to defragment the heap, the references to each object change. Therefore, *compact* operations do not occur by default but only when certain triggers occur.
+    The final step processes weakly reachable roots such as finalizable objects, weak references, monitor sets, and string sets. For more information about the processing of soft, weak, and phantom references, see [Weak reference processing](#weak-reference-processing).
 
-**Add the triggers:**
+In a verbose GC log, this operation is shown by the `<gc-op type="scavenge">` XML element. For more information, see [Verbose GC logs](vgclog.md).
 
-Two options are available to control *compact* operations; [`-Xcompactgc`](xcompactgc.md) and [`-Xnocompactgc`](xnocompactgc.md). If `-Xnocompactgc` is specified, compaction occurs only in rare circumstances.
+The scavenge operation is used by the [`gencon` GC policy](gc.md#gencon-policy-default).
 
-#### GC *mark compact* operation
+### GC copy forward operation
 
-A GC *mark compact* operation is sometimes used instead of a *copy forward* operation by the `balanced` GC policy. Rather than moving or *evacuating* objects to empty regions, objects within a region are *marked* and the region *compacted* to free up contiguous space.
+A GC *copy forward* operation is similar to a scavenge operation but is triggered by a taxation threshold being reached. The operation occurs in the following 3 steps:
+
+1. Initial
+
+    A root object is an object that is accessible from outside of the heap such as a stack, class static field, or JNI reference. For other objects in the heap to be reachable, they must retain a connection from a root object. In the initial step, tracing identifies all root objects by running a root scan. Root objects are pushed onto a work stack for processing in the next step.
+
+2. Main
+
+    The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap. If new objects are found, they are added to the work stack. If an object is reachable, it is moved to another region of the same age or to an empty region of the same age in the heap. The age of all regions in the heap is then incremented by 1, except for the oldest region (age 24).
+
+3. Final
+
+    The final step processes weakly reachable roots such as finalizable objects, weak references, monitor sets, and string sets. For more information about the processing of soft, weak, and phantom references, see [Weak reference processing](#weak-reference-processing).
+
+The operation aims to empty or *evacuate* fragmented regions that can then be reclaimed for new object allocation.
+
+In a verbose GC log, this operation is shown by the `<gc-op type="copy forward">` XML element. For more information, see [Verbose GC logs](vgclog.md).
+
+The copy forward operation is used by the [`balanced GC policy`](gc.md#balanced-policy).
+
+### GC classunloading operation
+
+The *classunloading* operation is single threaded, not parallel threaded.
+
+In a verbose GC log, this operation is shown by the `<gc-op type="classunload">` XML element. For more information, see [Verbose GC logs](vgclog.md).
+
+
+### GC compact operation
+
+Compaction of the heap is an expensive operation because when objects are moved to defragment the heap, the references to each object change. Therefore, compact operations do not occur by default but only when the following triggers occur:
+
+- The `-Xcompactgc` option is specified on the command line.
+- After sweeping the heap, there is not enough free space available to satisfy an allocation request.
+- A `System.gc()` is requested and the last allocation failure that triggered a global GC cycle did not compact or `-Xcompactexplicitgc` is specified.
+- At least half the previously available memory has been consumed by TLH allocations (ensuring an accurate sample) and the average TLH size falls to less than 1024 bytes.
+- The largest object that the `gencon` GC policy failed to move to the tenure area in the most recent scavenge operation is bigger than the largest free slot in the tenure area.
+- The heap is fully expanded and less than 4% of the tenure area is free.
+- Less than 128 KB of the heap is free.
+
+The following two options can be used to control compaction:
+
+- [`-Xcompactgc`](xcompactgc.md) forces compaction of the heap.
+- [`-Xnocompactgc`](xnocompactgc.md) avoids compaction of the heap as a result of all the triggers shown in the preceding list. However a compaction can still occur in rare circumstances.
+
+In a verbose GC log, this operation is shown by the `<gc-op type="compact">` XML element. For more information, see [Verbose GC logs](vgclog.md).
+
+## Weak reference processing
+
+Weak reference processing includes soft references, weak references, and phantom references. These references are created by the user for specific use cases and allow
+some level of interaction with the garbage collector. For example, a soft reference to an object allows that object to persist in memory for a longer period of time before being
+cleared. For example, a software cache. The garbage collector handles the reference types in the order shown and with the behavior detailed in the following table:
+
+
+| Reference type | Class                            | Garbage collector behavior |
+|----------------|----------------------------------|----------------------------|
+| soft         | `java.lang.ref.SoftReference`    | A soft reference is cleared only when its *referent* is not marked for a number of GC cycles or if space on the heap is likely to cause an out of memory error. Use the [-Xsoftrefthreshold](xsoftrefthreshold.md) option to control the collection of soft reference objects. |
+| weak         | `java.lang.ref.WeakReference`    | A weak reference is cleared as soon as its *referent* is not marked by a GC cycle. |
+| phantom      | `java.lang.ref.PhantomReference` | A phantom reference is added to a reference queue and cleared after any objects that require finalization. |  
+
+If your application uses the Java Native Interface (JNI) to interact with other application types, you can also create weak JNI object references. These references have a similar life cycle to a weak Java reference. The garbage collector processes weak JNI references after all other Java reference types.
+
 
 <!-- ==== END OF TOPIC ==== gc_overview.md ==== -->
