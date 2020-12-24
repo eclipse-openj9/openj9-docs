@@ -88,7 +88,7 @@ These parameters, including the `<file path>` parameter, can be in any order. Th
 
 ### Change in behavior for the `jextract` utility
 
-The `jextract` utility gathers relevant files following a system dump to assist with problem determination. It is important that the `jextract` utility is run from the same SDK that generated the dump. From this release, if the build ID of the `jextract` utility does not match the build ID of the SDK that is recorded in the system dump, an exception message is generated. To force `jextract` to continue, a new option is introduced. For more information, see [Dump extractor](tool_jextract.md).
+The `jextract` utility gathers relevant files following a system dump to assist with problem determination. It is important that the `jextract` utility is run from the same SDK that generated the dump. From this release, if the build ID of the `jextract` utility does not match the build ID of the SDK that is recorded in the system dump, an exception message is generated. To force `jextract` to continue, a new option, `-r`, is introduced. For more information, see [Dump extractor](tool_jextract.md).
 
 
 ### New diagnostic suboption for `-Xcheck:jni` for fatal JNI errors

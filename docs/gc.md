@@ -53,7 +53,7 @@ The following table shows the heap configuration and the GC cycles and operation
 |` nogc`         | One area: *flat* | No GC cycles |
 
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** All OpenJ9 GC policies support compressed references on 64-bit platforms, which compresses heap pointers to 32 bits if the total heap size does not exceed the theoretical upper bound of 64 GB. Applications that require more heap space can select any heap size within the bounds imposed by the operating system and available system RAM, without using compressed references. For more information, see [compressed references](allocator.md#compressed-references).
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** All OpenJ9 GC policies support compressed references on 64-bit platforms, which compresses heap pointers to 32 bits if the total heap size does not exceed the theoretical upper bound of 64 GB. Applications that require more heap space can select any heap size within the bounds imposed by the operating system and available system RAM, without using compressed references. For more information, see [compressed references](gc_overview.md#compressed-references).
 
 
 ## Policy selection and tuning
