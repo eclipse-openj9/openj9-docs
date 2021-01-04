@@ -184,7 +184,7 @@ Options that change the behavior of the Garbage Collector (GC).
   |---------------|----------------|-----------------------|
   | `<n>`         | [1 - 14]       | 10                    |
 
-: Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see [Generational Concurrent policy](gc.md#generational-concurrent-policy).
+: Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see [`gencon` policy (default)](gc.md#gencon-policy-default).
 
 ### `stdGlobalCompactToSatisfyAllocate`
 
