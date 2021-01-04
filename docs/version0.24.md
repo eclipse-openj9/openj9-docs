@@ -46,7 +46,7 @@ OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15. Binaries are available fro
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 - [OpenJDK version 15](https://adoptopenjdk.net/archive.html?variant=openjdk15&jvmVariant=openj9)
 
-Windows builds for Java 8 are now compiled with Microsoft Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match.
+Windows&reg; builds for Java&trade; 8 are now compiled with Microsoft&reg; Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -73,17 +73,17 @@ The `-XX:[+|-]PortableSharedCache` option is now supported on IBM Z&reg; and POW
 
 ### ![Start of content that applies to Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update
 
-The `-XX:[+|-]ShareAnonymousClasses` option currently enables and disables the storage of VM anonymous classes in the shared classes cache. From OpenJDK 15, this option now enables and disables the storage of hidden classes in the shared classes cache. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
+In earlier OpenJ9 releases, the `-XX:[+|-]ShareAnonymousClasses` option enables and disables the storage of VM anonymous classes in the shared classes cache. From 0.24.0 (OpenJDK 15 only), this option also enables and disables the storage of hidden classes in the shared classes cache. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
 
 
 ### Additional parameters for `jcmd Dump` commands
 
-You can now include additional parameters for `jcmd Dump` commands. These are as follows:
+You can now include additional parameters for `jcmd Dump` commands as indicated in the following list:
 
 - `Dump.system`, `Dump.heap`, `Dump.java`, and `Dump.snap` accept an optional `request=<requests>` parameter.
 - `Dump.heap` accepts an optional `opts=<options>` parameter.
 
-These parameters, including the `<file path>` parameter, can be in any order. The default for both system and heap dumps is now: `request=exclusive+prepwalk`. For further details, refer to the following `-Xdump` suboptions: [`request=<requests>`](xdump.md#requestltrequestsgt) and [`opts=<options>`](xdump.md#optsltoptionsgt). And for more information about `jcmd`, see [Java diagnostic command (jcmd) tool](tool_jcmd.md).
+These parameters, including the `<file path>` parameter, can be in any order. The default for both system and heap dumps is now: `request=exclusive+prepwalk`. For further details, refer to the following `-Xdump` suboptions: [`request=<requests>`](xdump.md#requestltrequestsgt) and [`opts=<options>`](xdump.md#optsltoptionsgt). For more information about `jcmd`, see [Java diagnostic command (jcmd) tool](tool_jcmd.md).
 
 
 ### Change in behavior for the `jextract` utility
