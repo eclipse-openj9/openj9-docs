@@ -228,6 +228,6 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 | Linux x86 64-bit            | CentOS 7.8               | gcc 7.5                         |
 | Linux on POWER LE 64-bit    | CentOS 7.8               | gcc 7.5                         |
 | Linux on IBM Z 64-bit       | RHEL 7.7                 | gcc 7.5                         |
-| Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
+| Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2019    |
 | macOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
 | AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 16.1.0                  |
