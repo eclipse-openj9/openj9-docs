@@ -29,7 +29,7 @@ The dump viewer is a command-line tool that allows you to examine the contents o
 
 For long running tasks, the dump viewer can also be run in batch mode.
 
-The dump viewer is useful for diagnosing `OutOfMemoryError` exceptions in Java&trade; applications. For problems like general protection faults (GPF), system abends, and SIGSEVs, a system debugger such as **gdb** (Linux) provides more information.
+The dump viewer is useful for diagnosing `OutOfMemoryError` exceptions in Java&trade; applications. For problems like general protection faults (GPFs), system abends, and SIGSEGVs, a system debugger such as **gdb** (Linux) provides more information.
 
 
 ## Syntax
