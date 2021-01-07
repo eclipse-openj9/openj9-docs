@@ -444,6 +444,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#improved-diagnostic-information-in-a-java-dump-file-on-processor-features" class="md-nav__link">
+    Improved diagnostic information in a Java dump file on processor features
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4012,6 +4019,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#improved-diagnostic-information-in-a-java-dump-file-on-processor-features" class="md-nav__link">
+    Improved diagnostic information in a Java dump file on processor features
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4080,6 +4094,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#additional-parameters-for-jcmd-dump-commands">Additional parameters for <code>jcmd Dump</code> commands</a></li>
 <li><a href="#change-in-behavior-for-the-jextract-utility">Change in behavior for the <code>jextract</code> utility</a></li>
 <li><a href="#new-diagnostic-suboption-for-xcheckjni-for-fatal-jni-errors">New diagnostic suboption for <code>-Xcheck:jni</code> for fatal JNI errors</a></li>
+<li><a href="#improved-diagnostic-information-in-a-java-dump-file-on-processor-features">Improved diagnostic information in a Java dump file on processor features</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -4118,6 +4133,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The <code>jextract</code> utility gathers relevant files following a system dump to assist with problem determination. It is important that the <code>jextract</code> utility is run from the same SDK that generated the dump. From this release, if the build ID of the <code>jextract</code> utility does not match the build ID of the SDK that is recorded in the system dump, an exception message is generated. To force <code>jextract</code> to continue, a new option, <code>-r</code>, is introduced. For more information, see <a href="../tool_jextract/">Dump extractor</a>.</p>
 <h3 id="new-diagnostic-suboption-for-xcheckjni-for-fatal-jni-errors">New diagnostic suboption for <code>-Xcheck:jni</code> for fatal JNI errors</h3>
 <p>A new <code>abortonerror</code> suboption for <code>-Xcheck:jni</code> provides diagnostic data when fatal JNI errors occur. For more information, run <code>-Xcheck:jni:help</code>.</p>
+<h3 id="improved-diagnostic-information-in-a-java-dump-file-on-processor-features">Improved diagnostic information in a Java dump file on processor features</h3>
+<p>The <strong>ENVINFO</strong> section of a Java dump file now includes further information about processor features. This information helps to diagnose problems associated with JIT and AOT compilations that depend on underlying hardware. For an example that shows the information provided when JIT is enabled, see the <strong>CPU Information</strong> (<code>2CIJITFEATURE</code>,<code>2CIAOTFEATURE</code>) section in the <a href="../dump_javadump/#envinfo">Java dump</a> topic.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.23.0 and v 0.24.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.24/0.24.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.24.md ==== -->
