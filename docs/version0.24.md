@@ -34,6 +34,7 @@ The following new features and notable changes since v 0.23.0 are included in th
 - [Additional parameters for `jcmd Dump` commands](#additional-parameters-for-jcmd-dump-commands)
 - [Change in behavior for the `jextract` utility](#change-in-behavior-for-the-jextract-utility)
 - [New diagnostic suboption for `-Xcheck:jni` for fatal JNI errors](#new-diagnostic-suboption-for-xcheckjni-for-fatal-jni-errors)
+- [Improved diagnostic information in a Java dump file on processor features](#improved-diagnostic-information-in-a-java-dump-file-on-processor-features)
 
 
 ## Features and changes
@@ -95,6 +96,9 @@ The `jextract` utility gathers relevant files following a system dump to assist 
 
 A new `abortonerror` suboption for `-Xcheck:jni` provides diagnostic data when fatal JNI errors occur. For more information, run `-Xcheck:jni:help`.
 
+### Improved diagnostic information in a Java dump file on processor features
+
+The **ENVINFO** section of a Java dump file now includes further information about processor features. This information helps to diagnose problems associated with JIT and AOT compilations that depend on underlying hardware. For an example that shows the information provided when JIT is enabled, see the **CPU Information** (`2CIJITFEATURE`,`2CIAOTFEATURE`) section in the [Java dump](dump_javadump.md#envinfo) topic.
 
 
 
