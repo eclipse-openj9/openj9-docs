@@ -17,7 +17,7 @@ To help you visualize and analyze the garbage collection, you can feed verbose G
 
 You can enable verbose GC logs by specifying the `-verbose:gc` standard option when you start your application. For more information, see [standard command-line options](cmdline_general.md). 
 
-The output of `-verbose:gc` is printed to STDERR by default. To print the log output to a file, append the `-Xverbosegclog` option. You can print the verbose GC log file to a succession of files, where each file logs a specified number of GC cycles, by using additional parameters of `-Xverbosegclog` option. For more information, see the command-line option [-Xverbosegclog](xverbosegclog.md). 
+The output of `-verbose:gc` is printed to STDERR by default. To print the log output to a file, append the `-Xverbosegclog` option. You can print the verbose GC log file to a succession of files, where each file logs a specified number of GC cycles, by using extra parameters of `-Xverbosegclog` option. For more information, see the command-line option [`-Xverbosegclog`](xverbosegclog.md). 
 
 # Verbose GC log contents  
 The Verbose garbage collection logs are printed in XML format and consist of the following sections:  
@@ -26,9 +26,9 @@ The Verbose garbage collection logs are printed in XML format and consist of the
 
 - sections that contain information about the different GC cycles run, including the GC operations and GC increments that made up the GC cycle.  
 
-The logs can tell you when a GC cycle or increment starts and ends, together with the GC operations that are run to manage or reclaim memory. You can also find out what triggers these activities and the amount of memory available to your application before and after processing.  
+The logs record when a GC cycle or increment starts and ends, together with the GC operations that are run to manage or reclaim memory. You can also find out what triggers these activities and the amount of memory available to your application before and after processing.  
 
-Not all operations that take place during garbage collection are recorded. For example, the logs can tell you when an increment of a concurrent GC cycle starts and ends; the explicit concurrent GC operations that take place during the increment are mostly not recorded. 
+Not all operations that take place during garbage collection are recorded. For example, the logs record when an increment of a concurrent GC cycle starts and ends, but most concurrent GC operations are not recorded.
 
 For definitions of GC cycles, GC increments, operations, phases, see [Garbage Collection Policies](gc.md#garbage-collection-policies). 
 
@@ -36,9 +36,9 @@ For definitions of GC cycles, GC increments, operations, phases, see [Garbage Co
 
 GC activities that make up a GC cycle are listed in the XML structure in a linear fashion. Some XML elements contain child XML elements while other XML elements are empty, serving as markers for starting and ending parts of the GC cycle. The XML elements contain attributes that record further information about the activity. 
 
-The start of a GC cycle is recorded using the <cycle-start> XML element. The trigger reason for the GC cycle is captured in an adjacent XML element, such as <af-start> for an allocation failure or <allocation taxation> for a policy’s memory threshold trigger. 
+The start of a GC cycle is recorded by using the <cycle-start> XML element. The trigger reason for the GC cycle is captured in an adjacent XML element, such as <af-start> for an allocation failure or <allocation taxation> for a policy’s memory threshold trigger. 
 
-For example, the following XML structure can be found in the verbose GC logs that are generated from the `gencon` policy. In this example, the lines have been indented to help illustrate the flow and some child XML elements are omitted for clarity: 
+For example, the following XML structure can be found in the verbose GC logs that are generated from the `gencon` policy. In this example, the lines are indented to help illustrate the flow and some child XML elements are omitted for clarity: 
 
 ```
 <exclusive-start> </exclusive-start> 
@@ -72,24 +72,24 @@ All other XML elements contain child XML elements, which are omitted from this s
 
 Some GC policies include more than 1 GC cycle. GC cycles might be divided into multiple GC increments so that GC operations from the different GC cycles can interleave with each other to reduce pause times.  
 
-A GC cycle can be divided into GC increments in different ways. See specific policy details in this topic for definitions of the GC increments that make up each cycle and the associated GC increment XML elements. 
+A GC cycle can be divided into GC increments in different ways. See specific policy details for definitions of the GC increments that make up each cycle and the associated GC increment XML elements. 
  
 The verbose GC log records all GC activities in the order in which they are run, so GC increments and operations of different cycles interleave with each other in the logs. 
 
-When analyzing the logs, use the `contextid` and `id` attributes to locate the GC increments and operations associated with a specific GC cycle. For example: 
+Use the `contextid` and `id` attributes to locate the GC increments and operations in the log that are associated with a specific GC cycle:
  
 1. Determine the `id` attribute value associated with your GC cycle’s XML element `<cycle-start>`. Note: the `id` attribute increases incrementally with each GC event.  
-2. Search for the `contextid` attribute values that are equal to your GC cycle’s `id` attribute value. All GC increments, operations, and concurrent events associated with a particular cycle have a `contextid` attribute whose value matches the `id` attribute value of the cycle. 
+2. Search for the `contextid` attribute values that are equal to your GC cycle’s `id` attribute value. All GC increments, operations, and concurrent events that are associated with a particular cycle have a `contextid` attribute whose value matches the `id` attribute value of the cycle. 
  
 ## Gencon Policy 
 
 ### Types of GC Cycle
 
-As detailed in [Gencon Policy (Default)](gc.md#gencon-policy-default), the Gencon policy makes use of 2 types of cycle to perform garbage collection – a partial GC cycle and a global GC cycle. 
+As detailed in [Gencon Policy (Default)](gc.md#gencon-policy-default), the Gencon policy uses two types of cycle to perform garbage collection – a partial GC cycle and a global GC cycle. 
  
-Note: For details of the different cycles used per policy type, see [garbage collection policies](gc#garbage-collection-policies). 
+Note: For more information about the cycles used in a particular policy, see [garbage collection policies](gc#garbage-collection-policies). 
 
-You can search for a particular type of cycle in the logs by searching for the “type=<value>” attribute of the <cycle-start> and <cycle-end> XML elements. The following table shows the “type” attribute values and trigger XML elements associated with the different Gencon GC cycles:  
+You can search for a particular type of cycle in the logs by searching for the “type=<value>” attribute of the <cycle-start> and <cycle-end> XML elements. The following table shows the values of the “type” XML attribute the XML elements that record the cycle trigger for the different Gencon GC cycles:  
 
 | GC cycle | value of `type` XML attribute| XML element for cycle trigger| Triggering reason|
 |----------|----------------------------|------------------------------|------------------|
@@ -97,32 +97,32 @@ You can search for a particular type of cycle in the logs by searching for the �
 |Partial (default) | `scavenge`           | `<af-start>`                 |allocation failure|
 |Partial (non-default)| `scavenge`        | `<af-start>`                 |allocation failure|
 
-### Gencon cycle, increment and operation XML elements
+### Gencon cycle, increment, and operation XML elements
 
-Gencon GC cycles, increments and operations are recorded in the verbose GC log using the XML elements listed in the following table:  
+Gencon GC cycles, increments, and operations are recorded in the verbose GC log by using the XML elements that are listed in the following table:  
 
 
 | GC process             | start and end XML elements   | Details |
 |------------------------|------------------------------|------------------------------|
-|GC cycle                |`<cycle-start>`, `<cycle-end>`| The start and end of a GC cycle; a repeatable process that involves a set of GC operations. These operations process all or parts of the Java heap to complete a discrete function. |
-|GC STW increment        |`<gc-start>`, `<gc-end>`      | The start and end of a GC increment that begins with a STW pause. 
-|GC STW increment        | `<concurrent-kickoff>`       | The start of the initial GC increment of the global concurrent cycle that kicks off the initial mark operation 
-|GC STW increment        | `<concurrent-global-final> ` | The start of the final GC increment of the global concurrent cycle that performs the final collection|
-|GC operations and phases| `<gc-op>`                    | A GC operation such as mark or sweep, or a sub-operation ‘phase’ such as class unload. |
+|GC cycle                |`<cycle-start>`, `<cycle-end>`| The start and end of a GC cycle.|
+|GC STW increment        |`<gc-start>`, `<gc-end>`      | The start and end of a GC increment that begins with a *stop-the-world* pause. 
+|GC STW increment        | `<concurrent-kickoff>`       | The start of the initial GC increment of the global concurrent cycle that begins the initial mark operation 
+|GC *stop-the-world* increment        | `<concurrent-global-final> ` | The start of the final GC increment of the global concurrent cycle that performs the final collection|
+|GC operations and phases| `<gc-op>`                    | A GC operation such as mark or sweep, or a suboperation ‘phase’ such as class unload. |
 
-**Note:** Details of a GC operation or phase are logged using the single <gc-op> XML element rather than start and end XML elements. 
+**Note:** Details of a GC operation or phase are logged by using the single <gc-op> XML element rather than start and end XML elements. 
 
 The following sections give details about specific cycles, including examples of how the cycle appears in the Verbose GC log.
 
 ### Partial GC cycle – STW scavenge operation(default) 
-The Gencon policy’s partial cycle, scavenge, is run by default using only a *stop-the-world* pause. The cycle only consists of 1 *stop-the-world* scavenge operation, and is run on the nursery area only: 
+The Gencon policy’s partial cycle, scavenge, is run by default by using only a *stop-the-world* pause. The cycle consists of only one *stop-the-world* scavenge operation, and is run on the nursery area only: 
 
 |GC Operation | GC increment | *stop-the-world* or concurrent| XML element of GC increment          | Details                                                                   |
 |-------------|--------------|-------------------------------|--------------------------------------|---------------------------------------------------------------------------|
 |Scavenge     |Single        | *stop-the-world*              | `<gc-start>`, `<gc-end>`| `<gc-op'>` |Contains detailed information about root scanning and weak roots processing|
 
 
-**EXAMPLE: Gencon’s default partial GC cycle**
+**EXAMPLE - Gencon’s default partial GC cycle**
 
 A default partial GC cycle is recorded within the following example, which is taken from the verbose GC log output of a Gencon policy garbage collection. The following log content is broken down into sections that describe particular activities of the GC cycle. 
 
@@ -180,7 +180,7 @@ The verbose GC log then begins recording GC activities and details.
 
 **XML Structure of partial GC cycle**
 
-The default partial GC cycle follows a general structure in the verbose GC log as shown.  The lines have been indented to help illustrate the flow and some child XML elements are omitted for clarity: 
+The default partial GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some child XML elements are omitted for clarity: 
 ``` 
 <exclusive-start> 
 
@@ -245,7 +245,7 @@ Logged GC events are labeled with `timestamp`,`id`, and `contextid` XML attribut
 
 **`<gc-start>`** 
 
-The start of the first GC increment is logged using the XML element `<gc-start>`:   
+The start of the first GC increment is logged by using the XML element `<gc-start>`:   
 
 ``` 
 <gc-start id="5" type="scavenge" contextid="4" timestamp="2020-10-18T13:27:09.603">  
@@ -283,7 +283,7 @@ The start of the first GC increment is logged using the XML element `<gc-start>`
 </allocation-stats>  
  
 ``` 
-The `<mem-info>` XML element and it’s child XML elements give detailed information about the amount of memory available and where it is located in the heap. You can determine how the GC operations in the increment modify and reclaim memory by comparing the attribute values of the `<mem-info>` and `<mem>` elements.   
+The `<mem-info>` XML element and its child XML elements give detailed information about the amount of memory available and where it is located in the heap. You can determine how the GC operations in the increment modify and reclaim memory by comparing the attribute values of the `<mem-info>` and `<mem>` elements.   
  
 For this example, at the start of the GC increment the available memory is configured in the heap as follows: 
 
@@ -293,7 +293,7 @@ For this example, at the start of the GC increment the available memory is confi
 
 **`<gc-op>`** 
 
-The `<gc-op>` XML element and it’s child XML elements contain information about the increment’s operations and phases. The example GC cycle only includes 1 GC operation, which is of type `"scavenge"`: 
+The `<gc-op>` XML element and its child XML elements contain information about the increment’s operations and phases. The example GC cycle includes only 1 GC operation, which is of type `"scavenge"`: 
 
 ``` 
 <gc-op id="7" type="scavenge" timems="30.675" contextid="4" timestamp="2020-10-18T13:27:09.634">  
@@ -315,9 +315,11 @@ The `<gc-op>` XML element and it’s child XML elements contain information abou
 
 </gc-op>  
 ``` 
-The child XML elements of `<gc-op>` provide details about the operation itself. For example, the `<scavenger-info>` XML element shows that the tenure age has been set by the VM to be `"1"`, meaning that any objects that have already been copied between the allocate and survivor space once will be moved to the tenure area during the next scavenge operation. The `<memory-copied>` XML element indicates that 25MB (25522536) have been reclaimed in the nursery area for new object allocation. For more information about how the scavenge operation acts on the heap, see [Gencon policy(default)](gc.md#gencon-policy-default).
+The child XML elements of `<gc-op>` provide details about the operation itself. For example, the `<scavenger-info>` XML element shows that the tenure age is set to `"1"` for this operation. For a tenure age of `"1"`, any objects already copied between the allocate and survivor space once will be moved to the tenure area during the next scavenge operation. 
 
-**note:** The `“contextid”` value of the `<gc-start>` and `<gc-op>` XML elements are both ‘7’, which  matches the “id=7” value of the `<cycle-start>` XML element, indicating that the GC increment and GC operation are both associated with this default partial GC cycle. 
+The `<memory-copied>` XML element indicates that 25 MB (25522536) were reclaimed in the nursery area for new object allocation. For more information about how the scavenge operation acts on the heap, see [Gencon policy(default)](gc.md#gencon-policy-default).
+
+The `contextid="7"`for the`<gc-start>` and `<gc-op>` XML elements are both ‘7’. The `id` value of the <cycle-start> element of the current partial GC cycle is also `"7"`, so the increment and operations are associated with the partial GC cycle.
 
 **`<gc-end>`** 
 
@@ -352,12 +354,10 @@ The end of the GC increment is recorded with the `<gc-end>` XML element. The chi
 </gc-end>  
 
 ``` 
-The attribute values of `<mem>` and `<mem-info>` show that by the end of the GC increment, the configuration of the heap has been modified to release memory for use in the nursery area: 
+The attribute values of `<mem>` and `<mem-info>` show that memory has been released in the nursery area:
 
 - 40% of the nursery area available as free memory. The allocate space of the nursery area is now 80% available memory, and the survivor space is full. 
 - 99% of the tenure area is now available as free memory. 
-
-This is as expected – the Gencon partial GC cycle runs a *stop-the-world* scavenge operation, which acts solely on the nursery area to reclaim memory in the event of a memory allocation failure.  
 
 **`<cycle-end>`** 
 The end of the GC cycle is recorded by the `<cycle-end>` XML element. The GC cycle finishes after only 1 GC increment:  
@@ -372,25 +372,25 @@ The end of the GC cycle is recorded by the `<cycle-end>` XML element. The GC cyc
 <exclusive-end id="13" timestamp="2020-10-18T13:27:09.635" durationms="31.984" />  
 
 ``` 
-The `<allocation-satisfied>` XML element indicates that the requested memory reclaim of 272 bytes has been achieved by the GC cycle. The `<exclusive-end>` XML element indicates that the *stop-the-world* pause has ended. 
+The `<allocation-satisfied>` XML element indicates that the requested memory reclaim of 272 bytes has been achieved by the GC cycle. The `<exclusive-end>` XML element indicates the end of the *stop-the-world* pause.
 
 
 **Summary of the example**
 
-So from the structure and XML schema of the example, you can determine that: 
+So from the structure and XML schema of the example, you can determine the following:
 
 - The GC cycle begins with a *stop-the-world* pause due to an allocation failure. 
 
-- All GC events associated with this cycle occur during the *stop-the-world> pause 
+- All GC events that are associated with this cycle occur during the *stop-the-world* pause 
 
-- The cycle consists of only 1 GC increment, containing only 1 operation, a ‘scavenge’. 
+- The cycle consists of only 1 GC increment, containing only one operation, a ‘scavenge’. 
 
 - The GC cycle reclaims memory in the nursery area.  
  
 ### Partial GC cycle – concurrent scavenge operation(non-default)
  
 
-The [partial scavenge GC cycle](vgclog.md#partial-gc-cycle-stw-scavenge-operation-default) can alternatively be run as a [concurrent scavenge cycle](gc.md#concurrent-scavenge). This non-default concurrent scavenge partial GC cycle is divided into 3 GC increments, to reduce pause times and maximise throughput, as defined in the following table:  
+The [partial scavenge GC cycle](vgclog.md#partial-gc-cycle-stw-scavenge-operation-default) can alternatively be run as a [concurrent scavenge cycle](gc.md#concurrent-scavenge). This non-default concurrent scavenge partial GC cycle is divided into 3 GC increments to reduce pause times and maximise throughput as defined in the following table:  
 
 |GC Operation | GC increment | *stop-the-world* or concurrent| XML element of GC increment          | Details                                                                   |
 |-------------|--------------|-------------------------------|--------------------------------------|---------------------------------------------------------------------------|
@@ -400,21 +400,21 @@ The [partial scavenge GC cycle](vgclog.md#partial-gc-cycle-stw-scavenge-operatio
 
 ### Global GC cycle 
 
-The Gencon policy’s global GC cycle, which runs when the tenure area is close to full, consists of a mixture of STW and concurrent operations that run on the tenure area.  The initial and final steps of the GC cycle are executed using a *stop-the-world* pause to run the GC operations involved in the step. GC operations involved in the intermediate step are run concurrently.  
+The Gencon policy’s global GC cycle, which runs when the tenure area is close to full, consists of a mixture of STW and concurrent operations that run on the tenure area.  The initial and final steps of the GC cycle are run during a *stop-the-world* pause. GC operations that are involved in the intermediate step are run concurrently.  
 
-The global GC cycle is divided into GC increments as shown in the following table: 
+The global GC cycle is divided into GC increments, as shown in the following table: 
 
 |GC Operation         | GC increment| *stop-the-world* or concurrent| XML element of GC increment| Details                         |
 |---------------------|-------------|-------------------------------|--------------------------------------|-----------------------|
 |n/a - initiates cycle|initial      | *stop-the-world*              | `<concurrent-kickoff`        |No `<gc-op>` is logged. This increment just initiates the concurrent mark increment |
 |concurrent mark      |intermediate |concurrent                     | `<gc-start>`, `<gc-end>`     |`<concurrent-trace-info>` records progress of concurrent mark|
-|final collection     |final        | *stop-the-world*              | `<concurrent-global-final>`  |Operations and phases include a final phase of concurrent mark, a sweep, and optionally class unload and compact.  Triggered when card-cleaning threshold reached. Child XML element: `<concurrent-trace-info reason=””>`  |
+|final collection     |final        | *stop-the-world*              | `<concurrent-global-final>`  |Operations and phases include a final phase of concurrent mark, a sweep, and an optional class unload and compact. Triggered when card-cleaning threshold reached. Child XML element is `<concurrent-trace-info reason=””>`  |
 
 **Interleaving of Gencon GC cycle increments**
 
 While the *stop-the-world* scavenge operation of the partial GC cycle is running on the nursery area, the intermediate increment of the global GC cycle – a concurrent mark-sweep operation - runs concurrently on the tenure area.  
 
-You can see this interleaving of the increments in the verbose GC log, which will take on a similar structure to the following example (for clarity, not all GC activities are listed):
+You can see this interleaving of the increments in the verbose GC log, which has a similar structure to the following example (for clarity, not all GC activities are listed):
 
 <table style="width:100%">
 
@@ -450,7 +450,7 @@ You can see this interleaving of the increments in the verbose GC log, which wil
     <td>51656</td>
     <td>❌ </td>
     <td> - </td>
-    <td>scavenge increment executes</td>
+    <td>scavenge increment runs</td>
   </tr>
   <tr>
     <td>51696</td>
@@ -481,26 +481,26 @@ You can see this interleaving of the increments in the verbose GC log, which wil
   <tr>
     <td>51709</td>
     <td> ✅  </td>
-    <td> concurrent increment executes (blank line)</td>
+    <td> concurrent increment runs (blank line)</td>
     <td>-</td>
   </tr>
   <tr>
     <td>51714</td>
     <td> ❌  </td>
-    <td> concurrent increment executing</td>
+    <td> concurrent increment runs</td>
     <td>partial cycle initializes</td>
   </tr>
 
   <tr>
     <td>51715</td>
     <td> ❌ </td>
-    <td> concurrent increment executing</td>
-    <td>scavenge increment executes</td>
+    <td> concurrent increment runs</td>
+    <td>scavenge increment runs</td>
   </tr>
   <tr>
     <td>51754</td>
     <td> ❌ </td>
-    <td> concurrent increment executing</td>
+    <td> concurrent increment runs</td>
     <td>partial cycle ends</td>
   </tr>
   <tr>
@@ -512,7 +512,7 @@ You can see this interleaving of the increments in the verbose GC log, which wil
   <tr>
     <td>51762</td>
     <td> ❌  </td>
-    <td> final collection increment executes </td>
+    <td> final collection increment runs </td>
     <td></td>
   </tr>
   <tr>
@@ -523,15 +523,15 @@ You can see this interleaving of the increments in the verbose GC log, which wil
   </tr>
   </table>
 
-**Example: Gencon’s global GC cycle**
+**Example - Gencon’s global GC cycle**
 
-The following example shows how a global GC cycle is recorded in a Gencon policy verbose GC log. The global GC cycle is run after many partial GC cycles have completed, so the log content in this example begins part way down the full log. For details of the GC Initialisation section and partial cycle log contents, see [Log example: Gencon’s default partial GC cycle](./vgclogs.md/#log-example-gencons-default-partial-gc-cycle). 
+The following example shows how a global GC cycle is recorded in a Gencon policy verbose GC log. The global GC cycle is run after the completion of many partial GC cycles, so the log content in this example begins part way down the full log. For more information about the GC Initialization section and partial cycle log contents, see [Log example: Gencon’s default partial GC cycle](./vgclogs.md/#log-example-gencons-default-partial-gc-cycle). 
 
-In contrast to the previous log example of a default partial GC cycle, where the whole of the GC cycle is recorded in a single block in the log, [the global GC cycle is split into increments](./verbosegc.md#global-gc-cycle) that interleave with partial GC cycles. The interleaving can be seen in the following example, where a partial GC cycle is logged between the start and end of the global cycle. 
+ [The global GC cycle is split into increments](./verbosegc.md#global-gc-cycle) that interleave with partial GC cycles. The interleaving can be seen in the following example, where a partial GC cycle is logged between the start and end of the global cycle. 
  
-**XML Structure of balanced GC cycle**
+**XML structure of global GC cycle**
 
-The global GC cycle follows a general structure in the verbose GC log as shown.  The lines have been indented to help illustrate the flow and some child XML elements are omitted for clarity: 
+The global GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some child XML elements are omitted for clarity: 
 ```
 <concurrent-kickoff> 
 
@@ -620,9 +620,12 @@ The global GC cycle follows a general structure in the verbose GC log as shown. 
 // The logs now record a partial GC cycle that runs from start to finish 
 ```
 
-**`<concurrent-kickoff>** 
+**`<concurrent-kickoff>`** 
 
-The XML element `<concurrent-kickoff>` records the start of the first increment of the Gencon Global GC cycle. The ‘<kickoff>’ element contains details of the reason for the kickoff, the target number of bytes the cycle aims to free up in the heap, as well as the current available memory in the different parts of the heap. 
+The XML element `<concurrent-kickoff>` records the start of the first increment of the Gencon Global GC cycle. The ‘<kickoff>’ element contains:
+- Details of the reason for the launch of the GC cycle
+- The target number of bytes the cycle aims to free up in the heap
+- The current available memory in the different parts of the heap
 
 ```
 <concurrent-kickoff id="12362" timestamp="2020-10-18T13:35:44.341"> 
@@ -631,7 +634,7 @@ The XML element `<concurrent-kickoff>` records the start of the first increment 
 
 </concurrent-kickoff> 
 ```
-**note:** To analyze specific parts of a cycle, you can search for the XML elements that record  the GC activities of a specific increment of the cycle – in this case, you can search for the <concurrent-kickoff> XML element. See the details of a particular cycle, such as the [Gencon Global Cycle](./vgclog.md/#global-cycle), to determine the XML element names for particular *stop-the-world* or concurrent GC increments or operations. 
+**Note:** To analyze specific parts of a cycle, you can search for the XML elements that mark a specific increment of the cycle. For example, you can search for the <concurrent-kickoff> XML element to locate the first increment of the Gencon global cycle. See the details of a particular cycle, such as the [Gencon Global Cycle](./vgclog.md/#global-cycle), to determine the XML element names for particular *stop-the-world* or concurrent GC increments or operations. 
 
 **`<exclusive-start>`** 
 
@@ -646,11 +649,11 @@ The `<exclusive-start>` XML element indicates the start of a *stop-the-world* pa
 
 **`<cycle-start>`** 
 
-The beginning of the global cycle is recorded, indicated by the `"global"` value of the XML `type` attribute. All subsequent GC events recorded in the logs that are associated with this particular cycle will have a `contextid` value equal to the `<cycle-start>` `id` attribute value of “12634”. 
+The beginning of the global cycle is recorded, indicated by the `"global"` value of the XML `type` attribute. All subsequent GC events recorded in the logs that are associated with this particular cycle have a `contextid` value equal to the `<cycle-start>` `id` attribute value of `“12634”`. 
 ```
 <cycle-start id="12364" type="global" contextid="0" timestamp="2020-10-18T13:35:44.344" intervalms="516655.052" /> 
 ```
-**`<exclusive-end>`** and the concurrent GC events** 
+**`<exclusive-end>` and the concurrent GC events** 
 
 The `<exclusive-end>` XML element records the end of the *stop-the-world* pause. 
 ```
@@ -658,9 +661,9 @@ The `<exclusive-end>` XML element records the end of the *stop-the-world* pause.
 ```
 
 **A blank line**
-The next activity recorded in the logs, which is recorded using an <exclusive-end> XML element, follows a blank line. A blank line indicates there are no *stop-the-world* activities running. However, concurrent activities may be running, in this case, the concurrent operations and phases of the 2nd increment of a Gencon global cycle. 
+A blank line appears in the log before the next section. A blank line indicates that there no *stop-the-world* activities are running. However, concurrent activities might be running, in this case, the concurrent operations, and phases of the second increment of a Gencon global cycle are running.
  
-**A partial GC cycle starts and completes** The next section of the logs records a *stop-the-world* pause associated with an allocation failure. The following XML element, <cycle-start>, indicates the start of a scavenge cycle. The ‘’contextid” XML attribute value of the XML elements in the following log section is “12368” not “12364. So the activities recorded in this section are associated with this new scavenge cycle rather than the currently executing global cycle.  
+**A partial GC cycle starts and completes** The next section of the logs records a *stop-the-world* pause associated with an allocation failure. The following XML element, `<cycle-start>`, indicates the start of a scavenge cycle. The ‘’contextid” XML attribute value of the XML elements in the following log section is “12368” not “12364. So the activities that are recorded in the section are associated with this new scavenge cycle rather than the currently running global cycle.  
 
 This new scavenge cycle is a Gencon default partial GC cycle. For more information about how this cycle is recorded in the logs, see the [log example for Gencon’s default partial G cycle](verbosegclog.md#ADD). 
 
@@ -767,9 +770,9 @@ This new scavenge cycle is a Gencon default partial GC cycle. For more informati
 
 After the partial GC cycle completes and the stop the world pause finishes, the log records a *stop-the-world* pause preceding a `<concurrent-global-final>` XML element. 
 
-The `<concurrent-global-final>` XML element records the start of the 3rd and final increment of the Global partial GC cycle which consists of *stop-the-world* GC operations and phases. The *stop-the-world* pause is executed by the garbage collector to execute this final increment.  
+The `<concurrent-global-final>` XML element records the start of the third and final increment of the Global partial GC cycle, which consists of *stop-the-world* GC operations and phases. The *stop-the-world* pause is run by the garbage collector to run this final increment.  
 
-The `reason` attribute of the `<concurrent-trace-info>` XML element indicates that the global cycle has reached the card cleaning threshold and so can now complete this final increment.  
+The `reason` attribute of the `<concurrent-trace-info>` XML element indicates that the global cycle reached the card cleaning threshold and so can now complete this final increment.  
 
 ```
 <exclusive-start id="12378" timestamp="2020-10-18T13:35:44.594" intervalms="12.075"> 
@@ -787,7 +790,8 @@ The `reason` attribute of the `<concurrent-trace-info>` XML element indicates th
 
 **`<gc-start>`** 
 
-A global GC increment begins. You can check that this increment is associated with the particular GC global cycle of this example by checking that the `contextid=”12364”’ matches the ‘id’ attribute value for our global GC cycle’s <gc-cycle> XML element.  
+A global GC increment begins. You can check that the increment is associated with the GC global cycle in the example by checking the `contextid` XML attribute value matches the `id` XML attribute value of the cycle's <gc-cycle> XML element. For the increment in the example, the` <gc-start>` `contextid` and `<gc-cycle>` `id` value are both `"12364"`.
+
 ```
 <gc-start id="12380" type="global" contextid="12364" timestamp="2020-10-18T13:35:44.594"> 
 
@@ -829,23 +833,23 @@ A global GC increment begins. You can check that this increment is associated wi
 
 The child XML element attribute values of the`<mem>` and `<mem-info>` XML elements indicate the configuration of the memory. For this example, at the start of this GC increment, 25% of the total heap is available as free memory. This free memory is split between the following areas of the heap:  
 
-the nursery area, which has 87% of it’s total memory available as free memory. The free memory is only available in the allocate space of the nursery area. The survivor space has no free memory.  
+The nursery area, which has 87% of its total memory available as free memory. The free memory is only available in the allocate space of the nursery area. The survivor space has no free memory.  
 
-the tenure area, which has 5% of it’s total memory available as free memory. All of this free memory is in the long object allocation area. There is no free memory available in the short object allocation area.  
+The tenure area, which has 5% of its total memory available as free memory. All of this free memory is in the long object allocation area. No free memory is available in the short object allocation area.  
  
-**note** The global GC cycle runs to free up memory in the tenure area. The freeing up of memory in the nursery area is achieved using the partial GC cycle. For more information, see [Gencon Policy(default)](gc.md#gencon-policy-(default)). 
+**Note:** The global GC cycle runs to free up memory in the tenure area. The freeing up of memory in the nursery area is achieved by using the partial GC cycle. For more information, see [Gencon Policy(default)](gc.md#gencon-policy-(default)). 
 
 **`<gc-op>`** 
 
-The `<gc-op>` XML element and it’s child XML elements contain information about the increment’s operations and phases. There are 5 `<gc-op>` XML elements recorded in this section of the logs. The `type` XML attribute shows the different operations and phases involved, which include a final concurrent mark phase, a sweep, and a class unload: 
+The `<gc-op>` XML element and its child XML elements contain information about the increment’s operations and phases. 5 `<gc-op>` XML elements are recorded. The `type` XML attribute records the different operations and phases that are involved: 
 
-1. Rs-scan 
-2. Card-cleaning 
-3. Mark 
-4. Classunload 
-5. Sweep 
+1. `Rs-scan`
+2. `Card-cleaning`
+3. `Mark`
+4. `Classunload`
+5. `Sweep`
 
-**note:** Sometimes this final increment of a Gencon global cycle will include an optional compact phase. 
+**Note:** The final increment of a Gencon global cycle can include an optional compact phase.
 ```
 <gc-op id="12382" type="rs-scan" timems="3.525" contextid="12364" timestamp="2020-10-18T13:35:44.598"> 
 
@@ -891,10 +895,10 @@ The `<gc-op>` XML element and it’s child XML elements contain information abou
 
 **`<gc-end>`** 
 
-The `<gc-end>` XML element logs the end of the final increment of the global cycle. The `<mem>` and `<mem-info>` child XML elements show that after the increment has run, the heap contains 60% free memory. This free memory is split between the following areas of the heap:  
+The `<gc-end>` XML element logs the end of the final increment of the global cycle. The `<mem>` and `<mem-info>` child XML elements show that after the increment runs, the heap contains 60% free memory. This free memory is split between the following areas of the heap:  
 
-- the nursery area remains unchanged, with 87% of it’s total memory available as free memory. The free memory is only available in the allocate space of the nursery area. The survivor space has no free memory. 
-- the tenure area, now has 51% of it’s total memory available as free memory. The memory is split between the small object allocation space, which has 48% of it’s space available as free memory, and the large object allocation space, which is all available memory.
+- the nursery area remains unchanged, with 87% of its total memory available as free memory. The free memory is only available in the allocate space of the nursery area. The survivor space has no free memory. 
+- the tenure area, now has 51% of its total memory available as free memory. The memory is split between the small object allocation space, which has 48% of its space available as free memory, and the large object allocation space, which is all available memory.
 
  ```
 <gc-end id="12387" type="global" contextid="12364" durationms="24.220" usertimems="86.465" systemtimems="0.000" stalltimems="2.846" timestamp="2020-10-18T13:35:44.618" activeThreads="4"> 
@@ -927,20 +931,20 @@ The `<gc-end>` XML element logs the end of the final increment of the global cyc
 ```
 **`<cycle-end>`** 
 
-After the GC operations and phases of the final increment of the global cycle have completed, the global cycle ends and the *stop-the-world* pause ends. 
+After the GC operations and phases of the final increment of the global cycle complete, the global cycle ends and the *stop-the-world* pause ends. 
 ```
 <cycle-end id="12389" type="global" contextid="12364" timestamp="2020-10-18T13:35:44.619" /> 
 
 <exclusive-end id="12391" timestamp="2020-10-18T13:35:44.619" durationms="24.679" /> 
 ```
-So from the structure and XML schema of this example, you can determine that: 
+In summary, by analyzing the structure and XML element details of the example, you have determined the following: 
 
 - The GC global cycle is triggered when a memory threshold is reached and begins with a *stop-the-world* pause 
 
-- After the first increment of the GC global cycle completes, the *stop-the-world* pause ends and the 2nd increment runs concurrently. 
+- After the first increment of the GC global cycle completes, the *stop-the-world* pause ends and the second increment runs concurrently. 
 
-- Whilst the 2nd increment is running concurrently, a partial GC cycle starts and finishes. 
+- While the second increment is running concurrently, a partial GC cycle starts and finishes. 
 
-- When the 2nd increment has completed, a *stop-the-world* pause begins so that the 3rd and final increment of the global cycle, which consists of 5 operations and phases, can run. 
+- When the second increment completes, a *stop-the-world* pause begins so that the third and final increment of the global cycle, which consists of five operations and phases, can run. 
 
 - The global GC cycle reclaims memory in the tenure area. 
