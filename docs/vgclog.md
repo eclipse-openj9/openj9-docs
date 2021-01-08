@@ -41,28 +41,28 @@ The start of a GC cycle is recorded by using the <cycle-start> XML element. The 
 For example, the following XML structure can be found in the verbose GC logs that are generated from the `gencon` policy. In this example, the lines are indented to help illustrate the flow and some child XML elements are omitted for clarity: 
 
 ```
-<exclusive-start> </exclusive-start> 
+    <exclusive-start> </exclusive-start>
 
-  <af-start/> 
+      <af-start/> 
 
-    <cycle-start/> 
+        <cycle-start/> 
 
-      <gc-start> </gc-start> 
+          <gc-start> </gc-start> 
 
-        <allocation-stats> </allocation-stats> 
+            <allocation-stats> </allocation-stats> 
 
-        <gc-op> </gc-op> 
+              <gc-op> </gc-op> 
 
-      <gc-end> </gc-end> 
+          <gc-end> </gc-end> 
 
-    <cycle-end/> 
+        <cycle-end/> 
 
-    <allocation-satisfied/> 
+        <allocation-satisfied/> 
 
-  <af-end/> 
+      <af-end/> 
 
-<exclusive-end/> 
- ```
+    <exclusive-end/> 
+```
 
 The `<af-start/>`, `<cycle-start/>`, `<cycle-end/>`, `<allocation-satisfied/>`, and `<af-end/>` XML elements are empty and contain only attributes. 
 
@@ -129,7 +129,8 @@ A default partial GC cycle is recorded within the following example, which is ta
 **Initialization** 
 
 The first section of the log, which appears at the start of all verbose GC logs, records the configuration of the garbage collector:  
-```
+
+```xml
 <initialized id="1" timestamp="2020-10-18T13:27:07.691"> 
 
 <attribute name="gcPolicy" value="-Xgcpolicy:gencon" /> 
@@ -180,8 +181,10 @@ The verbose GC log then begins recording GC activities and details.
 
 **XML Structure of partial GC cycle**
 
-The default partial GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some child XML elements are omitted for clarity: 
-``` 
+The default partial GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some child XML elements are omitted for clarity:
+
+```
+{% highlight xml %}
 <exclusive-start> 
 
   <af-start> 
@@ -214,7 +217,9 @@ The default partial GC cycle follows a general structure in the verbose GC log a
   <af-end> 
 
 <exclusive-end> 
+{% endhighlight %}
 ```
+
 **`<exclusive-start>`**
 
 The cycle begins with a *stop-the-world* pause, recorded by the <exclusive-start> XML element:  
