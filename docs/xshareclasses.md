@@ -1,5 +1,5 @@
 ﻿<!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -26,11 +26,9 @@
 
 Use the `-Xshareclasses` option to enable, disable, or modify class sharing behavior. Class data sharing is enabled by default for bootstrap classes only (the equivalent of specifying `-Xshareclasses:bootClassesOnly,nonFatal,silent`), unless your application is running in a container.
 
-This option can take a number of parameters, some of which are cache utilities. Cache utilities perform the required operation on the specified cache, without starting the VM. You can combine multiple suboptions, which are separated by commas, but the cache utilities are mutually exclusive.
+This option can take a number of parameters, some of which are *cache utilities*. Cache utilities carry out specific operations on a specified cache without starting the Java virtual machine (VM). Although you can combine multiple suboptions, which are separated by commas, the cache utilities are mutually exclusive.
 
-When you are running cache utilities, the message `Could not create the Java virtual machine` is expected. Cache utilities do not create the virtual machine.
-
-Some cache utilities can work with caches from previous Java&trade; versions or caches that are created by virtual machines (VMs) with different bit-widths. These caches are referred to as *"incompatible"* caches.
+Some cache utilities can work with caches from previous Java&trade; versions or caches that are created by VMs with different bit-widths. These caches are referred to as *"incompatible"* caches.
 
 See also the [Class data sharing](shrc.md) topic, which includes some [best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
@@ -192,7 +190,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 - Persistent caches that are still in use continue to exist even when you use this option, but they are unlinked from the file system so they are not visible to new VM invocations. If you update the VM then restart an application for which a persistent shared cache already exists, the VM unlinks the existing cache and creates a new cache. Because the unlinked caches are not visible to new VMs, you cannot find them by using the `-Xshareclasses:listAllCaches` option, and you cannot use the `-Xshareclasses:printStats` option on them. You can therefore have multiple unlinked caches that consume file system space until they are no longer in use.
 
-### `destroyAllLayers`
+### `destroyAllLayers` (Cache utility)
 
 **(64-bit only)**
 

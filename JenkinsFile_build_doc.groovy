@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018, 2020 IBM Corp. and others
+ * Copyright (c) 2017, 2021 IBM Corp. and others
  *
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which accompanies this
@@ -31,7 +31,7 @@ ECLIPSE_REPO = 'ssh://genie.openj9@git.eclipse.org:29418/www.eclipse.org/openj9/
 SSH_CREDENTIAL_ID = 'git.eclipse.org-bot-ssh'
 
 BUILD_DIR = 'built_doc'
-CREDENTIAL_ID = 'b6987280-6402-458f-bdd6-7affc2e360d4'
+CREDENTIAL_ID = 'github-bot'
 
 switch (params.BUILD_TYPE) {
     case "MERGE":

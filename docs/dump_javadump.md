@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -186,11 +186,13 @@ NULL           -----------------------------------------------------------------
 NULL          
 1CICPUINFO     CPU Information
 NULL           ------------------------------------------------------------------------
-2CIPHYSCPU     Physical CPUs: 4
-2CIONLNCPU     Online CPUs: 4
-2CIBOUNDCPU    Bound CPUs: 4
+2CIPHYSCPU     Physical CPUs: 8
+2CIONLNCPU     Online CPUs: 8
+2CIBOUNDCPU    Bound CPUs: 8
 2CIACTIVECPU   Active CPUs: 0
-2CITARGETCPU   Target CPUs: 4
+2CITARGETCPU   Target CPUs: 8
+2CIJITFEATURE  CPU features (JIT): fpu cx8 cmov mmx sse sse2 ssse3 fma sse4_1 popcnt aesni osxsave avx avx2 rdt_m
+2CIAOTFEATURE  CPU features (AOT): fpu cx8 cmov mmx sse sse2 ssse3 fma sse4_1 popcnt aesni osxsave avx avx2 rdt_m
 NULL
 1CICGRPINFO    Cgroup Information
 NULL           ------------------------------------------------------------------------
@@ -206,7 +208,7 @@ NULL           -----------------------------------------------------------------
 2CICGRPINFO    cgroup name : /
 3CICGRPINFO	   CPU exclusive : 1
 3CICGRPINFO	   Mem exclusive : 1
-3CICGRPINFO	   CPUs : 0-3
+3CICGRPINFO	   CPUs : 0-7
 3CICGRPINFO	   Mems : 0
 2CICGRPINFO    subsystem : memory
 2CICGRPINFO    cgroup name : /
