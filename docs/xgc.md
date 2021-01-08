@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -59,13 +59,13 @@ Options that change the behavior of the Garbage Collector (GC).
 
 : This option supports pause-less garbage collection mode when you use the Generational Concurrent ([`gencon`](xgcpolicy.md#gencon)) garbage collection policy (the default policy).
 
-    If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications.
+    If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications. This mode can be enabled with hardware-based support (Linux on IBM Z&reg; and z/OS&reg;) and software-based support (64-bit: Linux on (x86-64, POWER&reg;, IBM Z&reg;) AIX&reg;, macOS&reg;, and z/OS).
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note: Linux on Z and z/OS**
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note: Linux on IBM Z and z/OS**
 
-    This option is supported by all generations of IBM Z&reg; hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; and IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode.
+    This option is supported by all generations of IBM Z hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode.
 
-    Hardware-based pause-less GC is supported on IBM z14&trade; and later hardware running the following software:
+    Hardware-based pause-less GC is supported on IBM z14 and later hardware running the following software:
 
     Operating systems:
 
@@ -184,7 +184,7 @@ Options that change the behavior of the Garbage Collector (GC).
   |---------------|----------------|-----------------------|
   | `<n>`         | [1 - 14]       | 10                    |
 
-: Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see [Generational Concurrent policy](gc.md#generational-concurrent-policy).
+: Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see [`gencon` policy (default)](gc.md#gencon-policy-default).
 
 ### `stdGlobalCompactToSatisfyAllocate`
 
