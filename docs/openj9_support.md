@@ -52,7 +52,7 @@ columns will be removed over time.
 | v 0.25.0       | March 2021 (\*1)    | No        | No          | No        | Yes (\*2) |            |
 | v 0.26.0       | April 2021 (\*1)    | Yes       | Yes         | No        | Yes       |            |
 | v 0.27.0       | July 2021 (\*1)     | Yes       | Yes         | No        | Yes       |            |
-| v 0.28.0       | September 2021 (\*1)| Yes       | Yes         | No        | No        | Yes (\*2)  |
+| v 0.28.0       | September 2021 (\*1)| Yes       | Yes         | No        | No        | Yes        |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
