@@ -127,7 +127,7 @@ nav:
     - "Memory management" :
         - "Overview"                                                             : gc_overview.md
         - "Garbage collection policies"                                          : gc.md
-        - "Verbose Garbage collection logs"                                      : vgclog.md
+        - "Verbose garbage collection logs"                                      : vgclog.md
 
     - "JIT Compiler"                                                             : jit.md
     - "JITServer (tech. preview)"                                                : jitserver.md
