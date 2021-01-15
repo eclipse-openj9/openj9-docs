@@ -511,7 +511,7 @@ You can see this interleaving of the increments in the verbose GC log, which has
 
 The following example shows how a global GC cycle is recorded in a `gencon` policy verbose GC log. The global GC cycle is run after the completion of many partial GC cycles, so the log content in this example begins part way down the full log. For more information about the GC Initialization section and partial cycle log contents, see [Example - `gencon`’s default partial GC cycle](./vgclogs.md/#example-gencons-default-partial-gc-cycle). 
 
- [The global GC cycle is split into increments](./verbosegc.md#interleaving-of-gencon-gc-cycle-increments) that interleave with partial GC cycles. The interleaving can be seen in the following example, where a partial GC cycle is logged between the start and end of the global cycle. 
+ [The global GC cycle is split into increments](./vgclog.md#interleaving-of-gencon-gc-cycle-increments) that interleave with partial GC cycles. The interleaving can be seen in the following example, where a partial GC cycle is logged between the start and end of the global cycle. 
 
 The global GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some child XML elements are omitted for clarity:
 
