@@ -127,9 +127,9 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow 
 ### Exploiting GPUs
 
 OpenJ9 provides both the [CUDA4J API](api-cuda.md) <!-- Link to API --> and the [GPU API](api-gpu.md), <!-- Link to API -->
-which enables you to develop applications that can take advantage of graphics processing unit (GPU) processing for suitable functions, such as code page conversion. You can also enable the JIT compiler to offload certain processing tasks to a GPU by specifying the [`-Xjit:enableGPU`](xjit.md#enablegpu) option on the command line. When enabled, the JIT compiler determines when to offload tasks based on performance heuristics.
+which enables you to develop applications that can take advantage of graphics processing unit (GPU) processing for suitable functions, such as sorting arrays. You can also enable the JIT compiler to offload certain processing tasks to a GPU by specifying the [`-Xjit:enableGPU`](xjit.md#enablegpu) option on the command line. When enabled, the JIT compiler determines when to offload tasks based on performance heuristics.
 
-GPU processing is supported only on Windows (x86-64) and Linux (x86-64 and IBM Power LE) systems. For more information about enabling GPU processing, see [Exploiting graphics processing units](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/gpu_overview.html).
+GPU processing is supported only on Windows (x86-64) and Linux (little-endian) systems. For more information about enabling GPU processing, see [Exploiting graphics processing units](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/gpu_overview.html).
 
 Special consideration is needed when using the WDDM driver model for GPUs on Windows. Using the WDDM driver model means the GPU is also used as a display device and as such is subject to the [Timeout Detection and Recovery (TDR) mechanism](https://docs.microsoft.com/en-us/windows-hardware/drivers/display/timeout-detection-and-recovery) of Windows. If you are running demanding GPU workloads, you should increase the timeout from the default 2 seconds. More detail may be found in [NVIDIA's Installation Guide for Windows](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#driver-model).
 
