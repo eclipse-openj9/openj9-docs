@@ -127,7 +127,10 @@ nav:
     - "Memory management" :
         - "Overview"                                                             : gc_overview.md
         - "Garbage collection policies"                                          : gc.md
-        - "Verbose garbage collection logs"                                      : vgclog.md
+        - "Verbose garbage collection logs" :
+            - "Overview"                                                         : vgclog.md
+            - "Example gencon logs"                                              : vgclog_genconexamples.md
+            - "Example balanced logs"                                            : vgclog_balancedexamples.md
 
     - "JIT Compiler"                                                             : jit.md
     - "JITServer (tech. preview)"                                                : jitserver.md
@@ -397,18 +400,19 @@ nav:
         - "Directory conventions"                                                 : openj9_directories.md
         - "OpenJ9 messages"                                                       : messages_intro.md
         - "Environment variables"                                                 : env_var.md
+# Commenting out to speed up local build.
 
-    - "API documentation" :
-        - "Overview"                                                             : api-overview.md
-        - "Java 8 API" :
-            - "Condition exception handling"                                      : api-conditionhandling.md
-            - "CUDA4J"                                                            : api-cuda.md
-            - "Data access acceleration"                                          : api-daa.md
-            - "DTFJ"                                                              : api-dtfj.md
-            - "GPU"                                                               : api-gpu.md
-            - "JVM diagnostic utilities"                                          : api-jvm.md
-            - "Monitoring and management"                                         : api-langmgmt.md
-            - "Shared classes"                                                    : api-shrc.md
-        - "Java 11 API"                                                           : api-jdk11.md
+    # - "API documentation" :
+    #     - "Overview"                                                             : api-overview.md
+    #     - "Java 8 API" :
+    #         - "Condition exception handling"                                      : api-conditionhandling.md
+    #         - "CUDA4J"                                                            : api-cuda.md
+    #         - "Data access acceleration"                                          : api-daa.md
+    #         - "DTFJ"                                                              : api-dtfj.md
+    #         - "GPU"                                                               : api-gpu.md
+    #         - "JVM diagnostic utilities"                                          : api-jvm.md
+    #         - "Monitoring and management"                                         : api-langmgmt.md
+    #         - "Shared classes"                                                    : api-shrc.md
+    #     - "Java 11 API"                                                           : api-jdk11.md
 
     - "Legal"                                                                     : legal.md
