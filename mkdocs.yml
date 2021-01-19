@@ -402,17 +402,17 @@ nav:
         - "Environment variables"                                                 : env_var.md
 
 
-     - "API documentation" :
-         - "Overview"                                                             : api-overview.md
-         - "Java 8 API" :
-             - "Condition exception handling"                                      : api-conditionhandling.md
-             - "CUDA4J"                                                            : api-cuda.md
-             - "Data access acceleration"                                          : api-daa.md
-             - "DTFJ"                                                              : api-dtfj.md
-             - "GPU"                                                               : api-gpu.md
-             - "JVM diagnostic utilities"                                          : api-jvm.md
-             - "Monitoring and management"                                         : api-langmgmt.md
-             - "Shared classes"                                                    : api-shrc.md
-         - "Java 11 API"                                                           : api-jdk11.md
+    - "API documentation" :
+        - "Overview"                                                             : api-overview.md
+        - "Java 8 API" :
+            - "Condition exception handling"                                      : api-conditionhandling.md
+            - "CUDA4J"                                                            : api-cuda.md
+            - "Data access acceleration"                                          : api-daa.md
+            - "DTFJ"                                                              : api-dtfj.md
+            - "GPU"                                                               : api-gpu.md
+            - "JVM diagnostic utilities"                                          : api-jvm.md
+            - "Monitoring and management"                                         : api-langmgmt.md
+            - "Shared classes"                                                    : api-shrc.md
+        - "Java 11 API"                                                           : api-jdk11.md
 
     - "Legal"                                                                     : legal.md
