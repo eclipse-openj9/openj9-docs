@@ -51,6 +51,7 @@ Windows&reg; builds for Java&trade; 8 are now compiled with Microsoft&reg; Visua
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+
 ### Changes to message logging
 
 [JEP 158](https://openjdk.java.net/jeps/158) introduces the `-Xlog` option as a common logging system for all components of a Java virtual machine. To avoid confusion with the reference implementation, the [`-Xsyslog`](xsyslog.md) option replaces the existing OpenJ9 [`-Xlog`](xlog.md) option for message logging. For compatibility with the reference implementation, a limited set of `-Xlog` suboptions are supported.
@@ -74,7 +75,7 @@ The `-XX:[+|-]PortableSharedCache` option is now supported on IBM Z&reg; and POW
 
 ### ![Start of content that applies to Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update
 
-In earlier OpenJ9 releases, the `-XX:[+|-]ShareAnonymousClasses` option enables and disables the storage of VM anonymous classes in the shared classes cache. From 0.24.0 (OpenJDK 15 only), this option also enables and disables the storage of hidden classes in the shared classes cache. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
+In earlier releases of OpenJ9, the `-XX:[+|-]ShareAnonymousClasses` option enables and disables the storage of VM anonymous classes in the shared classes cache. From OpenJ9 0.24.0 for OpenJDK 15 binaries, this option also controls the storage of hidden classes. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
 
 
 ### Additional parameters for `jcmd Dump` commands
@@ -95,6 +96,7 @@ The `jextract` utility gathers relevant files following a system dump to assist 
 ### New diagnostic suboption for `-Xcheck:jni` for fatal JNI errors
 
 A new `abortonerror` suboption for `-Xcheck:jni` provides diagnostic data when fatal JNI errors occur. For more information, run `-Xcheck:jni:help`.
+
 
 ### Improved diagnostic information in a Java dump file on processor features
 
