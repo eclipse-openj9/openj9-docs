@@ -1,6 +1,6 @@
-## Balanced Policy
+# Balanced Policy [WIP]
 
-### Types of GC Cycle
+This topic covers examples of log output for the different GC cycle types that are associated with the `balanced` policy. For each type of cycle, you will learn how to interpret the XML elements in the example log and determine the characteristics of the cycle that has been recorded.
 
 As detailed in [`balanced` Policy](gc.md#balanced-policy), the Balanced policy (`-Xgcpolicy:balanced`) uses two types of cycle to perform GC – a partial GC cycle and a global GC *mark* cycle. 
  

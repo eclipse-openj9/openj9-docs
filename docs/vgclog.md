@@ -26,7 +26,7 @@ The verbose GC logs are printed in XML format and consist of the following secti
 
 - Information about the GC cycles that ran, including each cycle's GC operations and GC increments.  
 
-For definitions of GC cycles, GC increments, operations, phases, see [Garbage collection policies](gc.md#garbage-collection-policies). 
+For definitions of GC cycles, operations, phases, see [Garbage collection policies](gc.md#garbage-collection-policies). For definitions of GC increments, see [GC increments and interleaving](#gc-increments-and-interleaving).
 
 The logs record when GC cycles and their increments start and end, and list the GC operations that run within these increments to manage or reclaim memory. You can also determine which type of event triggered the cycle or increment, and the amount of memory available to your application before and after processing.  
 
@@ -124,9 +124,135 @@ The following XML structure is an example of the verbose GC logs that are genera
 
 Some elements serve as markers for starting and ending parts of the GC cycle and do not contain child elements, while other elements do contain child elements. In this example, the `<af-start/>`, `<cycle-start/>`, `<cycle-end/>`, `<allocation-satisfied/>`, and `<af-end/>` XML elements are empty and contain only attributes. All other XML elements contain child XML elements, which are omitted from this simplified example.  For detailed examples of log output for a specific cycle, see [Example `gencon` log](vgclog_genconexamples.md) or [Example `balanced` log](vgclog_balancedexamples.md).
 
-Given that some policies can run more than 1 GC cycle type, and some GC cycles are split into multiple increments to reduce pause times, different GC operations from different GC cycles might interleave with each other. To follow how the different cycles and operations interleave in a log, you can identify operations and increments of a particular cycle. The XML elements and attribute values that define operations and increments of a particular cycle are specific to the policy and type of cycle. For details of the XML elements and attribute values that are used for a particular type of cycle for a particular policy, see [Example `gencon` log]() or [Example `balanced` log](). 
+### GC increments and interleaving
 
-You can use the `contextid` and `id` attributes to locate the GC increments and operations in the log that are associated with a specific GC cycle:
+Some GC cycle types are executed in piecemeal blocks of operations or phases called GC increments. This reduces pause times by enabling blocks of operations or phases to interleave with operations and phases from other types of cycle. For example, consider the GC for the `gencon` policy which uses partial cycles and global cycles. The partial cycle consists of just 1 GC operation, scavenge, that runs on the *nursery* area during a STW pause. The global cycle, which runs when the *tenure* area is close to full, consists of some operations that are run during a stop the world pause, and others that are run concurrently. 
+
+The global cycle is split into three increments - the initial and final increments which run during an STW pause, and an intermediate increment that executes it's GC operations concurrently. By splitting the global cycle operations and phases into increments, the STW scavenge operation of the partial GC cycle can run on the *nursery* area while the intermediate increment of the global GC cycle – a concurrent mark-sweep operation - runs concurrently on the *tenure* area. 
+
+You can see this interleaving of the increments in the verbose GC log. The following table illustrates how the different increments interleave in a `gencon` policy log (for clarity, not all GC activities are listed):
+
+<table style="width:100%">
+
+  <tr>
+    <th>Line Number</th>
+    <th>Application threads running?</th>
+    <th colspan="2">Logging</th>
+  </tr>
+  <tr>
+    <th>-</th>
+    <th>-</th>
+    <th>`gencon` global GC cycle status</th>
+    <th>`gencon` partial GC cycle status</th>
+  </tr>
+  <tr>
+    <td>1-87</td>
+    <td>✅ </td>
+    <td colspan="2">initialization</th>
+  </tr>
+<tr>
+    <td>87-51651</td>
+    <td>✅ / ❌ </td>
+    <td> - </td>
+    <td> series of `gencon` partial cycles start and finish </td>
+  </tr>
+<tr>
+    <td>51655</td>
+    <td>❌ </td>
+    <td> - </td>
+    <td>partial cycle initializes</td>
+  </tr>
+<tr>
+    <td>51656</td>
+    <td>❌ </td>
+    <td> - </td>
+    <td>scavenge increment runs</td>
+  </tr>
+  <tr>
+    <td>51696</td>
+    <td>❌ </td>
+    <td> - </td>
+    <td>partial cycle ends</td>
+  </tr>
+  <tr>
+    <td>51700</td>
+    <td> ✅  </td>
+    <td> blank line - no activities logged</td>
+    <td>-</td>
+  </tr>
+<tr>
+    <td>51701</td>
+    <td> ✅  </td>
+    <td> global cycle's initial increment marked</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>51707</td>
+    <td> ❌  </td>
+    <td> global cycle initializes</td>
+    <td>-</td>
+  </tr>
+
+  <tr>
+    <td>51709</td>
+    <td> ✅  </td>
+    <td> concurrent increment runs (blank line)</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>51714</td>
+    <td> ❌  </td>
+    <td> concurrent increment runs</td>
+    <td>partial cycle initializes</td>
+  </tr>
+
+  <tr>
+    <td>51715</td>
+    <td> ❌ </td>
+    <td> concurrent increment runs</td>
+    <td>scavenge increment runs</td>
+  </tr>
+  <tr>
+    <td>51754</td>
+    <td> ❌ </td>
+    <td> concurrent increment runs</td>
+    <td>partial cycle ends</td>
+  </tr>
+  <tr>
+    <td>51758</td>
+    <td> ✅  </td>
+    <td> blank line - no activities logged </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>51762</td>
+    <td> ❌  </td>
+    <td> final collection increment runs </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>51867</td>
+    <td> ❌  </td>
+    <td> global cycle ends</td>
+    <td></td>
+  </tr>
+  </table>
+
+The XML elements and attribute values that define operations and increments of a particular cycle are specific to the policy and type of cycle. To follow how the different cycles's increments interleave in a log, you can locate the elements and attributes that record the increments and operations belonging to a particular type of cycle. 
+
+For example, the XML elements corresponding to the different increments of the `gencon` policy's global GC cycle are shown in the following table: 
+
+|GC Operation         | GC increment| STW or concurrent| XML element of GC increment| Details                         |
+|---------------------|-------------|-------------------------------|--------------------------------------|-----------------------|
+|n/a - initiates cycle|initial      | STW              | `<concurrent-kickoff`        |No `<gc-op>` is logged. This increment just initiates the concurrent mark increment |
+|concurrent mark      |intermediate |concurrent                     | `<gc-start>`, `<gc-end>`     |`<concurrent-trace-info>` records progress of concurrent mark|
+|final collection     |final        | STW              | `<concurrent-global-final>`  |Operations and phases include a final phase of concurrent mark, a sweep, and an optional class unload and compact. Triggered when card-cleaning threshold reached. Child XML element is `<concurrent-trace-info reason=””>`  |
+
+
+For details of the XML elements and attribute values that are used for a particular type of cycle for a particular policy, and examples of log output, see [Example `gencon` log]() or [Example `balanced` log](). 
+
+When analysing the logs, you can determine the GC increments and operations associated with a particular *instance* of a cycle by using the `contextid` and `id` attributes:
  
 1. Determine the ID of the GC cycle: find the value of the `id` attribute of the `<cycle-start>` element that denotes the start of the GC cycle.  Note: the `id` attribute increases incrementally with each GC event.  
 2. Search for the `contextid` attribute values that match the GC cycle's ID. All GC increments, operations, and concurrent events that are associated with a particular cycle have a `contextid` attribute whose value matches GC cycle's ID. 
