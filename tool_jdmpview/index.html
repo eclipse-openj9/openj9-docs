@@ -4608,11 +4608,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tr>
 </tbody>
 </table>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The <code>-core</code> option can be used with the <code>-zip</code> option to specify the core file in the compressed file. Without these options, <code>jdmpview</code> shows multiple contexts, one for each source file that it identified in the compressed file.</p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On AIX and Linux, some <code>jdmpview</code> commands need to locate the native libraries that are referenced by the core. For example, commands that relate to callsites. First, check the list of native libraries by running <code>jdmpview</code> on a core with the <code>info mod</code> parameter. If the libraries are not in the original locations, ensure that <code>jdmpview</code> can locate them by specifying the path mapping (<code>-J-Dcom.ibm.j9ddr.path.mapping=&lt;mappings&gt;</code>) and library path (<code>-J-Dcom.ibm.j9ddr.library.path=&lt;path&gt;</code>) options specified on the <code>jdmpview</code> command line.  </p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The <code>-core</code> option can be used with the <code>-zip</code> option to specify the core file in the compressed file. With these options, <code>jdmpview</code> shows multiple contexts, one for each source file that it identified in the compressed file.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On AIX and Linux, some <code>jdmpview</code> commands need to locate the executable and the native libraries that are referenced by the core. For example, commands that relate to call-sites. Because a common scenario involves using <code>jdmpview</code> to examine core files that originate on different systems, even if the executable and the libraries are in their original locations, <code>jdmpview</code> may not consider them. First, check the executable and the list of native libraries by running <code>jdmpview</code> on a core with the <code>info mod</code> command.</p>
+<p>One way to assist <code>jdmpview</code> to locate those files is by specifying on command line one or both of the path mapping (<code>-J-Dcom.ibm.j9ddr.path.mapping=&lt;mappings&gt;</code>) and library path (<code>-J-Dcom.ibm.j9ddr.library.path=&lt;path&gt;</code>) options.</p>
+<p>Alternatively, on the system where the core file was produced, you can use <code>jextract</code> to collect all the relevant files into a single zip archive. That archive can be unpacked, possibly on another system, into a new, empty directory. Running <code>jdmpview</code> in that new directory (where the core file will be located) should allow it to find all the data it needs, including information that may not be included in the core file itself (e.g. symbols or sections). When using an archive produced by <code>jextract</code>, setting the path or library mapping system properties should not be necessary.</p>
 <p>On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to <code>jdmpview</code>, or you can supply a fully qualified MVS&trade; data set name. For example:</p>
 <pre><code>&gt; jdmpview -core USER1.JVM.TDUMP.SSHD6.D070430.T092211
-DTFJView version 4.28.3, using DTFJ version 1.11.28004
+DTFJView version 4.29.5, using DTFJ version 1.12.29003
 Loading image from DTFJ...
 </code></pre>
 
@@ -5171,7 +5173,7 @@ heap #1 - name: Default@19fce8
 <p>In the example session, which is generated on a Linux system, some lines have been removed for clarity (and terseness).</p>
 <p>User input is prefaced by a greater than symbol (&gt;).</p>
 <pre><code>    test@madras:~/test&gt; sdk/bin/jdmpview -core core.20121116.154147.16838.0001.dmp
-    DTFJView version 4.27.57, using DTFJ version 1.10.27022
+    DTFJView version 4.29.5, using DTFJ version 1.12.29003
     Loading image from DTFJ...
 
     For a list of commands, type &quot;help&quot;; for how to use &quot;help&quot;, type &quot;help help&quot;
