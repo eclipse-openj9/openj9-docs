@@ -4609,9 +4609,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tbody>
 </table>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> The <code>-core</code> option can be used with the <code>-zip</code> option to specify the core file in the compressed file. With these options, <code>jdmpview</code> shows multiple contexts, one for each source file that it identified in the compressed file.</p>
-<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On AIX and Linux, some <code>jdmpview</code> commands need to locate the executable and the native libraries that are referenced by the core. For example, commands that relate to call-sites. Because a common scenario involves using <code>jdmpview</code> to examine core files that originate on different systems, even if the executable and the libraries are in their original locations, <code>jdmpview</code> may not consider them. First, check the executable and the list of native libraries by running <code>jdmpview</code> on a core with the <code>info mod</code> command.</p>
-<p>One way to assist <code>jdmpview</code> to locate those files is by specifying on command line one or both of the path mapping (<code>-J-Dcom.ibm.j9ddr.path.mapping=&lt;mappings&gt;</code>) and library path (<code>-J-Dcom.ibm.j9ddr.library.path=&lt;path&gt;</code>) options.</p>
-<p>Alternatively, on the system where the core file was produced, you can use <code>jextract</code> to collect all the relevant files into a single zip archive. That archive can be unpacked, possibly on another system, into a new, empty directory. Running <code>jdmpview</code> in that new directory (where the core file will be located) should allow it to find all the data it needs, including information that may not be included in the core file itself (e.g. symbols or sections). When using an archive produced by <code>jextract</code>, setting the path or library mapping system properties should not be necessary.</p>
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> On AIX and Linux, some <code>jdmpview</code> commands must locate the executable and the native libraries that are referenced by the core. For example, commands that relate to call-sites. 
+A common scenario involves using <code>jdmpview</code> to examine core files that originate on different systems. However, if the executable and the libraries are in their original locations, <code>jdmpview</code> might not consider them. Therefore, first check the executable and the list of native libraries by running <code>jdmpview</code> on a core with the <code>info mod</code> command.</p>
+<ul>
+<li>
+<p>One way to assist <code>jdmpview</code> to locate those files is by specifying on the command line one or both of the path mapping option (<code>-J-Dcom.ibm.j9ddr.path.mapping=&lt;mappings&gt;</code>) and the library path option (<code>-J-Dcom.ibm.j9ddr.library.path=&lt;path&gt;</code>).</p>
+</li>
+<li>
+<p>Alternatively, on the system where the core file was produced, you can use <code>jextract</code> to collect all the relevant files into a single zip archive. That archive can be unpacked, possibly on another system, into a new, empty directory. Running <code>jdmpview</code> in that new directory (where the core file will be located) should enable it to find all the data it needs, including information that might not be included in the core file itself, such as symbols or sections. When you use an archive produced by <code>jextract</code>, setting the path or library mapping system properties should not be necessary.</p>
+</li>
+</ul>
 <p>On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to <code>jdmpview</code>, or you can supply a fully qualified MVS&trade; data set name. For example:</p>
 <pre><code>&gt; jdmpview -core USER1.JVM.TDUMP.SSHD6.D070430.T092211
 DTFJView version 4.29.5, using DTFJ version 1.12.29003
@@ -5150,14 +5157,14 @@ heap #1 - name: Default@19fce8
 <h3 id="xd-0xaddr">x/D &lt;<code>0xaddr</code>&gt;</h3>
 <dl>
 <dd>
-<p>Displays the integer at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big endian architecture.</p>
+<p>Displays the integer at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big-endian architecture.</p>
 <p><i class="fa fa-pencil-square-o"></i> This command uses the number of items and unit size passed to it by the <code>x/</code> command.</p>
 </dd>
 </dl>
 <h3 id="xx-0xaddr">x/X &lt;<code>0xaddr</code>&gt;</h3>
 <dl>
 <dd>
-<p>Displays the hex value of the bytes at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big endian architecture.</p>
+<p>Displays the hex value of the bytes at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big-endian architecture.</p>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> This command uses the number of items and unit size passed to it by the <code>x/</code> command.</p>
 </dd>
 </dl>
