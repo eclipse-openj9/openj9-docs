@@ -62,25 +62,16 @@ The first section of the log records the configuration of the garbage collector,
 <vmargs> 
 
     <vmarg name="-Xoptionsfile=/java/perffarm/sdks/O11_j9_x64_linux-20201014/sdk/lib/options.default" /> 
-… 
+...
+    <vmarg name="-Xms1024m" />
+    <vmarg name="-Xmx1024m" />
+...
     <vmarg name="-Dsun.java.launcher.pid=6068" /> 
 
 </vmargs> 
 
 </initialized> 
 
-</verbosegc> 
-
-UNNAMED" /> 
-
-<vmarg name="--add-opens=java.sql/java.sql=ALL-UNNAMED" /> 
-
-<vmarg name="--add-opens=java.management/javax.management=ALL-UNNAMED" /> 
-... 
-
-</vmargs> 
-
-</initialized> 
 ```
 
 ADD DETAILS ABOUT THE INITIATISATION SECTION
