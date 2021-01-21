@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -48,6 +48,13 @@ Some of the common options supported are summarised in the following table:
 - `-verbose:stack`: Writes information to `stderr` describing the Java and C stack usage for each thread.
 
 For more information about standard options, see [Oracle Java SE Standard Options](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html#BABDJJFI)
+
+## OpenJ9 extensions
+
+OpenJ9 supports the following extension to the `-verbose` option:
+
+- `-verbose:stacktrace` : Writes either the module name or the `Classloader` name (with the code source location when available) to the end of each line of a Java stack trace.
+
 
 
 <!-- ==== END OF TOPIC ==== cmdline_general.md ==== -->

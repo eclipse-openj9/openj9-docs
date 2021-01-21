@@ -1,5 +1,5 @@
 ﻿<!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -39,6 +39,7 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-Xcheck:jni`](xcheck.md)                                       | Runs additional checks for JNI functions during VM startup.                                                                                  |
 | [`-Xfuture`](xfuture.md)                                         | Turns on strict class-file format checks.                                                                                                    |
 | [`-Xint`](xint.md)                                               | Runs an application in interpreted-only mode.                                                                                                |
+| [`-Xlog`](xlog.md)                                               | Some forms of `-Xlog` that enable garbage collection logging are recognized. (Equivalent to [`-Xverbosegclog`](xverbosegclog.md)).
 | [`-Xmn`](xmn.md)                                                 | Sets the initial and maximum size of the new area when using -Xgcpolicy:gencon.                                                              |
 | [`-Xms`](xms.md)                                                 | Sets the initial size of the heap. (Equivalent to `-XX:InitialHeapSize`)                                                                     |
 | [`-Xmx`](xms.md)                                                 | Specifies the maximum size of the object memory allocation pool. (Equivalent to `-XX:MaxHeapSize`)                                           |
@@ -72,11 +73,11 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 
 These HotSpot command-line options have equivalents in OpenJ9 that are not specified in the same way, but perform a related function:
 
-| HotSpot Option          | OpenJ9 Option                                    | Usage                                                            |
-|-------------------------|--------------------------------------------------|------------------------------------------------------------------|                                                                        
-| `-Xcomp`                | [`-Xjit:count=0`](xjit.md#count)**<sup>1</sup>** | `-Xcomp` disables interpreted method invocations.                |
-| `-Xgc`                  | [`-Xgcpolicy`](xgcpolicy.md)**<sup>2</sup>**     | Configuring your garbage collection policy.                      |
-| `-XX:+UseNUMA`          | [`-Xnuma:none`](xnumanone.md)**<sup>3</sup>**    | Controls non-uniform memory architecture (NUMA) awareness.       |
+| HotSpot Option          | OpenJ9 Option                                    | Usage                                                     |
+|-------------------------|--------------------------------------------------|-----------------------------------------------------------|                                                                        
+| `-Xcomp`                | [`-Xjit:count=0`](xjit.md#count)**<sup>1</sup>** | `-Xcomp` disables interpreted method invocations.         |
+| `-Xgc`                  | [`-Xgcpolicy`](xgcpolicy.md)**<sup>2</sup>**     | Configuring your garbage collection policy.               |
+| `-XX:+UseNUMA`          | [`-Xnuma:none`](xnumanone.md)**<sup>3</sup>**    | Controls non-uniform memory architecture (NUMA) awareness.|
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
@@ -99,5 +100,9 @@ You can set the following options to make OpenJ9 behave in the same way as HotSp
 | [`-Xnuma:none`](xnumanone.md)                                                     | Disable non-uniform memory architecture (NUMA) awareness.       |
 | [`-XXHandleSIGABRT`](xxhandlesigabrt.md) | Force handling of SIGABRT signals to be compatible with HotSpot |
 
+
+## Compatible environment variables
+
+The `JAVA_OPTIONS` and `JAVA_TOOL_OPTIONS` environment variables can be used to set command line options as described in [OpenJ9 command-line options](cmdline_specifying.md) and [Environment variables](env_var.md).
 
 <!-- ==== END OF TOPIC ==== cmdline_migration.md ==== -->

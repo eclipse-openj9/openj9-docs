@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018, 2020 IBM Corp. and others
+ * Copyright (c) 2017, 2021 IBM Corp. and others
  *
  * This program and the accompanying materials are made available under
  * the terms of the Eclipse Public License 2.0 which accompanies this
@@ -47,7 +47,7 @@ timeout(time: 6, unit: 'HOURS') {
 
                 // Push container to Dockerhub
                 stage('Push') {
-                    withCredentials([usernamePassword(credentialsId: '7fb9f8f0-14bf-469a-9132-91db4dd80c48', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                    withCredentials([usernamePassword(credentialsId: 'docker-login', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                         sh "docker login --username=\"${USER}\" --password=\"${PASS}\""
                     }
                     if (params.ghprbPullId) {

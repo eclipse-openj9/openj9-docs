@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -382,7 +382,7 @@ Each dump type has default options. To view the default options for a particular
 You can change the default options at run time. For example, you can direct Java dump files into a separate directory for each process, and guarantee unique files by adding a sequence number to the file name using:
 
 ```
--Xdump:java:defaults:file=dumps/%pid/javacore-%seq.txt`
+-Xdump:java:defaults:file=dumps/%pid/javacore-%seq.txt
 ```
 
 Or, for example, on z/OS, you can add the jobname to the Java dump file name using:
