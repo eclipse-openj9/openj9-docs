@@ -30,8 +30,6 @@ For definitions of GC cycles, operations, phases, see [Garbage collection polici
 
 The logs record when GC cycles and their increments start and end, and list the GC operations that run within these increments to manage or reclaim memory. You can also determine which type of event triggered the cycle or increment, and the amount of memory available to your application before and after processing.  
 
-Not all operations that take place during GC are recorded. For example, the logs record when an increment of a concurrent GC cycle starts and ends, but most concurrent GC operations are not recorded.
-
 ### Initialization
 
 The first section of the log records the configuration of the garbage collector, for example:  
@@ -85,7 +83,11 @@ The verbose GC log then begins recording GC activities and details.
 
 ### GC Cycles
 
-The start of a GC cycle is recorded by the `<cycle-start>` XML element. The trigger for the GC cycle might be captured in a preceding element, for example if the trigger is an allocation failure. In other cases, the trigger might be captured in a subsequent element, for example if a policy's memory threshold trigger has been reached.
+The start of a GC cycle is recorded by the `<cycle-start>` XML element. The trigger for the start of a GC cycle is captured in a preceding element to the `<cycle-start>`. The most common triggers for starting or ending a GC cycle or GC increment are:
+
+- Allocation failures, recorded by the `<af-start>` element. Allocation failures occur when a specific area of the heap is unable to fulfil allocation.
+- Memory thresholds being reached, recorded by the `reason` attribute of the element associated with the start of the first GC increment of the cycle. Memory threshold values, which set the conditions for performing certain types of GC activities, are defined by the policy type and configuration options.
+- Allocation taxation, recorded by the `reason` attribute of the element associated with the GC increment end or cycle end. When the GC has achieved the specific allocation threshold required of the cycle or increment, the allocation taxation triggers the end of the GC increment or cycle.
 
 The following XML structure is an example of the verbose GC logs that are generated from the Generational Concurrent GC policy (`-Xgcpolicy:gencon`). In this example, the lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity: 
 
@@ -242,6 +244,42 @@ For example, the XML elements corresponding to the different increments of the `
 
 
 For details of the XML elements and attribute values that are used for a particular type of cycle for a particular policy, and examples of log output, see [Example `gencon` log]() or [Example `balanced` log](). 
+
+Operations are recorded in the logs once they have completed. As such, there may be cases where the start of a concurrent increment is recorded, but concurrent operations that are running at the same time as a STW increment of another cycle are not recorded until after the STW increment operations are recorded. For example, for the `gencon` policy, operations from the second, concurrent increment of the global cycle operations run during the partial cycle, but they are not logged until after the partial cycle has completed. In the following `genocon` log output example, the lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity: 
+
+```xml
+
+<concurrent-kickoff></concurrent-kickoff> <!--Trigger for global cycle -->
+    <exclusive-start></exclusive-start> <!-- STW pause started -->
+        <cycle-start></cycle-start> <!-- global cycle start recorded-->
+    <exclusive-end></exclusive-end> <!-- STW pause finished 1st increment complete-->
+
+<!-- concurrent operations of the global cycle's second increment running -->
+
+<exclusive-start></exclusive-start>
+  <af-start></af-start>
+     <cycle-start></cycle-start> <!-- start of partial cycle-->
+       <gc-start></gc-start>
+         <gc-op type="scavenge"> </gc-op>
+      <gc-end></gc-end>
+     <cycle-end></cycle-end> <!-- start of partial cycle-->
+  <af-end></af-end>
+<exclusive-end></exclusive-end>
+
+<exclusive-start><exclusive-start>
+  <concurrent-collection-start> <!-- global cycle's final increment triggered-->
+     <concurrent-trace-info reason="card cleaning threshold reached"> 
+      <!-- completion of the concurrent operations of the global cycle's
+      second increment -->
+  </concurrent-collection-start>
+  <gc-start> <!-- global cycle's final increment started-->
+    <gc-op>
+    ...
+  <gc-end>
+<cycle-end>
+<concurrent-collection-end> <!-- final increment of the global cycle ended-->
+<exclusive-end>
+```
 
 When analysing the logs, you can determine the GC increments and operations associated with a particular *instance* of a cycle by using the `contextid` and `id` attributes:
  
