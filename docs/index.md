@@ -58,6 +58,5 @@ Several versions of the documentation are available, covering all releases of Op
 - [Eclipse OpenJ9 website home page](https://www.eclipse.org/openj9)
 - [Eclipse OpenJ9 GitHub repository](https://github.com/eclipse/openj9)
 - [Eclipse Foundation OpenJ9 project page](https://projects.eclipse.org/projects/technology.openj9)
-- [Pre-built binaries from the AdoptOpenJDK project](https://adoptopenjdk.net/releases.html?variant=openjdk8&jvmVariant=openj9)
 
 <!-- ==== END OF TOPIC ==== index.md ==== -->

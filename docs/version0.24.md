@@ -41,11 +41,7 @@ The following new features and notable changes since v 0.23.0 are included in th
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15. Binaries are available from the AdoptOpenJDK community at the following links:
-
-- [OpenJDK version 8](https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=openj9)
-- [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
-- [OpenJDK version 15](https://adoptopenjdk.net/archive.html?variant=openjdk15&jvmVariant=openj9)
+OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15.
 
 Windows&reg; builds for Java&trade; 8 are now compiled with Microsoft&reg; Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match.
 
