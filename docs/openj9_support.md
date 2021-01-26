@@ -52,7 +52,7 @@ columns will be removed over time.
 | v 0.25.0       | March 2021 (\*1)    | No        | No          | No        | Yes (\*2) |            |
 | v 0.26.0       | April 2021 (\*1)    | Yes       | Yes         | No        | Yes       |            |
 | v 0.27.0       | July 2021 (\*1)     | Yes       | Yes         | No        | Yes       |            |
-| v 0.28.0       | September 2021 (\*1)| Yes       | Yes         | No        | No        | Yes (\*2)  |
+| v 0.28.0       | September 2021 (\*1)| Yes       | Yes         | No        | No        | Yes        |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
@@ -206,7 +206,7 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 | Linux on IBM Z&reg; 64-bit                  | RHEL 7.7                  | gcc 7.5                         |
 | Windows x86 32-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2013 Update 5 |
 | Windows x86 64-bit                          | Windows Server 2012 R2    | Microsoft Visual Studio 2013 Update 5 |
-| macOS x86 64-bit                            | OSX 10.11                 | xcode/clang 4.6.3 and 7.2.1     |
+| macOS x86 64-bit                            | OSX 10.14.6               | xcode 10.3 and clang 10.0.1     |
 | AIX POWER BE 64-bit                         | AIX 7.1 TL04              | xlc/C++ 13.1.3                  |
 
 ### OpenJDK 11
@@ -218,7 +218,7 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 | Linux on POWER LE 64-bit    | CentOS 7.8               | gcc 7.5                         |
 | Linux on IBM Z 64-bit       | RHEL 7.7                 | gcc 7.5                         |
 | Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
-| macOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
+| macOS x86 64-bit            | macOS 10.14.6            | xcode 10.3 and clang 10.0.1     |
 | AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 13.1.3                  |
 
 ### OpenJDK 15
@@ -228,6 +228,6 @@ The project build and test OpenJDK with OpenJ9 on a number of platforms. The ope
 | Linux x86 64-bit            | CentOS 7.8               | gcc 7.5                         |
 | Linux on POWER LE 64-bit    | CentOS 7.8               | gcc 7.5                         |
 | Linux on IBM Z 64-bit       | RHEL 7.7                 | gcc 7.5                         |
-| Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2017    |
-| macOS x86 64-bit            | macOS 10.13.5            | xcode/clang 9.4                 |
+| Windows x86 64-bit          | Windows Server 2012 R2   | Microsoft Visual Studio 2019    |
+| macOS x86 64-bit            | macOS 10.14.6            | xcode 10.3 and clang 10.0.1     |
 | AIX POWER BE 64-bit         | AIX 7.1 TL04             | xlc/C++ 16.1.0                  |
