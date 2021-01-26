@@ -36,7 +36,7 @@
         <meta name="description" content="Eclipse OpenJ9 documentation">
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/adoptopenjdk/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/builds/">
       
       
       
@@ -63,7 +63,7 @@
     
     
       
-        <title>AdoptOpenJDK builds -  </title>
+        <title>OpenJ9 builds -  </title>
       
     
     
@@ -119,7 +119,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#adoptopenjdk-builds" tabindex="1" class="md-skip">
+      <a href="../#openj9-builds" tabindex="1" class="md-skip">
         
       </a>
     
@@ -294,11 +294,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        AdoptOpenJDK builds
+        OpenJ9 builds
       </label>
     
-    <a href="./" title="AdoptOpenJDK builds" class="md-nav__link md-nav__link--active">
-      AdoptOpenJDK builds
+    <a href="./" title="OpenJ9 builds" class="md-nav__link md-nav__link--active">
+      OpenJ9 builds
     </a>
     
       
@@ -319,15 +319,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-pre-requisites" class="md-nav__link">
-    Installation pre-requisites
+  <a href="#building-your-own-binaries" class="md-nav__link">
+    Building your own binaries
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-your-own-binaries" class="md-nav__link">
-    Building your own binaries
+  <a href="#installation-pre-requisites" class="md-nav__link">
+    Installation pre-requisites
   </a>
   
 </li>
@@ -3899,15 +3899,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-pre-requisites" class="md-nav__link">
-    Installation pre-requisites
+  <a href="#building-your-own-binaries" class="md-nav__link">
+    Building your own binaries
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-your-own-binaries" class="md-nav__link">
-    Building your own binaries
+  <a href="#installation-pre-requisites" class="md-nav__link">
+    Installation pre-requisites
   </a>
   
 </li>
@@ -3929,33 +3929,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
 <!-- this adds 'pencil' icon to H1 so that you can edit the page directly in GitHub
                 
-                  <a href="https://github.com/eclipse/openj9/edit/master/docs/adoptopenjdk.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/eclipse/openj9/edit/master/docs/builds.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
 -->
                 
-                <h1 id="adoptopenjdk-builds">AdoptOpenJDK builds</h1>
-<p>The AdoptOpenJDK community project provide pre-built binaries of OpenJDK with OpenJ9, which have been rigorously tested
-to meet expected quality standards. Binaries for the latest release of Eclipse OpenJ9 can be obtained from the
-following links:</p>
-<ul>
-<li><a href="https://adoptopenjdk.net/releases.html?variant=openjdk8&amp;jvmVariant=openj9">OpenJDK8 with OpenJ9</a></li>
-<li><a href="https://adoptopenjdk.net/releases.html?variant=openjdk11&amp;jvmVariant=openj9">OpenJDK11 with OpenJ9</a></li>
-<li><a href="https://adoptopenjdk.net/releases.html?variant=openjdk15&amp;jvmVariant=openj9">OpenJDK15 with OpenJ9</a></li>
-</ul>
-<p>Nightly builds of OpenJDK with OpenJ9 are also available from the project.</p>
+                <h1 id="openj9-builds">OpenJ9 builds</h1>
+<p>Eclipse Foundation projects are not permitted to distribute, market or promote JDK binaries unless they have
+passed a Java SE Technology Compatibility Kit licensed from Oracle, to which the OpenJ9 project does
+not currently have access. See the <a href="https://projects.eclipse.org/projects/adoptium/charter">Eclipse Adoptium Project Charter</a>.</p>
 <h2 id="supported-platforms">Supported platforms</h2>
-<p>The community develop and maintain a build and test infrastructure for the OpenJDK source across a broad
-range of platforms. For information about the platforms and minimum operating system levels supported for the builds, see the AdoptOpenJDK <a href="https://adoptopenjdk.net/supported_platforms.html">Platform support matrix</a>.</p>
-<h2 id="installation-pre-requisites">Installation pre-requisites</h2>
-<p>If you obtain binaries from the AdoptOpenJDK community, the following pre-requisites are required:</p>
-<ul>
-<li>From Eclipse OpenJ9 release 0.13.0, OpenJDK binaries for Linux and AIX platforms from the AdoptOpenJDK community no longer bundle the OpenSSL cryptographic library. The library is expected to be found on the system path. If you want to use OpenSSL cryptographic acceleration, you must install OpenSSL 1.0.2 or 1.1.X on your system. If the library is not found on the system path, the in-built Java crytographic implementation is used instead, which performs less well.  </li>
-<li><img alt="Start of content that applies only to Java 8" src="../cr/java8.png" /> On Linux systems, the <code>fontconfig.x86_64</code> package should be installed to avoid a <code>NullPointerException</code> error when the AWT font subsystem is initialized. Work is ongoing at the AdoptOpenJDK project to fix this issue for their OpenJDK binaries.</li>
-<li>From Eclipse OpenJ9 release 0.16.0 (OpenJDK 13) and release 0.17.0 (OpenJDK 8 and 11), CUDA is now enabled on Windows (x86-64) and Linux (x86-64 and IBM POWER LE) platforms, which allows you to offload certain Java application processing tasks to a general purpose graphics processing unit (GPU). To take advantage of this feature, your system must support NVIDIA Compute Unified Device Architecture (CUDA). The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0.</li>
-</ul>
+<p>The community develops and maintains a test infrastructure for the OpenJ9 source across a broad
+range of platforms. For information about the platforms and minimum operating system levels supported, see the <a href="../openj9_support/">Platform support matrix</a>.</p>
 <h2 id="building-your-own-binaries">Building your own binaries</h2>
 <p>If you want to build your own binaries of OpenJDK with OpenJ9, a complete set of build instructions for several platforms can be found in the <a href="https://github.com/eclipse/openj9/tree/master/doc/build-instructions">OpenJ9 GitHub repository</a>.  </p>
-<!-- ==== END OF TOPIC ==== adoptopenjdk.md ==== -->
+<h2 id="installation-pre-requisites">Installation pre-requisites</h2>
+<p>Note the following:</p>
+<ul>
+<li>For the best performance, OpenSSL support should be enabled in the build. In builds that aren't configured with <code>--enable-openssl-bundling</code>, the OpenSSL library is expected to be found on the system path. If you want to use OpenSSL cryptographic acceleration, you must install OpenSSL 1.0.2 or 1.1.X on your system. If the library is not found on the system path, the in-built Java crytographic implementation is used instead, which performs less well.  </li>
+<li><img alt="Start of content that applies only to Java 8" src="../cr/java8.png" /> On Linux systems, the <code>fontconfig.x86_64</code> package should be installed to avoid a <code>NullPointerException</code> error when the AWT font subsystem is initialized.</li>
+<li>From Eclipse OpenJ9 release 0.16.0 (OpenJDK 13) and release 0.17.0 (OpenJDK 8 and 11), CUDA is now enabled on Windows (x86-64) and Linux (x86-64 and IBM POWER LE) platforms, which allows you to offload certain Java application processing tasks to a general purpose graphics processing unit (GPU). To take advantage of this feature, your system must support NVIDIA Compute Unified Device Architecture (CUDA). The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0.</li>
+</ul>
+<!-- ==== END OF TOPIC ==== builds.md ==== -->
                 
                   
                 
