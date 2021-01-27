@@ -41,7 +41,6 @@ New to Eclipse OpenJ9? Here are a few links to get you started:
 
 - Visit the [Eclipse OpenJ9 website](http://www.eclipse.org/openj9) to find out more.
 - Read the [Getting started](https://www.eclipse.org/openj9/docs/introduction/) topic in our user documentation.
-- Grab an OpenJDK binary that embeds OpenJ9 from  [AdoptOpenJDK](https://adoptopenjdk.net/releases.html?variant=openjdk8&jvmVariant=openj9).
 
 The files in this repository are authored in markdown format and built using
 [Mkdocs](http://www.mkdocs.org/) with the [MkDocs-material theme](https://squidfunk.github.io/mkdocs-material/). Draft documentation for the next release is hosted via the gh-pages branch of this repository at the following URL: https://eclipse.github.io/openj9-docs/).

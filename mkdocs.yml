@@ -99,7 +99,7 @@ markdown_extensions:
 nav:
 
     - "About the docs"                                                           : index.md
-    - "AdoptOpenJDK builds"                                                      : adoptopenjdk.md
+    - "OpenJ9 builds"                                                            : builds.md
     - "Getting started"                                                          : introduction.md
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 

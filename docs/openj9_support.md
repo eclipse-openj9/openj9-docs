@@ -69,9 +69,6 @@ reasons the Eclipse OpenJ9 JVM does not currently run on every platform.
 
 ### OpenJDK 8
 
-<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html) or from other sources,
-platform support might vary, depending on the build environment. For AdoptOpenJDK, see the [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
-
 OpenJDK 8 binaries are expected to function on the minimum operating system levels shown in the following tables:
 
 | Linux&reg;                                |   x32  |  x64   | ppc64le    | Z31  | Z64 |
@@ -108,9 +105,6 @@ minimum glibc version 2.12 (x) or 2.17 (others) are expected to function without
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
 ### OpenJDK 11
-
-<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html) or from other sources,
-platform support might vary, depending on the build environment. For AdoptOpenJDK, see the [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
 
 OpenJDK 11 binaries are expected to function on the minimum operating system levels shown in the following tables:
 
@@ -151,9 +145,6 @@ When public support for an operating system version ends, OpenJ9 can no longer b
 
 
 ### OpenJDK 15
-
-<i class="fa fa-bell" aria-hidden="true"></i> **Important:** If you obtain pre-built binaries from [AdoptOpenJDK.net](https://adoptopenjdk.net/index.html) or from other sources,
-platform support might vary, depending on the build environment. For AdoptOpenJDK, see the [Platform support matrix](https://adoptopenjdk.net/supported_platforms.html).
 
 OpenJDK 15 binaries are expected to function on the minimum operating system levels shown in the following tables:
 
