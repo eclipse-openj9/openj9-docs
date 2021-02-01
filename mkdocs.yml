@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2020 IBM Corp. and others
+# Copyright (c) 2017, 2021 IBM Corp. and others
 #
 # This program and the accompanying materials are made
 # available under the terms of the Eclipse Public License 2.0
@@ -105,12 +105,13 @@ nav:
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.24.0"                                                       : version0.24.md
         - "Version 0.23.0"                                                       : version0.23.md
         - "Version 0.22.0"                                                       : version0.22.md
         - "Version 0.21.0"                                                       : version0.21.md
-        - "Version 0.20.0"                                                       : version0.20.md
-        - "Version 0.19.0"                                                       : version0.19.md
         - "Earlier releases" :
+            - "Version 0.20.0"                                                   : version0.20.md
+            - "Version 0.19.0"                                                   : version0.19.md
             - "Version 0.18.1"                                                   : version0.18.md
             - "Version 0.17.0"                                                   : version0.17.md
             - "Version 0.16.0"                                                   : version0.16.md
@@ -124,8 +125,11 @@ nav:
             - "Version 0.8.0"                                                    : version0.8.md
 
     - "Memory management" :
-        - "Memory allocation"                                                    : allocator.md
-        - "Garbage collection"                                                   : gc.md
+        - "Overview"                                                             : gc_overview.md
+        - "Garbage collection policies"                                          : gc.md
+        - "Verbose garbage collection logs" :
+            - "Overview"                                                         : vgclog.md
+            - "Log examples"                                                     : vgclog_examples.md
 
     - "JIT Compiler"                                                             : jit.md
     - "JITServer (tech. preview)"                                                : jitserver.md
@@ -316,6 +320,7 @@ nav:
             - "-Xsoftrefthreshold"                                               : xsoftrefthreshold.md
             - "-Xss"                                                             : xss.md
             - "-Xssi"                                                            : xss.md                             # redirect
+            - "-Xsyslog"                                                         : xsyslog.md
             - "-Xtgc"                                                            : xtgc.md
             - "-Xthr"                                                            : xthr.md
             - "-XtlhPrefetch"                                                    : xtlhprefetch.md
@@ -355,6 +360,7 @@ nav:
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
             - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
+            - "-XX:[+|-]LegacyXLogOption"                                        : xxlegacyxlogoption.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
             - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
             - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
