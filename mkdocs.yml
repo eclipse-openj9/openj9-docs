@@ -99,7 +99,7 @@ markdown_extensions:
 nav:
 
     - "About the docs"                                                           : index.md
-    - "AdoptOpenJDK builds"                                                      : adoptopenjdk.md
+    - "OpenJ9 builds"                                                            : builds.md
     - "Getting started"                                                          : introduction.md
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 
@@ -109,8 +109,8 @@ nav:
         - "Version 0.24.0"                                                       : version0.24.md
         - "Version 0.23.0"                                                       : version0.23.md
         - "Version 0.22.0"                                                       : version0.22.md
-        - "Version 0.21.0"                                                       : version0.21.md
         - "Earlier releases" :
+            - "Version 0.21.0"                                                   : version0.21.md
             - "Version 0.20.0"                                                   : version0.20.md
             - "Version 0.19.0"                                                   : version0.19.md
             - "Version 0.18.1"                                                   : version0.18.md

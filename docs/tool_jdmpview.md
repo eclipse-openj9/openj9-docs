@@ -39,7 +39,7 @@ The dump viewer is useful for diagnosing `OutOfMemoryError` exceptions in Java&t
 `jdmpview [-J<vm option>] (-core <core file> | -zip <zip file>) [-notemp]`
 
 
-|          Input option   |  Explanation                                                                                           |
+| Input option            | Explanation                                                                                            |
 |-------------------------|--------------------------------------------------------------------------------------------------------|
 | `-core <core file>`     | Specifies a dump file.                                                                                 |
 | `-zip <zip file>`       | Specifies a compressed file containing the core file (produced by the [dump extractor (`jextract`)](tool_jextract.md) tool on AIX&reg;, Linux&reg;, and macOS&reg; systems). |
@@ -47,15 +47,20 @@ The dump viewer is useful for diagnosing `OutOfMemoryError` exceptions in Java&t
 | `-J-Dcom.ibm.j9ddr.path.mapping=<mappings>` | The variable `<mappings>` is a list of native library mappings of the form `old-path=new-path`, using the usual path separator (a semi-colon (';') on Windows, and a colon (':') on other platforms). |
 | `-J-Dcom.ibm.j9ddr.library.path=<path>` | The variable `<path>` is a list of paths to search for native libraries, using the usual path separator (a semi-colon (';') on Windows, and a colon (':') on other platforms). |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The `-core` option can be used with the `-zip` option to specify the core file in the compressed file. Without these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The `-core` option can be used with the `-zip` option to specify the core file in the compressed file. With these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On AIX and Linux, some `jdmpview` commands need to locate the native libraries that are referenced by the core. For example, commands that relate to callsites. First, check the list of native libraries by running `jdmpview` on a core with the `info mod` parameter. If the libraries are not in the original locations, ensure that `jdmpview` can locate them by specifying the path mapping (`-J-Dcom.ibm.j9ddr.path.mapping=<mappings>`) and library path (`-J-Dcom.ibm.j9ddr.library.path=<path>`) options specified on the `jdmpview` command line.  
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On AIX and Linux, some `jdmpview` commands must locate the executable and the native libraries that are referenced by the core. For example, commands that relate to call-sites. 
+A common scenario involves using `jdmpview` to examine core files that originate on different systems. However, if the executable and the libraries are in their original locations, `jdmpview` might not consider them. Therefore, first check the executable and the list of native libraries by running `jdmpview` on a core with the `info mod` command.
+
+- One way to assist `jdmpview` to locate those files is by specifying on the command line one or both of the path mapping option (`-J-Dcom.ibm.j9ddr.path.mapping=<mappings>`) and the library path option (`-J-Dcom.ibm.j9ddr.library.path=<path>`).
+
+- Alternatively, on the system where the core file was produced, you can use `jextract` to collect all the relevant files into a single zip archive. That archive can be unpacked, possibly on another system, into a new, empty directory. Running `jdmpview` in that new directory (where the core file will be located) should enable it to find all the data it needs, including information that might not be included in the core file itself, such as symbols or sections. When you use an archive produced by `jextract`, setting the path or library mapping system properties should not be necessary.
 
 On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to `jdmpview`, or you can supply a fully qualified MVS&trade; data set name. For example:
 
 ```
 > jdmpview -core USER1.JVM.TDUMP.SSHD6.D070430.T092211
-DTFJView version 4.28.3, using DTFJ version 1.11.28004
+DTFJView version 4.29.5, using DTFJ version 1.12.29003
 Loading image from DTFJ...
 ```
 
@@ -557,12 +562,12 @@ If a class name is passed to info class, the following information is shown abou
 
 : Passes the number of items to display and the unit size, as listed in the following table, to the sub-command. For example, `x/12bd`.
 
-    |Abbreviation	| Unit       | Size    |
+    |Abbreviation | Unit       | Size    |
     |-------------|------------|---------|
-    |b	          | Byte       | 8-bit   |
-    |h            |	Half word  | 16-bit  |
-    |w            | Word       |	32-bit |
-    |g	          | Giant word | 64-bit  |
+    |b            | Byte       | 8-bit   |
+    |h            | Half word  | 16-bit  |
+    |w            | Word       | 32-bit  |
+    |g            | Giant word | 64-bit  |
 
     This command is similar to the use of the `x/` command in gdb, including the use of defaults.
 
@@ -575,13 +580,13 @@ If a class name is passed to info class, the following information is shown abou
 
 ### x/D <`0xaddr`>
 
-: Displays the integer at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big endian architecture.
+: Displays the integer at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big-endian architecture.
 
     <i class="fa fa-pencil-square-o"></i> This command uses the number of items and unit size passed to it by the `x/` command.
 
 ### x/X <`0xaddr`>
 
-: Displays the hex value of the bytes at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big endian architecture.
+: Displays the hex value of the bytes at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big-endian architecture.
 
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This command uses the number of items and unit size passed to it by the `x/` command.
 
@@ -602,7 +607,7 @@ User input is prefaced by a greater than symbol (>).
 
 ```
     test@madras:~/test> sdk/bin/jdmpview -core core.20121116.154147.16838.0001.dmp
-    DTFJView version 4.27.57, using DTFJ version 1.10.27022
+    DTFJView version 4.29.5, using DTFJ version 1.12.29003
     Loading image from DTFJ...
 
     For a list of commands, type "help"; for how to use "help", type "help help"

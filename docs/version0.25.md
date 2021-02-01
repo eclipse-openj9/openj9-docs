@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2021, 2021 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -26,15 +26,28 @@
 
 The following new features and notable changes since v 0.24.0 are included in this release:
 
-- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for -verbose:module in Java 11+](#support-verbose-module-option)
+- [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for the `-verbose:module` option](#support-for-the-verbosemodule-option)
+
 
 ## Features and changes
 
-### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for -verbose:module in Java 11+
-The `-verbose:module` option is now supported in OpenJ9 for Java 11+. This option writes information to `stderr` for each module that is loaded and unloaded.
+### Binaries and supported environments
+
+OpenJ9 release 0.25.0 supports OpenJDK 16. OpenJDK 16 with Eclipse OpenJ9 is *not* a long term support (LTS) release.
+
+Windows&reg; builds for Java&trade; 8 are now compiled with Microsoft&reg; Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match.
+
+To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for the `-verbose:module` option
+
+The `-verbose:module` option is now supported for Java 11 and later releases. This option writes information to `stderr` for each module that is loaded and unloaded.
 
 ## Full release information
 
 To see a complete list of changes between Eclipse OpenJ9 v 0.24.0 and v 0.25.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.25/0.25.md).
 
+
 <!-- ==== END OF TOPIC ==== version0.25.md ==== -->
+

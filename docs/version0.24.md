@@ -34,21 +34,19 @@ The following new features and notable changes since v 0.23.0 are included in th
 - [Additional parameters for `jcmd Dump` commands](#additional-parameters-for-jcmd-dump-commands)
 - [Change in behavior for the `jextract` utility](#change-in-behavior-for-the-jextract-utility)
 - [New diagnostic suboption for `-Xcheck:jni` for fatal JNI errors](#new-diagnostic-suboption-for-xcheckjni-for-fatal-jni-errors)
+- [Improved diagnostic information in a Java dump file on processor features](#improved-diagnostic-information-in-a-java-dump-file-on-processor-features)
 
 
 ## Features and changes
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15. Binaries are available from the AdoptOpenJDK community at the following links:
-
-- [OpenJDK version 8](https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=openj9)
-- [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
-- [OpenJDK version 15](https://adoptopenjdk.net/archive.html?variant=openjdk15&jvmVariant=openj9)
+OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15.
 
 Windows&reg; builds for Java&trade; 8 are now compiled with Microsoft&reg; Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
 
 ### Changes to message logging
 
@@ -73,7 +71,7 @@ The `-XX:[+|-]PortableSharedCache` option is now supported on IBM Z&reg; and POW
 
 ### ![Start of content that applies to Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update
 
-In earlier OpenJ9 releases, the `-XX:[+|-]ShareAnonymousClasses` option enables and disables the storage of VM anonymous classes in the shared classes cache. From 0.24.0 (OpenJDK 15 only), this option also enables and disables the storage of hidden classes in the shared classes cache. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
+In earlier releases of OpenJ9, the `-XX:[+|-]ShareAnonymousClasses` option enables and disables the storage of VM anonymous classes in the shared classes cache. From OpenJ9 0.24.0 for OpenJDK 15 binaries, this option also controls the storage of hidden classes. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
 
 
 ### Additional parameters for `jcmd Dump` commands
@@ -95,6 +93,10 @@ The `jextract` utility gathers relevant files following a system dump to assist 
 
 A new `abortonerror` suboption for `-Xcheck:jni` provides diagnostic data when fatal JNI errors occur. For more information, run `-Xcheck:jni:help`.
 
+
+### Improved diagnostic information in a Java dump file on processor features
+
+The **ENVINFO** section of a Java dump file now includes further information about processor features. This information helps to diagnose problems associated with JIT and AOT compilations that depend on underlying hardware. For an example that shows the information provided when JIT is enabled, see the **CPU Information** (`2CIJITFEATURE`,`2CIAOTFEATURE`) section in the [Java dump](dump_javadump.md#envinfo) topic.
 
 
 
