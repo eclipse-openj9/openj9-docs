@@ -27,6 +27,7 @@
 The following new features and notable changes since v 0.24.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for the `-verbose:module` option](#support-for-the-verbosemodule-option)
 
 
 ## Features and changes
@@ -39,14 +40,14 @@ Windows&reg; builds for Java&trade; 8 are now compiled with Microsoft&reg; Visua
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for the `-verbose:module` option
 
-
-
-
-
+The `-verbose:module` option is now supported for Java 11 and later releases. This option writes information to `stderr` for each module that is loaded and unloaded.
 
 ## Full release information
 
 To see a complete list of changes between Eclipse OpenJ9 v 0.24.0 and v 0.25.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.25/0.25.md).
 
+
 <!-- ==== END OF TOPIC ==== version0.25.md ==== -->
+
