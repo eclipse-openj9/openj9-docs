@@ -1,0 +1,416 @@
+# Copyright (c) 2017, 2021 IBM Corp. and others
+#
+# This program and the accompanying materials are made
+# available under the terms of the Eclipse Public License 2.0
+# which accompanies this distribution and is available at
+# https://www.eclipse.org/legal/epl-2.0/ or the Apache
+# License, Version 2.0 which accompanies this distribution and
+# is available at https://www.apache.org/licenses/LICENSE-2.0.
+#
+# This Source Code may also be made available under the
+# following Secondary Licenses when the conditions for such
+# availability set forth in the Eclipse Public License, v. 2.0
+# are satisfied: GNU General Public License, version 2 with
+# the GNU Classpath Exception [1] and GNU General Public
+# License, version 2 with the OpenJDK Assembly Exception [2].
+#
+# [1] https://www.gnu.org/software/classpath/license.html
+# [2] http://openjdk.java.net/legal/assembly-exception.html
+#
+# SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+# Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+#
+# Eclipse OpenJ9 user documentation
+
+site_name: ' '
+
+site_url: https://www.eclipse.org/openj9/docs
+# the canonical URL of the site. This will add a link tag with the canonical URL to the generated HTML header.
+
+repo_name: eclipse/openj9
+repo_url : https://github.com/eclipse/openj9
+# A link to your GitHub or Bitbucket repository on each page.
+
+edit_uri:
+# edit/master/docs/
+
+site_description: Eclipse OpenJ9 documentation
+
+# copyright: '© 2017, 2018 IBM Corp. and others'
+
+google_analytics: ['UA-105616558-3', 'mkdocs.org']
+
+# Build directories
+
+theme:
+    name: material
+    custom_dir: 'theme'
+    palette:
+      primary:  'cyan'
+      accent:   'cyan'
+    font:
+      text: 'Roboto'        # 'Segoe Print' 'Kristen ITC' 'Tempus Sans ITC'
+      code: 'Roboto Mono'   # 'Consolas'
+    logo: 'cr/openj9_6b.png'
+    favicon: 'cr/oj9logo_img9.ico'
+#    static_templates:
+#        - sitemap.html
+#    include_sidebar: false
+
+docs_dir: 'docs'
+
+site_dir: 'site'
+
+extra_css:
+  - 'stylesheets/oj9.css'
+
+extra_javascript:
+  - javascripts/oj9.js
+
+extra_templates:
+
+extra:
+    version: 1.0
+    social:                 # see: http://fontawesome.io/icons/
+      - type: 'github'
+        link: 'https://github.com/eclipse/openj9'
+      - type: 'slack'
+        link: 'https://openj9.slack.com'
+      - type: 'twitter'
+        link: 'https://twitter.com/openj9'
+      - type: 'stack-overflow'
+        link: 'https://stackoverflow.com/search?q=OpenJ9'
+
+# Preview controls
+
+dev_addr: '127.0.0.1:8008'
+
+# Formatting options
+
+markdown_extensions:
+    - def_list
+    - toc
+    - sane_lists
+#    - codehilite(linenums=false)
+
+# Documentation layout
+
+# "pages:" --> "nav:" for MkDocs 1.0
+nav:
+
+    - "About the docs"                                                           : index.md
+    - "AdoptOpenJDK builds"                                                      : adoptopenjdk.md
+    - "Getting started"                                                          : introduction.md
+    - "New to OpenJ9?"                                                           : openj9_newuser.md
+
+    - "Release notes" :
+        - "Overview"                                                             : openj9_releases.md
+        - "Version 0.24.0"                                                       : version0.24.md
+        - "Version 0.23.0"                                                       : version0.23.md
+        - "Version 0.22.0"                                                       : version0.22.md
+        - "Version 0.21.0"                                                       : version0.21.md
+        - "Earlier releases" :
+            - "Version 0.20.0"                                                   : version0.20.md
+            - "Version 0.19.0"                                                   : version0.19.md
+            - "Version 0.18.1"                                                   : version0.18.md
+            - "Version 0.17.0"                                                   : version0.17.md
+            - "Version 0.16.0"                                                   : version0.16.md
+            - "Version 0.15.1"                                                   : version0.15.md
+            - "Version 0.14.0"                                                   : version0.14.md
+            - "Version 0.13.0"                                                   : version0.13.md
+            - "Version 0.12.0"                                                   : version0.12.md
+            - "Version 0.11.0"                                                   : version0.11.md
+            - "Version 0.10.0"                                                   : version0.10.md
+            - "Version 0.9.0"                                                    : version0.9.md
+            - "Version 0.8.0"                                                    : version0.8.md
+
+    - "Memory management" :
+        - "Overview"                                                             : gc_overview.md
+        - "Garbage collection policies"                                          : gc.md
+        - "Verbose garbage collection logs" :
+            - "Overview"                                                         : vgclog.md
+            - "Log examples"                                                     : vgclog_examples.md
+
+    - "JIT Compiler"                                                             : jit.md
+    - "JITServer (tech. preview)"                                                : jitserver.md
+
+    - "AOT Compiler"                                                             : aot.md
+
+    - "Class data sharing" :
+        - "Overview"                                                             : shrc.md
+        - "Diagnostic cache utilities"                                           : shrc_diag_util.md
+
+    - "Java Attach API"                                                          : attachapi.md
+
+    - "Diagnostics" :
+
+        - "Overview"                                                             : diag_overview.md
+
+        - "Dumps" :
+#          Move dump agents, events, xdump builder from -Xdump (link to -Xdump for detail) then...
+            - "Java dump"                                                        : dump_javadump.md
+            - "Heap dump"                                                        : dump_heapdump.md
+            - "System dump"                                                      : dump_systemdump.md
+
+#        - "Logs" :
+#            - "verboseGC"                                                        : logs_verboseGC.md  (to be written)
+#            - "JIT logs"                                                         : (move from JIT)
+#            - "SHRC"                                                             : logs_shrc.md  (to be written)
+
+#        - "Trace" :
+#            Move high level content and xtrace builder from -Xtrace (link to -Xtrace and -Xtgc for cmd line detail).
+#            - "Application trace"                                                :   trace_aplication.md  (to be written)
+#            - "Method trace"                                                     :   trace_method.md  (to be written)
+
+        - "Tools" :
+#              3rd party tools topic for IBM monitoring & diag tools & Eclipse MA (take from New to OpenJ9), then...
+            - "Dump extractor"                                                   : tool_jextract.md
+            - "Dump viewer"                                                      : tool_jdmpview.md
+            - "Trace formatter"                                                  : tool_traceformat.md
+            - "Option builder"                                                   : tool_builder.md
+            - "Java command (jcmd) tool"                                         : tool_jcmd.md
+            - "Java memory map (jmap) tool"                                      : tool_jmap.md
+            - "Java process status (jps)"                                        : tool_jps.md
+            - "Java stack (jstack) tool"                                         : tool_jstack.md
+            - "Java statistics monitoring (jstat) tool"                          : tool_jstat.md
+            - "Switching to OpenJ9"                                              : tool_migration.md
+
+        - "Interfaces" :
+            - "JVMTI"                                                            : interface_jvmti.md
+            - "DTFJ"                                                             : interface_dtfj.md
+            - "Language Management"                                              : interface_lang_management.md
+
+    - "Command-line options" :
+        - "Specifying options"                                                   : cmdline_specifying.md
+        - "Standard options"                                                     : cmdline_general.md
+        - "Switching to OpenJ9"                                                  : cmdline_migration.md
+
+# System properties that are commented out are not supported at this time.
+
+        - "System property options" :
+            - "Using System properties"                                          : d_jvm_commands.md
+            - "-Dcom.ibm.enableClassCaching"                                     : dcomibmenableclasscaching.md
+            - "-Dcom.ibm.enableLegacyDumpSecurity"                               : dcomibmenablelegacydumpsecurity.md
+            - "-Dcom.ibm.enableLegacyLogSecurity"                                : dcomibmenablelegacylogsecurity.md
+            - "-Dcom.ibm.enableLegacyTraceSecurity"                              : dcomibmenablelegacytracesecurity.md
+            - "-Dcom.ibm.gpu.disable"                                            : dcomibmgpudisable.md
+            - "-Dcom.ibm.gpu.enable"                                             : dcomibmgpuenable.md
+            - "-Dcom.ibm.gpu.verbose"                                            : dcomibmgpuverbose.md
+            - "-Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns"   : dcomibmlangmanagementosmxbeaniscputime100ns.md
+            - "-Dcom.ibm.lang.management.verbose"                                : dcomibmlangmanagementverbose.md
+            - "-Dcom.ibm.tools.attach.command_timeout"                           : dcomibmtoolsattachcommand_timeout.md
+            - "-Dcom.ibm.tools.attach.directory"                                 : dcomibmtoolsattachdirectory.md
+            - "-Dcom.ibm.tools.attach.displayName"                               : dcomibmtoolsattachdisplayname.md
+            - "-Dcom.ibm.tools.attach.enable"                                    : dcomibmtoolsattachenable.md
+            - "-Dcom.ibm.tools.attach.id"                                        : dcomibmtoolsattachid.md
+            - "-Dcom.ibm.tools.attach.logging"                                   : dcomibmtoolsattachlogging.md
+            - "-Dcom.ibm.tools.attach.log.name"                                  : dcomibmtoolsattachlogname.md
+            - "-Dcom.ibm.tools.attach.shutdown_timeout"                          : dcomibmtoolsattachshutdown_timeout.md
+            - "-Dcom.ibm.tools.attach.timeout"                                   : dcomibmtoolsattachtimeout.md
+            - "-Dfile.encoding"                                                  : dfileencoding.md
+            - "-Djava.compiler"                                                  : djavacompiler.md
+            - "-Djava.lang.string.substring.nocopy"                              : djavalangstringsubstringnocopy.md
+            - "-Djava.lang.stringBuffer.growAggressively"                        : djavalangstringbuffergrowaggressively.md
+            - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
+            - "-Djdk.nativeChaCha20"                                             : djdknativechacha20.md
+            - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
+            - "-Djdk.nativeDigest"                                               : djdknativedigest.md
+            - "-Djdk.nativeGCM"                                                  : djdknativegcm.md
+            - "-Djdk.nativeRSA"                                                  : djdknativersa.md
+
+        - "JVM -X options" :
+            - "Using -X options"                                                 : x_jvm_commands.md
+            - "-X"                                                               : x.md
+            - "-Xaggressive"                                                     : xaggressive.md
+            - "-Xalwaysclassgc"                                                  : xalwaysclassgc.md
+            - "-Xaot"                                                            : xaot.md
+            - "-Xargencoding"                                                    : xargencoding.md
+            - "-Xbootclasspath"                                                  : xbootclasspath.md
+            - "-XCEEHDLR"                                                        : xceehdlr.md
+            - "-Xcheck"                                                          : xcheck.md
+            - "-Xclassgc"                                                        : xclassgc.md
+            - "-Xcodecache"                                                      : xcodecache.md
+            - "-Xcodecachetotal"                                                 : xcodecachetotal.md
+            - "-Xcomp"                                                           : xcomp.md
+            - "-Xcompactexplicitgc"                                              : xcompactexplicitgc.md
+            - "-Xcompactgc"                                                      : xcompactgc.md
+            - "-XcompilationThreads"                                             : xcompilationthreads.md
+            - "-Xcompressedrefs"                                                 : xcompressedrefs.md
+            - "-Xconcurrentbackground"                                           : xconcurrentbackground.md
+            - "-Xconcurrentlevel"                                                : xconcurrentlevel.md
+            - "-Xconcurrentslack"                                                : xconcurrentslack.md
+            - "-Xconmeter"                                                       : xconmeter.md
+            - "-Xdisableexcessivegc"                                             : xenableexcessivegc.md              # redirect
+            - "-Xdisableexplicitgc"                                              : xenableexplicitgc.md               # redirect
+            - "-Xdisablejavadump"                                                : xdisablejavadump.md
+            - "-Xdisablestringconstantgc"                                        : xenablestringconstantgc.md         # redirect
+            - "-Xdump"                                                           : xdump.md
+            - "-Xenableexcessivegc"                                              : xenableexcessivegc.md
+            - "-Xenableexplicitgc"                                               : xenableexplicitgc.md
+            - "-Xenablestringconstantgc"                                         : xenablestringconstantgc.md
+            - "-Xfastresolve"                                                    : xfastresolve.md
+            - "-Xfuture"                                                         : xfuture.md
+            - "-Xgc"                                                             : xgc.md
+            - "-Xgc:splitheap"                                                   : xgcsplitheap.md
+            - "-Xgcpolicy"                                                       : xgcpolicy.md
+            - "-Xgcthreads"                                                      : xgcthreads.md
+            - "-Xgcworkpackets"                                                  : xgcworkpackets.md
+            - "-Xint"                                                            : xint.md
+            - "-Xiss"                                                            : xss.md                             # redirect
+            - "-Xjit"                                                            : xjit.md
+            - "-Xjni"                                                            : xjni.md
+            - "-Xlinenumbers"                                                    : xlinenumbers.md
+            - "-Xloa"                                                            : xloa.md
+            - "-Xloainitial"                                                     : xloaminimum.md                     # redirect
+            - "-Xloamaximum"                                                     : xloaminimum.md                     # redirect
+            - "-Xloaminimum"                                                     : xloaminimum.md
+            - "-XlockReservation"                                                : xlockreservation.md
+            - "-Xlockword"                                                       : xlockword.md
+            - "-Xlog"                                                            : xlog.md
+            - "-Xlp"                                                             : xlp.md
+            - "-Xlp:codecache"                                                   : xlpcodecache.md
+            - "-Xlp:objectheap"                                                  : xlpobjectheap.md
+            - "-Xmaxe"                                                           : xmine.md                           # redirect
+            - "-Xmaxf"                                                           : xminf.md                           # redirect
+            - "-Xmaxt"                                                           : xmint.md                           # redirect
+            - "-Xmca"                                                            : xmca.md
+            - "-Xmco"                                                            : xmca.md                            # redirect
+            - "-Xmcrs"                                                           : xmcrs.md
+            - "-Xmine"                                                           : xmine.md
+            - "-Xminf"                                                           : xminf.md
+            - "-Xmint"                                                           : xmint.md
+            - "-Xmn"                                                             : xmn.md
+            - "-Xmns"                                                            : xmn.md                             # redirect
+            - "-Xmnx"                                                            : xmn.md                             # redirect
+            - "-Xmo"                                                             : xmo.md
+            - "-Xmoi"                                                            : xmo.md                             # redirect
+            - "-Xmos"                                                            : xmo.md                             # redirect
+            - "-Xmox"                                                            : xmo.md                             # redirect
+            - "-Xmr"                                                             : xmr.md
+            - "-Xmrx"                                                            : xmr.md                             # redirect
+            - "-Xms"                                                             : xms.md
+            - "-Xmso"                                                            : xmso.md
+            - "-Xmx"                                                             : xms.md                             # redirect
+            - "-Xnoaot"                                                          : xaot.md                            # redirect
+            - "-Xnoclassgc"                                                      : xclassgc.md                        # redirect
+            - "-Xnocompactexplicitgc"                                            : xcompactexplicitgc.md              # redirect
+            - "-Xnocompactgc"                                                    : xcompactgc.md                      # redirect
+            - "-Xnocompressedrefs"                                               : xcompressedrefs.md                 # redirect
+            - "-Xnojit"                                                          : xjit.md                            # redirect
+            - "-Xnolinenumbers"                                                  : xlinenumbers.md                    # redirect
+            - "-Xnoloa"                                                          : xloa.md                            # redirect
+            - "-Xnosigcatch"                                                     : xsigcatch.md                       # redirect
+            - "-Xnosigchain"                                                     : xsigchain.md                       # redirect
+            - "-Xnuma:none"                                                      : xnumanone.md
+            - "-Xoptionsfile"                                                    : xoptionsfile.md
+            - "-Xquickstart"                                                     : xquickstart.md
+            - "-Xrs"                                                             : xrs.md
+            - "-XsamplingExpirationTime"                                         : xsamplingexpirationtime.md
+            - "-Xscdmx"                                                          : xscdmx.md
+            - "-Xscmaxaot"                                                       : xscminaot.md                       # redirect
+            - "-Xscmaxjitdata"                                                   : xscminjitdata.md                   # redirect
+            - "-Xscminaot"                                                       : xscminaot.md
+            - "-Xscminjitdata"                                                   : xscminjitdata.md
+            - "-Xscmx"                                                           : xscmx.md
+            - "-Xshareclasses"                                                   : xshareclasses.md
+            - "-Xsigcatch"                                                       : xsigcatch.md
+            - "-Xsigchain"                                                       : xsigchain.md
+            - "-Xsignal"                                                         : xsignal.md
+            - "-Xsoftmx"                                                         : xsoftmx.md
+            - "-Xsoftrefthreshold"                                               : xsoftrefthreshold.md
+            - "-Xss"                                                             : xss.md
+            - "-Xssi"                                                            : xss.md                             # redirect
+            - "-Xsyslog"                                                         : xsyslog.md
+            - "-Xtgc"                                                            : xtgc.md
+            - "-Xthr"                                                            : xthr.md
+            - "-XtlhPrefetch"                                                    : xtlhprefetch.md
+            - "-Xtrace"                                                          : xtrace.md
+            - "-Xtune:virtualized"                                               : xtunevirtualized.md
+            - "-Xverbosegclog"                                                   : xverbosegclog.md
+            - "-Xverify"                                                         : xverify.md
+            - "-Xzero"                                                           : xzero.md
+
+        - "JVM -XX options" :
+            - "Using -XX options"                                                : xx_jvm_commands.md
+            - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
+            - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
+            - "-XX:[+|-]AlwaysPreTouch"                                          : xxalwayspretouch.md
+            - "-XX:[+|-]ClassRelationshipVerifier"                               : xxclassrelationshipverifier.md
+            - "-XX:ConcGCThreads"                                                : xxconcgcthreads.md
+            - "-XX:codecachetotal"                                               : xxcodecachetotal.md
+            - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
+            - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
+            - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
+            - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
+            - "-XX:[+|-]ExitOnOutOfMemoryError"                                  : xxexitonoutofmemoryerror.md
+            - "-XX:[+|-]GlobalLockReservation"                                   : xxgloballockreservation.md
+            - "-XX:[+|-]HandleSIGXFSZ"                                           : xxhandlesigxfsz.md
+            - "-XX:[+|-]HandleSIGABRT"                                           : xxhandlesigabrt.md
+            - "-XX:[+|-]HeapDumpOnOutOfMemory"                                   : xxheapdumponoutofmemory.md
+            - "-XX:HeapDumpPath"                                                 : xxheapdumppath.md
+            - "-XX:[+|-]HeapManagementMXBeanCompatibility"                       : xxheapmanagementmxbeancompatibility.md
+            - "-XX:[+|-]IdleTuningCompactOnIdle"                                 : xxidletuningcompactonidle.md
+            - "-XX:[+|-]IdleTuningGcOnIdle"                                      : xxidletuninggconidle.md
+            - "-XX:IdleTuningMinFreeHeapOnIdle"                                  : xxidletuningminfreeheaponidle.md
+            - "-XX:IdleTuningMinIdleWaitTime"                                    : xxidletuningminidlewaittime.md
+            - "-XX:[+|-]IgnoreUnrecognizedVMOptions"                             : xxignoreunrecognizedvmoptions.md
+            - "-XX:[+|-]IgnoreUnrecognizedXXColonOptions"                        : xxignoreunrecognizedxxcolonoptions.md
+            - "-XX:InitialRAMPercentage"                                         : xxinitialrampercentage.md
+            - "-XX:InitialHeapSize"                                              : xxinitialheapsize.md
+            - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
+            - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
+            - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
+            - "-XX:[+|-]LegacyXLogOption"                                        : xxlegacyxlogoption.md
+            - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
+            - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
+            - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
+            - "-XX:OnOutOfMemoryError"                                           : xxonoutofmemoryerror.md
+            - "-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode"                   : xxoriginaljdk8heapsizecompatibilitymode.md
+            - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
+            - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
+            - "-XX:ParallelCMSThreads"                                           : xxparallelcmsthreads.md
+            - "-XX:ParallelGCThreads"                                            : xxparallelgcthreads.md
+            - "-XX:[+|-]PortableSharedCache"                                     : xxportablesharedcache.md
+            - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md
+            - "-XX:[+|-]PrintCodeCache"                                          : xxprintcodecache.md
+            - "-XX:[+|-]PrintFlagsFinal"                                         : xxprintflagsfinal.md
+            - "-XX:[+|-]ReadIPInfoForRAS"                                        : xxreadipinfoforras.md
+            - "-XX:[+|-]ReduceCPUMonitorOverhead"                                : xxreducecpumonitoroverhead.md
+            - "-XX:[+|-]RuntimeInstrumentation"                                  : xxruntimeinstrumentation.md
+            - "-XXsetHWPrefetch"                                                 : xxsethwprefetch.md
+            - "-XX:[+|-]ShareAnonymousClasses"                                   : xxshareanonymousclasses.md
+            - "-XX:ShareClassesDisableBCI"                                       : xxshareclassesenablebci.md         #redirect
+            - "-XX:ShareClassesEnableBCI"                                        : xxshareclassesenablebci.md
+            - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
+            - "-XX:[+|-]ShareUnsafeClasses"                                      : xxshareunsafeclasses.md
+            - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
+            - "-XX:[+|-]TransparentHugePage"                                     : xxtransparenthugepage.md
+            - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
+            - "-XX:[+|-]UseContainerSupport"                                     : xxusecontainersupport.md
+            - "-XX:[+|-]UseGCStartupHints"                                       : xxusegcstartuphints.md
+            - "-XX:[+|-]UseNoGC"                                                 : xxusenogc.md
+            - "-XX:[+|-]VerboseVerification"                                     : xxverboseverification.md
+            - "-XX:[+|-]VMLockClassLoader"                                       : xxvmlockclassloader.md
+
+    - " Reference" :
+        - "Supported environments"                                                : openj9_support.md
+        - "Default settings"                                                      : openj9_defaults.md
+        - "Signal handling"                                                       : openj9_signals.md
+        - "Directory conventions"                                                 : openj9_directories.md
+        - "OpenJ9 messages"                                                       : messages_intro.md
+        - "Environment variables"                                                 : env_var.md
+
+    - "API documentation" :
+        - "Overview"                                                             : api-overview.md
+        - "Java 8 API" :
+            - "Condition exception handling"                                      : api-conditionhandling.md
+            - "CUDA4J"                                                            : api-cuda.md
+            - "Data access acceleration"                                          : api-daa.md
+            - "DTFJ"                                                              : api-dtfj.md
+            - "GPU"                                                               : api-gpu.md
+            - "JVM diagnostic utilities"                                          : api-jvm.md
+            - "Monitoring and management"                                         : api-langmgmt.md
+            - "Shared classes"                                                    : api-shrc.md
+        - "Java 11 API"                                                           : api-jdk11.md
+
+    - "Legal"                                                                     : legal.md
