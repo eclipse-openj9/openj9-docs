@@ -27,6 +27,7 @@
 The following new features and notable changes since v 0.24.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- ![Start of content that applies to Java 16](cr/java16.png) [New JDK 16 features](#new-jdk-16-features)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for the `-verbose:module` option](#support-for-the-verbosemodule-option)
 
 
@@ -36,9 +37,45 @@ The following new features and notable changes since v 0.24.0 are included in th
 
 OpenJ9 release 0.25.0 supports OpenJDK 16. OpenJDK 16 with Eclipse OpenJ9 is *not* a long term support (LTS) release.
 
-Windows&reg; builds for Java&trade; 8 are now compiled with Microsoft&reg; Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match.
+Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 release 0.25.0, testing at the project is not complete and therefore support for new features that apply to these Java versions is not available.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### ![Start of content that applies to Java 16](cr/java16.png) New JDK 16 features
+
+The following features are supported by OpenJ9:
+
+- [JEP 338](https://openjdk.java.net/jeps/338): Vector API (incubator)
+    - The OpenJ9 project is adding optimizations for this feature.
+- [JEP 390](https://openjdk.java.net/jeps/390): Warnings for value-based classes
+- [JEP 395](https://openjdk.java.net/jeps/395): Records
+- [JEP 397](https://openjdk.java.net/jeps/397): Sealed Classes (second preview)
+
+The following features will be supported by OpenJ9 in a future release:
+
+- [JEP 389](https://openjdk.java.net/jeps/389): Foreign linker API (incubator)
+- [JEP 393](https://openjdk.java.net/jeps/393): Foreign-memory access API (third incubator)
+
+The following features are implemented in OpenJDK and available in any builds of OpenJDK 16 with OpenJ9:
+
+- [JEP 347](https://openjdk.java.net/jeps/347): Enable C++ 14 language features
+- [JEP 380](https://openjdk.java.net/jeps/380): Unix-domain socket channels
+- [JEP 394](https://openjdk.java.net/jeps/394): Pattern matching for `instanceof`
+- [JEP 396](https://openjdk.java.net/jeps/396): Strongly encapsulate JDK internals by default
+- [JEP 392](https://openjdk.java.net/jeps/392): Packaging tool
+
+You can find the full list of features for JDK 16 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/16/). Any remaining features that are listed do not apply to OpenJ9.
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Applications might be adversely affected by
+JEP 396 if they make use of internal APIs. You should update your application to use standard APIs. To temporarily work around this problem, set `--illegal-access=permit` on the command line, which prints a warning that is similar to the following example when an illegal access call is made:
+
+```
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.openj9.test.com.ibm.jit.Test_JITHelpers (file:/home/jenkins/workspace/Test_openjdk11_j9_sanity.functional_ppc64_aix_Nightly_testList_1/jvmtest/functional/Java8andUp/GeneralTest.jar) to field java.lang.String.value
+WARNING: Please consider reporting this to the maintainers of org.openj9.test.com.ibm.jit.Test_JITHelpers
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+```
 
 ### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for the `-verbose:module` option
 
@@ -50,4 +87,3 @@ To see a complete list of changes between Eclipse OpenJ9 v 0.24.0 and v 0.25.0 r
 
 
 <!-- ==== END OF TOPIC ==== version0.25.md ==== -->
-
