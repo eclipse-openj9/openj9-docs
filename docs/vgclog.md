@@ -32,54 +32,58 @@ The logs record when GC cycles and their increments start and end, and list the 
 
 ### Initialization
 
-The first section of the log records the configuration of the garbage collector, for example:  
+The log begins by recording the configuration of the OpenJ9 runtime virtual environment (VM) and details of the GC configuration(GC). The configuration is recorded by using child elements of the `<initialized>` element, for example:  
 
 ```xml
-<initialized id="1" timestamp="2020-10-18T13:27:07.691"> 
 
-    <attribute name="gcPolicy" value="-Xgcpolicy:gencon" /> 
-
-    <attribute name="maxHeapSize" value="0x40000000" /> 
-
-    <attribute name="initialHeapSize" value="0x40000000" /> 
-
-    <attribute name="compressedRefs" value="true" /> 
-
-... 
- 
-<system> 
-
-    <attribute name="physicalMemory" value="100335456256" /> 
-
-    <attribute name="numCPUs" value="28" /> 
-
-... 
-
-</system> 
-
-<vmargs> 
-
-    <vmarg name="-Xoptionsfile=/java/perffarm/sdks/O11_j9_x64_linux-20201014/sdk/lib/options.default" /> 
-...
+<initialized id="1" timestamp="2020-10-18T13:27:07.691">
+  <attribute name="gcPolicy" value="-Xgcpolicy:gencon" />
+  <attribute name="maxHeapSize" value="0x40000000" />
+  <attribute name="initialHeapSize" value="0x40000000" />
+  <attribute name="compressedRefs" value="true" />
+  <attribute name="compressedRefsDisplacement" value="0x0" />
+  <attribute name="compressedRefsShift" value="0x0" />
+  <attribute name="pageSize" value="0x1000" />
+  <attribute name="pageType" value="not used" />
+  <attribute name="requestedPageSize" value="0x1000" />
+  <attribute name="requestedPageType" value="not used" />
+  <attribute name="gcthreads" value="4" />
+  <attribute name="gcthreads Concurrent Mark" value="1" />
+  <attribute name="packetListSplit" value="1" />
+  <attribute name="cacheListSplit" value="1" />
+  <attribute name="splitFreeListSplitAmount" value="1" />
+  <attribute name="numaNodes" value="0" />
+  <system>
+    <attribute name="physicalMemory" value="100335456256" />
+    <attribute name="numCPUs" value="28" />
+    <attribute name="architecture" value="amd64" />
+    <attribute name="os" value="Linux" />
+    <attribute name="osVersion" value="3.10.0-1160.el7.x86_64" />
+  </system>
+  <vmargs>
+    <vmarg name="-Xoptionsfile=/java/perffarm/sdks/O11_j9_x64_linux-20201014/sdk/lib/options.default" />
+    ...
+    <vmarg name="-Dcom.ibm.oti.vm.bootstrap.library.path=/java/perffarm/sdks/O11_j9_x64_linux-20201014/sdk/lib/compressedrefs:/java/perffarm/sdk..." />
+    ...
     <vmarg name="-Xms1024m" />
     <vmarg name="-Xmx1024m" />
-...
-    <vmarg name="-Dsun.java.launcher.pid=6068" /> 
-
-</vmargs> 
-
+    ...
+    <vmarg name="-Xverbosegclog:verbosegc.xml" />
+    ...
+  </vmargs>
 </initialized> 
-
 ```
 
-ADD DETAILS ABOUT THE INITIATISATION SECTION
+The first set of `<attribute>` elements record the configuration of the garbage collector, such as the GC policy type, configuration of the heap, and the number of threads that are used for garbage collection. For example, the `GCThreads` attribute records that the garbage collector is configured to use 4 threads.
 
-The first set of <attribute> XML elements record the GC policy type and its settings. 
-The child <attribute> XML elements of the <system> stanza records information about the....
-<region> XML elements...
-<vmargs>....
+The `<system>` section records information about the operating system, such as the physical memory, number of CPUs, and operating system type and version. In the example, the VM is running on Linux amd64 V3.10 which has access to 28 CPUs and over 100Gb.
 
-The verbose GC log then begins recording GC activities and details. 
+The `<vmargs>` section records any VM configuration [command-line options](cmdline_specifying.md) (VM arguments) that have been specified. These Command-line options, set by using the command line or by passing a manifest file, options file or environment variables to the VM, include:
+
+- non-standard [JVM `-X` options](x_jvm_commands.md) and [JVM `-XX` options](xx_jvm_commands.md).  In the example output, the log has recorded the location of the file that contains VM options and definitions as `java/perffarm/sdks/O11_j9_x64_linux-20201014/sdk/lib/options.default`. The log also shows that the `-xverbose` option has been set to `-Xverbosegclog:verbosegc.xml` to write the verbose GC log output to an xml file and that the initial/minimum and maximum heap sizes have been set to 1024kb by using the `-Xms` and `-Xmx` options.
+- [system property options](d_jvm_commands.md). In the example output, the system property `com.ibm.oti.vm.bootstrap.library.path` has been set.
+
+After recording the configuration in the *Initialization* section of the logs, the verbose GC log begins recording GC activities and details. 
 
 ### GC Cycles
 
