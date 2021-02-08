@@ -95,20 +95,36 @@ The start of a GC cycle is recorded by the `<cycle-start>` XML element. The trig
 
 The following XML structure is an example of the verbose GC logs that are generated from the Generational Concurrent GC policy (`-Xgcpolicy:gencon`). In this example, the lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity: 
 
-```
-    <exclusive-start> </exclusive-start>
+```xml
+    <exclusive-start/>
 
       <af-start/> 
 
         <cycle-start/> 
 
-          <gc-start> </gc-start> 
+          <gc-start> 
 
-            <allocation-stats> </allocation-stats> 
+            <mem-info>
 
-              <gc-op> </gc-op> 
+              <mem/>
 
-          <gc-end> </gc-end> 
+            </mem-info>
+
+          </gc-start> 
+
+          <allocation-stats/>
+
+              <gc-op/> 
+
+          <gc-end> 
+          
+            <mem-info>
+
+              <mem/>
+
+            </mem-info>
+          
+          </gc-end> 
 
         <cycle-end/> 
 
@@ -133,104 +149,87 @@ You can see this interleaving of the increments in the verbose GC log. The follo
 
   <tr>
     <th>Line Number</th>
-    <th>Application threads running?</th>
     <th colspan="2">Logging</th>
   </tr>
   <tr>
-    <th>-</th>
     <th>-</th>
     <th>`gencon` global GC cycle status</th>
     <th>`gencon` partial GC cycle status</th>
   </tr>
   <tr>
     <td>1-87</td>
-    <td>✅ </td>
     <td colspan="2">initialization</th>
   </tr>
 <tr>
     <td>87-51651</td>
-    <td>✅ / ❌ </td>
     <td> - </td>
     <td> series of `gencon` partial cycles start and finish </td>
   </tr>
 <tr>
     <td>51655</td>
-    <td>❌ </td>
     <td> - </td>
     <td>partial cycle initializes</td>
   </tr>
 <tr>
     <td>51656</td>
-    <td>❌ </td>
     <td> - </td>
     <td>scavenge increment runs</td>
   </tr>
   <tr>
     <td>51696</td>
-    <td>❌ </td>
     <td> - </td>
     <td>partial cycle ends</td>
   </tr>
   <tr>
     <td>51700</td>
-    <td> ✅  </td>
     <td> blank line - no activities logged</td>
     <td>-</td>
   </tr>
 <tr>
     <td>51701</td>
-    <td> ✅  </td>
     <td> global cycle's initial increment marked</td>
     <td>-</td>
   </tr>
 
   <tr>
     <td>51707</td>
-    <td> ❌  </td>
     <td> global cycle initializes</td>
     <td>-</td>
   </tr>
 
   <tr>
     <td>51709</td>
-    <td> ✅  </td>
     <td> concurrent increment runs (blank line)</td>
     <td>-</td>
   </tr>
   <tr>
     <td>51714</td>
-    <td> ❌  </td>
     <td> concurrent increment runs</td>
     <td>partial cycle initializes</td>
   </tr>
 
   <tr>
     <td>51715</td>
-    <td> ❌ </td>
     <td> concurrent increment runs</td>
     <td>scavenge increment runs</td>
   </tr>
   <tr>
     <td>51754</td>
-    <td> ❌ </td>
     <td> concurrent increment runs</td>
     <td>partial cycle ends</td>
   </tr>
   <tr>
     <td>51758</td>
-    <td> ✅  </td>
     <td> blank line - no activities logged </td>
     <td></td>
   </tr>
   <tr>
     <td>51762</td>
-    <td> ❌  </td>
     <td> final collection increment runs </td>
     <td></td>
   </tr>
   <tr>
     <td>51867</td>
-    <td> ❌  </td>
     <td> global cycle ends</td>
     <td></td>
   </tr>
@@ -249,40 +248,73 @@ For example, the XML elements corresponding to the different increments of the `
 
 For details of the XML elements and attribute values that are used for a particular type of cycle for a particular policy, and examples of log output, see [Example `gencon` log]() or [Example `balanced` log](). 
 
-Operations are recorded in the logs once they have completed. As such, there may be cases where the start of a concurrent increment is recorded, but concurrent operations that are running at the same time as a STW increment of another cycle are not recorded until after the STW increment operations are recorded. For example, for the `gencon` policy, operations from the second, concurrent increment of the global cycle operations run during the partial cycle, but they are not logged until after the partial cycle has completed. In the following `genocon` log output example, the lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity: 
+Operations are recorded in the logs once they have completed. As such, there may be cases where the start of a concurrent increment is recorded, but concurrent operations that are running at the same time as a STW increment of another cycle are not recorded until after the STW increment operations are recorded. For example, for the `gencon` policy, operations from the second, concurrent increment of the global cycle operations run during the partial cycle, but they are not logged until after the partial cycle has completed. In the following `genocon` log output example, some attributes and some child elements are omitted for clarity to illustrate the general flow: 
 
 ```xml
 
-<concurrent-kickoff></concurrent-kickoff> <!--Trigger for global cycle -->
-    <exclusive-start></exclusive-start> <!-- STW pause started -->
-        <cycle-start></cycle-start> <!-- global cycle start recorded-->
-    <exclusive-end></exclusive-end> <!-- STW pause finished 1st increment complete-->
+<concurrent-kickoff/>       (global cycle 1st increment recorded)
 
-<!-- concurrent operations of the global cycle's second increment running -->
+<exclusive-start/>          (STW pause starts)
 
-<exclusive-start></exclusive-start>
-  <af-start></af-start>
-     <cycle-start></cycle-start> <!-- start of partial cycle-->
-       <gc-start></gc-start>
-         <gc-op type="scavenge"> </gc-op>
-      <gc-end></gc-end>
-     <cycle-end></cycle-end> <!-- start of partial cycle-->
-  <af-end></af-end>
-<exclusive-end></exclusive-end>
+<cycle-start/>              (global cycle starts)
 
-<exclusive-start><exclusive-start>
-  <concurrent-collection-start> <!-- global cycle's final increment triggered-->
-     <concurrent-trace-info reason="card cleaning threshold reached"> 
-      <!-- completion of the concurrent operations of the global cycle's
-      second increment -->
-  </concurrent-collection-start>
-  <gc-start> <!-- global cycle's final increment started-->
-    <gc-op>
-    ...
-  <gc-end>
-<cycle-end>
-<concurrent-collection-end> <!-- final increment of the global cycle ended-->
-<exclusive-end>
+<exclusive-end/>            (STW pause ends)
+
+
+(global cycle 2nd increment running concurrently)
+
+
+<exclusive-start/>          (STW for partial GC cycle starts)
+
+
+...                         (partial GC cycle starts and completes)
+
+
+<exclusive-end/>            (STW for partial GC cycle ends)
+
+<exclusive-start/>          (STW pause starts)
+
+<concurrent-global-final/>  (global cycle final increment recorded)
+
+<gc-start/>                 (global cycle final increment starts)
+
+<allocation-stats/>
+
+<mem-info>                  (memory status before operations)
+
+<mem></mem>                 (status of different types of memory)
+
+</mem-info>
+
+</gc-start>
+
+<gc-op> “type=rs-scan"</gc-op>        (roots scanning completed)
+
+<gc-op>”type=card-cleaning" </gc-op>  (card cleaning completed)
+
+<gc-op> “type=mark”</gc-op>           (mark operation completed)
+
+<gc-op> “type=classunload”</gc-op>    (class unload operation completed)
+
+<gc-op ”type=sweep” />                (sweep operation completed)
+
+<gc-end>                     (global cycle final increment ends)
+
+<mem-info>                   (memory status after operations)
+
+<mem></mem>                  (status of different types of memory)
+
+</mem-info>
+
+</gc-end> 
+
+</cycle-end>                 (global cycle ends)
+
+<exclusive-end>              (STW pause ends)
+
+<exclusive-start>            (STW pause starts)
+...
+
 ```
 
 When analysing the logs, you can determine the GC increments and operations associated with a particular *instance* of a cycle by using the `contextid` and `id` attributes:
