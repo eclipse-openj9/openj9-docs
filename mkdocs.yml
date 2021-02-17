@@ -337,6 +337,7 @@ nav:
             - "-XX:ConcGCThreads"                                                : xxconcgcthreads.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
             - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
+            - "-XX:DiagnoseSyncOnValueBasedClasses"                              : xxdiagnosesynconvaluebasedclasses.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md

@@ -48,6 +48,7 @@ The following features are supported by OpenJ9:
 - [JEP 338](https://openjdk.java.net/jeps/338): Vector API (incubator)
     - The OpenJ9 project is adding optimizations for this feature.
 - [JEP 390](https://openjdk.java.net/jeps/390): Warnings for value-based classes
+    - The OpenJ9 project is adding option `-XX:DiagnoseSyncOnValueBasedClasses=<number>`. See [`-XX:DiagnoseSyncOnValueBasedClasses=<number>`](xxdiagnosesynconvaluebasedclasses.md) for more details.
 - [JEP 395](https://openjdk.java.net/jeps/395): Records
 - [JEP 397](https://openjdk.java.net/jeps/397): Sealed Classes (second preview)
 
