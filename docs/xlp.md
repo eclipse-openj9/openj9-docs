@@ -88,7 +88,7 @@ The VM ends if insufficient operating system resources are available to satisfy 
 
 ## See also
 
-- [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
+- [Configuring large page memory allocation](configuring.md#configuring-large-page-memory-allocation).
 
 
 <!-- ==== END OF TOPIC ==== xlp.md ==== -->
