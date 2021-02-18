@@ -401,7 +401,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
         <li class="md-nav__item">
   <a href="#using-jlink" class="md-nav__link">
-    Using Jlink
+    Using jlink
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-jpackage" class="md-nav__link">
+    Using jpackage
   </a>
   
 </li>
@@ -4062,7 +4069,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
         <li class="md-nav__item">
   <a href="#using-jlink" class="md-nav__link">
-    Using Jlink
+    Using jlink
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-jpackage" class="md-nav__link">
+    Using jpackage
   </a>
   
 </li>
@@ -4214,9 +4228,12 @@ which enables you to develop applications that can take advantage of graphics pr
 <p>Runtime options are specified on the command line and include system properties, standard options, nonstandard (<strong>-X</strong>) options, and <strong>-XX</strong> options. For a detailed list of runtime options, see <a href="../cmdline_specifying/">OpenJ9 command-line options</a></p>
 <h2 id="default-settings">Default settings</h2>
 <p>If you do not specify any options on the command line at run time, the OpenJ9 VM starts with default settings that define how it operates. For more information about these settings, see <a href="../openj9_defaults/">Default settings for the OpenJ9 VM</a>.</p>
-<h2 id="using-jlink"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> Using Jlink</h2>
+<h2 id="using-jlink"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> Using jlink</h2>
 <p>On Java 11 and later, you can use the <code>jlink</code> utility to create a custom OpenJ9 runtime image, which allows you to optimize image size.
 If you do not require translations from the English language, the translation files can be removed to further optimize the size. You can achieve this by specifying the <code>--exclude-files=**java_**.properties</code> option when you run <code>jlink</code>. The default English <code>java.properties</code> file is unaffected.</p>
+<h2 id="using-jpackage">Using jpackage</h2>
+<p><strong>(Linux, macOS, and Windows only)</strong></p>
+<p>You can use the <code>jpackage</code> utility to package a Java application into a platform-specific package that includes all of the necessary dependencies. Full details of the tool are available at <a href="https://openjdk.java.net/jeps/392">JEP 392: Packaging Tool</a>. Instructions for using it and the various options available, are documented in the Oracle Tool Specifications: <a href="https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html">The jpackage Command</a>.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>The OpenJ9 diagnostic component contains extensive features to assist with problem determination. Diagnostic data is produced under default conditions, but can also be controlled by starting the VM with the <a href="../xdump/">-Xdump option</a> or using the <code>com.ibm.jvm.Dump</code> API. You can also trace Java applications, methods, and VM operations by using the <a href="../xtrace/">-Xtrace option</a>.</p>
 <p>To get started, read <a href="../diag_overview/">Diagnostic tools and data</a>.</p>

@@ -4027,7 +4027,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The following new features and notable changes since v 0.24.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
-<li><img alt="Start of content that applies to Java 16" src="../cr/java16.png" /> <a href="#new-jdk-16-features">New JDK 16 features</a></li>
+<li><img alt="Start of content that applies to Java 16 plus" src="../cr/java16plus.png" /> <a href="#new-jdk-16-features">New JDK 16 features</a></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#support-for-the-verbosemodule-option">Support for the <code>-verbose:module</code> option</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -4035,7 +4035,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>OpenJ9 release 0.25.0 supports OpenJDK 16. OpenJDK 16 with Eclipse OpenJ9 is <em>not</em> a long term support (LTS) release.</p>
 <p>Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 release 0.25.0, testing at the project is not complete and therefore support for new features that apply to these Java versions is not available.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
-<h3 id="new-jdk-16-features"><img alt="Start of content that applies to Java 16" src="../cr/java16.png" /> New JDK 16 features</h3>
+<h3 id="new-jdk-16-features"><img alt="Start of content that applies to Java 16 plus" src="../cr/java16plus.png" /> New JDK 16 features</h3>
 <p>The following features are supported by OpenJ9:</p>
 <ul>
 <li><a href="https://openjdk.java.net/jeps/338">JEP 338</a>: Vector API (incubator)<ul>
@@ -4057,7 +4057,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="https://openjdk.java.net/jeps/380">JEP 380</a>: Unix-domain socket channels</li>
 <li><a href="https://openjdk.java.net/jeps/394">JEP 394</a>: Pattern matching for <code>instanceof</code></li>
 <li><a href="https://openjdk.java.net/jeps/396">JEP 396</a>: Strongly encapsulate JDK internals by default</li>
-<li><a href="https://openjdk.java.net/jeps/392">JEP 392</a>: Packaging tool</li>
+<li><a href="https://openjdk.java.net/jeps/392">JEP 392</a>: Packaging tool<ul>
+<li><strong>(Linux&reg;, macOS&reg;, and Windows&trade; only)</strong> Promoted from incubation to a production-ready feature in this release. See <a href="../introduction/#using-jpackage">Using <code>jpackage</code></a> for details.</li>
+</ul>
+</li>
 </ul>
 <p>You can find the full list of features for JDK 16 at the <a href="http://openjdk.java.net/projects/jdk/16/">OpenJDK project</a>. Any remaining features that are listed do not apply to OpenJ9.</p>
 <p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <strong>Note:</strong> Applications might be adversely affected by
