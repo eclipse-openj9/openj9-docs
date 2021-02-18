@@ -141,10 +141,15 @@ Runtime options are specified on the command line and include system properties,
 
 If you do not specify any options on the command line at run time, the OpenJ9 VM starts with default settings that define how it operates. For more information about these settings, see [Default settings for the OpenJ9 VM](openj9_defaults.md).
 
-## ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Using Jlink
+## ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Using jlink
 
 On Java 11 and later, you can use the `jlink` utility to create a custom OpenJ9 runtime image, which allows you to optimize image size.
 If you do not require translations from the English language, the translation files can be removed to further optimize the size. You can achieve this by specifying the `--exclude-files=**java_**.properties` option when you run `jlink`. The default English `java.properties` file is unaffected.
+
+## Using jpackage
+**(Linux, macOS, and Windows only)**
+
+You can use the `jpackage` utility to package a Java application into a platform-specific package that includes all of the necessary dependencies. Full details of the tool are available at [JEP 392: Packaging Tool](https://openjdk.java.net/jeps/392). Instructions for using it and the various options available, are documented in the Oracle Tool Specifications: [The jpackage Command](https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html).
 
 ## Troubleshooting
 

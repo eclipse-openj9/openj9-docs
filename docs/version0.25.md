@@ -27,7 +27,7 @@
 The following new features and notable changes since v 0.24.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- ![Start of content that applies to Java 16](cr/java16.png) [New JDK 16 features](#new-jdk-16-features)
+- ![Start of content that applies to Java 16 plus](cr/java16plus.png) [New JDK 16 features](#new-jdk-16-features)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for the `-verbose:module` option](#support-for-the-verbosemodule-option)
 
 
@@ -41,7 +41,7 @@ Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 re
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### ![Start of content that applies to Java 16](cr/java16.png) New JDK 16 features
+### ![Start of content that applies to Java 16 plus](cr/java16plus.png) New JDK 16 features
 
 The following features are supported by OpenJ9:
 
@@ -63,6 +63,7 @@ The following features are implemented in OpenJDK and available in any builds of
 - [JEP 394](https://openjdk.java.net/jeps/394): Pattern matching for `instanceof`
 - [JEP 396](https://openjdk.java.net/jeps/396): Strongly encapsulate JDK internals by default
 - [JEP 392](https://openjdk.java.net/jeps/392): Packaging tool
+    - **(Linux&reg;, macOS&reg;, and Windows&trade; only)** Promoted from incubation to a production-ready feature in this release. See [Using `jpackage`](introduction.md#using-jpackage) for details.
 
 You can find the full list of features for JDK 16 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/16/). Any remaining features that are listed do not apply to OpenJ9.
 
@@ -80,6 +81,7 @@ WARNING: All illegal access operations will be denied in a future release
 ### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for the `-verbose:module` option
 
 The `-verbose:module` option is now supported for Java 11 and later releases. This option writes information to `stderr` for each module that is loaded and unloaded.
+
 
 ## Full release information
 
