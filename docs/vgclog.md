@@ -87,11 +87,10 @@ After recording the configuration in the *Initialization* section of the logs, t
 
 ### GC Cycles
 
-The start of a GC cycle is recorded by the `<cycle-start>` XML element. The trigger for the start of a GC cycle is captured in a preceding element to the `<cycle-start>`. The most common triggers for starting or ending a GC cycle or GC increment are:
+The start of a GC cycle is recorded by the `<cycle-start>` XML element. The trigger for the start of a GC cycle is captured in a preceding element to the `<cycle-start>` element. A GC cycle or GC increment is triggered for one of the following reasons:
 
-- Allocation failures, recorded by the `<af-start>` element. Allocation failures occur when a specific area of the heap is unable to fulfil allocation.
-- Memory thresholds being reached, recorded by the `reason` attribute of the element associated with the start of the first GC increment of the cycle. Memory threshold values, which set the conditions for performing certain types of GC activities, are defined by the policy type and configuration options.
-- Allocation taxation, recorded by the `reason` attribute of the element associated with the GC increment end or cycle end. When the GC has achieved the specific allocation threshold required of the cycle or increment, the allocation taxation triggers the end of the GC increment or cycle.
+- An allocation failure. Allocation failures occur when a request for memory fails because there is not enough memory available in the heap. The element `<af-start>` logs an allocation failure trigger. 
+- A memory threshold is reached. Memory threshold values, which set the conditions for performing certain types of GC cycles or increments, are defined by the policy type and configuration options. For more information about the particular elements or attributes used to record a memory threshold trigger, see specific policies and cycles in [Log Examples](vgclog_examples.md).
 
 The following XML structure is an example of the verbose GC logs that are generated from the Generational Concurrent GC policy (`-Xgcpolicy:gencon`). In this example, the lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity: 
 

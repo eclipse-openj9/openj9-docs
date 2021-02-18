@@ -8,12 +8,12 @@ As detailed in [`gencon` policy (default)](gc.md#gencon-policy-default), this po
 
 The start of a `gencon` cycle is recorded in the log by the following elements and attributes:
 
-| GC cycle | Value of `type` attribute| Element for cycle trigger|  Triggering reason|
+| GC cycle | Value of `type` attribute| Element that logs the cycle trigger|  Trigger reason|
 |----------|----------------------------|------------------------------|------------------|
-|Global    | `global`                   | `<concurrent-kickoff>`       | Threshold reached. Cycle trigger element is located after the `cycle-start>' element|
-|Partial | `scavenge`                   | `<af-start>`                 |Allocation failure. Cycle trigger element is located before the `cycle-start` element|
+|Global    | `global`                   | `<concurrent-kickoff>`       | Memory threshold reached. Cycle trigger element is located before the `<cycle-start>` element|
+|Partial | `scavenge`                   | `<af-start>`                 |Allocation failure. Cycle trigger element is located before the `<cycle-start>` element|
 
-To locate a particular type of cycle, you can search for the elements that log the cycle trigger.
+The element that records the cycle trigger is located before the '<cycle-start>` element and can be used to locate a particuler type of cycle. 
 
 You can analyze the increments and operations that are associated with a particular type of cycle by locating and interpreting the elements in the following table:
 
@@ -334,11 +334,11 @@ The global GC cycle follows a general structure in the verbose GC log as shown. 
 
 ```
 
-The first activity in the cycle is recorded by a `<concurrent-kickoff>` element, which records the start of the first of three increments that make up a `gencon` Global GC cycle. The `<concurrent-kickoff>` element contains:
+The first activity in the cycle is recorded by a `<concurrent-kickoff>` element, which records the start of the first of three increments that make up a `gencon` Global GC cycle. The `<concurrent-kickoff>` element records:
 
-- the reason for the launch of the GC cycle
-- The target number of bytes the cycle aims to reclaim in the heap
-- The current available memory in the different parts of the heap
+- the reason why the GC cycle was triggered. For a `gencon` global cycle, the cycle is triggered when the amount of available memory reaches a particular threshold value.
+- The target number of bytes the cycle aims to reclaim in the heap.
+- The current available memory in the different parts of the heap.
 
 ```xml
 <concurrent-kickoff id="12362" timestamp="2020-10-18T13:35:44.341">
