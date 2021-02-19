@@ -138,11 +138,11 @@ Some elements serve as markers for starting and ending parts of the GC cycle and
 
 ### GC increments and interleaving
 
-Some GC cycle types are executed in piecemeal blocks of operations or phases called GC increments. This reduces pause times by enabling blocks of operations or phases to interleave with operations and phases from other types of cycle. For example, consider the GC for the `gencon` policy which uses partial cycles and global cycles. The partial cycle consists of just 1 GC operation, scavenge, that runs on the *nursery* area during a STW pause. The global cycle, which runs when the *tenure* area is close to full, consists of some operations that are run during a stop the world pause, and others that are run concurrently. 
+Some GC cycle types are executed in piecemeal blocks of operations or phases called GC increments. This reduces pause times by enabling blocks of operations or phases to interleave with operations and phases from other types of cycle. 
 
-The global cycle is split into three increments - the initial and final increments which run during an STW pause, and an intermediate increment that executes it's GC operations concurrently. By splitting the global cycle operations and phases into increments, the STW scavenge operation of the partial GC cycle can run on the *nursery* area while the intermediate increment of the global GC cycle – a concurrent mark-sweep operation - runs concurrently on the *tenure* area. 
+For example, consider the garbage collector for the `gencon` policy which uses partial cycles and global cycles. The partial cycle consists of just 1 GC operation, scavenge, that runs on the *nursery* area during a STW pause. However the `gencon` global cycle, which runs when the *tenure* area is close to full, is split into operations that are run during a stop the world pause, and others that can run concurrently. Specifically, the `gencon` global cycle is split into three increments - the initial and final increments which run during a relatively short STW pause, and an intermediate increment which runs it's GC operations concurrently. By splitting the global cycle operations into these increments, the STW scavenge operation of the partial GC cycle can run on the *nursery* area while the intermediate increment, which represents the majority of the global GC cycle's work, runs concurrently on the *tenure* area. 
 
-You can see this interleaving of the increments in the verbose GC log. The following table illustrates how the different increments interleave in a `gencon` policy log (for clarity, not all GC activities are listed):
+You can see this interleaving of the increments in the verbose GC log. The following table illustrates how the different increments of an example log interleave for the `gencon` policy (for clarity, not all GC activities are listed):
 
 <table style="width:100%">
 
@@ -159,17 +159,17 @@ You can see this interleaving of the increments in the verbose GC log. The follo
     <td>1-87</td>
     <td colspan="2">initialization</th>
   </tr>
-<tr>
+  <tr>
     <td>87-51651</td>
     <td> - </td>
     <td> series of `gencon` partial cycles start and finish </td>
   </tr>
-<tr>
+  <tr>
     <td>51655</td>
     <td> - </td>
-    <td>partial cycle initializes</td>
+    <td>partial cycle starrs</td>
   </tr>
-<tr>
+  <tr>
     <td>51656</td>
     <td> - </td>
     <td>scavenge increment runs</td>
@@ -180,19 +180,19 @@ You can see this interleaving of the increments in the verbose GC log. The follo
     <td>partial cycle ends</td>
   </tr>
   <tr>
-    <td>51700</td>
+    <td>517676</td>
     <td> blank line - no activities logged</td>
     <td>-</td>
   </tr>
-<tr>
-    <td>51701</td>
+  <tr>
+    <td>51677</td>
     <td> global cycle's initial increment marked</td>
     <td>-</td>
   </tr>
 
   <tr>
-    <td>51707</td>
-    <td> global cycle initializes</td>
+    <td>51685</td>
+    <td> global cycle starts</td>
     <td>-</td>
   </tr>
 
@@ -204,7 +204,7 @@ You can see this interleaving of the increments in the verbose GC log. The follo
   <tr>
     <td>51714</td>
     <td> concurrent increment runs</td>
-    <td>partial cycle initializes</td>
+    <td>partial cycle starts</td>
   </tr>
 
   <tr>
@@ -212,11 +212,13 @@ You can see this interleaving of the increments in the verbose GC log. The follo
     <td> concurrent increment runs</td>
     <td>scavenge increment runs</td>
   </tr>
+
   <tr>
     <td>51754</td>
     <td> concurrent increment runs</td>
     <td>partial cycle ends</td>
   </tr>
+
   <tr>
     <td>51758</td>
     <td> blank line - no activities logged </td>
@@ -227,12 +229,13 @@ You can see this interleaving of the increments in the verbose GC log. The follo
     <td> final collection increment runs </td>
     <td></td>
   </tr>
+
   <tr>
     <td>51867</td>
     <td> global cycle ends</td>
     <td></td>
   </tr>
-  </table>
+</table>
 
 The XML elements and attribute values that define operations and increments of a particular cycle are specific to the policy and type of cycle. To follow how the different cycles's increments interleave in a log, you can locate the elements and attributes that record the increments and operations belonging to a particular type of cycle. 
 
