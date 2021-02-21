@@ -29,6 +29,7 @@ The following new features and notable changes since v 0.24.0 are included in th
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 16 plus](cr/java16plus.png) [New JDK 16 features](#new-jdk-16-features)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for the `-verbose:module` option](#support-for-the-verbosemodule-option)
+- [Change the default `zlib` library on AIX&reg;](#change-the-default-zlib-library-on-aix)
 
 
 ## Features and changes
@@ -82,6 +83,11 @@ WARNING: All illegal access operations will be denied in a future release
 
 The `-verbose:module` option is now supported for Java 11 and later releases. This option writes information to `stderr` for each module that is loaded and unloaded.
 
+### Change the default `zlib` library on AIX&reg;
+
+OpenJ9 for AIX&reg; uses the system `zlib` library by default instead of a bundled copy.
+
+OpenJ9 on AIX&reg; systems uses the hardware-accelerated `zlibNX` if the Nest accelerators (NX) co-processor is enabled and the library is installed. To learn more about hardware acceleration and the `zlibNX` library see [Hardware acceleration](introduction.md#hardware-acceleration).
 
 ## Full release information
 

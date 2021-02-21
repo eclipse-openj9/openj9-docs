@@ -133,6 +133,10 @@ GPU processing is supported only on Linux little-endian systems, such as x86-64 
 
 Special consideration is needed when using the WDDM driver model for GPUs on Windows. Using the WDDM driver model means the GPU is also used as a display device and as such is subject to the [Timeout Detection and Recovery (TDR) mechanism](https://docs.microsoft.com/en-us/windows-hardware/drivers/display/timeout-detection-and-recovery) of Windows. If you are running demanding GPU workloads, you should increase the timeout from the default 2 seconds. More detail may be found in [NVIDIA's Installation Guide for Windows](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#driver-model).
 
+### Hardware acceleration
+
+OpenJ9 on AIX&reg; uses the hardware-accelerated `zlibNX` library when available. `zlibNX` is an enhanced version of the `zlib` compression library that supports hardware-accelerated data compression and decompression by using the Nest accelerators (NX) co-processor, available in the IBM POWER9&reg; or newer processors. The library can be installed on AIX&reg; 7.2 with Technology Level 4 Expansion Pack and later. OpenJ9 in AIX&reg; systems with the NX co-processor enabled and `zlibNX` installed will make use of the library. To learn more about `zlibNX`, see [Data compression by using the zlibNX library](https://www.ibm.com/support/knowledgecenter/ssw_aix_72/performance/zlibNX.html).
+
 ## Runtime options
 
 Runtime options are specified on the command line and include system properties, standard options, nonstandard (**-X**) options, and **-XX** options. For a detailed list of runtime options, see [OpenJ9 command-line options](cmdline_specifying.md)
