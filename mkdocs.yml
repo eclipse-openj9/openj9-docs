@@ -99,17 +99,18 @@ markdown_extensions:
 nav:
 
     - "About the docs"                                                           : index.md
-    - "AdoptOpenJDK builds"                                                      : adoptopenjdk.md
+    - "OpenJ9 builds"                                                            : builds.md
     - "Getting started"                                                          : introduction.md
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.25.0"                                                       : version0.25.md
         - "Version 0.24.0"                                                       : version0.24.md
         - "Version 0.23.0"                                                       : version0.23.md
         - "Version 0.22.0"                                                       : version0.22.md
-        - "Version 0.21.0"                                                       : version0.21.md
         - "Earlier releases" :
+            - "Version 0.21.0"                                                   : version0.21.md
             - "Version 0.20.0"                                                   : version0.20.md
             - "Version 0.19.0"                                                   : version0.19.md
             - "Version 0.18.1"                                                   : version0.18.md
@@ -337,6 +338,7 @@ nav:
             - "-XX:ConcGCThreads"                                                : xxconcgcthreads.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
             - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
+            - "-XX:DiagnoseSyncOnValueBasedClasses"                              : xxdiagnosesynconvaluebasedclasses.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
@@ -410,5 +412,6 @@ nav:
             - "Monitoring and management"                                         : api-langmgmt.md
             - "Shared classes"                                                    : api-shrc.md
         - "Java 11 API"                                                           : api-jdk11.md
+        - "Java 16 API"                                                           : api-jdk16.md
 
     - "Legal"                                                                     : legal.md

@@ -52,7 +52,7 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 | Signal            | Type | Description                                                        | Option to disable signal  |
 | ------------------|------|--------------------------------------------------------------------|-----------------------|
 | `SIGBUS (7)`      | Exc  | Incorrect memory access (data misalignment)                        | `-Xrs` or `-Xrs:sync` |
-| `SIGSEV (11)`     | Exc  | Incorrect memory access (write to inaccessible area)               | `-Xrs` or `-Xrs:sync` |
+| `SIGSEGV (11)`    | Exc  | Incorrect memory access (write to inaccessible area)               | `-Xrs` or `-Xrs:sync` |
 | `SIGILL (4)`      | Exc  | Illegal instruction (attempt to call unknown machine instruction)  | `-Xrs` or `-Xrs:sync` |
 | `SIGFPE (8)`      | Exc  | Floating point exception (divide by zero)                          | `-Xrs` or `-Xrs:sync` |
 | `SIGABRT (6)`     | Err  | Abnormal termination, raised by the VM when a VM fault is detected | `-Xrs` or `-Xrs:sync` |
@@ -76,7 +76,7 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 | Signal            | Type | Description                                                        | Option to disable signal  |
 | ------------------|------|--------------------------------------------------------------------|-----------------------|
 | `SIGBUS (10)`     | Exc  | Incorrect memory access (data misalignment)                        | `-Xrs` or `-Xrs:sync` |
-| `SIGSEV (11)`     | Exc  | Incorrect memory access (write to inaccessible area)               | `-Xrs` or `-Xrs:sync` |
+| `SIGSEGV (11)`    | Exc  | Incorrect memory access (write to inaccessible area)               | `-Xrs` or `-Xrs:sync` |
 | `SIGILL (4)`      | Exc  | Illegal instruction (attempt to call unknown machine instruction)) | `-Xrs` or `-Xrs:sync` |
 | `SIGFPE (8)`      | Exc  | Floating point exception (divide by zero)                          | `-Xrs` or `-Xrs:sync` |
 | `SIGABRT (6)`     | Err  | Abnormal termination, raised by the VM when a VM fault is detected | `-Xrs` or `-Xrs:sync` |
@@ -118,7 +118,7 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 | Signal            | Type | Description                                                        | Option to disable signal  |
 | ------------------|------|--------------------------------------------------------------------|-----------------------|
 | `SIGBUS (10)`     | Exc  | Incorrect memory access (data misalignment)                        | `-Xrs` or `-Xrs:sync` |
-| `SIGSEV (11)`     | Exc  | Incorrect memory access (write to inaccessible area)               | `-Xrs` or `-Xrs:sync` |
+| `SIGSEGV (11)`    | Exc  | Incorrect memory access (write to inaccessible area)               | `-Xrs` or `-Xrs:sync` |
 | `SIGILL (4)`      | Exc  | Illegal instruction (attempt to call unknown machine instruction)) | `-Xrs` or `-Xrs:sync` |
 | `SIGFPE (8)`      | Exc  | Floating point exception (divide by zero)                          | `-Xrs` or `-Xrs:sync` |
 | `SIGABRT (3)`     | Err  | Abnormal termination, raised by the VM when a VM fault is detected | `-Xrs` or `-Xrs:sync` |
@@ -139,7 +139,7 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 | Signal            | Type | Description                                                        | Option to disable signal   |
 | ------------------|------|--------------------------------------------------------------------|-----------------------|
 | `SIGBUS (10)`     | Exc  | Incorrect memory access (data misalignment)                        | `-Xrs` or `-Xrs:sync` |
-| `SIGSEV (11)`     | Exc  | Incorrect memory access (write to inaccessible area)               | `-Xrs` or `-Xrs:sync` |
+| `SIGSEGV (11)`    | Exc  | Incorrect memory access (write to inaccessible area)               | `-Xrs` or `-Xrs:sync` |
 | `SIGILL (4)`      | Exc  | Illegal instruction (attempt to call unknown machine instruction)) | `-Xrs` or `-Xrs:sync` |
 | `SIGFPE (8)`      | Exc  | Floating point exception (divide by zero)                          | `-Xrs` or `-Xrs:sync` |
 | `SIGABRT (6)`     | Err  | Abnormal termination, raised by the VM when a VM fault is detected | `-Xrs` or `-Xrs:sync` |

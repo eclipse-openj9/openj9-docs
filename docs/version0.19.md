@@ -30,7 +30,7 @@
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Option to print code cache usage to `stderr` at VM shutdown](#option-to-print-code-cache-usage-to-stderr-at-vm-shutdown)
 - [![Start of content that applies to Java 8](cr/java8.png) `StringBuffer` and `StringBuilder` above 1 G grow to the maximum size](#stringbuffer-and-stringbuilder-above-1-g-grow-to-the-maximum-size)
-- [![Start of content that applies to Java 14+](cr/java14plus.png) **jpackage** packaging tool platform support](#jpackage-packaging-tool-platform-support)
+- [![Start of content that applies to Java 14+](cr/java14plus.png) jpackage packaging tool platform support](#jpackage-packaging-tool-platform-support)
 - [![Start of content that applies to Java 14+](cr/java14plus.png) Extended messages for `NullPointerException` not yet implemented](#extended-messages-for-nullpointerexception-not-yet-implemented)
 - [Compiler changes for Linux](#compiler-changes-for-linux)
 
@@ -56,9 +56,9 @@ A new command line option [-XX:+PrintCodeCache](xxprintcodecache.md) allows you 
 
 A 1 G `char[]` or larger `StringBuffer` and `StringBuilder` now immediately grows to the maximum possible size for <i>all</i> current versions of Java, including Java 8. For Java 8 only, you can revert to the previous behavior of growing only as much as necessary to accommodate the `String` being added, by using the option, [`-Djava.lang.stringBuffer.growAggressively=false`](djavalangstringbuffergrowaggressively.md).
 
-### ![Start of content that applies to Java 14+](cr/java14plus.png) **jpackage** packaging tool platform support
+### ![Start of content that applies to Java 14+](cr/java14plus.png) jpackage packaging tool platform support
 
-The **jpackage** utility is described in JEP 343 as a tool that "packages a Java application into a platform-specific package that includes all of the necessary dependencies." Full details of the tool are available at [JEP 343: Packaging Tool](https://openjdk.java.net/jeps/343). Be aware that **jpackage** is supported on only the following OpenJ9 platforms: Linux&reg;, macOS&reg;, and Windows&trade;. It is _not_ supported on AIX&reg; or z/OS&reg; platforms.
+The `jpackage` utility is described in JEP 343 as a tool that "packages a Java application into a platform-specific package that includes all of the necessary dependencies." Full details of the tool are available at [JEP 343: Packaging Tool](https://openjdk.java.net/jeps/343). Be aware that `jpackage` is supported on only the following OpenJ9 platforms: Linux&reg;, macOS&reg;, and Windows&trade;. It is _not_ supported on AIX&reg; or z/OS&reg; platforms.
 
 ### ![Start of content that applies to Java 14+](cr/java14plus.png) Extended messages for `NullPointerException` not yet implemented
 

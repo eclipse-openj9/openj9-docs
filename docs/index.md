@@ -28,9 +28,9 @@ Welcome to the user documentation for the Eclipse OpenJ9 virtual machine (VM).
 
 This user documentation supports the configuration, tuning, and diagnosis of the OpenJ9 VM in an OpenJDK runtime. However, due to differences between the Java SE class libraries, specific options might apply only to one Java SE version. Icons are used to indicate where differences apply. For example:
 
-![Start of content that applies only to Java 8 (LTS)](cr/java8.png) This sentence applies only to Java 8 binaries that include the OpenJ9 VM. Icons for LTS releases are this colour. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+![Start of content that applies only to Java 11 (LTS)](cr/java11.png) This sentence applies only to Java 11 binaries that include the OpenJ9 VM. Icons for LTS releases are this colour. ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 
-![Start of content that applies only to Java 15 and later](cr/java15plus.png) This sentence applies only to Java 15 or later binaries that include the OpenJ9 VM. Icons for feature releases are this colour. ![End of content that applies only to Java 15 or later](cr/java_close.png)
+![Start of content that applies only to Java 16 and later](cr/java16plus.png) This sentence applies only to Java 16 or later binaries that include the OpenJ9 VM. Icons for feature releases are this colour. ![End of content that applies only to Java 16 or later](cr/java_close.png)
 
 To see which Java releases are LTS releases and which are feature releases, and for information about release cadence, supported platforms, and build environments, see [Supported environments](openj9_support.md).
 
@@ -58,6 +58,5 @@ Several versions of the documentation are available, covering all releases of Op
 - [Eclipse OpenJ9 website home page](https://www.eclipse.org/openj9)
 - [Eclipse OpenJ9 GitHub repository](https://github.com/eclipse/openj9)
 - [Eclipse Foundation OpenJ9 project page](https://projects.eclipse.org/projects/technology.openj9)
-- [Pre-built binaries from the AdoptOpenJDK project](https://adoptopenjdk.net/releases.html?variant=openjdk8&jvmVariant=openj9)
 
 <!-- ==== END OF TOPIC ==== index.md ==== -->

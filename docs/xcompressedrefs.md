@@ -51,5 +51,6 @@ Compressed references are enabled by default when [`-Xmx`](xms.md) &le; 57 GB.
 - [Compressed references](allocation.md#compressed-references)
 
 
+
 <!-- ==== END OF TOPIC ==== xcompressedrefs.md ==== -->
 <!-- ==== END OF TOPIC ==== xnocompressedrefs.md ==== -->
