@@ -416,6 +416,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#zos-support-for-the-sysname-dump-token" class="md-nav__link">
+    z/OS support for the %sysname dump token
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4004,6 +4011,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#zos-support-for-the-sysname-dump-token" class="md-nav__link">
+    z/OS support for the %sysname dump token
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4068,6 +4082,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><img alt="Start of content that applies to Java 16 plus" src="../cr/java16plus.png" /> <a href="#new-jdk-16-features">New JDK 16 features</a></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#support-for-the-verbosemodule-option">Support for the <code>-verbose:module</code> option</a></li>
 <li><a href="#change-the-default-zlib-library-on-aix">Change the default <code>zlib</code> library on AIX&reg;</a></li>
+<li><a href="#zos-support-for-the-sysname-dump-token">z/OS support for the <code>%sysname</code> dump token</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -4119,6 +4134,8 @@ WARNING: All illegal access operations will be denied in a future release
 <h3 id="change-the-default-zlib-library-on-aix">Change the default <code>zlib</code> library on AIX&reg;</h3>
 <p>OpenJ9 for AIX&reg; uses the system <code>zlib</code> library by default instead of a bundled copy.</p>
 <p>OpenJ9 on AIX&reg; systems uses the hardware-accelerated <code>zlibNX</code> if the Nest accelerators (NX) co-processor is enabled and the library is installed. To learn more about hardware acceleration and the <code>zlibNX</code> library see <a href="../introduction/#hardware-acceleration">Hardware acceleration</a>.</p>
+<h3 id="zos-support-for-the-sysname-dump-token">z/OS support for the <code>%sysname</code> dump token</h3>
+<p>The <code>%sysname</code> dump token is added on z/OS, which equates to the SYSNAME sysparm. See <a href="../xdump/#dump-agent-tokens">Dump agent tokens</a>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.24.0 and v 0.25.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.25/0.25.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.25.md ==== -->
