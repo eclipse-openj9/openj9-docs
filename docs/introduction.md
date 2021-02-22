@@ -135,7 +135,7 @@ Special consideration is needed when using the WDDM driver model for GPUs on Win
 
 ### Hardware acceleration
 
-OpenJ9 on AIX&reg; uses the hardware-accelerated `zlibNX` library when available. `zlibNX` is an enhanced version of the `zlib` compression library that supports hardware-accelerated data compression and decompression by using the Nest accelerators (NX) co-processor, available in the IBM POWER9&reg; or newer processors. The library can be installed on AIX&reg; 7.2 with Technology Level 4 Expansion Pack and later. OpenJ9 in AIX&reg; systems with the NX co-processor enabled and `zlibNX` installed will make use of the library. To learn more about `zlibNX`, see [Data compression by using the zlibNX library](https://www.ibm.com/support/knowledgecenter/ssw_aix_72/performance/zlibNX.html).
+On AIX&reg; systems that contain the Nest accelerator (NX) co-processor, OpenJ9 can take advantage of the `zlibNX` library. This library is an enhanced version of the `zlib` compression library that supports hardware-accelerated data compression and decompression. The `zlibNX` library is supported on AIX version 7.2 TL4 and later and must be installed on the system. The Nest accelerator (NX) co-processor is available on IBM POWER9&reg; systems. To learn more about `zlibNX`, see [Data compression by using the zlibNX library](https://www.ibm.com/support/knowledgecenter/ssw_aix_72/performance/zlibNX.html).
 
 ## Runtime options
 

@@ -24,16 +24,19 @@
 
 # -XX:DiagnoseSyncOnValueBasedClasses
 
-![Start of content that applies only to Java 16 and later](cr/java16plus.png) This option provides warnings about improper attempts to synchronize on instances of a value-based class. ![End of content that applies only to Java 16 or later](cr/java_close.png)
+![Start of content that applies only to Java 16 and later](cr/java16plus.png) This HotSpot option provides warnings about improper attempts to synchronize on instances of a value-based class. The option is recognized by OpenJ9 for compatibility.
 
 
 ## Syntax
 
         -XX:DiagnoseSyncOnValueBasedClasses=<number>
 
-Where <number> is one of the following values:
 
-   - 1: OpenJ9 throws a VirtualMachineError on improper attempts to synchronize on instances of value-based classes.
-   - 2: OpenJ9 prints a warning message on improper attempts to synchronize on instances of value-based classes.
+| `<number>` value  | Effect                                       |
+|-------------------|----------------------------------------------|
+| 1                 | Generate `VirtualMachineError` error         |
+| 2                 | Print a warning message                      |
+
+
 
 <!-- ==== END OF TOPIC ==== xxdiagnosesynconvaluebasedclasses.md ==== -->

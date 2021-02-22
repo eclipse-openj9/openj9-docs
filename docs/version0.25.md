@@ -29,7 +29,7 @@ The following new features and notable changes since v 0.24.0 are included in th
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 16 plus](cr/java16plus.png) [New JDK 16 features](#new-jdk-16-features)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for the `-verbose:module` option](#support-for-the-verbosemodule-option)
-- [Change the default `zlib` library on AIX&reg;](#change-the-default-zlib-library-on-aix)
+- [Enabling `zlibNX` hardware-accelerated data compression and decompression on AIX](#enabling-zlibnx-hardware-accelerated-data-compression-and-decompression-on-aix)
 
 
 ## Features and changes
@@ -47,9 +47,9 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 The following features are supported by OpenJ9:
 
 - [JEP 338](https://openjdk.java.net/jeps/338): Vector API (incubator)
-    - The OpenJ9 project is adding optimizations for this feature.
+    - OpenJ9 adds optimizations for this feature.
 - [JEP 390](https://openjdk.java.net/jeps/390): Warnings for value-based classes
-    - The OpenJ9 project is adding option `-XX:DiagnoseSyncOnValueBasedClasses=<number>`. See [`-XX:DiagnoseSyncOnValueBasedClasses=<number>`](xxdiagnosesynconvaluebasedclasses.md) for more details.
+    - OpenJ9 adds option [`-XX:DiagnoseSyncOnValueBasedClasses=<number>`](xxdiagnosesynconvaluebasedclasses.md) for compatibility with the reference implementation.
 - [JEP 395](https://openjdk.java.net/jeps/395): Records
 - [JEP 397](https://openjdk.java.net/jeps/397): Sealed Classes (second preview)
 
@@ -84,11 +84,11 @@ WARNING: All illegal access operations will be denied in a future release
 
 The `-verbose:module` option is now supported for Java 11 and later releases. This option writes information to `stderr` for each module that is loaded and unloaded.
 
-### Change the default `zlib` library on AIX&reg;
+### Enabling `zlibNX` hardware-accelerated data compression and decompression on AIX
 
-OpenJ9 for AIX&reg; uses the system `zlib` library by default instead of a bundled copy.
+By default, AIX&reg; uses the system `zlib` library for data compression and decompression.
 
-OpenJ9 on AIX&reg; systems uses the hardware-accelerated `zlibNX` if the Nest accelerators (NX) co-processor is enabled and the library is installed. To learn more about hardware acceleration and the `zlibNX` library see [Hardware acceleration](introduction.md#hardware-acceleration).
+On systems that contain the Nest accelerator (NX) co-processor, OpenJ9 now uses the `zlibNX` library instead, if it is installed. To learn more about hardware acceleration and the `zlibNX` library, see [Hardware acceleration](introduction.md#hardware-acceleration).
 
 ## Full release information
 
