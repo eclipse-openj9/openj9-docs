@@ -8,12 +8,12 @@ As detailed in [`gencon` policy (default)](gc.md#gencon-policy-default), this po
 
 The start of a `gencon` cycle is recorded in the log by the following elements and attributes:
 
-| GC cycle | Value of `type` attribute| Element that logs the cycle trigger|  Trigger reason|
+| GC cycle | Value of `type` attribute of the `<cycle-start>` and `<cycle-end` ``elements | Element that logs the cycle trigger|  Trigger reason|
 |----------|----------------------------|------------------------------|------------------|
 |Global    | `global`                   | `<concurrent-kickoff>`       | Low free memory tenure area threshold reached. Cycle trigger element is located before the `<cycle-start>` element|
 |Partial | `scavenge`                   | `<af-start>`                 |Allocation failure. Cycle trigger element is located before the `<cycle-start>` element|
 
-The element that records the cycle trigger is located before the '<cycle-start>` element and can be used to locate a particuler type of cycle. 
+You can use the `type` attribute of the `<gc-start>` and `<gc-end>` elements to locate a particular cycle. YOu can also locate a particular type of cycle by searching for the element that records the cycle trigger, which is located before the `<cycle-start>` element.
 
 You can analyze the increments and operations that are associated with a particular type of cycle by locating and interpreting the elements in the following table:
 
@@ -33,6 +33,8 @@ The following examples use log excerpts to show how the different types of `genc
 ### Scavenge partial GC cycle
 
 The following example is taken from a `gencon` log. The output is broken down into sections with supporting text to explain the GC processing that is taking place.
+
+To search for a scavenge partial GC cycle, you can search for the `type` attribute value `scavenge` in `cycle-start` and `cycle-end` elements, or search for the `<af>` element that logs the allocation failure trigger.
 
 By default, the `gencon` partial GC cycle runs by using a single *stop-the-world* (STW) pause. The cycle performs only 1 operation,  a *scavenge* operation, which runs only on the *nursery* area. The cycle consists of a single GC increment, which is labelled using the elements shown in the following table:
 
@@ -60,7 +62,7 @@ The scavenge partial GC cycle follows a general structure in the verbose GC log 
 
 </gc-start>
 
-<allocation-stats/>         (memory allocation status)
+<allocation-stats/>         (snapshot of application threads status taken before cycle started)
 
 <gc-op> “scavenge"</gc-op>  (scavenge operation completed)
 
@@ -136,7 +138,7 @@ The heap memory allocation at the start of the increment is as follows:
 - The *survivor* space of the *nursery* area is reported as 'full' to reflect that no available memory is available to allocate to the mutator threads. The entire *survivor* space is reserved for GC operations during the GC increment. 
 - The *tenure* area has 414.96MB (414960320) of free memory available.
 
-The next element, `<allocation-stats>`, shows a snapshot that was taken before the cycle started of the allocation status of the mutator threads. In this example, the thread that used the most memory was `LargeThreadPool-thread-79`.
+The next element `<allocation-stats>` shows a snapshot, which was taken before the cycle started, of the allocation status of the mutator threads. In this example, the thread that used the most memory was `LargeThreadPool-thread-79`.
 
 ```xml
 <allocation-stats totalBytes="235362176" >
@@ -207,7 +209,7 @@ The cycle ends (`<cycle-end>`). The following `<allocation-satisfied>` element i
 
 #### Summary of the example
 
-By analyzing the structure and elements of the example log output, this example shows that the global cycle has the following characteristics:
+Analyzing the structure and elements of this example log output shows that this example global cycle has the following characteristics:
 
 - The GC cycle begins with a STW pause due to an allocation failure.
 
@@ -227,6 +229,8 @@ When concurrent scavenge mode is enabled, the partial GC cycle is run as a [conc
 |Scavenge     |intermediate        | concurrent         | `<concurrent-start>`, `<concurrent-end>`|`<warning details=>`  Root scan, live objects traversed and evacuated (copy-forwarded). Reported as a scavenge operation |
 |Scavenge     |final     | STW              | `<gc-start>`, `<gc-end>` |weak roots scanning, reported as a complex scavenge operation (`<gc-op>`) containing specific details for each of weak root groups  |
 
+To search for a scavenge partial GC cycle, you can search for the `type` attribute value `scavenge` in `cycle-start` and `cycle-end` elements, or search for the `<af>` element that logs the allocation failure trigger.
+
 ### Global GC cycle
 
 The following example shows how a global GC cycle is recorded in a `gencon` policy verbose GC log. The output is broken down into sections with supporting text to explain the GC processing that is taking place.
@@ -235,15 +239,17 @@ The global GC cycle runs when the *tenure* area is close to full, which typicall
 
  [The global GC cycle is split into 3 increments](./vgclog.md#gc-increments-and-interleaving) that interleave with partial GC cycles. Splitting the cycle operations into the following increments means that the STW pause times can be as short as possible, with the majority of the GC work being done concurrently. Specifically, the intermediate increment of the global cycle can run concurrently on the *tenure* area while the partial GC cycle runs on the *nursery* area. The interleaving can be seen in the following example, where a partial GC cycle is logged between the initial and final increments of the global cycle.
 
+To search for a global cycle, you can search for the `type` attribute value `global` in `cycle-start` and `cycle-end` elements, or search for the element that logs the initial concurrent increment, `<concurrent-kickoff>`.
+
  The following elements log the GC increments and operations of the global GC cycle:
 
  |GC Operation         | GC increment| STW or concurrent| XML element of GC increment| Details                         |
 |---------------------|-------------|-------------------------------|--------------------------------------|-----------------------|
 |n/a - initiates cycle|initial      | STW              | `<concurrent-kickoff`        |No `<gc-op>` is logged. This increment just initiates the concurrent mark increment |
-|concurrent mark      |intermediate |concurrent                     | `<gc-start>`, `<gc-end>`     |`<concurrent-trace-info>` records the progress of the concurrent mark increment|
-|final collection     |final        | STW              | `<concurrent-global-final>`  |The increment is typically triggered when a card cleaning threshold is reached. The completion of a tracing phase can also trigger the increment. Operations and sub-operations include a final concurrent mark, a sweep, and an optional class unload and compact.|
+|concurrent mark      |intermediate |concurrent                     | none|`<concurrent-trace-info>` records the progress of the concurrent mark increment|
+|final collection     |final        | STW              | `<concurrent-global-final>`  |The increment is typically triggered when a card cleaning threshold is reached. The completion of a tracing phase can also trigger the increment. Operations include a final concurrent mark, a sweep, and an optional class unload and compact.|
 
-The global GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity. The structure includes a partial GC cycle that starts and finishes within the global cycle:
+The global GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity. Multiple partial GC cycles can start and finish between the start and end of a global GC cycle. In this example, the structure includes a single partial GC cycle within the global cycle:
 
 ```xml
 
@@ -274,7 +280,7 @@ The global GC cycle follows a general structure in the verbose GC log as shown. 
 
 <gc-start/>                 (global cycle final increment starts)
 
-<allocation-stats/>
+<allocation-stats/>         (snapshot of application threads status taken before cycle started)
 
 <mem-info>                  (memory status before operations)
 
@@ -313,10 +319,11 @@ The global GC cycle follows a general structure in the verbose GC log as shown. 
 
 ```
 
+
 The first activity in the cycle is recorded by a `<concurrent-kickoff>` element, which records the start of the first of three increments that make up a `gencon` Global GC cycle. The `<concurrent-kickoff>` element records:
 
-- the reason why the GC cycle was triggered. For a `gencon` global cycle, the cycle is triggered when the amount of available memory reaches a particular threshold value.
-- The target number of bytes the cycle aims to reclaim in the heap.
+- the reason why the GC cycle was triggered. For a `gencon` global cycle, the cycle is triggered when the amount of free memory has decreased to a threshold value, the `thresholdFreeBytes` value. 
+- The target number of bytes, `targetBytes`, that the cycle aims to mark concurrently
 - The current available memory in the different parts of the heap.
 
 ```xml
@@ -326,6 +333,10 @@ The first activity in the cycle is recorded by a `<concurrent-kickoff>` element,
 
 </concurrent-kickoff>
 ```
+
+For this example, the `remainingFree` bytes value of 32.9MB (32933776) is approaching the `thresholdFreeBytes` value of 33.0MB (33024922) so a global cycle is triggered.  
+
+This cycle aims to trace 239MB (239014924) during the concurrent increment. If the concurrent increment is interrupted by a card cleaning threshold value before it has traced 239MB, the final STW increment will complete the tracing during the STW pause.
 
 **Note:** To analyze specific parts of a cycle, you can search for the elements that mark a specific increment of the cycle. For example, you can search for the <concurrent-global-final> element to locate the final increment of the `gencon` global cycle. See the details of a particular cycle, such as the [`gencon` Global Cycle](./vgclog.md/#global-gc-cycle), to determine the element names for particular STW or concurrent GC increments or operations.
 
@@ -406,9 +417,9 @@ After the partial GC cycle completes and the STW pause finishes, the log records
 </concurrent-global-final>
 ```
 
-The final increment of a global cycle is triggered when the card-cleaning threshold is reached, indicated by the `reason` attribute of the `<concurrent-trace-info>` element.
+The `reason` attribute of the `<concurrent-trace-info>` child element indicates that this final STW increment of the global cycle was triggered because a card-cleaning threshold was reached. The concurrent tracing was terminated prematurely and the `targetBytes` concurrent tracing target, recorded at the cycle start by `<concurrent-kickoff>`, was not achieved concurrently. If the concurrent tracing completes without interruption, the `<concurrent-trace-info` element logs `reason=tracing completed`.  
 
-In the next section that begins with the `gc-start` element, you can find information about the amount of memory available (`<mem-info>`) and where it is located in the heap. This snapshot is taken before the final increment's operations and sub-operations are run and can be compared with a similar snapshot that is taken afterwards to understand the effect on the heap. The child element attribute values of the`<mem>` and `<mem-info>` elements indicate the status of the memory. 
+In the next section that begins with the `gc-start` element, you can find information about the amount of memory available (`<mem-info>`) and where it is located in the heap. This snapshot is taken before the final increment's operations and sub-operations are run and can be compared with a similar snapshot that is taken afterwards to understand the effect on the heap. The child element attribute values of the`<mem>` and `<mem-info>` elements indicate the status of the memory.
 
 **Note:** You can double check that the increment is associated with the GC global cycle in the example by checking the `contextid` attribute value matches the `id=12364` attribute value of the cycle's <gc-cycle> element.
 
@@ -450,11 +461,13 @@ In the next section that begins with the `gc-start` element, you can find inform
 </allocation-stats>
 ```
 
-For this example, at the start of this GC increment, 25% of the total heap is available as free memory. This free memory is split between the following areas of the heap:
+The element `<allocation-stats>` shows a snapshot, which was taken before the cycle started, of the allocation status of the mutator threads. In this example, the thread that used the most memory was `LargeThreadPool-thread-68`.
+
+For this example, at the start of this GC increment, the *tenure* area is low on free memory, as expected. 25% of the total heap is available as free memory, which is split between the following areas of the heap:
 
 - The *nursery* area, which has 87% of its total memory available as free memory. The free memory is only available in the *allocate* space of the *nursery* area. The *survivor* space has no free memory.
 
-- The *tenure* area, which has 5% of its total memory available as free memory. All of this free memory is in the long object allocation area(LOA). No free memory is available in the short object allocation area(SOA).
+- The *tenure* area, which has only 5% of its total memory available as free memory. Most of this free memory is in the large object allocation area(LOA). Almost no free memory is available in the small object allocation area(SOA). 
 
 The `<gc-op>` elements and their child elements contain information about the increment’s operations and sub-operations. The final increment of the `gencon` global cycle consists of multiple operations, each logged with a `<gc-op>` element. The type of operation is shown by the `<gc-op>` `type` attribute. There are 5 types of operation involved in the final increment of the example log:
 
@@ -555,17 +568,17 @@ After the GC operations and sub-operations of the final increment of the global 
 
 ### Summary of the example
 
-By analyzing the structure and elements of the example log output, this example shows that the global cycle has the following characteristics:
+Analyzing the structure and elements of this example log output shows that this example global cycle has the following characteristics:
 
 - The GC global cycle is triggered when a memory threshold is reached and begins with an STW pause
 
 - After the first increment of the GC global cycle completes, the STW pause ends and the second increment runs concurrently.
 
-- While the second increment is running concurrently, a partial GC cycle starts and finishes.
+- A single partial GC cycle starts and finishes between the start and end of the concurrent increment.
 
-- When the second increment completes, an STW pause begins so that the third and final increment of the global cycle, which consists of five operations and sub-operations, can run.
+-A STW pause begins after the concurrent increments completes, during which the third and final increment of the global cycle, which consists of five operations, runs.
 
-- The global GC cycle reclaims memory in the *tenure* area.-->
+- The global GC cycle reclaims memory in the *tenure* area and a small amount of memory in the *nursery* area.
 
 
 ## `balanced` example
