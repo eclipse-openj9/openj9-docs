@@ -36,9 +36,9 @@ For a list of compatible options, equivalent options, and options that need to b
 
 ## Garbage collection policies
 
-Eclipse OpenJ9 has a number of GC policies designed around different types of applications and workloads. By default, OpenJ9 uses the Generational Concurrent (`gencon`) GC policy, which is best suited for transactional applications that have many short-lived objects. The policy aims to minimize GC pause times without compromising throughput. If you are using Java 8, the `gencon` policy is similar to the `ParallelGC` policy, which is the default HotSpot policy. If you are using Java 11, the OpenJ9 balanced (`balanced`) policy is most similar to the default HotSpot policy.
+Eclipse OpenJ9 has a number of garbage collection (GC) policies designed around different types of applications and workloads. By default, OpenJ9 uses the Generational Concurrent (`gencon`) GC policy, which is best suited for transactional applications that have many short-lived objects. The policy aims to minimize GC pause times without compromising throughput. If you are using Java 8, the `gencon` policy is similar to the HotSpot CMS (concurrent mark sweep). If you are using Java 11, the OpenJ9 balanced (`balanced`) policy is most similar to the default HotSpot policy.
 
-If you have a different type of workload, you might want to select a different GC policy. For information about the available policies and when to use them, see [Garbage collection](gc.md). To start your application with a different policy, use the [`-Xgcpolicy`](xgcpolicy.md) option on the command line.
+If you have a different type of workload, you might want to select a different GC policy. For details about the available policies and when to choose them, see [Garbage collection](gc.md).
 
 
 ## Operational tooling
