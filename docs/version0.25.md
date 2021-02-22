@@ -30,6 +30,7 @@ The following new features and notable changes since v 0.24.0 are included in th
 - ![Start of content that applies to Java 16 plus](cr/java16plus.png) [New JDK 16 features](#new-jdk-16-features)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for the `-verbose:module` option](#support-for-the-verbosemodule-option)
 - [Change the default `zlib` library on AIX&reg;](#change-the-default-zlib-library-on-aix)
+- [z/OS support for the `%sysname` dump token](#zos-support-for-the-sysname-dump-token)
 
 
 ## Features and changes
@@ -89,6 +90,11 @@ The `-verbose:module` option is now supported for Java 11 and later releases. Th
 OpenJ9 for AIX&reg; uses the system `zlib` library by default instead of a bundled copy.
 
 OpenJ9 on AIX&reg; systems uses the hardware-accelerated `zlibNX` if the Nest accelerators (NX) co-processor is enabled and the library is installed. To learn more about hardware acceleration and the `zlibNX` library see [Hardware acceleration](introduction.md#hardware-acceleration).
+
+### z/OS support for the `%sysname` dump token
+
+The `%sysname` dump token is added on z/OS, which equates to the SYSNAME sysparm. See [Dump agent tokens](xdump.md#dump-agent-tokens).
+
 
 ## Full release information
 
