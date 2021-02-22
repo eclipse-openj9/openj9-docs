@@ -116,6 +116,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://www.eclipse.org/openj9/docs/allocation/</loc>
+     <lastmod>2021-02-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://www.eclipse.org/openj9/docs/gc_overview/</loc>
      <lastmod>2021-02-22</lastmod>
      <changefreq>daily</changefreq>
