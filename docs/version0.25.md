@@ -98,9 +98,13 @@ The `%sysname` dump token is added on z/OS, which equates to the SYSNAME sysparm
 
 ### Single build for compressed references and non-compressed references
 
-A single (mixedrefs) build now supports both compressed references and non-compressed references. The object reference mode is selected at runtime based on the specified heap size ([`-Xmx`](#xms.md)), or via command line options that control selection of compressed references. If non-compressed references is desired when using a mixedrefs build (i.e. for smaller heap sizes that select compressed references automatically), the command line option `-Xnocompressedrefs` must be used. This is a change in behavior from using a large heap build. The `compressedrefs` directory is not present in a mixedrefs build.
+A single build now supports both compressed references and non-compressed references. The object reference mode is selected at run time based on the specified heap size ([`-Xmx`](#xms.md)) or by using command-line options that control the selection of compressed references.
 
-See [Compressed references](gc_overview#compressed-references), and the options [`-Xcompressedrefs` and `-Xnocompressedrefs`](xcompressedrefs.md) or [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md).
+If you used a large heap build for an earlier release of OpenJ9 because you did not require compressed references, you might need to turn it off if compressed references mode is being selected automatically at run time. Use the [`-Xnocompressedrefs`](xcompressedrefs.md) option when you start your application.
+
+The `compressedrefs` directory is no longer present in the single build.
+
+To learn about the benefits of using compressed references, see [Compressed references](allocation.md#compressed-references).
 
 ## Full release information
 
