@@ -30,6 +30,8 @@ The following new features and notable changes since v 0.24.0 are included in th
 - ![Start of content that applies to Java 16 plus](cr/java16plus.png) [New JDK 16 features](#new-jdk-16-features)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for the `-verbose:module` option](#support-for-the-verbosemodule-option)
 - [Enabling `zlibNX` hardware-accelerated data compression and decompression on AIX](#enabling-zlibnx-hardware-accelerated-data-compression-and-decompression-on-aix)
+- [z/OS support for the `%sysname` dump token](#zos-support-for-the-sysname-dump-token)
+- [Single build for compressed references and non-compressed references](#single-build-for-compressed-references-and-non-compressed-references)
 
 
 ## Features and changes
@@ -89,6 +91,16 @@ The `-verbose:module` option is now supported for Java 11 and later releases. Th
 By default, AIX&reg; uses the system `zlib` library for data compression and decompression.
 
 On systems that contain the Nest accelerator (NX) co-processor, OpenJ9 now uses the `zlibNX` library instead, if it is installed. To learn more about hardware acceleration and the `zlibNX` library, see [Hardware acceleration](introduction.md#hardware-acceleration).
+
+### z/OS support for the `%sysname` dump token
+
+The `%sysname` dump token is added on z/OS, which equates to the SYSNAME sysparm. See [Dump agent tokens](xdump.md#dump-agent-tokens).
+
+### Single build for compressed references and non-compressed references
+
+A single (mixedrefs) build now supports both compressed references and non-compressed references. The object reference mode is selected at runtime based on the specified heap size ([`-Xmx`](#xms.md)), or via command line options that control selection of compressed references. If non-compressed references is desired when using a mixedrefs build (i.e. for smaller heap sizes that select compressed references automatically), the command line option `-Xnocompressedrefs` must be used. This is a change in behavior from using a large heap build. The `compressedrefs` directory is not present in a mixedrefs build.
+
+See [Compressed references](gc_overview#compressed-references), and the options [`-Xcompressedrefs` and `-Xnocompressedrefs`](xcompressedrefs.md) or [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md).
 
 ## Full release information
 
