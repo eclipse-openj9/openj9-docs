@@ -221,7 +221,9 @@ Analyzing the structure and elements of this example log output shows that this 
 
 ### Concurrent scavenge partial GC cycle (non-default)
 
-When concurrent scavenge mode is enabled, the partial GC cycle is run as a [concurrent scavenge cycle](gc.md#concurrent-scavenge). When this mode is enabled, the scavenge partial GC cycle is divided into increments to enable part of the cycle to run in parallel to running application threads. Specifically, the cycle is divided into 3 GC increments as defined in the following table:
+When concurrent scavenge mode is enabled, the partial GC cycle is run as a [concurrent scavenge cycle](gc.md#concurrent-scavenge). When this mode is enabled, the scavenge partial GC cycle is divided into increments to enable the majority of the scavenge operation to run concurrently with running application threads. The concurrent increment can run while application threads run, and also while the intermediate concurrent increment of the global GC cycle runs. The interleaving of the concurrent scavenge partial GC cycle with the global cycle can be seen in the logs.
+
+The following elements log the GC increments and operations of the concurrent scavenge partial GC cycle:
 
 |GC Operation | GC increment | STW or concurrent| XML element of GC increment          | Details                                                                   |
 |-------------|--------------|-------------------------------|--------------------------------------|---------------------------------------------------------------------------|
@@ -229,7 +231,10 @@ When concurrent scavenge mode is enabled, the partial GC cycle is run as a [conc
 |Scavenge     |intermediate        | concurrent         | `<concurrent-start>`, `<concurrent-end>`|`<warning details=>`  Root scan, live objects traversed and evacuated (copy-forwarded). Reported as a scavenge operation |
 |Scavenge     |final     | STW              | `<gc-start>`, `<gc-end>` |weak roots scanning, reported as a complex scavenge operation (`<gc-op>`) containing specific details for each of weak root groups  |
 
-To search for a scavenge partial GC cycle, you can search for the `type` attribute value `scavenge` in `cycle-start` and `cycle-end` elements, or search for the `<af>` element that logs the allocation failure trigger.
+To search for a concurrent scavenge partial GC cycle, you can search for the `type` attribute value `scavenge` in `cycle-start` and `cycle-end` elements, or search for the `<af>` element that logs the allocation failure trigger. 
+
+You can locate the concurrent scavenge partial cycle's concurrent increment by searching for `<concurrent-start>` and `<concurrent-end>`. The global cycle's intermediate concurrent increment, which can run at the same time, is not logged by an element, but begins immediately after application threads are restarted following the `<cycle-start type="global"/>` element. For more information about the global cycle's intermediate concurrent increment, see [Log examples - Global GC Cycle](vgclog_examples.md#global-gc-cycle). For more information about GC increments, see [GC increments and interleaving](vgclog.md#gc-increments-and-interleaving).
+
 
 ### Global GC cycle
 
@@ -237,7 +242,7 @@ The following example shows how a global GC cycle is recorded in a `gencon` poli
 
 The global GC cycle runs when the *tenure* area is close to full, which typically occurs after many partial cycles. As such, the output can be found part way down the full log. For more information about the GC Initialization section, see [Verbose GC log contents and structure ](vgclog-md#verbose-gc-log-contents-and-structure). For an example log output for a `gencon` partial cycle, see [Example - `gencon`’s default partial GC cycle](./vgclogs.md/#example-gencons-default-partial-gc-cycle).
 
- [The global GC cycle is split into 3 increments](./vgclog.md#gc-increments-and-interleaving) that interleave with partial GC cycles. Splitting the cycle operations into the following increments means that the STW pause times can be as short as possible, with the majority of the GC work being done concurrently. Specifically, the intermediate increment of the global cycle can run concurrently on the *tenure* area while the partial GC cycle runs on the *nursery* area. The interleaving can be seen in the following example, where a partial GC cycle is logged between the initial and final increments of the global cycle.
+ [The global GC cycle is split into 3 increments](./vgclog.md#gc-increments-and-interleaving). Splitting the cycle operations into the following increments reduces pause times by running the majority of the GC work concurrently. The concurrent increment pauses when a partial GC cycle is triggered and resumes after the partial GC cycle(s) have completed. The interleaving of partial GC cycles with the global cycle's intermediate concurrent increment can be seen in the following example, where a single partial GC cycle is logged between the initial and final increments of the global cycle.
 
 To search for a global cycle, you can search for the `type` attribute value `global` in `cycle-start` and `cycle-end` elements, or search for the element that logs the initial concurrent increment, `<concurrent-kickoff>`.
 
@@ -465,9 +470,8 @@ The element `<allocation-stats>` shows a snapshot, which was taken before the cy
 
 For this example, at the start of this GC increment, the *tenure* area is low on free memory, as expected. 25% of the total heap is available as free memory, which is split between the following areas of the heap:
 
-- The *nursery* area, which has 87% of its total memory available as free memory. The free memory is only available in the *allocate* space of the *nursery* area. The *survivor* space has no free memory.
-
-- The *tenure* area, which has only 5% of its total memory available as free memory. Most of this free memory is in the large object allocation area(LOA). Almost no free memory is available in the small object allocation area(SOA). 
+- The *nursery* area, which has 234.6MB (234,609,440MB) of free memory available. The free memory is only available in the *allocate* space of the *nursery* area.The *survivor* space of the *nursery* area is reported as 'full' to reflect that no available memory is available to allocate to the mutator threads. The entire *survivor* space is reserved for GC operations during the GC increment. 
+- The *tenure* area, which has 42MB (42,439,200MB) available as free memory, which is only 5% of its total memory. Most of this free memory is in the large object allocation area(LOA). Almost no free memory is available in the small object allocation area(SOA). 
 
 The `<gc-op>` elements and their child elements contain information about the increment’s operations and sub-operations. The final increment of the `gencon` global cycle consists of multiple operations, each logged with a `<gc-op>` element. The type of operation is shown by the `<gc-op>` `type` attribute. There are 5 types of operation involved in the final increment of the example log:
 
@@ -523,9 +527,7 @@ The `<gc-op>` elements and their child elements contain information about the in
 <gc-op id="12386" type="sweep" timems="9.464" contextid="12364" timestamp="2020-10-18T13:35:44.618" />
 ```
 
-The end of the increment is recorded with `<gc-end>` and provides another snapshot of memory in the heap, similar to `<gc-start>`. In the example, 60% of the heap now contains free memory as a result of the final global cycle increment. The *nursery* area remains unchanged which means the final increment reclaimed memory only in the *tenure* space, which now has 51% of free memory available. The LOA is now all available as free memory. The SOA has 48% of it's memory available as free memory.
-
-**Note:** The global GC cycle runs to reclaim memory in the *tenure* area. The freeing up of memory in the *nursery* area is achieved by using the partial GC cycle. For more information, see [`gencon` Policy(default)](gc.md#gencon-policy-(default)).
+The end of the increment is recorded with `<gc-end>` and provides another snapshot of memory in the heap, similar to `<gc-start>`. 
 
 
 ```xml
@@ -558,7 +560,14 @@ The end of the increment is recorded with `<gc-end>` and provides another snapsh
 </gc-end>
 ```
 
-After the GC operations and sub-operations of the final increment of the global cycle complete, the global cycle ends and the STW pause ends, as shown in the following output:
+60% of the heap now contains free memory as a result of the final global cycle increment, which is split between the following areas of the heap:
+
+- The *nursery* area, which has gained 0.91MB of of free memory (the *nursery area now has 235.2MB (235,516,088MB) available as free memory. At the start of the final increment the area had 234.6MB (234,609,440MB) of free memory available).
+- The *tenure* area, which has gained 372MB (372,521,216MB) of free memory. (the *tenure* area now has 414MB (414,960,416MB) available as free memory. At the start of the final increment area had 42MB (42,439,200MB) of free memory available.
+
+**Note:** The global GC cycle runs to reclaim memory in the *tenure* area. The freeing up of memory in the *nursery* area is achieved by using the partial GC cycle. For more information, see [`gencon` Policy(default)](gc.md#gencon-policy-(default)).
+
+After the final increment of the global cycle completes, the global cycle ends and the STW pause ends, as shown in the following output:
 
 ```xml
 <cycle-end id="12389" type="global" contextid="12364" timestamp="2020-10-18T13:35:44.619" />
