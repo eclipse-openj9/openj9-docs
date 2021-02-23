@@ -410,8 +410,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#change-the-default-zlib-library-on-aix" class="md-nav__link">
-    Change the default zlib library on AIX&reg;
+  <a href="#enabling-zlibnx-hardware-accelerated-data-compression-and-decompression-on-aix" class="md-nav__link">
+    Enabling zlibNX hardware-accelerated data compression and decompression on AIX
   </a>
   
 </li>
@@ -4012,8 +4012,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </li>
         
           <li class="md-nav__item">
-  <a href="#change-the-default-zlib-library-on-aix" class="md-nav__link">
-    Change the default zlib library on AIX&reg;
+  <a href="#enabling-zlibnx-hardware-accelerated-data-compression-and-decompression-on-aix" class="md-nav__link">
+    Enabling zlibNX hardware-accelerated data compression and decompression on AIX
   </a>
   
 </li>
@@ -4095,7 +4095,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><img alt="Start of content that applies to Java 16 plus" src="../cr/java16plus.png" /> <a href="#new-jdk-16-features">New JDK 16 features</a></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#support-for-the-verbosemodule-option">Support for the <code>-verbose:module</code> option</a></li>
-<li><a href="#change-the-default-zlib-library-on-aix">Change the default <code>zlib</code> library on AIX&reg;</a></li>
+<li><a href="#enabling-zlibnx-hardware-accelerated-data-compression-and-decompression-on-aix">Enabling <code>zlibNX</code> hardware-accelerated data compression and decompression on AIX</a></li>
 <li><a href="#zos-support-for-the-sysname-dump-token">z/OS support for the <code>%sysname</code> dump token</a></li>
 <li><a href="#single-build-for-compressed-references-and-non-compressed-references">Single build for compressed references and non-compressed references</a></li>
 </ul>
@@ -4108,11 +4108,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>The following features are supported by OpenJ9:</p>
 <ul>
 <li><a href="https://openjdk.java.net/jeps/338">JEP 338</a>: Vector API (incubator)<ul>
-<li>The OpenJ9 project is adding optimizations for this feature.</li>
+<li>OpenJ9 adds optimizations for this feature.</li>
 </ul>
 </li>
 <li><a href="https://openjdk.java.net/jeps/390">JEP 390</a>: Warnings for value-based classes<ul>
-<li>The OpenJ9 project is adding option <code>-XX:DiagnoseSyncOnValueBasedClasses=&lt;number&gt;</code>. See <a href="../xxdiagnosesynconvaluebasedclasses/"><code>-XX:DiagnoseSyncOnValueBasedClasses=&lt;number&gt;</code></a> for more details.</li>
+<li>OpenJ9 adds option <a href="../xxdiagnosesynconvaluebasedclasses/"><code>-XX:DiagnoseSyncOnValueBasedClasses=&lt;number&gt;</code></a> for compatibility with the reference implementation.</li>
 </ul>
 </li>
 <li><a href="https://openjdk.java.net/jeps/395">JEP 395</a>: Records</li>
@@ -4146,9 +4146,9 @@ WARNING: All illegal access operations will be denied in a future release
 
 <h3 id="support-for-the-verbosemodule-option"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> Support for the <code>-verbose:module</code> option</h3>
 <p>The <code>-verbose:module</code> option is now supported for Java 11 and later releases. This option writes information to <code>stderr</code> for each module that is loaded and unloaded.</p>
-<h3 id="change-the-default-zlib-library-on-aix">Change the default <code>zlib</code> library on AIX&reg;</h3>
-<p>OpenJ9 for AIX&reg; uses the system <code>zlib</code> library by default instead of a bundled copy.</p>
-<p>OpenJ9 on AIX&reg; systems uses the hardware-accelerated <code>zlibNX</code> if the Nest accelerators (NX) co-processor is enabled and the library is installed. To learn more about hardware acceleration and the <code>zlibNX</code> library see <a href="../introduction/#hardware-acceleration">Hardware acceleration</a>.</p>
+<h3 id="enabling-zlibnx-hardware-accelerated-data-compression-and-decompression-on-aix">Enabling <code>zlibNX</code> hardware-accelerated data compression and decompression on AIX</h3>
+<p>By default, AIX&reg; uses the system <code>zlib</code> library for data compression and decompression.</p>
+<p>On systems that contain the Nest accelerator (NX) co-processor, OpenJ9 now uses the <code>zlibNX</code> library instead, if it is installed. To learn more about hardware acceleration and the <code>zlibNX</code> library, see <a href="../introduction/#hardware-acceleration">Hardware acceleration</a>.</p>
 <h3 id="zos-support-for-the-sysname-dump-token">z/OS support for the <code>%sysname</code> dump token</h3>
 <p>The <code>%sysname</code> dump token is added on z/OS, which equates to the SYSNAME sysparm. See <a href="../xdump/#dump-agent-tokens">Dump agent tokens</a>.</p>
 <h3 id="single-build-for-compressed-references-and-non-compressed-references">Single build for compressed references and non-compressed references</h3>
