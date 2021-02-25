@@ -6,9 +6,9 @@ Note: For more information about the cycles used in a particular policy, see [ga
 
 The start of a `balanced` cycle is recorded in the log by the following elements and attributes:
 
-| GC cycle or increment | value of `type` attribute| Element for cycle or increment trigger| Triggering reason|
+| GC cycle or increment | value of `type` attribute| Element that logs the cycle or increment trigger| Triggering reason|
 |----------|----------------------------|------------------------------|------------------|
-|Global mark cycle| `global mark phase`| `<allocation-taxation>` | taxation threshold reached. Application threads need to do work for GC
+|Global mark cycle| `global mark phase`| `<allocation-taxation>` | taxation threshold reached. |
 | Global mark increment of global mark cycle| `GMP work packet processing` | `<concurrent-start>` `<concurrent-end>` |
 partial cycle| `partial gc`           | `<allocation-taxation>`                 |taxation threshold reached|
 |global cycle|     ???    | `af-start`, `<af-end>`           |An allocation failure. Occurs under tight memory conditions. Cycle runs very rarely. |
@@ -31,9 +31,9 @@ The following sections give details about specific cycles, including examples of
 
 ### Partial GC cycle
 
-A partial GC cycle is recorded within the following example, which is taken from the verbose GC log output of a `balanced` policy garbage collection. The following log content is broken down into sections that describe particular activities of the GC cycle. 
+A [`balanced` partial GC cycle](gc.md#balanced-policy) is recorded within the following example, which is taken from the verbose GC log output of a `balanced` policy garbage collection. The following log content is broken down into sections that describe particular activities of the GC cycle. 
 
-The `balanced` policy’s partial GC cycle reclaims memory in the heap for allocation new objects. The cycle runs on all regions in the *eden* space and might also run on some older regions. All the cycle's operations are run using a single *stop-the-world* pause:
+The `balanced` policy’s partial GC cycle reclaims memory in the heap for allocation of new objects by reducing the number of used regions. The partial GC cycle always reduces user regions in the *eden* space and may also reclaim memory from older regions. All the cycle's operations run during a single *stop-the-world* pause:
 
 |GC Operations | GC increment | *stop-the-world* or concurrent| XML element of GC increment          | Details                                                                   |
 |-------------|--------------|-------------------------------|--------------------------------------|---------------------------------------------------------------------------|
@@ -42,48 +42,48 @@ The `balanced` policy’s partial GC cycle reclaims memory in the heap for alloc
 The `balanced` partial GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some child elements are omitted for clarity:
 
 ```xml
-<exclusive-start/> 
+<exclusive-start/>                       (STW pause starts)
 
-<allocation-taxation/>
+<allocation-taxation/>                   (memory threshold trigger recorded)
 
-<cycle-start/> 
+<cycle-start/>                            (partial cycle starts)
 
-  <gc-start/>  
+  <gc-start/>                             (partial  cycle increment starts)
 
-    <mem-info> 
+    <mem-info>                            (memory status before operations)
 
-      <mem></mem> 
+      <mem></mem>                         (status of different types of memory)
 
-    </mem-info> 
+    </mem-info>         
 
   </gc-start> 
 
-  <allocation-stats>
+  <allocation-stats>                      (snapshot of application threads status taken before...
+                                          ...cycle starts)
+  <gc-op> type="copy forward" </gc-op>    (copy forward operation completed)
 
-  <gc-op> type="copy forward" </gc-op> 
+  <gc-op> type="class unload" </gc-op>    (class unload operation completed)
 
-  <gc-op> type="class unload" </gc-op> 
+  <gc-op> type="sweep" </gc-op>           (sweep operation completed)
 
-  <gc-op> type="sweep" </gc-op> 
+  <gc-op> type="compact" </gc-op>         (compact operation completed)
 
-  <gc-op> type="compact" </gc-op> 
+  <gc-end>                                (partial cycle increment ends)
 
-  <gc-end>  
-
-    <mem-info> 
+    <mem-info>                            (memory status after operations)
           
-      <mem></mem> 
+      <mem></mem>                         (status of different types of memory)
 
-    </mem-info> 
+    </mem-info>         
 
-  </gc-end> 
+  </gc-end>
 
-<cycle-end> 
+<cycle-end>                               (partial cycle ends)
 
-<exclusive-end> 
+<exclusive-end>                           (STW pause ends)
 ```
 
-When the `balanced` partial GC cycle is triggered, the GC runs an STW pause to pause application threads ready for the first increment's operations. The STW pause is recorded in the logs by the `<exclusive-start>` element. 
+When the `balanced` partial GC cycle is triggered, the GC runs an STW pause. Application threads are halted to give the garbage collector exclusive access to the heap. The STW pause is recorded in the logs by the `<exclusive-start>` element. 
 
 ```xml
 <exclusive-start id="334" timestamp="2020-11-13T06:32:26.853" intervalms="879.225">
@@ -91,7 +91,7 @@ When the `balanced` partial GC cycle is triggered, the GC runs an STW pause to p
 </exclusive-start>
 ```
 
-A `balanced` partial GC cycle, which reduces the number of regions in the *eden* space TRUE?, is triggered when the region count for the *eden* space reaches a *taxation* threshold. At this threshold, the GC 'taxes' the application threads, who have been 'paid' with memory allocation, to run some GC work - in this case, a partial GC cycle.The logs record this trigger reason by using the`<allocation-taxation>` element.
+A `balanced` partial GC cycle is triggered when the region count for the *eden* space reaches a *taxation* threshold. At this threshold, the GC 'taxes' the application threads, who have been 'paid' with memory allocation, to run some GC work - in this case, a partial GC cycle.The logs record this trigger reason by using the`<allocation-taxation>` element.
 
 ```xml
 <allocation-taxation id="335" taxation-threshold="805306368" timestamp="2020-11-13T06:32:26.853" intervalms="879.261" />
@@ -401,7 +401,7 @@ The operations to create a record of object liveness across the heap, which toge
 
 A record of object liveness is now complete.
 
-### GLobal Cycle
+### Global Cycle
 
 If the GC cannot reclaim enough memory using partial and global *mark* cycles to prevent the whole heap becoming full, an allocation failure occurs and a global cycle is triggered.
 
