@@ -126,7 +126,8 @@ nav:
             - "Version 0.8.0"                                                    : version0.8.md
 
     - "Memory management" :
-        - "Overview"                                                             : gc_overview.md
+        - "Heap allocation"                                                      : allocation.md
+        - "Garbage collection"                                                   : gc_overview.md
         - "Garbage collection policies"                                          : gc.md
 
     - "JIT Compiler"                                                             : jit.md
@@ -337,6 +338,7 @@ nav:
             - "-XX:ConcGCThreads"                                                : xxconcgcthreads.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
             - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
+            - "-XX:DiagnoseSyncOnValueBasedClasses"                              : xxdiagnosesynconvaluebasedclasses.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
@@ -410,5 +412,6 @@ nav:
             - "Monitoring and management"                                         : api-langmgmt.md
             - "Shared classes"                                                    : api-shrc.md
         - "Java 11 API"                                                           : api-jdk11.md
+        - "Java 16 API"                                                           : api-jdk16.md
 
     - "Legal"                                                                     : legal.md

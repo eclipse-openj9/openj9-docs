@@ -181,7 +181,7 @@ Registered dump agents
 ```
 ### Dump agent tokens
 
-You can use tokens to add context to dump file names and directories, and to pass command-line arguments to the tool agent. The tokens available are listed in the following table:
+You can use tokens to add context to dump file names and directories, and to pass command-line arguments to the tool agent. The tokens available are listed in the following tables:
 
 | Token | Description                                                                                                                   |
 |-------|-------------------------------------------------------------------------------------------------------------------------------|
@@ -192,16 +192,22 @@ You can use tokens to add context to dump file names and directories, and to pas
 | %H    | Hour ( 2 digits)                                                                                                              |
 | %M    | Minute (2 digits)                                                                                                             |
 | %S    | Second (2 digits)                                                                                                             |
-| %pid  | Process ID                                                                                                                    |
-| %uid  | User name                                                                                                                     |
-| %seq  | Dump counter                                                                                                                  |   
-| %tick | msec counter                                                                                                                  |
 | %home | Java home directory                                                                                                           |
 | %last | Last dump                                                                                                                     |
-| %job  | Job name (z/OS only)                                                                                                          |
-| %jobid| Job ID (z/OS only)                                                                                                            |
-| %asid | Address space ID (z/OS only)                                                                                                  |
-| &DS   | Dump Section. An incrementing sequence number used for splitting TDUMP files to be less than 2 GB in size. (z/OS 64-bit only) |
+| %pid  | Process ID                                                                                                                    |
+| %seq  | Dump counter                                                                                                                  |   
+| %tick | msec counter                                                                                                                  |
+| %uid  | User name                                                                                                                     |
+
+The following tokens are applicable only to z/OS:
+
+| Token    | Description                                                                                                                |
+|----------|----------------------------------------------------------------------------------------------------------------------------|
+| %asid    | Address space ID                                                                                                           |
+| %job     | Job name                                                                                                                   |
+| %jobid   | Job ID                                                                                                                     |
+| %sysname | SYSNAME sysparm                                                                                                            |
+| &DS      | Dump Section. An incrementing sequence number used for splitting TDUMP files to be less than 2 GB in size. (64-bit only)   |
 
 ### Merging dump agents
 
