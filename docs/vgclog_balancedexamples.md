@@ -1,4 +1,4 @@
-# `balanced` examples [WIP]
+# `balanced` examples
 
 The [`balanced`](gc.md#balanced-policy) policy (`-Xgcpolicy:balanced`) uses two types of cycle to perform GC – a partial GC cycle and a global GC *mark* cycle. The policy GC may have to perform a third type of cycle - a global cycle - to reclaim memory after an allocation failure that has resulted from tight memory conditions. 
  
@@ -6,14 +6,14 @@ Note: For more information about the cycles used in a particular policy, see [ga
 
 The start of a `balanced` cycle is recorded in the log by the following elements and attributes:
 
-| GC cycle or increment | value of `type` attribute| Element that logs the cycle or increment trigger| Triggering reason|
+| GC cycle or increment | value of `type` attribute of the `<cycle-start>` and `<cycle-end` elements| Element that logs the cycle or increment trigger| Triggering reason|
 |----------|----------------------------|------------------------------|------------------|
 |Global mark cycle| `global mark phase`| `<allocation-taxation>` | taxation threshold reached. |
 | Global mark increment of global mark cycle| `GMP work packet processing` | `<concurrent-start>` `<concurrent-end>` |
 partial cycle| `partial gc`           | `<allocation-taxation>`                 |taxation threshold reached|
 |global cycle|     ???    | `af-start`, `<af-end>`           |An allocation failure. Occurs under tight memory conditions. Cycle runs very rarely. |
 
-To locate a particular type of cycle, you can search for the `type` attribute of the `<cycle-start>` and `<cycle-end>` elements. 
+To locate a particular type of cycle, you can search for the `type` attribute of the `<cycle-start>` and `<cycle-end>` elements.
 
 You an analyze the increments and operations that are associated with a particular type of cycle by locating and interpreting the elements in the following table:
 
@@ -25,15 +25,17 @@ You an analyze the increments and operations that are associated with a particul
 | ? | `<concurrent-mark-start>` | THIS IS A CHILD ELEMENT GIVING STATUS - WHERE PUT IT? |
 |GC operations and phases| `<gc-op>`                    | A GC operation such as mark or sweep, or a suboperation ‘phase’ such as class unload. |
 
-**Note:** Details of a GC operation or phase are logged by using the single <gc-op> XML element rather than start and end XML elements. 
+**Note: For more information about the XML structure of GC cycles, see [GC cycles](vgclog.md#gc-cycles).  For more information about GC cycle increments, see [GC increments and interleaving](vgclog.md#gc-increments-and-interleaving).
 
-The following sections give details about specific cycles, including examples of how the cycle appears in the Verbose GC log.
+The following sections use log excerpts to show how the different types of give details about `balanced` cycle are logged. 
 
 ### Partial GC cycle
 
-A [`balanced` partial GC cycle](gc.md#balanced-policy) is recorded within the following example, which is taken from the verbose GC log output of a `balanced` policy garbage collection. The following log content is broken down into sections that describe particular activities of the GC cycle. 
+The following example is taken from a [`balanced` partial GC cycle](gc.md#balanced-policy) verbose GC log. The output is broken down into sections to explain the GC processing that is taking place.
 
-The `balanced` policy’s partial GC cycle reclaims memory in the heap for allocation of new objects by reducing the number of used regions. The partial GC cycle always reduces user regions in the *eden* space and may also reclaim memory from older regions. All the cycle's operations run during a single *stop-the-world* pause:
+To search for a `balanced` partial GC cycle, you can search for the `type` attribute value `partial gc` in `<cycle-start>` and `<cycle-end>` elements.
+
+The `balanced` policy’s partial GC cycle reclaims memory in the heap for allocation of new objects by reducing the number of used *regions*. The partial GC cycle always reduces used regions in the *eden* space and may also reclaim memory from older regions. All the cycle's operations run during a single *stop-the-world* pause:
 
 |GC Operations | GC increment | *stop-the-world* or concurrent| XML element of GC increment          | Details                                                                   |
 |-------------|--------------|-------------------------------|--------------------------------------|---------------------------------------------------------------------------|
@@ -58,8 +60,8 @@ The `balanced` partial GC cycle follows a general structure in the verbose GC lo
 
   </gc-start> 
 
-  <allocation-stats>                      (snapshot of application threads status taken before...
-                                          ...cycle starts)
+  <allocation-stats>                      (snapshot of application threads status...
+                                          ... taken before the cycle starts)
   <gc-op> type="copy forward" </gc-op>    (copy forward operation completed)
 
   <gc-op> type="class unload" </gc-op>    (class unload operation completed)
@@ -102,7 +104,7 @@ If the partial GC cycle is not run within a global *mark* cycle, the end of the 
 If the partial GC cycle is run within a global *mark* cycle, the allocation taxation threshold is set to be smaller than the size of the *eden* region to allow for global mark phase increments to run in between partial GC cycles TRUE? Specifically, when the previous partial GC cycle completes, the allocation taxation threshold is set to be half the size of the eden area. The increment, which could be a partial GC cycle or could be a GMP increment, runs.......
 --->
 
-Details about the start of the cycle are recorded by the `<cycle-start>` element. The cycle is recorded as a `partial gc` with an `id=336`. Any subsequent elements associated with this cycle have a `contextid=336` to match the cycle's `id`. You can use the `contextid` value to distinguish increments and operations of the global cycle from the partial cycles that interleave with it.
+Details about the start of the cycle are recorded by the `<cycle-start>` element. The cycle is recorded as a `partial gc` with an `id=336`. Any subsequent elements associated with this cycle have a `contextid=336` to match the cycle's `id`. You can use this `contextid` value to distinguish the partial GC cycle increment and operations from interleaving increments and operations from other `balanced` cycles, such as global *mark* cycles.
 
 ```xml
 <cycle-start id="336" type="partial gc" contextid="0" timestamp="2020-11-13T06:32:26.854" intervalms="879.022" />
@@ -122,7 +124,7 @@ The partial cycle begins its one and only GC increment, recorded using the `<gc-
 </gc-start>
 ```
 
-As expected, at the start of this increment, the eden region is full.
+As expected, at the start of this increment, the eden region is full. 730MB (765,460,480B) of the total  3072MB (3,221,225,472B) heap is available as free memory.
 
 The following element, `<allocation-stats>`, records information about the state of application threads before the start of the current cycle. For this example, the thread `Group1.Backend.CompositeBackend{Tier1}.2` was the largest consumer of memory. 
 
@@ -154,9 +156,9 @@ The operations of the GC increment are run and details are recorded in the `<gc-
 </gc-op>
 ```
 
-The logs show that the copy forward operation acts on the *eden* region, recorded as `type=eden`, and older regions, which are recorded as `type=other`. 
+The logs show that the copy forward operation acts on the *eden* region, recorded as `type=eden`, and older regions, which are recorded as `type=other`. 53.5 MB (56,147,800 B) have been copied from the *eden* space TO WHERE? and 101.9 MB (106,884,464 B) from older regions TO WHERE?.
 
-The element `<gc-end>` records the end of the increment, including a snapshot of the memory now available and where it is located in the heap.
+The element `<gc-end>` records the end of the increment and provides another snapshopt of memory allocation on the heap, similar to `<gc-start>`. 
 
 ```xml
 <gc-end id="341" type="partial gc" contextid="336" durationms="152.457" usertimems="1148.000" systemtimems="16.000" stalltimems="26.991" timestamp="2020-11-13T06:32:27.007" activeThreads="8">
@@ -170,7 +172,11 @@ The element `<gc-end>` records the end of the increment, including a snapshot of
 
 ```
 
-Memory has been reclaimed in ?????
+The heap memory allocation at the end of the increment is as follows:
+
+- The increment has reclaimed 748 MB of memory. The heap now has 1478 MB(1,549,795,328 B) of memory available compared to the 730 MB available at the start of the increment.
+
+- The increment has reclaimed 1.73MB (1,812,208 B). 3% of the *eden* space is now available as free memory. The *eden* space was full at the start of the increment.
 
 The cycle completes and the GC restarts application threads.
 
@@ -181,10 +187,13 @@ The cycle completes and the GC restarts application threads.
 
 **Summary of the example**
 
-So from the structure and XML schema of the example, you can determine the following:
-  
-ADD
+Analyzing the structure and elements of this example log output shows that this example `balanced` partial GC cycle has the following characteristics:
 
+- The GC cycle begins with an STW pause and is triggered because a memory allocation threshold was reached. The *eden* space is full.
+- All GC operations that are associated with this cycle occur during the STW pause.
+- The GC cycle consists of only one increment, which runs a copy-forward operation and a class-unload operation.
+- The GC cycle reclaims 1.73 MB of memory from the *eden* space that was full, which represents 3% of the *eden* space. 
+- 748 MB of the total 3072 MB heap was reclaimed. Free regions from the *eden* space and also some older regions were reclaimed.
 
 ### Global mark GC cycle
  
