@@ -11,7 +11,7 @@ The start of a `balanced` cycle is recorded in the log by the following elements
 |Global mark cycle| `global mark phase`| `<allocation-taxation>` | taxation threshold reached. |
 | Global mark increment of global mark cycle| `GMP work packet processing` | `<concurrent-start>` `<concurrent-end>` |
 partial cycle| `partial gc`           | `<allocation-taxation>`                 |taxation threshold reached|
-|global cycle|     ???    | `af-start`, `<af-end>`           |An allocation failure. Occurs under tight memory conditions. Cycle runs very rarely. |
+|global cycle|     `global garbage collect`    | `af-start`, `<af-end>`           |An allocation failure. Occurs under tight memory conditions. Cycle runs very rarely. |
 
 To locate a particular type of cycle, you can search for the `type` attribute of the `<cycle-start>` and `<cycle-end>` elements.
 
@@ -29,7 +29,7 @@ You an analyze the increments and operations that are associated with a particul
 
 The following sections use log excerpts to show how the different types of give details about `balanced` cycle are logged. 
 
-### Partial GC cycle
+### `balanced` Partial GC cycle
 
 The following example is taken from a [`balanced` partial GC cycle](gc.md#balanced-policy) verbose GC log. The output is broken down into sections to explain the GC processing that is taking place.
 
@@ -195,21 +195,29 @@ Analyzing the structure and elements of this example log output shows that this 
 - The GC cycle reclaims 1.73 MB of memory from the *eden* space that was full, which represents 3% of the *eden* space. 
 - 748 MB of the total 3072 MB heap was reclaimed. Free regions from the *eden* space and also some older regions were reclaimed.
 
-### Global mark GC cycle
+### `balanced` global mark GC cycle
  
-The `balanced` policy’s global mark GC cycle consists of a mixture of STW and concurrent operations. When the global *mark* cycle allocation taxation threshold is reached, the GC 'taxes' application threads by requesting the threads are used to run some global *mark* phase work. A global *mark* GC cycle increment is triggered.
+The `balanced` policy’s global *mark* GC cycle uses a mixture of STW and concurrent operations to build a new record of object liveness across the heap for use by the partial GC cycle. When the global *mark* cycle allocation taxation threshold is reached, the GC 'taxes' application threads to run a global *mark* GC cycle. The global *mark* cycle performs a [global *mark* phase](vgclog_balancedexamples.md#mark-phase) and also invokes an associated [*sweep* phase](vgclog_balancedexamples.md#sweep-phase) within the partial GC cycle that immediately follows the final global *mark* cycle increment.
 
-The cycle is split into multiple increments that each run a *global mark phase* sub-increment and a *global mark phase work packet* sub-increment on the heap. Each *global mark phase* consists of a global *mark* operation that runs during a STW pause, followed by a processing operation that may run concurrently or may use an additional STW pause.
+To search for a `balanced` global mark cycle, you can search for the `type` attribute  value `global mark phase` in `<cycle-start>` and `<cycle-end>` elements. 
 
-The global mark GC cycle is divided into GC increments, as shown in the following table: 
+The global cycle is split into multiple increments, each recorded as `type="global mark phase"`. A global mark phase increment involves an STW subincrement, which runs a global mark operation during an STW pause, followed by a *global mark phase(GMP) work packet* subincrement. The`GMP work packet` subincrement involves a processing operation that runs concurrently. The `GMP work packet` subincrement might also use an STW pause to complete if the subincrement is interrupted by a partial or global cycle trigger.
+
+Splitting the global mark phase into these increments and subincrements reduces pause times by running the majority of the GC work concurrently and interleaving global mark phase increments with partial GC cycles, and, rarely, [global GC cycles](vgclog_examples.md#balanced-global-gc-cycle).
+
+A global *mark* GC cycle increment is triggered when ????
+
+The following elements log the GC increments, subincrements and operations of the global *mark* GC cycle:
 
 |GC increment         | GC operations| *stop-the-world* or concurrent| XML element of GC increment| Details                         |
 |---------------------|-------------|-------------------------------|--------------------------------------|-----------------------|
-|global mark phase increment| mark | *stop-the-world* | `<gc-start>`, `end` |The global mark phase operations start at the beginning of the cycle and run through all *regions* until the final *region* ||
-|                               | work packet processing operations | concurrent | `<concurrent-start>`, `<concurrent-end>`| |
+|`global mark phase` subincrement| mark | *stop-the-world* | `<gc-start>`, `<gc-end>` |The global mark phase operations start at the beginning of the cycle and run through all *regions* until the final *region* |
+|`GMP work packet processing` subincrement| work packet processing operations | concurrent and sometimes final operations during a *STW* to complete the subincrement | `<concurrent-start>`, `<concurrent-end>`| The `GMP work packet processing subincrement runs immediately after the `global mark phase` subincrement |
 |final global mark phase increment | final global mark phase operations including class unload | *stop-the-world* | `gc-start>`, `<gc-end>`| Final increment. Runs the final global mark phase operations followed by operations to finish the cycle  |
 
-The first activity in the cycle a STW pause, recorded by an `<exclusive-start>` element. The GC pauses application threads to execute the cycle's initial operations. 
+#### Global mark phase
+
+The first activity of the global mark cycle is a STW pause, recorded by an `<exclusive-start>` element. The GC pauses application threads to execute the cycle's initial operations. 
 
 ```xml
 <exclusive-start id="345" timestamp="2020-11-13T06:32:27.347" intervalms="494.235">
@@ -217,7 +225,7 @@ The first activity in the cycle a STW pause, recorded by an `<exclusive-start>` 
 </exclusive-start>
 ```
 
-The cycle is triggered by an allocation taxation threshold being reached. The allocation threshold is set by the policy type and GC configuration and may be resized each time a `balanced` cycle completes. For more information, see ????? TRUE? The current threshold for triggering a cycle is shown by the `taxation-threshold` attribute to be set to `402GB`. 
+The cycle is triggered when the global mark cycle allocation taxation is reached. The threshold is set by the policy configuration and is often resized by the GC when a `balanced` global mark GC cycle completes. The <allocation-taxation> element records the memory threshold value that was in use when this example global mark cycle was triggered. The`taxation-threshold` attribute shows the taxation threshold is `402GB`.
 
 ```xml
 <allocation-taxation id="346" taxation-threshold="402653184" timestamp="2020-11-13T06:32:27.348" intervalms="494.037" />
@@ -228,7 +236,8 @@ Details about the start of the global mark GC cycle are recorded by the `<cycle-
 ```xml
 <cycle-start id="347" type="global mark phase" contextid="0" timestamp="2020-11-13T06:32:27.348" intervalms="55328.929" />
 ```
-The cycle begins with the STW sub-increment of the the global *mark* phase increment. The sub-increment is recorded using the `<gc-start>` element of type `global mark phase`.
+
+The cycle begins with the STW subincrement of a global *mark* phase increment. The STW subincrement is recorded using the `<gc-start>` element of type `global mark phase`.
 
 ```xml
 <gc-start id="348" type="global mark phase" contextid="347" timestamp="2020-11-13T06:32:27.348">
@@ -239,7 +248,11 @@ The cycle begins with the STW sub-increment of the the global *mark* phase incre
 
 ```
 
-The sub-increment runs a mark operation. This operation begins the process of building a record of object liveness across the heap. 
+The `<gc-start>` element provides a snapshot of the free memory available in the heap and the status of marked objects. At the start of the increment, the heap is 35% free, with 1094 MB (1147142144 B) of the total 3072 MB (3221225472 B) heap size free. 
+
+The `<remembered-set>` elements records.....
+
+The `<gc-op>` element records that the STW subincrement runs a mark operation. This operation begins the process of building a record of object liveness across the heap. 
 
 ```xml
 <gc-op id="350" type="mark increment" timems="49.623" contextid="347" timestamp="2020-11-13T06:32:27.398">
@@ -247,7 +260,11 @@ The sub-increment runs a mark operation. This operation begins the process of bu
 </gc-op>
 ```
 
-The STW sub-increment ends, as recorded by the `<gc-end>` element. The effect of this first sub-increment on the heap can be determined by comparing the `<mem-info>` attributes and child element attributes at the beginning and end of the sub-increment. Specifically, the marking can be seen by the increase in the `count` value of the `<remembered-set>`.
+The object count.....
+
+The scancount and scan bytes....
+
+The STW `global mark phase` subincrement ends, as recorded by `<gc-end>`, which records a snapshot of the memory status in the heap in a similar way to `<gc-start>`. 
 
 ```xml
 <gc-end id="351" type="global mark phase" contextid="347" durationms="49.866" usertimems="344.000" systemtimems="40.000" stalltimems="9.352" timestamp="2020-11-13T06:32:27.398" activeThreads="8">
@@ -257,7 +274,12 @@ The STW sub-increment ends, as recorded by the `<gc-end>` element. The effect of
 </gc-end>
 ```
 
-The beginning of the second part of the global *mark* phase increment is recorded. The `GMP work packet processing` operations, recorded by the `<concurrent-start>` element, are run concurrently. The child element `<concurrent-mark-start>` records the scan target of this increment to be 113.5GB.
+Comparing the snapshot at the beginning and end of the heap shows that:
+
+- The marking operation has increased the `count` value of the `<remembered-set>` from...to....
+- As expected, there is no change in the amount of free memory available, which is 1094 MB.
+
+The beginning of the second part of the global *mark* phase increment, the GMP work packet procesing subincrememt, is recorded by `<concurrent-start>`. The child element `<concurrent-mark-start>` records the scan target of this subincrement as 108.25 MB.
 
 ```xml
 <concurrent-start id="353" type="GMP work packet processing" contextid="347" timestamp="2020-11-13T06:32:27.399">
@@ -271,7 +293,7 @@ Now that the global mark phase sub-increment is complete, application threads ar
 <exclusive-end id="354" timestamp="2020-11-13T06:32:27.399" durationms="52.216" />
 ```
 
-The end of the concurrent `GMP work packet processing` sub-increment operations are recorded using the `<concurrent-end>` element. The child element `<concurrent-mark-end>` shows that the processing OR ENTIRE GMP INCREMENT? has exceeded the scan target of `113.5GB`.
+The end of the concurrent `GMP work packet processing` sub-increment operations are recorded using the `<concurrent-end>` element. 
 
 ```xml
 <concurrent-end id="355" type="GMP work packet processing" contextid="347" timestamp="2020-11-13T06:32:27.538">
@@ -279,9 +301,11 @@ The end of the concurrent `GMP work packet processing` sub-increment operations 
 </concurrent-end>
 ```
 
+The child element `<concurrent-mark-end>` shows that the processing has scanned 108.37 MB (113629324 B), which exceeds the 108.25 MB scan target.
+
 The garbage collector now returns to running partial cycles to reclaim free space in the heap before the next global mark phase increment is triggered. To see an example of how a `balanced` partial GC cycle appears in the logs, see the [`Balanced` examples - Partial GC Cycle](vgclog_examples#partial-gc-cycle).
 
-Following some partial GC cycles, an allocation taxation threshold is reached which triggers a STW pause. The element `<gc-start>` has a `contextid=347` and a type `global mark phase` which indicates that this is a global mark phase sub-increment associated with our global *mark* cycle example. 
+Following some partial GC cycles, a global mark phase increment allocation taxation threshold is reached which triggers a STW pause. The element `<gc-start>` has a `contextid=347` and type `global mark phase` which indicates that this is a global mark phase sub-increment associated with our global *mark* cycle example.
 
 ```xml
 <exclusive-start id="367" timestamp="2020-11-13T06:32:28.539" intervalms="692.067">
@@ -295,7 +319,9 @@ Following some partial GC cycles, an allocation taxation threshold is reached wh
 </gc-start>
 ```
 
-Details of the memory allocation at the beginning and end of this STW sub-increment, which are automatically recorded, show that there is no change to the heap's memory status. This is as expected because there are no `<gc-op>` elements recorded for this sub-increment. For some STW sub-increments, some GC operations are run, such as ADD. 
+`<allocation-taxation>` shows the taxation threshold for this global mark phase increment is set to 384 MB. `<gc-start>` records the heap to have 1058 MB of free memory available at the beginning of this global mark phase increment. This compares to the 1094 MB of free memory available at the end of the previous global mark phase increment. Although free memory was reclaimed by the partial GC cycles that ran between these global mark phase increments, free memory was allocated to objects during this period resutling in a net reduction of free memory available. 
+
+The status of the heap at the beginning and end of STW sub-increments are automatically recorded. For this STW subincrement, there are no `<gc-op>` elements recorded - `<gc-end>` immediately follows `<gc-start>` in the logs. For some STW sub-increments, some GC operations are run, such as ......
 
 <gc-end id="371" type="global mark phase" contextid="347" durationms="0.219" usertimems="0.000" systemtimems="0.000" stalltimems="0.000" timestamp="2020-11-13T06:32:28.540" activeThreads="8">
   <mem-info id="372" free="1109393408" total="3221225472" percent="34">
@@ -303,7 +329,9 @@ Details of the memory allocation at the beginning and end of this STW sub-increm
   </mem-info>
 </gc-end>
 
-The second part of the increment, the `GMP work packet processing` sub-increment, is recorded using the `<concurrent-start>` and <concurrent-end>` elements. 
+Comparing the heap status at the beginning and end of the subincrement shows that there is no change in free memory available or `<remembered-set>`  values.
+
+The second part of the increment, the `GMP work packet processing` subincrement, is recorded using the `<concurrent-start>` and <concurrent-end>` elements. 
 
 ```xml
 <concurrent-start id="373" type="GMP work packet processing" contextid="347" timestamp="2020-11-13T06:32:28.541">
@@ -316,7 +344,9 @@ The second part of the increment, the `GMP work packet processing` sub-increment
 </concurrent-end>
 ```
 
-More partial cycles are run. This pattern of interleaving of intermediate global mark increments with partial gc cycles repeats until a final global mark increment completes the global mark cycle. The final global mark phase increment consists of a STW `global mark phase` sub-increment that includes `mark increment` and `class unload` operations. 
+The log excerpt shows the concurrent GMP work packet processing subincrement has achieved the scan target of 112.58 MB (118053382 B). 112.67 MB (118142880 B) were scanned.
+
+More partial cycles run. This pattern of interleaving of global mark increments with partial gc cycles repeats until a final global mark increment completes the global mark cycle. The final global mark phase increment consists of a STW `global mark phase` sub-increment that includes `mark increment` and `class unload` operations.
 
 ```xml
 <exclusive-start id="489" timestamp="2020-11-13T06:32:34.197" intervalms="504.129">
@@ -350,14 +380,18 @@ More partial cycles are run. This pattern of interleaving of intermediate global
 </gc-end>
 ```
 
-Comparing the status of the memory before an after this `global mark phase` sub-increment shows that .....
-
+Comparing the status of the memory before and after this final `global mark phase` increment shows that .....
+- as expected, the final global mark phase increment does not reclaim any free memory. 
+- 113.29MB `freeBytes` of 122.81 `totalbytes` which represents 92% of the total. 7 regions overflowed. At the end of the final increment, 112.63MB of 122.81 which represents 91%, same number of regions overflowed. 
 
 Following the final global mark increment, the global mark cycles completes and the GC ends the STW pause.
 
+```xml
 <cycle-end id="497" type="global mark phase" contextid="347" timestamp="2020-11-13T06:32:34.314" />
 <exclusive-end id="498" timestamp="2020-11-13T06:32:34.317" durationms="120.638" />
 ```
+
+#### Sweep phase
 
 The operations to create a record of object liveness across the heap, which together with the partial GC cycle enables the `balanced` GC to reclaim memory, is completed with a sweep phase.  While the global *sweep* operation is logically associated with the global *mark* phase, it does not run in the same global *mark* cycle. Instead, the *sweep* operation runs in the same STW increment as the first partial GC cycle that runs after the completion of the global *mark* cycle. This can be seen in the following log excerpt.  After the log records the end of the global mark cycle it records a STW pause followed by a `partial gc` cycle of `id=501`. The global *sweep* operation that runs after the the global *mark* phase is recorded in the `<gc-op>` element tagged as `id=504`. 
 
@@ -410,7 +444,61 @@ The operations to create a record of object liveness across the heap, which toge
 
 A record of object liveness is now complete.
 
-### Global Cycle
+**Summary of the example**
+
+Analyzing the structure and elements of this example log output shows that this example `balanced` global mark GC cycle has the following characteristics:
+
+ADD
+
+### `balanced` Global Cycle
 
 If the GC cannot reclaim enough memory using partial and global *mark* cycles to prevent the whole heap becoming full, an allocation failure occurs and a global cycle is triggered.
 
+```xml
+<exclusive-start id="41" timestamp="2020-11-13T06:31:42.006" intervalms="2429.574">
+  <response-info timems="2.338" idlems="0.802" threads="2" lastid="000000000074FF00" lastname="RunDataWriter.1" />
+</exclusive-start>
+<sys-start reason="explicit" id="42" timestamp="2020-11-13T06:31:42.006" intervalms="9987.458" />
+<cycle-start id="43" type="global garbage collect" contextid="0" timestamp="2020-11-13T06:31:42.007" intervalms="9987.772" />
+<gc-start id="44" type="global garbage collect" contextid="43" timestamp="2020-11-13T06:31:42.007">
+  <mem-info id="45" free="2281852504" total="3221225472" percent="70">
+    <mem type="eden" free="151128" total="130023424" percent="0" />
+    <arraylet-reference objects="4" leaves="4" largest="1" />
+    <arraylet-primitive objects="1" leaves="8" largest="8" />
+    <remembered-set count="453472" freebytes="126964352" totalbytes="128778240" percent="98" regionsoverflowed="4" regionsstable="0" regionsrebuilding="0"/>
+  </mem-info>
+</gc-start>
+<allocation-stats totalBytes="127765576" >
+  <allocated-bytes non-tlh="11566360" tlh="116199216" arrayletleaf="0"/>
+  <largest-consumer threadName="ForkJoinPool-3-worker-5" threadId="000000000077E900" bytes="53174768" />
+</allocation-stats>
+<gc-op id="46" type="global mark" timems="35.727" contextid="43" timestamp="2020-11-13T06:31:42.044">
+  <trace-info objectcount="1856388" scancount="1838558" scanbytes="66324640" />
+  <finalization candidates="87" enqueued="0" />
+  <ownableSynchronizers candidates="200093" cleared="200034" />
+  <references type="soft" candidates="4427" cleared="0" enqueued="0" dynamicThreshold="23" maxThreshold="32" />
+  <references type="weak" candidates="2968" cleared="31" enqueued="29" />
+  <references type="phantom" candidates="97" cleared="0" enqueued="0" />
+  <stringconstants candidates="8948" cleared="0"  />
+  <object-monitors candidates="20" cleared="7"  />
+</gc-op>
+<gc-op id="47" type="classunload" timems="0.020" contextid="43" timestamp="2020-11-13T06:31:42.044">
+  <classunload-info classloadercandidates="74" classloadersunloaded="0" classesunloaded="0" anonymousclassesunloaded="0" quiescems="0.000" setupms="0.020" scanms="0.000" postms="0.000" />
+</gc-op>
+<gc-op id="48" type="sweep" timems="2.322" contextid="43" timestamp="2020-11-13T06:31:42.047" />
+<gc-op id="49" type="compact" timems="66.804" contextid="43" timestamp="2020-11-13T06:31:42.114">
+  <compact-info movecount="1651540" movebytes="56069168" />
+  <remembered-set-cleared processed="37569" cleared="33373" durationms="1.000" />
+</gc-op>
+<gc-end id="50" type="global garbage collect" contextid="43" durationms="107.552" usertimems="688.000" systemtimems="36.000" stalltimems="130.908" timestamp="2020-11-13T06:31:42.115" activeThreads="8">
+  <mem-info id="51" free="3128950784" total="3221225472" percent="97">
+    <arraylet-reference objects="2" leaves="2" largest="1" />
+    <arraylet-primitive objects="1" leaves="8" largest="8" />
+    <pending-finalizers system="0" default="0" reference="29" classloader="0" />
+    <remembered-set count="26656" freebytes="128671616" totalbytes="128778240" percent="99" regionsoverflowed="0" regionsstable="0" regionsrebuilding="0"/>
+  </mem-info>
+</gc-end>
+<cycle-end id="52" type="global garbage collect" contextid="43" timestamp="2020-11-13T06:31:42.115" />
+<sys-end id="53" timestamp="2020-11-13T06:31:42.115" />
+<exclusive-end id="54" timestamp="2020-11-13T06:31:42.115" durationms="108.749" />
+```
