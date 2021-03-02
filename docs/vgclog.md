@@ -1,4 +1,4 @@
-# Verbose garbage collection Logs  
+# Verbose garbage collection logs
 
 [Garbage collection](gc.md) (GC) reclaims used memory in the heap for reuse. During cleanup of the heap, the verbose GC logs, when enabled, capture information about the different GC operations that are involved in the GC cycles. GC operations aim to reorganize or reclaim memory. 
  
