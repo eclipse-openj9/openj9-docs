@@ -1,12 +1,8 @@
 # `balanced` examples
 
-The [`balanced`](gc.md#balanced-policy) policy (`-Xgcpolicy:balanced`) uses two types of cycle to perform GC – a partial GC cycle and a global GC *mark* cycle. The policy GC may have to perform a third type of cycle - a global cycle - to reclaim memory after an allocation failure that has resulted from tight memory conditions. 
-
-Partial GC cycles, global mark cycles, and global cycles set the allocation taxation threshold at the end of the cycle. If a partial GC cycle is not run between global mark phase increments of a global *mark* cycle, the allocation taxation threshold is set to trigger the next cycle when the *eden* space is full. Specifically, at the end of the partial gc cycle, the allocation threshold is set to be equal to the size of the *eden* space.
-
-If a partial GC cycle is run within a global *mark* cycle, the allocation taxation threshold is set to be smaller than the size of the *eden* space to allow for global mark phase increments to run in between partial GC cycles. Specifically, when the partial GC cycle completes within a global *mark* cycle, the allocation taxation threshold is set to be half the size of the *eden* space. The increment, which could be a partial GC cycle or could be a GMP increment, runs when only half of the *eden* space is available as free memory.
+The [`balanced`](gc.md#balanced-policy) policy (`-Xgcpolicy:balanced`) uses two types of cycle to perform GC – a partial GC cycle and a global GC *mark* cycle. The `balanced` policy GC may have to perform a third type of cycle - a global cycle - to reclaim memory after an allocation failure that has resulted from tight memory conditions.
  
-Note: For more information about the cycles used in a particular policy, see [garbage collection policies](gc#garbage-collection-policies). 
+Note: For more information about the cycles used in a particular policy, see [garbage collection policies](gc#garbage-collection-policies).
 
 The start of a `balanced` cycle is recorded in the log by the following elements and attributes:
 
@@ -19,6 +15,12 @@ partial cycle| `partial gc`           | `<allocation-taxation>`                 
 
 To locate a particular type of cycle, you can search for the `type` attribute of the `<cycle-start>` and `<cycle-end>` elements.
 
+Partial GC cycles, global mark cycles, and global cycles set the allocation taxation threshold at the end of the cycle. If a partial GC cycle is not run between global mark phase increments of a global *mark* cycle, the allocation taxation threshold is set to trigger the next cycle when the *eden* space is full. Specifically, at the end of the partial gc cycle, the allocation threshold is set to be equal to the size of the *eden* space.
+
+If a partial GC cycle is run within a global *mark* cycle, the allocation taxation threshold is set to be smaller than the size of the *eden* space to allow for global mark phase increments to run in between partial GC cycles. Specifically, when the partial GC cycle completes within a global *mark* cycle, the allocation taxation threshold is set to be half the size of the *eden* space. The increment, which could be a partial GC cycle or could be a GMP increment, runs when only half of the *eden* space is available as free memory.
+
+Note: For more information about GC increments, see [GC increments and interleaving](vglog.md#gc-increments-and-interleaving).
+
 You an analyze the increments and operations that are associated with a particular type of cycle by locating and interpreting the elements in the following table:
 
 | GC process             | start and end XML elements   | Details |
@@ -26,10 +28,9 @@ You an analyze the increments and operations that are associated with a particul
 |GC cycle                |`<cycle-start>`, `<cycle-end>`| The start and end of a GC cycle.|
 |GC STW increment        |`<gc-start>`, `<gc-end>`      | The start and end of a GC increment or sub-increment that begins with a *stop-the-world* pause. For example a `global mark phase` global mark GC cycle increment or a partial GC cycle increment.
 |GC concurrent increment        | `<concurrent-start>`, `<concurrent-end>` | The start of the concurrent *global mark phase work packet processing* sub-increments of the global mark cycle|
-| ? | `<concurrent-mark-start>` | THIS IS A CHILD ELEMENT GIVING STATUS - WHERE PUT IT? |
 |GC operations and phases| `<gc-op>`                    | A GC operation such as mark or sweep, or a suboperation ‘phase’ such as class unload. |
 
-**Note: For more information about the XML structure of GC cycles, see [GC cycles](vgclog.md#gc-cycles).  For more information about GC cycle increments, see [GC increments and interleaving](vgclog.md#gc-increments-and-interleaving).
+Note: For more information about the XML structure of GC cycles, see [GC cycles](vgclog.md#gc-cycles).
 
 The following sections use log excerpts to show how the different types of give details about `balanced` cycle are logged. 
 
@@ -39,7 +40,7 @@ The following example is taken from a [`balanced` partial GC cycle](gc.md#balanc
 
 To search for a `balanced` partial GC cycle, you can search for the `type` attribute value `partial gc` in `<cycle-start>` and `<cycle-end>` elements.
 
-The `balanced` policy’s partial GC cycle reclaims memory in the heap for allocation of new objects by reducing the number of used *regions*. The partial GC cycle always reduces used regions in the *eden* space and may also reclaim memory from older regions. Multiple partial GC cycles often run in between global mark phase increments of the [`balanced` global mark cycle](vgclog_examples.md#balanced-global-mark-cycle).  
+The `balanced` policy’s partial GC cycle reclaims memory in the heap for allocation of new objects by reducing the number of used regions. The partial GC cycle always reduces used regions in the *eden* space and may also reclaim memory from older regions. Multiple partial GC cycles often run in between global mark phase increments of the [`balanced` global mark cycle](vgclog_examples.md#balanced-global-mark-cycle).  
 
 All the partial GC cycle's operations run during a single *stop-the-world* pause:
 
@@ -49,6 +50,8 @@ All the partial GC cycle's operations run during a single *stop-the-world* pause
 
 The `balanced` partial GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some child elements are omitted for clarity:
 
+CHECK THIS ILLUSTRATION
+
 ```xml
 <exclusive-start/>                       (STW pause starts)
 
@@ -56,35 +59,35 @@ The `balanced` partial GC cycle follows a general structure in the verbose GC lo
 
 <cycle-start/>                            (partial cycle starts)
 
-  <gc-start/>                             (partial  cycle increment starts)
+<gc-start/>                             (partial  cycle increment starts)
 
-    <mem-info>                            (memory status before operations)
+<mem-info>                            (memory status before operations)
 
-      <mem></mem>                         (status of different types of memory)
+ <mem></mem>                         (status of different types of memory)
 
-    </mem-info>         
+</mem-info>         
 
-  </gc-start> 
+</gc-start> 
 
-  <allocation-stats>                      (snapshot of application threads status...
+<allocation-stats>                      (snapshot of application threads status...
                                           ... taken before the cycle starts)
-  <gc-op> type="copy forward" </gc-op>    (copy forward operation completed)
+<gc-op> type="copy forward" </gc-op>    (copy forward operation completed)
 
-  <gc-op> type="class unload" </gc-op>    (class unload operation completed)
+<gc-op> type="class unload" </gc-op>    (class unload operation completed)
 
-  <gc-op> type="sweep" </gc-op>           (sweep operation completed)
+<gc-op> type="sweep" </gc-op>           (sweep operation completed)
 
-  <gc-op> type="compact" </gc-op>         (compact operation completed)
+<gc-op> type="compact" </gc-op>         (compact operation completed)
 
-  <gc-end>                                (partial cycle increment ends)
+<gc-end>                                (partial cycle increment ends)
 
-    <mem-info>                            (memory status after operations)
+<mem-info>                            (memory status after operations)
           
-      <mem></mem>                         (status of different types of memory)
+<mem></mem>                         (status of different types of memory)
 
-    </mem-info>         
+</mem-info>         
 
-  </gc-end>
+</gc-end>
 
 <cycle-end>                               (partial cycle ends)
 
@@ -242,9 +245,119 @@ The following elements log the GC increments, subincrements and operations of th
 |`GMP work packet processing` subincrement| work packet processing operations | concurrent and sometimes final operations during a *STW* to complete the subincrement | `<concurrent-start>`, `<concurrent-end>`| The `GMP work packet processing subincrement runs immediately after the `global mark phase` subincrement |
 |final global mark phase increment | final global mark phase operations including class unload | *stop-the-world* | `gc-start>`, `<gc-end>`| Final increment. Runs the final global mark phase operations followed by operations to finish the cycle  |
 
-ADD HERE AN ILLUSTRATION OF THE LOGS
+MODIFY THIS FOR  GLOBAL MARK CYCLE
 
+The `balanced` global *mark* GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some child elements are omitted for clarity:
 
+```xml
+<exclusive-start/>                        (STW pause starts)
+
+<allocation-taxation/>                    (memory threshold trigger recorded)
+
+<cycle-start/> type="global mark phase"   (global mark cycle starts)
+
+<gc-start/> type="global mark phase"      (GMP subincrementstarts)
+
+<mem-info>                                (memory status before operations)
+
+<remembered-set>
+
+</mem-info>         
+
+</gc-start> 
+
+<gc-op> type="mark increment" </gc-op>  (copy forward operation completed)
+
+<gc-op> type="class unload" </gc-op>    (optional class unload operation completed)
+
+<gc-end>                                (partial cycle increment ends)
+
+<mem-info>                            (memory status after operations)
+          
+<remembered-set>
+
+</mem-info>         
+
+<concurrent-start/> type="GMP work packet processing" (GMP WPP sub increment starts)
+
+<exclusive-end/>                       (STW pause ends)
+
+<concurrent-end> type="GMP work packet processing" (GMP WPP sub increment ends)
+
+<gc-op type="mark increment"> </gc-op>
+
+</concurrent-end>
+
+...                                       (partial GC cycles run)
+
+<exclusive-start/>                        (STW pause starts)
+
+<gc-start/> type="global mark phase"      (another STW GMP subincrement runs)
+
+...   
+
+<concurrent-start/> type="GMP work packet processing" (another concurrent global mark phase subincrement runs)
+
+...
+
+<exclusive-end/>
+
+...                                       (more partial GC cycles may run)
+<concurrent-end> type="GMP work packet processing"
+
+<gc-op type="mark increment"> </gc-op>
+
+</concurrent-end>
+
+...
+
+...                                       (more partial and GMP increments GC cycles interleave)
+
+<exclusive-start/>                        (STW pause starts)
+
+<allocation-taxation/>                    (memory threshold trigger recorded)
+
+<gc-start/> type="global mark phase"      (final GMP increment starts)
+
+<mem-info>                                (memory status before operations)
+
+<remembered-set>
+
+</mem-info>         
+
+</gc-start> 
+
+<gc-op> type="mark increment" </gc-op>  (copy forward operation completed)
+
+<gc-op> type="class unload" </gc-op>    (class unload operation completed)
+
+<gc-end>                                (final GMP increment ends)
+
+<mem-info>                            (memory status after operations)
+          
+<remembered-set>
+
+</mem-info>         
+
+<cycle-end/> type "global mark phase"
+
+<exclusive-end/>
+
+<exclusive-start/>
+
+<cycle-start/> type "partial gc"
+
+...
+
+<gc-op> type="sweep"
+
+...
+
+<cycle-end/> type "partial gc"
+
+<exclusive-end/>
+
+```
 
 
 #### Global mark phase
