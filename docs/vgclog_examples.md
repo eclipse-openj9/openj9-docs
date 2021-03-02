@@ -26,7 +26,7 @@ You can analyze the increments and operations that are associated with a particu
 |GC STW increment        | `<concurrent-global-final> ` | The start of the final GC increment of the global concurrent cycle that executes the final collection|
 |GC operations and suboperations| `<gc-op>`                    | A GC operation such as mark or sweep, or a suboperation such as class unload. |
 
-**Note:** For more information about the XML structure of GC cycles, see [GC cycles](vgclog.md/#gc-cycles). For more information about GC cycle increments, see [GC increments and interleaving](vgclog.md#gc-increments-and-interleaving).
+**Note:** For more information about the XML structure of GC cycles, see [GC cycles](vgclog.md#gc-cycles). For more information about GC cycle increments, see [GC increments and interleaving](vgclog.md#gc-increments-and-interleaving).
 
 The following examples use log excerpts to show how the different types of `gencon` cycle are logged.
 
@@ -166,7 +166,7 @@ The `<memory-copied>` element indicates that 5.75 MB (6,027,440B) of reachable o
 
 The `<scavenger-info>` element shows that the *tenure age* is set to `7`. Any object in the *allocate* space with an age less than or equal to `7` is copied to the survivor space during this `scavenge`operation. Any object that is copied between the *allocate* and *survivor* areas more than `7` times is moved to the tenure area. 
 
-For more information about how the scavenge operation acts on the heap, see [`gencon` policy(default)](gc_overview.md#gencon-policy-default).
+For more information about how the scavenge operation acts on the heap, see [`gencon` policy(default)](gc_overview.md#gc-scavenge-operation).
 
 The end of the increment is recorded with `<gc-end>` and provides another snapshot of memory allocation on the heap, similar to `<gc-start>`. 
 
@@ -240,7 +240,7 @@ You can locate the concurrent scavenge partial cycle's concurrent increment by s
 
 The following example shows how a global GC cycle is recorded in a `gencon` policy verbose GC log. The output is broken down into sections with supporting text to explain the GC processing that is taking place.
 
-The global GC cycle runs when the *tenure* area is close to full, which typically occurs after many partial cycles. As such, the output can be found part way down the full log. For more information about the GC Initialization section, see [Verbose GC log contents and structure ](vgclog-md#verbose-gc-log-contents-and-structure). For an example log output for a `gencon` partial cycle, see [Example - `gencon`’s default partial GC cycle](./vgclogs.md/#example-gencons-default-partial-gc-cycle).
+The global GC cycle runs when the *tenure* area is close to full, which typically occurs after many partial cycles. As such, the output can be found part way down the full log. For more information about the GC Initialization section, see [Verbose GC log contents and structure ](vgclog.md#verbose-gc-log-contents-and-structure). For an example log output for a `gencon` partial cycle, see [Example - `gencon`’s default partial GC cycle](vgclog.md/#example-gencons-default-partial-gc-cycle).
 
  [The global GC cycle is split into three increments](./vgclog.md#gc-increments-and-interleaving). Splitting the cycle operations into the following increments reduces pause times by running the majority of the GC work concurrently. The concurrent increment pauses when a partial GC cycle is triggered and resumes after the partial cycle, or multiple cycles, finish. The interleaving of partial GC cycles with the global cycle's intermediate concurrent increment can be seen in the following example. A single partial GC cycle is logged between the initial and final increments of the global cycle.
 
