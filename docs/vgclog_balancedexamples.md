@@ -11,7 +11,7 @@ The start of a `balanced` cycle is recorded in the log by the following elements
 |Global mark cycle| `global mark phase`| `<allocation-taxation>` | taxation threshold reached. |
 | Global mark increment of global mark cycle| `GMP work packet processing` | `<concurrent-start>` `<concurrent-end>` |
 partial cycle| `partial gc`           | `<allocation-taxation>`                 |taxation threshold reached|
-|global cycle|     `global garbage collect`    | `af-start`, `<af-end>`           |An allocation failure. Occurs under tight memory conditions. Cycle runs very rarely. |
+|global cycle|     `global garbage collect`    | `<sys-start reason="explicit"/>` |An allocation failure. Occurs under tight memory conditions. Cycle runs very rarely. |
 
 To locate a particular type of cycle, you can search for the `type` attribute of the `<cycle-start>` and `<cycle-end>` elements.
 
@@ -34,9 +34,9 @@ Note: For more information about the XML structure of GC cycles, see [GC cycles]
 
 The following sections use log excerpts to show how the different types of give details about `balanced` cycle are logged. 
 
-### `balanced` Partial GC cycle
+### `balanced` partial GC cycle
 
-The following example is taken from a [`balanced` partial GC cycle](gc.md#balanced-policy) verbose GC log. The output is broken down into sections to explain the GC processing that is taking place.
+The following [`balanced` partial GC cycle](gc.md#balanced-policy) example is taken from a `balanced` policy verbose GC log. The output is broken down into sections to explain the GC processing that is taking place.
 
 To search for a `balanced` partial GC cycle, you can search for the `type` attribute value `partial gc` in `<cycle-start>` and `<cycle-end>` elements.
 
@@ -46,7 +46,7 @@ All the partial GC cycle's operations run during a single *stop-the-world* pause
 
 |GC Operations | GC increment | *stop-the-world* or concurrent| XML element of GC increment          | Details                                                                   |
 |-------------|--------------|-------------------------------|--------------------------------------|---------------------------------------------------------------------------|
-|copy forward, optionally class unload, sweep, compact |Single        | *stop-the-world*              | `<gc-start>`, `<gc-end>`| `<gc-op'>` |ADD| 
+|copy forward, and optionally class unload, sweep, and compact |Single        | *stop-the-world*              | `<gc-start>`, `<gc-end>`| `<gc-op'>` |ADD| 
 
 The `balanced` partial GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some child elements are omitted for clarity:
 
@@ -181,7 +181,7 @@ The element `<gc-end>` records the end of the increment and provides another sna
 
 The heap memory allocation at the end of the increment is as follows:
 
-- The heap now has 2864 MB(3003121664 B) of memory available compared to the 856 MB available at the start of the increment. The increment reclaimed 2008 MB of memory in the heap. 
+- The heap now has 2864 MB(3,003,121,664 B) of memory available compared to the 856 MB available at the start of the increment. The increment reclaimed 2,008 MB of memory in the heap. 
 
 - 100% of the *eden* space is available as free memory. All the used memory in the *eden* space is reclaimed.
 
@@ -589,16 +589,84 @@ Analyzing the structure and elements of this example log output shows that this 
 - The final global mark phase increment includes a class unload. The final increment also triggers a sweep phase to run in the next partial cycle.
 - WHAT ELSE?
 
-### `balanced` Global Cycle
+### `balanced` global cycle
 
-If the GC cannot reclaim enough memory using partial and global *mark* cycles to prevent the whole heap becoming full, an allocation failure occurs and a global cycle is triggered.
+The following [`balanced` partial GC cycle](gc.md#balanced-policy) example is taken from a `balanced` verbose GC log. The output is broken down into sections to explain the GC processing that is taking place.
+
+To search for a `balanced` global cycle, you can search for the `type` attribute value `global garbage collect` in `<cycle-start>` and `cycle-end` elements. You can also search for the `sys-start` element, which records the `balanced` global cycle trigger as `explicit`.
+
+If the `balanced` policy GC cannot reclaim enough memory using the `balanced` partial and global *mark* cycles to prevent the heap becoming completely full, an allocation failure occurs and a `balanced` global cycle is triggered.
+
+The ['balanced` global cycle](gc.md)'s operations run during in a single GC increment during a STW pause.
+
+|GC Operations | GC increment | *stop-the-world* or concurrent| XML element of GC increment          | Details                                                                   |
+|-------------|--------------|-------------------------------|--------------------------------------|---------------------------------------------------------------------------|
+|???? |Single        | *stop-the-world*              | `<gc-start>`, `<gc-end>`| `<gc-op'>` |ADD| 
+
+The `balanced` partial GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some child elements are omitted for clarity:
+
+CREATE THIS ILLUSTRATION FOR GLOBAL CYCLE - THIS IS CURRENTLY COPIED FROM PARTIAL GC
+
+```xml
+<exclusive-start/>                       (STW pause starts)
+
+<allocation-taxation/>                   (memory threshold trigger recorded)
+
+<cycle-start/>                            (partial cycle starts)
+
+<gc-start/>                             (partial  cycle increment starts)
+
+<mem-info>                            (memory status before operations)
+
+ <mem></mem>                         (status of different types of memory)
+
+</mem-info>         
+
+</gc-start> 
+
+<allocation-stats>                      (snapshot of application threads status...
+                                          ... taken before the cycle starts)
+<gc-op> type="copy forward" </gc-op>    (copy forward operation completed)
+
+<gc-op> type="class unload" </gc-op>    (class unload operation completed)
+
+<gc-op> type="sweep" </gc-op>           (sweep operation completed)
+
+<gc-op> type="compact" </gc-op>         (compact operation completed)
+
+<gc-end>                                (partial cycle increment ends)
+
+<mem-info>                            (memory status after operations)
+          
+<mem></mem>                         (status of different types of memory)
+
+</mem-info>         
+
+</gc-end>
+
+<cycle-end>                               (partial cycle ends)
+
+<exclusive-end>                           (STW pause ends)
+```
+
+The first activity of a global cycle is a STW pause, recorded by an `<exclusive-start` element. The following `<sys-start>` element records the trigger reason as `explicit`.
 
 ```xml
 <exclusive-start id="41" timestamp="2020-11-13T06:31:42.006" intervalms="2429.574">
   <response-info timems="2.338" idlems="0.802" threads="2" lastid="000000000074FF00" lastname="RunDataWriter.1" />
 </exclusive-start>
 <sys-start reason="explicit" id="42" timestamp="2020-11-13T06:31:42.006" intervalms="9987.458" />
+```
+
+The start of the cycle is recorded using the `<cycle-start>` element as type `global garbage collect`.
+
+```xml
 <cycle-start id="43" type="global garbage collect" contextid="0" timestamp="2020-11-13T06:31:42.007" intervalms="9987.772" />
+```
+
+The 
+
+```xml
 <gc-start id="44" type="global garbage collect" contextid="43" timestamp="2020-11-13T06:31:42.007">
   <mem-info id="45" free="2281852504" total="3221225472" percent="70">
     <mem type="eden" free="151128" total="130023424" percent="0" />
@@ -607,10 +675,16 @@ If the GC cannot reclaim enough memory using partial and global *mark* cycles to
     <remembered-set count="453472" freebytes="126964352" totalbytes="128778240" percent="98" regionsoverflowed="4" regionsstable="0" regionsrebuilding="0"/>
   </mem-info>
 </gc-start>
+```
+
+```xml
 <allocation-stats totalBytes="127765576" >
   <allocated-bytes non-tlh="11566360" tlh="116199216" arrayletleaf="0"/>
   <largest-consumer threadName="ForkJoinPool-3-worker-5" threadId="000000000077E900" bytes="53174768" />
 </allocation-stats>
+```
+
+```xml
 <gc-op id="46" type="global mark" timems="35.727" contextid="43" timestamp="2020-11-13T06:31:42.044">
   <trace-info objectcount="1856388" scancount="1838558" scanbytes="66324640" />
   <finalization candidates="87" enqueued="0" />
@@ -629,6 +703,9 @@ If the GC cannot reclaim enough memory using partial and global *mark* cycles to
   <compact-info movecount="1651540" movebytes="56069168" />
   <remembered-set-cleared processed="37569" cleared="33373" durationms="1.000" />
 </gc-op>
+```
+
+```xml
 <gc-end id="50" type="global garbage collect" contextid="43" durationms="107.552" usertimems="688.000" systemtimems="36.000" stalltimems="130.908" timestamp="2020-11-13T06:31:42.115" activeThreads="8">
   <mem-info id="51" free="3128950784" total="3221225472" percent="97">
     <arraylet-reference objects="2" leaves="2" largest="1" />
@@ -637,7 +714,12 @@ If the GC cannot reclaim enough memory using partial and global *mark* cycles to
     <remembered-set count="26656" freebytes="128671616" totalbytes="128778240" percent="99" regionsoverflowed="0" regionsstable="0" regionsrebuilding="0"/>
   </mem-info>
 </gc-end>
+```
+
+```xml
 <cycle-end id="52" type="global garbage collect" contextid="43" timestamp="2020-11-13T06:31:42.115" />
 <sys-end id="53" timestamp="2020-11-13T06:31:42.115" />
 <exclusive-end id="54" timestamp="2020-11-13T06:31:42.115" durationms="108.749" />
 ```
+
+**Summary of the example**
