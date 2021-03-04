@@ -11,7 +11,7 @@ The start of a `balanced` cycle is recorded in the log by the following elements
 |Global mark cycle| `global mark phase`| `<allocation-taxation>` | taxation threshold reached. |
 | Global mark increment of global mark cycle| `GMP work packet processing` | `<concurrent-start>` `<concurrent-end>` |
 partial cycle| `partial gc`           | `<allocation-taxation>`                 |taxation threshold reached|
-|global cycle|     `global garbage collect`    | `<sys-start reason="explicit"/>` |An allocation failure. Occurs under tight memory conditions. Cycle runs very rarely. |
+|global cycle|     `global garbage collect`    | `<sys-start reason="explicit"/>` |An allocation failure. Occurs under tight memory conditions. Cycle runs rarely. |
 
 To locate a particular type of cycle, you can search for the `type` attribute of the `<cycle-start>` and `<cycle-end>` elements.
 
