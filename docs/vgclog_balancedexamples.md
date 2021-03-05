@@ -1,4 +1,4 @@
-# `balanced` examples
+## `balanced` examples
 
 The [`balanced`](gc.md#balanced-policy) policy (`-Xgcpolicy:balanced`) uses two types of cycle to perform GC – a partial GC cycle and a global GC *mark* cycle. The `balanced` policy GC may have to perform a third type of cycle - a global cycle - to reclaim memory after an allocation failure that has resulted from tight memory conditions.
  
@@ -15,7 +15,9 @@ partial cycle| `partial gc`           | `<allocation-taxation>`                 
 
 To locate a particular type of cycle, you can search for the `type` attribute of the `<cycle-start>` and `<cycle-end>` elements.
 
-Partial GC cycles, global mark cycles, and global cycles set the allocation taxation threshold at the end of the cycle. If a partial GC cycle is not run between global mark phase increments of a global *mark* cycle, the allocation taxation threshold is set to trigger the next cycle when the *eden* space is full. Specifically, at the end of the partial gc cycle, the allocation threshold is set to be equal to the size of the *eden* space.
+Partial GC cycles, global mark cycles, and global cycles set the allocation taxation threshold at the end of the cycle. For 'balanced' cycles, the *tax* on the mutator threads refers to pausing the mutator threads while GC work is run. 
+
+If a partial GC cycle is not run between global mark phase increments of a global *mark* cycle, the allocation taxation threshold is set to trigger the next cycle when the *eden* space is full. Specifically, at the end of the partial gc cycle, the allocation threshold is set to be equal to the size of the *eden* space.
 
 If a partial GC cycle is run within a global *mark* cycle, the allocation taxation threshold is set to be smaller than the size of the *eden* space to allow for global mark phase increments to run in between partial GC cycles. Specifically, when the partial GC cycle completes within a global *mark* cycle, the allocation taxation threshold is set to be half the size of the *eden* space. The increment, which could be a partial GC cycle or could be a GMP increment, runs when only half of the *eden* space is available as free memory.
 
