@@ -8,23 +8,72 @@ As detailed in [`gencon` policy (default)](gc.md#gencon-policy-default), this po
 
 The start of a `gencon` cycle is recorded in the log by the following elements and attributes:
 
-| GC cycle | Value of `type` attribute of the `<cycle-start>` and `<cycle-end` ``elements | Element that logs the cycle trigger|  Trigger reason|
-|----------|----------------------------|------------------------------|------------------|
-|Global    | `global`                   | `<concurrent-kickoff>`       | Low free memory tenure area threshold reached. Cycle trigger element is located before the `<cycle-start>` element|
-|Partial | `scavenge`                   | `<af-start>`                 |Allocation failure. Cycle trigger element is located before the `<cycle-start>` element|
+<table style="width:100%" align="center">
+<caption>Table showing types of <code>gencon</code> cycle along with the corresponding trigger reason and XML elements for each type. </caption>
+
+  <tr>
+    <th scope="col">GC cycle</th>
+    <th align="center" scope="col">Value of <code>type</code> attribute of the <code>&lt;cycle-start&gt;</code> and <code>&lt;cycle-end&gt;</code>elements</th>
+    <th align="center"scope="col">Element that logs the cycle trigger</th>
+    <th scope="col">Trigger reason</th>
+  </tr>
+
+  <tr>
+    <td scope="row"> Global</td>
+    <td align="center"><code>global</code> </td>
+    <td align="center"><code>&lt;concurrent-kickoff&gt;</code></td>
+    <td>Low free memory tenure area threshold reached. Cycle trigger element is located before the <code>&lt;cycle-start&gt;</code> element.</td>
+  </tr>
+
+  <tr>
+    <td scope="row"> Partial</td>
+    <td align="center"> <code>scavenge</code></td>
+    <td align="center"><code>&lt;af-start&gt;</code></td>
+    <td>Allocation failure. Cycle trigger element is located before the <code>&lt;cycle-start&gt;</code> element.</td>
+  <tr>
+</table>
 
 You can use the `type` attribute of the `<gc-start>` and `<gc-end>` elements to locate a particular cycle. YOu can also locate a particular type of cycle by searching for the element that records the cycle trigger, which is located before the `<cycle-start>` element.
 
 You can analyze the increments and operations that are associated with a particular type of cycle by locating and interpreting the elements in the following table:
 
+<table style="width:100%" align="center">
+<caption>Table showing increments and operations that are associated with the <code>gencon</code> partial scavenge and global cycles.</caption>
 
-| GC process             | Elements that log the start and end of the event  | Details |
-|------------------------|------------------------------|------------------------------|
-|GC cycle                |`<cycle-start>`, `<cycle-end>`| The start and end of a GC cycle.|
-|GC STW increment        |`<gc-start>`, `<gc-end>`      | The start and end of a GC increment that begins with a pause.
-|GC STW increment        | `<concurrent-kickoff>`       | The start of the initial GC increment of the global concurrent cycle that begins the initial mark operation
-|GC STW increment        | `<concurrent-global-final> ` | The start of the final GC increment of the global concurrent cycle that executes the final collection|
-|GC operations and suboperations| `<gc-op>`                    | A GC operation such as mark or sweep, or a suboperation such as class unload. |
+  <tr>
+    <th align="center" scope="col">GC process</th>
+    <th align="center" scope="col">Elements that log the start and end of the event</th>
+    <th align="center" scope="col">Details</th>
+  </tr>
+
+  <tr>
+    <td align="center" scope="row"> GC cycle</td>
+    <td align="center"><code>&lt;cycle-start&gt;</code>, <code>&lt;cycle-end&gt;</code></td>
+    <td >The start and end of a GC cycle.</td>
+  </tr>
+
+  <tr>
+    <td align="center" scope="row"> GC STW increment</td>
+    <td align="center"><code>&lt;gc-start&gt;</code>, <code>&lt;gc-end&gt;</code></td>
+    <td >The start and end of a GC increment that begins with a pause.</td>
+  <tr>
+    <tr>
+    <td align="center" scope="row"> GC STW increment</td>
+    <td align="center"><code>&lt;concurrent-kickoff&gt;</code></td>
+    <td>The start of the initial GC increment of the global concurrent cycle that begins the initial mark operation.</td>
+  <tr>
+
+  <tr>
+    <td align="center" scope="row"> GC STW increment</td>
+    <td align="center"><code>&lt;concurrent-global-final&gt;</code></td>
+    <td>The start of the final GC increment of the global concurrent cycle that executes the final collection.</td>
+  <tr>
+  <tr>
+    <td align="center" scope="row"> GC operations and suboperations</td>
+    <td align="center"><code>&lt;gc-op&gt;</code></td>
+    <td>A GC operation such as mark or sweep, or a suboperation such as class unload.</td>
+  <tr>
+</table>
 
 **Note:** For more information about the XML structure of GC cycles, see [GC cycles](vgclog.md#gc-cycles). For more information about GC cycle increments, see [GC increments and interleaving](vgclog.md#gc-increments-and-interleaving).
 
@@ -38,9 +87,24 @@ To search for a scavenge partial GC cycle, you can search for the `type` attribu
 
 By default, the `gencon` partial GC cycle runs by using a single *stop-the-world* (STW) pause. The cycle performs only one operation, a *scavenge* operation, which runs only on the *nursery* area. The cycle consists of a single GC increment, which is labeled by using the elements that are shown in the following table:
 
-|GC Operation | GC increment | STW or concurrent| XML element of GC increment          | Details                                                                   |
-|-------------|--------------|------------------|--------------------------------------|---------------------------------------------------------------------------|
-|Scavenge     |Single        | STW              | `<gc-start>`, `<gc-end>` |Contains detailed information about copied objects and the weak roots processing operation|
+<table style="width:100%" align="center">
+<caption>Table showing the <code>gencon</code> default partial scavenge cycle's GC increment and corresponding XML elements.</caption>
+
+  <tr>
+    <th align="center" scope="col">GC operation</th>
+    <th align="center" scope="col">GC increment</th>
+    <th align="center" scope="col">STW or concurrent</th>
+    <th align="center" scope="col">XML element of GC increment</th>
+    <th align="center" scope="col">Details</th>
+  </tr>
+  <tr>
+    <td scope="row"> scavenge</td>
+    <td align="center">single </code></td>
+    <td align="center">STW </code></td>
+    <td align="center"><code>&lt;gc-start&gt;</code>, <code>&lt;gc-end&gt;</code></code></td>
+    <td>Contains detailed information about copied objects and the weak roots processing operation</code></td>
+  </tr>
+</table>
 
 The scavenge partial GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some elements are omitted for clarity:
 
@@ -56,7 +120,7 @@ The scavenge partial GC cycle follows a general structure in the verbose GC log 
 
 <mem-info>                  (memory status before operation)
 
-<mem></mem>                 (status of different types of memory)
+<mem></mem>                 (status of different areas of heap)
 
 </mem-info>
 
@@ -70,7 +134,7 @@ The scavenge partial GC cycle follows a general structure in the verbose GC log 
 
 <mem-info>                  (memory status after operation)
 
-<mem></mem>                 (status of different types of memory)
+<mem></mem>                 (status of different areas of heap)
 
 </mem-info>
 
@@ -87,8 +151,7 @@ The scavenge partial GC cycle follows a general structure in the verbose GC log 
 
 ```
 
-The first activity in the cycle is recorded by an `<exclusive-start>` element, which indicates the start of the STW pause. Application threads are halted to give
-the garbage collector exclusive access to the heap:
+The first activity in the cycle is recorded by an `<exclusive-start>` element, which indicates the start of the STW pause. Application threads are halted to give the garbage collector exclusive access to the Java&trade; object heap:
 
 ```xml
 <!-- Start of gencon scavenge partial GC cycle example -->
@@ -98,7 +161,7 @@ the garbage collector exclusive access to the heap:
 </exclusive-start>
 ```
 
-The `<af-start>` element indicates that the cycle was triggered by an allocation failure in the *nursery* (`type="nursery"`) area of the heap:
+The `<af-start>` element indicates that the cycle was triggered by an allocation failure in the nursery (`type="nursery"`) area of the heap:
 
 ```xml
 <af-start id="12393" threadId="00000000013D7280" totalBytesRequested="8200" timestamp="2020-10-18T13:35:45.000" intervalms="418.233" type="nursery" />
@@ -112,7 +175,7 @@ The `<cycle-start>` element marks the start of the cycle. The attribute `type="s
 
 Most elements are labeled with an `id` attribute that increases in value incrementally, a`timestamp` attribute, and a `contextid` attribute. All elements that record GC increments and operations that are associated with a particular cycle have a `contextid` value that matches the `id` value of the cycle. The `<cycle-start>` element of this example cycle has an `id="12394"`, so all subsequent elements that have a `contextid="4"`, such as the `<gc-start>` increment element and the `<gc-op>` operation element, are associated with this particular example cycle.  
 
-The `<gc-start>` element records the first GC increment. In this `<gc-start>` section, you can find information about the amount of memory available (`<mem-info>`) and where it is located in the heap.
+The `<gc-start>` element records the first GC increment. In this `<gc-start>` section, you can find information about the amount of memory available (`<mem-info>`) and where it is located in the Java&trade; object heap.
 
 The memory snapshot within the `<gc-start>` element is taken before the *scavenge* operation and can be compared with a similar snapshot that is taken afterward to understand the effect on the heap.
 
@@ -132,10 +195,10 @@ The memory snapshot within the `<gc-start>` element is taken before the *scaveng
 </gc-start>
 ```
 
-The heap memory allocation at the start of the increment is as follows:
+The Java&trade; object heap memory allocation at the start of the increment is as follows:
 
-- The *allocate* space of the *nursery* area is full, or close to full. The allocation failure was triggered by the lack of available memory in this space.
-- The *survivor* space of the *nursery* area is reported as 'full' to reflect that no available memory is available to allocate to the mutator threads. The entire *survivor* space is reserved for GC operations during the GC increment. 
+- The *allocate* space of the nursery area is full, or close to full. The allocation failure was triggered by the lack of available memory in this space.
+- The *survivor* space of the nursery area is reported as 'full' to reflect that no available memory is available to allocate to the mutator threads. The entire *survivor* space is reserved for GC operations during the GC increment. 
 - The *tenure* area has 395.7 MB (414,960,320B) of free memory available.
 
 The next element `<allocation-stats>` shows a snapshot, which was taken before the cycle started, of the allocation status of the mutator threads. In this example, the thread that used the most memory was `LargeThreadPool-thread-79`.
@@ -164,9 +227,9 @@ The *scavenge* GC operation is recorded by the `<gc-op>` element; child elements
 
 The `<memory-copied>` element indicates that 5.75 MB (6,027,440B) of reachable objects were moved by the *scavenge* operation from the allocate space to the survivor space in the nursery area, and 0.54 MB(562,848 B) were moved to the tenure area. 
 
-The `<scavenger-info>` element shows that the *tenure age* is set to `7`. Any object in the *allocate* space with an age less than or equal to `7` is copied to the survivor space during this `scavenge`operation. Any object that is copied between the *allocate* and *survivor* areas more than `7` times is moved to the tenure area. 
+The `<scavenger-info>` element shows that the [*tenure age*](gc.md#gencon-policy-default) is set to `7`. Any object in the *allocate* space with an age less than or equal to `7` is copied to the survivor space during this `scavenge`operation. Any object that is copied between the *allocate* and *survivor* areas more than `7` times is moved to the tenure area. 
 
-For more information about how the scavenge operation acts on the heap, see [`gencon` policy(default)](gc_overview.md#gc-scavenge-operation).
+For more information about how the scavenge operation acts on the Java&trade; object heap, see [`gencon` policy (default)](gc.md#gencon-policy-default).
 
 The end of the increment is recorded with `<gc-end>` and provides another snapshot of memory allocation on the heap, similar to `<gc-start>`. 
 
@@ -187,13 +250,13 @@ The end of the increment is recorded with `<gc-end>` and provides another snapsh
 </gc-end>
 ```
 
-The heap memory allocation at the end of the increment is as follows:
+The Java&trade; object heap memory allocation at the end of the increment is as follows:
 
-- 97% of the *allocate* space of the *nursery* area is now available as free memory.
-- The *survivor* space of the *nursery* area is still reported as 'full' to reflect that the entire *survivor* space is reserved for GC operations during the next GC increment. 
-- The *tenure* region has 395 MB (414,331,440B) of free memory available. The *scavenge* operation copied 562 kB from the *nursery* region to the *tenure* region so less memory is now available in the *tenure* region.
+- 97% of the *allocate* space of the nursery area is now available as free memory.
+- The *survivor* space of the nursery area is still reported as 'full' to reflect that the entire *survivor* space is reserved for GC operations during the next GC increment. 
+- The tenure area has 395 MB (414,331,440B) of free memory available. The *scavenge* operation copied 562 KB from the nursery area to the tenure area so less memory is now available in the tenure area.
 
-The *scavenge* operation successfully reclaimed memory in the *allocate* space of the nursery region by copying objects from the *allocate* space into the *survivor* space of the nursery region, and copying objects from the *survivor* space into the tenure region.
+The *scavenge* operation successfully reclaimed memory in the *allocate* space of the nursery area by copying objects from the *allocate* space into the *survivor* space of the nursery area, and copying objects from the *survivor* space into the tenure area.
 
 The cycle ends (`<cycle-end>`). The following `<allocation-satisfied>` element indicates that the allocation request that caused the allocation failure can now complete successfully. The STW pause ends with the `<exclusive-end>` element:
 
@@ -217,7 +280,7 @@ Analyzing the structure and elements of this example log output shows that this 
 
 - The cycle consists of only 1 GC increment, which runs a single *scavenge* operation.
 
-- The GC cycle reclaims memory in the *allocate* area of the *nursery* region by coping objects from the *allocate* area to the *survivor* area and also to the *tenure* region.
+- The GC cycle reclaims memory in the *allocate* area of the nursery area by coping objects from the *allocate* area to the *survivor* area and also to the tenure area.
 
 ### Concurrent scavenge partial GC cycle (non-default)
 
@@ -225,22 +288,49 @@ When concurrent scavenge mode is enabled, the partial GC cycle is run as a [conc
 
 The following elements log the GC increments and operations of the concurrent scavenge partial GC cycle:
 
-|GC Operation | GC increment | STW or concurrent| XML element of GC increment          | Details                                                                   |
-|-------------|--------------|-------------------------------|--------------------------------------|---------------------------------------------------------------------------|
-|Scavenge     |initial        | STW              | `<gc-start>`, `<gc-end>`|Root scanning, reported as a single scavenge operation |
-|Scavenge     |intermediate        | concurrent         | `<concurrent-start>`, `<concurrent-end>`|Live objects are traversed and evacuated (copy-forwarded). Operation is reported as a `scavenge` operation |
-|Scavenge     |final     | STW              | `<gc-start>`, `<gc-end>` |weak roots scanning, reported as a complex scavenge operation (`<gc-op>`) containing specific details for each of weak root groups  |
+<table style="width:100%">
+<caption>Table showing the <code>gencon</code> concurrent (non-default) partial scavenge cycle's GC increment and corresponding XML elements.</caption>
+
+  <tr>
+    <th align="center" scope="col">GC operation</th>
+    <th align="center" scope="col">GC increment</th>
+    <th align="center" scope="col">STW or concurrent</th>
+    <th align="center" scope="col">XML element of GC increment</th>
+    <th align="center" scope="col">Details</th>
+  </tr>
+  <tr>
+    <td scope="row"> scavenge</td>
+    <td align="center">initial </code></td>
+    <td align="center">STW </code></td>
+    <td align="center"><code>&lt;gc-start&gt;</code>, <code>&lt;gc-end&gt;</code></code></td>
+    <td>Root scanning, reported as a single scavenge operation.</code></td>
+  </tr>
+  <tr>
+    <td scope="row"> scavenge</td>
+    <td align="center">intermediate </code></td>
+    <td align="center">concurrent</code></td>
+    <td align="center"><code>&lt;concurrent-start&gt;</code>, <code>&lt;concurrent-end&gt;</code></td>
+    <td>Live objects are traversed and evacuated (copy-forwarded). Operation is reported as a <code>scavenge</code> operation.</td>
+  </tr>
+  <tr>
+    <td scope="row"> scavenge</td>
+    <td align="center">final</code></td>
+    <td align="center">STW </code></td>
+    <td align="center"><code>&lt;gc-start&gt;</code>, <code>&lt;gc-end&gt;</code></td>
+    <td>weak roots scanning, reported as a complex scavenge operation. <code>&lt;gc-op&gt;</code> contains specific details for each of the weak root groups.</code></td>
+  </tr>
+</table>
 
 To search for a concurrent scavenge partial GC cycle, you can search for the `type` attribute value `scavenge` in `cycle-start` and `cycle-end` elements, or search for the `<af>` element that logs the allocation failure trigger. 
 
 You can locate the concurrent scavenge partial cycle's concurrent increment by searching for `<concurrent-start>` and `<concurrent-end>`. The global cycle's intermediate concurrent increment, which can run at the same time, is not logged by an element, but begins immediately after application threads are restarted following the `<cycle-start type="global"/>` element. For more information about the global cycle's intermediate concurrent increment, see [Log examples - Global GC Cycle](vgclog_examples.md#global-gc-cycle). For more information about GC increments, see [GC increments and interleaving](vgclog.md#gc-increments-and-interleaving).
 
 
-### Global GC cycle
+### `gencon` global GC cycle
 
 The following example shows how a global GC cycle is recorded in a `gencon` policy verbose GC log. The output is broken down into sections with supporting text to explain the GC processing that is taking place.
 
-The global GC cycle runs when the *tenure* area is close to full, which typically occurs after many partial cycles. As such, the output can be found part way down the full log. For more information about the GC Initialization section, see [Verbose GC log contents and structure ](vgclog.md#verbose-gc-log-contents-and-structure). For an example log output for a `gencon` partial cycle, see [Example - `gencon`’s default partial GC cycle](vgclog.md/#example-gencons-default-partial-gc-cycle).
+The global GC cycle runs when the tenure area is close to full, which typically occurs after many partial cycles. As such, the output can be found part way down the full log. For more information about the GC Initialization section, see [Verbose GC log contents and structure ](vgclog.md#verbose-gc-log-contents-and-structure). For an example log output for a `gencon` partial cycle, see [Example - `gencon`’s default partial GC cycle](vgclog.md/#example-gencons-default-partial-gc-cycle).
 
  [The global GC cycle is split into three increments](./vgclog.md#gc-increments-and-interleaving). Splitting the cycle operations into the following increments reduces pause times by running the majority of the GC work concurrently. The concurrent increment pauses when a partial GC cycle is triggered and resumes after the partial cycle, or multiple cycles, finish. The interleaving of partial GC cycles with the global cycle's intermediate concurrent increment can be seen in the following example. A single partial GC cycle is logged between the initial and final increments of the global cycle.
 
@@ -248,13 +338,41 @@ To search for a global cycle, you can search for the `type` attribute value `glo
 
  The following elements log the GC increments and operations of the global GC cycle:
 
- |GC Operation         | GC increment| STW or concurrent| XML element of GC increment| Details                         |
-|---------------------|-------------|-------------------------------|--------------------------------------|-----------------------|
-|n/a - initiates cycle|initial      | STW              | `<concurrent-kickoff`        |No `<gc-op>` is logged. This increment just initiates the concurrent mark increment |
-|concurrent mark      |intermediate |concurrent                     | none|`<concurrent-trace-info>` records the progress of the concurrent mark increment|
-|final collection     |final        | STW              | `<concurrent-global-final>`  |The increment is typically triggered when a card cleaning threshold is reached. The completion of a tracing phase can also trigger the increment. Operations include a final concurrent mark, a sweep, and an optional class unload and compact.|
+ <table style="width:100%">
+<caption>Table showing the <code>gencon</code> global cycle's GC increment and corresponding XML elements.</caption>
 
-The global GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity. Multiple partial GC cycles can start and finish between the start and end of a global GC cycle. In this example, the structure includes a single partial GC cycle within the global cycle:
+  <tr>
+    <th align="center" scope="col">GC operation</th>
+    <th align="center" scope="col">GC increment</th>
+    <th align="center" scope="col">STW or concurrent</th>
+    <th align="center" scope="col">XML element of GC increment</th>
+    <th align="center" scope="col">Details</th>
+  </tr>
+  <tr>
+    <td align="center" scope="row"> n/a - initiates cycle</td>
+    <td align="center">initial</td>
+    <td align="center">STW</td>
+    <td align="center"><code>&lt;concurrent-kickoff&gt;</code></td>
+    <td align="center">No <code>&lt;gc-op&gt;</code> is logged. This increment just initiates the concurrent mark increment.</td>
+    <td></code></td>
+  </tr>
+  <tr>
+    <td align="center" scope="row"> concurrent mark</td>
+    <td align="center">intermediate </code></td>
+    <td align="center">concurrent</code></td>
+    <td align="center">none</td>
+    <td><code>&lt;concurrent-trace-info&gt;</code> records the progress of the concurrent mark increment.</td>
+  </tr>
+  <tr>
+    <td align="center" scope="row"> final collection</td>
+    <td align="center">final</code></td>
+    <td align="center">STW </code></td>
+    <td align="center"><code>&lt;concurrent-global-final&gt;</code></td>
+    <td>The increment is typically triggered when a card cleaning threshold is reached. The completion of a tracing phase can also trigger the increment. Operations include a final concurrent mark, a sweep, and an optional class unload and compact.</td>
+  </tr>
+</table>
+
+The global GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity. Multiple partial GC cycles can start and finish between the start and end of a global GC cycle. In the following example, the structure includes a single partial GC cycle within the global cycle:
 
 ```xml
 
@@ -289,7 +407,7 @@ The global GC cycle follows a general structure in the verbose GC log as shown. 
 
 <mem-info>                  (memory status before operations)
 
-<mem></mem>                 (status of different types of memory)
+<mem></mem>                 (status of different areas of heap)
 
 </mem-info>
 
@@ -309,7 +427,7 @@ The global GC cycle follows a general structure in the verbose GC log as shown. 
 
 <mem-info>                   (memory status after operations)
 
-<mem></mem>                  (status of different types of memory)
+<mem></mem>                  (status of different areas of heap)
 
 </mem-info>
 
@@ -325,10 +443,10 @@ The global GC cycle follows a general structure in the verbose GC log as shown. 
 ```
 
 
-The first activity in the cycle is recorded by a `<concurrent-kickoff>` element, which records the start of the first of three increments that make up a `gencon` Global GC cycle. The `<concurrent-kickoff>` element records:
+The first activity in the cycle is recorded by a `<concurrent-kickoff>` element, which records the start of the first of three increments that make up a `gencon` Global GC cycle. The `<concurrent-kickoff>` element records the following information:
 
-- the reason why the GC cycle was triggered. For a `gencon` global cycle, the cycle is triggered when the amount of free memory decreases to a threshold value, the `thresholdFreeBytes` value. 
-- The target number of bytes, `targetBytes`, that the cycle aims to mark concurrently
+- The reason why the GC cycle was triggered. For a `gencon` global cycle, the cycle is triggered when the amount of free memory decreases to a threshold value, the `thresholdFreeBytes` value. 
+- The target number of bytes, `targetBytes`, that the cycle aims to mark concurrently.
 - The current available memory in the different parts of the heap.
 
 ```xml
@@ -424,7 +542,7 @@ After the partial GC cycle completes and the STW pause finishes, the log records
 
 The `reason` attribute of the `<concurrent-trace-info>` child element indicates that this final STW increment of the global cycle was triggered because a card-cleaning threshold was reached. The concurrent tracing was stopped prematurely and the `targetBytes` concurrent tracing target, recorded at the cycle start by `<concurrent-kickoff>`, was not achieved concurrently. If the concurrent tracing completes without interruption, the `<concurrent-trace-info` element logs `reason=tracing completed`.  
 
-In the next section that begins with the `gc-start` element, you can find information about the amount of memory available (`<mem-info>`) and where it is located in the heap. This snapshot is taken before the final increment's operations and suboperations are run and can be compared with a similar snapshot that is taken afterward to understand the effect on the heap. The child element attribute values of the`<mem>` and `<mem-info>` elements indicate the status of the memory.
+In the next section that begins with the `gc-start` element, you can find information about the amount of memory available (`<mem-info>`) and where it is located in the java&trade; object heap. This snapshot is taken before the final increment's operations and suboperations are run and can be compared with a similar snapshot that is taken afterward to understand the effect on the heap. The child element attribute values of the`<mem>` and `<mem-info>` elements indicate the status of the memory.
 
 **Note:** You can double check that the increment is associated with the GC global cycle in the example by checking the `contextid` attribute value matches the `id=12364` attribute value of the cycle's <gc-cycle> element.
 
@@ -468,10 +586,10 @@ In the next section that begins with the `gc-start` element, you can find inform
 
 The element `<allocation-stats>` shows a snapshot, which was taken before the cycle started, of the allocation status of the mutator threads. In this example, the thread that used the most memory was `LargeThreadPool-thread-68`.
 
-For this example, at the start of this GC increment, the *tenure* area is low on free memory, as expected. 25% of the total heap is available as free memory, which is split between the following areas of the heap:
+For this example, at the start of this GC increment, the tenure area is low on free memory, as expected. 25% of the total heap is available as free memory, which is split between the following areas of the heap:
 
-- The *nursery* area, which has 223.7 MB (234,609,440B) of free memory available. The free memory is only available in the *allocate* space of the *nursery* area. The *survivor* space of the *nursery* area is reported as 'full' to reflect that no available memory is available to allocate to the mutator threads. The entire *survivor* space is reserved for GC operations during the GC increment. 
-- The *tenure* area, which has 40.5 MB (42,439,200B) available as free memory, which is only 5% of its total memory. Most of this free memory is in the large object allocation area(LOA). Almost no free memory is available in the small object allocation area(SOA). 
+- The nursery area, which has 223.7 MB (234,609,440B) of free memory available. The free memory is only available in the *allocate* space of the nursery area. The *survivor* space of the nursery area is reported as 'full' to reflect that no available memory is available to allocate to the mutator threads. The entire *survivor* space is reserved for GC operations during the GC increment. 
+- The tenure area, which has 40.5 MB (42,439,200B) available as free memory, which is only 5% of its total memory. Most of this free memory is in the large object area (LOA). Almost no free memory is available in the small object area (SOA). 
 
 The `<gc-op>` elements and their child elements contain information about the increment’s operations and suboperations. The final increment of the `gencon` global cycle consists of multiple operations, each logged with a `<gc-op>` element. The type of operation is shown by the `<gc-op>` `type` attribute. The final increment of the example log runs five types of operation:
 
@@ -483,7 +601,7 @@ The `<gc-op>` elements and their child elements contain information about the in
 
 **Note:** The final increment of a `gencon` global cycle can include an optional compact suboperation. 
 
-**Note:** For more information about the different types of GC operation, see [GC Operations](gc_overview.md#gc-operations).
+**Note:** For more information about the different types of GC operation, see [GC operations](gc_overview.md#gc-operations).
 
 ```xml
 <gc-op id="12382" type="rs-scan" timems="3.525" contextid="12364" timestamp="2020-10-18T13:35:44.598">
@@ -562,10 +680,10 @@ The end of the increment is recorded with `<gc-end>` and provides another snapsh
 
 60% of the heap now contains free memory as a result of the final global cycle increment, which is split between the following areas of the heap:
 
-- The *nursery* area, which gained 0.9 MB of free memory. The *nursery area now has 224.6 MB (235,516,088B) available as free memory. At the start of the final increment, the *nursery* area had 223.7 MB (234,609,440B) of free memory available.
-- The *tenure* area, which gained 355.2 MB (372,521,216B) of free memory. (the *tenure* area now has 395.7 MB (414,960,416B) available as free memory. At the start of the final increment, the *tenure* area had 40.5 MB (42,439,200B) of free memory available.
+- The nursery area, which gained 0.9 MB of free memory. The nursery area now has 224.6 MB (235,516,088B) available as free memory. At the start of the final increment, the nursery area had 223.7 MB (234,609,440B) of free memory available.
+- The tenure area, which gained 355.2 MB (372,521,216B) of free memory. (the tenure area now has 395.7 MB (414,960,416B) available as free memory. At the start of the final increment, the tenure area had 40.5 MB (42,439,200B) of free memory available).
 
-**Note:** The global GC cycle runs to reclaim memory in the *tenure* area. The freeing up of memory in the *nursery* area is achieved by using the partial GC cycle. For more information, see [`gencon` Policy(default)](gc.md#gencon-policy-(default)).
+**Note:** The global GC cycle runs to reclaim memory in the tenure area. The freeing up of memory in the nursery area is achieved by using the partial GC cycle. For more information, see [`gencon` Policy(default)](gc.md#gencon-policy-(default)).
 
 After the final increment of the global cycle completes, the global cycle ends and the STW pause ends, as shown in the following output:
 
@@ -579,17 +697,12 @@ After the final increment of the global cycle completes, the global cycle ends a
 
 Analyzing the structure and elements of this example log output shows that this example global cycle has the following characteristics:
 
-- The GC global cycle is triggered when a memory threshold is reached and begins with an STW pause
+- The GC global cycle is triggered when a memory threshold is reached and begins with an STW pause.
 
 - After the first increment of the GC global cycle completes, the STW pause ends and the second increment runs concurrently.
 
 - A single partial GC cycle starts and finishes between the start and end of the concurrent increment.
 
--A STW pause begins after the concurrent increments completes, during which the third and final increment of the global cycle, which consists of five operations, runs.
+- An STW pause begins after the concurrent increments completes, during which the third and final increment of the global cycle, which consists of five operations, runs.
 
-- The global GC cycle reclaims memory in the *tenure* area and a small amount of memory in the *nursery* area.
-
-
-## `balanced` example
-
-Add here
+- The global GC cycle reclaims memory in the tenure area and a small amount of memory in the nursery area.

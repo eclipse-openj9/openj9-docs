@@ -1,17 +1,17 @@
 # Verbose garbage collection logs
 
-[Garbage collection](gc.md) (GC) reclaims used memory in the heap for reuse. During cleanup of the heap, the verbose GC logs, when enabled, capture information about the different GC operations that are involved in the GC cycles. GC operations aim to reorganize or reclaim memory. 
+Garbage collection (GC) reclaims used memory in the Java&trade; object heap for reuse. During cleanup of the heap, the verbose GC logs, when enabled, capture information about the different GC operations that are involved in the GC cycles. GC operations aim to reorganize or reclaim memory. 
  
 Verbose GC logs contain information about GC operations to assist with the following actions:  
 
 - Tuning GC and improving application performance.
-- Troubleshooting GC operations and policies. For example, analyzing long pauses, or determining how free memory is divided in the heap before and after a GC cycle.  
+- Troubleshooting GC operations and policies. For example, analyzing long pauses, or determining how free memory is divided in the Java&trade; object heap before and after a GC cycle.  
 
 Verbose GC logs, when enabled, begin capturing information as soon as GC is initialized. 
 
 To help you visualize and analyze the GC, you can feed verbose GC log files into various diagnostic tools and interfaces. Examples include tools such as the [Garbage Collection and Memory Visualizer extension for Eclipse](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv), and online services such as [GCEasy](https://gceasy.io).  
 
-**Note:** You can run one or more GC traces by using the ['-Xtgc' option](xtgc.md) to get more detailed information to help diagnose GC problems or perform finer tuning. 
+**Note:** You can run one or more GC traces by using the [`-Xtgc` option](xtgc.md) to get more detailed information to help diagnose GC problems or perform finer tuning. 
 
 ## How to generate a verbose GC log  
 
@@ -74,23 +74,25 @@ The log begins by recording the configuration of the OpenJ9 runtime virtual envi
 </initialized> 
 ```
 
-The first set of `<attribute>` elements records the configuration of the garbage collector, such as the GC policy type, configuration of the heap, and the number of threads that are used for garbage collection. For example, the `GCThreads` attribute records that the garbage collector is configured to use four threads.
+The first set of `<attribute>` elements records the configuration of the garbage collector, such as the GC policy type, configuration of the Java&trade; object heap, and the number of threads that are used for garbage collection. For example, the `GCThreads` attribute records that the garbage collector is configured to use four threads.
 
-The `<system>` section records information about the operating system, such as the physical memory, number of CPUs, and operating system type and version. In the example, the VM is running on Linux&reg; amd64 V3.10 and has access to 28 CPUs and over 100 GB.
+The `<system>` section records information about the operating system and available hardware, such as the physical memory, number of CPUs, and operating system type and version. In the example, the VM is running on Linux&reg; amd64 V3.10 and has access to 28 CPUs and over 100 GB.
 
-The `<vmargs>` section records any VM configuration [command-line options](cmdline_specifying.md) (VM arguments) that are specified. These command-line options, which are set by using the command line or by passing a manifest file, options file or environment variables to the VM, include:
+The `<vmargs>` section records any VM configuration [command-line options](cmdline_specifying.md) (VM arguments) that are specified. The following types of options are recorded:
 
-- non-standard [JVM `-X` options](x_jvm_commands.md) and [JVM `-XX` options](xx_jvm_commands.md). In the example output, the log records the location of the file that contains VM options and definitions as `java/perffarm/sdks/O11_j9_x64_linux-20201014/sdk/lib/options.default`. The `-xverbose` option is set to `-Xverbosegclog:verbosegc.xml` to write the verbose GC log output to an xml file. The initial and maximum heap sizes are both set to 1024 kB by using the `-Xms` and `-Xmx` options.
+- non-standard [JVM `-X` options](x_jvm_commands.md) and [JVM `-XX` options](xx_jvm_commands.md). In the example output, the log records the location of the file that contains VM options and definitions as `java/perffarm/sdks/O11_j9_x64_linux-20201014/sdk/lib/options.default`. The verbose GC log option is set to `-Xverbosegclog:verbosegc.xml` to write the verbose GC log output to an XML file. The initial and maximum Java&trade; object heap sizes are both set to 1024 KB by using the `-Xms` and `-Xmx` options.
 - [system property options](d_jvm_commands.md). In the example output, the system property `com.ibm.oti.vm.bootstrap.library.path` is set.
+
+These command-line options can be set by using the command line, or by passing a manifest file, options file, or environment variable to the VM.
 
 After the configurations are recorded in the Initialization section, the verbose GC log begins recording GC activities and details. 
 
-### GC Cycles
+### GC cycles
 
 The start of a GC cycle is recorded by the `<cycle-start>` XML element. The trigger for the start of a GC cycle is captured in a preceding element to the `<cycle-start>` element. A GC cycle or GC increment is triggered for one of the following reasons:
 
-- An allocation failure. Allocation failures occur when a request for memory fails the heap does not have enough memory available. The element `<af-start>` logs an allocation failure trigger. 
-- A memory threshold is reached. Memory threshold values, which set the conditions for triggering certain types of GC cycles or increments, are defined by the policy type and configuration options. For more information about the particular elements or attributes that are used to record a memory threshold trigger, see specific policies and cycles in [Log examples](vgclog_examples.md).
+- Because an allocation failure occurs. Allocation failures occur when a request for memory fails the Java&trade; object heap does not have enough memory available. The element `<af-start>` logs an allocation failure trigger. 
+- Because a memory threshold is reached. Memory threshold values, which set the conditions for triggering certain types of GC cycles or increments, are defined by the policy type and configuration options. For more information about the particular elements or attributes that are used to record a memory threshold trigger, see specific policies and cycles in [Log examples](vgclog_examples.md).
 
 The following XML structure is an example of the verbose GC logs that are generated from the Generational Concurrent GC policy (`-Xgcpolicy:gencon`). In this example, the lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity: 
 
@@ -144,118 +146,115 @@ For example, consider the garbage collector for the `gencon` policy, which uses 
 
 Splitting the global cycle operations into these increments reduces pause times by running most of the GC operations concurrently with application threads. The `gencon` global cycle's concurrent increment is paused when a `gencon` partial GC cycle is triggered and resumes when the partial cycle, or multiple partial cycles, complete. In this way, a global cycle can progress while other types of cycle are run by pausing and resuming the concurrent work. In some policies, concurrent operations are split further into multiple concurrent increments for better control of progress of the concurrent operation.
 
-You can see this interleaving of the increments in the verbose GC log. The following table illustrates how the different increments of an example log interleave for the `gencon` policy (for clarity, not all GC activities are listed):
+You can see this interleaving of the increments in the verbose GC log. The following table illustrates how the interleaving of the `gencon` policy's partial scavenge and global cycles appears in the logs. Line numbers of an example `gencon` policy's verbose GC log are displayed, alongside columns that show the status of each cycle that is recorded in the logs. (for clarity, not all GC activities are listed):
 
-<table style="width:100%">
+<table style="width:100%" align="center">
+<caption>Table showing how the `gencon` policy's global and partial scavenge cycles, which interleave with each other, are recorded in an example log. </caption>
 
   <tr>
-    <th>Line Number</th>
-    <th colspan="2">Logging</th>
-  </tr>
-  <tr>
-    <th>-</th>
-    <th>`gencon` global GC cycle status</th>
-    <th>`gencon` partial GC cycle status</th>
+    <th scope="col">Example log line number</th>
+    <th align="center" scope="col">`gencon` global GC cycle status recorded in log</th>
+    <th align="center"scope="col">`gencon` partial GC cycle status recorded in log</th>
   </tr>
   <tr>
     <td>1-87</td>
-    <td colspan="2">initialization</th>
+    <td colspan="2" align="center">Initialization section of the logs</th>
   </tr>
   <tr>
-    <td>87-51676</td>
-    <td> - </td>
-    <td> series of `gencon` partial cycles start and finish </td>
+    <td scope="row"> 87-51676</td>
+    <td align="center"> - </td>
+    <td align="center"> series of partial scavenge cycles start and finish </td>
   </tr>
 
   <tr>
-    <td>51677</td>
-    <td> global cycle's initial increment marked</td>
-    <td>-</td>
+    <td scope="row"> 51677</td>
+    <td align="center"> global cycle's trigger and target logged</td>
+    <td align="center">-</td>
   </tr>
 
   <tr>
-    <td>51680</td>
-    <td> STW pause starts</td>
-    <td>-</td>
+    <td scope="row">51680</td>
+    <td align="center"> STW pause starts</td>
+    <td align="center">-</td>
   </tr>
 
   <tr>
-    <td>51683</td>
-    <td> global cycle starts</td>
-    <td>-</td>
+    <td scope="row">51683</td>
+    <td align="center"> global cycle starts</td>
+    <td align="center">-</td>
   </tr>
 
+  <tr>
+    <td scope="row">51684</td>
+    <td align="center"> STW pause ends</td>
+    <td align="center">-</td>
+  </tr>
+
+  <tr>
+    <td scope="row">518685</td>
+    <td align="center"> blank line in logs. (Concurrent increment runs) </td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td scope="row">51686</td>
+    <td align="center"> (concurrent increment paused)</td>
+    <td align="center">STW pause starts</td>
+  </tr>
     <tr>
-    <td>51684</td>
-    <td> STW pause ends</td>
-    <td>-</td>
+    <td scope="row">51690</td>
+    <td align="center"> (concurrent increment paused)</td>
+    <td align="center">partial scavenge cycle starts</td>
   </tr>
 
   <tr>
-    <td>51709</td>
-    <td> concurrent increment runs (blank line)</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td>51686</td>
-    <td> concurrent increment paused</td>
-    <td>STW pause starts</td>
-  </tr>
-    <tr>
-    <td>51690</td>
-    <td> concurrent increment paused</td>
-    <td>partial cycle starts</td>
+    <td scope="row">51691</td>
+    <td align="center"> (concurrent increment paused)</td>
+    <td align="center"> partial scavenge increment runs</td>
   </tr>
 
   <tr>
-    <td>51708</td>
-    <td> concurrent increment paused</td>
-    <td>scavenge increment runs</td>
+    <td scope="row">51730</td>
+    <td align="center"> (concurrent increment paused)</td>
+    <td align="center">partial cycle ends</td>
   </tr>
 
   <tr>
-    <td>51730</td>
-    <td> concurrent increment paused</td>
-    <td>partial cycle ends</td>
+    <td scope="row">51733</td>
+    <td align="center"> (concurrent increment resumes)</td>
+    <td align="center">STW pause ends</td>
+  </tr>
+
+   <tr>
+    <td scope="row">51734</td>
+    <td align="center"> blank line in logs. (Concurrent increment resumes)</td>
+    <td align="center">-</td>
   </tr>
 
   <tr>
-    <td>51733</td>
-    <td> concurrent increment resumes</td>
-    <td>STW pause ends</td>
-  </tr>
-
-      <tr>
-    <td>51734</td>
-    <td> concurrent increment finishes</td>
-    <td> - </td>
+    <td scope="row">51735</td>
+    <td align="center"> STW pause starts</td>
+    <td align="center">-</td>
   </tr>
 
   <tr>
-    <td>51735</td>
-    <td> STW pause starts</td>
-    <td></td>
+    <td scope="row">51741</td>
+    <td align="center"> final global increment logged </td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td scope="row">51793</td>
+    <td align="center"> global cycle ends </td>
+    <td align="center">-</td>
   </tr>
 
   <tr>
-    <td>51738</td>
-    <td> final global increment runs </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>51793</td>
-    <td> global cycle ends </td>
-    <td></td>
-  </tr>
-
-  <tr>
-    <td>51795</td>
-    <td> STW pause ends</td>
-    <td></td>
+    <td scope="row">51795</td>
+    <td align="center"> STW pause ends</td>
+    <td align="center">-</td>
   </tr>
 </table>
 
-**Note:** More than one partial gc cycle might run between the start and end of a `gencon` global GC cycle
+**Note:** Zero, one, or multiple gc cycles might run between the start and end of a `gencon` global GC cycle.
 
 The XML elements and attribute values that define operations and increments of a particular cycle are specific to the policy and type of cycle. To follow how the different cycle's increments interleave in a log, you can locate the elements and attributes that record the increments and operations that belong to a particular type of cycle. For example, for the `gencon` policy, you can locate the start of the intermediate, concurrent increment of the global cycle by searching for the `<concurrent-kickoff>` element.
 

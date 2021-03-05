@@ -125,10 +125,10 @@ nav:
             - "Version 0.8.0"                                                    : version0.8.md
 
     - "Memory management" :
-        - "Overview"                                                             : gc_overview.md
-        - "Garbage collection policies"                                          : gc.md
-        - "Troubleshooting garbage collection" :
-            - "Verbose garbage collection logs"                                  : vgclog.md
+        - "Garbage Collection(GC)"                                               : gc_overview.md
+        - "GC policies"                                                          : gc.md
+        - "Troubleshooting GC" :
+            - "Verbose GC logs"                                                  : vgclog.md
             - "Log examples"                                                     : vgclog_examples.md
 
     - "JIT Compiler"                                                             : jit.md
