@@ -32,9 +32,11 @@ Specifies the number of low-priority background threads attached to assist the m
 
 ## Default behavior
 
-The default is `0` for Linux&reg; on IBM Z&reg; and `1` on all other platforms.
+The default value is `1`.
 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This value is reported in the header section of a verbose GC log with an entry 
+
+        <attribute name="gcthreads Concurrent Mark" value="1" />
  
-
 <!-- ==== END OF TOPIC ==== xconcurrentbackground.md ==== -->
 
