@@ -4,7 +4,7 @@ To help you understand how garbage collection (GC) processes memory for your app
 
 ## `gencon` examples
 
-As detailed in [`gencon` policy (default)](gc.md#gencon-policy-default), this policy uses two types of cycle; a partial GC cycle and a global GC cycle. By default, the partial GC cycle runs a *stop-the-world* (STW) *scavenge* operation but can run a concurrent *scavenge* operation ([-Xgc:concurrentScavenge](xgc.md#concurrentscavenge)) if enabled at run time.
+As detailed in [`gencon` policy (default)](gc.md#gencon-policy-default), this policy uses two types of cycle; a partial GC cycle and a global GC cycle. By default, the partial GC cycle runs a *stop-the-world* (STW) *scavenge* operation but can run a concurrent *scavenge* operation ([-Xgc:concurrentScavenge](xgc.md#concurrentscavenge)) on specific platforms if enabled at run time.
 
 The start of a `gencon` cycle is recorded in the log by the following elements and attributes:
 
@@ -33,7 +33,7 @@ The start of a `gencon` cycle is recorded in the log by the following elements a
   <tr>
 </table>
 
-You can use the `type` attribute of the `<gc-start>` and `<gc-end>` elements to locate a particular cycle. YOu can also locate a particular type of cycle by searching for the element that records the cycle trigger, which is located before the `<cycle-start>` element.
+You can use the `type` attribute of the `<gc-start>` and `<gc-end>` elements to locate a particular cycle. You can also locate a particular type of cycle by searching for the element that records the cycle trigger, which is located before the `<cycle-start>` element.
 
 You can analyze the increments and operations that are associated with a particular type of cycle by locating and interpreting the elements in the following table:
 
@@ -106,7 +106,7 @@ By default, the `gencon` partial GC cycle runs by using a single *stop-the-world
   </tr>
 </table>
 
-The scavenge partial GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and some elements are omitted for clarity:
+The scavenge partial GC cycle follows a general structure in the verbose GC log as shown. Some elements are omitted for clarity:
 
 ```xml
 
@@ -284,7 +284,7 @@ Analyzing the structure and elements of this example log output shows that this 
 
 ### Concurrent scavenge partial GC cycle (non-default)
 
-When concurrent scavenge mode is enabled, the partial GC cycle is run as a [concurrent scavenge cycle](gc.md#concurrent-scavenge). When this mode is enabled, the scavenge partial GC cycle is divided into increments to enable the majority of the scavenge operation to run concurrently with running application threads. The concurrent increment can run while application threads run, and also while the intermediate concurrent increment of the global GC cycle runs. The interleaving of the concurrent scavenge partial GC cycle with the global cycle can be seen in the logs.
+When concurrent scavenge mode is enabled, the partial GC cycle is run as a [concurrent scavenge cycle](gc.md#concurrent-scavenge). This partial GC cycle is divided into increments to enable the majority of the scavenge operation to run concurrently with running application threads. The concurrent increment can run while application threads run, and also while the intermediate concurrent increment of the global GC cycle runs. The interleaving of the concurrent scavenge partial GC cycle with the global cycle can be seen in the logs.
 
 The following elements log the GC increments and operations of the concurrent scavenge partial GC cycle:
 
@@ -332,7 +332,7 @@ The following example shows how a global GC cycle is recorded in a `gencon` poli
 
 The global GC cycle runs when the tenure area is close to full, which typically occurs after many partial cycles. As such, the output can be found part way down the full log. For more information about the GC Initialization section, see [Verbose GC log contents and structure ](vgclog.md#verbose-gc-log-contents-and-structure). For an example log output for a `gencon` partial cycle, see [Example - `gencon`’s default partial GC cycle](vgclog.md/#example-gencons-default-partial-gc-cycle).
 
- [The global GC cycle is split into three increments](./vgclog.md#gc-increments-and-interleaving). Splitting the cycle operations into the following increments reduces pause times by running the majority of the GC work concurrently. The concurrent increment pauses when a partial GC cycle is triggered and resumes after the partial cycle, or multiple cycles, finish. The interleaving of partial GC cycles with the global cycle's intermediate concurrent increment can be seen in the following example. A single partial GC cycle is logged between the initial and final increments of the global cycle.
+The global GC cycle is split into three increments, as shown in [GC increments and interleaving](./vgclog.md#gc-increments-and-interleaving). Splitting the cycle operations into the following increments reduces pause times by running the majority of the GC work concurrently. The concurrent increment pauses when a partial GC cycle is triggered and resumes after the partial cycle, or multiple cycles, finish. The interleaving of partial GC cycles with the global cycle's intermediate concurrent increment can be seen in the following `gencon` global GC cycle log output. A single partial GC cycle is logged between the initial and final increments of the global cycle.
 
 To search for a global cycle, you can search for the `type` attribute value `global` in `cycle-start` and `cycle-end` elements, or search for the element that logs the initial concurrent increment, `<concurrent-kickoff>`.
 
@@ -372,7 +372,7 @@ To search for a global cycle, you can search for the `type` attribute value `glo
   </tr>
 </table>
 
-The global GC cycle follows a general structure in the verbose GC log as shown. The lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity. Multiple partial GC cycles can start and finish between the start and end of a global GC cycle. In the following example, the structure includes a single partial GC cycle within the global cycle:
+The global GC cycle follows a general structure in the verbose GC log as shown. Some child elements are omitted for clarity. Multiple partial GC cycles can start and finish between the start and end of a global GC cycle. In the following example, the structure includes a single partial GC cycle within the global cycle:
 
 ```xml
 

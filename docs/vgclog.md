@@ -61,9 +61,7 @@ The log begins by recording the configuration of the OpenJ9 runtime virtual envi
     <attribute name="osVersion" value="3.10.0-1160.el7.x86_64" />
   </system>
   <vmargs>
-    <vmarg name="-Xoptionsfile=/java/perffarm/sdks/O11_j9_x64_linux-20201014/sdk/lib/options.default" />
-    ...
-    <vmarg name="-Dcom.ibm.oti.vm.bootstrap.library.path=/java/perffarm/sdks/O11_j9_x64_linux-20201014/sdk/lib/compressedrefs:/java/perffarm/sdk..." />
+    <vmarg name="-Dfile.encoding=bestfit936" />
     ...
     <vmarg name="-Xms1024m" />
     <vmarg name="-Xmx1024m" />
@@ -81,7 +79,7 @@ The `<system>` section records information about the operating system and availa
 The `<vmargs>` section records any VM configuration [command-line options](cmdline_specifying.md) (VM arguments) that are specified. The following types of options are recorded:
 
 - non-standard [JVM `-X` options](x_jvm_commands.md) and [JVM `-XX` options](xx_jvm_commands.md). In the example output, the log records the location of the file that contains VM options and definitions as `java/perffarm/sdks/O11_j9_x64_linux-20201014/sdk/lib/options.default`. The verbose GC log option is set to `-Xverbosegclog:verbosegc.xml` to write the verbose GC log output to an XML file. The initial and maximum Java&trade; object heap sizes are both set to 1024 KB by using the `-Xms` and `-Xmx` options.
-- [system property options](d_jvm_commands.md). In the example output, the system property `com.ibm.oti.vm.bootstrap.library.path` is set.
+- [system property options](d_jvm_commands.md). In the example output, the system property `file.encoding` is set to `bestfit936` to force the GBK converter to follow unicode 2.0 rather than 3.0 standards.
 
 These command-line options can be set by using the command line, or by passing a manifest file, options file, or environment variable to the VM.
 
@@ -142,7 +140,7 @@ Some elements serve as markers for starting and ending parts of the GC cycle and
 
 Some GC cycle types are run in piecemeal blocks of operations called GC increments. Using GC increments reduces pause times by enabling blocks of operations or operation steps to interleave with operations or operation steps from other types of cycle. 
 
-For example, consider the garbage collector for the `gencon` policy, which uses partial cycles and global cycles. The partial cycle consists of just 1 GC operation, scavenge, that runs on the *nursery* area during an STW pause. However, the `gencon` global cycle, which runs when the *tenure* area is close to full, is split into three increments. The initial and final global cycle increments run during a relatively short STW pause. The intermediate global cycle increment, which consists of the majority of the GC cycle's work, runs its GC operations concurrently.
+For example, consider the garbage collector for the `gencon` policy, which uses partial cycles and global cycles. The partial cycle consists of just 1 GC operation, scavenge, that runs on the *nursery* area during a stop-the-world (STW) pause. However, the `gencon` global cycle, which runs when the *tenure* area is close to full, is split into three increments. The initial and final global cycle increments run during a relatively short STW pause. The intermediate global cycle increment, which consists of the majority of the GC cycle's work, runs its GC operations concurrently.
 
 Splitting the global cycle operations into these increments reduces pause times by running most of the GC operations concurrently with application threads. The `gencon` global cycle's concurrent increment is paused when a `gencon` partial GC cycle is triggered and resumes when the partial cycle, or multiple partial cycles, complete. In this way, a global cycle can progress while other types of cycle are run by pausing and resuming the concurrent work. In some policies, concurrent operations are split further into multiple concurrent increments for better control of progress of the concurrent operation.
 
@@ -263,6 +261,6 @@ For more information about the XML elements and attribute values that are used f
 You can determine the GC increments and operations that are associated with a particular *instance* of a cycle by using the `contextid` and `id` attributes:
  
 1. Determine the ID of the GC cycle: find the value of the `id` attribute of the `<cycle-start>` element that denotes the start of the GC cycle.  Note: the `id` attribute increases incrementally with each GC event.  
-2. Search for the `contextid` attribute values that match the GC cycle's ID. All GC increments, operations, and concurrent events that are associated with a particular cycle have a `contextid` attribute whose value matches GC cycle's ID. 
+2. Search for the `contextid` attribute values that match the GC cycle's ID. All GC increments, operations, and concurrent events that are associated with a particular cycle have a `contextid` attribute whose value matches the GC cycle's ID. 
 
 For examples of log output, including guidance on how to analyze the logs, see [Log examples](vgclog_examples.md).
