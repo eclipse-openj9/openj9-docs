@@ -727,7 +727,7 @@ When memory in the Java&trade; object heap reaches a memory threshold called an 
 
 If a partial GC cycle is not run between global mark phase increments of a global *mark* cycle, the allocation taxation threshold is set to trigger the next cycle when the *eden* space is full. Specifically, at the end of the partial gc cycle, the allocation threshold is set to be equal to the size of the *eden* space.
 
-If a partial GC cycle is run within a global *mark* cycle, the allocation taxation threshold is set to be smaller than the size of the *eden* space to allow for global mark phase increments to run in between partial GC cycles. Specifically, when the partial GC cycle completes within a global *mark* cycle, the allocation taxation threshold is set to be half the size of the *eden* space. The increment, which could be a partial GC cycle or could be a GMP increment, runs when only half of the *eden* space is available as free memory.
+If a partial GC cycle is run within a global *mark* cycle, the allocation taxation threshold is set to be smaller than the size of the *eden* space to allow for global mark phase increments to run in between partial GC cycles. Specifically, during the global mark cycle, the allocation taxation threshold is set to be half the size of the eden space.
 
 Note: For more information about GC increments, see [GC increments and interleaving](vglog.md#gc-increments-and-interleaving).
 
@@ -812,7 +812,7 @@ When the `balanced` partial GC cycle is triggered, the GC runs an STW pause. App
 </exclusive-start>
 ```
 
-A `balanced` partial GC cycle is triggered when the region count for the *eden* space reaches a *taxation* threshold. At this threshold, the GC 'taxes' the application threads, who have been 'paid' with memory allocation, to run some GC work - in this case, a partial GC cycle.The logs record this trigger reason by using the`<allocation-taxation>` element.
+A `balanced` partial GC cycle is triggered when the region count for the *eden* space reaches the allocation taxation threshold. The logs record this trigger reason by using the`<allocation-taxation>` element.
 
 ```xml
 <allocation-taxation id="185" taxation-threshold="2147483648" timestamp="2021-02-26T11:11:42.311" intervalms="3745.785" />
@@ -837,13 +837,15 @@ The partial cycle begins its one and only GC increment, recorded using the `<gc-
 </gc-start>
 ```
 
-As expected, at the start of this increment, the eden region is full. 856 MB (897581056 B) of the total 2048 MB (2147483648 B) *eden* space is available as free memory. 856MB (897,581,056 B) of the total 4096MB (4294,967,296 B) heap is available as free memory.
+As expected, at the start of this increment, the eden region is full. 856MB (897,581,056 B) of the total 4096MB (4294,967,296 B) heap, equivalent to 20% of the heap, is available as free memory.
 
-The status of the *remembered set*, a metastructure specific to openJ9 JVM generational garbage collectors, is reported by the `<remembered-set>` element. The remembered set metastructure keeps track of any object references that cross different regions. Each region corresponds to a single remembered set. The partial gc cycle uses and prunes the remembered set. The `regionsoverflowed` value records the number of regions that have exceeded the non-heap memory allocation reserved for the remembered set. The partial GC cycle cannot reclaim memory from these overflow regions. The partial GC cycle also cannot reclaim memory from any regions whose remembered set  is being rebuilt by an increment of a global mark cycle that is in progress.
+The status of the *remembered set*, a metastructure specific to openJ9 JVM generational garbage collectors, is reported by the `<remembered-set>` element. The remembered set metastructure keeps track of any object references that cross different regions. Each region corresponds to a single remembered set. 
 
-At the start of the partial gc cycle, the remembered set is using 93% of its available memory capacity, with 153.26 MB (160705664 B) available. The remembered set has 1 overflow region.
+The partial gc cycle uses and prunes the remembered set. The `regionsoverflowed` value records the number of regions that exceeded the non-object-heap memory allocation that is reserved for the remembered set. The partial GC cycle cannot reclaim memory from these overflow regions. The partial GC cycle also cannot reclaim memory from any regions whose remembered set is being rebuilt by an increment of a global mark cycle that is in progress.
 
-The following element, `<allocation-stats>`, records information about the status of the application threads before the start of the current cycle. For this example, the thread `Group1.Backend.CompositeBackend{Tier1}.7` was the largest consumer of memory. 
+At the start of the partial gc cycle, the remembered set is using 93% of its available memory capacity, with 153.26 MB (160705664 B) available. The set consists of 2,749,664 cards and has 1 overflow region.
+
+The following element, `<allocation-stats>`, records information about the status of the application threads before the start of the current cycle. For this example, the thread `Group1.Backend.CompositeBackend{Tier1}.7` was the largest consumer of memory.
 
 ```xml
 <allocation-stats totalBytes="2146431360" >
@@ -873,11 +875,35 @@ The operations of the GC increment are run and details are recorded in the `<gc-
 </gc-op>
 ```
 
+
+
 The logs show that the copy forward operation acts on the the entire *eden* space (512 regions), recorded as `type=eden`, and 80 older regions, which are recorded as `type=other`. 113.76 MB (119281928 B) have been copied from the *eden* space to 1st generation regions and 233.10 MB (244414264 B) of memory in non-*eden* regions have been copied to the next generation of regions. The copy forward operation is followed by a class unload operation.
 
-In some cases, a copy forward operation moves some regions using a copying-forward, but only marks others. The logs record these 2 concurrent parts of a copy-forward operation in the `<gc-op type="copy forward">` section by using a `<memory-traced>` child element. In addition,`evacuated` and `marked` attributes for the `<regions>` child element are used to distinguish between the number of regions that have been copied forward (recorded as `evacuated`) and the number of regions that have just been marked. For example, `<regions eden="256" other="308" evacuated="308" marked="256" />`.
+In some cases, a copy forward operation moves some regions by copying forward the objects in those regions, but only marks the objects in other regions. For example, the following log excerpt is taken from  a different partial cycle, corresponding to a `contextid` of `2049`. The copy forward operation in the following example involves marking some regions and copying forward others.
 
-The element `<gc-end>` records the end of the increment and provides another snapshot of memory allocation on the heap, similar to `<gc-start>`.
+```xml
+<gc-op id="2052" type="copy forward" timems="649.059" contextid="2049" timestamp="2021-02-26T11:22:34.901">
+  <memory-copied type="eden" objects="95989" bytes="7882704" bytesdiscarded="501088" />
+  <memory-copied type="other" objects="2955854" bytes="86854064" bytesdiscarded="626024" />
+  <memory-cardclean objects="1304" bytes="56840" />
+  <memory-traced type="eden" objects="23392785" bytes="553756840" />
+  <memory-traced type="other" objects="5461302" bytes="131394216" />
+  <regions eden="488" other="138" />
+  <remembered-set-cleared processed="156775" cleared="4897" durationms="1.759" />
+  <finalization candidates="31" enqueued="12" />
+  <ownableSynchronizers candidates="1992467" cleared="1600904" />
+  <references type="soft" candidates="329190" cleared="0" enqueued="0" dynamicThreshold="8" maxThreshold="32" />
+  <references type="weak" candidates="697" cleared="105" enqueued="6" />
+  <stringconstants candidates="9848" cleared="0"  />
+  <object-monitors candidates="1437" cleared="1353"  />
+  <heap-resize type="expand" space="default" amount="0" count="1" timems="0.000" reason="continue current collection" />
+  <warning details="operation aborted due to insufficient free space" />
+</gc-op> 
+```
+
+The logs record these 2 concurrent parts of a copy-forward operation in the `<gc-op type="copy forward">` section by using a `<memory-traced>` child element. In addition,`evacuated` and `marked` attributes for the `<regions>` child element are used to distinguish between the number of regions that have been copied forward (recorded as `evacuated`) and the number of regions that have just been marked. For example, `<regions eden="256" other="308" evacuated="308" marked="256" />`.
+
+Returning to our `contextid=186` partial cycle example, the next element in the logs, `<gc-end>`, records the end of the increment and provides another snapshot of memory allocation on the heap, similar to `<gc-start>`.
 
 ```xml
 <gc-end id="191" type="partial gc" contextid="186" durationms="402.645" usertimems="3157.520" systemtimems="4.000" stalltimems="47.689" timestamp="2021-02-26T11:11:42.714" activeThreads="8">
@@ -922,39 +948,38 @@ The `<mem-info>` element shows that the following occurred in between the end of
 
 - All available memory in the *eden* area was allocated to application threads.
 - Application threads also used some memory from non-*eden* heap areas. The heap's total available memory reduced from the 69% to 19%.
-
-The `<remembered-set` element shows that the remembered set status is unchanged, as expected. The remembered set metastructure is only rebuilt when GC cycles run.
+- The `<remembered-set` element shows that the remembered set status is unchanged. When mutator threads run, they build data about object references that cross boundaries using a card table. However, processing of card table data into the remembered set and reporting of the remembered set counts are executed during the operations of a cycle.
 
 **Summary of the example**
 
 Analyzing the structure and elements of this example log output shows that this example `balanced` partial GC cycle has the following characteristics:
 
-- The GC cycle begins with an STW pause and is triggered because a memory allocation threshold was reached. The *eden* space is full.
+- The partial GC cycle begins with an STW pause and is triggered because a memory allocation threshold was reached. The *eden* space is full.
 - All GC operations that are associated with this cycle occur during the STW pause.
-- The GC cycle consists of only one increment, which runs a copy-forward operation on 512 *eden* regions and 80 other regions, followed by a class-unload operation.
-- The GC cycle recreates a free eden space by reclaiming all possible regions from the eden space (some objects will always survive) and assigning other free regions to the eden space. The GC cycle also reclaims memory from some other regions.
-- 2864 MB of the total 4096 MB heap was reclaimed. All free regions from the *eden* space were reclaimed, and also some older regions were reclaimed.
-- the remembered set count increases by 172,384 cards and the number of free bytes decreases by 0.66 MB (689,536 B). After performing a copy-forward operation on objects to move them to older regions, the partial GC cycle rebuilds the remembered set of any regions that received these moved objects. During a partial cycle, the remembered set is also pruned. Overall, the rebuilding and pruning can lead to either an increase or a decrease in the remembered set count and free memory available. 
-- The remembered set metastructure remains unchanged between GC cycles. 
+- The partial GC cycle consists of only one increment, which runs a copy-forward operation on 512 *eden* regions and 80 other regions, followed by a class-unload operation.
+- The partial GC cycle recreates a free eden space by reclaiming all possible regions from the eden space (some objects will always survive) and assigning other free regions to the eden space. The GC cycle also reclaims memory from some other regions.
+- 2864 MB of the total 4096 MB heap was reclaimed. 100% of the eden space is available as free memory, and some older regions were also reclaimed.
+- Between the start and end of the partial GC cycle, the remembered set count increases by 172,384 cards and the number of free bytes decreases by 0.66 MB (689,536 B). After performing a copy-forward operation on objects to move them to older regions, the partial GC cycle rebuilds the remembered set of any regions that received these moved objects. During a partial cycle, the remembered set is also pruned. Overall, the rebuilding and pruning can lead to either an increase or a decrease in the remembered set count and free memory available. 
+- The remembered set metastructure remains unchanged between GC cycles, even though the mutator threads build new data about object references when the threads run. The remembered set count is identical at the end of one partial GC cycle and the beginning of the next because the remembered set consumes this data and reports to the verbose GC logs only during a cycle's operation.
 
 ### `balanced` global mark GC cycle
  
-The `balanced` policy’s global *mark* GC cycle uses a mixture of STW and concurrent operations to build a new record of object liveness across the heap for use by the partial GC cycle. When an allocation taxation threshold is reached, the GC 'taxes' application threads to run a global *mark* GC cycle. The global *mark* cycle performs a [global *mark* phase](vgclog_balancedexamples.md#mark-phase) and also invokes an associated [*sweep* phase](vgclog_balancedexamples.md#sweep-phase) within the partial GC cycle that immediately follows the final global *mark* cycle increment.
+The `balanced` policy’s global *mark* GC cycle uses a mixture of STW and concurrent operations to build a new record of object liveness across the heap for use by the partial GC cycle. When an allocation taxation threshold is reached, the global mark cycle is triggered. The global *mark* cycle performs a [global *mark* phase](vgclog_balancedexamples.md#mark-phase) and also triggers an associated [*sweep* phase](vgclog_balancedexamples.md#sweep-phase) within the partial GC cycle that immediately follows the end of the global *mark* cycle.
 
-To search for a `balanced` global mark cycle, you can search for the `type` attribute  value `global mark phase` in `<cycle-start>` and `<cycle-end>` elements. 
+To search for a `balanced` global mark cycle, you can search for the `type` attribute  value `global mark phase` in `<cycle-start>` and `<cycle-end>` elements.
 
 The global cycle is split into multiple increments, each recorded as `type="global mark phase"`. A global mark phase increment involves an STW subincrement, which runs a global mark operation during an STW pause, followed by a *global mark phase(GMP) work packet* subincrement. The`GMP work packet` subincrement involves a processing operation that runs concurrently. The `GMP work packet` subincrement might also use an STW pause to complete if the subincrement is interrupted by a partial or global cycle trigger.
 
 Splitting the global mark phase into these increments and subincrements reduces pause times by running the majority of the GC work concurrently and interleaving global mark phase increments with partial GC cycles, and, rarely, [global GC cycles](vgclog_examples.md#balanced-global-gc-cycle).
 
-A global *mark* GC cycle increment is triggered when ????
+A global *mark* GC cycle increment is triggered by an [allocation taxation threshold](vgclog_examples.md#balanced-examples).
 
 The following elements log the GC increments, subincrements and operations of the global *mark* GC cycle:
 
 |GC increment         | GC operations| *stop-the-world* or concurrent| XML element of GC increment| Details                         |
 |---------------------|-------------|-------------------------------|--------------------------------------|-----------------------|
 |`global mark phase` subincrement| mark | *stop-the-world* | `<gc-start>`, `<gc-end>` |The global mark phase operations start at the beginning of the cycle and run through all *regions* until the final *region* |
-|`GMP work packet processing` subincrement| work packet processing operations | concurrent and sometimes final operations during a *STW* to complete the subincrement | `<concurrent-start>`, `<concurrent-end>`| The `GMP work packet processing subincrement runs immediately after the `global mark phase` subincrement |
+|`GMP work packet processing` subincrement| work packet processing operations | concurrent and sometimes final operations during a *STW* to complete the subincrement | `<concurrent-start>`, `<concurrent-end>`| The `GMP work packet processing subincrement` runs immediately after the `global mark phase` subincrement |
 |final global mark phase increment | final global mark phase operations including class unload | *stop-the-world* | `gc-start>`, `<gc-end>`| Final increment. Runs the final global mark phase operations followed by operations to finish the cycle  |
 
 MODIFY THIS FOR  GLOBAL MARK CYCLE
@@ -1082,7 +1107,7 @@ The first activity of the global mark cycle is a STW pause, recorded by an `<exc
 </exclusive-start>
 ```
 
-The cycle is triggered when the allocation taxation is reached. The threshold is set by the policy configuration and is often resized by the GC when a `balanced` global mark GC cycle completes. The <allocation-taxation> element records the memory threshold value that was in use when this example global mark cycle was triggered. The`taxation-threshold` attribute shows the taxation threshold is 1024MB (1,073,741,824), which is half the total memory of the *eden* space (2048 MB), as expected. For more information taxation thresholds for the `balanced` policy, see [`balanced` examples](vgclog_examples.md#balanced-examples).
+The cycle is triggered when the allocation taxation threshold is reached. The <allocation-taxation> element records the memory threshold value that was in use when this example global mark cycle was triggered. The`taxation-threshold` attribute shows the taxation threshold is 1024MB (1,073,741,824), which is half the total memory of the *eden* space (2048 MB), as expected for threshold triggers of global mark cycles and increments. For more information taxation thresholds for the `balanced` policy, see [`balanced` examples](vgclog_examples.md#balanced-examples).
 
 ```xml
 <allocation-taxation id="1153" taxation-threshold="1073741824" timestamp="2021-02-26T11:17:25.034" intervalms="1931.251" />
@@ -1105,11 +1130,13 @@ The cycle begins with the STW subincrement of a global *mark* phase increment. T
 
 ```
 
-The `<gc-start>` element provides a snapshot of the free memory available in the heap and the status of marked objects. At the start of the increment, the heap is 33% free, with 1376 MB (1442840576 B) of the total 4096 MB (4294967296 B) heap size free. 
+The `<gc-start>` element provides a snapshot of the free memory available in the heap and the status of marked objects. At the start of the increment, the heap is 33% free, with 1376 MB (1442840576 B) of the total 4096 MB (4294967296 B) heap free.
 
-The `<remembered-set>` element records the status of the remembered set metastructure of the JVM, a structure that records object references that cross different regions. One remembered set corresponds to one region of the heap. During the rebuilding of the *remembered set* metastructure, any regions that cannot be rebuilt into a remembered set due to a lack of memory resource in the metastructure are marked as *overflow* regions. Cycles cannot reclaim memory from *overflow* regions.
+The `<remembered-set>` element records the status of the remembered set metastructure of the JVM, a structure that records object references that cross different regions. During the rebuilding of the *remembered set* metastructure, any regions that cannot be rebuilt into a remembered set due to a lack of memory resource in the metastructure are marked as *overflow* regions. Cycles cannot reclaim memory from *overflow* regions.
 
-The global *mark* cycle populates the remembered set and attempts to completely rebuild the set for the overflowed regions. The logs show that at the start of this STW subincrement, the remembered set count WHAT DOES THIS MEAN? is 2197888, the metastructure is using 94% of its total available memory, and three *overflow* regions need to be rebuilt.
+The aim of the global mark cycle to create a new record of object liveness can be seen in the remembered set statistics. The global mark cycle populates the remembered set and also attempts to completely rebuild the set for the overflowed regions. 
+
+The logs show that at the start of this STW subincrement, the remembered set count is 2,197,888 cards, the metastructure is using 94% of its total available memory, and three *overflow* regions need to be rebuilt.
 
 The `<gc-op>` element records that the STW subincrement runs a mark operation. This operation begins the process of building a record of object liveness across the heap. 
 
@@ -1119,9 +1146,7 @@ The `<gc-op>` element records that the STW subincrement runs a mark operation. T
 </gc-op>
 ```
 
-The object count.....
-
-The scancount and scan bytes....
+The `<trace-info>` element shows that the `mark increment` GC operation scanned 7,584,109 objects, corresponding to 203.5 MB (213445656 B). The marking did not mark the target number of objects to scan of 7,726,701 objects. 
 
 The STW `global mark phase` subincrement ends, as recorded by `<gc-end>`, which records a snapshot of the memory status in the heap in a similar way to `<gc-start>`. 
 
@@ -1136,8 +1161,8 @@ The STW `global mark phase` subincrement ends, as recorded by `<gc-end>`, which 
 Comparing the snapshot at the beginning and end of the heap shows that:
 
 - The marking operation has increased the `count` value of the `<remembered-set>` by 1,066,080 cards (from 2,197,888 to 3,263,968)
-- The number of *overflow* regions has reduced from three to zero. This GMP increment has rebuilt all *overflow regions.
-- As expected, there is no change in the amount of free memory available, which is 1376 MB.
+- The number of *overflow* regions has reduced from three to zero. This GMP increment has rebuilt all overflow regions.
+- As expected of a global mark cycle's operations, there is no change in the amount of free memory available, which is 1376 MB.
 
 The beginning of the second part of the global *mark* phase increment, the GMP work packet procesing subincrememt, is recorded by `<concurrent-start>`. The child element `<concurrent-mark-start>` records the scan target of this subincrement as 242.74 MB (254,532,672 B).
 
