@@ -91,8 +91,8 @@ After the configurations are recorded in the Initialization section, the verbose
 
 The start of a GC cycle is recorded by the `<cycle-start>` XML element. The trigger for the start of a GC cycle is captured in a preceding element to the `<cycle-start>` element. A GC cycle or GC increment is triggered for one of the following reasons:
 
-- Because an allocation failure occurs. Allocation failures occur when a request for memory fails the Java&trade; object heap does not have enough memory available. The element `<af-start>` logs an allocation failure trigger. 
-- Because a memory threshold is reached. Memory threshold values, which set the conditions for triggering certain types of GC cycles or increments, are defined by the policy type and configuration options. For more information about the particular elements or attributes that are used to record a memory threshold trigger, see specific policies and cycles in [Log examples](vgclog_examples.md).
+- an allocation failure occurs. Allocation failures occur when a request for memory fails because the Java&trade; object heap does not have enough memory available. The element `<af-start>` logs an allocation failure trigger. 
+- a memory threshold is reached. Memory threshold values, which set the conditions for triggering certain types of GC cycles or increments, are defined by the policy type and configuration options. For more information about the particular elements or attributes that are used to record a memory threshold trigger, see specific policies and cycles in [Log examples](vgclog_examples.md).
 
 The following XML structure is an example of the verbose GC logs that are generated from the Generational Concurrent GC policy (`-Xgcpolicy:gencon`). In this example, the lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity: 
 
