@@ -35,6 +35,7 @@ The following new features and notable changes since v 0.23.0 are included in th
 - [Change in behavior for the `jextract` utility](#change-in-behavior-for-the-jextract-utility)
 - [New diagnostic suboption for `-Xcheck:jni` for fatal JNI errors](#new-diagnostic-suboption-for-xcheckjni-for-fatal-jni-errors)
 - [Improved diagnostic information in a Java dump file on processor features](#improved-diagnostic-information-in-a-java-dump-file-on-processor-features)
+- [Helm chart available for deploying JITServer](#helm-chart-available-for-deploying-jitserver)
 
 
 ## Features and changes
@@ -98,7 +99,9 @@ A new `abortonerror` suboption for `-Xcheck:jni` provides diagnostic data when f
 
 The **ENVINFO** section of a Java dump file now includes further information about processor features. This information helps to diagnose problems associated with JIT and AOT compilations that depend on underlying hardware. For an example that shows the information provided when JIT is enabled, see the **CPU Information** (`2CIJITFEATURE`,`2CIAOTFEATURE`) section in the [Java dump](dump_javadump.md#envinfo) topic.
 
+### Helm chart available for deploying JITServer
 
+A Helm Chart is now available for easier deployment of JITServer technology in a Kubernetes or OpenShift cluster. You can find the chart (**openj9-jitserver-chart**) in the [JITServer Helm repository](https://github.com/eclipse/openj9-utils/tree/master/helm-chart/openj9-jitserver-chart), which contains a complete set of usage instructions. For an introduction to JITServer technology, see [JITServer (tech. preview)](jitserver.md).
 
 ## Full release information
 
