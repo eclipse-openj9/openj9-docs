@@ -252,7 +252,7 @@ You can see this interleaving of the increments in the verbose GC log. The follo
   </tr>
 </table>
 
-**Note:** Zero, one, or multiple gc cycles might run between the start and end of a `gencon` global GC cycle.
+**Note:** Zero, one, or multiple GC cycles might run between the start and end of a `gencon` global GC cycle.
 
 The XML elements and attribute values that define operations and increments of a particular cycle are specific to the policy and type of cycle. To follow how the different cycle's increments interleave in a log, you can locate the elements and attributes that record the increments and operations that belong to a particular type of cycle. For example, for the `gencon` policy, you can locate the start of the intermediate, concurrent increment of the global cycle by searching for the `<concurrent-kickoff>` element.
 

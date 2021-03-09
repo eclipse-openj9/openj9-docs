@@ -330,7 +330,7 @@ You can locate the concurrent scavenge partial cycle's concurrent increment by s
 
 The following example shows how a global GC cycle is recorded in a `gencon` policy verbose GC log. The output is broken down into sections with supporting text to explain the GC processing that is taking place.
 
-The global GC cycle runs when the tenure area is close to full, which typically occurs after many partial cycles. As such, the output can be found part way down the full log. For more information about the GC Initialization section, see [Verbose GC log contents and structure ](vgclog.md#verbose-gc-log-contents-and-structure). For an example log output for a `gencon` partial cycle, see [Example - `gencon`’s default partial GC cycle](vgclog.md/#example-gencons-default-partial-gc-cycle).
+The global GC cycle runs when the tenure area is close to full, which typically occurs after many partial cycles. As such, the output can be found part way down the full log. For more information about the GC Initialization section, see [Verbose GC log contents and structure ](vgclog.md#verbose-gc-log-contents-and-structure). For an example log output for a `gencon` partial cycle, see [Example - `gencon`’s default partial GC cycle](vgclog.md#example-gencons-default-partial-gc-cycle).
 
 The global GC cycle is split into three increments, as shown in [GC increments and interleaving](./vgclog.md#gc-increments-and-interleaving). Splitting the cycle operations into the following increments reduces pause times by running the majority of the GC work concurrently. The concurrent increment pauses when a partial GC cycle is triggered and resumes after the partial cycle, or multiple cycles, finish. The interleaving of partial GC cycles with the global cycle's intermediate concurrent increment can be seen in the following `gencon` global GC cycle log output. A single partial GC cycle is logged between the initial and final increments of the global cycle.
 
@@ -461,7 +461,7 @@ For this example, the `remainingFree` bytes value of 31.4 MB (32,933,776B) is ap
 
 This cycle aims to trace 228 MB (239,014,924B) during the concurrent increment. If the concurrent increment is interrupted by a card cleaning threshold value before it traces all 228 MB, the final STW increment completes the tracing during the STW pause.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** To analyze specific parts of a cycle, you can search for the elements that mark a specific increment of the cycle. For example, you can search for the <concurrent-global-final> element to locate the final increment of the `gencon` global cycle. See the details of a particular cycle, such as the [`gencon` Global Cycle](./vgclog.md/#global-gc-cycle), to determine the element names for particular STW or concurrent GC increments or operations.
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** To analyze specific parts of a cycle, you can search for the elements that mark a specific increment of the cycle. For example, you can search for the <concurrent-global-final> element to locate the final increment of the `gencon` global cycle. See the details of a particular cycle, such as the [`gencon` global cycle](./vgclog.md/#global-gc-cycle), to determine the element names for particular STW or concurrent GC increments or operations.
 
 The next element recorded in the log, the `<exclusive-start>`element, records the start of an STW pause:
 
@@ -683,7 +683,7 @@ The end of the increment is recorded with `<gc-end>` and provides another snapsh
 - The nursery area, which gained 0.9 MB of free memory. The nursery area now has 224.6 MB (235,516,088B) available as free memory. At the start of the final increment, the nursery area had 223.7 MB (234,609,440B) of free memory available.
 - The tenure area, which gained 355.2 MB (372,521,216B) of free memory. (the tenure area now has 395.7 MB (414,960,416B) available as free memory. At the start of the final increment, the tenure area had 40.5 MB (42,439,200B) of free memory available).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The global GC cycle runs to reclaim memory in the tenure area. The freeing up of memory in the nursery area is achieved by using the partial GC cycle. For more information, see [`gencon` Policy(default)](gc.md#gencon-policy-(default)).
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The global GC cycle runs to reclaim memory in the tenure area. The freeing up of memory in the nursery area is achieved by using the partial GC cycle. For more information, see [`gencon` policy (default)](gc.md#gencon-policy-default).
 
 After the final increment of the global cycle completes, the global cycle ends and the STW pause ends, as shown in the following output:
 
