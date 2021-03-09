@@ -1132,11 +1132,11 @@ The cycle begins with the STW subincrement of a global *mark* phase increment. T
 
 The `<gc-start>` element provides a snapshot of the free memory available in the heap and the status of marked objects. At the start of the increment, the heap is 33% free, with 1376 MB (1442840576 B) of the total 4096 MB (4294967296 B) heap free.
 
-The `<remembered-set>` element records the status of the remembered set metastructure of the JVM, a structure that records object references that cross different regions. During the rebuilding of the *remembered set* metastructure, any regions that cannot be rebuilt into a remembered set due to a lack of memory resource in the metastructure are marked as *overflow* regions. Cycles cannot reclaim memory from *overflow* regions.
+The `<remembered-set>` element records the status of the remembered set metastructure of the JVM, a structure that records object references that cross different regions. During the rebuilding of the *remembered set* metastructure, any regions that cannot be rebuilt into a remembered set due to a lack of memory resource in the metastructure are marked as *overflow* regions. Cycles cannot reclaim memory from overflow regions.
 
 The aim of the global mark cycle to create a new record of object liveness can be seen in the remembered set statistics. The global mark cycle populates the remembered set and also attempts to completely rebuild the set for the overflowed regions. 
 
-The logs show that at the start of this STW subincrement, the remembered set count is 2,197,888 cards, the metastructure is using 94% of its total available memory, and three *overflow* regions need to be rebuilt.
+The logs show that at the start of this STW subincrement, the remembered set count is 2,197,888 cards, the metastructure is using 94% of its total available memory, and three overflow regions need to be rebuilt.
 
 The `<gc-op>` element records that the STW subincrement runs a mark operation. This operation begins the process of building a record of object liveness across the heap. 
 
@@ -1158,10 +1158,10 @@ The STW `global mark phase` subincrement ends, as recorded by `<gc-end>`, which 
 </gc-end>
 ```
 
-Comparing the snapshot at the beginning and end of the heap shows that:
+Comparing the snapshot at the beginning and end of this STW `global mark phase` subincrement shows that:
 
 - The marking operation has increased the `count` value of the `<remembered-set>` by 1,066,080 cards (from 2,197,888 to 3,263,968)
-- The number of *overflow* regions has reduced from three to zero. This GMP increment has rebuilt all overflow regions.
+- The number of overflow regions has reduced from three to zero. This GMP increment has rebuilt all overflow regions.
 - As expected of a global mark cycle's operations, there is no change in the amount of free memory available, which is 1376 MB.
 
 The beginning of the second part of the global *mark* phase increment, the GMP work packet procesing subincrememt, is recorded by `<concurrent-start>`. The child element `<concurrent-mark-start>` records the scan target of this subincrement as 242.74 MB (254,532,672 B).
@@ -1172,13 +1172,12 @@ The beginning of the second part of the global *mark* phase increment, the GMP w
 </concurrent-start>
 ```
 
-Now that the global mark phase sub-increment is complete, application threads are restarted. The second part of the global mark phase increment, the GMP work packet processing sub-increment, continues to run concurrently:
+Now that the STW global mark phase sub-increment is complete, application threads are restarted. 
 
 ```xml
 <exclusive-end id="1161" timestamp="2021-02-26T11:17:25.157" durationms="123.936" />
 ```
-
-The end of the concurrent `GMP work packet processing` sub-increment operations are recorded using the `<concurrent-end>` element. 
+The second part of the global mark phase increment, the `GMP work packet processing` sub-increment, continues to run concurrently. The end of the concurrent `GMP work packet processing` sub-increment operations are recorded using the `<concurrent-end>` element. 
 
 ```xml
 <concurrent-end id="1162" type="GMP work packet processing" contextid="1154" timestamp="2021-02-26T11:17:25.469" terminationReason="Work target met">
@@ -1188,11 +1187,11 @@ The end of the concurrent `GMP work packet processing` sub-increment operations 
 </concurrent-end>
 ```
 
-The child element `<concurrent-mark-end>` shows that the processing has scanned 242.91 MB (254,708,852 B), which exceeds the 108.25 MB scan target.
+The child element `<trace-info>` shows that the processing has scanned 242.91 MB (254,708,852 B), which exceeds the 108.25 MB scan target.
 
 The garbage collector now returns to running partial cycles to reclaim free space in the heap before the next global mark phase increment is triggered. To see an example of how a `balanced` partial GC cycle appears in the logs, see the [`Balanced` examples - Partial GC Cycle](vgclog_examples#partial-gc-cycle).
 
-Following some partial GC cycles, an allocation taxation threshold is reached which triggers a STW pause followed by a global mark phase increment. The element `<gc-start>` has a `contextid=1154` and type `global mark phase` which indicates that this is a global mark phase sub-increment associated with our global *mark* cycle example.
+Following some partial GC cycles, an allocation taxation threshold is reached which triggers a STW pause followed by a global mark phase increment. The element `<gc-start>` in the following log excerpt has a `contextid=1154` and type `global mark phase`, which indicates that this is a global mark phase sub-increment associated with our global *mark* cycle example.
 
 ```xml
 <exclusive-start id="1175" timestamp="2021-02-26T11:17:28.993" intervalms="1978.886">
@@ -1206,11 +1205,11 @@ Following some partial GC cycles, an allocation taxation threshold is reached wh
 </gc-start>
 ```
 
-`<allocation-taxation>` shows the taxation threshold for is set to 1024 MB, half of the size of the *eden* space. `<gc-start>` records the heap to have 1384 MB (1,451,229,184 B)of free memory available at the beginning of this global mark phase increment. This compares to the 1376 MB (1,442,840,576 B) of free memory available at the end of the previous global mark phase increment. Although free memory was reclaimed by the partial GC cycles that ran between these global mark phase increments, free memory was allocated to objects during this period resulting in a net reduction of free memory available. 
+The `<allocation-taxation>` element shows the taxation threshold for triggering this global mark phase increment is set to 1024 MB, half of the size of the *eden* space, as expected. `<gc-start>` records the heap to have 1384 MB (1,451,229,184 B)of free memory available at the beginning of this global mark phase increment. This compares to the 1376 MB (1,442,840,576 B) of free memory available at the end of the previous global mark phase increment. Although free memory was reclaimed by the partial GC cycles that ran between these global mark phase increments, free memory was allocated to objects when application threads ran, resulting in a net reduction of free memory available.
 
-There are two *overflow* regions to be rebuilt.
+The `<remembered set>` element shows that there are two overflow regions to rebuild.
 
-The status of the heap at the beginning and end of STW sub-increments are automatically recorded. For this STW subincrement, there are no `<gc-op>` elements recorded - `<gc-end>` immediately follows `<gc-start>` in the logs. For some STW sub-increments, some GC operations are run, such as ADD
+The status of the heap at the beginning and end of STW sub-increments are automatically recorded. For this STW subincrement, there are no `<gc-op>` elements recorded; `<gc-end>` immediately follows `<gc-start>` in the logs. For some STW sub-increments, some GC operations are run, such as ADD
 
 ```xml
 <gc-end id="1179" type="global mark phase" contextid="1154" durationms="0.289" usertimems="1.000" systemtimems="0.000" stalltimems="0.000" timestamp="2021-02-26T11:17:28.994" activeThreads="8">
@@ -1277,7 +1276,7 @@ Comparing the status of the memory at the start and end of this final `global ma
 
 - As expected, the final global mark phase increment does not reclaim any free memory.
 - The remembered set metastructure has been rebuilt. The count has reduced and the number of available memory in the metastructure has increased from 91% to 94%.
-- The number of *overflow* regions remains unchanged. 
+- The number of overflow regions remains unchanged. 
 
 Following the final global mark increment, the global mark cycles completes and the GC ends the STW pause.
 
