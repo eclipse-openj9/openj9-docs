@@ -25,7 +25,8 @@
 # JITServer technology (technical preview)
 
 ![Start of content that applies to Java 8 and later](cr/java8.png)
-![Start of content that applies to Java 11 and later](cr/java11.png)  
+![Start of content that applies to Java 11 and later](cr/java11.png)
+
 **Linux&reg; on x86, Linux on IBM Power&reg; systems, and Linux on IBM Z&reg; systems (64-bit only)**
 
 JITServer technology decouples the JIT compiler from the VM and lets the JIT compiler run remotely in its own process. This mechanism prevents your Java&trade; application suffering possible negative effects due to CPU and memory consumption caused by JIT compilation.
@@ -78,9 +79,9 @@ and use the certificate at the client:
 
 For more details and further discussion about security considerations, see [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/).
 
-## Building an SDK with JITServer technology
+## Building a JDK with JITServer technology
 
-If you want to build a JDK with JITServer technology for yourself, see Appendix A of [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/).
+If you want to build a JDK with JITServer technology, see Appendix A of [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/).
 
 ## See also
 
