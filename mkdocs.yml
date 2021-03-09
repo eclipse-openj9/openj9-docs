@@ -124,8 +124,13 @@ nav:
             - "Version 0.8.0"                                                    : version0.8.md
 
     - "Memory management" :
-        - "Memory allocation"                                                    : allocator.md
-        - "Garbage collection"                                                   : gc.md
+        - "Memory allocation"                                                    : allocation.md
+        - "Garbage collection (GC)"                                              : gc_overview.md
+        - "GC policies"                                                          : gc.md
+        - "Troubleshooting GC" :
+            - "Verbose GC logs"                                                  : vgclog.md
+            - "Log examples"                                                     : vgclog_examples.md
+
 
     - "JIT Compiler"                                                             : jit.md
     - "JITServer (tech. preview)"                                                : jitserver.md
