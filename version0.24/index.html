@@ -463,6 +463,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#helm-chart-available-for-deploying-jitserver" class="md-nav__link">
+    Helm chart available for deploying JITServer
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4074,6 +4081,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#helm-chart-available-for-deploying-jitserver" class="md-nav__link">
+    Helm chart available for deploying JITServer
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4143,6 +4157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="#change-in-behavior-for-the-jextract-utility">Change in behavior for the <code>jextract</code> utility</a></li>
 <li><a href="#new-diagnostic-suboption-for-xcheckjni-for-fatal-jni-errors">New diagnostic suboption for <code>-Xcheck:jni</code> for fatal JNI errors</a></li>
 <li><a href="#improved-diagnostic-information-in-a-java-dump-file-on-processor-features">Improved diagnostic information in a Java dump file on processor features</a></li>
+<li><a href="#helm-chart-available-for-deploying-jitserver">Helm chart available for deploying JITServer</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -4178,6 +4193,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>A new <code>abortonerror</code> suboption for <code>-Xcheck:jni</code> provides diagnostic data when fatal JNI errors occur. For more information, run <code>-Xcheck:jni:help</code>.</p>
 <h3 id="improved-diagnostic-information-in-a-java-dump-file-on-processor-features">Improved diagnostic information in a Java dump file on processor features</h3>
 <p>The <strong>ENVINFO</strong> section of a Java dump file now includes further information about processor features. This information helps to diagnose problems associated with JIT and AOT compilations that depend on underlying hardware. For an example that shows the information provided when JIT is enabled, see the <strong>CPU Information</strong> (<code>2CIJITFEATURE</code>,<code>2CIAOTFEATURE</code>) section in the <a href="../dump_javadump/#envinfo">Java dump</a> topic.</p>
+<h3 id="helm-chart-available-for-deploying-jitserver">Helm chart available for deploying JITServer</h3>
+<p>A Helm Chart is now available for easier deployment of JITServer technology in a Kubernetes or OpenShift cluster. You can find the chart (<strong>openj9-jitserver-chart</strong>) in the <a href="https://github.com/eclipse/openj9-utils/tree/master/helm-chart/openj9-jitserver-chart">JITServer Helm repository</a>, which contains a complete set of usage instructions. For an introduction to JITServer technology, see <a href="../jitserver/">JITServer (tech. preview)</a>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v 0.23.0 and v 0.24.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.24/0.24.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.24.md ==== -->
