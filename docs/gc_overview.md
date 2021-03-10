@@ -182,7 +182,7 @@ Compaction of the heap is an expensive operation because when objects are moved 
 The following two options can be used to control compaction:
 
 - [`-Xcompactgc`](xcompactgc.md) forces compaction of the heap.
-- [`-Xnocompactgc`](xnocompactgc.md) avoids compaction of the heap as a result of all the triggers shown in the preceding list. However a compaction can still occur in rare circumstances.
+- [`-Xnocompactgc`](xcompactgc.md) avoids compaction of the heap as a result of all the triggers shown in the preceding list. However a compaction can still occur in rare circumstances.
 
 In a verbose GC log, this operation is shown by the `<gc-op type="compact">` XML element. For more information, see [Verbose GC logs](vgclog.md).
 
