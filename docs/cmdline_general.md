@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -34,7 +34,7 @@ Some of the common options supported are summarised in the following table:
 | `-help`, `-?`                                                       | Prints a usage message.                                                                                                   |
 | `-fullversion`                                                      | Prints the build and version information for a VM                                                                         |
 | `-showversion`                                                      | Prints product version and continues.                                                                                     |
-| `-verbose:<option>[,<option>]`                                      | Enables verbose output. Options include `class`, `dynload`, `gc`, `init`, `jni`, `sizes` and `stack`. (See **Notes**)     |
+| `-verbose:<option>[,<option>]`                                      | Enables verbose output. Options include `class`, `dynload`, `gc`, `init`, `jni`, `sizes`, `stack`, and `module`. (See **Notes**)     |
 | `-version`                                                          | Prints the full build and version information a VM                                                                        |
 
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
@@ -46,8 +46,16 @@ Some of the common options supported are summarised in the following table:
 - `-verbose:jni`: Writes information to `stderr` describing the JNI services called by the application and VM.
 - `-verbose:sizes`: Writes information to `stderr` describing the active memory usage settings.
 - `-verbose:stack`: Writes information to `stderr` describing the Java and C stack usage for each thread.
+- `-verbose:module`: ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Writes information to `stderr` for each module that is loaded and unloaded.
 
 For more information about standard options, see [Oracle Java SE Standard Options](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html#BABDJJFI)
+
+## OpenJ9 extensions
+
+OpenJ9 supports the following extension to the `-verbose` option:
+
+- `-verbose:stacktrace` : Writes either the module name or the `Classloader` name (with the code source location when available) to the end of each line of a Java stack trace.
+
 
 
 <!-- ==== END OF TOPIC ==== cmdline_general.md ==== -->

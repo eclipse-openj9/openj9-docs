@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xconcurrentbackground 
+# -Xconcurrentbackground
 
 Specifies the number of low-priority background threads attached to assist the mutator threads in concurrent mark.
 
@@ -32,9 +32,8 @@ Specifies the number of low-priority background threads attached to assist the m
 
 ## Default behavior
 
-The default is `0` for Linux&reg; on IBM Z&reg; and `1` on all other platforms.
+The default value is `1`.
 
- 
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This value is reported in the header section of a verbose GC log with the entry `<attribute name="gcthreads Concurrent Mark" value="1" />`.
 
 <!-- ==== END OF TOPIC ==== xconcurrentbackground.md ==== -->
-

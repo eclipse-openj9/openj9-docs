@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2020 IBM Corp. and others
+# Copyright (c) 2017, 2021 IBM Corp. and others
 #
 # This program and the accompanying materials are made
 # available under the terms of the Eclipse Public License 2.0
@@ -99,18 +99,20 @@ markdown_extensions:
 nav:
 
     - "About the docs"                                                           : index.md
-    - "AdoptOpenJDK builds"                                                      : adoptopenjdk.md
+    - "OpenJ9 builds"                                                            : builds.md
     - "Getting started"                                                          : introduction.md
     - "New to OpenJ9?"                                                           : openj9_newuser.md
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.25.0"                                                       : version0.25.md
+        - "Version 0.24.0"                                                       : version0.24.md
         - "Version 0.23.0"                                                       : version0.23.md
         - "Version 0.22.0"                                                       : version0.22.md
-        - "Version 0.21.0"                                                       : version0.21.md
-        - "Version 0.20.0"                                                       : version0.20.md
-        - "Version 0.19.0"                                                       : version0.19.md
         - "Earlier releases" :
+            - "Version 0.21.0"                                                   : version0.21.md
+            - "Version 0.20.0"                                                   : version0.20.md
+            - "Version 0.19.0"                                                   : version0.19.md
             - "Version 0.18.1"                                                   : version0.18.md
             - "Version 0.17.0"                                                   : version0.17.md
             - "Version 0.16.0"                                                   : version0.16.md
@@ -320,6 +322,7 @@ nav:
             - "-Xsoftrefthreshold"                                               : xsoftrefthreshold.md
             - "-Xss"                                                             : xss.md
             - "-Xssi"                                                            : xss.md                             # redirect
+            - "-Xsyslog"                                                         : xsyslog.md
             - "-Xtgc"                                                            : xtgc.md
             - "-Xthr"                                                            : xthr.md
             - "-XtlhPrefetch"                                                    : xtlhprefetch.md
@@ -338,6 +341,7 @@ nav:
             - "-XX:ConcGCThreads"                                                : xxconcgcthreads.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
             - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
+            - "-XX:DiagnoseSyncOnValueBasedClasses"                              : xxdiagnosesynconvaluebasedclasses.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
@@ -359,6 +363,7 @@ nav:
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
             - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
+            - "-XX:[+|-]LegacyXLogOption"                                        : xxlegacyxlogoption.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
             - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
             - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
@@ -410,5 +415,6 @@ nav:
             - "Monitoring and management"                                         : api-langmgmt.md
             - "Shared classes"                                                    : api-shrc.md
         - "Java 11 API"                                                           : api-jdk11.md
+        - "Java 16 API"                                                           : api-jdk16.md
 
     - "Legal"                                                                     : legal.md
