@@ -63,7 +63,7 @@
     
     
       
-        <title>Garbage collection -  </title>
+        <title>Garbage Collection (GC) -  </title>
       
     
     
@@ -639,11 +639,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Garbage collection
+        Garbage Collection (GC)
       </label>
     
-    <a href="./" title="Garbage collection" class="md-nav__link md-nav__link--active">
-      Garbage collection
+    <a href="./" title="Garbage Collection (GC)" class="md-nav__link md-nav__link--active">
+      Garbage Collection (GC)
     </a>
     
       
@@ -768,9 +768,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <li class="md-nav__item">
-    <a href="../gc/" title="Garbage collection policies" class="md-nav__link">
-      Garbage collection policies
+    <a href="../gc/" title="GC policies" class="md-nav__link">
+      GC policies
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      Troubleshooting GC
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Troubleshooting GC
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vgclog/" title="Verbose GC logs" class="md-nav__link">
+      Verbose GC logs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vgclog_examples/" title="Log examples" class="md-nav__link">
+      Log examples
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -4187,7 +4235,7 @@ whole of the Java heap, the cycle is referred to as a <em>global GC cycle</em>; 
 </li>
 </ol>
 <p>In general, helper threads are used in parallel to speed up mark operations on the heap. The helper threads share the work stack with the application thread and are involved in identifying root objects, tracing objects in the heap, and updating the mark map. By default, the number of helper threads is based on the number of CPUs reported by the operating system. You can control the number of helper threads available by specifying the <a href="../xgcthreads/">-Xgcthreads</a> command line option when starting your application.</p>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="mark"&gt;</code> XML element. For more information, see <a href="vgclog.md">Verbose GC logs</a>.</p>
+<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="mark"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
 <h4 id="concurrent-mark-processing">Concurrent mark processing</h4>
 <p>A mark operation can run with exclusive access to the heap, which requires application threads to pause while processing takes place. Alternatively, it can run concurrently with application threads to avoid pauses in application processing.</p>
 <p>With concurrent mark, the process of root scanning is handed over to application stack threads, which populate the work stack with root objects in their stack. The root objects in the work stack are then traced by a background thread and by each application thread during a heap lock allocation to find reachable objects and update the mark map. Because the mark operation runs concurrently with application threads, any changes to objects that are already traced must be updated. This process works by using a write barrier that can flag the update and trigger a further scan of part of the heap.</p>
@@ -4215,7 +4263,7 @@ whole of the Java heap, the cycle is referred to as a <em>global GC cycle</em>; 
 </ol>
 <p>As with mark operations, multiple helper threads can be used to sweep the Java heap in parallel to speed up processing times. Because these helper threads are the same ones that are used for parallel mark operations, the number of threads can be controlled by using the <a href="../xgcthreads/">-Xgcthreads</a> option.</p>
 <p>Parallel sweep operations run on 256 KB sections of the heap. Each helper thread scans a section at a time. The results are stored and used to generate a freelist of empty regions.</p>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="sweep"&gt;</code> XML element. For more information, see <a href="vgclog.md">Verbose GC logs</a>.</p>
+<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="sweep"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
 <h4 id="concurrent-sweep-processing">Concurrent sweep processing</h4>
 <p>Concurrent sweep processing works in tandem with concurrent mark processing and uses the same mark map. Concurrent sweep operations start after a STW collection and complete a section of the heap before concurrent mark operations continue.</p>
 <p>Concurrent sweep is used by the <code>optavgpause</code> GC policy.</p>
@@ -4235,7 +4283,7 @@ whole of the Java heap, the cycle is referred to as a <em>global GC cycle</em>; 
 <p>The final step processes weakly reachable roots such as finalizable objects, weak references, monitor sets, and string sets. For more information about the processing of soft, weak, and phantom references, see <a href="#weak-reference-processing">Weak reference processing</a>.</p>
 </li>
 </ol>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="scavenge"&gt;</code> XML element. For more information, see <a href="vgclog.md">Verbose GC logs</a>.</p>
+<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="scavenge"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
 <p>The scavenge operation is used by the <a href="../gc/#gencon-policy-default"><code>gencon</code> GC policy</a>.</p>
 <h3 id="gc-copy-forward-operation">GC copy forward operation</h3>
 <p>A GC <em>copy forward</em> operation is similar to a scavenge operation but is triggered by a taxation threshold being reached. The operation occurs in the following 3 steps:</p>
@@ -4254,11 +4302,11 @@ whole of the Java heap, the cycle is referred to as a <em>global GC cycle</em>; 
 </li>
 </ol>
 <p>The operation aims to empty or <em>evacuate</em> fragmented regions that can then be reclaimed for new object allocation.</p>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="copy forward"&gt;</code> XML element. For more information, see <a href="vgclog.md">Verbose GC logs</a>.</p>
+<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="copy forward"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
 <p>The copy forward operation is used by the <a href="../gc/#balanced-policy"><code>balanced GC policy</code></a>.</p>
 <h3 id="gc-classunloading-operation">GC classunloading operation</h3>
 <p>The <em>classunloading</em> operation is single threaded, not parallel threaded.</p>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="classunload"&gt;</code> XML element. For more information, see <a href="vgclog.md">Verbose GC logs</a>.</p>
+<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="classunload"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
 <h3 id="gc-compact-operation">GC compact operation</h3>
 <p>Compaction of the heap is an expensive operation because when objects are moved to defragment the heap, the references to each object change. Therefore, compact operations do not occur by default but only when the following triggers occur:</p>
 <ul>
@@ -4275,7 +4323,7 @@ whole of the Java heap, the cycle is referred to as a <em>global GC cycle</em>; 
 <li><a href="../xcompactgc/"><code>-Xcompactgc</code></a> forces compaction of the heap.</li>
 <li><a href="../xcompactgc/"><code>-Xnocompactgc</code></a> avoids compaction of the heap as a result of all the triggers shown in the preceding list. However a compaction can still occur in rare circumstances.</li>
 </ul>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="compact"&gt;</code> XML element. For more information, see <a href="vgclog.md">Verbose GC logs</a>.</p>
+<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="compact"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
 <h2 id="weak-reference-processing">Weak reference processing</h2>
 <p>Weak reference processing includes soft references, weak references, and phantom references. These references are created by the user for specific use cases and allow
 some level of interaction with the garbage collector. For example, a soft reference to an object allows that object to persist in memory for a longer period of time before being
