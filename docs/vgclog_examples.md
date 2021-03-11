@@ -1115,7 +1115,7 @@ The aim of the global mark cycle to create a new record of object liveness can b
 
 The logs show that at the start of this STW subincrement, the remembered set count is 2,197,888 cards, the metastructure is using 94% of its total available memory, and three overflow regions need to be rebuilt.
 
-The `<gc-op>` element records that the STW subincrement runs a mark operation. This operation begins the process of building a record of object liveness across the heap. 
+The `<gc-op>` element records that the STW subincrement runs a [mark operation](gc_overview.md#gc-mark-operation). This operation begins the process of building a record of object liveness across the heap.
 
 ```xml
 <gc-op id="1157" type="mark increment" timems="122.825" contextid="1154" timestamp="2021-02-26T11:17:25.157">
@@ -1123,7 +1123,9 @@ The `<gc-op>` element records that the STW subincrement runs a mark operation. T
 </gc-op>
 ```
 
-The `<trace-info>` element shows that the `mark increment` GC operation scanned 7,584,109 objects, corresponding to 203.5 MB (213445656 B). The marking did not mark the target number of objects to scan of 7,726,701 objects. 
+The `<trace-info>` element records information about the marking and scanning stages of the mark increment operation. `objectcount` records the number of objects that have been marked, ready for tracing. After marking live objects, a scan is run to trace objects and references. `scancount` records the number of marked objects that have been scanned. `scanbytes` records the total memory of all marked objects that have been scanned.
+
+The mark increment operation in the example marked 7,726,701 objects and scanned 7,584,109 of these marked objects. The 7,584,109 of scanned objects take up 203.5 MB (213445656 B) of memory. The number of scanned objects is less than the number of marked objects because only objects that have children require scanning. Also, the scanning part of the marking operation might be interrupted by the garbage collector if a trigger threshold for a partial cycle or global cycle is reached during the marking operation.
 
 The STW `global mark phase` subincrement ends, as recorded by `<gc-end>`, which records a snapshot of the memory status in the heap in a similar way to `<gc-start>`. 
 
