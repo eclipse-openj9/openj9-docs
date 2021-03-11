@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2017, 2020 IBM Corp. and others
+* Copyright (c) 2017, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -31,12 +31,14 @@ Enables and disables garbage collection (GC) when calls are made to `System.gc()
 
 | Setting               | Effect     | Default                                                                            |
 |-----------------------|------------|:----------------------------------------------------------------------------------:|
-| `-Xenableexplicitgc`  | Enable GC  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| `-Xdisableexplicitgc` | Disable GC |                                                                                    |
+| `-Xenableexplicitgc`  | Enable explicit GC calls  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Xdisableexplicitgc` | Disable explicit GC calls |                                                                                    |
 
 ## Explanation
 
-Although it is possible to programmatically trigger a garbage collection by calling `System.gc()`, performance can be adversely affected by halting the application before it is really necessary. Use this option to prevent the VM responding to application requests for a garage collection cycle.
+Although it is possible to programmatically trigger a global GC by calling `System.gc()`, performance can be adversely affected by halting the application before it is really necessary. Use this option to prevent the VM responding to application requests for a GC cycle.
+
+The default for all OpenJ9 GC policies is `-Xenableexplicitgc` except for [`-Xgcpolicy:nogc`](xgcpolicy.md#nogc), where the default is `-Xdisableexplicitgc`.
 
 
 <!-- ==== END OF TOPIC ==== xenableexplicitgc.md ==== -->
