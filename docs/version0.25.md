@@ -98,7 +98,7 @@ The `%sysname` dump token is added on z/OS, which equates to the SYSNAME sysparm
 
 ### Single build for compressed references and non-compressed references
 
-A single build now supports both compressed references and non-compressed references. The object reference mode is selected at run time based on the specified heap size ([`-Xmx`](#xms.md)) or by using command-line options that control the selection of compressed references.
+A single build now supports both compressed references and non-compressed references. The object reference mode is selected at run time based on the specified heap size ([`-Xmx`](xms.md)) or by using command-line options that control the selection of compressed references.
 
 If you used a large heap build for an earlier release of OpenJ9 because you did not require compressed references, you might need to turn it off if compressed references mode is being selected automatically at run time. Use the [`-Xnocompressedrefs`](xcompressedrefs.md) option when you start your application.
 
