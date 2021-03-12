@@ -4,7 +4,7 @@ To help you understand how garbage collection (GC) processes memory for your app
 
 ## `gencon` examples
 
-As detailed in [`gencon` policy (default)](gc.md#gencon-policy-default), this policy uses two types of cycle; a partial GC cycle and a global GC cycle. By default, the partial GC cycle runs a *stop-the-world* (STW) *scavenge* operation but can run a concurrent *scavenge* operation ([-Xgc:concurrentScavenge](xgc.md#concurrentscavenge)) if enabled at run time.
+As detailed in [`gencon` policy (default)](gc.md#gencon-policy-default), this policy uses two types of cycle; a partial GC cycle and a global GC cycle. By default, the partial GC cycle runs a *stop-the-world* (STW) *scavenge* operation but can run a concurrent *scavenge* operation ([-Xgc:concurrentScavenge](xgc.md#concurrentscavenge)) on specific platforms if enabled at run time.
 
 The start of a `gencon` cycle is recorded in the log by the following elements and attributes:
 
@@ -151,7 +151,7 @@ The scavenge partial GC cycle follows a general structure in the verbose GC log 
 
 ```
 
-The first activity in the cycle is recorded by an `<exclusive-start>` element, which indicates the start of the STW pause. Application threads are halted to give the garbage collector exclusive access to the Java&trade; object heap:
+The first activity in the cycle is recorded by an `<exclusive-start>` element, which indicates the start of the STW pause. Application (or *mutator*) threads are halted to give the garbage collector exclusive access to the Java&trade; object heap:
 
 ```xml
 <!-- Start of gencon scavenge partial GC cycle example -->
@@ -269,7 +269,7 @@ The cycle ends (`<cycle-end>`). The following `<allocation-satisfied>` element i
 <!-- End of gencon partial GC cycle example -->
 ```
 
-**Summary of the example**
+#### Summary of the example
 
 Analyzing the structure and elements of this example log output shows that this example global cycle has the following characteristics:
 
@@ -283,7 +283,7 @@ Analyzing the structure and elements of this example log output shows that this 
 
 ### Concurrent scavenge partial GC cycle (non-default)
 
-When concurrent scavenge mode is enabled, the partial GC cycle is run as a [concurrent scavenge cycle](gc.md#concurrent-scavenge). This partial GC cycle is divided into increments to enable the majority of the scavenge operation to run concurrently with running application threads. The concurrent increment can run while application threads run, and also while the intermediate concurrent increment of the global GC cycle runs. The interleaving of the concurrent scavenge partial GC cycle with the global cycle can be seen in the logs.
+When concurrent scavenge mode is enabled, the partial GC cycle is run as a [concurrent scavenge cycle](gc.md#concurrent-scavenge). This partial GC cycle is divided into increments to enable the majority of the scavenge operation to run concurrently with running application (or *mutator*) threads. The concurrent increment can run while application threads run, and also while the intermediate concurrent increment of the global GC cycle runs. The interleaving of the concurrent scavenge partial GC cycle with the global cycle can be seen in the logs.
 
 The following elements log the GC increments and operations of the concurrent scavenge partial GC cycle:
 
@@ -692,7 +692,7 @@ After the final increment of the global cycle completes, the global cycle ends a
 <exclusive-end id="12391" timestamp="2020-10-18T13:35:44.619" durationms="24.679" />
 ```
 
-**Summary of the example**
+#### Summary of the example
 
 Analyzing the structure and elements of this example log output shows that this example global cycle has the following characteristics:
 
@@ -802,7 +802,7 @@ The `balanced` partial GC cycle follows a general structure in the verbose GC lo
 <exclusive-end>                           (STW pause ends)
 ```
 
-When the `balanced` partial GC cycle is triggered, the GC runs an STW pause. Application threads are halted to give the garbage collector exclusive access to the heap. The STW pause is recorded in the logs by the `<exclusive-start>` element. 
+When the `balanced` partial GC cycle is triggered, the GC runs an STW pause. Application (or *mutator*) threads are halted to give the garbage collector exclusive access to the heap. The STW pause is recorded in the logs by the `<exclusive-start>` element. 
 
 ```xml
 <exclusive-start id="184" timestamp="2021-02-26T11:11:42.310" intervalms="3745.790">
@@ -843,7 +843,7 @@ The partial gc cycle uses and prunes the remembered set. The `regionsoverflowed`
 
 At the start of the partial gc cycle, the remembered set is using 93% of its available memory capacity, with 153.26 MB (160705664 B) available. The set consists of 2,749,664 cards and has 1 overflow region.
 
-The following element, `<allocation-stats>`, records information about the status of the application threads before the start of the current cycle. For this example, the thread `Group1.Backend.CompositeBackend{Tier1}.7` was the largest consumer of memory.
+The following element, `<allocation-stats>`, records information about the status of the application (or *mutator*) threads before the start of the current cycle. For this example, the thread `Group1.Backend.CompositeBackend{Tier1}.7` was the largest consumer of memory.
 
 ```xml
 <allocation-stats totalBytes="2146431360" >
@@ -946,7 +946,7 @@ The `<mem-info>` element shows that the following occurred in between the end of
 - Application threads also used some memory from non-*eden* heap areas. The heap's total available memory reduced from the 69% to 19%.
 - The `<remembered-set` element shows that the remembered set status is unchanged. When mutator threads run, they build data about object references that cross boundaries using a card table. However, processing of card table data into the remembered set and reporting of the remembered set counts are executed during the operations of a cycle.
 
-**Summary of the example**
+#### Summary of the example
 
 Analyzing the structure and elements of this example log output shows that this example `balanced` partial GC cycle has the following characteristics:
 
@@ -1295,8 +1295,8 @@ While the global *sweep* operation is logically associated with the global *mark
 ```
 
 A record of object liveness is now complete.
-
-**Summary of the example**
+*
+#### Summary of the example
 
 Analyzing the structure and elements of this example log output shows that this example `balanced` global mark GC cycle has the following characteristics:
 
@@ -1441,7 +1441,7 @@ The
 <exclusive-end id="54" timestamp="2020-11-13T06:31:42.115" durationms="108.749" />
 ```
 
-**Summary of the example**
+#### Summary of the example
 ADD HERE
 
 - The cycle has reclaimed memory in the heap that the pgc cannot reclaim
