@@ -4200,7 +4200,7 @@ WARNING: All illegal access operations will be denied in a future release
 <h3 id="zos-support-for-the-sysname-dump-token">z/OS support for the <code>%sysname</code> dump token</h3>
 <p>The <code>%sysname</code> dump token is added on z/OS, which equates to the SYSNAME sysparm. See <a href="../xdump/#dump-agent-tokens">Dump agent tokens</a>.</p>
 <h3 id="single-build-for-compressed-references-and-non-compressed-references">Single build for compressed references and non-compressed references</h3>
-<p>A single build now supports both compressed references and non-compressed references. The object reference mode is selected at run time based on the specified heap size (<a href="#xms.md"><code>-Xmx</code></a>) or by using command-line options that control the selection of compressed references.</p>
+<p>A single build now supports both compressed references and non-compressed references. The object reference mode is selected at run time based on the specified heap size (<a href="../xms/"><code>-Xmx</code></a>) or by using command-line options that control the selection of compressed references.</p>
 <p>If you used a large heap build for an earlier release of OpenJ9 because you did not require compressed references, you might need to turn it off if compressed references mode is being selected automatically at run time. Use the <a href="../xcompressedrefs/"><code>-Xnocompressedrefs</code></a> option when you start your application.</p>
 <p>The <code>compressedrefs</code> directory is no longer present in the single build.</p>
 <p>To learn about the benefits of using compressed references, see <a href="../allocation/#compressed-references">Compressed references</a>.</p>
