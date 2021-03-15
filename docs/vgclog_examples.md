@@ -126,7 +126,8 @@ The scavenge partial GC cycle follows a general structure in the verbose GC log 
 
 </gc-start>
 
-<allocation-stats/>         (snapshot of application threads status taken before cycle started)
+<allocation-stats/>         (Snapshot of how memory was divided up between
+                            ... application threads before current cycle started)
 
 <gc-op> “scavenge"</gc-op>  (scavenge operation completed)
 
@@ -201,7 +202,7 @@ The Java&trade; object heap memory allocation at the start of the increment is a
 - The *survivor* space of the nursery area is reported as 'full' to reflect that no available memory is available to allocate to the mutator threads. The entire *survivor* space is reserved for GC operations during the GC increment. 
 - The *tenure* area has 395.7 MB (414,960,320B) of free memory available.
 
-The next element `<allocation-stats>` shows a snapshot, which was taken before the cycle started, of the allocation status of the mutator threads. In this example, the thread that used the most memory was `LargeThreadPool-thread-79`.
+The next element `<allocation-stats>` shows a snapshot, which was taken before the cycle started, of how memory was divided up between application threads. In this example, the thread that used the most memory was `LargeThreadPool-thread-79`.
 
 ```xml
 <allocation-stats totalBytes="235362176" >
@@ -402,7 +403,8 @@ The global GC cycle follows a general structure in the verbose GC log as shown. 
 
 <gc-start/>                 (global cycle final increment starts)
 
-<allocation-stats/>         (snapshot of application threads status taken before cycle started)
+<allocation-stats/>         (Snapshot of how memory was divided up between
+                            ... application threads before current cycle started)
 
 <mem-info>                  (memory status before operations)
 
@@ -583,7 +585,7 @@ In the next section that begins with the `gc-start` element, you can find inform
 </allocation-stats>
 ```
 
-The element `<allocation-stats>` shows a snapshot, which was taken before the cycle started, of the allocation status of the mutator threads. In this example, the thread that used the most memory was `LargeThreadPool-thread-68`.
+The next element `<allocation-stats>` shows a snapshot of how memory was divided up between application threads before the current cycle started.In this example, the thread that used the most memory was `LargeThreadPool-thread-68`.
 
 For this example, at the start of this GC increment, the tenure area is low on free memory, as expected. 25% of the total heap is available as free memory, which is split between the following areas of the heap:
 
@@ -762,7 +764,7 @@ The start of a `balanced` cycle is recorded in the log by the following elements
 
 To locate a particular type of cycle, you can search for the `type` attribute of the `<cycle-start>` and `<cycle-end>` elements.
 
-When memory in the Java&trade; object heap reaches a memory threshold called an allocation taxation threshold,  a GC cycle or GC increment is triggered. Partial GC cycles, global mark cycles, and global cycles set the allocation taxation threshold at the end of their cycle. For `balanced` cycles, the *taxation* on the mutator threads refers to pausing the mutator threads while GC work is run.
+When memory in the Java&trade; object heap reaches a memory threshold called an allocation taxation threshold, a GC cycle or GC increment is triggered. Partial GC cycles, global mark cycles, and global cycles set the allocation taxation threshold at the end of their cycle or increment to schedule the next cycle or increment. For `balanced` cycles, the *taxation* on the mutator threads refers to pausing the mutator threads while GC work is run.
 
 If a partial GC cycle is not run between global mark phase increments of a global *mark* cycle, the allocation taxation threshold is set to trigger the next cycle when the *eden* space is full. Specifically, at the end of the partial gc cycle, the allocation threshold is set to be equal to the size of the *eden* space.
 
@@ -818,8 +820,9 @@ The `balanced` partial GC cycle follows a general structure in the verbose GC lo
 
 </gc-start> 
 
-<allocation-stats>                      (snapshot of application threads status...
-                                          ... taken before the cycle starts)
+<allocation-stats/>                  (Snapshot of how memory was divided up between
+                                     ... application threads before current cycle started)
+
 <gc-op> type="copy forward" </gc-op>    (copy forward operation completed)
 
 <gc-op> type="class unload" </gc-op>    (class unload operation completed)
@@ -851,7 +854,9 @@ When the `balanced` partial GC cycle is triggered, the GC runs an STW pause. App
 </exclusive-start>
 ```
 
-A `balanced` partial GC cycle is triggered when the region count for the *eden* space reaches the allocation taxation threshold. The logs record this trigger reason by using the`<allocation-taxation>` element.
+A `balanced` partial GC cycle is triggered when application threads reach an allocation taxation threshold. During a global mark cycle, the allocation taxation threshold is set by the previous GMP increment to trigger a partial GC cycle when the eden area is full. Else, the previous partial or global GC cycle sets the allocation taxation threshold to trigger a partial GC cycle when the eden is full.
+
+ The logs record this trigger reason by using the`<allocation-taxation>` element.
 
 ```xml
 <allocation-taxation id="185" taxation-threshold="2147483648" timestamp="2021-02-26T11:11:42.311" intervalms="3745.785" />
@@ -876,7 +881,7 @@ The partial cycle begins its one and only GC increment, recorded using the `<gc-
 </gc-start>
 ```
 
-As expected, at the start of this increment, the eden region is full. 856MB (897,581,056 B) of the total 4096MB (4294,967,296 B) heap, equivalent to 20% of the heap, is available as free memory.
+As expected, at the start of this increment, the eden regions are full. 856MB (897,581,056 B) of the total 4096MB (4294,967,296 B) heap, equivalent to 20% of the heap, is available as free memory.
 
 The status of the *remembered set*, a metastructure specific to openJ9 JVM generational garbage collectors, is reported by the `<remembered-set>` element. The remembered set metastructure keeps track of any object references that cross different regions. Each region corresponds to a single remembered set. 
 
@@ -884,7 +889,7 @@ The partial gc cycle uses and prunes the remembered set. The `regionsoverflowed`
 
 At the start of the partial gc cycle, the remembered set is using 93% of its available memory capacity, with 153.26 MB (160705664 B) available. The set consists of 2,749,664 cards and has 1 overflow region.
 
-The following element, `<allocation-stats>`, records information about the status of the application (or *mutator*) threads before the start of the current cycle. For this example, the thread `Group1.Backend.CompositeBackend{Tier1}.7` was the largest consumer of memory.
+The following element, `<allocation-stats>`, records information about how memory was divided up between application (or *mutator*) threads before the start of the current cycle. For this example, the thread `Group1.Backend.CompositeBackend{Tier1}.7` was the largest consumer of memory.
 
 ```xml
 <allocation-stats totalBytes="2146431360" >
@@ -956,7 +961,7 @@ Returning to our `contextid=186` partial cycle example, the next element in the 
 
 The heap memory allocation at the end of the increment is as follows:
 
-- The heap now has 2864 MB(3,003,121,664 B) of memory available compared to the 856 MB available at the start of the increment. The increment reclaimed 2,008 MB of memory in the heap, which is slightly less than the size of the eden space, as expected.
+- The heap now has 2864 MB(3,003,121,664 B) of memory available compared to the 856 MB available at the start of the increment. The increment reclaimed 2,008 MB of memory in the heap, which is slightly less than the size of the eden space, as is typically the case.
 
 - The eden space is recorded to have 100% memory available as free memory. (The eden space, which consists of regions containing the newest objects allocated, has been fully recreated by reclaiming almost all of the eden regions - some objects from eden regions always survive - and assigning some other empty regions of the heap to the eden space).
 
@@ -1349,7 +1354,7 @@ Analyzing the structure and elements of this example log output shows that this 
 
 ### `balanced` global cycle
 
-The following [`balanced` partial GC cycle](gc.md#balanced-policy) example is taken from a `balanced` verbose GC log. The output is broken down into sections to explain the GC processing that is taking place.
+The following [`balanced` global GC cycle](gc.md#balanced-policy) example is taken from a `balanced` verbose GC log. The output is broken down into sections to explain the GC processing that is taking place.
 
 A `balanced` global cycle is triggered if the JVM is close to throwing an out of memory exception, which only occurs under tight memory conditions. Under these conditions, the `balanced` GC cannot reclaim enough memory by using only `balanced` partial and global *mark* cycles.
 
@@ -1371,14 +1376,14 @@ The ['balanced` global cycle's](gc.md) operations run as a single GC increment d
   <tr>
     <th align="center" scope="col">GC increment </th>
     <th align="center" scope="col">GC operations</th>
-    <th align="center" scope="col">stop-the-world or concurrent</th>
+    <th align="center" scope="col">STW or concurrent</th>
     <th align="center" scope="col">XML element of GC increment</th>
     <th align="center" scope="col">Details</th>
   </tr>
   <tr>
     <td align="center">single</td>
     <td align="center">STW mark-sweep operations, optionally followed by a compact operation</td>
-    <td align="center">stop-the-world</td>
+    <td align="center">STW</td>
     <td align="center"><code>&lt;cycle-start&gt;</code>, <code>&lt;gc-end&gt;</code></code></td>
     <td>Contains detailed information about where free memory is located and remembered set statistics</td>
   </tr>
@@ -1407,8 +1412,8 @@ If the global cycle is triggered during a global *mark* cycle, the global cycle 
 
 </gc-start type="global garbage collect"/>
 
-<allocation-stats>                          (snapshot of application threads status...
-                                          ... taken before the cycle starts)
+<allocation-stats/>                        (Snapshot of how memory was divided up between
+                                           ... application threads before current cycle started)
 <gc-op> type="mark" </gc-op>                (mark operation completed)
 
 <gc-op> type="class unload" </gc-op>        (class unload operation completed)
@@ -1472,8 +1477,7 @@ A global cycle increment is recorded by `<gc-start>` and has the same `contextid
 
 At the start of the global cycle's increment, the amount of memory available in the heap is zero. In some cases, the amount of memory will be close to full, and in other cases, the memory will be full.
 
-
-The next element `<allocation-stats>` shows a snapshot, which was taken before the cycle started, of the allocation status of the mutator threads. In this example WHAT SAY HERE?
+The next element `<allocation-stats>` shows a snapshot of how memory was divided up between application threads before the current cycle started. In this example WHAT SAY HERE?
 
 ```xml
 <allocation-stats totalBytes="524200" >
