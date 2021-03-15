@@ -51,7 +51,7 @@ The following table shows the heap configuration and the GC cycles and operation
 
 ## Policy selection and tuning
 
-The default policy is the Generational Concurrent (`gencon`) GC policy, which suits a broad spectrum of applications. Choosing a different GC policy should be guided by the application dynamics and an observation of how the application interacts with the heap during startup and at steady state. To help with this analysis, all OpenJ9 GC policies are instrumented to collect a wide range of GC-related metric data for reporting in a GC log file.
+The default policy is the Generational Concurrent (`gencon`) GC policy, which suits a broad spectrum of applications. Choosing a different GC policy should be guided by the application dynamics and an observation of how the application interacts with the heap during startup and at steady state. To help with this analysis, all OpenJ9 GC policies are instrumented to collect a wide range of GC-related metric data for reporting in a [GC log file](vgclog.md).
 
 To enable GC logging for the OpenJ9 Java runtime, include the `-verbose:gc` option on the command line. By default, this option prints output to `stderr` but you can send the output to a log file by using [`-Xverbosegclog`](xverbsoegclog). You can then visualize the output by loading the GC log into the [Garbage Collector and Memory Visualizer (GCMV)](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv) plugin for the Eclipse IDE. OpenJ9 Java GC logs can also be analyzed by some online services, such as [GCEasy](https://gceasy.io/).
 
@@ -225,7 +225,7 @@ This policy is not suited to the majority of Java applications. However, the fol
 
 ## Troubleshooting
 
-You can diagnose problems with garbage collection operations by turning on verbose GC logging. By default, the information is printed to STDERR but can be redirected to a file by specifying the `-Xverbosegclog` option. The log files contain detailed information about all operations, including initialization, STW processing, finalization, reference processing, and allocation failures. For more information, see [Verbose garbage collection](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_pd_verbosegc.html)
+You can diagnose problems with garbage collection operations by turning on verbose GC logging. By default, the information is printed to STDERR but can be redirected to a file by specifying the `-Xverbosegclog` option. The log files contain detailed information about all operations, including initialization, STW processing, finalization, reference processing, and allocation failures. For more information, see [Verbose GC logs](vgclog.md).
 
 If verbose logs do not provide enough information to help you diagnose GC problems, you can use GC trace to analyze operations at a more granular level. For more information, see [-Xtgc](xtgc.md).
 
