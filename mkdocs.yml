@@ -127,8 +127,11 @@ nav:
 
     - "Memory management" :
         - "Heap allocation"                                                      : allocation.md
-        - "Garbage collection"                                                   : gc_overview.md
-        - "Garbage collection policies"                                          : gc.md
+        - "Garbage Collection (GC)"                                              : gc_overview.md
+        - "GC policies"                                                          : gc.md
+        - "Troubleshooting GC" :
+            - "Verbose GC logs"                                                  : vgclog.md
+            - "Log examples"                                                     : vgclog_examples.md
 
     - "JIT Compiler"                                                             : jit.md
     - "JITServer (tech. preview)"                                                : jitserver.md
