@@ -44,7 +44,7 @@ Some components of OpenJ9 can also produce verbose output or log files to assist
 
 - Class data sharing provides a number of `-Xshareclasses` suboptions to provide detailed data about the content of a shared classes cache, cache I/O activity, and information about the Java Helper API (where used). For example, the `-Xshareclasses:printAllStats` suboption lists every class in chronological order with a reference to the location from which it was loaded. For more information, see [-Xshareclasses](xshareclasses.md).   
 
-- Garbage collection operations can be analyzed by producing verbose output from the `-verbose:gc` standard option. This output can be redirected to a file by specifying the `-Xverbosegclog` option. Information can be obtained about GC initialization, *stop-the-world* processing, finalization, reference processing, and allocation failures. Even more granular information can be obtained with the [-Xtgc](xtgc.md) option.
+- Garbage collection operations can be analyzed by producing verbose output from the `-verbose:gc` standard option. This output can be redirected to a file by specifying the `-Xverbosegclog` option. Information can be obtained about GC initialization, *stop-the-world* processing, finalization, reference processing, and allocation failures. Even more granular information can be obtained with the [-Xtgc](xtgc.md) option. For more information, see [verbose GC logs](vgclog.md).
 
 - The JIT compiler provides verbose logging, which records all compiler operations. To find out how to enable logging, read the [JIT troubleshooting](jit.md#troubleshooting) content.
 
