@@ -52,7 +52,7 @@ The final value stored to the shared cache is not recorded in the verbose GC out
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
 
 - When enabled, this option overrides any initial heap size that is specified on the command line, for example by using the [`-Xms`](xms.md) option.
-- Because the shared classes cache is used to store heap size information, this option does not work if [shared classes](shrc.md) are disabled.
+- Because the shared classes cache is used to store heap size information, this option does not work if class data sharing ([`-Xshareclasses`](xshareclasses.md)) is disabled.
 
 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This feature is not currently available with the Balanced GC policy.
 

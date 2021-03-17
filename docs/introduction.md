@@ -57,7 +57,7 @@ OpenJ9 is configured to start with a set of default options that provide the opt
 OpenJ9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see [Garbage collection policies](gc.md).
 
 ### Class data sharing
-You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Class Data Sharing](shrc.md).
+You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Introduction to class data sharing](shrc.md).
 
 ### Native data operations
 If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator (DAA) API.
@@ -79,7 +79,7 @@ For more information, see the [API documentation](api-overview.md).
 ### Cloud optimizations
 To improve the performance of applications that run in containers, try setting the following tuning options:
 
-- Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For more information, see [Class Data Sharing](shrc.md) and [AOT Compiler](aot.md).
+- Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For persistence, store the cache in a volume that you map to your container. For more information, see [Inroduction to class data sharing](shrc.md) and [AOT Compiler](aot.md).
 
 - Use the [-Xtune:virtualized](xtunevirtualized.md) option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.
 

@@ -42,7 +42,7 @@ Startup performance can be improved by using the shared AOT code to provide nati
 
 ## Default behavior
 
-The AOT compiler is enabled by default, but is only active for classes that are found in the shared classes cache. See [Class data sharing](shrc.md) for information about the shared classes cache, how class sharing is enabled, and what options are available to modify class sharing behavior. 
+The AOT compiler is enabled by default, but is only active for classes that are found in the shared classes cache. See [Introduction to class data sharing](shrc.md) for information about the shared classes cache, how class sharing is enabled, and what options are available to modify class sharing behavior.
 
 ## Syntax
 
@@ -89,7 +89,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
 : Excludes a Java method when AOT code is compiled from the shared classes cache. Use this option if the method causes the program to fail.
 
-    `<method_name>` is a regular expression that determines the method or methods that are to be excluded. Specify as much of the full package, class and method as necessary. 
+    `<method_name>` is a regular expression that determines the method or methods that are to be excluded. Specify as much of the full package, class and method as necessary.
 
     For example, `-Xaot:exclude={test/sample/MyClass.testMethod()V}` excludes the single method specified.  
     However, `-Xaot:exclude={test/sample/MyClass.testMethod()*}` excludes the method regardless of return type.  
@@ -135,7 +135,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
     `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xaot:exclude`](#exclude) for details).
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `loadLimit` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md). This option filters what AOT code the compiler is allowed to load from the shared classes cache. 
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `loadLimit` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md). This option filters what AOT code the compiler is allowed to load from the shared classes cache.
 
 
 ### `loadLimitFile`
@@ -151,7 +151,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
 ## See also
 
-- [Class data sharing](shrc.md)
+- [Introduction to class data sharing](shrc.md)
 - [`-Xquickstart`](xquickstart.md)
 - [`-Xshareclasses`](xshareclasses.md)
 - [`-Xjit`](xjit.md)

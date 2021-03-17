@@ -24,7 +24,7 @@
 
 # -XX:[+|-]ShareAnonymousClasses
 
-This option enables and disables the storage of VM anonymous classes, those created by `Unsafe.defineAnonymousClass`, in the shared classes cache. 
+This option enables and disables the storage of VM anonymous classes, those created by `Unsafe.defineAnonymousClass`, in the shared classes cache.
 
 ![Start of content that applies to Java 15+](cr/java15plus.png) In OpenJDK 15 and later versions, this option also enables and disables the storage of hidden classes in the shared classes cache.
 
@@ -43,7 +43,7 @@ The option is enabled by default, which means that anonymous classes (and hidden
 ## See also
 
 - [AOT compiler](aot.md)
-- [Class data sharing](shrc.md)
+- [Introduction to class data sharing](shrc.md)
 - [-Xshareclasses](xshareclasses.md)
 - [-XX:[+|-]ShareUnsafeClasses](xxshareunsafeclasses.md)
 
