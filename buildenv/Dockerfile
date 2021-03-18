@@ -1,4 +1,4 @@
-# (C) Copyright IBM Corporation 2016, 2017
+# (C) Copyright IBM Corporation 2016, 2021
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,19 +13,20 @@
 # limitations under the License.
 #
 
-FROM ubuntu:16.04
-MAINTAINER openj9.bot <openj9.bot@gmail.com> 
+FROM ubuntu:18.04
+MAINTAINER openj9.bot <openj9.bot@gmail.com>
 
-# Install basic requirementes from APT. Set up for SSH (including SSH login fix to prevent user being logged out), install and setup  virtualenv from pip3 
+# Install basic requirementes from APT. Set up for SSH (including SSH login fix to prevent user being logged out), install and setup  virtualenv from pip3
 COPY requirements.* /tmp/
-RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pip git openjdk-8-jdk zip \
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-dev python3-pip git openjdk-8-jdk zip \
     && DEBIAN_FRONTEND="noninteractive" apt-get -q upgrade -y -o Dpkg::Options::="--force-confnew" --no-install-recommends \
     && DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends openssh-server \
     && rm -rf /var/lib/apt/lists/* \
     && sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd \
     && mkdir -p /var/run/sshd \
+    && pip3 install -U pip \
     && pip3 install virtualenv \
-    && virtualenv myenv -p python3 
+    && virtualenv myenv -p python3
 # Update LANG to fix error with pip-tools
 ENV LANG=C.UTF-8
 # Update path to include the virtual env install location

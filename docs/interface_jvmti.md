@@ -278,7 +278,7 @@ When dumps are in progress, the dump configuration is locked, and calls to `SetV
 
 - `jvmti_env`: A pointer to the JVMTI environment.
 - `option`: The VM dump option string.  
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, you might need to convert the option string from EBCDIC to ASCII before using this JVMTI extension function.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On z/OS, you might need to convert the option string from EBCDIC to ASCII before using this JVMTI extension function.
 
 **Returns**
 
@@ -321,7 +321,7 @@ Choose the type of dump required by specifying an ASCII string that contains one
     `snap`  
     `ceedump` (z/OS only)  
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, you might need to convert the option string from EBCDIC to ASCII before using this JVMTI extension function.
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On z/OS, you might need to convert the option string from EBCDIC to ASCII before using this JVMTI extension function.
 
 **Returns**
 
@@ -432,7 +432,7 @@ The trace option is passed in as an ASCII character string. Use the same syntax 
 
 - `jvmti_env`: JVMTI environment pointer.
 - `option`: Enter the VM trace option string.  
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, you might need to convert the option string from EBCDIC to ASCII before using this JVMTI extension function.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On z/OS, you might need to convert the option string from EBCDIC to ASCII before using this JVMTI extension function.
 
 **Returns**
 
@@ -740,7 +740,7 @@ Macro declaration in the `ibmjvmti.h` file: `COM_IBM_ITERATE_SHARED_CACHES`
         jint layer;            // the shared cache layer number
         } jvmtiSharedCacheInfo;
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
     - The field `cacheType` is included when `COM_IBM_ITERATE_SHARED_CACHES_VERSION_2` or later is specified.
 

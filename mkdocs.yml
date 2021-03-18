@@ -24,39 +24,29 @@
 
 site_name: ' '
 
-site_url: https://www.eclipse.org/openj9/docs
-# the canonical URL of the site. This will add a link tag with the canonical URL to the generated HTML header.
-
+site_url: https://www.eclipse.org/openj9/docs  # the canonical URL of the site. This will add a link tag with the canonical URL to the generated HTML header.
 repo_name: eclipse/openj9
-repo_url : https://github.com/eclipse/openj9
-# A link to your GitHub or Bitbucket repository on each page.
+repo_url : https://github.com/eclipse/openj9  # A link to your GitHub or Bitbucket repository on each page.
+edit_uri: ""
 
-edit_uri:
-# edit/master/docs/
 
 site_description: Eclipse OpenJ9 documentation
 
-# copyright: '© 2017, 2018 IBM Corp. and others'
-
-google_analytics: ['UA-105616558-3', 'mkdocs.org']
-
-# Build directories
-
 theme:
-    name: material
-    custom_dir: 'theme'
-    palette:
-      primary:  'cyan'
-      accent:   'cyan'
-    font:
-      text: 'Roboto'        # 'Segoe Print' 'Kristen ITC' 'Tempus Sans ITC'
-      code: 'Roboto Mono'   # 'Consolas'
-    logo: 'cr/openj9_6b.png'
-    favicon: 'cr/oj9logo_img9.ico'
-#    static_templates:
-#        - sitemap.html
-#    include_sidebar: false
-
+  name: material
+  custom_dir: theme
+  palette:
+    primary: teal          # deep orange
+    accent:  cyan          # orange
+  font:
+    text: Roboto           # 'Segoe Print' 'Kristen ITC' 'Tempus Sans ITC'
+    code: Roboto Mono      # 'Consolas'
+  logo: cr/openj9_6b.png
+  language: en_custom
+  icon:
+    repo: fontawesome/brands/github
+  favicon: cr/openj9-logo.svg
+  
 docs_dir: 'docs'
 
 site_dir: 'site'
@@ -67,19 +57,21 @@ extra_css:
 extra_javascript:
   - javascripts/oj9.js
 
-extra_templates:
-
 extra:
-    version: 1.0
-    social:                 # see: http://fontawesome.io/icons/
-      - type: 'github'
-        link: 'https://github.com/eclipse/openj9'
-      - type: 'slack'
-        link: 'https://openj9.slack.com'
-      - type: 'twitter'
-        link: 'https://twitter.com/openj9'
-      - type: 'stack-overflow'
-        link: 'https://stackoverflow.com/search?q=OpenJ9'
+  version: 2.0
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/eclipse/openj9
+      name: OpenJ9 in GitHub
+    - icon: fontawesome/brands/slack
+      link: https://openj9.slack.com
+      name: OpenJ9 on Slack
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/openj9
+      name: OpenJ9 on Twitter
+    - icon: fontawesome/brands/stack-overflow
+      link: https://stackoverflow.com/search?q=OpenJ9
+      name: OpenJ9 on StackOverflow
 
 # Preview controls
 
@@ -88,14 +80,15 @@ dev_addr: '127.0.0.1:8008'
 # Formatting options
 
 markdown_extensions:
-    - def_list
-    - toc
-    - sane_lists
-#    - codehilite(linenums=false)
+  - def_list
+  - toc
+  - sane_lists
+  - attr_list
+  - pymdownx.emoji:   # enable icons in markdown
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
-# Documentation layout
 
-# "pages:" --> "nav:" for MkDocs 1.0
 nav:
 
     - "About the docs"                                                           : index.md

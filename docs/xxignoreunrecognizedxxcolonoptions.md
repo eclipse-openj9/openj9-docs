@@ -33,7 +33,7 @@ runtime environment.
 
 | Setting                            | Effect  | Default                                                                            |
 |------------------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+IgnoreUnrecognizedXXColonOptions` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:+IgnoreUnrecognizedXXColonOptions` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:-IgnoreUnrecognizedXXColonOptions` | Disable |                                                                               |
 
 When you specify `-XX:-IgnoreUnrecognizedXXColonOptions`, if you also specify a `-XX:` option that is not recognized, that option is reported and the VM does not start. For example:

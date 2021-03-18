@@ -88,7 +88,7 @@ For more information, see [Option builder](tool_builder.md).
 A number of tools are available for compatibility with the reference implementation. These tools are independently implemented by
 OpenJ9 but have similar functions, allowing users to migrate more easily. The available tools are listed in the Tools section.  
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you are already familiar with tools that are provided with HotSpot, see [Switching to OpenJ9](tool_migration.md), which explains some of the differences you might encounter when using OpenJ9.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you are already familiar with tools that are provided with HotSpot, see [Switching to OpenJ9](tool_migration.md), which explains some of the differences you might encounter when using OpenJ9.
 
 ### Eclipse marketplace tools
 

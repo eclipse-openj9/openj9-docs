@@ -33,7 +33,7 @@ This option enables or disables OpenSSL native cryptographic support for the GCM
 
 | Setting           | value    | Default                                                                        |
 |-------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeGCM` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Djdk.nativeGCM` | true     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-Djdk.nativeGCM` | false    |                                                                                |
 
 ## Explanation

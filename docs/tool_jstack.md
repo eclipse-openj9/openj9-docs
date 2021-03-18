@@ -40,7 +40,7 @@ The values for `<options>*` are as follows:
 - `-h`: prints help information
 
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:**
 
 - This tool is not supported and is subject to change or removal in future releases.
 - Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9. For more information about differences, see [Switching to OpenJ9](tool_migration.md).

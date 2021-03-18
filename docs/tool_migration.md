@@ -26,7 +26,7 @@
 
 OpenJ9 provides the following tools, which might differ in behavior from the HotSpot equivalent.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** For information about HotSpot equivalences and differences for items other than tools, see [New to OpenJ9?](openj9_newuser.md)
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** For information about HotSpot equivalences and differences for items other than tools, see [New to OpenJ9?](openj9_newuser.md)
 
 #### Java diagnostic command tool (`jcmd`)
 

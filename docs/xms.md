@@ -27,7 +27,7 @@
 
 These Oracle&reg; HotSpot&trade; options set the initial/minimum Java&trade; heap size, and the maximum heap size respectively. These options are recognized by the OpenJ9 VM.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
 - If you set `-Xms` &gt; `-Xmx`, the OpenJ9 VM fails with the message `-Xms too large for -Xmx`.
 - If you exceed the limit set by the `-Xmx` option, the OpenJ9 VM generates an `OutofMemoryError`.
