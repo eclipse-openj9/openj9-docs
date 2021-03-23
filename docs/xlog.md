@@ -30,7 +30,7 @@ This option is supported for better compatibility with the reference implementat
 
         -Xlog[:<parameters>]
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i>**Note:** In Eclipse OpenJ9 version 0.24.0, the [`-Xsyslog`](xsyslog.md) option replaced the existing OpenJ9 `-Xlog` option for message logging to avoid conflicts with the reference implementation. For backward compatibility, you can control the behavior of the `-Xlog` option with the [`-XX:[+|-]LegacyXlogOption`](xxlegacyxlogoption.md) option.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"}**Note:** In Eclipse OpenJ9 version 0.24.0, the [`-Xsyslog`](xsyslog.md) option replaced the existing OpenJ9 `-Xlog` option for message logging to avoid conflicts with the reference implementation. For backward compatibility, you can control the behavior of the `-Xlog` option with the [`-XX:[+|-]LegacyXlogOption`](xxlegacyxlogoption.md) option.
 
 
 ## Explanation

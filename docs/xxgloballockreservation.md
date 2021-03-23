@@ -36,7 +36,7 @@ The `-XX:+GlobalLockReservation` option enables an optimization targeted towards
 | Setting                    | Effect | Default                                                                        |
 |----------------------------|--------|:------------------------------------------------------------------------------:|
 |`-XX:+GlobalLockReservation`| Enable |                                                                                |
-|`-XX:-GlobalLockReservation`| Disable| <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+|`-XX:-GlobalLockReservation`| Disable| :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 This optimization is targeted towards applications with lots of uncontended locked objects that are being locked just to be safe. When enabled, heuristics are used to try and determine when an object will be exclusively locked by a single thread so that faster, more specialized code can be used for locking the object. If the heuristics incorrectly identify an object as a target for the optimization, performance might be adversely affected.
 

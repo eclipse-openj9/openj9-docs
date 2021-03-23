@@ -53,14 +53,14 @@ For example:
     5462
     14332
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9.
 
 The tool uses the Attach API, and has the following limitations:
 
 - Does not list Java processes on other hosts, to enhance security
 - Does not list Java processes owned by other users
 - Does not list non-OpenJ9 Java processes
-- Does not list processes whose attach API is disabled. <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The Attach API is disabled by default on z/OS.
+- Does not list processes whose attach API is disabled. :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The Attach API is disabled by default on z/OS.
 
 For more information about the Attach API, including how to enable and secure it, see [Support for the Java Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html).
 

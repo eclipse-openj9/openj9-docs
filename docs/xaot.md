@@ -48,11 +48,11 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
 | Setting       | Action       | Default   |
 |---------------|--------------|:---------:|
-|`-Xaot`        | Enable AOT   | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+|`-Xaot`        | Enable AOT   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 |`-Xaot:<parameter>[=<value>]` (See **Note**) | Enable AOT with modifications |           |
 |`-Xnoaot`      | Disable AOT  |           |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You can concatenate several parameters in a comma-separated list, for example: `-Xaot:<parameter1>[=<value1>], <parameter2>[=<value2>]`
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You can concatenate several parameters in a comma-separated list, for example: `-Xaot:<parameter1>[=<value1>], <parameter2>[=<value2>]`
 
 
 ## Parameters for `-Xaot`
@@ -95,7 +95,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
     However, `-Xaot:exclude={test/sample/MyClass.testMethod()*}` excludes the method regardless of return type.  
     Similarly, `-Xaot:exclude={*}` excludes _all_ methods.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `exclude` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:exclude`, JIT compilation is also prevented and the methods specified are always interpreted.
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `exclude` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:exclude`, JIT compilation is also prevented and the methods specified are always interpreted.
 
 
 ### `limit`
@@ -104,7 +104,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
 : Only the Java methods specified are included when AOT code is compiled from the shared classes cache. `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xaot:exclude`](#exclude) for details).
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `limit` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:limit`, JIT compilation is also restricted to those methods specified; other methods are always interpreted.
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limit` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:limit`, JIT compilation is also restricted to those methods specified; other methods are always interpreted.
 
 
 ### `limitFile`
@@ -113,7 +113,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
 : Compiles or loads only the methods listed on lines `<m>` to, and including, `<n>` in the specified limit file, `<filename>`. Methods not listed in the limit file and methods listed on lines outside the range are not compiled or loaded.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `limitFile` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:limitFile`, JIT compilation is also restricted to those methods specified; other methods are always interpreted.
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limitFile` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:limitFile`, JIT compilation is also restricted to those methods specified; other methods are always interpreted.
 
 
 ### `loadExclude`
@@ -124,7 +124,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
     `<method_name>` is a regular expression that determines the method or methods that are to be excluded (see [`-Xaot:exclude`](#exclude) for details). This option does _not_ prevent the method from being compiled.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `loadExclude` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md).
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `loadExclude` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md).
 
 
 ### `loadLimit`
@@ -135,7 +135,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
     `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xaot:exclude`](#exclude) for details).
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `loadLimit` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md). This option filters what AOT code the compiler is allowed to load from the shared classes cache. 
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `loadLimit` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md). This option filters what AOT code the compiler is allowed to load from the shared classes cache. 
 
 
 ### `loadLimitFile`
@@ -146,7 +146,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
     `<filename>`. Methods not listed in the limit file and methods listed on lines outside the range are not loaded.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `loadLimitFile` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md).
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `loadLimitFile` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md).
 
 
 ## See also

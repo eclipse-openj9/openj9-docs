@@ -23,352 +23,74 @@
 */
 
 
+/* text for screen readers only */
 
-[data-md-color-primary=cyan] .md-header {
-  height: 3rem;
-  padding-top: 0.3rem;
-  background-color: #434343;
+.sr-only {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
 }
 
-[data-md-color-primary=cyan] .md-typeset a {
-  padding-right: 0rem;
-  color: #af6e3d;                      /* dark orange - Eclipse link: visited */
+/* prevent code wrapping in first column of tables */
+
+tr td:first-of-type code {
+  white-space: nowrap;
 }
 
 
-[data-md-color-primary=cyan] a.md-icon {
-  color: white;
-  padding-right: 1.5rem;
-  padding-left: 2rem;
-}
-
-
-[data-md-color-primary=cyan] .md-typeset a:hover {
-  color: #da7a08;                      /* orange - Eclipse button: hover */
-}
+/* Add colour to fontawesome icons */
 
 /*
-[data-md-color-accent=cyan] .md-nav__link:focus, 
-[data-md-color-accent=cyan] .md-nav__link:hover, 
-[data-md-color-accent=cyan] .md-typeset .footnote li:hover .footnote-backref:hover, 
-[data-md-color-accent=cyan] .md-typeset .footnote li:target .footnote-backref, 
-[data-md-color-accent=cyan] .md-typeset [id] .headerlink:focus, 
-[data-md-color-accent=cyan] .md-typeset [id]:hover .headerlink:hover, 
-[data-md-color-accent=cyan] .md-typeset [id]:target .headerlink,
+Five icons are currently used (old syntax -> new syntax):
+
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i>       -> :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"}
+<i class="fa fa-check" aria-hidden="true"></i>                 -> :fontawesome-solid-check:{: .yes aria-hidden="true"}
+<i class="fa fa-times" aria-hidden="true"></i>                 -> :fontawesome-solid-times:{: .no aria-hidden="true"}
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  -> :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"}
+<i class="fa fa-bell" aria-hidden="true"></i>                  -> :fontawesome-solid-bell:{: .warn aria-hidden="true"}
+
+Icon format (e.g. :fontawesome-solid-check: ) can be chosen from bundled icons in material theme in Python directory (e.g. ...Python\Python37-32\Lib\site-packages\material\.icons\fontawesome\solid\check ). Note partial directory structure replicated in link.
+
+Colour added by enabling attr_list under markdown_extensions: in mkdocs.yml, and adding a class attribute to each icon (e.g. {: .yes}, then adding colours here in oj9.css (colours therefore easy to change).
 */
-[data-md-color-accent=cyan] .md-typeset .md-clipboard:active:before, 
-[data-md-color-accent=cyan] .md-typeset .md-clipboard:hover:before {
-  color: #da7a08;                      /* orange - Eclipse button: hover */
-}
 
-[data-md-color-primary=cyan] .md-nav__item--active>.md-nav__link, [data-md-color-primary=teal] .md-nav__link:active {
-  color: #af6e3d;                      /* dark orange - Eclipse link: visited */
-}
+.yes  { color: #009485; }
+.no   { color: #da7a08; }
+.note { color: #009485; }
+.warn { color: #da7a08; }
 
-[data-md-color-primary=cyan] .md-nav__item--active>.md-nav__link:hover, [data-md-color-primary=teal] .md-nav__link:hover {
-  color: #da7a08;                      /* orange - Eclipse button: hover */
-}
 
-.md-flex__ellipsis, .md-footer-nav__button {
-  color: #af6e3d;                      /* dark orange - Eclipse link: visited */
-}
-.md-flex__ellipsis:hover, .md-footer-nav__button:hover {
-  color: #da7a08;                      /* orange - Eclipse button: hover */
-}
-.md-footer-nav__link:hover {
-    opacity: 1;
-}
+/* LH navigation: prevent text from wrapping */
 
-@media only screen and (max-width: 76.1875em) {
-
-  html [data-md-color-primary=cyan] .md-nav--primary .md-nav__title--site {
-      background-color: #353434;
-  }
-
-  [data-md-color-primary=cyan] .md-nav__source {
-    background-color: #69c1bd;  /* cyan */
-  }
-}
-
-@media only screen and (min-width: 60em) {
-  [data-md-color-primary=cyan] .md-nav--secondary {
-    border-left: .4rem solid #888888;
-  }
-}
-
-.md-logo {
-  text-align: center;
-}
-.md-logo img {
-  width: 100px;
-  /*margin-left:32rem;*/
-}
-
-.md-sidebar__scrollwrap::-webkit-scrollbar {
-  width: .8rem;
-}
-
-[data-md-color-accent=cyan] .md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
-  background-color: #69c1bd;  /* cyan */
+.md-nav__item {
+  white-space: nowrap;
 }
 
 
-.md-typeset h1 {
-/*  background: #69c1bd url(../cr/bg-l.png);  */
-  background: #888888;
-  color: white;
-  padding-left: 1rem;
-  font-weight: 500;
-}
-.md-typeset h1 code {
-  padding-left: 0;
-  color: white;
-}
-.md-typeset h1[id]:before {
-  margin-top: 0;
-  padding-top: 0;
-    content: "";
-}
-
-.md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
-  color: #4c4c4c;  /* gray - dark */
-}
-.md-typeset h2 code, .md-typeset h3 code, .md-typeset h4 code, .md-typeset h5 code, .md-typeset h6 code {
-  color: #4c4c4c;  /* gray - dark */
-}
-.md-typeset h2 {
-  font-weight: 500;
-  font-weight: 600;
-}
-.md-typeset h3 {
-  font-weight: 600;
-}
-.md-typeset h3 code {
-  font-size: 0.95rem;
-}
-
-.md-nav__title {
-  color: #69c1bd;
-}
-
-/*
-.md-footer-nav__inner.md-grid img {
-height 3rem;
-}
-*/
-.md-footer-nav__inner.md-grid {
-margin-top: 5rem;
-}
-
-/* HEADER */
+/* Header */
 
 .md-header {
-  height: 2.4rem;
-  padding: .15rem 0rem 2.5rem 0rem;
+  background-color: #555555;
 }
 
-/* Logo in the header - container */
-.md-header-nav__button {
-  padding-left: 1rem;
-  margin: 0;
-  position: absolute;
-}
-
-.egg {
-  height: 2rem;
-  transition: opacity .4s;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.egg:hover {
-  opacity: .7;
-  transition: opacity .4s;
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+  width: 5rem;
+  height: 2.1rem;
 }
 
 
+/* Footer */
 
-/* LH NAV */
-
-/* Add a > twisty symbol as a pseudo-element before every parent item in the TOC */
-.md-nav__item--nested>.md-nav__link:before {
-  content: "➤";
-  color: #69c1bd;  /* cyan */
+.md-footer {
+  background-color: #777777;
 }
 
-/* Remove the original twisty symbol */
-.md-nav__item--nested>.md-nav__link:after {
-  content: "";
+.md-footer a:hover {
+  color: #00bad6;
 }
-
-.md-nav__item--nested .md-nav__toggle:checked~.md-nav__link:before {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-.js .md-nav__item--nested>.md-nav__link:before {
-  -webkit-transition: -webkit-transform .4s;
-  transition: transform .4s, -webkit-transform .4s;
-  display: inline-block;
-}
-
-
-/* RH NAV */
-
-[data-md-color-accent=cyan] .md-nav__link:hover {
-  color: #da7a08;                      /* orange - Eclipse button: hover */
-}
-/*
-[data-md-color-accent=cyan] .md-nav__link {
-  color: #B63814;  /* orange - dull
-}
-*/
-
-@media only screen and (min-width: 76.25em) {
-  .md-sidebar__inner {
-    border-right: .1rem solid rgba(0,0,0,.1);
-  }
-}
-
-/* FOOTER CSS */
-
-.md-footer-meta {
-  color: white;
-  background-color: #434343;
-  z-index: 1000;
-  padding: 1rem;
-  padding-bottom: 0;
-/*   background-image: url(../cr/bg-lg.png); */
-}
-
-.md-flex__ellipsis {
-  font-size: initial;
-}
-
-/* DRAFT COMMENTS */
-
-aside {
-  background-color: #ddffee;
-  padding: 0 0 .15rem 0;
-  margin: 0 0 0 0;
-}
-aside p {
-  padding: 0rem .4rem 0rem 0.5rem;
-  font-size: 0.65rem;
-  }
-aside p:first-child {
-  padding: .3rem .4rem .3rem 0.5rem;
-  background-color: #bbffcc;
-  font-size: 0.75rem;
-  font-weight: bold;
-}
-
-.fa-pencil-square-o, .fa-external-link {
-  color: #69c1bd;  /* cyan */
-}
-
-
-/* TABLES */
-
-.md-typeset table:not([class]) th {
-  min-width: 5rem;
-  padding: .2rem 0.8rem;
-  background-color: #888888;
-  color: #fff;
-  vertical-align: top;
-}
-
-.md-typeset table:not([class]) th code {
-  color: #fff;
-  background-color: #888888;
-  box-shadow: none;
-}
-
-.md-typeset table:not([class]) td {
-  padding: .25rem 0.8rem;
-  border-top: .05rem solid rgba(0,0,0,.07);
-  vertical-align: top;
-}
-
-/* CHECK MARKS (tick and cross) */
-
-.fa-check {  
-  color: #407471;  /* cyan - dark */
-  opacity: 0.8;
-}
-
-.fa-times {  
-  color: #744043;  /* red - dark */
-  opacity: 0.8;
-}
-
-/* Stop code wrapping except in a list items */
-code {
-  white-space: pre;
-}
-li code {
-  white-space: pre-wrap;
-}
-
-/* Hide H4 and below in secondary sidebar
-(use "Inspect > Copy > Copy selector" to find correct selector! */
-body > div > main > div > div.md-sidebar.md-sidebar--secondary > div > div > nav > ul > li:nth-child(2) > nav > ul > li:nth-child(1) > nav > ul > li {
-	display: none;
-}
-
-/* Just tweak in-line icons a bit! */
-img {
-	vertical-align: -.1rem;
-}
-
-.md-nav__item, .md-nav__link {
-	white-space: nowrap;
-}
-
-.md-content__icon, .md-footer-nav__button, .md-header-nav__button, .md-nav__button, .md-nav__title:before, .md-search-result__article--document:before {
-  padding: .2rem;
-}
-
-.md-sidebar__inner {
-  margin-top: 2rem;
-}
-
-.md-container {
-  margin-top: 0.5rem;
-}
-
-
-.md-source {
-  width: inherit;
-}
-
-@media only screen and (min-width: 60em) {
-  .md-source {
-    margin-left: 4rem;
-  }
-}
-
-.md-search__icon[for=__search]:before {
-  margin-left: 5rem;
-}
-
-@media only screen and (min-width: 60em) {
-  .md-search__input {
-    margin-left: 5rem;
-  }
-}
-
-.fa-chevron-circle-right:before {
-  color: white;
-}
-
-.footer {
-  display: "flex";
-  background-color: "#434343";
-  color: "white";
-  flex-wrap: "wrap";
-}
-
 .horizontal-line{
   height: 2px;
   background-color: var(--theme-ui-colors-secondary,#5DA7A3);
@@ -380,6 +102,7 @@ img {
   display: flex;
   flex: 80%;
   justify-content: flex-start;
+  padding-left: 1rem;
 }
 
 .below-line-links {
@@ -396,7 +119,14 @@ img {
 
 .social-media-link {
   margin: 1rem 0.7rem;
+  padding-right: 1rem;
 }
+
+.md-footer-social__link svg {
+  max-height: 99rem;
+  height: 1.2rem;
+}
+
 
 .above-line {
   display: flex;
@@ -407,6 +137,7 @@ img {
 .above-line-links {
   display: flex;
   flex-direction: row;
+  padding-left: 1rem;
 }
 
 .column {
@@ -433,6 +164,7 @@ img {
   flex: 20%;
   justify-content: flex-end;
   padding: 1rem 0;
+  padding-right: 1rem;
 }
 
 .arrange-column {
@@ -520,6 +252,3 @@ img {
   }
 }
 
-.footer a:hover {
-  color: #5DA7A3;
-}

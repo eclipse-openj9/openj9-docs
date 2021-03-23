@@ -34,7 +34,7 @@ This option enables or disables OpenSSL native cryptographic support for the RSA
 
 | Setting           | value    | Default                                                                        |
 |-------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeRSA` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Djdk.nativeRSA` | true     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-Djdk.nativeRSA` | false    |                                                                                |
 
 ## Explanation

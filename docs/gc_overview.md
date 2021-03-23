@@ -37,6 +37,8 @@ A global GC cycle can be triggered explicitly or implicitly according to the fol
 
 Partial GC cycles are triggered only implicitly under the control of a particular GC policy. For more information about the GC policies available with OpenJ9, see [Garbage collection policies](gc.md).
 
+The GC process is designed to operate without intervention from an application. Developers should not attempt to predict GC behavior, for example, by making calls to `System.gc()` to trigger a cycle or by using finalizers to clean up objects in memory. Such actions might degrade the performance of an application.
+
 ## GC operations
 
 GC operations run discrete functions on the Java heap. For example, a mark operation traces all objects in the heap to determine which ones are reachable. A sweep operation runs to clear away unreachable objects. Together, a mark and sweep operation are capable of reclaiming used memory as part of a GC cycle. Not all GC cycles include operations to reclaim memory. For example, the `balanced` GC policy involves a global cycle that includes only a mark operation; reclaiming the memory with a sweep operation occurs as part of a separate partial GC cycle that *evacuates* younger regions and defragments older regions.

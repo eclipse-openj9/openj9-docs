@@ -11,7 +11,7 @@ Verbose GC logs, when enabled, begin capturing information as soon as GC is init
 
 To help you visualize and analyze the GC, you can feed verbose GC log files into various diagnostic tools and interfaces. Examples include tools such as the [Garbage Collection and Memory Visualizer extension for Eclipse](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv), and online services such as [GCEasy](https://gceasy.io).  
 
-**Note:** You can run one or more GC traces by using the [`-Xtgc` option](xtgc.md) to get more detailed information to help diagnose GC problems or perform finer tuning. 
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You can run one or more GC traces by using the [`-Xtgc` option](xtgc.md) to get more detailed information to help diagnose GC problems or perform finer tuning. 
 
 ## How to generate a verbose GC log  
 
@@ -252,7 +252,7 @@ You can see this interleaving of the increments in the verbose GC log. The follo
   </tr>
 </table>
 
-**Note:** Zero, one, or multiple GC cycles might run between the start and end of a `gencon` global GC cycle.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Zero, one, or multiple GC cycles might run between the start and end of a `gencon` global GC cycle.
 
 The XML elements and attribute values that define operations and increments of a particular cycle are specific to the policy and type of cycle. To follow how the different cycle's increments interleave in a log, you can locate the elements and attributes that record the increments and operations that belong to a particular type of cycle. For example, for the `gencon` policy, you can locate the start of the intermediate, concurrent increment of the global cycle by searching for the `<concurrent-kickoff>` element.
 

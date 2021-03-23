@@ -33,7 +33,7 @@ Changes the unit of the return value of the `OperatingSystemMXBean.getProcessCpu
 | Setting | Effect  | Default                                                                            |
 |---------|---------|:----------------------------------------------------------------------------------:|
 | true    | Enable  |                                                                                    |
-| false   | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| false   | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 ## Explanation
 

@@ -30,7 +30,7 @@ You can use the `-verbose:sizes` option to find out the values that the VM is cu
 
 When a native method makes a call into the VM, the VM calculates whether the memory required for the call will exceed the `-Xmso` value. If so, a `java/lang/StackOverflowError` error is thrown.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Java methods and native methods run on two different stacks and the VM handles switching between them for JNI calls. Each stack is sized using separate options; this option applies to the native stack only. For the Java stack option, see the link in the [See also](#see-also) section.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Java methods and native methods run on two different stacks and the VM handles switching between them for JNI calls. Each stack is sized using separate options; this option applies to the native stack only. For the Java stack option, see the link in the [See also](#see-also) section.
 
 ## Syntax
 
@@ -42,7 +42,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 Default values vary by platform. See [Default settings for the OpenJ9 VM](openj9_defaults.md).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On 64-bit z/OS, the default size is the minimum that can be allocated by the operating system. So if you set a value that is smaller, that value is ignored by the VM.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On 64-bit z/OS, the default size is the minimum that can be allocated by the operating system. So if you set a value that is smaller, that value is ignored by the VM.
 
 ## See also
 

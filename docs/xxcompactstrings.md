@@ -32,13 +32,13 @@ If the option is not enabled, the JIT compiler is nevertheless optimized so that
 
 Further details are available at [JEP 254: Compact Strings](https://openjdk.java.net/jeps/254).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** With OpenJ9, this option is supported on OpenJDK version 8 and later versions, whereas HotSpot supports it only from Java version 9.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** With OpenJ9, this option is supported on OpenJDK version 8 and later versions, whereas HotSpot supports it only from Java version 9.
 
 ## Syntax
 
 | Setting                  | Effect                       | Default |
 |--------------------------|------------------------------|:-------:|
 | `-XX:+CompactStrings`    | Enable `String` compression  |         |
-| `-XX:-CompactStrings`    | Disable `String` compression | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-CompactStrings`    | Disable `String` compression | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 <!-- ==== END OF TOPIC ==== xxcompactstrings.md ==== -->

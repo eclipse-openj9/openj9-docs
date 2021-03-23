@@ -37,7 +37,7 @@ Because limiting identity hash codes to non-negative values can have an impact o
 | Setting                     | Effect  | Default                                                                        |
 |-----------------------------|---------|:------------------------------------------------------------------------------:|
 | `-XX:+PositiveIdentityHash` | Enable  |                                                                                |
-| `-XX:-PositiveIdentityHash` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-PositiveIdentityHash` | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 
 

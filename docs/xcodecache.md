@@ -28,7 +28,7 @@ Use this option to tune performance.
 
 This option sets the size of each block of memory that is allocated to store the native code of compiled Java&trade; methods. By default, this size is selected internally according to the processor architecture and the capability of your system. The maximum value you can specify is 32 MB. If you set a value larger than 32 MB, the JIT ignores the input and sets the value to 32 MB.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The JIT compiler might allocate more than one code cache for an application. Use the [`-Xcodecachetotal`](xcodecachetotal.md) option to set the maximum amount of memory that is used by all code caches.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The JIT compiler might allocate more than one code cache for an application. Use the [`-Xcodecachetotal`](xcodecachetotal.md) option to set the maximum amount of memory that is used by all code caches.
 
 
 ## Syntax

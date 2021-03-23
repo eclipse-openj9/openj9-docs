@@ -42,7 +42,7 @@ Class data sharing is enabled by default for bootstrap classes only (the equival
 - You can change the name and location of the default shared classes cache.
 - You can enable messages about the default shared classes cache by using the default command line option without the `silent` suboption: `-Xshareclasses:bootClassesOnly,nonFatal`.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you have multiple VMs and you do not change the default shared classes behavior, the VMs will share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and recreated; for more information, see the following section about best practices.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you have multiple VMs and you do not change the default shared classes behavior, the VMs will share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and recreated; for more information, see the following section about best practices.
 
 You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it.
 
@@ -58,7 +58,7 @@ The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing y
 
     This avoids sharing your application cache with a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache.
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache.
 
 - Set a specific cache directory ([`-Xshareclasses:cacheDir=<directory>`](xshareclasses.md#cachedir)).
 
