@@ -109,7 +109,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : Otherwise, persistent caches are created with the same permissions as non-persistent caches. The permissions for non-persistent caches are `-rw-r-----`, or `-rw-rw----` if you also specify `-Xshareclasses:groupAccess`.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to set an application-specific cache directory  to avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** It is good practice to set an application-specific cache directory  to avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
 ### `cacheDirPerm`
 
@@ -136,7 +136,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : †On z/OS&reg; systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
 ### `cacheRetransformed`
 
@@ -152,7 +152,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : Causes timestamps of `jar` or `zip` files to be checked every time a class is loaded. If a timestamp has changed, the class is loaded from the `jar` or `zip` file and not from the shared cache. This suboption is not enabled by default and reflects the legacy behavior of the shared classes cache.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The timestamp of a bootstrap `jar` or `zip` file is checked once when it is used for the first time to load a class.
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The timestamp of a bootstrap `jar` or `zip` file is checked once when it is used for the first time to load a class.
 
 ### `createLayer`
 
@@ -178,7 +178,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : On Windows and z/OS systems, a cache can be destroyed only if all VMs that are using it have shut down and the user has sufficient permissions.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, when the `destroyAll` option is invoked from a 31-bit VM, 64-bit caches are not destroyed. Similarly, when the `destroyAll` option is invoked from a 64-bit VM, 31-bit caches are not destroyed. The following message is displayed:
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On z/OS, when the `destroyAll` option is invoked from a 31-bit VM, 64-bit caches are not destroyed. Similarly, when the `destroyAll` option is invoked from a 64-bit VM, 31-bit caches are not destroyed. The following message is displayed:
 
         JVMSHRC735I: Use a nn-bit VM to perform the requested operation on the
         nn-bit shared cache "cachename" as the nn-bit VM
@@ -376,7 +376,7 @@ case, the VM continues without using shared classes.
     - `nopartialpages`: Use this value to turn off the protection of partially filled pages. This value is available only on Linux, macOS, and Windows systems.
     - `none`: Specifying this value disables the page protection.
 
-  : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Specifying `all` has a negative impact on performance. You should specify `all` only for problem diagnosis and not for production. Specifying values `partialpagesonstartup` or `onfind` can also have a negative impact on performance when the cache is being populated. There is no further impact when the cache is full or no longer being modified.
+  : :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Specifying `all` has a negative impact on performance. You should specify `all` only for problem diagnosis and not for production. Specifying values `partialpagesonstartup` or `onfind` can also have a negative impact on performance when the cache is being populated. There is no further impact when the cache is full or no longer being modified.
 
 ### `modified`
 
@@ -394,7 +394,7 @@ case, the VM continues without using shared classes.
 
 :   Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, `destroy`. Use the `listAllCaches` utility to show which named caches are currently available. If you do not specify a name, the default name *"sharedcc\_%u"* is used. "%u" in the cache name inserts the current user name. On operating systems other than Windows, you can specify *"%g"* in the cache name to insert the current group name.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to explicitly specify a cache for your application. This avoids the application sharing a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application. Note that you cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** It is good practice to explicitly specify a cache for your application. This avoids the application sharing a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application. Note that you cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
 ### `noaot`
 
@@ -421,7 +421,7 @@ case, the VM continues without using shared classes.
 :   Timestamps of `jar` or `zip` files are checked only when they are added to a class loader and used for the first time to look up a class. This is the default
 behavior, which can improve the performance of class loading from the shared classes cache, especially on Windows systems. To revert to the behavior of the shared classes cache in earlier releases, use the [`CheckURLTimeStamps`](xshareclasses.md#checkurltimestamps) suboption.
 
-: <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** When the `nocheckURLTimestamps` suboption is used (default), if `jar` or `zip` files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. If this scenario occurs, use the `checkURLTimestamps` option.
+: :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** When the `nocheckURLTimestamps` suboption is used (default), if `jar` or `zip` files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. If this scenario occurs, use the `checkURLTimestamps` option.
 
 ### `nojitdata`
 
@@ -441,7 +441,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
 :   Allows the VM to start even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select `nonfatal` and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing. See also [`fatal`](#fatal).
 
-:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Unless it is important that your application runs with class data sharing, it is good practice to set this parameter. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Unless it is important that your application runs with class data sharing, it is good practice to set this parameter. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
 
 ### `nonpersistent`
@@ -450,7 +450,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
 :   Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a nonpersistent cache. z/OS supports only nonpersistent caches.
 
-:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a nonpersistent cache.
+:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a nonpersistent cache.
 
 ### `noPersistentDiskSpaceCheck`
 
@@ -466,7 +466,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
 :   Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Nonpersistent and persistent caches can have the same name. On AIX, you must always use the `persistent` suboption when you run utilities such as `destroy` on a persistent cache.
 
-:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Persisent caches are not supported on z/OS systems. z/OS supports only nonpersistent caches.
+:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Persisent caches are not supported on z/OS systems. z/OS supports only nonpersistent caches.
 
 ### `printAllStats` (Cache utility)
 

@@ -34,7 +34,7 @@ This user documentation supports the configuration, tuning, and diagnosis of the
 
 To see which Java releases are LTS releases and which are feature releases, and for information about release cadence, supported platforms, and build environments, see [Supported environments](openj9_support.md).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Documentation to support OpenJ9 is still under construction. The current content covers
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Documentation to support OpenJ9 is still under construction. The current content covers
 some high level information about OpenJ9 components together with the command-line options and environment variables that you can use to configure the VM when you start your application. Because OpenJ9 was contributed to the Eclipse Foundation by IBM, this content contains some links to additional information that forms part of the [IBM&reg; SDK, Java&trade; Technology Edition product documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2/welcome_javasdk_family.html) in IBM Knowledge Center. That content supplements the documentation here until a more complete set of user documentation is available.
 
 We welcome contributions to the user documentation. If you would like to get involved, please read our [Contribution guidelines](https://github.com/eclipse/openj9-docs/blob/master/CONTRIBUTING.md). If you spot any errors in the documentation, please raise an [issue](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-error.md) at our GitHub repository.
@@ -43,7 +43,7 @@ We welcome contributions to the user documentation. If you would like to get inv
 
 OpenJDK binaries that contain the OpenJ9 VM are supported on a range of hardware and operating systems. This range is expanding as work progresses at the Eclipse foundation. See the [current list of supported environments](openj9_support.md) for details.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** This user guide also contains information about configuring, tuning, and debugging OpenJ9 on the z/OS&reg; platform. 
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This user guide also contains information about configuring, tuning, and debugging OpenJ9 on the z/OS&reg; platform. 
 
 ## Documentation for specific releases
 

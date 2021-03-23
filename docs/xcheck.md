@@ -107,7 +107,7 @@ You can use the `-Xcheck` option to run checks during OpenJ9 virtual machine (VM
 
 : Identifies memory leaks inside the VM by using strict checks that cause the VM to exit on failure.
 
-: <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** You cannot include `-Xcheck:memory` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
+: :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** You cannot include `-Xcheck:memory` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
 
 : The available parameters are as follows:
 

@@ -35,7 +35,7 @@ Specifying `-Xjit` with no parameters, has no effect as the JIT compiler is enab
 
 | Setting                                             | Action                  | Default                                                                            |
 |-----------------------------------------------------|-------------------------|:----------------------------------------------------------------------------------:|
-| `-Xjit`                                             | Enable JIT              | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Xjit`                                             | Enable JIT              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-Xjit[:<parameter>=<value>{,<parameter>=<value>}]` | Enable JIT with options |                                                                                    |
 | `-Xnojit`                                           | Disable JIT             |                                                                                    ||
 
@@ -91,7 +91,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
     However, `-Xjit:exclude={test/sample/MyClass.testMethod()*}` excludes the method regardless of return type.  
     Similarly, `-Xjit:exclude={*}` excludes _all_ methods.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `exclude` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:exclude`, AOT compilation is also prevented and the methods specified are always interpreted.
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `exclude` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:exclude`, AOT compilation is also prevented and the methods specified are always interpreted.
 
 ### `limit`
 
@@ -99,7 +99,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Only the Java methods specified are included when code is compiled or loaded from the shared classes cache. `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xjit:exclude`](#exclude) for details).
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `limit` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limit`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limit` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limit`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
 
 ### `limitFile`
 
@@ -107,7 +107,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Compile only the methods that are listed on lines `<m>` to `<n>` in the specified limit file, where the limit file is a verbose log that you generated with the `-Xjit:verbose,vlog=<vlog_filename>` option. Methods that are not listed in the limit file and methods that are listed on lines outside the range are not compiled.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `limitFile` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limitFile`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limitFile` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limitFile`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
 
 ### `optlevel`
 
@@ -141,7 +141,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Shows the methods that are inlined.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Suboptions can be chained together by using a pipe (`|`) symbol. When used, you must enclose the full option name in single quotation marks (`'`) to avoid the shell misinterpreting these characters as pipe commands. For example:
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Suboptions can be chained together by using a pipe (`|`) symbol. When used, you must enclose the full option name in single quotation marks (`'`) to avoid the shell misinterpreting these characters as pipe commands. For example:
 
         java '-Xjit:verbose={compileStart|compileEnd|inlining}' -version
 

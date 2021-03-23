@@ -21,14 +21,17 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
-<cite></cite>{% import "partials/language.html" as lang with context %}
-<footer class="footer">
+{% import "partials/language.html" as lang with context %}
+<footer class="md-footer">
+
   <div class="md-footer-meta">
     {% if config.copyright %}
     <div class="md-footer-copyright1">
     	{{ config.copyright }}
     </div>
     {% endif %}
+
+<!-- Add following links ...................................... -->
 
     <div class="above-line">
       <div class="above-line-links">
@@ -69,11 +72,18 @@
       <span class="below-line-links"><a href="https://www.eclipse.org/legal/copyright.php" rel="noopener noreferrer" target="_blank">Copyright Agent</a></span>
       <span class="below-line-links"><a href="https://www.eclipse.org/legal/" rel="noopener noreferrer" target="_blank">Legal</a></span>
       <div class="below-line-social-media-icons">
-        <span class="social-media-link"> <a href="https://twitter.com/openj9/" rel="noopener noreferrer" target="_blank"> <img src="{{ base_url }}/cr/twitter-logo.svg" alt="Twitter Logo"></img></a></span>
-        <span class="social-media-link"> <a href="https://github.com/eclipse/openj9" rel="noopener noreferrer" target="_blank"> <img src="{{ base_url }}/cr/github-logo.svg" alt="GitHub Logo"></img></a></span>
-        <span class="social-media-link"> <a href="https://openj9.slack.com/" rel="noopener noreferrer" target="_blank"><img src="{{ base_url }}/cr/slack-icon.svg" alt="Slack logo"></img></a></span>
-        <span class="social-media-link"> <a href="https://stackoverflow.com/search?q=%23OpenJ9" rel="noopener noreferrer" target="_blank"><img src="{{ base_url }}/cr/stackoverflow-logo.svg" alt="Stack Overflow logo"></img></a></span>
+      {% include "partials/social.html" %}
       </div>
     </div>
+
+<!-- End of added links........................................ -->
+
+
+
+<!--
+      {% include "partials/social.html" %}
+-->
   </div>
 </footer>
+
+

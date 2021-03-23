@@ -109,7 +109,7 @@ There are a number of advantages to using arraylets.
 
 - Additionally, the garbage collector never needs to move an arraylet leaf once it has been allocated. The cost of relocating an array is therefore limited to the cost of relocating the spine, so large arrays do not contribute to higher defragmentation times.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Despite the general advantage of using arraylets, they can slow down processing when the Java Native Interface (JNI) is being used. The JNI provides flexibility by enabling Java programs to call native code; for example C or C++, and if direct addressability to the inside of an object is needed, a JNI critical section can be used. However, that requires the object to be in a contiguous region of memory, or at least _appear_ to be so. The JNI therefore creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Despite the general advantage of using arraylets, they can slow down processing when the Java Native Interface (JNI) is being used. The JNI provides flexibility by enabling Java programs to call native code; for example C or C++, and if direct addressability to the inside of an object is needed, a JNI critical section can be used. However, that requires the object to be in a contiguous region of memory, or at least _appear_ to be so. The JNI therefore creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.
 
 ## Heap sizing
 
@@ -121,7 +121,7 @@ When the Java heap runs out of space, `OutOfMemoryError` exceptions are generate
 
 At startup, the VM allocates a single contiguous area of virtual storage to match the value of `-Xmx`. By default, this is 25% of the available memory up to a maximum of 25 GB. The actual Java heap size starts at the value set by `-Xms` and expands automatically, as required, up to the maximum heap size. The VM can also contract the size of the Java heap. Expansion and contraction occur as part of a GC cycle when the VM has exclusive access to the heap. The only GC policy that does not support heap expansion and contraction is the `metronome` GC policy, where the heap is always fully expanded.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On operating systems that support paging, the VM allocates a single contiguous area that matches the value of `-Xms`. Additional memory is committed as the heap expands by using the paging process.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On operating systems that support paging, the VM allocates a single contiguous area that matches the value of `-Xms`. Additional memory is committed as the heap expands by using the paging process.
 
 Expansion occurs to maintain free space on the Java heap for object allocation. By default, the heap is expanded to maintain 30% free space, but this proportion can be adjusted by setting one of the following command-line options:
 

@@ -30,7 +30,7 @@ Sets the minimum and maximum proportion of time to spend in the garbage collecti
 - If the percentage of time drops to less than the minimum, the OpenJ9 VM tries to shrink the heap.
 - If the percentage of time exceeds the maximum, the OpenJ9 VM tries to expand the heap.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:**
 
 - This option applies only to GC policies that include stop-the-world (STW) operations, such as `-Xgcpolicy:optthruput`.  
 

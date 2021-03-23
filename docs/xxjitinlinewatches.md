@@ -32,7 +32,7 @@ This option controls JIT operations that relate to JVMTI watched fields.
 
 | Setting                 | Effect  | Default                                                                            |
 |-------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+JITInlineWatches` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| `-XX:+JITInlineWatches` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
 | `-XX:-JITInlineWatches` | Disable |                                                                                    |
 
 

@@ -33,7 +33,7 @@ The MXBean interface now reports more detailed information about memory pools an
 | Setting                                  | Effect  | Default                                                                            |
 |------------------------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+HeapManagementMXBeanCompatibility` | Enable  |                                                                                    |
-| `-XX:-HeapManagementMXBeanCompatibility` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-HeapManagementMXBeanCompatibility` | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 Setting `-XX:+HeapManagementMXBeanCompatibility` on the command line turns on compatibility with earlier versions of the VM. Information about memory pools and garbage collectors are reported in the older format.
 

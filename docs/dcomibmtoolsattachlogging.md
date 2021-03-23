@@ -35,7 +35,7 @@ Enable logging for Attach API events.
 | Value        | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
 | yes          | Enable  |                                                                                    |
-| no           | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| no           | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
 
 
 

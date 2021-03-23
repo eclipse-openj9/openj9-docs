@@ -33,7 +33,7 @@ This option affects the handling of the operating system signal `SIGABRT`. This 
 
 | Setting               | Effect  | Default                                                                            |
 |-----------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+HandleSIGABRT ` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:+HandleSIGABRT ` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:-HandleSIGABRT ` | Disable |                                                                                    |
 
 
@@ -43,6 +43,6 @@ When enabled, the VM handles the signal `SIGABRT` and generates the various dump
 
 When the option is disabled, the VM does not handle the signal `SIGABRT`. Generally, this signal is handled by the default operating system handler.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Do not use the `-XX:+HandleSIGABRT` and [`-Xrs`](xrs.md) options together. An error is thrown if both options are enabled. To resolve this error, one of the options should be disabled.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Do not use the `-XX:+HandleSIGABRT` and [`-Xrs`](xrs.md) options together. An error is thrown if both options are enabled. To resolve this error, one of the options should be disabled.
 
 <!-- ==== END OF TOPIC ==== xxhandlesigabrt.md ==== -->

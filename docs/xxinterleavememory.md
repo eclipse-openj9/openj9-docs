@@ -35,7 +35,7 @@ Use the `-XX:+InterleaveMemory` option to enable the interleaving of allocated m
 | Setting                 | Effect  | Default                                                                            |
 |-------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+InterleaveMemory` | Enable  |                                                                                    |
-| `-XX:-InterleaveMemory` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-InterleaveMemory` | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 
 
