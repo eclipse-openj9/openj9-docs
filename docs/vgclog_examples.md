@@ -1190,7 +1190,7 @@ The STW `global mark phase` subincrement ends, as recorded by `<gc-end>`, which 
 
 Comparing the snapshot at the beginning and end of this STW `global mark phase` subincrement shows that:
 
-- The marking operation has increased the `count` value of the `<remembered-set>` by 1,066,080 cards (from 2,197,888 to 3,263,968)
+- The marking operation has increased the `count` value of the `<remembered-set>` by 1,066,080 cards (from 2,197,888 to 3,263,968). As regions are rebuilt, the new cards record the new remembered set data associated with these regions.
 - The number of overflow regions has reduced from three to zero.
 - As expected of a global mark cycle's operations, there is no change in the amount of free memory available, which is 1376 MB.
 
@@ -1243,7 +1243,7 @@ The `<allocation-taxation>` element shows the allocation taxation threshold for 
 <!---
 The `<remembered set>` element shows that there are two overflow regions to attempt to rebuild.-->
 
-The status of the heap at the beginning and end of STW sub-increments are automatically recorded. For this STW subincrement, there are no `<gc-op>` elements recorded; `<gc-end>` immediately follows `<gc-start>` in the logs. For some STW sub-increments, some GC operations are run, such as a mark operation.
+The status of the heap at the beginning and end of STW sub-increments are automatically recorded. For this STW subincrement, there are no `<gc-op>` elements recorded; `<gc-end>` immediately follows `<gc-start>` in the logs. For some STW sub-increments, a mark operation is run. 
 
 ```xml
 <gc-end id="1179" type="global mark phase" contextid="1154" durationms="0.289" usertimems="1.000" systemtimems="0.000" stalltimems="0.000" timestamp="2021-02-26T11:17:28.994" activeThreads="8">
@@ -1324,7 +1324,12 @@ The operations to create a record of object liveness across the heap, which bega
 
 #### Sweep phase
 
-While the global *sweep* operation is logically associated with the global *mark* phase, it does not run in the same global *mark* cycle. Instead, the *sweep* operation runs in the same STW increment as the first partial GC cycle that runs after the completion of the global *mark* cycle. This can be seen in the following log excerpt.  After the log records the end of the global mark cycle it records a STW pause followed by a `partial gc` cycle of `id=1229`. The global *sweep* operation that runs after the the global *mark* phase is recorded in the `<gc-op>` element tagged as `id=1229`.
+The sweep operation has two objectives:
+
+- To directly reclaim some memory by creating empty regions.
+- To build information about occupancy and fragmentation for regions that still contain live objects. The next partial GC cycle uses this information to defragment older regions.
+
+While the global *sweep* operation is logically associated with the global *mark* phase, it does not run in the same global mark cycle. Instead, the sweep operation runs in the same STW increment as the first partial GC cycle that runs after the completion of the global mark cycle. This can be seen in the following log excerpt.  After the log records the end of the global mark cycle it records a STW pause followed by a `partial gc` cycle of `id=1229`. The global sweep operation that runs after the the global mark phase is recorded in the `<gc-op>` element tagged as `id=1229`.
 
 ```xml
 <exclusive-start id="1227" timestamp="2021-02-26T11:17:38.804" intervalms="1940.125">
@@ -1352,9 +1357,10 @@ A record of object liveness is now complete.
 
 Analyzing the structure and elements of this example log output shows that this example `balanced` global mark GC cycle has the following characteristics:
 
-- The GC cycle begins with an STW pause and is triggered by a taxation allocation threshold that has a value equal to half the size of the eden space. Each global mark phase increment is also triggered by a allocation taxation threshold equal to the size of half of the eden space.
-- The global *mark* cycle does not reclaim memory. The cycle creates a record of object liveness, which can be seen by inspecting the status of the remembered set metastructure using the `<remembered-set>` attributes.
-- Each global mark phase increment rebuilds the remembered set metastructure. Sometimes, the increment has managed to rebuilt some of the overflow regions.
+- If the total free memory is low when the taxation allocation threshold is reached, the GC triggers a global mark cycle. The allocation taxation threshold is set by the previous cycle to trigger a new cycle when the eden space is half full. This threshold value frees up eden space to enable a global mark cycle to interleave with the garbage collection operations of partial GC cycles.
+- Each global mark phase increment is triggered by an allocation taxation threshold value that is set to half of the eden space.
+- Global mark GC cycle and global mark cycle increments begin with a STW pause.
+- The global *mark* cycle does not reclaim memory. The cycle creates an updated record of object liveness by attempting to rebuild overflowed and stable regions. The change in status of the remembered set metastructure can be seen in the logs by inspecting the `<remembered-set>` attributes.
 - Partial cycles run in between global mark phase increments.
 - The final global mark phase increment includes a class unload. The final increment also triggers a sweep phase to run in the next partial cycle.
 
@@ -1481,15 +1487,18 @@ A global cycle increment is recorded by `<gc-start>` and has the same `contextid
 </gc-start>
 ```
 
-At the start of the global cycle's increment, the amount of memory available in the heap is zero. In some cases, the amount of memory will be close to full, and in other cases, the memory will be full.
+At the start of the global cycle's increment, the amount of memory available in the heap is zero. In some cases, the heap will be close to full, and in other cases, the memory will be full.
 
-The next element `<allocation-stats>` shows a snapshot of how memory was divided up between application threads before the current cycle started. In this example WHAT SAY HERE?
+The next element `<allocation-stats>` shows a snapshot of how memory was divided up between application threads before the current cycle started. 
 
 ```xml
 <allocation-stats totalBytes="524200" >
   <allocated-bytes non-tlh="0" tlh="524200" arrayletleaf="0"/>
 </allocation-stats>
 ```
+
+The `<allocation-stats>` element shows that there was very little allocation taking place. Global cycles are triggered due to an allocation failure, so the low memory allocation values are as expected.
+
 
 The following operations, each recorded by a `<gc-op>` element, run as part of the global cycle's increment:
 
@@ -1534,7 +1543,7 @@ The global cycle's increment ends. The end of the increment is recorded with `<g
 </gc-end>
 ```
 
-Comparing the snapshot at the beginning and end of this STW `global mark phase` subincrement shows that memory has been reclaimed and regions reassigned to create an empty eden space, equal to 1.5MB(1,572,864 B). In some cases, a global cycle also reclaims a small amount of memory from non-eden regions.
+Comparing the snapshot at the beginning and end of this STW `global mark phase` subincrement shows that memory has been reclaimed and regions reassigned to create an empty eden space, equal to 1.5MB(1,572,864 B). Global cycles are triggered when memory conditions are tight, so it is not suprising that the global cycle is only able to reclaim a small amount of memory.
 
 The cycle ends (`<cycle-end>`). The following `<allocation-satisfied>` element indicates that the allocation request that caused the allocation failure can now complete successfully.
 
@@ -1598,10 +1607,10 @@ NOW SHOW A GLOBAL CYCLE THAT IS TRIGGERED WHEN NO GLOBAL MARK CYCLE IS RUNNING? 
 
 Analyzing the structure and elements of this example log output shows that this example global cycle has the following characteristics:
 
-- The global GC cycle was triggered during a global mark GC cycle.
+- The global GC cycle was triggered during a global mark GC cycle when the heap was very low in memory. The memory could not be reclaimed by just using partial GC cycles and global mark cycles.
 
 - The concurrent subincrement of the global mark GC cycle was interrupted by an allocation failure that triggered the concurrent subincrement to end and the `global mark` cycle type to change to a `global` type. 
 
 - The global GC cycle consists of only 1 GC increment, which runs mark, sweep and compact operations during an STW pause. 
 
-- The global GC cycle reclaimed the entire eden space of the heap.
+- The global GC cycle reclaimed the eden space, which is equivalently 1.5MB of memory. The heap initiates with 2048MB of free memory in the eden space, but [the amount of memory available in the eden space decreases during partial GC cycles](gc.md#balanced-policy), and in cases of tight memory conditions, reduces to a very low value.
