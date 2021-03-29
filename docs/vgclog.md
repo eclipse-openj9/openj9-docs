@@ -148,12 +148,14 @@ You can see this interleaving of the increments in the verbose GC log. The follo
 
 <table style="width:100%" align="center">
 <caption>Table showing how the `gencon` policy's global and partial scavenge cycles, which interleave with each other, are recorded in an example log. </caption>
-
+<thead>
   <tr>
     <th scope="col">Example log line number</th>
     <th align="center" scope="col">`gencon` global GC cycle status recorded in log</th>
     <th align="center"scope="col">`gencon` partial GC cycle status recorded in log</th>
   </tr>
+</thead>
+</tbody>
   <tr>
     <td>1-87</td>
     <td colspan="2" align="center">Initialization section of the logs</th>
@@ -250,6 +252,7 @@ You can see this interleaving of the increments in the verbose GC log. The follo
     <td align="center"> STW pause ends</td>
     <td align="center">-</td>
   </tr>
+</tbody>
 </table>
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Zero, one, or multiple GC cycles might run between the start and end of a `gencon` global GC cycle.
