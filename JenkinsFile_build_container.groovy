@@ -21,7 +21,7 @@
  * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
  *******************************************************************************/
 
-NAMESPACE = 'eclipse'
+NAMESPACE = 'eclipseopenj9'
 CONTAINER_NAME = 'openj9-docs'
 
 timeout(time: 6, unit: 'HOURS') {
