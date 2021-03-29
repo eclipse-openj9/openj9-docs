@@ -13,6 +13,8 @@ To help you visualize and analyze the GC, you can feed verbose GC log files into
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You can run one or more GC traces by using the [`-Xtgc` option](xtgc.md) to get more detailed information to help diagnose GC problems or perform finer tuning. 
 
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:**  For examples of log output, including guidance on how to analyze the logs, see [Log examples](vgclog_examples.md).
+
 ## How to generate a verbose GC log  
 
 You can enable verbose GC logs by specifying the `-verbose:gc` standard option when you start your application. For more information, see [standard command-line options](cmdline_general.md). 

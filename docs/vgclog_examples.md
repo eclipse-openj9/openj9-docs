@@ -757,21 +757,21 @@ The start of a `balanced` cycle is recorded in the log by the following elements
   <tr>
     <td scope="row">global mark STW subincrement of global mark cycle</td>
     <td align="center"> <code>mark increment</code></td>
-    <td align="center"><code>n/a</code></td>
+    <td align="center">n/a</td>
     <td>allocation taxation threshold reached</td>
   <tr>
 
 <tr>
     <td scope="row">global mark concurrent subincrement of global mark cycle</td>
     <td align="center"> <code>GMP work packet processing</code></td>
-    <td align="center"><code>n/a</code></td>
+    <td align="center">n/a</td>
     <td>allocation taxation threshold reached</td>
   <tr>
 
   <tr>
     <td scope="row">global cycle</td>
-    <td align="center"> <code>global garbage collect</code></td>
-    <td align="center"><code>&lt;af-start&gt;</code> (or <code>&lt;sys-start reason="explicit"&gt;</code> if triggered by an API)</td>
+    <td align="center"><code>global garbage collect</code></td>
+    <td align="center"><code>&lt;af-start&gt;</code> (or <code>&lt;sys-start reason="explicit"&gt;</code> if triggered explicitly)</td>
     <td>An allocation failure. Occurs under tight memory conditions. Cycle runs rarely.</td>
   <tr>
 </tbody>
@@ -1078,25 +1078,22 @@ Splitting the global mark phase into these increments and subincrements reduces 
 The following elements log the GC increments, subincrements and operations of the global *mark* GC cycle:
 
 <table style="width:100%" align="center">
-  <!--
-    <colgroup>
-       <col span="1" style="width: 10%;">
-       <col span="1" style="width: 10%;">
-       <col span="1" style="width: 10%;">
-       <col span="1" style="width: 10%;">
-       <col span="1" style="width: 60%;">
-    </colgroup>
-  -->
+
+  <col>
+  <col>
+  <col>
+  <col>
+  <col style="width: 60%;">
 
 <caption>Table showing the <code>balanced</code> global mark cycle's GC increments and corresponding XML elements</caption>
 
   <thead>
     <tr>
-      <th scope="col" width="10%">GC increment</th>
-      <th align="center" scope="col" width="10%">GC operations></th>
-      <th width="10%">STW or concurrent</th>
-      <th width="10%">XML element of GC increment</th>
-      <th width="60%">Details</th>
+      <th scope="col" >GC increment</th>
+      <th align="center" scope="col">GC operations></th>
+      <th scope="col">STW or concurrent</th>
+      <th scope="col">XML element of GC increment</th>
+      <th scope="col">Details</th>
     </tr>
   </thead>
   <tbody>
