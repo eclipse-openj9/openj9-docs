@@ -100,11 +100,13 @@ More information about Concurrent Scavenge mode can be found in the blog post [C
 
 ## `balanced` policy
 
+**(64-bit only)**
+
 The Balanced GC policy ([`-Xgcpolicy:balanced`](xgcpolicy.md#balanced)) evens out pause times and reduces the overhead of some of the costlier operations that are typically associated with garbage collection, such as compaction and class unloading. The Java heap is divided into a large number of regions (1,000 - 2,000), which are managed individually by an incremental generational collector to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates.
 
 ###  When to use
 
-The Balanced policy suits applications that require large heaps (>64 Mb) on 64-bit platforms. This policy might be a good alternative for applications that experience unacceptable pause times with `gencon`.
+The Balanced policy suits applications that require large heaps (>64 MB) on 64-bit platforms. This policy might be a good alternative for applications that experience unacceptable pause times with `gencon`.
 
 
 - If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance.

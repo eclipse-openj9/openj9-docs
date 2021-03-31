@@ -24,7 +24,7 @@
 
 # -Xgc
 
-Options that change the behavior of the Garbage Collector (GC).
+Options that change the behavior of the garbage collector.
 
 ## Syntax
 
@@ -35,7 +35,9 @@ Options that change the behavior of the Garbage Collector (GC).
 | Parameter                                                                 | Effect                                                                                                    |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 | [`breadthFirstScanOrdering`         ](#breadthfirstscanordering         ) | Sets the scan mode to breadth first.                                             |
-| [`concurrentScavenge`               ](#concurrentscavenge               ) | Enables a garbage collection (GC) mode with less pause times.                                             |
+| [`classUnloadingKickoffThreshold`   ](#classunloadingkickoffthreshold   ) | Sets a threshold to start an early concurrent global garbage collection (GC) cycle due to recent, heavy class loading activity  |
+| [`classUnloadingThreshold`          ](#classunloadingthreshold          ) | Sets a threshold to trigger a class unloading operation in a global GC cycle                                     |
+| [`concurrentScavenge`               ](#concurrentscavenge               ) | Enables a GC mode with less pause times.                                             |
 | [`dnssExpectedTimeRatioMaximum`     ](#dnssexpectedtimeratiomaximum     ) | Sets the maximum time to spend on GC of the nursery area.                                                 |
 | [`dnssExpectedTimeRatioMinimum`     ](#dnssexpectedtimeratiominimum     ) | Sets the minimum time to spend on GC of the nursery area.                                                 |
 | [`dynamicBreadthFirstScanOrdering`  ](#dynamicbreadthfirstscanordering  ) | Sets scan mode to dynamic breadth first.                                             |
@@ -59,6 +61,26 @@ Options that change the behavior of the Garbage Collector (GC).
          -Xgc:breadthFirstScanOrdering
 
 : This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (`gencon`) and copy forward operations (`balanced`)) to breadth first mode. The scan mode reflects the method for traversing the object graph and is also known as *Cheney's algorithm*.
+
+### `classUnloadingKickoffThreshold`
+
+         -Xgc:classUnloadingKickoffThreshold=<value>
+
+: Where `<value>` is equal to the number of class loaders plus the number of anonymous classes that are loaded since the previous class unloading operation.
+
+: This option sets a threshold that is used to start an early concurrent global GC cycle due to recent class loading activity. The default value is 80000.
+
+: This option  is applicable to the following GC policies: `gencon` and `optavgpause`.
+
+### `classUnloadingThreshold`
+
+         -Xgc:classUnloadingThreshold=<value>
+
+: Where `<value>` is equal to the number of class loaders plus the number of anonymous classes that are loaded since the previous class unloading operation.
+
+: This option sets a threshold that is used to trigger an optional GC class unloading operation in a global GC cycle, irrespective of how the global GC cycle is triggered. The default value is 6.
+
+: This option  is applicable to the following GC policies: `gencon`, `optavgpause`, and `optthruput`.
 
 ### `concurrentScavenge`
 

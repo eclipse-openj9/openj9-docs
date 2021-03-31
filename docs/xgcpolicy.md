@@ -36,7 +36,7 @@ Controls which Garbage Collection (GC) policy is used for your Java&trade; appli
 | Parameter                                                                    | Default |
 |------------------------------------------------------------------------------|---------|
 | [`gencon`](#gencon)                                                          | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| [`balanced`](#balanced)                                                      |         |
+| [`balanced`](#balanced-64-bit-only) (64-bit only)                            |         |
 | [`metronome`](#metronome-aix-linux-x86-only) (AIX&reg;, Linux&reg; x86 only) |         |
 | [`optavgpause`](#optavgpause)                                                |         |
 | [`optthruput`](#optthruput)                                                  |         |
@@ -53,7 +53,7 @@ For a detailed description of the policies, when to use them, and how they work,
 : To learn more about this policy, when to use it, and how it works, see [Garbage collection: `gencon` policy](gc.md#gencon-policy-default).
 
 
-### `balanced`
+### `balanced` (64-bit only)
 
         -Xgcpolicy:balanced
 
