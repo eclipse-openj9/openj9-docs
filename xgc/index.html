@@ -300,6 +300,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.26/" class="md-nav__link">
+        Version 0.26.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.25/" class="md-nav__link">
         Version 0.25.0
       </a>
@@ -335,18 +347,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../version0.22/" class="md-nav__link">
-        Version 0.22.0
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -363,6 +363,18 @@
           Earlier releases
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version0.22/" class="md-nav__link">
+        Version 0.22.0
+      </a>
+    </li>
+  
+
           
             
   
@@ -1973,6 +1985,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#breadthfirstscanordering" class="md-nav__link">
+    breadthFirstScanOrdering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#concurrentscavenge" class="md-nav__link">
     concurrentScavenge
   </a>
@@ -1994,8 +2013,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dynamicbreadthfirstscanordering" class="md-nav__link">
+    dynamicBreadthFirstScanOrdering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#excessivegcratio" class="md-nav__link">
     excessiveGCratio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchicalscanordering" class="md-nav__link">
+    HierarchicalScanOrdering
   </a>
   
 </li>
@@ -4150,6 +4183,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#breadthfirstscanordering" class="md-nav__link">
+    breadthFirstScanOrdering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#concurrentscavenge" class="md-nav__link">
     concurrentScavenge
   </a>
@@ -4171,8 +4211,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dynamicbreadthfirstscanordering" class="md-nav__link">
+    dynamicBreadthFirstScanOrdering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#excessivegcratio" class="md-nav__link">
     excessiveGCratio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchicalscanordering" class="md-nav__link">
+    HierarchicalScanOrdering
   </a>
   
 </li>
@@ -4318,6 +4372,10 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="#breadthfirstscanordering"><code>breadthFirstScanOrdering</code>         </a></td>
+<td>Sets the scan mode to breadth first.</td>
+</tr>
+<tr>
 <td><a href="#concurrentscavenge"><code>concurrentScavenge</code>               </a></td>
 <td>Enables a garbage collection (GC) mode with less pause times.</td>
 </tr>
@@ -4330,8 +4388,16 @@
 <td>Sets the minimum time to spend on GC of the nursery area.</td>
 </tr>
 <tr>
+<td><a href="#dynamicbreadthfirstscanordering"><code>dynamicBreadthFirstScanOrdering</code>  </a></td>
+<td>Sets scan mode to dynamic breadth first.</td>
+</tr>
+<tr>
 <td><a href="#excessivegcratio"><code>excessiveGCratio</code>                 </a></td>
 <td>Sets a boundary value beyond which GC is deemed to be excessive.</td>
+</tr>
+<tr>
+<td><a href="#hierarchicalscanordering"><code>hierarchicalScanOrdering</code>         </a></td>
+<td>Sets scan mode to hierarchical.</td>
 </tr>
 <tr>
 <td><a href="#mincontractpercent"><code>minContractPercent</code>               </a></td>
@@ -4342,12 +4408,12 @@
 <td>Sets the maximum percentage of the heap that can be contracted at any given time.</td>
 </tr>
 <tr>
-<td><a href="#overridehirestimercheck"><code>overrideHiresTimerCheck</code>          </a></td>
-<td>Overrides GC operating system checks for timer resolution.</td>
-</tr>
-<tr>
 <td><a href="#noconcurrentscavenge"><code>noConcurrentScavenge</code>             </a></td>
 <td>Disables concurrent scavenge.</td>
+</tr>
+<tr>
+<td><a href="#overridehirestimercheck"><code>overrideHiresTimerCheck</code>          </a></td>
+<td>Overrides GC operating system checks for timer resolution.</td>
 </tr>
 <tr>
 <td><a href="#preferredheapbase"><code>preferredHeapBase</code>                </a></td>
@@ -4383,6 +4449,12 @@
 </tr>
 </tbody>
 </table>
+<h3 id="breadthfirstscanordering"><code>breadthFirstScanOrdering</code></h3>
+<pre><code>     -Xgc:breadthFirstScanOrdering
+</code></pre>
+<dl>
+<dd>This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (<code>gencon</code>) and copy forward operations (<code>balanced</code>)) to breadth first mode. The scan mode reflects the method for traversing the object graph and is also known as <em>Cheney's algorithm</em>.</dd>
+</dl>
 <h3 id="concurrentscavenge"><code>concurrentScavenge</code></h3>
 <p><strong>(64-bit only)</strong></p>
 <pre><code>    -Xgc:concurrentScavenge
@@ -4463,6 +4535,12 @@
 <p>The minimum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.</p>
 </dd>
 </dl>
+<h3 id="dynamicbreadthfirstscanordering"><code>dynamicBreadthFirstScanOrdering</code></h3>
+<pre><code>     -Xgc:dynamicBreadthFirstScanOrdering
+</code></pre>
+<dl>
+<dd>This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (<code>gencon</code>) and copy forward operations (<code>balanced</code>)) to dynamic breadth first mode. This scan mode reflects the method for traversing the object graph and is a variant that adds <em>partial depth first traversal</em> on top of the breadth first scan mode. The aim of dynamic breadth first mode is driven by object field hotness. This mode is the default for the <code>balanced</code> GC policy.</dd>
+</dl>
 <h3 id="excessivegcratio"><code>excessiveGCratio</code></h3>
 <pre><code>    -Xgc:excessiveGCratio=&lt;value&gt;
 </code></pre>
@@ -4489,6 +4567,12 @@
 <p>where <code>&lt;value&gt;</code> is a percentage of total application run time that is not spent in GC.</p>
 <p>The default value is 95, which means that anything over 5% of total application run time spent on GC is deemed excessive. This option can be used only when <a href="../xenableexcessivegc/"><code>-Xenableexcessivegc</code></a> is set (enabled by default).</p>
 </dd>
+</dl>
+<h3 id="hierarchicalscanordering"><code>HierarchicalScanOrdering</code></h3>
+<pre><code>    -Xgc:hierarchicalScanOrdering
+</code></pre>
+<dl>
+<dd>This option sets the scan mode for the scavenge operation (<code>gencon</code> GC policy) to hierarchical mode. This mode reflects the method for traversing the object graph and adds partial depth first traversal on top of breadth first scan mode. The aim of hierarchical mode is to minimize object distances. This option is the default for the <code>gencon</code> GC policy.</dd>
 </dl>
 <h3 id="mincontractpercent"><code>minContractPercent</code></h3>
 <pre><code>    -Xgc:minContractPercent=&lt;n&gt;
