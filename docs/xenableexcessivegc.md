@@ -28,13 +28,13 @@ Enables or disables the throwing of an `OutOfMemory` exception if excessive time
 
 If excessive time is spent in the GC, the option returns `null` for an allocate request and thus causes an `OutOfMemory` exception to be thrown.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The `OutOfMemory` exception is thrown only when the heap has been fully expanded and the percentage of application run time that is not spent in garbage collection is at least 95%. This percentage is the default value that triggers an excessive GC event. You can control this value with the [`-Xgc:excessiveGCratio`](xgc.md#excessivegcratio) option.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The `OutOfMemory` exception is thrown only when the heap has been fully expanded and the percentage of application run time that is not spent in garbage collection is at least 95%. This percentage is the default value that triggers an excessive GC event. You can control this value with the [`-Xgc:excessiveGCratio`](xgc.md#excessivegcratio) option.
 
 ## Syntax
 
 | Setting               | Effect            | Default                                                                            |
 |-----------------------|-------------------|:----------------------------------------------------------------------------------:|
-|`-Xenableexcessivegc`  | Enable exception  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+|`-Xenableexcessivegc`  | Enable exception  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
 |`-Xdisableexcessivegc` | Disable exception |                                                                                    |
 
 

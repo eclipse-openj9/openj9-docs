@@ -26,7 +26,7 @@
 
 This option relates to the information about the CPU usage of thread categories that is available with the `com.ibm.lang.management.JvmCpuMonitorMXBean` application programming interface.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This option might not be supported in subsequent releases.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This option might not be supported in subsequent releases.
 
 ## Syntax
 
@@ -34,7 +34,7 @@ This option relates to the information about the CPU usage of thread categories 
 
 | Setting                 | Effect  | Default                                                                            |
 |-------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+EnableCPUMonitor` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:+EnableCPUMonitor` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:-EnableCPUMonitor` | Disable |                                                                                    |
 
 ## Explanation

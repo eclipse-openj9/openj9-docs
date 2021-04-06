@@ -30,7 +30,7 @@ This HotSpot option is recognized by OpenJ9 for compatibility. See [‑Xenableex
 
 | Setting                  | Effect     | Default                                                                            |
 |--------------------------|------------|:----------------------------------------------------------------------------------:|
-| `-XX:+DisableExplicitGC` | Enable GC  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:+DisableExplicitGC` | Enable GC  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:-DisableExplicitGC` | Disable GC |                                                                                    |
 
 <!-- ==== END OF TOPIC ==== xxdisableexplicitgc.md ==== -->

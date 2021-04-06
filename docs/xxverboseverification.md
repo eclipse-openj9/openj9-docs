@@ -35,7 +35,7 @@ The Oracle documentation to support this option is no longer available, because 
 
 | Setting                    | Effect  | Default                                                                            |
 |----------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:-VerboseVerification` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-VerboseVerification` | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:+VerboseVerification` | Enable  |                                                                                    |
 
 Use  `-XX:-VerboseVerification` to enable the output of verbose diagnostic data to `stderr` that is generated during verification from the class file `StackMapTable` attribute. The data provides extra contextual information about bytecode verification, which helps diagnose bytecode or stackmap deficiencies in the field.

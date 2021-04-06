@@ -26,7 +26,7 @@
 
 This option enables and disables the recording of class relationships in the verifier to delay validation until triggered by class loading.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You cannot use this setting in conjunction with [`-Xfuture`](xfuture.md) or [`-Xverify:all`](xverify.md), which itself enables `-Xfuture`.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You cannot use this setting in conjunction with [`-Xfuture`](xfuture.md) or [`-Xverify:all`](xverify.md), which itself enables `-Xfuture`.
 
 ## Syntax
 
@@ -35,7 +35,7 @@ This option enables and disables the recording of class relationships in the ver
 | Setting                          | Effect  | Default                                                                        |
 |----------------------------------|---------|:------------------------------------------------------------------------------:|
 | `-XX:+ClassRelationshipVerifier` | Enable  |                                                                                |
-| `-XX:-ClassRelationshipVerifier` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-ClassRelationshipVerifier` | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 ## Explanation
 

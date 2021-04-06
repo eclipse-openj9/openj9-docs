@@ -34,14 +34,17 @@ Options that change the behavior of the Garbage Collector (GC).
 
 | Parameter                                                                 | Effect                                                                                                    |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| [`breadthFirstScanOrdering`         ](#breadthfirstscanordering         ) | Sets the scan mode to breadth first.                                             |
 | [`concurrentScavenge`               ](#concurrentscavenge               ) | Enables a garbage collection (GC) mode with less pause times.                                             |
 | [`dnssExpectedTimeRatioMaximum`     ](#dnssexpectedtimeratiomaximum     ) | Sets the maximum time to spend on GC of the nursery area.                                                 |
 | [`dnssExpectedTimeRatioMinimum`     ](#dnssexpectedtimeratiominimum     ) | Sets the minimum time to spend on GC of the nursery area.                                                 |
+| [`dynamicBreadthFirstScanOrdering`  ](#dynamicbreadthfirstscanordering  ) | Sets scan mode to dynamic breadth first.                                             |
 | [`excessiveGCratio`                 ](#excessivegcratio                 ) | Sets a boundary value beyond which GC is deemed to be excessive.                                          |
+| [`hierarchicalScanOrdering`         ](#hierarchicalscanordering         ) | Sets scan mode to hierarchical.                                             |
 | [`minContractPercent`               ](#mincontractpercent               ) | Sets the minimum percentage of the heap that can be contracted at any given time.                         |
 | [`maxContractPercent`               ](#maxcontractpercent               ) | Sets the maximum percentage of the heap that can be contracted at any given time.                         |
-| [`overrideHiresTimerCheck`          ](#overridehirestimercheck          ) | Overrides GC operating system checks for timer resolution.                                                |
 | [`noConcurrentScavenge`             ](#noconcurrentscavenge             ) | Disables concurrent scavenge.                                                                             |
+| [`overrideHiresTimerCheck`          ](#overridehirestimercheck          ) | Overrides GC operating system checks for timer resolution.                                                |
 | [`preferredHeapBase`                ](#preferredheapbase                ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; only) |
 | [`scvNoAdaptiveTenure`              ](#scvnoadaptivetenure              ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                               |
 | [`scvTenureAge`                     ](#scvtenureage                     ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                           |
@@ -50,6 +53,12 @@ Options that change the behavior of the Garbage Collector (GC).
 | [`tlhInitialSize`                   ](#tlhinitialsize                   ) | Sets the initial size of the thread local heap.                                                           |
 | [`tlhMaximumSize`                   ](#tlhmaximumsize                   ) | Sets the maximum size of the thread local heap.                                                           |
 | [`verboseFormat`                    ](#verboseformat                    ) | Sets the verbose GC format.                                                                               |
+
+### `breadthFirstScanOrdering`
+
+         -Xgc:breadthFirstScanOrdering
+
+: This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (`gencon`) and copy forward operations (`balanced`)) to breadth first mode. The scan mode reflects the method for traversing the object graph and is also known as *Cheney's algorithm*.
 
 ### `concurrentScavenge`
 
@@ -61,7 +70,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
     If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications. This mode can be enabled with hardware-based support (Linux on IBM Z&reg; and z/OS&reg;) and software-based support (64-bit: Linux on (x86-64, POWER&reg;, IBM Z&reg;) AIX&reg;, macOS&reg;, and z/OS).
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note: Linux on IBM Z and z/OS**
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note: Linux on IBM Z and z/OS**
 
     This option is supported by all generations of IBM Z hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode.
 
@@ -82,7 +91,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
     If these requirements are not met, the option is ignored.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by `ulimit -M`, to a larger value than the maximum heap size.
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by `ulimit -M`, to a larger value than the maximum heap size.
 
 ### `dnssExpectedTimeRatioMaximum`
 
@@ -104,6 +113,12 @@ Options that change the behavior of the Garbage Collector (GC).
 
 : The minimum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.
 
+### `dynamicBreadthFirstScanOrdering`
+
+         -Xgc:dynamicBreadthFirstScanOrdering
+
+: This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (`gencon`) and copy forward operations (`balanced`)) to dynamic breadth first mode. This scan mode reflects the method for traversing the object graph and is a variant that adds *partial depth first traversal* on top of the breadth first scan mode. The aim of dynamic breadth first mode is driven by object field hotness. This mode is the default for the `balanced` GC policy.
+
 ### `excessiveGCratio`
 
         -Xgc:excessiveGCratio=<value>
@@ -115,6 +130,12 @@ Options that change the behavior of the Garbage Collector (GC).
 : where `<value>` is a percentage of total application run time that is not spent in GC.
 
     The default value is 95, which means that anything over 5% of total application run time spent on GC is deemed excessive. This option can be used only when [`-Xenableexcessivegc`](xenableexcessivegc.md) is set (enabled by default).
+
+### `HierarchicalScanOrdering`
+
+        -Xgc:hierarchicalScanOrdering
+
+: This option sets the scan mode for the scavenge operation (`gencon` GC policy) to hierarchical mode. This mode reflects the method for traversing the object graph and adds partial depth first traversal on top of breadth first scan mode. The aim of hierarchical mode is to minimize object distances. This option is the default for the `gencon` GC policy.
 
 ### `minContractPercent`
 
@@ -144,7 +165,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
 : This option disables pause-less garbage collection that you might have enabled with the [`-Xgc:concurrentScavenge`](#concurrentscavenge) option when using the Generational Concurrent ([`gencon`](xgcpolicy.md#gencon)) garbage collection policy (the default policy).
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** No concurrent scavenge is the default state, but the `noConcurrentScavenge` option is useful as it will disable concurrent scavenge even if it has been enabled by a previous option; the right-most option always takes precedence.
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** No concurrent scavenge is the default state, but the `noConcurrentScavenge` option is useful as it will disable concurrent scavenge even if it has been enabled by a previous option; the right-most option always takes precedence.
 
 ### `overrideHiresTimerCheck`
 
@@ -152,7 +173,7 @@ Options that change the behavior of the Garbage Collector (GC).
 
 : When the VM starts, the GC checks that the operating system can meet the timer resolution requirements for the requested target pause time. Typically, this check correctly identifies operating systems that can deliver adequate time resolution. However, in some cases the operating system provides a more conservative answer than strictly necessary for GC pause time management, which prevents startup. Specifying this parameter causes the GC to ignore the answer returned by the operating system. The VM starts, but GC pause time management remains subject to operating system performance, which might not provide adequate timer resolution.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Use this option with caution, and only when you are unable to use a supported operating system.
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Use this option with caution, and only when you are unable to use a supported operating system.
 
 ### `preferredHeapBase`
 
@@ -223,7 +244,7 @@ Larger TLHs can help reduce heap lock contention, but might also reduce heap uti
 
 : | Setting       | Value          | Default                                                                            |
   |---------------|----------------|:----------------------------------------------------------------------------------:|
-  | `<format>`    | `default`      | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+  | `<format>`    | `default`      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
   |               | `deprecated`   |                                                                                    |
 
 

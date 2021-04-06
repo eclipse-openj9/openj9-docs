@@ -1,8 +1,7 @@
 window.onload = function () {
+
     if (document.getElementById("api") !== null) {
-        document.getElementsByClassName('md-content')[0].style.marginRight="auto";
-        document.getElementsByClassName('md-sidebar--secondary')[0].style.zIndex="-9999999";
-    }  else {
-        document.getElementsByClassName('md-sidebar--secondary')[0].style.zIndex="0";
+        document.getElementsByClassName('md-sidebar--secondary')[0].style.position="absolute";
+        document.getElementsByClassName('md-sidebar--secondary')[0].style.left="-10000px";
     }
 }

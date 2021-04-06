@@ -34,7 +34,7 @@ This option affects the timing of symbol resolution for functions in user native
 
 | Setting                     | Effect  | Default                                                                            |
 |-----------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+LazySymbolResolution` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:+LazySymbolResolution` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:-LazySymbolResolution` | Disable |                                                                                    |
 
 ## Explanation

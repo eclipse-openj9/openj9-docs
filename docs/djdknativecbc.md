@@ -34,7 +34,7 @@ This option enables or disables OpenSSL native cryptographic support for the CBC
 
 | Setting           | value    | Default                                                                        |
 |-------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeCBC` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Djdk.nativeCBC` | true     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-Djdk.nativeCBC` | false    |                                                                                |
 
 ## Explanation

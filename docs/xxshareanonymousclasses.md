@@ -36,7 +36,7 @@ The option is enabled by default, which means that anonymous classes (and hidden
 
 | Setting                      | Effect  | Default                                                                        |
 |------------------------------|---------|:------------------------------------------------------------------------------:|
-| `-XX:+ShareAnonymousClasses` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:+ShareAnonymousClasses` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:-ShareAnonymousClasses` | Disable |                                                                                |
 
 

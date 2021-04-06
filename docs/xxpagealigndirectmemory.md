@@ -33,7 +33,7 @@ This Oracle HotSpot option affects the alignment of direct byte buffer allocatio
 | Setting                      | Effect  | Default                                                                            |
 |------------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+PageAlignDirectMemory` | Enable  |                                                                                    |
-| `-XX:-PageAlignDirectMemory` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-PageAlignDirectMemory` | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 As discussed in the Oracle documentation, before Java&trade; SE 7, direct buffers that were allocated using `java.nio.ByteBuffer.allocateDirect(int)` were aligned on a page boundary. This behavior changed in Java SE 7 and the `-XX:+PageAlignDirectMemory` option is provided to revert to the previous behavior.
 

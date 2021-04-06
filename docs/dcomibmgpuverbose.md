@@ -24,7 +24,7 @@
 
 # -Dcom.ibm.gpu.verbose
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This system property is supported only on Java&trade; 11 and later
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This system property is supported only on Java&trade; 11 and later
 
 This system property can be used to help identify problems with graphics processing unit (GPU) processing.
 

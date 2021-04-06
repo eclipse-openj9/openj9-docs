@@ -42,7 +42,7 @@ For normal operation, certain environment variables must be set at the operating
 - If your application allocates a large amount of memory and frequently accesses that memory, you might want to enable large page support on your system. See [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
 - Configuring Dynamic LPAR support on AIX systems.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
 1. On macOS&reg; systems, you must set the DYLD_LIBRARY_PATH environment variable to indicate where to find shared libraries. In addition, to ensure there are sufficient resources for your application, you might need to increase system limits by using `launchctl`, `ulimit`, or `kern.<VARIABLES>`. For further instructions, refer to the documentation for your macOS release.
 
@@ -102,7 +102,7 @@ Each algorithm can be disabled individually by setting the following system prop
 
 
 - To turn off **Digest**, set `-Djdk.nativeDigest=false`
-- To turn off **ChaCha20** and **ChaCha20-Poly1305**, set `-Djdk.nativeChaCha20=false`. <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+- To turn off **ChaCha20** and **ChaCha20-Poly1305**, set `-Djdk.nativeChaCha20=false`. :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 - To turn off **CBC**, set `-Djdk.nativeCBC=false`
 - To turn off **GCM**, set `-Djdk.nativeGCM=false`
 - To turn off **RSA**, set `-Djdk.nativeRSA=false`
@@ -119,7 +119,7 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow 
 - [OpenJDK 11 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
 - [OpenJDK 15 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V15.md).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you obtain an OpenJDK with OpenJ9 build that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgements apply in accordance with the license terms:
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you obtain an OpenJDK with OpenJ9 build that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgements apply in accordance with the license terms:
 
 - *This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/).*
 - *This product includes cryptographic software written by Eric Young (eay@cryptsoft.com).*

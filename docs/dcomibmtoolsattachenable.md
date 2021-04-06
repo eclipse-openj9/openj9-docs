@@ -34,7 +34,7 @@ On AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; systems, the following d
 
 | Value        | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
-| yes          | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| yes          | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | no           | Disable |                                                                                    |
 
 On z/OS&reg; systems, the following default applies:
@@ -42,7 +42,7 @@ On z/OS&reg; systems, the following default applies:
 | Value        | Effect  | Default                                                                            |
 |--------------|---------|:----------------------------------------------------------------------------------:|
 | yes          | Enable  |                                                                                    |
-| no           | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| no           | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 
 
