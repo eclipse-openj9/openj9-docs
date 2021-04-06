@@ -73,7 +73,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
         -Xshareclasses:adjustsoftmx=<size>
 
-: Adjusts the soft maximum size of the cache. When you use the `-Xshareclasses:verbose` option, the VM writes to the console the number of bytes that are not stored due to the current setting of the soft maximum size. For more information about the soft maximum size, see [-Xscmx](xscmx.md "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option).").
+: Adjusts the soft maximum size of the cache. When you use the `-Xshareclasses:verbose` option, the VM writes to the console the number of bytes that are not stored due to the current setting of the soft maximum size. For more information about the soft maximum size, see [-Xscmx](xscmx.md "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the `-XX:SharedCacheHardLimit` option).").
 
 ### `allowClasspaths`
 
@@ -94,7 +94,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 : Sets the directory in which cache data is read and written. The following defaults apply:
 
     - On Windows&trade; systems, `<directory>` is the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
-    - On other operating systems, `<directory>` is the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`.
+    - On other operating systems, `<directory>` is `javasharedresources` in the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`.
 
 : On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
 
@@ -198,7 +198,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : Destroys all shared cache layers that are specified by the `name` suboption. For example, `-Xshareclasses:name=Cache1,destroyAllLayers` destroys all layers of the cache called `Cache1`. If you use the `destroy` suboption on a layered cache, for example `-Xshareclasses:name=Cache1,destroy`, only the top layer of the cache is destroyed.
 
-: For more information about layered caches, see the [`layer`](xshareclasses.md#layer) suboption.
+: For more information about layered caches, see [Creating layer caches](shrc.md#creating-layer-caches).
 
 ### `destroyAllSnapshots` (Cache utility)
 
@@ -315,38 +315,8 @@ case, the VM continues without using shared classes.
 
 : This suboption has the same effect as the [`createLayer`](xshareclasses.md#createlayer) suboption, but with the added ability to specify the layer number.
 
-: One scenario where you might want to use a layered cache is if you are building a Docker image. Normally, writing to an existing shared cache in a lower image layer results in Docker duplicating the shared cache to the top layer (following the Docker [copy-on-write strategy](https://docs.docker.com/storage/storagedriver/#the-copy-on-write-cow-strategy)). With a layered cache, you can instead write into a new cache in the top layer. The new cache builds on the existing cache, so space is saved in the image.
+: For more information about creating a shared classes cache with layers, see [Creating layer caches](shrc.md#creating-layer-caches).
 
-: The following example shows a Docker container with four layers:
-
-: ![This diagram is explained in the surrounding text](./cr/shrc_layers.jpg "Docker container with layered caches")
-
-1. The lowest layer is a Ubuntu Docker image.
-2. The next layer is an OpenJ9 Docker image that is built on the Ubuntu image. As part of this image, the `-Xshareclasses:name=Cache1` suboption is used to create a cache called `Cache1`. The layer number assigned to this cache is 0. The `listAllCaches` suboption shows the cache and the layer number:
-
-        java -Xshareclasses:listAllCaches
-        ...
-        Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
-
-        Compatible shared caches
-        Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019                       
-
-3. The next Docker layer up is an Open Liberty image that is built on the OpenJ9 image. As part of this image, the `-Xshareclasses:name=Cache1,layer=1` suboption is used to create another cache called Cache1. Because the `layer=1` suboption is specified, this new cache is a layered cache, which builds on `Cache1` in the previous container layer. (Open Liberty starts two VMs, so if you instead use the `createLayer` suboption here, two layered caches are created, with layer numbers of 1 and 2.) Note that cache layers are different from, and independent of, container layers.  
-
-4. In the same way, another Docker layer is added for an Open Liberty Java application, and another layered cache is created to add to `Cache1`. The `listAllCaches` suboption now shows all the caches and their layers:
-
-        java -Xshareclasses:listAllCaches
-        ...
-        Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
-
-        Compatible shared caches
-        Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019   
-        Cache1                  Java8 64-bit  persistent      cr              1                                         Mon Sep 23 11:46:25 2019
-        Cache1                  Java8 64-bit  persistent      cr              2                                         In use                     
-
-: The caches are created in the same directory.
-
-: When you use the `-Xshareclasses:name=Cache1` suboption in future Java commands, all the caches are started. The top-layer cache is started in read/write mode, and lower-layer caches are started in read-only mode. Modifying a lower-layer cache would invalidate all the caches in the layers above.
 
 ### `listAllCaches` (Cache utility)
 
@@ -439,10 +409,9 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:nonfatal
 
-:   Allows the VM to start even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select `nonfatal` and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing. See also [`fatal`](#fatal).
+:   Allows the VM to start, in most cases, even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select `nonfatal` and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing. See also [`fatal`](#fatal).
 
-:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Unless it is important that your application runs with class data sharing, it is good practice to set this parameter. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
-
+:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Unless it is important that your application runs with class data sharing, it is good practice to set this parameter. See [Creating a shared classes cache](shrc.md#creating-a-shared-classes-cache). However, cache corruption as a result of a bug in the operating system, VM, or user code might not be detected when opening the cache. In this situation, the cache is used and the application might crash.
 
 ### `nonpersistent`
 
@@ -488,7 +457,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:printTopLayerStats=<data_type>[+<data_type>]
 
-:   Equivalent to [`printStats`](#printstats-cache-utility) but for the top layer cache only.
+:   Equivalent to [`printStats`](#printstats-cache-utility) but for the top layer cache only. For more information about layered caches, see [Creating a layer cache](shrc.md#creating-layer-caches).
 
 ### `readonly`
 
@@ -645,8 +614,9 @@ Here are some examples:
 
 ## See also
 
+- [Introduction to class data sharing](shrc.md)
 - [-Xscmx](xscmx.md)
 - [-XX:SharedCacheHardLimit](xxsharedcachehardlimit.md)
-- [Class data sharing](shrc.md)
+
 
 <!-- ==== END OF TOPIC ==== docs/xshareclasses.md ==== -->

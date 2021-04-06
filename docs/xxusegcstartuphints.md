@@ -52,7 +52,7 @@ The final value stored to the shared cache is not recorded in the verbose GC out
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
 - When enabled, this option overrides any initial heap size that is specified on the command line, for example by using the [`-Xms`](xms.md) option.
-- Because the shared classes cache is used to store heap size information, this option does not work if [shared classes](shrc.md) are disabled.
+- Because the shared classes cache is used to store heap size information, this option does not work if class data sharing ([`-Xshareclasses`](xshareclasses.md)) is disabled.
 
 :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This feature is not currently available with the Balanced GC policy.
 

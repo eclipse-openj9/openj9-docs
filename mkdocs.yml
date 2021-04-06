@@ -133,7 +133,7 @@ nav:
     - "AOT Compiler"                                                             : aot.md
 
     - "Class data sharing" :
-        - "Overview"                                                             : shrc.md
+        - "Introduction"                                                         : shrc.md
         - "Diagnostic cache utilities"                                           : shrc_diag_util.md
 
     - "Java Attach API"                                                          : attachapi.md
@@ -194,6 +194,7 @@ nav:
             - "-Dcom.ibm.gpu.verbose"                                            : dcomibmgpuverbose.md
             - "-Dcom.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns"   : dcomibmlangmanagementosmxbeaniscputime100ns.md
             - "-Dcom.ibm.lang.management.verbose"                                : dcomibmlangmanagementverbose.md
+            - "-Dcom.ibm.oti.shared.SharedClassGlobalFilterClass"                : dcomibmotisharedsharedclassglobalfilterclass.md
             - "-Dcom.ibm.tools.attach.command_timeout"                           : dcomibmtoolsattachcommand_timeout.md
             - "-Dcom.ibm.tools.attach.directory"                                 : dcomibmtoolsattachdirectory.md
             - "-Dcom.ibm.tools.attach.displayName"                               : dcomibmtoolsattachdisplayname.md
