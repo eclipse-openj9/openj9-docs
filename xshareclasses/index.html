@@ -748,7 +748,7 @@
   
     <li class="md-nav__item">
       <a href="../shrc/" class="md-nav__link">
-        Overview
+        Introduction
       </a>
     </li>
   
@@ -1300,6 +1300,18 @@
     <li class="md-nav__item">
       <a href="../dcomibmlangmanagementverbose/" class="md-nav__link">
         -Dcom.ibm.lang.management.verbose
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dcomibmotisharedsharedclassglobalfilterclass/" class="md-nav__link">
+        -Dcom.ibm.oti.shared.SharedClassGlobalFilterClass
       </a>
     </li>
   
@@ -4957,7 +4969,7 @@
 <p>Sets the directory in which cache data is read and written. The following defaults apply:</p>
 <ul>
 <li>On Windows&trade; systems, <code>&lt;directory&gt;</code> is the user's <code>C:\Documents and Settings\&lt;username&gt;\Local Settings\Application Data\javasharedresources</code> directory.</li>
-<li>On other operating systems, <code>&lt;directory&gt;</code> is the user's home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is <code>/tmp/javasharedresources</code>, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in <code>&lt;directory&gt;</code>.</li>
+<li>On other operating systems, <code>&lt;directory&gt;</code> is <code>javasharedresources</code> in the user's home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is <code>/tmp/javasharedresources</code>, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in <code>&lt;directory&gt;</code>.</li>
 </ul>
 </dd>
 <dd>
@@ -5089,7 +5101,7 @@ cannot verify that the shared memory was created by the VM.
 </code></pre>
 <dl>
 <dd>Destroys all shared cache layers that are specified by the <code>name</code> suboption. For example, <code>-Xshareclasses:name=Cache1,destroyAllLayers</code> destroys all layers of the cache called <code>Cache1</code>. If you use the <code>destroy</code> suboption on a layered cache, for example <code>-Xshareclasses:name=Cache1,destroy</code>, only the top layer of the cache is destroyed.</dd>
-<dd>For more information about layered caches, see the <a href="./#layer"><code>layer</code></a> suboption.</dd>
+<dd>For more information about layered caches, see <a href="../shrc/#creating-layer-caches">Creating layer caches</a>.</dd>
 </dl>
 <h3 id="destroyallsnapshots-cache-utility"><code>destroyAllSnapshots</code> (Cache utility)</h3>
 <dl>
@@ -5209,41 +5221,7 @@ with shared classes cache.
 <dl>
 <dd>Creates layered caches.</dd>
 <dd>This suboption has the same effect as the <a href="./#createlayer"><code>createLayer</code></a> suboption, but with the added ability to specify the layer number.</dd>
-<dd>One scenario where you might want to use a layered cache is if you are building a Docker image. Normally, writing to an existing shared cache in a lower image layer results in Docker duplicating the shared cache to the top layer (following the Docker <a href="https://docs.docker.com/storage/storagedriver/#the-copy-on-write-cow-strategy">copy-on-write strategy</a>). With a layered cache, you can instead write into a new cache in the top layer. The new cache builds on the existing cache, so space is saved in the image.</dd>
-<dd>The following example shows a Docker container with four layers:</dd>
-<dd><img alt="This diagram is explained in the surrounding text" src="../cr/shrc_layers.jpg" title="Docker container with layered caches" /></dd>
-</dl>
-<ol>
-<li>The lowest layer is a Ubuntu Docker image.</li>
-<li>
-<p>The next layer is an OpenJ9 Docker image that is built on the Ubuntu image. As part of this image, the <code>-Xshareclasses:name=Cache1</code> suboption is used to create a cache called <code>Cache1</code>. The layer number assigned to this cache is 0. The <code>listAllCaches</code> suboption shows the cache and the layer number:</p>
-<pre><code>java -Xshareclasses:listAllCaches
-...
-Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
-
-Compatible shared caches
-Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019
-</code></pre>
-</li>
-<li>
-<p>The next Docker layer up is an Open Liberty image that is built on the OpenJ9 image. As part of this image, the <code>-Xshareclasses:name=Cache1,layer=1</code> suboption is used to create another cache called Cache1. Because the <code>layer=1</code> suboption is specified, this new cache is a layered cache, which builds on <code>Cache1</code> in the previous container layer. (Open Liberty starts two VMs, so if you instead use the <code>createLayer</code> suboption here, two layered caches are created, with layer numbers of 1 and 2.) Note that cache layers are different from, and independent of, container layers.  </p>
-</li>
-<li>
-<p>In the same way, another Docker layer is added for an Open Liberty Java application, and another layered cache is created to add to <code>Cache1</code>. The <code>listAllCaches</code> suboption now shows all the caches and their layers:</p>
-<pre><code>java -Xshareclasses:listAllCaches
-...
-Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
-
-Compatible shared caches
-Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019   
-Cache1                  Java8 64-bit  persistent      cr              1                                         Mon Sep 23 11:46:25 2019
-Cache1                  Java8 64-bit  persistent      cr              2                                         In use
-</code></pre>
-</li>
-</ol>
-<dl>
-<dd>The caches are created in the same directory.</dd>
-<dd>When you use the <code>-Xshareclasses:name=Cache1</code> suboption in future Java commands, all the caches are started. The top-layer cache is started in read/write mode, and lower-layer caches are started in read-only mode. Modifying a lower-layer cache would invalidate all the caches in the layers above.</dd>
+<dd>For more information about creating a shared classes cache with layers, see <a href="../shrc/#creating-layer-caches">Creating layer caches</a>.</dd>
 </dl>
 <h3 id="listallcaches-cache-utility"><code>listAllCaches</code> (Cache utility)</h3>
 <pre><code>    -Xshareclasses:listAllCaches
@@ -5338,8 +5316,8 @@ behavior, which can improve the performance of class loading from the shared cla
 <pre><code>    -Xshareclasses:nonfatal
 </code></pre>
 <dl>
-<dd>Allows the VM to start even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select <code>nonfatal</code> and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing. See also <a href="#fatal"><code>fatal</code></a>.</dd>
-<dd><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Unless it is important that your application runs with class data sharing, it is good practice to set this parameter. See <a href="../shrc/#best-practices-for-using-xshareclasses">Class data sharing: Best practices for using <code>-Xshareclasses</code></a>.</dd>
+<dd>Allows the VM to start, in most cases, even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select <code>nonfatal</code> and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing. See also <a href="#fatal"><code>fatal</code></a>.</dd>
+<dd><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Unless it is important that your application runs with class data sharing, it is good practice to set this parameter. See <a href="../shrc/#creating-a-shared-classes-cache">Creating a shared classes cache</a>. However, cache corruption as a result of a bug in the operating system, VM, or user code might not be detected when opening the cache. In this situation, the cache is used and the application might crash.</dd>
 </dl>
 <h3 id="nonpersistent"><code>nonpersistent</code></h3>
 <pre><code>    -Xshareclasses:nonpersistent
@@ -5380,7 +5358,7 @@ behavior, which can improve the performance of class loading from the shared cla
 <pre><code>    -Xshareclasses:printTopLayerStats=&lt;data_type&gt;[+&lt;data_type&gt;]
 </code></pre>
 <dl>
-<dd>Equivalent to <a href="#printstats-cache-utility"><code>printStats</code></a> but for the top layer cache only.</dd>
+<dd>Equivalent to <a href="#printstats-cache-utility"><code>printStats</code></a> but for the top layer cache only. For more information about layered caches, see <a href="../shrc/#creating-layer-caches">Creating a layer cache</a>.</dd>
 </dl>
 <h3 id="readonly"><code>readonly</code></h3>
 <pre><code>    -Xshareclasses:readonly
@@ -5567,9 +5545,9 @@ behavior, which can improve the performance of class loading from the shared cla
 </table>
 <h2 id="see-also">See also</h2>
 <ul>
+<li><a href="../shrc/">Introduction to class data sharing</a></li>
 <li><a href="../xscmx/">-Xscmx</a></li>
 <li><a href="../xxsharedcachehardlimit/">-XX:SharedCacheHardLimit</a></li>
-<li><a href="../shrc/">Class data sharing</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== docs/xshareclasses.md ==== -->
                 

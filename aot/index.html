@@ -786,7 +786,7 @@
   
     <li class="md-nav__item">
       <a href="../shrc/" class="md-nav__link">
-        Overview
+        Introduction
       </a>
     </li>
   
@@ -1336,6 +1336,18 @@
     <li class="md-nav__item">
       <a href="../dcomibmlangmanagementverbose/" class="md-nav__link">
         -Dcom.ibm.lang.management.verbose
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dcomibmotisharedsharedclassglobalfilterclass/" class="md-nav__link">
+        -Dcom.ibm.oti.shared.SharedClassGlobalFilterClass
       </a>
     </li>
   
@@ -4063,12 +4075,12 @@
 
 <h1 id="ahead-of-time-aot-compiler">Ahead-Of-Time (AOT) compiler</h1>
 <p>The AOT compiler dynamically compiles Java methods into native AOT code at runtime and stores them in the shared classes cache. This activity enables the VM to start an application faster the next time it runs because it doesn't need to spend time interpreting Java methods. The VM automatically chooses which methods should be AOT-compiled based on heuristics that identify the start-up phase of large applications. AOT code is always used in combination with class data sharing and is enabled automatically when <code>-Xshareclasses</code> is set on the command line. When a cached AOT method is run it might also be optimized further by the Just-In-Time (JIT) compiler.</p>
-<p>If you want to turn off AOT compilation and disable the use of AOT-compiled code, set the <code>-Xnoaot</code> suboption. When the AOT compiler is disabled, the JIT compiles frequently used methods into native code. However, because the JIT compiler operates while the application is running, the startup time for an application will increase. </p>
+<p>If you want to turn off AOT compilation and disable the use of AOT-compiled code, set the <code>-Xnoaot</code> suboption. When the AOT compiler is disabled, the JIT compiles frequently used methods into native code. However, because the JIT compiler operates while the application is running, the startup time for an application will increase.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jit_pd_diagnose.html">Diagnosing a JIT or AOT problem</a></li>
 <li><a href="../jit/">JIT compiler</a></li>
-<li><a href="../shrc/">Class data sharing</a></li>
+<li><a href="../shrc/">Introduction to class data sharing</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== aot.md ==== -->
                 

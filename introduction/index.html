@@ -883,7 +883,7 @@
   
     <li class="md-nav__item">
       <a href="../shrc/" class="md-nav__link">
-        Overview
+        Introduction
       </a>
     </li>
   
@@ -1433,6 +1433,18 @@
     <li class="md-nav__item">
       <a href="../dcomibmlangmanagementverbose/" class="md-nav__link">
         -Dcom.ibm.lang.management.verbose
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dcomibmotisharedsharedclassglobalfilterclass/" class="md-nav__link">
+        -Dcom.ibm.oti.shared.SharedClassGlobalFilterClass
       </a>
     </li>
   
@@ -4283,7 +4295,7 @@
 <h3 id="garbage-collection-policies">Garbage collection policies</h3>
 <p>OpenJ9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see <a href="../gc/">Garbage collection policies</a>.</p>
 <h3 id="class-data-sharing">Class data sharing</h3>
-<p>You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see <a href="../shrc/">Class Data Sharing</a>.</p>
+<p>You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see <a href="../shrc/">Introduction to class data sharing</a>.</p>
 <h3 id="native-data-operations">Native data operations</h3>
 <p>If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator (DAA) API.</p>
 <p>The following functions are provided:</p>
@@ -4303,7 +4315,7 @@
 <p>To improve the performance of applications that run in containers, try setting the following tuning options:</p>
 <ul>
 <li>
-<p>Use a shared classes cache (<code>-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m</code>) with Ahead-Of-Time (AOT) compilation to improve your startup time. For more information, see <a href="../shrc/">Class Data Sharing</a> and <a href="../aot/">AOT Compiler</a>.</p>
+<p>Use a shared classes cache (<code>-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m</code>) with Ahead-Of-Time (AOT) compilation to improve your startup time. For persistence, store the cache in a volume that you map to your container. For more information, see <a href="../shrc/">Inroduction to class data sharing</a> and <a href="../aot/">AOT Compiler</a>.</p>
 </li>
 <li>
 <p>Use the <a href="../xtunevirtualized/">-Xtune:virtualized</a> option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.</p>

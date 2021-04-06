@@ -18,7 +18,7 @@
     
     
       
-        <title>Overview -  </title>
+        <title>Introduction -  </title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#class-data-sharing" class="md-skip">
+        <a href="#introduction-to-class-data-sharing" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Introduction
             
           </span>
         </div>
@@ -758,12 +758,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Overview
+          Introduction
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Overview
+        Introduction
       </a>
       
         
@@ -780,6 +780,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cache-utilities" class="md-nav__link">
+    Cache utilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enabling-class-data-sharing" class="md-nav__link">
     Enabling class data sharing
   </a>
@@ -787,8 +794,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices-for-using-xshareclasses" class="md-nav__link">
-    Best practices for using -Xshareclasses
+  <a href="#class-data-sharing-operations" class="md-nav__link">
+    Class data sharing operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Class data sharing operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aot-code-and-jit-data" class="md-nav__link">
+    AOT code and JIT data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-shared-classes-cache" class="md-nav__link">
+    Creating a shared classes cache
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a shared classes cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-layer-caches" class="md-nav__link">
+    Creating layer caches
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-a-non-persistent-shared-classes-cache" class="md-nav__link">
+    Saving a non-persistent shared classes cache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#housekeeping" class="md-nav__link">
+    Housekeeping
   </a>
   
 </li>
@@ -798,12 +852,25 @@
     Support for custom class loaders
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cache-utilities" class="md-nav__link">
-    Cache utilities
+    <nav class="md-nav" aria-label="Support for custom class loaders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-java-shared-classes-helper-api" class="md-nav__link">
+    The Java shared classes Helper API
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-java-shared-classes-utility-api" class="md-nav__link">
+    The Java shared classes utility API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1366,6 +1433,18 @@
     <li class="md-nav__item">
       <a href="../dcomibmlangmanagementverbose/" class="md-nav__link">
         -Dcom.ibm.lang.management.verbose
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dcomibmotisharedsharedclassglobalfilterclass/" class="md-nav__link">
+        -Dcom.ibm.oti.shared.SharedClassGlobalFilterClass
       </a>
     </li>
   
@@ -4048,6 +4127,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cache-utilities" class="md-nav__link">
+    Cache utilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enabling-class-data-sharing" class="md-nav__link">
     Enabling class data sharing
   </a>
@@ -4055,8 +4141,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices-for-using-xshareclasses" class="md-nav__link">
-    Best practices for using -Xshareclasses
+  <a href="#class-data-sharing-operations" class="md-nav__link">
+    Class data sharing operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Class data sharing operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aot-code-and-jit-data" class="md-nav__link">
+    AOT code and JIT data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-shared-classes-cache" class="md-nav__link">
+    Creating a shared classes cache
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a shared classes cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-layer-caches" class="md-nav__link">
+    Creating layer caches
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-a-non-persistent-shared-classes-cache" class="md-nav__link">
+    Saving a non-persistent shared classes cache
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#housekeeping" class="md-nav__link">
+    Housekeeping
   </a>
   
 </li>
@@ -4066,12 +4199,25 @@
     Support for custom class loaders
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cache-utilities" class="md-nav__link">
-    Cache utilities
+    <nav class="md-nav" aria-label="Support for custom class loaders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-java-shared-classes-helper-api" class="md-nav__link">
+    The Java shared classes Helper API
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-java-shared-classes-utility-api" class="md-nav__link">
+    The Java shared classes utility API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4119,27 +4265,130 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="class-data-sharing">Class data sharing</h1>
-<p>Sharing class data between JVMs improves start up performance and reduces memory footprint.</p>
-<p>Start up performance is improved by placing classes that an application needs when initializing into a shared classes cache. The next time the
-application runs, it takes much less time to start because the classes are already available. When you enable class data sharing, AOT compilation is also enabled by default, which dynamically compiles certain methods into AOT code at runtime. By using these features in combination, startup performance can be improved even further because the cached AOT code can be used to quickly enable native code performance for subsequent runs of your application.</p>
-<p>When class data sharing is enabled, OpenJ9 automatically creates a memory mapped file that stores and shares the classes in memory.</p>
-<p>The shared classes cache is updated dynamically; When an application loads new classes, the JVM automatically stores them in the cache without any user intervention.</p>
-<p>Memory footprint is reduced by sharing common classes between applications that run in separate Java VMs.</p>
-<h2 id="enabling-class-data-sharing">Enabling class data sharing</h2>
-<p>Class data sharing is enabled by default for bootstrap classes only (the equivalent of specifying <code>-Xshareclasses:bootClassesOnly,nonFatal,silent</code>), unless your application is running in a container. If you want to change the default behaviour, use the <a href="../xshareclasses/"><code>-Xshareclasses</code></a> option on the command line. For example:</p>
-<ul>
-<li>You can change the name and location of the default shared classes cache.</li>
-<li>You can enable messages about the default shared classes cache by using the default command line option without the <code>silent</code> suboption: <code>-Xshareclasses:bootClassesOnly,nonFatal</code>.</li>
-</ul>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> If you have multiple VMs and you do not change the default shared classes behavior, the VMs will share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and recreated; for more information, see the following section about best practices.</p>
-<p>You can treat the default cache like any other shared classes cache, for example you can print statistics for it, change the soft maximum limit size, or delete it.</p>
-<p>You can enable class data sharing for non-bootstrap classes as well, by using <code>-Xshareclasses</code> without the <code>bootClassesOnly</code> suboption. You can also disable all class data sharing by using the <code>none</code> suboption.</p>
-<h2 id="best-practices-for-using-xshareclasses">Best practices for using <code>-Xshareclasses</code></h2>
-<p>The <a href="../xshareclasses/">-Xshareclasses</a> option is highly configurable, allowing you to specify where to create the cache, how much space to allocate for AOT code and more. You can also set the cache size by using the <a href="../xscmx/">-Xscmx</a> option. When shared classes is enabled, it is good practice to specify some of the cache behavior:</p>
+<h1 id="introduction-to-class-data-sharing">Introduction to class data sharing</h1>
+<p>Sharing class data between OpenJ9 VMs improves start up performance and reduces memory footprint. Consider the following outcomes for two VMs that are running similar Java applications but sharing class data:</p>
 <ul>
 <li>
-<p>Set an application-specific cache name (<a href="../xshareclasses/#name"><code>-Xshareclasses:name=&lt;name&gt;</code></a>).</p>
+<p>Start up performance is improved by placing classes that each application needs when initializing into a shared classes cache. The next time the application runs, it takes less time to start because the classes are already available.</p>
+</li>
+<li>
+<p>Memory footprint is reduced by sharing common classes between the applications.</p>
+</li>
+</ul>
+<p>When class data sharing is enabled, OpenJ9 automatically creates shared memory that stores and shares the classes in memory between processes. This shared classes cache is updated dynamically; when an application loads new classes, the VM automatically stores them in the cache without any user intervention. By default, class data sharing is enabled for bootstrap classes, as described in <a href="#enabling-class-data-sharing">Enabling class data sharing</a>.</p>
+<p>When class data sharing is enabled, Ahead-of-time (AOT) compilation is also enabled by default, which dynamically compiles certain methods into AOT code at runtime. By using these features in combination, startup performance is further improved because the cached AOT code can be used to quickly enable native code performance for subsequent runs of your application. For more information about AOT, see <a href="../aot/">AOT Compiler</a>. Further performance improvements are gained by storing JIT data and profiles in the shared classes cache.</p>
+<p>The contents of a shared classes cache can include the following artifacts:</p>
+<ul>
+<li>Bootstrap classes</li>
+<li>Application classes</li>
+<li>Metadata that describes the classes</li>
+<li>AOT-compiled code</li>
+<li>JIT data</li>
+<li>GC hints (for initial Java heap size)</li>
+<li><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> Bootstrap <code>jar</code> file indexes</li>
+</ul>
+<h2 id="cache-utilities">Cache utilities</h2>
+<p>Active caches can be managed by a set of cache utilities, which are invoked by specifying <code>-Xshareclasses</code> suboptions. These utilities control the following types of operations:</p>
+<ul>
+<li>Displaying information about the caches on a system.</li>
+<li>Adjusting the size of a cache and the amount of space that is reserved for AOT code or JIT data.</li>
+<li>Creating a snapshot of a non-persistent cache to save to disk and restoring the cache from disk.</li>
+<li>Troubleshooting cache problems.</li>
+<li>Removing unwanted caches on a system.</li>
+</ul>
+<p>These cache utilities are discussed in more detail in the sections that follow.</p>
+<h2 id="enabling-class-data-sharing">Enabling class data sharing</h2>
+<p>Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container.
+Default behavior includes the following characteristics:</p>
+<ul>
+<li>The cache is created in the <code>javasharedresources</code> directory in the users home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is created in <code>/tmp/javasharedresources</code>. However, on Windows, it is created in the user's <code>C:\Documents and Settings\&lt;username&gt;\Local Settings\Application Data\javasharedresources</code> directory.</li>
+<li>The cache name is <code>sharedcc_%u</code>, where <code>%u</code> is the current user name.</li>
+<li>If class data sharing fails, the VM still starts without printing any errors.</li>
+</ul>
+<p>Shared class behavior is controlled by specifying the <a href="../xshareclasses/">-Xshareclasses</a> option on the command line when you start your application. The default settings are equivalent to specifying the following suboptions:</p>
+<pre><code>-Xshareclasses:bootClassesOnly,nonFatal,silent
+</code></pre>
+
+<p>You can enable class data sharing for non-bootstrap classes as well as bootstrap classes, by omitting the <code>bootClassesOnly</code> suboption. You can also disable all class data sharing by using the <code>none</code> suboption.</p>
+<p>Further suboptions are available to configure a cache at startup, including name, location, and startup size. You can also use cache utilities to manage a shared classes cache after it is initialized and in use.</p>
+<p>A shared classes cache can be <em>persistent</em> or <em>non-persistent</em> according to the following definition:</p>
+<ul>
+<li>persistent caches are written to memory-mapped files and remain in place, even after a system is rebooted.</li>
+<li>non-persistent caches exist in shared memory and are automatically removed when the operating system is restarted.</li>
+</ul>
+<p>By default, a shared classes cache is persistent, except on the z/OS platform, where persistent caches are not supported.
+If you are using a non-persistent cache, you can use a cache utility to create a snapshot of the cache, which can be reinitialized after a reboot. For more information see <a href="#saving-a-non-persistent-shared-classes-cache">Saving a non-persistent shared classes cache</a>.</p>
+<p>If you have multiple VMs and you do not change the default shared classes behavior, the VMs share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and re-created.</p>
+<p>For a set of best practices when using class data sharing, see <a href="#creating-a-shared-classes-cache">Creating a shared classes cache</a>.</p>
+<h2 id="class-data-sharing-operations">Class data sharing operations</h2>
+<p>When a VM loads a class and the class loader is enabled for class sharing, the VM looks in the shared classes cache to see if the class is already present. If the class is present and the classpath or URL to load the class is a match, the VM loads the class from the cache. Otherwise, it loads the class from the filesystem and writes it into the cache.</p>
+<p>The VM detects filesystem updates by storing timestamp values into the cache and comparing the cached values with actual values. In this way, the VM detects when a class might be invalidated and can mark the class as <em>stale</em>. These operations happen transparently when classes are loaded, so users can modify and update as many classes as they like during the lifetime of a shared class cache, knowing that the correct classes are always loaded. Stale classes are <em>redeemed</em> if the same class is subsequently fetched by the class loader from another VM and checked against the stale class in the cache.</p>
+<p>Occasionally, caches that are created from one version of the VM might not be compatible with caches that are created from a different version. This situation typically occurs when an update is made in OpenJ9 that changes the internal cache data structure. If a VM detects an incompatible cache at start up, it creates a new cache that can coexist, even if it has the same name. The VM detects a conflict by checking an internal shared classes cache generation number.</p>
+<p>Caches are not compatible between VMs that are using different object storage modes. For example, a 64-bit VM that uses compressed references to store 64-bit objects in a 32-bit representation, cannot share a cache with a 64-bit VM that is not using compressed references. For more information about object storage options, see <a href="../allocation/#compressed-references">Compressed references</a>.</p>
+<p>In the OpenJ9 implementation of <code>java.net.URLClassLoader</code>, classes are read from and written to the cache using the public Helper API. Therefore, any class loader that extends <code>java.net.URLClassLoader</code> gets class sharing support for free provided that it continues to use the methods in <code>java.net.URLClassLoader</code> to load classes. Custom class loaders that do not extend <code>java.net.URLClassLoader</code> must be adapted to share class data as described in <a href="#support-for-custom-class-loaders">Support for custom class loaders</a>.</p>
+<h3 id="aot-code-and-jit-data">AOT code and JIT data</h3>
+<p>OpenJ9 can automatically store small amounts of AOT code and JIT data, which helps improve performance in the following ways:</p>
+<ul>
+<li>The JIT compiler dynamically compiles certain methods into AOT code at runtime. Subsequent VMs that attach to the cache can take advantage of the compiled code to start faster.</li>
+<li>The JIT compiler stores profiling data and various compilation <em>hints</em> into the shared classes cache. This data enables subsequent VMs that attach to the cache to start faster, run faster, or both.</li>
+</ul>
+<p>The default settings provide significant performance benefits. However, you can specify options on the command line to configure AOT code storage or JIT data storage in the shared classes cache, as shown in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Setting a minimum storage value</th>
+<th>Setting a maximum storage value</th>
+<th>Turning off storage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AOT code</td>
+<td><a href="../xscminaot/"><code>-Xscminaot&lt;size&gt;</code></a></td>
+<td><a href="../xscminaot/"><code>-Xscmaxaot&lt;size&gt;</code></a></td>
+<td><a href="../xshareclasses/#noaot"><code>-Xshareclasses:noaot</code></a></td>
+</tr>
+<tr>
+<td>JIT data</td>
+<td><a href="../xscminjitdata/"><code>-Xscminjitdata&lt;size&gt;</code></a></td>
+<td><a href="../xscminjitdata/"><code>-Xscmaxjitdata&lt;size&gt;</code></a></td>
+<td><a href="../xshareclasses/#nojitdata"><code>-Xshareclasses:nojitdata</code></a></td>
+</tr>
+</tbody>
+</table>
+<p>The following cache utilities are available to adjust the storage values when a cache is active:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Adjusting the minimum storage value</th>
+<th>Adjusting the maximum storage value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AOT code</td>
+<td><a href="../xshareclasses/#adjustminaot"><code>-Xshareclasses:adjustminaot</code></a></td>
+<td><a href="../xshareclasses/#adjustmaxaot"><code>-Xshareclasses:adjustmaxaot</code></a></td>
+</tr>
+<tr>
+<td>JIT code</td>
+<td><a href="../xshareclasses/#adjustminjit"><code>-Xshareclasses:adjustminjit</code></a></td>
+<td><a href="../xshareclasses/#adjustmaxjit"><code>-Xshareclasses:adjustmaxjit</code></a></td>
+</tr>
+</tbody>
+</table>
+<p>You can also use the <code>-Xshareclasses:findAotMethods</code> cache utility to list the AOT methods in a cache that match a method specification. This utility helps you identify methods that are causing a failure in an application. You can then invalidate the method without destroying the cache by using the <code>-Xshareclasses:invalidateAotMethods</code> cache utility. You can also revalidate an AOT method with the <code>-Xshareclasses:revalidateAotMethods</code> cache utility. For more information see <a href="../xshareclasses/"><code>-Xshareclasses</code></a>.</p>
+<h2 id="creating-a-shared-classes-cache">Creating a shared classes cache</h2>
+<p>The <a href="../xshareclasses/">-Xshareclasses</a> option is highly configurable, allowing you to specify where to create the cache, how much space to allocate, and more. The following best practices apply to using class data sharing:</p>
+<ul>
+<li>
+<p>Before starting your application, use the <a href="../xshareclasses/#listallcaches"><code>-Xshareclasses:listAllCaches</code></a> cache utility to review and maintain the existing caches on your system.</p>
+<p>This option lists all the caches that exist in the default directory, including compatible and incompatible caches. You can also specify the <code>cacheDir</code> suboption to look for caches in a specified directory. Remove any obsolete caches, as described in <a href="#housekeeping">Housekeeping</a>.</p>
+</li>
+<li>
+<p>If you are creating a new cache, set an application-specific cache name (<a href="../xshareclasses/#name"><code>-Xshareclasses:name=&lt;name&gt;</code></a>).</p>
 <p>If a cache with the specified name doesn't already exist, a new cache is created.</p>
 <p>This avoids sharing your application cache with a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> You cannot change the size of a default cache that already exists by using the <a href="../xscmx/"><code>-Xscmx</code></a> option, as that option has no effect on a pre-existing cache.</p>
@@ -4151,33 +4400,120 @@ application runs, it takes much less time to start because the classes are alrea
 </li>
 <li>
 <p>Ensure that the cache directory permissions are set appropriately (<a href="../xshareclasses/#cachedirperm"><code>-Xshareclasses:cacheDirPerm</code></a>).</p>
-<p>It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate.</p>
+<p>It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. Access is controlled by operating system permissions and Java security permissions; read/write access is the default only for the current user. On Unix systems, you can use the <a href="../xshareclasses/#groupaccess"><code>-Xshareclasses:groupAccess</code></a> suboption to allow read/write permissions for groups as well as users.</p>
+<p>On z/OS, a cache can be accessed only by a VM that is running in the same storage key as the VM that created the cache. If the keys do not match, permission to access the cache is denied.</p>
 </li>
 <li>
 <p>Set the <a href="../xshareclasses/#nonfatal"><code>-Xshareclasses:nonfatal</code></a> option.</p>
-<p>This option means that your application can start even if there is a problem opening or creating the shared cache, in which case, the VM might be able to start <em>without</em> class data sharing.</p>
+<p>In most cases, setting this option allows your application to start even if there is a problem opening or creating the shared cache. The VM will continue to start <em>without</em> class data sharing.</p>
+</li>
+<li>
+<p>Set a soft maximum size for the cache by specifying the <a href="../xscmx/">-Xscmx</a> option with the <a href="../xxsharedcachehardlimit/"><code>-XXSharedCacheHardLimit</code></a> option.  </p>
+<p>For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the <code>-Xscmx</code> option, to limit the data stored in the cache (<code>-XX:SharedCacheHardLimit=64m -Xscmx16m</code>). You can then adjust the soft maximum size by using the <a href="../xshareclasses/#adjustsoftmx"><code>-Xshareclasses:adjustsoftmx</code></a> cache utility or the  <code>MemoryMXBean.setSharedClassCacheSoftmxBytes()</code> method in the <code>com.ibm.lang.management</code> API. For more information, see <a href="../xscmx/#setting-a-soft-maximum-size">Setting a soft maximum size</a>.</p>
 </li>
 </ul>
-<h2 id="support-for-custom-class-loaders">Support for custom class loaders</h2>
-<p>Classes are shared by the bootstrap class loader internally in the OpenJ9 VM. If you are using a custom class loader, you can use the Java Helper API to find and store classes in the shared classes cache.</p>
-<p>For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper.html">Using the Java Helper API</a>.</p>
-<h2 id="cache-utilities">Cache utilities</h2>
-<p>Several utilities are provided for managing active caches, which are invoked by specifying <code>-Xshareclasses</code> suboptions. These utilities control the following types of operations:</p>
+<h3 id="creating-layer-caches">Creating layer caches</h3>
+<p>Creating a layered cache might be useful when you are building a Docker image.</p>
+<p>Normally, writing to an existing shared cache in a lower image layer results in Docker duplicating the shared cache to the top layer (following the Docker <a href="https://docs.docker.com/storage/storagedriver/#the-copy-on-write-cow-strategy">copy-on-write strategy</a>). With a layered cache, you can instead write into a new cache in the top layer. The new cache builds on the existing cache, so space is saved in the image.</p>
+<dl>
+<dt>The following example shows a Docker container with four layers:</dt>
+<dd>
+<p><img alt="This diagram is explained in the surrounding text" src="../cr/shrc_layers.png" title="Docker container with layered caches" /></p>
+</dd>
+</dl>
+<ol>
+<li>The lowest layer is a Ubuntu Docker image.</li>
+<li>
+<p>The next layer is an OpenJ9 Docker image that is built on the Ubuntu image. As part of this image, the <code>-Xshareclasses:name=MyCache</code> suboption is used to create a cache called <code>MyCache</code>. The layer number assigned to this cache is <code>0</code>. The <code>listAllCaches</code> suboption shows the cache and the layer number:</p>
+<pre><code>java -Xshareclasses:listAllCaches
+...
+Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
+
+Compatible shared caches
+MyCache                 Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019
+</code></pre>
+</li>
+<li>
+<p>The next Docker layer up is a middleware image that is built on the OpenJ9 image. As part of this image, the <code>-Xshareclasses:name=MyCache,layer=1</code> suboption is used to create another cache called <code>MyCache</code>. Because the <code>layer=1</code> suboption is specified, this new cache is a layered cache, which builds on <code>MyCache</code> in the previous container layer. (Open Liberty starts two VMs, so if you instead use the <code>createLayer</code> suboption here, two layered caches are created, with layer numbers of 1 and 2.) Note that cache layers are different from, and independent of, container layers.</p>
+</li>
+<li>
+<p>In the same way, another Docker layer is added for an application, and another layered cache is created to add to <code>MyCache</code>. The <code>listAllCaches</code> suboption now shows all the caches and their layers:</p>
+<pre><code>java -Xshareclasses:listAllCaches
+...
+Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
+
+Compatible shared caches
+MyCache                 Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019   
+MyCache                 Java8 64-bit  persistent      cr              1                                         Mon Sep 23 11:46:25 2019
+MyCache                 Java8 64-bit  persistent      cr              2                                         In use
+</code></pre>
+</li>
+</ol>
+<p>The caches are created in the same directory.</p>
+<p>When you use the <code>-Xshareclasses:name=MyCache</code> suboption in future Java commands, all the caches are started. The top-layer cache is started in read/write mode, and lower-layer caches are started in read-only mode. Modifying a lower-layer cache will invalidate all the caches in the layers above.</p>
+<p>The following options and cache utilities are available for creating, managing, and removing layered caches:</p>
 <ul>
-<li>Adjust the minimum and maximum amount of cache space reserved for AOT or JIT data.</li>
-<li>Adjust the soft maximum size of the cache.</li>
-<li>Create snapshots of a cache.</li>
-<li>Create a cache from a snapshot.</li>
-<li>Remove caches and cache snapshots.</li>
-<li>List all the compatible and incompatible caches and snapshots.</li>
-<li>For problem determination, invalidate and revalidate AOT methods that cause a failure in an application.</li>
-<li>For problem determination, provide information to analyze the contents of a shared classes cache.</li>
+<li><a href="../xshareclasses/#createlayer"><code>-Xshareclasses:createLayer</code></a></li>
+<li><a href="../xshareclasses/#layer"><code>-Xshareclasses:layer</code></a></li>
+<li><a href="../xshareclasses/#printtoplayerstats"><code>-Xshareclasses:printTopLayerStats</code></a> (for example output, see <a href="../shrc_diag_util/#printtoplayerstats">printTopLayerStats</a>)</li>
+<li><a href="../xshareclasses/#destroyalllayers"><code>-Xshareclasses:destroyAllLayers</code></a></li>
 </ul>
-<p>For more information, see <a href="../xshareclasses/">-Xshareclasses</a>.</p>
+<h2 id="saving-a-non-persistent-shared-classes-cache">Saving a non-persistent shared classes cache</h2>
+<p>As described in an earlier section, a shared classes cache can be persistent or non-persistent; persistent caches are memory-mapped files. By default, a cache is persistent on all platforms, except z/OS. Non-persistent caches are stored in shared memory and are removed when a system is rebooted. If you want to save a non-persistent cache beyond a reboot, you might want to consider taking a cache snapshot.</p>
+<p>To create a snapshot of a non-persistent shared classes cache, use the <a href="../xshareclasses/#snapshotcache"><code>-Xshareclasses:snapshotCache</code></a> cache utility. The snapshot has the same name and location as the shared cache, as specified by the <code>name</code> and <code>cacheDir</code> suboptions. The shared cache can be in use when the snapshot is taken, but VMs are blocked when they try to write to the shared cache while the cache data is copied to the file.</p>
+<p>Typically, after a system is reinitialized, the snapshot file is used to restore the copy of the non-persistent cache into shared memory, by using the <a href="../xshareclasses/#restorefromsnapshot"><code>-Xshareclasses:restoreFromSnapshot</code></a> cache utility. Because this process removes all non-persistent caches from shared memory, restoring the cache from the snapshot file can result in better VM startup performance, because the contents of the shared cache, including classes and AOT code, do not have to be re-created.</p>
+<p>The <a href="../xshareclasses/#listallcaches"><code>-Xshareclasses:listAllCaches</code></a> cache utility can be used to identify snapshots on a system.</p>
+<p>A snapshot can be created only if the user has sufficient permissions to create the destination snapshot file. If a snapshot of the same name exists already, it is overwritten. On platforms that support persistent caches, the <code>nonpersistent</code> suboption must be specified in order to create a snapshot. For information about removing snapshot files, see the <code>destroySnapshot</code> and <code>destroyAllSnapshots</code> cache utilities in <a href="#housekeeping">Housekeeping</a>.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Notes:</strong></p>
+<ul>
+<li>Persistent caches are not supported on z/OS.</li>
+<li>The <code>snapshotCache</code> and <code>restoreFromCache</code> cache utilities cannot be used on Windows systems.</li>
+</ul>
+<h2 id="housekeeping">Housekeeping</h2>
+<p>Caches can be deleted if they contain many stale classes or if the cache is full and you want to create a bigger cache. Use one of the following utilities to remove unwanted caches:</p>
+<ul>
+<li><a href="../xshareclasses/#destroy"><code>-Xshareclasses:destroy</code></a>: Removes specific caches when used with the <code>name</code>, <code>cacheDir</code>, and <code>nonpersistent</code> suboptions.</li>
+<li><a href="../xshareclasses/#destroyall"><code>-Xshareclasses:destroyAll</code></a>: Removes all the caches that are specified by the <code>cacheDir</code> and <code>nonpersistent</code> suboptions.</li>
+<li><a href="../xshareclasses/#destroysnapshot"><code>-Xshareclasses:destroySnapshot</code></a>: Removes a cache snapshot from disk that is specified by <code>name</code> and <code>cacheDir</code> suboptions.</li>
+<li><a href="../xshareclasses/#destroyallsnapshots"><code>-Xshareclasses:destroyAllSnapshots</code></a>: Removes all cache snapshots from disk that are found by specifying the <code>cacheDir</code> suboption.</li>
+<li><a href="../xshareclasses/#destroyalllayers"><code>-Xshareclasses:destroyAllLayers</code></a>: Removes all shared cache layers that are specified by the <code>name</code> and <code>cacheDir</code> suboptions.</li>
+</ul>
+<p>Caches can also be removed if they are unused for a specified amount of time. To configure time-based housekeeping, use the <a href="../xshareclasses/#expire">-Xshareclasses:expire</a> option.</p>
+<p>If you want to remove a cache but allow it to be re-created when the VM restarts, use the <a href="../xshareclasses/#reset"><code>-Xshareclasses:reset</code></a> option.</p>
+<h2 id="support-for-custom-class-loaders">Support for custom class loaders</h2>
+<p>Classes are shared by the bootstrap class loader internally in the VM. The OpenJ9 implementation of <code>java.net.URLClassLoader</code> is modified to use <code>SharedClassURLClasspathHelper</code> and any class loaders that extend <code>java.net.URLClassLoader</code> can inherit this behavior. If you are using a custom class loader that does not extend <code>java.net.URLClassLoader</code>, you can use the Java Helper API to find and store classes in a shared classes cache.</p>
+<p>If a running application uses its own class loader and you are using a <code>SecurityManager</code>, you must grant the class loader permission to <code>SharedCachePermission</code> before they can share classes. To grant permission, add shared class permissions to the <code>java.policy</code> file by specifying the <code>ClassLoader</code> class name. Permissions can be set for <code>read</code>, <code>write</code>, or <code>read,write</code>. For example:</p>
+<pre><code>permission com.ibm.oti.shared.SharedClassPermission
+        &quot;com.abc.customclassloaders.*&quot;, &quot;read,write&quot;;
+</code></pre>
+
+<p>If a running application is calling the <code>com.ibm.oti.shared.SharedClassUtilities</code> APIs <code>getSharedCacheInfo()</code> or <code>destroySharedCache()</code>, you must also grant the code calling these APIs the appropriate <code>SharedClassesNamedPermission</code>. For example:</p>
+<pre><code>permission com.ibm.oti.shared.SharedClassesNamedPermission &quot;getSharedCacheInfo&quot;;
+permission com.ibm.oti.shared.SharedClassesNamedPermission &quot;destroySharedCache&quot;;
+</code></pre>
+
+<h3 id="the-java-shared-classes-helper-api">The Java shared classes Helper API</h3>
+<p>The Java Helper API classes can be found in the <a href="../api-overview/#monitoring-and-management"><code>com.ibm.oti.shared</code></a> package.</p>
+<p>Each class loader that wants to share classes must get a <code>SharedClassHelper</code> object from a <code>SharedClassHelperFactory</code>. The <code>SharedClassHelper</code>, when created, has a one to one relationship with the class loader. That is, it belongs to the class loader that requested it and can only store classes defined by that class loader. The <code>SharedClassHelper</code> gives the class loader a simple API for finding and storing classes in the class cache to which the VM is connected. If the class loader is garbage collected, its <code>SharedClassHelper</code> is also garbage collected.</p>
+<p>The following main functions are available from the <code>SharedClassHelper</code> API:</p>
+<ul>
+<li><code>findSharedClass</code>: Used to check whether a class is already in the cache before looking for the class on the filesystem.</li>
+<li><code>storeSharedClass</code>: Used to store a class in the cache.</li>
+<li><code>setSharingFilter</code>: A filter that can be used to decide which classes are found and stored in the cache. This filter can be applied to a particular package by implementing the <code>SharedClassFilter</code> interface. To apply a filter to all non-bootstrap class loaders that share classes, specify the <code>-Dcom.ibm.oti.shared.SharedClassGlobalFilterClass</code> system property on the command line.</li>
+</ul>
+<p>Each class loader that wants to share data must get a <code>SharedDataHelper</code> object from a <code>SharedDataHelperFactory</code>.
+A <code>SharedDataHelperFactory</code> provides an interface that can be used to create <code>SharedDataHelpers</code>, which are used for storing Java byte array data. A <code>SharedDataHelper</code> also has a one to one relationship with a class loader, although a class loader can exist without a <code>SharedDataHelper</code>.</p>
+<h3 id="the-java-shared-classes-utility-api">The Java shared classes utility API</h3>
+<p>The following APIs are available for obtaining information about a shared classes cache:</p>
+<ul>
+<li><code>com.ibm.oti.shared.SharedClassStatistics</code>: Obtains information about cache size, including free space, soft maximum limit, and the limits enforced for AOT and JIT data.</li>
+<li><code>com.ibm.oti.shared.SharedClassUtilities</code>: Obtains detailed information about a shared classes cache, including its size, name, type, and status.</li>
+<li><code>com.ibm.oti.shared.SharedClassCacheInfo</code>: Stores information about a shared classes cache and provides API methods to retrieve the information and remove caches. You can also use the <code>IterateSharedCaches</code> and <code>DestroySharedCache</code> <a href="../interface_jvmti/#iteratesharedcaches">JVMTI extensions</a>.</li>
+</ul>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../aot/">AOT compiler</a></li>
-<li><a href="https://www.ibm.com/developerworks/java/library/j-ibmjava4/index.html">Class Sharing</a></li>
+<li><a href="https://developer.ibm.com/languages/java/tutorials/j-class-sharing-openj9/">Class sharing article</a></li>
 <li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_intro.html">Diagnosing class data sharing problems</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== shrc.md ==== -->
