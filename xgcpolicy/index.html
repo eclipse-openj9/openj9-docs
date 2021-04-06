@@ -2016,11 +2016,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#balanced" class="md-nav__link">
-    balanced
+  <a href="#balanced-64-bit-only" class="md-nav__link">
+    balanced (64-bit only)
   </a>
   
-    <nav class="md-nav" aria-label="balanced">
+    <nav class="md-nav" aria-label="balanced (64-bit only)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4125,11 +4125,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#balanced" class="md-nav__link">
-    balanced
+  <a href="#balanced-64-bit-only" class="md-nav__link">
+    balanced (64-bit only)
   </a>
   
-    <nav class="md-nav" aria-label="balanced">
+    <nav class="md-nav" aria-label="balanced (64-bit only)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4246,7 +4246,7 @@
 <td><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
 </tr>
 <tr>
-<td><a href="#balanced"><code>balanced</code></a></td>
+<td><a href="#balanced-64-bit-only"><code>balanced</code></a> (64-bit only)</td>
 <td></td>
 </tr>
 <tr>
@@ -4275,7 +4275,7 @@
 <dd>The generational concurrent policy (default) requires a heap that is divided into two main areas (<em>nursery</em> and <em>tenure</em>) to manage two generation groups (<em>new</em> and <em>older</em>). The policy uses a global GC cycle of concurrent <em>mark-sweep</em> operations, optionally followed by <em>compact</em> operations. The policy also uses a partial GC cycle to run <em>scavenge</em> operations on the <em>nursery</em> area. The partial cycle helps reduce the frequency and duration of the global GC cycle. Note that <em>scavenge</em> is a <em>stop-the-world</em> operation, unless <code>-Xgcpolicy:gencon</code> is specified with the <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a> option.</dd>
 <dd>To learn more about this policy, when to use it, and how it works, see <a href="../gc/#gencon-policy-default">Garbage collection: <code>gencon</code> policy</a>.</dd>
 </dl>
-<h3 id="balanced"><code>balanced</code></h3>
+<h3 id="balanced-64-bit-only"><code>balanced</code> (64-bit only)</h3>
 <pre><code>    -Xgcpolicy:balanced
 </code></pre>
 <dl>

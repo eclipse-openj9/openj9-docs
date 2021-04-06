@@ -1992,6 +1992,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#classunloadingkickoffthreshold" class="md-nav__link">
+    classUnloadingKickoffThreshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classunloadingthreshold" class="md-nav__link">
+    classUnloadingThreshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#concurrentscavenge" class="md-nav__link">
     concurrentScavenge
   </a>
@@ -4190,6 +4204,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#classunloadingkickoffthreshold" class="md-nav__link">
+    classUnloadingKickoffThreshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classunloadingthreshold" class="md-nav__link">
+    classUnloadingThreshold
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#concurrentscavenge" class="md-nav__link">
     concurrentScavenge
   </a>
@@ -4358,7 +4386,7 @@
 -->
 
 <h1 id="-xgc">-Xgc</h1>
-<p>Options that change the behavior of the Garbage Collector (GC).</p>
+<p>Options that change the behavior of the garbage collector.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -Xgc:&lt;parameter&gt;
 </code></pre>
@@ -4376,8 +4404,16 @@
 <td>Sets the scan mode to breadth first.</td>
 </tr>
 <tr>
+<td><a href="#classunloadingkickoffthreshold"><code>classUnloadingKickoffThreshold</code>   </a></td>
+<td>Sets a threshold to start an early concurrent global garbage collection (GC) cycle due to recent, heavy class loading activity</td>
+</tr>
+<tr>
+<td><a href="#classunloadingthreshold"><code>classUnloadingThreshold</code>          </a></td>
+<td>Sets a threshold to trigger a class unloading operation in a global GC cycle</td>
+</tr>
+<tr>
 <td><a href="#concurrentscavenge"><code>concurrentScavenge</code>               </a></td>
-<td>Enables a garbage collection (GC) mode with less pause times.</td>
+<td>Enables a GC mode with less pause times.</td>
 </tr>
 <tr>
 <td><a href="#dnssexpectedtimeratiomaximum"><code>dnssExpectedTimeRatioMaximum</code>     </a></td>
@@ -4454,6 +4490,22 @@
 </code></pre>
 <dl>
 <dd>This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (<code>gencon</code>) and copy forward operations (<code>balanced</code>)) to breadth first mode. The scan mode reflects the method for traversing the object graph and is also known as <em>Cheney's algorithm</em>.</dd>
+</dl>
+<h3 id="classunloadingkickoffthreshold"><code>classUnloadingKickoffThreshold</code></h3>
+<pre><code>     -Xgc:classUnloadingKickoffThreshold=&lt;value&gt;
+</code></pre>
+<dl>
+<dd>Where <code>&lt;value&gt;</code> is equal to the number of class loaders plus the number of anonymous classes that are loaded since the previous class unloading operation.</dd>
+<dd>This option sets a threshold that is used to start an early concurrent global GC cycle due to recent class loading activity. The default value is 80000.</dd>
+<dd>This option  is applicable to the following GC policies: <code>gencon</code> and <code>optavgpause</code>.</dd>
+</dl>
+<h3 id="classunloadingthreshold"><code>classUnloadingThreshold</code></h3>
+<pre><code>     -Xgc:classUnloadingThreshold=&lt;value&gt;
+</code></pre>
+<dl>
+<dd>Where <code>&lt;value&gt;</code> is equal to the number of class loaders plus the number of anonymous classes that are loaded since the previous class unloading operation.</dd>
+<dd>This option sets a threshold that is used to trigger an optional GC class unloading operation in a global GC cycle, irrespective of how the global GC cycle is triggered. The default value is 6.</dd>
+<dd>This option  is applicable to the following GC policies: <code>gencon</code>, <code>optavgpause</code>, and <code>optthruput</code>.</dd>
 </dl>
 <h3 id="concurrentscavenge"><code>concurrentScavenge</code></h3>
 <p><strong>(64-bit only)</strong></p>
