@@ -36,6 +36,8 @@ The following new features and notable changes since v 0.25.0 are included in th
 
 OpenJ9 release 0.26.0 supports OpenJDK 8, 11, and 16.
 
+For OpenJDK 8 and 11 builds that contain OpenJ9, see [Version 0.25.0](version0.25.md) for additional changes that have now been fully tested for these versions.
+
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
 ### Change in default behavior for the `balanced` garbage collection (GC) policy
