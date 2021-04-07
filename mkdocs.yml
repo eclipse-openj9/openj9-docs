@@ -251,6 +251,7 @@ nav:
             - "-Xgc:splitheap"                                                   : xgcsplitheap.md
             - "-Xgcpolicy"                                                       : xgcpolicy.md
             - "-Xgcthreads"                                                      : xgcthreads.md
+            - "-Xgcmaxthreads"                                                   : xgcmaxthreads.md
             - "-Xgcworkpackets"                                                  : xgcworkpackets.md
             - "-Xint"                                                            : xint.md
             - "-Xiss"                                                            : xss.md                             # redirect
@@ -330,6 +331,7 @@ nav:
         - "JVM -XX options" :
             - "Using -XX options"                                                : xx_jvm_commands.md
             - "-XXActiveProcessorCount"                                          : xxactiveprocessorcount.md
+            - "-XX:[+|-]AdaptiveGCThreading"                                     : xxadaptivegcthreading.md
             - "-XXallowvmshutdown"                                               : xxallowvmshutdown.md
             - "-XX:[+|-]AlwaysPreTouch"                                          : xxalwayspretouch.md
             - "-XX:[+|-]ClassRelationshipVerifier"                               : xxclassrelationshipverifier.md
@@ -368,6 +370,7 @@ nav:
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
             - "-XX:ParallelCMSThreads"                                           : xxparallelcmsthreads.md
             - "-XX:ParallelGCThreads"                                            : xxparallelgcthreads.md
+            - "-XX:ParallelGCMaxThreads"                                            : xxparallelgcmaxthreads.md
             - "-XX:[+|-]PortableSharedCache"                                     : xxportablesharedcache.md
             - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md
             - "-XX:[+|-]PrintCodeCache"                                          : xxprintcodecache.md
