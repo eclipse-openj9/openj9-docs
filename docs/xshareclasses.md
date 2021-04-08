@@ -73,7 +73,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
         -Xshareclasses:adjustsoftmx=<size>
 
-: Adjusts the soft maximum size of the cache. When you use the `-Xshareclasses:verbose` option, the VM writes to the console the number of bytes that are not stored due to the current setting of the soft maximum size. For more information about the soft maximum size, see [-Xscmx](xscmx.md "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option).").
+: Adjusts the soft maximum size of the cache. When you use the `-Xshareclasses:verbose` option, the VM writes to the console the number of bytes that are not stored due to the current setting of the soft maximum size. For more information about the soft maximum size, see [-Xscmx](xscmx.md "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the `-XX:SharedCacheHardLimit` option).").
 
 ### `allowClasspaths`
 
@@ -94,7 +94,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 : Sets the directory in which cache data is read and written. The following defaults apply:
 
     - On Windows&trade; systems, `<directory>` is the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
-    - On other operating systems, `<directory>` is the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`.
+    - On other operating systems, `<directory>` is `javasharedresources` in the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`.
 
 : On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
 
@@ -109,7 +109,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : Otherwise, persistent caches are created with the same permissions as non-persistent caches. The permissions for non-persistent caches are `-rw-r-----`, or `-rw-rw----` if you also specify `-Xshareclasses:groupAccess`.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to set an application-specific cache directory  to avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** It is good practice to set an application-specific cache directory  to avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
 ### `cacheDirPerm`
 
@@ -136,7 +136,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : †On z/OS&reg; systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
 ### `cacheRetransformed`
 
@@ -152,7 +152,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : Causes timestamps of `jar` or `zip` files to be checked every time a class is loaded. If a timestamp has changed, the class is loaded from the `jar` or `zip` file and not from the shared cache. This suboption is not enabled by default and reflects the legacy behavior of the shared classes cache.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The timestamp of a bootstrap `jar` or `zip` file is checked once when it is used for the first time to load a class.
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The timestamp of a bootstrap `jar` or `zip` file is checked once when it is used for the first time to load a class.
 
 ### `createLayer`
 
@@ -178,7 +178,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : On Windows and z/OS systems, a cache can be destroyed only if all VMs that are using it have shut down and the user has sufficient permissions.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, when the `destroyAll` option is invoked from a 31-bit VM, 64-bit caches are not destroyed. Similarly, when the `destroyAll` option is invoked from a 64-bit VM, 31-bit caches are not destroyed. The following message is displayed:
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On z/OS, when the `destroyAll` option is invoked from a 31-bit VM, 64-bit caches are not destroyed. Similarly, when the `destroyAll` option is invoked from a 64-bit VM, 31-bit caches are not destroyed. The following message is displayed:
 
         JVMSHRC735I: Use a nn-bit VM to perform the requested operation on the
         nn-bit shared cache "cachename" as the nn-bit VM
@@ -198,7 +198,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : Destroys all shared cache layers that are specified by the `name` suboption. For example, `-Xshareclasses:name=Cache1,destroyAllLayers` destroys all layers of the cache called `Cache1`. If you use the `destroy` suboption on a layered cache, for example `-Xshareclasses:name=Cache1,destroy`, only the top layer of the cache is destroyed.
 
-: For more information about layered caches, see the [`layer`](xshareclasses.md#layer) suboption.
+: For more information about layered caches, see [Creating layer caches](shrc.md#creating-layer-caches).
 
 ### `destroyAllSnapshots` (Cache utility)
 
@@ -315,38 +315,8 @@ case, the VM continues without using shared classes.
 
 : This suboption has the same effect as the [`createLayer`](xshareclasses.md#createlayer) suboption, but with the added ability to specify the layer number.
 
-: One scenario where you might want to use a layered cache is if you are building a Docker image. Normally, writing to an existing shared cache in a lower image layer results in Docker duplicating the shared cache to the top layer (following the Docker [copy-on-write strategy](https://docs.docker.com/storage/storagedriver/#the-copy-on-write-cow-strategy)). With a layered cache, you can instead write into a new cache in the top layer. The new cache builds on the existing cache, so space is saved in the image.
+: For more information about creating a shared classes cache with layers, see [Creating layer caches](shrc.md#creating-layer-caches).
 
-: The following example shows a Docker container with four layers:
-
-: ![This diagram is explained in the surrounding text](./cr/shrc_layers.jpg "Docker container with layered caches")
-
-1. The lowest layer is a Ubuntu Docker image.
-2. The next layer is an OpenJ9 Docker image that is built on the Ubuntu image. As part of this image, the `-Xshareclasses:name=Cache1` suboption is used to create a cache called `Cache1`. The layer number assigned to this cache is 0. The `listAllCaches` suboption shows the cache and the layer number:
-
-        java -Xshareclasses:listAllCaches
-        ...
-        Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
-
-        Compatible shared caches
-        Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019                       
-
-3. The next Docker layer up is an Open Liberty image that is built on the OpenJ9 image. As part of this image, the `-Xshareclasses:name=Cache1,layer=1` suboption is used to create another cache called Cache1. Because the `layer=1` suboption is specified, this new cache is a layered cache, which builds on `Cache1` in the previous container layer. (Open Liberty starts two VMs, so if you instead use the `createLayer` suboption here, two layered caches are created, with layer numbers of 1 and 2.) Note that cache layers are different from, and independent of, container layers.  
-
-4. In the same way, another Docker layer is added for an Open Liberty Java application, and another layered cache is created to add to `Cache1`. The `listAllCaches` suboption now shows all the caches and their layers:
-
-        java -Xshareclasses:listAllCaches
-        ...
-        Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
-
-        Compatible shared caches
-        Cache1                  Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019   
-        Cache1                  Java8 64-bit  persistent      cr              1                                         Mon Sep 23 11:46:25 2019
-        Cache1                  Java8 64-bit  persistent      cr              2                                         In use                     
-
-: The caches are created in the same directory.
-
-: When you use the `-Xshareclasses:name=Cache1` suboption in future Java commands, all the caches are started. The top-layer cache is started in read/write mode, and lower-layer caches are started in read-only mode. Modifying a lower-layer cache would invalidate all the caches in the layers above.
 
 ### `listAllCaches` (Cache utility)
 
@@ -376,7 +346,7 @@ case, the VM continues without using shared classes.
     - `nopartialpages`: Use this value to turn off the protection of partially filled pages. This value is available only on Linux, macOS, and Windows systems.
     - `none`: Specifying this value disables the page protection.
 
-  : <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Specifying `all` has a negative impact on performance. You should specify `all` only for problem diagnosis and not for production. Specifying values `partialpagesonstartup` or `onfind` can also have a negative impact on performance when the cache is being populated. There is no further impact when the cache is full or no longer being modified.
+  : :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Specifying `all` has a negative impact on performance. You should specify `all` only for problem diagnosis and not for production. Specifying values `partialpagesonstartup` or `onfind` can also have a negative impact on performance when the cache is being populated. There is no further impact when the cache is full or no longer being modified.
 
 ### `modified`
 
@@ -394,7 +364,7 @@ case, the VM continues without using shared classes.
 
 :   Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, `destroy`. Use the `listAllCaches` utility to show which named caches are currently available. If you do not specify a name, the default name *"sharedcc\_%u"* is used. "%u" in the cache name inserts the current user name. On operating systems other than Windows, you can specify *"%g"* in the cache name to insert the current group name.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** It is good practice to explicitly specify a cache for your application. This avoids the application sharing a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application. Note that you cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** It is good practice to explicitly specify a cache for your application. This avoids the application sharing a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application. Note that you cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
 ### `noaot`
 
@@ -421,7 +391,7 @@ case, the VM continues without using shared classes.
 :   Timestamps of `jar` or `zip` files are checked only when they are added to a class loader and used for the first time to look up a class. This is the default
 behavior, which can improve the performance of class loading from the shared classes cache, especially on Windows systems. To revert to the behavior of the shared classes cache in earlier releases, use the [`CheckURLTimeStamps`](xshareclasses.md#checkurltimestamps) suboption.
 
-: <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** When the `nocheckURLTimestamps` suboption is used (default), if `jar` or `zip` files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. If this scenario occurs, use the `checkURLTimestamps` option.
+: :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** When the `nocheckURLTimestamps` suboption is used (default), if `jar` or `zip` files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. If this scenario occurs, use the `checkURLTimestamps` option.
 
 ### `nojitdata`
 
@@ -439,10 +409,9 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:nonfatal
 
-:   Allows the VM to start even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select `nonfatal` and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing. See also [`fatal`](#fatal).
+:   Allows the VM to start, in most cases, even if class data sharing fails. Normal behavior for the VM is to refuse to start if class data sharing fails. If you select `nonfatal` and the shared classes cache fails to initialize, the VM attempts to connect to the cache in read-only mode. If this attempt fails, the VM starts without class data sharing. See also [`fatal`](#fatal).
 
-:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Unless it is important that your application runs with class data sharing, it is good practice to set this parameter. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
-
+:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Unless it is important that your application runs with class data sharing, it is good practice to set this parameter. See [Creating a shared classes cache](shrc.md#creating-a-shared-classes-cache). However, cache corruption as a result of a bug in the operating system, VM, or user code might not be detected when opening the cache. In this situation, the cache is used and the application might crash.
 
 ### `nonpersistent`
 
@@ -450,7 +419,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
 :   Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a nonpersistent cache. z/OS supports only nonpersistent caches.
 
-:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a nonpersistent cache.
+:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a nonpersistent cache.
 
 ### `noPersistentDiskSpaceCheck`
 
@@ -466,7 +435,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
 :   Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Nonpersistent and persistent caches can have the same name. On AIX, you must always use the `persistent` suboption when you run utilities such as `destroy` on a persistent cache.
 
-:   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Persisent caches are not supported on z/OS systems. z/OS supports only nonpersistent caches.
+:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Persisent caches are not supported on z/OS systems. z/OS supports only nonpersistent caches.
 
 ### `printAllStats` (Cache utility)
 
@@ -488,7 +457,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:printTopLayerStats=<data_type>[+<data_type>]
 
-:   Equivalent to [`printStats`](#printstats-cache-utility) but for the top layer cache only.
+:   Equivalent to [`printStats`](#printstats-cache-utility) but for the top layer cache only. For more information about layered caches, see [Creating a layer cache](shrc.md#creating-layer-caches).
 
 ### `readonly`
 
@@ -645,8 +614,9 @@ Here are some examples:
 
 ## See also
 
+- [Introduction to class data sharing](shrc.md)
 - [-Xscmx](xscmx.md)
 - [-XX:SharedCacheHardLimit](xxsharedcachehardlimit.md)
-- [Class data sharing](shrc.md)
+
 
 <!-- ==== END OF TOPIC ==== docs/xshareclasses.md ==== -->

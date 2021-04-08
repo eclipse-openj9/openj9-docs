@@ -46,14 +46,14 @@ The following table shows the heap configuration and the GC cycles and operation
 |`metronome`     | Multiple regions by size class <br> One generation | Global GC cycle: incremental STW *mark-sweep* operation in small interruptible steps |
 |` nogc`         | One area: flat | No GC cycles |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** All OpenJ9 GC policies support compressed references on 64-bit platforms, which compresses heap pointers to 32 bits if the total heap size does not exceed the theoretical upper bound of 64 GB. Applications that require more heap space can select any heap size within the bounds imposed by the operating system and available system RAM, without using compressed references. For more information, see [compressed references](allocation.md#compressed-references).
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** All OpenJ9 GC policies support compressed references on 64-bit platforms, which compresses heap pointers to 32 bits if the total heap size does not exceed the theoretical upper bound of 64 GB. Applications that require more heap space can select any heap size within the bounds imposed by the operating system and available system RAM, without using compressed references. For more information, see [compressed references](allocation.md#compressed-references).
 
 
 ## Policy selection and tuning
 
-The default policy is the Generational Concurrent (`gencon`) GC policy, which suits a broad spectrum of applications. Choosing a different GC policy should be guided by the application dynamics and an observation of how the application interacts with the heap during startup and at steady state. To help with this analysis, all OpenJ9 GC policies are instrumented to collect a wide range of GC-related metric data for reporting in a GC log file.
+The default policy is the Generational Concurrent (`gencon`) GC policy, which suits a broad spectrum of applications. Choosing a different GC policy should be guided by the application dynamics and an observation of how the application interacts with the heap during startup and at steady state. To help with this analysis, all OpenJ9 GC policies are instrumented to collect a wide range of GC-related metric data for reporting in a [GC log file](vgclog.md).
 
-To enable GC logging for the OpenJ9 Java runtime, include the `-verbose:gc` option on the command line. By default, this option prints output to `stderr` but you can send the output to a log file by using [`-Xverbosegclog`](xverbsoegclog). You can then visualize the output by loading the GC log into the [Garbage Collector and Memory Visualizer (GCMV)](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv) plugin for the Eclipse IDE. OpenJ9 Java GC logs can also be analyzed by some online services, such as [GCEasy](https://gceasy.io/).
+To enable GC logging for the OpenJ9 Java runtime, include the `-verbose:gc` option on the command line. By default, this option prints output to `stderr` but you can send the output to a log file by using [`-Xverbosegclog`](xverbosegclog.md). You can then visualize the output by loading the GC log into the [Garbage Collector and Memory Visualizer (GCMV)](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv) plugin for the Eclipse IDE. OpenJ9 Java GC logs can also be analyzed by some online services, such as [GCEasy](https://gceasy.io/).
 
 The following sections provide more information about each policy and when you might choose it for your application. To select a GC policy other than `gencon`, specify the [`-Xgcpolicy`](xgcpolicy.md) option on the command line. To adjust the initial and maximum size of the Java heap, use the [`-Xms` and `-Xmx`](xms.md) command line options. For generational GC policies, you can also set the [`-Xmn`, `-Xmns`, and `-Xmnx`](xmn.md) options.
 
@@ -100,11 +100,13 @@ More information about Concurrent Scavenge mode can be found in the blog post [C
 
 ## `balanced` policy
 
+**(64-bit only)**
+
 The Balanced GC policy ([`-Xgcpolicy:balanced`](xgcpolicy.md#balanced)) evens out pause times and reduces the overhead of some of the costlier operations that are typically associated with garbage collection, such as compaction and class unloading. The Java heap is divided into a large number of regions (1,000 - 2,000), which are managed individually by an incremental generational collector to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates.
 
 ###  When to use
 
-The Balanced policy suits applications that require large heaps (>64 Mb) on 64-bit platforms. This policy might be a good alternative for applications that experience unacceptable pause times with `gencon`.
+The Balanced policy suits applications that require large heaps (>64 MB) on 64-bit platforms. This policy might be a good alternative for applications that experience unacceptable pause times with `gencon`.
 
 
 - If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance.
@@ -134,7 +136,7 @@ With the `balanced` policy, a global GC cycle is sometimes required in addition 
 
 Most objects are easily contained within the minimum region size of 512 KB. However, to support large arrays, which cannot be contained in a region, the `balanced` GC policy uses an *arraylet* representation in the heap. For more information about structure and layout, see [Arraylets](allocation.md#arraylets).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** With arraylets, JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** With arraylets, JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing.
 
 To learn about the default heap size and the tuning options that can be used with the `balanced` policy, see [`-Xgcpolicy:balanced`](xgcpolicy.md#balanced-defaults-and-options).
 
@@ -188,7 +190,7 @@ The Java heap is allocated as a contiguous range of memory, partitioned into sma
 
 Each region of the heap is either empty, or contains only objects in one of 16 size classes. The heap also supports [Arraylets](allocation.md#arraylets) for dealing with large arrays. This organization improves the use of available heap space, reducing the need for heap compaction and defragmentation, and providing more precise control over the incremental sweep operation.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** With arraylets, JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** With arraylets, JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing.
 
 Although high application utilization is desirable for optimal throughput, the GC must be able to keep up with the application's memory allocation rate.
 
@@ -217,7 +219,7 @@ This policy is not suited to the majority of Java applications. However, the fol
 
     - Similarly, when memory application is well understood or where there is rarely memory to be reclaimed, you might prefer to avoid unnecessary GC cycles and rely on a failover mechanism to occasionally restart the VM.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** You should be especially careful when using any of the following techniques with `nogc` because memory is never released under this policy:  
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You should be especially careful when using any of the following techniques with `nogc` because memory is never released under this policy:  
 
 - Finalization  
 - Direct memory access  
@@ -225,7 +227,7 @@ This policy is not suited to the majority of Java applications. However, the fol
 
 ## Troubleshooting
 
-You can diagnose problems with garbage collection operations by turning on verbose GC logging. By default, the information is printed to STDERR but can be redirected to a file by specifying the `-Xverbosegclog` option. The log files contain detailed information about all operations, including initialization, STW processing, finalization, reference processing, and allocation failures. For more information, see [Verbose garbage collection](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_pd_verbosegc.html)
+You can diagnose problems with garbage collection operations by turning on verbose GC logging. By default, the information is printed to STDERR but can be redirected to a file by specifying the `-Xverbosegclog` option. The log files contain detailed information about all operations, including initialization, STW processing, finalization, reference processing, and allocation failures. For more information, see [Verbose GC logs](vgclog.md).
 
 If verbose logs do not provide enough information to help you diagnose GC problems, you can use GC trace to analyze operations at a more granular level. For more information, see [-Xtgc](xtgc.md).
 

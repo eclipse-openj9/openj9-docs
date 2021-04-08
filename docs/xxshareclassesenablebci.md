@@ -33,7 +33,7 @@ The option `-Xshareclasses:enableBCI` improves startup performance without using
 | Setting                      | Effect  | Default                                                                            |
 |------------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:ShareClassesDisableBCI` | Disable |                                                                                    |
-| `-XX:ShareClassesEnableBCI`  | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:ShareClassesEnableBCI`  | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 These options are equivalent to `-Xshareclasses:disableBCI` and `-Xshareclasses:enableBCI`. For more information, see [`-Xshareclasses`](xshareclasses.md#disablebci).
 

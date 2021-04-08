@@ -35,7 +35,7 @@ This option affects the handling of the operating system signal `SIGXFSZ`. This 
 
 | Setting               | Effect  | Default                                                                            |
 |-----------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+HandleSIGXFSZ ` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:+HandleSIGXFSZ ` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:-HandleSIGXFSZ ` | Disable |                                                                                    |
 
 

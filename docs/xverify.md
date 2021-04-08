@@ -30,11 +30,11 @@ As described in the [Oracle documentation](https://docs.oracle.com/javase/8/docs
 
 | Setting           | Effect | Default |
 |-------------------|--------|:-------:|
-| `-Xverify`        | Enables verification for all non-bootstrap classes. [`-Xfuture`](xfuture.md) verification is not enabled. | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Xverify`        | Enables verification for all non-bootstrap classes. [`-Xfuture`](xfuture.md) verification is not enabled. | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-Xverify:all`    | Enables verification for all classes and enables [`-Xfuture`](xfuture.md) verification. &nbsp; You cannot use this setting in conjunction with [-XX:+ClassRelationshipVerifier](xxclassrelationshipverifier.md). &nbsp; **Note:** This setting might have an impact on performance. | |
 | `-Xverify:remote` | For compatibility, this parameter is accepted, but is equivalent to the default `-Xverify`. | |
 | `-Xverify:none`   | Disables the verifier. &nbsp; **Note:** This is not a supported configuration and, as noted, was deprecated from Java 13. If you encounter problems with the verifier turned off, remove this option and try to reproduce the problem. | |
 
-![Start of content that applies to Java 13 and later](cr/java13plus.png) <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The option `-Xverify:none` (and its equivalent `-noverify`) was deprecated in Java 13. Both options might be removed in a future release. OpenJ9 issues a warning if these options are used in Java 13 and later versions. ![End of content that applies only to Java 13](cr/java_close.png)
+![Start of content that applies to Java 13 and later](cr/java13plus.png) :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The option `-Xverify:none` (and its equivalent `-noverify`) was deprecated in Java 13. Both options might be removed in a future release. OpenJ9 issues a warning if these options are used in Java 13 and later versions. ![End of content that applies only to Java 13](cr/java_close.png)
 
 <!-- ==== END OF TOPIC ==== xverify.md ==== -->

@@ -51,7 +51,7 @@ There are a number of ways to disable the JIT:
 - Specify `-Xint` on the command line, which turns off the JIT and AOT compiler. To eliminate problems with one or the other you can turn these compilers off selectively with the `-Xnojit` and `-Xnoaot` options.
 - Call the `java.lang.Compiler` API programmatically.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** `java.lang.Compiler` is deprecated for removal in Java SE 9.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `java.lang.Compiler` is deprecated for removal in Java SE 9.
 
 If turning off the JIT solves your problem, you can investigate JIT operations in more detail by using a number of options to control behavior.
 
@@ -165,7 +165,7 @@ The following example can be used to create verbose output that includes lines t
 ```
 java '-Xjit:verbose={compileStart|compileEnd|inlining},count=5,vlog=vlogfile' -XcompilationThreads1 -version
 ```
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The suboptions `count` and `-XcompilationThreads1` are included only to simplify the output for this example and are not recommended for production.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The suboptions `count` and `-XcompilationThreads1` are included only to simplify the output for this example and are not recommended for production.
 
 The following section is taken from the output and describes the compilation and inlining of one method `java/lang/String.equals`:
 

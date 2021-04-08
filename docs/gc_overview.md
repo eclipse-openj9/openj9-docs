@@ -37,6 +37,8 @@ A global GC cycle can be triggered explicitly or implicitly according to the fol
 
 Partial GC cycles are triggered only implicitly under the control of a particular GC policy. For more information about the GC policies available with OpenJ9, see [Garbage collection policies](gc.md).
 
+The GC process is designed to operate without intervention from an application. Developers should not attempt to predict GC behavior, for example, by making calls to `System.gc()` to trigger a cycle or by using finalizers to clean up objects in memory. Such actions might degrade the performance of an application.
+
 ## GC operations
 
 GC operations run discrete functions on the Java heap. For example, a mark operation traces all objects in the heap to determine which ones are reachable. A sweep operation runs to clear away unreachable objects. Together, a mark and sweep operation are capable of reclaiming used memory as part of a GC cycle. Not all GC cycles include operations to reclaim memory. For example, the `balanced` GC policy involves a global cycle that includes only a mark operation; reclaiming the memory with a sweep operation occurs as part of a separate partial GC cycle that *evacuates* younger regions and defragments older regions.
@@ -128,7 +130,7 @@ A GC *scavenge* operation is triggered by an allocation failure in the *nursery*
 
 2. Main
 
-    The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap. If new objects are found, they are added to the work stack. If an object is reachable, it is copied from the *allocate* space to the *survivor* space in the nursery area or to the *tenure* area if the object has reached a particular age.
+    The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap by using the *hierarchical scan ordering* mode ([`-Xgc:hierarchicalScanOrdering`](xgc.md#hierarchicalscanordering)). If new objects are found, they are added to the work stack. If an object is reachable, it is copied from the *allocate* space to the *survivor* space in the nursery area or to the *tenure* area if the object has reached a particular age.
 
 3. Final
 
@@ -148,7 +150,7 @@ A GC *copy forward* operation is similar to a scavenge operation but is triggere
 
 2. Main
 
-    The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap. If new objects are found, they are added to the work stack. If an object is reachable, it is moved to another region of the same age or to an empty region of the same age in the heap. The age of all regions in the heap is then incremented by 1, except for the oldest region (age 24).
+    The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap by using *dynamic breadth first scan ordering* mode ([`-Xgc:dynamicBreadthFirstScanOrdering`](xgc.md#dynamicbreadthfirstscanordering)). If new objects are found, they are added to the work stack. If an object is reachable, it is moved to another region of the same age or to an empty region of the same age in the heap. The age of all regions in the heap is then incremented by 1, except for the oldest region (age 24).
 
 3. Final
 

@@ -28,30 +28,32 @@ This short guide will help you if you want to make a contribution to the Eclipse
 
 **Note:** There is a short video presentation explaining the process for contributing to the OpenJ9 documentation. (Save and open the [`.zip` file](process/Contributing.to.OpenJ9.docs.zip) in the `/process` directory to view the `.mp4` video.) You can also view the [PowerPoint presentation](process/openj9-doc-contibutions.pptx) used in that video. (Either save the file to view locally, or click "View raw".)
 
-:white_circle: If you don't want to contribute directly by modifying the documentation yourself, but you have a suggestion or want to report an error, please raise an issue in this repository.
-The following templates are available to help you provide the correct information for someone else to handle any changes:
+- If you don't want to contribute directly by modifying the documentation yourself, but you have a suggestion or want to report an error, please raise an issue in this repository.
 
-- [General documentation enhancements / ideas for improvements](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-enhancement.md)
-- [Documentation errors or inaccuracies](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-error.md)
-- [New content as a result of code changes at the Eclipse OpenJ9 repo](https://github.com/eclipse/openj9-docs/issues/new?template=new-documentation-change.md)
+    The following templates are available to help you provide the correct information for someone else to handle any changes:
 
-:white_circle: If you want to contribute to the documentation, we recommend that you install a local test environment for editing and previewing your changes.
+    - [General documentation enhancements / ideas for improvements](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-enhancement.md)
+    - [Documentation errors or inaccuracies](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-error.md)
+    - [New content as a result of code changes at the Eclipse OpenJ9 repo](https://github.com/eclipse/openj9-docs/issues/new?template=new-documentation-change.md)
+
+- If you want to contribute to the documentation, we recommend that you install a local test environment for editing and previewing your changes.
 The user documentation is authored in Markdown and built into HTML using [Mkdocs](http://www.mkdocs.org/), with a [mkdocs-material](https://github.com/squidfunk/mkdocs-material) theme.
-To get started, follow the guidance in the following sections:
 
-- [Setting up a local MkDocs environment](#setting-up-a-local-mkdocs-environment)
-- [Editing the documentation](#editing-the-documentation)
-- [- Documentation structure](#documentation-structure)
-- [- Style guidelines](#style-guidelines)
-- [- Writing tips](#writing-tips)
-- [- Which platform?](#which-platform)
-- [- Which OpenJDK version?](#which-openjdk-version)
-- [- Trademarks](#trademarks)
-- [- Using images](#using-images)
-- [- Accessibility](#accessibility)
-- [Testing your changes locally](#testing-your-changes-locally)
-- [Submitting a contribution](#submitting-a-contribution)
-- [Accepting contributions](#accepting-contributions)
+    To get started, follow the guidance in the following sections:
+
+    - [Setting up a local MkDocs environment](#setting-up-a-local-mkdocs-environment)
+    - [Editing the documentation](#editing-the-documentation)
+    - [- Documentation structure](#documentation-structure)
+    - [- Style guidelines](#style-guidelines)
+    - [- Writing tips](#writing-tips)
+    - [- Which platform?](#which-platform)
+    - [- Which OpenJDK version?](#which-openjdk-version)
+    - [- Trademarks](#trademarks)
+    - [- Using images](#using-images)
+    - [- Accessibility](#accessibility)
+    - [Testing your changes locally](#testing-your-changes-locally)
+    - [Submitting a contribution](#submitting-a-contribution)
+    - [Accepting contributions](#accepting-contributions)
 
 ## Setting up a local MkDocs environment
 
@@ -165,17 +167,18 @@ See [Trademarks](#trademarks) for information about marking trade names appropri
 
 The user documentation supports the configuration, tuning, and diagnosis of the OpenJ9 VM in various versions of the OpenJDK runtime. However, due to differences between the Java<sup>&trade;</sup> SE class libraries, specific options might apply only to one environment. The following icons are available to indicate where differences apply:
 
-- ![Java 8 icon](docs/cr/java8.png) - For content that applies only to an OpenJDK version 8.
-- ![Java 11 icon](docs/cr/java11.png) - For content that applies only to an OpenJDK version 11.
-- ![Java 11 and later icon](docs/cr/java11plus.png) -  For content that applies to an OpenJDK version 11 or later version.
-- ![Java 13 icon](docs/cr/java13.png) - For content that applies only to an OpenJDK version 13.
-- ![Java 13 and later icon](docs/cr/java13plus.png) -  For content that applies to an OpenJDK version 13 or later version.
-- ![Java 14 icon](docs/cr/java14.png) - For content that applies only to an OpenJDK version 14.
-- ![Java 14 and later icon](docs/cr/java14plus.png) -  For content that applies to an OpenJDK version 14 or later version.
-- ![Java 15 icon](docs/cr/java15.png) - For content that applies only to an OpenJDK version 15.
-- ![Java 15 and later icon](docs/cr/java15plus.png) -  For content that applies to an OpenJDK version 15 or later version.
-- ![Java 16 icon](docs/cr/java16.png) - For content that applies only to an OpenJDK version 16.
-- ![Java 16 and later icon](docs/cr/java16plus.png) -  For content that applies to an OpenJDK version 16 or later version.
+- ![Java 8 (LTS)](docs/cr/java8.png) - For content that applies only to an OpenJDK version 8.
+- ![Java 8 (LTS) and later](docs/cr/java8plus.png) -  For content that applies to an OpenJDK version 8 or later version.
+- ![Java 11 (LTS)](docs/cr/java11.png) - For content that applies only to an OpenJDK version 11.
+- ![Java 11 (LTS) and later](docs/cr/java11plus.png) -  For content that applies to an OpenJDK version 11 or later version.
+- ![Java 15](docs/cr/java15.png) - For content that applies only to an OpenJDK version 15.
+- ![Java 15 and later](docs/cr/java15plus.png) -  For content that applies to an OpenJDK version 15 or later version.
+- ![Java 16](docs/cr/java16.png) - For content that applies only to an OpenJDK version 16.
+- ![Java 16 and later](docs/cr/java16plus.png) -  For content that applies to an OpenJDK version 16 or later version.
+- ![Java 17 (LTS)](docs/cr/java17.png) - For content that applies only to an OpenJDK version 17.
+- ![Java 17 (LTS) and later](docs/cr/java17plus.png) -  For content that applies to an OpenJDK version 17 or later version.
+- ![Java 18](docs/cr/java18.png) - For content that applies only to an OpenJDK version 18.
+- ![Java 18 and later](docs/cr/java18plus.png) -  For content that applies to an OpenJDK version 18 or later version.
 
 Different colors are used for the icons to differentiate long term service (LTS) releases from feature releases. For accessibility reasons it is important to use alternative text with these icons that differentiates an LTS release.
 
@@ -183,7 +186,7 @@ Follow these guidelines:
 
 - If a topic is exclusive to a particular version, use the icon near the top of the topic.
 - If the content applies to a cell or row in a table, use the icon within the table.
-- If the content applies to a sentence within a topic, encapsulate the content by using an end tag ![end tag for LTS releases](docs/cr/java_close_lts.png) for LTS releases or end tag ![end tag for feature releases](docs/cr/java_close.png) for feature releases.
+- If the content applies to a sentence within a topic, encapsulate the content by using an end tag ![end tag for LTS releases](docs/cr/java_close_lts.png) for LTS releases or ![end tag for feature releases](docs/cr/java_close.png) for feature releases.
 
 Here are some examples:
 
@@ -192,7 +195,7 @@ Here are some examples:
 ```
 
 ```
-![Start of content that applies only to Java 13 and later](cr/java13plus.png) This sentence applies only to Java 13 or later runtime environments that include the OpenJ9 VM. ![End of content that applies only to Java 13 and later](cr/java_close.png)
+![Start of content that applies only to Java 16 and later](cr/java16plus.png) This sentence applies only to Java 16 or later runtime environments that include the OpenJ9 VM. ![End of content that applies only to Java 16 and later](cr/java_close.png)
 ```
 
 ### Trademarks
@@ -213,24 +216,24 @@ If you believe that a diagram can be used to enhance the content, add the .gif o
 ![Add alternative text here to describe the image for users who are using a screen reader](cr/<my_image>.png)
 ```
 
-[Font-awesome](http://fontawesome.io/icons/) icons can also be used to highlight user "notes" (:pencil:) and "restrictions" (:warning:). The following examples show how to embed these icons, which include some important attributes for accessibility:
+[Font-awesome](http://fontawesome.io/icons/) icons can also be used to highlight user "notes" and "restrictions". The following examples show how to embed these icons:
 
 ```
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Here is something you should be aware of.
-```
-
-```
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** Here is something you should be aware of.
-```
-
-Font-awesome icons are also used in option tables to indicate defaults. The following examples show how to embed these "ticks" (:heavy_check_mark:) and "crosses" (:heavy_multiplication_x:).
-
-```
-<i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Here is something you should be aware of...
 ```
 
 ```
-<i class="fa fa-times" aria-hidden="true"></i><span class="sr-only">no</span>
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** Here is some limitations...
+```
+
+Font-awesome icons are also used in option tables to indicate defaults. The following examples show how to embed these "ticks" and "crosses".
+
+```
+:fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>
+```
+
+```
+:fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span>
 ```
 
 Note that these require an extra `<span>`, which is used by screen readers.

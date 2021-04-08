@@ -31,7 +31,7 @@ Enables and disables garbage collection (GC) when calls are made to `System.gc()
 
 | Setting               | Effect     | Default                                                                            |
 |-----------------------|------------|:----------------------------------------------------------------------------------:|
-| `-Xenableexplicitgc`  | Enable explicit GC calls  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Xenableexplicitgc`  | Enable explicit GC calls  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-Xdisableexplicitgc` | Disable explicit GC calls |                                                                                    |
 
 ## Explanation

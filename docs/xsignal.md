@@ -34,7 +34,7 @@ This option controls the behavior of OpenJ9 VM signal handlers.
 
 ## Parameters
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** You cannot use these parameters together.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** You cannot use these parameters together.
 
 ### `posixSignalHandler`
 

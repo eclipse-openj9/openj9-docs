@@ -96,7 +96,7 @@ At startup, the list of VM arguments is constructed in the following order, with
 
             export OPENJ9_JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The environment variable `JAVA_TOOL_OPTIONS` is equivalent to `OPENJ9_JAVA_OPTIONS` and is available for compatibility with JVMTI. The equivalent `IBM_JAVA_OPTIONS` environment variable is deprecated and will be removed in a future release.
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The environment variable `JAVA_TOOL_OPTIONS` is equivalent to `OPENJ9_JAVA_OPTIONS` and is available for compatibility with JVMTI. The equivalent `IBM_JAVA_OPTIONS` environment variable is deprecated and will be removed in a future release.
 
 5.  Options that are specified on the command line. For example:
 

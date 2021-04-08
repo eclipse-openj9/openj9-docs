@@ -34,7 +34,7 @@ This option enables or disables hardware prefetch. Hardware prefetch can improve
 
 | Setting    | Effect  | Default                                                                            |
 |------------|---------|:----------------------------------------------------------------------------------:|
-| none       | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| none       | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | os-default | Enable  |                                                                                    |
 
 The `-XXsetHWPrefetch:none` option disables hardware prefetch. Although you can disable hardware prefetch on AIX by issuing the command `dscrctl -n -s 1`, this command disables hardware prefetch for all processes, and for all future processes, which might not be desirable in a mixed workload environment. The `-XXsetHWPrefetch:none` option allows hardware prefetch to be disabled for individual VMs.

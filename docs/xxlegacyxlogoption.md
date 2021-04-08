@@ -31,7 +31,7 @@ Controls processing of the `-Xlog` option.
 | Setting                 | Effect                                     | Default                                                                       |
 |-------------------------|--------------------------------------------|:-----------------------------------------------------------------------------:|
 | `-XX:+LegacyXlogOption` | Enable legacy `-Xlog` behavior             |                                                                               |
-| `-XX:-LegacyXlogOption` | Process `-Xlog` requests for GC logging    | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>|
+| `-XX:-LegacyXlogOption` | Process `-Xlog` requests for GC logging    | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>|
 
 ## Explanation
 

@@ -56,9 +56,9 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 OpenJ9 release 0.13.0 introduced support for OpenSSL 1.0.2 for Java 12. In this release, support is extended to Java 8 and Java 11. OpenSSL is enabled by default for the CBC, Digest, GCM, and RSA cryptographic algorithms. On Linux&reg; and AIX&reg; platforms, the OpenSSL libraries are expected to be available on the system path. For more information about cryptographic acceleration with OpenSSL, see [Cryptographic operations](introduction.md#cryptographic-operations).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Support for the OpenSSL Digest algorithm on Java 8 and 11 is re-enabled in this release following the resolution of issue [#4530](https://github.com/eclipse/openj9/issues/4530).
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Support for the OpenSSL Digest algorithm on Java 8 and 11 is re-enabled in this release following the resolution of issue [#4530](https://github.com/eclipse/openj9/issues/4530).
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Warning:** Earlier versions of OpenJDK with OpenJ9 from the AdoptOpenJDK project bundle OpenSSL as part of the binary package. On Linux and AIX systems, OpenSSL is no longer bundled and the libraries are expected to be available on the system path.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Earlier versions of OpenJDK with OpenJ9 from the AdoptOpenJDK project bundle OpenSSL as part of the binary package. On Linux and AIX systems, OpenSSL is no longer bundled and the libraries are expected to be available on the system path.
 
 #### New option for ignoring or reporting unrecognized -XX: options
 

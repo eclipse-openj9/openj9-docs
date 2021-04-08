@@ -25,7 +25,7 @@
 # -XX:[+|-]ShareUnsafeClasses
 
 This option enables and disables the storage of VM classes created through `Unsafe.defineClass` in the shared classes cache.
- 
+
 The option is enabled by default, which means that unsafe classes are stored in the shared classes cache and are therefore available for ahead-of-time (AOT) compilation, potentially improving startup performance.
 
 ## Syntax
@@ -34,14 +34,14 @@ The option is enabled by default, which means that unsafe classes are stored in 
 
 | Setting                      | Effect  | Default                                                                        |
 |------------------------------|---------|:------------------------------------------------------------------------------:|
-| `-XX:+ShareUnsafeClasses`    | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:+ShareUnsafeClasses`    | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:-ShareUnsafeClasses`    | Disable |                                                                                |
 
 
 ## See also
 
 - [AOT compiler](aot.md)
-- [Class data sharing](shrc.md)
+- [Introduction to class data sharing](shrc.md)
 - [-Xshareclasses](xshareclasses.md)
 - [-XX:[+|-]ShareAnonymousClasses](xxshareanonymousclasses.md)
 

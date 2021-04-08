@@ -26,11 +26,11 @@
 
 **(Linux&reg; only)**
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Warning:** From OpenJ9 version 0.23.0 this option has no effect.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** From OpenJ9 version 0.23.0 this option has no effect.
 
 In versions of OpenJ9 before 0.23.0, this option controls garbage collection processing with compaction when the state of the OpenJ9 VM is set to idle.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:**
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:**
   
 1. This option was deprecated in release 0.15.0 due to operational changes. A compaction is now triggered by internal heuristics that look into the number of fragmented pages. Typically there is no need to force a compaction. This option will be removed in the future.
 2. This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use.
@@ -43,8 +43,8 @@ In versions of OpenJ9 before 0.23.0, this option controls garbage collection pro
 
 | Setting                        | Effect  | Default  | Default when running in a docker container                                 |
 |--------------------------------|---------|:--------:|:--------------------------------------------------------------------------:|
-| `-XX:+IdleTuningCompactOnIdle` | Enable  |  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
-| `-XX:-IdleTuningCompactOnIdle` | Disable |  <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>   |   |
+| `-XX:+IdleTuningCompactOnIdle` | Enable  |  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
+| `-XX:-IdleTuningCompactOnIdle` | Disable |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |   |
 
 The default depends on whether or not the OpenJ9 VM is running in a container. As indicated in the table, when the VM is running in a container and the state is set to idle, the VM attempts to compact the object heap following a garbage collection cycle. The garbage collection cycle is controlled by the `-XX:+IdleTuningGcOnIdle` option, which is also enabled by default when the OpenJ9 VM is running inside a container.
 

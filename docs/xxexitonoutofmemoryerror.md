@@ -26,7 +26,7 @@
 
 This HotSpot option is recognized by OpenJ9. You can use the option to trigger a shut down on VM out-of-memory conditions.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Java&trade;, heap, snap, and system dumps are enabled by default but can be disabled by including [`-XX:-HeapDumpOnOutOfMemoryError`](xxheapdumponoutofmemory.md).
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Java&trade;, heap, snap, and system dumps are enabled by default but can be disabled by including [`-XX:-HeapDumpOnOutOfMemoryError`](xxheapdumponoutofmemory.md).
 
 ## Syntax
 
@@ -35,7 +35,7 @@ This HotSpot option is recognized by OpenJ9. You can use the option to trigger a
 | Setting                           | Effect  | Default                                                                        |
 |-----------------------------------|---------|:------------------------------------------------------------------------------:|
 | `-XX:+ExitOnOutOfMemoryError`     | Enable  |                                                                                |
-| `-XX:-ExitOnOutOfMemoryError`     | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-ExitOnOutOfMemoryError`     | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 
 <!-- ==== END OF TOPIC ==== xxexitonoutofmemoryerror.md ==== -->
