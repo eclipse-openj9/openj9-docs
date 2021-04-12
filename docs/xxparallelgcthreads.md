@@ -28,8 +28,7 @@ This Oracle HotSpot option specifies the number of threads that are used during 
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
-- This option forces the thread count and prevents the collector from adjusting the thread count (disables the [Adaptive GC Threading](xxadaptivegcthreading.md) optimization).
-- To allow for collector adjustments, [`-XX:ParallelGCMaxThreads`](xxparallelgcmaxthreads.md) can be used instead. Rather than forcing the thread count `-XX:ParallelGCMaxThreads` sets a limit on the thread count.
+This option enforces the thread count and cannot be used with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option, which enables the garbage collector to adjust the number of parallel threads based on heuristics. If you want to use [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md), use [`-XX:ParallelGCMaxThreads`](xxparallelgcmaxthreads.md) instead of `-XX:ParallelGCThreads`.
 
 ## Syntax
 

@@ -25,12 +25,11 @@
 # -Xgcthreads
 
 
-Sets the number of threads that the Garbage Collector uses for parallel operations. 
+Sets the number of threads that the garbage collector uses for parallel operations. 
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
-- This option forces the thread count and prevents the collector from adjusting the thread count (disables the [Adaptive GC Threading](xxadaptivegcthreading.md) optimization).
-- To allow for collector adjustments, [`-xgcmaxthreads`](xgcmaxthreads.md) can be used instead. Rather than forcing the thread count `-Xgcmaxthreads` sets a limit on the thread count.
+This option enforces a fixed thread count and cannot be used with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option, which enables the garbage collector to adjust the number of parallel threads based on heuristics. If you want to use [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md), use [`-Xgcmaxthreads`](xgcmaxthreads.md) instead of `-Xgcthreads`.
 
 ## Syntax
 

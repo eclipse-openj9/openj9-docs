@@ -24,8 +24,7 @@
 
 # -Xgcmaxthreads
 
-
-Specifies the maximum number of threads that the Garbage Collector can use for parallel operations. This option behaves like [`-Xgcthreads`](xgcthreads.md) except it doesn't force the thread count. This allows for collector adjustments (allows the [Adaptive GC Threading](xxadaptivegcthreading.md) optimization) with a thread count limit.
+Specifies the maximum number of threads that the garbage collector can use for parallel operations. This option behaves in the same way as [`-Xgcthreads`](xgcthreads.md) but does not enforce a fixed thread count, which allows the garbage collector to adjust the thread count when used with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option.
 
 ## Syntax
 

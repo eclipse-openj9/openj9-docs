@@ -22,16 +22,10 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -XX:ParallelGCMaxThreads
+# What's new in version 0.27.0
 
-This option specifies the maximum number of threads that can be used during parallel operations of the garbage collector. Unlike [`-XX:ParallelGCThreads`](xxparallelgcthreads.md), this option does not enforce a thread count, but can be used to allow the garbage collector to adjust the number of parallel GC threads, if used with the [Adaptive GC Threading](xxadaptivegcthreading.md) option.
+The following new features and notable changes since v 0.26.0 are included in this release:
 
-## Syntax
+- [New `-XX:[+|-]AdaptiveGCThreading` option added](xxadaptivegcthreading.md)
 
-        -XX:ParallelGCMaxThreads=<number>
-
-Where `<number>` is the maximum number of threads that can be used for parallel operations. 
-
-This option is directly mapped to [`-Xgcmaxthreads`](xgcmaxthreads.md).
-
-<!-- ==== END OF TOPIC ==== xxparallelgcmaxthreads.md ==== -->
+<!-- ==== END OF TOPIC ==== version0.27.md ==== -->
