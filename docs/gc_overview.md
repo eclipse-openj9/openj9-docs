@@ -150,7 +150,7 @@ A GC *copy forward* operation is similar to a scavenge operation but is triggere
 
 2. Main
 
-    The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap by using *dynamic breadth first scan ordering* mode ([`-Xgc:dynamicBreadthFirstScanOrdering`](xgc.md#dynamicbreadthfirstscanordering)). If new objects are found, they are added to the work stack. If an object is reachable, it is moved to another region of the same age or to an empty region of the same age in the heap. The age of all regions in the heap is then incremented by 1, except for the oldest region (age 24).
+    The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap<!-- by using *dynamic breadth first scan ordering* mode ([`-Xgc:dynamicBreadthFirstScanOrdering`](xgc.md#dynamicbreadthfirstscanordering))-->. If new objects are found, they are added to the work stack. If an object is reachable, it is moved to another region of the same age or to an empty region of the same age in the heap. The age of all regions in the heap is then incremented by 1, except for the oldest region (age 24).
 
 3. Final
 
