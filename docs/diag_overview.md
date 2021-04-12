@@ -63,7 +63,7 @@ A number of diagnostic tools are available with OpenJ9 to assist with the analys
 
 ### Dump extractor
 
-The dump extractor (`jextract`) supports a full analysis of core files on specific platforms by collecting key files from a system and packaging them into an archive along with a core dump. This archive file is extremely useful when reporting issues to the OpenJ9
+The dump extractor (`jpackcore`) supports a full analysis of core files on specific platforms by collecting key files from a system and packaging them into an archive along with a core dump. This archive file is extremely useful when reporting issues to the OpenJ9
 community, helping to ensure a faster analysis and turnaround. For more information, see
 [Dump extractor](tool_jextract.md).
 
