@@ -347,6 +347,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#dump-extractor-tool-deprecated" class="md-nav__link">
+    Dump extractor tool deprecated
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4066,6 +4073,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#dump-extractor-tool-deprecated" class="md-nav__link">
+    Dump extractor tool deprecated
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4119,12 +4133,16 @@
 <p>The following new features and notable changes since v 0.25.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#dump-extractor-tool-deprecated">Dump extractor tool deprecated</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
 <p>OpenJ9 release 0.26.0 supports OpenJDK 8, 11, and 16.</p>
 <p>For OpenJDK 8 and 11 builds that contain OpenJ9, see <a href="../version0.25/">Version 0.25.0</a> for additional changes that have now been fully tested for these versions.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="dump-extractor-tool-deprecated">Dump extractor tool deprecated</h3>
+<p>The dump extractor tool, <code>jextract</code>, is deprecated in this release and replaced with the <code>jpackcore</code> tool. This tool uses the same syntax and parameters as <code>jextract</code> to collect diagnostic files for analysis. The change is necessary because the reference implementation will be introducing a tool in a future release that is also called <code>jextract</code>.</p>
+<p>For more information, see <a href="../tool_jextract/">Dump extractor</a>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v0.25.0 and v0.26.0 releases, see the <a href="https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.26/0.26.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.26.md ==== -->
