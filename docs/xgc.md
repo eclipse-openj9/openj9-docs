@@ -40,7 +40,6 @@ Options that change the behavior of the garbage collector.
 | [`concurrentScavenge`               ](#concurrentscavenge               ) | Enables a GC mode with less pause times.                                             |
 | [`dnssExpectedTimeRatioMaximum`     ](#dnssexpectedtimeratiomaximum     ) | Sets the maximum time to spend on GC of the nursery area.                                                 |
 | [`dnssExpectedTimeRatioMinimum`     ](#dnssexpectedtimeratiominimum     ) | Sets the minimum time to spend on GC of the nursery area.                                                 |
-| [`dynamicBreadthFirstScanOrdering`  ](#dynamicbreadthfirstscanordering  ) | Sets scan mode to dynamic breadth first.                                             |
 | [`excessiveGCratio`                 ](#excessivegcratio                 ) | Sets a boundary value beyond which GC is deemed to be excessive.                                          |
 | [`hierarchicalScanOrdering`         ](#hierarchicalscanordering         ) | Sets scan mode to hierarchical.                                             |
 | [`minContractPercent`               ](#mincontractpercent               ) | Sets the minimum percentage of the heap that can be contracted at any given time.                         |
@@ -56,11 +55,12 @@ Options that change the behavior of the garbage collector.
 | [`tlhMaximumSize`                   ](#tlhmaximumsize                   ) | Sets the maximum size of the thread local heap.                                                           |
 | [`verboseFormat`                    ](#verboseformat                    ) | Sets the verbose GC format.                                                                               |
 
+
 ### `breadthFirstScanOrdering`
 
          -Xgc:breadthFirstScanOrdering
 
-: This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (`gencon`) and copy forward operations (`balanced`)) to breadth first mode. The scan mode reflects the method for traversing the object graph and is also known as *Cheney's algorithm*.
+: This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (`gencon`) and copy forward operations (`balanced`)) to breadth first mode. The scan mode reflects the method for traversing the object graph and is also known as *Cheney's algorithm*. This mode is the default for the `balanced` GC policy.
 
 ### `classUnloadingKickoffThreshold`
 
@@ -135,11 +135,11 @@ Options that change the behavior of the garbage collector.
 
 : The minimum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.
 
-### `dynamicBreadthFirstScanOrdering`
+<!--### `dynamicBreadthFirstScanOrdering`
 
          -Xgc:dynamicBreadthFirstScanOrdering
 
-: This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (`gencon`) and copy forward operations (`balanced`)) to dynamic breadth first mode. This scan mode reflects the method for traversing the object graph and is a variant that adds *partial depth first traversal* on top of the breadth first scan mode. The aim of dynamic breadth first mode is driven by object field hotness. This mode is the default for the `balanced` GC policy.
+: This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (`gencon`) and copy forward operations (`balanced`)) to dynamic breadth first mode. This scan mode reflects the method for traversing the object graph and is a variant that adds *partial depth first traversal* on top of the breadth first scan mode. The aim of dynamic breadth first mode is driven by object field hotness. This mode is the default for the `balanced` GC policy.-->
 
 ### `excessiveGCratio`
 
@@ -153,7 +153,7 @@ Options that change the behavior of the garbage collector.
 
     The default value is 95, which means that anything over 5% of total application run time spent on GC is deemed excessive. This option can be used only when [`-Xenableexcessivegc`](xenableexcessivegc.md) is set (enabled by default).
 
-### `HierarchicalScanOrdering`
+### `hierarchicalScanOrdering`
 
         -Xgc:hierarchicalScanOrdering
 
