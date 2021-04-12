@@ -26,7 +26,7 @@
 
 The Diagnostic Tool Framework for Java&trade; (DTFJ) is a Java application programming interface (API) that is used to support the building of Java diagnostic tools. DTFJ works with data from a system dump or a Java dump.
 
-On Linux and AIX® operating systems, you can get more information from a system dump if you also have copies of executable files and libraries. You can run the `jextract` utility provided in the SDK to collect these files into a single archive for use in subsequent problem diagnosis. For more information, see [Dump extractor](tool_jextract.md).
+On Linux and AIX® operating systems, you can get more information from a system dump if you also have copies of executable files and libraries. You can run the `jpackcore` utility to collect these files into a single archive for use in subsequent problem diagnosis. For more information, see [Dump extractor](tool_jextract.md).
 
 The DTFJ API helps diagnostic tools access the following information:  
 

@@ -27,6 +27,7 @@
 The following new features and notable changes since v 0.25.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [Dump extractor tool deprecated](#dump-extractor-tool-deprecated)
 
 
 ## Features and changes
@@ -38,6 +39,13 @@ OpenJ9 release 0.26.0 supports OpenJDK 8, 11, and 16.
 For OpenJDK 8 and 11 builds that contain OpenJ9, see [Version 0.25.0](version0.25.md) for additional changes that have now been fully tested for these versions.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### Dump extractor tool deprecated
+
+The dump extractor tool, `jextract`, is deprecated in this release and replaced with the `jpackcore` tool. This tool uses the same syntax and parameters as `jextract` to collect diagnostic files for analysis. The change is necessary because the reference implementation will be introducing a tool in a future release that is also called `jextract`.
+
+For more information, see [Dump extractor](tool_jextract.md).
+
 
 ## Full release information
 
