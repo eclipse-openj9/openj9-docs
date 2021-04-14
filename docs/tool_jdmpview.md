@@ -42,19 +42,19 @@ The dump viewer is useful for diagnosing `OutOfMemoryError` exceptions in Java&t
 | Input option            | Explanation                                                                                            |
 |-------------------------|--------------------------------------------------------------------------------------------------------|
 | `-core <core file>`     | Specifies a dump file.                                                                                 |
-| `-zip <zip file>`       | Specifies a compressed file containing the core file (produced by the [dump extractor (`jextract`)](tool_jextract.md) tool on AIX&reg;, Linux&reg;, and macOS&reg; systems). |
+| `-zip <zip file>`       | Specifies a compressed file containing the core file (produced by the [dump extractor (`jpackcore`)](tool_jextract.md) tool on AIX&reg;, Linux&reg;, and macOS&reg; systems). |
 | `-notemp`               | By default, when you specify a file by using the `-zip` option, the contents are extracted to a temporary directory before processing. Use the `-notemp` option to prevent this extraction step, and run all subsequent commands in memory. |
 | `-J-Dcom.ibm.j9ddr.path.mapping=<mappings>` | The variable `<mappings>` is a list of native library mappings of the form `old-path=new-path`, using the usual path separator (a semi-colon (';') on Windows, and a colon (':') on other platforms). |
 | `-J-Dcom.ibm.j9ddr.library.path=<path>` | The variable `<path>` is a list of paths to search for native libraries, using the usual path separator (a semi-colon (';') on Windows, and a colon (':') on other platforms). |
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The `-core` option can be used with the `-zip` option to specify the core file in the compressed file. With these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On AIX and Linux, some `jdmpview` commands must locate the executable and the native libraries that are referenced by the core. For example, commands that relate to call-sites. 
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On AIX and Linux, some `jdmpview` commands must locate the executable and the native libraries that are referenced by the core. For example, commands that relate to call-sites.
 A common scenario involves using `jdmpview` to examine core files that originate on different systems. However, if the executable and the libraries are in their original locations, `jdmpview` might not consider them. Therefore, first check the executable and the list of native libraries by running `jdmpview` on a core with the `info mod` command.
 
 - One way to assist `jdmpview` to locate those files is by specifying on the command line one or both of the path mapping option (`-J-Dcom.ibm.j9ddr.path.mapping=<mappings>`) and the library path option (`-J-Dcom.ibm.j9ddr.library.path=<path>`).
 
-- Alternatively, on the system where the core file was produced, you can use `jextract` to collect all the relevant files into a single zip archive. That archive can be unpacked, possibly on another system, into a new, empty directory. Running `jdmpview` in that new directory (where the core file will be located) should enable it to find all the data it needs, including information that might not be included in the core file itself, such as symbols or sections. When you use an archive produced by `jextract`, setting the path or library mapping system properties should not be necessary.
+- Alternatively, on the system where the core file was produced, you can use `jpackcore` to collect all the relevant files into a single zip archive. That archive can be unpacked, possibly on another system, into a new, empty directory. Running `jdmpview` in that new directory (where the core file will be located) should enable it to find all the data it needs, including information that might not be included in the core file itself, such as symbols or sections. When you use an archive produced by `jpackcore`, setting the path or library mapping system properties should not be necessary.
 
 On z/OS&reg;, you can copy the dump to an HFS file and supply that as input to `jdmpview`, or you can supply a fully qualified MVS&trade; data set name. For example:
 

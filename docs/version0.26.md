@@ -27,7 +27,7 @@
 The following new features and notable changes since v 0.25.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [Change in default behavior for the `balanced` garbage collection policy](#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy)
+- [Dump extractor tool deprecated](#dump-extractor-tool-deprecated)
 
 
 ## Features and changes
@@ -40,13 +40,12 @@ For OpenJDK 8 and 11 builds that contain OpenJ9, see [Version 0.25.0](version0.2
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### Change in default behavior for the `balanced` garbage collection (GC) policy
+### Dump extractor tool deprecated
 
-In this release, a new scan mode, [`-Xgc:dynamicBreadthFirstScanOrdering`](xgc.md#dynamicbreadthfirstscanordering), is used during `balanced` GC copy forward operations that is expected to improve performance.
+The dump extractor tool, `jextract`, is deprecated in this release and replaced with the `jpackcore` tool. This tool uses the same syntax and parameters as `jextract` to collect diagnostic files for analysis. The change is necessary because the reference implementation will be introducing a tool in a future release that is also called `jextract`.
 
-For more information about this type of operation, see [GC copy forward operation](gc_overview.md#gc-copy-forward-operation).
+For more information, see [Dump extractor](tool_jextract.md).
 
-You can revert to the behavior in earlier releases by setting [`-Xgc:breadthFirstScanOrdering`](xgc.md#breadthfirstscanordering) when you start your application.
 
 ## Full release information
 
