@@ -322,7 +322,9 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:listAllCaches
 
-: Lists all the compatible and incompatible caches, and snapshots that exist in the specified cache directory. If you do not specify `cacheDir`, the default directory is used. Summary information, such as Java version and current usage, is displayed for each cache.
+: Lists all the compatible and incompatible caches, and snapshots that exist in the specified cache directory. If you do not specify `cacheDir`, the default directory is used.
+
+: Summary information, such as Java version and current usage, is displayed for each cache. Output includes `cache-type` (persistent or non-persistent) and `feature` (compressed references (`cr`) or non-compressed references (`non-cr`)).
 
 ### `mprotect`
 
@@ -463,7 +465,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:readonly
 
-:   Opens an existing cache with read-only permissions. The Java virtual machine does not create a new cache with this suboption. Opening a cache read-only prevents the VM from making any updates to the cache. If you specify this suboption, the VM can connect to caches that were created by other users or groups without requiring write access.
+: By default, a shared classes cache is created with read/write access. Use the `readonly` suboption to open an existing cache with read-only permissions. Opening a cache read-only prevents the VM from making any updates to the cache. If you specify this suboption, the VM can connect to caches that were created by other users or groups without requiring write access.
 
 : On AIX, Linux, and macOS systems, this access is permitted only if the cache was created by using the [`-Xshareclasses:cacheDir`](#cachedir) option to specify a directory with appropriate permissions. If you do not use the `-Xshareclasses:cacheDir` option, the cache is created with default permissions, which do not permit access by other users or groups.
 
