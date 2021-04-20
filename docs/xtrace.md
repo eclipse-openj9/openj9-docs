@@ -407,8 +407,8 @@ Use exception output to redirect exceptions trace data to a file.
 
 Where:
 
-- `<filename>` is a file name, which is created automatically if it does not exist. Otherwise, it is overwritten. To embed specific values in the file name use any of the following variables: *%d%* (today's date in "
-yyyymmdd" format), *%p* (process ID number of the process generating the trace), or *%t%* (time in 24-hour hhmmss format).
+- `<filename>` is a file name, which is created automatically if it does not exist. Otherwise, it is overwritten. To embed specific values in the file name use any of the following variables: *%d* (today's date in "
+yyyymmdd" format), *%p* (process ID number of the process generating the trace), or *%t* (time in 24-hour hhmmss format).
 - Optionally, `<size>` is a value in megabytes (MB), for example, use *4m* to specify 4 MB. When full, it wraps nondestructively to the beginning. If you do not limit the file, it grows indefinitely, until limited by disk space.
 
 Here are some examples:
