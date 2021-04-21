@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xmcrs/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/configuring/">
       
       <link rel="shortcut icon" href="../cr/openj9-logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
     
     
       
-        <title>-Xmcrs -  </title>
+        <title>Configuring your system -  </title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xmcrs" class="md-skip">
+        <a href="#configuring-your-system" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Xmcrs
+              Configuring your system
             
           </span>
         </div>
@@ -562,11 +562,117 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../configuring/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configuring your system
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Configuring your system
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page...
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-resource-limits-aix-linux-and-macos" class="md-nav__link">
+    Setting resource limits (AIX, Linux, and macOS)
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting resource limits (AIX, Linux, and macOS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-ulimit-values" class="md-nav__link">
+    Setting ulimit values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-shared-memory-values" class="md-nav__link">
+    Setting shared memory values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-large-page-memory-allocation" class="md-nav__link">
+    Configuring large page memory allocation
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring large page memory allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aix-systems" class="md-nav__link">
+    AIX systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-systems" class="md-nav__link">
+    Linux systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-systems" class="md-nav__link">
+    Windows systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zos-systems" class="md-nav__link">
+    z/OS systems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-dynamic-lpar-support-aix-only" class="md-nav__link">
+    Configuring Dynamic LPAR support (AIX only)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1123,14 +1229,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
       
       <label class="md-nav__link" for="__nav_14">
         Command-line options
@@ -1569,14 +1673,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_5" type="checkbox" id="__nav_14_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_5" type="checkbox" id="__nav_14_5" >
       
       <label class="md-nav__link" for="__nav_14_5">
         JVM -X options
@@ -2264,49 +2366,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          -Xmcrs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xmcrs/" class="md-nav__link">
         -Xmcrs
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="On this page...">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page...
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4049,8 +4113,76 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
+  <a href="#setting-resource-limits-aix-linux-and-macos" class="md-nav__link">
+    Setting resource limits (AIX, Linux, and macOS)
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting resource limits (AIX, Linux, and macOS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-ulimit-values" class="md-nav__link">
+    Setting ulimit values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-shared-memory-values" class="md-nav__link">
+    Setting shared memory values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-large-page-memory-allocation" class="md-nav__link">
+    Configuring large page memory allocation
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring large page memory allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aix-systems" class="md-nav__link">
+    AIX systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-systems" class="md-nav__link">
+    Linux systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-systems" class="md-nav__link">
+    Windows systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zos-systems" class="md-nav__link">
+    z/OS systems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-dynamic-lpar-support-aix-only" class="md-nav__link">
+    Configuring Dynamic LPAR support (AIX only)
   </a>
   
 </li>
@@ -4092,19 +4224,238 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xmcrs">-Xmcrs</h1>
-<p>Sets an initial size for an area in memory that is reserved for any native classes, monitors, and threads that are used by compressed references within the lowest 4 GB memory area.</p>
-<p>You can use the <code>-verbose:sizes</code> option to find out the value that is being used by the VM.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Notes:</strong> </p>
+<h1 id="configuring-your-system">Configuring your system</h1>
+<p>Configuring your local system can help you optimize the runtime environment for your Java application. Options include setting operating system environment variables and configuring system resources so that OpenJ9 can exploit the underlying operating system and hardware capabilities.</p>
+<p>When you install a Java&trade; runtime environment on your system you can set the <strong>PATH</strong> environment variable so that the operating system can find the Java programs and utilities to run your application. To tell your application where to find user classes, you can use the <strong>-cp</strong> option or set the <strong>CLASSPATH</strong> environment variable. However, if you set <strong>CLASSPATH</strong> globally, all invocations of Java are affected. How to set these environment variables is covered in many publications about Java, such as <a href="https://docs.oracle.com/javase/tutorial/essential/environment/paths.html">The Java Tutorials: PATH and CLASSPATH</a>.</p>
+<p>On some systems, a further environment variable might be required if your application requires shared libraries but does not specify their exact location. You can set the following environment variables to specify the directory location of the shared libraries, although setting a global value affects all invocations of Java:</p>
 <ul>
-<li>Native memory <code>OutOfMemoryError</code> exceptions might occur when using compressed references if the lowest 4 GB of address space becomes full, particularly when loading classes, starting threads, or using monitors. </li>
-<li>If you are not using compressed references and this option is set, the option is ignored and the output of <code>-verbose:sizes</code> shows <code>-Xmcrs0</code>.</li>
+<li><strong>LIBPATH</strong> (AIX&reg;)</li>
+<li><strong>LD_LIBRARY_PATH</strong> (Linux&reg;)</li>
+<li><strong>DYLD_LIBRARY_PATH</strong> (macOS&reg;)</li>
+<li><strong>PATH</strong> (Windows&reg;)</li>
 </ul>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -Xmcrs&lt;size&gt;
+<p><img alt="Start of content that applies to Java 14+" src="../cr/java14plus.png" /> Although most Java applications should run without changing anything on the underlying system, a unique pre-requisite exists for AIX systems on OpenJDK version 14 and later; you must have the <a href="https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018">XL C++ Runtime</a> installed. <img alt="End of content that applies only to Java 14 and later" src="../cr/java_close.png" /></p>
+<h2 id="setting-resource-limits-aix-linux-and-macos">Setting resource limits (AIX, Linux, and macOS)</h2>
+<p>The operating system sets resource limits for a shell, and to processes started by the shell, to ensure that a single process cannot consume all available resources. However, these limits can affect certain operations that might need to run for a Java application, such as producing a dump file.</p>
+<h3 id="setting-ulimit-values">Setting ulimit values</h3>
+<p>Some resource limits are controlled by the <strong>ulimit</strong> command. A <em>soft</em> limit is the value set by the kernel for a resource and a <em>hard</em> limit imposes a maximum value on the soft limit. A privileged process can change either limit, but an unprivileged process can change only its soft limit (between 0 and the hard limit) or irreversibly lower its hard limit. To see the current limits set for a system, run <code>ulimit -a</code>. The output is similar to the following example:</p>
+<pre><code>core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+file size               (blocks, -f) unlimited
+max locked memory       (kbytes, -l) unlimited
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 256
+pipe size            (512 bytes, -p) 1
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 2784
+virtual memory          (kbytes, -v) unlimited
 </code></pre>
-<p>See <a href="../x_jvm_commands/">Using -X command-line options</a> for more information about the <code>&lt;size&gt;</code> parameter.</p>
-<!-- ==== END OF TOPIC ==== xmcrs.md ==== -->
+
+<p>To show hard limits, use <code>ulimit -Ha</code>.</p>
+<p>You can change limits for specific resources on a temporary basis by running the <strong>ulimit</strong> command. Alternatively, you can store limit settings in a configuration file, which is <code>/etc/security/limits</code> for AIX or <code>etc/security/limits.conf</code> for Linux. For more information about configuring resource limits, refer to the documentation for your operating system.   </p>
+<p>The main use case for changing <code>ulimit</code> resources is when enabling a system dump to ensure that all the required data can be collected for analysis. For more information, see <a href="../dump_systemdump/#enabling-a-full-system-dump-aix-and-linux">Enabling a full system dump</a>.</p>
+<h3 id="setting-shared-memory-values">Setting shared memory values</h3>
+<p>Another use case for changing resource limits is to ensure that there is sufficient shared memory allocated for class data sharing. By default, the shared classes cache consists of memory-mapped files that are created on disk and <em>persist</em> when the system is restarted. If you choose to use <em>non-persistent</em> caches by setting the <code>-Xshareclasses:nonpersistent</code> option, caches are not retained on startup and are allocated by using the System V IPC shared memory mechanism.</p>
+<ul>
+<li>On AIX systems, the kernel dynamically adjusts the shared memory settings as required. No special configuration is required.</li>
+<li>On Linux systems, the <strong>SHMMAX</strong> setting limits the amount of shared memory that can be allocated, which affects the shared classes cache size. You can find the value of <strong>SHMMAX</strong> for your system in the <code>/proc/sys/kernel/shmmax</code> file. For non-persistent caches, set this value to an appropriate size for your applications. To make these changes permanent, edit <code>/etc/sysctl.conf</code> and reboot your system.</li>
+<li>On macOS systems, you must set <strong>kern.sysv.shmmax</strong> and <strong>kern.sysv.shmall</strong> when using a nonpersistent cache. Modify the settings in your <code>/etc/sysctl.conf</code> file and reboot your system. To check the value, run <code>sysctl kern.sysv.shmmax</code>.</li>
+</ul>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The virtual address space of a process is shared between the shared classes cache and the Java heap. Increasing the maximum size for the shared classes cache might reduce the size of the Java heap that you can create.</p>
+<p>Shared memory limits are also important when configuring large page memory allocation on Linux systems. For more information, see <a href="#linux-systems">Configuring large page memory allocation: Linux systems</a>.</p>
+<!--## Setting resource limits (z/OS)
+
+Resource limits imposed by z/OS might affect Java operations. To learn how these resource limits are set, see [Customizing the BPXPRMxx member of SYS1.PARMLIB](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.bpxb200/cusis.htm).
+
+The OpenJ9 class data sharing feature is implemented by using shared memory segments on z/OS. Special consideration should be given to the following parameters that relate to the shared memory and IPC semaphore settings:-->
+
+<!-- - **MAXSHAREPAGES** (This no longer seems to do anything, per https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ieae200/spb.htm). Also removed from table below. -->
+
+<!--- **IPCSHMSPAGES**
+- **IPCSHMMPAGES**
+- **IPCSHMNSEGS**
+
+Incorrect or suboptimal settings might prevent shared classes from working or impact performance. By default, the VM attempts to create a 16 MB cache. If you set a cache size for your application by specifying the [`-Xscmx`](xscmx.md) option on the command line, the VM rounds the value up to the nearest megabyte. Ensure that the value set for **IPCSHMMPAGES** takes this adjustment into consideration.
+
+To see the current settings, enter the following z/OS operator command:
+
+
+<pre><code>D OMVS,O
+</code></pre>
+
+The suggested minimum values for Java applications are shown in the following table:
+
+| Parameter         | Value      |
+|-------------------|------------|
+|**MAXPROCSYS**     | 900        |
+|**MAXPROCUSER**    |   512        |
+|**MAXUIDS**          | 500        |
+|**MAXTHREADS**     |   10000      |
+|**MAXTHREADTASKS** | 5000       |
+|**MAXASSIZE**      | 2147483647 |
+|**MAXCPUTIME**     | 2147483647 |
+|**MAXMMAPAREA**      | 40960      |
+|**IPCSHMSPAGES**   | 262144     |
+|**IPCSHMMPAGES**   | 256        |
+|**IPCSHMNSEGS**    | 10         |
+|**IPCSEMNIDS**     | 500        |
+|**IPCSEMNSEMS**      | 1000       |
+
+
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The number of threads that can be created by a Java process is limited by the lower of the two values for **MAXTHREADS** and **MAXTHREADSTASKS**.
+
+You can change these settings dynamically without re-IPLing the system. For example, to set **MACPROCUSER** to 256, run `SETOMVS MAXPROCUSER=256`
+
+z/OS uses region sizes to determine the amount of storage available to running programs. For a Java runtime environment, the  region size must be sufficiently large to avoid storage related error messages or abends. Rather than restricting region size, allow the VM to use what it needs. Region size can be affected by one of the following parameters: **JCL REGION**, **BPXPRMxx MAXASSIZE**, the RACF OMVS segment **ASSIZEMAX**, or IEFUSI (Step initiation exit).
+
+
+### Configuring Language Environment runtime options
+
+Language Environment&reg; runtime options affect performance and storage usage. These options can be optimized for your application.
+
+Runtime options are typically embedded in programs by using **#pragma runopts** settings. In many cases, these options provide suitable default values that are known to produce good performance results. However, these options can be overridden to tune the runtime environment of your application.
+
+On 64-bit z/OS systems, the following runtime options affect Java applications:
+
+- **HEAP64**: Controls allocation of the user heap. A suggested starting point for an override is **HEAP64(512M,4M,KEEP,16M,4M,KEEP,0K,0K,FREE)**.
+- **HEAPPOOLS64**: Used to manage Java heap storage above the 2 G bar. The Java USS launcher sets **HEAPPOOLS64(ALIGN)** for more optimal management of multi-threaded applications. Other Java launchers might have different settings. Before you set an override for **HEAPPOOLS64**, use **RPTOPTS(ON)** to confirm the active settings for your environment and **RPTSTG(ON)** to review storage usage and tuning recommendations. Note that the host product might have already set cell sizes and numbers that are known to produce good performance.
+- **STACK64**: Controls the allocation and management of stack storage. A suggested default is **STACK64(1M,1M,128M)**.
+- **THREADSTACK64**: Controls the allocation of thread-level stack storage for both the upward and downward-growing stack. A suggested default is **THREADSTACK64(OFF,1M,1M,128M)**.
+
+A suitable **MEMLIMIT** value is also required. The OpenJ9 VM requirement is the sum of the following amounts:
+
+- User heap storage required by the VM and native libraries, as controlled by **HEAP64** (minimum 512 M) settings.
+- User stack storage (3 MB multiplied by the expected number of concurrent threads), as controlled by **STACK64** settings.
+- `-Xmx` largest expected VM heap size.
+- The JIT data cache maximum size.
+- The JIT code cache maximum size, if **RMODE64** is supported.
+
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you intend to use the Concurrent Scavenge mode of the default Generational Concurrent (`gencon`) garbage collection policy by using hardware-based support, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit to a larger value than the maximum heap size. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
+
+The following guides are available to help you configure Language Environment runtime options and callable services:
+
+- See [z/OS Language Environment Programming Guide](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea200/abstract.htm) for guidance on how to override the default options. Use **RPTOPTS (ON)** to write the options that are in effect to *stderr* on termination.
+- See [z/OS Language Environment Programming Reference](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea300/abstract.htm) for a full list of the available runtime options.
+- See [z/OS Language Environment Debugging Guide](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea100/abstract.htm) for tuning guidance by using **RPTSTG (ON)**.
+
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Changing the runtime options can often degrade performance.-->
+
+<h2 id="configuring-large-page-memory-allocation">Configuring large page memory allocation</h2>
+<p>If your application allocates a large amount of memory and frequently accesses that memory, you might be able to improve performance by enabling large page support on your system.</p>
+<p>Some Linux kernels implement Transparent HugePage Support (THP), which automates the provision of large pages to back virtual memory, as described in <a href="#linux-systems">Linux systems</a>. Alternatively, you can enable large page support by setting the <a href="../xlpobjectheap/"><code>-Xlp:objectheap</code></a> and <a href="../xlpcodecache/"><code>-Xlp:codecache</code></a> options on the command line when you start your application. These options have the following effects:</p>
+<ul>
+<li>The <code>-Xlp:objectheap</code> option requests that the Java object heap is allocated by using large pages.</li>
+<li>The <code>-Xlp:codecache</code> option requests that the JIT code cache is allocated by using large pages.</li>
+</ul>
+<p>You must also enable large pages on your local system. This process differs according to the operating system.</p>
+<h3 id="aix-systems">AIX systems</h3>
+<p>AIX supports large page sizes of 64 KB and 16 MB, and a huge page size of 16 GB depending on the underlying system P hardware. To determine which page sizes are supported on a particular system, run <code>pagesize -a</code>.</p>
+<p>To use large pages to back an application's data and heap segments, specify the <strong>LDR_CNTRL</strong> environment variable. You can set different page sizes for different purposes. The following variables can be used:</p>
+<ul>
+<li><strong>TEXTPSIZE</strong>: Page size to use for text</li>
+<li><strong>STACKPSIZE</strong>: Page size to use for stacks</li>
+<li><strong>DATAPSIZE</strong>: Page size to use for native data or HEAP64</li>
+</ul>
+<p>The following example sets 4 KB for text and 64 KB for stack, native data, and heap areas:</p>
+<pre><code>LDR_CNTRL=TEXTPSIZE=4K@STACKPSIZE=64K@DATAPSIZE=64K
+</code></pre>
+
+<p>For more information, including support considerations, see <a href="https://www.ibm.com/support/knowledgecenter/ssw_aix_72/performance/large_page_ovw.html">Large pages</a> and <a href="https://www.ibm.com/support/knowledgecenter/ssw_aix_72/performance/multiple_page_size_support.html">Multiple page size support</a> in the AIX documentation.</p>
+<p>The 16 MB and 16 GB page sizes, which are intended for very high performance environments, require special user permissions. You must also configure the number of pages that you require, which cannot be adjusted on demand. For 16 MB large pages, you set the number of large pages by using the <code>vmo</code> command. For 16 GB huge pages you must define the number of pages by using the hardware management console. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/ssw_aix_72/performance/page_sizes_very_high-perf_env.html">Page sizes for very high-performance environments</a> in the AIX documentation.</p>
+<h3 id="linux-systems">Linux systems</h3>
+<p>Large pages are typically referred to as <em>huge pages</em> on Linux systems. To configure huge page memory allocation, the kernel must support huge pages. If huge pages are supported, the following lines are present in the <strong>/proc/meminfo</strong> file:</p>
+<pre><code>HugePages_Total:    
+HugePages_Free:     
+Hugepagesize:     
+</code></pre>
+
+<p>If these lines do not exist, update your Linux kernel. If <code>HugePages_Total</code> has a value of <code>0</code>, huge pages are available, but not enabled. To enable huge pages, add the following line to your <strong>/etc/sysctl.conf</strong> file and reload the configuration by running <code>sysctl -p</code>:</p>
+<pre><code>vm.nr_hugepages=&lt;number&gt;
+</code></pre>
+
+<p>Where <code>&lt;number&gt;</code> is the number of huge pages required.</p>
+<p>Configure the number of huge pages that you require at boot time to ensure that the VM has access to sufficient contiguous pages. The following kernel parameters must be set appropriately for your system:</p>
+<ul>
+<li><strong>SHMMAX</strong>: The maximum size of the shared memory segment (bytes).</li>
+<li><strong>SHMALL</strong>: The total amount of shared memory in the system (bytes or pages).</li>
+</ul>
+<p>The user running the Java process must either be ROOT or have permissions to use huge pages. For the appropriate permissions, the user must be a member of a group that has its group identifier (gid) stored in <strong>/proc/sys/vm/hugetlb_shm_group</strong>. The locked memory limit must also be increased to at least the size of the Java heap by using the <strong>ulimit -l</strong> command.</p>
+<p>Where huge page support is available, the following default sizes apply for the object heap:</p>
+<ul>
+<li>Linux on x86: 2 MB</li>
+<li>Linux on IBM Power Systems: Varies depending on kernel version, check <code>/proc/meminfo</code></li>
+<li>Linux on IBM Z: 1 MB</li>
+</ul>
+<p>Transparent HugePage Support (THP) is an automated mechanism of using huge pages to back virtual memory. On Linux kernels that support THP, it is typically enabled by default with the <strong>madvise</strong> option and can be relied on to provide huge pages as required without any user configuration. To disable THP for your application, use the OpenJ9 <a href="../xxtransparenthugepage/"><code>-XX:-TransparentHugePage</code></a> option on the command line. To disable THP system-wide, change the <strong>sysfs</strong> boot time defaults with the command <code>transparent_hugepage=never</code>. For more information about THP see <a href="https://www.kernel.org/doc/html/latest/admin-guide/mm/transhuge.html">Transparent HugePage Support</a>.</p>
+<h3 id="windows-systems">Windows systems</h3>
+<p>On Windows systems, large pages are typically 2 MB in size. To use large pages, the VM user must have the Windows <strong>Lock pages in memory</strong> setting enabled in the Local Security Policy. Applications must also be run with Admin privileges in order to use large page memory allocations.</p>
+<p>For more information, see the following resources from Microsoft:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-gb/windows/win32/memory/large-page-support">Large page support</a></li>
+<li><a href="https://docs.microsoft.com/en-gb/windows/win32/api/memoryapi/nf-memoryapi-getlargepageminimum"><code>GetLargePageMinimum</code> function (<code>memoryapi.h</code>)</a></li>
+</ul>
+<h3 id="zos-systems">z/OS systems</h3>
+<p>When available, 1 MB pageable pages are the default size for the object heap and the code cache. Other page sizes are available for the object heap, depending on the system architecture as shown in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Large page size</th>
+<th>System architecture required</th>
+<th><code>-Xlp:codecache</code></th>
+<th><code>-Xlp:objectheap</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 GB nonpageable</td>
+<td>IBM zEnterprise EC12 processor or later</td>
+<td>Not supported</td>
+<td>Supported (64-bit VM only)</td>
+</tr>
+<tr>
+<td>1 MB nonpageable</td>
+<td>System z10 processor or later</td>
+<td>Not supported</td>
+<td>Supported (64-bit VM only)</td>
+</tr>
+<tr>
+<td>1 MB pageable</td>
+<td>IBM zEnterprise EC12 processor or later (see Note)</td>
+<td>Supported</td>
+<td>Supported</td>
+</tr>
+</tbody>
+</table>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The Flash Express feature (#0402) helps avoid demoting 1 MB pageable pages to 4 KB pages when there is system paging activity.</p>
+<p>If a particular page size cannot be allocated, a smaller page size is attempted, in descending order. For example, if 2 GB nonpageable pages are requested but not available, the VM tries to allocate 1MB nonpageable pages. If 1 MB nonpageable pages are not available, the VM tries to allocate 1MB pageable pages. If large pages are not available, 4 KB pages are allocated.</p>
+<p>If you want to use nonpageable large pages for the object heap, a system programmer must configure z/OS for nonpageable large pages in the <strong>IEASYSxx</strong> parmlib member. Users who require large pages must also be authorized to the <strong>IARRSM.LRGPAGES</strong> resource in the RACF FACILITY class with read authority.</p>
+<p>Use the following z/OS system command to show large page usage for an LPAR:</p>
+<pre><code>MODIFY AXR,IAXDMEM
+</code></pre>
+
+<p>For more information, see <a href="https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.4.0/com.ibm.zos.v2r4.ieag100/iaxdmem.htm">Displaying real storage memory statistics</a> in the z/OS product documentation.</p>
+<p>For usage information, including examples, see <a href="../xlpobjectheap/#pageablenonpageable"><code>-Xlp:objectheap</code></a>.</p>
+<h2 id="configuring-dynamic-lpar-support-aix-only">Configuring Dynamic LPAR support (AIX only)</h2>
+<p><em>Dynamic logical partitioning</em> (DLPAR) provides a mechanism to add or remove system resources, such as memory or CPU, to or from the operating system in a logical partition without rebooting. Changing these resources dynamically can have an impact on Java applications that are running on the LPAR.</p>
+<p>To enable an application to respond to DLPAR events, you can use OpenJ9 MXBean extensions to the <code>java.lang.management</code> API. The following classes are available in the <code>com.ibm.lang.management</code> package:</p>
+<ul>
+<li><code>AvailableProcessorsNotificationInfo</code>: Use to listen for changes to the number of available processors.</li>
+<li><code>ProcessingCapacityNotificationInfo</code>: Use to listen for changes to processing capacity.</li>
+<li><code>TotalPhysicalMemoryNotificationInfo</code>: Use to listen for changes to the total amount of physical memory that is available.</li>
+</ul>
+<p>These extensions can listen for events and trigger any necessary adjustments to the runtime environment. For example, if a Java VM is running in an LPAR with 2GB of memory, but the available memory might be adjusted between 1GB and 8GB, you might set the following options for the Java heap at run time:</p>
+<pre><code>–Xms1g –Xsoftmx2g –Xmx8g
+</code></pre>
+
+<p>This command-line string sets an initial heap size of 1 GB, a <em>soft</em> (adjustable) maximum heap size of 2 GB, and a maximum heap size of 8 GB. You can then use the <code>MemoryMXBean</code> API to dynamically respond to changes in memory resources. The following classes can be used:</p>
+<ul>
+<li><code>getMaxHeapSize()</code>: Query the maximum heap size.</li>
+<li><code>isSetMaxHeapSizeSupported()</code>: Query whether the VM can support dynamic updates.</li>
+<li><code>setMaxHeapSize()</code>: Adjust the maximum heap size.</li>
+</ul>
+<p>For more information about the <code>com.ibm.lang.managment</code> package, which extends the <code>jdk.management</code> module, see the <a href="../api-overview/#monitoring-and-management">API documentation</a>.</p>
+<!-- ==== END OF TOPIC ==== configuring.md ==== -->
                 
               
               
