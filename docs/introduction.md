@@ -28,26 +28,17 @@ OpenJ9 is a high performance, scalable, Java&trade; virtual machine (VM) impleme
 
 At run time, the VM interprets the Java bytecode that is compiled by the Java compiler. The VM acts as a translator between the language and the underlying operating system and hardware. A Java program requires a specific VM to run on a particular platform, such as Linux&reg;, z/OS&reg;, or Windows&trade;.
 
-This reference material provides information about the VM configuration and tuning options, together with the default settings.
+This material provides information about the VM configuration and tuning options, together with the default settings. Follow the links provided for more detailed information.
 
 
 ## Configuring your system
 
-For normal operation, certain environment variables must be set at the operating system level. Depending on your system environment, you might also want to set other configuration options that allow the VM to exploit hardware and operating system features. Read [Customizing your system](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure.html) to learn more about the following options:
+Most Java applications should run on an OpenJDK that contains the OpenJ9 VM without changing anything on the underlying system. However, to get the most out of your system you might want to consider some configuration options. Read [Configuring your system](configuring.md) to learn more about the following options:
 
-- Setting the PATH and CLASSPATH environment variable.
-- Setting the LIBPATH or LD_LIBRARY_PATH environment variable (AIX&reg; and Linux) to indicate where to find shared libraries.
-- Setting ulimits on AIX and Linux systems to ensure that the operating system allocates sufficient resources for your application.
-- Setting region size, BPXPRM parameters, and Language Environment&reg; runtime options on z/OS systems.
-- If your application allocates a large amount of memory and frequently accesses that memory, you might want to enable large page support on your system. See [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
-- Configuring Dynamic LPAR support on AIX systems.
-
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
-
-1. On macOS&reg; systems, you must set the DYLD_LIBRARY_PATH environment variable to indicate where to find shared libraries. In addition, to ensure there are sufficient resources for your application, you might need to increase system limits by using `launchctl`, `ulimit`, or `kern.<VARIABLES>`. For further instructions, refer to the documentation for your macOS release.
-
-2. On AIX systems, the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018) is required to run JDK 14 or later.
-
+- Setting operating system environment variables, such as **PATH** and **CLASSPATH**.
+- Increasing resource limits for running Java applications.
+- Configuring large page memory allocation.
+- Configuring Dynamic LPAR support on AIX&reg; systems.
 
 ## Performance tuning
 
