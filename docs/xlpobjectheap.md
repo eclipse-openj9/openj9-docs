@@ -78,12 +78,37 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 : On z/OS systems, defines the type of memory to allocate for the Java object heap.
 
-    1 MB pageable pages, when available, are the default size for the object heap.  
-    Supported large page sizes are 2 GB nonpageable, 1 MB nonpageable, and 1 MB pageable. A page size of 4 KB can also be used.
+    1 MB pageable large pages, when available, are the default size for the object heap.  
+
+    64-bit VMs support large page sizes of 1 MB nonpageable and 2 GB nonpageable with the following requirements:
+
+    - 2 GB nonpageable sizes are supported only on IBM zEnterprise EC12 processors or later.
+    - A system programmer must configure z/OS for nonpageable large pages.
+    - Users who require large pages must be authorized to the **IARRSM.LRGPAGES** resource in the RACF FACILITY class with read authority.
+
+    31-bit VMs support a large page size of only 1 MB pageable.
+
+    A page size of 4 KB can also be used.
+
+## Examples
+
+1. **z/OS:** To allocate 1 GB of real memory by using 1 MB nonpageable pages when the VM starts, set the following options:
+
+```
+-Xmx1023m -Xms512m -Xlp:objectheap:pagesize=1M,nonpageable
+```
+
+2. **z/OS:** To allocate 1 GB of real memory by using 2 GB nonpageable pages, set the following options:
+
+```
+-Xmx1023m -Xms512m -Xlp:objectheap:pagesize=2G,nonpageable
+```
+
+In this example the heap is allocated on a 2 GB large page. Even though the object heap is only 1 GB, 2 GB of memory are consumed and the large page is never paged out while the VM is running.
 
 ## See also
 
-- [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
+- [Configuring large page memory allocation](configuring.md#configuring-large-page-memory-allocation).
 
 
 

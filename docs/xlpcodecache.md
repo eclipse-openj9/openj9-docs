@@ -48,7 +48,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 :   The code cache page size is controlled by the `DATAPSIZE` setting of the `LDR_CNTRL` environment variable. The page size cannot be controlled by the `-Xlp:codecache:pagesize=<size>` option. Specifying any other page size results in a warning that the page size is not available. The `-verbose:sizes` output reflects the current operating system setting.
 
-    For more information about the `LDR_CNTRL` environment variable, see [Working with the LDR_CNTRL environment variable](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_aix_ldr_cntrl.html).
+    For more information about the `LDR_CNTRL` environment variable, see [Configuring large page memory allocation: AIX systems](configuring.md#aix-systems).
 
 ### Linux
 
@@ -71,7 +71,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 ## See also
 
-- [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html).
+- [Configuring large page memory allocation](configuring.md#configuring-large-page-memory-allocation).
 
 
 

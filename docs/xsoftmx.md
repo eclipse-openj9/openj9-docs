@@ -53,7 +53,7 @@ When the heap shrinks, the garbage collector might release memory. The ability o
 - When using `-Xgcpolicy:metronome`, `-Xsoftmx` is ignored because the Metronome garbage collector does not support contraction or expansion of the heap.
 
 - There might be little benefit in reducing the `-Xsoftmx` value when the Java heap is using large pages. Large pages are pinned in memory and are not reclaimed by the operating system, with the exception of 1M pageable pages on z/OS&reg;. On certain platforms and processors the VM starts with large pages enabled by default for the Java heap when the operating system is configured to provide large pages.
-For more information, see [Configuring large page memory allocation](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_large_page.html). A future version of the Java virtual machine might provide a hint to the operating system when large pages are no longer in use.
+For more information, see [Configuring large page memory allocation](configuring.md#configuring-large-page-memory-allocation). A future version of the Java virtual machine might provide a hint to the operating system when large pages are no longer in use.
 
 
 
