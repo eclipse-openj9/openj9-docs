@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]DisclaimJitScratch  
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This option is deprecated; the option is accepted but ignored.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This option is deprecated; the option is accepted but ignored.
 
 **(Linux&reg; only)**
 
@@ -37,7 +37,7 @@ The `-XX:+DisclaimJitScratch` option signals to the operating system to discard 
 | Setting                 | Effect | Default                                                                            |
 |-------------------------|--------|:----------------------------------------------------------------------------------:|
 |`-XX:+DisclaimJitScratch`| Enable |                                                                                    |
-|`-XX:-DisclaimJitScratch`| Disable| <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+|`-XX:-DisclaimJitScratch`| Disable| :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 ## Explanation
 

@@ -33,7 +33,7 @@ Use this command-line option to enable and disable network queries from being us
 
 | Setting                 | Effect  | Default                                                                            |
 |-------------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+ReadIPInfoForRAS` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| `-XX:+ReadIPInfoForRAS` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
 | `-XX:-ReadIPInfoForRAS` | Disable |                                                                                    |
 
 OpenJ9 captures the host name and IP address by default, for use in diagnosing problems. But if a nameserver cannot be contacted when a network query is made, the program will wait until the resolver times out.

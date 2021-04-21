@@ -33,7 +33,7 @@ When enabled, this option outputs the values of a subset of configuration parame
 | Setting                | Effect  | Default |
 |------------------------|---------|:-------:|
 | `-XX:+PrintFlagsFinal` | Enable  |         |
-| `-XX:-PrintFlagsFinal` | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:-PrintFlagsFinal` | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 ## Example
 

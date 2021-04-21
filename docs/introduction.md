@@ -45,10 +45,10 @@ Most Java applications should run on an OpenJDK that contains the OpenJ9 VM with
 OpenJ9 is configured to start with a set of default options that provide the optimal runtime environment for Java applications with typical workloads. However, if your application is atypical, you can improve performance by tuning the OpenJ9 VM. You can also improve performance by enabling hardware features or using specific APIs in your application code.
 
 ### Garbage collection policies
-OpenJ9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see [Garbage Collection](gc.md).
+OpenJ9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see [Garbage collection policies](gc.md).
 
 ### Class data sharing
-You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Class Data Sharing](shrc.md).
+You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Introduction to class data sharing](shrc.md).
 
 ### Native data operations
 If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator (DAA) API.
@@ -70,7 +70,7 @@ For more information, see the [API documentation](api-overview.md).
 ### Cloud optimizations
 To improve the performance of applications that run in containers, try setting the following tuning options:
 
-- Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For more information, see [Class Data Sharing](shrc.md) and [AOT Compiler](aot.md).
+- Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For persistence, store the cache in a volume that you map to your container. For more information, see [Inroduction to class data sharing](shrc.md) and [AOT Compiler](aot.md).
 
 - Use the [-Xtune:virtualized](xtunevirtualized.md) option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.
 
@@ -93,7 +93,7 @@ Each algorithm can be disabled individually by setting the following system prop
 
 
 - To turn off **Digest**, set `-Djdk.nativeDigest=false`
-- To turn off **ChaCha20** and **ChaCha20-Poly1305**, set `-Djdk.nativeChaCha20=false`. <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+- To turn off **ChaCha20** and **ChaCha20-Poly1305**, set `-Djdk.nativeChaCha20=false`. :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 - To turn off **CBC**, set `-Djdk.nativeCBC=false`
 - To turn off **GCM**, set `-Djdk.nativeGCM=false`
 - To turn off **RSA**, set `-Djdk.nativeRSA=false`
@@ -110,7 +110,7 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow 
 - [OpenJDK 11 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
 - [OpenJDK 15 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V15.md).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you obtain an OpenJDK with OpenJ9 build that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgements apply in accordance with the license terms:
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you obtain an OpenJDK with OpenJ9 build that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgements apply in accordance with the license terms:
 
 - *This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/).*
 - *This product includes cryptographic software written by Eric Young (eay@cryptsoft.com).*
@@ -124,6 +124,10 @@ GPU processing is supported only on Linux little-endian systems, such as x86-64 
 
 Special consideration is needed when using the WDDM driver model for GPUs on Windows. Using the WDDM driver model means the GPU is also used as a display device and as such is subject to the [Timeout Detection and Recovery (TDR) mechanism](https://docs.microsoft.com/en-us/windows-hardware/drivers/display/timeout-detection-and-recovery) of Windows. If you are running demanding GPU workloads, you should increase the timeout from the default 2 seconds. More detail may be found in [NVIDIA's Installation Guide for Windows](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#driver-model).
 
+### Hardware acceleration
+
+On AIX&reg; systems that contain the Nest accelerator (NX) co-processor, OpenJ9 can take advantage of the `zlibNX` library. This library is an enhanced version of the `zlib` compression library that supports hardware-accelerated data compression and decompression. The `zlibNX` library is supported on AIX version 7.2 TL4 and later and must be installed on the system. The Nest accelerator (NX) co-processor is available on IBM POWER9&reg; systems. To learn more about `zlibNX`, see [Data compression by using the zlibNX library](https://www.ibm.com/support/knowledgecenter/ssw_aix_72/performance/zlibNX.html).
+
 ## Runtime options
 
 Runtime options are specified on the command line and include system properties, standard options, nonstandard (**-X**) options, and **-XX** options. For a detailed list of runtime options, see [OpenJ9 command-line options](cmdline_specifying.md)
@@ -132,10 +136,15 @@ Runtime options are specified on the command line and include system properties,
 
 If you do not specify any options on the command line at run time, the OpenJ9 VM starts with default settings that define how it operates. For more information about these settings, see [Default settings for the OpenJ9 VM](openj9_defaults.md).
 
-## ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Using Jlink
+## ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Using jlink
 
 On Java 11 and later, you can use the `jlink` utility to create a custom OpenJ9 runtime image, which allows you to optimize image size.
 If you do not require translations from the English language, the translation files can be removed to further optimize the size. You can achieve this by specifying the `--exclude-files=**java_**.properties` option when you run `jlink`. The default English `java.properties` file is unaffected.
+
+## ![Start of content that applies to Java 16 and later](cr/java16plus.png) Using jpackage
+**(Linux, macOS, and Windows only)**
+
+You can use the `jpackage` utility to package a Java application into a platform-specific package that includes all of the necessary dependencies. Full details of the tool are available at [JEP 392: Packaging Tool](https://openjdk.java.net/jeps/392). Instructions for using it and the various options available, are documented in the Oracle Tool Specifications: [The jpackage Command](https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html).
 
 ## Troubleshooting
 

@@ -33,7 +33,7 @@ This Oracle HotSpot option prints the code cache memory usage when the applicati
 | Setting                      | Effect  | Default                                                                            |
 |------------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:+PrintCodeCache`        | Enable  |                                                                                    |
-| `-XX:-PrintCodeCache`        | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| `-XX:-PrintCodeCache`        | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
 
 As discussed in the Oracle documentation, the code cache usage can be shown when the application exits, by specifying `–XX:+PrintCodeCache` on the Java launcher command line. The output looks similar to the following: 
 

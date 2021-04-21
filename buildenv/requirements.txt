@@ -23,19 +23,24 @@
 #
 # Mkdocs build dependencies pinned
 #
-click==7.0                # via mkdocs
-htmlmin==0.1.12           # via mkdocs-minify-plugin
-jinja2==2.10.3            # via mkdocs
-jsmin==2.2.2              # via mkdocs-minify-plugin
-livereload==2.6.1         # via mkdocs
-markdown==3.1.1           # via mkdocs, mkdocs-material, pymdown-extensions
+click==7.1.2              # via mkdocs, nltk
+future==0.18.2            # via lunr
+importlib-metadata==2.1.1  # via markdown
+jinja2==2.11.3            # via mkdocs
+joblib==0.14.1            # via nltk
+livereload==2.6.3         # via mkdocs
+lunr[languages]==0.5.8    # via mkdocs
+markdown==3.2.2           # via mkdocs, mkdocs-material, pymdown-extensions
 markupsafe==1.1.1         # via jinja2
-mkdocs-material==4.5.0
-mkdocs-minify-plugin==0.2.1  # via mkdocs-material
-mkdocs==1.0.4
-pep562==1.0               # via pymdown-extensions
-pygments==2.4.2           # via mkdocs-material
-pymdown-extensions==6.2   # via mkdocs-material
-pyyaml==5.1.2             # via mkdocs
-six==1.13.0               # via livereload
-tornado==6.0.3            # via livereload, mkdocs
+mkdocs-material-extensions==1.0.1  # via mkdocs-material
+mkdocs-material==7.0.3
+mkdocs==1.1.2
+nltk==3.5                 # via lunr
+pygments==2.8.0           # via mkdocs-material
+pymdown-extensions==8.0.1  # via mkdocs-material
+pyyaml==5.3.1             # via mkdocs
+regex==2020.11.13         # via nltk
+six==1.15.0               # via livereload, lunr
+tornado==6.1              # via livereload, mkdocs
+tqdm==4.58.0              # via nltk
+zipp==1.2.0               # via importlib-metadata

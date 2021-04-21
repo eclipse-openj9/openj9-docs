@@ -37,7 +37,7 @@ If your application is running in a container that imposes a memory limit, the V
 | Setting                    | Effect  | Default                                                                            |
 |----------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XX:-UseContainerSupport` | Disable |                                                                                    |
-| `-XX:+UseContainerSupport` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
+| `-XX:+UseContainerSupport` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
 
 
 When using container technology, applications are typically run on their own and do not need to compete for memory. The OpenJ9 VM detects when it is running inside a container that imposes a memory limit, and adjusts the maximum Java heap size appropriately.
@@ -65,7 +65,7 @@ When [`-XX:MaxRAMPercentage` / `-XX:InitialRAMPercentage`](xxinitialrampercentag
 
     -XX:+UseContainerSupport -XX:MaxRAMPercentage=80
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you set a value for [`-Xms`](xms.md), the `-XX:InitialRAMPercentage` option is ignored.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you set a value for [`-Xms`](xms.md), the `-XX:InitialRAMPercentage` option is ignored.
 If you set a value for [`-Xmx`](xms.md), the `-XX:MaxRAMPercentage` option is ignored.
 
 <!-- ==== END OF TOPIC ==== xxusecontainersupport.md ==== -->

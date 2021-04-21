@@ -24,7 +24,7 @@
 
 # -Djava.lang.stringBuffer.growAggressively
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** This system property is supported only on Java&trade; 8.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This system property is supported only on Java&trade; 8.
 
 ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) Setting this property to `false` reverts to the behavior (OpenJ9 0.18 and earlier) of growing a 1 G `char[]` or larger `StringBuffer` or `StringBuilder` only as much as necessary to accommodate the `String` being added. The default behavior is to immediately grow to the maximum possible size, similarly to Java 11 and later. The default behavior is compatible with the Oracle HotSpot VM.
 
@@ -36,7 +36,7 @@
 
 | Setting      | Effect                                | Default                                                                            |
 |--------------|---------------------------------------|:----------------------------------------------------------------------------------:|
-| true         | Above 1 G, grow to the maximum size  |  <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>    |
+| true         | Above 1 G, grow to the maximum size  |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>    |
 | false        | Above 1 G, grow only as required     |                                                                                    |
 
 

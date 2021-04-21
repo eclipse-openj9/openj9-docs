@@ -26,7 +26,7 @@
 
 Optimizes OpenJ9 VM function for virtualized environments, such as a cloud, by reducing OpenJ9 VM CPU consumption when idle.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Performance is optimized if there is a large shared classes cache (SCC) and AOT space in the SCC is not capped.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Performance is optimized if there is a large shared classes cache (SCC) and AOT space in the SCC is not capped.
 
 ## Syntax
 

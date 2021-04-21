@@ -28,7 +28,7 @@
 
 This option controls whether a garbage collection cycle takes place when the state of the OpenJ9 VM is set to idle. Compaction of the heap is also attempted during the idle GC when certain triggers are met.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
 
 ## Syntax
 
@@ -36,8 +36,8 @@ This option controls whether a garbage collection cycle takes place when the sta
 
 | Setting                   | Effect  | Default  | Default when running in a docker container                                 |
 |---------------------------|---------|:--------:|:--------------------------------------------------------------------------:|
-| `-XX:+IdleTuningGcOnIdle` | Enable  |  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>     |
-| `-XX:-IdleTuningGcOnIdle` | Disable |  <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span>   |   |
+| `-XX:+IdleTuningGcOnIdle` | Enable  |  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
+| `-XX:-IdleTuningGcOnIdle` | Disable |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |   |
 
 The default depends on whether or not the OpenJ9 VM is running in a docker container. As indicated in the table, when the VM is running in a container and the state is set to idle, this option causes the VM to release free memory pages in the object heap without resizing the Java&trade; heap and attempts to compact the heap after the garbage collection cycle if certain heuristics are triggered. The pages are reclaimed by the operating system, which reduces the physical memory footprint of the VM.
 

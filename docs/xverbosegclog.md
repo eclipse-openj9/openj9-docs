@@ -47,6 +47,7 @@ By default, no verbose GC logging occurs.
 ## See also
 
 - [Dump agent tokens](xdump.md#dump-agent-tokens) for more information.
+- [Verbose GC logs](vgclog.md) and [Log examples](vgclog_examples.md) for more information about verbose GC logs.
 
 
 <!-- ==== END OF TOPIC ==== xverbosegclog.md ==== -->

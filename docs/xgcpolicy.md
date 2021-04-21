@@ -35,8 +35,8 @@ Controls which Garbage Collection (GC) policy is used for your Java&trade; appli
 
 | Parameter                                                                    | Default |
 |------------------------------------------------------------------------------|---------|
-| [`gencon`](#gencon)                                                          | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
-| [`balanced`](#balanced)                                                      |         |
+| [`gencon`](#gencon)                                                          | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| [`balanced`](#balanced-64-bit-only) (64-bit only)                            |         |
 | [`metronome`](#metronome-aix-linux-x86-only) (AIX&reg;, Linux&reg; x86 only) |         |
 | [`optavgpause`](#optavgpause)                                                |         |
 | [`optthruput`](#optthruput)                                                  |         |
@@ -53,7 +53,7 @@ For a detailed description of the policies, when to use them, and how they work,
 : To learn more about this policy, when to use it, and how it works, see [Garbage collection: `gencon` policy](gc.md#gencon-policy-default).
 
 
-### `balanced`
+### `balanced` (64-bit only)
 
         -Xgcpolicy:balanced
 
@@ -61,7 +61,7 @@ For a detailed description of the policies, when to use them, and how they work,
 
 : The `balanced` policy also exploits large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), which might further improve application throughput.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you are using this GC policy in a Docker container that uses the default `seccomp` Docker profile, you must start the container with `--security-opt seccomp=unconfined` to exploit NUMA characteristics. These options are not required if you are running in Kubernetes, because `unconfined` is set by default (see [Seccomp]( https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp)).
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you are using this GC policy in a Docker container that uses the default `seccomp` Docker profile, you must start the container with `--security-opt seccomp=unconfined` to exploit NUMA characteristics. These options are not required if you are running in Kubernetes, because `unconfined` is set by default (see [Seccomp]( https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp)).
 
 : To learn more about this policy, how it works, and when to use it, see [Garbage collection: `balanced` policy](gc.md#balanced-policy).
 
@@ -171,7 +171,7 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
 : [`-Xnoclassgc`](xclassgc.md) disables class garbage collection. This option switches off the collection of storage associated with Java classes that are no longer being used by the OpenJ9 VM. The default behavior is [`-Xclassgc`](xclassgc.md), which heuristically decides which GC cycle will attempt to unload classes.
 
-: <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Disabling class GC is not recommended as this causes unlimited native memory growth, leading to *out-of-memory* errors.
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Disabling class GC is not recommended as this causes unlimited native memory growth, leading to *out-of-memory* errors.
 
 : [`-Xalwaysclassgc`](xalwaysclassgc.md) always performs dynamic class unloading checks during global GC cycles.
 
@@ -191,7 +191,7 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 `-Xgc:verboseGCCycleTime=N`
 : N is the time in milliseconds that the summary information should be logged.
 
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The cycle time does not mean that the summary information is logged precisely at that time, but when the last GC event that meets this time criterion passes.
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The cycle time does not mean that the summary information is logged precisely at that time, but when the last GC event that meets this time criterion passes.
 
 `-Xmx<size>`
 : Specifies the Java heap size. Unlike other GC strategies, the `metronome` policy does not support heap expansion. You can specify only the maximum heap size, not an initial heap size (`-Xms`).

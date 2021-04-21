@@ -82,7 +82,7 @@ You can have multiple `-Xdump` options on the command line. You can also have mu
 java -Xdump:heap:none -Xdump:heap+java:events=vmstart+vmstop -mp . -m <class> [args...]
 ```
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Multiple suboptions that follow an `Xdump` suboption must be split with a comma (,), for example:
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Multiple suboptions that follow an `Xdump` suboption must be split with a comma (,), for example:
 
 ```
 java -Xdump:java:events=vmstart,file=/STDERR/ -version
@@ -181,7 +181,7 @@ Registered dump agents
 ```
 ### Dump agent tokens
 
-You can use tokens to add context to dump file names and directories, and to pass command-line arguments to the tool agent. The tokens available are listed in the following table:
+You can use tokens to add context to dump file names and directories, and to pass command-line arguments to the tool agent. The tokens available are listed in the following tables:
 
 | Token | Description                                                                                                                   |
 |-------|-------------------------------------------------------------------------------------------------------------------------------|
@@ -192,16 +192,22 @@ You can use tokens to add context to dump file names and directories, and to pas
 | %H    | Hour ( 2 digits)                                                                                                              |
 | %M    | Minute (2 digits)                                                                                                             |
 | %S    | Second (2 digits)                                                                                                             |
-| %pid  | Process ID                                                                                                                    |
-| %uid  | User name                                                                                                                     |
-| %seq  | Dump counter                                                                                                                  |   
-| %tick | msec counter                                                                                                                  |
 | %home | Java home directory                                                                                                           |
 | %last | Last dump                                                                                                                     |
-| %job  | Job name (z/OS only)                                                                                                          |
-| %jobid| Job ID (z/OS only)                                                                                                            |
-| %asid | Address space ID (z/OS only)                                                                                                  |
-| &DS   | Dump Section. An incrementing sequence number used for splitting TDUMP files to be less than 2 GB in size. (z/OS 64-bit only) |
+| %pid  | Process ID                                                                                                                    |
+| %seq  | Dump counter                                                                                                                  |   
+| %tick | msec counter                                                                                                                  |
+| %uid  | User name                                                                                                                     |
+
+The following tokens are applicable only to z/OS:
+
+| Token    | Description                                                                                                                |
+|----------|----------------------------------------------------------------------------------------------------------------------------|
+| %asid    | Address space ID                                                                                                           |
+| %job     | Job name                                                                                                                   |
+| %jobid   | Job ID                                                                                                                     |
+| %sysname | SYSNAME sysparm                                                                                                            |
+| &DS      | Dump Section. An incrementing sequence number used for splitting TDUMP files to be less than 2 GB in size. (64-bit only)   |
 
 ### Merging dump agents
 
@@ -306,7 +312,7 @@ The following table shows the events that are available as dump agent triggers:
 | **corruptcache**| The VM finds that the shared classes cache is corrupt.                      | Not applicable                                                 |
 | **excessivegc** | An excessive amount of time is being spent in the garbage collector.        | Not applicable                                                 |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The **gpf**, **traceassert**, and **abort** events cannot trigger a heap dump, prepare the heap (request=prepwalk), or compact the heap (request=compact).
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The **gpf**, **traceassert**, and **abort** events cannot trigger a heap dump, prepare the heap (request=prepwalk), or compact the heap (request=compact).
 
 ## Parameters
 
@@ -373,7 +379,7 @@ If you remove all dump agents by using `-Xdump:none` with no further `-Xdump` op
 - If a user signal (kill -QUIT) is sent to the VM, a brief listing of the Java threads including their stacks, status, and monitor information is written to stderr.
 - If a crash occurs, information about the location of the crash, VM options, and native and Java stack traces are written to stderr. A system dump file is also written to the user's home directory.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Removing dump agents and specifying a new dump configuration can require a long set of command-line options. To reuse command-line options, save the new dump configuration in a file and use the `-Xoptionsfile` option. For more information, see [-Xoptionsfile](xoptionsfile.md).
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Removing dump agents and specifying a new dump configuration can require a long set of command-line options. To reuse command-line options, save the new dump configuration in a file and use the `-Xoptionsfile` option. For more information, see [-Xoptionsfile](xoptionsfile.md).
 
 ### `defaults`
 
@@ -393,7 +399,7 @@ Or, for example, on z/OS, you can add the jobname to the Java dump file name usi
 
 This option does not add a Java dump agent; it updates the default settings for Java dump agents. Further Java dump agents will then create dump files using this specification for filenames, unless overridden.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** Changing the defaults for a dump type will also affect the default agents for that dump type added by the VM during initialization. For example if you change the default file name for Java dump files, that will change the file name used by the default Java dump agents. However, changing the default range option will not change the range used by the default Java dump agents, because those agents override the range option with specific values.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Changing the defaults for a dump type will also affect the default agents for that dump type added by the VM during initialization. For example if you change the default file name for Java dump files, that will change the file name used by the default Java dump agents. However, changing the default range option will not change the range used by the default Java dump agents, because those agents override the range option with specific values.
 
 ### `events=<event>`
 
@@ -546,7 +552,7 @@ You can filter the **catch** exception events by Java method name (optional port
 -Xdump:java:events=catch,filter=ExceptionClassName[#com/ibm/CatchingClassName.catchingMethodName]
 ```
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** The filters apply to the stacktrace and fire every time the same exception is rethrown, which might result in multiple Java core files.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The filters apply to the stacktrace and fire every time the same exception is rethrown, which might result in multiple Java core files.
 
 #### vmstop event
 
@@ -701,7 +707,7 @@ For example:
 -Xdump:java:events=fullgc,range=100..200
 ```
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** range=1..0 against an event means "on every occurrence".
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** range=1..0 against an event means "on every occurrence".
 
 The VM default dump agents have the range suboption set to 1..0 for all events except systhrow. Most systhrow events with `filter=java/lang/OutOfMemoryError` have the range suboption set to 1..4, which limits the number of dump files produced on `OutOfMemory` conditions to a maximum of 4. For more information, see [Default dump agents](#default-dump-agents).
 
@@ -764,7 +770,7 @@ Dump output is written to different files, depending on the type of dump and the
 
 The tokens used in this table, for example `%Y`, are described in [Dump agent tokens](#dump-agent-tokens).
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** On z/OS, the system dump file name can be set with the `JAVA_DUMP_TDUMP_PATTERN` environment variable. The CEEDUMP, which is not produced by default, is stored in the directory specified by
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On z/OS, the system dump file name can be set with the `JAVA_DUMP_TDUMP_PATTERN` environment variable. The CEEDUMP, which is not produced by default, is stored in the directory specified by
 `_CEE_DMPTARG` or the current directory if `_CEE_DMPTARG` is not specified.
 
 ### System dumps on Linux
@@ -775,7 +781,7 @@ The system dump file for the child process contains an exact copy of the memory 
 
 You can use the Linux `kernel.core_pattern` setting to specify the name and path for system dumps. The VM dump agents override the Linux system dump name and path by renaming the dump as specified in the `-Xdump` options. If the `kernel.core_pattern` setting specifies a different file system to the `-Xdump` options, the VM dump agents might be unable to change the file path. In this case the VM renames the dump file, but leaves the file path unchanged. You can find the dump file name and location in the JVMDUMP010I message.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you use the `%t` specifier in the `kernel.core_pattern` setting, the VM does not rename the dump. The VM cannot determine the exact time that Linux generated the core file, and therefore cannot be certain which Linux dump file is the correct one to rename.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you use the `%t` specifier in the `kernel.core_pattern` setting, the VM does not rename the dump. The VM cannot determine the exact time that Linux generated the core file, and therefore cannot be certain which Linux dump file is the correct one to rename.
 
 ## See also
 

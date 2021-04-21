@@ -29,13 +29,13 @@
 
 Enables or disables the use of compressed references.
 
-<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> **Restriction:** You cannot include `-Xcompressedrefs` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** You cannot include `-Xcompressedrefs` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
 
 ## Syntax
 
 | Setting             | Action              | Default                                                                                                                        |
 |---------------------|---------------------|:------------------------------------------------------------------------------------------------------------------------------:|
-|`-Xcompressedrefs`   | Enable compression  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> (see [Default behavior](#default-behavior)) |
+|`-Xcompressedrefs`   | Enable compression  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (see [Default behavior](#default-behavior)) |
 |`-Xnocompressedrefs` | Disable compression |                                                                                                                                |
 
 ## Default behavior
@@ -48,7 +48,8 @@ Compressed references are enabled by default when [`-Xmx`](xms.md) &le; 57 GB.
 
 ## See also
 
-- [Compressed references](gc_overview.md#compressed-references)
+- [Compressed references](allocation.md#compressed-references)
+
 
 
 <!-- ==== END OF TOPIC ==== xcompressedrefs.md ==== -->

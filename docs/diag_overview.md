@@ -44,7 +44,7 @@ Some components of OpenJ9 can also produce verbose output or log files to assist
 
 - Class data sharing provides a number of `-Xshareclasses` suboptions to provide detailed data about the content of a shared classes cache, cache I/O activity, and information about the Java Helper API (where used). For example, the `-Xshareclasses:printAllStats` suboption lists every class in chronological order with a reference to the location from which it was loaded. For more information, see [-Xshareclasses](xshareclasses.md).   
 
-- Garbage collection operations can be analyzed by producing verbose output from the `-verbose:gc` standard option. This output can be redirected to a file by specifying the `-Xverbosegclog` option. Information can be obtained about GC initialization, *stop-the-world* processing, finalization, reference processing, and allocation failures. Even more granular information can be obtained with the [-Xtgc](xtgc.md) option.
+- Garbage collection operations can be analyzed by producing verbose output from the `-verbose:gc` standard option. This output can be redirected to a file by specifying the `-Xverbosegclog` option. Information can be obtained about GC initialization, *stop-the-world* processing, finalization, reference processing, and allocation failures. Even more granular information can be obtained with the [-Xtgc](xtgc.md) option. For more information, see [verbose GC logs](vgclog.md).
 
 - The JIT compiler provides verbose logging, which records all compiler operations. To find out how to enable logging, read the [JIT troubleshooting](jit.md#troubleshooting) content.
 
@@ -63,7 +63,7 @@ A number of diagnostic tools are available with OpenJ9 to assist with the analys
 
 ### Dump extractor
 
-The dump extractor (`jextract`) supports a full analysis of core files on specific platforms by collecting key files from a system and packaging them into an archive along with a core dump. This archive file is extremely useful when reporting issues to the OpenJ9
+The dump extractor (`jpackcore`) supports a full analysis of core files on specific platforms by collecting key files from a system and packaging them into an archive along with a core dump. This archive file is extremely useful when reporting issues to the OpenJ9
 community, helping to ensure a faster analysis and turnaround. For more information, see
 [Dump extractor](tool_jextract.md).
 
@@ -88,7 +88,7 @@ For more information, see [Option builder](tool_builder.md).
 A number of tools are available for compatibility with the reference implementation. These tools are independently implemented by
 OpenJ9 but have similar functions, allowing users to migrate more easily. The available tools are listed in the Tools section.  
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** If you are already familiar with tools that are provided with HotSpot, see [Switching to OpenJ9](tool_migration.md), which explains some of the differences you might encounter when using OpenJ9.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you are already familiar with tools that are provided with HotSpot, see [Switching to OpenJ9](tool_migration.md), which explains some of the differences you might encounter when using OpenJ9.
 
 ### Eclipse marketplace tools
 
@@ -97,7 +97,6 @@ OpenJ9 provides support for a number of monitoring and diagnostic tools that can
 - [**Health Center:**](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-health-center) Provides real-time monitoring of running applications with minimal overhead over the network. You can monitor a whole range of operations including, class loading, CPU usage, GC heap and pause times, I/O activity, lock contention, method trace, native memory usage, profiling, and live threads. For more information, read the [Health Center documentation](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/homepage/plugin-homepage-hc.html).
 - [**Garbage Collection Memory Vizualizer (GCMV):**](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv) Plots GC and native memory data over time. You can view and save data as a report, raw log, tabulated data, or in graphical format. The tool helps to diagnose problems such as memory leaks with data presented in various visual formats for analysis. Tuning recommendations are also provided. For more information, read the [GCMV documentation](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.visualizer.doc/homepage/plugin-homepage-gcmv.html).
 - [**Memory Analyzer:**](https://marketplace.eclipse.org/content/memory-analyzer-0) Examines the Java object heap to help find memory leaks or reduce memory consumption. Support is available for OpenJ9 via the DTFJ interface (Install from the Eclipse Help menu; Install New Software > Work with "IBM Diagnostic Tool Framework for Java" > IBM Monitoring and Diagnostic Tools > Diagnostic Tool Framework for Java). More information about Eclipse MAT can be found on the [project website page](https://www.eclipse.org/mat/).
-- [**Interactive Diagnostic Data Explorer (IDDE):**](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-interactive-diagnostic-data-explorer-idde) A GUI alternative to the OpenJ9 [dump viewer](tool_jdmpview.md), which can examine the contents of an OpenJ9 system dump. For more information, read the [IDDE documentation](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.idde.doc/homepage/plugin-homepage-idde.html).
 
 If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, the Java VisualVM utility is functionally similar to Health Center.
 

@@ -46,7 +46,7 @@ If you reduce the `-Xsoftmx` value, the garbage collector attempts to respect th
 
 When the heap shrinks, the garbage collector might release memory. The ability of the operating system to reclaim and use this memory varies based on the capabilities of the operating system.
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Notes:**
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
 - When using `-Xgcpolicy:gencon`, `-Xsoftmx` applies only to the non-nursery portion of the heap. In some cases the heap grows to greater than the `-Xsoftmx` value because the nursery portion grows, making the heap size exceed the limit that is set. See `-Xmn` for limiting the nursery size.
 

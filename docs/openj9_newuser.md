@@ -36,9 +36,9 @@ For a list of compatible options, equivalent options, and options that need to b
 
 ## Garbage collection policies
 
-Eclipse OpenJ9 has a number of GC policies designed around different types of applications and workloads. By default, OpenJ9 uses the Generational Concurrent (`gencon`) GC policy, which is best suited for transactional applications that have many short-lived objects. The policy aims to minimize GC pause times without compromising throughput. If you are using Java 8, the `gencon` policy is similar to the `ParallelGC` policy, which is the default HotSpot policy. If you are using Java 11, the OpenJ9 balanced (`balanced`) policy is most similar to the default HotSpot policy.
+Eclipse OpenJ9 has a number of garbage collection (GC) policies designed around different types of applications and workloads. By default, OpenJ9 uses the Generational Concurrent (`gencon`) GC policy, which is best suited for transactional applications that have many short-lived objects. The policy aims to minimize GC pause times without compromising throughput. If you are using Java 8, the `gencon` policy is similar to the HotSpot CMS (concurrent mark sweep). If you are using Java 11, the OpenJ9 balanced (`balanced`) policy is most similar to the default HotSpot policy.
 
-If you have a different type of workload, you might want to select a different GC policy. For information about the available policies and when to use them, see [Garbage collection](gc.md). To start your application with a different policy, use the [`-Xgcpolicy`](xgcpolicy.md) option on the command line.
+If you have a different type of workload, you might want to select a different GC policy. For details about the available policies and when to choose them, see [Garbage collection](gc.md).
 
 
 ## Operational tooling
@@ -76,7 +76,6 @@ OpenJ9 provides support for a number of monitoring and diagnostic tools that can
 - [**Health Center:**](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-health-center) Provides real-time monitoring of running applications with minimal overhead over the network. You can monitor a whole range of operations including, class loading, CPU usage, GC heap and pause times, I/O activity, lock contention, method trace, native memory usage, profiling, and live threads. For more information, read the [Health Center documentation](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/homepage/plugin-homepage-hc.html).
 - [**Garbage Collection Memory Vizualizer (GCMV):**](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv) Plots GC and native memory data over time. You can view and save data as a report, raw log, tabulated data, or in graphical format. The tool helps to diagnose problems such as memory leaks with data presented in various visual formats for analysis. Tuning recommendations are also provided. For more information, read the [GCMV documentation](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.visualizer.doc/homepage/plugin-homepage-gcmv.html).
 - [**Memory Analyzer:**](https://marketplace.eclipse.org/content/memory-analyzer-0) Examines the Java object heap to help find memory leaks or reduce memory consumption. Support is available for OpenJ9 via the DTFJ interface (Install from the Eclipse Help menu; Install New Software > Work with "IBM Diagnostic Tool Framework for Java" > IBM Monitoring and Diagnostic Tools > Diagnostic Tool Framework for Java). More information about Eclipse MAT can be found on the [project website page](https://www.eclipse.org/mat/).
-- [**Interactive Diagnostic Data Explorer (IDDE):**](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-interactive-diagnostic-data-explorer-idde) A GUI alternative to the OpenJ9 [dump viewer](tool_jdmpview.md), which can examine the contents of an OpenJ9 system dump. For more information, read the [IDDE documentation](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.idde.doc/homepage/plugin-homepage-idde.html).
 
 If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, the Java VisualVM utility is functionally similar to Health Center. Most of the other tools provided with HotSpot are not officially supported, but equivalent functionality is available in OpenJ9 through command-line
 options, dump agents, and AttachAPI.
@@ -102,7 +101,7 @@ If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, you 
 |`VMOption`                  | OpenJ9 Java dump (option `-Xdump:java`) |
 |`DiagnosticCommandMBean`    | None                     |
 
-<i class="fa fa-pencil-square-o" aria-hidden="true"></i> **Note:** OpenJ9 implements the following `com.sun.management` interfaces: `GarbageCollectorMXBean`, `GarbageCollectionNotificationInfo`, `GcInfo`, `OperatingSystemMXBean`, `UnixOperatingSystemMXBean`.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** OpenJ9 implements the following `com.sun.management` interfaces: `GarbageCollectorMXBean`, `GarbageCollectionNotificationInfo`, `GcInfo`, `OperatingSystemMXBean`, `UnixOperatingSystemMXBean`.
 
 For information about OpenJ9 application programming interfaces, see [API documentation](api-overview.md).
 

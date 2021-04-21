@@ -35,7 +35,7 @@ When compressed references are used with a 64-bit OpenJ9 VM on z/OS&reg;, this o
 | Setting                 | Effect  | Default                                                                            |
 |-------------------------|---------|:----------------------------------------------------------------------------------:|
 | `-XXnosuballoc32bitmem` | Enable  |                                                                                    |   
-| No setting              | Disable | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| No setting              | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 ## Explanation
 

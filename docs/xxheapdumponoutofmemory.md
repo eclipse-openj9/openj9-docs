@@ -32,7 +32,7 @@ This HotSpot option is recognized by OpenJ9. You can use the option to to disabl
 
 | Setting                      | Effect  | Default                                                                        |
 |------------------------------|---------|:------------------------------------------------------------------------------:|
-| `-XX:+HeapDumpOnOutOfMemory` | Enable  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-XX:+HeapDumpOnOutOfMemory` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:-HeapDumpOnOutOfMemory` | Disable |                                                                                |
 
 

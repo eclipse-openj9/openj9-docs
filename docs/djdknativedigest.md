@@ -32,7 +32,7 @@ This option enables or disables OpenSSL native cryptographic support for the Dig
 
 | Setting              | value    | Default                                                                        |
 |----------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeDigest` | true     | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+| `-Djdk.nativeDigest` | true     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-Djdk.nativeDigest` | false    |  |
 
 ## Explanation

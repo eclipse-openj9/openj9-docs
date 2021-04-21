@@ -33,7 +33,7 @@ Compaction takes place on global garbage collections if you specify `-Xcompactgc
 
 | Setting                | Action             | Default                                                                            |
 |------------------------|--------------------|:----------------------------------------------------------------------------------:|
-|`-Xcompactexplicitgc`   | Enable compaction  | <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+|`-Xcompactexplicitgc`   | Enable compaction  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 |`-Xnocompactexplicitgc` | Disable compaction |                                                                                    |
 
 ## See also

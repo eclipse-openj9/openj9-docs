@@ -33,6 +33,6 @@ This Oracle HotSpot option enables or disables the committing of memory during i
 | Setting                  | Effect | Default                                                          |
 |--------------------------|--------|------------------------------------------------------------------|
 |`-XX:+AlwaysPreTouch`     | Enable |                                                                  |
-|`-XX:-AlwaysPreTouch`     | Disable| <i class="fa fa-check" aria-hidden="true"></i><span class="sr-only">yes</span> |
+|`-XX:-AlwaysPreTouch`     | Disable| :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 <!-- ==== END OF TOPIC ==== xxalwayspretouch.md ==== -->

@@ -53,14 +53,14 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 ### Some class data sharing is enabled by default
 
-Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including using `-Xshareclasses:none` to disable all class data sharing. For more information, see [Class data sharing](shrc.md).
+Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container. You can use the `-Xshareclasses` option to change the default behavior, including using `-Xshareclasses:none` to disable all class data sharing. For more information, see [Introduction to class data sharing](shrc.md).
 
 ### Automatic setting of initial heap size is enabled by default
 
 OpenJ9 version 0.15.1 introduced the [`-XX:[+|-]UseGCStartupHints`](xxusegcstartuphints.md) option, which, when enabled, turned on the automatic learning and setting of an appropriate heap size for an application. This option is now enabled by default.
 
 ### Option to share VM anonymous classes
- 
+
 Prior to version 0.16.0, anonymous classes, those created by `Unsafe.defineAnonymousClass`, were not stored in the shared classes cache. They are now stored there by default, which means they are available for ahead-of-time (AOT) compilation, potentially improving startup performance. A new command, [-XX:[+|-]ShareAnonymousClasses](xxshareanonymousclasses.md), is introduced that enables you to stop anonymous classes being stored in the shared classes cache.
 
 ### Performance improvements for JVMTI watched fields on Power Systems
@@ -68,7 +68,7 @@ Prior to version 0.16.0, anonymous classes, those created by `Unsafe.defineAnony
 OpenJ9 version 0.14.0 introduced the [`-XX:[+|-]JITInlineWatches`](xxjitinlinewatches.md) option, which turns on JIT operations to improve the performance of JVMTI watched fields. This option, which was enabled by default in version 0.15.1, is now also supported on AIX&reg; and Linux on Power Systems&trade;.
 
 ### Linux&reg; on x86: Support for Transparent Huge Pages (THP)
- 
+
 When you use the `madvise` (`/sys/kernel/mm/transparent_hugepage/enabled`) setting on Linux on x86 systems, THP is now enabled by default. To disable this feature, set [`-XX:-TransparentHugePage`](xxtransparenthugepage.md) on the command line when you start your application. The THP setting on other systems remains disabled by default when you use `madvise`, but can be enabled by setting [`-XX:+TransparentHugePage`](xxtransparenthugepage.md).
 
 ### New jcmd tool
