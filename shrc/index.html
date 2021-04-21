@@ -890,6 +890,46 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#support-for-bytecode-instrumentation" class="md-nav__link">
+    Support for bytecode instrumentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Support for bytecode instrumentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redefined-and-retransformed-classes" class="md-nav__link">
+    Redefined and retransformed classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-modified-bytecode" class="md-nav__link">
+    Sharing modified bytecode
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharing modified bytecode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sharedclasshelper-cache-partitions" class="md-nav__link">
+    SharedClassHelper cache partitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#see-also" class="md-nav__link">
     See also
   </a>
@@ -4237,6 +4277,46 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#support-for-bytecode-instrumentation" class="md-nav__link">
+    Support for bytecode instrumentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Support for bytecode instrumentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redefined-and-retransformed-classes" class="md-nav__link">
+    Redefined and retransformed classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-modified-bytecode" class="md-nav__link">
+    Sharing modified bytecode
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharing modified bytecode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sharedclasshelper-cache-partitions" class="md-nav__link">
+    SharedClassHelper cache partitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#see-also" class="md-nav__link">
     See also
   </a>
@@ -4336,8 +4416,8 @@ If you are using a non-persistent cache, you can use a cache utility to create a
 <p>If you have multiple VMs and you do not change the default shared classes behavior, the VMs share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and re-created.</p>
 <p>For a set of best practices when using class data sharing, see <a href="#creating-a-shared-classes-cache">Creating a shared classes cache</a>.</p>
 <h2 id="class-data-sharing-operations">Class data sharing operations</h2>
-<p>When a VM loads a class and the class loader is enabled for class sharing, the VM looks in the shared classes cache to see if the class is already present. If the class is present and the classpath or URL to load the class is a match, the VM loads the class from the cache. Otherwise, it loads the class from the filesystem and writes it into the cache.</p>
-<p>The VM detects filesystem updates by storing timestamp values into the cache and comparing the cached values with actual values. In this way, the VM detects when a class might be invalidated and can mark the class as <em>stale</em>. These operations happen transparently when classes are loaded, so users can modify and update as many classes as they like during the lifetime of a shared class cache, knowing that the correct classes are always loaded. Stale classes are <em>redeemed</em> if the same class is subsequently fetched by the class loader from another VM and checked against the stale class in the cache.</p>
+<p>When a VM loads a class and the class loader is enabled for class sharing, the VM looks in the shared classes cache to see if the class is already present. If the class is present and the classpath or URL to load the class is a match, the VM loads the class from the cache. Otherwise, it loads the class from the file system and writes it into the cache.</p>
+<p>The VM detects file system updates by storing timestamp values into the cache and comparing the cached values with actual values. In this way, the VM detects when a class might be invalidated and can mark the class as <em>stale</em>. These operations happen transparently when classes are loaded, so users can modify and update as many classes as they like during the lifetime of a shared class cache, knowing that the correct classes are always loaded. Stale classes are <em>redeemed</em> if the same class is subsequently fetched by the class loader from another VM and checked against the stale class in the cache.</p>
 <p>Occasionally, caches that are created from one version of the VM might not be compatible with caches that are created from a different version. This situation typically occurs when an update is made in OpenJ9 that changes the internal cache data structure. If a VM detects an incompatible cache at start up, it creates a new cache that can coexist, even if it has the same name. The VM detects a conflict by checking an internal shared classes cache generation number.</p>
 <p>Caches are not compatible between VMs that are using different object storage modes. For example, a 64-bit VM that uses compressed references to store 64-bit objects in a 32-bit representation, cannot share a cache with a 64-bit VM that is not using compressed references. For more information about object storage options, see <a href="../allocation/#compressed-references">Compressed references</a>.</p>
 <p>In the OpenJ9 implementation of <code>java.net.URLClassLoader</code>, classes are read from and written to the cache using the public Helper API. Therefore, any class loader that extends <code>java.net.URLClassLoader</code> gets class sharing support for free provided that it continues to use the methods in <code>java.net.URLClassLoader</code> to load classes. Custom class loaders that do not extend <code>java.net.URLClassLoader</code> must be adapted to share class data as described in <a href="#support-for-custom-class-loaders">Support for custom class loaders</a>.</p>
@@ -4394,7 +4474,7 @@ If you are using a non-persistent cache, you can use a cache utility to create a
 </tr>
 </tbody>
 </table>
-<p>You can also use the <code>-Xshareclasses:findAotMethods</code> cache utility to list the AOT methods in a cache that match a method specification. This utility helps you identify methods that are causing a failure in an application. You can then invalidate the method without destroying the cache by using the <code>-Xshareclasses:invalidateAotMethods</code> cache utility. You can also revalidate an AOT method with the <code>-Xshareclasses:revalidateAotMethods</code> cache utility. For more information see <a href="../xshareclasses/"><code>-Xshareclasses</code></a>.</p>
+<p>You can also use the <code>-Xshareclasses:findAotMethods</code> cache utility to list the AOT methods in a cache that match a method specification. This utility helps you identify methods that are causing a failure in an application. You can then invalidate the method without destroying the cache by using the <code>-Xshareclasses:invalidateAotMethods</code> cache utility. You can also revalidate an AOT method with the <code>-Xshareclasses:revalidateAotMethods</code> cache utility. To troubleshoot AOT problems, use the <code>-Xshareclasses:verboseAOT</code> suboption on the command line, which generates output about AOT code that is found or stored in the cache. For more information see <a href="../xshareclasses/"><code>-Xshareclasses</code></a>.</p>
 <h2 id="creating-a-shared-classes-cache">Creating a shared classes cache</h2>
 <p>The <a href="../xshareclasses/">-Xshareclasses</a> option is highly configurable, allowing you to specify where to create the cache, how much space to allocate, and more. The following best practices apply to using class data sharing:</p>
 <ul>
@@ -4493,6 +4573,7 @@ MyCache                 Java8 64-bit  persistent      cr              2         
 <li><a href="../xshareclasses/#destroyallsnapshots"><code>-Xshareclasses:destroyAllSnapshots</code></a>: Removes all cache snapshots from disk that are found by specifying the <code>cacheDir</code> suboption.</li>
 <li><a href="../xshareclasses/#destroyalllayers"><code>-Xshareclasses:destroyAllLayers</code></a>: Removes all shared cache layers that are specified by the <code>name</code> and <code>cacheDir</code> suboptions.</li>
 </ul>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> You must always use the utilities to remove non-persistent caches correctly from shared memory.</p>
 <p>Caches can also be removed if they are unused for a specified amount of time. To configure time-based housekeeping, use the <a href="../xshareclasses/#expire">-Xshareclasses:expire</a> option.</p>
 <p>If you want to remove a cache but allow it to be re-created when the VM restarts, use the <a href="../xshareclasses/#reset"><code>-Xshareclasses:reset</code></a> option.</p>
 <h2 id="support-for-custom-class-loaders">Support for custom class loaders</h2>
@@ -4512,10 +4593,11 @@ permission com.ibm.oti.shared.SharedClassesNamedPermission &quot;destroySharedCa
 <p>Each class loader that wants to share classes must get a <code>SharedClassHelper</code> object from a <code>SharedClassHelperFactory</code>. The <code>SharedClassHelper</code>, when created, has a one to one relationship with the class loader. That is, it belongs to the class loader that requested it and can only store classes defined by that class loader. The <code>SharedClassHelper</code> gives the class loader a simple API for finding and storing classes in the class cache to which the VM is connected. If the class loader is garbage collected, its <code>SharedClassHelper</code> is also garbage collected.</p>
 <p>The following main functions are available from the <code>SharedClassHelper</code> API:</p>
 <ul>
-<li><code>findSharedClass</code>: Used to check whether a class is already in the cache before looking for the class on the filesystem.</li>
+<li><code>findSharedClass</code>: Used to check whether a class is already in the cache before looking for the class on the file system.</li>
 <li><code>storeSharedClass</code>: Used to store a class in the cache.</li>
-<li><code>setSharingFilter</code>: A filter that can be used to decide which classes are found and stored in the cache. This filter can be applied to a particular package by implementing the <code>SharedClassFilter</code> interface. To apply a filter to all non-bootstrap class loaders that share classes, specify the <code>-Dcom.ibm.oti.shared.SharedClassGlobalFilterClass</code> system property on the command line.</li>
+<li><code>setSharingFilter</code>: A filter that can be used to decide which classes are found and stored in the cache. This filter can be applied to a particular package by implementing the <code>SharedClassFilter</code> interface. To apply a filter to all non-bootstrap class loaders that share classes, specify the <a href="../dcomibmotisharedsharedclassglobalfilterclass/"><code>-Dcom.ibm.oti.shared.SharedClassGlobalFilterClass</code></a> system property on the command line.</li>
 </ul>
+<p>You can also define partitions in a cache to store sets of classes separately from one another. For more information see <a href="#sharedclasshelper-cache-partitions"><code>SharedClassHelper</code> cache partitions</a>.</p>
 <p>Each class loader that wants to share data must get a <code>SharedDataHelper</code> object from a <code>SharedDataHelperFactory</code>.
 A <code>SharedDataHelperFactory</code> provides an interface that can be used to create <code>SharedDataHelpers</code>, which are used for storing Java byte array data. A <code>SharedDataHelper</code> also has a one to one relationship with a class loader, although a class loader can exist without a <code>SharedDataHelper</code>.</p>
 <h3 id="the-java-shared-classes-utility-api">The Java shared classes utility API</h3>
@@ -4525,6 +4607,32 @@ A <code>SharedDataHelperFactory</code> provides an interface that can be used to
 <li><code>com.ibm.oti.shared.SharedClassUtilities</code>: Obtains detailed information about a shared classes cache, including its size, name, type, and status.</li>
 <li><code>com.ibm.oti.shared.SharedClassCacheInfo</code>: Stores information about a shared classes cache and provides API methods to retrieve the information and remove caches. You can also use the <code>IterateSharedCaches</code> and <code>DestroySharedCache</code> <a href="../interface_jvmti/#iteratesharedcaches">JVMTI extensions</a>.</li>
 </ul>
+<h2 id="support-for-bytecode-instrumentation">Support for bytecode instrumentation</h2>
+<p>Modifying the bytecode of a set of classes at runtime is a useful mechanism for adding functions to a program, such as profiling or debugging. The JVM Tools Interface (JVMTI) includes hooks that allow you to instrument the byte code in this way. Alternatively, you can write your own Java agent that uses the <code>java.lang.instrument</code> API. Sharing classes that are changed before they are loaded adds complexity to the class sharing process.</p>
+<p>By default, if OpenJ9 detects that a JVMTI agent or <code>java.lang.instrument</code> agent has registered to modify class bytes, modified classes are not stored in the cache. Instead, the VM stores original class byte data in the cache, which allows classes to be retransformed.</p>
+<p>If you turn off bytecode instrumentation support by specifying <a href="../xshareclasses/#disablebci"><code>-Xshareclasses:disableBCI</code></a> and do not use a <em>modification context</em> to share modified classes safely, all bytecode is loaded from the file system for the agent to modify. When passed to the cache for storing, the VM compares the bytes with known classes of the same name. If a match is found, the class is reused. However, if a match is not found, the potentially modified class is stored in the cache in a way that prevents other VMs from loading it. In this situation, performance can be affected because the bytecode is always loaded from the file system and compared with existing classes in the cache. When bytecode instrumentation is turned off, classes loaded from the shared cache cannot be retransformed.
+For more information about using a modification context, see <a href="#sharing-modified-bytecode">Sharing modified bytecode</a>.</p>
+<h3 id="redefined-and-retransformed-classes">Redefined and retransformed classes</h3>
+<p>The following rules exist for classes that are redefined or retransformed by JVMTI or <code>java.lang.instrument</code> agents:</p>
+<ul>
+<li>
+<p>Redefined classes contain replacement bytecode that is provided by an agent at run time by using the JVMTI <code>RedefineClasses</code> or <code>Instrumentation.redefineClasses</code> function. A typical use case is for debugging, where function is added for log output. These classes are never stored in the cache.</p>
+</li>
+<li>
+<p>Retransformed classes contain bytecode that can be changed without any reference to the original bytecode by using the JVMTI <code>RetransformClasses</code> or <code>Instrumentation.retransformClasses</code> functions. A typical use case is a profiling agent that adds or removes profiling calls with each retransformation. These classes can be modified multiple times and are not stored in the cache by default. If you want to store these modified classes for reuse, you can do so by setting the <a href="../xshareclasses/#cacheretransformed"><code>-Xshareclasses:cacheRetransformed</code></a> suboption when you start your application. This option turns off bytecode instrumentation support, forcing cache creation into <a href="../xshareclasses/#disablebci"><code>-Xshareclasses:disableBCI</code></a> mode.  </p>
+</li>
+</ul>
+<h3 id="sharing-modified-bytecode">Sharing modified bytecode</h3>
+<p>Sharing modified bytecode can be advantageous for applications that use the same modifications because the transformation process needs to happen only once. OpenJ9 allows multiple VMs that are using the same or different types of class modifications to safely share the cache. However, when a class is modified and cached, it cannot be modified (retransformed) further.</p>
+<p>Modified bytecode can be shared safely by using a <em>modification context</em>. Use the <a href="../xshareclasses/#disablebci"><code>-Xshareclasses:disableBCI</code></a> and <a href="../xshareclasses/#modified"><code>-Xshareclasses:modified=&lt;modified_context&gt;</code></a> suboptions when you start your application, where <code>&lt;modified_context&gt;</code> is a user-defined description. The cache is structured so that any VM that is started with the same modification context can share the classes in a private area. The following outcomes apply to VMs that do not want to share the modified classes:</p>
+<ul>
+<li>A VM that is started without specifying a modification context shares classes outside of that area as normal.</li>
+<li>A VM that is started with a different modification context, shares classes in its own private area.</li>
+</ul>
+<h4 id="sharedclasshelper-cache-partitions"><code>SharedClassHelper</code> cache partitions</h4>
+<p>Another method of structuring and protecting classes in the shared classes cache can be implemented by using the <code>SharedClassHelper</code> API with a custom class loader. This mechanism creates partitions by using a string key to identify a set of classes, which can be stored and retrieved by the class loader. A use case for this mechanism is Aspect Oriented Programming (AOP) where aspects are woven in to bytecode when a class is loaded into the VM. Being able to partition the cache provides a suitable level of granularity when you want to use different aspect paths.</p>
+<p>Although it is possible to combine partitions and modification contexts, this practice is not recommended because the cache will contain partitions within partitions.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Partitions are not supported by the bootstrap class loader or the default application class loader.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../aot/">AOT compiler</a></li>
