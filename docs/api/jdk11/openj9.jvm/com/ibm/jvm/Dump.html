@@ -170,7 +170,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  <br>
  The recommended usage of the <a href="#javaDumpToFile()"><code>javaDumpToFile()</code></a>, <a href="#systemDumpToFile()"><code>systemDumpToFile()</code></a>,
  <a href="#heapDumpToFile()"><code>heapDumpToFile()</code></a> and <a href="#snapDumpToFile()"><code>snapDumpToFile()</code></a>
- methods is to call the no argument versions  of these calls rather than specifying a file
+ methods is to call the no argument versions of these calls rather than specifying a file
  name as this will trigger a dump to the default location. Your dump file will go to the
  default location specified by any -Xdump options given to the JVM at startup time following
  the user or administrators preferences.
@@ -388,7 +388,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">public static&nbsp;void&nbsp;JavaDump()</pre>
 <div class="block">Trigger a java dump. A java dump is in a human-readable format, and
  summarizes the state of the JVM.
- 
+
  A security manager check will be made only if the system property
  com.ibm.jvm.enableLegacyDumpSecurity is set to "true" in which case
  a check will be made for com.ibm.jvm.DumpPermission</div>
@@ -408,7 +408,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">public static&nbsp;void&nbsp;HeapDump()</pre>
 <div class="block">Trigger a heap dump. The default heap dump format (a phd file) is not
  human-readable.
- 
+
  A security manager check will be made only if the system property
  com.ibm.jvm.enableLegacyDumpSecurity is set to "true" in which case
  a check will be made for com.ibm.jvm.DumpPermission</div>
@@ -429,7 +429,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Trigger a system dump. A system dump is a platform-specific
  file that contains information about the active processes, threads, and
  system memory. System dumps are usually large.
- 
+
  A security manager check will be made only if the system property
  com.ibm.jvm.enableLegacyDumpSecurity is set to "true" in which case
  a check will be made for com.ibm.jvm.DumpPermission</div>
@@ -450,7 +450,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Trigger a snap dump. The snap dump format is not human-readable
  and must be processed using the trace formatting tool supplied
  with the OpenJ9 JVM.
- 
+
  A security manager check will be made only if the system property
  com.ibm.jvm.enableLegacyDumpSecurity is set to "true" in which case
  a check will be made for com.ibm.jvm.DumpPermission</div>
@@ -471,11 +471,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                              throws <a href="InvalidDumpOptionException.html" title="class in com.ibm.jvm">InvalidDumpOptionException</a></pre>
 <div class="block">Trigger a java dump. A java dump is in a human-readable format, and
  summarizes the state of the JVM.
- 
+
  The JVM will attempt to write the file to the specified file name. This may
  include replacement tokens as documented in the section on dump agents
  in the documentation for the OpenJ9 JVM.
- 
+
  A string containing the actual file name written to is returned. This may not
  be the same as the requested filename for several reasons:
  <ul>
@@ -490,7 +490,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
   to write the dump to another location, unless -Xdump:nofailover was specified on
   the command line.</li>
  </ul>
- 
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown.</div>
 <dl>
@@ -513,11 +513,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;javaDumpToFile()</pre>
 <div class="block">Trigger a java dump. A java dump is in a human-readable format, and
  summarizes the state of the JVM.
- 
+
  The JVM will attempt to write the file to the default location.
- 
+
  A string containing the actual file name written to is returned.
- 
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown.</div>
 <dl>
@@ -538,11 +538,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                              throws <a href="InvalidDumpOptionException.html" title="class in com.ibm.jvm">InvalidDumpOptionException</a></pre>
 <div class="block">Trigger a heap dump. The default heap dump format (a phd file) is not
  human-readable.
- 
+
  The JVM will attempt to write the file to the specified file name. This may
  include replacement tokens as documented in the section on dump agents
  in the documentation for the OpenJ9 JVM.
- 
+
  A string containing the actual file name written to is returned. This may not
  be the same as the requested filename for several reasons:
  <ul>
@@ -557,7 +557,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
   to write the dump to another location, unless -Xdump:nofailover was specified on
   the command line.</li>
  </ul>
- 
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown.</div>
 <dl>
@@ -580,11 +580,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;heapDumpToFile()</pre>
 <div class="block">Trigger a heap dump. The default heap dump format (a phd file) is not
  human-readable.
- 
+
  The JVM will attempt to write the file to the default location.
- 
+
  A string containing the actual file name written to is returned.
- 
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown.</div>
 <dl>
@@ -606,11 +606,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Trigger a system dump. A system dump is a platform-specific
  file that contains information about the active processes, threads, and
  system memory. System dumps are usually large.
- 
+
  The JVM will attempt to write the file to the specified file name. This may
  include replacement tokens as documented in the section on dump agents
  in the documentation for the OpenJ9 JVM.
- 
+
  A string containing the actual file name written to is returned. This may not
  be the same as the requested filename for several reasons:
  <ul>
@@ -625,7 +625,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
   to write the dump to another location, unless -Xdump:nofailover was specified on
   the command line.</li>
  </ul>
- 
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown.</div>
 <dl>
@@ -649,11 +649,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Trigger a system dump. A system dump is a platform-specific
  file that contains information about the active processes, threads, and
  system memory. System dumps are usually large.
- 
+
  The JVM will attempt to write the file to the default location.
- 
+
  A string containing the actual file name written to is returned.
- 
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown.</div>
 <dl>
@@ -675,11 +675,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Trigger a snap dump. The snap dump format is not human-readable
  and must be processed using the trace formatting tool supplied
  with the OpenJ9 JVM.
- 
+
  The JVM will attempt to write the file to the specified file name. This may
  include replacement tokens as documented in the section on dump agents
  in the documentation for the OpenJ9 JVM.
- 
+
  A string containing the actual file name written to is returned. This may not
  be the same as the requested filename for several reasons:
  <ul>
@@ -694,7 +694,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
   to write the dump to another location, unless -Xdump:nofailover was specified on
   the command line.</li>
  </ul>
- 
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown.</div>
 <dl>
@@ -718,11 +718,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Trigger a snap dump. The snap dump format is not human-readable
  and must be processed using the trace formatting tool supplied
  with the OpenJ9 JVM.
- 
+
  The JVM will attempt to write the file to the default location.
- 
+
  A string containing the actual file name written to is returned.
- 
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown.</div>
 <dl>
@@ -747,20 +747,20 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  options are specified using the same string parameters
  as the -Xdump flag as described in the section on dump agents
  in the documentation for the OpenJ9 JVM.
- 
+
  Settings that do not apply to dumps that occur immediately
  ("range=", "priority=", "filter=", "events=", "none" and "defaults")
  will be ignored.
- 
+
  The "opts=" setting is supported if an option is used that causes two
  dumps to occur only the filename for the first will be returned.
- 
+
  If a filename is specified for the dump it may contain replacement strings
  as specified in the documentation. In addition if a dump cannot be created
  with the specified filename the JVM may attempt to write it to another location.
- For these reasons you should always use the file name that is returned from this function 
+ For these reasons you should always use the file name that is returned from this function
  when looking for the dump rather than the name you supplied.
- 
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown. If a "tool" dump is requested an
  additional check for com.ibm.jvm.ToolDumpPermission will also be made.</div>
@@ -789,15 +789,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Sets options for the dump subsystem.
  The dump option is passed in as an String.
  Use the same syntax as the -Xdump command-line option, with the initial -Xdump: omitted.
- See Using the -Xdump option as described in the section on dump agents
+ See the -Xdump option section on dump agents
  in the documentation for the OpenJ9 JVM.
- 
+
  This method may throw a DumpConfigurationUnavailableException if the dump configuration
- cannot be altered. If this occurs it will usually be because a dump event is currently 
+ cannot be altered. If this occurs it will usually be because a dump event is currently
  being handled. As this can take some time depending on the dumps being generated an
  exception is thrown rather than this call blocking the calling thread potentially for
- minutes. 
- 
+ minutes.
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown. If a "tool" dump is specified an
  additional check for com.ibm.jvm.ToolDumpPermission will also be made.</div>
@@ -821,9 +821,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>[]&nbsp;queryDumpOptions()</pre>
 <div class="block">Returns the current dump configuration as an array of Strings.
  The syntax of the option Strings is the same as the -Xdump command-line option,
- with the initial -Xdump: omitted. See Using the -Xdump option
- in the section on dump agents in the documentation for the OpenJ9 JVM.
- 
+ with the initial -Xdump: omitted. See the -Xdump option
+ section on dump agents in the documentation for the OpenJ9 JVM.
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown.</div>
 <dl>
@@ -844,13 +844,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                              throws <a href="DumpConfigurationUnavailableException.html" title="class in com.ibm.jvm">DumpConfigurationUnavailableException</a></pre>
 <div class="block">Reset the JVM dump options to the settings specified when the JVM
  was started removing any additional configuration done since then.
- 
+
  This method may throw a DumpConfigurationUnavailableException if the dump configuration
- cannot be altered. If this occurs it will usually be because a dump event is currently 
+ cannot be altered. If this occurs it will usually be because a dump event is currently
  being handled. As this can take some time depending on the dumps being generated an
  exception is thrown rather than this call blocking the calling thread potentially for
- minutes. 
- 
+ minutes.
+
  If a security manager exists a permission check for com.ibm.jvm.DumpPermission will be
  made, if this fails a SecurityException will be thrown.</div>
 <dl>
@@ -931,7 +931,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2021, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>
