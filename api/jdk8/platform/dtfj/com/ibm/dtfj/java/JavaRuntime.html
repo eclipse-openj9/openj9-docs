@@ -6,6 +6,7 @@
 <title>JavaRuntime (Diagnostic Tool Framework for Java&amp;trade;)</title>
 <meta name="keywords" content="com.ibm.dtfj.java.JavaRuntime interface">
 <meta name="keywords" content="getJavaVM()">
+<meta name="keywords" content="getSystemProperty()">
 <meta name="keywords" content="getJavaVMInitArgs()">
 <meta name="keywords" content="getJavaClassLoaders()">
 <meta name="keywords" content="getThreads()">
@@ -36,8 +37,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":18,"i15":6,"i16":6,"i17":6,"i18":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -140,7 +141,7 @@ extends <a href="../../../../com/ibm/dtfj/runtime/ManagedRuntime.html" title="in
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -233,12 +234,18 @@ extends <a href="../../../../com/ibm/dtfj/runtime/ManagedRuntime.html" title="in
 </td>
 </tr>
 <tr id="i14" class="altColor">
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/dtfj/java/JavaRuntime.html#getSystemProperty-java.lang.String-">getSystemProperty</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;key)</code>
+<div class="block">Get a system property of the virtual machine.</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util">Iterator</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/dtfj/java/JavaRuntime.html#getThreads--">getThreads</a></span>()</code>
 <div class="block">Get the set of Java threads known by the VM</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" target="_blank" title="class or interface in java.lang">Object</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/dtfj/java/JavaRuntime.html#getTraceBuffer-java.lang.String-boolean-">getTraceBuffer</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;bufferName,
               boolean&nbsp;formatted)</code>
@@ -246,13 +253,13 @@ extends <a href="../../../../com/ibm/dtfj/runtime/ManagedRuntime.html" title="in
  or the Universal Trace Engine (UTE) buffer</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/dtfj/java/JavaRuntime.html#hashCode--">hashCode</a></span>()</code>
 <div class="block">Answers an integer hash code for the receiver.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/dtfj/java/JavaRuntime.html#isJITEnabled--">isJITEnabled</a></span>()</code>
 <div class="block">Determine if the JIT was enabled for this Java runtime.</div>
@@ -293,6 +300,27 @@ extends <a href="../../../../com/ibm/dtfj/runtime/ManagedRuntime.html" title="in
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the address of the JavaVM structure which represents this JVM instance in JNI</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getSystemProperty-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSystemProperty</h4>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;getSystemProperty(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;key)
+                          throws <a href="../../../../com/ibm/dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
+                                 <a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
+<div class="block">Get a system property of the virtual machine.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>key</code> - the name of the property to retrieve</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the value of the requested system property from this VM</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../../com/ibm/dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - if the system properties are not available</dd>
 <dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
 </dl>
 </li>
@@ -470,7 +498,7 @@ extends <a href="../../../../com/ibm/dtfj/runtime/ManagedRuntime.html" title="in
 <dd>the <code>JavaObject</code> instance representing the located object.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang">IllegalArgumentException</a></code> - if  <code>address</code> is outside the heap's boundaries, or if it doesn't point to the start location of an object;</dd>
-<dd><code><a href="../../../../com/ibm/dtfj/image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></code> - if  <code>address</code> is is in the heap but it's not accessible from the dump;</dd>
+<dd><code><a href="../../../../com/ibm/dtfj/image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></code> - if  <code>address</code> is in the heap but it's not accessible from the dump;</dd>
 <dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code> - if any data needed to build the returned instance of <code>JavaObject</code> is corrupt.</dd>
 <dd><code><a href="../../../../com/ibm/dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - if any data needed to build the returned instance of <code>JavaObject</code> is not available.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -724,6 +752,6 @@ extends <a href="../../../../com/ibm/dtfj/runtime/ManagedRuntime.html" title="in
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse OpenJ9 issue.</a><br> Copyright &copy; 2004, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse OpenJ9 issue.</a><br> Copyright &copy; 2004, 2021, IBM Corp. and others.</small></p>
 </body>
 </html>

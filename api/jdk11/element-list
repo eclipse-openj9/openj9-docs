@@ -59,6 +59,7 @@ com.ibm.java.diagnostics.utils.plugins
 com.ibm.java.diagnostics.utils.plugins.impl
 com.ibm.jvm.j9.dump.extract
 com.ibm.jvm.j9.dump.indexsupport
+com.ibm.jzos
 module:openj9.dtfjview
 com.ibm.jvm.dtfjview
 com.ibm.jvm.dtfjview.commands
