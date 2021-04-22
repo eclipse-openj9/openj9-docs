@@ -910,13 +910,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">JavaRuntime.</span><code><span class="memberNameLink"><a href="../../java/JavaRuntime.html#getSystemProperty(java.lang.String)">getSystemProperty</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;key)</code></th>
+<td class="colLast">
+<div class="block">Get a system property of the virtual machine.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaReference.</span><code><span class="memberNameLink"><a href="../../java/JavaReference.html#getTarget()">getTarget</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the object referred to by this reference.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaRuntime.</span><code><span class="memberNameLink"><a href="../../java/JavaRuntime.html#getTraceBuffer(java.lang.String,boolean)">getTraceBuffer</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;bufferName,
               boolean&nbsp;formatted)</code></th>
@@ -925,56 +932,56 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  or the Universal Trace Engine (UTE) buffer</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaVMInitArgs.</span><code><span class="memberNameLink"><a href="../../java/JavaVMInitArgs.html#getVersion()">getVersion</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Fetch the JNI version from the JavaVMInitArgs structure used to create this VM.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaClass.</span><code><span class="memberNameLink"><a href="../../java/JavaClass.html#isArray()">isArray</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Is this an array class ?</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaObject.</span><code><span class="memberNameLink"><a href="../../java/JavaObject.html#isArray()">isArray</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Is this object an array ?</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaReference.</span><code><span class="memberNameLink"><a href="../../java/JavaReference.html#isClassReference()">isClassReference</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Does this reference point to a class?</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaRuntime.</span><code><span class="memberNameLink"><a href="../../java/JavaRuntime.html#isJITEnabled()">isJITEnabled</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Determine if the JIT was enabled for this Java runtime.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>default boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaField.</span><code><span class="memberNameLink"><a href="../../java/JavaField.html#isNestedPacked()">isNestedPacked</a></span>()</code></th>
 <td class="colLast">
 <div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>default boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaField.</span><code><span class="memberNameLink"><a href="../../java/JavaField.html#isNestedPackedArray()">isNestedPackedArray</a></span>()</code></th>
 <td class="colLast">
 <div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">JavaReference.</span><code><span class="memberNameLink"><a href="../../java/JavaReference.html#isObjectReference()">isObjectReference</a></span>()</code></th>
 <td class="colLast">
@@ -1289,7 +1296,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2021, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

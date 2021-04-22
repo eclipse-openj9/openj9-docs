@@ -6,6 +6,7 @@
 <title>OpenJ9DiagnosticsMXBean (OpenJ9 Monitoring and Management Interface Classes)</title>
 <meta name="keywords" content="openj9.lang.management.OpenJ9DiagnosticsMXBean interface">
 <meta name="keywords" content="resetDumpOptions()">
+<meta name="keywords" content="queryDumpOptions()">
 <meta name="keywords" content="setDumpOptions()">
 <meta name="keywords" content="triggerDump()">
 <meta name="keywords" content="triggerDumpToFile()">
@@ -23,7 +24,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -160,31 +161,37 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../openj9/lang/management/OpenJ9DiagnosticsMXBean.html#queryDumpOptions--">queryDumpOptions</a></span>()</code>
+<div class="block">Returns the current dump configuration as an array of Strings, or null if an internal error occurs.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../openj9/lang/management/OpenJ9DiagnosticsMXBean.html#resetDumpOptions--">resetDumpOptions</a></span>()</code>
 <div class="block">Reset the JVM dump options to the settings specified when the JVM was started removing any additional
  configuration done since then.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../openj9/lang/management/OpenJ9DiagnosticsMXBean.html#setDumpOptions-java.lang.String-">setDumpOptions</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;dumpOptions)</code>
 <div class="block">This function sets options for the dump subsystem.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../openj9/lang/management/OpenJ9DiagnosticsMXBean.html#triggerClassicHeapDump--">triggerClassicHeapDump</a></span>()</code>
 <div class="block">This function triggers the heap dump agent and requests for a heap dump in CLASSIC format.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../openj9/lang/management/OpenJ9DiagnosticsMXBean.html#triggerDump-java.lang.String-">triggerDump</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;dumpAgent)</code>
 <div class="block">This function triggers the specified dump agent.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../openj9/lang/management/OpenJ9DiagnosticsMXBean.html#triggerDumpToFile-java.lang.String-java.lang.String-">triggerDumpToFile</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;dumpAgent,
                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;fileNamePattern)</code>
@@ -232,6 +239,23 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
 </dl>
 </li>
 </ul>
+<a name="queryDumpOptions--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>queryDumpOptions</h4>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>[]&nbsp;queryDumpOptions()</pre>
+<div class="block">Returns the current dump configuration as an array of Strings, or null if an internal error occurs.
+ The syntax of the option Strings is the same as the -Xdump command-line option,
+ with the initial -Xdump: omitted. See the -Xdump option section on dump agents in
+ the documentation for the OpenJ9 JVM.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang">SecurityException</a></code> - if there is a security manager and it doesn't allow the checks required to read the dump settings</dd>
+</dl>
+</li>
+</ul>
 <a name="setDumpOptions-java.lang.String-">
 <!--   -->
 </a>
@@ -243,7 +267,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
                     <a href="../../../openj9/lang/management/ConfigurationUnavailableException.html" title="class in openj9.lang.management">ConfigurationUnavailableException</a></pre>
 <div class="block">This function sets options for the dump subsystem.
  The dump option is passed in as a String. Use the same syntax as the -Xdump command-line option, with the 
- initial -Xdump: omitted. See Using the -Xdump option as described in the section on dump agents in the 
+ initial -Xdump: omitted. See the -Xdump option section on dump agents in the 
  documentation for the OpenJ9 JVM. This method may throw a ConfigurationUnavailableException if the dump
  configuration cannot be altered.</div>
 <dl>
@@ -417,6 +441,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse OpenJ9 issue.</a><br> Copyright &copy; 2001, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse OpenJ9 issue.</a><br> Copyright &copy; 2001, 2021, IBM Corp. and others.</small></p>
 </body>
 </html>
