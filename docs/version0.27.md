@@ -26,6 +26,16 @@
 
 The following new features and notable changes since v 0.26.0 are included in this release:
 
-- [New `-XX:[+|-]AdaptiveGCThreading` option added](xxadaptivegcthreading.md)
+- [New `-XX:[+|-]AdaptiveGCThreading` option added](#new-xx-adaptivegcthreading-option-added)
+
+## Features and changes
+
+### Performance improvements
+
+### New `-XX:[+|-]AdaptiveGCThreading` option added
+
+To optimize performance, you can now enable adaptive threading to automatically tune the number of active parallel garbage collection (GC) threads. When enabled, the GC thread count is dynamically adjusted from collection cycle to cycle to account for changes in the workload and consider the available resources. When parallel workloads decrease, less threads can be used, reducing the overhead and freeing up resources for other processing activities.
+
+Use the [`-xgcmaxthreads`](xgcmaxthreads.md) option with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option to specify a thread count limit.
 
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
