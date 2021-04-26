@@ -123,7 +123,8 @@ var activeTableTab = "activeTableTab";
 <pre>public class <span class="typeNameLabel">SharedClassUtilities</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" target="_blank" title="class or interface in java.lang">Object</a></pre>
 <div class="block">SharedClassUtilities provides APIs to get information about all shared class caches in a directory and
- to destroy a particular shared class cache.</div>
+ to destroy a particular shared class cache.   
+ <p></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/ibm/oti/shared/SharedClassCacheInfo.html" title="class in com.ibm.oti.shared"><code>SharedClassCacheInfo</code></a></dd>
@@ -512,7 +513,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                 </ul></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html?is-external=true" target="_blank" title="class or interface in java.lang">IllegalStateException</a></code> - If shared classes is disabled for this JVM (that is -Xshareclasses:none is present).</dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang">IllegalArgumentException</a></code> - If <code>cacheType</code> is not a valid value.</dd>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang">IllegalArgumentException</a></code> - If <code>cacheType<code> is not a valid value.</dd>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang">SecurityException</a></code> - If a security manager is enabled and the calling thread does not
                                         have SharedClassesNamedPermission("destroySharedCache")</dd>
 </dl>

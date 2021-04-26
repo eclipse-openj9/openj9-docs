@@ -149,7 +149,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">SharedClassUtilities</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a></pre>
 <div class="block">SharedClassUtilities provides APIs to get information about all shared class caches in a directory and
- to destroy a particular shared class cache.</div>
+ to destroy a particular shared class cache.   
+ <p></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="SharedClassCacheInfo.html" title="class in com.ibm.oti.shared"><code>SharedClassCacheInfo</code></a></dd>
@@ -564,7 +565,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                                 </ul></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalStateException</a></code> - If shared classes is disabled for this JVM (that is -Xshareclasses:none is present).</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - If <code>cacheType</code> is not a valid value.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - If <code>cacheType<code> is not a valid value.</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">SecurityException</a></code> - If a security manager is enabled and the calling thread does not
                                         have SharedClassesNamedPermission("destroySharedCache")</dd>
 </dl>

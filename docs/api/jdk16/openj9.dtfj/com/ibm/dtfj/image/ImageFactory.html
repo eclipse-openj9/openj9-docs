@@ -103,26 +103,26 @@ loadScripts(document, 'script');</script>
 
  e.g.
 
- <pre><code>
+ <pre>
  Image image;
  try {
-   Class&lt;?&gt; factoryClass = Class.forName(&amp;quot;com.ibm.dtfj.image.j9.ImageFactory&amp;quot;);
+   Class<?> factoryClass = Class.forName(&quot;com.ibm.dtfj.image.j9.ImageFactory&quot;);
    ImageFactory factory = (ImageFactory) factoryClass.newInstance();
    image = factory.getImage(new File(coreFileName), new File(xmlFileName));
  } catch (ClassNotFoundException e) {
-   System.err.println(&amp;quot;Could not find DTFJ factory class:&amp;quot;);
+   System.err.println(&quot;Could not find DTFJ factory class:&quot;);
    e.printStackTrace(System.err);
  } catch (IllegalAccessException e) {
-   System.err.println(&amp;quot;Could not instantiate DTFJ factory class:&amp;quot;);
+   System.err.println(&quot;Could not instantiate DTFJ factory class:&quot;);
    e.printStackTrace(System.err);
  } catch (InstantiationException e) {
-   System.err.println(&amp;quot;Could not instantiate DTFJ factory class:&amp;quot;);
+   System.err.println(&quot;Could not instantiate DTFJ factory class:&quot;);
    e.printStackTrace(System.err);
  } catch (IOException e) {
-   System.err.println(&amp;quot;Could not find file required for bootstrapping:&amp;quot;);
+   System.err.println(&quot;Could not find file required for bootstrapping:&quot;);
    e.printStackTrace(System.err);
  }
- </code></pre></div>
+ </pre></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
