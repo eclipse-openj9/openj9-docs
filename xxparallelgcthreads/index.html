@@ -300,6 +300,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.27/" class="md-nav__link">
+        Version 0.27.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.26/" class="md-nav__link">
         Version 0.26.0
       </a>
@@ -351,14 +363,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
-      <label class="md-nav__link" for="__nav_5_6">
+      <label class="md-nav__link" for="__nav_5_7">
         Earlier releases
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Earlier releases" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_6">
+        <label class="md-nav__title" for="__nav_5_7">
           <span class="md-nav__icon md-icon"></span>
           Earlier releases
         </label>
@@ -1988,6 +2000,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../xgcmaxthreads/" class="md-nav__link">
+        -Xgcmaxthreads
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xgcpolicy/" class="md-nav__link">
         -Xgcpolicy
       </a>
@@ -2965,6 +2989,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxadaptivegcthreading/" class="md-nav__link">
+        -XX:[+|-]AdaptiveGCThreading
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxallowvmshutdown/" class="md-nav__link">
         -XXallowvmshutdown
       </a>
@@ -3399,6 +3435,18 @@
     <li class="md-nav__item">
       <a href="../xxparallelcmsthreads/" class="md-nav__link">
         -XX:ParallelCMSThreads
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxparallelgcmaxthreads/" class="md-nav__link">
+        -XX:ParallelGCMaxThreads
       </a>
     </li>
   
@@ -4094,6 +4142,8 @@
 
 <h1 id="-xxparallelgcthread">-XX:ParallelGCThread</h1>
 <p>This Oracle HotSpot option specifies the number of threads that are used during parallel operations of the default garbage collector. This option is recognized by OpenJ9 and provided for compatibility.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Notes:</strong></p>
+<p>This option enforces the thread count and cannot be used with the <a href="../xxadaptivegcthreading/"><code>-XX:+AdaptiveGCThreading</code></a> option, which enables the garbage collector to adjust the number of parallel threads based on heuristics. If you want to use <a href="../xxadaptivegcthreading/"><code>-XX:+AdaptiveGCThreading</code></a>, use <a href="../xxparallelgcmaxthreads/"><code>-XX:ParallelGCMaxThreads</code></a> instead of <code>-XX:ParallelGCThreads</code>.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:ParallelGCThreads=&lt;number&gt;
 </code></pre>
