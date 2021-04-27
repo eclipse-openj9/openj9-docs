@@ -39,7 +39,7 @@ These options are equivalent to `-Xshareclasses:disableBCI` and `-Xshareclasses:
 
 ## See also
 
-- [Runtime bytecode modification](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_bytecode.html)
+- [Support for bytecode instrumentation](shrc.md#support-for-bytecode-instrumentation)
 
 
 <!-- ==== END OF TOPIC ==== xxshareclassesdisablebci.md ==== -->
