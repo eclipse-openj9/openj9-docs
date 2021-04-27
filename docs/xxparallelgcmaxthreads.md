@@ -22,20 +22,16 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -XX:ParallelGCThread
+# -XX:ParallelGCMaxThreads
 
-This Oracle HotSpot option specifies the number of threads that are used during parallel operations of the default garbage collector. This option is recognized by OpenJ9 and provided for compatibility.
-
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
-
-This option enforces the thread count and cannot be used with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option, which enables the garbage collector to adjust the number of parallel threads based on heuristics. If you want to use [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md), use [`-XX:ParallelGCMaxThreads`](xxparallelgcmaxthreads.md) instead of `-XX:ParallelGCThreads`.
+This option specifies the maximum number of threads that can be used during parallel operations of the garbage collector. Unlike [`-XX:ParallelGCThreads`](xxparallelgcthreads.md), this option does not enforce a thread count, but can be used to allow the garbage collector to adjust the number of parallel GC threads, if used with the [Adaptive GC Threading](xxadaptivegcthreading.md) option.
 
 ## Syntax
 
-        -XX:ParallelGCThreads=<number>
+        -XX:ParallelGCMaxThreads=<number>
 
-Where `<number>` is the number of threads that are used for parallel operations. 
+Where `<number>` is the maximum number of threads that can be used for parallel operations. 
 
-Within OpenJ9 this option is directly mapped to [`-Xgcthreads`](xgcthreads.md).
+This option is directly mapped to [`-Xgcmaxthreads`](xgcmaxthreads.md).
 
-<!-- ==== END OF TOPIC ==== xxparallelgcthreads.md ==== -->
+<!-- ==== END OF TOPIC ==== xxparallelgcmaxthreads.md ==== -->

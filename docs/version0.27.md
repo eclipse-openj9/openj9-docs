@@ -22,20 +22,20 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -XX:ParallelGCThread
+# What's new in version 0.27.0
 
-This Oracle HotSpot option specifies the number of threads that are used during parallel operations of the default garbage collector. This option is recognized by OpenJ9 and provided for compatibility.
+The following new features and notable changes since v 0.26.0 are included in this release:
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+- [New `-XX:[+|-]AdaptiveGCThreading` option added](#new-xx-adaptivegcthreading-option-added)
 
-This option enforces the thread count and cannot be used with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option, which enables the garbage collector to adjust the number of parallel threads based on heuristics. If you want to use [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md), use [`-XX:ParallelGCMaxThreads`](xxparallelgcmaxthreads.md) instead of `-XX:ParallelGCThreads`.
+## Features and changes
 
-## Syntax
+### Performance improvements
 
-        -XX:ParallelGCThreads=<number>
+### New `-XX:[+|-]AdaptiveGCThreading` option added
 
-Where `<number>` is the number of threads that are used for parallel operations. 
+To optimize performance, you can now enable adaptive threading to automatically tune the number of active parallel garbage collection (GC) threads. When enabled, the GC thread count is dynamically adjusted from collection cycle to cycle to account for changes in the workload and consider the available resources. When parallel workloads decrease, less threads can be used, reducing the overhead and freeing up resources for other processing activities.
 
-Within OpenJ9 this option is directly mapped to [`-Xgcthreads`](xgcthreads.md).
+Use the [`-xgcmaxthreads`](xgcmaxthreads.md) option with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option to specify a thread count limit.
 
-<!-- ==== END OF TOPIC ==== xxparallelgcthreads.md ==== -->
+<!-- ==== END OF TOPIC ==== version0.27.md ==== -->
