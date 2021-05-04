@@ -26,6 +26,10 @@
 
 This Oracle HotSpot option specifies the number of threads that are used during parallel operations of the default garbage collector. This option is recognized by OpenJ9 and provided for compatibility.
 
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+
+This option enforces the thread count and cannot be used with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option, which enables the garbage collector to adjust the number of parallel threads based on heuristics. If you want to use [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md), use [`-XX:ParallelGCMaxThreads`](xxparallelgcmaxthreads.md) instead of `-XX:ParallelGCThreads`.
+
 ## Syntax
 
         -XX:ParallelGCThreads=<number>

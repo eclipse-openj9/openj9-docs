@@ -149,26 +149,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 
  e.g.
 
- <pre>
+ <pre><code>
  Image image;
  try {
-   Class<?> factoryClass = Class.forName(&quot;com.ibm.dtfj.image.j9.ImageFactory&quot;);
+   Class&lt;?&gt; factoryClass = Class.forName(&amp;quot;com.ibm.dtfj.image.j9.ImageFactory&amp;quot;);
    ImageFactory factory = (ImageFactory) factoryClass.newInstance();
    image = factory.getImage(new File(coreFileName), new File(xmlFileName));
  } catch (ClassNotFoundException e) {
-   System.err.println(&quot;Could not find DTFJ factory class:&quot;);
+   System.err.println(&amp;quot;Could not find DTFJ factory class:&amp;quot;);
    e.printStackTrace(System.err);
  } catch (IllegalAccessException e) {
-   System.err.println(&quot;Could not instantiate DTFJ factory class:&quot;);
+   System.err.println(&amp;quot;Could not instantiate DTFJ factory class:&amp;quot;);
    e.printStackTrace(System.err);
  } catch (InstantiationException e) {
-   System.err.println(&quot;Could not instantiate DTFJ factory class:&quot;);
+   System.err.println(&amp;quot;Could not instantiate DTFJ factory class:&amp;quot;);
    e.printStackTrace(System.err);
  } catch (IOException e) {
-   System.err.println(&quot;Could not find file required for bootstrapping:&quot;);
+   System.err.println(&amp;quot;Could not find file required for bootstrapping:&amp;quot;);
    e.printStackTrace(System.err);
  }
- </pre></div>
+ </code></pre></div>
 </li>
 </ul>
 </div>
@@ -619,7 +619,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2020, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2021, IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

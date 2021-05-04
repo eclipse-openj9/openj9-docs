@@ -960,7 +960,7 @@ The following element, `<allocation-stats>`, records information about how memor
 </allocation-stats>
 ```
 
-The operations of the GC increment are run and details are recorded in the `<gc-op>` elements. The logs show that this increment begins with a copy forward operation followed by a class unload. Other `balanced` partial GC cycles can also include sweep and compact operations. For more information about the operations involved in `balanced` partial GC cycles, see [GC Processing](gc.md##gc-processing_1).
+The operations of the GC increment are run and details are recorded in the `<gc-op>` elements. The logs show that this increment begins with a copy forward operation followed by a class unload. Other `balanced` partial GC cycles can also include sweep and compact operations. For more information about the operations involved in `balanced` partial GC cycles, see [GC Processing](gc.md#gc-processing_1).
 
 ```xml
 <gc-op id="189" type="copy forward" timems="400.637" contextid="186" timestamp="2021-02-26T11:11:42.713">
@@ -1320,7 +1320,7 @@ The `GMP work packet processing` subincrement continues to run concurrently. The
 
 The child element `<trace-info>` shows that the processing scanned 242.91 MB (254,708,852 B), which slightly exceeds the 108.25 MB scan target.
 
-Application threads continue to run and allocate memory. The garbage collector stops and starts the application threads to run partial GC cycles that reclaim free space in the eden space and some older regions. To see an example of how a `balanced` partial GC cycle appears in the logs, see the [`balanced` partial GC cycle](vgclog_examples#balanced-partial-gc-cycle).
+Application threads continue to run and allocate memory. The garbage collector stops and starts the application threads to run partial GC cycles that reclaim free space in the eden space and some older regions. To see an example of how a `balanced` partial GC cycle appears in the logs, see the [`balanced` partial GC cycle](#balanced-partial-gc-cycle).
 
 Following some partial GC cycles, an allocation taxation threshold is reached that triggers an STW pause followed by another global mark phase increment. The element `<gc-start>` in the following log excerpt has a `contextid=1154` and type `global mark phase`, which indicates that this is a global mark phase subincrement associated with the global mark cycle example.
 
@@ -1469,7 +1469,7 @@ A `balanced` global cycle is triggered if the VM is close to throwing an out of 
 
 To search for a `balanced` global cycle or increment, you can search for the `type` attribute value `global garbage collect` of the cycle or increment element.
 
-If the `balanced` global cycle is triggered during a [`balanced` global mark GC cycle](vgclog_examples#balanced-global-mark-gc-cycle), a new `global` cycle is not recorded. Instead, the global mark cycle's global mark phase increment switches to a global garbage collect increment that is run as an STW increment. This switch is recorded in the logs by using a `<cycle-continue>` element, which precedes the `gc-start` element that records the new global garbage collect increment.
+If the `balanced` global cycle is triggered during a [`balanced` global mark GC cycle](#balanced-global-mark-gc-cycle), a new `global` cycle is not recorded. Instead, the global mark cycle's global mark phase increment switches to a global garbage collect increment that is run as an STW increment. This switch is recorded in the logs by using a `<cycle-continue>` element, which precedes the `gc-start` element that records the new global garbage collect increment.
 
 If the `balanced` global cycle is not triggered during a `balanced` global mark cycle, the global cycle is recorded as a new cycle by using the `<cycle-start>` element.
 
@@ -1549,7 +1549,7 @@ If the global cycle is triggered during a global mark cycle, the global cycle fo
 <exclusive-end>                             (STW pause ends)
 ```
 
-The following example shows a `balanced` global cycle that is triggered during a [global mark cycle](vgclog_examples.md#balanced-global-mark-gc-cycle).
+The following example shows a `balanced` global cycle that is triggered during a [global mark cycle](#balanced-global-mark-gc-cycle).
 
 The start of the GMP work processing subincrement of the global mark cycle, which runs concurrently with application threads, is recorded by using the `<concurrent-start>` element.
 
@@ -1657,7 +1657,7 @@ The STW pause ends with the `<exclusive-end>` element.
 <exclusive-end id="2025" timestamp="2021-03-05T12:16:44.237" durationms="1130.358" />
 ```
 
-#### Summary 
+#### Summary
 
 Analyzing the structure and elements of this example log output shows that this global cycle has the following characteristics:
 
