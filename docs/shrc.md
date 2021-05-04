@@ -61,7 +61,7 @@ These cache utilities are discussed in more detail in the sections that follow.
 Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container.
 Default behavior includes the following characteristics:
 
-- The cache is created in the `javasharedresources` directory in the users home directory, unless the `groupAccess` parameter is specified, in which case it is created in `/tmp/javasharedresources`. However, on Windows, it is created in the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
+- The cache is created in the `javasharedresources` directory in the users home directory, unless the `groupAccess` parameter is specified, in which case it is created in `/tmp/javasharedresources`. However, on Windows&reg;, it is created in the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
 - The cache name is `sharedcc_%u`, where `%u` is the current user name.
 - If class data sharing fails, the VM still starts without printing any errors.
 
@@ -80,7 +80,7 @@ A shared classes cache can be *persistent* or *non-persistent* according to the 
 - persistent caches are written to memory-mapped files and remain in place, even after a system is rebooted.
 - non-persistent caches exist in shared memory and are automatically removed when the operating system is restarted.
 
-By default, a shared classes cache is persistent, except on the z/OS platform, where persistent caches are not supported.
+By default, a shared classes cache is persistent, except on the z/OS&reg; platform, where persistent caches are not supported.
 If you are using a non-persistent cache, you can use a cache utility to create a snapshot of the cache, which can be reinitialized after a reboot. For more information see [Saving a non-persistent shared classes cache](#saving-a-non-persistent-shared-classes-cache).
 
 If you have multiple VMs and you do not change the default shared classes behavior, the VMs share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and re-created.
@@ -330,7 +330,7 @@ Although it is possible to combine partitions and modification contexts, this pr
 
 - [AOT compiler](aot.md)
 - [Class sharing article](https://developer.ibm.com/languages/java/tutorials/j-class-sharing-openj9/)
-- [Diagnosing class data sharing problems](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_intro.html)
+- [Diagnosing problems with class data sharing](shrc_diag_util.md)
 
 
 <!-- ==== END OF TOPIC ==== shrc.md ==== -->

@@ -46,7 +46,7 @@ theme:
   icon:
     repo: fontawesome/brands/github
   favicon: cr/openj9-logo.svg
-  
+
 docs_dir: 'docs'
 
 site_dir: 'site'
@@ -137,7 +137,7 @@ nav:
 
     - "Class data sharing" :
         - "Introduction"                                                         : shrc.md
-        - "Diagnostic cache utilities"                                           : shrc_diag_util.md
+        - "Diagnosing problems"                                                  : shrc_diag_util.md
 
     - "Java Attach API"                                                          : attachapi.md
 

@@ -60,7 +60,18 @@ You can then use the `com.ibm.lang.management` API from within a Java applicatio
 
 You can increase the soft maximum size if it is currently less than the actual cache size. If you attempt to reduce the soft maximum size to a value that is less than the number of bytes already used in the cache, the number of used bytes is set as the new soft maximum size.
 
-For more information about cache sizes, see [Cache size limits](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_cache_size.html).
+### Cache size limits
+
+The theoretical cache size limit is 2 GB. The size of the cache that you can specify is limited by the following factors:
+
+- AIX&reg;, Linux&reg;, and macOS&reg;: The amount of physical memory and paging space available to the system.
+- Windows&reg;: The amount of available disk space and available virtual address space.
+- z/OS&reg;: The amount of swap space available to the system.
+
+Non-persistent caches are stored in shared memory and are removed when a system is rebooted. On systems other than Windows, non-persistent caches are allocated by using the System V IPC shared memory mechanism. To ensure that sufficient shared memory is available for class data sharing, see [Setting shared memory values](configuring.md#setting-shared-memory-values).
+
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** By default, a cache is persistent on all platforms, except z/OS.
+
 
 ## See also
 

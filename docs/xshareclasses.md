@@ -98,7 +98,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
 
-: Nonpersistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a `javasharedresources` subdirectory of the `cacheDir` specified. Do not move or delete control files in this directory. The `listAllCaches` utility, the `destroyAll` utility, and the `expire` suboption work only in the scope of a given `cacheDir`.
+: Non-persistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a `javasharedresources` subdirectory of the `cacheDir` specified. Do not move or delete control files in this directory. The `listAllCaches` utility, the `destroyAll` utility, and the `expire` suboption work only in the scope of a given `cacheDir`.
 
 : On AIX, Linux, and macOS systems, if you specify the `cacheDir=<directory>` option, persistent caches are created with the following permissions (`-rw-r--r--`):
 
@@ -142,7 +142,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
         -Xshareclasses:cacheRetransformed
 
-: Enables caching of classes that are transformed by using the JVMTI `RetransformClasses` function. For more information, see [JVMTI redefinition and retransformation of classes](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_jvmti.html).
+: Enables caching of classes that are transformed by using the JVMTI `RetransformClasses` function. For more information, see [Redefined and retransformed classes](shrc.md#redefined-and-retransformed-classes).
 
 The option `enableBCI` is enabled by default. However, if you use the `cacheRetransformed` option, this option forces cache creation into `-Xshareclasses:disableBCI` mode.
 
@@ -228,7 +228,7 @@ The option `enableBCI` is enabled by default. However, if you use the `cacheRetr
 
 : This option is enabled by default.
 
-: Allows a JVMTI `ClassFileLoadHook` event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about this option, see [Using the JVMTI ClassFileLoadHook with cached classes](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_jvmti_mod.html). This option is incompatible with the [`cacheRetransformed`](#cacheretransformed) option. Using the two options together causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this
+: Allows a JVMTI `ClassFileLoadHook` event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about bytecode modification, see [Support for bytecode instrumentation](shrc.md#support-for-bytecode-instrumentation). This option is incompatible with the [`cacheRetransformed`](#cacheretransformed) option. Using the two options together causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this
 case, the VM continues without using shared classes.
 
 : A cache that is created without the `enableBCI` suboption cannot be reused with the `enableBCI` suboption. Attempting to do so causes the VM to end with an error message, unless [`-Xshareclasses:nonfatal`](#nonfatal) is specified. In this case, the VM continues without using shared classes. A cache that is created with the `enableBCI` suboption can be reused without specifying this suboption. In this case, the VM detects that the cache was created with the `enableBCI` suboption and uses the cache in this mode.
@@ -356,7 +356,7 @@ case, the VM continues without using shared classes.
 
 : Used when a JVMTI agent is installed that might modify bytecode at run time. If you do not specify this suboption and a bytecode modification agent is installed, classes are safely shared with an extra performance cost. The `<modified context>` is a descriptor that is chosen by the user; for example, *myModification1*. This option partitions the cache so that only VMs that are using context *myModification1* can share the same classes. So if, for example, you run an application with a modification context and then run it again with a different modification context, all classes are stored twice in the cache.
 
-: For more information, see [Dealing with runtime bytecode modification](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_runtime_bytecode_mod.html).
+: For more information, see [Sharing modified bytecode](shrc.md#sharing-modified-bytecode).
 
 : If you are migrating from IBM&reg; SDK, Java Technology Edition, Version 7, or earlier releases, you must set [`-Xshareclasses:disableBCI`](#disablebci) when you use this option to retain the same behavior.
 
@@ -378,7 +378,7 @@ case, the VM continues without using shared classes.
 
         -Xshareclasses:noBootclasspath
 
-:   Disables the storage of classes that are loaded by the bootstrap class loader in the shared classes cache. Often used with the `SharedClassURLFilter` API to control exactly which classes are cached. For more information about shared class filtering, see [Using the SharedClassHelper API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_class.html).
+:   Disables the storage of classes that are loaded by the bootstrap class loader in the shared classes cache. Often used with the `SharedClassURLFilter` API to control exactly which classes are cached. For more information about shared class filtering, see [The Java shared classes Helper API](shrc.md#the-java-shared-classes-helper-api).
 
 ### `noTimestampChecks`
 
@@ -405,7 +405,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:none
 
-:   Added to the end of a command line, disables class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption disables the shared class utility APIs. To disable class data sharing without disabling the utility APIs, use the `utilities` suboption. For more information about the shared class utility APIs, see [Obtaining information about shared caches](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_getting_shrc_info.html).
+:   Added to the end of a command line, disables class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption disables the shared class utility APIs. To disable class data sharing without disabling the utility APIs, use the `utilities` suboption. For more information about the shared class utility APIs, see [The Java shared classes utility API](shrc.md#the-java-shared-classes-utility-api).
 
 ### `nonfatal`
 
@@ -419,9 +419,9 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:nonpersistent
 
-:   Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a nonpersistent cache. z/OS supports only nonpersistent caches.
+:   Uses a non-persistent cache. The cache is lost when the operating system shuts down. Non-persistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a non-persistent cache. z/OS supports only non-persistent caches.
 
-:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a nonpersistent cache.
+:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a non-persistent cache.
 
 ### `noPersistentDiskSpaceCheck`
 
@@ -435,15 +435,15 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:persistent
 
-:   Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Nonpersistent and persistent caches can have the same name. On AIX, you must always use the `persistent` suboption when you run utilities such as `destroy` on a persistent cache.
+:   Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Non-persistent and persistent caches can have the same name. On AIX, you must always use the `persistent` suboption when you run utilities such as `destroy` on a persistent cache.
 
-:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Persisent caches are not supported on z/OS systems. z/OS supports only nonpersistent caches.
+:   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Persisent caches are not supported on z/OS systems. z/OS supports only non-persistent caches.
 
 ### `printAllStats` (Cache utility)
 
         -Xshareclasses:printAllStats
 
-:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats-cache-utility)). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see [Diagnostic cache utilities](shrc_diag_util.md).
+:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats-cache-utility)). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see [Shared classes cache diagnostic utilities](shrc_diag_util.md#shared-classes-cache-diagnostic-utilities).
 
 ### `printStats` (Cache utility)
 
@@ -453,7 +453,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
 : Specify one or more data types, which are separated by a plus symbol (+), to see more detailed information about the cache content. Data types include AOT data, class paths, and ROMMethods.
 
-: For more information and for a full list of data types, see [Diagnostic cache utilities](shrc_diag_util.md).
+: For more information and for a full list of data types, see [Shared classes cache diagnostic utilities](shrc_diag_util.md#shared-classes-cache-diagnostic-utilities).
 
 ### `printTopLayerStats` (Cache utility)
 
@@ -533,7 +533,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:utilities
 
-:   Can be added to the end of a command line to disable class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption is like [`none`](#none), but does not disable the shared class utility APIs. For more information about the shared class utility APIs, see [Obtaining information about shared caches](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_getting_shrc_info.html).
+:   Can be added to the end of a command line to disable class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption is like [`none`](#none), but does not disable the shared class utility APIs. For more information, see [The Java shared classes utility API](shrc.md#the-java-shared-classes-utility-api).
 
 ### `verbose`
 
@@ -614,7 +614,6 @@ Here are some examples:
 | `{java/util/*.*(),java/lang/Object.*(*)}`    | All classes or methods with no input parameter in the `java.util` package, and all methods in `java.lang.Object`|
 | `{java/util/*.*(),!java/util/*.*()}`         | Nothing.                                                                                                        |
 
-## See also
 
 - [Introduction to class data sharing](shrc.md)
 - [-Xscmx](xscmx.md)
