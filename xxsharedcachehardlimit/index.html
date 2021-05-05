@@ -787,7 +787,7 @@
   
     <li class="md-nav__item">
       <a href="../shrc_diag_util/" class="md-nav__link">
-        Diagnostic cache utilities
+        Diagnosing problems
       </a>
     </li>
   
@@ -4192,7 +4192,7 @@
 <p>See <a href="../x_jvm_commands/">Using -X command-line options</a> for more information about the <code>&lt;size&gt;</code> parameter.</p>
 <p>When you use this option with the <code>-Xscmx</code> option, the <code>-Xscmx</code> option sets the soft maximum size, and the <code>-XX:SharedCacheHardLimit</code> option sets the actual size, of a new shared classes cache. For more information, see <a href="../xscmx/#xscmx" title="For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option). In earlier releases, the default cache size is platform-dependent.">-Xscmx</a>.</p>
 <p>If you use this option without the <code>-Xscmx</code> option, the behavior is the same as using the <code>-Xscmx</code> option by itself; both options set the actual size of the shared classes cache.</p>
-<p>For more information about cache sizes, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_cache_size.html">Cache size limits</a>.</p>
+<p>For more information about cache sizes, see <a href="../xscmx/#cache-size-limits">Cache size limits</a>.</p>
 <h2 id="example">Example</h2>
 <p>The following settings, when used together, set the soft maximum size of the shared classes cache to 16 MB and the actual maximum cache size to 64 MB.</p>
 <pre><code>-XX:SharedCacheHardLimit=64m -Xscmx16m

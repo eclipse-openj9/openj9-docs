@@ -787,7 +787,7 @@
   
     <li class="md-nav__item">
       <a href="../shrc_diag_util/" class="md-nav__link">
-        Diagnostic cache utilities
+        Diagnosing problems
       </a>
     </li>
   
@@ -2774,6 +2774,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cache-size-limits" class="md-nav__link">
+    Cache size limits
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4145,6 +4152,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cache-size-limits" class="md-nav__link">
+    Cache size limits
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4218,7 +4232,15 @@
 </code></pre>
 <p>You can then use the <code>com.ibm.lang.management</code> API from within a Java application to increase the soft maximum value during run time, as load increases. This change allows the application to use more shared cache space than you specified initially.</p>
 <p>You can increase the soft maximum size if it is currently less than the actual cache size. If you attempt to reduce the soft maximum size to a value that is less than the number of bytes already used in the cache, the number of used bytes is set as the new soft maximum size.</p>
-<p>For more information about cache sizes, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_cache_size.html">Cache size limits</a>.</p>
+<h3 id="cache-size-limits">Cache size limits</h3>
+<p>The theoretical cache size limit is 2 GB. The size of the cache that you can specify is limited by the following factors:</p>
+<ul>
+<li>AIX&reg;, Linux&reg;, and macOS&reg;: The amount of physical memory and paging space available to the system.</li>
+<li>Windows&reg;: The amount of available disk space and available virtual address space.</li>
+<li>z/OS&reg;: The amount of swap space available to the system.</li>
+</ul>
+<p>Non-persistent caches are stored in shared memory and are removed when a system is rebooted. On systems other than Windows, non-persistent caches are allocated by using the System V IPC shared memory mechanism. To ensure that sufficient shared memory is available for class data sharing, see <a href="../configuring/#setting-shared-memory-values">Setting shared memory values</a>.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> By default, a cache is persistent on all platforms, except z/OS.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../xscdmx/"><code>-Xscdmx</code></a> (control the size of the class debug area)</li>

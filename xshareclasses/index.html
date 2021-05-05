@@ -787,7 +787,7 @@
   
     <li class="md-nav__item">
       <a href="../shrc_diag_util/" class="md-nav__link">
-        Diagnostic cache utilities
+        Diagnosing problems
       </a>
     </li>
   
@@ -3176,13 +3176,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4920,13 +4913,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -5039,7 +5025,7 @@
 <p>On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.</p>
 </dd>
 <dd>
-<p>Nonpersistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a <code>javasharedresources</code> subdirectory of the <code>cacheDir</code> specified. Do not move or delete control files in this directory. The <code>listAllCaches</code> utility, the <code>destroyAll</code> utility, and the <code>expire</code> suboption work only in the scope of a given <code>cacheDir</code>.</p>
+<p>Non-persistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a <code>javasharedresources</code> subdirectory of the <code>cacheDir</code> specified. Do not move or delete control files in this directory. The <code>listAllCaches</code> utility, the <code>destroyAll</code> utility, and the <code>expire</code> suboption work only in the scope of a given <code>cacheDir</code>.</p>
 </dd>
 <dd>
 <p>On AIX, Linux, and macOS systems, if you specify the <code>cacheDir=&lt;directory&gt;</code> option, persistent caches are created with the following permissions (<code>-rw-r--r--</code>):</p>
@@ -5111,7 +5097,7 @@
 <pre><code>    -Xshareclasses:cacheRetransformed
 </code></pre>
 <dl>
-<dd>Enables caching of classes that are transformed by using the JVMTI <code>RetransformClasses</code> function. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_jvmti.html">JVMTI redefinition and retransformation of classes</a>.</dd>
+<dd>Enables caching of classes that are transformed by using the JVMTI <code>RetransformClasses</code> function. For more information, see <a href="../shrc/#redefined-and-retransformed-classes">Redefined and retransformed classes</a>.</dd>
 </dl>
 <p>The option <code>enableBCI</code> is enabled by default. However, if you use the <code>cacheRetransformed</code> option, this option forces cache creation into <code>-Xshareclasses:disableBCI</code> mode.</p>
 <h3 id="checkurltimestamps"><code>checkURLTimestamps</code></h3>
@@ -5195,7 +5181,7 @@ cannot verify that the shared memory was created by the VM.
 </code></pre>
 <dl>
 <dd>This option is enabled by default.</dd>
-<dd>Allows a JVMTI <code>ClassFileLoadHook</code> event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about this option, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_rbm_jvmti_mod.html">Using the JVMTI ClassFileLoadHook with cached classes</a>. This option is incompatible with the <a href="#cacheretransformed"><code>cacheRetransformed</code></a> option. Using the two options together causes the VM to end with an error message, unless <a href="#nonfatal"><code>-Xshareclasses:nonfatal</code></a> is specified. In this
+<dd>Allows a JVMTI <code>ClassFileLoadHook</code> event to be triggered every time, for classes that are loaded from the cache. This mode also prevents caching of classes that are modified by JVMTI agents. For more information about bytecode modification, see <a href="../shrc/#support-for-bytecode-instrumentation">Support for bytecode instrumentation</a>. This option is incompatible with the <a href="#cacheretransformed"><code>cacheRetransformed</code></a> option. Using the two options together causes the VM to end with an error message, unless <a href="#nonfatal"><code>-Xshareclasses:nonfatal</code></a> is specified. In this
 case, the VM continues without using shared classes.</dd>
 <dd>A cache that is created without the <code>enableBCI</code> suboption cannot be reused with the <code>enableBCI</code> suboption. Attempting to do so causes the VM to end with an error message, unless <a href="#nonfatal"><code>-Xshareclasses:nonfatal</code></a> is specified. In this case, the VM continues without using shared classes. A cache that is created with the <code>enableBCI</code> suboption can be reused without specifying this suboption. In this case, the VM detects that the cache was created with the <code>enableBCI</code> suboption and uses the cache in this mode.</dd>
 </dl>
@@ -5328,7 +5314,7 @@ with shared classes cache.
 </code></pre>
 <dl>
 <dd>Used when a JVMTI agent is installed that might modify bytecode at run time. If you do not specify this suboption and a bytecode modification agent is installed, classes are safely shared with an extra performance cost. The <code>&lt;modified context&gt;</code> is a descriptor that is chosen by the user; for example, <em>myModification1</em>. This option partitions the cache so that only VMs that are using context <em>myModification1</em> can share the same classes. So if, for example, you run an application with a modification context and then run it again with a different modification context, all classes are stored twice in the cache.</dd>
-<dd>For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_runtime_bytecode_mod.html">Dealing with runtime bytecode modification</a>.</dd>
+<dd>For more information, see <a href="../shrc/#sharing-modified-bytecode">Sharing modified bytecode</a>.</dd>
 <dd>If you are migrating from IBM&reg; SDK, Java Technology Edition, Version 7, or earlier releases, you must set <a href="#disablebci"><code>-Xshareclasses:disableBCI</code></a> when you use this option to retain the same behavior.</dd>
 </dl>
 <h3 id="name"><code>name</code></h3>
@@ -5348,7 +5334,7 @@ with shared classes cache.
 <pre><code>    -Xshareclasses:noBootclasspath
 </code></pre>
 <dl>
-<dd>Disables the storage of classes that are loaded by the bootstrap class loader in the shared classes cache. Often used with the <code>SharedClassURLFilter</code> API to control exactly which classes are cached. For more information about shared class filtering, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_class.html">Using the SharedClassHelper API</a>.</dd>
+<dd>Disables the storage of classes that are loaded by the bootstrap class loader in the shared classes cache. Often used with the <code>SharedClassURLFilter</code> API to control exactly which classes are cached. For more information about shared class filtering, see <a href="../shrc/#the-java-shared-classes-helper-api">The Java shared classes Helper API</a>.</dd>
 </dl>
 <h3 id="notimestampchecks"><code>noTimestampChecks</code></h3>
 <pre><code>    -Xshareclasses:noTimestampChecks
@@ -5374,7 +5360,7 @@ behavior, which can improve the performance of class loading from the shared cla
 <pre><code>    -Xshareclasses:none
 </code></pre>
 <dl>
-<dd>Added to the end of a command line, disables class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption disables the shared class utility APIs. To disable class data sharing without disabling the utility APIs, use the <code>utilities</code> suboption. For more information about the shared class utility APIs, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_getting_shrc_info.html">Obtaining information about shared caches</a>.</dd>
+<dd>Added to the end of a command line, disables class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption disables the shared class utility APIs. To disable class data sharing without disabling the utility APIs, use the <code>utilities</code> suboption. For more information about the shared class utility APIs, see <a href="../shrc/#the-java-shared-classes-utility-api">The Java shared classes utility API</a>.</dd>
 </dl>
 <h3 id="nonfatal"><code>nonfatal</code></h3>
 <pre><code>    -Xshareclasses:nonfatal
@@ -5387,8 +5373,8 @@ behavior, which can improve the performance of class loading from the shared cla
 <pre><code>    -Xshareclasses:nonpersistent
 </code></pre>
 <dl>
-<dd>Uses a nonpersistent cache. The cache is lost when the operating system shuts down. Nonpersistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the <code>nonpersistent</code> suboption when you run utilities such as <code>destroy</code> on a nonpersistent cache. z/OS supports only nonpersistent caches.</dd>
-<dd><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> On macOS systems, you must set <code>kern.sysv.shmmax</code> and <code>kern.sysv.shmall</code> when using a nonpersistent cache.</dd>
+<dd>Uses a non-persistent cache. The cache is lost when the operating system shuts down. Non-persistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the <code>nonpersistent</code> suboption when you run utilities such as <code>destroy</code> on a non-persistent cache. z/OS supports only non-persistent caches.</dd>
+<dd><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> On macOS systems, you must set <code>kern.sysv.shmmax</code> and <code>kern.sysv.shmall</code> when using a non-persistent cache.</dd>
 </dl>
 <h3 id="nopersistentdiskspacecheck"><code>noPersistentDiskSpaceCheck</code></h3>
 <pre><code>    -Xshareclasses:noPersistentDiskSpaceCheck
@@ -5401,14 +5387,14 @@ behavior, which can improve the performance of class loading from the shared cla
 <pre><code>    -Xshareclasses:persistent
 </code></pre>
 <dl>
-<dd>Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Nonpersistent and persistent caches can have the same name. On AIX, you must always use the <code>persistent</code> suboption when you run utilities such as <code>destroy</code> on a persistent cache.</dd>
-<dd><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Persisent caches are not supported on z/OS systems. z/OS supports only nonpersistent caches.</dd>
+<dd>Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Non-persistent and persistent caches can have the same name. On AIX, you must always use the <code>persistent</code> suboption when you run utilities such as <code>destroy</code> on a persistent cache.</dd>
+<dd><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Persisent caches are not supported on z/OS systems. z/OS supports only non-persistent caches.</dd>
 </dl>
 <h3 id="printallstats-cache-utility"><code>printAllStats</code> (Cache utility)</h3>
 <pre><code>    -Xshareclasses:printAllStats
 </code></pre>
 <dl>
-<dd>Displays detailed information about the contents of the cache that is specified in the <a href="#name"><code>name</code></a> suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use <a href="#printtoplayerstats-cache-utility"><code>printTopLayerStats=all</code></a>). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see <a href="../shrc_diag_util/">Diagnostic cache utilities</a>.</dd>
+<dd>Displays detailed information about the contents of the cache that is specified in the <a href="#name"><code>name</code></a> suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use <a href="#printtoplayerstats-cache-utility"><code>printTopLayerStats=all</code></a>). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see <a href="../shrc_diag_util/#shared-classes-cache-diagnostic-utilities">Shared classes cache diagnostic utilities</a>.</dd>
 </dl>
 <h3 id="printstats-cache-utility"><code>printStats</code> (Cache utility)</h3>
 <pre><code>    -Xshareclasses:printStats=&lt;data_type&gt;[+&lt;data_type&gt;]
@@ -5416,7 +5402,7 @@ behavior, which can improve the performance of class loading from the shared cla
 <dl>
 <dd>Displays summary information for the cache that is specified by the <a href="#name"><code>name</code></a>, <a href="#cachedir"><code>cacheDir</code></a>, and <a href="#nonpersistent"><code>nonpersistent</code></a> suboptions. For layered caches, information is shown for all layers (to see information for the top layer cache only, use <a href="#printtoplayerstats-cache-utility"><code>printTopLayerStats</code></a>). The most useful information that is displayed is how full the cache is and how many classes it contains. Stale classes are classes that are updated on the file system and which the cache has therefore marked as "stale". Stale classes are not purged from the cache and can be reused. Use the <code>printStats=stale</code> option to list all the stale entries and stale bytes.</dd>
 <dd>Specify one or more data types, which are separated by a plus symbol (+), to see more detailed information about the cache content. Data types include AOT data, class paths, and ROMMethods.</dd>
-<dd>For more information and for a full list of data types, see <a href="../shrc_diag_util/">Diagnostic cache utilities</a>.</dd>
+<dd>For more information and for a full list of data types, see <a href="../shrc_diag_util/#shared-classes-cache-diagnostic-utilities">Shared classes cache diagnostic utilities</a>.</dd>
 </dl>
 <h3 id="printtoplayerstats-cache-utility"><code>printTopLayerStats</code> (Cache utility)</h3>
 <pre><code>    -Xshareclasses:printTopLayerStats=&lt;data_type&gt;[+&lt;data_type&gt;]
@@ -5499,7 +5485,7 @@ behavior, which can improve the performance of class loading from the shared cla
 <pre><code>    -Xshareclasses:utilities
 </code></pre>
 <dl>
-<dd>Can be added to the end of a command line to disable class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption is like <a href="#none"><code>none</code></a>, but does not disable the shared class utility APIs. For more information about the shared class utility APIs, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_helper_getting_shrc_info.html">Obtaining information about shared caches</a>.</dd>
+<dd>Can be added to the end of a command line to disable class data sharing. This suboption overrides class sharing arguments found earlier on the command line. This suboption is like <a href="#none"><code>none</code></a>, but does not disable the shared class utility APIs. For more information, see <a href="../shrc/#the-java-shared-classes-utility-api">The Java shared classes utility API</a>.</dd>
 </dl>
 <h3 id="verbose"><code>verbose</code></h3>
 <pre><code>    -Xshareclasses:verbose
@@ -5607,7 +5593,6 @@ behavior, which can improve the performance of class loading from the shared cla
 </tr>
 </tbody>
 </table>
-<h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../shrc/">Introduction to class data sharing</a></li>
 <li><a href="../xscmx/">-Xscmx</a></li>

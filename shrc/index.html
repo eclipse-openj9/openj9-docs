@@ -962,7 +962,7 @@
   
     <li class="md-nav__item">
       <a href="../shrc_diag_util/" class="md-nav__link">
-        Diagnostic cache utilities
+        Diagnosing problems
       </a>
     </li>
   
@@ -4444,7 +4444,7 @@
 <p>Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container.
 Default behavior includes the following characteristics:</p>
 <ul>
-<li>The cache is created in the <code>javasharedresources</code> directory in the users home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is created in <code>/tmp/javasharedresources</code>. However, on Windows, it is created in the user's <code>C:\Documents and Settings\&lt;username&gt;\Local Settings\Application Data\javasharedresources</code> directory.</li>
+<li>The cache is created in the <code>javasharedresources</code> directory in the users home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is created in <code>/tmp/javasharedresources</code>. However, on Windows&reg;, it is created in the user's <code>C:\Documents and Settings\&lt;username&gt;\Local Settings\Application Data\javasharedresources</code> directory.</li>
 <li>The cache name is <code>sharedcc_%u</code>, where <code>%u</code> is the current user name.</li>
 <li>If class data sharing fails, the VM still starts without printing any errors.</li>
 </ul>
@@ -4459,7 +4459,7 @@ Default behavior includes the following characteristics:</p>
 <li>persistent caches are written to memory-mapped files and remain in place, even after a system is rebooted.</li>
 <li>non-persistent caches exist in shared memory and are automatically removed when the operating system is restarted.</li>
 </ul>
-<p>By default, a shared classes cache is persistent, except on the z/OS platform, where persistent caches are not supported.
+<p>By default, a shared classes cache is persistent, except on the z/OS&reg; platform, where persistent caches are not supported.
 If you are using a non-persistent cache, you can use a cache utility to create a snapshot of the cache, which can be reinitialized after a reboot. For more information see <a href="#saving-a-non-persistent-shared-classes-cache">Saving a non-persistent shared classes cache</a>.</p>
 <p>If you have multiple VMs and you do not change the default shared classes behavior, the VMs share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and re-created.</p>
 <p>For a set of best practices when using class data sharing, see <a href="#creating-a-shared-classes-cache">Creating a shared classes cache</a>.</p>
@@ -4685,7 +4685,7 @@ For more information about using a modification context, see <a href="#sharing-m
 <ul>
 <li><a href="../aot/">AOT compiler</a></li>
 <li><a href="https://developer.ibm.com/languages/java/tutorials/j-class-sharing-openj9/">Class sharing article</a></li>
-<li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/shrc_pd_intro.html">Diagnosing class data sharing problems</a></li>
+<li><a href="../shrc_diag_util/">Diagnosing problems with class data sharing</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== shrc.md ==== -->
                 
