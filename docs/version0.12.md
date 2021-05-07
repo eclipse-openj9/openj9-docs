@@ -39,7 +39,7 @@ The following new features and notable changes since v 0.11.0 are included in th
 - [`IBM_JAVA_OPTIONS` is deprecated](#ibm_java_options-is-deprecated)
 
 :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Following the release of OpenJ9 0.12.0, an intermittent problem
-was identified with OpenSSL V1.1.x acceleration of the cryptographic Digest algorithm. For more information about the issue, see [#4530](https://github.com/eclipse/openj9/issues/4530). You can turn off the Digest algorithm by setting the [-Djdk.nativeDigest](djdknativedigest.md) system property to `false`. A new release of OpenJ9 (0.12.1) is available that disables the Digest algorithm by default.
+was identified with OpenSSL V1.1.x acceleration of the cryptographic Digest algorithm. For more information about the issue, see [#4530](https://github.com/eclipse-openj9/openj9/issues/4530). You can turn off the Digest algorithm by setting the [-Djdk.nativeDigest](djdknativedigest.md) system property to `false`. A new release of OpenJ9 (0.12.1) is available that disables the Digest algorithm by default.
 
 
 ### Features and changes
@@ -110,7 +110,7 @@ The VM environment variable `IBM_JAVA_OPTIONS` is deprecated and is replaced by 
 
 ### Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.11.0 and v 0.12.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.12/0.12.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.11.0 and v 0.12.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.12/0.12.md).
 
 ## Version 0.12.1
 
@@ -120,7 +120,7 @@ By default, OpenJ9 provides native cryptographic acceleration using OpenSSL v 1.
 
 ### Full release information
 
-Release notes to describe the changes between Eclipse OpenJ9 v 0.12.0 and v 0.12.1 releases, can be found in the [OpenJ9 GitHub repository](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.12/0.12.1.md).
+Release notes to describe the changes between Eclipse OpenJ9 v 0.12.0 and v 0.12.1 releases, can be found in the [OpenJ9 GitHub repository](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.12/0.12.1.md).
 
 
 

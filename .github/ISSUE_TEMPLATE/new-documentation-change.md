@@ -1,6 +1,6 @@
 ---
 name: New documentation changes
-about: Request updates as a result of external changes at github.com/eclipse/openj9
+about: Request updates as a result of external changes at github.com/eclipse-openj9/openj9
 
 ---
 

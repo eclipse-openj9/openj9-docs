@@ -106,9 +106,9 @@ You can turn off all the algorithms by setting the following system property on 
 
 To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow the steps in our detailed build instructions:
 
-- [OpenJDK 8 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V8.md).
-- [OpenJDK 11 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
-- [OpenJDK 15 with OpenJ9](https://github.com/eclipse/openj9/blob/master/doc/build-instructions/Build_Instructions_V15.md).
+- [OpenJDK 8 with OpenJ9](https://github.com/eclipse-openj9/openj9/blob/master/doc/build-instructions/Build_Instructions_V8.md).
+- [OpenJDK 11 with OpenJ9](https://github.com/eclipse-openj9/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
+- [OpenJDK 15 with OpenJ9](https://github.com/eclipse-openj9/openj9/blob/master/doc/build-instructions/Build_Instructions_V15.md).
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you obtain an OpenJDK with OpenJ9 build that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgements apply in accordance with the license terms:
 

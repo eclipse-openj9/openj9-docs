@@ -13,7 +13,7 @@ range of platforms. For information about the platforms and minimum operating sy
 
 ## Building your own binaries
 
-If you want to build your own binaries of OpenJDK with OpenJ9, a complete set of build instructions for several platforms can be found in the [OpenJ9 GitHub repository](https://github.com/eclipse/openj9/tree/master/doc/build-instructions).  
+If you want to build your own binaries of OpenJDK with OpenJ9, a complete set of build instructions for several platforms can be found in the [OpenJ9 GitHub repository](https://github.com/eclipse-openj9/openj9/tree/master/doc/build-instructions).  
 
 ## Installation pre-requisites
 

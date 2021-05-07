@@ -92,7 +92,7 @@ This release adds JIT compiler support for exploiting z15 instructions.
 
 ### Digest algorithm is re-enabled
 
-Issue [#5611](https://github.com/eclipse/openj9/issues/5611) is fixed, so support for the Digest algorithm is re-enabled. For more information about this support, see [Cryptographic operations]( introduction.md#cryptographic-operations).
+Issue [#5611](https://github.com/eclipse-openj9/openj9/issues/5611) is fixed, so support for the Digest algorithm is re-enabled. For more information about this support, see [Cryptographic operations]( introduction.md#cryptographic-operations).
 
 ### Direct Dump Reader (DDR) VM restriction removed
 
@@ -111,12 +111,12 @@ For more information and an example of the new format, see [Java dump: HOOKS](du
 ### LUDCL caching disabled by default
 
 By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This
-capability is controlled by the [-Dcom.ibm.enableClassCaching](dcomibmenableclasscaching.md) system property and is now disabled by default due to [issue #7332](https://github.com/eclipse/openj9/issues/7332).
+capability is controlled by the [-Dcom.ibm.enableClassCaching](dcomibmenableclasscaching.md) system property and is now disabled by default due to [issue #7332](https://github.com/eclipse-openj9/openj9/issues/7332).
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Versions of the documentation before 0.17.0 incorrectly identified this property as disabled by default when it was actually enabled by default in the VM.
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.16 and v 0.17.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.17/0.17.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.16 and v 0.17.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.17/0.17.md).
 
 <!-- ==== END OF TOPIC ==== version0.17.md ==== -->
