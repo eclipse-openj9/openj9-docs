@@ -22,10 +22,10 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xcompactgc / -Xnocompactgc 
+# -Xcompactgc / -Xnocompactgc
 
 
-Enables or disables full compaction on all garbage collections (system and global).
+Enables or disables full compaction on system and global garbage collection (GC) activities.
 
 ## Syntax
 
@@ -37,13 +37,17 @@ Enables or disables full compaction on all garbage collections (system and globa
 
 ## Default behavior
 
-If no compaction option is specified, the garbage collector compacts based on a series of triggers that attempt to compact only when it is beneficial to the future performance of the OpenJ9 VM.
+If a compaction option is not specified, the garbage collector compacts based on a series of triggers. These triggers attempt to compact only when it is beneficial to the future performance of the VM.
+
+These options are not applicable to the following GC policies:
+
+- balanced GC policy (`-Xgcpolicy:balanced`): compaction is always enabled.
+- metronome GC policy (`-Xgcpolicy:metronome`): compaction is not supported.
 
 ## See also
 
-- [Global garbage collection: Compaction phase](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_compact.html)
+- [GC compact operation](gc_overview.md#gc-compact-operation)
 
 
 <!-- ==== END OF TOPIC ==== xcompactgc.md ==== -->
 <!-- ==== END OF TOPIC ==== xnocompactgc.md ==== -->
-

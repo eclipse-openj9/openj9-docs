@@ -22,9 +22,9 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xconmeter 
+# -Xconmeter
 
-This option determines the usage of which area, LOA (large object area) or SOA (small object area), is metered and hence which allocations are taxed during concurrent mark.
+This option determines the usage of which area, LOA (large object area) or SOA (small object area), is metered and therefore which allocations are taxed during concurrent mark operations.
 
 ## Syntax
 
@@ -54,6 +54,7 @@ This option determines the usage of which area, LOA (large object area) or SOA (
 
 By default, allocation tax is applied to the SOA.
 
+This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`) or metronome GC policy (`-Xgcpolicy:metronome`).
+
 
 <!-- ==== END OF TOPIC ==== xconmeter.md ==== -->
-

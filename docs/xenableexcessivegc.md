@@ -37,7 +37,7 @@ If excessive time is spent in the GC, the option returns `null` for an allocate 
 |`-Xenableexcessivegc`  | Enable exception  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
 |`-Xdisableexcessivegc` | Disable exception |                                                                                    |
 
-
+These options can be used with all OpenJ9 GC policies.
 
 <!-- ==== END OF TOPIC ==== xenableexcessivegc.md ==== -->
 <!-- ==== END OF TOPIC ==== xdisableexcessivegc.md ==== -->

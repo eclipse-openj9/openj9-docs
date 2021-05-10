@@ -252,7 +252,7 @@ nav:
             - "-Xfuture"                                                         : xfuture.md
             - "-Xgc"                                                             : xgc.md
             - "-Xgc:splitheap"                                                   : xgcsplitheap.md
-            - "-Xgcmaxthreads"                                                   : xgcmaxthreads.md            
+            - "-Xgcmaxthreads"                                                   : xgcmaxthreads.md
             - "-Xgcpolicy"                                                       : xgcpolicy.md
             - "-Xgcthreads"                                                      : xgcthreads.md
             - "-Xgcworkpackets"                                                  : xgcworkpackets.md
@@ -284,7 +284,7 @@ nav:
             - "-Xmns"                                                            : xmn.md                             # redirect
             - "-Xmnx"                                                            : xmn.md                             # redirect
             - "-Xmo"                                                             : xmo.md
-            - "-Xmoi"                                                            : xmo.md                             # redirect
+            - "-Xmoi"                                                            : xmoi.md
             - "-Xmos"                                                            : xmo.md                             # redirect
             - "-Xmox"                                                            : xmo.md                             # redirect
             - "-Xmr"                                                             : xmr.md

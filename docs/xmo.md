@@ -22,30 +22,32 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xmo / -Xmoi / -Xmos / -Xmox
+# -Xmo / -Xmos / -Xmox
 
-
-Sets the size and behavior of the old (tenure) heap when using `-Xgcpolicy:gencon`.
+Sets the size of the tenure area of the heap for the `gencon` garbage collection (GC) policy.
 
 You can use the `-verbose:sizes` option to find out the values that the VM is currently using.
 
 ## Syntax
 
-| Setting       | Effect                                         | Default                   |
-|---------------|------------------------------------------------|---------------------------|
-| `-Xmo<size>`  | Equivalent to setting both `-Xmos` and `-Xmox` | not set                   |
-| `-Xmoi<size>` | Set increment size of old (tenure) heap        | See **Note**              |
-| `-Xmos<size>` | Set initial size of old (tenure) heap          | 75% of [`-Xms`](xms.md)   |
-| `-Xmox<size>` | Set maximum size of old (tenure) heap          | Same as [`-Xmx`](xms.md)  |
-
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** By default, the increment size (`-Xmoi`) is calculated on the expansion size, set by [`-Xmine`](xmine.md) and [`-Xminf`](xminf.md).  If you set `-Xmoi` to zero, no expansion is allowed.
+| Setting       | Effect                                            | Default                   |
+|---------------|---------------------------------------------------|---------------------------|
+| `-Xmo<size>`  | Equivalent to setting both `-Xmos` and `-Xmox`    | not set                   |            |
+| `-Xmos<size>` | Set initial size of the tenure area of the heap   | 75% of [`-Xms`](xms.md)   |
+| `-Xmox<size>` | Set maximum size of the tenure area of the heap   | Same as [`-Xmx`](xms.md)  |
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** If you try to set `-Xmo` with either `-Xmos` or `-Xmox`, the VM does not start, returning an error. 
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** If you try to set `-Xmo` with either `-Xmos` or `-Xmox`, the VM does not start, returning an error.
 
+To set the size of the nursery area of the heap, see [`-Xmn/-Xmns/-Xmnx`](xmn.md).
+
+## See also
+
+- [`gencon` policy (default)](gc.md#gencon-policy-default)
+- [`-Xmn/-Xmns/-Xmnx`](xmn.md)
+- [`-Xms`/`-Xmx`](xms.md)
 
 <!-- ==== END OF TOPIC ==== xmo.md ==== -->
-<!-- ==== END OF TOPIC ==== xmoi.md ==== -->
 <!-- ==== END OF TOPIC ==== xmos.md ==== -->
 <!-- ==== END OF TOPIC ==== xmox.md ==== -->

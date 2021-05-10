@@ -22,21 +22,31 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xmr / &nbsp; -Xmrx
+# -Xmoi
 
+Sets the heap expansion allocation increment.
 
-Sets the initial and maximum size of the the garbage collection (GC) *remembered set* in the `gencon` GC policy. The remembered set is a list of objects in the tenure area of the heap that have references to objects in the new area.
+You can use the `-verbose:sizes` option to find out the values that the VM is currently using.
 
 ## Syntax
 
-| Setting       | Effect            | Default                   |
-|---------------|-------------------|---------------------------|
-| `-Xmr<size>`  | Set initial size  | 16 K                      |
-| `-Xmrx<size>` | Set maximium size |                           |
+| Setting       | Effect                                            | Default                   |
+|---------------|---------------------------------------------------|---------------------------|
+| `-Xmoi<size>` | Sets the heap expansion allocation increment      | See **Notes**              |
+
+
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+
+- By default, the increment size (`-Xmoi`) is calculated on the expansion size, set by [`-Xmine`](xmine.md) and [`-Xminf`](xminf.md).  If you set `-Xmoi` to zero, no expansion is allowed.
+- For the `gencon` GC policy, the expansion increment applies to the tenure area of the heap.  
+
+This option is not supported for the `metronome` GC policy, because the heap is always fully expanded.
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
-This option applies only to the `gencon` GC policy.
+## See also
 
-<!-- ==== END OF TOPIC ==== xmr.md ==== -->
-<!-- ==== END OF TOPIC ==== xmrx.md ==== -->
+- [Heap expansion and contraction](allocation.md#expansion-and-contraction)
+
+
+<!-- ==== END OF TOPIC ==== xmoi.md ==== -->

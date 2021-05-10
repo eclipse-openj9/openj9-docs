@@ -25,9 +25,7 @@
 # -Xmn / -Xmns / -Xmnx
 
 
-Sets the initial and maximum size of the new area when using `-Xgcpolicy:gencon`.
-
-If the scavenger is disabled, this option is ignored.
+Sets the initial and maximum size of the nursery area when using the [`gencon` garbage collection (GC) policy](gc.md#gencon-policy-default) (`-Xgcpolicy:gencon`). These options are ignored if they are used with any other GC policy.
 
 You can use the `-verbose:sizes` option to find out the value that is being used by the VM.
 
@@ -41,11 +39,16 @@ You can use the `-verbose:sizes` option to find out the value that is being used
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** If you try to set `-Xmn` with either `-Xmns` or `-Xmnx`, the VM does not start, returning an error. 
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** If you try to set `-Xmn` with either `-Xmns` or `-Xmnx`, the VM does not start, returning an error.
 
+To set the size of the tenure area of the heap, see [`-Xmo/-Xmos/-Xmox`](xmo.md).
 
+## See also
+
+- [`gencon` policy (default)](gc.md#gencon-policy-default)
+- [`-Xmo/-Xmos/-Xmox`](xmo.md)
+- [`-Xms`/`-Xmx`](xms.md)
 
 <!-- ==== END OF TOPIC ==== xmn.md ==== -->
 <!-- ==== END OF TOPIC ==== xmns.md ==== -->
 <!-- ==== END OF TOPIC ==== xmnx.md ==== -->
-
