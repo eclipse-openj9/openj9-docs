@@ -30,7 +30,7 @@ When you install a Java&trade; runtime environment on your system you can set th
 
 On some systems, a further environment variable might be required if your application requires shared libraries but does not specify their exact location. You can set the following environment variables to specify the directory location of the shared libraries, although setting a global value affects all invocations of Java:
 
-- **LIBPATH** (AIX&reg;)
+- **LIBPATH** (AIX&reg; and z/OS&reg;)
 - **LD_LIBRARY_PATH** (Linux&reg;)
 - **DYLD_LIBRARY_PATH** (macOS&reg;)
 - **PATH** (Windows&reg;)
@@ -77,14 +77,15 @@ Another use case for changing resource limits is to ensure that there is suffici
 
 Shared memory limits are also important when configuring large page memory allocation on Linux systems. For more information, see [Configuring large page memory allocation: Linux systems](#linux-systems).
 
-<!--## Setting resource limits (z/OS)
+## Setting resource limits (z/OS)
 
 Resource limits imposed by z/OS might affect Java operations. To learn how these resource limits are set, see [Customizing the BPXPRMxx member of SYS1.PARMLIB](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.bpxb200/cusis.htm).
 
-The OpenJ9 class data sharing feature is implemented by using shared memory segments on z/OS. Special consideration should be given to the following parameters that relate to the shared memory and IPC semaphore settings:-->
+The OpenJ9 class data sharing feature is implemented by using shared memory segments on z/OS. Special consideration should be given to the following parameters that relate to the shared memory and IPC semaphore settings:
 
 <!-- - **MAXSHAREPAGES** (This no longer seems to do anything, per https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ieae200/spb.htm). Also removed from table below. -->
-<!--- **IPCSHMSPAGES**
+
+- **IPCSHMSPAGES**
 - **IPCSHMMPAGES**
 - **IPCSHMNSEGS**
 
@@ -150,7 +151,7 @@ The following guides are available to help you configure Language Environment ru
 - See [z/OS Language Environment Programming Reference](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea300/abstract.htm) for a full list of the available runtime options.
 - See [z/OS Language Environment Debugging Guide](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea100/abstract.htm) for tuning guidance by using **RPTSTG (ON)**.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Changing the runtime options can often degrade performance.-->
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Changing the runtime options can often degrade performance.
 
 ## Configuring large page memory allocation
 
