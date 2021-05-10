@@ -55,7 +55,7 @@ OpenJ9 releases 0.18.0 and 0.18.1 support OpenJDK 8, 11, and 13. Binaries are av
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 - [OpenJDK version 13](https://adoptopenjdk.net/archive.html?variant=openjdk13&jvmVariant=openj9)
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Binaries at AdoptOpenJDK that are labeled 0.18.1 include additional bug fixes. For more information, see the [release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.18/0.18.md).
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Binaries at AdoptOpenJDK that are labeled 0.18.1 include additional bug fixes. For more information, see the [release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.18/0.18.md).
 
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
@@ -97,7 +97,7 @@ The new exit dump agent shuts down the VM when the specified event occurs. The e
 OpenJ9 now supports the HotSpot option [`-XX:[+|-]ExitOnOutOfMemoryError`](xxexitonoutofmemoryerror.md). You can set this option to have the VM shut down when a `java.lang.OutOfMemory` error is thrown by the VM or in Java code. The exit dump agent is used in the implementation of `-XX:[+|-]ExitOnOutOfMemoryError`.
 
 ### LUDCL caching enabled by default
-By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This capability is controlled by the [`-Dcom.ibm.enableClassCaching`](dcomibmenableclasscaching.md) system property and is now enabled by default. This feature was disabled for the 0.17.0 release due to [issue #7332](https://github.com/eclipse/openj9/issues/7332) which has now been resolved.
+By caching the Latest User Defined Class Loader (LUDCL), Java applications that use deserialization extensively can see a performance improvement. This capability is controlled by the [`-Dcom.ibm.enableClassCaching`](dcomibmenableclasscaching.md) system property and is now enabled by default. This feature was disabled for the 0.17.0 release due to [issue #7332](https://github.com/eclipse-openj9/openj9/issues/7332) which has now been resolved.
 
 
 ### Terabytes suffix support for `-X` and `-XX` options that take a size
@@ -137,6 +137,6 @@ The previously undocumented Java 8 option [`-Djava.lang.string.substring.nocopy=
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.17.0 and v 0.18.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.18/0.18.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.17.0 and v 0.18.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.18/0.18.md).
 
 <!-- ==== END OF TOPIC ==== version0.18.md ==== -->

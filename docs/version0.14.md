@@ -56,7 +56,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 OpenJ9 release 0.13.0 introduced support for OpenSSL 1.0.2 for Java 12. In this release, support is extended to Java 8 and Java 11. OpenSSL is enabled by default for the CBC, Digest, GCM, and RSA cryptographic algorithms. On Linux&reg; and AIX&reg; platforms, the OpenSSL libraries are expected to be available on the system path. For more information about cryptographic acceleration with OpenSSL, see [Cryptographic operations](introduction.md#cryptographic-operations).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Support for the OpenSSL Digest algorithm on Java 8 and 11 is re-enabled in this release following the resolution of issue [#4530](https://github.com/eclipse/openj9/issues/4530).
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Support for the OpenSSL Digest algorithm on Java 8 and 11 is re-enabled in this release following the resolution of issue [#4530](https://github.com/eclipse-openj9/openj9/issues/4530).
 
 :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Earlier versions of OpenJDK with OpenJ9 from the AdoptOpenJDK project bundle OpenSSL as part of the binary package. On Linux and AIX systems, OpenSSL is no longer bundled and the libraries are expected to be available on the system path.
 
@@ -96,7 +96,7 @@ The default stack size for operating system threads on 64-bit z/OS is changed fr
 
 ### Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.13.0 and v 0.14.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.14/0.14.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.13.0 and v 0.14.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.14/0.14.md).
 
 ## Version 0.14.2
 
@@ -127,7 +127,7 @@ OpenSSL version 1.0.1 support is now enabled; Earlier releases supported only Op
 
 #### OpenSSL Digest algorithm disabled
 
-Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is disabled.
+Due to issue [#5611](https://github.com/eclipse-openj9/openj9/issues/5611), the Digest algorithm is disabled.
 
 
 <!-- ==== END OF TOPIC ==== version0.14.md ==== -->

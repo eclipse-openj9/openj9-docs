@@ -73,7 +73,7 @@ The ChaCha20 and ChaCha20-Poly1305 algorithms can now use OpenSSL on Java 11. Fo
 
 ### ![Start of content that applies only to Java 12)](cr/java12.png) OpenSSL Digest algorithm disabled
 
-Due to issue [#5611](https://github.com/eclipse/openj9/issues/5611), the Digest algorithm is disabled. This algorithm was disabled
+Due to issue [#5611](https://github.com/eclipse-openj9/openj9/issues/5611), the Digest algorithm is disabled. This algorithm was disabled
 for Java 8 and 11 in release 0.14.2, which did not support Java 12.
 
 ### Support for OpenJDK HotSpot options
@@ -124,6 +124,6 @@ In earlier releases, the shared classes cache checks timestamps of `jar` or `zip
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.14.0 and v 0.15.1 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.15/0.15.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.14.0 and v 0.15.1 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.15/0.15.md).
 
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->

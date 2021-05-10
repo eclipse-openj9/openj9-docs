@@ -51,7 +51,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 ###  ![Start of content that applies to Java 11](cr/java11.png) Limited support for 64-bit Linux on ARM
 
 Limited support is available in this release for the 64-bit ARM (AArch64) architecture. An early access build on OpenJDK 11 is available from the
-[AdoptOpenJDK community](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9). See the [OpenJ9 release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.20/0.20.md) for any known issues that are still being worked on before this
+[AdoptOpenJDK community](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9). See the [OpenJ9 release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.20/0.20.md) for any known issues that are still being worked on before this
 platform is fully supported.  
 
 ### `-XX:[+|-]ExitOnOutOfMemoryError` option behavior update
@@ -75,6 +75,6 @@ The Java diagnostic command (`jcmd`) tool no longer requires a filename when use
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.19.0 and v 0.20.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.20/0.20.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.19.0 and v 0.20.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.20/0.20.md).
 
 <!-- ==== END OF TOPIC ==== version0.20.md ==== -->

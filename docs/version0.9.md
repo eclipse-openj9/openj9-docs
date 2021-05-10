@@ -137,5 +137,5 @@ For performance and compatibility with the new String object layout, the OpenJ9 
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.8.0 and v 0.9.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.9/0.9.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.8.0 and v 0.9.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.9/0.9.md).
 <!-- ==== END OF TOPIC ==== cmdline_general.md ==== -->

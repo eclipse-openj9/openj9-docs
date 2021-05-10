@@ -38,7 +38,7 @@ When `-Xtune:virtualized` is used in conjunction with the [`-Xshareclasses`](xsh
 
 ## See also
 
-- For an example of the effect of using this option, see: [Measuring the strengths of OpenJDK with Eclipse OpenJ9](https://github.com/eclipse/openj9-website/blob/master/benchmark/daytrader3.md)
+- For an example of the effect of using this option, see: [Measuring the strengths of OpenJDK with Eclipse OpenJ9](https://github.com/eclipse-openj9/openj9-website/blob/master/benchmark/daytrader3.md)
 
 
 <!-- ==== END OF TOPIC ==== xtunevirtualized.md ==== -->
