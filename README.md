@@ -23,7 +23,7 @@
 -->
 
 <p align="center">
-<img src="https://github.com/eclipse/openj9/blob/master/artwork/OpenJ9.svg" alt="OpenJ9 logo" align="middle" width="50%" height="50%" />
+<img src="https://github.com/eclipse-openj9/openj9/blob/master/artwork/OpenJ9.svg" alt="OpenJ9 logo" align="middle" width="50%" height="50%" />
 <p>
 
 # Eclipse OpenJ9 user documentation

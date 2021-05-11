@@ -72,6 +72,6 @@ Linux x86 64-bit, Linux on POWER&reg; LE 64-bit, and Linux on IBM Z&reg; 64-bit 
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.18.0 and v 0.19.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.19/0.19.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.18.0 and v 0.19.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.19/0.19.md).
 
 <!-- ==== END OF TOPIC ==== version0.19.md ==== -->

@@ -28,11 +28,11 @@ License agreement, notices, copyright, and trademark information for the user do
 
 ### License agreement
 
-See [License](https://github.com/eclipse/openj9-docs/blob/master/LICENSE.md)
+See [License](https://github.com/eclipse-openj9/openj9-docs/blob/master/LICENSE.md)
 
 ### Notices
 
-See [Notices](https://github.com/eclipse/openj9-docs/blob/master/NOTICE.md)
+See [Notices](https://github.com/eclipse-openj9/openj9-docs/blob/master/NOTICE.md)
 
 ### Copyright information
 

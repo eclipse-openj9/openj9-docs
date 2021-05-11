@@ -59,7 +59,7 @@ columns will be removed over time.
 2. These OpenJ9 releases are feature releases that support a new OpenJDK release only.
 3. These OpenJ9 releases support a new LTS OpenJDK release and current LTS releases.
 
-For any issues or limitations of an Eclipse OpenJ9 release, read the [release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/).
+For any issues or limitations of an Eclipse OpenJ9 release, read the [release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/).
 
 ## Platform support
 
@@ -121,7 +121,7 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
 1. Not all of these distributions are tested, but Linux distributions that have a minimum glibc version 2.12 (x) or 2.17 (others) are expected to function without problems.
-2. Only limited support for the 64-bit ARM architecture is currently available. For a list of known issues, see the [Release notes](https://github.com/eclipse/openj9/tree/master/doc/release-notes) for the latest version of Eclipse OpenJ9.
+2. Only limited support for the 64-bit ARM architecture is currently available. For a list of known issues, see the [Release notes](https://github.com/eclipse-openj9/openj9/tree/master/doc/release-notes) for the latest version of Eclipse OpenJ9.
 
 | Windows                                   | x64                                                                            |
 |-------------------------------------------|--------------------------------------------------------------------------------|
@@ -158,7 +158,7 @@ OpenJDK 16 binaries are expected to function on the minimum operating system lev
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
 1. Not all of these distributions are tested, but Linux distributions that have a minimum glibc version 2.17 are expected to function without problems.
-2. Only limited support for the 64-bit ARM architecture is currently available. For a list of known issues, see the [Release notes](https://github.com/eclipse/openj9/tree/master/doc/release-notes) for the latest version of Eclipse OpenJ9.
+2. Only limited support for the 64-bit ARM architecture is currently available. For a list of known issues, see the [Release notes](https://github.com/eclipse-openj9/openj9/tree/master/doc/release-notes) for the latest version of Eclipse OpenJ9.
 
 | Windows                                   | x64                                                                            |
 |-------------------------------------------|--------------------------------------------------------------------------------|

@@ -66,6 +66,6 @@ Platform support for the JITServer technology preview is now extended to 64-bit 
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.22.0 and v 0.23.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.23/0.23.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.22.0 and v 0.23.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.23/0.23.md).
 
 <!-- ==== END OF TOPIC ==== version0.23.md ==== -->

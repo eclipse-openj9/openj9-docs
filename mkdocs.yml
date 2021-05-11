@@ -25,8 +25,8 @@
 site_name: ' '
 
 site_url: https://www.eclipse.org/openj9/docs  # the canonical URL of the site. This will add a link tag with the canonical URL to the generated HTML header.
-repo_name: eclipse/openj9
-repo_url : https://github.com/eclipse/openj9  # A link to your GitHub or Bitbucket repository on each page.
+repo_name: eclipse-openj9/openj9
+repo_url : https://github.com/eclipse-openj9/openj9  # A link to your GitHub or Bitbucket repository on each page.
 edit_uri: ""
 
 
@@ -46,7 +46,7 @@ theme:
   icon:
     repo: fontawesome/brands/github
   favicon: cr/openj9-logo.svg
-  
+
 docs_dir: 'docs'
 
 site_dir: 'site'
@@ -61,7 +61,7 @@ extra:
   version: 2.0
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/eclipse/openj9
+      link: https://github.com/eclipse-openj9/openj9
       name: OpenJ9 in GitHub
     - icon: fontawesome/brands/slack
       link: https://openj9.slack.com
@@ -137,7 +137,7 @@ nav:
 
     - "Class data sharing" :
         - "Introduction"                                                         : shrc.md
-        - "Diagnostic cache utilities"                                           : shrc_diag_util.md
+        - "Diagnosing problems"                                                  : shrc_diag_util.md
 
     - "Java Attach API"                                                          : attachapi.md
 

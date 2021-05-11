@@ -54,7 +54,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 OpenSSL cryptographic support is extended to include OpenSSL 1.0.2 for the Digest, CBC, GCM, and RSA algorithms. Support is enabled by default. On Linux and AIX platforms, the OpenSSL libraries are expected to be available on the system path. For more information about cryptographic acceleration with OpenSSL, see [Cryptographic operations](introduction.md#cryptographic-operations).
 
-In addition, support for the OpenSSL Digest algorithm is re-enabled in this release following the resolution of issue [#4530](https://github.com/eclipse/openj9/issues/4530).
+In addition, support for the OpenSSL Digest algorithm is re-enabled in this release following the resolution of issue [#4530](https://github.com/eclipse-openj9/openj9/issues/4530).
 
 :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Earlier versions of OpenJDK with OpenJ9 from the AdoptOpenJDK project bundle OpenSSL as part of the binary package. On Linux and AIX systems, OpenSSL is no longer bundled and the libraries are expected to be available on the system path.
 
@@ -87,6 +87,6 @@ For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscave
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.12.1 and v 0.13.0 releases, see the [Release notes](https://github.com/eclipse/openj9/blob/master/doc/release-notes/0.13/0.13.md).
+To see a complete list of changes between Eclipse OpenJ9 v 0.12.1 and v 0.13.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.13/0.13.md).
 
 <!-- ==== END OF TOPIC ==== version0.13.md ==== -->

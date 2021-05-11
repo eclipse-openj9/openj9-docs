@@ -24,7 +24,7 @@
 import groovy.json.JsonSlurper;
 
 HTTP = 'https://'
-OPENJ9_STAGING_REPO = 'github.com/eclipse/openj9-docs-staging'
+OPENJ9_STAGING_REPO = 'github.com/eclipse-openj9/openj9-docs-staging'
 CREDENTIAL_ID = 'github-bot'
 API_CRED = 'github-bot-token'
 PUSH_BRANCH = 'master'
@@ -51,7 +51,7 @@ timeout(time: 6, unit: 'HOURS') {
                     withCredentials([string(credentialsId: API_CRED, variable: 'token')]) {
                         for (pr in prArray) {
                             retry(3) {
-                                def prJSON = sh (returnStdout: true, script: "curl -u genie-openj9:${token} https://api.github.com/repos/eclipse/openj9-docs/pulls/${pr} 2>/dev/null").trim()
+                                def prJSON = sh (returnStdout: true, script: "curl -u genie-openj9:${token} https://api.github.com/repos/eclipse-openj9/openj9-docs/pulls/${pr} 2>/dev/null").trim()
                                 def slurper = new groovy.json.JsonSlurper()
                                 def prInfo = slurper.parseText(prJSON)
                                 def state = prInfo.state

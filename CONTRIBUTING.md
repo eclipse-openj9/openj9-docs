@@ -32,9 +32,9 @@ This short guide will help you if you want to make a contribution to the Eclipse
 
     The following templates are available to help you provide the correct information for someone else to handle any changes:
 
-    - [General documentation enhancements / ideas for improvements](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-enhancement.md)
-    - [Documentation errors or inaccuracies](https://github.com/eclipse/openj9-docs/issues/new?template=documentation-error.md)
-    - [New content as a result of code changes at the Eclipse OpenJ9 repo](https://github.com/eclipse/openj9-docs/issues/new?template=new-documentation-change.md)
+    - [General documentation enhancements / ideas for improvements](https://github.com/eclipse-openj9/openj9-docs/issues/new?template=documentation-enhancement.md)
+    - [Documentation errors or inaccuracies](https://github.com/eclipse-openj9/openj9-docs/issues/new?template=documentation-error.md)
+    - [New content as a result of code changes at the Eclipse OpenJ9 repo](https://github.com/eclipse-openj9/openj9-docs/issues/new?template=new-documentation-change.md)
 
 - If you want to contribute to the documentation, we recommend that you install a local test environment for editing and previewing your changes.
 The user documentation is authored in Markdown and built into HTML using [Mkdocs](http://www.mkdocs.org/), with a [mkdocs-material](https://github.com/squidfunk/mkdocs-material) theme.
@@ -70,7 +70,7 @@ Use **pip** to install the other components, reusing the **requirements.txt** fi
 
 Next:
 
-- Fork the repository: https://github.com/eclipse/openj9-docs
+- Fork the repository: https://github.com/eclipse-openj9/openj9-docs
 - Clone the repository: `git clone git@github.com:<your_github_account>/openj9-docs.git`
 
 If you are working on a Windows<sup>&trade;</sup> system, set the following Git configuration, which allows you to edit with Windows line endings (CRLF), but converts to Unix-style endings (LF) when you push changes:
@@ -259,7 +259,7 @@ When you've made the changes that you want to contribute, build and preview the 
 
 ## Submitting a contribution
 
-When you are happy with your changes, create a pull request, following the guidelines for submitting a contribution to OpenJ9 [here](https://github.com/eclipse/openj9/blob/master/CONTRIBUTING.md).
+When you are happy with your changes, create a pull request, following the guidelines for submitting a contribution to OpenJ9 [here](https://github.com/eclipse-openj9/openj9/blob/master/CONTRIBUTING.md).
 
 In particular, if your changes address an issue, quote the issue number in the commit message.
 
@@ -271,7 +271,7 @@ Pull requests must be previewed before merging. Stage your pull request (i.e. cr
 ```
 Jenkins doc stage
 ```  
-Pull request builds are staged at the gh-pages branch of the https://github.com/eclipse/openj9-docs-staging repository. To view
+Pull request builds are staged at the gh-pages branch of the https://github.com/eclipse-openj9/openj9-docs-staging repository. To view
 the staged draft of your documentation, visit the following URL, substituting &lt;PR&gt; with the number of your pull request:
 
 [`https://eclipse.github.io/openj9-docs-staging/<PR>`](https://eclipse.github.io/openj9-docs-staging/<PR>)
@@ -286,7 +286,7 @@ Documentation pull requests must not be merged before code pull requests are mer
 
 Before merging, check with the developers involved and make sure that there is not work still to be done. This is usually indicated by a "WIP" prefix on the pull request title.
 
-When pull requests are merged, the documentation is published to the gh-pages branch of the https://github.com/eclipse/openj9-docs repository as part of the "current working draft" at the following URL:
+When pull requests are merged, the documentation is published to the gh-pages branch of the https://github.com/eclipse-openj9/openj9-docs repository as part of the "current working draft" at the following URL:
 
 https://eclipse.github.io/openj9-docs
 
