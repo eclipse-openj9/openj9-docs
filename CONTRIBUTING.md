@@ -202,7 +202,7 @@ Here are some examples:
 
 In each topic, the _first occurence only_ of trademarked terms should be marked appropriately. Avoid including trademark symbols in titles, headings, etc., unless the term appears nowhere else in the topic.
 
-Here are some examples that you might come across: 
+Here are some examples that you might come across:
 
 AIX&reg;, IBM&reg;, IBM z15&reg;, Java&trade;, Linux&reg;, Linux on IBM Z&reg;, Linux on Power Systems&trade;, macOS&reg;, MVS&trade;, OpenJ9 VM Language Environment&reg;, Oracle&reg;, Windows&trade;, z/OS&reg;.
 
@@ -274,8 +274,8 @@ Jenkins doc stage
 Pull request builds are staged at the gh-pages branch of the https://github.com/eclipse-openj9/openj9-docs-staging repository. To view
 the staged draft of your documentation, visit the following URL, substituting &lt;PR&gt; with the number of your pull request:
 
-[`https://eclipse.github.io/openj9-docs-staging/<PR>`](https://eclipse.github.io/openj9-docs-staging/<PR>)
-     
+[`https://eclipse-openj9.github.io/openj9-docs-staging/<PR>`](https://eclipse.github.io/openj9-docs-staging/<PR>)
+
 ## Accepting contributions
 
 _(approved users only)_
@@ -288,8 +288,10 @@ Before merging, check with the developers involved and make sure that there is n
 
 When pull requests are merged, the documentation is published to the gh-pages branch of the https://github.com/eclipse-openj9/openj9-docs repository as part of the "current working draft" at the following URL:
 
-https://eclipse.github.io/openj9-docs
+https://eclipse-openj9.github.io/openj9-docs
 
 When released, the latest version of Eclipse OpenJ9 is published at:
 
 https://www.eclipse.org/openj9/docs
+
+For more information about the documentation release process, build process, and publication process, see the wiki section of this repository.

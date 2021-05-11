@@ -102,8 +102,8 @@ nav:
         - "Version 0.26.0"                                                       : version0.26.md
         - "Version 0.25.0"                                                       : version0.25.md
         - "Version 0.24.0"                                                       : version0.24.md
-        - "Version 0.23.0"                                                       : version0.23.md
         - "Earlier releases" :
+            - "Version 0.23.0"                                                   : version0.23.md
             - "Version 0.22.0"                                                   : version0.22.md
             - "Version 0.21.0"                                                   : version0.21.md
             - "Version 0.20.0"                                                   : version0.20.md
