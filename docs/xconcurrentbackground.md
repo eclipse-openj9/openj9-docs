@@ -24,7 +24,7 @@
 
 # -Xconcurrentbackground
 
-Specifies the number of low-priority background threads attached to assist the mutator threads in concurrent mark.
+Specifies the number of low-priority background threads that are attached to assist the mutator threads in concurrent mark operations. This option maps directly to the HotSpot `-XX:ParallelCMSThreads=N` and `-XX:ConcGCThreads=N` options.
 
 ## Syntax
 
@@ -35,5 +35,12 @@ Specifies the number of low-priority background threads attached to assist the m
 The default value is `1`.
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This value is reported in the header section of a verbose GC log with the entry `<attribute name="gcthreads Concurrent Mark" value="1" />`.
+
+This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`) or metronome GC policy (`-Xgcpolicy:metronome`).
+
+## See also
+
+- [`-XX:ParallelCMSThreads`](xxparallelcmsthreads.md)
+- [`-XX:ConcGCThreads`](xxconcgcthreads.md)
 
 <!-- ==== END OF TOPIC ==== xconcurrentbackground.md ==== -->

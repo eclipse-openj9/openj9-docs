@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xgcworkpackets 
+# -Xgcworkpackets
 
 
 Specifies the total number of work packets available in the global collector.
@@ -35,7 +35,8 @@ Specifies the total number of work packets available in the global collector.
 
 If you do not specify a value, the collector allocates a number of packets based on the maximum heap size.
 
+This option can be used with all OpenJ9 GC policies.
+
 
 
 <!-- ==== END OF TOPIC ==== xgcworkpackets.md ==== -->
-

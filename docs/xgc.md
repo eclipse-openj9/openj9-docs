@@ -45,16 +45,20 @@ Options that change the behavior of the garbage collector.
 | [`minContractPercent`               ](#mincontractpercent               ) | Sets the minimum percentage of the heap that can be contracted at any given time.                         |
 | [`maxContractPercent`               ](#maxcontractpercent               ) | Sets the maximum percentage of the heap that can be contracted at any given time.                         |
 | [`noConcurrentScavenge`             ](#noconcurrentscavenge             ) | Disables concurrent scavenge.                                                                             |
+| [`noSynchronousGCOnOOM`             ](#nosynchronousgconoom             ) | Prevents an application stopping to allow GC activity.                                                                             |
 | [`overrideHiresTimerCheck`          ](#overridehirestimercheck          ) | Overrides GC operating system checks for timer resolution.                                                |
 | [`preferredHeapBase`                ](#preferredheapbase                ) | Sets a memory range for the Java&trade; heap. (AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade; only) |
 | [`scvNoAdaptiveTenure`              ](#scvnoadaptivetenure              ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                               |
 | [`scvTenureAge`                     ](#scvtenureage                     ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                           |
 | [`stdGlobalCompactToSatisfyAllocate`](#stdglobalcompacttosatisfyallocate) | Prevents the GC from performing a compaction unless absolutely required.                                  |
+| [`synchronousGCOnOOM`               ](#synchronousgconoom               )     | Stops an application to allow GC activity.                                                                             |
+| [`targetPausetime`                  ](#targetpausetime                  )   | Sets the GC pause time for the `metronome` GC policy.                                                   |
+| [`targetUtilization`                ](#targetutilization                )   | Sets application utilization for the `metronome` GC policy.                                                   |
 | [`tlhIncrementSize`                 ](#tlhincrementsize                 ) | Sets the size of the thread local heap (TLH) increment.                                                   |
 | [`tlhInitialSize`                   ](#tlhinitialsize                   ) | Sets the initial size of the thread local heap.                                                           |
 | [`tlhMaximumSize`                   ](#tlhmaximumsize                   ) | Sets the maximum size of the thread local heap.                                                           |
 | [`verboseFormat`                    ](#verboseformat                    ) | Sets the verbose GC format.                                                                               |
-
+| [`verbosegcCycleTime`               ](#verbosegccycletime                    ) | Sets the criteria for verbose GC logging.                                                                              |
 
 ### `breadthFirstScanOrdering`
 
@@ -70,7 +74,7 @@ Options that change the behavior of the garbage collector.
 
 : This option sets a threshold that is used to start an early concurrent global GC cycle due to recent class loading activity. The default value is 80000.
 
-: This option  is applicable to the following GC policies: `gencon` and `optavgpause`.
+: This option is applicable to the following GC policies: `gencon` and `optavgpause`.
 
 ### `classUnloadingThreshold`
 
@@ -80,7 +84,7 @@ Options that change the behavior of the garbage collector.
 
 : This option sets a threshold that is used to trigger an optional GC class unloading operation in a global GC cycle, irrespective of how the global GC cycle is triggered. The default value is 6.
 
-: This option  is applicable to the following GC policies: `gencon`, `optavgpause`, and `optthruput`.
+: This option is applicable to the following GC policies: `gencon`, `optavgpause`, and `optthruput`.
 
 ### `concurrentScavenge`
 
@@ -88,7 +92,7 @@ Options that change the behavior of the garbage collector.
 
         -Xgc:concurrentScavenge
 
-: This option supports pause-less garbage collection mode when you use the Generational Concurrent ([`gencon`](xgcpolicy.md#gencon)) garbage collection policy (the default policy).
+: This option supports pause-less garbage collection mode when you use the Generational Concurrent ([`gencon`](xgcpolicy.md#gencon)) garbage collection policy (the default policy). This option cannot be used with any other GC policies.
 
     If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications. This mode can be enabled with hardware-based support (Linux on IBM Z&reg; and z/OS&reg;) and software-based support (64-bit: Linux on (x86-64, POWER&reg;, IBM Z&reg;) AIX&reg;, macOS&reg;, and z/OS).
 
@@ -125,6 +129,8 @@ Options that change the behavior of the garbage collector.
 
 : The maximum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.
 
+: This option applies only to the `gencon` GC policy.
+
 ### `dnssExpectedTimeRatioMinimum`
 
         -Xgc:dnssExpectedTimeRatioMinimum=<value>
@@ -134,6 +140,8 @@ Options that change the behavior of the garbage collector.
   | `<value>`     | [percentage]   | 1                     |
 
 : The minimum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.
+
+: This option applies only to the `gencon` GC policy.
 
 <!--### `dynamicBreadthFirstScanOrdering`
 
@@ -153,6 +161,8 @@ Options that change the behavior of the garbage collector.
 
     The default value is 95, which means that anything over 5% of total application run time spent on GC is deemed excessive. This option can be used only when [`-Xenableexcessivegc`](xenableexcessivegc.md) is set (enabled by default).
 
+: This option can be used with all OpenJ9 GC policies.
+
 ### `hierarchicalScanOrdering`
 
         -Xgc:hierarchicalScanOrdering
@@ -169,6 +179,8 @@ Options that change the behavior of the garbage collector.
 
 : The minimum percentage of the heap that can be contracted at any given time.
 
+: This option can be used with all OpenJ9 GC policies.
+
 ### `maxContractPercent`
 
         -Xgc:maxContractPercent=<n>
@@ -179,15 +191,25 @@ Options that change the behavior of the garbage collector.
 
 : The maximum percentage of the heap that can be contracted at any given time. For example, `-Xgc:maxContractPercent=20` causes the heap to contract by as much as 20%.
 
+: This option can be used with all OpenJ9 GC policies.
+
 ### `noConcurrentScavenge`
 
 **(64-bit only)**
 
         -Xgc:noConcurrentScavenge
 
-: This option disables pause-less garbage collection that you might have enabled with the [`-Xgc:concurrentScavenge`](#concurrentscavenge) option when using the Generational Concurrent ([`gencon`](xgcpolicy.md#gencon)) garbage collection policy (the default policy).
+: This option disables pause-less garbage collection that you might have enabled with the [`-Xgc:concurrentScavenge`](#concurrentscavenge) option when using the default [`gencon`](xgcpolicy.md#gencon) GC policy. This option applies only to the `gencon` GC policy.
 
     :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** No concurrent scavenge is the default state, but the `noConcurrentScavenge` option is useful as it will disable concurrent scavenge even if it has been enabled by a previous option; the right-most option always takes precedence.
+
+### `nosynchronousGCOnOOM`
+
+        -Xgc:nosynchronousGCOnOOM
+
+: Setting `-Xgc:nosynchronousGCOnOOM` implies that when heap memory is full your application stops and issues an *out-of-memory* message. The default is [`-Xgc:synchronousGCOnOOM`](#synchronousgconoom).
+
+: This option applies only to the `metronome` GC policy.
 
 ### `overrideHiresTimerCheck`
 
@@ -196,6 +218,8 @@ Options that change the behavior of the garbage collector.
 : When the VM starts, the GC checks that the operating system can meet the timer resolution requirements for the requested target pause time. Typically, this check correctly identifies operating systems that can deliver adequate time resolution. However, in some cases the operating system provides a more conservative answer than strictly necessary for GC pause time management, which prevents startup. Specifying this parameter causes the GC to ignore the answer returned by the operating system. The VM starts, but GC pause time management remains subject to operating system performance, which might not provide adequate timer resolution.
 
     :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Use this option with caution, and only when you are unable to use a supported operating system.
+
+: This option applies only to the `metronome` GC policy.
 
 ### `preferredHeapBase`
 
@@ -213,11 +237,15 @@ Options that change the behavior of the garbage collector.
 
     If the heap cannot be allocated in a contiguous block at the `preferredHeapBase` address you specified, an error occurs detailing a Garbage Collection (GC) allocation failure startup. When the `preferredHeapBase` option is used with the [`-Xlp`](xlp.md) option, the `preferredHeapBase` address must be a multiple of the large page size. If you specify an inaccurate heap base address, the heap is allocated with the default page size.
 
+: This option can be used with all OpenJ9 GC policies.
+
 ### `scvNoAdaptiveTenure`
 
         -Xgc:scvNoAdaptiveTenure
 
-: Turns off the adaptive tenure age in the generational concurrent GC policy. The initial age that is set is maintained throughout the run time of the VM. See `scvTenureAge`.
+: Turns off the adaptive tenure age in the `gencon` GC policy. The initial age that is set is maintained throughout the run time of the VM. See `scvTenureAge`.
+
+: This option applies only to the `gencon` GC policy.
 
 ### `scvTenureAge`
 
@@ -227,7 +255,9 @@ Options that change the behavior of the garbage collector.
   |---------------|----------------|-----------------------|
   | `<n>`         | [1 - 14]       | 10                    |
 
-: Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see [`gencon` policy (default)](gc.md#gencon-policy-default).
+: Sets the initial scavenger tenure age in the `gencon` GC policy. For more information, see [`gencon` policy (default)](gc.md#gencon-policy-default).
+
+: This option applies only to the `gencon` GC policy.
 
 ### `stdGlobalCompactToSatisfyAllocate`
 
@@ -240,6 +270,36 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 - `optthruput`
 - `optavgpause`
 
+: This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`) or metronome GC policy (`-Xgcpolicy:metronome`).
+
+
+### `synchronousGCOnOOM`
+
+        -Xgc:synchronousGCOnOOM
+
+: GC cycles can occur when the Java heap runs out of memory. If there is no more free space in the heap, using `-Xgc:synchronousGCOnOOM` stops your application while GC operations remove unused objects. If free space runs out again, consider decreasing the target utilization to allow GC operations more time to complete. Setting `-Xgc:nosynchronousGCOnOOM` implies that when heap memory is full your application stops and issues an *out-of-memory* message. The default is `-Xgc:synchronousGCOnOOM`.
+
+: This option applies only to the `metronome` GC policy.
+
+### `targetPausetime`
+
+        -Xgc:targetPausetime=N
+
+: Sets the GC pause time, where `N` is the time in milliseconds. When this option is specified, the garbage collector operates with pauses that do not exceed the value specified. If this option is not specified the default pause time is set to 3 milliseconds. For example, running with `-Xgc:targetPausetime=20` causes the garbage collector to pause for no longer than 20 milliseconds during GC operations.
+
+: This option applies only to the `metronome` GC policy.
+
+### `targetUtilization`
+
+        -Xgc:targetUtilization=N
+
+: Sets the application utilization to `N%`; the garbage collector attempts to use at most (100-N)% of each time interval. Reasonable values are in the range of 50-80%. Applications with low allocation rates might be able to run at 90%. The default is 70%.
+
+    In the following example, the maximum size of the heap is set to 30 MB. The garbage collector attempts to use 25% of each time interval because the target utilization for the application is set to 75%.
+
+        java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
+
+: This option applies only to the `metronome` GC policy.
 
 ### `tlhIncrementSize`
 
@@ -247,11 +307,15 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 
 : Sets the increment size of the thread local heap (TLH), which plays a key role in cache allocation. Threads start creating TLHs with a predefined initial size (default 2 KB). On every TLH refresh, the requested size for that thread is increased by an increment (default 4 KB). Use this option to control the increment size.
 
+: This option can be used with all OpenJ9 GC policies.
+
 ### `tlhInitialSize`
 
         -Xgc:tlhInitialSize=<bytes>
 
 : Sets the initial size of the TLH. The default size is 2 KB.
+
+: This option can be used with all OpenJ9 GC policies.
 
 ### `tlhMaximumSize`
 
@@ -259,6 +323,8 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 
 : Sets the maximum size of the TLH. The size of the TLH varies from 512 bytes (768 on 64-bit JVMs) to 128 KB, depending on the allocation rate of the thread.
 Larger TLHs can help reduce heap lock contention, but might also reduce heap utilisation and increase heap fragmentation. Typically, when the maximum TLH size is increased, you should also increase the increment size (`-XtlhIncrementSize`) proportionally, so that active threads can reach the maximum requested TLH size more quickly.
+
+: This option can be used with all OpenJ9 GC policies.
 
 ### `verboseFormat`
 
@@ -270,9 +336,19 @@ Larger TLHs can help reduce heap lock contention, but might also reduce heap uti
   |               | `deprecated`   |                                                                                    |
 
 
-    - `default`: The default verbose garbage collection format for OpenJ9. For more information, see [Verbose garbage collection logging](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_pd_verbosegc.html).
+    - `default`: The default verbose garbage collection format for OpenJ9. For more information, see [Verbose garbage collection logs](vgclog.md).
     - `deprecated`: The verbose garbage collection format available in the IBM J9 VM V2.4 and earlier.
 
+: This option does not apply to the `metronome` GC policy. The verbose log format for the `metronome` GC policy is equivalent to `-Xgc:verboseFormat=deprecated`.
 
+### `verbosegcCycleTime`
+
+        -Xgc:verbosegcCycleTime=N
+
+: `N` is the time in milliseconds that the summary information should be logged.
+
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The cycle time does not mean that the summary information is logged precisely at that time, but when the last GC event that meets this time criterion passes.
+
+: This option applies only to the `metronome` GC policy.
 
 <!-- ==== END OF TOPIC ==== xgc.md ==== -->

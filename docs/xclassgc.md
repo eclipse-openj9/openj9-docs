@@ -24,20 +24,24 @@
 
 # -Xclassgc / -Xnoclassgc
 
-Enables and disables class garbage collection (the dynamic unloading of class objects by the VM). 
+Enables and disables the garbage collection (GC) of storage that is associated with Java classes that are no longer being used by the OpenJ9 VM.
 
-When enabled, garbage collection, occurs only on class loader changes. This is the default behavior.
+When enabled, GC occurs only on class loader changes. To always enable dynamic class unloading regardless of class loader changes, set [`-Xalwaysclassgc`](xalwaysclassgc.md).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Disabling class garbage collection is not recommended as this causes unlimited native memory growth, leading to out-of-memory errors.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Disabling class GC is not recommended because unlimited native memory growth can occur, which can lead to out-of-memory errors.
 
 ## Syntax
 
 | Setting      | Action     | Default                                                                            |
 |--------------|------------|:----------------------------------------------------------------------------------:|
-|`-Xclassgc`   | Enable GC  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-|`-Xnoclassgc` | Disable GC |                                                                                    |
+|`-Xclassgc`   | Enables dynamic class unloading on demand  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+|`-Xnoclassgc` | Disables dynamic class unloading |                                                                                    |
 
+These options can be used with all OpenJ9 GC policies.
 
+## See also
+
+- [`-Xalwaysclassgc`](xalwaysclassgc.md)
 
 <!-- ==== END OF TOPIC ==== xclassgc.md ==== -->
 <!-- ==== END OF TOPIC ==== xnoclassgc.md ==== -->

@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# ‑Xenablestringconstantgc / ‑Xdisablestringconstantgc 
+# ‑Xenablestringconstantgc / ‑Xdisablestringconstantgc
 
 Enables or disables the collection of strings from the string intern table.
 
@@ -33,6 +33,7 @@ Enables or disables the collection of strings from the string intern table.
 | `-Xenablestringconstantgc`  | Enable collection  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-Xdisablestringconstantgc` | Disable collection |                                                                                    |
 
+This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`).
+
 <!-- ==== END OF TOPIC ==== xenablestringconstantgc.md ==== -->
 <!-- ==== END OF TOPIC ==== xdisablestringconstantgc.md ==== -->
-

@@ -25,7 +25,7 @@
 # -Xgcpolicy
 
 
-Controls which Garbage Collection (GC) policy is used for your Java&trade; application.
+Controls which garbage collection (GC) policy is used for your Java&trade; application.
 
 ## Syntax
 
@@ -72,9 +72,6 @@ The initial heap size is *Xmx/1024*, rounded down to the nearest power of 2, whe
 
 The following options can also be specified on the command line with `-Xgcpolicy:balanced`:
 
-<!-- - `-Xalwaysclassgc` -->
-<!-- - `-Xclassgc`
-<!-- - `-Xcompactexplicitgc` -->
 - `-Xdisableexcessivegc`
 - `-Xdisableexplicitgc`
 - `-Xenableexcessivegc`
@@ -93,8 +90,6 @@ The following options can also be specified on the command line with `-Xgcpolicy
 - `-Xmnx<size>`
 - `-Xms<size>`
 - `-Xmx<size>`
-<!-- - `-Xnoclassgc` -->
-<!-- - `-Xnocompactexplicitgc` -->
 - `-Xnuma:none`
 - `-Xsoftmx<size>`
 - `-Xsoftrefthreshold<number>`
@@ -132,8 +127,6 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 - `-Xmr<size>`
 - `-Xmrx<size>`
 - `-Xnoloa`
-<!-- - `-Xnopartialcompactgc` (deprecated) -->
-<!-- - `-Xpartialcompactgc` (deprecated) -->
 
 
 ### `optavgpause`
@@ -162,40 +155,16 @@ The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
     To learn more about this policy, how it works, and when to use it, see [Garbage collection: `metronome` policy](gc.md#metronome-policy).
 
-#### `metronome` defaults and options
+#### `metronome` options
 
-`-Xgc:synchronousGCOnOOM | -Xgc:nosynchronousGCOnOOM`
-: GC cycles can occur when the Java heap runs out of memory. If there is no more free space in the heap, using `-Xgc:synchronousGCOnOOM` stops your application while GC operations remove unused objects. If free space runs out again, consider decreasing the target utilization to allow GC operations more time to complete. Setting `-Xgc:nosynchronousGCOnOOM` implies that when heap memory is full your application stops and issues an *out-of-memory* message. The default is `-Xgc:synchronousGCOnOOM`.
+The following options are specific to the `metronome` GC policy:
 
-`-Xclassgc | -Xnoclassgc | -Xalwaysclassgc`
-
-: [`-Xnoclassgc`](xclassgc.md) disables class garbage collection. This option switches off the collection of storage associated with Java classes that are no longer being used by the OpenJ9 VM. The default behavior is [`-Xclassgc`](xclassgc.md), which heuristically decides which GC cycle will attempt to unload classes.
-
-: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Disabling class GC is not recommended as this causes unlimited native memory growth, leading to *out-of-memory* errors.
-
-: [`-Xalwaysclassgc`](xalwaysclassgc.md) always performs dynamic class unloading checks during global GC cycles.
-
-`-Xgc:targetPauseTime=N`
-: Sets the GC pause time, where N is the time in milliseconds. When this option is specified, the GC operates with pauses that do not exceed the value specified. If this option is not specified the default pause time is set to 3 milliseconds. For example, running with `-Xgc:targetPauseTime=20` causes the GC to pause for no longer than 20 milliseconds during GC operations.
-
-`-Xgc:targetUtilization=N`
-: Sets the application utilization to `N%`; the GC attempts to use at most (100-N)% of each time interval. Reasonable values are in the range of 50-80%. Applications with low allocation rates might be able to run at 90%. The default is 70%.
-
-    In the following example, the maximum size of the heap is set to 30 MB. The GC attempts to use 25% of each time interval because the target utilization for the application is set to 75%.
-
-        java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
-
-`-Xgc:threads=N`
-: Specifies the number of GC threads to run. The default is the number of processor cores available to the process. The maximum value that you can specify is the number of processors available to the operating system.
-
-`-Xgc:verboseGCCycleTime=N`
-: N is the time in milliseconds that the summary information should be logged.
-
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The cycle time does not mean that the summary information is logged precisely at that time, but when the last GC event that meets this time criterion passes.
-
-`-Xmx<size>`
-: Specifies the Java heap size. Unlike other GC strategies, the `metronome` policy does not support heap expansion. You can specify only the maximum heap size, not an initial heap size (`-Xms`).
-
+- [`-Xgc:nosynchronousGCOnOOM`](xgc.md#nosynchronousgconoom)
+- [`-Xgc:overrideHiresTimerCheck`](xgc.md#overridehirestimercheck)
+- [`-Xgc:synchronousGCOnOOM`](xgc.md#synchronousgconoom)
+- [`-Xgc:targetPausetime`](xgc.md#targetpausetime)
+- [`-Xgc:targetUtilization`](xgc.md#targetutilization)
+- [`-Xgc:verbosegcCycleTime`](xgc.md#verbosegccycletime)
 
 ### `nogc`
 

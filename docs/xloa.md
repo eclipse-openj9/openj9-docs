@@ -24,7 +24,7 @@
 
 # -Xloa / -Xnoloa
 
-This option enables or prevents allocation of a large object area (LOA) during garbage collection.
+This option enables or prevents the allocation of a large object area (LOA) during garbage collection (GC).
 
 ## Syntax
 
@@ -45,7 +45,7 @@ The LOA is an area of the tenure area of the heap set used solely to satisfy all
 
 As objects are allocated and freed, the heap can become fragmented in such a way that allocation can be met only by time-consuming compactions. This problem is more pronounced if an application allocates large objects. In an attempt to alleviate this problem, the LOA is allocated. A large object in this context is considered to be any object 64 KB or greater in size. Allocations for new TLH objects are not considered to be large objects.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The Balanced Garbage Collection policy does not use the LOA. Therefore, when specifying -`Xgcpolicy:balanced`, any LOA options passed on the command line are ignored. The policy addresses the issues of LOA by reorganizing object layout with the VM to reduce heap fragmentation and compaction requirements. 
+This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`) or metronome GC policy (`-Xgcpolicy:metronome`), which do not use an LOA. Any LOA options passed on the command line are ignored. These policies address the issues that are solved by an LOA by reorganizing object layout with the VM to reduce heap fragmentation and compaction requirements.
 
 ## See also
 
