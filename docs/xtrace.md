@@ -120,10 +120,10 @@ There are two types of tracepoints inside the VM:
 
 Trace data can be written to one of the following locations:
 
-- Memory buffers that can be dumped or snapped when a problem occurs. Use the `-Xtrace:buffers=<size>` option to control the size of the buffer allocated to each thread. Buffers allocated to a thread are discarded when that thread terminates. To examine the trace data captured in these memory buffers, you must snap or dump the data, then format the buffers.
-- One or more files that are using buffered I/O. Use the `-Xtrace:output` option.
-- An external agent in real time, using the `-Xtrace:external` option.
-- stderr in real time.
+- Memory buffers that can be dumped or snapped when a problem occurs. Use the [`-Xtrace:buffers=<size>`](#buffers) option to control the size of the buffer allocated to each thread. Buffers allocated to a thread are discarded when that thread terminates. To examine the trace data captured in these memory buffers, you must snap or dump the data. Use the [`-Xdump:snap`](xdump.md#dump-agents) option to vary the events that cause a snap trace file to be produced. When produced, format the buffers by using the [trace formatter](tool_traceformat.md).
+- One or more files that are using buffered I/O. Use the [`-Xtrace:output`](#output) option.
+- An external agent in real time, using the [`-Xtrace:external`](#external-tracepoint) option.
+- `stderr` in real time.
 - Any combination of the other items in this list.
 
 ## Default tracing
@@ -468,7 +468,9 @@ When specified, trace data is placed into internal trace buffers that can then b
 
 ### `methods`
 
-Using method trace provides a complete and potentially large diagnosis of code paths inside your application and the system classes. Use wild cards and filtering to control method trace so that you can focus on the sections of code that interest you. To specify one or more method specifications, use the following syntax:
+Using method trace provides a complete and potentially large diagnosis of code paths inside your application and the system classes. Use wild cards and filtering to control method trace so that you can focus on the sections of code that interest you. Note that method trace is powerful but it also has a cost. Application throughput is affected by method trace.
+
+To specify one or more method specifications, use the following syntax:
 
     -Xtrace:methods=<method_specification>[,<method_specification>]
 
@@ -490,7 +492,9 @@ To output all method trace information to stderr, use either the `print` or `ipr
     -Xtrace:iprint=mt,methods=*.*
 
 The `iprint` suboption prints to stderr with indentation.
-To output method trace information in binary format, see the [`output`](#output) option.
+To output method trace information in binary format, see the [`output`](#output) option
+
+Internal Native Library (INL) native methods inside the VM cannot be traced because they are not implemented by using JNI. The list of methods that are not traceable is subject to change without notice.
 
 Here are some examples:
 
@@ -800,11 +804,11 @@ Wherever an action (`<action>`, `<entryAction>`, or `<exitAction>`) must be spec
 | **`<action>`**              | Effect                                                                                                                                                           |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `abort`                     | Halt the VM.                                                                                                                                                     |
-| `ceedump`                   | This action is applicable to z/OS&reg; only. For more information, see z/OS LE CEEDUMPs.                                                                         |
-| `coredump`                  | See `sysdump`.                                                                                                                                                   |
-| `heapdump`                  | Produce a Heapdump. See [Using Heapdump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html).                    |
-| `javadump`                  | Produce a Javadump. See [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html).                    |
-| `jstacktrace`               | Examine the Java stack of the current thread and generate auxiliary tracepoints for each stack frame. The auxiliary tracepoints are written to the same destination as the tracepoint or method trace that triggered the action. You can control the number of stack frames examined with the stackdepth=n option. See the [stackdepth](#stackdepth) option.   |
+| `ceedump`                   | This action is applicable to z/OS&reg; only. For more information, see [z/OS LE CEEDUMPs](xdump.md#dump-agents).                                                                         |
+| `coredump`                  | Produce a system dump. See [Dump agents (`-Xdump:system`)](xdump.md#dump-agents)                                                                          |
+| `heapdump`                  | Produce a heap dump. See [Heap dump](dump_heapdump.md).                    |
+| `javadump`                  | Produce a Java dump. See [Java dump](dump_javadump.md).                    |
+| `jstacktrace`               | Examine the Java stack of the current thread and generate auxiliary tracepoints for each stack frame. The auxiliary tracepoints are written to the same destination as the tracepoint or method trace that triggered the action. You can control the number of stack frames examined with the `stackdepth=n` option. See the [stackdepth](#stackdepth) option.   |
 | `resume`                    | Resume all tracing (except for threads that are suspended by the action of the resumecount property and `Trace.suspendThis()` calls).                            |
 | `resumethis`                | Decrement the suspend count for this thread. If the suspend count is zero or less, resume tracing for this thread.                                               |
 | `segv`                      | Cause a segmentation violation. (Intended for use in debugging.)                                                                                                 |

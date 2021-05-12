@@ -25,7 +25,7 @@
 # Dump viewer (`jdmpview`)
 
 
-The dump viewer is a command-line tool that allows you to examine the contents of system dumps produced from the OpenJ9 VM. The dump viewer allows you to view both Java&trade; and native information from the time the dump was produced.
+The dump viewer is a command-line tool that allows you to examine the contents of system dumps produced from the OpenJ9 VM. The dump viewer allows you to view both Java&trade; and native information from the time the dump was produced. You can run the dump viewer on one platform to work with dumps from another platform.
 
 For long running tasks, the dump viewer can also be run in batch mode.
 
@@ -202,7 +202,7 @@ Where `<options>`:
 - `-keep` : Keep lines that do not contain a match to the pattern. By default, lines that do not contain a match are excluded from the results.
 - `-i` or `-ignoreCase` : Ignore case.
 
-For example, the following command displays lines that contain the pattern "@", and trims each line to exclude all characters from "@" onwards:
+For example, the following command displays lines that contain the pattern `@`, and trims each line to exclude all characters from `@` onwards:
 
     > info mod | charsTo @
     bin/java
@@ -213,7 +213,7 @@ For example, the following command displays lines that contain the pattern "@", 
     /test/sdk/lib/ppc64le/libjsig.so
     libjsig.so
 
-You can also use `charsFrom` and `charsTo` together, separated by a vertical bar character. For example, the following command displays lines that contain the pattern "lib", and trims each line to exclude all characters that come before this pattern, as well as all characters from the pattern `@` :
+You can also use `charsFrom` and `charsTo` together, separated by a vertical bar character. For example, the following command displays lines that contain the pattern `lib`, and trims each line to exclude all characters that come before this pattern, as well as all characters from the pattern `@` :
 
     > info mod | charsFrom lib | charsTo @
     lib/ppc64le/libzip.so
@@ -235,10 +235,10 @@ Where `<options>`:
 - `-i` : Ignore case.
 - `-r`, `-G`, or `--regex`: Use a regular expression as defined in the Java documentation of the java.utils.regex.Pattern class.
 - `-b` or `--block` : Show blocks of lines where at least one of the lines matches the pattern. Blocks of lines are separated by empty lines.
-- `-A` &lt;NUM&gt; or +&lt;NUM&gt; : Show at most &lt;NUM&gt; lines after the matching line. For example grep -A 2 pattern or grep +2 pattern.
+- `-A` &lt;NUM&gt; or +&lt;NUM&gt; : Show at most &lt;NUM&gt; lines after the matching line. For example `grep -A 2 <pattern>` or `grep +2 <pattern>`.
 - `-B` &lt;NUM&gt; or -&lt;NUM&gt; : Show at most &lt;NUM&gt; lines before the matching line.
 - `-C` &lt;NUM&gt; or +-&lt;NUM&gt; : Show at most &lt;NUM&gt; lines before and after the matching line.
-- `-v` or `--invert-match` : Use with the grep command to show lines that do not match the pattern. These options are equivalent to the grep- command.
+- `-v` or `--invert-match` : Use with the grep command to show lines that do not match the pattern. These options are equivalent to the `grep` command.
 - `-F` or `--fixed-strings` : Do not treat the asterisk (\*) as a wildcard character. Use these options with the `-r`, `-G`, or `--regex` options.
 
 Pattern rules:
@@ -248,21 +248,23 @@ Pattern rules:
 - If a pattern contains double quotation marks, enclose the pattern in a pair of single quotation marks (').
 - You can specify multiple sub-patterns to match by using the following format, but only if you do not use the `-r`, `-G`, or `--regex` options:
 
+    ```
     "[pattern1|pattern2|...|patternN]"
+    ```  
 
     The initial and trailing double quotation marks and brackets ([ ]) are required. Use a vertical bar character to separate the sub-patterns. Quotation marks and the vertical bar are not allowed in a sub-pattern. Spaces are allowed in the middle of a sub-pattern, but leading and trailing spaces will be trimmed.
 
 - Use the `grep` command to show lines that do not match the pattern.
 
-For example, the following command displays the number of instances and total heap size for the `java/lang/String` class:
+In the following example, the command displays the number of instances and total heap size for the `java/lang/String` class:
 
-    > info class | grep java/lang/String              
-    94 7688 [Ljava/lang/String;            
+    > info class | grep java/lang/String
+    94 7688 [Ljava/lang/String;
     1822 58304 java/lang/String               
-    1 16 java/lang/String$CaseInsensitiveComparator               
+    1 16 java/lang/String$CaseInsensitiveComparator              
     0 0 java/lang/String$UnsafeHelpers
 
-The following command uses two pipes in combination to display the number of instances and total heap size for the `java/lang/StringCoding.StringDecoder` class:
+In the following example, the command uses two pipes in combination to display the number of instances and total heap size for the `java/lang/StringCoding.StringDecoder` class:
 
     > info class | grep java/lang/String | grep -i decoder
     1 48 java/lang/StringCoding$StringDecoder
@@ -275,16 +277,16 @@ Use the `tokens` command after the vertical bar character to isolate specified t
 
 You can define range in the following formats:
 
-- x
-- x,y
-- x..y
+- `x`
+- `x,y`
+- `x..y`
 
 A set of rules applies to these formats:
 
-- x or y can be prefixed with "-". This means that x or y are counting backwards from the end of a list. For example, a y value of -1 represents the last token in a list, while -2 represents the penultimate token in a list.
-- x must represent a token that either precedes or is at the same position as y.
+- `x` or `y` can be prefixed with `-`. This means that `x` or `y` are counting backwards from the end of a list. For example, a `y` value of `-1` represents the last token in a list, while -2 represents the penultimate token in a list.
+- `x` must represent a token that either precedes or is at the same position as `y`.
 
-In this format, if x is omitted, it is assumed to be '1'. If y is omitted, it is assumed to be '-1'.
+In this format, if `x` is omitted, it is assumed to be `1`. If `y` is omitted, it is assumed to be `-1`.
 
 For example, the following command displays the first and second token for each resulting line:
 
@@ -346,12 +348,14 @@ When `jdmpview` is started, many parameters can be used during the session to in
 
 ### findnext
 
+: Finds the next instance of the last string passed to `find` or `findptr`. It repeats the previous `find` or `findptr` command, depending on which one was issued last, starting from the last match.
+
+### findptr
 
         findptr <pattern>,<start_address>,<end_address>,<memory_boundary>,<bytes_to_print>,<matches_to_display>
 
-: Finds the next instance of the last string passed to `find` or `findptr`. It repeats the previous `find` or `findptr` command, depending on which one was issued last, starting from the last match.
 
-    Searches memory for the given pointer. `findptr` searches for `<pattern>` as a pointer in the memory segment from `<start_address>` to `<end_address>` (both inclusive), and shows the number of matching addresses you specify with `<matches_to_display>`. You can also display the next `<bytes_to_print>` bytes for the last match.
+:  Searches memory for the given pointer. `findptr` searches for `<pattern>` as a pointer in the memory segment from `<start_address>` to `<end_address>` (both inclusive), and shows the number of matching addresses you specify with `<matches_to_display>`. You can also display the next `<bytes_to_print>` bytes for the last match.
 
     By default, the `findptr` command searches for the pattern at every byte in the range. If you know the pattern is aligned to a particular byte boundary, you can specify `<memory_boundary>` to search every `<memory_boundary>` bytes. For example, if you specify a `<memory_boundary>` of "4", the command searches for the pattern every 4 bytes.
 
@@ -401,7 +405,7 @@ When `jdmpview` is started, many parameters can be used during the session to in
 
 : Displays the inheritance chain and other data for a given class.
 
-If a class name is passed to info class, the following information is shown about that class:
+: If a class name is passed to info class, the following information is shown about that class:
 
     - Name
     - ID
@@ -413,7 +417,7 @@ If a class name is passed to info class, the following information is shown abou
     - Fields with modifiers (and values for static fields)
     - Methods with modifiers
 
-    If no parameters are passed to `info class`, the following information is shown:
+: If no parameters are passed to `info class`, the following information is shown:
 
     - The number of instances of each class.
     - The total size of all instances of each class.
@@ -421,7 +425,7 @@ If a class name is passed to info class, the following information is shown abou
     - The total number of instances of all classes.
     - The total size of all objects.
 
-    The `sort` option allows the list of classes to be sorted by name (default), by number of instances of each class, or by the total size of instances of each class.
+: The `sort` option allows the list of classes to be sorted by name (default), by number of instances of each class, or by the total size of instances of each class.
 
 
 ### info proc
@@ -467,11 +471,11 @@ If a class name is passed to info class, the following information is shown abou
     - Heap name
     - (Heap size and occupancy)
     - Heap sections
-      - Section name
-      - Section size
-      - Whether the section is shared
-      - Whether the section is executable
-      - Whether the section is read only
+        - Section name
+        - Section size
+        - Whether the section is shared
+        - Whether the section is executable
+        - Whether the section is read only
 
 
 ### heapdump
@@ -525,16 +529,20 @@ If a class name is passed to info class, the following information is shown abou
     - `file <filename>`: Sets the file to log to. The path is relative to the directory returned by the pwd command, unless an absolute path is specified. If the file is set while logging is on, the change takes effect the next time logging is started. Not set by default.
     - `overwrite [on|off]`: Turns overwriting of the specified log file on or off. When overwrite is off, log messages are appended to the log file. When overwrite is on, the log file is overwritten after the set logging command. (Default: off)
     - `redirect [on|off]`: Turns redirecting to file on or off, with off being the default. When logging is set to on:
-      - A value of on for redirect sends non-error output only to the log file.
-      - A value of off for redirect sends non-error output to the console and log file.
+        - A value of on for redirect sends non-error output only to the log file.
+        - A value of off for redirect sends non-error output to the console and log file.
 
     Redirect must be turned off before logging can be turned off. (Default: off)
 
 ### show heapdump
 
-: Displays the current Heapdump generation settings.
+        show heapdump <options>
+
+: Displays the current heap dump generation settings.
 
 ### show logging
+
+        show logging <options>
 
 : Displays the current logging settings:
 
