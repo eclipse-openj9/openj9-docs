@@ -2315,6 +2315,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2424,7 +2431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4103,6 +4110,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4142,7 +4156,7 @@
 
 <h1 id="-xmca-xmco">-Xmca / -Xmco</h1>
 <p>Sets the expansion step for the memory allocated to store the RAM (<code>-Xmca</code>) and ROM (<code>-Xmco</code>) portions of loaded classes.</p>
-<p>Each time more memory is required to store classes in RAM or ROM, the allocated memory is increased by the amount set. </p>
+<p>Each time more memory is required to store classes in RAM or ROM, the allocated memory is increased by the amount set.</p>
 <p>If the expansion step size you choose is too large, <code>OutOfMemoryError</code> is reported. The exact value of a <em>"too large"</em> expansion step size varies according to the platform and the specific machine configuration.</p>
 <p>You can use the <code>-verbose:sizes</code> option to find out the value that is being used by the VM.</p>
 <h2 id="syntax">Syntax</h2>
@@ -4168,6 +4182,11 @@
 </tbody>
 </table>
 <p>See <a href="../x_jvm_commands/">Using -X command-line options</a> for more information about the <code>&lt;size&gt;</code> parameter.</p>
+<p>This option cannot be used with the metronome GC policy (<code>-Xgcpolicy:metronome</code>) because the heap is always fully expanded.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../allocation/#expansion-and-contraction">Heap expansion and contraction</a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xmca.md ==== -->
 
 <!-- ==== END OF TOPIC ==== xmco.md ==== -->

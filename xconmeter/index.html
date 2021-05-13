@@ -2465,7 +2465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4223,7 +4223,7 @@
 -->
 
 <h1 id="-xconmeter">-Xconmeter</h1>
-<p>This option determines the usage of which area, LOA (large object area) or SOA (small object area), is metered and hence which allocations are taxed during concurrent mark.</p>
+<p>This option determines the usage of which area, LOA (large object area) or SOA (small object area), is metered and therefore which allocations are taxed during concurrent mark operations.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -Xconmeter:&lt;parameter&gt;
 </code></pre>
@@ -4248,6 +4248,7 @@
 </dl>
 <h2 id="default-behavior">Default behavior</h2>
 <p>By default, allocation tax is applied to the SOA.</p>
+<p>This option is not supported with the balanced GC policy (<code>-Xgcpolicy:balanced</code>) or metronome GC policy (<code>-Xgcpolicy:metronome</code>).</p>
 <!-- ==== END OF TOPIC ==== xconmeter.md ==== -->
                 
               

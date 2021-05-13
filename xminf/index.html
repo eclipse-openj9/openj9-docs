@@ -2431,7 +2431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4181,13 +4181,13 @@
 </table>
 <p>The value range is 0.0 - 1.0.</p>
 <ul>
-<li>For the <code>gencon</code> GC policy, the values apply only to the Tenure part of the heap and only at global GC points.</li>
+<li>For the <code>gencon</code> GC policy, the values apply only to the tenure part of the heap and only at global GC points.</li>
 <li>For the <code>optthruput</code> and <code>optavgpause</code> GC policies, these values apply to the whole heap at every GC point.</li>
 </ul>
+<p>This option cannot be used with the metronome GC policy (<code>-Xgcpolicy:metronome</code>) because the heap is always fully expanded.</p>
 <h2 id="see-also">See also</h2>
 <ul>
-<li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapshrinkage.html">Heap shrinkage</a></li>
-<li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapexpansion.html">Heap expansion</a></li>
+<li><a href="../allocation/#expansion-and-contraction">Heap expansion and contraction</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xminf.md ==== -->
 

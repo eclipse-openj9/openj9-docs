@@ -2101,6 +2101,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#nosynchronousgconoom" class="md-nav__link">
+    nosynchronousGCOnOOM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#overridehirestimercheck" class="md-nav__link">
     overrideHiresTimerCheck
   </a>
@@ -2136,6 +2143,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#synchronousgconoom" class="md-nav__link">
+    synchronousGCOnOOM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#targetpausetime" class="md-nav__link">
+    targetPausetime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#targetutilization" class="md-nav__link">
+    targetUtilization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tlhincrementsize" class="md-nav__link">
     tlhIncrementSize
   </a>
@@ -2159,6 +2187,13 @@
           <li class="md-nav__item">
   <a href="#verboseformat" class="md-nav__link">
     verboseFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verbosegccycletime" class="md-nav__link">
+    verbosegcCycleTime
   </a>
   
 </li>
@@ -2577,7 +2612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4342,6 +4377,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#nosynchronousgconoom" class="md-nav__link">
+    nosynchronousGCOnOOM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#overridehirestimercheck" class="md-nav__link">
     overrideHiresTimerCheck
   </a>
@@ -4377,6 +4419,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#synchronousgconoom" class="md-nav__link">
+    synchronousGCOnOOM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#targetpausetime" class="md-nav__link">
+    targetPausetime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#targetutilization" class="md-nav__link">
+    targetUtilization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tlhincrementsize" class="md-nav__link">
     tlhIncrementSize
   </a>
@@ -4400,6 +4463,13 @@
           <li class="md-nav__item">
   <a href="#verboseformat" class="md-nav__link">
     verboseFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verbosegccycletime" class="md-nav__link">
+    verbosegcCycleTime
   </a>
   
 </li>
@@ -4505,6 +4575,10 @@
 <td>Disables concurrent scavenge.</td>
 </tr>
 <tr>
+<td><a href="#nosynchronousgconoom"><code>noSynchronousGCOnOOM</code>             </a></td>
+<td>Prevents an application stopping to allow GC activity.</td>
+</tr>
+<tr>
 <td><a href="#overridehirestimercheck"><code>overrideHiresTimerCheck</code>          </a></td>
 <td>Overrides GC operating system checks for timer resolution.</td>
 </tr>
@@ -4525,6 +4599,18 @@
 <td>Prevents the GC from performing a compaction unless absolutely required.</td>
 </tr>
 <tr>
+<td><a href="#synchronousgconoom"><code>synchronousGCOnOOM</code>               </a></td>
+<td>Stops an application to allow GC activity.</td>
+</tr>
+<tr>
+<td><a href="#targetpausetime"><code>targetPausetime</code>                  </a></td>
+<td>Sets the GC pause time for the <code>metronome</code> GC policy.</td>
+</tr>
+<tr>
+<td><a href="#targetutilization"><code>targetUtilization</code>                </a></td>
+<td>Sets application utilization for the <code>metronome</code> GC policy.</td>
+</tr>
+<tr>
 <td><a href="#tlhincrementsize"><code>tlhIncrementSize</code>                 </a></td>
 <td>Sets the size of the thread local heap (TLH) increment.</td>
 </tr>
@@ -4540,6 +4626,10 @@
 <td><a href="#verboseformat"><code>verboseFormat</code>                    </a></td>
 <td>Sets the verbose GC format.</td>
 </tr>
+<tr>
+<td><a href="#verbosegccycletime"><code>verbosegcCycleTime</code>               </a></td>
+<td>Sets the criteria for verbose GC logging.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="breadthfirstscanordering"><code>breadthFirstScanOrdering</code></h3>
@@ -4554,7 +4644,7 @@
 <dl>
 <dd>Where <code>&lt;value&gt;</code> is equal to the number of class loaders plus the number of anonymous classes that are loaded since the previous class unloading operation.</dd>
 <dd>This option sets a threshold that is used to start an early concurrent global GC cycle due to recent class loading activity. The default value is 80000.</dd>
-<dd>This option  is applicable to the following GC policies: <code>gencon</code> and <code>optavgpause</code>.</dd>
+<dd>This option is applicable to the following GC policies: <code>gencon</code> and <code>optavgpause</code>.</dd>
 </dl>
 <h3 id="classunloadingthreshold"><code>classUnloadingThreshold</code></h3>
 <pre><code>     -Xgc:classUnloadingThreshold=&lt;value&gt;
@@ -4562,7 +4652,7 @@
 <dl>
 <dd>Where <code>&lt;value&gt;</code> is equal to the number of class loaders plus the number of anonymous classes that are loaded since the previous class unloading operation.</dd>
 <dd>This option sets a threshold that is used to trigger an optional GC class unloading operation in a global GC cycle, irrespective of how the global GC cycle is triggered. The default value is 6.</dd>
-<dd>This option  is applicable to the following GC policies: <code>gencon</code>, <code>optavgpause</code>, and <code>optthruput</code>.</dd>
+<dd>This option is applicable to the following GC policies: <code>gencon</code>, <code>optavgpause</code>, and <code>optthruput</code>.</dd>
 </dl>
 <h3 id="concurrentscavenge"><code>concurrentScavenge</code></h3>
 <p><strong>(64-bit only)</strong></p>
@@ -4570,7 +4660,7 @@
 </code></pre>
 <dl>
 <dd>
-<p>This option supports pause-less garbage collection mode when you use the Generational Concurrent (<a href="../xgcpolicy/#gencon"><code>gencon</code></a>) garbage collection policy (the default policy).</p>
+<p>This option supports pause-less garbage collection mode when you use the Generational Concurrent (<a href="../xgcpolicy/#gencon"><code>gencon</code></a>) garbage collection policy (the default policy). This option cannot be used with any other GC policies.</p>
 <p>If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications. This mode can be enabled with hardware-based support (Linux on IBM Z&reg; and z/OS&reg;) and software-based support (64-bit: Linux on (x86-64, POWER&reg;, IBM Z&reg;) AIX&reg;, macOS&reg;, and z/OS).</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note: Linux on IBM Z and z/OS</strong></p>
 <p>This option is supported by all generations of IBM Z hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode.</p>
@@ -4617,6 +4707,9 @@
 <dd>
 <p>The maximum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.</p>
 </dd>
+<dd>
+<p>This option applies only to the <code>gencon</code> GC policy.</p>
+</dd>
 </dl>
 <h3 id="dnssexpectedtimeratiominimum"><code>dnssExpectedTimeRatioMinimum</code></h3>
 <pre><code>    -Xgc:dnssExpectedTimeRatioMinimum=&lt;value&gt;
@@ -4642,6 +4735,9 @@
 </dd>
 <dd>
 <p>The minimum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.</p>
+</dd>
+<dd>
+<p>This option applies only to the <code>gencon</code> GC policy.</p>
 </dd>
 </dl>
 <!--### `dynamicBreadthFirstScanOrdering`
@@ -4676,6 +4772,9 @@
 <p>where <code>&lt;value&gt;</code> is a percentage of total application run time that is not spent in GC.</p>
 <p>The default value is 95, which means that anything over 5% of total application run time spent on GC is deemed excessive. This option can be used only when <a href="../xenableexcessivegc/"><code>-Xenableexcessivegc</code></a> is set (enabled by default).</p>
 </dd>
+<dd>
+<p>This option can be used with all OpenJ9 GC policies.</p>
+</dd>
 </dl>
 <h3 id="hierarchicalscanordering"><code>hierarchicalScanOrdering</code></h3>
 <pre><code>    -Xgc:hierarchicalScanOrdering
@@ -4708,6 +4807,9 @@
 <dd>
 <p>The minimum percentage of the heap that can be contracted at any given time.</p>
 </dd>
+<dd>
+<p>This option can be used with all OpenJ9 GC policies.</p>
+</dd>
 </dl>
 <h3 id="maxcontractpercent"><code>maxContractPercent</code></h3>
 <pre><code>    -Xgc:maxContractPercent=&lt;n&gt;
@@ -4734,6 +4836,9 @@
 <dd>
 <p>The maximum percentage of the heap that can be contracted at any given time. For example, <code>-Xgc:maxContractPercent=20</code> causes the heap to contract by as much as 20%.</p>
 </dd>
+<dd>
+<p>This option can be used with all OpenJ9 GC policies.</p>
+</dd>
 </dl>
 <h3 id="noconcurrentscavenge"><code>noConcurrentScavenge</code></h3>
 <p><strong>(64-bit only)</strong></p>
@@ -4741,9 +4846,16 @@
 </code></pre>
 <dl>
 <dd>
-<p>This option disables pause-less garbage collection that you might have enabled with the <a href="#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a> option when using the Generational Concurrent (<a href="../xgcpolicy/#gencon"><code>gencon</code></a>) garbage collection policy (the default policy).</p>
+<p>This option disables pause-less garbage collection that you might have enabled with the <a href="#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a> option when using the default <a href="../xgcpolicy/#gencon"><code>gencon</code></a> GC policy. This option applies only to the <code>gencon</code> GC policy.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> No concurrent scavenge is the default state, but the <code>noConcurrentScavenge</code> option is useful as it will disable concurrent scavenge even if it has been enabled by a previous option; the right-most option always takes precedence.</p>
 </dd>
+</dl>
+<h3 id="nosynchronousgconoom"><code>nosynchronousGCOnOOM</code></h3>
+<pre><code>    -Xgc:nosynchronousGCOnOOM
+</code></pre>
+<dl>
+<dd>Setting <code>-Xgc:nosynchronousGCOnOOM</code> implies that when heap memory is full your application stops and issues an <em>out-of-memory</em> message. The default is <a href="#synchronousgconoom"><code>-Xgc:synchronousGCOnOOM</code></a>.</dd>
+<dd>This option applies only to the <code>metronome</code> GC policy.</dd>
 </dl>
 <h3 id="overridehirestimercheck"><code>overrideHiresTimerCheck</code></h3>
 <pre><code>    -Xgc:overrideHiresTimerCheck
@@ -4752,6 +4864,9 @@
 <dd>
 <p>When the VM starts, the GC checks that the operating system can meet the timer resolution requirements for the requested target pause time. Typically, this check correctly identifies operating systems that can deliver adequate time resolution. However, in some cases the operating system provides a more conservative answer than strictly necessary for GC pause time management, which prevents startup. Specifying this parameter causes the GC to ignore the answer returned by the operating system. The VM starts, but GC pause time management remains subject to operating system performance, which might not provide adequate timer resolution.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Use this option with caution, and only when you are unable to use a supported operating system.</p>
+</dd>
+<dd>
+<p>This option applies only to the <code>metronome</code> GC policy.</p>
 </dd>
 </dl>
 <h3 id="preferredheapbase"><code>preferredHeapBase</code></h3>
@@ -4783,12 +4898,16 @@
 </code></pre>
 <p>If the heap cannot be allocated in a contiguous block at the <code>preferredHeapBase</code> address you specified, an error occurs detailing a Garbage Collection (GC) allocation failure startup. When the <code>preferredHeapBase</code> option is used with the <a href="../xlp/"><code>-Xlp</code></a> option, the <code>preferredHeapBase</code> address must be a multiple of the large page size. If you specify an inaccurate heap base address, the heap is allocated with the default page size.</p>
 </dd>
+<dd>
+<p>This option can be used with all OpenJ9 GC policies.</p>
+</dd>
 </dl>
 <h3 id="scvnoadaptivetenure"><code>scvNoAdaptiveTenure</code></h3>
 <pre><code>    -Xgc:scvNoAdaptiveTenure
 </code></pre>
 <dl>
-<dd>Turns off the adaptive tenure age in the generational concurrent GC policy. The initial age that is set is maintained throughout the run time of the VM. See <code>scvTenureAge</code>.</dd>
+<dd>Turns off the adaptive tenure age in the <code>gencon</code> GC policy. The initial age that is set is maintained throughout the run time of the VM. See <code>scvTenureAge</code>.</dd>
+<dd>This option applies only to the <code>gencon</code> GC policy.</dd>
 </dl>
 <h3 id="scvtenureage"><code>scvTenureAge</code></h3>
 <pre><code>    -Xgc:scvTenureAge=&lt;n&gt;
@@ -4813,7 +4932,10 @@
 </table>
 </dd>
 <dd>
-<p>Sets the initial scavenger tenure age in the generational concurrent GC policy. For more information, see <a href="../gc/#gencon-policy-default"><code>gencon</code> policy (default)</a>.</p>
+<p>Sets the initial scavenger tenure age in the <code>gencon</code> GC policy. For more information, see <a href="../gc/#gencon-policy-default"><code>gencon</code> policy (default)</a>.</p>
+</dd>
+<dd>
+<p>This option applies only to the <code>gencon</code> GC policy.</p>
 </dd>
 </dl>
 <h3 id="stdglobalcompacttosatisfyallocate"><code>stdGlobalCompactToSatisfyAllocate</code></h3>
@@ -4828,17 +4950,50 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 <li><code>optthruput</code></li>
 <li><code>optavgpause</code></li>
 </ul>
+<dl>
+<dd>This option is not supported with the balanced GC policy (<code>-Xgcpolicy:balanced</code>) or metronome GC policy (<code>-Xgcpolicy:metronome</code>).</dd>
+</dl>
+<h3 id="synchronousgconoom"><code>synchronousGCOnOOM</code></h3>
+<pre><code>    -Xgc:synchronousGCOnOOM
+</code></pre>
+<dl>
+<dd>GC cycles can occur when the Java heap runs out of memory. If there is no more free space in the heap, using <code>-Xgc:synchronousGCOnOOM</code> stops your application while GC operations remove unused objects. If free space runs out again, consider decreasing the target utilization to allow GC operations more time to complete. Setting <code>-Xgc:nosynchronousGCOnOOM</code> implies that when heap memory is full your application stops and issues an <em>out-of-memory</em> message. The default is <code>-Xgc:synchronousGCOnOOM</code>.</dd>
+<dd>This option applies only to the <code>metronome</code> GC policy.</dd>
+</dl>
+<h3 id="targetpausetime"><code>targetPausetime</code></h3>
+<pre><code>    -Xgc:targetPausetime=N
+</code></pre>
+<dl>
+<dd>Sets the GC pause time, where <code>N</code> is the time in milliseconds. When this option is specified, the garbage collector operates with pauses that do not exceed the value specified. If this option is not specified the default pause time is set to 3 milliseconds. For example, running with <code>-Xgc:targetPausetime=20</code> causes the garbage collector to pause for no longer than 20 milliseconds during GC operations.</dd>
+<dd>This option applies only to the <code>metronome</code> GC policy.</dd>
+</dl>
+<h3 id="targetutilization"><code>targetUtilization</code></h3>
+<pre><code>    -Xgc:targetUtilization=N
+</code></pre>
+<dl>
+<dd>
+<p>Sets the application utilization to <code>N%</code>; the garbage collector attempts to use at most (100-N)% of each time interval. Reasonable values are in the range of 50-80%. Applications with low allocation rates might be able to run at 90%. The default is 70%.</p>
+<p>In the following example, the maximum size of the heap is set to 30 MB. The garbage collector attempts to use 25% of each time interval because the target utilization for the application is set to 75%.</p>
+<pre><code>java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
+</code></pre>
+</dd>
+<dd>
+<p>This option applies only to the <code>metronome</code> GC policy.</p>
+</dd>
+</dl>
 <h3 id="tlhincrementsize"><code>tlhIncrementSize</code></h3>
 <pre><code>    -Xgc:tlhIncrementSize=&lt;bytes&gt;
 </code></pre>
 <dl>
 <dd>Sets the increment size of the thread local heap (TLH), which plays a key role in cache allocation. Threads start creating TLHs with a predefined initial size (default 2 KB). On every TLH refresh, the requested size for that thread is increased by an increment (default 4 KB). Use this option to control the increment size.</dd>
+<dd>This option can be used with all OpenJ9 GC policies.</dd>
 </dl>
 <h3 id="tlhinitialsize"><code>tlhInitialSize</code></h3>
 <pre><code>    -Xgc:tlhInitialSize=&lt;bytes&gt;
 </code></pre>
 <dl>
 <dd>Sets the initial size of the TLH. The default size is 2 KB.</dd>
+<dd>This option can be used with all OpenJ9 GC policies.</dd>
 </dl>
 <h3 id="tlhmaximumsize"><code>tlhMaximumSize</code></h3>
 <pre><code>    -Xgc:tlhMaximumSize=&lt;bytes&gt;
@@ -4846,6 +5001,7 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 <dl>
 <dd>Sets the maximum size of the TLH. The size of the TLH varies from 512 bytes (768 on 64-bit JVMs) to 128 KB, depending on the allocation rate of the thread.
 Larger TLHs can help reduce heap lock contention, but might also reduce heap utilisation and increase heap fragmentation. Typically, when the maximum TLH size is increased, you should also increase the increment size (<code>-XtlhIncrementSize</code>) proportionally, so that active threads can reach the maximum requested TLH size more quickly.</dd>
+<dd>This option can be used with all OpenJ9 GC policies.</dd>
 </dl>
 <h3 id="verboseformat"><code>verboseFormat</code></h3>
 <pre><code>    -Xgc:verboseFormat=&lt;format&gt;
@@ -4874,9 +5030,24 @@ Larger TLHs can help reduce heap lock contention, but might also reduce heap uti
 </tbody>
 </table>
 <ul>
-<li><code>default</code>: The default verbose garbage collection format for OpenJ9. For more information, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_pd_verbosegc.html">Verbose garbage collection logging</a>.</li>
+<li><code>default</code>: The default verbose garbage collection format for OpenJ9. For more information, see <a href="../vgclog/">Verbose garbage collection logs</a>.</li>
 <li><code>deprecated</code>: The verbose garbage collection format available in the IBM J9 VM V2.4 and earlier.</li>
 </ul>
+</dd>
+<dd>
+<p>This option does not apply to the <code>metronome</code> GC policy. The verbose log format for the <code>metronome</code> GC policy is equivalent to <code>-Xgc:verboseFormat=deprecated</code>.</p>
+</dd>
+</dl>
+<h3 id="verbosegccycletime"><code>verbosegcCycleTime</code></h3>
+<pre><code>    -Xgc:verbosegcCycleTime=N
+</code></pre>
+<dl>
+<dd>
+<p><code>N</code> is the time in milliseconds that the summary information should be logged.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The cycle time does not mean that the summary information is logged precisely at that time, but when the last GC event that meets this time criterion passes.</p>
+</dd>
+<dd>
+<p>This option applies only to the <code>metronome</code> GC policy.</p>
 </dd>
 </dl>
 <!-- ==== END OF TOPIC ==== xgc.md ==== -->

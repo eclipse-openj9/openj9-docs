@@ -2431,7 +2431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4155,8 +4155,8 @@
 -->
 
 <h1 id="-xloainitial-xloaminimum-xloamaximum">-Xloainitial / -Xloaminimum / -Xloamaximum</h1>
-<p>Specifies the initial, minimum, and maximum proportion of the current tenure space allocated to the large object area (LOA). </p>
-<p>The LOA does not shrink to less than the minimum value. </p>
+<p>Specifies the initial, minimum, and maximum proportion of the current tenure space allocated to the large object area (LOA).</p>
+<p>The LOA does not shrink to less than the minimum value.</p>
 <h2 id="syntax">Syntax</h2>
 <table>
 <thead>
@@ -4188,6 +4188,7 @@
 <ul>
 <li><a href="../xloa/">-Xloa / Xnoloa</a></li>
 </ul>
+<p>This option is not supported with the balanced GC policy (<code>-Xgcpolicy:balanced</code>) or metronome GC policy (<code>-Xgcpolicy:metronome</code>), which do not use an LOA.</p>
 <!-- ==== END OF TOPIC ==== xloainitial.md ==== -->
 
 <!-- ==== END OF TOPIC ==== xloaminimum.md ==== -->

@@ -2438,7 +2438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4197,10 +4197,10 @@
 <li><code>-Xmine</code> forces the expansion to be at least the specified value. For example, <code>-Xmine10M</code> sets the expansion size to a minimum of 10 MB.  </li>
 <li><code>-Xmaxe</code> limits the expansion to the specified value. For example <code>-Xmaxe50M</code> prevents expansion by more than 50 MB. (<code>-Xmaxe0</code> allows unlimited expansion.)</li>
 </ul>
+<p>For the <code>gencon</code> GC policy, the values apply only to the tenure part of the heap. For the <code>balanced</code>, <code>optthruput</code>, and <code>optavgpause</code> GC policies, these values apply to the whole heap. This option cannot be used with the metronome GC policy (<code>-Xgcpolicy:metronome</code>) because the heap is always fully expanded.</p>
 <h2 id="see-also">See also</h2>
 <ul>
-<li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapshrinkage.html">Heap shrinkage</a></li>
-<li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapexpansion.html">Heap expansion</a></li>
+<li><a href="../allocation/#expansion-and-contraction">Heap expansion and contraction</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xmine.md ==== -->
 

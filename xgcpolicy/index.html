@@ -2109,8 +2109,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#metronome-defaults-and-options" class="md-nav__link">
-    metronome defaults and options
+  <a href="#metronome-options" class="md-nav__link">
+    metronome options
   </a>
   
 </li>
@@ -2505,7 +2505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4242,8 +4242,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#metronome-defaults-and-options" class="md-nav__link">
-    metronome defaults and options
+  <a href="#metronome-options" class="md-nav__link">
+    metronome options
   </a>
   
 </li>
@@ -4303,7 +4303,7 @@
 -->
 
 <h1 id="-xgcpolicy">-Xgcpolicy</h1>
-<p>Controls which Garbage Collection (GC) policy is used for your Java&trade; application.</p>
+<p>Controls which garbage collection (GC) policy is used for your Java&trade; application.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -Xgcpolicy:&lt;parameter&gt;
 </code></pre>
@@ -4362,11 +4362,6 @@
 <h4 id="balanced-defaults-and-options"><code>balanced</code> defaults and options</h4>
 <p>The initial heap size is <em>Xmx/1024</em>, rounded down to the nearest power of 2, where <em>Xmx</em> is the maximum heap size available. You can override this value by specifying the <code>-Xms</code> option on the command line.</p>
 <p>The following options can also be specified on the command line with <code>-Xgcpolicy:balanced</code>:</p>
-<!-- - `-Xalwaysclassgc` -->
-
-<!-- - `-Xclassgc`
-<!-- - `-Xcompactexplicitgc` -->
-
 <ul>
 <li><code>-Xdisableexcessivegc</code></li>
 <li><code>-Xdisableexplicitgc</code></li>
@@ -4385,9 +4380,7 @@
 <li><code>-Xmns&lt;size&gt;</code></li>
 <li><code>-Xmnx&lt;size&gt;</code></li>
 <li><code>-Xms&lt;size&gt;</code></li>
-<li><code>-Xmx&lt;size&gt;</code>
-<!-- - <code>-Xnoclassgc</code> -->
-<!-- - <code>-Xnocompactexplicitgc</code> --></li>
+<li><code>-Xmx&lt;size&gt;</code></li>
 <li><code>-Xnuma:none</code></li>
 <li><code>-Xsoftmx&lt;size&gt;</code></li>
 <li><code>-Xsoftrefthreshold&lt;number&gt;</code></li>
@@ -4421,9 +4414,7 @@
 <li><code>-Xmos&lt;size&gt;</code></li>
 <li><code>-Xmr&lt;size&gt;</code></li>
 <li><code>-Xmrx&lt;size&gt;</code></li>
-<li><code>-Xnoloa</code>
-<!-- - <code>-Xnopartialcompactgc</code> (deprecated) -->
-<!-- - <code>-Xpartialcompactgc</code> (deprecated) --></li>
+<li><code>-Xnoloa</code></li>
 </ul>
 <h3 id="optavgpause"><code>optavgpause</code></h3>
 <pre><code>    -Xgcpolicy:optavgpause
@@ -4452,39 +4443,16 @@
 <p>To learn more about this policy, how it works, and when to use it, see <a href="../gc/#metronome-policy">Garbage collection: <code>metronome</code> policy</a>.</p>
 </dd>
 </dl>
-<h4 id="metronome-defaults-and-options"><code>metronome</code> defaults and options</h4>
-<dl>
-<dt><code>-Xgc:synchronousGCOnOOM | -Xgc:nosynchronousGCOnOOM</code></dt>
-<dd>GC cycles can occur when the Java heap runs out of memory. If there is no more free space in the heap, using <code>-Xgc:synchronousGCOnOOM</code> stops your application while GC operations remove unused objects. If free space runs out again, consider decreasing the target utilization to allow GC operations more time to complete. Setting <code>-Xgc:nosynchronousGCOnOOM</code> implies that when heap memory is full your application stops and issues an <em>out-of-memory</em> message. The default is <code>-Xgc:synchronousGCOnOOM</code>.</dd>
-<dt><code>-Xclassgc | -Xnoclassgc | -Xalwaysclassgc</code></dt>
-<dd>
-<p><a href="../xclassgc/"><code>-Xnoclassgc</code></a> disables class garbage collection. This option switches off the collection of storage associated with Java classes that are no longer being used by the OpenJ9 VM. The default behavior is <a href="../xclassgc/"><code>-Xclassgc</code></a>, which heuristically decides which GC cycle will attempt to unload classes.</p>
-</dd>
-<dd>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Disabling class GC is not recommended as this causes unlimited native memory growth, leading to <em>out-of-memory</em> errors.</p>
-</dd>
-<dd>
-<p><a href="../xalwaysclassgc/"><code>-Xalwaysclassgc</code></a> always performs dynamic class unloading checks during global GC cycles.</p>
-</dd>
-<dt><code>-Xgc:targetPauseTime=N</code></dt>
-<dd>Sets the GC pause time, where N is the time in milliseconds. When this option is specified, the GC operates with pauses that do not exceed the value specified. If this option is not specified the default pause time is set to 3 milliseconds. For example, running with <code>-Xgc:targetPauseTime=20</code> causes the GC to pause for no longer than 20 milliseconds during GC operations.</dd>
-<dt><code>-Xgc:targetUtilization=N</code></dt>
-<dd>
-<p>Sets the application utilization to <code>N%</code>; the GC attempts to use at most (100-N)% of each time interval. Reasonable values are in the range of 50-80%. Applications with low allocation rates might be able to run at 90%. The default is 70%.</p>
-<p>In the following example, the maximum size of the heap is set to 30 MB. The GC attempts to use 25% of each time interval because the target utilization for the application is set to 75%.</p>
-<pre><code>java -Xgcpolicy:metronome -Xmx30m -Xgc:targetUtilization=75 Test
-</code></pre>
-</dd>
-<dt><code>-Xgc:threads=N</code></dt>
-<dd>Specifies the number of GC threads to run. The default is the number of processor cores available to the process. The maximum value that you can specify is the number of processors available to the operating system.</dd>
-<dt><code>-Xgc:verboseGCCycleTime=N</code></dt>
-<dd>
-<p>N is the time in milliseconds that the summary information should be logged.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The cycle time does not mean that the summary information is logged precisely at that time, but when the last GC event that meets this time criterion passes.</p>
-</dd>
-<dt><code>-Xmx&lt;size&gt;</code></dt>
-<dd>Specifies the Java heap size. Unlike other GC strategies, the <code>metronome</code> policy does not support heap expansion. You can specify only the maximum heap size, not an initial heap size (<code>-Xms</code>).</dd>
-</dl>
+<h4 id="metronome-options"><code>metronome</code> options</h4>
+<p>The following options are specific to the <code>metronome</code> GC policy:</p>
+<ul>
+<li><a href="../xgc/#nosynchronousgconoom"><code>-Xgc:nosynchronousGCOnOOM</code></a></li>
+<li><a href="../xgc/#overridehirestimercheck"><code>-Xgc:overrideHiresTimerCheck</code></a></li>
+<li><a href="../xgc/#synchronousgconoom"><code>-Xgc:synchronousGCOnOOM</code></a></li>
+<li><a href="../xgc/#targetpausetime"><code>-Xgc:targetPausetime</code></a></li>
+<li><a href="../xgc/#targetutilization"><code>-Xgc:targetUtilization</code></a></li>
+<li><a href="../xgc/#verbosegccycletime"><code>-Xgc:verbosegcCycleTime</code></a></li>
+</ul>
 <h3 id="nogc"><code>nogc</code></h3>
 <pre><code>    -Xgcpolicy:nogc
 </code></pre>

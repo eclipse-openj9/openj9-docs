@@ -1854,6 +1854,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2431,7 +2438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4117,6 +4124,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4155,13 +4169,19 @@
 -->
 
 <h1 id="-xconcurrentbackground">-Xconcurrentbackground</h1>
-<p>Specifies the number of low-priority background threads attached to assist the mutator threads in concurrent mark.</p>
+<p>Specifies the number of low-priority background threads that are attached to assist the mutator threads in concurrent mark operations. This option maps directly to the HotSpot <code>-XX:ParallelCMSThreads=N</code> and <code>-XX:ConcGCThreads=N</code> options.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -Xconcurrentbackground&lt;n&gt;
 </code></pre>
 <h2 id="default-behavior">Default behavior</h2>
 <p>The default value is <code>1</code>.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> This value is reported in the header section of a verbose GC log with the entry <code>&lt;attribute name="gcthreads Concurrent Mark" value="1" /&gt;</code>.</p>
+<p>This option is not supported with the balanced GC policy (<code>-Xgcpolicy:balanced</code>) or metronome GC policy (<code>-Xgcpolicy:metronome</code>).</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../xxparallelcmsthreads/"><code>-XX:ParallelCMSThreads</code></a></li>
+<li><a href="../xxconcgcthreads/"><code>-XX:ConcGCThreads</code></a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xconcurrentbackground.md ==== -->
                 
               

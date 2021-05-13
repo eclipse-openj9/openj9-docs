@@ -2386,7 +2386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4169,7 +4169,7 @@
 -->
 
 <h1 id="-xcompactgc-xnocompactgc">-Xcompactgc / -Xnocompactgc</h1>
-<p>Enables or disables full compaction on all garbage collections (system and global).</p>
+<p>Enables or disables full compaction on system and global garbage collection (GC) activities.</p>
 <h2 id="syntax">Syntax</h2>
 <table>
 <thead>
@@ -4190,10 +4190,15 @@
 </tbody>
 </table>
 <h2 id="default-behavior">Default behavior</h2>
-<p>If no compaction option is specified, the garbage collector compacts based on a series of triggers that attempt to compact only when it is beneficial to the future performance of the OpenJ9 VM.</p>
+<p>If a compaction option is not specified, the garbage collector compacts based on a series of triggers. These triggers attempt to compact only when it is beneficial to the future performance of the VM.</p>
+<p>These options are not applicable to the following GC policies:</p>
+<ul>
+<li>balanced GC policy (<code>-Xgcpolicy:balanced</code>): compaction is always enabled.</li>
+<li>metronome GC policy (<code>-Xgcpolicy:metronome</code>): compaction is not supported.</li>
+</ul>
 <h2 id="see-also">See also</h2>
 <ul>
-<li><a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_compact.html">Global garbage collection: Compaction phase</a></li>
+<li><a href="../gc_overview/#gc-compact-operation">GC compact operation</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xcompactgc.md ==== -->
 

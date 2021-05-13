@@ -2386,7 +2386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4183,7 +4183,7 @@
 -->
 
 <h1 id="-xloa-xnoloa">-Xloa / -Xnoloa</h1>
-<p>This option enables or prevents allocation of a large object area (LOA) during garbage collection.</p>
+<p>This option enables or prevents the allocation of a large object area (LOA) during garbage collection (GC).</p>
 <h2 id="syntax">Syntax</h2>
 <table>
 <thead>
@@ -4212,7 +4212,7 @@
 <h2 id="explanation">Explanation</h2>
 <p>The LOA is an area of the tenure area of the heap set used solely to satisfy allocations for large objects. The LOA is used when the allocation request cannot be satisfied in the main area (the SOA of the tenure heap.</p>
 <p>As objects are allocated and freed, the heap can become fragmented in such a way that allocation can be met only by time-consuming compactions. This problem is more pronounced if an application allocates large objects. In an attempt to alleviate this problem, the LOA is allocated. A large object in this context is considered to be any object 64 KB or greater in size. Allocations for new TLH objects are not considered to be large objects.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The Balanced Garbage Collection policy does not use the LOA. Therefore, when specifying -<code>Xgcpolicy:balanced</code>, any LOA options passed on the command line are ignored. The policy addresses the issues of LOA by reorganizing object layout with the VM to reduce heap fragmentation and compaction requirements. </p>
+<p>This option is not supported with the balanced GC policy (<code>-Xgcpolicy:balanced</code>) or metronome GC policy (<code>-Xgcpolicy:metronome</code>), which do not use an LOA. Any LOA options passed on the command line are ignored. These policies address the issues that are solved by an LOA by reorganizing object layout with the VM to reduce heap fragmentation and compaction requirements.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../xloaminimum/">-Xloainitial / -Xloaminimum / -Xloamaximum</a></li>

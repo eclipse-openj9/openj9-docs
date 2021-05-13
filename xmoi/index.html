@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/d_jvm_commands/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xmoi/">
       
       <link rel="shortcut icon" href="../cr/openj9-logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
     
     
       
-        <title>Using System properties -  </title>
+        <title>-Xmoi -  </title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-system-property-command-line-options" class="md-skip">
+        <a href="#-xmoi" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using System properties
+              -Xmoi
             
           </span>
         </div>
@@ -1194,14 +1194,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_4" type="checkbox" id="__nav_14_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_4" type="checkbox" id="__nav_14_4" >
       
       <label class="md-nav__link" for="__nav_14_4">
         System property options
@@ -1217,20 +1215,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../d_jvm_commands/" class="md-nav__link">
         Using System properties
       </a>
-      
     </li>
   
 
@@ -1592,12 +1581,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_5" type="checkbox" id="__nav_14_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_5" type="checkbox" id="__nav_14_5" checked>
       
       <label class="md-nav__link" for="__nav_14_5">
         JVM -X options
@@ -2393,11 +2384,56 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../xmoi/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          -Xmoi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         -Xmoi
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page...
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4061,6 +4097,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page...
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4096,18 +4154,38 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="using-system-property-command-line-options">Using system property command-line options</h1>
-<p>Java&trade; system properties determine the environment in which a Java program runs by starting a Java virtual machine with a set of values.
-You can choose to use the default values for Java system properties or you can specify values for them by adding parameters to the command line when you start your application.</p>
-<p>To set a system property from the command line, use:</p>
-<pre><code>java -D&lt;property_name&gt;=&lt;value&gt; &lt;program_name&gt;
-</code></pre>
-
-<p>For example, to specify the UTF-8 file encoding for your application <code>MyProgram</code>, use:</p>
-<pre><code>java -Dfile.encoding=UTF-8 MyProgram
-</code></pre>
-
-<!-- ==== END OF TOPIC ==== x_jvm_commands.md ==== -->
+<h1 id="-xmoi">-Xmoi</h1>
+<p>Sets the heap expansion allocation increment.</p>
+<p>You can use the <code>-verbose:sizes</code> option to find out the values that the VM is currently using.</p>
+<h2 id="syntax">Syntax</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Effect</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-Xmoi&lt;size&gt;</code></td>
+<td>Sets the heap expansion allocation increment</td>
+<td>See <strong>Notes</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Notes:</strong></p>
+<ul>
+<li>By default, the increment size (<code>-Xmoi</code>) is calculated on the expansion size, set by <a href="../xmine/"><code>-Xmine</code></a> and <a href="../xminf/"><code>-Xminf</code></a>.  If you set <code>-Xmoi</code> to zero, no expansion is allowed.</li>
+<li>For the <code>gencon</code> GC policy, the expansion increment applies to the tenure area of the heap.  </li>
+</ul>
+<p>This option is not supported for the <code>metronome</code> GC policy, because the heap is always fully expanded.</p>
+<p>See <a href="../x_jvm_commands/">Using -X command-line options</a> for more information about the <code>&lt;size&gt;</code> parameter.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../allocation/#expansion-and-contraction">Heap expansion and contraction</a></li>
+</ul>
+<!-- ==== END OF TOPIC ==== xmoi.md ==== -->
                 
               
               

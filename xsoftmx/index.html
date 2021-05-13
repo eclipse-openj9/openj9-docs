@@ -2386,7 +2386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4155,12 +4155,13 @@
 -->
 
 <h1 id="-xsoftmx">-Xsoftmx</h1>
-<p>This option sets a "soft" maximum limit for the initial size of the Java&trade; heap.</p>
+<p>This option sets a "soft" maximum limit for the Java&trade; heap.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -Xsoftmx&lt;size&gt;
 </code></pre>
 <h2 id="explanation">Explanation</h2>
-<p>Use the <a href="../xms/"><code>-Xmx</code></a> option to set a "hard" limit for the maximum size of the heap. By default, <code>-Xsoftmx</code> is set to the same value as <code>-Xmx</code>. The value of <code>-Xms</code> must be less than, or equal to, the value of <code>-Xsoftmx</code>. See the introduction to this topic for more information about specifying <em>&lt;size&gt;</em> parameters.</p>
+<p>Use the <a href="../xms/"><code>-Xmx</code></a> option to set a "hard" limit for the maximum size of the heap. By default, <code>-Xsoftmx</code> is set to the same value as <code>-Xmx</code>. The value of <code>-Xms</code> must be less than, or equal to, the value of <code>-Xsoftmx</code>.</p>
+<p>See <a href="../x_jvm_commands/">Using -X command-line options</a> for more information about the <code>&lt;size&gt;</code> parameter.</p>
 <p>You can set this option on the command line, then modify it at run time by using the <code>MemoryMXBean.setMaxHeapSize()</code> method in the <code>com.ibm.lang.management</code> API. By using this API, Java applications can dynamically monitor and adjust the heap size as required. This function can be useful in virtualized or cloud environments, for example, where the available memory might change dynamically to meet business needs. When you use the API, you must specify the value in bytes, such as <code>2147483648</code> instead of <code>2g</code>.</p>
 <p>For example, you might set the initial heap size to 1 GB and the maximum heap size to 8 GB. You might set a smaller value, such as 2 GB, for <code>-Xsoftmx</code>, to limit the heap size that is used initially:</p>
 <pre><code>-Xms1g -Xsoftmx2g -Xmx8g
@@ -4170,16 +4171,9 @@
 <p>When the heap shrinks, the garbage collector might release memory. The ability of the operating system to reclaim and use this memory varies based on the capabilities of the operating system.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Notes:</strong></p>
 <ul>
-<li>
-<p>When using <code>-Xgcpolicy:gencon</code>, <code>-Xsoftmx</code> applies only to the non-nursery portion of the heap. In some cases the heap grows to greater than the <code>-Xsoftmx</code> value because the nursery portion grows, making the heap size exceed the limit that is set. See <code>-Xmn</code> for limiting the nursery size.</p>
-</li>
-<li>
-<p>When using <code>-Xgcpolicy:metronome</code>, <code>-Xsoftmx</code> is ignored because the Metronome garbage collector does not support contraction or expansion of the heap.</p>
-</li>
-<li>
-<p>There might be little benefit in reducing the <code>-Xsoftmx</code> value when the Java heap is using large pages. Large pages are pinned in memory and are not reclaimed by the operating system, with the exception of 1M pageable pages on z/OS&reg;. On certain platforms and processors the VM starts with large pages enabled by default for the Java heap when the operating system is configured to provide large pages.
-For more information, see <a href="../configuring/#configuring-large-page-memory-allocation">Configuring large page memory allocation</a>. A future version of the Java virtual machine might provide a hint to the operating system when large pages are no longer in use.</p>
-</li>
+<li>When using <code>-Xgcpolicy:gencon</code>, <code>-Xsoftmx</code> applies only to the tenure area of the heap. In some cases the heap grows to greater than the <code>-Xsoftmx</code> value because the nursery portion grows, making the heap size exceed the limit that is set. See <a href="../xmn/"><code>-Xmn</code></a> for limiting the nursery size.</li>
+<li>This option is ignored if used with the metronome GC policy (<code>-Xgcpolicy:metronome</code>) because the heap is always fully expanded.</li>
+<li>There might be little benefit in reducing the <code>-Xsoftmx</code> value when the Java heap is using large pages. Large pages are pinned in memory and are not reclaimed by the operating system, with the exception of 1M pageable pages on z/OS&reg;. On certain platforms and processors the VM starts with large pages enabled by default for the Java heap when the operating system is configured to provide large pages. For more information, see <a href="../configuring/#configuring-large-page-memory-allocation">Configuring large page memory allocation</a>. A future version of the Java virtual machine might provide a hint to the operating system when large pages are no longer in use.</li>
 </ul>
 <!-- ==== END OF TOPIC ==== xsoftmx.md ==== -->
                 

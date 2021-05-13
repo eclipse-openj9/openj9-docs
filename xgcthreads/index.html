@@ -2431,7 +2431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4155,7 +4155,7 @@
 -->
 
 <h1 id="-xgcthreads">-Xgcthreads</h1>
-<p>Sets the number of threads that the garbage collector uses for parallel operations. </p>
+<p>Sets the number of threads that the garbage collector uses for parallel operations.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Notes:</strong></p>
 <p>This option enforces a fixed thread count and cannot be used with the <a href="../xxadaptivegcthreading/"><code>-XX:+AdaptiveGCThreading</code></a> option, which enables the garbage collector to adjust the number of parallel threads based on heuristics. If you want to use <a href="../xxadaptivegcthreading/"><code>-XX:+AdaptiveGCThreading</code></a>, use <a href="../xgcmaxthreads/"><code>-Xgcmaxthreads</code></a> instead of <code>-Xgcthreads</code>.</p>
 <h2 id="syntax">Syntax</h2>
@@ -4164,6 +4164,7 @@
 <h2 id="explanation">Explanation</h2>
 <p>The total number of GC threads is composed of one application thread with the remainder being dedicated GC threads. By default, the number is set to <code>n-1</code>, where <code>n</code> is the number of reported CPUs, up to a maximum of 64. Where SMT or hyperthreading is in place, the number of reported CPUs is larger than the number of physical CPUs. Likewise, where virtualization is in place, the number of reported CPUs is the number of virtual CPUs assigned to the operating system. To set it to a different number, for example 4, use <code>-Xgcthreads4</code>. The minimum valid value is 1, which disables parallel operations, at the cost of performance. No advantage is gained if you increase the number of threads to more than the default setting.</p>
 <p>On systems running multiple VMs or in LPAR environments where multiple VMs can share the same physical CPUs, you might want to restrict the number of GC threads used by each VM. The restriction helps prevent the total number of parallel operation GC threads for all VMs exceeding the number of physical CPUs present, when multiple VMs perform garbage collection at the same time.</p>
+<p>This option is directly mapped to the HotSpot option <a href="../xxparallelgcthreads/"><code>-XX:ParallelGCThreads</code></a> and can be used with all OpenJ9 GC policies.</p>
 <!-- ==== END OF TOPIC ==== xgcthreads.md ==== -->
                 
               

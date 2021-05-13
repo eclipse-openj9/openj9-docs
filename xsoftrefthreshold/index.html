@@ -2386,7 +2386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xmo/" class="md-nav__link">
+      <a href="../xmoi/" class="md-nav__link">
         -Xmoi
       </a>
     </li>
@@ -4169,15 +4169,16 @@
 -->
 
 <h1 id="-xsoftrefthreshold">-Xsoftrefthreshold</h1>
-<p>Sets the value used by the garbage collector to determine the number of garbage collections after which a soft reference is cleared if its referent has not been marked.</p>
+<p>Sets the value used by the garbage collector to determine the number of garbage collection (GC) cycles after which a soft reference is cleared if its referent has not been marked.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -Xsoftrefthreshold&lt;value&gt;
 </code></pre>
 <h2 id="default-behavior">Default behavior</h2>
 <p>The default value is 32.</p>
+<p>This option can be used with all OpenJ9 GC policies.</p>
 <h2 id="explanation">Explanation</h2>
-<p>A soft reference (where its referent is not marked) is cleared after a number of garbage collection cycles calculated as: <code>&lt;value&gt;</code> * (proportion of free heap space)</p>
-<p>For example, if <code>-Xsoftrefthreshold</code> is set to 32, and the heap is 25% free, soft references are cleared after 8 garbage collection cycles.</p>
+<p>A soft reference (where its referent is not marked) is cleared after a number of GC cycles, which is calculated as: <code>&lt;value&gt;</code> * (proportion of free heap space)</p>
+<p>For example, if <code>-Xsoftrefthreshold</code> is set to 32, and the heap is 25% free, soft references are cleared after 8 GC cycles.</p>
 <!-- ==== END OF TOPIC ==== xsoftrefthreshold.md ==== -->
                 
               
