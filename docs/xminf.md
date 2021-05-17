@@ -38,13 +38,14 @@ If the free space is above or below these limits, the OpenJ9 VM attempts to adju
 
 The value range is 0.0 - 1.0.
 
-- For the `gencon` GC policy, the values apply only to the Tenure part of the heap and only at global GC points.
+- For the `gencon` GC policy, the values apply only to the tenure part of the heap and only at global GC points.
 - For the `optthruput` and `optavgpause` GC policies, these values apply to the whole heap at every GC point.
+
+This option cannot be used with the metronome GC policy (`-Xgcpolicy:metronome`) because the heap is always fully expanded.
 
 ## See also
 
-- [Heap shrinkage](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapshrinkage.html)
-- [Heap expansion](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_gc_heapexpansion.html)
+- [Heap expansion and contraction](allocation.md#expansion-and-contraction)
 
 
 <!-- ==== END OF TOPIC ==== xminf.md ==== -->

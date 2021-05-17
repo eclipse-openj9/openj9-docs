@@ -40,6 +40,7 @@ Although it is possible to programmatically trigger a global GC by calling `Syst
 
 The default for all OpenJ9 GC policies is `-Xenableexplicitgc` except for [`-Xgcpolicy:nogc`](xgcpolicy.md#nogc), where the default is `-Xdisableexplicitgc`.
 
+These options can be used with all OpenJ9 GC policies.
 
 <!-- ==== END OF TOPIC ==== xenableexplicitgc.md ==== -->
 <!-- ==== END OF TOPIC ==== xdisableexplicitgc.md ==== -->

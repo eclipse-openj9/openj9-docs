@@ -27,7 +27,7 @@
 
 Sets the expansion step for the memory allocated to store the RAM (`-Xmca`) and ROM (`-Xmco`) portions of loaded classes.
 
-Each time more memory is required to store classes in RAM or ROM, the allocated memory is increased by the amount set. 
+Each time more memory is required to store classes in RAM or ROM, the allocated memory is increased by the amount set.
 
 If the expansion step size you choose is too large, `OutOfMemoryError` is reported. The exact value of a *"too large"* expansion step size varies according to the platform and the specific machine configuration.
 
@@ -42,7 +42,11 @@ You can use the `-verbose:sizes` option to find out the value that is being used
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
+This option cannot be used with the metronome GC policy (`-Xgcpolicy:metronome`) because the heap is always fully expanded.
+
+## See also
+
+- [Heap expansion and contraction](allocation.md#expansion-and-contraction)
 
 <!-- ==== END OF TOPIC ==== xmca.md ==== -->
 <!-- ==== END OF TOPIC ==== xmco.md ==== -->
-

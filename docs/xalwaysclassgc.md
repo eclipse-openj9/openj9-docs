@@ -22,9 +22,9 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xalwaysclassgc 
+# -Xalwaysclassgc
 
-Always perform dynamic class unloading checks during global garbage collection.
+Always perform dynamic class unloading during global garbage collection.
 
 ## Syntax
 
@@ -34,8 +34,10 @@ Always perform dynamic class unloading checks during global garbage collection.
 
 If you don't set this option, the default behavior is defined by [`-Xclassgc`](xclassgc.md).
 
+This option can be used with all OpenJ9 GC policies.
 
+## See also
 
+- [`-Xclassgc`/`-Xnoclassgc`](xclassgc.md)
 
 <!-- ==== END OF TOPIC ==== xalwaysclassgc.md ==== -->
-

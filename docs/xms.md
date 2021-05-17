@@ -29,14 +29,15 @@ These Oracle&reg; HotSpot&trade; options set the initial/minimum Java&trade; hea
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
-- If you set `-Xms` &gt; `-Xmx`, the OpenJ9 VM fails with the message `-Xms too large for -Xmx`.
-- If you exceed the limit set by the `-Xmx` option, the OpenJ9 VM generates an `OutofMemoryError`.
+- If you set `-Xms` &gt; `-Xmx`, the VM fails with the message `-Xms too large for -Xmx`.
+- If you exceed the limit set by the `-Xmx` option, the VM generates an `OutofMemoryError`.
 - If you set a value for `-Xms`, the [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md) option is ignored.
 - If you set a value for `-Xmx`, the [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md) option is ignored.
 
-You can also use the [`-Xmo`](xmo.md) option (not supported by the balanced garbage collection policy):  
-If the scavenger is enabled, `-Xms` &ge; `-Xmn` + `-Xmo`  
-If the scavenger is disabled, `-Xms` &ge; `-Xmo`  
+For the `gencon` GC policy, you can also use the [`-Xmo`](xmo.md) option:
+
+- If the scavenger is enabled, `-Xms` &ge; `-Xmn` + `-Xmo`  
+- If the scavenger is disabled, `-Xms` &ge; `-Xmo`  
 
 ## Syntax
 
@@ -47,6 +48,8 @@ If the scavenger is disabled, `-Xms` &ge; `-Xmo`
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.  
 See [Default settings for the OpenJ9 VM](openj9_defaults.md) for more about default values.
+
+The `-Xmx` option can be used with all OpenJ9 GC policies. However, the `-Xms` option can be used with all GC policies except for the `metronome` GC policy because the heap is always fully expanded.
 
 ## Examples
 

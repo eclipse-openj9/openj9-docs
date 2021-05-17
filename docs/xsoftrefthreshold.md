@@ -22,10 +22,10 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xsoftrefthreshold 
+# -Xsoftrefthreshold
 
 
-Sets the value used by the garbage collector to determine the number of garbage collections after which a soft reference is cleared if its referent has not been marked.
+Sets the value used by the garbage collector to determine the number of garbage collection (GC) cycles after which a soft reference is cleared if its referent has not been marked.
 
 ## Syntax
 
@@ -35,12 +35,13 @@ Sets the value used by the garbage collector to determine the number of garbage 
 
 The default value is 32.
 
+This option can be used with all OpenJ9 GC policies.
+
 ## Explanation
 
-A soft reference (where its referent is not marked) is cleared after a number of garbage collection cycles calculated as: `<value>` \* (proportion of free heap space)
+A soft reference (where its referent is not marked) is cleared after a number of GC cycles, which is calculated as: `<value>` \* (proportion of free heap space)
 
-For example, if `-Xsoftrefthreshold` is set to 32, and the heap is 25% free, soft references are cleared after 8 garbage collection cycles.
+For example, if `-Xsoftrefthreshold` is set to 32, and the heap is 25% free, soft references are cleared after 8 GC cycles.
 
 
 <!-- ==== END OF TOPIC ==== xsoftrefthreshold.md ==== -->
-

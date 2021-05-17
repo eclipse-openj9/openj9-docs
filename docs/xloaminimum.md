@@ -22,11 +22,11 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xloainitial / -Xloaminimum / -Xloamaximum 
+# -Xloainitial / -Xloaminimum / -Xloamaximum
 
-Specifies the initial, minimum, and maximum proportion of the current tenure space allocated to the large object area (LOA). 
+Specifies the initial, minimum, and maximum proportion of the current tenure space allocated to the large object area (LOA).
 
-The LOA does not shrink to less than the minimum value. 
+The LOA does not shrink to less than the minimum value.
 
 ## Syntax
 
@@ -40,6 +40,7 @@ The LOA does not shrink to less than the minimum value.
 
 - [-Xloa / Xnoloa](xloa.md)
 
+This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`) or metronome GC policy (`-Xgcpolicy:metronome`), which do not use an LOA.
 
 <!-- ==== END OF TOPIC ==== xloainitial.md ==== -->
 <!-- ==== END OF TOPIC ==== xloaminimum.md ==== -->

@@ -22,9 +22,9 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xconcurrentlevel 
+# -Xconcurrentlevel
 
-This option indicates the ratio between the amount of heap allocated and the amount of heap marked (the allocation "tax" rate).
+This option indicates the ratio between the amount of heap allocated and the amount of heap marked, which is known as the *allocation tax* rate.
 
 ## Syntax
 
@@ -34,7 +34,8 @@ This option indicates the ratio between the amount of heap allocated and the amo
 
 The default is 8.
 
+This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`) or metronome GC policy (`-Xgcpolicy:metronome`).
+
 
 
 <!-- ==== END OF TOPIC ==== xconcurrentlevel.md ==== -->
-

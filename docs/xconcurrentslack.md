@@ -22,11 +22,11 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -Xconcurrentslack 
+# -Xconcurrentslack
 
 Attempts to keep the specified amount of the heap space free in concurrent collectors by starting the concurrent operations earlier.
 
-Using this option can sometimes alleviate pause time problems in concurrent collectors at the cost of longer concurrent cycles, affecting total throughput. 
+Using this option can sometimes alleviate pause time problems in concurrent collectors at the cost of longer concurrent cycles, affecting total throughput.
 
 ## Syntax
 
@@ -38,7 +38,8 @@ Using this option can sometimes alleviate pause time problems in concurrent coll
 
 The default value is 0, which is optimal for most applications.
 
+This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`), the *optimize for throughput* policy (`-Xgcpolicy:optthruput`), or metronome GC policy (`-Xgcpolicy:metronome`).
+
 
 
 <!-- ==== END OF TOPIC ==== xconcurrentslack.md ==== -->
-
