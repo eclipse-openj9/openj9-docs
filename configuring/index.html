@@ -634,6 +634,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setting-resource-limits-zos" class="md-nav__link">
+    Setting resource limits (z/OS)
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting resource limits (z/OS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-language-environment-runtime-options" class="md-nav__link">
+    Configuring Language Environment runtime options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuring-large-page-memory-allocation" class="md-nav__link">
     Configuring large page memory allocation
   </a>
@@ -4188,6 +4208,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setting-resource-limits-zos" class="md-nav__link">
+    Setting resource limits (z/OS)
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting resource limits (z/OS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-language-environment-runtime-options" class="md-nav__link">
+    Configuring Language Environment runtime options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuring-large-page-memory-allocation" class="md-nav__link">
     Configuring large page memory allocation
   </a>
@@ -4277,7 +4317,7 @@
 <p>When you install a Java&trade; runtime environment on your system you can set the <strong>PATH</strong> environment variable so that the operating system can find the Java programs and utilities to run your application. To tell your application where to find user classes, you can use the <strong>-cp</strong> option or set the <strong>CLASSPATH</strong> environment variable. However, if you set <strong>CLASSPATH</strong> globally, all invocations of Java are affected. How to set these environment variables is covered in many publications about Java, such as <a href="https://docs.oracle.com/javase/tutorial/essential/environment/paths.html">The Java Tutorials: PATH and CLASSPATH</a>.</p>
 <p>On some systems, a further environment variable might be required if your application requires shared libraries but does not specify their exact location. You can set the following environment variables to specify the directory location of the shared libraries, although setting a global value affects all invocations of Java:</p>
 <ul>
-<li><strong>LIBPATH</strong> (AIX&reg;)</li>
+<li><strong>LIBPATH</strong> (AIX&reg; and z/OS&reg;)</li>
 <li><strong>LD_LIBRARY_PATH</strong> (Linux&reg;)</li>
 <li><strong>DYLD_LIBRARY_PATH</strong> (macOS&reg;)</li>
 <li><strong>PATH</strong> (Windows&reg;)</li>
@@ -4312,83 +4352,113 @@ virtual memory          (kbytes, -v) unlimited
 </ul>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The virtual address space of a process is shared between the shared classes cache and the Java heap. Increasing the maximum size for the shared classes cache might reduce the size of the Java heap that you can create.</p>
 <p>Shared memory limits are also important when configuring large page memory allocation on Linux systems. For more information, see <a href="#linux-systems">Configuring large page memory allocation: Linux systems</a>.</p>
-<!--## Setting resource limits (z/OS)
-
-Resource limits imposed by z/OS might affect Java operations. To learn how these resource limits are set, see [Customizing the BPXPRMxx member of SYS1.PARMLIB](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.bpxb200/cusis.htm).
-
-The OpenJ9 class data sharing feature is implemented by using shared memory segments on z/OS. Special consideration should be given to the following parameters that relate to the shared memory and IPC semaphore settings:-->
-
+<h2 id="setting-resource-limits-zos">Setting resource limits (z/OS)</h2>
+<p>Resource limits imposed by z/OS might affect Java operations. To learn how these resource limits are set, see <a href="https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.bpxb200/cusis.htm">Customizing the BPXPRMxx member of SYS1.PARMLIB</a>.</p>
+<p>The OpenJ9 class data sharing feature is implemented by using shared memory segments on z/OS. Special consideration should be given to the following parameters that relate to the shared memory and IPC semaphore settings:</p>
 <!-- - **MAXSHAREPAGES** (This no longer seems to do anything, per https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ieae200/spb.htm). Also removed from table below. -->
 
-<!--- **IPCSHMSPAGES**
-- **IPCSHMMPAGES**
-- **IPCSHMNSEGS**
-
-Incorrect or suboptimal settings might prevent shared classes from working or impact performance. By default, the VM attempts to create a 16 MB cache. If you set a cache size for your application by specifying the [`-Xscmx`](xscmx.md) option on the command line, the VM rounds the value up to the nearest megabyte. Ensure that the value set for **IPCSHMMPAGES** takes this adjustment into consideration.
-
-To see the current settings, enter the following z/OS operator command:
-
-
+<ul>
+<li><strong>IPCSHMSPAGES</strong></li>
+<li><strong>IPCSHMMPAGES</strong></li>
+<li><strong>IPCSHMNSEGS</strong></li>
+</ul>
+<p>Incorrect or suboptimal settings might prevent shared classes from working or impact performance. By default, the VM attempts to create a 16 MB cache. If you set a cache size for your application by specifying the <a href="../xscmx/"><code>-Xscmx</code></a> option on the command line, the VM rounds the value up to the nearest megabyte. Ensure that the value set for <strong>IPCSHMMPAGES</strong> takes this adjustment into consideration.</p>
+<p>To see the current settings, enter the following z/OS operator command:</p>
 <pre><code>D OMVS,O
 </code></pre>
 
-The suggested minimum values for Java applications are shown in the following table:
-
-| Parameter         | Value      |
-|-------------------|------------|
-|**MAXPROCSYS**     | 900        |
-|**MAXPROCUSER**    |   512        |
-|**MAXUIDS**          | 500        |
-|**MAXTHREADS**     |   10000      |
-|**MAXTHREADTASKS** | 5000       |
-|**MAXASSIZE**      | 2147483647 |
-|**MAXCPUTIME**     | 2147483647 |
-|**MAXMMAPAREA**      | 40960      |
-|**IPCSHMSPAGES**   | 262144     |
-|**IPCSHMMPAGES**   | 256        |
-|**IPCSHMNSEGS**    | 10         |
-|**IPCSEMNIDS**     | 500        |
-|**IPCSEMNSEMS**      | 1000       |
-
-
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The number of threads that can be created by a Java process is limited by the lower of the two values for **MAXTHREADS** and **MAXTHREADSTASKS**.
-
-You can change these settings dynamically without re-IPLing the system. For example, to set **MACPROCUSER** to 256, run `SETOMVS MAXPROCUSER=256`
-
-z/OS uses region sizes to determine the amount of storage available to running programs. For a Java runtime environment, the  region size must be sufficiently large to avoid storage related error messages or abends. Rather than restricting region size, allow the VM to use what it needs. Region size can be affected by one of the following parameters: **JCL REGION**, **BPXPRMxx MAXASSIZE**, the RACF OMVS segment **ASSIZEMAX**, or IEFUSI (Step initiation exit).
-
-
-### Configuring Language Environment runtime options
-
-Language Environment&reg; runtime options affect performance and storage usage. These options can be optimized for your application.
-
-Runtime options are typically embedded in programs by using **#pragma runopts** settings. In many cases, these options provide suitable default values that are known to produce good performance results. However, these options can be overridden to tune the runtime environment of your application.
-
-On 64-bit z/OS systems, the following runtime options affect Java applications:
-
-- **HEAP64**: Controls allocation of the user heap. A suggested starting point for an override is **HEAP64(512M,4M,KEEP,16M,4M,KEEP,0K,0K,FREE)**.
-- **HEAPPOOLS64**: Used to manage Java heap storage above the 2 G bar. The Java USS launcher sets **HEAPPOOLS64(ALIGN)** for more optimal management of multi-threaded applications. Other Java launchers might have different settings. Before you set an override for **HEAPPOOLS64**, use **RPTOPTS(ON)** to confirm the active settings for your environment and **RPTSTG(ON)** to review storage usage and tuning recommendations. Note that the host product might have already set cell sizes and numbers that are known to produce good performance.
-- **STACK64**: Controls the allocation and management of stack storage. A suggested default is **STACK64(1M,1M,128M)**.
-- **THREADSTACK64**: Controls the allocation of thread-level stack storage for both the upward and downward-growing stack. A suggested default is **THREADSTACK64(OFF,1M,1M,128M)**.
-
-A suitable **MEMLIMIT** value is also required. The OpenJ9 VM requirement is the sum of the following amounts:
-
-- User heap storage required by the VM and native libraries, as controlled by **HEAP64** (minimum 512 M) settings.
-- User stack storage (3 MB multiplied by the expected number of concurrent threads), as controlled by **STACK64** settings.
-- `-Xmx` largest expected VM heap size.
-- The JIT data cache maximum size.
-- The JIT code cache maximum size, if **RMODE64** is supported.
-
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you intend to use the Concurrent Scavenge mode of the default Generational Concurrent (`gencon`) garbage collection policy by using hardware-based support, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit to a larger value than the maximum heap size. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
-
-The following guides are available to help you configure Language Environment runtime options and callable services:
-
-- See [z/OS Language Environment Programming Guide](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea200/abstract.htm) for guidance on how to override the default options. Use **RPTOPTS (ON)** to write the options that are in effect to *stderr* on termination.
-- See [z/OS Language Environment Programming Reference](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea300/abstract.htm) for a full list of the available runtime options.
-- See [z/OS Language Environment Debugging Guide](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea100/abstract.htm) for tuning guidance by using **RPTSTG (ON)**.
-
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Changing the runtime options can often degrade performance.-->
-
+<p>The suggested minimum values for Java applications are shown in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MAXPROCSYS</strong></td>
+<td>900</td>
+</tr>
+<tr>
+<td><strong>MAXPROCUSER</strong></td>
+<td>512</td>
+</tr>
+<tr>
+<td><strong>MAXUIDS</strong></td>
+<td>500</td>
+</tr>
+<tr>
+<td><strong>MAXTHREADS</strong></td>
+<td>10000</td>
+</tr>
+<tr>
+<td><strong>MAXTHREADTASKS</strong></td>
+<td>5000</td>
+</tr>
+<tr>
+<td><strong>MAXASSIZE</strong></td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td><strong>MAXCPUTIME</strong></td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td><strong>MAXMMAPAREA</strong></td>
+<td>40960</td>
+</tr>
+<tr>
+<td><strong>IPCSHMSPAGES</strong></td>
+<td>262144</td>
+</tr>
+<tr>
+<td><strong>IPCSHMMPAGES</strong></td>
+<td>256</td>
+</tr>
+<tr>
+<td><strong>IPCSHMNSEGS</strong></td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>IPCSEMNIDS</strong></td>
+<td>500</td>
+</tr>
+<tr>
+<td><strong>IPCSEMNSEMS</strong></td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The number of threads that can be created by a Java process is limited by the lower of the two values for <strong>MAXTHREADS</strong> and <strong>MAXTHREADSTASKS</strong>.</p>
+<p>You can change these settings dynamically without re-IPLing the system. For example, to set <strong>MACPROCUSER</strong> to 256, run <code>SETOMVS MAXPROCUSER=256</code></p>
+<p>z/OS uses region sizes to determine the amount of storage available to running programs. For a Java runtime environment, the  region size must be sufficiently large to avoid storage related error messages or abends. Rather than restricting region size, allow the VM to use what it needs. Region size can be affected by one of the following parameters: <strong>JCL REGION</strong>, <strong>BPXPRMxx MAXASSIZE</strong>, the RACF OMVS segment <strong>ASSIZEMAX</strong>, or IEFUSI (Step initiation exit).</p>
+<h3 id="configuring-language-environment-runtime-options">Configuring Language Environment runtime options</h3>
+<p>Language Environment&reg; runtime options affect performance and storage usage. These options can be optimized for your application.</p>
+<p>Runtime options are typically embedded in programs by using <strong>#pragma runopts</strong> settings. In many cases, these options provide suitable default values that are known to produce good performance results. However, these options can be overridden to tune the runtime environment of your application.</p>
+<p>On 64-bit z/OS systems, the following runtime options affect Java applications:</p>
+<ul>
+<li><strong>HEAP64</strong>: Controls allocation of the user heap. A suggested starting point for an override is <strong>HEAP64(512M,4M,KEEP,16M,4M,KEEP,0K,0K,FREE)</strong>.</li>
+<li><strong>HEAPPOOLS64</strong>: Used to manage Java heap storage above the 2 G bar. The Java USS launcher sets <strong>HEAPPOOLS64(ALIGN)</strong> for more optimal management of multi-threaded applications. Other Java launchers might have different settings. Before you set an override for <strong>HEAPPOOLS64</strong>, use <strong>RPTOPTS(ON)</strong> to confirm the active settings for your environment and <strong>RPTSTG(ON)</strong> to review storage usage and tuning recommendations. Note that the host product might have already set cell sizes and numbers that are known to produce good performance.</li>
+<li><strong>STACK64</strong>: Controls the allocation and management of stack storage. A suggested default is <strong>STACK64(1M,1M,128M)</strong>.</li>
+<li><strong>THREADSTACK64</strong>: Controls the allocation of thread-level stack storage for both the upward and downward-growing stack. A suggested default is <strong>THREADSTACK64(OFF,1M,1M,128M)</strong>.</li>
+</ul>
+<p>A suitable <strong>MEMLIMIT</strong> value is also required. The OpenJ9 VM requirement is the sum of the following amounts:</p>
+<ul>
+<li>User heap storage required by the VM and native libraries, as controlled by <strong>HEAP64</strong> (minimum 512 M) settings.</li>
+<li>User stack storage (3 MB multiplied by the expected number of concurrent threads), as controlled by <strong>STACK64</strong> settings.</li>
+<li><code>-Xmx</code> largest expected VM heap size.</li>
+<li>The JIT data cache maximum size.</li>
+<li>The JIT code cache maximum size, if <strong>RMODE64</strong> is supported.</li>
+</ul>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> If you intend to use the Concurrent Scavenge mode of the default Generational Concurrent (<code>gencon</code>) garbage collection policy by using hardware-based support, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit to a larger value than the maximum heap size. For more information, see <a href="../xgc/#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a>.</p>
+<p>The following guides are available to help you configure Language Environment runtime options and callable services:</p>
+<ul>
+<li>See <a href="https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea200/abstract.htm">z/OS Language Environment Programming Guide</a> for guidance on how to override the default options. Use <strong>RPTOPTS (ON)</strong> to write the options that are in effect to <em>stderr</em> on termination.</li>
+<li>See <a href="https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea300/abstract.htm">z/OS Language Environment Programming Reference</a> for a full list of the available runtime options.</li>
+<li>See <a href="https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea100/abstract.htm">z/OS Language Environment Debugging Guide</a> for tuning guidance by using <strong>RPTSTG (ON)</strong>.</li>
+</ul>
+<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg></span> <strong>Warning:</strong> Changing the runtime options can often degrade performance.</p>
 <h2 id="configuring-large-page-memory-allocation">Configuring large page memory allocation</h2>
 <p>If your application allocates a large amount of memory and frequently accesses that memory, you might be able to improve performance by enabling large page support on your system.</p>
 <p>Some Linux kernels implement Transparent HugePage Support (THP), which automates the provision of large pages to back virtual memory, as described in <a href="#linux-systems">Linux systems</a>. Alternatively, you can enable large page support by setting the <a href="../xlpobjectheap/"><code>-Xlp:objectheap</code></a> and <a href="../xlpcodecache/"><code>-Xlp:codecache</code></a> options on the command line when you start your application. These options have the following effects:</p>
