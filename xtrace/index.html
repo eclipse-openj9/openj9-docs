@@ -4858,10 +4858,10 @@ yyyymmdd.hhmmssth.process.trc</code>.</li>
 </ul>
 <p>Trace data can be written to one of the following locations:</p>
 <ul>
-<li>Memory buffers that can be dumped or snapped when a problem occurs. Use the <code>-Xtrace:buffers=&lt;size&gt;</code> option to control the size of the buffer allocated to each thread. Buffers allocated to a thread are discarded when that thread terminates. To examine the trace data captured in these memory buffers, you must snap or dump the data, then format the buffers.</li>
-<li>One or more files that are using buffered I/O. Use the <code>-Xtrace:output</code> option.</li>
-<li>An external agent in real time, using the <code>-Xtrace:external</code> option.</li>
-<li>stderr in real time.</li>
+<li>Memory buffers that can be dumped or snapped when a problem occurs. Use the <a href="#buffers"><code>-Xtrace:buffers=&lt;size&gt;</code></a> option to control the size of the buffer allocated to each thread. Buffers allocated to a thread are discarded when that thread terminates. To examine the trace data captured in these memory buffers, you must snap or dump the data. Use the <a href="../xdump/#dump-agents"><code>-Xdump:snap</code></a> option to vary the events that cause a snap trace file to be produced. When produced, format the buffers by using the <a href="../tool_traceformat/">trace formatter</a>.</li>
+<li>One or more files that are using buffered I/O. Use the <a href="#output"><code>-Xtrace:output</code></a> option.</li>
+<li>An external agent in real time, using the <a href="#external-tracepoint"><code>-Xtrace:external</code></a> option.</li>
+<li><code>stderr</code> in real time.</li>
 <li>Any combination of the other items in this list.</li>
 </ul>
 <h2 id="default-tracing">Default tracing</h2>
@@ -5273,7 +5273,8 @@ yyyymmdd* format (for example, <code>traceout.20181025.trc</code>):</p>
 <p>When specified, trace data is placed into internal trace buffers that can then be written to a snap file or written to the files that are specified in an output trace option. All associated data is traced.</p>
 <p><code>minimal</code> and <code>maximal</code> traces are independent from any types that follow them. For example, if the <code>maximal</code> option is specified, it does not affect a later option such as <code>print</code>.</p>
 <h3 id="methods"><code>methods</code></h3>
-<p>Using method trace provides a complete and potentially large diagnosis of code paths inside your application and the system classes. Use wild cards and filtering to control method trace so that you can focus on the sections of code that interest you. To specify one or more method specifications, use the following syntax:</p>
+<p>Using method trace provides a complete and potentially large diagnosis of code paths inside your application and the system classes. Use wild cards and filtering to control method trace so that you can focus on the sections of code that interest you. Note that method trace is powerful but it also has a cost. Application throughput is affected by method trace.</p>
+<p>To specify one or more method specifications, use the following syntax:</p>
 <pre><code>-Xtrace:methods=&lt;method_specification&gt;[,&lt;method_specification&gt;]
 </code></pre>
 <p>The syntax for <code>&lt;method_specification&gt;</code> can be further broken down to the following suboptions:</p>
@@ -5292,7 +5293,8 @@ yyyymmdd* format (for example, <code>traceout.20181025.trc</code>):</p>
 -Xtrace:iprint=mt,methods=*.*
 </code></pre>
 <p>The <code>iprint</code> suboption prints to stderr with indentation.
-To output method trace information in binary format, see the <a href="#output"><code>output</code></a> option.</p>
+To output method trace information in binary format, see the <a href="#output"><code>output</code></a> option</p>
+<p>Internal Native Library (INL) native methods inside the VM cannot be traced because they are not implemented by using JNI. The list of methods that are not traceable is subject to change without notice.</p>
 <p>Here are some examples:</p>
 <p><em>Tracing entry and exit of all methods in a given class:</em> To trace all method entry and exit of the <code>ReaderMain</code> class in the default package and the <code>java.lang.String</code> class, specify the following command:</p>
 <pre><code>-Xtrace:methods={ReaderMain.*,java/lang/String.*},print=mt
@@ -5544,23 +5546,23 @@ print=tpnid(j9vm.23-25)
 </tr>
 <tr>
 <td><code>ceedump</code></td>
-<td>This action is applicable to z/OS&reg; only. For more information, see z/OS LE CEEDUMPs.</td>
+<td>This action is applicable to z/OS&reg; only. For more information, see <a href="../xdump/#dump-agents">z/OS LE CEEDUMPs</a>.</td>
 </tr>
 <tr>
 <td><code>coredump</code></td>
-<td>See <code>sysdump</code>.</td>
+<td>Produce a system dump. See <a href="../xdump/#dump-agents">Dump agents (<code>-Xdump:system</code>)</a></td>
 </tr>
 <tr>
 <td><code>heapdump</code></td>
-<td>Produce a Heapdump. See <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html">Using Heapdump</a>.</td>
+<td>Produce a heap dump. See <a href="../dump_heapdump/">Heap dump</a>.</td>
 </tr>
 <tr>
 <td><code>javadump</code></td>
-<td>Produce a Javadump. See <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html">Using Javadump</a>.</td>
+<td>Produce a Java dump. See <a href="../dump_javadump/">Java dump</a>.</td>
 </tr>
 <tr>
 <td><code>jstacktrace</code></td>
-<td>Examine the Java stack of the current thread and generate auxiliary tracepoints for each stack frame. The auxiliary tracepoints are written to the same destination as the tracepoint or method trace that triggered the action. You can control the number of stack frames examined with the stackdepth=n option. See the <a href="#stackdepth">stackdepth</a> option.</td>
+<td>Examine the Java stack of the current thread and generate auxiliary tracepoints for each stack frame. The auxiliary tracepoints are written to the same destination as the tracepoint or method trace that triggered the action. You can control the number of stack frames examined with the <code>stackdepth=n</code> option. See the <a href="#stackdepth">stackdepth</a> option.</td>
 </tr>
 <tr>
 <td><code>resume</code></td>
