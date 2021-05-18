@@ -51,6 +51,10 @@ docs_dir: 'docs'
 
 site_dir: 'site'
 
+plugins:
+    - search
+    - macros
+
 extra_css:
   - 'stylesheets/oj9.css'
 
