@@ -243,13 +243,15 @@ For examples that embed Java version icons such as ![Java 8 icon](docs/cr/java8.
 
 ### Referencing non-Markdown pages
 
-The user documentation has two builds, one for use in the web site and a special build for offline use. The offline build uses the Mkdocs `use_directory_urls: false` configuration setting, which alters the layout of the site and automatically adjusts relative urls between Markdown files. However, relative urls to non-Markdown pages, which are copied as-is into the `/site` directory, are not adjusted.
+The user documentation pulls in API documentation, which is pre-built as HTML files. These files have to be referenced in a specific way for the build process. The documentation has two builds, one for use in the web site and a special build for offline use. The offline build uses the Mkdocs `use_directory_urls: false` configuration setting, which alters the layout of the site and automatically adjusts relative urls between Markdown files. However, relative urls to non-Markdown pages, which are copied as-is into the `/site` directory, are not adjusted.
 
-If you need to reference a non-Markdown page from a Markdown file use the variable `config.use_directory_urls` provided by `mkdocs-macros` plugin. For example in the [OpenJ9 JDK 11 API documentation](docs/api-jdk11.md), the `iframe` element uses this technique in the `src` attribute:
+If you need to reference a specific API page from a Markdown file use the variable `config.use_directory_urls` provided by `mkdocs-macros` plugin. For example in the [OpenJ9 JDK 11 API documentation](docs/api-jdk11.md), the `iframe` element uses this technique in the `src` attribute:
 
 ```
 {% if config.use_directory_urls %}../{% endif %}api/jdk11/index.html?view=embed
 ```
+
+To ensure that the contribution process is as simple as possible, the `mkdocs-macros` plugin should not be used for any other purpose than referencing pre-built API documentation.
 
 ### Accessibility
 
