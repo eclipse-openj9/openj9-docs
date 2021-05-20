@@ -13,8 +13,8 @@
       
         <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.12/">
       
-      <link rel="shortcut icon" href="../cr/openj9-logo.svg">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+      <link rel="icon" href="../cr/openj9-logo.svg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -22,10 +22,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1655a90d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
           
           
@@ -59,8 +59,9 @@
     
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="cyan">
-      
   
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -77,11 +78,9 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-header__button md-logo" aria-label=" ">
+    <a href=".." title=" " class="md-header__button md-logo" aria-label=" " data-md-component="logo">
       
   <img src="../cr/openj9_6b.png" alt="logo">
 
@@ -105,9 +104,8 @@
         </div>
       </div>
     </div>
-    <div class="md-header__options">
-      
-    </div>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
@@ -123,7 +121,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
       <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
@@ -172,11 +170,9 @@
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-nav__button md-logo" aria-label=" ">
+    <a href=".." title=" " class="md-nav__button md-logo" aria-label=" " data-md-component="logo">
       
   <img src="../cr/openj9_6b.png" alt="logo">
 
@@ -510,6 +506,7 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+      
         
       
       
@@ -524,6 +521,7 @@
       
         
 <nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
   
   
     
@@ -4189,6 +4187,7 @@
 <nav class="md-nav md-nav--secondary" aria-label="On this page...">
   
   
+  
     
   
   
@@ -4348,8 +4347,10 @@
 <h2 id="version-0120">Version 0.12.0</h2>
 <p>The following new features and notable changes since v 0.11.0 are included in this release:</p>
 <ul>
-<li><a href="#improved-flexibility-for-managing-the-size-of-the-jit-code-cache">Improved flexibility for managing the size of the JIT code cache</a>
-<!-- - <a href="#class-data-sharing-is-enabled-by-default">Class data sharing is enabled by default</a> --></li>
+<li><a href="#improved-flexibility-for-managing-the-size-of-the-jit-code-cache">Improved flexibility for managing the size of the JIT code cache</a></li>
+</ul>
+<!-- - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default) -->
+<ul>
 <li><a href="#idle-tuning-is-enabled-by-default-when-openj9-runs-in-a-docker-container">Idle-tuning is enabled by default when OpenJ9 runs in a docker container</a></li>
 <li><a href="#changes-to-default-shared-classes-cache-directory-permissions-not-windows">Changes to default shared classes cache directory permissions (not Windows)</a></li>
 <li><img alt="Start of content that applies only to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#openssl-is-now-supported-for-improved-native-cryptographic-performance">OpenSSL is now supported for improved native cryptographic performance</a></li>
@@ -4357,7 +4358,7 @@
 <li><a href="#rsa-algorithm-support-for-openssl">RSA algorithm support for OpenSSL</a></li>
 <li><a href="#ibm_java_options-is-deprecated"><code>IBM_JAVA_OPTIONS</code> is deprecated</a></li>
 </ul>
-<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg></span> <strong>Warning:</strong> Following the release of OpenJ9 0.12.0, an intermittent problem
+<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg></span> <strong>Warning:</strong> Following the release of OpenJ9 0.12.0, an intermittent problem
 was identified with OpenSSL V1.1.x acceleration of the cryptographic Digest algorithm. For more information about the issue, see <a href="https://github.com/eclipse-openj9/openj9/issues/4530">#4530</a>. You can turn off the Digest algorithm by setting the <a href="../djdknativedigest/">-Djdk.nativeDigest</a> system property to <code>false</code>. A new release of OpenJ9 (0.12.1) is available that disables the Digest algorithm by default.</p>
 <h3 id="features-and-changes">Features and changes</h3>
 <h4 id="binaries-and-supported-environments">Binaries and supported environments</h4>
@@ -4391,7 +4392,7 @@ Class data sharing is enabled by default for bootstrap classes, unless your appl
 <h4 id="openssl-is-now-supported-for-improved-native-cryptographic-performance">OpenSSL is now supported for improved native cryptographic performance</h4>
 <p><img alt="Start of content that applies only to Java 11 (LTS)" src="../cr/java11.png" /></p>
 <p>OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which provides improved cryptographic performance compared to the in-built OpenJDK Java cryptographic implementation. The OpenSSL V1.1.x implementation is enabled by default and  supported for the Digest, CBC, and GCM algorithms. Binaries obtained from AdoptOpenJDK include OpenSSL v1.1.x (see Note). For more information about tuning the OpenSSL implementation, see <a href="../introduction/#cryptographic-operations">Performance tuning</a>.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> OpenJDK 8 with OpenJ9 includes OpenSSL support since v 0.11.0. Currently, OpenSSL is not bundled as part of the AdoptOpenJDK AIX binaries due to an unresolved problem.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> OpenJDK 8 with OpenJ9 includes OpenSSL support since v 0.11.0. Currently, OpenSSL is not bundled as part of the AdoptOpenJDK AIX binaries due to an unresolved problem.</p>
 <p><img alt="End of content that applies only to Java 11 (LTS)" src="../cr/java_close_lts.png" /></p>
 <h4 id="improved-support-for-pause-less-garbage-collection">Improved support for pause-less garbage collection</h4>
 <p>Concurrent scavenge mode is now supported on 64-bit Windows operating systems.</p>
@@ -4419,6 +4420,7 @@ Class data sharing is enabled by default for bootstrap classes, unless your appl
             </article>
           </div>
         </div>
+        
       </main>
       
         <!--
@@ -4515,7 +4517,7 @@ Class data sharing is enabled by default for bootstrap classes, unless your appl
       
       
       <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
       </a>
     
   </div>
@@ -4552,7 +4554,7 @@ Class data sharing is enabled by default for bootstrap classes, unless your appl
       
       
       <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
       </a>
     
   </div>
@@ -4567,10 +4569,10 @@ Class data sharing is enabled by default for bootstrap classes, unless your appl
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": 2.0}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": 2.0}</script>
     
     
-      <script src="../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="../javascripts/oj9.js"></script>
       

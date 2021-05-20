@@ -13,8 +13,8 @@
       
         <link rel="canonical" href="https://www.eclipse.org/openj9/docs/vgclog/">
       
-      <link rel="shortcut icon" href="../cr/openj9-logo.svg">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+      <link rel="icon" href="../cr/openj9-logo.svg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -22,10 +22,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1655a90d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
           
           
@@ -59,8 +59,9 @@
     
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="cyan">
-      
   
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -77,11 +78,9 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-header__button md-logo" aria-label=" ">
+    <a href=".." title=" " class="md-header__button md-logo" aria-label=" " data-md-component="logo">
       
   <img src="../cr/openj9_6b.png" alt="logo">
 
@@ -105,9 +104,8 @@
         </div>
       </div>
     </div>
-    <div class="md-header__options">
-      
-    </div>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
@@ -123,7 +121,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
       <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
@@ -172,11 +170,9 @@
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-nav__button md-logo" aria-label=" ">
+    <a href=".." title=" " class="md-nav__button md-logo" aria-label=" " data-md-component="logo">
       
   <img src="../cr/openj9_6b.png" alt="logo">
 
@@ -678,6 +674,7 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+      
         
       
       
@@ -692,6 +689,7 @@
       
         
 <nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
   
   
     
@@ -4121,6 +4119,7 @@
 <nav class="md-nav md-nav--secondary" aria-label="On this page...">
   
   
+  
     
   
   
@@ -4236,7 +4235,7 @@
 <p>The logs record when GC cycles and their increments start and end, and list the GC operations that run within these increments to manage or reclaim memory. You can also determine which type of event triggered the cycle or increment, and the amount of memory available to your application before and after processing.  </p>
 <h3 id="initialization">Initialization</h3>
 <p>The log begins by recording the configuration of the OpenJ9 runtime virtual environment (VM) and details of the GC configuration(GC). The configuration is recorded by using child elements of the <code>&lt;initialized&gt;</code> element, for example:  </p>
-<pre><code class="xml">
+<pre><code class="language-xml">
 &lt;initialized id=&quot;1&quot; timestamp=&quot;2020-10-18T13:27:07.691&quot;&gt;
   &lt;attribute name=&quot;gcPolicy&quot; value=&quot;-Xgcpolicy:gencon&quot; /&gt;
   &lt;attribute name=&quot;maxHeapSize&quot; value=&quot;0x40000000&quot; /&gt;
@@ -4272,7 +4271,6 @@
   &lt;/vmargs&gt;
 &lt;/initialized&gt;
 </code></pre>
-
 <p>The first set of <code>&lt;attribute&gt;</code> elements records the configuration of the garbage collector, such as the GC policy type, configuration of the Java object heap, and the number of threads that are used for garbage collection. For example, the <code>GCThreads</code> attribute records that the garbage collector is configured to use four threads.</p>
 <p>The <code>&lt;system&gt;</code> section records information about the operating system and available hardware, such as the physical memory, number of CPUs, and operating system type and version. In the example, the VM is running on Linux&reg; amd64 V3.10 and has access to 28 CPUs and over 100 GB.</p>
 <p>The <code>&lt;vmargs&gt;</code> section records any VM configuration <a href="../cmdline_specifying/">command-line options</a> (VM arguments) that are specified. The following types of options are recorded:</p>
@@ -4289,7 +4287,7 @@
 <li>a memory threshold is reached. Memory threshold values, which set the conditions for triggering certain types of GC cycles or increments, are defined by the policy type and configuration options. For more information about the particular elements or attributes that are used to record a memory threshold trigger, see specific policies and cycles in <a href="../vgclog_examples/">Log examples</a>.</li>
 </ul>
 <p>The following XML structure is an example of the verbose GC logs that are generated from the Generational Concurrent GC policy (<code>-Xgcpolicy:gencon</code>). In this example, the lines are indented to help illustrate the flow and attributes and some child elements are omitted for clarity:</p>
-<pre><code class="xml">    &lt;exclusive-start/&gt;
+<pre><code class="language-xml">    &lt;exclusive-start/&gt;
 
       &lt;af-start/&gt;
 
@@ -4327,7 +4325,6 @@
 
     &lt;exclusive-end/&gt;
 </code></pre>
-
 <p>Some elements serve as markers for starting and ending parts of the GC cycle and do not contain child elements, while other elements do contain child elements. In this example, the <code>&lt;af-start/&gt;</code>, <code>&lt;cycle-start/&gt;</code>, <code>&lt;cycle-end/&gt;</code>, <code>&lt;allocation-satisfied/&gt;</code>, and <code>&lt;af-end/&gt;</code> XML elements are empty and contain only attributes. All other XML elements contain child XML elements, which are omitted from this simplified example. For detailed examples of log output for a specific cycle, see <a href="../vgclog_examples/">Log examples</a>).</p>
 <h3 id="gc-increments-and-interleaving">GC increments and interleaving</h3>
 <p>Some GC cycle types are run in piecemeal blocks of operations called GC increments. Using GC increments reduces pause times by enabling blocks of operations or operation steps to interleave with operations or operation steps from other types of cycle.</p>
@@ -4443,7 +4440,7 @@
 </tbody>
 </table>
 
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Zero, one, or multiple GC cycles might run between the start and end of a <code>gencon</code> global GC cycle.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Zero, one, or multiple GC cycles might run between the start and end of a <code>gencon</code> global GC cycle.</p>
 <p>The XML elements and attribute values that define operations and increments of a particular cycle are specific to the policy and type of cycle. To follow how the different cycle's increments interleave in a log, you can locate the elements and attributes that record the increments and operations that belong to a particular type of cycle. For example, for the <code>gencon</code> policy, you can locate the start of the intermediate, concurrent increment of the global cycle by searching for the <code>&lt;concurrent-kickoff&gt;</code> element.</p>
 <p>For more information about the XML elements and attribute values that are used for a particular type of cycle for a particular policy, and examples of log output, see <a href="../vgclog_examples/">Log examples</a>.</p>
 <p>You can determine the GC increments and operations that are associated with a particular <em>instance</em> of a cycle by using the <code>contextid</code> and <code>id</code> attributes:</p>
@@ -4462,6 +4459,7 @@
             </article>
           </div>
         </div>
+        
       </main>
       
         <!--
@@ -4558,7 +4556,7 @@
       
       
       <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
       </a>
     
   </div>
@@ -4595,7 +4593,7 @@
       
       
       <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
       </a>
     
   </div>
@@ -4610,10 +4608,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": 2.0}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": 2.0}</script>
     
     
-      <script src="../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="../javascripts/oj9.js"></script>
       

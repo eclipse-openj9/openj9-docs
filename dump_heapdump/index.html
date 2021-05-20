@@ -13,8 +13,8 @@
       
         <link rel="canonical" href="https://www.eclipse.org/openj9/docs/dump_heapdump/">
       
-      <link rel="shortcut icon" href="../cr/openj9-logo.svg">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+      <link rel="icon" href="../cr/openj9-logo.svg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -22,10 +22,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1655a90d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
           
           
@@ -59,8 +59,9 @@
     
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="cyan">
-      
   
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -77,11 +78,9 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-header__button md-logo" aria-label=" ">
+    <a href=".." title=" " class="md-header__button md-logo" aria-label=" " data-md-component="logo">
       
   <img src="../cr/openj9_6b.png" alt="logo">
 
@@ -105,9 +104,8 @@
         </div>
       </div>
     </div>
-    <div class="md-header__options">
-      
-    </div>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
@@ -123,7 +121,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
       <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
@@ -172,11 +170,9 @@
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-nav__button md-logo" aria-label=" ">
+    <a href=".." title=" " class="md-nav__button md-logo" aria-label=" " data-md-component="logo">
       
   <img src="../cr/openj9_6b.png" alt="logo">
 
@@ -897,6 +893,7 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+      
         
       
       
@@ -911,6 +908,7 @@
       
         
 <nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
   
   
     
@@ -4203,6 +4201,7 @@
 <nav class="md-nav md-nav--secondary" aria-label="On this page...">
   
   
+  
     
   
   
@@ -4389,7 +4388,6 @@ for analysis.</p>
 <p>The best method to analyze a PHD heap dump is to use the <a href="https://www.eclipse.org/mat/">Eclipse Memory Analyzer tool (MAT)</a> or the <a href="https://www.ibm.com/support/knowledgecenter/en/SSYKE2_8.0.0/com.ibm.java.80.doc/diag/tools/tool_memoryanalyzer.html">IBM Memory Analyzer tool</a>. These tools process the dump file and provide a visual representation of the objects in the Java Heap. Both tools require the Diagnostic Tool Framework for Java (DTFJ) plugin. To install the DTFJ plugin in the Eclipse IDE, select the following menu items:</p>
 <pre><code>Help &gt; Install New Software &gt; Work with &quot;IBM Diagnostic Tool Framework for Java&quot; &gt; IBM Monitoring and Diagnostic Tools &gt; Diagnostic Tool Framework for Java   
 </code></pre>
-
 <p>The following sections contain detailed information about the content of each type of heap dump file.</p>
 <h3 id="portable-heap-dump-phd-format">Portable Heap Dump (PHD) format</h3>
 <p>A PHD format dump file contains a header section and a body section. The body section can contain information about object, array, or class records.
@@ -4773,13 +4771,11 @@ Primitive numbers are used to describe the file format, as detailed in the follo
 <p>A single string containing information about the runtime environment, platform, and build levels, similar to the following example:</p>
 <pre><code>// Version: JRE 1.8.0 Linux amd64-64 (build 1.8.0_232-b09)
 </code></pre>
-
 <h4 id="object-records_1">Object records</h4>
 <p>A record of each object instance in the heap with the following format:</p>
 <pre><code>&lt;object address, in hexadecimal&gt; [&lt;length in bytes of object instance, in decimal&gt;] OBJ &lt;object type&gt;
 &lt;heap reference, in hexadecimal&gt; &lt;heap reference, in hexadecimal&gt; ...
 </code></pre>
-
 <p>The following object types (<code>object type</code>) might be shown:</p>
 <ul>
 <li>class name (including package name)</li>
@@ -4792,22 +4788,18 @@ Primitive numbers are used to describe the file format, as detailed in the follo
 <pre><code>0x00000000E0000AF0 [16] OBJ java/lang/String
     0x00000000E0000B00
 </code></pre>
-
 <p>The object instance (length 32 bytes) of type char array, as referenced from the <code>java/lang/String</code>, is shown in the following example:</p>
 <pre><code>0x00000000E0000B00 [32] OBJ [C
 </code></pre>
-
 <p>The following example shows an object instance (24 bytes in length) of type array of <code>java/lang/String</code>:</p>
 <pre><code>0x00000000FFF07498 [24] OBJ [Ljava/lang/String;
     0x00000000E0005D78 0x00000000E0005D50 0x00000000E0005D28 0x00000000E0005D00
 </code></pre>
-
 <h4 id="class-records_1">Class records</h4>
 <p>A record of each class in the following format:</p>
 <pre><code>&lt;class object address, in hexadecimal&gt; [&lt;length in bytes of class object, in decimal&gt;] CLS &lt;class type&gt;
 &lt;heap reference, in hexadecimal&gt; &lt;heap reference, in hexadecimal&gt;...
 </code></pre>
-
 <p>The following class types (<code>&lt;class type&gt;</code>) might be shown:</p>
 <ul>
 <li>class name (including package name)</li>
@@ -4820,19 +4812,16 @@ Primitive numbers are used to describe the file format, as detailed in the follo
 <pre><code>0x00000000E00174F0 [80] CLS java/util/Date
     0x00000000FFF1BB60 0x00000000FFF29630
 </code></pre>
-
 <h4 id="trailer-record-1">Trailer record 1</h4>
 <p>A single record containing record counts, in decimal.</p>
 <p>For example:</p>
 <pre><code>// Breakdown - Classes: 630, Objects: 3692, ObjectArrays: 576, PrimitiveArrays: 2249
 </code></pre>
-
 <h4 id="trailer-record-2">Trailer record 2</h4>
 <p>A single record containing totals, in decimal.</p>
 <p>For example:</p>
 <pre><code>// EOF:  Total 'Objects',Refs(null) : 7147,22040(12379)
 </code></pre>
-
 <p>The values in the example reflect the following counts:</p>
 <ul>
 <li><code>7147</code> total objects</li>
@@ -4910,6 +4899,7 @@ Primitive numbers are used to describe the file format, as detailed in the follo
             </article>
           </div>
         </div>
+        
       </main>
       
         <!--
@@ -5006,7 +4996,7 @@ Primitive numbers are used to describe the file format, as detailed in the follo
       
       
       <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
       </a>
     
   </div>
@@ -5043,7 +5033,7 @@ Primitive numbers are used to describe the file format, as detailed in the follo
       
       
       <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
       </a>
     
   </div>
@@ -5058,10 +5048,10 @@ Primitive numbers are used to describe the file format, as detailed in the follo
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": 2.0}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": 2.0}</script>
     
     
-      <script src="../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="../javascripts/oj9.js"></script>
       

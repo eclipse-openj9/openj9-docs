@@ -13,8 +13,8 @@
       
         <link rel="canonical" href="https://www.eclipse.org/openj9/docs/jit/">
       
-      <link rel="shortcut icon" href="../cr/openj9-logo.svg">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+      <link rel="icon" href="../cr/openj9-logo.svg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -22,10 +22,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1655a90d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
           
           
@@ -59,8 +59,9 @@
     
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="cyan">
-      
   
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -77,11 +78,9 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-header__button md-logo" aria-label=" ">
+    <a href=".." title=" " class="md-header__button md-logo" aria-label=" " data-md-component="logo">
       
   <img src="../cr/openj9_6b.png" alt="logo">
 
@@ -105,9 +104,8 @@
         </div>
       </div>
     </div>
-    <div class="md-header__options">
-      
-    </div>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
@@ -123,7 +121,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
       <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
@@ -172,11 +170,9 @@
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-nav__button md-logo" aria-label=" ">
+    <a href=".." title=" " class="md-nav__button md-logo" aria-label=" " data-md-component="logo">
       
   <img src="../cr/openj9_6b.png" alt="logo">
 
@@ -713,6 +709,7 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+      
         
       
       
@@ -727,6 +724,7 @@
       
         
 <nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
   
   
     
@@ -4110,6 +4108,7 @@
 <nav class="md-nav md-nav--secondary" aria-label="On this page...">
   
   
+  
     
   
   
@@ -4210,7 +4209,7 @@
 <li>Specify <code>-Xint</code> on the command line, which turns off the JIT and AOT compiler. To eliminate problems with one or the other you can turn these compilers off selectively with the <code>-Xnojit</code> and <code>-Xnoaot</code> options.</li>
 <li>Call the <code>java.lang.Compiler</code> API programmatically.</li>
 </ul>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> <code>java.lang.Compiler</code> is deprecated for removal in Java SE 9.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> <code>java.lang.Compiler</code> is deprecated for removal in Java SE 9.</p>
 <p>If turning off the JIT solves your problem, you can investigate JIT operations in more detail by using a number of options to control behavior.</p>
 <p>Turning on verbose logging with the <code>verbose</code> suboption causes the JIT to record all compiler operations. However, the log file can be difficult to read because there are so many complex operations occuring in rapid succession. Follow these steps to simplify operations, which helps you pinpoint the root cause:</p>
 <dl>
@@ -4237,7 +4236,6 @@
 <p>The following option turns on verbose logging and directs output to a log file called <code>vlogfile</code>:</p>
 <pre><code>java -Xjit:verbose,vlog=vlogfile -version
 </code></pre>
-
 <p>The first section of the log includes lines that start with <code>#INFO:</code>, which provides information about the environment that the JIT is operating in. You can determine the version of the JIT and VM that you are using, and the type and number of processors that the JIT has access to.</p>
 <pre><code>#INFO:  _______________________________________
 #INFO:  Version Information:
@@ -4274,13 +4272,11 @@
 #INFO:  Free Physical Memory: 996188 KB
 #INFO:  CPU entitlement = 100.00
 </code></pre>
-
 <p>This section also shows the AOT and JIT options that are in force. The last few lines detail the start time of the compilation activity, how much free physical memory is available to the process, and the CPU entitlement.</p>
 <p>The information section is followed by a sequence of lines that describe the methods that are being compiled, as well as other events significant to the operation of the JIT compiler.</p>
 <p>Here is a typical line from the verbose log:</p>
 <pre><code>+ (cold) sun/reflect/Reflection.getCallerClass()Ljava/lang/Class; @ 00007FCACED1303C-00007FCACED13182 OrdinaryMethod - Q_SZ=0 Q_SZI=0 QW=1 j9m=00000000011E7EA8 bcsz=2 JNI compThread=0 CpuLoad=2%(2%avg) JvmCpu=0%
 </code></pre>
-
 <p>In this example:</p>
 <ul>
 <li>The method compiled is <code>sun/reflect/Reflection.getCallerClass()Ljava/lang/Class</code>.</li>
@@ -4294,11 +4290,9 @@
 <p>The following example requests information about the performance of JIT compiler threads, with output written to <code>vlogfile</code>.</p>
 <pre><code>java -Xjit:verbose={compilePerformance},vlog=vlogfile -version
 </code></pre>
-
 <p>The output generated by using this command adds the values <code>time</code> and <code>mem</code> into each line, as shown in the following example:</p>
 <pre><code>+ (cold) java/lang/System.getEncoding(I)Ljava/lang/String; @ 00007F29183A921C-00007F29183A936D OrdinaryMethod - Q_SZ=0 Q_SZI=0 QW=1 j9m=0000000000F13A70 bcsz=3 JNI time=311us mem=[region=704 system=16384]KB compThread=0 CpuLoad=2%(2%avg) JvmCpu=0%
 </code></pre>
-
 <ul>
 <li>time=311us reflects the amount of time taken to do the compilation.</li>
 <li>mem=[region=704 system=16384]KB reflects the amount of memory that was allocated during the compilation.</li>
@@ -4306,8 +4300,7 @@
 <p>The following example can be used to create verbose output that includes lines to show when compilation for a method starts and ends, and any methods that are inlined during the compilation.</p>
 <pre><code>java '-Xjit:verbose={compileStart|compileEnd|inlining},count=5,vlog=vlogfile' -XcompilationThreads1 -version
 </code></pre>
-
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The suboptions <code>count</code> and <code>-XcompilationThreads1</code> are included only to simplify the output for this example and are not recommended for production.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The suboptions <code>count</code> and <code>-XcompilationThreads1</code> are included only to simplify the output for this example and are not recommended for production.</p>
 <p>The following section is taken from the output and describes the compilation and inlining of one method <code>java/lang/String.equals</code>:</p>
 <pre><code>(warm) Compiling java/lang/String.equals(Ljava/lang/Object;)Z  OrdinaryMethod j9m=0000000001300B30 t=90 compThread=0 memLimit=262144 KB freePhysicalMemory=969 MB
 #INL: 7 methods inlined into 4dce72bd java/lang/String.equals(Ljava/lang/Object;)Z @ 00007F53190A3E40
@@ -4323,29 +4316,24 @@
 #INL: 4dce72bd coldCalled 4dce72bd@104 -&gt; bf62dcaf bcsz=182 java/lang/String.regionMatchesInternal(Ljava/lang/String;Ljava/lang/String;[C[CIII)Z
 + (warm) java/lang/String.equals(Ljava/lang/Object;)Z @ 00007F53190A3E40-00007F53190A40D0 OrdinaryMethod - Q_SZ=277 Q_SZI=277 QW=1667 j9m=0000000001300B30 bcsz=127 GCR compThread=0 CpuLoad=2%(2%avg) JvmCpu=0%
 </code></pre>
-
 <p>The first line is included as a result of setting the <code>compileStart</code> suboption and shows the start of the warm method compilation:</p>
 <pre><code>(warm) Compiling java/lang/String.equals(Ljava/lang/Object;)Z OrdinaryMethod j9m=0000000001300B30 t=90 compThread=0 memLimit=262144 KB freePhysicalMemory=969 MB
 </code></pre>
-
 <p>Similarly, the last line shows the successful compilation of this method, as denoted by the <code>+</code>:</p>
 <pre><code>+ (warm) java/lang/String.equals(Ljava/lang/Object;)Z @ 00007F53190A3E40-00007F53190A40D0 OrdinaryMethod - Q_SZ=277 Q_SZI=277 QW=1667 j9m=0000000001300B30 bcsz=127 GCR compThread=0 CpuLoad=2%(2%avg) JvmCpu=0%
 </code></pre>
-
 <p>The lines inbetween that start with <code>#INL</code> describe the inlining operations that took place. A total of 7 methods were inlined into <code>java/lang/String.equals</code>:</p>
 <p>The first three methods (<code>#0</code>, <code>#1</code>, <code>#2</code>) are inlined into the top level method, denoted as <code>#-1</code>:</p>
 <pre><code>#INL: #0: 4dce72bd #-1 inlined 4dce72bd@22 -&gt; 81670d20 bcsz=37 java/lang/String.lengthInternal()I
 #INL: #1: 4dce72bd #-1 inlined 4dce72bd@28 -&gt; 81670d20 bcsz=37 java/lang/String.lengthInternal()I
 #INL: #2: 4dce72bd #-1 inlined 4dce72bd@104 -&gt; bf62dcaf bcsz=182 java/lang/String.regionMatchesInternal(Ljava/lang/String;Ljava/lang/String;[C[CIII)Z
 </code></pre>
-
 <p>The next four methods (<code>#3</code>, <code>#4</code>, <code>#5</code>, <code>#6</code>) are inlined into the method denoted by <code>#2</code>.</p>
 <pre><code>#INL: #3: 4dce72bd #2 inlined bf62dcaf@121 -&gt; bbb5af92 bcsz=39 java/lang/String.charAtInternal(I[C)C
 #INL: #4: 4dce72bd #2 inlined bf62dcaf@131 -&gt; bbb5af92 bcsz=39 java/lang/String.charAtInternal(I[C)C
 #INL: #5: 4dce72bd #2 inlined bf62dcaf@156 -&gt; bbb5af92 bcsz=39 java/lang/String.charAtInternal(I[C)C
 #INL: #6: 4dce72bd #2 inlined bf62dcaf@166 -&gt; bbb5af92 bcsz=39 java/lang/String.charAtInternal(I[C)C
 </code></pre>
-
 <p>Here's how to interpret the line for <code>#INL: #0:</code>:</p>
 <p>The method is inlined into <code>4dce72bd</code>, where <code>4dce72bd</code> is an internal pointer that corresponds to this method (in this case, <code>java/lang/String.equals(Ljava/lang/Object;)Z</code>).
 The value <code>@22</code> at the end of the pointer is a bytecode index, which describes the bytecode index of the call that is being inlined.
@@ -4355,20 +4343,17 @@ Going through the <code>#INL</code> output line by line then:</p>
 java/lang/String.lengthInternal()I also got inlined into its caller 4dce72bd at bytecode index @28.
 java/lang/String.regionMatchesInternal(...) got inlined at call reference 4dce72bd at bytecode index @104.
 </code></pre>
-
 <p>Then 4 distinct calls to <code>java/lang/String.charAtInternal(I[C)C</code> were also inlined into <code>java/lang/String.regionMatchesInternal(...)</code> :</p>
 <pre><code>#3 at bytecode index @121 of regionMatchesInternal
 #4 at bytecode index @131 of regionMatchesInternal
 #5 at bytecode index @156 of regionMatchesInternal
 #6 at bytecode index @166 of regionMatchesInternal
 </code></pre>
-
 <p>These were all the calls that the inliner decided to inline into the method being compiled. There is some additional output that describes calls to methods that weren't inlined:</p>
 <pre><code>#INL: 4dce72bd called 4dce72bd@120 -&gt; f734b49c bcsz=233 java/lang/String.deduplicateStrings(Ljava/lang/String;Ljava/lang/String;)V
 #INL: 4dce72bd coldCalled 4dce72bd@104 -&gt; bf62dcaf bcsz=182 java/lang/String.regionMatchesInternal(Ljava/lang/String;Ljava/lang/String;[C[CIII)Z
 #INL: 4dce72bd coldCalled 4dce72bd@104 -&gt; bf62dcaf bcsz=182 java/lang/String.regionMatchesInternal(Ljava/lang/String;Ljava/lang/String;[C[CIII)Z
 </code></pre>
-
 <p>While the output does not specifically say why these methods were not inlined, the relatively larger bytecode size (<code>bcsz=233</code>) probably prevented the first method from being inlined. It's possible that, at a higher optimization level than cold, this <code>deduplicateStrings</code> method may get inlined. The <code>coldCalled</code> label on the last two lines, however, indicate that these calls are located in a part of the method that has not ever been executed, so the JIT decided that inlining those last two methods will probably increase compile time without much promise that it will improve performance.</p>
 <p>By reading the log in this way you can reconstruct the tree of inlines that are taking place as the compilation proceeds. You can see which methods are being inlined and which methods are not being inlined.</p>
 <h2 id="see-also">See also</h2>
@@ -4386,6 +4371,7 @@ java/lang/String.regionMatchesInternal(...) got inlined at call reference 4dce72
             </article>
           </div>
         </div>
+        
       </main>
       
         <!--
@@ -4482,7 +4468,7 @@ java/lang/String.regionMatchesInternal(...) got inlined at call reference 4dce72
       
       
       <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
       </a>
     
   </div>
@@ -4519,7 +4505,7 @@ java/lang/String.regionMatchesInternal(...) got inlined at call reference 4dce72
       
       
       <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
       </a>
     
   </div>
@@ -4534,10 +4520,10 @@ java/lang/String.regionMatchesInternal(...) got inlined at call reference 4dce72
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": 2.0}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": 2.0}</script>
     
     
-      <script src="../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="../javascripts/oj9.js"></script>
       

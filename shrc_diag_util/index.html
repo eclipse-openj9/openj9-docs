@@ -13,8 +13,8 @@
       
         <link rel="canonical" href="https://www.eclipse.org/openj9/docs/shrc_diag_util/">
       
-      <link rel="shortcut icon" href="../cr/openj9-logo.svg">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+      <link rel="icon" href="../cr/openj9-logo.svg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -22,10 +22,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1655a90d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
         
           
           
@@ -59,8 +59,9 @@
     
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="cyan">
-      
   
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -77,11 +78,9 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-header__button md-logo" aria-label=" ">
+    <a href=".." title=" " class="md-header__button md-logo" aria-label=" " data-md-component="logo">
       
   <img src="../cr/openj9_6b.png" alt="logo">
 
@@ -105,9 +104,8 @@
         </div>
       </div>
     </div>
-    <div class="md-header__options">
-      
-    </div>
+    
+    
     
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
@@ -123,7 +121,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
       <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
@@ -172,11 +170,9 @@
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://www.eclipse.org/openj9/docs" title=" " class="md-nav__button md-logo" aria-label=" ">
+    <a href=".." title=" " class="md-nav__button md-logo" aria-label=" " data-md-component="logo">
       
   <img src="../cr/openj9_6b.png" alt="logo">
 
@@ -793,6 +789,7 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+      
         
       
       
@@ -807,6 +804,7 @@
       
         
 <nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
   
   
     
@@ -4229,6 +4227,7 @@
 <nav class="md-nav md-nav--secondary" aria-label="On this page...">
   
   
+  
     
   
   
@@ -4464,7 +4463,6 @@ JVMSHRC168I Total shared class bytes read=2532416. Total bytes stored=268156
 JVMSHRC818I Total unstored bytes due to the setting of shared cache soft max is 0. Unstored AOT bytes due to the setting of -Xscmaxaot is 0. Unstored JIT bytes due to the setting of -Xscmaxjitdata is 0.
 
 </code></pre>
-
 <h3 id="verboseio"><code>verboseIO</code></h3>
 <p>The <a href="../xshareclasses/#verboseio"><code>-Xshareclasses:verboseIO</code></a> suboption provides more detailed information about class sharing operations. In the following example, some classes are found when the cache is accessed. However, class <code>openj9/internal/tools/attach/target/CommonDirectory</code> is not found and is therefore stored for sharing.</p>
 <pre><code>java -Xshareclasses:name=myCache,verboseIO HelloWorld
@@ -4478,7 +4476,6 @@ Failed to find class openj9/internal/tools/attach/target/CommonDirectory in shar
 Stored class openj9/internal/tools/attach/target/CommonDirectory in shared cache for class-loader id 0 with URL /root/sdk/jre/lib/amd64/compressedrefs/jclSC180/vm.jar (index 0).
 ...
 </code></pre>
-
 <p>The bootstrap class loader has an ID of <code>0</code>; other class loaders are given a unique ID. Class loaders follow the class loader hierarchy by asking the parent class loader for a class. If a parent fails to find the class in the cache, the child class loader stores the class in the cache.</p>
 <p>In some situations, verbose output might not show classes being found. For example, classes are typically not found if the class is stale, as described in <a href="../shrc/#class-data-sharing-operations">Class data sharing operations</a>. Stale classes are redeemed if the same class is subsequently fetched by the class loader from another VM and checked against the stale class in the cache.</p>
 <h3 id="verboseaot"><code>verboseAOT</code></h3>
@@ -4496,7 +4493,6 @@ Found AOT code for ROMMethod 0x00007F65800D38A4 in shared cache.
 Stored AOT code for ROMMethod 0x00007F65800724C4 in shared cache.
 ...
 </code></pre>
-
 <h3 id="verbosehelper"><code>verboseHelper</code></h3>
 <p>To troubleshoot problems with custom class loaders that use the Java <code>SharedClassHelper</code> API, specify the <a href="../xshareclasses/#verbosehelper"><code>-Xshareclasses:verboseHelper</code></a> suboption. Information messages and error messages are generated in the output, which can help you diagnose problems with finding or storing classes in the shared cache.</p>
 <p>The following example output shows only information messages:</p>
@@ -4512,7 +4508,6 @@ Info for SharedClassURLClasspathHelper id 2: setClasspath() updated classpath. N
 Info for SharedClassURLClasspathHelper id 2: Number of confirmed entries is now 1
 Hello World
 </code></pre>
-
 <h2 id="diagnostic-cache-utilities">Diagnostic cache utilities</h2>
 <p>These utilities display information about the contents of a shared classes cache. Run the utilities by specifying them as suboptions of <code>-Xshareclasses</code>. The utilities run on the default cache unless you specify a cache by adding the <code>name=&lt;cache_name&gt;</code> and <code>cacheDir=&lt;directory&gt;</code> suboptions.</p>
 <h3 id="printstats"><code>printStats</code></h3>
@@ -4520,7 +4515,6 @@ Hello World
 -Xshareclasses:printStats,name=&lt;cache_name&gt;
 -Xshareclasses:printStats=&lt;data_type1&gt;[+&lt;data_type2&gt;][...],name=&lt;cache_name&gt;
 </code></pre>
-
 <p>Displays summary information about the cache. For layered caches, <code>-Xshareclasses:printStats</code> shows some information for the top layer cache, and summary information (bytes and counts only) for all layers combined. To see information for the top layer cache only, use <a href="#printtoplayerstats"><code>printTopLayerStats</code></a>.</p>
 <p>You can request more detail about items of a specific data type that are stored in the shared cache by using <code>printStats=&lt;data_type&gt;</code>. Use the plus symbol (+) to separate the data types. For example, use <code>printStats=romclass+url,name=myCache</code> to see information about <code>ROMClass</code> and <code>URL</code> items in all the layer caches of the cache called <code>Cache1</code>. The valid data types are as follows (case insensitive):</p>
 <ul>
@@ -4589,7 +4583,6 @@ Cache is 24% full
 
 Cache is accessible to current user = true
 </code></pre>
-
 <p>Example output for a cache with 2 layers (<code>cache layer = 1</code>), with summary information only:</p>
 <pre><code>Current statistics for top layer of cache &quot;Cache1&quot;:
 
@@ -4640,7 +4633,6 @@ Data bytes                           = 114080
 # Stale classes                      = 0
 % Stale classes                      = 0%
 </code></pre>
-
 <p>The <code>Cache created with</code> section indicates the options that were used when the cache was created. <code>BCI Enabled</code> relates to the <a href="../xshareclasses/#enablebci"><code>-Xshareclasses:enableBCI</code></a> option (enabled by default) and <code>Restrict Classpaths</code> relates to the <a href="../xshareclasses/#restrictclasspaths"><code>-Xshareclasses:restrictClasspaths</code></a> option. <code>Feature = cr</code> indicates that the cache is a 64-bit compressed references cache.</p>
 <p>Line number information for classes in the cache is then shown with one of the following messages:</p>
 <ul>
@@ -4712,7 +4704,7 @@ Data bytes                           = 114080
 </ul>
 </li>
 <li><code>Metadata bytes</code><ul>
-<li>The number of bytes of data stored to describe the cached classes. <span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> This field is available only in the top layer cache output or when a cache is not layered.</li>
+<li>The number of bytes of data stored to describe the cached classes. <span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> This field is available only in the top layer cache output or when a cache is not layered.</li>
 </ul>
 </li>
 <li><code>Metadata % used</code><ul>
@@ -4784,7 +4776,6 @@ Data bytes                           = 114080
 <pre><code>-Xshareclasses:printAllStats
 -Xshareclasses:printAllStats,name=&lt;cache_name&gt;
 </code></pre>
-
 <p>Displays the contents of the cache in chronological order. You can use this output to see the history of updates that were made to the cache. For layered caches, some information is shown for the top layer cache only, and some is shown for all layers combined. To see information for the top layer cache only, use <a href="#printtoplayerstats"><code>printTopLayerStats=all</code></a>.</p>
 <p>Each entry in the output starts with a VM ID, so you can see which VM wrote the associated data. Here are example entries for various types of cache data, with explanations:</p>
 <h4 id="class-paths">Class paths</h4>
@@ -4912,7 +4903,6 @@ Cache is 8% full
 
 Cache is accessible to current user = true
 </code></pre>
-
 <h2 id="using-the-trace-facility">Using the trace facility</h2>
 <p>Trace output contains very detailed information that might be used by a VM developer to diagnose complex problems with class data sharing. Trace is configured by using the <a href="../xtrace/"><code>-Xtrace</code></a> option and the binary output of the trace facility must be processed by the <a href="../tool_traceformat/">Trace formatter</a> into a human-readable format.</p>
 <p>The trace component for class data sharing is <code>j9shr</code>. Five levels of trace are available, starting from basic initialization and runtime information in level 1 up to the most detailed trace output in level 5.</p>
@@ -4929,6 +4919,7 @@ Cache is accessible to current user = true
             </article>
           </div>
         </div>
+        
       </main>
       
         <!--
@@ -5025,7 +5016,7 @@ Cache is accessible to current user = true
       
       
       <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
       </a>
     
   </div>
@@ -5062,7 +5053,7 @@ Cache is accessible to current user = true
       
       
       <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
       </a>
     
   </div>
@@ -5077,10 +5068,10 @@ Cache is accessible to current user = true
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": 2.0}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": 2.0}</script>
     
     
-      <script src="../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="../javascripts/oj9.js"></script>
       
