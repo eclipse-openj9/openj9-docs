@@ -152,6 +152,7 @@ timeout(time: 6, unit: 'HOURS') {
                                 git clean -ffxd
                                 git status
                                 sed -i "s|site_dir: 'site'|use_directory_urls: false\\nsite_dir: 'site'|" mkdocs.yml
+                                sed -i "/- search/d" mkdocs.yml
                                 mkdocs build -v
                                 cd site
                                 zip -r ${ZIP_FILENAME} *
