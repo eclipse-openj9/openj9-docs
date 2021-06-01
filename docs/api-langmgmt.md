@@ -25,6 +25,6 @@
 # Monitoring and management API documentation
 
 <div id="api" data-role="content">
-	<iframe src="../api/jdk8/jre/management/extension/index.html?view=embed" title="API viewer" name="apiframe" allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="min-height:80vh; width: 100%;">
+	<iframe src="{% if config.use_directory_urls %}../{% endif %}api/jdk8/jre/management/extension/index.html?view=embed" title="API viewer" name="apiframe" allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="min-height:80vh; width: 100%;">
 	</iframe>
 </div>

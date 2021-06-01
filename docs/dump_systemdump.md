@@ -26,15 +26,22 @@
 
 System dumps, often known as *core dumps*, are platform-specific and contain a raw binary dump of the process memory. This type of dump has a complete copy of the Java heap, including the contents of all Java objects in the application.
 
-To examine a system dump you can use the [OpenJ9 dump viewer](tool_jdmpview.md) (`jdmpview`), a platform-specific debugging tool, or the [Eclipse Memory Analyzer tool (MAT)](https://www.eclipse.org/mat/).
+## Obtaining system dumps
 
-If you want to use MAT to analyze your system dump, you must install the  Diagnostic Tool Framework for Java (DTFJ) plugin in the Eclipse IDE. Select the following menu items:
+System dumps are produced in response to specific events. To discover which events generate a dump, run the `-Xdump:what` command. The following output captures the information shown for a system dump:
 
 ```
-Help > Install New Software > Work with "IBM Diagnostic Tool Framework for Java" > IBM Monitoring and Diagnostic Tools > Diagnostic Tool Framework for Java   
+-Xdump:system:
+    events=gpf+abort+traceassert+corruptcache,
+    label=/home/user/core.%Y%m%d.%H%M%S.%pid.%seq.dmp,
+    range=1..0,
+    priority=999,
+    request=serial
 ```
 
-## Enabling a full system dump (AIX, Linux, and macOS)
+This output shows that events such as a general protection fault (gpf) or native `abort()` call can trigger a system dump. For more information about controlling the behavior of dump agents, see [Dump agents](xdump.md#dump-agents).
+
+### Enabling a full system dump (AIX, Linux, and macOS)
 
 If you require a system dump that contains details of all the native threads that are running, you must change the resource limits for your operating system. Otherwise, the native thread details that are stored in the dump are only for the native thread that was running when the VM ended.
 
@@ -59,5 +66,15 @@ If you require a system dump that contains details of all the native threads tha
   ```
   chdev -l sys0 -a fullcore='true' -a pre430core='false'
   ```
+
+## Analyzing a system dump
+
+To examine a system dump you can use the [OpenJ9 dump viewer](tool_jdmpview.md) (`jdmpview`), a platform-specific debugging tool, or the [Eclipse Memory Analyzer tool (MAT)](https://www.eclipse.org/mat/).
+
+If you want to use MAT to analyze your system dump, you must install the  Diagnostic Tool Framework for Java (DTFJ) plugin in the Eclipse IDE. Select the following menu items:
+
+```
+Help > Install New Software > Work with "IBM Diagnostic Tool Framework for Java" > IBM Monitoring and Diagnostic Tools > Diagnostic Tool Framework for Java   
+```
 
 <!-- ==== END OF TOPIC ==== dump_systemdump.md ==== -->

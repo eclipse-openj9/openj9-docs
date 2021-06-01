@@ -25,6 +25,6 @@
 # OpenJ9 JDK 11 API documentation
 
 <div id="api" data-role="content">
-	<iframe src="../api/jdk11/index.html?view=embed" title="API viewer" name="classFrame" allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="min-height:80vh; width: 100%;">
+	<iframe src="{% if config.use_directory_urls %}../{% endif %}api/jdk11/index.html?view=embed" title="API viewer" name="classFrame" allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="min-height:80vh; width: 100%;">
 	</iframe>
 </div>
