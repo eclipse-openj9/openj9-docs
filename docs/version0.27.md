@@ -35,7 +35,11 @@ The following new features and notable changes since v 0.26.0 are included in th
 
 ### New `-XX:[+|-]AdaptiveGCThreading` option added
 
-To optimize performance, you can now enable adaptive threading to automatically tune the number of active parallel garbage collection (GC) threads. When enabled, the GC thread count is dynamically adjusted from collection cycle to cycle to account for changes in the workload and consider the available resources. When parallel workloads decrease, less threads can be used, reducing the overhead and freeing up resources for other processing activities.
+Adaptive threading is enabled by default, which automatically tunes the number of active parallel garbage collection (GC) threads.
+When this feature is enabled, the GC thread count is dynamically adjusted from collection cycle to cycle to account for changes in the the amount
+of time that parallel threads spend doing useful GC work (such as object graph traversal) compared to time spent synchronizing among themselves.
+When GC work decreases, fewer threads are used, which reduces the overhead, effectively reducing GC pause times.
+Resources are freed up for other processing activities.
 
 Use the [`-xgcmaxthreads`](xgcmaxthreads.md) option with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option to specify a thread count limit.
 
