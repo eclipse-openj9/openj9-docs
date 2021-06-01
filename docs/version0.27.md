@@ -28,6 +28,7 @@ The following new features and notable changes since v 0.26.0 are included in th
 
 - [New `-XX:[+|-]AdaptiveGCThreading` option added](#new-xx-adaptivegcthreading-option-added)
 - [Improved time zone information added to Java dump files](#improved-time-zone-information-added-to-java-dump-files)
+- [Change in default behavior for the `balanced` garbage collection policy](#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy)
 
 ## Features and changes
 
@@ -41,5 +42,13 @@ Use the [`-xgcmaxthreads`](xgcmaxthreads.md) option with the [`-XX:+AdaptiveGCTh
 ### Improved time zone information added to Java dump files
 
 To help with troubleshooting, additional time zone information is added to Java dump files. Two new fields are included, the date and time in UTC (`1TIDATETIMEUTC`) and the time zone according to the local system (`1TITIMEZONE`). For more information, see the [Java dump `TITLE` section](dump_javadump.md#title).
+
+### Change in default behavior for the `balanced` garbage collection (GC) policy
+
+In this release, a new scan mode, [`-Xgc:dynamicBreadthFirstScanOrdering`](xgc.md#dynamicbreadthfirstscanordering), is used during `balanced` GC copy forward operations that is expected to improve performance.
+
+For more information about this type of operation, see [GC copy forward operation](gc_overview.md#gc-copy-forward-operation).
+
+You can revert to the behavior in earlier releases by setting [`-Xgc:breadthFirstScanOrdering`](xgc.md#breadthfirstscanordering) when you start your application.
 
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
