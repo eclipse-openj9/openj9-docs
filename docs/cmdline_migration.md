@@ -104,6 +104,6 @@ You can set the following options to make OpenJ9 behave in the same way as HotSp
 
 ## Compatible environment variables
 
-The `JAVA_OPTIONS` and `JAVA_TOOL_OPTIONS` environment variables can be used to set command line options as described in [OpenJ9 command-line options](cmdline_specifying.md) and [Environment variables](env_var.md).
+The `JAVA_TOOL_OPTIONS` environment variable can be used to set command line options as described in [OpenJ9 command-line options](cmdline_specifying.md) and [Environment variables](env_var.md).
 
 <!-- ==== END OF TOPIC ==== cmdline_migration.md ==== -->

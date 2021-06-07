@@ -29,6 +29,7 @@ The following new features and notable changes since v 0.26.0 are included in th
 - [New `-XX:[+|-]AdaptiveGCThreading` option added](#new-xx-adaptivegcthreading-option-added)
 - [Improved time zone information added to Java dump files](#improved-time-zone-information-added-to-java-dump-files)
 - [Change in default behavior for the `balanced` garbage collection policy](#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy)
+- [Stop parsing the JAVA_OPTIONS environment variable](#stop-parsing-the-java_options-environment-variable)
 
 ## Features and changes
 
@@ -54,5 +55,10 @@ In this release, a new scan mode, [`-Xgc:dynamicBreadthFirstScanOrdering`](xgc.m
 For more information about this type of operation, see [GC copy forward operation](gc_overview.md#gc-copy-forward-operation).
 
 You can revert to the behavior in earlier releases by setting [`-Xgc:breadthFirstScanOrdering`](xgc.md#breadthfirstscanordering) when you start your application.
+
+### Stop parsing the JAVA_OPTIONS environment variable
+
+The 0.24 release started parsing the JAVA_OPTIONS environment variable. This variable was added in error and has been removed.
+The [_JAVA_OPTIONS environment variable](cmdline_specifying.md) ([with different behavior](env_var.md#general-options)) is added for compatibility. 
 
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
