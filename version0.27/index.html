@@ -352,6 +352,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy" class="md-nav__link">
+    Change in default behavior for the balanced garbage collection (GC) policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-parsing-the-java_options-environment-variable" class="md-nav__link">
+    Stop parsing the JAVA_OPTIONS environment variable
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4135,6 +4149,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy" class="md-nav__link">
+    Change in default behavior for the balanced garbage collection (GC) policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-parsing-the-java_options-environment-variable" class="md-nav__link">
+    Stop parsing the JAVA_OPTIONS environment variable
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4182,13 +4210,26 @@
 <ul>
 <li><a href="#new-xx-adaptivegcthreading-option-added">New <code>-XX:[+|-]AdaptiveGCThreading</code> option added</a></li>
 <li><a href="#improved-time-zone-information-added-to-java-dump-files">Improved time zone information added to Java dump files</a></li>
+<li><a href="#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy">Change in default behavior for the <code>balanced</code> garbage collection policy</a></li>
+<li><a href="#stop-parsing-the-java_options-environment-variable">Stop parsing the JAVA_OPTIONS environment variable</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="new-xx-adaptivegcthreading-option-added">New <code>-XX:[+|-]AdaptiveGCThreading</code> option added</h3>
-<p>To optimize performance, you can now enable adaptive threading to automatically tune the number of active parallel garbage collection (GC) threads. When enabled, the GC thread count is dynamically adjusted from collection cycle to cycle to account for changes in the workload and consider the available resources. When parallel workloads decrease, less threads can be used, reducing the overhead and freeing up resources for other processing activities.</p>
+<p>Adaptive threading is enabled by default, which automatically tunes the number of active parallel garbage collection (GC) threads.
+When this feature is enabled, the GC thread count is dynamically adjusted from collection cycle to cycle to account for changes in the the amount
+of time that parallel threads spend doing useful GC work (such as object graph traversal) compared to time spent synchronizing among themselves.
+When GC work decreases, fewer threads are used, which reduces the overhead, effectively reducing GC pause times.
+Resources are freed up for other processing activities.</p>
 <p>Use the <a href="../xgcmaxthreads/"><code>-xgcmaxthreads</code></a> option with the <a href="../xxadaptivegcthreading/"><code>-XX:+AdaptiveGCThreading</code></a> option to specify a thread count limit.</p>
 <h3 id="improved-time-zone-information-added-to-java-dump-files">Improved time zone information added to Java dump files</h3>
 <p>To help with troubleshooting, additional time zone information is added to Java dump files. Two new fields are included, the date and time in UTC (<code>1TIDATETIMEUTC</code>) and the time zone according to the local system (<code>1TITIMEZONE</code>). For more information, see the <a href="../dump_javadump/#title">Java dump <code>TITLE</code> section</a>.</p>
+<h3 id="change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy">Change in default behavior for the <code>balanced</code> garbage collection (GC) policy</h3>
+<p>In this release, a new scan mode, <a href="../xgc/#dynamicbreadthfirstscanordering"><code>-Xgc:dynamicBreadthFirstScanOrdering</code></a>, is used during <code>balanced</code> GC copy forward operations that is expected to improve performance.</p>
+<p>For more information about this type of operation, see <a href="../gc_overview/#gc-copy-forward-operation">GC copy forward operation</a>.</p>
+<p>You can revert to the behavior in earlier releases by setting <a href="../xgc/#breadthfirstscanordering"><code>-Xgc:breadthFirstScanOrdering</code></a> when you start your application.</p>
+<h3 id="stop-parsing-the-java_options-environment-variable">Stop parsing the JAVA_OPTIONS environment variable</h3>
+<p>The 0.24 release started parsing the JAVA_OPTIONS environment variable. This variable was added in error and has been removed.
+The <a href="../cmdline_specifying/">_JAVA_OPTIONS environment variable</a> (<a href="../env_var/#general-options">with different behavior</a>) is added for compatibility. </p>
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
                 
               

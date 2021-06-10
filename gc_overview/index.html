@@ -4405,7 +4405,7 @@ whole of the Java heap, the cycle is referred to as a <em>global GC cycle</em>; 
 </li>
 <li>
 <p>Main</p>
-<p>The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap<!-- by using *dynamic breadth first scan ordering* mode (<a href="xgc.md#dynamicbreadthfirstscanordering">klzzwxh:0062</a>)-->. If new objects are found, they are added to the work stack. If an object is reachable, it is moved to another region of the same age or to an empty region of the same age in the heap. The age of all regions in the heap is then incremented by 1, except for the oldest region (age 24).</p>
+<p>The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap by using <em>dynamic breadth first scan ordering</em> mode (<a href="../xgc/#dynamicbreadthfirstscanordering"><code>-Xgc:dynamicBreadthFirstScanOrdering</code></a>). If new objects are found, they are added to the work stack. If an object is reachable, it is moved to another region of the same age or to an empty region of the same age in the heap. The age of all regions in the heap is then incremented by 1, except for the oldest region (age 24).</p>
 </li>
 <li>
 <p>Final</p>

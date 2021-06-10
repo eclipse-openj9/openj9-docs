@@ -2064,6 +2064,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dynamicbreadthfirstscanordering" class="md-nav__link">
+    dynamicBreadthFirstScanOrdering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#excessivegcratio" class="md-nav__link">
     excessiveGCratio
   </a>
@@ -4341,6 +4348,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dynamicbreadthfirstscanordering" class="md-nav__link">
+    dynamicBreadthFirstScanOrdering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#excessivegcratio" class="md-nav__link">
     excessiveGCratio
   </a>
@@ -4554,6 +4568,10 @@
 <td>Sets the minimum time to spend on GC of the nursery area.</td>
 </tr>
 <tr>
+<td><a href="#dynamicbreadthfirstscanordering"><code>dynamicBreadthFirstScanOrdering</code>  </a></td>
+<td>Sets scan mode to dynamic breadth first.</td>
+</tr>
+<tr>
 <td><a href="#excessivegcratio"><code>excessiveGCratio</code>                 </a></td>
 <td>Sets a boundary value beyond which GC is deemed to be excessive.</td>
 </tr>
@@ -4635,7 +4653,7 @@
 <pre><code>     -Xgc:breadthFirstScanOrdering
 </code></pre>
 <dl>
-<dd>This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (<code>gencon</code>) and copy forward operations (<code>balanced</code>)) to breadth first mode. The scan mode reflects the method for traversing the object graph and is also known as <em>Cheney's algorithm</em>. This mode is the default for the <code>balanced</code> GC policy.</dd>
+<dd>This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (<code>gencon</code>) and copy forward operations (<code>balanced</code>)) to breadth first mode. The scan mode reflects the method for traversing the object graph and is also known as <em>Cheney's algorithm</em>.</dd>
 </dl>
 <h3 id="classunloadingkickoffthreshold"><code>classUnloadingKickoffThreshold</code></h3>
 <pre><code>     -Xgc:classUnloadingKickoffThreshold=&lt;value&gt;
@@ -4739,12 +4757,12 @@
 <p>This option applies only to the <code>gencon</code> GC policy.</p>
 </dd>
 </dl>
-<!--### `dynamicBreadthFirstScanOrdering`
-
-         -Xgc:dynamicBreadthFirstScanOrdering
-
-: This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (`gencon`) and copy forward operations (`balanced`)) to dynamic breadth first mode. This scan mode reflects the method for traversing the object graph and is a variant that adds *partial depth first traversal* on top of the breadth first scan mode. The aim of dynamic breadth first mode is driven by object field hotness. This mode is the default for the `balanced` GC policy.-->
-
+<h3 id="dynamicbreadthfirstscanordering"><code>dynamicBreadthFirstScanOrdering</code></h3>
+<pre><code>     -Xgc:dynamicBreadthFirstScanOrdering
+</code></pre>
+<dl>
+<dd>This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (<code>gencon</code>) and copy forward operations (<code>balanced</code>)) to dynamic breadth first mode. This scan mode reflects the method for traversing the object graph and is a variant that adds <em>partial depth first traversal</em> on top of the breadth first scan mode. The aim of dynamic breadth first mode is driven by object field hotness. This mode is the default for the <code>balanced</code> GC policy.</dd>
+</dl>
 <h3 id="excessivegcratio"><code>excessiveGCratio</code></h3>
 <pre><code>    -Xgc:excessiveGCratio=&lt;value&gt;
 </code></pre>
