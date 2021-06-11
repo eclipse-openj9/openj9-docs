@@ -59,6 +59,6 @@ You can revert to the behavior in earlier releases by setting [`-Xgc:breadthFirs
 ### Stop parsing the JAVA_OPTIONS environment variable
 
 The 0.24 release started parsing the JAVA_OPTIONS environment variable. This variable was added in error and has been removed.
-The [_JAVA_OPTIONS environment variable](cmdline_specifying.md) ([with different behavior](env_var.md#general-options)) is added for compatibility. 
+The [_JAVA_OPTIONS environment variable](cmdline_specifying.md) (with different behavior) is added for compatibility. 
 
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
