@@ -47,6 +47,14 @@ DTFJ is implemented in pure Java and tools written using DTFJ can be cross-platf
 
 See the [DTFJ API documentation](api-dtfj.md). <!-- Link to API -->
 
+Note: If the code that loads DTFJ is in a module, the module must require the `openj9.dtfj` module. For example:
+
+```
+module MyModule {
+  requires openj9.dtfj;
+}
+```
+
 ## Using the DTFJ interface
 
 To create applications that use DTFJ, you must use the DTFJ interface. Implementations of this interface have been written that work with system dumps and Java dumps.
