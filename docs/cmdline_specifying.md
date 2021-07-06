@@ -86,11 +86,11 @@ At startup, the list of VM arguments is constructed in the following order, with
 
             export IBM_NOSIGHANDLER=<non_null_string>
 
-4.  The `JAVA_OPTIONS` and `OPENJ9_JAVA_OPTIONS` environment variables. You can set command-line options using these environment variables. `JAVA_OPTIONS` is processed first and can be overridden by `OPENJ9_JAVA_OPTIONS`. The options that you specify with these environment variables are added to the command line when a VM starts in that environment. The environment variables can contain multiple blank-delimited argument strings, but must not contain comments. For example:
+4.  The `OPENJ9_JAVA_OPTIONS` environment variable. You can set command-line options using this environment variable. The options that you specify with this environment variable are added to the command line when a VM starts in that environment. The environment variable can contain multiple blank-delimited argument strings, but must not contain comments. For example:
 
     - On Windows systems:
 
-            set OPENJ9_JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
+            set OPENJ9_JAVA_OPTIONS=-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump
 
     - On AIX, Linux, macOS, and z/OS systems:
 
@@ -116,6 +116,16 @@ Here is an extract from a Java core file that shows the options that are used:
         2CIUSERARG               -Dtest.cmdlineOption=1
         2CIUSERARG               -XXallowvmshutdown:true
         2CIUSERARG               -Xoptionsfile=test1.test_options_file
+
+6.  The `_JAVA_OPTIONS` environment variable. You can override previous options using this environment variable. The options that you specify with this environment variable are added to the end of the command line when a VM starts in that environment. The environment variable can contain multiple blank-delimited argument strings, but must not contain comments. For example:
+
+    - On Windows systems:
+
+            set _JAVA_OPTIONS=-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump
+
+    - On AIX, Linux, macOS, and z/OS systems:
+
+            export _JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
 
 
 <!-- ==== END OF TOPIC ==== cmdline_specifying.md ==== -->

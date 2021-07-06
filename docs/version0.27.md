@@ -28,18 +28,37 @@ The following new features and notable changes since v 0.26.0 are included in th
 
 - [New `-XX:[+|-]AdaptiveGCThreading` option added](#new-xx-adaptivegcthreading-option-added)
 - [Improved time zone information added to Java dump files](#improved-time-zone-information-added-to-java-dump-files)
+- [Change in default behavior for the `balanced` garbage collection policy](#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy)
+- [Stop parsing the JAVA_OPTIONS environment variable](#stop-parsing-the-java_options-environment-variable)
 
 ## Features and changes
 
 
 ### New `-XX:[+|-]AdaptiveGCThreading` option added
 
-To optimize performance, you can now enable adaptive threading to automatically tune the number of active parallel garbage collection (GC) threads. When enabled, the GC thread count is dynamically adjusted from collection cycle to cycle to account for changes in the workload and consider the available resources. When parallel workloads decrease, less threads can be used, reducing the overhead and freeing up resources for other processing activities.
+Adaptive threading is enabled by default, which automatically tunes the number of active parallel garbage collection (GC) threads.
+When this feature is enabled, the GC thread count is dynamically adjusted from collection cycle to cycle to account for changes in the the amount
+of time that parallel threads spend doing useful GC work (such as object graph traversal) compared to time spent synchronizing among themselves.
+When GC work decreases, fewer threads are used, which reduces the overhead, effectively reducing GC pause times.
+Resources are freed up for other processing activities.
 
 Use the [`-xgcmaxthreads`](xgcmaxthreads.md) option with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option to specify a thread count limit.
 
 ### Improved time zone information added to Java dump files
 
 To help with troubleshooting, additional time zone information is added to Java dump files. Two new fields are included, the date and time in UTC (`1TIDATETIMEUTC`) and the time zone according to the local system (`1TITIMEZONE`). For more information, see the [Java dump `TITLE` section](dump_javadump.md#title).
+
+### Change in default behavior for the `balanced` garbage collection (GC) policy
+
+In this release, a new scan mode, [`-Xgc:dynamicBreadthFirstScanOrdering`](xgc.md#dynamicbreadthfirstscanordering), is used during `balanced` GC copy forward operations that is expected to improve performance.
+
+For more information about this type of operation, see [GC copy forward operation](gc_overview.md#gc-copy-forward-operation).
+
+You can revert to the behavior in earlier releases by setting [`-Xgc:breadthFirstScanOrdering`](xgc.md#breadthfirstscanordering) when you start your application.
+
+### Stop parsing the JAVA_OPTIONS environment variable
+
+The 0.24 release started parsing the JAVA_OPTIONS environment variable. This variable was added in error and has been removed.
+The [_JAVA_OPTIONS environment variable](cmdline_specifying.md) (with different behavior) is added for compatibility. 
 
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
