@@ -4237,7 +4237,7 @@
 
 <h1 id="-xx-globallockreservation">-XX:[+|-]GlobalLockReservation</h1>
 <p><strong>(AIX and Linux on Power systems only)</strong></p>
-<p>The <code>-XX:+GlobalLockReservation</code> option enables an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects.</p>
+<p>The <code>-XX:+GlobalLockReservation</code> option enables an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. The <code>-XX:-GlobalLockReservation</code> option is used to disable this optimization. The optimization is enabled by default.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]GlobalLockReservation
     -XX:+GlobalLockReservation:&lt;parameter&gt;
@@ -4254,17 +4254,18 @@
 <tr>
 <td><code>-XX:+GlobalLockReservation</code></td>
 <td>Enable</td>
-<td align="center"></td>
+<td align="center"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
 </tr>
 <tr>
 <td><code>-XX:-GlobalLockReservation</code></td>
 <td>Disable</td>
-<td align="center"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
 <p>This optimization is targeted towards applications with lots of uncontended locked objects that are being locked just to be safe. When enabled, heuristics are used to try and determine when an object will be exclusively locked by a single thread so that faster, more specialized code can be used for locking the object. If the heuristics incorrectly identify an object as a target for the optimization, performance might be adversely affected.</p>
-<p>The <code>-XX:-GlobalLockReservation</code> option turns off a previously enabled <code>-XX:+GlobalLockReservation</code> option.</p>
+<p>The <code>-XX:-GlobalLockReservation</code> option turns off global lock reservation.</p>
+<p>The <code>-XX:+GlobalLockReservation</code> option can be used to enable global lock reservation if it was disabled by an option that occurs earlier in command line processing or to modify some of the global lock reservation related suboptions that are described later in this document.</p>
 <h2 id="parameters">Parameters</h2>
 <p>Advanced tuning parameters are shown in the following table:</p>
 <table>

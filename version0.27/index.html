@@ -366,6 +366,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#global-lock-reservation-enabled-by-default" class="md-nav__link">
+    Global lock reservation enabled by default
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4163,6 +4170,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#global-lock-reservation-enabled-by-default" class="md-nav__link">
+    Global lock reservation enabled by default
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4212,6 +4226,7 @@
 <li><a href="#improved-time-zone-information-added-to-java-dump-files">Improved time zone information added to Java dump files</a></li>
 <li><a href="#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy">Change in default behavior for the <code>balanced</code> garbage collection policy</a></li>
 <li><a href="#stop-parsing-the-java_options-environment-variable">Stop parsing the JAVA_OPTIONS environment variable</a></li>
+<li><a href="#global-lock-reservation-enabled-by-default">Global lock reservation enabled by default</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="new-xx-adaptivegcthreading-option-added">New <code>-XX:[+|-]AdaptiveGCThreading</code> option added</h3>
@@ -4230,6 +4245,9 @@ Resources are freed up for other processing activities.</p>
 <h3 id="stop-parsing-the-java_options-environment-variable">Stop parsing the JAVA_OPTIONS environment variable</h3>
 <p>The 0.24 release started parsing the JAVA_OPTIONS environment variable. This variable was added in error and has been removed.
 The <a href="../cmdline_specifying/">_JAVA_OPTIONS environment variable</a> (with different behavior) is added for compatibility. </p>
+<h3 id="global-lock-reservation-enabled-by-default">Global lock reservation enabled by default</h3>
+<p><strong>(AIX and Linux on Power systems only)</strong></p>
+<p>Global lock reservation is now enabled by default. This is an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. The older locking behavior can be restored via the <code>-XX:-GlobalLockReservation</code> option. See <a href="../xxgloballockreservation/">-XX:[+|-]GlobalLockReservation</a> for more details.</p>
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
                 
               
