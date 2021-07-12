@@ -47,7 +47,7 @@ DTFJ is implemented in pure Java and tools written using DTFJ can be cross-platf
 
 See the [DTFJ API documentation](api-dtfj.md). <!-- Link to API -->
 
-Note: If the code that loads DTFJ is in a module, the module must require the `openj9.dtfj` module. For example:
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If the code that loads DTFJ is in a module, the module must require the `openj9.dtfj` module. For example:
 
 ```
 module MyModule {
