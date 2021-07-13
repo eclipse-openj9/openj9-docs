@@ -26,21 +26,23 @@
 
 **(AIX and Linux on Power systems only)**
 
-The `-XX:+GlobalLockReservation` option enables an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects.
+The `-XX:+GlobalLockReservation` option enables an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. The `-XX:-GlobalLockReservation` option is used to disable this optimization. The optimization is enabled by default.
 
 ## Syntax
 
         -XX:[+|-]GlobalLockReservation
         -XX:+GlobalLockReservation:<parameter>
 
-| Setting                    | Effect | Default                                                                        |
-|----------------------------|--------|:------------------------------------------------------------------------------:|
-|`-XX:+GlobalLockReservation`| Enable |                                                                                |
-|`-XX:-GlobalLockReservation`| Disable| :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Setting                    | Effect | Default                                                                              |
+|----------------------------|--------|:------------------------------------------------------------------------------------:|
+|`-XX:+GlobalLockReservation`| Enable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+|`-XX:-GlobalLockReservation`| Disable|                                                                                      |
 
 This optimization is targeted towards applications with lots of uncontended locked objects that are being locked just to be safe. When enabled, heuristics are used to try and determine when an object will be exclusively locked by a single thread so that faster, more specialized code can be used for locking the object. If the heuristics incorrectly identify an object as a target for the optimization, performance might be adversely affected.
 
-The `-XX:-GlobalLockReservation` option turns off a previously enabled `-XX:+GlobalLockReservation` option.
+The `-XX:-GlobalLockReservation` option turns off global lock reservation.
+
+The `-XX:+GlobalLockReservation` option can be used to enable global lock reservation if it was disabled by an option that occurs earlier in command line processing or to modify some of the global lock reservation related suboptions that are described later in this document.
 
 ## Parameters
 

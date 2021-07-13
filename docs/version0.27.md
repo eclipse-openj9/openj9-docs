@@ -30,6 +30,7 @@ The following new features and notable changes since v 0.26.0 are included in th
 - [Improved time zone information added to Java dump files](#improved-time-zone-information-added-to-java-dump-files)
 - [Change in default behavior for the `balanced` garbage collection policy](#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy)
 - [Stop parsing the JAVA_OPTIONS environment variable](#stop-parsing-the-java_options-environment-variable)
+- [Global lock reservation enabled by default](#global-lock-reservation-enabled-by-default)
 
 ## Features and changes
 
@@ -60,5 +61,11 @@ You can revert to the behavior in earlier releases by setting [`-Xgc:breadthFirs
 
 The 0.24 release started parsing the JAVA_OPTIONS environment variable. This variable was added in error and has been removed.
 The [_JAVA_OPTIONS environment variable](cmdline_specifying.md) (with different behavior) is added for compatibility. 
+
+### Global lock reservation enabled by default
+
+**(AIX and Linux on Power systems only)**
+
+Global lock reservation is now enabled by default. This is an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. The older locking behavior can be restored via the `-XX:-GlobalLockReservation` option. See [-XX:[+|-]GlobalLockReservation](xxgloballockreservation.md) for more details.
 
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
