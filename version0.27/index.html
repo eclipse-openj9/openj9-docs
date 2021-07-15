@@ -373,6 +373,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#increase-in-default-operating-system-stack-size-on-ppc64-platforms" class="md-nav__link">
+    Increase in default operating system stack size on PPC64 platforms
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4177,6 +4184,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#increase-in-default-operating-system-stack-size-on-ppc64-platforms" class="md-nav__link">
+    Increase in default operating system stack size on PPC64 platforms
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4227,6 +4241,7 @@
 <li><a href="#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy">Change in default behavior for the <code>balanced</code> garbage collection policy</a></li>
 <li><a href="#stop-parsing-the-java_options-environment-variable">Stop parsing the JAVA_OPTIONS environment variable</a></li>
 <li><a href="#global-lock-reservation-enabled-by-default">Global lock reservation enabled by default</a></li>
+<li><a href="#increase-in-default-operating-system-stack-size-on-ppc64-platforms">Increase in default operating system stack size on PPC64 platforms</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="new-xx-adaptivegcthreading-option-added">New <code>-XX:[+|-]AdaptiveGCThreading</code> option added</h3>
@@ -4248,6 +4263,8 @@ The <a href="../cmdline_specifying/">_JAVA_OPTIONS environment variable</a> (wit
 <h3 id="global-lock-reservation-enabled-by-default">Global lock reservation enabled by default</h3>
 <p><strong>(AIX and Linux on Power systems only)</strong></p>
 <p>Global lock reservation is now enabled by default. This is an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. The older locking behavior can be restored via the <code>-XX:-GlobalLockReservation</code> option. See <a href="../xxgloballockreservation/">-XX:[+|-]GlobalLockReservation</a> for more details.</p>
+<h3 id="increase-in-default-operating-system-stack-size-on-ppc64-platforms">Increase in default operating system stack size on PPC64 platforms</h3>
+<p>The default operating system stack size on AIX and Linux PPC64 is increased from 256KB to 512KB. You can change the operating system stack size by using the <a href="../xmso/">-Xmso</a> option.</p>
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
                 
               
