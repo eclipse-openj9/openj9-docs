@@ -31,6 +31,7 @@ The following new features and notable changes since v 0.26.0 are included in th
 - [Change in default behavior for the `balanced` garbage collection policy](#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy)
 - [Stop parsing the JAVA_OPTIONS environment variable](#stop-parsing-the-java_options-environment-variable)
 - [Global lock reservation enabled by default](#global-lock-reservation-enabled-by-default)
+- [Increase in default operating system stack size on PPC64 platforms](#increase-in-default-operating-system-stack-size-on-ppc64-platforms)
 
 ## Features and changes
 
@@ -67,5 +68,9 @@ The [_JAVA_OPTIONS environment variable](cmdline_specifying.md) (with different 
 **(AIX and Linux on Power systems only)**
 
 Global lock reservation is now enabled by default. This is an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. The older locking behavior can be restored via the `-XX:-GlobalLockReservation` option. See [-XX:[+|-]GlobalLockReservation](xxgloballockreservation.md) for more details.
+
+### Increase in default operating system stack size on PPC64 platforms
+
+The default operating system stack size on AIX and Linux PPC64 is increased from 256KB to 512KB. You can change the operating system stack size by using the [-Xmso](xmso.md) option.
 
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
