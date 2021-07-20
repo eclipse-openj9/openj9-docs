@@ -348,6 +348,7 @@ nav:
             - "-XX:DiagnoseSyncOnValueBasedClasses"                              : xxdiagnosesynconvaluebasedclasses.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
+            - "-XX:[+|-]Enable3164Interoperability"                              : xxenable3164interoperability.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
             - "-XX:[+|-]ExitOnOutOfMemoryError"                                  : xxexitonoutofmemoryerror.md
             - "-XX:[+|-]GlobalLockReservation"                                   : xxgloballockreservation.md
