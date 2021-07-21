@@ -339,6 +339,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    Binaries and supported environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-xx-adaptivegcthreading-option-added" class="md-nav__link">
     New -XX:[+|-]AdaptiveGCThreading option added
   </a>
@@ -382,6 +389,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-release-information" class="md-nav__link">
+    Full release information
+  </a>
   
 </li>
       
@@ -4162,6 +4176,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    Binaries and supported environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-xx-adaptivegcthreading-option-added" class="md-nav__link">
     New -XX:[+|-]AdaptiveGCThreading option added
   </a>
@@ -4208,6 +4229,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#full-release-information" class="md-nav__link">
+    Full release information
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4248,6 +4276,7 @@
 <h1 id="whats-new-in-version-0270">What's new in version 0.27.0</h1>
 <p>The following new features and notable changes since v 0.26.0 are included in this release:</p>
 <ul>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#new-xx-adaptivegcthreading-option-added">New <code>-XX:[+|-]AdaptiveGCThreading</code> option added</a></li>
 <li><a href="#improved-time-zone-information-added-to-java-dump-files">Improved time zone information added to Java dump files</a></li>
 <li><a href="#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy">Change in default behavior for the <code>balanced</code> garbage collection policy</a></li>
@@ -4256,6 +4285,9 @@
 <li><a href="#increase-in-default-operating-system-stack-size-on-ppc64-platforms">Increase in default operating system stack size on PPC64 platforms</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>OpenJ9 release 0.27.0 supports OpenJDK 8, 11, and 16.</p>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="new-xx-adaptivegcthreading-option-added">New <code>-XX:[+|-]AdaptiveGCThreading</code> option added</h3>
 <p>Adaptive threading is enabled by default, which automatically tunes the number of active parallel garbage collection (GC) threads.
 When this feature is enabled, the GC thread count is dynamically adjusted from collection cycle to cycle to account for changes in the the amount
@@ -4264,19 +4296,21 @@ When GC work decreases, fewer threads are used, which reduces the overhead, effe
 Resources are freed up for other processing activities.</p>
 <p>Use the <a href="../xgcmaxthreads/"><code>-xgcmaxthreads</code></a> option with the <a href="../xxadaptivegcthreading/"><code>-XX:+AdaptiveGCThreading</code></a> option to specify a thread count limit.</p>
 <h3 id="improved-time-zone-information-added-to-java-dump-files">Improved time zone information added to Java dump files</h3>
-<p>To help with troubleshooting, additional time zone information is added to Java dump files. Two new fields are included, the date and time in UTC (<code>1TIDATETIMEUTC</code>) and the time zone according to the local system (<code>1TITIMEZONE</code>). For more information, see the <a href="../dump_javadump/#title">Java dump <code>TITLE</code> section</a>.</p>
+<p>To help with troubleshooting, additional time zone information is added to Java&trade; dump files. Two new fields are included, the date and time in UTC (<code>1TIDATETIMEUTC</code>) and the time zone according to the local system (<code>1TITIMEZONE</code>). For more information, see the <a href="../dump_javadump/#title">Java dump <code>TITLE</code> section</a>.</p>
 <h3 id="change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy">Change in default behavior for the <code>balanced</code> garbage collection (GC) policy</h3>
 <p>In this release, a new scan mode, <a href="../xgc/#dynamicbreadthfirstscanordering"><code>-Xgc:dynamicBreadthFirstScanOrdering</code></a>, is used during <code>balanced</code> GC copy forward operations that is expected to improve performance.</p>
 <p>For more information about this type of operation, see <a href="../gc_overview/#gc-copy-forward-operation">GC copy forward operation</a>.</p>
 <p>You can revert to the behavior in earlier releases by setting <a href="../xgc/#breadthfirstscanordering"><code>-Xgc:breadthFirstScanOrdering</code></a> when you start your application.</p>
 <h3 id="stop-parsing-the-java_options-environment-variable">Stop parsing the JAVA_OPTIONS environment variable</h3>
 <p>The 0.24 release started parsing the JAVA_OPTIONS environment variable. This variable was added in error and has been removed.
-The <a href="../cmdline_specifying/">_JAVA_OPTIONS environment variable</a> (with different behavior) is added for compatibility. </p>
+The <a href="../cmdline_specifying/">_JAVA_OPTIONS environment variable</a> (with different behavior) is added for compatibility.</p>
 <h3 id="global-lock-reservation-enabled-by-default">Global lock reservation enabled by default</h3>
-<p><strong>(AIX and Linux on Power systems only)</strong></p>
-<p>Global lock reservation is now enabled by default. This is an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. The older locking behavior can be restored via the <code>-XX:-GlobalLockReservation</code> option. See <a href="../xxgloballockreservation/">-XX:[+|-]GlobalLockReservation</a> for more details.</p>
+<p><strong>(AIX&reg; and Linux on Power Systems&trade; only)</strong></p>
+<p>Global lock reservation is now enabled by default. This is an optimization targeted towards more efficient handling of locking and unlocking Java objects. The older locking behavior can be restored via the <code>-XX:-GlobalLockReservation</code> option. See <a href="../xxgloballockreservation/">-XX:[+|-]GlobalLockReservation</a> for more details.</p>
 <h3 id="increase-in-default-operating-system-stack-size-on-ppc64-platforms">Increase in default operating system stack size on PPC64 platforms</h3>
 <p>The default operating system stack size on AIX and Linux PPC64 is increased from 256KB to 512KB. You can change the operating system stack size by using the <a href="../xmso/">-Xmso</a> option.</p>
+<h2 id="full-release-information">Full release information</h2>
+<p>To see a complete list of changes between Eclipse OpenJ9 v0.26.0 and v0.27.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.27/0.27.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
                 
               
