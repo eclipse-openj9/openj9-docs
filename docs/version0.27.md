@@ -26,6 +26,7 @@
 
 The following new features and notable changes since v 0.26.0 are included in this release:
 
+- [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:[+|-]AdaptiveGCThreading` option added](#new-xx-adaptivegcthreading-option-added)
 - [Improved time zone information added to Java dump files](#improved-time-zone-information-added-to-java-dump-files)
 - [Change in default behavior for the `balanced` garbage collection policy](#change-in-default-behavior-for-the-balanced-garbage-collection-gc-policy)
@@ -35,6 +36,11 @@ The following new features and notable changes since v 0.26.0 are included in th
 
 ## Features and changes
 
+### Binaries and supported environments
+
+OpenJ9 release 0.27.0 supports OpenJDK 8, 11, and 16.
+
+To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
 ### New `-XX:[+|-]AdaptiveGCThreading` option added
 
@@ -48,7 +54,7 @@ Use the [`-xgcmaxthreads`](xgcmaxthreads.md) option with the [`-XX:+AdaptiveGCTh
 
 ### Improved time zone information added to Java dump files
 
-To help with troubleshooting, additional time zone information is added to Java dump files. Two new fields are included, the date and time in UTC (`1TIDATETIMEUTC`) and the time zone according to the local system (`1TITIMEZONE`). For more information, see the [Java dump `TITLE` section](dump_javadump.md#title).
+To help with troubleshooting, additional time zone information is added to Java&trade; dump files. Two new fields are included, the date and time in UTC (`1TIDATETIMEUTC`) and the time zone according to the local system (`1TITIMEZONE`). For more information, see the [Java dump `TITLE` section](dump_javadump.md#title).
 
 ### Change in default behavior for the `balanced` garbage collection (GC) policy
 
@@ -61,16 +67,20 @@ You can revert to the behavior in earlier releases by setting [`-Xgc:breadthFirs
 ### Stop parsing the JAVA_OPTIONS environment variable
 
 The 0.24 release started parsing the JAVA_OPTIONS environment variable. This variable was added in error and has been removed.
-The [_JAVA_OPTIONS environment variable](cmdline_specifying.md) (with different behavior) is added for compatibility. 
+The [_JAVA_OPTIONS environment variable](cmdline_specifying.md) (with different behavior) is added for compatibility.
 
 ### Global lock reservation enabled by default
 
-**(AIX and Linux on Power systems only)**
+**(AIX&reg; and Linux on Power Systems&trade; only)**
 
-Global lock reservation is now enabled by default. This is an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. The older locking behavior can be restored via the `-XX:-GlobalLockReservation` option. See [-XX:[+|-]GlobalLockReservation](xxgloballockreservation.md) for more details.
+Global lock reservation is now enabled by default. This is an optimization targeted towards more efficient handling of locking and unlocking Java objects. The older locking behavior can be restored via the `-XX:-GlobalLockReservation` option. See [-XX:[+|-]GlobalLockReservation](xxgloballockreservation.md) for more details.
 
 ### Increase in default operating system stack size on PPC64 platforms
 
 The default operating system stack size on AIX and Linux PPC64 is increased from 256KB to 512KB. You can change the operating system stack size by using the [-Xmso](xmso.md) option.
+
+## Full release information
+
+To see a complete list of changes between Eclipse OpenJ9 v0.26.0 and v0.27.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.27/0.27.md).
 
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->

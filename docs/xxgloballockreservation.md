@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]GlobalLockReservation
 
-**(AIX and Linux on Power systems only)**
+**(AIX&reg; and Linux on Power Systems&trade; only)**
 
 The `-XX:+GlobalLockReservation` option enables an optimization targeted towards more efficient handling of locking and unlocking Java&trade; objects. The `-XX:-GlobalLockReservation` option is used to disable this optimization. The optimization is enabled by default.
 
