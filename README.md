@@ -43,7 +43,7 @@ New to Eclipse OpenJ9? Here are a few links to get you started:
 - Read the [Getting started](https://www.eclipse.org/openj9/docs/introduction/) topic in our user documentation.
 
 The files in this repository are authored in markdown format and built using
-[Mkdocs](http://www.mkdocs.org/) with the [MkDocs-material theme](https://squidfunk.github.io/mkdocs-material/). Draft documentation for the next release is hosted via the gh-pages branch of this repository at the following URL: https://eclipse.github.io/openj9-docs/).
+[Mkdocs](http://www.mkdocs.org/) with the [MkDocs-material theme](https://squidfunk.github.io/mkdocs-material/). Draft documentation for the next release is hosted via the gh-pages branch of this repository at the following URL: https://eclipse-openj9.github.io/openj9-docs/).
 
 We welcome contributions to the user documentation. Please follow our
 [Contribution guidelines](CONTRIBUTING.md).
