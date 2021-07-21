@@ -60,7 +60,7 @@ The `-XX:[+|-]ExitOnOutOfMemoryError` option is updated to exit only on VM `OutO
 
 ### New `-XX:[+|-]GlobalLockReservation` option added
 
-**(AIX and Linux on Power systems only)**
+**(AIX&reg; and Linux on Power Systems&trade; only)**
 
 Option `-XX:[+|-]GlobalLockReservation` enables a new optimization targeted towards more efficient handling of locking and unlocking Java  objects. See [`-XX:[+|-]GlobalLockReservation`](xxgloballockreservation.md) for more details about this option.
 
