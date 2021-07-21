@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xclassgc/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxenable3164interoperability/">
       
       <link rel="icon" href="../cr/openj9-logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
-        <title>-Xnoclassgc -  </title>
+        <title>-XX:[+|-]Enable3164Interoperability -  </title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xclassgc-xnoclassgc" class="md-skip">
+        <a href="#-xx-enable3164interoperability" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Xnoclassgc
+              -XX:[+|-]Enable3164Interoperability
             
           </span>
         </div>
@@ -1577,14 +1577,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_5" type="checkbox" id="__nav_14_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_5" type="checkbox" id="__nav_14_5" >
       
       <label class="md-nav__link" for="__nav_14_5">
         JVM -X options
@@ -1710,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./" class="md-nav__link">
+      <a href="../xclassgc/" class="md-nav__link">
         -Xclassgc
       </a>
     </li>
@@ -2488,58 +2486,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          -Xnoclassgc
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xclassgc/" class="md-nav__link">
         -Xnoclassgc
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="On this page...">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page...
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2985,12 +2936,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_6" type="checkbox" id="__nav_14_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_6" type="checkbox" id="__nav_14_6" checked>
       
       <label class="md-nav__link" for="__nav_14_6">
         JVM -XX options
@@ -3150,11 +3103,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../xxenable3164interoperability/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         -XX:[+|-]Enable3164Interoperability
       </a>
+      
     </li>
   
 
@@ -4108,28 +4071,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page...
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -4142,7 +4083,7 @@
                 
                 
                 <!--
-* Copyright (c) 2017, 2021 IBM Corp. and others
+* Copyright (c) 2021, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -4165,39 +4106,10 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xclassgc-xnoclassgc">-Xclassgc / -Xnoclassgc</h1>
-<p>Enables and disables the garbage collection (GC) of storage that is associated with Java classes that are no longer being used by the OpenJ9 VM.</p>
-<p>When enabled, GC occurs only on class loader changes. To always enable dynamic class unloading regardless of class loader changes, set <a href="../xalwaysclassgc/"><code>-Xalwaysclassgc</code></a>.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Disabling class GC is not recommended because unlimited native memory growth can occur, which can lead to out-of-memory errors.</p>
-<h2 id="syntax">Syntax</h2>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Action</th>
-<th align="center">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-Xclassgc</code></td>
-<td>Enables dynamic class unloading on demand</td>
-<td align="center"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td><code>-Xnoclassgc</code></td>
-<td>Disables dynamic class unloading</td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
-<p>These options can be used with all OpenJ9 GC policies.</p>
-<h2 id="see-also">See also</h2>
-<ul>
-<li><a href="../xalwaysclassgc/"><code>-Xalwaysclassgc</code></a></li>
-</ul>
-<!-- ==== END OF TOPIC ==== xclassgc.md ==== -->
-<!-- ==== END OF TOPIC ==== xnoclassgc.md ==== -->
+<h1 id="-xx-enable3164interoperability">-XX:[+|-]Enable3164Interoperability</h1>
+<p><strong>(z/OS&reg; only)</strong></p>
+<p>Enables support for using 31-bit native applications with the 64-bit Java&trade; virtual machine, where that support is available. For more information, see <a href="https://www.ibm.com/docs/en/sdk-java-technology/8?topic=wja-using-31-bit-native-code-64-bit-java-vm-zos-only">Using 31-bit native code with the 64-bit Java VM</a>.</p>
+<!-- ==== END OF TOPIC ==== xxenable3164interoperability.md ==== -->
                 
               
               
