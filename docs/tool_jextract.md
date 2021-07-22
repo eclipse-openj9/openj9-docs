@@ -32,17 +32,18 @@ On some operating systems, copies of executable files and libraries are required
 
 ## Syntax
 
-        jpackcore [-r] <core file name> [<zip_file>]
+    jpackcore [-r] [-x] <core file name> [<zip_file>]
 
 where:
 
 - `-r` forces the `jpackcore` utility to proceed when the system dump is created from an SDK with a different build ID. See **Restriction**.
+- `-x` causes the `jpackcore` utility to omit the system dump itself from the archive produced. In its place, the file `excluded-files.txt` is added which names the excluded file.
 - `<core file name>` is the name of the system dump.
 - `<zip_file>` is the name you want to give to the processed file. If you do not specify a name, output is written to `<core file name>.zip` by default. The output is written to the same directory as the core file.
 
 :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** You should run `jpackcore` on the same system that produced the system dump in order to collect the correct executables and libraries referenced in the system dump. You should also run `jpackcore` using the same VM level, to avoid any problems. From Eclipse OpenJ9 V0.24.0, the utility always checks that the build ID of the SDK that created the dump file matches the `jpackcore` build ID. Where these IDs do not match, the following exception is thrown:
 
-```  
+```
 J9RAS.buildID is incorrect (found XXX, expecting YYY). This version of jpackcore is incompatible with this dump (use '-r' option to relax this check).
 ```
 
@@ -51,8 +52,5 @@ To continue, despite the mismatch, use the `-r` option.
 ## See also
 
 - [Dump viewer (`jdmpview`)](tool_jdmpview.md)
-
-
-
 
 <!-- ==== END OF TOPIC ==== tool_jextract.md ==== -->

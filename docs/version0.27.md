@@ -33,6 +33,7 @@ The following new features and notable changes since v 0.26.0 are included in th
 - [Stop parsing the JAVA_OPTIONS environment variable](#stop-parsing-the-java_options-environment-variable)
 - [Global lock reservation enabled by default](#global-lock-reservation-enabled-by-default)
 - [Increase in default operating system stack size on PPC64 platforms](#increase-in-default-operating-system-stack-size-on-ppc64-platforms)
+- [New `-x` option added to `jpackcore` / `jextract`](#new-x-option-recognized-by-jpackcore-jextract)
 
 ## Features and changes
 
@@ -78,6 +79,10 @@ Global lock reservation is now enabled by default. This is an optimization targe
 ### Increase in default operating system stack size on PPC64 platforms
 
 The default operating system stack size on AIX and Linux PPC64 is increased from 256KB to 512KB. You can change the operating system stack size by using the [-Xmso](xmso.md) option.
+
+### New `-x` option recognized by `jpackcore` / `jextract`
+
+The new option, `-x`, causes the system dump to be omitted from the archive created. In its place, the file `excluded-files.txt` is added, which names the excluded file. For more information, see [Dump extractor](tool_jextract.md).
 
 ## Full release information
 
