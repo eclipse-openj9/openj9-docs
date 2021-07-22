@@ -287,7 +287,7 @@ Jenkins doc stage
 Pull request builds are staged at the gh-pages branch of the https://github.com/eclipse-openj9/openj9-docs-staging repository. To view
 the staged draft of your documentation, visit the following URL, substituting &lt;PR&gt; with the number of your pull request:
 
-[`https://eclipse-openj9.github.io/openj9-docs-staging/<PR>`](https://eclipse.github.io/openj9-docs-staging/<PR>)
+[`https://eclipse-openj9.github.io/openj9-docs-staging/<PR>`](https://eclipse-openj9.github.io/openj9-docs-staging/<PR>)
 
 ## Accepting contributions
 

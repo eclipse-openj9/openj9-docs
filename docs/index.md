@@ -50,7 +50,7 @@ OpenJDK binaries that contain the OpenJ9 VM are supported on a range of hardware
 Several versions of the documentation are available, covering all releases of OpenJ9:
 
 - [Online documentation for the last release](https://www.eclipse.org/openj9/docs/index.html)
-- [Online, in-progress documentation for the forthcoming release](https://eclipse.github.io/openj9-docs/)
+- [Online, in-progress documentation for the forthcoming release](https://eclipse-openj9.github.io/openj9-docs/)
 - [Downloads of earlier releases](https://github.com/eclipse-openj9/openj9-docs/tree/master/downloads): to download a zip file, click the filename, then click **Download**. After downloading a `.zip` file, extract it, then open the `index.html` file in your browser.
 
 ## Useful links
