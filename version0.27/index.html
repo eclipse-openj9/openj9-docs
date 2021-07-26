@@ -387,6 +387,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-x-option-recognized-by-jpackcore-jextract" class="md-nav__link">
+    New -x option recognized by jpackcore / jextract
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4224,6 +4231,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-x-option-recognized-by-jpackcore-jextract" class="md-nav__link">
+    New -x option recognized by jpackcore / jextract
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4283,6 +4297,7 @@
 <li><a href="#stop-parsing-the-java_options-environment-variable">Stop parsing the JAVA_OPTIONS environment variable</a></li>
 <li><a href="#global-lock-reservation-enabled-by-default">Global lock reservation enabled by default</a></li>
 <li><a href="#increase-in-default-operating-system-stack-size-on-ppc64-platforms">Increase in default operating system stack size on PPC64 platforms</a></li>
+<li><a href="#new-x-option-recognized-by-jpackcore-jextract">New <code>-x</code> option added to <code>jpackcore</code> / <code>jextract</code></a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -4309,6 +4324,8 @@ The <a href="../cmdline_specifying/">_JAVA_OPTIONS environment variable</a> (wit
 <p>Global lock reservation is now enabled by default. This is an optimization targeted towards more efficient handling of locking and unlocking Java objects. The older locking behavior can be restored via the <code>-XX:-GlobalLockReservation</code> option. See <a href="../xxgloballockreservation/">-XX:[+|-]GlobalLockReservation</a> for more details.</p>
 <h3 id="increase-in-default-operating-system-stack-size-on-ppc64-platforms">Increase in default operating system stack size on PPC64 platforms</h3>
 <p>The default operating system stack size on AIX and Linux PPC64 is increased from 256KB to 512KB. You can change the operating system stack size by using the <a href="../xmso/">-Xmso</a> option.</p>
+<h3 id="new-x-option-recognized-by-jpackcore-jextract">New <code>-x</code> option recognized by <code>jpackcore</code> / <code>jextract</code></h3>
+<p>The new option, <code>-x</code>, causes the system dump to be omitted from the archive created. In its place, the file <code>excluded-files.txt</code> is added, which names the excluded file. For more information, see <a href="../tool_jextract/">Dump extractor</a>.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v0.26.0 and v0.27.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.27/0.27.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->
