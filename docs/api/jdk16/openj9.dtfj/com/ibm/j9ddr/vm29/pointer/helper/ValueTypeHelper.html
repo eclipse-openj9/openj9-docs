@@ -16,7 +16,6 @@
 <meta name="keywords" content="findNestedClassHierarchy()">
 <meta name="keywords" content="findJ9ClassInFlattenedClassCacheWithSigName()">
 <meta name="keywords" content="isRomClassAValueType()">
-<meta name="keywords" content="isRomClassAtomic()">
 <meta name="keywords" content="isJ9ClassAValueType()">
 <meta name="keywords" content="isFieldInClassFlattened()">
 <meta name="keywords" content="isFlattenableFieldSignature()">
@@ -206,13 +205,8 @@ loadScripts(document, 'script');</script>
 <div class="block">Queries if a field in a class is flattened</div>
 </div>
 <div class="col-first odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isRomClassAtomic(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">isRomClassAtomic</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
+<div class="col-second odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isRomClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">isRomClassAValueType</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
 <div class="col-last odd-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
-<div class="block">Queries if a J9ROMClass is atomic</div>
-</div>
-<div class="col-first even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table"><code><span class="member-name-link"><a href="#isRomClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">isRomClassAValueType</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
-<div class="col-last even-row-color method-summary-table-tab2 method-summary-table-tab4 method-summary-table">
 <div class="block">Queries if J9ROMClass is a value type</div>
 </div>
 </div>
@@ -343,22 +337,6 @@ loadScripts(document, 'script');</script>
 <dd><code>romClass</code> - clazz to query</dd>
 <dt>Returns:</dt>
 <dd>true if romClass is a value type, false otherwise</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="isRomClassAtomic(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">
-<h3>isRomClassAtomic</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRomClassAtomic</span>&#8203;<span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</span>
-                         throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<div class="block">Queries if a J9ROMClass is atomic</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>romClass</code> - class to query</dd>
-<dt>Returns:</dt>
-<dd>true if the romClass is atomic, false otherwise.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
