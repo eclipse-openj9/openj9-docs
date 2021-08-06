@@ -65,7 +65,9 @@ You can use the following command line options to further configure the JITServe
 | `-XX:JITServerAddress=<address>` | Specifies the name or IP of the server                            | `localhost` |
 | `-XX:JITServerTimeout=<timeout>` | Specifies a timeout value in milliseconds for socket operations   |(**Note 1**) |
 
-**Note 1:** The timeout default is 30000 ms for the JITServer process, and 2000 ms when OpenJ9 is launched as a client VM. You might need to increase the latter value if network latency is large.
+**Note 1:** The timeout default is 30000 ms for the JITServer process, and 10000 ms when OpenJ9 is launched as a client VM.
+
+Check out documentation for `-XX:*JITServer*` options for a full list of JITServer command-line options.
 
 ## Security issues
 
@@ -86,7 +88,5 @@ If you want to build a JDK with JITServer technology, see Appendix A of [Free yo
 ## See also
 
 - [The JIT compiler](jit.md)
-
-
 
 <!-- ==== END OF TOPIC ==== jitserver.md ==== -->
