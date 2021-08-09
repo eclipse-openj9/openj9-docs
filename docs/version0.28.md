@@ -34,7 +34,7 @@ The following new features and notable changes since v 0.27.0 are included in th
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.28.0 supports OpenJDK 17. OpenJDK 17 with Eclipse OpenJ9 is *not* a long term support (LTS) release.
+OpenJ9 release 0.28.0 supports OpenJDK 17. OpenJDK 17 with Eclipse OpenJ9 is a long term support (LTS) release and supersedes OpenJDK 11 with Eclipse OpenJ9.
 
 Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 release 0.28.0, testing at the project is not complete and therefore support for new features that apply to these Java versions is not available.
 
