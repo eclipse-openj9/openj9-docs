@@ -45,18 +45,18 @@ columns will be removed over time.
 
 | OpenJ9 release | Release&nbsp;date | JDK8&nbsp;(LTS)                                                                | JDK11&nbsp;(LTS)                                                               | JDK16                                                                              | JDK17&nbsp;(LTS)                                                                   |
 |----------------|-------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| v 0.24.0       | Jan 2021          | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |                                                                                    |                                                                                    |
 | v 0.25.0       | Mar 2021          | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (2) |                                                                                    |
 | v 0.26.0       | Apr 2021          | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |                                                                                    |
 | v 0.27.0       | Jul 2021          | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |                                                                                    |
-| v 0.28.0       | Sep 2021 (1)      | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span>  | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (3) |
-| v 0.29.0       | Oct 2021 (1)      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (3) |
+| v 0.28.0       | Sep 2021          | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span>  | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (3) |
+| v 0.29.0       | Oct 2021 (1)      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| v 0.30.0       | Jan 2022 (1)      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
 1. These future OpenJ9 releases are expected, in line with our support statement.
 2. These OpenJ9 releases are feature releases that support a new OpenJDK release only.
-3. These OpenJ9 releases support a new LTS OpenJDK release and current LTS releases.
+3. These OpenJ9 releases support a new LTS OpenJDK release only.
 
 For any issues or limitations of an Eclipse OpenJ9 release, read the [release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/).
 
@@ -145,9 +145,9 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
 
-### OpenJDK 16
+### OpenJDK 17
 
-OpenJDK 16 binaries are expected to function on the minimum operating system levels shown in the following tables:
+OpenJDK 17 binaries are expected to function on the minimum operating system levels shown in the following tables:
 
 
 | Linux (**Note 1**)                        | AArch64 (**Note 2**)                                                           | x64                                                                            | ppc64le                                                                        | Z64                                                                            |
@@ -214,7 +214,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | macOS x86 64-bit              | macOS 10.14.6          | xcode 10.3 and clang 10.0.1           |
 | AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 13.1.3                        |
 
-### OpenJDK 16
+### OpenJDK 17
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
