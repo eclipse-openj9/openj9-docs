@@ -137,6 +137,7 @@ nav:
 
     - "JIT Compiler"                                                             : jit.md
     - "JITServer technology"                                                     : jitserver.md
+    - "JITServer tuning"                                                         : jitserver_tuning.md
 
     - "AOT Compiler"                                                             : aot.md
 

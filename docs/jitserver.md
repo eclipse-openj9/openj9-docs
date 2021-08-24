@@ -69,7 +69,11 @@ If a JITServer server crashes, the client is forced to perform compilations loca
 
 ## Security
 
-You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x or 1.1.x. To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see [-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts](xxjitserversslcert.md)
+You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x or 1.1.x. To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see [-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts](xxjitserversslcert.md).
+
+## Tuning JITServer
+
+For best practices regarding JITServer configuration and tuning, please see the document [JITServer tuning and practical considerations](jitserver_tuning.md).
 
 ## Building a JDK with JITServer technology
 
