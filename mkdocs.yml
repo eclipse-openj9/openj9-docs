@@ -353,6 +353,7 @@ nav:
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]Enable3164Interoperability"                              : xxenable3164interoperability.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
+            - "-XX:[+|-]EnsureHashed"                                            : xxensurehashed.md
             - "-XX:[+|-]ExitOnOutOfMemoryError"                                  : xxexitonoutofmemoryerror.md
             - "-XX:[+|-]GlobalLockReservation"                                   : xxgloballockreservation.md
             - "-XX:[+|-]HandleSIGXFSZ"                                           : xxhandlesigxfsz.md
