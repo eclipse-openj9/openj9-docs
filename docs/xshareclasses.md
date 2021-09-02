@@ -91,12 +91,13 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
         -Xshareclasses:cacheDir=<directory>
 
-: Sets the directory in which cache data is read and written. The following defaults apply:
+: Sets the directory in which cache data is read and written. Please do not set the cache directory on a NFS mount or a shared mount across systems or LPARs. The following defaults apply:
 
     - On Windows&trade; systems, `<directory>` is the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
-    - On other operating systems, `<directory>` is `javasharedresources` in the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`.
+    - On z/OS&reg; systems, `<directory>` is the `/tmp/javasharedresources` directory.
+    - On other operating systems, `<directory>` is `javasharedresources` in the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`. Do not set user's home directory on a NFS or shared mount.
 
-: On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.
+: On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system.
 
 : Non-persistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a `javasharedresources` subdirectory of the `cacheDir` specified. Do not move or delete control files in this directory. The `listAllCaches` utility, the `destroyAll` utility, and the `expire` suboption work only in the scope of a given `cacheDir`.
 
