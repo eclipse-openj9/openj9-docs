@@ -368,6 +368,15 @@ nav:
             - "-XX:InitialHeapSize"                                              : xxinitialheapsize.md
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
             - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
+            - "-XX:JITServerAddress"                                             : xxjitserveraddress.md
+            - "-XX:[+|-]JITServerLocalSyncCompiles"                              : xxjitserverlocalsynccompiles.md
+            - "-XX:[+|-]JITServerLogConnections"                                 : xxjitserverlogconnections.md
+            - "-XX:JITServerPort"                                                : xxjitserverport.md
+            - "-XX:JITServerShareROMClasses"                                     : xxjitservershareromclasses.md
+            - "-XX:JITServerSSLCert"                                             : xxjitserversslcert.md
+            - "-XX:JITServerSSLKey"                                              : xxjitserversslkey.md
+            - "-XX:JITServerSSLRootCerts"                                        : xxjitserversslrootcerts.md
+            - "-XX:JITServerTimeout"                                             : xxjitservertimeout.md
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
             - "-XX:[+|-]LegacyXLogOption"                                        : xxlegacyxlogoption.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
@@ -386,6 +395,7 @@ nav:
             - "-XX:[+|-]PrintFlagsFinal"                                         : xxprintflagsfinal.md
             - "-XX:[+|-]ReadIPInfoForRAS"                                        : xxreadipinfoforras.md
             - "-XX:[+|-]ReduceCPUMonitorOverhead"                                : xxreducecpumonitoroverhead.md
+            - "-XX:[+|-]RequireJITServer"                                        : xxrequirejitserver.md
             - "-XX:[+|-]RuntimeInstrumentation"                                  : xxruntimeinstrumentation.md
             - "-XXsetHWPrefetch"                                                 : xxsethwprefetch.md
             - "-XX:[+|-]ShareAnonymousClasses"                                   : xxshareanonymousclasses.md
@@ -398,6 +408,7 @@ nav:
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
             - "-XX:[+|-]UseContainerSupport"                                     : xxusecontainersupport.md
             - "-XX:[+|-]UseGCStartupHints"                                       : xxusegcstartuphints.md
+            - "-XX:[+|-]UseJITServer"                                            : xxusejitserver.md
             - "-XX:[+|-]UseNoGC"                                                 : xxusenogc.md
             - "-XX:[+|-]VerboseVerification"                                     : xxverboseverification.md
             - "-XX:[+|-]VMLockClassLoader"                                       : xxvmlockclassloader.md
