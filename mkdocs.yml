@@ -136,7 +136,7 @@ nav:
             - "Log examples"                                                     : vgclog_examples.md
 
     - "JIT Compiler"                                                             : jit.md
-    - "JITServer (tech. preview)"                                                : jitserver.md
+    - "JITServer technology"                                                     : jitserver.md
 
     - "AOT Compiler"                                                             : aot.md
 
@@ -373,9 +373,9 @@ nav:
             - "-XX:[+|-]JITServerLogConnections"                                 : xxjitserverlogconnections.md
             - "-XX:JITServerPort"                                                : xxjitserverport.md
             - "-XX:JITServerShareROMClasses"                                     : xxjitservershareromclasses.md
-            - "-XX:JITServerSSLCert"                                             : xxjitserversslcert.md
-            - "-XX:JITServerSSLKey"                                              : xxjitserversslkey.md
-            - "-XX:JITServerSSLRootCerts"                                        : xxjitserversslrootcerts.md
+            - "-XX:JITServerSSLCert"                                             : xxjitserversslcert.md             
+            - "-XX:JITServerSSLKey"                                              : xxjitserversslcert.md        #redirect
+            - "-XX:JITServerSSLRootCerts"                                        : xxjitserversslcert.md        #redirect 
             - "-XX:JITServerTimeout"                                             : xxjitservertimeout.md
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
             - "-XX:[+|-]LegacyXLogOption"                                        : xxlegacyxlogoption.md

@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]JITServerShareROMClasses
 
-This option enables the server to share cached ROM classes between clients.
+This option enables the JITServer server to share cached ROM classes between JITServer clients.
 
 ## Syntax
 
@@ -37,10 +37,12 @@ This option enables the server to share cached ROM classes between clients.
 
 ## Explanation
 
-This option should be enabled when multiple clients executing identical or similar applications connect to a single server.
+Enable this option when multiple clients that are running identical or similar applications connect to a single server.
 
-This option enables a caching optimization that allows the server to use ROM classes cached
-for one client while compiling for a different client. This reduces the amount of network communication between the server and the clients required, improving
-startup time and reducing clients' CPU usage. Moreover, footprint at the server can be reduced because only a single copy for a particular Java class is cached.
+This option enables a caching optimization that allows the server to use ROM classes that are cached for one client while compiling for a different client. This behavior reduces the amount of network communication required between the server and the clients, improving startup time and reducing clients' CPU usage. Moreover, footprint at the server can be reduced because only a single copy of a particular Java&trade; class is cached.
+
+## See also
+
+- [JITServer technology](jitserver.md)
 
 <!-- ==== END OF TOPIC ==== xxjitservershareromclasses.md ==== -->

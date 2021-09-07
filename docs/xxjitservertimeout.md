@@ -26,7 +26,7 @@
 
 This option specifies the socket timeout for JITServer communication.
 
-It can be specified on both the server and the client.
+You can specify this option on both the server and the client sides.
 
 ## Syntax
 
@@ -34,12 +34,15 @@ It can be specified on both the server and the client.
 
 | Setting                 | Effect | Default                                                                            |
 |-------------------------|--------|:----------------------------------------------------------------------------------:|
-|`-XX:JITServerTimeout`           | Set the timeout value in milliseconds for socket operations | **Note 1**                                                                                    |
+|`-XX:JITServerTimeout`           | Set the timeout value in milliseconds for socket operations | 30000 ms for the JITServer process and 10000 ms when OpenJ9 is launched as a client VM                                                                                    |
 
-**Note 1:** The timeout default is 30000 ms for the JITServer process, and 10000 ms when OpenJ9 is launched as a client VM.
 
 ## Explanation
 
 The default values should be reasonable for most use cases.
+
+## See also
+
+- [JITServer technology](jitserver.md)
 
 <!-- ==== END OF TOPIC ==== xxjitservertimeout.md ==== -->

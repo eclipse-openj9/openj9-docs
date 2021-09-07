@@ -27,21 +27,22 @@
 The following new features and notable changes since v 0.27.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [Next item](#next-item)
+- [JITServer technology is fully supported on some  systems](#jitserver-technology-is-fully-supported-on-some-systems)
 
 
 ## Features and changes
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.28.0 supports OpenJDK 17. OpenJDK 17 with Eclipse OpenJ9 is a long term support (LTS) release and supersedes OpenJDK 11 with Eclipse OpenJ9.
+OpenJ9 release 0.28.0 supports OpenJDK 17. OpenJDK 17 is the most current long term support (LTS) release (previously OpenJDK 11).
 
 Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 release 0.28.0, testing at the project is not complete and therefore support for new features that apply to these Java versions is not available.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### Next item ###
-<!-- Replace this with the next new feature for 0.28 and update the URL list near the top of the topic to point to this section -->
+### JITServer technology is fully supported on some systems
+
+JITServer technology is now a fully supported feature on Linux&reg; on x86 and Linux on IBM Power&reg; systems (64-bit only). This feature remains a technical preview for Linux on IBM Z&reg; systems (64-bit only). For more information, see [JITServer technology](jitserver.md).
 
 ## Full release information
 

@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]RequireJITServer
 
-When you enable this option, JITServer client will crash with an assert if it detects that a server is unavailable.
+When you enable this option, the JITServer client crashes with an assert if it detects that a JITServer server is unavailable.
 
 ## Syntax
 
@@ -39,6 +39,10 @@ When you enable this option, JITServer client will crash with an assert if it de
 
 This option is for debugging purposes only.
 
-Without this option, a server crash will force the client to perform compilations locally. However, when running a test suite with JITServer enabled, you might want to use this option. It will cause a test to fail if the server crashes, instead of switching to local compilations and hiding the failure.
+When this option is disabled, a server crash forces the client to perform compilations locally. You might want to enable this option if you are running a test suite with JITServer enabled, so that a test fails if the server crashes, instead of switching to local compilations and hiding the failure.
+
+## See also
+
+- [JITServer technology](jitserver.md)
 
 <!-- ==== END OF TOPIC ==== xxrequirejitserver.md ==== -->

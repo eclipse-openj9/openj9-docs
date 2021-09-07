@@ -22,20 +22,40 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -XX:JITServerSSLCert
+# -XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts
 
-Set SSL certificate on the JITServer server (required for enabling network traffic encryption). The certificate needs to be in a `.pem` file format.
-
-Must be used in conjunction with [-XX:JITServerSSLKey](xxjitserversslkey.md).
-
-Clients must provide [-XX:JITServerSSLRootCerts](xxjitserversslrootcerts.md) to connect.
+Options for encrypting network communication between JITServer servers and JITServer client VMs.
 
 ## Syntax
 
         -XX:JITServerCert=<cert_file>
+        -XX:JITServerKey=<key_file>
+        -XX:JITServerSSLRootCerts=<root_certs_file>
+
+The files must all be in `.pem` file format.
 
 | Setting                 | Effect | Default                                                                            |
 |-------------------------|--------|:----------------------------------------------------------------------------------:|
 |`-XX:JITServerSSLCert`           | Set server's SSL certificate | None                                                                                    |
+|`-XX:JITServerSSLKey`           | Set server's SSL key | None                                                                                    |
+|`-XX:JITServerSSLRootCerts`           | Set client's SSL root certificate | None                                                                                    |
+
+## Explanation
+
+You can encrypt network communication by using OpenSSL 1.0.x or 1.1.x. To enable encryption, specify the private key (`<key>.pem`) and the certificate (`<cert>.pem`) at the server:
+
+    -XX:JITServerSSLKey=<key>.pem -XX:JITServerSSLCert=<cert>.pem
+
+and use the certificate at the client:
+
+    -XX:JITServerSSLRootCerts=<cert>.pem
+
+You must specify all three options for the client to be able to connect to the server. If the client cannot connect, it is forced to perform all compilations locally instead.
+
+For more details and further discussion about security considerations, see the blog post [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/).
+
+## See also
+
+- [JITServer technology](jitserver.md)
 
 <!-- ==== END OF TOPIC ==== xxjitserversslcert.md ==== -->
