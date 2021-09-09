@@ -45,18 +45,18 @@ columns will be removed over time.
 
 | OpenJ9 release | Release&nbsp;date | JDK8&nbsp;(LTS)                                                                | JDK11&nbsp;(LTS)                                                               | JDK16                                                                              | JDK17&nbsp;(LTS)                                                                   |
 |----------------|-------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| v 0.24.0       | Jan 2021          | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |                                                                                    |                                                                                    |
 | v 0.25.0       | Mar 2021          | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (2) |                                                                                    |
 | v 0.26.0       | Apr 2021          | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |                                                                                    |
 | v 0.27.0       | Jul 2021          | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |                                                                                    |
-| v 0.28.0       | Sep 2021 (1)      | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span>  | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (3) |
-| v 0.29.0       | Oct 2021 (1)      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (3) |
+| v 0.28.0       | Sep 2021          | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span>  | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (3) |
+| v 0.29.0       | Oct 2021 (1)      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| v 0.30.0       | Jan 2022 (1)      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
 1. These future OpenJ9 releases are expected, in line with our support statement.
 2. These OpenJ9 releases are feature releases that support a new OpenJDK release only.
-3. These OpenJ9 releases support a new LTS OpenJDK release and current LTS releases.
+3. These OpenJ9 releases support a new LTS OpenJDK release only.
 
 For any issues or limitations of an Eclipse OpenJ9 release, read the [release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/).
 
@@ -73,10 +73,10 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
 | Linux&reg;                                | x32                                                                            | x64                                                                            | ppc64le                                                                        | Z31                                                                            | Z64                                                                            |
 |-------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
 | CentOS 6.10                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
-| CentOS 7.7                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
+| CentOS 7.9                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
 | CentOS 8.1                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
 | Red Hat Enterprise Linux (RHEL) 6.10      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
-| RHEL 7.7                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| RHEL 7.8                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | RHEL 8.1                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | SUSE Linux Enterprise Server (SLES) 12 SP5| :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Ubuntu 18.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
@@ -100,7 +100,7 @@ minimum glibc version 2.12 (x) or 2.17 (others) are expected to function without
 | AIX&reg;                                  | ppc32                                                                          | ppc64                                                                          |
 |-------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
 | AIX 7.1 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| AIX 7.2 TL3                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| AIX 7.2 TL4                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
@@ -112,10 +112,10 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 | Linux (**Note 1**)                        | AArch64 (**Note 2**)                                                           | x64                                                                            | ppc64le                                                                         | Z64                                                                           |
 |-------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|---------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
 | CentOS 6.10                               | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
-| CentOS 7.7                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
+| CentOS 7.9                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
 | CentOS 8.1                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
 | Red Hat Enterprise Linux (RHEL) 6.10      | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
-| RHEL 7.7                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| RHEL 7.8                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | RHEL 8.1                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | SUSE Linux Enterprise Server (SLES) 12 SP5| :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Ubuntu 18.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
@@ -140,21 +140,21 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 | AIX                                       | ppc64                                                                          |
 |-------------------------------------------|--------------------------------------------------------------------------------|
 | AIX 7.1 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| AIX 7.2 TL3                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| AIX 7.2 TL4                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
 
-### OpenJDK 16
+### OpenJDK 17
 
-OpenJDK 16 binaries are expected to function on the minimum operating system levels shown in the following tables:
+OpenJDK 17 binaries are expected to function on the minimum operating system levels shown in the following tables:
 
 
 | Linux (**Note 1**)                        | AArch64 (**Note 2**)                                                           | x64                                                                            | ppc64le                                                                        | Z64                                                                            |
 |-------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| CentOS 7.7                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
+| CentOS 7.9                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
 | CentOS 8.1                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
-| RHEL 7.7                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| RHEL 7.8                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | RHEL 8.1                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | SUSE Linux Enterprise Server (SLES) 12 SP5| :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Ubuntu 18.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
@@ -179,7 +179,7 @@ OpenJDK 16 binaries are expected to function on the minimum operating system lev
 | AIX                                       | ppc64                                                                          |
 |-------------------------------------------|--------------------------------------------------------------------------------|
 | AIX 7.1 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| AIX 7.2 TL3                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| AIX 7.2 TL4                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 :fontawesome-solid-bell:{: .warn aria-hidden="true"} **Important:** AIX OpenJ9 builds require the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018).
 
@@ -195,8 +195,8 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
 | Linux x86 64-bit              | CentOS 6.10            | gcc 7.5                               |
-| Linux on POWER&reg; LE 64-bit | CentOS 7.8             | gcc 7.5                               |
-| Linux on IBM Z&reg; 64-bit    | RHEL 7.7               | gcc 7.5                               |
+| Linux on POWER&reg; LE 64-bit | CentOS 7.9             | gcc 7.5                               |
+| Linux on IBM Z&reg; 64-bit    | RHEL 7.9               | gcc 7.5                               |
 | Windows x86 32-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2013 Update 5 |
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2013 Update 5 |
 | macOS x86 64-bit              | OSX 10.14.6            | xcode 10.3 and clang 10.0.1           |
@@ -208,19 +208,19 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 |-------------------------------|------------------------|---------------------------------------|
 | Linux x86 64-bit              | CentOS 6.10            | gcc 7.5                               |
 | Linux on ARM 64-bit           | CentOS 7               | gcc 7.5                               |
-| Linux on POWER LE 64-bit      | CentOS 7.8             | gcc 7.5                               |
-| Linux on IBM Z 64-bit         | RHEL 7.7               | gcc 7.5                               |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 7.5                               |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 7.5                               |
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2017          |
 | macOS x86 64-bit              | macOS 10.14.6          | xcode 10.3 and clang 10.0.1           |
 | AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 13.1.3                        |
 
-### OpenJDK 16
+### OpenJDK 17
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
-| Linux x86 64-bit              | CentOS 7.8             | gcc 7.5                               |
-| Linux on POWER LE 64-bit      | CentOS 7.8             | gcc 7.5                               |
-| Linux on IBM Z 64-bit         | RHEL 7.7               | gcc 7.5                               |
+| Linux x86 64-bit              | CentOS 7.9             | gcc 7.5                               |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 7.5                               |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 7.5                               |
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
 | macOS x86 64-bit              | macOS 10.14.6          | xcode 10.3 and clang 10.0.1           |
 | AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0                        |
