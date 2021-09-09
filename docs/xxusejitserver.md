@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]UseJITServer
 
-This option starts up OpenJ9 JVM in JITServer client mode.
+This option starts the OpenJ9 VM in JITServer client mode.
 
 ## Syntax
 
@@ -37,9 +37,12 @@ This option starts up OpenJ9 JVM in JITServer client mode.
 
 ## Explanation
 
-When this option is enabled, the JVM will try to connect to a server and send it all JIT compilations requests.
-Read ["JITServer Technology"](jitserver.md) for a more detailed explanation.
+When you enable this option, the VM tries to connect to a server and send all JIT compilation requests to it. For more information, see [JITServer Technology](jitserver.md).
 
-This option must be specfied for any other `-XX:*JITServer*` options to take effect.
+You must specify this option for any other `-XX:*JITServer*` options to take effect.
+
+## See also
+
+- [JITServer technology](jitserver.md)
 
 <!-- ==== END OF TOPIC ==== xxusejitserver.md ==== -->

@@ -24,8 +24,7 @@
 
 # -XX:\[+|-\]JITServerLogConnections
 
-This option enables logging of connection/disconnection events between the server and the client.
-It can be used on both server and client sides.
+This option enables the logging of connection/disconnection events between the JITServer server and the JITServer client. You can use the option on both the server and the client sides.
 
 ## Syntax
 
@@ -38,12 +37,11 @@ It can be used on both server and client sides.
 
 ## Explanation
 
-This option is useful when you need to know when server and client successfully
-establish or terminate connections but verbose logs provide too much information.
+This option is useful when you need to know when the server and the client successfully establish or terminate connections but verbose logs provide too much information.
 
-The same logging can also be enabled with `-Xjit:verbose={JITServerConns}` option.
+You can also enable the same logging by specifying the  `-Xjit:verbose={JITServerConns}` option.
 
-If no `vlog` log file (`-Xjit:vlog=`) is specified, output is written to stderr, otherwise it is written to the `vlog` file.
+If you do not specify a `vlog` log file (`-Xjit:vlog=<vlog_filename>`), output is written to `stderr`, otherwise it is written to the `vlog` file.
 
 ## Example
 
@@ -66,5 +64,9 @@ On the **client** side:
 ...
 #JITServer: t=   698 Lost connection to the server (serverUID=10444660844386807777)
 ```
+## See also
+
+- [JITServer technology](jitserver.md)
+- [-Xjit / -Xnojit](xjit.md)
 
 <!-- ==== END OF TOPIC ==== xxjitserverlogconnections.md ==== -->

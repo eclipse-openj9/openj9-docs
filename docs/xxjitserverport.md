@@ -24,11 +24,11 @@
 
 # -XX:JITServerPort
 
-This option specifies the port on which the server is listening for compilation requests.
+This option specifies the port on which the JITServer server listens for compilation requests.
 
-On the **server**, this option sets the port that is open for connections.
+On the JITServer **server**, this option sets the port that is open for connections.
 
-On the **client**, this option specifies to which server port it should send compilation requests.
+On the JITServer **client**, this option specifies to which server port the client should send compilation requests.
 
 ## Syntax
 
@@ -36,6 +36,10 @@ On the **client**, this option specifies to which server port it should send com
 
 | Setting                 | Effect | Default                                                                            |
 |-------------------------|--------|:----------------------------------------------------------------------------------:|
-|`-XX:JITServerPort`           | Set JITServer Port | 38400                                                                                    |
+|`-XX:JITServerPort`           | Set JITServer port | 38400                                                                                    |
+
+## See also
+
+- [JITServer technology](jitserver.md)
 
 <!-- ==== END OF TOPIC ==== xxjitserverport.md ==== -->

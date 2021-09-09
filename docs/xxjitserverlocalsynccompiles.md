@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]JITServerLocalSyncCompiles
 
-When this option is specified, synchronous JIT compilations are downgraded to cold optimization level and compiled locally, with a remote asynchronous recompilation scheduled at a later point.
+When you specify this JITServer option, synchronous JIT compilations are downgraded to `cold` optimization level and compiled locally, with a remote asynchronous recompilation scheduled at a later point.
 
 ## Syntax
 
@@ -37,11 +37,13 @@ When this option is specified, synchronous JIT compilations are downgraded to co
 
 ## Explanation
 
-During a synchronous compilation, Java application threads have to wait for it to complete.
-Since remote compilations usually take longer, due to network latency, remote synchronous
-compilations can result in large pauses in the client application.
+During a synchronous compilation, Java&trade; application threads have to wait for the compilation to complete.
+Because remote compilations usually take longer, due to network latency, remote synchronous compilations can result in large pauses in the client application.
 
-With this option enabled, the client performs synchronous compilations locally at cold optimization level,
-and later recompiles asynchronously at a higher level remotely. Real-time applications can benefit from using this option.
+If you enable this option, the client performs synchronous compilations locally at `cold` optimization level and later recompiles asynchronously at a higher level remotely. This behavior can be beneficial for real-time applications.
+
+## See also
+
+- [JITServer technology](jitserver.md)
 
 <!-- ==== END OF TOPIC ==== xxjitserverlocalsynccompiles.md ==== -->

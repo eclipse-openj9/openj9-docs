@@ -22,22 +22,21 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# JITServer technology (technical preview)
-
-![Start of content that applies to Java 8 and later](cr/java8.png)
-![Start of content that applies to Java 11 and later](cr/java11.png)
+# JITServer technology
 
 **Linux&reg; on x86, Linux on IBM Power&reg; systems, and Linux on IBM Z&reg; systems (64-bit only)**
 
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On Linux on IBM Z systems, this feature is a technical preview and should not be used in production environments.
+
 JITServer technology decouples the JIT compiler from the VM and lets the JIT compiler run remotely in its own process. This mechanism prevents your Java&trade; application suffering possible negative effects due to CPU and memory consumption caused by JIT compilation.
 
-This technology can improve quality of service, robustness, and even performance of Java applications. We recommend trying this technology if the following criteria are met:
+This technology can improve quality of service, robustness, and performance of Java applications. You might want to try this technology if the following criteria are met:
 
 - Your Java application is required to compile many methods using JIT in a relatively short time.
 - The application is running in an environment with limited CPU or memory, which can worsen interference from the JIT compiler.
 - The network latency between JITServer and client VM is relatively low.
 
-For more details about JITServer technology, its pros and cons, and when best to use it, see the blog [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/).
+For more details about JITServer technology, its pros and cons, and when best to use it, see the blog post [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/).
 
 ## Using JITServer technology
 
@@ -57,29 +56,20 @@ Use the following command to start a JITServer process that listens for incoming
 
 ## Configuring JITServer technology
 
-You can use the following command line options to further configure the JITServer and the client VM processes:
+You can use command line options to further configure the JITServer and the client VM processes. For example:
 
-|  Setting                         | Effect                                                            | Default     |
-|----------------------------------|-------------------------------------------------------------------|-------------|
-| `-XX:JITServerPort=<port>`       | Specifies the port the server listens to for compilation requests | `38400`     |
-| `-XX:JITServerAddress=<address>` | Specifies the name or IP of the server                            | `localhost` |
-| `-XX:JITServerTimeout=<timeout>` | Specifies a timeout value in milliseconds for socket operations   |(**Note 1**) |
+- [`-XX:JITServerPort=<port>`](xxjitserverport.md): Specifies the port the server listens to for compilation requests
+- [`-XX:JITServerAddress=<address>`](xxjitserveraddress.md): Specifies the name or IP of the server
+- [`-XX:JITServerTimeout=<timeout>`](xxjitservertimeout.md): Specifies a timeout value in milliseconds for socket operations
+- [`-XX:[+|-]JITServerShareROMClasses`](xxjitservershareromclasses.md): Specifies whether the server shares cached ROM classes between clients
+- [`-XX:[+|-]JITServerLocalSyncCompiles`](xxjitserverlocalsynccompiles.md): Improves performance for real-time applications by compiling synchronous JIT compilations locally, with a remote asynchronous recompilation scheduled at a later point
+- [`-XX:[+|-]JITServerLogConnections`](xxjitserverlogconnections.md): Enables logging of connection/disconnection events between the server and the client
 
-**Note 1:** The timeout default is 30000 ms for the JITServer process, and 10000 ms when OpenJ9 is launched as a client VM.
+If a JITServer server crashes, the client is forced to perform compilations locally. You can change this behavior by using the [`-XX:[+|-]RequireJITServer`](xxrequirejitserver.md) option so that the client crashes with an assert when it detects that the server is unavailable. This feature is useful when you are running a test suite with JITServer enabled and you want the server crash to cause the test to fail.
 
-Check out documentation for `-XX:*JITServer*` options for a full list of JITServer command-line options.
+## Security
 
-## Security issues
-
-You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x or 1.1.x. To enable encryption, specify the private key (`<key>.pem`) and the certificate (`<cert>.pem`) at the server:
-
-    -XX:JITServerSSLKey=<key>.pem -XX:JITServerSSLCert=<cert>.pem
-
-and use the certificate at the client:
-
-    -XX:JITServerSSLRootCerts=<cert>.pem
-
-For more details and further discussion about security considerations, see [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/).
+You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x or 1.1.x. To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see [-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts](xxjitserversslcert.md)
 
 ## Building a JDK with JITServer technology
 
@@ -88,5 +78,7 @@ If you want to build a JDK with JITServer technology, see Appendix A of [Free yo
 ## See also
 
 - [The JIT compiler](jit.md)
+
+
 
 <!-- ==== END OF TOPIC ==== jitserver.md ==== -->

@@ -24,7 +24,7 @@
 
 # -XX:JITServerAddress
 
-This option specifies the server name or IP address for JITServer client to connect to.
+This option specifies the JITServer server name or IP address for a JITServer client to connect to.
 
 ## Syntax
 
@@ -32,12 +32,15 @@ This option specifies the server name or IP address for JITServer client to conn
 
 | Setting                 | Effect | Default                                                                            |
 |-------------------------|--------|:----------------------------------------------------------------------------------:|
-|`-XX:JITServerAddress`           | Set server's name or IP address | localhost                                                                                    |
+|`-XX:JITServerAddress`           | Set server's name or IP address | `localhost`                                                                                    |
 
 ## Explanation
 
-When you enable this option, JITServer client will send compilation requests to a server
-with the provided name or address.
-If there is no server available at that address, JIT will compile locally.
+When you enable this option, the JITServer client sends compilation requests to a server with the provided name or address.
+If there is no server available at that address, the JIT compiler compiles locally.
+
+## See also
+
+- [JITServer technology](jitserver.md)
 
 <!-- ==== END OF TOPIC ==== xxjitserveraddress.md ==== -->
