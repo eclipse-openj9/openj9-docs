@@ -3429,6 +3429,114 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxjitserveraddress/" class="md-nav__link">
+        -XX:JITServerAddress
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserverlocalsynccompiles/" class="md-nav__link">
+        -XX:[+|-]JITServerLocalSyncCompiles
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserverlogconnections/" class="md-nav__link">
+        -XX:[+|-]JITServerLogConnections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserverport/" class="md-nav__link">
+        -XX:JITServerPort
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitservershareromclasses/" class="md-nav__link">
+        -XX:JITServerShareROMClasses
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
+        -XX:JITServerSSLCert
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserversslkey/" class="md-nav__link">
+        -XX:JITServerSSLKey
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserversslrootcerts/" class="md-nav__link">
+        -XX:JITServerSSLRootCerts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitservertimeout/" class="md-nav__link">
+        -XX:JITServerTimeout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxlazysymbolresolution/" class="md-nav__link">
         -XX:[+|-]LazySymbolResolution
       </a>
@@ -3645,6 +3753,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxrequirejitserver/" class="md-nav__link">
+        -XX:[+|-]RequireJITServer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxruntimeinstrumentation/" class="md-nav__link">
         -XX:[+|-]RuntimeInstrumentation
       </a>
@@ -3779,6 +3899,18 @@
     <li class="md-nav__item">
       <a href="../xxusegcstartuphints/" class="md-nav__link">
         -XX:[+|-]UseGCStartupHints
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxusejitserver/" class="md-nav__link">
+        -XX:[+|-]UseJITServer
       </a>
     </li>
   
@@ -4305,7 +4437,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Note 1:</strong> The timeout default is 30000 ms for the JITServer process, and 2000 ms when OpenJ9 is launched as a client VM. You might need to increase the latter value if network latency is large.</p>
+<p><strong>Note 1:</strong> The timeout default is 30000 ms for the JITServer process, and 10000 ms when OpenJ9 is launched as a client VM.</p>
+<p>Check out documentation for <code>-XX:*JITServer*</code> options for a full list of JITServer command-line options.</p>
 <h2 id="security-issues">Security issues</h2>
 <p>You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x or 1.1.x. To enable encryption, specify the private key (<code>&lt;key&gt;.pem</code>) and the certificate (<code>&lt;cert&gt;.pem</code>) at the server:</p>
 <pre><code>-XX:JITServerSSLKey=&lt;key&gt;.pem -XX:JITServerSSLCert=&lt;cert&gt;.pem
