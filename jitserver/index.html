@@ -18,7 +18,7 @@
     
     
       
-        <title>JITServer (tech. preview) -  </title>
+        <title>JITServer technology -  </title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jitserver-technology-technical-preview" class="md-skip">
+        <a href="#jitserver-technology" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JITServer (tech. preview)
+              JITServer technology
             
           </span>
         </div>
@@ -741,12 +741,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          JITServer (tech. preview)
+          JITServer technology
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        JITServer (tech. preview)
+        JITServer technology
       </a>
       
         
@@ -798,8 +798,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-issues" class="md-nav__link">
-    Security issues
+  <a href="#security" class="md-nav__link">
+    Security
   </a>
   
 </li>
@@ -3501,7 +3501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslkey/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLKey
       </a>
     </li>
@@ -3513,7 +3513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslrootcerts/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLRootCerts
       </a>
     </li>
@@ -4330,8 +4330,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-issues" class="md-nav__link">
-    Security issues
+  <a href="#security" class="md-nav__link">
+    Security
   </a>
   
 </li>
@@ -4387,18 +4387,17 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="jitserver-technology-technical-preview">JITServer technology (technical preview)</h1>
-<p><img alt="Start of content that applies to Java 8 and later" src="../cr/java8.png" />
-<img alt="Start of content that applies to Java 11 and later" src="../cr/java11.png" /></p>
+<h1 id="jitserver-technology">JITServer technology</h1>
 <p><strong>Linux&reg; on x86, Linux on IBM Power&reg; systems, and Linux on IBM Z&reg; systems (64-bit only)</strong></p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> On Linux on IBM Z systems, this feature is a technical preview and should not be used in production environments.</p>
 <p>JITServer technology decouples the JIT compiler from the VM and lets the JIT compiler run remotely in its own process. This mechanism prevents your Java&trade; application suffering possible negative effects due to CPU and memory consumption caused by JIT compilation.</p>
-<p>This technology can improve quality of service, robustness, and even performance of Java applications. We recommend trying this technology if the following criteria are met:</p>
+<p>This technology can improve quality of service, robustness, and performance of Java applications. You might want to try this technology if the following criteria are met:</p>
 <ul>
 <li>Your Java application is required to compile many methods using JIT in a relatively short time.</li>
 <li>The application is running in an environment with limited CPU or memory, which can worsen interference from the JIT compiler.</li>
 <li>The network latency between JITServer and client VM is relatively low.</li>
 </ul>
-<p>For more details about JITServer technology, its pros and cons, and when best to use it, see the blog <a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a>.</p>
+<p>For more details about JITServer technology, its pros and cons, and when best to use it, see the blog post <a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a>.</p>
 <h2 id="using-jitserver-technology">Using JITServer technology</h2>
 <p>JITServer technology is not enabled by default: you must explicitly invoke it. Running OpenJ9 without either of the following options launches it as a regular VM with embedded JIT compilation.</p>
 <h3 id="launch-openj9-in-client-mode">Launch OpenJ9 in client mode</h3>
@@ -4410,43 +4409,18 @@
 <pre><code>jitserver
 </code></pre>
 <h2 id="configuring-jitserver-technology">Configuring JITServer technology</h2>
-<p>You can use the following command line options to further configure the JITServer and the client VM processes:</p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Effect</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-XX:JITServerPort=&lt;port&gt;</code></td>
-<td>Specifies the port the server listens to for compilation requests</td>
-<td><code>38400</code></td>
-</tr>
-<tr>
-<td><code>-XX:JITServerAddress=&lt;address&gt;</code></td>
-<td>Specifies the name or IP of the server</td>
-<td><code>localhost</code></td>
-</tr>
-<tr>
-<td><code>-XX:JITServerTimeout=&lt;timeout&gt;</code></td>
-<td>Specifies a timeout value in milliseconds for socket operations</td>
-<td>(<strong>Note 1</strong>)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Note 1:</strong> The timeout default is 30000 ms for the JITServer process, and 10000 ms when OpenJ9 is launched as a client VM.</p>
-<p>Check out documentation for <code>-XX:*JITServer*</code> options for a full list of JITServer command-line options.</p>
-<h2 id="security-issues">Security issues</h2>
-<p>You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x or 1.1.x. To enable encryption, specify the private key (<code>&lt;key&gt;.pem</code>) and the certificate (<code>&lt;cert&gt;.pem</code>) at the server:</p>
-<pre><code>-XX:JITServerSSLKey=&lt;key&gt;.pem -XX:JITServerSSLCert=&lt;cert&gt;.pem
-</code></pre>
-<p>and use the certificate at the client:</p>
-<pre><code>-XX:JITServerSSLRootCerts=&lt;cert&gt;.pem
-</code></pre>
-<p>For more details and further discussion about security considerations, see <a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a>.</p>
+<p>You can use command line options to further configure the JITServer and the client VM processes. For example:</p>
+<ul>
+<li><a href="../xxjitserverport/"><code>-XX:JITServerPort=&lt;port&gt;</code></a>: Specifies the port the server listens to for compilation requests</li>
+<li><a href="../xxjitserveraddress/"><code>-XX:JITServerAddress=&lt;address&gt;</code></a>: Specifies the name or IP of the server</li>
+<li><a href="../xxjitservertimeout/"><code>-XX:JITServerTimeout=&lt;timeout&gt;</code></a>: Specifies a timeout value in milliseconds for socket operations</li>
+<li><a href="../xxjitservershareromclasses/"><code>-XX:[+|-]JITServerShareROMClasses</code></a>: Specifies whether the server shares cached ROM classes between clients</li>
+<li><a href="../xxjitserverlocalsynccompiles/"><code>-XX:[+|-]JITServerLocalSyncCompiles</code></a>: Improves performance for real-time applications by compiling synchronous JIT compilations locally, with a remote asynchronous recompilation scheduled at a later point</li>
+<li><a href="../xxjitserverlogconnections/"><code>-XX:[+|-]JITServerLogConnections</code></a>: Enables logging of connection/disconnection events between the server and the client</li>
+</ul>
+<p>If a JITServer server crashes, the client is forced to perform compilations locally. You can change this behavior by using the <a href="../xxrequirejitserver/"><code>-XX:[+|-]RequireJITServer</code></a> option so that the client crashes with an assert when it detects that the server is unavailable. This feature is useful when you are running a test suite with JITServer enabled and you want the server crash to cause the test to fail.</p>
+<h2 id="security">Security</h2>
+<p>You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x or 1.1.x. To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see <a href="../xxjitserversslcert/">-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts</a></p>
 <h2 id="building-a-jdk-with-jitserver-technology">Building a JDK with JITServer technology</h2>
 <p>If you want to build a JDK with JITServer technology, see Appendix A of <a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a>.</p>
 <h2 id="see-also">See also</h2>

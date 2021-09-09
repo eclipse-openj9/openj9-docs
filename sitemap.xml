@@ -944,11 +944,11 @@
      <lastmod>2021-09-09</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://www.eclipse.org/openj9/docs/xxjitserversslkey/</loc>
+     <loc>https://www.eclipse.org/openj9/docs/xxjitserversslcert/</loc>
      <lastmod>2021-09-09</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://www.eclipse.org/openj9/docs/xxjitserversslrootcerts/</loc>
+     <loc>https://www.eclipse.org/openj9/docs/xxjitserversslcert/</loc>
      <lastmod>2021-09-09</lastmod>
      <changefreq>daily</changefreq>
     </url><url>

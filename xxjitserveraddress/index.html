@@ -732,7 +732,7 @@
   
     <li class="md-nav__item">
       <a href="../jitserver/" class="md-nav__link">
-        JITServer (tech. preview)
+        JITServer technology
       </a>
     </li>
   
@@ -3391,6 +3391,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3464,7 +3471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslkey/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLKey
       </a>
     </li>
@@ -3476,7 +3483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslrootcerts/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLRootCerts
       </a>
     </li>
@@ -4272,6 +4279,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4310,7 +4324,7 @@
 -->
 
 <h1 id="-xxjitserveraddress">-XX:JITServerAddress</h1>
-<p>This option specifies the server name or IP address for JITServer client to connect to.</p>
+<p>This option specifies the JITServer server name or IP address for a JITServer client to connect to.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:JITServerAddress=&lt;address&gt;
 </code></pre>
@@ -4326,14 +4340,17 @@
 <tr>
 <td><code>-XX:JITServerAddress</code></td>
 <td>Set server's name or IP address</td>
-<td align="center">localhost</td>
+<td align="center"><code>localhost</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>When you enable this option, JITServer client will send compilation requests to a server
-with the provided name or address.
-If there is no server available at that address, JIT will compile locally.</p>
+<p>When you enable this option, the JITServer client sends compilation requests to a server with the provided name or address.
+If there is no server available at that address, the JIT compiler compiles locally.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../jitserver/">JITServer technology</a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xxjitserveraddress.md ==== -->
                 
               

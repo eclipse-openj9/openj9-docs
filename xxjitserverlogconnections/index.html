@@ -732,7 +732,7 @@
   
     <li class="md-nav__item">
       <a href="../jitserver/" class="md-nav__link">
-        JITServer (tech. preview)
+        JITServer technology
       </a>
     </li>
   
@@ -3422,6 +3422,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3471,7 +3478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslkey/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLKey
       </a>
     </li>
@@ -3483,7 +3490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslrootcerts/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLRootCerts
       </a>
     </li>
@@ -4286,6 +4293,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4324,8 +4338,7 @@
 -->
 
 <h1 id="-xx-jitserverlogconnections">-XX:[+|-]JITServerLogConnections</h1>
-<p>This option enables logging of connection/disconnection events between the server and the client.
-It can be used on both server and client sides.</p>
+<p>This option enables the logging of connection/disconnection events between the JITServer server and the JITServer client. You can use the option on both the server and the client sides.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]JITServerLogConnections
 </code></pre>
@@ -4351,10 +4364,9 @@ It can be used on both server and client sides.</p>
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>This option is useful when you need to know when server and client successfully
-establish or terminate connections but verbose logs provide too much information.</p>
-<p>The same logging can also be enabled with <code>-Xjit:verbose={JITServerConns}</code> option.</p>
-<p>If no <code>vlog</code> log file (<code>-Xjit:vlog=</code>) is specified, output is written to stderr, otherwise it is written to the <code>vlog</code> file.</p>
+<p>This option is useful when you need to know when the server and the client successfully establish or terminate connections but verbose logs provide too much information.</p>
+<p>You can also enable the same logging by specifying the  <code>-Xjit:verbose={JITServerConns}</code> option.</p>
+<p>If you do not specify a <code>vlog</code> log file (<code>-Xjit:vlog=&lt;vlog_filename&gt;</code>), output is written to <code>stderr</code>, otherwise it is written to the <code>vlog</code> file.</p>
 <h2 id="example">Example</h2>
 <p>This is what the typical output looks like:</p>
 <p>On the <strong>server</strong> side:</p>
@@ -4369,6 +4381,11 @@ establish or terminate connections but verbose logs provide too much information
 ...
 #JITServer: t=   698 Lost connection to the server (serverUID=10444660844386807777)
 </code></pre>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../jitserver/">JITServer technology</a></li>
+<li><a href="../xjit/">-Xjit / -Xnojit</a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xxjitserverlogconnections.md ==== -->
                 
               

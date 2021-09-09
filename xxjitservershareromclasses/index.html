@@ -732,7 +732,7 @@
   
     <li class="md-nav__item">
       <a href="../jitserver/" class="md-nav__link">
-        JITServer (tech. preview)
+        JITServer technology
       </a>
     </li>
   
@@ -3439,6 +3439,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3464,7 +3471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslkey/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLKey
       </a>
     </li>
@@ -3476,7 +3483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslrootcerts/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLRootCerts
       </a>
     </li>
@@ -4272,6 +4279,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4310,7 +4324,7 @@
 -->
 
 <h1 id="-xx-jitservershareromclasses">-XX:[+|-]JITServerShareROMClasses</h1>
-<p>This option enables the server to share cached ROM classes between clients.</p>
+<p>This option enables the JITServer server to share cached ROM classes between JITServer clients.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]JITServerShareROMClasses
 </code></pre>
@@ -4336,10 +4350,12 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>This option should be enabled when multiple clients executing identical or similar applications connect to a single server.</p>
-<p>This option enables a caching optimization that allows the server to use ROM classes cached
-for one client while compiling for a different client. This reduces the amount of network communication between the server and the clients required, improving
-startup time and reducing clients' CPU usage. Moreover, footprint at the server can be reduced because only a single copy for a particular Java class is cached.</p>
+<p>Enable this option when multiple clients that are running identical or similar applications connect to a single server.</p>
+<p>This option enables a caching optimization that allows the server to use ROM classes that are cached for one client while compiling for a different client. This behavior reduces the amount of network communication required between the server and the clients, improving startup time and reducing clients' CPU usage. Moreover, footprint at the server can be reduced because only a single copy of a particular Java&trade; class is cached.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../jitserver/">JITServer technology</a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xxjitservershareromclasses.md ==== -->
                 
               

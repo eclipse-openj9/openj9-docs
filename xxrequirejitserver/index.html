@@ -732,7 +732,7 @@
   
     <li class="md-nav__item">
       <a href="../jitserver/" class="md-nav__link">
-        JITServer (tech. preview)
+        JITServer technology
       </a>
     </li>
   
@@ -3417,7 +3417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslkey/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLKey
       </a>
     </li>
@@ -3429,7 +3429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslrootcerts/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLRootCerts
       </a>
     </li>
@@ -3711,6 +3711,13 @@
         <li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
   </a>
   
 </li>
@@ -4272,6 +4279,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4310,7 +4324,7 @@
 -->
 
 <h1 id="-xx-requirejitserver">-XX:[+|-]RequireJITServer</h1>
-<p>When you enable this option, JITServer client will crash with an assert if it detects that a server is unavailable.</p>
+<p>When you enable this option, the JITServer client crashes with an assert if it detects that a JITServer server is unavailable.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]RequireJITServer
 </code></pre>
@@ -4337,7 +4351,11 @@
 </table>
 <h2 id="explanation">Explanation</h2>
 <p>This option is for debugging purposes only.</p>
-<p>Without this option, a server crash will force the client to perform compilations locally. However, when running a test suite with JITServer enabled, you might want to use this option. It will cause a test to fail if the server crashes, instead of switching to local compilations and hiding the failure.</p>
+<p>When this option is disabled, a server crash forces the client to perform compilations locally. You might want to enable this option if you are running a test suite with JITServer enabled, so that a test fails if the server crashes, instead of switching to local compilations and hiding the failure.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../jitserver/">JITServer technology</a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xxrequirejitserver.md ==== -->
                 
               

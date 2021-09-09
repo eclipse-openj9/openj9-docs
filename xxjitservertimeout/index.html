@@ -732,7 +732,7 @@
   
     <li class="md-nav__item">
       <a href="../jitserver/" class="md-nav__link">
-        JITServer (tech. preview)
+        JITServer technology
       </a>
     </li>
   
@@ -3417,7 +3417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslkey/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLKey
       </a>
     </li>
@@ -3429,7 +3429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslrootcerts/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLRootCerts
       </a>
     </li>
@@ -3481,8 +3481,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    Explanation
+  <a href="#see-also" class="md-nav__link">
+    See also
   </a>
   
 </li>
@@ -4266,8 +4266,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    Explanation
+  <a href="#see-also" class="md-nav__link">
+    See also
   </a>
   
 </li>
@@ -4311,7 +4311,7 @@
 
 <h1 id="-xxjitservertimeout">-XX:JITServerTimeout</h1>
 <p>This option specifies the socket timeout for JITServer communication.</p>
-<p>It can be specified on both the server and the client.</p>
+<p>You can specify this option on both the server and the client sides.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:JITServerTimeout=&lt;timeout_ms&gt;
 </code></pre>
@@ -4327,13 +4327,14 @@
 <tr>
 <td><code>-XX:JITServerTimeout</code></td>
 <td>Set the timeout value in milliseconds for socket operations</td>
-<td align="center"><strong>Note 1</strong></td>
+<td align="center">30000 ms for the JITServer process and 10000 ms when OpenJ9 is launched as a client VM</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note 1:</strong> The timeout default is 30000 ms for the JITServer process, and 10000 ms when OpenJ9 is launched as a client VM.</p>
-<h2 id="explanation">Explanation</h2>
-<p>The default values should be reasonable for most use cases.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../jitserver/">JITServer technology</a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xxjitservertimeout.md ==== -->
                 
               

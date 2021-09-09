@@ -732,7 +732,7 @@
   
     <li class="md-nav__item">
       <a href="../jitserver/" class="md-nav__link">
-        JITServer (tech. preview)
+        JITServer technology
       </a>
     </li>
   
@@ -3417,7 +3417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslkey/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLKey
       </a>
     </li>
@@ -3429,7 +3429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserversslrootcerts/" class="md-nav__link">
+      <a href="../xxjitserversslcert/" class="md-nav__link">
         -XX:JITServerSSLRootCerts
       </a>
     </li>
@@ -3871,6 +3871,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4272,6 +4279,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4310,7 +4324,7 @@
 -->
 
 <h1 id="-xx-usejitserver">-XX:[+|-]UseJITServer</h1>
-<p>This option starts up OpenJ9 JVM in JITServer client mode.</p>
+<p>This option starts the OpenJ9 VM in JITServer client mode.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]UseJITServer
 </code></pre>
@@ -4336,9 +4350,12 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>When this option is enabled, the JVM will try to connect to a server and send it all JIT compilations requests.
-Read <a href="../jitserver/">"JITServer Technology"</a> for a more detailed explanation.</p>
-<p>This option must be specfied for any other <code>-XX:*JITServer*</code> options to take effect.</p>
+<p>When you enable this option, the VM tries to connect to a server and send all JIT compilation requests to it. For more information, see <a href="../jitserver/">JITServer Technology</a>.</p>
+<p>You must specify this option for any other <code>-XX:*JITServer*</code> options to take effect.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../jitserver/">JITServer technology</a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xxusejitserver.md ==== -->
                 
               
