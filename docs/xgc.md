@@ -53,7 +53,7 @@ Options that change the behavior of the garbage collector.
 | [`scvTenureAge`                     ](#scvtenureage                     ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                           |
 | [`stdGlobalCompactToSatisfyAllocate`](#stdglobalcompacttosatisfyallocate) | Prevents the GC from performing a compaction unless absolutely required.                                  |
 | [`synchronousGCOnOOM`               ](#synchronousgconoom               )     | Stops an application to allow GC activity.                                                                             |
-| [`targetPausetime`                  ](#targetpausetime                  )   | Sets the GC pause time for the `metronome` GC policy.                                                   |
+| [`targetPausetime`                  ](#targetpausetime                  )   | Sets the target GC pause time for the `metronome` and `balanced` GC policies.                            |
 | [`targetUtilization`                ](#targetutilization                )   | Sets application utilization for the `metronome` GC policy.                                                   |
 | [`tlhIncrementSize`                 ](#tlhincrementsize                 ) | Sets the size of the thread local heap (TLH) increment.                                                   |
 | [`tlhInitialSize`                   ](#tlhinitialsize                   ) | Sets the initial size of the thread local heap.                                                           |
@@ -286,9 +286,15 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 
         -Xgc:targetPausetime=N
 
-: Sets the GC pause time, where `N` is the time in milliseconds. When this option is specified, the garbage collector operates with pauses that do not exceed the value specified. If this option is not specified the default pause time is set to 3 milliseconds. For example, running with `-Xgc:targetPausetime=20` causes the garbage collector to pause for no longer than 20 milliseconds during GC operations.
+: Sets the target GC pause time, where `N` is the time in milliseconds.
 
-: This option applies only to the `metronome` GC policy.
+: When this option is specified with the `metronome` policy, the garbage collector operates with pauses that do not exceed the value specified. If this option is not specified when using the `metronome` policy, the default pause time target is set to 3 milliseconds. For example, running with `-Xgc:targetPausetime=20` causes the garbage collector to pause for no longer than 20 milliseconds during GC operations.
+
+: When this option is specified with the `balanced` policy, the GC will use the specified pause time as a *soft* pause time target. If this option is not specified when using the `balanced` policy, the default pause time target is set to 200 milliseconds. If the GC pauses are longer than the specified target, then the GC may shrink the amount of eden regions in order to satisfy the target pause time. If the percentage of time spent in PGC pauses is higher than `dnssExpectedTimeRatioMaximum` *and* the GC pauses are longer than the specified pause time target, then the target pause time may not be satisfied, in order to balance reaching the target pause time goal and percentage of time in GC pause goal.
+
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Specifying an ultra low `targetPausetime` with the Balanced GC policy may cause the percentage of time spent in GC pauses to noticeably increase.
+
+: This option applies only to the `metronome` and `balanced` GC policies.
 
 ### `targetUtilization`
 
