@@ -38,8 +38,8 @@ Options that change the behavior of the garbage collector.
 | [`classUnloadingKickoffThreshold`   ](#classunloadingkickoffthreshold   ) | Sets a threshold to start an early concurrent global garbage collection (GC) cycle due to recent, heavy class loading activity  |
 | [`classUnloadingThreshold`          ](#classunloadingthreshold          ) | Sets a threshold to trigger a class unloading operation in a global GC cycle                                     |
 | [`concurrentScavenge`               ](#concurrentscavenge               ) | Enables a GC mode with less pause times.                                             |
-| [`dnssExpectedTimeRatioMaximum`     ](#dnssexpectedtimeratiomaximum     ) | Sets the maximum time to spend on GC of the nursery area.                                                 |
-| [`dnssExpectedTimeRatioMinimum`     ](#dnssexpectedtimeratiominimum     ) | Sets the minimum time to spend on GC of the nursery area.                                                 |
+| [`dnssExpectedTimeRatioMaximum`     ](#dnssexpectedtimeratiomaximum     ) | Sets the maximum percentage of time to spend on local GC pauses                                             |
+| [`dnssExpectedTimeRatioMinimum`     ](#dnssexpectedtimeratiominimum     ) | Sets the minimum percentage of time to spend on local GC pauses                                             |
 | [`dynamicBreadthFirstScanOrdering`  ](#dynamicbreadthfirstscanordering  ) | Sets scan mode to dynamic breadth first.                                             |
 | [`excessiveGCratio`                 ](#excessivegcratio                 ) | Sets a boundary value beyond which GC is deemed to be excessive.                                          |
 | [`hierarchicalScanOrdering`         ](#hierarchicalscanordering         ) | Sets scan mode to hierarchical.                                             |
@@ -124,25 +124,25 @@ Options that change the behavior of the garbage collector.
 
         -Xgc:dnssExpectedTimeRatioMaximum=<value>
 
-: | Setting       | Value          | Default               |
-  |---------------|----------------|-----------------------|
-  | `<value>`     | [percentage]   | 5                     |
+: | Setting       | Value          | Default                       |
+  |---------------|----------------|-------------------------------|
+  | `<value>`     | [percentage]   | 5 for gencon, 5 for balanced  |
 
-: The maximum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.
+: The maximum percentage of time spent in local garbage collection pauses. For the `gencon` policy, this refers to the amount of time spent on the nursery area of the heap (scavenge operation). For the `balanced` policy, this refers to the amount of time spent on the eden regions of the heap (PGC operation).
 
-: This option applies only to the `gencon` GC policy.
+: This option applies only to the `gencon` and `balanced` GC policies.
 
 ### `dnssExpectedTimeRatioMinimum`
 
         -Xgc:dnssExpectedTimeRatioMinimum=<value>
 
-: | Setting       | Value          | Default               |
-  |---------------|----------------|-----------------------|
-  | `<value>`     | [percentage]   | 1                     |
+: | Setting       | Value          | Default                      |
+  |---------------|----------------|------------------------------|
+  | `<value>`     | [percentage]   | 1 for gencon, 2 for balanced |
 
-: The minimum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.
+: The minimum percentage of time spent in local garbage collection pauses. For the `gencon` policy, this refers to the amount of time spent on the nursery area of the heap (scavenge operation). For the `balanced` policy, this refers to the amount of time spent on the eden regions of the heap (PGC operation). 
 
-: This option applies only to the `gencon` GC policy.
+: This option applies only to the `gencon` and `balanced` GC policies.
 
 ### `dynamicBreadthFirstScanOrdering`
 
