@@ -433,6 +433,6 @@ nav:
             - "Monitoring and management"                                         : api-langmgmt.md
             - "Shared classes"                                                    : api-shrc.md
         - "Java 11 API"                                                           : api-jdk11.md
-        - "Java 16 API"                                                           : api-jdk16.md
+        - "Java 17 API"                                                           : api-jdk17.md
 
     - "Legal"                                                                     : legal.md
