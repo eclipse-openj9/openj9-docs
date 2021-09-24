@@ -150,7 +150,7 @@ When public support for an operating system version ends, OpenJ9 can no longer b
 OpenJDK 17 binaries are expected to function on the minimum operating system levels shown in the following tables:
 
 
-| Linux (**Note 1**)                        | AArch64 (**Note 2**)                                                           | x64                                                                            | ppc64le                                                                        | Z64                                                                            |
+| Linux (**Note 1**)                        | AArch64                                                                        | x64                                                                            | ppc64le                                                                        | Z64                                                                            |
 |-------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
 | CentOS 7.9                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
 | CentOS 8.1                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span> |
@@ -163,7 +163,6 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
 1. Not all of these distributions are tested, but Linux distributions that have a minimum glibc version 2.17 are expected to function without problems.
-2. Only limited support for the 64-bit ARM architecture is currently available. For a list of known issues, see the [Release notes](https://github.com/eclipse-openj9/openj9/tree/master/doc/release-notes) for the latest version of Eclipse OpenJ9.
 
 | Windows                                   | x64                                                                            |
 |-------------------------------------------|--------------------------------------------------------------------------------|
@@ -221,6 +220,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Linux x86 64-bit              | CentOS 7.9             | gcc 7.5                               |
 | Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 7.5                               |
 | Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 7.5                               |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 7.5                               |
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
 | macOS x86 64-bit              | macOS 10.14.6          | xcode 10.3 and clang 10.0.1           |
 | AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0                        |
