@@ -28,7 +28,7 @@
 
 # Eclipse OpenJ9 user documentation
 
-[![Build Status](https://ci.eclipse.org/openj9/buildStatus/icon?job=Build-Doc-Push_to_Eclipse)](https://ci.eclipse.org/openj9/job/Build-Doc-Push_to_Eclipse)
+[![Build Status](https://openj9-jenkins.osuosl.org/buildStatus/icon?job=Build-Doc-Push_to_Eclipse)](https://openj9-jenkins.osuosl.org/job/Build-Doc-Push_to_Eclipse)
 
 [![License](https://img.shields.io/badge/License-EPL%202.0-green.svg)](https://opensource.org/licenses/EPL-2.0)
 [![License](https://img.shields.io/badge/License-APL%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
