@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xcompilationthreads/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/jitserver_tuning/">
       
       <link rel="icon" href="../cr/openj9-logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
-        <title>-XcompilationThreads -  </title>
+        <title>JITServer tuning -  </title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xcompilationthreads" class="md-skip">
+        <a href="#jitserver-tuning-and-practical-considerations" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -XcompilationThreads
+              JITServer tuning
             
           </span>
         </div>
@@ -744,11 +744,107 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../jitserver_tuning/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          JITServer tuning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         JITServer tuning
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page...
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#server-caches" class="md-nav__link">
+    Server caches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#number-of-concurrent-clients" class="md-nav__link">
+    Number of concurrent clients
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alleviating-cpu-congestion-at-the-server" class="md-nav__link">
+    Alleviating CPU congestion at the server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avoiding-memory-shortages-at-the-server" class="md-nav__link">
+    Avoiding memory shortages at the server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traffic-encryption" class="md-nav__link">
+    Traffic encryption
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimizing-application-stalls" class="md-nav__link">
+    Minimizing application stalls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-affinity" class="md-nav__link">
+    Session affinity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resilience" class="md-nav__link">
+    Resilience
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    Monitoring
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1158,14 +1254,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
       
       <label class="md-nav__link" for="__nav_15">
         Command-line options
@@ -1604,14 +1698,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_5" type="checkbox" id="__nav_15_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_5" type="checkbox" id="__nav_15_5" >
       
       <label class="md-nav__link" for="__nav_15_5">
         JVM -X options
@@ -1807,58 +1899,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          -XcompilationThreads
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xcompilationthreads/" class="md-nav__link">
         -XcompilationThreads
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="On this page...">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page...
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    Explanation
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4274,15 +4319,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
+  <a href="#server-caches" class="md-nav__link">
+    Server caches
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    Explanation
+  <a href="#number-of-concurrent-clients" class="md-nav__link">
+    Number of concurrent clients
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alleviating-cpu-congestion-at-the-server" class="md-nav__link">
+    Alleviating CPU congestion at the server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avoiding-memory-shortages-at-the-server" class="md-nav__link">
+    Avoiding memory shortages at the server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traffic-encryption" class="md-nav__link">
+    Traffic encryption
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimizing-application-stalls" class="md-nav__link">
+    Minimizing application stalls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-affinity" class="md-nav__link">
+    Session affinity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resilience" class="md-nav__link">
+    Resilience
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    Monitoring
   </a>
   
 </li>
@@ -4301,7 +4395,7 @@
                 
                 
                 <!--
-* Copyright (c) 2017, 2021 IBM Corp. and others
+* Copyright (c) 2021, 2021 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -4323,27 +4417,77 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
-
-<h1 id="-xcompilationthreads">-XcompilationThreads</h1>
-<p>Use this option to specify the number of compilation threads that are used by the JIT compiler.</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -XcompilationThreads&lt;n&gt;
+<h1 id="jitserver-tuning-and-practical-considerations">JITServer tuning and practical considerations</h1>
+<h2 id="server-caches">Server caches</h2>
+<p>Multiple client JVMs can be connected at the same time to a single JIT server. For each client, the server maintains a client-session cache with information about the environment the client is running in (Java classes, class hierarchy, profiling information, JVM options, etc.). Typically, the information in these caches is kept separately, per client. However, if you specify the <code>-XX:+JITServerShareROMClasses</code> option, the read-only part of the Java classes (ROMClasses in OpenJ9 parlance) is shared between the different clients. This option can generate memory savings at the server when the connected clients run identical or similar Java applications.</p>
+<p>The client-session caches are deleted when the clients terminate, but this can happen only if the clients are shutdown gracefully, giving them the opportunity to send a termination message to the server. To address the scenario of clients ending abruptly, the server also deletes the cache for a client that hasn’t issued a compilation request for 1000 minutes, or 5 minutes under memory pressure. If needed, you can change these values with the following options:</p>
+<pre><code>-Xjit:oldAge=&lt;time-in-ms&gt;,oldAgeUnderLowMemory=&lt;time-in-ms&gt;
 </code></pre>
-<dl>
-<dd>where <code>&lt;n&gt;</code> is the number of threads, in the range 1-7 inclusive. Any number outside this range is ignored. </dd>
-<dd>Setting the compilation threads to zero does not prevent the JIT from working. Instead, if you do not want the JIT to work, use the <a href="../xint/"><code>-Xint</code></a> option.</dd>
-</dl>
-<h2 id="explanation">Explanation</h2>
-<p>When multiple compilation threads are used, the JIT might generate several diagnostic log files. A log file is generated for each compilation thread. The naming convention for the log file generated by the first compilation thread uses the following pattern:</p>
-<pre><code>&lt;specified_filename&gt;.&lt;date&gt;.&lt;time&gt;.&lt;pid&gt;
+<h2 id="number-of-concurrent-clients">Number of concurrent clients</h2>
+<p>The amount of CPU and memory resources consumed by the server is expected to increase with the number of connected clients. Finding the appropriate number of clients to connect to a server is a tricky proposition that depends on many factors: number of methods that need to be compiled by the clients, optimization levels for these compilations, how clients are started (staggered or not), how clients are shutdown (gracefully or not), etc.</p>
+<p>As a rule of thumb, you should have 10-20 JVMs simultaneously connected to a server with 1-2 GB of memory. With respect to CPU resources, in Kubernetes you might want to set a low "request" value at the server (1-2 vCPUs) and a larger "limit" value (4-8 vCPUs) in order to soak all those idle cycles. It is possible to connect even more clients to one server instance if memory and CPU resources are increased, but in general, two medium-sized server instances placed on different nodes are better than a single, larger server.</p>
+<h2 id="alleviating-cpu-congestion-at-the-server">Alleviating CPU congestion at the server</h2>
+<p>When too many clients connect to the server, the server can become flooded with compilation requests, leading to increased compilation times and slower start-up/ramp-up for applications. It should be noted that a client JVM issues most of its compilation requests during the start-up phase and ramp-up phase of an application, when load is first applied to it. Thus, from the CPU consumption point of view what matters is the number of clients that start-up or ramp-up concurrently. To alleviate the CPU strain on the server, you can start the client JVMs in a staggered fashion, rather than all at the same time. Sometimes the staggering happens naturally; for instance, when using Kubernetes horizontal pod auto-scaling, additional application instances are launched gradually as the load increases.</p>
+<p>Another idea is to use the <code>-Xjit:enableJITServerHeuristics</code> command line option at the clients. When this option is present, the client JVMs share some of the compilation burden by performing the cheap compilations locally and send only expensive compilations to the server. What constitutes a cheap compilation is determined by JIT heuristics that look at the method size, optimization level and the amount of CPU and memory available to the JVM.</p>
+<h2 id="avoiding-memory-shortages-at-the-server">Avoiding memory shortages at the server</h2>
+<p>Roughly speaking, the server uses two types of memory:
+1. "Scratch" memory. This is allocated during a compilation (for JIT internal data structures) and released to the operating system at the end of the compilation.
+2. "Persistent" memory. This is used for client-session caches and only gets deleted when a client terminates gracefully (or when JITServer purging mechanism is triggered).</p>
+<p>The total amount of scratch memory at any given moment depends on how many compilations are in progress and how expensive those compilations are. To reduce this amount, you can start the clients in a staggered fashion as suggested above, or reduce the number of compilation threads per client. Note that the latter already happens automatically: when the server senses that it is about to run out of memory, it provides feedback to the connected clients to reduce their number of active compilation threads.</p>
+<p>To reduce the amount of persistent memory you can use the techniques described in section <a href="#server-caches">Server caches</a>.</p>
+<h2 id="traffic-encryption">Traffic encryption</h2>
+<p>Enabling network encryption can increase the CPU overhead, both at the client and at the server. For this reason, you should turn on encryption only if needed. Note that some technologies like Istio, Weave, Linkerd, Calico, Cilium already encrypt all network traffic, so using JITServer encryption might be redundant.</p>
+<h2 id="minimizing-application-stalls">Minimizing application stalls</h2>
+<p>For the most part, the compilation threads in OpenJ9 JVM execute in parallel with Java application threads. However, for correctness reasons a small number of compilations are performed synchronously, meaning that Java application threads have to wait for the compilation result before being allowed to execute the method being compiled. Since remote compilations typically take longer to complete due to network latency, application stalls caused by synchronous compilations can be more severe in a JITServer setting. If this becomes a problem, you should add the following command line option at the client:</p>
+<pre><code>-XX:+JITServerLocalSyncCompiles
 </code></pre>
-<p>The first compilation thread has ID 0. Log files generated by the second and subsequent compilation threads append the ID of the corresponding compilation thread as a suffix to the log file name. The pattern for these log file names is as follows:</p>
-<pre><code>&lt;specified_filename&gt;.&lt;date&gt;.&lt;time&gt;.&lt;pid&gt;.&lt;compilation_thread_ID&gt;
+<p>This option instructs the client JVM to perform the synchronous compilations locally, at a low optimization level (thus the compilation is relatively quick), and to follow-on with remote asynchronous recompilations at a higher optimization level to avoid any performance loss.</p>
+<h2 id="session-affinity">Session affinity</h2>
+<p>For technical reasons, a client JVM must use a single JITServer at a time. In a Kubernetes environment, where a JITServer service can be backed up by several server instances, you can satisfy this requirement by using session affinity. Note that if a server crashes (or gets terminated by the Kubernetes controller) the clients can connect to another server instance. This scenario imposes some performance penalty because the client-session caches that the server maintains need to be built anew. Below we show an example of a Kubernetes service definition that uses sessionAffinity:</p>
+<pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: jitserver
+spec:
+  type: ClusterIP
+selector:
+    app: jitserver
+  ports:
+    - protocol: TCP
+      port: 38400
+      targetPort: 38400
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 86400
 </code></pre>
-<p>For example, the second compilation thread has ID 1. The result is that the corresponding log file name has the form:</p>
-<pre><code>&lt;specified_filename&gt;.&lt;date&gt;.&lt;time&gt;.&lt;pid&gt;.1
+<h2 id="resilience">Resilience</h2>
+<p>If the client JVM does not find a compatible server to connect to, compilations are performed locally, by the client itself. To account for the case where the server is temporarily unavailable (e.g, server crash followed by Kubernetes launching another server instance), from time to time the client retries to connect to a server at the indicated address and port. The retry mechanism uses an exponential back-off where the retry interval is doubled with each unsuccessful attempt.</p>
+<h2 id="monitoring">Monitoring</h2>
+<p>There are several ways to inspect the behavior of a JITServer instance, but all are based on the <a href="https://blog.openj9.org/2018/06/07/reading-verbose-jit-logs/">OpenJ9 verbose logging facility</a>. Note that if the name of the verbose log is not specified, the relevant information is printed to stderr.
+When you use the <code>-XX:+JITServerLogConnections</code> command line option, the server prints a message to the verbose log every time a new client JVM connects to it or disconnects from it. This is an easy way to determine that the clients are able to reach the server. Example of output:</p>
+<pre><code>#JITServer: t= 74232 A new client (clientUID=14692403771747196083) connected. Server allocated a new client session.
+#JITServer: t= 74282 A new client (clientUID=2599593246759846167) connected. Server allocated a new client session.
+#JITServer: t= 86281 Client (clientUID=14692403771747196083) disconnected. Client session deleted
 </code></pre>
-<!-- ==== END OF TOPIC ==== xcompilationthreads.md ==== -->
+<p>The server has a heart-beat thread that periodically prints to the verbose log information related to the number of clients connected, the number of active compilation threads, the amount of CPU used, the amount of available memory and the number of times the internal server caches have been cleared. This last bit of information is important for diagnosing performance problems. The heart-beat information is enabled with the following option:</p>
+<pre><code>-Xjit:statisticsFrequency=&lt;period-in-ms&gt;
+</code></pre>
+<p>Example of output:</p>
+<pre><code>#JITServer: CurrentTime: Aug 06 17:25:15 2021
+#JITServer: Compilation Queue Size: 0
+#JITServer: Number of clients : 2
+#JITServer: Total compilation threads : 63
+#JITServer: Active compilation threads : 2
+#JITServer: Physical memory available: 14299 MB
+#JITServer: CpuLoad 206% (AvgUsage 25%) JvmCpu 113%
+...
+</code></pre>
+<p>A value greater than 0 for the <code>Compilation Queue Size</code> is a sign that the server is overloaded. Compilation requests that wait in the compilation queue face greater delays and run the risk of exceeding network timeouts. To avoid this scenario, you can reduce the number of connected clients, use the techniques described in section <a href="#alleviating-CPU-congestion-at-the-server">Alleviating CPU congestion at the server</a> or increase the number of compilation threads at the server with the following option:</p>
+<pre><code>-XcompilationThreads&lt;N&gt; (default is 63)
+</code></pre>
+<p>More detailed diagnostics can be obtained with the option <code>-Xjit:verbose={JITServer},verbose={compilePerformance}</code> which is typically used for debugging server behavior.</p>
+<!-- ==== END OF TOPIC ==== jitservertuning.md ==== -->
                 
               
               
