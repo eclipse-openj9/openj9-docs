@@ -88,6 +88,10 @@ timeout(time: 6, unit: 'HOURS') {
                             checkout changelog: false, poll: false,
                                 scm: [$class: 'GitSCM',
                                     branches: [[name: CLONE_BRANCH]],
+                                    extensions: [
+                                        [$class: 'CheckoutOption', timeout: 30],
+                                        [$class: 'CloneOption', timeout: 30]
+                                    ],
                                     userRemoteConfigs: [[refspec: REFSPEC, url: "${HTTP}${OPENJ9_REPO}"]]]
 
                             if (GET_SHA) {
