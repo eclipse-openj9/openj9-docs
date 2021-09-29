@@ -16,7 +16,7 @@ To enable or disable the Attach API, use the [`-Dcom.ibm.tools.attach.enable=[ye
 Because the Attach API can be used to connect to a running application, you must control access to it to ensure that only
 authorized users or processes can use it. Disable the Attach API if you do not intend to use it.
 
-On Windows systems, the Attach API uses the system temporary directory, which is typically `C:\Documents and Settings\<userid>\Local Settings\Temp`.
+On Windows systems, the Attach API uses the system temporary directory, which is typically `C:\Users\<USERNAME>\AppData\Local\Temp`.
 The Attach API creates a common subdirectory, which is `.com_ibm_tools_attach` by default. Because files and directories in the system temporary directory are handled by Windows security, only the process owner can connect to their processes.
 
 On UNIX systems, the Attach API uses `/tmp` and creates a common subdirectory, which is `.com_ibm_tools_attach` by default. The common subdirectory must be on a local drive, not a network drive. Security is handled by POSIX file permissions. The Attach API directory must be owned by `root` user and must have read, write, and execute file permissions for `user`, `group`, and `other` (`drwxrwxrwx`). The sticky bit is set so that only the owner and `root` can delete or rename files or directories within it. A process using the Java Attach API must be owned by the same UNIX user ID as the target process.
