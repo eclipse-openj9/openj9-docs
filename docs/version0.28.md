@@ -29,7 +29,6 @@ The following new features and notable changes since v 0.27.0 are included in th
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [JITServer technology is fully supported on some  systems](#jitserver-technology-is-fully-supported-on-some-systems)
 
-
 ## Features and changes
 
 ### Binaries and supported environments
@@ -37,6 +36,8 @@ The following new features and notable changes since v 0.27.0 are included in th
 OpenJ9 release 0.28.0 supports OpenJDK 17. OpenJDK 17 is the most current long term support (LTS) release (previously OpenJDK 11).
 
 Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 release 0.28.0, testing at the project is not complete and therefore support for new features that apply to these Java versions is not available.
+
+AArch64 Linux is now a fully supported, production-ready target for OpenJDK 17.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
