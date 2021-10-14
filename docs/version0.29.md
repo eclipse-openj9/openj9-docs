@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# What's new in version 0.28.0
+# What's new in version 0.29.0
 
 The following new features and notable changes since v 0.27.0 are included in this release:
 
@@ -33,11 +33,9 @@ The following new features and notable changes since v 0.27.0 are included in th
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.28.0 supports OpenJDK 17. OpenJDK 17 is the most current long term support (LTS) release (previously OpenJDK 11).
+OpenJ9 release 0.29.0 supports OpenJDK 8 and 11.
 
-Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 release 0.28.0, testing at the project is not complete and therefore support for new features that apply to these Java versions is not available.
-
-AArch64 Linux is now a fully supported, production-ready target for OpenJDK 17.
+AArch64 Linux is now a fully supported, production-ready target for OpenJDK 8 and 11.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -47,6 +45,6 @@ JITServer technology is now a fully supported feature on Linux&reg; on x86 and L
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v0.27.0 and v0.28.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.28/0.28.md).
+To see a complete list of changes between Eclipse OpenJ9 v0.27.0 and v0.29.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.29/0.29.md).
 
-<!-- ==== END OF TOPIC ==== version0.27.md ==== -->
+<!-- ==== END OF TOPIC ==== version0.29.md ==== -->
