@@ -5185,14 +5185,15 @@
 </code></pre>
 <dl>
 <dd>
-<p>Sets the directory in which cache data is read and written. The following defaults apply:</p>
+<p>Sets the directory in which cache data is read and written. Please do not set the cache directory on a NFS mount or a shared mount across systems or LPARs. The following defaults apply:</p>
 <ul>
 <li>On Windows&trade; systems, <code>&lt;directory&gt;</code> is the user's <code>C:\Documents and Settings\&lt;username&gt;\Local Settings\Application Data\javasharedresources</code> directory.</li>
-<li>On other operating systems, <code>&lt;directory&gt;</code> is <code>javasharedresources</code> in the user's home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is <code>/tmp/javasharedresources</code>, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in <code>&lt;directory&gt;</code>.</li>
+<li>On z/OS&reg; systems, <code>&lt;directory&gt;</code> is the <code>/tmp/javasharedresources</code> directory.</li>
+<li>On other operating systems, <code>&lt;directory&gt;</code> is <code>javasharedresources</code> in the user's home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is <code>/tmp/javasharedresources</code>, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in <code>&lt;directory&gt;</code>. Do not set user's home directory on a NFS or shared mount.</li>
 </ul>
 </dd>
 <dd>
-<p>On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system. For persistent caches, the directory must not be on an NFS mount.</p>
+<p>On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system.</p>
 </dd>
 <dd>
 <p>Non-persistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a <code>javasharedresources</code> subdirectory of the <code>cacheDir</code> specified. Do not move or delete control files in this directory. The <code>listAllCaches</code> utility, the <code>destroyAll</code> utility, and the <code>expire</code> suboption work only in the scope of a given <code>cacheDir</code>.</p>

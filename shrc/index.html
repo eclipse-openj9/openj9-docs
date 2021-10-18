@@ -4614,7 +4614,7 @@
 <p>Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container.
 Default behavior includes the following characteristics:</p>
 <ul>
-<li>The cache is created in the <code>javasharedresources</code> directory in the users home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is created in <code>/tmp/javasharedresources</code>. However, on Windows&reg;, it is created in the user's <code>C:\Documents and Settings\&lt;username&gt;\Local Settings\Application Data\javasharedresources</code> directory.</li>
+<li>On Windows&reg;, the cache is created in the user's <code>C:\Documents and Settings\&lt;username&gt;\Local Settings\Application Data\javasharedresources</code> directory. On z/OS&reg;, the default cache directory is <code>/tmp/javasharedresources</code>. On other systems, the cache is created in the <code>javasharedresources</code> directory in the users home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is created in <code>/tmp/javasharedresources</code>. Please do not set the home directory on a NFS mount or shared mount across systems or LPARs. </li>
 <li>The cache name is <code>sharedcc_%u</code>, where <code>%u</code> is the current user name.</li>
 <li>If class data sharing fails, the VM still starts without printing any errors.</li>
 </ul>
@@ -4707,7 +4707,7 @@ If you are using a non-persistent cache, you can use a cache utility to create a
 </li>
 <li>
 <p>Set a specific cache directory (<a href="../xshareclasses/#cachedir"><code>-Xshareclasses:cacheDir=&lt;directory&gt;</code></a>).</p>
-<p>Set a cache directory that is specific to your application, to  avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory. Your application will be unaffected by a user running <a href="../xshareclasses/#destroyall-cache-utility"><code>java -Xshareclasses:destroyAll</code></a>.</p>
+<p>Set a cache directory that is specific to your application, to  avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory. Your application will be unaffected by a user running <a href="../xshareclasses/#destroyall-cache-utility"><code>java -Xshareclasses:destroyAll</code></a>. Please do not set the cache directory on a NFS mount or a shared mount across systems or LPARs.</p>
 <p>In addition, if you have VMs from different Java installations, of the same Java release and installed by the same user, each VM checks whether the existing default shared cache in the cache directory is from the same Java installation as the VM. If not, the VM deletes that shared cache, then creates a new one. Specifying a different cache directory for each Java installation avoids this situation.</p>
 </li>
 <li>
