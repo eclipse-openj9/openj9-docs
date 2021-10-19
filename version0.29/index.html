@@ -352,6 +352,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-xx-utfcache-option-added" class="md-nav__link">
+    New -XX:[+|-]UTFCache option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-xsoftmx-updates-for-gencon" class="md-nav__link">
+    -Xsoftmx updates for gencon
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4325,6 +4339,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-xx-utfcache-option-added" class="md-nav__link">
+    New -XX:[+|-]UTFCache option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-xsoftmx-updates-for-gencon" class="md-nav__link">
+    -Xsoftmx updates for gencon
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4379,6 +4407,8 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#jitserver-technology-is-fully-supported-on-some-systems">JITServer technology is fully supported on some  systems</a></li>
+<li><a href="#new-xx-utfcache-option-added">New <code>-XX:[+|-]UTFCache</code> option added</a></li>
+<li><a href="#-xsoftmx-updates-for-gencon"><code>-Xsoftmx</code> updates for gencon</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -4387,6 +4417,10 @@
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="jitserver-technology-is-fully-supported-on-some-systems">JITServer technology is fully supported on some systems</h3>
 <p>JITServer technology is now a fully supported feature on Linux&reg; on x86 and Linux on IBM Power&reg; systems (64-bit only). This feature remains a technical preview for Linux on IBM Z&reg; systems (64-bit only). For more information, see <a href="../jitserver/">JITServer technology</a>.</p>
+<h3 id="new-xx-utfcache-option-added">New <code>-XX:[+|-]UTFCache</code> option added</h3>
+<p>A UTF to String cache is added to enhance reflection performance. The cache is enabled by default but can be disabled using the <a href="../xxutfcache/"><code>-XX:[+|-]UTFCache</code></a> option.</p>
+<h3 id="-xsoftmx-updates-for-gencon"><code>-Xsoftmx</code> updates for gencon</h3>
+<p>When using gencon, the <a href="../xsoftmx/"><code>-Xsoftmx</code></a> limit is proportional to the maximum amount of nursery space specified relative to the <code>-Xmx</code> value.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v0.27.0 and v0.29.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.29/0.29.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.29.md ==== -->
