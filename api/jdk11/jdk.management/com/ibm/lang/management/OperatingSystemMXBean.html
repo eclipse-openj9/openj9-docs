@@ -161,7 +161,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public interface <span class="typeNameLabel">OperatingSystemMXBean</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></pre>
-<div class="block">OpenJ9 platform management extension interface for the Operating System on which the Java Virtual Machine is running. 
+<div class="block">OpenJ9 platform management extension interface for the Operating System on which the Java Virtual Machine is running.
  <br>
  <table border="1">
  <caption><b>Usage example for the <a href="OperatingSystemMXBean.html" title="interface in com.ibm.lang.management"><code>OperatingSystemMXBean</code></a></b></caption>
@@ -230,7 +230,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.manageme
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProcessCpuLoad()">getProcessCpuLoad</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the "recent cpu usage" for the Java Virtual Machine process.</div>
+<div class="block">Returns the recent CPU usage for the Java Virtual Machine process.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -282,7 +282,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.manageme
 <td class="colFirst"><code>double</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSystemCpuLoad()">getSystemCpuLoad</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the "recent cpu usage" for the whole system.</div>
+<div class="block">Returns the recent CPU usage for the whole system.</div>
 </td>
 </tr>
 <tr id="i12" class="altColor">
@@ -464,14 +464,14 @@ long&nbsp;getTotalPhysicalMemory()</pre>
 <div class="block">Returns total amount of time the process has been scheduled or
  executed so far in both kernel and user modes. Returns -1 if the
  value is unavailable on this platform or in the case of an error.
- 
- Note that as of Java 8 SR5 the returned value is in 1 ns units, unless the system property 
+
+ Note that as of Java 8 SR5 the returned value is in 1 ns units, unless the system property
  com.ibm.lang.management.OperatingSystemMXBean.isCpuTime100ns is set to "true".</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getProcessCpuTime()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getProcessCpuTime</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>process cpu time.</dd>
+<dd>process CPU time.</dd>
 </dl>
 </li>
 </ul>
@@ -495,17 +495,17 @@ long&nbsp;getProcessCpuTimeByNS()</pre>
 <li class="blockList">
 <h4>getSystemCpuLoad</h4>
 <pre class="methodSignature">double&nbsp;getSystemCpuLoad()</pre>
-<div class="block">Returns the "recent cpu usage" for the whole system. This value is a double in
+<div class="block">Returns the recent CPU usage for the whole system. This value is a double in
  the [0.0,1.0] interval. A value of 0.0 means all CPUs were idle in the recent
  period of time observed, while a value of 1.0 means that all CPUs were actively
  running 100% of the time during the recent period of time observed. All values
- between 0.0 and 1.0 are possible. The first call to the method always 
+ between 0.0 and 1.0 are possible. The first call to the method always
  returns <a href="CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a>.ERROR_VALUE
  (-1.0), which marks the starting point. If the Java Virtual Machine's recent CPU
  usage is not available, the method returns a negative error code from
  <a href="CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a>.
  <p>getSystemCpuLoad might not return the same value that is reported by operating system
- utilities such as Unix "top" or Windows task manager.</p></div>
+ utilities such as Unix <code>top</code> or Windows task manager.</p></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true#getSystemCpuLoad()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getSystemCpuLoad</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">OperatingSystemMXBean</a></code></dd>
@@ -532,7 +532,7 @@ long&nbsp;getProcessCpuTimeByNS()</pre>
 <li class="blockList">
 <h4>getFreePhysicalMemorySize</h4>
 <pre class="methodSignature">long&nbsp;getFreePhysicalMemorySize()</pre>
-<div class="block">Returns the amount of physical memory that is available on the system in bytes. 
+<div class="block">Returns the amount of physical memory that is available on the system in bytes.
  Returns -1 if the value is unavailable on this platform or in the case of an error.
  <ul>
  <li>This information is not available on the z/OS platform.
@@ -662,14 +662,14 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <li class="blockList">
 <h4>getProcessCpuLoad</h4>
 <pre class="methodSignature">double&nbsp;getProcessCpuLoad()</pre>
-<div class="block">Returns the "recent cpu usage" for the Java Virtual Machine process.
+<div class="block">Returns the recent CPU usage for the Java Virtual Machine process.
  This value is a double in the [0.0,1.0] interval. A value of 0.0 means
  that none of the CPUs were running threads from the JVM process during
  the recent period of time observed, while a value of 1.0 means that all
  CPUs were actively running threads from the JVM 100% of the time
  during the recent period of time observed. Threads from the JVM include
  application threads as well as JVM internal threads. All values
- between 0.0 and 1.0 are possible. The first call to the method always 
+ between 0.0 and 1.0 are possible. The first call to the method always
  returns <a href="CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a>.ERROR_VALUE
  (-1.0), which marks the starting point. If the Java Virtual Machine's recent CPU
  usage is not available, the method returns a negative error code from
@@ -762,7 +762,7 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">NullPointerException</a></code> - if a null reference is passed as parameter.</dd>
 <dd><code><a href="ProcessorUsageRetrievalException.html" title="class in com.ibm.lang.management">ProcessorUsageRetrievalException</a></code> - if it failed obtaining Processor usage statistics.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - if array provided has insufficient entries and there are more 
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">IllegalArgumentException</a></code> - if array provided has insufficient entries and there are more
                    Processors to report on.
 
  <p>In case of an exception, the handler code might use toString() on the exception code
@@ -859,8 +859,8 @@ long&nbsp;getProcessVirtualMemorySize()</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The new <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank"><code>String</code></a> object or NULL in case of an error.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">UnsupportedOperationException</a></code> - if the operation is not implemented on this platform. 
- UnsupportedOperationException will also be thrown if the operation is implemented but it 
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">UnsupportedOperationException</a></code> - if the operation is not implemented on this platform.
+ UnsupportedOperationException will also be thrown if the operation is implemented but it
  cannot be performed because the system does not satisfy all the requirements, for example,
  an OS service is not installed.</dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>

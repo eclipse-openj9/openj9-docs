@@ -896,7 +896,7 @@ var activeTableTab = "activeTableTab";
 <div class="block">Get the root type, as defined in the JVMTI specification.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>an integer representing the root type, see HEAP_ROOT_ statics above.</dd>
+<dd>an integer representing the root type, see the HEAP_ROOT_ static fields.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
 </dl>
@@ -913,7 +913,7 @@ var activeTableTab = "activeTableTab";
 <div class="block">Get the reference type, as defined in the JVMTI specification.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>an integer representing the reference type, see REFERENCE_ statics above.</dd>
+<dd>an integer representing the reference type, see the REFERENCE_ static fields.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
 </dl>
@@ -930,7 +930,7 @@ var activeTableTab = "activeTableTab";
 <div class="block">Get the reachability of the target object via this specific reference.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>an integer representing the reachability, see REACHABILITY_ statics above.</dd>
+<dd>an integer representing the reachability, see the REACHABILITY_ static fields.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
 </dl>
@@ -945,7 +945,7 @@ var activeTableTab = "activeTableTab";
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;getDescription()</pre>
 <div class="block">Get a string describing the reference type.
  Implementers should not depend on the contents or identity of this string.
- e.g. "JNI Weak global reference", "Instance field 'MyClass.value'", "Constant pool string constant"</div>
+ e.g. <q>JNI Weak global reference</q>, <q>Instance field 'MyClass.value'</q>, <q>Constant pool string constant</q></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a String describing the reference type</dd>
