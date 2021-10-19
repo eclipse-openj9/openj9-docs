@@ -28,6 +28,8 @@ The following new features and notable changes since v 0.27.0 are included in th
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [JITServer technology is fully supported on some  systems](#jitserver-technology-is-fully-supported-on-some-systems)
+- [New `-XX:[+|-]UTFCache` option added](#new-xx-utfcache-option-added)
+- [`-Xsoftmx` updates for gencon](#-xsoftmx-updates-for-gencon)
 
 ## Features and changes
 
@@ -42,6 +44,14 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 ### JITServer technology is fully supported on some systems
 
 JITServer technology is now a fully supported feature on Linux&reg; on x86 and Linux on IBM Power&reg; systems (64-bit only). This feature remains a technical preview for Linux on IBM Z&reg; systems (64-bit only). For more information, see [JITServer technology](jitserver.md).
+
+### New `-XX:[+|-]UTFCache` option added
+
+A UTF to String cache is added to enhance reflection performance. The cache is enabled by default but can be disabled using the [`-XX:[+|-]UTFCache`](xxutfcache.md) option.
+
+### `-Xsoftmx` updates for gencon
+
+When using gencon, the [`-Xsoftmx`](xsoftmx.md) limit is proportional to the maximum amount of nursery space specified relative to the `-Xmx` value.
 
 ## Full release information
 
