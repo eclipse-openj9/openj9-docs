@@ -411,6 +411,7 @@ nav:
             - "-XX:[+|-]UseGCStartupHints"                                       : xxusegcstartuphints.md
             - "-XX:[+|-]UseJITServer"                                            : xxusejitserver.md
             - "-XX:[+|-]UseNoGC"                                                 : xxusenogc.md
+            - "-XX:[+|-]UTFCache"                                                : xxutfcache.md
             - "-XX:[+|-]VerboseVerification"                                     : xxverboseverification.md
             - "-XX:[+|-]VMLockClassLoader"                                       : xxvmlockclassloader.md
 
