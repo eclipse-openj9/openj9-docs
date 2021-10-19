@@ -260,7 +260,7 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#externalArrayletsSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">externalArrayletsSize</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#externalArrayletsSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">externalArrayletsSize</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></th>
 <td class="colLast">
 <div class="block">Get the total number of bytes consumed by arraylets external to the
  given indexable object.</div>
@@ -290,14 +290,14 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../pointer/ObjectReferencePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">ObjectReferencePointer</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getArrayoidPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">getArrayoidPointer</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getArrayoidPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">getArrayoidPointer</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></th>
 <td class="colLast">
 <div class="block">Returns the address of first arraylet leaf slot in the spine</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDataPointerForContiguous(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">getDataPointerForContiguous</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDataPointerForContiguous(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">getDataPointerForContiguous</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></th>
 <td class="colLast">
 <div class="block">Returns the address of first data slot in the array</div>
 </td>
@@ -682,7 +682,7 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 <dd><code>objPtr</code> - Pointer to an array object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The total size in bytes of objPtr's array spine;
-                        includes header, arraylet ptrs, and (if present) padding & inline data</dd>
+         includes header, arraylet ptrs, and (if present) padding & inline data</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
@@ -738,7 +738,7 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 <div class="block">Returns the size of data in an indexable object, in bytes, including leaves, excluding the header.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>arrayPtr</code> - Pointer to the indexable object whose size is required</dd>
+<dd><code>array</code> - Pointer to the indexable object whose size is required</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Size of object in bytes excluding the header</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -752,12 +752,12 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 <ul class="blockList">
 <li class="blockList">
 <h4>getArrayoidPointer</h4>
-<pre class="methodSignature">public&nbsp;<a href="../../pointer/ObjectReferencePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">ObjectReferencePointer</a>&nbsp;getArrayoidPointer&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)
+<pre class="methodSignature">public&nbsp;<a href="../../pointer/ObjectReferencePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">ObjectReferencePointer</a>&nbsp;getArrayoidPointer&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)
                                           throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
 <div class="block">Returns the address of first arraylet leaf slot in the spine</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>arrayPtr</code> - Ptr to an array</dd>
+<dd><code>array</code> - Ptr to an array</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Arrayoid ptr</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -771,12 +771,12 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 <ul class="blockList">
 <li class="blockList">
 <h4>getDataPointerForContiguous</h4>
-<pre class="methodSignature">public&nbsp;<a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;getDataPointerForContiguous&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)
+<pre class="methodSignature">public&nbsp;<a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;getDataPointerForContiguous&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)
                                         throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
 <div class="block">Returns the address of first data slot in the array</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>arrayPtr</code> - pointer to an array</dd>
+<dd><code>array</code> - pointer to an array</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Address of first data slot in the array</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -929,13 +929,13 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 <ul class="blockList">
 <li class="blockList">
 <h4>externalArrayletsSize</h4>
-<pre class="methodSignature">protected&nbsp;<a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;externalArrayletsSize&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)
+<pre class="methodSignature">protected&nbsp;<a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;externalArrayletsSize&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)
                                throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
 <div class="block">Get the total number of bytes consumed by arraylets external to the
  given indexable object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>arrayPtr</code> - Pointer to an array object</dd>
+<dd><code>array</code> - Pointer to an array object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the number of bytes consumed external to the spine</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
