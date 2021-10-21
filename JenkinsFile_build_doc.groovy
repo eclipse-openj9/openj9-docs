@@ -131,7 +131,15 @@ timeout(time: 6, unit: 'HOURS') {
                     if ((params.BUILD_TYPE == "PR") || (params.BUILD_TYPE == "MERGE")) {
                         stage("Push Doc") {
                             dir('push_repo') {
-                                git branch: PUSH_BRANCH, url: "${HTTP}${PUSH_REPO}"
+                                checkout changelog: false, poll: false,
+                                    scm: [$class: 'GitSCM',
+                                        branches: [[name: PUSH_BRANCH]],
+                                        extensions: [
+                                            [$class: 'CheckoutOption', timeout: 30],
+                                            [$class: 'CloneOption', timeout: 30],
+                                            [$class: 'LocalBranch', localBranch: PUSH_BRANCH]
+                                        ],
+                                        userRemoteConfigs: [[url: "${HTTP}${PUSH_REPO}"]]]
                                 if (params.BUILD_TYPE == "PR") {
                                     dir("${ghprbPullId}") {
                                         copy_built_doc(BUILD_DIR)
