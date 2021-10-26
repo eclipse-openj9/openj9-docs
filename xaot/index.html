@@ -4601,7 +4601,7 @@
 <dl>
 <dd>
 <p>Excludes a Java method when AOT code is compiled from the shared classes cache. Use this option if the method causes the program to fail.</p>
-<p><code>&lt;method_name&gt;</code> is a regular expression that determines the method or methods that are to be excluded. Specify as much of the full package, class and method as necessary.</p>
+<p><code>&lt;method_name&gt;</code> is the method or methods that are to be excluded; the wildcard <code>*</code> may be used. Specify as much of the full package, class and method as necessary.</p>
 <p>For example, <code>-Xaot:exclude={test/sample/MyClass.testMethod()V}</code> excludes the single method specified.<br />
 However, <code>-Xaot:exclude={test/sample/MyClass.testMethod()*}</code> excludes the method regardless of return type.<br />
 Similarly, <code>-Xaot:exclude={*}</code> excludes <em>all</em> methods.</p>
@@ -4613,7 +4613,7 @@ Similarly, <code>-Xaot:exclude={*}</code> excludes <em>all</em> methods.</p>
 </code></pre>
 <dl>
 <dd>
-<p>Only the Java methods specified are included when AOT code is compiled from the shared classes cache. <code>&lt;method_name&gt;</code> is a regular expression that determines the method or methods that are to be included (see <a href="#exclude"><code>-Xaot:exclude</code></a> for details).</p>
+<p>Only the Java methods specified are included when AOT code is compiled from the shared classes cache. <code>&lt;method_name&gt;</code> is the method or methods that are to be included (the wildcard <code>*</code> may be used, see <a href="#exclude"><code>-Xaot:exclude</code></a> for details).</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> <code>limit</code> has the same effect regardless of whether it's specified on <a href="../xjit/"><code>-Xjit</code></a> or <code>-Xaot</code>. In consequence, if you specify <code>-Xaot:limit</code>, JIT compilation is also restricted to those methods specified; other methods are always interpreted.</p>
 </dd>
 </dl>
@@ -4632,7 +4632,7 @@ Similarly, <code>-Xaot:exclude={*}</code> excludes <em>all</em> methods.</p>
 <dl>
 <dd>
 <p>Excludes the specified Java methods when AOT code is loaded from the shared classes cache. In consequence, the compiler does a JIT compilation on those methods instead.</p>
-<p><code>&lt;method_name&gt;</code> is a regular expression that determines the method or methods that are to be excluded (see <a href="#exclude"><code>-Xaot:exclude</code></a> for details). This option does <em>not</em> prevent the method from being compiled.</p>
+<p><code>&lt;method_name&gt;</code> is the method or methods that are to be excluded (the wildcard <code>*</code> may be used, see <a href="#exclude"><code>-Xaot:exclude</code></a> for details). This option does <em>not</em> prevent the method from being compiled.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> <code>loadExclude</code> can only be specified on <code>-Xaot</code>; it does not have an equivalent on <a href="../xjit/"><code>-Xjit</code></a>.</p>
 </dd>
 </dl>
@@ -4642,7 +4642,7 @@ Similarly, <code>-Xaot:exclude={*}</code> excludes <em>all</em> methods.</p>
 <dl>
 <dd>
 <p>Only the Java methods specified are included when AOT code is loaded from the shared classes cache. In consequence, the compiler does a JIT compilation on other methods instead.</p>
-<p><code>&lt;method_name&gt;</code> is a regular expression that determines the method or methods that are to be included (see <a href="#exclude"><code>-Xaot:exclude</code></a> for details).</p>
+<p><code>&lt;method_name&gt;</code> is the method or methods that are to be included (the wildcard <code>*</code> may be used; see <a href="#exclude"><code>-Xaot:exclude</code></a> for details).</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> <code>loadLimit</code> can only be specified on <code>-Xaot</code>; it does not have an equivalent on <a href="../xjit/"><code>-Xjit</code></a>. This option filters what AOT code the compiler is allowed to load from the shared classes cache. </p>
 </dd>
 </dl>
