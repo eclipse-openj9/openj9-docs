@@ -89,7 +89,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
 : Excludes a Java method when AOT code is compiled from the shared classes cache. Use this option if the method causes the program to fail.
 
-    `<method_name>` is a regular expression that determines the method or methods that are to be excluded. Specify as much of the full package, class and method as necessary.
+    `<method_name>` is the method or methods that are to be excluded; the wildcard `*` may be used. Specify as much of the full package, class and method as necessary.
 
     For example, `-Xaot:exclude={test/sample/MyClass.testMethod()V}` excludes the single method specified.  
     However, `-Xaot:exclude={test/sample/MyClass.testMethod()*}` excludes the method regardless of return type.  
@@ -102,7 +102,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
         -Xaot:limit={<method_name>}
 
-: Only the Java methods specified are included when AOT code is compiled from the shared classes cache. `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xaot:exclude`](#exclude) for details).
+: Only the Java methods specified are included when AOT code is compiled from the shared classes cache. `<method_name>` is the method or methods that are to be included (the wildcard `*` may be used, see [`-Xaot:exclude`](#exclude) for details).
 
     :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limit` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:limit`, JIT compilation is also restricted to those methods specified; other methods are always interpreted.
 
@@ -122,7 +122,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
 : Excludes the specified Java methods when AOT code is loaded from the shared classes cache. In consequence, the compiler does a JIT compilation on those methods instead.
 
-    `<method_name>` is a regular expression that determines the method or methods that are to be excluded (see [`-Xaot:exclude`](#exclude) for details). This option does _not_ prevent the method from being compiled.
+    `<method_name>` is the method or methods that are to be excluded (the wildcard `*` may be used, see [`-Xaot:exclude`](#exclude) for details). This option does _not_ prevent the method from being compiled.
 
     :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `loadExclude` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md).
 
@@ -133,7 +133,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 
 : Only the Java methods specified are included when AOT code is loaded from the shared classes cache. In consequence, the compiler does a JIT compilation on other methods instead.
 
-    `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xaot:exclude`](#exclude) for details).
+    `<method_name>` is the method or methods that are to be included (the wildcard `*` may be used; see [`-Xaot:exclude`](#exclude) for details).
 
     :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `loadLimit` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md). This option filters what AOT code the compiler is allowed to load from the shared classes cache. 
 

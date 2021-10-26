@@ -85,7 +85,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Excludes the specified method from compilation.
 
-    `<method_name>` is a regular expression that determines the method or methods that are to be excluded. Specify as much of the full package, class and method as necessary. 
+    `<method_name>` is the method or methods that are to be excluded; the wildcard `*` may be used. Specify as much of the full package, class and method as necessary. 
     
     For example, `-Xjit:exclude={test/sample/MyClass.testMethod()V}` excludes the single method specified.  
     However, `-Xjit:exclude={test/sample/MyClass.testMethod()*}` excludes the method regardless of return type.  
@@ -97,7 +97,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
         -Xjit:limit={<method_name>}
 
-: Only the Java methods specified are included when code is compiled or loaded from the shared classes cache. `<method_name>` is a regular expression that determines the method or methods that are to be included (see [`-Xjit:exclude`](#exclude) for details).
+: Only the Java methods specified are included when code is compiled or loaded from the shared classes cache. `<method_name>` is the method or methods that are to be included (the wildcard `*` may be used, see [`-Xjit:exclude`](#exclude) for details).
 
 : :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limit` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limit`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
 
