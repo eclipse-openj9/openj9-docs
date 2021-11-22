@@ -28,6 +28,7 @@ The following new features and notable changes since v 0.29.0 are included in th
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
+- [Ignored options now captured in java dumps](#ignored-options-captured-in-java-dumps)
 
 ## Features and changes
 
@@ -40,6 +41,19 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 ### Changes to the shared classes cache generation number
 
 The format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache rather than re-creating or reusing an existing cache. To save space, you can remove all existing shared caches unless they are in use by an earlier release. For more information about the `-Xshareclasses` option, including the `destroy` options that you can use to remove caches, see [`-Xshareclasses`](xshareclasses.md).
+
+### Ignored options captured in java dumps
+
+For improved compatibility with other Java implementations, OpenJ9 ignores many command-line options. If any were ignored, they are now listed in java dump files. For example, this command
+<pre>
+java -Xdump:java:events=vmstop -XX:+UseCompressedOop -XX:CompressedClassSpaceSize=528482304 -version
+</pre>
+would yield the following in the <tt>ENVINFO</tt> section after the complete list of all command-line arguments
+<pre>
+1CIIGNOREDARGS Ignored Args:
+2CIIGNOREDARG            -XX:+UseCompressedOop
+2CIIGNOREDARG            -XX:CompressedClassSpaceSize=528482304
+</pre>
 
 ## Full release information
 

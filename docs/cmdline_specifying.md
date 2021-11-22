@@ -24,7 +24,6 @@
 
 # OpenJ9 command-line options
 
-
 When you start a Java&trade; application you can specify various options on the command line to configure the runtime environment. These options include:
 
 - [System properties](d_jvm_commands.md)
@@ -36,7 +35,6 @@ Although the command line is the traditional way to specify command-line options
 
 Options specified on the command line override the equivalent environment variables. For example, specifying `java -cp <dir1>` completely overrides setting the environment variable `CLASSPATH=<dir2>`.
 
-
 ## Quotation marks
 
 Use single or double quotation marks for command-line options only when explicitly directed to do so. Single and double quotation marks have different meanings on different platforms, operating systems, and shells. Do not use `'-X<option>'` or `"-X<option>"`. Instead, you must use `-X<option>`. For example, do not use `'-Xmx500m'` and `"-Xmx500m"`. Write this option as `-Xmx500m`.
@@ -46,7 +44,6 @@ Use single or double quotation marks for command-line options only when explicit
 The sequence of the Java options on the command line defines which options take precedence during startup. Rightmost options have precedence over leftmost options. In the following example, the `-Xjit` option takes precedence:
 
     java -Xint -Xjit myClass
-
 
 At startup, the list of VM arguments is constructed in the following order, with the lowest precedence first:
 
@@ -126,6 +123,5 @@ Here is an extract from a Java core file that shows the options that are used:
     - On AIX, Linux, macOS, and z/OS systems:
 
             export _JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
-
 
 <!-- ==== END OF TOPIC ==== cmdline_specifying.md ==== -->
