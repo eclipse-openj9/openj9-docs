@@ -296,6 +296,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.30/" class="md-nav__link">
+        Version 0.30.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.29/" class="md-nav__link">
         Version 0.29.0
       </a>
@@ -331,18 +343,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../version0.25/" class="md-nav__link">
-        Version 0.25.0
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -359,6 +359,18 @@
           Earlier releases
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version0.25/" class="md-nav__link">
+        Version 0.25.0
+      </a>
+    </li>
+  
+
           
             
   
@@ -4624,9 +4636,9 @@ NULL           ================================
 3XHCPUARCH       Architecture   : amd64
 3XHNUMCPUS       How Many       : 4
 3XHNUMASUP       NUMA is either not supported or has been disabled by user
-NULL           
+NULL
 1XHERROR2      Register dump section only produced for SIGSEGV, SIGILL or SIGFPE.
-NULL           
+NULL
 </code></pre>
 <p>The content of this section can vary, depending on the cause of the dump. For example, if the dump was caused by a
 general protection fault (gpf), the library in which the crash occurred is also recorded, together with a value shown
@@ -4685,7 +4697,7 @@ following line in the output:</p>
 <li>OpenJ9 VM and subcomponent version information (<code>1CIVMVERSION</code>, <code>1CIJ9VMVERSION</code>, <code>1CIJITVERSION</code>, <code>1CIOMRVERSION</code>, <code>1CIJCLVERSION</code>)</li>
 <li>VM start time (<code>1CISTARTTIME</code>) and process information (<code>1CIPROCESSID</code>)</li>
 <li>Java home (<code>1CIJAVAHOMEDIR</code>) and DLL (<code>1CIJAVADLLDIR</code>) directories</li>
-<li>User arguments passed on the command line (<code>1CIUSERARG</code>)</li>
+<li>User arguments passed on the command line (<code>1CIUSERARGS</code>), identifying those that are ignored (<code>1CIIGNOREDARGS</code>)</li>
 <li>User limits imposed by the system (<code>1CIUSERLIMITS</code>)</li>
 <li>Environment variables in place (<code>1CIENVVARS</code>)</li>
 <li>System information (<code>1CISYSINFO</code>)</li>
@@ -4713,10 +4725,13 @@ NULL           =================================
 1CICMDLINE     [not available]
 1CIJAVAHOMEDIR Java Home Dir:   /home/me/openj9-openjdk-jdk9/build/linux-x86_64-normal-server-release/images/jdk
 1CIJAVADLLDIR  Java DLL Dir:    /home/me/openj9-openjdk-jdk9/build/linux-x86_64-normal-server-release/images/jdk/bin
-1CISYSCP       Sys Classpath:   
+1CISYSCP       Sys Classpath:
 1CIUSERARGS    UserArgs:
 2CIUSERARG               -Xoptionsfile=/home/me/openj9-openjdk-jdk9/build/linux-x86_64-normal-server-release/images/jdk/lib/options.default
 ...
+1CIIGNOREDARGS Ignored Args:
+2CIIGNOREDARG            -XX:+UseCompressedOop
+2CIIGNOREDARG            -XX:CompressedClassSpaceSize=528482304
 NULL
 1CIUSERLIMITS  User Limits (in bytes except for NOFILE and NPROC)
 NULL           ------------------------------------------------------------------------
@@ -4742,12 +4757,12 @@ NULL           -----------------------------------------------------------------
 2CIENVVAR      XDG_VTNR=1
 2CIENVVAR      SSH_AGENT_PID=2653
 ...
-NULL           
+NULL
 1CISYSINFO     System Information
 NULL           ------------------------------------------------------------------------
 2CISYSINFO     /proc/sys/kernel/core_pattern = core
 2CISYSINFO     /proc/sys/kernel/core_uses_pid = 1
-NULL          
+NULL
 1CICPUINFO     CPU Information
 NULL           ------------------------------------------------------------------------
 2CIPHYSCPU     Physical CPUs: 8
@@ -4786,7 +4801,7 @@ NULL           -----------------------------------------------------------------
 3CICGRPINFO    Memory + Swap limit exceeded count : 0
 3CICGRPINFO    OOM Killer Disabled : 0
 3CICGRPINFO    Under OOM : 0
-NULL           
+NULL
 </code></pre>
 <h3 id="nativememinfo">NATIVEMEMINFO</h3>
 <p>This section records information about native memory that is requested by using library functions such as <code>malloc()</code> and <code>mmap()</code>.
@@ -4851,14 +4866,14 @@ NULL           =================================
 4MEMUSER       |  |  +--Other: 10,248 bytes / 12 allocations
 1MEMUSER       |
 2MEMUSER       +--Unknown: 513,728 bytes / 2065 allocations
-NULL           
+NULL
 </code></pre>
 <p>This section does not record memory that is allocated by application or JNI code and is typically a little less than the
 value recorded by operating system tools.</p>
 <h3 id="meminfo">MEMINFO</h3>
 <p>This section relates to memory management, providing a breakdown of memory usage in the VM for the object heap,
 internal memory, memory used for classes, the JIT code cache, and JIT data cache in decimal and hexadecimal format.
-You can also find out which garbage collection policy is in use when the dump is produced.  </p>
+You can also find out which garbage collection policy is in use when the dump is produced.</p>
 <p>The object memory area (<code>1STHEAPTYPE</code>) records each memory region in use, its start and end address, and region size.
 Further information is recorded about the memory segments used for internal memory, class memory, the JIT code cache and JIT data cache (<code>1STSEGMENT</code>).
 This information includes the address of the segment control data structure, the start and end address of the native memory segment, as well as
@@ -4867,7 +4882,7 @@ the segment size.</p>
 <pre><code>NULL           ------------------------------------------------------------------------
 0SECTION       MEMINFO subcomponent dump routine
 NULL           =================================
-NULL           
+NULL
 1STHEAPTYPE    Object Memory
 NULL           id                 start              end                size               space/region
 1STHEAPSPACE   0x00007FF4F00744A0         --                 --                 --         Generational
@@ -4887,7 +4902,7 @@ NULL
 1STSEGTOTAL    Total memory:                    17825792 (0x0000000001100000)
 1STSEGINUSE    Total memory in use:               894784 (0x00000000000DA740)
 1STSEGFREE     Total memory free:               16931008 (0x00000000010258C0)
-NULL           
+NULL
 1STSEGTYPE     Class Memory
 NULL           segment            start              alloc              end                type       size
 1STSEGMENT     0x00007FF4F03B5638 0x0000000001053D98 0x000000000105BD98 0x000000000105BD98 0x00010040 0x0000000000008000
@@ -4897,7 +4912,7 @@ NULL
 1STSEGTOTAL    Total memory:                     3512520 (0x00000000003598C8)
 1STSEGINUSE    Total memory in use:              3433944 (0x00000000003465D8)
 1STSEGFREE     Total memory free:                  78576 (0x00000000000132F0)
-NULL           
+NULL
 1STSEGTYPE     JIT Code Cache
 NULL           segment            start              alloc              end                type       size
 1STSEGMENT     0x00007FF4F00961F8 0x00007FF4CE43D000 0x00007FF4CE445790 0x00007FF4DE43D000 0x00000068 0x0000000010000000
@@ -4906,7 +4921,7 @@ NULL
 1STSEGINUSE    Total memory in use:                34704 (0x0000000000008790)
 1STSEGFREE     Total memory free:              268400752 (0x000000000FFF7870)
 1STSEGLIMIT    Allocation limit:               268435456 (0x0000000010000000)
-NULL           
+NULL
 1STSEGTYPE     JIT Data Cache
 NULL           segment            start              alloc              end                type       size
 1STSEGMENT     0x00007FF4F0096668 0x00007FF4CC553030 0x00007FF4CC753030 0x00007FF4CC753030 0x00000048 0x0000000000200000
@@ -4915,9 +4930,9 @@ NULL
 1STSEGINUSE    Total memory in use:              2097152 (0x0000000000200000)
 1STSEGFREE     Total memory free:                      0 (0x0000000000000000)
 1STSEGLIMIT    Allocation limit:               402653184 (0x0000000018000000)
-NULL           
-1STGCHTYPE     GC History  
-NULL           
+NULL
+1STGCHTYPE     GC History
+NULL
 </code></pre>
 <p>In the example, the GC History (<code>1STGCHTYPE</code>) section is blank. This section is populated if a garbage collection cycle occurred in
 a VM that is being diagnosed with the trace facility.</p>
@@ -4927,22 +4942,22 @@ a VM that is being diagnosed with the trace facility.</p>
 <pre><code>NULL           ------------------------------------------------------------------------
 0SECTION       LOCKS subcomponent dump routine
 NULL           ===============================
-NULL           
+NULL
 1LKPOOLINFO    Monitor pool info:
 2LKPOOLTOTAL     Current total number of monitors: 3
-NULL           
+NULL
 1LKMONPOOLDUMP Monitor Pool Dump (flat &amp; inflated object-monitors):
 2LKMONINUSE      sys_mon_t:0x00007FF4B0001D78 infl_mon_t: 0x00007FF4B0001DF8:
 3LKMONOBJECT       java/lang/ref/ReferenceQueue@0x00000000FFE26A10: &lt;unowned&gt;
 3LKNOTIFYQ            Waiting to be notified:
 3LKWAITNOTIFY            &quot;Common-Cleaner&quot; (J9VMThread:0x0000000000FD0100)
-NULL           
+NULL
 1LKREGMONDUMP  JVM System Monitor Dump (registered monitors):
 2LKREGMON          Thread global lock (0x00007FF4F0004FE8): &lt;unowned&gt;
 2LKREGMON          &amp;(PPG_mem_mem32_subAllocHeapMem32.monitor) lock (0x00007FF4F0005098): &lt;unowned&gt;
 2LKREGMON          NLS hash table lock (0x00007FF4F0005148): &lt;unowned&gt;
 ...
-NULL           
+NULL
 </code></pre>
 <h3 id="threads">THREADS</h3>
 <p>The THREADS section of a Java dump file provides summary information about the VM thread pool and detailed information about Java threads, native threads, and stack traces. Understanding the content of this section can help you diagnose problems that are caused by blocked or waiting threads.</p>
@@ -5007,9 +5022,9 @@ NULL
 2XMPOOLTOTAL       Current total number of pooled threads: 18
 2XMPOOLLIVE        Current total number of live threads: 16
 2XMPOOLDAEMON      Current total number of live daemon threads: 15
-NULL           
+NULL
 1XMTHDINFO     Thread Details
-NULL           
+NULL
 3XMTHREADINFO      &quot;JIT Diagnostic Compilation Thread-7 Suspended&quot; J9VMThread:0x0000000000EFC500, omrthread_t:0x00007FF4F00A77E8, java/lang/Thread:0x00000000FFE97480, state:R, prio=10
 3XMJAVALTHREAD            (java/lang/Thread getId:0xA, isDaemon:true)
 3XMTHREADINFO1            (native thread ID:0x7657, native priority:0xB, native policy:UNKNOWN, vmstate:CW, vm thread flags:0x00000081)
@@ -5291,7 +5306,7 @@ NULL
 </code></pre>
 <h3 id="classes">CLASSES</h3>
 <p>The classes section shows information about class loaders. The first part is a summary that records each available class loader (<code>2CLTEXTCLLOADER</code>) followed by the number of libraries and classes that it loaded. This information is followed by a more detailed list of libraries (<code>1CLTEXTCLLIB</code>) and classes (<code>1CLTEXTCLLO</code>) that are loaded.</p>
-<p>In the example you can see that the <code>java/lang/InternalAnonymousClassLoader</code> loaded 2 classes, <code>jdk/internal/loader/BuiltinClassLoader$$Lambda$2/00000000F03876A0(0x0000000001030F00)</code> and              <code>jdk/internal/loader/BuiltinClassLoader$$Lambda$1/00000000F00D2460(0x0000000001018A00)</code>.</p>
+<p>In the example you can see that the <code>java/lang/InternalAnonymousClassLoader</code> loaded 2 classes, <code>jdk/internal/loader/BuiltinClassLoader$$Lambda$2/00000000F03876A0(0x0000000001030F00)</code> and <code>jdk/internal/loader/BuiltinClassLoader$$Lambda$1/00000000F00D2460(0x0000000001018A00)</code>.</p>
 <pre><code>NULL           ------------------------------------------------------------------------
 0SECTION       CLASSES subcomponent dump routine
 NULL           =================================
@@ -5353,7 +5368,7 @@ NULL
 2XMPOOLTOTAL       Current total number of pooled threads: 16
 2XMPOOLLIVE        Current total number of live threads: 15
 2XMPOOLDAEMON      Current total number of live daemon threads: 14
-NULL            
+NULL
 1XMCURTHDINFO  Current thread
 3XMTHREADINFO      &quot;main&quot; J9VMThread:0xB6B60E00, omrthread_t:0xB6B049D8, java/lang/Thread:0xB55444D0, state:R, prio=5
 3XMJAVALTHREAD            (java/lang/Thread getId:0x1, isDaemon:false)
@@ -5492,7 +5507,7 @@ NULL
 <p>To simulate a Java <code>OutOfMemoryError</code>, this example application repeatedly appends characters to a <code>StringBuffer</code> object in an infinite loop. The Java callstack shows the <code>HeapBreaker.main</code> method appending characters (<code>java/lang/StringGuffer.append</code>) until the method <code>java/lang/StringBuffer.ensureCapacityImpl()</code> throws the <code>OutOfMemoryError</code>.</p>
 <p>StringBuffer objects are wrappers for character arrays (<code>char[]</code>) and when the capacity of the underlying array is reached, the contents are automatically copied into a new, larger array. The new array is created in the <code>StringBuffer.ensureCapacity()</code> method, which more or less doubles the size of the old array. In this scenario, the array takes up all the remaining space in the Java heap.</p>
 <p>The MEMINFO section of the Java dump file can also tell you when an unexpectedly large allocation request causes an OOM. Look for the GC History (<code>1STGCHTYPE</code>) section, which details allocation requests that trigger GC activity. In the sample output you can see that a large allocation request (<code>requestedbytes=603979784</code>) triggered a global GC. When the GC could not free up sufficient space in the heap to satisfy the request, the allocation failure generated the OOM.</p>
-<pre><code>1STGCHTYPE     GC History  
+<pre><code>1STGCHTYPE     GC History
 3STHSTTYPE     14:29:29:580239000 GMT j9mm.101 -   J9AllocateIndexableObject() returning NULL! 0 bytes requested for object of class B6BBC300 from memory space 'Generational' id=B6B49D20
 3STHSTTYPE     14:29:29:579916000 GMT j9mm.134 -   Allocation failure end: newspace=2686912/3014656 oldspace=231597224/533856256 loa=5338112/5338112
 3STHSTTYPE     14:29:29:579905000 GMT j9mm.470 -   Allocation failure cycle end: newspace=2686912/3014656 oldspace=231597224/533856256 loa=5338112/5338112
@@ -5541,12 +5556,12 @@ NULL
 <p>The next step in diagnosing the problem is to open the system dump that gets generated automatically when an <code>OutOfMemoryError</code> occurs. Open
 the dump with the <a href="https://www.eclipse.org/mat/">Eclipse Memory Analyzer tool (MAT)</a> and search for the <code>StringBuffer</code> object, which should provide further clues about what went wrong. A common example is seeing the same <code>String</code> duplicated over and over again, which might indicate that code is stuck in a loop.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> If you want to use MAT to analyze your system dump, you must install the Diagnostic Tool Framework for Java (DTFJ) plugin in the Eclipse IDE. Select the following menu items:</p>
-<pre><code>Help &gt; Install New Software &gt; Work with &quot;IBM Diagnostic Tool Framework for Java&quot; &gt;  
+<pre><code>Help &gt; Install New Software &gt; Work with &quot;IBM Diagnostic Tool Framework for Java&quot; &gt;
 </code></pre>
 <p>If, unlike the previous scenario, you receive an <code>OutOfMemoryError</code> and the MEMINFO section shows that there is very little space left
 on the Java heap, the current thread information is typically not important. The current thread is simply the thread that happened to be current when the space ran out. In this situation you might want to increase your Java heap size. For help with this task, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_heapsizing.html">How to do heap sizing</a>.</p>
 <h3 id="native-outofmemoryerror">Native OutOfMemoryError</h3>
-<p>In this scenario, the VM runs out of native memory. Native memory is memory that is used by the VM for storing all virtualized resources and data that it needs for VM operations. Native memory that is available to the VM process is limited by the operating system. The native memory available to the VM might also be subject to additional limits imposed by the operating system, for example Unix <code>ulimits</code>.  </p>
+<p>In this scenario, the VM runs out of native memory. Native memory is memory that is used by the VM for storing all virtualized resources and data that it needs for VM operations. Native memory that is available to the VM process is limited by the operating system. The native memory available to the VM might also be subject to additional limits imposed by the operating system, for example Unix <code>ulimits</code>.</p>
 <p>When a <code>NativeOutOfMemoryError</code> occurs, a Java dump is generated by default. The first section of the file (TITLE) tells you that a systhrow event triggered the Java dump as a result of an OOM (<code>java/lang/OutOfMemoryError</code>) for native memory.</p>
 <pre><code>0SECTION       TITLE subcomponent dump routine
 NULL           ===============================
@@ -5568,7 +5583,7 @@ NULL
 2XMPOOLTOTAL       Current total number of pooled threads: 16
 2XMPOOLLIVE        Current total number of live threads: 16
 2XMPOOLDAEMON      Current total number of live daemon threads: 15
-NULL            
+NULL
 1XMCURTHDINFO  Current thread
 3XMTHREADINFO      &quot;main&quot; J9VMThread:0xB6C60C00, omrthread_t:0xB6C049D8, java/lang/Thread:0xB55E3C10, state:R, prio=5
 3XMJAVALTHREAD            (java/lang/Thread getId:0x1, isDaemon:false)
@@ -5655,21 +5670,21 @@ NULL           =================================
 4MEMUSER       |  |  +--Other: 951,520 bytes / 247 allocations
 1MEMUSER       |
 2MEMUSER       +--Unknown: 2,112 bytes / 16 allocations
-NULL           
+NULL
 </code></pre>
 <p>In the <code>VM Class Libraries</code> section, the amount of memory allocated for <code>Direct Byte Buffers</code> is shown. Because the <code>NativeOutOfMemoryError</code> was received on a small 32-bit system, a value of <code>2,598,510,480 bytes</code> indicates that the operating system has run out of memory. On a larger UNIX system, the process might have run out of memory because of the <code>ulimit</code> setting. Increasing the value for <code>ulimit</code> might avoid the error, which you can do temporarily by setting  <code>ulimit -f unlimited</code> in your current session.</p>
 <p>The theoretical maximum size for a 32-bit process is the size of the 32-bit address space, which is 4 GB. On most operating systems a portion of the address space for each process is used by the kernel, such that the real limit for 32-bit processes is actually significantly less than 4GB. As a result, running out of native memory with a 32-bit VM is quite common.</p>
 <p>The same 4 GB limit is also important if you are using a 64-bit VM with compressed references. In compressed references mode, all references to objects, classes, threads, and monitors are represented by 32-bit values for performance reasons, so these structures can be allocated only at 32-bit addresses. However, the operating system might place other allocations within this 4 GB of address space, and if this area becomes sufficiently full or fragmented, the VM throws a native <code>NativeOutOfMemoryError</code> error. These errors typically occur when the VM tries to create a new thread or load a class. The <strong>Current Thread History</strong> section should contain more information about what the thread was doing at the VM level when the <code>NativeOutOfMemoryError</code> error occurred.</p>
 <p>You can usually avoid this type of problem by using the <code>-Xmcrs</code> option to reserve a contiguous area of memory within the lowest 4GB of memory at VM startup.</p>
-<p>Another common cause of a <code>NativeOutOfMemoryError</code> is when an application loads duplicate classes. Classes are allocated outside of the Java heap in native memory. If the value reported for <code>Classes</code> in the NATIVEMEMINFO section is very large, duplicate classes might be the cause of your problem. The <a href="https://www.eclipse.org/mat/">Eclipse Memory Analyzer Tool (MAT)</a> can tell you if you have duplicate classes by using the <em>Class Loader Explorer</em> feature. Because a system dump is automatically generated as well as a Java dump in response to a <code>NativeOutOfMemoryError</code>, simply open the system dump in MAT to continue your diagnosis.  </p>
+<p>Another common cause of a <code>NativeOutOfMemoryError</code> is when an application loads duplicate classes. Classes are allocated outside of the Java heap in native memory. If the value reported for <code>Classes</code> in the NATIVEMEMINFO section is very large, duplicate classes might be the cause of your problem. The <a href="https://www.eclipse.org/mat/">Eclipse Memory Analyzer Tool (MAT)</a> can tell you if you have duplicate classes by using the <em>Class Loader Explorer</em> feature. Because a system dump is automatically generated as well as a Java dump in response to a <code>NativeOutOfMemoryError</code>, simply open the system dump in MAT to continue your diagnosis.</p>
 <h3 id="deadlock">Deadlock</h3>
 <p>Deadlocks occur when two threads attempt to synchronize on an object and lock an instance of a class. When this happens, your application stops responding and hangs. Generating a Java dump file will quickly tell you whether you have a deadlock situation. Trigger the Java dump by sending a SIGQUIT signal (<code>kill -3</code>) to the VM.</p>
 <p>The VM can detect the most common types of deadlock scenario involving Java monitors. If this type of deadlock is detected, information is provided in the LOCKS section. More complex deadlocks, including those that involve a mixture of native mutexes and Java monitors, are not detected.</p>
 <p>Here is the output from the code that was used to cause a common deadlock scenario:</p>
-<pre><code>NULL           
+<pre><code>NULL
 1LKDEADLOCK    Deadlock detected !!!
 NULL           ---------------------
-NULL           
+NULL
 2LKDEADLOCKTHR  Thread &quot;Worker Thread 2&quot; (0x94501D00)
 3LKDEADLOCKWTR    is waiting for:
 4LKDEADLOCKMON      sys_mon_t:0x08C2B344 infl_mon_t: 0x08C2B384:
@@ -5731,10 +5746,10 @@ NULL
 <pre><code>NULL           ------------------------------------------------------------------------
 0SECTION       LOCKS subcomponent dump routine
 NULL           ===============================
-NULL           
+NULL
 1LKPOOLINFO    Monitor pool info:
 2LKPOOLTOTAL     Current total number of monitors: 1
-NULL           
+NULL
 1LKMONPOOLDUMP Monitor Pool Dump (flat &amp; inflated object-monitors):
 2LKMONINUSE      sys_mon_t:0x92711200 infl_mon_t: 0x92711240:
 3LKMONOBJECT       java/lang/Object@0xB56658D8: Flat locked by &quot;Worker Thread 0&quot; (J9VMThread:0x92A3EC00), entry count 1
@@ -5758,7 +5773,7 @@ NULL
 3LKWAITER                &quot;Worker Thread 17&quot; (J9VMThread:0x9276C300)
 3LKWAITER                &quot;Worker Thread 18&quot; (J9VMThread:0x92773100)
 3LKWAITER                &quot;Worker Thread 19&quot; (J9VMThread:0x92778F00)
-NULL           
+NULL
 </code></pre>
 <p>The next step is to determine why <code>Worker Thread 0</code> is not releasing the lock. The best place to start is the stack trace for this thread, which you can find by searching on the thread name or J9VMThread ID in the <strong>THREADS</strong> section.</p>
 <p>The following extract shows the details for <code>"Worker Thread 0" (J9VMThread:0x92A3EC00)</code>:</p>
