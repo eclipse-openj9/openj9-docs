@@ -359,6 +359,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-xx-ensurehashed-option-added" class="md-nav__link">
+    New -XX:[+|-]EnsureHashed option added
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3240,6 +3247,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxensurehashed/" class="md-nav__link">
+        -XX:[+|-]EnsureHashed
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxexitonoutofmemoryerror/" class="md-nav__link">
         -XX:[+|-]ExitOnOutOfMemoryError
       </a>
@@ -4351,6 +4370,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-xx-ensurehashed-option-added" class="md-nav__link">
+    New -XX:[+|-]EnsureHashed option added
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4406,6 +4432,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</a></li>
 <li><a href="#ignored-options-captured-in-java-dumps">Ignored options now captured in java dumps</a></li>
+<li><a href="#new-xx-ensurehashed-option-added">New <code>-XX:[+|-]EnsureHashed</code> option added</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -4425,6 +4452,8 @@ java -Xdump:java:events=vmstop -XX:+UseCompressedOop -XX:CompressedClassSpaceSiz
 2CIIGNOREDARG            -XX:CompressedClassSpaceSize=528482304
 </pre>
 
+<h3 id="new-xx-ensurehashed-option-added">New <code>-XX:[+|-]EnsureHashed</code> option added</h3>
+<p>This option specifies/unspecifies classes of objects that will be hashed and extended with a hash slot upon object creation or first move. This option may improve performance for applications that frequently hash objects of a certain type. See <a href="../xxensurehashed/">-XX:[+|-]EnsureHashed</a> for more details.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v0.29.0 and v0.30.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.30/0.30.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.30.md ==== -->
