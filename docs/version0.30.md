@@ -29,6 +29,7 @@ The following new features and notable changes since v 0.29.0 are included in th
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
 - [Ignored options now captured in java dumps](#ignored-options-captured-in-java-dumps)
+- [New `-XX:[+|-]EnsureHashed` option added](#new-xx-ensurehashed-option-added)
 
 ## Features and changes
 
@@ -54,6 +55,10 @@ would yield the following in the <tt>ENVINFO</tt> section after the complete lis
 2CIIGNOREDARG            -XX:+UseCompressedOop
 2CIIGNOREDARG            -XX:CompressedClassSpaceSize=528482304
 </pre>
+
+### New `-XX:[+|-]EnsureHashed` option added
+
+This option specifies/unspecifies classes of objects that will be hashed and extended with a hash slot upon object creation or first move. This option may improve performance for applications that frequently hash objects of a certain type. See [-XX:[+|-]EnsureHashed](xxensurehashed.md) for more details.
 
 ## Full release information
 
