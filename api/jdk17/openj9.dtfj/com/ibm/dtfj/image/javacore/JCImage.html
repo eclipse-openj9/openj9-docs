@@ -162,7 +162,7 @@ implements <a href="JCReleasingImage.html" title="interface in com.ibm.dtfj.imag
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link" target="_blank">Iterator</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAddressSpaces()" class="member-name-link">getAddressSpaces</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get the set of address spaces within the image - typically one but may be more on some 
+<div class="block">Get the set of address spaces within the image - typically one but may be more on some
  systems such as Z/OS.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
@@ -335,7 +335,7 @@ implements <a href="JCReleasingImage.html" title="interface in com.ibm.dtfj.imag
 <h3>getAddressSpaces</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link" target="_blank">Iterator</a></span>&nbsp;<span class="element-name">getAddressSpaces</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Image.html#getAddressSpaces()">Image</a></code></span></div>
-<div class="block">Get the set of address spaces within the image - typically one but may be more on some 
+<div class="block">Get the set of address spaces within the image - typically one but may be more on some
  systems such as Z/OS.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -402,8 +402,8 @@ implements <a href="JCReleasingImage.html" title="interface in com.ibm.dtfj.imag
 <dt>Specified by:</dt>
 <dd><code><a href="../Image.html#getIPAddresses()">getIPAddresses</a></code>&nbsp;in interface&nbsp;<code><a href="../Image.html" title="interface in com.ibm.dtfj.image">Image</a></code></dd>
 <dt>Returns:</dt>
-<dd>An Iterator over the IP addresses (as InetAddresses) which the system running 
- the image possessed.  The iterator will be non-null (but can be empty if the host is 
+<dd>An Iterator over the IP addresses (as InetAddresses) which the system running
+ the image possessed.  The iterator will be non-null (but can be empty if the host is
  known to have no IP addresses).</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - If the image did not provide this information (would happen
@@ -469,7 +469,7 @@ implements <a href="JCReleasingImage.html" title="interface in com.ibm.dtfj.imag
 <dt>Returns:</dt>
 <dd>the precise model of the CPU (note that this can be an empty string but not null).
  <br>
- e.g. getProcessorType() will return "x86" where getProcessorSubType() may return "Pentium IV step 4"
+ e.g. getProcessorType() will return <q>x86</q> where getProcessorSubType() may return <q>Pentium IV step 4</q>
  <p>
  Note that this value is platform and implementation dependent.</dd>
 <dt>Throws:</dt>
@@ -653,8 +653,8 @@ implements <a href="JCReleasingImage.html" title="interface in com.ibm.dtfj.imag
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../Image.html#close()">Image</a></code></span></div>
 <div class="block"><p>Close this image and any associated resources.</p>
- 
- <p>Some kinds of Image require the generation of temporary resources, for example temporary files created 
+
+ <p>Some kinds of Image require the generation of temporary resources, for example temporary files created
  when reading core files and libraries from .zip archives. Ordinarily, these resources are deleted at JVM shutdown,
  but DTFJ applications may want to free them earlier. This method should only be called when the Image is no
  longer needed. After this method has been called, any objects associated with the image will be in an invalid state.</p></div>
