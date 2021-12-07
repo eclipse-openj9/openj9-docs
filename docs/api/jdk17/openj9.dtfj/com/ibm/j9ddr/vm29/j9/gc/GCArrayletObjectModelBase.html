@@ -168,7 +168,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#externalArrayletsSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">externalArrayletsSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#externalArrayletsSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">externalArrayletsSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the total number of bytes consumed by arraylets external to the
  given indexable object.</div>
@@ -190,12 +190,12 @@ loadScripts(document, 'script');</script>
 <div class="block">Get the layout for the given indexable object</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../pointer/ObjectReferencePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">ObjectReferencePointer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getArrayoidPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">getArrayoidPointer</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getArrayoidPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">getArrayoidPointer</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the address of first arraylet leaf slot in the spine</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDataPointerForContiguous(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">getDataPointerForContiguous</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDataPointerForContiguous(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">getDataPointerForContiguous</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the address of first data slot in the array</div>
 </div>
@@ -488,7 +488,7 @@ loadScripts(document, 'script');</script>
 <dd><code>objPtr</code> - Pointer to an array object</dd>
 <dt>Returns:</dt>
 <dd>The total size in bytes of objPtr's array spine;
-                        includes header, arraylet ptrs, and (if present) padding &amp; inline data</dd>
+         includes header, arraylet ptrs, and (if present) padding &amp; inline data</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
@@ -535,7 +535,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the size of data in an indexable object, in bytes, including leaves, excluding the header.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>arrayPtr</code> - Pointer to the indexable object whose size is required</dd>
+<dd><code>array</code> - Pointer to the indexable object whose size is required</dd>
 <dt>Returns:</dt>
 <dd>Size of object in bytes excluding the header</dd>
 <dt>Throws:</dt>
@@ -546,12 +546,12 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getArrayoidPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
 <h3>getArrayoidPointer</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../pointer/ObjectReferencePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">ObjectReferencePointer</a></span>&nbsp;<span class="element-name">getArrayoidPointer</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../pointer/ObjectReferencePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">ObjectReferencePointer</a></span>&nbsp;<span class="element-name">getArrayoidPointer</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</span>
                                           throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
 <div class="block">Returns the address of first arraylet leaf slot in the spine</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>arrayPtr</code> - Ptr to an array</dd>
+<dd><code>array</code> - Ptr to an array</dd>
 <dt>Returns:</dt>
 <dd>Arrayoid ptr</dd>
 <dt>Throws:</dt>
@@ -562,12 +562,12 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getDataPointerForContiguous(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
 <h3>getDataPointerForContiguous</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></span>&nbsp;<span class="element-name">getDataPointerForContiguous</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></span>&nbsp;<span class="element-name">getDataPointerForContiguous</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</span>
                                         throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
 <div class="block">Returns the address of first data slot in the array</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>arrayPtr</code> - pointer to an array</dd>
+<dd><code>array</code> - pointer to an array</dd>
 <dt>Returns:</dt>
 <dd>Address of first data slot in the array</dd>
 <dt>Throws:</dt>
@@ -696,13 +696,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="externalArrayletsSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
 <h3>externalArrayletsSize</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">externalArrayletsSize</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</span>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">externalArrayletsSize</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</span>
                                throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
 <div class="block">Get the total number of bytes consumed by arraylets external to the
  given indexable object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>arrayPtr</code> - Pointer to an array object</dd>
+<dd><code>array</code> - Pointer to an array object</dd>
 <dt>Returns:</dt>
 <dd>the number of bytes consumed external to the spine</dd>
 <dt>Throws:</dt>
