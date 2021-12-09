@@ -26,6 +26,6 @@
 
 **(z/OS&reg; only)**
 
-Enables support for using 31-bit native applications with the 64-bit Java&trade; virtual machine, where that support is available. For more information, see [Using 31-bit native code with the 64-bit Java VM](https://www.ibm.com/docs/en/sdk-java-technology/8?topic=wja-using-31-bit-native-code-64-bit-java-vm-zos-only).
+Enables support for using 31-bit native applications with the 64-bit Java&trade; virtual machine, where that support is available. For more information, see [Using 31-bit native code with the 64-bit Java VM](https://www.ibm.com/docs/en/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/jni_31on64bit_zos.html).
 
 <!-- ==== END OF TOPIC ==== xxenable3164interoperability.md ==== -->

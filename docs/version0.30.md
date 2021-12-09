@@ -24,7 +24,7 @@
 
 # What's new in version 0.30.0
 
-The following new features and notable changes since v 0.29.0 are included in this release:
+The following new features and notable changes since version 0.29.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)

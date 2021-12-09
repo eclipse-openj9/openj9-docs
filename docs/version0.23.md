@@ -25,7 +25,7 @@
 
 # What's new in version 0.23.0
 
-The following new features and notable changes since v 0.22.0 are included in this release:
+The following new features and notable changes since version 0.22.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [`-XX:[+|-]PortableSharedCache` option behavior update](#-xx-portablesharedcache-option-behavior-update)
@@ -66,6 +66,6 @@ Platform support for the JITServer technology preview is now extended to 64-bit 
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.22.0 and v 0.23.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.23/0.23.md).
+To see a complete list of changes between Eclipse OpenJ9 version 0.22.0 and version 0.23.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.23/0.23.md).
 
 <!-- ==== END OF TOPIC ==== version0.23.md ==== -->

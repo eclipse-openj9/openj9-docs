@@ -101,6 +101,16 @@ At startup, the list of VM arguments is constructed in the following order, with
 
     The Java launcher adds some automatically generated arguments to this list, such as the names of the main class.
 
+6.  The `_JAVA_OPTIONS` environment variable. You can override previous options using this environment variable. The options that you specify with this environment variable are added to the end of the command line when a VM starts in that environment. The environment variable can contain multiple blank-delimited argument strings, but must not contain comments. For example:
+
+    - On Windows systems:
+
+            set _JAVA_OPTIONS=-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump
+
+    - On AIX, Linux, macOS, and z/OS systems:
+
+            export _JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
+
 You can also use the `-Xoptionsfile` parameter to specify VM options. This parameter can be used on the command line, or as part of the `OPENJ9_JAVA_OPTIONS` environment variable. The contents of an option file are expanded in place during startup. For more information about the structure and contents of this type of file, see [-Xoptionsfile](xoptionsfile.md#xoptionsfile "Specifies a file that contains VM options and definitions. The contents of the options file are recorded in the ENVINFO section of a Java dump.").
 
 To troubleshoot startup problems, you can check which options are used by the OpenJ9 VM. Append the following command-line option, and inspect the Java core file that is generated:
@@ -113,15 +123,5 @@ Here is an extract from a Java core file that shows the options that are used:
         2CIUSERARG               -Dtest.cmdlineOption=1
         2CIUSERARG               -XXallowvmshutdown:true
         2CIUSERARG               -Xoptionsfile=test1.test_options_file
-
-6.  The `_JAVA_OPTIONS` environment variable. You can override previous options using this environment variable. The options that you specify with this environment variable are added to the end of the command line when a VM starts in that environment. The environment variable can contain multiple blank-delimited argument strings, but must not contain comments. For example:
-
-    - On Windows systems:
-
-            set _JAVA_OPTIONS=-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump
-
-    - On AIX, Linux, macOS, and z/OS systems:
-
-            export _JAVA_OPTIONS="-Dmysysprop1=tcpip -Dmysysprop2=wait -Xdisablejavadump"
 
 <!-- ==== END OF TOPIC ==== cmdline_specifying.md ==== -->

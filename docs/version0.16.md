@@ -25,7 +25,7 @@
 
 # What's new in version 0.16.0
 
-The following new features and notable changes since v 0.15.1 are included in this release:
+The following new features and notable changes since version 0.15.1 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Some class data sharing is enabled by default](#some-class-data-sharing-is-enabled-by-default)
@@ -87,6 +87,6 @@ The option [`-Xverify:none`](xverify.md) (and its equivalent `-noverify`) is dep
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.15.1 and v 0.16.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.16/0.16.md).
+To see a complete list of changes between Eclipse OpenJ9 version 0.15.1 and version 0.16.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.16/0.16.md).
 
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->

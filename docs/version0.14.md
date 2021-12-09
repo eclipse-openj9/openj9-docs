@@ -27,7 +27,7 @@
 
 ## Version 0.14.0
 
-The following new features and notable changes since v 0.13.0 are included in this release:
+The following new features and notable changes since version 0.13.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Support for OpenSSL 1.0.2](#support-for-openssl-102)
@@ -96,11 +96,11 @@ The default stack size for operating system threads on 64-bit z/OS is changed fr
 
 ### Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.13.0 and v 0.14.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.14/0.14.md).
+To see a complete list of changes between Eclipse OpenJ9 version 0.13.0 and version 0.14.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.14/0.14.md).
 
 ## Version 0.14.2
 
-The following new features and notable changes since v 0.14.0 are included in this release:
+The following new features and notable changes since version 0.14.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Support for OpenSSL 1.0.1](#support-for-openssl-101)

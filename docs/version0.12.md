@@ -27,7 +27,7 @@
 
 ## Version 0.12.0
 
-The following new features and notable changes since v 0.11.0 are included in this release:
+The following new features and notable changes since version 0.11.0 are included in this release:
 
 - [Improved flexibility for managing the size of the JIT code cache](#improved-flexibility-for-managing-the-size-of-the-jit-code-cache)
 <!-- - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default) -->
@@ -87,7 +87,7 @@ For more information, see [`-Xshareclasses`](xshareclasses.md#cachedirperm).
 
 OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which provides improved cryptographic performance compared to the in-built OpenJDK Java cryptographic implementation. The OpenSSL V1.1.x implementation is enabled by default and  supported for the Digest, CBC, and GCM algorithms. Binaries obtained from AdoptOpenJDK include OpenSSL v1.1.x (see Note). For more information about tuning the OpenSSL implementation, see [Performance tuning](introduction.md#cryptographic-operations).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** OpenJDK 8 with OpenJ9 includes OpenSSL support since v 0.11.0. Currently, OpenSSL is not bundled as part of the AdoptOpenJDK AIX binaries due to an unresolved problem.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** OpenJDK 8 with OpenJ9 includes OpenSSL support since version 0.11.0. Currently, OpenSSL is not bundled as part of the AdoptOpenJDK AIX binaries due to an unresolved problem.
 
 ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 
@@ -96,7 +96,7 @@ OpenSSL is a native open source cryptographic toolkit for Transport Layer Securi
 
 Concurrent scavenge mode is now supported on 64-bit Windows operating systems.
 
-In Eclipse OpenJ9 v 0.11.0, support was added for `-Xgc:concurrentScavenge` on Linux x86-64 virtual machines that use compressed references. In this release, support is now available for Linux x86-64 large-heap virtual machines (non-compressed references).
+In Eclipse OpenJ9 version 0.11.0, support was added for `-Xgc:concurrentScavenge` on Linux x86-64 virtual machines that use compressed references. In this release, support is now available for Linux x86-64 large-heap virtual machines (non-compressed references).
 
 For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge) option.
 
@@ -110,17 +110,17 @@ The VM environment variable `IBM_JAVA_OPTIONS` is deprecated and is replaced by 
 
 ### Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.11.0 and v 0.12.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.12/0.12.md).
+To see a complete list of changes between Eclipse OpenJ9 version 0.11.0 and version 0.12.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.12/0.12.md).
 
 ## Version 0.12.1
 
-The following change is implemented since v 0.12.0:
+The following change is implemented since version 0.12.0:
 
-By default, OpenJ9 provides native cryptographic acceleration using OpenSSL v 1.1.x for the Digest, CBC, GCM, and RSA algorithms. Under certain circumstances acceleration of the Digest algorithm was found to cause a segmentation error. Cryptographic acceleration of the Digest algorithm is now turned off by default. The system property `-Djdk.nativeDigest` cannot be used to turn on support. This property is ignored by the VM.
+By default, OpenJ9 provides native cryptographic acceleration using OpenSSL version 1.1.x for the Digest, CBC, GCM, and RSA algorithms. Under certain circumstances acceleration of the Digest algorithm was found to cause a segmentation error. Cryptographic acceleration of the Digest algorithm is now turned off by default. The system property `-Djdk.nativeDigest` cannot be used to turn on support. This property is ignored by the VM.
 
 ### Full release information
 
-Release notes to describe the changes between Eclipse OpenJ9 v 0.12.0 and v 0.12.1 releases, can be found in the [OpenJ9 GitHub repository](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.12/0.12.1.md).
+Release notes to describe the changes between Eclipse OpenJ9 version 0.12.0 and version 0.12.1 releases, can be found in the [OpenJ9 GitHub repository](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.12/0.12.1.md).
 
 
 

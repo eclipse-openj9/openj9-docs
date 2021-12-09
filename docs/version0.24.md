@@ -24,7 +24,7 @@
 
 # What's new in version 0.24.0
 
-The following new features and notable changes since v 0.23.0 are included in this release:
+The following new features and notable changes since version 0.23.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Changes to message logging](#changes-to-message-logging)
@@ -105,6 +105,6 @@ A Helm Chart is now available for easier deployment of JITServer technology in a
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.23.0 and v 0.24.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.24/0.24.md).
+To see a complete list of changes between Eclipse OpenJ9 version 0.23.0 and version 0.24.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.24/0.24.md).
 
 <!-- ==== END OF TOPIC ==== version0.24.md ==== -->

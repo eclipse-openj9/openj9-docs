@@ -24,7 +24,7 @@
 
 # What's new in version 0.26.0
 
-The following new features and notable changes since v 0.25.0 are included in this release:
+The following new features and notable changes since version 0.25.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Dump extractor tool deprecated](#dump-extractor-tool-deprecated)
