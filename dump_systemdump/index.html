@@ -333,7 +333,7 @@
   
     <li class="md-nav__item">
       <a href="../version0.27/" class="md-nav__link">
-        Version 0.27.0
+        Version 0.27.1
       </a>
     </li>
   
@@ -4413,13 +4413,16 @@
 <h3 id="enabling-a-full-system-dump-aix-linux-and-macos">Enabling a full system dump (AIX, Linux, and macOS)</h3>
 <p>If you require a system dump that contains details of all the native threads that are running, you must change the resource limits for your operating system. Otherwise, the native thread details that are stored in the dump are only for the native thread that was running when the VM ended.</p>
 <ol>
-<li>Set the system resource limits by running the following commands:</li>
-</ol>
-<p><code>ulimit -c unlimited        
-  ulimit -n unlimited        
-  ulimit -d unlimited        
-  ulimit -f unlimited</code></p>
+<li>
+<p>Set the system resource limits by running the following commands:</p>
+<pre><code>ulimit -c unlimited      
+ulimit -n unlimited      
+ulimit -d unlimited      
+ulimit -f unlimited
+</code></pre>
 <p>Where:</p>
+</li>
+</ol>
 <ul>
 <li><code>-c</code> sets core files</li>
 <li><code>-n</code> sets the number of open files</li>

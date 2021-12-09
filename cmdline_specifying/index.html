@@ -333,7 +333,7 @@
   
     <li class="md-nav__item">
       <a href="../version0.27/" class="md-nav__link">
-        Version 0.27.0
+        Version 0.27.1
       </a>
     </li>
   
@@ -4449,18 +4449,6 @@ demonstrate long VM arguments in the manifest file
 </code></pre>
 <p>The Java launcher adds some automatically generated arguments to this list, such as the names of the main class.</p>
 </li>
-</ol>
-<p>You can also use the <code>-Xoptionsfile</code> parameter to specify VM options. This parameter can be used on the command line, or as part of the <code>OPENJ9_JAVA_OPTIONS</code> environment variable. The contents of an option file are expanded in place during startup. For more information about the structure and contents of this type of file, see <a href="../xoptionsfile/#xoptionsfile" title="Specifies a file that contains VM options and definitions. The contents of the options file are recorded in the ENVINFO section of a Java dump.">-Xoptionsfile</a>.</p>
-<p>To troubleshoot startup problems, you can check which options are used by the OpenJ9 VM. Append the following command-line option, and inspect the Java core file that is generated:</p>
-<pre><code>-Xdump:java:events=vmstart
-</code></pre>
-<p>Here is an extract from a Java core file that shows the options that are used:</p>
-<pre><code>    2CIUSERARG               -Xdump:java:file=/home/test_javacore.txt,events=vmstop
-    2CIUSERARG               -Dtest.cmdlineOption=1
-    2CIUSERARG               -XXallowvmshutdown:true
-    2CIUSERARG               -Xoptionsfile=test1.test_options_file
-</code></pre>
-<ol start="6">
 <li>
 <p>The <code>_JAVA_OPTIONS</code> environment variable. You can override previous options using this environment variable. The options that you specify with this environment variable are added to the end of the command line when a VM starts in that environment. The environment variable can contain multiple blank-delimited argument strings, but must not contain comments. For example:</p>
 <ul>
@@ -4477,6 +4465,16 @@ demonstrate long VM arguments in the manifest file
 </ul>
 </li>
 </ol>
+<p>You can also use the <code>-Xoptionsfile</code> parameter to specify VM options. This parameter can be used on the command line, or as part of the <code>OPENJ9_JAVA_OPTIONS</code> environment variable. The contents of an option file are expanded in place during startup. For more information about the structure and contents of this type of file, see <a href="../xoptionsfile/#xoptionsfile" title="Specifies a file that contains VM options and definitions. The contents of the options file are recorded in the ENVINFO section of a Java dump.">-Xoptionsfile</a>.</p>
+<p>To troubleshoot startup problems, you can check which options are used by the OpenJ9 VM. Append the following command-line option, and inspect the Java core file that is generated:</p>
+<pre><code>-Xdump:java:events=vmstart
+</code></pre>
+<p>Here is an extract from a Java core file that shows the options that are used:</p>
+<pre><code>    2CIUSERARG               -Xdump:java:file=/home/test_javacore.txt,events=vmstop
+    2CIUSERARG               -Dtest.cmdlineOption=1
+    2CIUSERARG               -XXallowvmshutdown:true
+    2CIUSERARG               -Xoptionsfile=test1.test_options_file
+</code></pre>
 <!-- ==== END OF TOPIC ==== cmdline_specifying.md ==== -->
                 
               
