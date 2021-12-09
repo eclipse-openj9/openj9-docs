@@ -25,7 +25,7 @@
 
 # What's new in version 0.20.0
 
-The following new features and notable changes since v 0.19.0 are included in this release:
+The following new features and notable changes since version 0.19.0 are included in this release:
 
 - [Binaries and supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 11](cr/java11.png) [Limited support for 64-bit Linux on ARM](#limited-support-for-64-bit-linux-on-arm)
@@ -75,6 +75,6 @@ The Java diagnostic command (`jcmd`) tool no longer requires a filename when use
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.19.0 and v 0.20.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.20/0.20.md).
+To see a complete list of changes between Eclipse OpenJ9 version 0.19.0 and version 0.20.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.20/0.20.md).
 
 <!-- ==== END OF TOPIC ==== version0.20.md ==== -->

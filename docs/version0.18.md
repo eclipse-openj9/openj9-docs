@@ -25,7 +25,7 @@
 
 # What's new in version 0.18.1
 
-The following new features and notable changes since v 0.17.0 are included in this release:
+The following new features and notable changes since version 0.17.0 are included in this release:
 
 - [Binaries and supported environments](#binaries-and-supported-environments)
 - [Technical preview of JITServer technology](#technical-preview-of-jitserver-technology)
@@ -137,6 +137,6 @@ The previously undocumented Java 8 option [`-Djava.lang.string.substring.nocopy=
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.17.0 and v 0.18.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.18/0.18.md).
+To see a complete list of changes between Eclipse OpenJ9 version 0.17.0 and version 0.18.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.18/0.18.md).
 
 <!-- ==== END OF TOPIC ==== version0.18.md ==== -->

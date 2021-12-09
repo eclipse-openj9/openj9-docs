@@ -22,9 +22,9 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# What's new in version 0.27.0
+# What's new in version 0.27.1
 
-The following new features and notable changes since v 0.26.0 are included in this release:
+The following new features and notable changes since version 0.26.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:[+|-]AdaptiveGCThreading` option added](#new-xx-adaptivegcthreading-option-added)
@@ -39,7 +39,7 @@ The following new features and notable changes since v 0.26.0 are included in th
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.27.0 supports OpenJDK 8, 11, and 16.
+OpenJ9 release 0.27.1 supports OpenJDK 8, 11, and 16.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -86,6 +86,6 @@ The new option, `-x`, causes the system dump to be omitted from the archive crea
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v0.26.0 and v0.27.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.27/0.27.md).
+To see a complete list of changes between Eclipse OpenJ9 v0.26.0 and v0.27.1 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.27/0.27.md).
 
 <!-- ==== END OF TOPIC ==== version0.27.md ==== -->

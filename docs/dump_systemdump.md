@@ -47,19 +47,17 @@ If you require a system dump that contains details of all the native threads tha
 
 1. Set the system resource limits by running the following commands:
 
-  ```
-  ulimit -c unlimited		 
-  ulimit -n unlimited		 
-  ulimit -d unlimited		 
-  ulimit -f unlimited		 
-  ```
+        ulimit -c unlimited		 
+        ulimit -n unlimited		 
+        ulimit -d unlimited		 
+        ulimit -f unlimited		 
+  
+    Where:
 
-  Where:
-
-  - `-c` sets core files
-  - `-n` sets the number of open files
-  - `-d` sets the data limit
-  - `-f` sets the file limit
+   - `-c` sets core files
+   - `-n` sets the number of open files
+   - `-d` sets the data limit
+   - `-f` sets the file limit
 
 2. For AIX systems, use the system management interface tool (SMIT) to enable a full CORE dump that is not a *pre-430 style CORE dump*. You can also set this configuration with the following command line option:
 

@@ -24,7 +24,7 @@
 
 # What's new in version 0.29.0
 
-The following new features and notable changes since v 0.27.0 are included in this release:
+The following new features and notable changes since version 0.27.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [JITServer technology is fully supported on some  systems](#jitserver-technology-is-fully-supported-on-some-systems)

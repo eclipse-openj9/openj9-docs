@@ -25,7 +25,7 @@
 
 # What's new in version 0.15.1
 
- The following new features and notable changes since v 0.14.0 are included in this release:
+ The following new features and notable changes since version 0.14.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Performance improvements for JVMTI watched fields](#performance-improvements-for-jvmti-watched-fields)
@@ -124,6 +124,6 @@ In earlier releases, the shared classes cache checks timestamps of `jar` or `zip
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.14.0 and v 0.15.1 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.15/0.15.md).
+To see a complete list of changes between Eclipse OpenJ9 version 0.14.0 and version 0.15.1 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.15/0.15.md).
 
 <!-- ==== END OF TOPIC ==== version0.15.md ==== -->

@@ -93,7 +93,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : Sets the directory in which cache data is read and written. Please do not set the cache directory on a NFS mount or a shared mount across systems or LPARs. The following defaults apply:
 
-    - On Windows&trade; systems, `<directory>` is the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\javasharedresources` directory.
+    - On Windows&trade; systems, `<directory>` is the user's `C:\Users\<username>\AppData\Local\javasharedresources` directory.
     - On z/OS&reg; systems, `<directory>` is the `/tmp/javasharedresources` directory.
     - On other operating systems, `<directory>` is `javasharedresources` in the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`. Do not set user's home directory on a NFS or shared mount.
 

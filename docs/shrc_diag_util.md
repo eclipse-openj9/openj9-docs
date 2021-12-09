@@ -30,7 +30,7 @@ If you encounter problems with class data sharing, VM messages are typically gen
 
 If you do not specify a directory for the shared classes cache by using the `cacheDir` suboption, the cache is created in the `javasharedresources` directory in the following default location:
 
-- On Windows&reg; systems, this directory is created in the user's `C:\Documents and Settings\<username>\Local Settings\Application Data\` directory.
+- On Windows&reg; systems, this directory is created in the user's `C:\Users\<username>\AppData\Local\` directory.
 - On z/OS&reg; systems, this directory is created in the `/tmp` directory.
 - On other systems, this directory is located in the user's home directory. Please do not set user's home on a NFS mount or a shared mount across systems or LPARs.
 

@@ -24,7 +24,7 @@
 
 # What's new in version 0.25.0
 
-The following new features and notable changes since v 0.24.0 are included in this release:
+The following new features and notable changes since version 0.24.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 16 plus](cr/java16plus.png) [New JDK 16 features](#new-jdk-16-features)
@@ -108,7 +108,7 @@ To learn about the benefits of using compressed references, see [Compressed refe
 
 ## Full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v 0.24.0 and v 0.25.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.25/0.25.md).
+To see a complete list of changes between Eclipse OpenJ9 version 0.24.0 and version 0.25.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.25/0.25.md).
 
 
 <!-- ==== END OF TOPIC ==== version0.25.md ==== -->
