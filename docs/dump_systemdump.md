@@ -46,11 +46,9 @@ This output shows that events such as a general protection fault (gpf) or native
 If you require a system dump that contains details of all the native threads that are running, you must change the resource limits for your operating system. Otherwise, the native thread details that are stored in the dump are only for the native thread that was running when the VM ended.
 
 1. Set the system resource limits by running the following commands:
-
-        ulimit -c unlimited		 
-        ulimit -n unlimited		 
-        ulimit -d unlimited		 
-        ulimit -f unlimited		 
+   ```
+   ulimit -c unlimited; ulimit -n unlimited; ulimit -d unlimited; ulimit -f unlimited;
+   ```
   
     Where:
 
