@@ -184,7 +184,7 @@ var activeTableTab = "activeTableTab";
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util">Iterator</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/dtfj/java/JavaClass.html#getConstantPoolReferences--">getConstantPoolReferences</a></span>()</code>
-<div class="block">Java classes may refer to other classes and to String objects via 
+<div class="block">Java classes may refer to other classes and to String objects via
  the class's constant pool.</div>
 </td>
 </tr>
@@ -289,11 +289,11 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>MODIFIERS_UNAVAILABLE</h4>
 <pre>static final&nbsp;int MODIFIERS_UNAVAILABLE</pre>
-<div class="block">MODIFIERS_UNAVAILABLE is returned by getModifiers() when the modifiers are unavailable. 
- The value 0xff000000 is chosen as it is a value that can never return true to any of the java.reflect.Modifier methods 
+<div class="block">MODIFIERS_UNAVAILABLE is returned by getModifiers() when the modifiers are unavailable.
+ The value 0xff000000 is chosen as it is a value that can never return true to any of the java.reflect.Modifier methods
  that test the modifier: isNative(), isPublic(), etc. while at the same time not being 0 which is a possible value
- when no modifier at all is present i.e. "default". 
- 
+ when no modifier at all is present i.e. "default".
+
  All other values for the modifier returned are defined in java.lang.reflect.Modifiers</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -341,9 +341,9 @@ var activeTableTab = "activeTableTab";
 <pre><a href="../../../../com/ibm/dtfj/java/JavaClassLoader.html" title="interface in com.ibm.dtfj.java">JavaClassLoader</a>&nbsp;getClassLoader()
                         throws <a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
 <div class="block">Fetch the class loader associated with this class. Classes defined in
- the bootstrap class loader (including classes representing primitive 
+ the bootstrap class loader (including classes representing primitive
  types or void) will always return a JavaClassLoader representing the
- bootstrap class loader. This asymmetry with 
+ bootstrap class loader. This asymmetry with
  java.lang.Class#getClassLoader() is intentional.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -383,7 +383,7 @@ var activeTableTab = "activeTableTab";
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the immediate superclass of this class, or null if this
- class has no superclass. For interfaces, Object, primitive types 
+ class has no superclass. For interfaces, Object, primitive types
  and void null is always returned.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
@@ -400,7 +400,7 @@ var activeTableTab = "activeTableTab";
 <div class="block">Get the set of names of interfaces directly implemented by this class.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>an iterator over the collection of the names of interfaces 
+<dd>an iterator over the collection of the names of interfaces
  directly implemented by this class. Some JVM implementations may
  choose to load interfaces lazily, so only the names are returned.
  The JavaClass objects may be found through the defining class loader.</dd>
@@ -419,15 +419,15 @@ var activeTableTab = "activeTableTab";
 <h4>getModifiers</h4>
 <pre>int&nbsp;getModifiers()
           throws <a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
-<div class="block">Return the Java language modifiers for this class. 
+<div class="block">Return the Java language modifiers for this class.
  <p>
  The modifiers are defined by the JVM Specification.
  <p>
  Return MODIFIERS_UNAVAILABLE if the modifiers are unavailable.
  This might be the case if DTFJ is operating against an artefact such as a portable heap dump that does not contain
- information about a class's modifiers.  
+ information about a class's modifiers.
  <p>
- Note that, for inner classes, the actual modifiers are returned, not 
+ Note that, for inner classes, the actual modifiers are returned, not
  the synthetic modifiers. For instance, a class will never have its
  'protected' modifier set, even if the inner class was a protected
  member, since 'protected' is not a legal modifier for a class file.</div>
@@ -517,24 +517,24 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>getConstantPoolReferences</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util">Iterator</a>&nbsp;getConstantPoolReferences()</pre>
-<div class="block">Java classes may refer to other classes and to String objects via 
- the class's constant pool. These references are followed by the 
+<div class="block">Java classes may refer to other classes and to String objects via
+ the class's constant pool. These references are followed by the
  garbage collector, forming edges on the graph of reachable objects.
  This getConstantPoolReferences() may be used to determine which
  objects are referred to by the receiver's constant pool.
  <p>
- Although Java VMs typically permit only Class and String 
- objects in the constant pool, some esoteric or future virtual 
- machines may permit other types of objects to occur in the constant 
- pool. This API imposes no restrictions on the types of JavaObjects 
+ Although Java VMs typically permit only Class and String
+ objects in the constant pool, some esoteric or future virtual
+ machines may permit other types of objects to occur in the constant
+ pool. This API imposes no restrictions on the types of JavaObjects
  which might be included in the Iterator.
  <p>
- No assumption should be made about the order in which constant 
+ No assumption should be made about the order in which constant
  pool references are returned.
  <p>
  Classes may also refer to objects through static variables.
  These may be found with the getDeclaredFields() API. Objects
- referenced by static variables are not returned by 
+ referenced by static variables are not returned by
  getConstantPoolReferences() unless the object is also referenced
  by the constant pool.</div>
 <dl>
@@ -563,8 +563,8 @@ var activeTableTab = "activeTableTab";
  behaviour.
  <p>
  In some implementations, getID() may return null for some classes.
- This indicates that the class is a synthetic class which has been 
- constructed for DTFJ purposes only. The class has no physical 
+ This indicates that the class is a synthetic class which has been
+ constructed for DTFJ purposes only. The class has no physical
  representation in the VM.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -625,10 +625,10 @@ var activeTableTab = "activeTableTab";
                      <a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
 <div class="block">Returns the size in bytes of an instance of this class on the heap.
  <p>
- The call is only meaningful for a non-array JavaClass, where all instances of the 
+ The call is only meaningful for a non-array JavaClass, where all instances of the
  class are of the same size. If this method is called on a JavaArrayClass, where instances
  can be of different sizes, an UnsupportedOperationException will be thrown.
- DataUnavailable can be thrown if no value is available: for example when 
+ DataUnavailable can be thrown if no value is available: for example when
  DTFJ is examining a javacore, where the instance size for a class is not recorded.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -681,7 +681,7 @@ var activeTableTab = "activeTableTab";
 <dd><code><a href="../../../../com/ibm/dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code></dd>
 <dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
 <dt><span class="simpleTagLabel">Since:</span></dt>
-<dd>1.9</dd>
+<dd>9</dd>
 </dl>
 </li>
 </ul>
@@ -755,6 +755,6 @@ var activeTableTab = "activeTableTab";
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse OpenJ9 issue.</a><br> Copyright &copy; 2004, 2021, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse OpenJ9 issue.</a><br> Copyright &copy; 2004, 2022, IBM Corp. and others.</small></p>
 </body>
 </html>
