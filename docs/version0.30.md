@@ -1,5 +1,5 @@
 <!--
-* Copyright (c) 2021, 2021 IBM Corp. and others
+* Copyright (c) 2021, 2022 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -60,8 +60,8 @@ would yield the following in the <tt>ENVINFO</tt> section after the complete lis
 
 This option specifies/unspecifies classes of objects that will be hashed and extended with a hash slot upon object creation or first move. This option may improve performance for applications that frequently hash objects of a certain type. See [-XX:[+|-]EnsureHashed](xxensurehashed.md) for more details.
 
-## Full release information
+## Known problems and full release information
 
-To see a complete list of changes between Eclipse OpenJ9 v0.29.0 and v0.30.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.30/0.30.md).
+To see known problems and a complete list of changes between Eclipse OpenJ9 v0.29.0 and v0.30.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.30/0.30.md).
 
 <!-- ==== END OF TOPIC ==== version0.30.md ==== -->
