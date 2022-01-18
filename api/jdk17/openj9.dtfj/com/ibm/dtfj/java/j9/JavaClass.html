@@ -190,7 +190,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link" target="_blank">Iterator</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConstantPoolReferences()" class="member-name-link">getConstantPoolReferences</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Java classes may refer to other classes and to String objects via 
+<div class="block">Java classes may refer to other classes and to String objects via
  the class's constant pool.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link" target="_blank">Iterator</a></code></div>
@@ -306,7 +306,7 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the immediate superclass of this class, or null if this
- class has no superclass. For interfaces, Object, primitive types 
+ class has no superclass. For interfaces, Object, primitive types
  and void null is always returned.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
@@ -388,24 +388,24 @@ loadScripts(document, 'script');</script>
 <h3>getConstantPoolReferences</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link" target="_blank">Iterator</a></span>&nbsp;<span class="element-name">getConstantPoolReferences</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../JavaClass.html#getConstantPoolReferences()">JavaClass</a></code></span></div>
-<div class="block">Java classes may refer to other classes and to String objects via 
- the class's constant pool. These references are followed by the 
+<div class="block">Java classes may refer to other classes and to String objects via
+ the class's constant pool. These references are followed by the
  garbage collector, forming edges on the graph of reachable objects.
  This getConstantPoolReferences() may be used to determine which
  objects are referred to by the receiver's constant pool.
  <p>
- Although Java VMs typically permit only Class and String 
- objects in the constant pool, some esoteric or future virtual 
- machines may permit other types of objects to occur in the constant 
- pool. This API imposes no restrictions on the types of JavaObjects 
+ Although Java VMs typically permit only Class and String
+ objects in the constant pool, some esoteric or future virtual
+ machines may permit other types of objects to occur in the constant
+ pool. This API imposes no restrictions on the types of JavaObjects
  which might be included in the Iterator.
  <p>
- No assumption should be made about the order in which constant 
+ No assumption should be made about the order in which constant
  pool references are returned.
  <p>
  Classes may also refer to objects through static variables.
  These may be found with the getDeclaredFields() API. Objects
- referenced by static variables are not returned by 
+ referenced by static variables are not returned by
  getConstantPoolReferences() unless the object is also referenced
  by the constant pool.</div>
 <dl class="notes">
@@ -527,10 +527,10 @@ loadScripts(document, 'script');</script>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../JavaClass.html#getInstanceSize()">JavaClass</a></code></span></div>
 <div class="block">Returns the size in bytes of an instance of this class on the heap.
  <p>
- The call is only meaningful for a non-array JavaClass, where all instances of the 
+ The call is only meaningful for a non-array JavaClass, where all instances of the
  class are of the same size. If this method is called on a JavaArrayClass, where instances
  can be of different sizes, an UnsupportedOperationException will be thrown.
- DataUnavailable can be thrown if no value is available: for example when 
+ DataUnavailable can be thrown if no value is available: for example when
  DTFJ is examining a javacore, where the instance size for a class is not recorded.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -549,7 +549,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2021, IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022, IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>
