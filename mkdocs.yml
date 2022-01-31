@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 2021 IBM Corp. and others
+# Copyright (c) 2017, 2022 IBM Corp. and others
 #
 # This program and the accompanying materials are made
 # available under the terms of the Eclipse Public License 2.0
@@ -102,11 +102,12 @@ nav:
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.31.0"                                                       : version0.31.md
         - "Version 0.30.0"                                                       : version0.30.md
         - "Version 0.29.1"                                                       : version0.29.1.md
         - "Version 0.29.0"                                                       : version0.29.md
-        - "Version 0.27.1"                                                       : version0.27.md
         - "Earlier releases" :
+            - "Version 0.27.1"                                                   : version0.27.md
             - "Version 0.26.0"                                                   : version0.26.md
             - "Version 0.25.0"                                                   : version0.25.md
             - "Version 0.24.0"                                                   : version0.24.md
