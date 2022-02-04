@@ -140,7 +140,7 @@ Options that change the behavior of the garbage collector.
   |---------------|----------------|------------------------------|
   | `<value>`     | [percentage]   | 1 for gencon, 2 for balanced |
 
-: The minimum percentage of time spent in local garbage collection pauses. For the `gencon` policy, this refers to the amount of time spent on the nursery area of the heap (scavenge operation). For the `balanced` policy, this refers to the amount of time spent on the eden regions of the heap (PGC operation). 
+: The minimum percentage of time spent in local garbage collection pauses. For the `gencon` policy, this refers to the amount of time spent in Scavenge operation (on the nursery area of the heap). For the `balanced` policy, this refers to the amount of time spent in PGC operations (mostly on the eden and young regions, but also some other regions for de-fragmentation purposes). 
 
 : This option applies only to the `gencon` and `balanced` GC policies.
 
