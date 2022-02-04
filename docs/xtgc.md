@@ -59,6 +59,12 @@ Provides garbage collection tracing options.
 
 : Prints a line of output for every free chunk of memory in the system, including "dark matter" (free chunks that are not on the free list for some reason, typically because they are too small). Each line contains the base address and the size in bytes of the chunk. If the chunk is followed in the heap by an object, the size and class name of the object is also printed. This argument has a similar effect to the `terse` argument.
 
+### `file`
+
+        -Xtgc:file=<filename>
+
+: Directs the logs to a file. Otherwise they are directed to stderr.
+
 ### `freeList`
 
         -Xtgc:freeList
@@ -69,7 +75,13 @@ Provides garbage collection tracing options.
 
         -Xtgc:parallel
 
-: Produces statistics on the activity of the parallel threads during the mark and sweep phases of a global garbage collection.
+: Produces statistics on the activity of the parallel threads during each operation (mark, sweep, scavenge etc.) of a GC cycle.
+
+### `rootscantime`
+
+        -Xtgc:rootscantime
+
+: Prints duration of strong and weak roots scanning of a GC cycle.
 
 ### `scavenger`
 
