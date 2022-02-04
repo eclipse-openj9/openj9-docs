@@ -45,7 +45,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 - When using the `balanced` GC policy without specifying `-Xmn` or `-Xmns`, the GC may decide to shrink eden size below its initial size (25% of `-Xms`) if it determines that doing so will improve GC performance.
 - When using the `balanced` GC policy, specifying `-Xmn`/`-Xmns`/`-Xmnx` may affect `balanced` GC's ability to satisfy [`-Xgc:targetPausetime`](xgc.md#targetpausetime)
-- Specifying `-Xmn`/`-Xmns`/`-Xmnx` may affect both `gencon` and `balanced` GC's ability to satisfy [`-Xgc:dnssexpectedtimeratiomaximum`](xgc.md##dnssexpectedtimeratiomaximum) and [`-Xgc:dnssexpectedtimeratiominimum`](xgc.md##dnssexpectedtimeratiominimum)
+- Specifying `-Xmn`/`-Xmns`/`-Xmnx` may affect both `gencon` and `balanced` GC's ability to satisfy [`-Xgc:dnssexpectedtimeratiomaximum`](xgc.md#dnssexpectedtimeratiomaximum) and [`-Xgc:dnssexpectedtimeratiominimum`](xgc.md#dnssexpectedtimeratiominimum)
 
 To set the size of the tenure area of the heap when using `gencon` GC policy, see [`-Xmo/-Xmos/-Xmox`](xmo.md).
 
