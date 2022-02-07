@@ -38,8 +38,8 @@ Options that change the behavior of the garbage collector.
 | [`classUnloadingKickoffThreshold`   ](#classunloadingkickoffthreshold   ) | Sets a threshold to start an early concurrent global garbage collection (GC) cycle due to recent, heavy class loading activity  |
 | [`classUnloadingThreshold`          ](#classunloadingthreshold          ) | Sets a threshold to trigger a class unloading operation in a global GC cycle                                     |
 | [`concurrentScavenge`               ](#concurrentscavenge               ) | Enables a GC mode with less pause times.                                             |
-| [`dnssExpectedTimeRatioMaximum`     ](#dnssexpectedtimeratiomaximum     ) | Sets the maximum time to spend on GC of the nursery area.                                                 |
-| [`dnssExpectedTimeRatioMinimum`     ](#dnssexpectedtimeratiominimum     ) | Sets the minimum time to spend on GC of the nursery area.                                                 |
+| [`dnssExpectedTimeRatioMaximum`     ](#dnssexpectedtimeratiomaximum     ) | Sets the maximum percentage of time to spend on local GC pauses                                             |
+| [`dnssExpectedTimeRatioMinimum`     ](#dnssexpectedtimeratiominimum     ) | Sets the minimum percentage of time to spend on local GC pauses                                             |
 | [`dynamicBreadthFirstScanOrdering`  ](#dynamicbreadthfirstscanordering  ) | Sets scan mode to dynamic breadth first.                                             |
 | [`excessiveGCratio`                 ](#excessivegcratio                 ) | Sets a boundary value beyond which GC is deemed to be excessive.                                          |
 | [`hierarchicalScanOrdering`         ](#hierarchicalscanordering         ) | Sets scan mode to hierarchical.                                             |
@@ -53,7 +53,7 @@ Options that change the behavior of the garbage collector.
 | [`scvTenureAge`                     ](#scvtenureage                     ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                           |
 | [`stdGlobalCompactToSatisfyAllocate`](#stdglobalcompacttosatisfyallocate) | Prevents the GC from performing a compaction unless absolutely required.                                  |
 | [`synchronousGCOnOOM`               ](#synchronousgconoom               )     | Stops an application to allow GC activity.                                                                             |
-| [`targetPausetime`                  ](#targetpausetime                  )   | Sets the GC pause time for the `metronome` GC policy.                                                   |
+| [`targetPausetime`                  ](#targetpausetime                  )   | Sets the target GC pause time for the `metronome` and `balanced` GC policies.                            |
 | [`targetUtilization`                ](#targetutilization                )   | Sets application utilization for the `metronome` GC policy.                                                   |
 | [`tlhIncrementSize`                 ](#tlhincrementsize                 ) | Sets the size of the thread local heap (TLH) increment.                                                   |
 | [`tlhInitialSize`                   ](#tlhinitialsize                   ) | Sets the initial size of the thread local heap.                                                           |
@@ -124,25 +124,25 @@ Options that change the behavior of the garbage collector.
 
         -Xgc:dnssExpectedTimeRatioMaximum=<value>
 
-: | Setting       | Value          | Default               |
-  |---------------|----------------|-----------------------|
-  | `<value>`     | [percentage]   | 5                     |
+: | Setting       | Value          | Default                       |
+  |---------------|----------------|-------------------------------|
+  | `<value>`     | [percentage]   | 5 for gencon, 5 for balanced  |
 
-: The maximum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.
+: The maximum percentage of time spent in local garbage collection pauses. For the `gencon` policy, this refers to the amount of time spent on the nursery area of the heap (scavenge operation). For the `balanced` policy, this refers to the amount of time spent on the eden regions of the heap (PGC operation).
 
-: This option applies only to the `gencon` GC policy.
+: This option applies only to the `gencon` and `balanced` GC policies.
 
 ### `dnssExpectedTimeRatioMinimum`
 
         -Xgc:dnssExpectedTimeRatioMinimum=<value>
 
-: | Setting       | Value          | Default               |
-  |---------------|----------------|-----------------------|
-  | `<value>`     | [percentage]   | 1                     |
+: | Setting       | Value          | Default                      |
+  |---------------|----------------|------------------------------|
+  | `<value>`     | [percentage]   | 1 for gencon, 2 for balanced |
 
-: The minimum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.
+: The minimum percentage of time spent in local garbage collection pauses. For the `gencon` policy, this refers to the amount of time spent in Scavenge operation (on the nursery area of the heap). For the `balanced` policy, this refers to the amount of time spent in PGC operations (mostly on the eden and young regions, but also some other regions for de-fragmentation purposes). 
 
-: This option applies only to the `gencon` GC policy.
+: This option applies only to the `gencon` and `balanced` GC policies.
 
 ### `dynamicBreadthFirstScanOrdering`
 
@@ -286,9 +286,15 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 
         -Xgc:targetPausetime=N
 
-: Sets the GC pause time, where `N` is the time in milliseconds. When this option is specified, the garbage collector operates with pauses that do not exceed the value specified. If this option is not specified the default pause time is set to 3 milliseconds. For example, running with `-Xgc:targetPausetime=20` causes the garbage collector to pause for no longer than 20 milliseconds during GC operations.
+: Sets the target GC pause time, where `N` is the time in milliseconds.
 
-: This option applies only to the `metronome` GC policy.
+: When this option is specified with the `metronome` policy, the garbage collector operates with pauses that do not exceed the value specified. If this option is not specified when using the `metronome` policy, the default pause time target is set to 3 milliseconds. For example, running with `-Xgc:targetPausetime=20` causes the garbage collector to pause for no longer than 20 milliseconds during GC operations.
+
+: When this option is specified with the `balanced` policy, the GC will use the specified pause time as a *soft* pause time target. If this option is not specified when using the `balanced` policy, the default pause time target is set to 200 milliseconds. If the GC pauses are longer than the specified target, then the GC may shrink the amount of eden regions in order to satisfy the target pause time. If the percentage of time spent in PGC pauses is higher than `dnssExpectedTimeRatioMaximum` *and* the GC pauses are longer than the specified pause time target, then the target pause time may not be satisfied, in order to balance reaching the target pause time goal and percentage of time in GC pause goal.
+
+    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Specifying an ultra low `targetPausetime` with the Balanced GC policy may cause the percentage of time spent in GC pauses to noticeably increase.
+
+: This option applies only to the `metronome` and `balanced` GC policies.
 
 ### `targetUtilization`
 
