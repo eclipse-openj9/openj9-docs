@@ -2977,6 +2977,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#freelist" class="md-nav__link">
     freeList
   </a>
@@ -2986,6 +2993,13 @@
           <li class="md-nav__item">
   <a href="#parallel" class="md-nav__link">
     parallel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rootscantime" class="md-nav__link">
+    rootscantime
   </a>
   
 </li>
@@ -4439,6 +4453,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#freelist" class="md-nav__link">
     freeList
   </a>
@@ -4448,6 +4469,13 @@
           <li class="md-nav__item">
   <a href="#parallel" class="md-nav__link">
     parallel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rootscantime" class="md-nav__link">
+    rootscantime
   </a>
   
 </li>
@@ -4541,6 +4569,12 @@
 <dl>
 <dd>Prints a line of output for every free chunk of memory in the system, including "dark matter" (free chunks that are not on the free list for some reason, typically because they are too small). Each line contains the base address and the size in bytes of the chunk. If the chunk is followed in the heap by an object, the size and class name of the object is also printed. This argument has a similar effect to the <code>terse</code> argument.</dd>
 </dl>
+<h3 id="file"><code>file</code></h3>
+<pre><code>    -Xtgc:file=&lt;filename&gt;
+</code></pre>
+<dl>
+<dd>Directs the logs to a file. Otherwise they are directed to stderr.</dd>
+</dl>
 <h3 id="freelist"><code>freeList</code></h3>
 <pre><code>    -Xtgc:freeList
 </code></pre>
@@ -4551,7 +4585,13 @@
 <pre><code>    -Xtgc:parallel
 </code></pre>
 <dl>
-<dd>Produces statistics on the activity of the parallel threads during the mark and sweep phases of a global garbage collection.</dd>
+<dd>Produces statistics on the activity of the parallel threads during each operation (mark, sweep, scavenge etc.) of a GC cycle.</dd>
+</dl>
+<h3 id="rootscantime"><code>rootscantime</code></h3>
+<pre><code>    -Xtgc:rootscantime
+</code></pre>
+<dl>
+<dd>Prints duration of strong and weak roots scanning of a GC cycle.</dd>
 </dl>
 <h3 id="scavenger"><code>scavenger</code></h3>
 <pre><code>    -Xtgc:scavenger
