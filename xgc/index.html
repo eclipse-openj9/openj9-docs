@@ -4792,11 +4792,11 @@
 </tr>
 <tr>
 <td><a href="#dnssexpectedtimeratiomaximum"><code>dnssExpectedTimeRatioMaximum</code>     </a></td>
-<td>Sets the maximum time to spend on GC of the nursery area.</td>
+<td>Sets the maximum percentage of time to spend on local GC pauses</td>
 </tr>
 <tr>
 <td><a href="#dnssexpectedtimeratiominimum"><code>dnssExpectedTimeRatioMinimum</code>     </a></td>
-<td>Sets the minimum time to spend on GC of the nursery area.</td>
+<td>Sets the minimum percentage of time to spend on local GC pauses</td>
 </tr>
 <tr>
 <td><a href="#dynamicbreadthfirstscanordering"><code>dynamicBreadthFirstScanOrdering</code>  </a></td>
@@ -4947,16 +4947,16 @@
 <tr>
 <td><code>&lt;value&gt;</code></td>
 <td>[percentage]</td>
-<td>5</td>
+<td>5 for gencon, 5 for balanced</td>
 </tr>
 </tbody>
 </table>
 </dd>
 <dd>
-<p>The maximum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.</p>
+<p>The maximum percentage of time spent in local garbage collection pauses. For the <code>gencon</code> policy, this refers to the amount of time spent on the nursery area of the heap (scavenge operation). For the <code>balanced</code> policy, this refers to the amount of time spent on the eden regions of the heap (PGC operation).</p>
 </dd>
 <dd>
-<p>This option applies only to the <code>gencon</code> GC policy.</p>
+<p>This option applies only to the <code>gencon</code> and <code>balanced</code> GC policies.</p>
 </dd>
 </dl>
 <h3 id="dnssexpectedtimeratiominimum"><code>dnssExpectedTimeRatioMinimum</code></h3>
@@ -4976,16 +4976,16 @@
 <tr>
 <td><code>&lt;value&gt;</code></td>
 <td>[percentage]</td>
-<td>1</td>
+<td>1 for gencon, 2 for balanced</td>
 </tr>
 </tbody>
 </table>
 </dd>
 <dd>
-<p>The minimum amount of time spent on garbage collection of the nursery area, expressed as a percentage of the overall time for the last three GC intervals.</p>
+<p>The minimum percentage of time spent in local garbage collection pauses. For the <code>gencon</code> policy, this refers to the amount of time spent in Scavenge operation (on the nursery area of the heap). For the <code>balanced</code> policy, this refers to the amount of time spent in PGC operations (mostly on the eden and young regions, but also some other regions for de-fragmentation purposes). </p>
 </dd>
 <dd>
-<p>This option applies only to the <code>gencon</code> GC policy.</p>
+<p>This option applies only to the <code>gencon</code> and <code>balanced</code> GC policies.</p>
 </dd>
 </dl>
 <h3 id="dynamicbreadthfirstscanordering"><code>dynamicBreadthFirstScanOrdering</code></h3>
