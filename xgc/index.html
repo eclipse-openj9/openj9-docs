@@ -4852,7 +4852,7 @@
 </tr>
 <tr>
 <td><a href="#targetpausetime"><code>targetPausetime</code>                  </a></td>
-<td>Sets the GC pause time for the <code>metronome</code> GC policy.</td>
+<td>Sets the target GC pause time for the <code>metronome</code> and <code>balanced</code> GC policies.</td>
 </tr>
 <tr>
 <td><a href="#targetutilization"><code>targetUtilization</code>                </a></td>
@@ -5212,8 +5212,15 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 <pre><code>    -Xgc:targetPausetime=N
 </code></pre>
 <dl>
-<dd>Sets the GC pause time, where <code>N</code> is the time in milliseconds. When this option is specified, the garbage collector operates with pauses that do not exceed the value specified. If this option is not specified the default pause time is set to 3 milliseconds. For example, running with <code>-Xgc:targetPausetime=20</code> causes the garbage collector to pause for no longer than 20 milliseconds during GC operations.</dd>
-<dd>This option applies only to the <code>metronome</code> GC policy.</dd>
+<dd>Sets the target GC pause time, where <code>N</code> is the time in milliseconds.</dd>
+<dd>When this option is specified with the <code>metronome</code> policy, the garbage collector operates with pauses that do not exceed the value specified. If this option is not specified when using the <code>metronome</code> policy, the default pause time target is set to 3 milliseconds. For example, running with <code>-Xgc:targetPausetime=20</code> causes the garbage collector to pause for no longer than 20 milliseconds during GC operations.</dd>
+<dd>
+<p>When this option is specified with the <code>balanced</code> policy, the GC will use the specified pause time as a <em>soft</em> pause time target. If this option is not specified when using the <code>balanced</code> policy, the default pause time target is set to 200 milliseconds. If the GC pauses are longer than the specified target, then the GC may shrink the amount of eden regions in order to satisfy the target pause time. If the percentage of time spent in PGC pauses is higher than <code>dnssExpectedTimeRatioMaximum</code> <em>and</em> the GC pauses are longer than the specified pause time target, then the target pause time may not be satisfied, in order to balance reaching the target pause time goal and percentage of time in GC pause goal.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Specifying an ultra low <code>targetPausetime</code> with the Balanced GC policy may cause the percentage of time spent in GC pauses to noticeably increase.</p>
+</dd>
+<dd>
+<p>This option applies only to the <code>metronome</code> and <code>balanced</code> GC policies.</p>
+</dd>
 </dl>
 <h3 id="targetutilization"><code>targetUtilization</code></h3>
 <pre><code>    -Xgc:targetUtilization=N
