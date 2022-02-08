@@ -27,6 +27,7 @@
 The following new features and notable changes since version 0.30.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [New `-XX:[+|-]ShowHiddenFrames` option added](#new-xx-showhiddenframes-option-added)
 
 ## Features and changes
 
@@ -35,6 +36,10 @@ The following new features and notable changes since version 0.30.0 are included
 OpenJ9 release 0.31.0 supports OpenJDK 18.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### New `-XX:[+|-]ShowHiddenFrames` option added
+
+This option specifies if generated hidden MethodHandle frames are displayed in a stacktrace. See [-XX:[+|-]ShowHiddenFrames](xxshowhiddenframes.md) for more details.
 
 ## Known problems and full release information
 
