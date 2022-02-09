@@ -22,19 +22,18 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# What's new in version 0.31.0
+# What's new in version 0.30.1
 
 The following new features and notable changes since version 0.30.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Creation of system dumps on macOS 12](#creation-of-system-dumps-on-macos-12)
-- [New `-XX:[+|-]ShowHiddenFrames` option added](#new-xx-showhiddenframes-option-added)
 
 ## Features and changes
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.31.0 supports OpenJDK 18.
+OpenJ9 release 0.30.1 supports OpenJDK 8, 11 and 17.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -42,12 +41,8 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 Creation of system (core) dumps on macOS 12 or later is now possible.
 
-### New `-XX:[+|-]ShowHiddenFrames` option added
-
-This option specifies if generated hidden MethodHandle frames are displayed in a stacktrace. See [-XX:[+|-]ShowHiddenFrames](xxshowhiddenframes.md) for more details.
-
 ## Known problems and full release information
 
-To see known problems and a complete list of changes between Eclipse OpenJ9 v0.30.0 and v0.31.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.31/0.31.md).
+To see known problems and a complete list of changes between Eclipse OpenJ9 v0.30.0 and v0.30.1 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.30/0.30.1.md).
 
-<!-- ==== END OF TOPIC ==== version0.30.md ==== -->
+<!-- ==== END OF TOPIC ==== version0.30.1.md ==== -->
