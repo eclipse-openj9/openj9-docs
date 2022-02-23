@@ -51,6 +51,6 @@ The tool uses the Attach API, and has the following limitations:
 - Displays information for OpenJ9 Java processes only
 - Does not show information for processes whose Attach API is disabled. :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The Attach API is disabled by default on z/OS.
 
-For more information about the Attach API, including how to enable and secure it, see [Support for the Java Attach API](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/attachapi.html).
+For more information about the Attach API, including how to enable and secure it, see [Java Attach API](attachapi.md).
 
 <!-- ==== END OF TOPIC ==== tool_jstack.md ==== -->
