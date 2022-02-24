@@ -27,9 +27,17 @@
 
 Use this option to control the behavior of the JIT compiler.
 
-Specifying `-Xjit` with no parameters, has no effect as the JIT compiler is enabled by default.
+Specifying `-Xjit` with no parameters has no effect because the JIT compiler is enabled by default.
 
-`-Xnojit` turns off the JIT compiler but does not affect the AOT compiler.
+Specifying `-Xnojit` turns off the JIT compiler but does not affect the AOT compiler.
+
+Specify the `-Xjit` option only once. If you specify this option multiple times, only the last option takes effect. 
+
+You can specify multiple parameters for the `-Xjit` option by using commas to separate the parameters. For example: 
+
+````-Xjit:enableGPU,exclude={ilog/rules/engine/sequential/generated/*}```` 
+
+Parameters such as `exclude` are additive so you can specify them multiple times within the same `-Xjit` option.
 
 ## Syntax
 
@@ -55,7 +63,6 @@ These parameters can be used to modify the behavior of `-Xjit`:
 | [`verbose`       ](#verbose       ) | Reports information about the JIT and AOT compiler configuration and method compilation.|
 | [`vlog`          ](#vlog          ) | Sends verbose output to a file.                                                         |
 
-: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The -Xjit option should only be specified once. If it's specified multiple times, only the last option takes effect. To specify multiple -Xjit parameters, use commas to separate the parameters; for example, -Xjit:enableGPU,exclude={ilog/rules/engine/sequential/generated/*}. Parameters such as exclude are additive and may be specified multiple times (but all within the same -Xjit option).
 
 ### `count`
 
