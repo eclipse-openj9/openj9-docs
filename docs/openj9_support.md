@@ -185,6 +185,46 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
 
+### OpenJDK 18
+
+OpenJDK 18 binaries are expected to function on the minimum operating system levels shown in the following tables:
+
+
+| Linux (**Note 1**)                        | AArch64                                                                              | x64                                                                                  | ppc64le                                                                              | Z64                                                                                  |
+|-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| CentOS 7.9                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>  |
+| CentOS Stream 8                           | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>  |
+| RHEL 7.8                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| RHEL 8.2                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| SUSE Linux Enterprise Server (SLES) 12 SP5| :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Ubuntu 18.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Ubuntu 20.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+
+1. Not all of these distributions are tested, but Linux distributions that have a minimum glibc version 2.17 are expected to function without problems.
+
+| Windows                                   | x64                                                                                  |
+|-------------------------------------------|--------------------------------------------------------------------------------------|
+| Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2012 R2                    | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+| macOS                                     | x64                                                                                  |
+|-------------------------------------------|--------------------------------------------------------------------------------------|
+| OS X 10.10.0+                             | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+| AIX                                       | ppc64                                                                                |
+|-------------------------------------------|--------------------------------------------------------------------------------------|
+| AIX 7.1 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| AIX 7.2 TL4                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+:fontawesome-solid-bell:{: .warn aria-hidden="true"} **Important:** AIX OpenJ9 builds require the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018).
+
+When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
+
+
 ## Build environments
 
 The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The operating system and compiler levels for the build systems are shown in the following tables.
@@ -225,3 +265,16 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
 | macOS x86 64-bit              | macOS 10.14.6          | xcode 10.3 and clang 10.0.1           |
 | AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0                        |
+
+### OpenJDK 18
+
+| Platform                      | Operating system       | Compiler                              |
+|-------------------------------|------------------------|---------------------------------------|
+| Linux x86 64-bit              | CentOS 7.9             | gcc 7.5                               |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 7.5                               |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 7.5                               |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 7.5                               |
+| Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
+| macOS x86 64-bit              | macOS 10.14.6          | xcode 10.3 and clang 10.0.1           |
+| AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0                        |
+
