@@ -381,6 +381,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-jdk-17-features" class="md-nav__link">
+    New JDK 17 features
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4383,6 +4390,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-jdk-17-features" class="md-nav__link">
+    New JDK 17 features
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4436,12 +4450,48 @@
 <p>The following new features and notable changes since version 0.29.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> <a href="#new-jdk-17-features">New JDK 17 features</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
 <p>OpenJ9 release 0.29.1 supports OpenJDK 17.</p>
 <p>AArch64 Linux is now a fully supported, production-ready target for OpenJDK 17.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="new-jdk-17-features"><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> New JDK 17 features</h3>
+<p>The following features are supported by OpenJ9:</p>
+<ul>
+<li><a href="https://openjdk.java.net/jeps/409">JEP 409</a>: Sealed Classes<ul>
+<li>Promoted from preview to a production-ready feature in this release.</li>
+</ul>
+</li>
+<li><a href="https://openjdk.java.net/jeps/411">JEP 411</a>: Deprecate the Security Manager for Removal</li>
+</ul>
+<p>The following features will be supported by OpenJ9 in a future release:</p>
+<ul>
+<li><a href="https://openjdk.java.net/jeps/391">JEP 391</a>: macOS/AArch64 Port</li>
+<li><a href="https://openjdk.java.net/jeps/412">JEP 412</a>: Foreign Function &amp; Memory API (Incubator)</li>
+<li><a href="https://openjdk.java.net/jeps/414">JEP 414</a>: Vector API (Second Incubator)</li>
+</ul>
+<p>The following features are implemented in OpenJDK and available in any build of OpenJDK 17 with OpenJ9:</p>
+<ul>
+<li>
+<p><a href="https://openjdk.java.net/jeps/306">JEP 306</a>: Restore Always-Strict Floating-Point Semantics</p>
+</li>
+<li>
+<p><a href="https://openjdk.java.net/jeps/356">JEP 356</a>: Enhanced Pseudo-Random Number Generators</p>
+</li>
+<li><a href="https://openjdk.java.net/jeps/382">JEP 382</a>: New macOS Rendering Pipeline</li>
+<li><a href="https://openjdk.java.net/jeps/398">JEP 398</a>: Deprecate the Applet API for Removal</li>
+<li><a href="https://openjdk.java.net/jeps/403">JEP 403</a>: Strongly Encapsulate JDK Internals</li>
+<li><a href="https://openjdk.java.net/jeps/406">JEP 406</a>: Pattern Matching for switch (Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/407">JEP 407</a>: Remove RMI Activation</li>
+<li><a href="https://openjdk.java.net/jeps/415">JEP 415</a>: Context-Specific Deserialization Filters</li>
+</ul>
+<p>You can find the full list of features for JDK 17 at the <a href="http://openjdk.java.net/projects/jdk/17/">OpenJDK project</a>.
+Any remaining features that are listed do not apply to OpenJ9.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Applications might be adversely affected by JEP 403
+if they make use of internal APIs. You should update your application to use standard APIs. To temporarily work around
+this problem, use <code>--add-opens</code>, <code>--add-exports</code> on the command line for each package required.</p>
 <h2 id="full-release-information">Full release information</h2>
 <p>To see a complete list of changes between Eclipse OpenJ9 v0.29.0 and v0.29.1 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.29/0.29.1.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.29.1.md ==== -->
