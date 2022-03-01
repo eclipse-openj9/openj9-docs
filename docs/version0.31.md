@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.30.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Creation of system dumps on macOS 12](#creation-of-system-dumps-on-macos-12)
 - [New `-XX:[+|-]ShowHiddenFrames` option added](#new-xx-showhiddenframes-option-added)
+- ![Start of content that applies to Java 18 plus](cr/java18plus.png) [New JDK 18 features](#new-jdk-18-features)
 
 ## Features and changes
 
@@ -45,6 +46,31 @@ Creation of system (core) dumps on macOS 12 or later is now possible.
 ### New `-XX:[+|-]ShowHiddenFrames` option added
 
 This option specifies if generated hidden MethodHandle frames are displayed in a stacktrace. See [-XX:[+|-]ShowHiddenFrames](xxshowhiddenframes.md) for more details.
+
+### ![Start of content that applies to Java 18 plus](cr/java18plus.png) New JDK 18 features
+
+The following features are supported by OpenJ9:
+
+- [JEP 400](https://openjdk.java.net/jeps/400): UTF-8 by Default
+- [JEP 416](https://openjdk.java.net/jeps/416): Reimplement Core Reflection with Method Handles
+- [JEP 421](https://openjdk.java.net/jeps/421): Deprecate Finalization for Removal
+
+The following features will be supported by OpenJ9 in a future release:
+
+- [JEP 391](https://openjdk.java.net/jeps/391): macOS/AArch64 Port
+    - An early access build is available in this release
+- [JEP 417](https://openjdk.java.net/jeps/417): Vector API (Third Incubator)
+- [JEP 419](https://openjdk.java.net/jeps/419): Foreign Function & Memory API (Second Incubator)
+
+The following features are implemented in OpenJDK and available in any build of OpenJDK 18 with OpenJ9:
+
+- [JEP 408](https://openjdk.java.net/jeps/408): Simple Web Server
+- [JEP 413](https://openjdk.java.net/jeps/413): Code Snippets in Java API Documentation
+- [JEP 418](https://openjdk.java.net/jeps/418): Internet-Address Resolution SPI
+- [JEP 420](https://openjdk.java.net/jeps/420): Pattern Matching for switch (Second Preview)
+
+You can find the full list of features for JDK 18 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/18/).
+
 
 ## Known problems and full release information
 
