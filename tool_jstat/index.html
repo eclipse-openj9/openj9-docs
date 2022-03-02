@@ -4385,6 +4385,13 @@ the operating system <em>process ID</em>, unless you specified the <a href="../d
 <li>This tool is not supported and is subject to change or removal in future releases.</li>
 <li>Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9. For more information about differences, see <a href="../tool_migration/">Switching to OpenJ9</a>.</li>
 </ul>
+<p>The tool uses the Attach API, and has the following limitations:</p>
+<ul>
+<li>Displays information only for local processes that are owned by the current user, due to security considerations.</li>
+<li>Displays information for OpenJ9 Java processes only</li>
+<li>Does not show information for processes whose Attach API is disabled. <span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The Attach API is disabled by default on z/OS.</li>
+</ul>
+<p>For more information about the Attach API, including how to enable and secure it, see <a href="../attachapi/">Java Attach API</a>.</p>
 <!-- ==== END OF TOPIC ==== tool_jstat.md ==== -->
                 
               
