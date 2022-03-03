@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.30.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Creation of system dumps on macOS 12](#creation-of-system-dumps-on-macos-12)
 - [New `-XX:[+|-]ShowHiddenFrames` option added](#new-xx-showhiddenframes-option-added)
+- ![Start of content that applies to Java 11 plus](cr/java11plus.png) [Modified default for `-XX:MaxDirectMemorySize`](#modified-default-for-xxmaxdirectmemorysize)
 - ![Start of content that applies to Java 18 plus](cr/java18plus.png) [New JDK 18 features](#new-jdk-18-features)
 
 ## Features and changes
@@ -45,7 +46,12 @@ Creation of system (core) dumps on macOS 12 or later is now possible.
 
 ### New `-XX:[+|-]ShowHiddenFrames` option added
 
-This option specifies if generated hidden MethodHandle frames are displayed in a stacktrace. See [-XX:[+|-]ShowHiddenFrames](xxshowhiddenframes.md) for more details.
+This option specifies if generated hidden MethodHandle frames are displayed in a stacktrace. See [`-XX:[+|-]ShowHiddenFrames`](xxshowhiddenframes.md) for more details.
+
+### ![Start of content that applies to Java 11 plus](cr/java11plus.png) Modified default for `-XX:MaxDirectMemorySize`
+
+[`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md) is no longer set by default and the class library limits the amount of heap memory used for
+Direct Byte Buffers to the same value as the maximum heap size.
 
 ### ![Start of content that applies to Java 18 plus](cr/java18plus.png) New JDK 18 features
 
