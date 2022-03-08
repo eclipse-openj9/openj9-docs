@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.30.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Creation of system dumps on macOS 12](#creation-of-system-dumps-on-macos-12)
 - [New `-XX:[+|-]ShowHiddenFrames` option added](#new-xx-showhiddenframes-option-added)
+- [New `SharedClassStatistics` API](#new-sharedclassstatistics-api)
 - ![Start of content that applies to Java 11 plus](cr/java11plus.png) [Modified default for `-XX:MaxDirectMemorySize`](#modified-default-for-xxmaxdirectmemorysize)
 - ![Start of content that applies to Java 18 plus](cr/java18plus.png) [New JDK 18 features](#new-jdk-18-features)
 
@@ -47,6 +48,11 @@ Creation of system (core) dumps on macOS 12 or later is now possible.
 ### New `-XX:[+|-]ShowHiddenFrames` option added
 
 This option specifies if generated hidden MethodHandle frames are displayed in a stacktrace. See [`-XX:[+|-]ShowHiddenFrames`](xxshowhiddenframes.md) for more details.
+
+### New `SharedClassStatistics` API
+
+New shared classes API is added in `SharedClassStatistics` for `cacheDir()`, `cacheName()`, `cachePath()`, `numberAttached()`. For more details see the API documentation.
+Only the [Java 18 API documentation](api-jdk18.md) is updated in this release, API documentation for the other versions will be updated in the next release.
 
 ### ![Start of content that applies to Java 11 plus](cr/java11plus.png) Modified default for `-XX:MaxDirectMemorySize`
 
