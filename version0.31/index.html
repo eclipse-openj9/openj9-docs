@@ -360,6 +360,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-sharedclassstatistics-api" class="md-nav__link">
+    New SharedClassStatistics API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#modified-default-for-xxmaxdirectmemorysize" class="md-nav__link">
     Modified default for -XX:MaxDirectMemorySize
   </a>
@@ -4438,6 +4445,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-sharedclassstatistics-api" class="md-nav__link">
+    New SharedClassStatistics API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#modified-default-for-xxmaxdirectmemorysize" class="md-nav__link">
     Modified default for -XX:MaxDirectMemorySize
   </a>
@@ -4506,6 +4520,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#creation-of-system-dumps-on-macos-12">Creation of system dumps on macOS 12</a></li>
 <li><a href="#new-xx-showhiddenframes-option-added">New <code>-XX:[+|-]ShowHiddenFrames</code> option added</a></li>
+<li><a href="#new-sharedclassstatistics-api">New <code>SharedClassStatistics</code> API</a></li>
 <li><img alt="Start of content that applies to Java 11 plus" src="../cr/java11plus.png" /> <a href="#modified-default-for-xxmaxdirectmemorysize">Modified default for <code>-XX:MaxDirectMemorySize</code></a></li>
 <li><img alt="Start of content that applies to Java 18 plus" src="../cr/java18plus.png" /> <a href="#new-jdk-18-features">New JDK 18 features</a></li>
 </ul>
@@ -4517,6 +4532,9 @@
 <p>Creation of system (core) dumps on macOS 12 or later is now possible.</p>
 <h3 id="new-xx-showhiddenframes-option-added">New <code>-XX:[+|-]ShowHiddenFrames</code> option added</h3>
 <p>This option specifies if generated hidden MethodHandle frames are displayed in a stacktrace. See <a href="../xxshowhiddenframes/"><code>-XX:[+|-]ShowHiddenFrames</code></a> for more details.</p>
+<h3 id="new-sharedclassstatistics-api">New <code>SharedClassStatistics</code> API</h3>
+<p>New shared classes API is added in <code>SharedClassStatistics</code> for <code>cacheDir()</code>, <code>cacheName()</code>, <code>cachePath()</code>, <code>numberAttached()</code>. For more details see the API documentation.
+Only the <a href="../api-jdk18/">Java 18 API documentation</a> is updated in this release, API documentation for the other versions will be updated in the next release.</p>
 <h3 id="modified-default-for-xxmaxdirectmemorysize"><img alt="Start of content that applies to Java 11 plus" src="../cr/java11plus.png" /> Modified default for <code>-XX:MaxDirectMemorySize</code></h3>
 <p><a href="../xxmaxdirectmemorysize/"><code>-XX:MaxDirectMemorySize</code></a> is no longer set by default and the class library limits the amount of heap memory used for
 Direct Byte Buffers to the same value as the maximum heap size.</p>
