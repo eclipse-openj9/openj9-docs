@@ -173,7 +173,7 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 
 | macOS                                     | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| OS X 10.10.0+                             | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| OS X 10.14+                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
@@ -213,7 +213,7 @@ OpenJDK 18 binaries are expected to function on the minimum operating system lev
 
 | macOS                                     | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| OS X 10.10.0+                             | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| OS X 10.15+                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
