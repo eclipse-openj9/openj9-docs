@@ -135,7 +135,7 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 
 | macOS                                     | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| OS X 10.10.0+                             | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| OS X 10.11+                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
