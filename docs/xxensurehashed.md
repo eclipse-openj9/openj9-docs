@@ -34,11 +34,11 @@ Objects allocated from the specified classes will be hashed and extended with a 
 | Setting                     | Effect           |
 |-----------------------------|------------------|
 |`-XX:+EnsureHashed:<classes>`| Specify classes  |
-|`-XX:-EnsureHashed:<classes>`| Unspecify classes|
+|`-XX:-EnsureHashed:<classes>`| Ignore classes|
 
 Where `<classes>` is a comma-separated list of fully qualified class names, e.g. `java/lang/String`.
 
-The `-XX:+EnsureHashed:<classes>` option specifies the classes and the `-XX:-EnsureHashed:<classes>` option unspecifies classes that were previously specified. These options are parsed left to right.
+The `-XX:+EnsureHashed:<classes>` option specifies the classes and the `-XX:-EnsureHashed:<classes>` option ignores classes that were previously specified. These options are parsed left to right.
 
 For example, `-XX:+EnsureHashed:Class1,Class2,Class3 -XX:-EnsureHashed:Class2 -XX:+EnsureHashed:Class2,Class4 -XX:-EnsureHashed:Class1,Class3` results in the set of `EnsureHashed` classes {`Class2`, `Class4`}.
 

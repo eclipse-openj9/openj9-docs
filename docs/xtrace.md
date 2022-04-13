@@ -874,8 +874,8 @@ Shows the current trace settings
 ## See also
 
 - [Application trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_application.html)
-- [Using Heapdump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/heapdump.html)
-- [Using Javadump](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/javadump.html)
+- [Heap dump](dump_heapdump.md)
+- [Java dump](dump_javadump.md)
 - [Dump viewer](tool_jdmpview.md)
 
 <!-- ==== END OF TOPIC ==== xtrace.md ==== -->
