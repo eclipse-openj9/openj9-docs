@@ -4426,12 +4426,12 @@
 </tr>
 <tr>
 <td><code>-XX:-EnsureHashed:&lt;classes&gt;</code></td>
-<td>Unspecify classes</td>
+<td>Ignore classes</td>
 </tr>
 </tbody>
 </table>
 <p>Where <code>&lt;classes&gt;</code> is a comma-separated list of fully qualified class names, e.g. <code>java/lang/String</code>.</p>
-<p>The <code>-XX:+EnsureHashed:&lt;classes&gt;</code> option specifies the classes and the <code>-XX:-EnsureHashed:&lt;classes&gt;</code> option unspecifies classes that were previously specified. These options are parsed left to right.</p>
+<p>The <code>-XX:+EnsureHashed:&lt;classes&gt;</code> option specifies the classes and the <code>-XX:-EnsureHashed:&lt;classes&gt;</code> option ignores classes that were previously specified. These options are parsed left to right.</p>
 <p>For example, <code>-XX:+EnsureHashed:Class1,Class2,Class3 -XX:-EnsureHashed:Class2 -XX:+EnsureHashed:Class2,Class4 -XX:-EnsureHashed:Class1,Class3</code> results in the set of <code>EnsureHashed</code> classes {<code>Class2</code>, <code>Class4</code>}.</p>
 <!-- ==== END OF TOPIC ==== xensurehashed.md ==== -->
                 
