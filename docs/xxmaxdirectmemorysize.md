@@ -37,7 +37,9 @@ This Oracle HotSpot option sets a limit on the amount of memory that can be rese
 
 The value you choose is the limit on memory that can be reserved for all Direct Byte Buffers. If a value is set for this option, the sum of all Direct Byte Buffer sizes cannot exceed the limit. After the limit is reached, a new Direct Byte Buffer can be allocated only when enough old buffers are freed to provide enough space to allocate the new buffer.
 
-By default, the VM limits the amount of heap memory used for Direct Byte Buffers to 87.5% of the maximum heap size.
+![Start of content that applies to Java 8](cr/java8.png) By default, the VM limits the amount of heap memory used for Direct Byte Buffers to 87.5% of the maximum heap size.
+
+![Start of content that applies to Java 11 plus](cr/java11plus.png) By default, the class library limits the amount of heap memory used for Direct Byte Buffers to the same value as the maximum heap size.
 
 
 
