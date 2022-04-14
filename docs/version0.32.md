@@ -22,42 +22,40 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# What's new in version 0.31.0
+# What's new in version 0.32.0
 
 The following new features and notable changes since version 0.30.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Creation of system dumps on macOS 12](#creation-of-system-dumps-on-macos-12)
 - [New `-XX:[+|-]ShowHiddenFrames` option added](#new-xx-showhiddenframes-option-added)
-- [New `SharedClassStatistics` API](#new-sharedclassstatistics-api)
-- ![Start of content that applies to Java 11 plus](cr/java11plus.png) [Modified default for `-XX:MaxDirectMemorySize`](#modified-default-for-xxmaxdirectmemorysize)
+- [`SharedClassStatistics` API updated](#sharedclassstatistics-api-updated)
+- ![Start of content that applies to Java 11 plus](cr/java11plus.png) [Modified default value for `-XX:MaxDirectMemorySize`](#modified-default-value-for-xxmaxdirectmemorysize)
 - ![Start of content that applies to Java 18 plus](cr/java18plus.png) [New JDK 18 features](#new-jdk-18-features)
 
 ## Features and changes
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.31.0 supports OpenJDK 18.
+OpenJ9 release 0.32.0 supports OpenJDK 8, 11, 17, and 18.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### Creation of system dumps on macOS 12
+### Creation of system dumps on macOS&reg; 12
 
-Creation of system (core) dumps on macOS 12 or later is now possible.
+You can now create system (core) dumps on macOS 12 or later.
 
 ### New `-XX:[+|-]ShowHiddenFrames` option added
 
-This option specifies if generated hidden MethodHandle frames are displayed in a stacktrace. See [`-XX:[+|-]ShowHiddenFrames`](xxshowhiddenframes.md) for more details.
+This option specifies whether generated hidden MethodHandle frames are displayed in a stack trace. For more information, see [`-XX:[+|-]ShowHiddenFrames`](xxshowhiddenframes.md).
 
-### New `SharedClassStatistics` API
+### `SharedClassStatistics` API updated
 
-New shared classes API is added in `SharedClassStatistics` for `cacheDir()`, `cacheName()`, `cachePath()`, `numberAttached()`. For more details see the API documentation.
-Only the [Java 18 API documentation](api-jdk18.md) is updated in this release, API documentation for the other versions will be updated in the next release.
+You can now use the `SharedClassStatistics` API to get the name, path, and directory of a shared classes cache. Depending on the operating system, you can also get the number of attached VMs for a non-persistent cache. This information is available through the following new methods: `cacheDir()`, `cacheName()`, `cachePath()`, and `numberAttached()`. For more information, see the API documentation.
 
-### ![Start of content that applies to Java 11 plus](cr/java11plus.png) Modified default for `-XX:MaxDirectMemorySize`
+### ![Start of content that applies to Java 11 plus](cr/java11plus.png) Modified default value for `-XX:MaxDirectMemorySize`
 
-[`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md) is no longer set by default and the class library limits the amount of heap memory used for
-Direct Byte Buffers to the same value as the maximum heap size.
+The default value of the [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md) option, which limits the amount of heap memory that is used for direct byte buffers, is now the same as the maximum heap size.
 
 ### ![Start of content that applies to Java 18 plus](cr/java18plus.png) New JDK 18 features
 
@@ -86,6 +84,6 @@ You can find the full list of features for JDK 18 at the [OpenJDK project](http:
 
 ## Known problems and full release information
 
-To see known problems and a complete list of changes between Eclipse OpenJ9 v0.30.0 and v0.31.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.31/0.31.md).
+To see known problems and a complete list of changes between Eclipse OpenJ9 v0.30.0 and v0.32.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.32/0.32.md).
 
-<!-- ==== END OF TOPIC ==== version0.30.md ==== -->
+<!-- ==== END OF TOPIC ==== version0.32.md ==== -->
