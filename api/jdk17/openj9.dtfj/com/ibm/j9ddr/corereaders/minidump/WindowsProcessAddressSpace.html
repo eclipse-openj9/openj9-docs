@@ -227,12 +227,12 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link" target="_blank">Properties</a></span>&nbsp;<span class="element-name">getEnvironmentVariables</span>()
                                    throws <span class="exceptions"><a href="../../DataUnavailableException.html" title="class in com.ibm.j9ddr">DataUnavailableException</a>,
 <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<div class="block">This method tries to get environment variables by iterating through modules. 
- It returns the one with environment var "IBM_JAVA_COMMAND_LINE"
- If there is no module with IBM_JAVA_COMMAND_LINE, then it returns the last one.</div>
+<div class="block">This method tries to get environment variables by iterating through modules.
+ It returns the one with environment variable "OPENJ9_JAVA_COMMAND_LINE" or
+ "IBM_JAVA_COMMAND_LINE". If no module has either, then it returns the last one.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>Properties instance of environment variables.</dd>
+<dd>Properties instance of environment variables</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../DataUnavailableException.html" title="class in com.ibm.j9ddr">DataUnavailableException</a></code></dd>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
@@ -320,7 +320,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022, IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>

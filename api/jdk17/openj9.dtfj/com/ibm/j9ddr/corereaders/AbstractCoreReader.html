@@ -141,9 +141,11 @@ implements <a href="ICore.html" title="interface in com.ibm.j9ddr.corereaders">I
 <section class="constructor-summary" id="constructor-summary">
 <h2>Constructor Summary</h2>
 <div class="caption"><span>Constructors</span></div>
-<div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>protected </code></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">AbstractCoreReader</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -265,7 +267,7 @@ implements <a href="ICore.html" title="interface in com.ibm.j9ddr.corereaders">I
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>AbstractCoreReader</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">AbstractCoreReader</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">AbstractCoreReader</span>()</div>
 </section>
 </li>
 </ul>
@@ -284,7 +286,7 @@ implements <a href="ICore.html" title="interface in com.ibm.j9ddr.corereaders">I
 <div class="block">This sets the reader to use to retrieve the underlying bytes to process.
  The reader may perform buffering or other operations before making the
  data available.
- 
+
  Subclasses should override this method if additional actions need to be
  performed when the reader is set, typically this will be things such as
  an initial read of the data.</div>
@@ -458,7 +460,7 @@ implements <a href="ICore.html" title="interface in com.ibm.j9ddr.corereaders">I
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022, IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>

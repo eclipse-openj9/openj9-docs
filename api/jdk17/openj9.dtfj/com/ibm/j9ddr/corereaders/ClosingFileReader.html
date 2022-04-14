@@ -91,9 +91,9 @@ loadScripts(document, 'script');</script>
  with the added auto-closing functionality that we require. Since it is not
  always easy to determine who "owns" a file and we do not want to introduce
  the concept of state, this class will manage all such file ownership.
- 
+
  We now also extend javax.imageio.stream.ImageInputStreamImpl as a convenient
- common interface that we can share with the zebedee corefile reader</div>
+ common interface that we can share with the zebedee corefile reader.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -116,15 +116,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.io.File)" class="member-name-link">ClosingFileReader</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link" target="_blank">File</a>&nbsp;file)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.io.File,boolean)" class="member-name-link">ClosingFileReader</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link" target="_blank">File</a>&nbsp;file,
- boolean&nbsp;deleteOnCloseOrExit)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Create a closing file reader which can close/delete the backing file on
- shutdown</div>
-</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.io.File,java.nio.ByteOrder)" class="member-name-link">ClosingFileReader</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link" target="_blank">File</a>&nbsp;file,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.io.File,java.nio.ByteOrder)" class="member-name-link">ClosingFileReader</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link" target="_blank">File</a>&nbsp;file,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/ByteOrder.html" title="class or interface in java.nio" class="external-link" target="_blank">ByteOrder</a>&nbsp;endian)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Create a closing file reader with the given endianness which can
  close/delete the backing file on shutdown</div>
 </div>
@@ -159,29 +153,9 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(java.io.File)">
 <h3>ClosingFileReader</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ClosingFileReader</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link" target="_blank">File</a>&nbsp;file)</span>
-                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link" target="_blank">IOException</a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link" target="_blank">FileNotFoundException</a></span></div>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link" target="_blank">FileNotFoundException</a>,
+<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link" target="_blank">IOException</a></span></div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link" target="_blank">IOException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link" target="_blank">FileNotFoundException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(java.io.File,boolean)">
-<h3>ClosingFileReader</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ClosingFileReader</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link" target="_blank">File</a>&nbsp;file,
- boolean&nbsp;deleteOnCloseOrExit)</span>
-                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link" target="_blank">IOException</a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link" target="_blank">FileNotFoundException</a></span></div>
-<div class="block">Create a closing file reader which can close/delete the backing file on
- shutdown</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>file</code> - </dd>
-<dd><code>deleteOnCloseOrExit</code> - Whether to delete the file when the file is closed or at
-            shutdown</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link" target="_blank">FileNotFoundException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link" target="_blank">IOException</a></code></dd>
@@ -193,8 +167,8 @@ loadScripts(document, 'script');</script>
 <h3>ClosingFileReader</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ClosingFileReader</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html" title="class or interface in java.io" class="external-link" target="_blank">File</a>&nbsp;file,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/ByteOrder.html" title="class or interface in java.nio" class="external-link" target="_blank">ByteOrder</a>&nbsp;endian)</span>
-                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link" target="_blank">IOException</a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link" target="_blank">FileNotFoundException</a></span></div>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link" target="_blank">FileNotFoundException</a>,
+<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link" target="_blank">IOException</a></span></div>
 <div class="block">Create a closing file reader with the given endianness which can
  close/delete the backing file on shutdown</div>
 <dl class="notes">
@@ -218,7 +192,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022, IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>
