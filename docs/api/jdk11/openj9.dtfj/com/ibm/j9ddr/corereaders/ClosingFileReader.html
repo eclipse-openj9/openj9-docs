@@ -149,9 +149,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop
  with the added auto-closing functionality that we require. Since it is not
  always easy to determine who "owns" a file and we do not want to introduce
  the concept of state, this class will manage all such file ownership.
- 
+
  We now also extend javax.imageio.stream.ImageInputStreamImpl as a convenient
- common interface that we can share with the zebedee corefile reader</div>
+ common interface that we can share with the zebedee corefile reader.</div>
 </li>
 </ul>
 </div>
@@ -193,14 +193,6 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.io.File,boolean)">ClosingFileReader</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">File</a>&nbsp;file,
-                 boolean&nbsp;deleteOnCloseOrExit)</code></th>
-<td class="colLast">
-<div class="block">Create a closing file reader which can close/delete the backing file on
- shutdown</div>
-</td>
-</tr>
-<tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.io.File,java.nio.ByteOrder)">ClosingFileReader</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">File</a>&nbsp;file,
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/ByteOrder.html?is-external=true" title="class or interface in java.nio" class="externalLink" target="_blank">ByteOrder</a>&nbsp;endian)</code></th>
 <td class="colLast">
@@ -263,32 +255,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop
 <li class="blockList">
 <h4>ClosingFileReader</h4>
 <pre>public&nbsp;ClosingFileReader&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">File</a>&nbsp;file)
-                  throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a>,
-                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">FileNotFoundException</a></pre>
+                  throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">FileNotFoundException</a>,
+                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a></pre>
 <dl>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">FileNotFoundException</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="&lt;init&gt;(java.io.File,boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ClosingFileReader</h4>
-<pre>public&nbsp;ClosingFileReader&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">File</a>&nbsp;file,
-                         boolean&nbsp;deleteOnCloseOrExit)
-                  throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a>,
-                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">FileNotFoundException</a></pre>
-<div class="block">Create a closing file reader which can close/delete the backing file on
- shutdown</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>file</code> - </dd>
-<dd><code>deleteOnCloseOrExit</code> - Whether to delete the file when the file is closed or at
-            shutdown</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">FileNotFoundException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a></code></dd>
@@ -303,8 +272,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop
 <h4>ClosingFileReader</h4>
 <pre>public&nbsp;ClosingFileReader&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">File</a>&nbsp;file,
                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/ByteOrder.html?is-external=true" title="class or interface in java.nio" class="externalLink" target="_blank">ByteOrder</a>&nbsp;endian)
-                  throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a>,
-                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">FileNotFoundException</a></pre>
+                  throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileNotFoundException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">FileNotFoundException</a>,
+                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a></pre>
 <div class="block">Create a closing file reader with the given endianness which can
  close/delete the backing file on shutdown</div>
 <dl>
@@ -390,7 +359,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 </nav>
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022, IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022 IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>
