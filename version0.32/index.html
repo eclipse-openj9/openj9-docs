@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.31/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.32/">
       
       <link rel="icon" href="../cr/openj9-logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
-        <title>Version 0.31.0 -  </title>
+        <title>Version 0.32.0 -  </title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#whats-new-in-version-0310" class="md-skip">
+        <a href="#whats-new-in-version-0320" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Version 0.31.0
+              Version 0.32.0
             
           </span>
         </div>
@@ -308,12 +308,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Version 0.31.0
+          Version 0.32.0
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Version 0.31.0
+        Version 0.32.0
       </a>
       
         
@@ -347,7 +347,7 @@
         
           <li class="md-nav__item">
   <a href="#creation-of-system-dumps-on-macos-12" class="md-nav__link">
-    Creation of system dumps on macOS 12
+    Creation of system dumps on macOS&reg; 12
   </a>
   
 </li>
@@ -360,15 +360,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-sharedclassstatistics-api" class="md-nav__link">
-    New SharedClassStatistics API
+  <a href="#sharedclassstatistics-api-updated" class="md-nav__link">
+    SharedClassStatistics API updated
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#modified-default-for-xxmaxdirectmemorysize" class="md-nav__link">
-    Modified default for -XX:MaxDirectMemorySize
+  <a href="#modified-default-value-for-xxmaxdirectmemorysize" class="md-nav__link">
+    Modified default value for -XX:MaxDirectMemorySize
   </a>
   
 </li>
@@ -4432,7 +4432,7 @@
         
           <li class="md-nav__item">
   <a href="#creation-of-system-dumps-on-macos-12" class="md-nav__link">
-    Creation of system dumps on macOS 12
+    Creation of system dumps on macOS&reg; 12
   </a>
   
 </li>
@@ -4445,15 +4445,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-sharedclassstatistics-api" class="md-nav__link">
-    New SharedClassStatistics API
+  <a href="#sharedclassstatistics-api-updated" class="md-nav__link">
+    SharedClassStatistics API updated
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#modified-default-for-xxmaxdirectmemorysize" class="md-nav__link">
-    Modified default for -XX:MaxDirectMemorySize
+  <a href="#modified-default-value-for-xxmaxdirectmemorysize" class="md-nav__link">
+    Modified default value for -XX:MaxDirectMemorySize
   </a>
   
 </li>
@@ -4514,30 +4514,28 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="whats-new-in-version-0310">What's new in version 0.31.0</h1>
+<h1 id="whats-new-in-version-0320">What's new in version 0.32.0</h1>
 <p>The following new features and notable changes since version 0.30.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#creation-of-system-dumps-on-macos-12">Creation of system dumps on macOS 12</a></li>
 <li><a href="#new-xx-showhiddenframes-option-added">New <code>-XX:[+|-]ShowHiddenFrames</code> option added</a></li>
-<li><a href="#new-sharedclassstatistics-api">New <code>SharedClassStatistics</code> API</a></li>
-<li><img alt="Start of content that applies to Java 11 plus" src="../cr/java11plus.png" /> <a href="#modified-default-for-xxmaxdirectmemorysize">Modified default for <code>-XX:MaxDirectMemorySize</code></a></li>
+<li><a href="#sharedclassstatistics-api-updated"><code>SharedClassStatistics</code> API updated</a></li>
+<li><img alt="Start of content that applies to Java 11 plus" src="../cr/java11plus.png" /> <a href="#modified-default-value-for-xxmaxdirectmemorysize">Modified default value for <code>-XX:MaxDirectMemorySize</code></a></li>
 <li><img alt="Start of content that applies to Java 18 plus" src="../cr/java18plus.png" /> <a href="#new-jdk-18-features">New JDK 18 features</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
-<p>OpenJ9 release 0.31.0 supports OpenJDK 18.</p>
+<p>OpenJ9 release 0.32.0 supports OpenJDK 8, 11, 17, and 18.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
-<h3 id="creation-of-system-dumps-on-macos-12">Creation of system dumps on macOS 12</h3>
-<p>Creation of system (core) dumps on macOS 12 or later is now possible.</p>
+<h3 id="creation-of-system-dumps-on-macos-12">Creation of system dumps on macOS&reg; 12</h3>
+<p>You can now create system (core) dumps on macOS 12 or later.</p>
 <h3 id="new-xx-showhiddenframes-option-added">New <code>-XX:[+|-]ShowHiddenFrames</code> option added</h3>
-<p>This option specifies if generated hidden MethodHandle frames are displayed in a stacktrace. See <a href="../xxshowhiddenframes/"><code>-XX:[+|-]ShowHiddenFrames</code></a> for more details.</p>
-<h3 id="new-sharedclassstatistics-api">New <code>SharedClassStatistics</code> API</h3>
-<p>New shared classes API is added in <code>SharedClassStatistics</code> for <code>cacheDir()</code>, <code>cacheName()</code>, <code>cachePath()</code>, <code>numberAttached()</code>. For more details see the API documentation.
-Only the <a href="../api-jdk18/">Java 18 API documentation</a> is updated in this release, API documentation for the other versions will be updated in the next release.</p>
-<h3 id="modified-default-for-xxmaxdirectmemorysize"><img alt="Start of content that applies to Java 11 plus" src="../cr/java11plus.png" /> Modified default for <code>-XX:MaxDirectMemorySize</code></h3>
-<p><a href="../xxmaxdirectmemorysize/"><code>-XX:MaxDirectMemorySize</code></a> is no longer set by default and the class library limits the amount of heap memory used for
-Direct Byte Buffers to the same value as the maximum heap size.</p>
+<p>This option specifies whether generated hidden MethodHandle frames are displayed in a stack trace. For more information, see <a href="../xxshowhiddenframes/"><code>-XX:[+|-]ShowHiddenFrames</code></a>.</p>
+<h3 id="sharedclassstatistics-api-updated"><code>SharedClassStatistics</code> API updated</h3>
+<p>You can now use the <code>SharedClassStatistics</code> API to get the name, path, and directory of a shared classes cache. Depending on the operating system, you can also get the number of attached VMs for a non-persistent cache. This information is available through the following new methods: <code>cacheDir()</code>, <code>cacheName()</code>, <code>cachePath()</code>, and <code>numberAttached()</code>. For more information, see the API documentation.</p>
+<h3 id="modified-default-value-for-xxmaxdirectmemorysize"><img alt="Start of content that applies to Java 11 plus" src="../cr/java11plus.png" /> Modified default value for <code>-XX:MaxDirectMemorySize</code></h3>
+<p>The default value of the <a href="../xxmaxdirectmemorysize/"><code>-XX:MaxDirectMemorySize</code></a> option, which limits the amount of heap memory that is used for direct byte buffers, is now the same as the maximum heap size.</p>
 <h3 id="new-jdk-18-features"><img alt="Start of content that applies to Java 18 plus" src="../cr/java18plus.png" /> New JDK 18 features</h3>
 <p>The following features are supported by OpenJ9:</p>
 <ul>
@@ -4563,8 +4561,8 @@ Direct Byte Buffers to the same value as the maximum heap size.</p>
 </ul>
 <p>You can find the full list of features for JDK 18 at the <a href="http://openjdk.java.net/projects/jdk/18/">OpenJDK project</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
-<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.30.0 and v0.31.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.31/0.31.md">Release notes</a>.</p>
-<!-- ==== END OF TOPIC ==== version0.30.md ==== -->
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.30.0 and v0.32.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.32/0.32.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.32.md ==== -->
                 
               
               
