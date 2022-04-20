@@ -39,7 +39,7 @@ Unlike the HotSpot implementation, this option doesn't require the `+UnlockDiagn
 | `-XX:+ShowHiddenFrames`  | Enable  |                                                                                      |
 | `-XX:-ShowHiddenFrames`  | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-:   When disabled, this option causes the VM to hide generated hidden MethodHandle frames in a stacktrace.  
+:   When disabled, this option causes the VM to hide generated hidden `MethodHandle` frames in a stacktrace.  
 
 
 <!-- ==== END OF TOPIC ==== xxshowhiddenframes.md ==== -->
