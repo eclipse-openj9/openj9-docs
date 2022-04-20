@@ -28,7 +28,7 @@ The following new features and notable changes since version 0.30.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Creation of system dumps on macOS 12](#creation-of-system-dumps-on-macos-12)
-- [New `-XX:[+|-]ShowHiddenFrames` option added](#new-xx-showhiddenframes-option-added)
+- [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [`SharedClassStatistics` API updated](#sharedclassstatistics-api-updated)
 - ![Start of content that applies to Java 11 plus](cr/java11plus.png) [Modified default value for `-XX:MaxDirectMemorySize`](#modified-default-value-for-xxmaxdirectmemorysize)
 - ![Start of content that applies to Java 18 plus](cr/java18plus.png) [New JDK 18 features](#new-jdk-18-features)
@@ -45,9 +45,12 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 You can now create system (core) dumps on macOS 12 or later.
 
-### New `-XX:[+|-]ShowHiddenFrames` option added
 
-This option specifies whether generated hidden MethodHandle frames are displayed in a stack trace. For more information, see [`-XX:[+|-]ShowHiddenFrames`](xxshowhiddenframes.md).
+### Support for OpenJDK HotSpot options
+
+For compatibility, the following OpenJDK HotSpot options are now supported by OpenJ9:
+
+- [`-XX:[+|-]ShowHiddenFrames`](xxshowhiddenframes.md). This option specifies whether generated hidden `MethodHandle` frames are displayed in a stack trace.
 
 ### `SharedClassStatistics` API updated
 
