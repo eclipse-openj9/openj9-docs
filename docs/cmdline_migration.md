@@ -65,6 +65,7 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-XX:ParallelCMSThreads`](xxparallelcmsthreads.md)              | Configures the number of GC mutator background threads.                                                                                      |
 | [`-XX:ParallelGCThreads`](xxparallelgcthreads.md)                | Configures the number of GC threads.                                                                                                         |
 | [`-XX:[+|-]PrintCodeCache`](xxprintcodecache.md)                 | Prints code cache usage when the application exits.                                                                                          |
+| [`-XX:[+|-]ShowHiddenFrames`](xxshowhiddenframes.md)             | Specifies whether generated hidden `MethodHandle` frames are displayed in a stack trace. :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Unlike HotSpot, this option doesn't require the `+UnlockDiagnosticVMOptions` option.                                                                                         |
 | [`-XX:[+|-]UseCompressedOops`](xxusecompressedoops.md)           | Disables compressed references in 64-bit JVMs. (See also [`-Xcompressedrefs`](xcompressedrefs.md))                                           |
 | [`-XX:[+|-]UseContainerSupport`](xxusecontainersupport.md)       | Sets a larger fraction of memory to the Java heap when the VM detects that it is running in a container.                                     |
 

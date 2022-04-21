@@ -24,7 +24,11 @@
 
 # -XX:\[+|-\]ShowHiddenFrames
 
-This option enables or disables the display of generated hidden MethodHandle frames in a stacktrace.
+This reimplementation of the Oracle HotSpot diagonostic option enables or disables the display of generated hidden `MethodHandle` frames in a stack trace.
+
+This option doesn't affect the contents of dump files.
+
+Unlike the HotSpot implementation, this option doesn't require the `+UnlockDiagnosticVMOptions` option.
 
 ## Syntax
 
@@ -35,8 +39,7 @@ This option enables or disables the display of generated hidden MethodHandle fra
 | `-XX:+ShowHiddenFrames`  | Enable  |                                                                                      |
 | `-XX:-ShowHiddenFrames`  | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-:   The option, `-XX:-ShowHiddenFrames`, causes the VM to hide generated hidden MethodHandle frames in a stacktrace. This is the default option.
+:   When disabled, this option causes the VM to hide generated hidden `MethodHandle` frames in a stacktrace.  
 
-    When specifying the `-XX:+ShowHiddenFrames` option, the VM displays these generated hidden MethodHandle frames in a stacktrace.
 
 <!-- ==== END OF TOPIC ==== xxshowhiddenframes.md ==== -->
