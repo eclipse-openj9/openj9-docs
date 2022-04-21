@@ -4407,7 +4407,9 @@
 -->
 
 <h1 id="-xx-showhiddenframes">-XX:[+|-]ShowHiddenFrames</h1>
-<p>This option enables or disables the display of generated hidden MethodHandle frames in a stacktrace.</p>
+<p>This reimplementation of the Oracle HotSpot diagonostic option enables or disables the display of generated hidden <code>MethodHandle</code> frames in a stack trace.</p>
+<p>This option doesn't affect the contents of dump files.</p>
+<p>Unlike the HotSpot implementation, this option doesn't require the <code>+UnlockDiagnosticVMOptions</code> option.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]ShowHiddenFrames
 </code></pre>
@@ -4433,10 +4435,7 @@
 </tbody>
 </table>
 <dl>
-<dd>
-<p>The option, <code>-XX:-ShowHiddenFrames</code>, causes the VM to hide generated hidden MethodHandle frames in a stacktrace. This is the default option.</p>
-<p>When specifying the <code>-XX:+ShowHiddenFrames</code> option, the VM displays these generated hidden MethodHandle frames in a stacktrace.</p>
-</dd>
+<dd>When disabled, this option causes the VM to hide generated hidden <code>MethodHandle</code> frames in a stacktrace.  </dd>
 </dl>
 <!-- ==== END OF TOPIC ==== xxshowhiddenframes.md ==== -->
                 
