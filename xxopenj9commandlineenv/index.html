@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xtunevirtualized/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxopenj9commandlineenv/">
       
       <link rel="icon" href="../cr/openj9-logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
-        <title>-Xtune:virtualized -  </title>
+        <title>-XX:[+|-]OpenJ9CommandLineEnv -  </title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xtunevirtualized" class="md-skip">
+        <a href="#-xx-openj9commandlineenv" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Xtune:virtualized
+              -XX:[+|-]OpenJ9CommandLineEnv
             
           </span>
         </div>
@@ -1652,14 +1652,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_5" type="checkbox" id="__nav_15_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_5" type="checkbox" id="__nav_15_5" >
       
       <label class="md-nav__link" for="__nav_15_5">
         JVM -X options
@@ -2959,58 +2957,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          -Xtune:virtualized
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xtunevirtualized/" class="md-nav__link">
         -Xtune:virtualized
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="On this page...">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page...
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3060,12 +3011,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_6" type="checkbox" id="__nav_15_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_6" type="checkbox" id="__nav_15_6" checked>
       
       <label class="md-nav__link" for="__nav_15_6">
         JVM -XX options
@@ -3645,11 +3598,58 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../xxopenj9commandlineenv/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          -XX:[+|-]OpenJ9CommandLineEnv
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         -XX:[+|-]OpenJ9CommandLineEnv
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page...
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4432,19 +4432,41 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xtunevirtualized">-Xtune:virtualized</h1>
-<p>Optimizes OpenJ9 VM function for virtualized environments, such as a cloud, by reducing OpenJ9 VM CPU consumption when idle.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Performance is optimized if there is a large shared classes cache (SCC) and AOT space in the SCC is not capped.</p>
+<h1 id="-xx-openj9commandlineenv">-XX:[+|-]OpenJ9CommandLineEnv</h1>
+<p>This option controls whether the VM captures the command line in the environment variable <code>OPENJ9_JAVA_COMMAND_LINE</code>. If enabled, the variable is set by the VM after it starts. Using this variable, you can find the command-line parameters set when the VM started. It applies not just to launchers (e.g. <code>java</code>) that are included in a JDK, but to any application that uses <code>JNI_CreateJavaVM()</code>.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -Xtune:virtualized
+<pre><code>    -XX:[+|-]OpenJ9CommandLineEnv
 </code></pre>
-<p>This option is recommended for CPU-constrained environments, such as those found in cloud deployments that use containers. Internally, the option makes the JIT compiler more conservative with inlining and recompilation decisions, which saves CPU resources. The Garbage Collector also reduces the rate of heap expansion, which reduces the memory footprint. These changes to reduce the amount of CPU that is consumed are at the expense of a small loss in throughput.</p>
-<p>When <code>-Xtune:virtualized</code> is used in conjunction with the <a href="../xshareclasses/"><code>-Xshareclasses</code></a> option, the JIT compiler is more aggressive with its use of <a href="../aot/">AOT-compiled code</a> compared to setting only <code>-Xshareclasses</code>. This action provides additional CPU savings during application start-up and ramp-up, but comes at the expense of an additional small loss in throughput.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Effect</th>
+<th align="center">Default on z/OS</th>
+<th align="center">Default on other platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-XX:+OpenJ9CommandLineEnv</code></td>
+<td>Enable</td>
+<td align="center"></td>
+<td align="center"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
+</tr>
+<tr>
+<td><code>-XX:-OpenJ9CommandLineEnv</code></td>
+<td>Disable</td>
+<td align="center"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>This option is currently disabled by default on z/OS&reg; because it might cause the VM to crash.</p>
 <h2 id="see-also">See also</h2>
 <ul>
-<li>For an example of the effect of using this option, see: <a href="https://github.com/eclipse-openj9/openj9-website/blob/master/benchmark/daytrader3.md">Measuring the strengths of OpenJDK with Eclipse OpenJ9</a></li>
+<li><a href="../env_var/">Environment variables</a></li>
 </ul>
-<!-- ==== END OF TOPIC ==== xtunevirtualized.md ==== -->
+<!-- ==== END OF TOPIC ==== xxopenj9commandlineenv.md ==== -->
                 
               
               
