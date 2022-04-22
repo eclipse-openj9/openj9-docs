@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.30.0 are included
 - [Creation of system dumps on macOS 12](#creation-of-system-dumps-on-macos-12)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [`SharedClassStatistics` API updated](#sharedclassstatistics-api-updated)
+- [New `-XX:[+|-]OpenJ9CommandLineEnv` option added](#new-xx-openj9commandlineenv-option-added)
 - ![Start of content that applies to Java 11 plus](cr/java11plus.png) [Modified default value for `-XX:MaxDirectMemorySize`](#modified-default-value-for-xxmaxdirectmemorysize)
 - ![Start of content that applies to Java 18 plus](cr/java18plus.png) [New JDK 18 features](#new-jdk-18-features)
 
@@ -55,6 +56,10 @@ For compatibility, the following OpenJDK HotSpot options are now supported by Op
 ### `SharedClassStatistics` API updated
 
 You can now use the `SharedClassStatistics` API to get the name, path, and directory of a shared classes cache. Depending on the operating system, you can also get the number of attached VMs for a non-persistent cache. This information is available through the following new methods: `cacheDir()`, `cacheName()`, `cachePath()`, and `numberAttached()`. For more information, see the API documentation.
+
+### New `-XX:[+|-]OpenJ9CommandLineEnv` option added
+
+This option specifies whether the VM captures the command line in the environment variable `OPENJ9_JAVA_COMMAND_LINE`. For more information, see [`-XX:[+|-]OpenJ9CommandLineEnv`](xxopenj9commandlineenv.md).
 
 ### ![Start of content that applies to Java 11 plus](cr/java11plus.png) Modified default value for `-XX:MaxDirectMemorySize`
 
