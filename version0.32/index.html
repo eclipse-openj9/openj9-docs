@@ -374,6 +374,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#jitserver-support-for-linux-on-ibm-z-systems" class="md-nav__link">
+    JITServer support for Linux on IBM Z&reg; systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#modified-default-value-for-xxmaxdirectmemorysize" class="md-nav__link">
     Modified default value for -XX:MaxDirectMemorySize
   </a>
@@ -4478,6 +4485,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#jitserver-support-for-linux-on-ibm-z-systems" class="md-nav__link">
+    JITServer support for Linux on IBM Z&reg; systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#modified-default-value-for-xxmaxdirectmemorysize" class="md-nav__link">
     Modified default value for -XX:MaxDirectMemorySize
   </a>
@@ -4548,6 +4562,7 @@
 <li><a href="#support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</a></li>
 <li><a href="#sharedclassstatistics-api-updated"><code>SharedClassStatistics</code> API updated</a></li>
 <li><a href="#new-xx-openj9commandlineenv-option-added">New <code>-XX:[+|-]OpenJ9CommandLineEnv</code> option added</a></li>
+<li><a href="#jitserver-support-for-linux-on-ibm-z-systems">JITServer technology support for Linux on IBM Z&reg; systems</a></li>
 <li><img alt="Start of content that applies to Java 11 plus" src="../cr/java11plus.png" /> <a href="#modified-default-value-for-xxmaxdirectmemorysize">Modified default value for <code>-XX:MaxDirectMemorySize</code></a></li>
 <li><img alt="Start of content that applies to Java 18 plus" src="../cr/java18plus.png" /> <a href="#new-jdk-18-features">New JDK 18 features</a></li>
 </ul>
@@ -4566,6 +4581,8 @@
 <p>You can now use the <code>SharedClassStatistics</code> API to get the name, path, and directory of a shared classes cache. Depending on the operating system, you can also get the number of attached VMs for a non-persistent cache. This information is available through the following new methods: <code>cacheDir()</code>, <code>cacheName()</code>, <code>cachePath()</code>, and <code>numberAttached()</code>. For more information, see the API documentation.</p>
 <h3 id="new-xx-openj9commandlineenv-option-added">New <code>-XX:[+|-]OpenJ9CommandLineEnv</code> option added</h3>
 <p>This option specifies whether the VM captures the command line in the environment variable <code>OPENJ9_JAVA_COMMAND_LINE</code>. For more information, see <a href="../xxopenj9commandlineenv/"><code>-XX:[+|-]OpenJ9CommandLineEnv</code></a>.</p>
+<h3 id="jitserver-support-for-linux-on-ibm-z-systems">JITServer support for Linux on IBM Z&reg; systems</h3>
+<p>JITServer technology is now a fully supported feature on Linux on IBM Z&reg; systems (64-bit only). For more information, see <a href="../jitserver/">JITServer technology</a>.</p>
 <h3 id="modified-default-value-for-xxmaxdirectmemorysize"><img alt="Start of content that applies to Java 11 plus" src="../cr/java11plus.png" /> Modified default value for <code>-XX:MaxDirectMemorySize</code></h3>
 <p>The default value of the <a href="../xxmaxdirectmemorysize/"><code>-XX:MaxDirectMemorySize</code></a> option, which limits the amount of heap memory that is used for direct byte buffers, is now the same as the maximum heap size.</p>
 <h3 id="new-jdk-18-features"><img alt="Start of content that applies to Java 18 plus" src="../cr/java18plus.png" /> New JDK 18 features</h3>
