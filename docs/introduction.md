@@ -86,6 +86,12 @@ Secure Sockets Layer (SSL) protocols, which is well established and used with ma
 
 On Linux and AIX platforms, the OpenSSL 1.0.x or 1.1.x library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On other platforms, the OpenSSL 1.1.x library is typically bundled.
 
+If you have multiple versions of OpenSSL on your system, the OpenJ9 VM uses the latest version.
+
+On Linux platform, OpenSSL 3.0.x library is supported.
+
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** OpenSSL 3.0.x does not support initialization vector (IV) sizes above 16 Bytes for the GCM algorithm. (In earlier OpenSSL versions, you can use such sizes but they might cause unpredictable behavior.) If you need to use a larger size, disable OpenSSL support for the GCM algorithm.
+
 OpenSSL support is enabled by default for all supported algorithms. If you want to limit support to specific algorithms, a number of
 system properties are available for tuning the implementation.
 
