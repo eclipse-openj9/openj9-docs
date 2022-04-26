@@ -389,6 +389,7 @@ nav:
             - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
             - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
             - "-XX:OnOutOfMemoryError"                                           : xxonoutofmemoryerror.md
+            - "-XX:[+|-]OpenJ9CommandLineEnv"                                    : xxopenj9commandlineenv.md
             - "-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode"                   : xxoriginaljdk8heapsizecompatibilitymode.md
             - "-XXnosuballoc32bitmem"                                            : xxnosuballoc32bitmem.md
             - "-XX:[+|-]PageAlignDirectMemory"                                   : xxpagealigndirectmemory.md
