@@ -31,6 +31,8 @@ The following new features and notable changes since version 0.30.0 are included
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [`SharedClassStatistics` API updated](#sharedclassstatistics-api-updated)
 - [Support for OpenSSL 3.0.x](#support-for-openssl-30x)
+- [New `-XX:[+|-]OpenJ9CommandLineEnv` option added](#new-xx-openj9commandlineenv-option-added)
+- [JITServer technology support for Linux on IBM Z&reg; systems](#jitserver-support-for-linux-on-ibm-z-systems)
 - ![Start of content that applies to Java 11 plus](cr/java11plus.png) [Modified default value for `-XX:MaxDirectMemorySize`](#modified-default-value-for-xxmaxdirectmemorysize)
 - ![Start of content that applies to Java 18 plus](cr/java18plus.png) [New JDK 18 features](#new-jdk-18-features)
 
@@ -60,6 +62,13 @@ You can now use the `SharedClassStatistics` API to get the name, path, and direc
 ### Support for OpenSSL 3.0.x
 
 OpenSSL 3.0.x is supported but on Linux only. The JITServer technology feature currently does not support OpenSSL 3.0.x. For more information about OpenSSL support, see [`Cryptographic operations`](introduction.md#cryptographic-operations).
+
+### New `-XX:[+|-]OpenJ9CommandLineEnv` option added
+
+This option specifies whether the VM captures the command line in the environment variable `OPENJ9_JAVA_COMMAND_LINE`. For more information, see [`-XX:[+|-]OpenJ9CommandLineEnv`](xxopenj9commandlineenv.md).
+
+### JITServer support for Linux on IBM Z&reg; systems
+JITServer technology is now a fully supported feature on Linux on IBM Z&reg; systems (64-bit only). For more information, see [JITServer technology](jitserver.md).
 
 ### ![Start of content that applies to Java 11 plus](cr/java11plus.png) Modified default value for `-XX:MaxDirectMemorySize`
 
