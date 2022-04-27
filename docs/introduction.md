@@ -82,13 +82,11 @@ For cloud services that charge based on memory usage, maintaining a small footpr
 
 OpenJDK uses the in-built Java cryptographic implementation by default. However, native cryptographic implementations
 typically provide better performance. OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and
-Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.0.x and V1.1.x implementations are currently supported for the Digest, CBC, GCM, and RSA algorithms. The OpenSSL V1.1.x implementation is also supported for the ChaCha20 and ChaCha20-Poly1305 algorithms.
+Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. The OpenSSL V1.0.x, V1.1.x, and V3.0.x implementations are currently supported for the Digest, CBC, GCM, and RSA algorithms. The OpenSSL V1.1.x and V3.0.x implementations are also supported for the ChaCha20 and ChaCha20-Poly1305 algorithms.
 
-On Linux and AIX platforms, the OpenSSL 1.0.x or 1.1.x library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On other platforms, the OpenSSL 1.1.x library is typically bundled.
+On Linux and AIX operating systems, the OpenSSL 1.0.x or 1.1.x library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On other operating systems, the OpenSSL 1.1.x library is typically bundled. Later levels of some Linux operating systems might bundle OpenSSL 3.0.x.
 
 If you have multiple versions of OpenSSL on your system, the OpenJ9 VM uses the latest version.
-
-On Linux platform, OpenSSL 3.0.x library is supported.
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** OpenSSL 3.0.x does not support initialization vector (IV) sizes above 16 Bytes for the GCM algorithm. (In earlier OpenSSL versions, you can use such sizes but they might cause unpredictable behavior.) If you need to use a larger size, disable OpenSSL support for the GCM algorithm.
 

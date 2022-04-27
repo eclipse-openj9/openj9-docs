@@ -59,9 +59,7 @@ You can now use the `SharedClassStatistics` API to get the name, path, and direc
 
 ### Support for OpenSSL 3.0.x
 
-OpenSSL 3.0.x is supported but on Linux only. OpenSSL is enabled by default for the CBC, ChaCha20, ChaCha20-Poly1305Digest, GCM, and RSA cryptographic algorithms.
-
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** OpenSSL 3.0.x does not support initialization vector (IV) sizes above 16 Bytes for the GCM algorithm. (In earlier OpenSSL versions, you can use such sizes but they might cause unpredictable behavior.) If you need to use a larger size, disable OpenSSL support for the GCM algorithm.
+OpenSSL 3.0.x is supported but on Linux only. The JITServer technology feature currently does not support OpenSSL 3.0.x. For more information about OpenSSL support, see [`Cryptographic operations`](introduction.md#cryptographic-operations).
 
 ### ![Start of content that applies to Java 11 plus](cr/java11plus.png) Modified default value for `-XX:MaxDirectMemorySize`
 
