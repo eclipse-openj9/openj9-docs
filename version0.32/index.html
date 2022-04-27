@@ -367,6 +367,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#support-for-openssl-30x" class="md-nav__link">
+    Support for OpenSSL 3.0.x
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-xx-openj9commandlineenv-option-added" class="md-nav__link">
     New -XX:[+|-]OpenJ9CommandLineEnv option added
   </a>
@@ -4478,6 +4485,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#support-for-openssl-30x" class="md-nav__link">
+    Support for OpenSSL 3.0.x
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-xx-openj9commandlineenv-option-added" class="md-nav__link">
     New -XX:[+|-]OpenJ9CommandLineEnv option added
   </a>
@@ -4561,6 +4575,7 @@
 <li><a href="#creation-of-system-dumps-on-macos-12">Creation of system dumps on macOS 12</a></li>
 <li><a href="#support-for-openjdk-hotspot-options">Support for OpenJDK HotSpot options</a></li>
 <li><a href="#sharedclassstatistics-api-updated"><code>SharedClassStatistics</code> API updated</a></li>
+<li><a href="#support-for-openssl-30x">Support for OpenSSL 3.0.x</a></li>
 <li><a href="#new-xx-openj9commandlineenv-option-added">New <code>-XX:[+|-]OpenJ9CommandLineEnv</code> option added</a></li>
 <li><a href="#jitserver-support-for-linux-on-ibm-z-systems">JITServer technology support for Linux on IBM Z&reg; systems</a></li>
 <li><img alt="Start of content that applies to Java 11 plus" src="../cr/java11plus.png" /> <a href="#modified-default-value-for-xxmaxdirectmemorysize">Modified default value for <code>-XX:MaxDirectMemorySize</code></a></li>
@@ -4579,6 +4594,8 @@
 </ul>
 <h3 id="sharedclassstatistics-api-updated"><code>SharedClassStatistics</code> API updated</h3>
 <p>You can now use the <code>SharedClassStatistics</code> API to get the name, path, and directory of a shared classes cache. Depending on the operating system, you can also get the number of attached VMs for a non-persistent cache. This information is available through the following new methods: <code>cacheDir()</code>, <code>cacheName()</code>, <code>cachePath()</code>, and <code>numberAttached()</code>. For more information, see the API documentation.</p>
+<h3 id="support-for-openssl-30x">Support for OpenSSL 3.0.x</h3>
+<p>OpenSSL 3.0.x is supported but on Linux only. The JITServer technology feature currently does not support OpenSSL 3.0.x. For more information about OpenSSL support, see <a href="../introduction/#cryptographic-operations"><code>Cryptographic operations</code></a>.</p>
 <h3 id="new-xx-openj9commandlineenv-option-added">New <code>-XX:[+|-]OpenJ9CommandLineEnv</code> option added</h3>
 <p>This option specifies whether the VM captures the command line in the environment variable <code>OPENJ9_JAVA_COMMAND_LINE</code>. For more information, see <a href="../xxopenj9commandlineenv/"><code>-XX:[+|-]OpenJ9CommandLineEnv</code></a>.</p>
 <h3 id="jitserver-support-for-linux-on-ibm-z-systems">JITServer support for Linux on IBM Z&reg; systems</h3>
