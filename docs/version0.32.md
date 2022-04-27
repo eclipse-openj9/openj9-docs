@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.30.0 are included
 - [Creation of system dumps on macOS 12](#creation-of-system-dumps-on-macos-12)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
 - [`SharedClassStatistics` API updated](#sharedclassstatistics-api-updated)
+- [Support for OpenSSL 3.0.x](#support-for-openssl-30x)
 - [New `-XX:[+|-]OpenJ9CommandLineEnv` option added](#new-xx-openj9commandlineenv-option-added)
 - [JITServer technology support for Linux on IBM Z&reg; systems](#jitserver-support-for-linux-on-ibm-z-systems)
 - ![Start of content that applies to Java 11 plus](cr/java11plus.png) [Modified default value for `-XX:MaxDirectMemorySize`](#modified-default-value-for-xxmaxdirectmemorysize)
@@ -57,6 +58,10 @@ For compatibility, the following OpenJDK HotSpot options are now supported by Op
 ### `SharedClassStatistics` API updated
 
 You can now use the `SharedClassStatistics` API to get the name, path, and directory of a shared classes cache. Depending on the operating system, you can also get the number of attached VMs for a non-persistent cache. This information is available through the following new methods: `cacheDir()`, `cacheName()`, `cachePath()`, and `numberAttached()`. For more information, see the API documentation.
+
+### Support for OpenSSL 3.0.x
+
+OpenSSL 3.0.x is supported but on Linux only. The JITServer technology feature currently does not support OpenSSL 3.0.x. For more information about OpenSSL support, see [`Cryptographic operations`](introduction.md#cryptographic-operations).
 
 ### New `-XX:[+|-]OpenJ9CommandLineEnv` option added
 
