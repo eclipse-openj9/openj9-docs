@@ -44,6 +44,8 @@ Sets the minimum and maximum proportion of time to spend in the garbage collecti
 
 For the `gencon` GC policy, the values apply only to the tenure part of the heap. For the `balanced`, `optthruput`, and `optavgpause` GC policies, these values apply to the whole heap. This option cannot be used with the metronome GC policy (`-Xgcpolicy:metronome`) because the heap is always fully expanded.
 
+todo: cover balanced
+
 ## See also
 
 - [Heap expansion and contraction](allocation.md#expansion-and-contraction)
