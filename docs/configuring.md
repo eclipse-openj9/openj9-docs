@@ -35,7 +35,7 @@ On some systems, a further environment variable might be required if your applic
 - **DYLD_LIBRARY_PATH** (macOS&reg;)
 - **PATH** (Windows&reg;)
 
-![Start of content that applies to Java 14+](cr/java14plus.png) Although most Java applications should run without changing anything on the underlying system, a unique pre-requisite exists for AIX systems on OpenJDK version 14 and later; you must have the [XL C++ Runtime](https://www.ibm.com/support/pages/xl-cc-runtime-aix-v16101-fix-pack-december-2018) installed. ![End of content that applies only to Java 14 and later](cr/java_close.png)
+![Start of content that applies to Java 11+](cr/java11plus.png) Although most Java applications should run without changing anything on the underlying system, a unique pre-requisite exists for AIX systems on OpenJDK version 11 and later; you must have the [16.1 XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X) installed. ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 ## Setting resource limits (AIX, Linux, and macOS)
 
