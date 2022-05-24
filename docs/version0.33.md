@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.30.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 11](cr/java11.png) [XL C++ Runtime required on AIX](#xl-c-runtime-required-on-aix)
+- ![Start of content that applies to Java 17 plus](cr/java17plus.png) [Linux reference compiler updated to gcc 10.3](#linux-reference-compiler-updated-to-gcc-103)
 
 ## Features and changes
 
@@ -41,6 +42,11 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 AIX OpenJ9 builds now require version 16.1 of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
 This was already required for OpenJDK 17 and is now also required from 11.0.16 to accommodate a security update to the HarfBuzz text shaping library.
+
+### ![Start of content that applies to Java 17 plus](cr/java17plus.png) Linux reference compiler updated to gcc 10.3
+
+Linux builds for all platforms now use gcc 10.3 instead of gcc 7.5. See the list of [build environments](openj9_support.md#build-environments).
+
 
 ## Known problems and full release information
 

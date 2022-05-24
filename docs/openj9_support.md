@@ -259,10 +259,10 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
-| Linux x86 64-bit              | CentOS 7.9             | gcc 7.5                               |
-| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 7.5                               |
-| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 7.5                               |
-| Linux AArch64 64-bit          | CentOS 7.9             | gcc 7.5                               |
+| Linux x86 64-bit              | CentOS 7.9             | gcc 10.3                               |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 10.3                               |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 10.3                               |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                               |
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
 | macOS x86 64-bit              | macOS 10.14.6          | xcode 10.3 and clang 10.0.1           |
 | AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0                        |
@@ -271,10 +271,10 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
-| Linux x86 64-bit              | CentOS 7.9             | gcc 7.5                               |
-| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 7.5                               |
-| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 7.5                               |
-| Linux AArch64 64-bit          | CentOS 7.9             | gcc 7.5                               |
+| Linux x86 64-bit              | CentOS 7.9             | gcc 10.3                               |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 10.3                               |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 10.3                               |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                               |
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
 | macOS x86 64-bit              | macOS 10.14.6          | xcode 10.3 and clang 10.0.1           |
 | AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0                        |
