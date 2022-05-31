@@ -158,9 +158,9 @@ Options that change the behavior of the garbage collector.
   |---------------|----------------|-----------------------|
   | `<value>`     | [percentage]   | 95                    |
 
-: where `<value>` is a percentage of total application run time that is not spent in GC.
+: where `<value>` is a percentage of total application run time that is spent in GC.
 
-    The default value is 95, which means that anything over 5% of total application run time spent on GC is deemed excessive. This option can be used only when [`-Xenableexcessivegc`](xenableexcessivegc.md) is set (enabled by default).
+    The default value is 95, which means that anything over 95% of total application run time spent on GC is deemed excessive. This option can be used only when [`-Xenableexcessivegc`](xenableexcessivegc.md) is set (enabled by default).
 
 : This option can be used with all OpenJ9 GC policies.
 
