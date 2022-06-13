@@ -36,6 +36,8 @@ The following new features and notable changes since version 0.30.0 are included
 
 OpenJ9 release 0.33.0 supports OpenJDK 8, 11, 17, and 18.
 
+OpenJ9 Windows&reg; builds for OpenJDK 8 are now compiled with Microsoft&reg; Visual Studio 2017. The Visual Studio redistributable files included with the build are updated to match.
+
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
 ### ![Start of content that applies to Java 11](cr/java11.png) XL C++ Runtime required on AIX
