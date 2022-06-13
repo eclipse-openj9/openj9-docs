@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# -XX:ParallelGCThread
+# -XX:ParallelGCThreads
 
 This Oracle HotSpot option specifies the number of threads that are used during parallel operations of the default garbage collector. This option is recognized by OpenJ9 and provided for compatibility.
 
