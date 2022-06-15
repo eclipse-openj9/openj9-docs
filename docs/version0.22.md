@@ -32,6 +32,8 @@ The following new features and notable changes since version 0.21.0 are included
 - [New `-XX:[+|-]PortableSharedCache` option added](#new-xx-portablesharedcache-option-added)
 - [Methods in `com.ibm.lang.management.MemoryMXBean` deprecated and replaced](#methods-in-comibmlangmanagementmemorymxbean-deprecated-and-replaced)
 - [![Start of content that applies to AIX Java 15+](cr/java15plus.png) `java.lang.System.mapLibraryName()` string suffix](#javalangsystemmaplibraryname-string-suffix)
+- ![Start of content that applies to Java 15 plus](cr/java15plus.png) [New JDK 15 features](#new-jdk-15-features)
+
 
 
 ## Features and changes
@@ -65,6 +67,25 @@ For more information see Java 8: [`com.ibm.lang.management.MemoryMXBean`](api/jd
 ### ![Start of content that applies to Java 15+](cr/java15plus.png) `java.lang.System.mapLibraryName()` string suffix
 
 On AIX&reg; systems, `java.lang.System.mapLibraryName(libname)` returns a representation of a native library in a platform-specific string with a `.so` suffix.
+
+### ![Start of content that applies to Java 15 plus](cr/java15plus.png) New JDK 15 features
+
+The following features are supported by OpenJ9:
+
+- [JEP 360](https://openjdk.org/jeps/360): Sealed Classes (Preview)
+- [JEP 371](https://openjdk.org/jeps/371): Hidden Classes
+- [JEP 384](https://openjdk.org/jeps/384): Records (Second Preview)
+
+The following features are implemented in OpenJDK and available in any builds of OpenJDK 14 with OpenJ9:
+
+- [JEP 339](https://openjdk.org/jeps/339): Edwards-Curve Digital Signature Algorithm (EdDSA) 
+- [JEP 372](https://openjdk.org/jeps/372): Remove the Nashorn JavaScript Engine
+- [JEP 373](https://openjdk.org/jeps/373): Reimplement the Legacy DatagramSocket API
+- [JEP 375](https://openjdk.org/jeps/375): Pattern Matching for instanceof (Second Preview)
+- [JEP 378](https://openjdk.org/jeps/378): Text Blocks
+- [JEP 385](https://openjdk.org/jeps/385): Deprecate RMI Activation for Removal
+
+You can find the full list of features for JDK 15 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/15/). Any remaining features that are listed do not apply to OpenJ9.
 
 ## Full release information
 

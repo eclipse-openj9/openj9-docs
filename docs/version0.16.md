@@ -36,6 +36,7 @@ The following new features and notable changes since version 0.15.1 are included
 - [New Java&trade; diagnostic command (`jcmd`) tool](#new-jcmd-tool)
 - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
 - [![Start of content that applies to Java 13 and later](cr/java13plus.png) The `-Xverify:none` and `-noverify` options are deprecated](#the-xverifynone-and-noverify-options-are-deprecated)
+- ![Start of content that applies only to Java 13 plus](cr/java13plus.png) [New JDK 13 features](#new-jdk-13-features)
 
 ## Features and changes
 
@@ -84,6 +85,16 @@ For more information about the `-Xshareclasses` option, including the `destroy` 
 ### ![Start of content that applies to Java 13 and later](cr/java13plus.png) The `-Xverify:none` and `-noverify` options are deprecated
 
 The option [`-Xverify:none`](xverify.md) (and its equivalent `-noverify`) is deprecated in Java 13. Both options might be removed in a future release. OpenJ9 issues a warning if these options are used in Java 13 and later versions. ![End of content that applies only to Java 13](cr/java_close.png)
+
+### ![Start of content that applies to Java 13 plus](cr/java13plus.png) New JDK 13 features
+
+The following features are implemented in OpenJDK and available in any builds of OpenJDK 13 with OpenJ9:
+
+- [JEP 353](https://openjdk.org/jeps/353): Reimplement the Legacy Socket API
+- [JEP 354](https://openjdk.org/jeps/354): Switch Expressions (Preview)
+- [JEP 355](https://openjdk.org/jeps/355): Text Blocks (Preview)
+
+You can find the full list of features for JDK 13 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/13/). Any remaining features that are listed do not apply to OpenJ9.
 
 ## Full release information
 
