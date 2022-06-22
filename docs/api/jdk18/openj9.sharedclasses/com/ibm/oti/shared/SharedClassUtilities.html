@@ -113,8 +113,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SharedClassUtilities</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a></span></div>
-<div class="block">SharedClassUtilities provides APIs to get information about all shared class caches in a directory and
- to destroy a particular shared class cache.</div>
+<div class="block">SharedClassUtilities provides APIs to get information about all shared class
+ caches in a directory and to destroy a particular shared class cache.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -138,7 +138,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#DESTROY_FAILED_CURRENT_GEN_CACHE" class="member-name-link">DESTROY_FAILED_CURRENT_GEN_CACHE</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Returned by <a href="#destroySharedCache(java.lang.String,int,java.lang.String,boolean)"><code>destroySharedCache(java.lang.String, int, java.lang.String, boolean)</code></a> to indicate that the method has failed to destroy the 
+<div class="block">Returned by <a href="#destroySharedCache(java.lang.String,int,java.lang.String,boolean)"><code>destroySharedCache(java.lang.String, int, java.lang.String, boolean)</code></a> to indicate that the method has failed to destroy the
  current generation cache.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
@@ -195,7 +195,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">SharedClassUtilities</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block"><span class="deprecated-label">Deprecated.</span></div>
+</div>
 </div>
 </section>
 </li>
@@ -353,7 +355,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="DESTROY_FAILED_CURRENT_GEN_CACHE">
 <h3>DESTROY_FAILED_CURRENT_GEN_CACHE</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DESTROY_FAILED_CURRENT_GEN_CACHE</span></div>
-<div class="block">Returned by <a href="#destroySharedCache(java.lang.String,int,java.lang.String,boolean)"><code>destroySharedCache(java.lang.String, int, java.lang.String, boolean)</code></a> to indicate that the method has failed to destroy the 
+<div class="block">Returned by <a href="#destroySharedCache(java.lang.String,int,java.lang.String,boolean)"><code>destroySharedCache(java.lang.String, int, java.lang.String, boolean)</code></a> to indicate that the method has failed to destroy the
  current generation cache.</div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -392,7 +394,10 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>SharedClassUtilities</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SharedClassUtilities</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link" target="_blank">@Deprecated</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="element-name">SharedClassUtilities</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span></div>
+<div class="block">Constructs a new instance of this class.</div>
 </section>
 </li>
 </ul>
@@ -439,15 +444,17 @@ loadScripts(document, 'script');</script>
  int&nbsp;cacheType,
  <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;cacheName,
  boolean&nbsp;useCommandLineValues)</span></div>
-<div class="block">Destroys a named shared class cache of a given type in a given directory. If the shared class cache has multiple layers, this function will destroy the top layer only.
- <p>
- If <code>useCommandLineValues</code> is <code>true</code>, then use the command line value to get the shared class cache name,
+<div class="block">Destroys a named shared class cache of a given type in a given directory.
+ If the shared class cache has multiple layers, this function will destroy
+ the top layer only.
+
+ <p>If <code>useCommandLineValues</code> is <code>true</code>, then use the command line value to get the shared class cache name,
  its type and its directory. If any of these is not available, then use the default value.
  If <code>useCommandLineValues</code> is <code>false</code>, then use <code>cacheDir</code>, <code>persistence</code>, and
  <code>cacheName</code> to identify the cache to be destroyed. To accept the default value for <code>cacheDir</code>
  or <code>cacheName</code>, specify the parameter with a <code>null</code> value.
- <p>
- The return value of this method depends on the status of existing current and older generation caches.
+
+ <p>The return value of this method depends on the status of existing current and older generation caches.
  <ul>
  <li>If it fails to destroy any existing cache with the given name, it returns
  <a href="#DESTROYED_NONE"><code>DESTROYED_NONE</code></a>.
@@ -457,7 +464,7 @@ loadScripts(document, 'script');</script>
  caches, it returns <a href="#DESTROY_FAILED_CURRENT_GEN_CACHE"><code>DESTROY_FAILED_CURRENT_GEN_CACHE</code></a>.<br>
  <li>If it fails to destroy one or more older generation caches, and either a current generation cache does not
  exist or is successfully destroyed, it returns <a href="#DESTROY_FAILED_OLDER_GEN_CACHE"><code>DESTROY_FAILED_OLDER_GEN_CACHE</code></a>.<br>
-        </ul></div>
+ </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>cacheDir</code> - Absolute path of the directory where the shared class cache is present</dd>

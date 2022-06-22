@@ -406,9 +406,10 @@ loadScripts(document, 'script');</script>
  long&nbsp;streamSegmentOffset)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="LoadCommand.html" title="class in com.ibm.j9ddr.corereaders.macho">LoadCommand</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readFullCommand(javax.imageio.stream.ImageInputStream,long,long)" class="member-name-link">readFullCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.desktop/javax/imageio/stream/ImageInputStream.html" title="class or interface in javax.imageio.stream" class="external-link" target="_blank">ImageInputStream</a>&nbsp;stream,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readFullCommand(javax.imageio.stream.ImageInputStream,long,long,int)" class="member-name-link">readFullCommand</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.desktop/javax/imageio/stream/ImageInputStream.html" title="class or interface in javax.imageio.stream" class="external-link" target="_blank">ImageInputStream</a>&nbsp;stream,
  long&nbsp;streamOffset,
- long&nbsp;segmentOffset)</code></div>
+ long&nbsp;segmentOffset,
+ int&nbsp;cpuType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
@@ -1240,11 +1241,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="readFullCommand(javax.imageio.stream.ImageInputStream,long,long)">
+<section class="detail" id="readFullCommand(javax.imageio.stream.ImageInputStream,long,long,int)">
 <h3>readFullCommand</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="LoadCommand.html" title="class in com.ibm.j9ddr.corereaders.macho">LoadCommand</a></span>&nbsp;<span class="element-name">readFullCommand</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.desktop/javax/imageio/stream/ImageInputStream.html" title="class or interface in javax.imageio.stream" class="external-link" target="_blank">ImageInputStream</a>&nbsp;stream,
  long&nbsp;streamOffset,
- long&nbsp;segmentOffset)</span>
+ long&nbsp;segmentOffset,
+ int&nbsp;cpuType)</span>
                                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link" target="_blank">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>

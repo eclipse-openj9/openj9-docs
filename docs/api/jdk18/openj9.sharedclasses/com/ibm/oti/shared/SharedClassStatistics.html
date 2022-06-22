@@ -126,7 +126,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">SharedClassStatistics</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block"><span class="deprecated-label">Deprecated.</span></div>
+</div>
 </div>
 </section>
 </li>
@@ -144,7 +146,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#cacheDir()" class="member-name-link">cacheDir</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns the cache dir.</div>
+<div class="block">Returns the cache directory.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#cacheName()" class="member-name-link">cacheName</a>()</code></div>
@@ -159,7 +161,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#freeSpaceBytes()" class="member-name-link">freeSpaceBytes</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns the free space of the shared cache that the JVM is currently connected to</div>
+<div class="block">Returns the free space of the shared cache that the JVM is currently connected to.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#maxAotBytes()" class="member-name-link">maxAotBytes</a>()</code></div>
@@ -176,7 +178,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#maxSizeBytes()" class="member-name-link">maxSizeBytes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns the size of the shared cache that the JVM is currently connected to</div>
+<div class="block">Returns the size of the shared cache that the JVM is currently connected to.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#minAotBytes()" class="member-name-link">minAotBytes</a>()</code></div>
@@ -198,7 +200,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#softmxBytes()" class="member-name-link">softmxBytes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns the soft limit in bytes for the available space of the cache that the JVM is currently connected to</div>
+<div class="block">Returns the soft limit in bytes for the available space of the cache that the JVM is currently connected to.</div>
 </div>
 </div>
 </div>
@@ -220,7 +222,10 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>SharedClassStatistics</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SharedClassStatistics</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link" target="_blank">@Deprecated</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="element-name">SharedClassStatistics</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span></div>
+<div class="block">Constructs a new instance of this class.</div>
 </section>
 </li>
 </ul>
@@ -235,11 +240,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="maxSizeBytes()">
 <h3>maxSizeBytes</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">maxSizeBytes</span>()</div>
-<div class="block">Returns the size of the shared cache that the JVM is currently connected to
- <p></div>
+<div class="block">Returns the size of the shared cache that the JVM is currently connected to.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>The total size in bytes</dd>
+<dd>the total size in bytes</dd>
 </dl>
 </section>
 </li>
@@ -247,11 +251,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="freeSpaceBytes()">
 <h3>freeSpaceBytes</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">freeSpaceBytes</span>()</div>
-<div class="block">Returns the free space of the shared cache that the JVM is currently connected to
- <p></div>
+<div class="block">Returns the free space of the shared cache that the JVM is currently connected to.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>The free space in bytes</dd>
+<dd>the free space in bytes</dd>
 </dl>
 </section>
 </li>
@@ -259,11 +262,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="softmxBytes()">
 <h3>softmxBytes</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">softmxBytes</span>()</div>
-<div class="block">Returns the soft limit in bytes for the available space of the cache that the JVM is currently connected to
- <p></div>
+<div class="block">Returns the soft limit in bytes for the available space of the cache that the JVM is currently connected to.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the soft max size or cache size in bytes if it is not set.</dd>
+<dd>the soft max size or cache size in bytes if it is not set</dd>
 </dl>
 </section>
 </li>
@@ -275,7 +277,7 @@ loadScripts(document, 'script');</script>
  connected to.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the minimum shared classes cache space reserved for AOT data in bytes or -1 if it is not set.</dd>
+<dd>the minimum shared classes cache space reserved for AOT data in bytes or -1 if it is not set</dd>
 </dl>
 </section>
 </li>
@@ -287,7 +289,7 @@ loadScripts(document, 'script');</script>
  connected to.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the maximum shared classes cache space allowed for AOT data in bytes or -1 if it is not set.</dd>
+<dd>the maximum shared classes cache space allowed for AOT data in bytes or -1 if it is not set</dd>
 </dl>
 </section>
 </li>
@@ -299,7 +301,7 @@ loadScripts(document, 'script');</script>
  connected to.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the minimum shared classes cache space reserved for JIT data in bytes or -1 if it is not set.</dd>
+<dd>the minimum shared classes cache space reserved for JIT data in bytes or -1 if it is not set</dd>
 </dl>
 </section>
 </li>
@@ -311,7 +313,7 @@ loadScripts(document, 'script');</script>
  connected to.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the maximum shared classes cache space allowed for JIT data in bytes  or -1 if it is not set.</dd>
+<dd>the maximum shared classes cache space allowed for JIT data in bytes  or -1 if it is not set</dd>
 </dl>
 </section>
 </li>
@@ -320,11 +322,12 @@ loadScripts(document, 'script');</script>
 <h3>numberAttached</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">numberAttached</span>()</div>
 <div class="block">Returns the SysV shmem nattch value for a non-persistent top level cache.
- On Windows or for persistent caches, -1 is returned. Depending on the platform
+
+ <p>On Windows or for persistent caches, -1 is returned. Depending on the platform
  and OS, such as z/OS, the value indicates the number of JVMs attached to the cache.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the SysV shmem nattch value for a top level non-persistent cache, or -1 if it cannot be determined.</dd>
+<dd>the SysV shmem nattch value for a top level non-persistent cache, or -1 if it cannot be determined</dd>
 </dl>
 </section>
 </li>
@@ -335,7 +338,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the full cache path.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the full cache path, or NULL if it cannot be determined.</dd>
+<dd>the full cache path, or NULL if it cannot be determined</dd>
 </dl>
 </section>
 </li>
@@ -346,7 +349,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the cache name.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the cache name, or NULL if it cannot be determined.</dd>
+<dd>the cache name, or NULL if it cannot be determined</dd>
 </dl>
 </section>
 </li>
@@ -354,10 +357,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="cacheDir()">
 <h3>cacheDir</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">cacheDir</span>()</div>
-<div class="block">Returns the cache dir.</div>
+<div class="block">Returns the cache directory.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the cache dir, or NULL if it cannot be determined.</dd>
+<dd>the cache directory, or NULL if it cannot be determined</dd>
 </dl>
 </section>
 </li>
