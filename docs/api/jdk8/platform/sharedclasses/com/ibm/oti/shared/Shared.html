@@ -138,7 +138,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../com/ibm/oti/shared/Shared.html#Shared--">Shared</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../com/ibm/oti/shared/Shared.html#Shared--">Shared</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</td>
 </tr>
 </table>
 </li>
@@ -201,7 +203,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Shared</h4>
-<pre>public&nbsp;Shared()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;Shared()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Constructs a new instance of this class.</div>
 </li>
 </ul>
 </li>
@@ -219,11 +224,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>isSharingEnabled</h4>
 <pre>public static&nbsp;boolean&nbsp;isSharingEnabled()</pre>
-<div class="block">Checks if sharing is enabled for this JVM.
- <p></div>
+<div class="block">Checks if sharing is enabled for this JVM.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if using -Xshareclasses on the command-line, false otherwise.</dd>
+<dd>true if using -Xshareclasses on the command-line, false otherwise</dd>
 </dl>
 </li>
 </ul>
@@ -234,8 +238,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getSharedClassHelperFactory</h4>
 <pre>public static&nbsp;<a href="../../../../com/ibm/oti/shared/SharedClassHelperFactory.html" title="interface in com.ibm.oti.shared">SharedClassHelperFactory</a>&nbsp;getSharedClassHelperFactory()</pre>
-<div class="block">If sharing is enabled, returns a SharedClassHelperFactory, otherwise returns null.
- <p></div>
+<div class="block">If sharing is enabled, returns a SharedClassHelperFactory, otherwise returns null.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>SharedClassHelperFactory</dd>
@@ -249,8 +252,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getSharedDataHelperFactory</h4>
 <pre>public static&nbsp;<a href="../../../../com/ibm/oti/shared/SharedDataHelperFactory.html" title="interface in com.ibm.oti.shared">SharedDataHelperFactory</a>&nbsp;getSharedDataHelperFactory()</pre>
-<div class="block">If sharing is enabled, returns a SharedDataHelperFactory, otherwise returns null.
- <p></div>
+<div class="block">If sharing is enabled, returns a SharedDataHelperFactory, otherwise returns null.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>SharedDataHelperFactory</dd>

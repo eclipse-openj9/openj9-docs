@@ -122,8 +122,8 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">SharedClassUtilities</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" target="_blank" title="class or interface in java.lang">Object</a></pre>
-<div class="block">SharedClassUtilities provides APIs to get information about all shared class caches in a directory and
- to destroy a particular shared class cache.</div>
+<div class="block">SharedClassUtilities provides APIs to get information about all shared class
+ caches in a directory and to destroy a particular shared class cache.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/ibm/oti/shared/SharedClassCacheInfo.html" title="class in com.ibm.oti.shared"><code>SharedClassCacheInfo</code></a></dd>
@@ -149,7 +149,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/oti/shared/SharedClassUtilities.html#DESTROY_FAILED_CURRENT_GEN_CACHE">DESTROY_FAILED_CURRENT_GEN_CACHE</a></span></code>
-<div class="block">Returned by <a href="../../../../com/ibm/oti/shared/SharedClassUtilities.html#destroySharedCache-java.lang.String-int-java.lang.String-boolean-"><code>destroySharedCache(java.lang.String, int, java.lang.String, boolean)</code></a> to indicate that the method has failed to destroy the 
+<div class="block">Returned by <a href="../../../../com/ibm/oti/shared/SharedClassUtilities.html#destroySharedCache-java.lang.String-int-java.lang.String-boolean-"><code>destroySharedCache(java.lang.String, int, java.lang.String, boolean)</code></a> to indicate that the method has failed to destroy the
  current generation cache.</div>
 </td>
 </tr>
@@ -218,7 +218,9 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../com/ibm/oti/shared/SharedClassUtilities.html#SharedClassUtilities--">SharedClassUtilities</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../com/ibm/oti/shared/SharedClassUtilities.html#SharedClassUtilities--">SharedClassUtilities</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+</td>
 </tr>
 </table>
 </li>
@@ -381,7 +383,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>DESTROY_FAILED_CURRENT_GEN_CACHE</h4>
 <pre>public static final&nbsp;int DESTROY_FAILED_CURRENT_GEN_CACHE</pre>
-<div class="block">Returned by <a href="../../../../com/ibm/oti/shared/SharedClassUtilities.html#destroySharedCache-java.lang.String-int-java.lang.String-boolean-"><code>destroySharedCache(java.lang.String, int, java.lang.String, boolean)</code></a> to indicate that the method has failed to destroy the 
+<div class="block">Returned by <a href="../../../../com/ibm/oti/shared/SharedClassUtilities.html#destroySharedCache-java.lang.String-int-java.lang.String-boolean-"><code>destroySharedCache(java.lang.String, int, java.lang.String, boolean)</code></a> to indicate that the method has failed to destroy the
  current generation cache.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -418,7 +420,10 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SharedClassUtilities</h4>
-<pre>public&nbsp;SharedClassUtilities()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" target="_blank" title="class or interface in java.lang">@Deprecated</a>
+public&nbsp;SharedClassUtilities()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
+<div class="block">Constructs a new instance of this class.</div>
 </li>
 </ul>
 </li>
@@ -471,15 +476,17 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
                                      int&nbsp;cacheType,
                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;cacheName,
                                      boolean&nbsp;useCommandLineValues)</pre>
-<div class="block">Destroys a named shared class cache of a given type in a given directory. If the shared class cache has multiple layers, this function will destroy the top layer only.
- <p>
- If <code>useCommandLineValues</code> is <code>true</code>, then use the command line value to get the shared class cache name,
+<div class="block">Destroys a named shared class cache of a given type in a given directory.
+ If the shared class cache has multiple layers, this function will destroy
+ the top layer only.
+
+ <p>If <code>useCommandLineValues</code> is <code>true</code>, then use the command line value to get the shared class cache name,
  its type and its directory. If any of these is not available, then use the default value.
  If <code>useCommandLineValues</code> is <code>false</code>, then use <code>cacheDir</code>, <code>persistence</code>, and
  <code>cacheName</code> to identify the cache to be destroyed. To accept the default value for <code>cacheDir</code>
  or <code>cacheName</code>, specify the parameter with a <code>null</code> value.
- <p>
- The return value of this method depends on the status of existing current and older generation caches.
+
+ <p>The return value of this method depends on the status of existing current and older generation caches.
  <ul>
  <li>If it fails to destroy any existing cache with the given name, it returns
  <a href="../../../../com/ibm/oti/shared/SharedClassUtilities.html#DESTROYED_NONE"><code>DESTROYED_NONE</code></a>.
@@ -489,7 +496,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
  caches, it returns <a href="../../../../com/ibm/oti/shared/SharedClassUtilities.html#DESTROY_FAILED_CURRENT_GEN_CACHE"><code>DESTROY_FAILED_CURRENT_GEN_CACHE</code></a>.<br>
  <li>If it fails to destroy one or more older generation caches, and either a current generation cache does not
  exist or is successfully destroyed, it returns <a href="../../../../com/ibm/oti/shared/SharedClassUtilities.html#DESTROY_FAILED_OLDER_GEN_CACHE"><code>DESTROY_FAILED_OLDER_GEN_CACHE</code></a>.<br>
-        </ul></div>
+ </ul></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>cacheDir</code> - Absolute path of the directory where the shared class cache is present</dd>

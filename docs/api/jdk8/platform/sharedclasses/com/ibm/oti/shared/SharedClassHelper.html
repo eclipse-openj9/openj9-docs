@@ -185,14 +185,16 @@ extends <a href="../../../../com/ibm/oti/shared/SharedHelper.html" title="interf
 <pre>void&nbsp;setSharingFilter(<a href="../../../../com/ibm/oti/shared/SharedClassFilter.html" title="interface in com.ibm.oti.shared">SharedClassFilter</a>&nbsp;filter)</pre>
 <div class="block">Applies the sharing filter to the SharedClassHelper.
 
- If a SecurityManager is installed, this method can only be called
+ <p>If a SecurityManager is installed, this method can only be called
  by an object whose caller ClassLoader has shared
- class "read,write" permissions.<br>
- If a SharedClassFilter is already set, it is replaced by the new filter.<br>
- Passing null as the argument removes the sharing filter.</div>
+ class "read,write" permissions.
+
+ <p>If a SharedClassFilter is already set, it is replaced by the new filter.
+
+ <p>Passing null as the argument removes the sharing filter.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>filter</code> - The SharedClassFilter instance or null.</dd>
+<dd><code>filter</code> - the SharedClassFilter instance or null</dd>
 </dl>
 </li>
 </ul>
@@ -203,11 +205,10 @@ extends <a href="../../../../com/ibm/oti/shared/SharedHelper.html" title="interf
 <li class="blockList">
 <h4>getSharingFilter</h4>
 <pre><a href="../../../../com/ibm/oti/shared/SharedClassFilter.html" title="interface in com.ibm.oti.shared">SharedClassFilter</a>&nbsp;getSharingFilter()</pre>
-<div class="block">Returns the sharing filter associated with this helper.
- <p></div>
+<div class="block">Returns the sharing filter associated with this helper.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The filter instance, or null if none is associated.</dd>
+<dd>the filter instance, or null if none is associated</dd>
 </dl>
 </li>
 </ul>
