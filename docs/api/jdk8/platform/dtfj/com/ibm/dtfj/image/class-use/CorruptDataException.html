@@ -184,14 +184,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ImageAddressSpace.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/image/ImageAddressSpace.html#getID--">getID</a></span>()</code>
-<div class="block">Gets the system wide identifier for the address space</div>
+<td class="colLast"><span class="typeNameLabel">ImageProcess.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/image/ImageProcess.html#getID--">getID</a></span>()</code>
+<div class="block">Get the system-wide identifier for the process.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ImageProcess.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/image/ImageProcess.html#getID--">getID</a></span>()</code>
-<div class="block">Get the system-wide identifier for the process.</div>
+<td class="colLast"><span class="typeNameLabel">ImageAddressSpace.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/image/ImageAddressSpace.html#getID--">getID</a></span>()</code>
+<div class="block">Gets the system wide identifier for the address space</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -554,14 +554,26 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><span class="typeNameLabel">JavaClass.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClass.html#getModifiers--">getModifiers</a></span>()</code>
-<div class="block">Return the Java language modifiers for this class.</div>
+<td class="colLast"><span class="typeNameLabel">JavaMember.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaMember.html#getModifiers--">getModifiers</a></span>()</code>
+<div class="block">Get the set of modifiers for this field or method - a set of bits</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><span class="typeNameLabel">JavaMember.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaMember.html#getModifiers--">getModifiers</a></span>()</code>
-<div class="block">Get the set of modifiers for this field or method - a set of bits</div>
+<td class="colLast"><span class="typeNameLabel">JavaClass.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClass.html#getModifiers--">getModifiers</a></span>()</code>
+<div class="block">Return the Java language modifiers for this class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="typeNameLabel">JavaRuntimeMemoryCategory.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaRuntimeMemoryCategory.html#getName--">getName</a></span>()</code>
+<div class="block">Gets the name of this category.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="typeNameLabel">JavaThread.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaThread.html#getName--">getName</a></span>()</code>
+<div class="block">Return the name of the thread.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -573,26 +585,14 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">JavaThread.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaThread.html#getName--">getName</a></span>()</code>
-<div class="block">Return the name of the thread.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">JavaClass.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClass.html#getName--">getName</a></span>()</code>
-<div class="block">Get the name of the class.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="typeNameLabel">JavaMember.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaMember.html#getName--">getName</a></span>()</code>
 <div class="block">Get the name of the field or method</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">JavaRuntimeMemoryCategory.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaRuntimeMemoryCategory.html#getName--">getName</a></span>()</code>
-<div class="block">Gets the name of this category.</div>
+<td class="colLast"><span class="typeNameLabel">JavaClass.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClass.html#getName--">getName</a></span>()</code>
+<div class="block">Get the name of the class.</div>
 </td>
 </tr>
 <tr class="altColor">

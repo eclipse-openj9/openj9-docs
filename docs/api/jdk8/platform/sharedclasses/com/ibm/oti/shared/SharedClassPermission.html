@@ -131,12 +131,17 @@ var activeTableTab = "activeTableTab";
 <pre>public class <span class="typeNameLabel">SharedClassPermission</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true" target="_blank" title="class or interface in java.security">BasicPermission</a></pre>
 <div class="block">SharedClassPermission provides security permission to govern ClassLoader access to the shared class cache.
- <p>
- <b>Usage:</b> To grant permission to a ClassLoader, add permission in the java.policy file.<br> 
- For example, com.ibm.oti.shared.SharedClassPermission "classloaders.myClassLoader", "read,write";
- <p>
- "read" allows a ClassLoader to load classes from the shared cache.<br>
- "write" allows a ClassLoader to add classes to the shared cache.</div>
+
+ <p><b>Usage:</b>
+ To grant permission to a ClassLoader, add permission in the <code>java.policy</code> file.
+ For example,
+ <pre><code>  com.ibm.oti.shared.SharedClassPermission "classloaders.myClassLoader", "read,write";</code></pre>
+
+ Possible actions are:
+ <ul>
+ <li>"read" allows a ClassLoader to load classes from the shared cache</li>
+ <li>"write" allows a ClassLoader to add classes to the shared cache</li>
+ </ul></div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../serialized-form.html#com.ibm.oti.shared.SharedClassPermission">Serialized Form</a></dd>
@@ -202,7 +207,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPe
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/oti/shared/SharedClassPermission.html#hashCode--">hashCode</a></span>()</code>
-<div class="block">Answers an integer hash code for the receiver.</div>
+<div class="block">Answers the integer hash code for the receiver.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -256,14 +261,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPe
 <h4>SharedClassPermission</h4>
 <pre>public&nbsp;SharedClassPermission(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ClassLoader.html?is-external=true" target="_blank" title="class or interface in java.lang">ClassLoader</a>&nbsp;loader,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;actions)</pre>
-<div class="block">Constructs a new instance of this class.
- <p></div>
+<div class="block">Constructs a new instance of this class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>loader</code> - java.lang.ClassLoader.
-                                        The ClassLoader requiring the permission.</dd>
-<dd><code>actions</code> - java.lang.String.
-                                        The actions which are applicable to it.</dd>
+<dd><code>loader</code> - ClassLoader the ClassLoader requiring the permission</dd>
+<dd><code>actions</code> - String the actions which are applicable to it</dd>
 </dl>
 </li>
 </ul>
@@ -275,14 +277,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPe
 <h4>SharedClassPermission</h4>
 <pre>public&nbsp;SharedClassPermission(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;classLoaderClassName,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;actions)</pre>
-<div class="block">Constructs a new instance of this class.
- <p></div>
+<div class="block">Constructs a new instance of this class.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>classLoaderClassName</code> - java.lang.String.
-                                        The className of the ClassLoader requiring the permission.</dd>
-<dd><code>actions</code> - java.lang.String.
-                                        The actions which are applicable to it.</dd>
+<dd><code>classLoaderClassName</code> - String the name of the ClassLoader class requiring the permission</dd>
+<dd><code>actions</code> - String the actions which are applicable to it</dd>
 </dl>
 </li>
 </ul>
@@ -303,20 +302,18 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPe
 <pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" target="_blank" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
 <div class="block">Compares the argument to the receiver, and answers <code>true</code>
  if they represent the <em>same</em> object using a class
- specific comparison. In this case, the receiver must be
- for the same property as the argument, and must have the
- same actions.
- <p></div>
+ specific comparison.
+
+ <p>In this case, the receiver must be for the same property as the argument,
+ and must have the same actions.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.security">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true" target="_blank" title="class or interface in java.security">BasicPermission</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>o</code> - The object to compare with this object</dd>
+<dd><code>o</code> - the object to compare with this object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd><code>true</code>
-                                        If the object is the same as this object
-                                <code>false</code>
-                                        If it is different from this object</dd>
+<dd>boolean <code>true</code> if the object is the same as this object,
+                 <code>false</code> if it is different from this object</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/ibm/oti/shared/SharedClassPermission.html#hashCode--"><code>hashCode()</code></a></dd>
 </dl>
@@ -330,14 +327,12 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPe
 <h4>newPermissionCollection</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/security/PermissionCollection.html?is-external=true" target="_blank" title="class or interface in java.security">PermissionCollection</a>&nbsp;newPermissionCollection()</pre>
 <div class="block">Answers a new PermissionCollection for holding permissions
- of this class. Answer null if any permission collection can
- be used.
- <p></div>
+ of this class.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true#newPermissionCollection--" title="class or interface in java.security">newPermissionCollection</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true" target="_blank" title="class or interface in java.security">BasicPermission</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A new PermissionCollection or null</dd>
+<dd>a new PermissionCollection</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/security/PermissionCollection.html?is-external=true" target="_blank" title="class or interface in java.security"><code>PermissionCollection</code></a></dd>
 </dl>
@@ -350,16 +345,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPe
 <li class="blockList">
 <h4>hashCode</h4>
 <pre>public&nbsp;int&nbsp;hashCode()</pre>
-<div class="block">Answers an integer hash code for the receiver. Any two 
- objects which answer <code>true</code> when passed to 
- <code>equals</code> must answer the same value for this
- method.
- <p></div>
+<div class="block">Answers the integer hash code for the receiver.
+
+ <p>Any two objects which answer <code>true</code> when passed to
+ <code>equals</code> must answer the same value for this method.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true#hashCode--" title="class or interface in java.security">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true" target="_blank" title="class or interface in java.security">BasicPermission</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The receiver's hash</dd>
+<dd>the receiver's hash code</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/ibm/oti/shared/SharedClassPermission.html#equals-java.lang.Object-"><code>equals(java.lang.Object)</code></a></dd>
 </dl>
@@ -373,15 +367,13 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPe
 <h4>getActions</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a>&nbsp;getActions()</pre>
 <div class="block">Answers the actions associated with the receiver.
- The result will be either "read", "write", or 
- "read,write".
- <p></div>
+
+ <p>The result will be either "read", "write", or "read,write".</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true#getActions--" title="class or interface in java.security">getActions</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true" target="_blank" title="class or interface in java.security">BasicPermission</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>String.
-                                        The actions associated with the receiver.</dd>
+<dd>String the actions associated with the receiver</dd>
 </dl>
 </li>
 </ul>
@@ -393,19 +385,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPe
 <h4>implies</h4>
 <pre>public&nbsp;boolean&nbsp;implies(<a href="https://docs.oracle.com/javase/8/docs/api/java/security/Permission.html?is-external=true" target="_blank" title="class or interface in java.security">Permission</a>&nbsp;permission)</pre>
 <div class="block">Indicates whether the argument permission is implied
- by the receiver.
- <p></div>
+ by the receiver.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true#implies-java.security.Permission-" title="class or interface in java.security">implies</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/security/BasicPermission.html?is-external=true" target="_blank" title="class or interface in java.security">BasicPermission</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>permission</code> - java.security.Permission.
-                                        The permission to check</dd>
+<dd><code>permission</code> - Permission the permission to check</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>boolean
-                                        <code>true</code> if the argument permission
-                                        is implied by the receiver,
-                                        and <code>false</code> if it is not.</dd>
+<dd>boolean <code>true</code> if the argument permission is implied
+     by the receiver, and <code>false</code> if it is not</dd>
 </dl>
 </li>
 </ul>
