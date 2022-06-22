@@ -11,11 +11,12 @@
 <meta name="keywords" content="getObjectAlignmentInBytes()">
 <meta name="keywords" content="getClassShape()">
 <meta name="keywords" content="isIndexable()">
-<meta name="keywords" content="isDeadObject()">
-<meta name="keywords" content="isSingleSlotDeadObject()">
-<meta name="keywords" content="getSizeInBytesMultiSlotDeadObject()">
-<meta name="keywords" content="getSizeInBytesSingleSlotDeadObject()">
-<meta name="keywords" content="getSizeInBytesDeadObject()">
+<meta name="keywords" content="isHoleObject()">
+<meta name="keywords" content="isSingleSlotHoleObject()">
+<meta name="keywords" content="getSizeInBytesMultiSlotHoleObject()">
+<meta name="keywords" content="getSizeInBytesSingleSlotHoleObject()">
+<meta name="keywords" content="getSizeInBytesHoleObject()">
+<meta name="keywords" content="isDarkMatterObject()">
 <meta name="keywords" content="getSizeInBytesWithHeader()">
 <meta name="keywords" content="getTotalFootprintInBytesWithHeader()">
 <meta name="keywords" content="getConsumedSizeInBytesWithHeader()">
@@ -60,7 +61,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":10,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":10,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":10,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":10,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -327,23 +328,23 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>static <a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSizeInBytesDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">getSizeInBytesDeadObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSizeInBytesHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">getSizeInBytesHoleObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
-<div class="block">Returns the size in bytes of a dead object.</div>
+<div class="block">Returns the size in bytes of a hole object.</div>
 </td>
 </tr>
 <tr id="i16" class="altColor">
 <td class="colFirst"><code>static <a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSizeInBytesMultiSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">getSizeInBytesMultiSlotDeadObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSizeInBytesMultiSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">getSizeInBytesMultiSlotHoleObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
-<div class="block">Returns the size, in bytes, of a multi-slot dead object.</div>
+<div class="block">Returns the size, in bytes, of a multi-slot hole object.</div>
 </td>
 </tr>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code>static <a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSizeInBytesSingleSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">getSizeInBytesSingleSlotDeadObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSizeInBytesSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">getSizeInBytesSingleSlotHoleObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
-<div class="block">Returns the size, in bytes, of a single slot dead object.</div>
+<div class="block">Returns the size, in bytes, of a single slot hole object.</div>
 </td>
 </tr>
 <tr id="i18" class="altColor">
@@ -390,38 +391,45 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i24" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isDeadObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isDarkMatterObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
-<div class="block">Returns TRUE if an object is dead, FALSE otherwise.</div>
+<div class="block">Returns TRUE if an object is dark matter, FALSE otherwise.</div>
 </td>
 </tr>
 <tr id="i25" class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isHoleObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
+<td class="colLast">
+<div class="block">Returns TRUE if an object is a hole, FALSE otherwise.</div>
+</td>
+</tr>
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">isIndexable</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an class is indexable, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isIndexable</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an object is indexable, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">isInlineContiguousArraylet</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isOld(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isOld</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an object is old, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPointerInHeap(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.AbstractPointer)">isPointerInHeap</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
                <a href="../pointer/AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a>&nbsp;pointer)</code></th>
@@ -429,7 +437,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns true if a pointer is in stored in heap.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isPointerInRegion(com.ibm.j9ddr.vm29.pointer.AbstractPointer,com.ibm.j9ddr.vm29.j9.gc.GCHeapRegionDescriptor)">isPointerInRegion</a></span>&#8203;(<a href="../pointer/AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a>&nbsp;pointer,
                  <a href="gc/GCHeapRegionDescriptor.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCHeapRegionDescriptor</a>&nbsp;region)</code></th>
@@ -437,21 +445,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns true if a pointer is in stored in specified region.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRemembered(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isRemembered</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an object is remembered, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSingleSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isSingleSlotDeadObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isSingleSlotHoleObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
-<div class="block">Returns TRUE if an object is a dead single slot object, FALSE otherwise.</div>
+<div class="block">Returns TRUE if an object is a single slot hole object, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>static <a href="gc/GCHeapRegionDescriptor.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCHeapRegionDescriptor</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#regionForAddress(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.j9.gc.GCHeapRegionManager,com.ibm.j9ddr.vm29.pointer.AbstractPointer)">regionForAddress</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
                 <a href="gc/GCHeapRegionManager.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCHeapRegionManager</a>&nbsp;hrm,
@@ -548,7 +556,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns the shape of an object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to object whose shape is required.</dd>
+<dd><code>object</code> - Pointer to object whose shape is required.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The shape of the object</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -586,7 +594,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns TRUE if an object is indexable, FALSE otherwise.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>TRUE if an object is indexable, FALSE otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -613,93 +621,112 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
-<a id="isDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<a id="isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isDeadObject</h4>
-<pre class="methodSignature">public static&nbsp;boolean&nbsp;isDeadObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)
+<h4>isHoleObject</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isHoleObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)
                             throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
-<div class="block">Returns TRUE if an object is dead, FALSE otherwise.</div>
+<div class="block">Returns TRUE if an object is a hole, FALSE otherwise.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>TRUE if an object is dead, FALSE otherwise</dd>
+<dd>TRUE if an object is a hole, FALSE otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a id="isSingleSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<a id="isSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isSingleSlotDeadObject</h4>
-<pre class="methodSignature">public static&nbsp;boolean&nbsp;isSingleSlotDeadObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)
+<h4>isSingleSlotHoleObject</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isSingleSlotHoleObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)
                                       throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
-<div class="block">Returns TRUE if an object is a dead single slot object, FALSE otherwise.</div>
+<div class="block">Returns TRUE if an object is a single slot hole object, FALSE otherwise.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>TRUE if an object is a dead single slot object, FALSE otherwise</dd>
+<dd>TRUE if an object is a single slot hole object, FALSE otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a id="getSizeInBytesMultiSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<a id="getSizeInBytesMultiSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getSizeInBytesMultiSlotDeadObject</h4>
-<pre class="methodSignature">public static&nbsp;<a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;getSizeInBytesMultiSlotDeadObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)
+<h4>getSizeInBytesMultiSlotHoleObject</h4>
+<pre class="methodSignature">public static&nbsp;<a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;getSizeInBytesMultiSlotHoleObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)
                                                throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
-<div class="block">Returns the size, in bytes, of a multi-slot dead object.</div>
+<div class="block">Returns the size, in bytes, of a multi-slot hole object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The size, in bytes, of a multi-slot dead object</dd>
+<dd>The size, in bytes, of a multi-slot hole object</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a id="getSizeInBytesSingleSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<a id="getSizeInBytesSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getSizeInBytesSingleSlotDeadObject</h4>
-<pre class="methodSignature">public static&nbsp;<a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;getSizeInBytesSingleSlotDeadObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</pre>
-<div class="block">Returns the size, in bytes, of a single slot dead object.</div>
+<h4>getSizeInBytesSingleSlotHoleObject</h4>
+<pre class="methodSignature">public static&nbsp;<a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;getSizeInBytesSingleSlotHoleObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</pre>
+<div class="block">Returns the size, in bytes, of a single slot hole object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The size, in bytes, of a single slot dead object</dd>
+<dd>The size, in bytes, of a single slot hole object</dd>
 </dl>
 </li>
 </ul>
-<a id="getSizeInBytesDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<a id="getSizeInBytesHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getSizeInBytesDeadObject</h4>
-<pre class="methodSignature">public static&nbsp;<a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;getSizeInBytesDeadObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)
+<h4>getSizeInBytesHoleObject</h4>
+<pre class="methodSignature">public static&nbsp;<a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;getSizeInBytesHoleObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)
                                       throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
-<div class="block">Returns the size in bytes of a dead object.</div>
+<div class="block">Returns the size in bytes of a hole object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The size in bytes of a dead object</dd>
+<dd>The size in bytes of a hole object</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isDarkMatterObject</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;isDarkMatterObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)
+                                  throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<div class="block">Returns TRUE if an object is dark matter, FALSE otherwise.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>object</code> - Pointer to an object</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>TRUE if an object is dark matter, FALSE otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
@@ -716,7 +743,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns the size of an object, in bytes, including the header.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The size of an object, in bytes, including the header</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -758,7 +785,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  object alignment and minimum object size</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The consumed heap size of an object, in bytes, including the header</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -777,7 +804,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns the size of an object, in slots, including the header.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The size of an object, in slots, including the header</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -798,7 +825,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  object alignment and minimum object size</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The consumed heap size of an object, in slots, including the header</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -817,7 +844,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns the age of an object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The age of the object</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -836,7 +863,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns TRUE if an object is remembered, FALSE otherwise.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>TRUE if an object is remembered, FALSE otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -855,7 +882,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns the collector bits from object's header.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>collector bits</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -874,7 +901,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns TRUE if an object is old, FALSE otherwise.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>TRUE if an object is in the old area, FALSE otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -928,7 +955,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns TRUE if an object has been hashed, FALSE otherwise.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>TRUE if an object has been hashed, FALSE otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -947,7 +974,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns TRUE if an object has been moved after being hashed, FALSE otherwise.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>TRUE if an object has been moved after being hashed, FALSE otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -1019,7 +1046,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  <p></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The size of an object header, in bytes.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>

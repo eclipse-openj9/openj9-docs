@@ -170,7 +170,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">SharedClassStatistics</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+</td>
 </tr>
 </table>
 </li>
@@ -194,7 +196,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#cacheDir()">cacheDir</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the cache dir.</div>
+<div class="block">Returns the cache directory.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -215,7 +217,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#freeSpaceBytes()">freeSpaceBytes</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the free space of the shared cache that the JVM is currently connected to</div>
+<div class="block">Returns the free space of the shared cache that the JVM is currently connected to.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -238,7 +240,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#maxSizeBytes()">maxSizeBytes</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the size of the shared cache that the JVM is currently connected to</div>
+<div class="block">Returns the size of the shared cache that the JVM is currently connected to.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -268,7 +270,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#softmxBytes()">softmxBytes</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the soft limit in bytes for the available space of the cache that the JVM is currently connected to</div>
+<div class="block">Returns the soft limit in bytes for the available space of the cache that the JVM is currently connected to.</div>
 </td>
 </tr>
 </table>
@@ -301,7 +303,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SharedClassStatistics</h4>
-<pre>public&nbsp;SharedClassStatistics()</pre>
+<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">@Deprecated</a>
+public&nbsp;SharedClassStatistics()</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span></div>
+<div class="block">Constructs a new instance of this class.</div>
 </li>
 </ul>
 </li>
@@ -321,11 +326,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>maxSizeBytes</h4>
 <pre class="methodSignature">public static&nbsp;long&nbsp;maxSizeBytes()</pre>
-<div class="block">Returns the size of the shared cache that the JVM is currently connected to
- <p></div>
+<div class="block">Returns the size of the shared cache that the JVM is currently connected to.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The total size in bytes</dd>
+<dd>the total size in bytes</dd>
 </dl>
 </li>
 </ul>
@@ -336,11 +340,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>freeSpaceBytes</h4>
 <pre class="methodSignature">public static&nbsp;long&nbsp;freeSpaceBytes()</pre>
-<div class="block">Returns the free space of the shared cache that the JVM is currently connected to
- <p></div>
+<div class="block">Returns the free space of the shared cache that the JVM is currently connected to.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The free space in bytes</dd>
+<dd>the free space in bytes</dd>
 </dl>
 </li>
 </ul>
@@ -351,11 +354,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>softmxBytes</h4>
 <pre class="methodSignature">public static&nbsp;long&nbsp;softmxBytes()</pre>
-<div class="block">Returns the soft limit in bytes for the available space of the cache that the JVM is currently connected to
- <p></div>
+<div class="block">Returns the soft limit in bytes for the available space of the cache that the JVM is currently connected to.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the soft max size or cache size in bytes if it is not set.</dd>
+<dd>the soft max size or cache size in bytes if it is not set</dd>
 </dl>
 </li>
 </ul>
@@ -370,7 +372,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  connected to.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the minimum shared classes cache space reserved for AOT data in bytes or -1 if it is not set.</dd>
+<dd>the minimum shared classes cache space reserved for AOT data in bytes or -1 if it is not set</dd>
 </dl>
 </li>
 </ul>
@@ -385,7 +387,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  connected to.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the maximum shared classes cache space allowed for AOT data in bytes or -1 if it is not set.</dd>
+<dd>the maximum shared classes cache space allowed for AOT data in bytes or -1 if it is not set</dd>
 </dl>
 </li>
 </ul>
@@ -400,7 +402,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  connected to.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the minimum shared classes cache space reserved for JIT data in bytes or -1 if it is not set.</dd>
+<dd>the minimum shared classes cache space reserved for JIT data in bytes or -1 if it is not set</dd>
 </dl>
 </li>
 </ul>
@@ -415,7 +417,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  connected to.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the maximum shared classes cache space allowed for JIT data in bytes  or -1 if it is not set.</dd>
+<dd>the maximum shared classes cache space allowed for JIT data in bytes  or -1 if it is not set</dd>
 </dl>
 </li>
 </ul>
@@ -427,11 +429,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>numberAttached</h4>
 <pre class="methodSignature">public static&nbsp;long&nbsp;numberAttached()</pre>
 <div class="block">Returns the SysV shmem nattch value for a non-persistent top level cache.
- On Windows or for persistent caches, -1 is returned. Depending on the platform
+
+ <p>On Windows or for persistent caches, -1 is returned. Depending on the platform
  and OS, such as z/OS, the value indicates the number of JVMs attached to the cache.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the SysV shmem nattch value for a top level non-persistent cache, or -1 if it cannot be determined.</dd>
+<dd>the SysV shmem nattch value for a top level non-persistent cache, or -1 if it cannot be determined</dd>
 </dl>
 </li>
 </ul>
@@ -445,7 +448,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns the full cache path.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the full cache path, or NULL if it cannot be determined.</dd>
+<dd>the full cache path, or NULL if it cannot be determined</dd>
 </dl>
 </li>
 </ul>
@@ -459,7 +462,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns the cache name.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the cache name, or NULL if it cannot be determined.</dd>
+<dd>the cache name, or NULL if it cannot be determined</dd>
 </dl>
 </li>
 </ul>
@@ -470,10 +473,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>cacheDir</h4>
 <pre class="methodSignature">public static&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;cacheDir()</pre>
-<div class="block">Returns the cache dir.</div>
+<div class="block">Returns the cache directory.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the cache dir, or NULL if it cannot be determined.</dd>
+<dd>the cache directory, or NULL if it cannot be determined</dd>
 </dl>
 </li>
 </ul>

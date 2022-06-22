@@ -185,18 +185,19 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <h4>getDataHelper</h4>
 <pre class="methodSignature"><a href="SharedDataHelper.html" title="interface in com.ibm.oti.shared">SharedDataHelper</a>&nbsp;getDataHelper&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassLoader.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">ClassLoader</a>&nbsp;owner)</pre>
-<div class="block">Return a SharedDataHelper for a given ClassLoader.<p>
- Creates a new SharedDataHelper if one cannot be found,
-   otherwise if a SharedDataHelper already exists for the ClassLoader, the existing Helper is returned. <br>
- Returns null if a SecurityManager is installed and there is no SharedClassPermission for the ClassLoader specified.
- <p></div>
+<div class="block">Return a SharedDataHelper for a given ClassLoader.
+
+ <p>Creates a new SharedDataHelper if one cannot be found, otherwise
+ if a SharedDataHelper already exists for the ClassLoader, the
+ existing Helper is returned.
+
+ <p>Returns null if a SecurityManager is installed and there is no
+ SharedClassPermission for the ClassLoader specified.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>owner</code> - ClassLoader.
-                                        The ClassLoader which owns the SharedDataHelper</dd>
+<dd><code>owner</code> - the ClassLoader which owns the SharedDataHelper</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>SharedDataHelper.
-                                        A new or existing SharedDataHelper</dd>
+<dd>SharedDataHelper a new or existing SharedDataHelper</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="SharedDataHelper.html" title="interface in com.ibm.oti.shared"><code>SharedDataHelper</code></a></dd>
 </dl>

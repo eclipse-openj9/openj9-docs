@@ -164,7 +164,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  <p>
  The <code>trace(int handle, int traceId, ...)</code> methods are used take the application
  trace points registered by <code>registerApplication(name, formats)</code>. The handle
- value is the integer returned by the  <code>registerApplication(name, formats)</code>.
+ value is the integer returned by the <code>registerApplication(name, formats)</code>.
  The traceId is an index into the formats array and the <code>trace(int handle, int traceId, ...)</code>
  method called must match the types required by the format String <code>formats[traceId]</code>.
  <p>
@@ -891,7 +891,7 @@ public static&nbsp;void&nbsp;initializeTrace()</pre>
 <div class="block">Trigger a snap dump. The snap dump format is not human-readable
  and must be processed using the trace formatting tool supplied
  with the IBM JVM.
- 
+
  A security manager check will be made only if the system property
  com.ibm.jvm.enableLegacyTraceSecurity is set to "true" in which case
  a check will be made for com.ibm.jvm.TracePermission</div>
@@ -909,7 +909,7 @@ public static&nbsp;void&nbsp;initializeTrace()</pre>
 <h4>suspend</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;suspend()</pre>
 <div class="block">Suspends tracing for all the threads in the JVM.
- 
+
  A security manager check will be made only if the system property
  com.ibm.jvm.enableLegacyTraceSecurity is set to "true" in which case
  a check will be made for com.ibm.jvm.TracePermission</div>
@@ -927,7 +927,7 @@ public static&nbsp;void&nbsp;initializeTrace()</pre>
 <h4>resume</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;resume()</pre>
 <div class="block">Resumes tracing for all the threads in the JVM.
- 
+
  A security manager check will be made only if the system property
  com.ibm.jvm.enableLegacyTraceSecurity is set to "true" in which case
  a check will be made for com.ibm.jvm.TracePermission</div>
@@ -946,7 +946,7 @@ public static&nbsp;void&nbsp;initializeTrace()</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;suspendThis()</pre>
 <div class="block">Decrements the suspend and resume count for the current thread and suspends
  tracing the thread if the result is negative.
- 
+
  A security manager check will be made only if the system property
  com.ibm.jvm.enableLegacyTraceSecurity is set to "true" in which case
  a check will be made for com.ibm.jvm.TracePermission</div>
@@ -965,7 +965,7 @@ public static&nbsp;void&nbsp;initializeTrace()</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;resumeThis()</pre>
 <div class="block">Increments the suspend and resume count for the current thread and resumes
  tracing the thread if the result is not negative.
- 
+
  A security manager check will be made only if the system property
  com.ibm.jvm.enableLegacyTraceSecurity is set to "true" in which case
  a check will be made for com.ibm.jvm.TracePermission</div>
@@ -995,11 +995,11 @@ public static&nbsp;void&nbsp;initializeTrace()</pre>
  When enabling or disabling trace points registered for this application
  either on the command line or using Trace.set() the trace point id's will
  be the application name and the index in the template array.
- 
+
  For example if you register an application called HelloWorld with three
  Strings in the template array the trace id's will be HelloWorld.0,
  HelloWorld.1 and HelloWorld.2
- 
+
  To start printing the third trace point you could call Trace.set() like
  this: <code>Trace.set("print=HelloWorld.2"); </code>
  <p>

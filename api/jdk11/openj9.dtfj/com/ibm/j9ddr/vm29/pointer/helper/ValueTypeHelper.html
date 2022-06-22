@@ -13,8 +13,9 @@
 <meta name="keywords" content="findNestedClassHierarchy()">
 <meta name="keywords" content="findJ9ClassInFlattenedClassCacheWithSigName()">
 <meta name="keywords" content="isRomClassAValueType()">
-<meta name="keywords" content="isRomClassAtomic()">
+<meta name="keywords" content="doesRomClassPermitsValue()">
 <meta name="keywords" content="isJ9ClassAValueType()">
+<meta name="keywords" content="isJ9ClassAPrimitiveValueType()">
 <meta name="keywords" content="isFieldInClassFlattened()">
 <meta name="keywords" content="isFlattenableFieldSignature()">
 <meta name="keywords" content="isJ9ClassLargestAlignmentConstraintDouble()">
@@ -43,7 +44,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -214,6 +215,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doesRomClassPermitsValue(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">doesRomClassPermitsValue</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></th>
+<td class="colLast">
+<div class="block">Queries if a J9ROMClass can be extended by a value class</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#findJ9ClassInFlattenedClassCacheWithFieldName(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.lang.String)">findJ9ClassInFlattenedClassCacheWithFieldName</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
                                              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;fieldName)</code></th>
@@ -221,7 +229,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Searches the flattenedClassCache (FCC) for a J9Class given a field name.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#findJ9ClassInFlattenedClassCacheWithSigName(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.lang.String)">findJ9ClassInFlattenedClassCacheWithSigName</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
                                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;fieldSig)</code></th>
@@ -229,7 +237,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Searches the flattenedClassCache (FCC) for a J9Class given a field signature.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#findNestedClassHierarchy(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.lang.String%5B%5D)">findNestedClassHierarchy</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;containerClazz,
                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>[]&nbsp;nestingHierarchy)</code></th>
@@ -238,14 +246,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  that correspond to the types of the field names passed in the nestingHierarchy array.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static <a href="ValueTypeHelper.html" title="class in com.ibm.j9ddr.vm29.pointer.helper">ValueTypeHelper</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getValueTypeHelper()">getValueTypeHelper</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Factory method that returns a valueTypeHelper instance.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isFieldInClassFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)">isFieldInClassFlattened</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
                        com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShape)</code></th>
@@ -253,42 +261,49 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Queries whether field is flattened of not.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isFlattenableFieldSignature(java.lang.String)">isFlattenableFieldSignature</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;signature)</code></th>
 <td class="colLast">
 <div class="block">Queries if field signature is flattenable</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isJ9ClassAPrimitiveValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">isJ9ClassAPrimitiveValueType</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></th>
+<td class="colLast">
+<div class="block">Queries if J9Class is a primitive value type</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isJ9ClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">isJ9ClassAValueType</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></th>
 <td class="colLast">
 <div class="block">Queries if J9Class is a value type</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isJ9ClassIsFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">isJ9ClassIsFlattened</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></th>
 <td class="colLast">
 <div class="block">Queries if class is flattened</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isJ9ClassLargestAlignmentConstraintDouble(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">isJ9ClassLargestAlignmentConstraintDouble</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></th>
 <td class="colLast">
 <div class="block">Queries if class contains a field with a double (64 bit) alignment constraint</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isJ9ClassLargestAlignmentConstraintReference(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">isJ9ClassLargestAlignmentConstraintReference</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></th>
 <td class="colLast">
 <div class="block">Queries if class contains a field with a reference alignment constraint</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isJ9FieldIsFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)">isJ9FieldIsFlattened</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;fieldClazz,
                     com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShape)</code></th>
@@ -296,14 +311,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Queries if a field in a class is flattened</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRomClassAtomic(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">isRomClassAtomic</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></th>
-<td class="colLast">
-<div class="block">Queries if a J9ROMClass is atomic</div>
-</td>
-</tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRomClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">isRomClassAValueType</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></th>
 <td class="colLast">
@@ -473,15 +481,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
-<a id="isRomClassAtomic(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">
+<a id="doesRomClassPermitsValue(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isRomClassAtomic</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;isRomClassAtomic&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)
-                         throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
-<div class="block">Queries if a J9ROMClass is atomic</div>
+<h4>doesRomClassPermitsValue</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;doesRomClassPermitsValue&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)
+                                 throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<div class="block">Queries if a J9ROMClass can be extended by a value class</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>romClass</code> - class to query</dd>
@@ -506,6 +514,25 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>clazz</code> - clazz to query</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if class is a value type, false otherwise</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="isJ9ClassAPrimitiveValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isJ9ClassAPrimitiveValueType</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isJ9ClassAPrimitiveValueType&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)
+                                     throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<div class="block">Queries if J9Class is a primitive value type</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>clazz</code> - clazz to query</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if class is a primitive value type, false otherwise</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
