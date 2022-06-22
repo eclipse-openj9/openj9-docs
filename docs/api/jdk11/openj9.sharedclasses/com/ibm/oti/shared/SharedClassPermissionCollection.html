@@ -149,7 +149,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">SharedClassPermissionCollection</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PermissionCollection.html?is-external=true" title="class or interface in java.security" class="externalLink" target="_blank">PermissionCollection</a></pre>
-<div class="block">SharedClassPermissionCollection provides permission collection to support SharedClassPermission</div>
+<div class="block">SharedClassPermissionCollection provides permission collection to support SharedClassPermission.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="SharedClassPermission.html" title="class in com.ibm.oti.shared"><code>SharedClassPermission</code></a>, 
@@ -176,7 +176,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">SharedClassPermissionCollection</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block"><span class="deprecatedLabel">Deprecated.</span></div>
+</td>
 </tr>
 </table>
 </li>
@@ -200,14 +202,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#add(java.security.Permission)">add</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/Permission.html?is-external=true" title="class or interface in java.security" class="externalLink" target="_blank">Permission</a>&nbsp;perm)</code></th>
 <td class="colLast">
-<div class="block">Adds a permission to this collection</div>
+<div class="block">Adds a permission to this collection.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Enumeration.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Enumeration</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/Permission.html?is-external=true" title="class or interface in java.security" class="externalLink" target="_blank">Permission</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#elements()">elements</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns permissions as an enumeration</div>
+<div class="block">Returns permissions as an enumeration.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -215,7 +217,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#implies(java.security.Permission)">implies</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/Permission.html?is-external=true" title="class or interface in java.security" class="externalLink" target="_blank">Permission</a>&nbsp;perm)</code></th>
 <td class="colLast">
 <div class="block">Returns <code>true</code> if the permission given is implied by any of the
- permissions in the collection</div>
+ permissions in the collection.</div>
 </td>
 </tr>
 </table>
@@ -255,7 +257,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SharedClassPermissionCollection</h4>
-<pre>public&nbsp;SharedClassPermissionCollection()</pre>
+<pre><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">@Deprecated</a>
+public&nbsp;SharedClassPermissionCollection()</pre>
+<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated.</span></div>
+<div class="block">Constructs a new instance of this class.</div>
 </li>
 </ul>
 </li>
@@ -275,14 +280,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>add</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;add&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/Permission.html?is-external=true" title="class or interface in java.security" class="externalLink" target="_blank">Permission</a>&nbsp;perm)</pre>
-<div class="block">Adds a permission to this collection
- <p></div>
+<div class="block">Adds a permission to this collection.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PermissionCollection.html?is-external=true#add(java.security.Permission)" title="class or interface in java.security" class="externalLink" target="_blank">add</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PermissionCollection.html?is-external=true" title="class or interface in java.security" class="externalLink" target="_blank">PermissionCollection</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>perm</code> - java.security.Permission.
-                                        The Permission object to add</dd>
+<dd><code>perm</code> - Permission the permission object to add</dd>
 </dl>
 </li>
 </ul>
@@ -293,14 +296,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>elements</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Enumeration.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Enumeration</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/Permission.html?is-external=true" title="class or interface in java.security" class="externalLink" target="_blank">Permission</a>&gt;&nbsp;elements()</pre>
-<div class="block">Returns permissions as an enumeration
- <p></div>
+<div class="block">Returns permissions as an enumeration.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PermissionCollection.html?is-external=true#elements()" title="class or interface in java.security" class="externalLink" target="_blank">elements</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PermissionCollection.html?is-external=true" title="class or interface in java.security" class="externalLink" target="_blank">PermissionCollection</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>java.util.Enumeration.
-                                        The Permissions as an enumeration</dd>
+<dd>Enumeration the permissions as an enumeration</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PermissionCollection.html?is-external=true#elementsAsStream()" title="class or interface in java.security" class="externalLink" target="_blank"><code>PermissionCollection.elementsAsStream()</code></a></dd>
 </dl>
@@ -314,17 +315,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>implies</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;implies&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/Permission.html?is-external=true" title="class or interface in java.security" class="externalLink" target="_blank">Permission</a>&nbsp;perm)</pre>
 <div class="block">Returns <code>true</code> if the permission given is implied by any of the
- permissions in the collection
- <p></div>
+ permissions in the collection.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PermissionCollection.html?is-external=true#implies(java.security.Permission)" title="class or interface in java.security" class="externalLink" target="_blank">implies</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PermissionCollection.html?is-external=true" title="class or interface in java.security" class="externalLink" target="_blank">PermissionCollection</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>perm</code> - java.security.Permission.
-                                        The permission to check</dd>
+<dd><code>perm</code> - Permission the permission to check</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>java.util.Enumeration.
-                                        The Permissions as an enumeration</dd>
+<dd>boolean whether the given permission is implied by any of the
+ permissions in this collection</dd>
 </dl>
 </li>
 </ul>
