@@ -56,6 +56,7 @@ loadScripts(document, 'script');</script>
 <ul>
 <li><a href="#for-removal">Terminally Deprecated</a></li>
 <li><a href="#method">Methods</a></li>
+<li><a href="#constructor">Constructors</a></li>
 </ul>
 </div>
 <ul class="block-list">
@@ -71,20 +72,26 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedMemoryMXBeanImpl.html#getTotalPhysicalMemory()">com.ibm.lang.management.internal.ExtendedMemoryMXBeanImpl.getTotalPhysicalMemory()</a></div>
 <div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedMemoryMXBeanImpl.html#getTotalPhysicalMemorySize()">com.ibm.lang.management.internal.ExtendedMemoryMXBeanImpl.getTotalPhysicalMemorySize()</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedMemoryMXBeanImpl.html#getUsedPhysicalMemory()">com.ibm.lang.management.internal.ExtendedMemoryMXBeanImpl.getUsedPhysicalMemory()</a></div>
+<div class="col-last odd-row-color"></div>
 <div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedOperatingSystemMXBeanImpl.html#getProcessCpuTimeByNS()">com.ibm.lang.management.internal.ExtendedOperatingSystemMXBeanImpl.getProcessCpuTimeByNS()</a></div>
 <div class="col-last even-row-color"></div>
 <div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedOperatingSystemMXBeanImpl.html#getProcessVirtualMemorySize()">com.ibm.lang.management.internal.ExtendedOperatingSystemMXBeanImpl.getProcessVirtualMemorySize()</a></div>
 <div class="col-last odd-row-color"></div>
 <div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedOperatingSystemMXBeanImpl.html#getTotalPhysicalMemory()">com.ibm.lang.management.internal.ExtendedOperatingSystemMXBeanImpl.getTotalPhysicalMemory()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getProcessCpuTimeByNS()">com.ibm.lang.management.OperatingSystemMXBean.getProcessCpuTimeByNS()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedRuntimeMXBeanImpl.html#getProcessID()">com.ibm.lang.management.internal.ExtendedRuntimeMXBeanImpl.getProcessID()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getProcessVirtualMemorySize()">com.ibm.lang.management.OperatingSystemMXBean.getProcessVirtualMemorySize()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getProcessCpuTimeByNS()">com.ibm.lang.management.OperatingSystemMXBean.getProcessCpuTimeByNS()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getTotalPhysicalMemory()">com.ibm.lang.management.OperatingSystemMXBean.getTotalPhysicalMemory()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getProcessVirtualMemorySize()">com.ibm.lang.management.OperatingSystemMXBean.getProcessVirtualMemorySize()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/RuntimeMXBean.html#getProcessID()">com.ibm.lang.management.RuntimeMXBean.getProcessID()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getTotalPhysicalMemory()">com.ibm.lang.management.OperatingSystemMXBean.getTotalPhysicalMemory()</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/RuntimeMXBean.html#getProcessID()">com.ibm.lang.management.RuntimeMXBean.getProcessID()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">As of Java 10. Use 
  <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getPid()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>getPid()</code></a> instead.</div>
 </div>
@@ -151,31 +158,56 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedMemoryMXBeanImpl.html#getTotalPhysicalMemory()">com.ibm.lang.management.internal.ExtendedMemoryMXBeanImpl.getTotalPhysicalMemory()</a></div>
 <div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedMemoryMXBeanImpl.html#getTotalPhysicalMemorySize()">com.ibm.lang.management.internal.ExtendedMemoryMXBeanImpl.getTotalPhysicalMemorySize()</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedMemoryMXBeanImpl.html#getUsedPhysicalMemory()">com.ibm.lang.management.internal.ExtendedMemoryMXBeanImpl.getUsedPhysicalMemory()</a></div>
+<div class="col-last even-row-color"></div>
 <div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedOperatingSystemMXBeanImpl.html#getProcessCpuTimeByNS()">com.ibm.lang.management.internal.ExtendedOperatingSystemMXBeanImpl.getProcessCpuTimeByNS()</a></div>
 <div class="col-last odd-row-color"></div>
 <div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedOperatingSystemMXBeanImpl.html#getProcessVirtualMemorySize()">com.ibm.lang.management.internal.ExtendedOperatingSystemMXBeanImpl.getProcessVirtualMemorySize()</a></div>
 <div class="col-last even-row-color"></div>
 <div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedOperatingSystemMXBeanImpl.html#getTotalPhysicalMemory()">com.ibm.lang.management.internal.ExtendedOperatingSystemMXBeanImpl.getTotalPhysicalMemory()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getProcessCpuTimeByNS()">com.ibm.lang.management.OperatingSystemMXBean.getProcessCpuTimeByNS()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/internal/ExtendedRuntimeMXBeanImpl.html#getProcessID()">com.ibm.lang.management.internal.ExtendedRuntimeMXBeanImpl.getProcessID()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getProcessVirtualMemorySize()">com.ibm.lang.management.OperatingSystemMXBean.getProcessVirtualMemorySize()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getProcessCpuTimeByNS()">com.ibm.lang.management.OperatingSystemMXBean.getProcessCpuTimeByNS()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getTotalPhysicalMemory()">com.ibm.lang.management.OperatingSystemMXBean.getTotalPhysicalMemory()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getProcessVirtualMemorySize()">com.ibm.lang.management.OperatingSystemMXBean.getProcessVirtualMemorySize()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/RuntimeMXBean.html#getProcessID()">com.ibm.lang.management.RuntimeMXBean.getProcessID()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="jdk.management/com/ibm/lang/management/OperatingSystemMXBean.html#getTotalPhysicalMemory()">com.ibm.lang.management.OperatingSystemMXBean.getTotalPhysicalMemory()</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="jdk.management/com/ibm/lang/management/RuntimeMXBean.html#getProcessID()">com.ibm.lang.management.RuntimeMXBean.getProcessID()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">As of Java 10. Use 
  <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getPid()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>getPid()</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="openj9.sharedclasses/com/ibm/oti/shared/SharedClassCacheInfo.html#isCachePersistent()">com.ibm.oti.shared.SharedClassCacheInfo.isCachePersistent()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="openj9.sharedclasses/com/ibm/oti/shared/SharedClassCacheInfo.html#isCachePersistent()">com.ibm.oti.shared.SharedClassCacheInfo.isCachePersistent()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use getCacheType() instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="openj9.sharedclasses/com/ibm/oti/shared/SharedClassHelperFactory.html#findHelperForClassLoader(java.lang.ClassLoader)">com.ibm.oti.shared.SharedClassHelperFactory.findHelperForClassLoader<wbr>(ClassLoader)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="openj9.sharedclasses/com/ibm/oti/shared/SharedClassHelperFactory.html#findHelperForClassLoader(java.lang.ClassLoader)">com.ibm.oti.shared.SharedClassHelperFactory.findHelperForClassLoader<wbr>(ClassLoader)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use findHelpersForClassLoader(ClassLoader loader) instead.</div>
 </div>
+</div>
+</div>
+</li>
+</ul>
+<ul class="block-list">
+<li>
+<div id="constructor">
+<div class="caption"><span>Deprecated Constructors</span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Constructor</div>
+<div class="table-header col-last">Description</div>
+<div class="col-summary-item-name even-row-color"><a href="openj9.sharedclasses/com/ibm/oti/shared/Shared.html#%3Cinit%3E()">com.ibm.oti.shared.Shared()</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="openj9.sharedclasses/com/ibm/oti/shared/SharedClassPermissionCollection.html#%3Cinit%3E()">com.ibm.oti.shared.SharedClassPermissionCollection()</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="openj9.sharedclasses/com/ibm/oti/shared/SharedClassStatistics.html#%3Cinit%3E()">com.ibm.oti.shared.SharedClassStatistics()</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="openj9.sharedclasses/com/ibm/oti/shared/SharedClassUtilities.html#%3Cinit%3E()">com.ibm.oti.shared.SharedClassUtilities()</a></div>
+<div class="col-last odd-row-color"></div>
 </div>
 </div>
 </li>
