@@ -177,7 +177,9 @@ implements <a href="SharedClassHelper.html" title="interface in com.ibm.oti.shar
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">SharedClassAbstractHelper</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs a new instance of this class.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -208,7 +210,8 @@ implements <a href="SharedClassHelper.html" title="interface in com.ibm.oti.shar
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSharedClassCookie(byte%5B%5D)">isSharedClassCookie</a></span>&#8203;(byte[]&nbsp;classBytes)</code></th>
 <td class="colLast">
-<div class="block">Utility function.</div>
+<div class="block">Determines whether a byte array being passed to defineClass is a class found
+ in the shared class cache, or a class found locally.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -263,6 +266,7 @@ implements <a href="SharedClassHelper.html" title="interface in com.ibm.oti.shar
 <li class="blockList">
 <h4>SharedClassAbstractHelper</h4>
 <pre>public&nbsp;SharedClassAbstractHelper()</pre>
+<div class="block">Constructs a new instance of this class.</div>
 </li>
 </ul>
 </li>
@@ -282,14 +286,13 @@ implements <a href="SharedClassHelper.html" title="interface in com.ibm.oti.shar
 <li class="blockList">
 <h4>isSharedClassCookie</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isSharedClassCookie&#8203;(byte[]&nbsp;classBytes)</pre>
-<div class="block">Utility function. Determines whether a byte array being passed to defineClass is a class found
- in the shared class cache, or a class found locally.
- <p></div>
+<div class="block">Determines whether a byte array being passed to defineClass is a class found
+ in the shared class cache, or a class found locally.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>classBytes</code> - A potential shared class cookie</dd>
+<dd><code>classBytes</code> - a potential shared class cookie</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if bytes are a cookie.</dd>
+<dd>true if bytes are a cookie</dd>
 </dl>
 </li>
 </ul>
@@ -300,15 +303,15 @@ implements <a href="SharedClassHelper.html" title="interface in com.ibm.oti.shar
 <li class="blockList">
 <h4>setSharingFilter</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;setSharingFilter&#8203;(<a href="SharedClassFilter.html" title="interface in com.ibm.oti.shared">SharedClassFilter</a>&nbsp;filter)</pre>
-<div class="block">Sets the SharedClassFilter for a helper instance.  Supplying
- null removes any filter that is currently associated with the
- helper instance.
- <p></div>
+<div class="block">Sets the SharedClassFilter for a helper instance.
+
+ <p>Supplying null removes any filter that is currently associated
+ with the helper instance.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="SharedClassHelper.html#setSharingFilter(com.ibm.oti.shared.SharedClassFilter)">setSharingFilter</a></code>&nbsp;in interface&nbsp;<code><a href="SharedClassHelper.html" title="interface in com.ibm.oti.shared">SharedClassHelper</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>filter</code> - The filter to use when finding and storing classes.</dd>
+<dd><code>filter</code> - the filter to use when finding and storing classes</dd>
 </dl>
 </li>
 </ul>
@@ -319,13 +322,12 @@ implements <a href="SharedClassHelper.html" title="interface in com.ibm.oti.shar
 <li class="blockList">
 <h4>getSharingFilter</h4>
 <pre class="methodSignature">public&nbsp;<a href="SharedClassFilter.html" title="interface in com.ibm.oti.shared">SharedClassFilter</a>&nbsp;getSharingFilter()</pre>
-<div class="block">Returns the SharedClassFilter associated with this helper.
- <p></div>
+<div class="block">Returns the SharedClassFilter associated with this helper.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="SharedClassHelper.html#getSharingFilter()">getSharingFilter</a></code>&nbsp;in interface&nbsp;<code><a href="SharedClassHelper.html" title="interface in com.ibm.oti.shared">SharedClassHelper</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The filter instance, or null if none is associated</dd>
+<dd>the filter instance, or null if none is associated</dd>
 </dl>
 </li>
 </ul>
