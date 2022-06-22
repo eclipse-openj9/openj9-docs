@@ -9,7 +9,6 @@
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <meta name="keywords" content="com.ibm.lang.management.internal.ExtendedOperatingSystemMXBeanImpl class">
 <meta name="keywords" content="getInstance()">
-<meta name="keywords" content="getFreePhysicalMemorySize()">
 <meta name="keywords" content="getCpuLoad()">
 <meta name="keywords" content="getTotalMemorySize()">
 <meta name="keywords" content="getFreeMemorySize()">
@@ -23,8 +22,6 @@
 <meta name="keywords" content="getProcessPrivateMemorySize()">
 <meta name="keywords" content="getCommittedVirtualMemorySize()">
 <meta name="keywords" content="getProcessVirtualMemorySize()">
-<meta name="keywords" content="getSystemCpuLoad()">
-<meta name="keywords" content="getTotalPhysicalMemorySize()">
 <meta name="keywords" content="getTotalPhysicalMemory()">
 <meta name="keywords" content="getTotalSwapSpaceSize()">
 <meta name="keywords" content="isHardwareEmulated()">
@@ -180,74 +177,64 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 <div class="block">Returns the amount of free memory in bytes.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFreePhysicalMemorySize()" class="member-name-link">getFreePhysicalMemorySize</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFreeSwapSpaceSize()" class="member-name-link">getFreeSwapSpaceSize</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the amount of physical memory that is available on the system in bytes.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFreeSwapSpaceSize()" class="member-name-link">getFreeSwapSpaceSize</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the amount of free swap space in bytes.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHardwareModel()" class="member-name-link">getHardwareModel</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHardwareModel()" class="member-name-link">getHardwareModel</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieve hardware model</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ExtendedOperatingSystemMXBeanImpl.html" title="class in com.ibm.lang.management.internal">ExtendedOperatingSystemMXBeanImpl</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ExtendedOperatingSystemMXBeanImpl.html" title="class in com.ibm.lang.management.internal">ExtendedOperatingSystemMXBeanImpl</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Singleton accessor method.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/javax/management/MBeanNotificationInfo.html" title="class or interface in javax.management" class="external-link" target="_blank">MBeanNotificationInfo</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNotificationInfo()" class="member-name-link">getNotificationInfo</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/javax/management/MBeanNotificationInfo.html" title="class or interface in javax.management" class="external-link" target="_blank">MBeanNotificationInfo</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNotificationInfo()" class="member-name-link">getNotificationInfo</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an array indicating, for each notification this
  MBean may send, the name of the Java class of the notification
  and the notification type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProcessCpuLoad()" class="member-name-link">getProcessCpuLoad</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProcessCpuLoad()" class="member-name-link">getProcessCpuLoad</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the recent CPU usage for the Java Virtual Machine process.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProcessCpuTime()" class="member-name-link">getProcessCpuTime</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProcessCpuTime()" class="member-name-link">getProcessCpuTime</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns total amount of time the process has been scheduled or
  executed so far in both kernel and user modes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>final long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getProcessCpuTimeByNS()" class="member-name-link">getProcessCpuTimeByNS</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>final long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getProcessCpuTimeByNS()" class="member-name-link">getProcessCpuTimeByNS</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProcessingCapacity()" class="member-name-link">getProcessingCapacity</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProcessingCapacity()" class="member-name-link">getProcessingCapacity</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the collective capacity of the virtual processors in
  the partition the VM is running in.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProcessPhysicalMemorySize()" class="member-name-link">getProcessPhysicalMemorySize</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProcessPhysicalMemorySize()" class="member-name-link">getProcessPhysicalMemorySize</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the amount of physical memory being used by the process
  in bytes.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProcessPrivateMemorySize()" class="member-name-link">getProcessPrivateMemorySize</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProcessPrivateMemorySize()" class="member-name-link">getProcessPrivateMemorySize</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the amount of private memory used by the process in bytes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>final long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getProcessVirtualMemorySize()" class="member-name-link">getProcessVirtualMemorySize</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>final long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getProcessVirtualMemorySize()" class="member-name-link">getProcessVirtualMemorySize</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSystemCpuLoad()" class="member-name-link">getSystemCpuLoad</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the recent CPU usage for the whole system.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTotalMemorySize()" class="member-name-link">getTotalMemorySize</a>()</code></div>
@@ -259,77 +246,72 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTotalPhysicalMemorySize()" class="member-name-link">getTotalPhysicalMemorySize</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTotalSwapSpaceSize()" class="member-name-link">getTotalSwapSpaceSize</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the total available physical memory on the system in bytes.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTotalSwapSpaceSize()" class="member-name-link">getTotalSwapSpaceSize</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the total amount of swap space in bytes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHardwareEmulated()" class="member-name-link">isHardwareEmulated</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHardwareEmulated()" class="member-name-link">isHardwareEmulated</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Identify whether the underlying hardware is being emulated</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isProcessRunning(long)" class="member-name-link">isProcessRunning</a><wbr>(long&nbsp;pid)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isProcessRunning(long)" class="member-name-link">isProcessRunning</a><wbr>(long&nbsp;pid)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates if the specified process is running</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeNotificationListener(javax.management.NotificationListener)" class="member-name-link">removeNotificationListener</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/javax/management/NotificationListener.html" title="class or interface in javax.management" class="external-link" target="_blank">NotificationListener</a>&nbsp;listener)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Removes a listener from this MBean.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeNotificationListener(javax.management.NotificationListener,javax.management.NotificationFilter,java.lang.Object)" class="member-name-link">removeNotificationListener</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/javax/management/NotificationListener.html" title="class or interface in javax.management" class="external-link" target="_blank">NotificationListener</a>&nbsp;listener,
- <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/javax/management/NotificationFilter.html" title="class or interface in javax.management" class="external-link" target="_blank">NotificationFilter</a>&nbsp;filter,
- <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a>&nbsp;handback)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeNotificationListener(javax.management.NotificationListener)" class="member-name-link">removeNotificationListener</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/javax/management/NotificationListener.html" title="class or interface in javax.management" class="external-link" target="_blank">NotificationListener</a>&nbsp;listener)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes a listener from this MBean.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../MemoryUsage.html" title="class in com.ibm.lang.management">MemoryUsage</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveMemoryUsage()" class="member-name-link">retrieveMemoryUsage</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeNotificationListener(javax.management.NotificationListener,javax.management.NotificationFilter,java.lang.Object)" class="member-name-link">removeNotificationListener</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/javax/management/NotificationListener.html" title="class or interface in javax.management" class="external-link" target="_blank">NotificationListener</a>&nbsp;listener,
+ <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/javax/management/NotificationFilter.html" title="class or interface in javax.management" class="external-link" target="_blank">NotificationFilter</a>&nbsp;filter,
+ <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a>&nbsp;handback)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes a listener from this MBean.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../MemoryUsage.html" title="class in com.ibm.lang.management">MemoryUsage</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveMemoryUsage()" class="member-name-link">retrieveMemoryUsage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Instantiates and returns an instance of <a href="../MemoryUsage.html" title="class in com.ibm.lang.management"><code>MemoryUsage</code></a> object
  that represents the current snapshot of Memory usage statistics.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../MemoryUsage.html" title="class in com.ibm.lang.management">MemoryUsage</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveMemoryUsage(com.ibm.lang.management.MemoryUsage)" class="member-name-link">retrieveMemoryUsage</a><wbr>(<a href="../MemoryUsage.html" title="class in com.ibm.lang.management">MemoryUsage</a>&nbsp;memoryUsageObj)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../MemoryUsage.html" title="class in com.ibm.lang.management">MemoryUsage</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveMemoryUsage(com.ibm.lang.management.MemoryUsage)" class="member-name-link">retrieveMemoryUsage</a><wbr>(<a href="../MemoryUsage.html" title="class in com.ibm.lang.management">MemoryUsage</a>&nbsp;memoryUsageObj)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an updated <a href="../MemoryUsage.html" title="class in com.ibm.lang.management"><code>MemoryUsage</code></a> object that represents the
  current snapshot of Memory usage statistics.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveProcessorUsage()" class="member-name-link">retrieveProcessorUsage</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveProcessorUsage()" class="member-name-link">retrieveProcessorUsage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Instantiates and returns an array of <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management"><code>ProcessorUsage</code></a> objects
  that represent the current snapshot of individual Processor usage times.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveProcessorUsage(com.ibm.lang.management.ProcessorUsage%5B%5D)" class="member-name-link">retrieveProcessorUsage</a><wbr>(<a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>[]&nbsp;procUsageArr)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveProcessorUsage(com.ibm.lang.management.ProcessorUsage%5B%5D)" class="member-name-link">retrieveProcessorUsage</a><wbr>(<a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>[]&nbsp;procUsageArr)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an updated array of <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management"><code>ProcessorUsage</code></a> objects
  that represent the current snapshot of individual Processor usage times.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveTotalProcessorUsage()" class="member-name-link">retrieveTotalProcessorUsage</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveTotalProcessorUsage()" class="member-name-link">retrieveTotalProcessorUsage</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Instantiate and return a new <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management"><code>ProcessorUsage</code></a> object that
  represents the current snapshot of Processor usage statistics.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveTotalProcessorUsage(com.ibm.lang.management.ProcessorUsage)" class="member-name-link">retrieveTotalProcessorUsage</a><wbr>(<a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>&nbsp;procUsageObj)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#retrieveTotalProcessorUsage(com.ibm.lang.management.ProcessorUsage)" class="member-name-link">retrieveTotalProcessorUsage</a><wbr>(<a href="../ProcessorUsage.html" title="class in com.ibm.lang.management">ProcessorUsage</a>&nbsp;procUsageObj)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an updated <a href="../ProcessorUsage.html" title="class in com.ibm.lang.management"><code>ProcessorUsage</code></a> object that represents the
  current snapshot of Processor usage statistics.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendNotification(javax.management.Notification)" class="member-name-link">sendNotification</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/javax/management/Notification.html" title="class or interface in javax.management" class="external-link" target="_blank">Notification</a>&nbsp;notification)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendNotification(javax.management.Notification)" class="member-name-link">sendNotification</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/javax/management/Notification.html" title="class or interface in javax.management" class="external-link" target="_blank">Notification</a>&nbsp;notification)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Send notifications to registered listeners.</div>
 </div>
 </div>
@@ -341,6 +323,9 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link" target="_blank">clone</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link" target="_blank">equals</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link" target="_blank">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link" target="_blank">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link" target="_blank">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link" target="_blank">notify</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link" target="_blank">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link" target="_blank">toString</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link" target="_blank">wait</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link" target="_blank">wait</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link" target="_blank">wait</a></code></div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-com.sun.management.OperatingSystemMXBean">Methods declared in interface&nbsp;com.sun.management.<a href="https://docs.oracle.com/en/java/javase/18/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html" title="class or interface in com.sun.management" class="external-link" target="_blank">OperatingSystemMXBean</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html#getFreePhysicalMemorySize()" title="class or interface in com.sun.management" class="external-link" target="_blank">getFreePhysicalMemorySize</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html#getSystemCpuLoad()" title="class or interface in com.sun.management" class="external-link" target="_blank">getSystemCpuLoad</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html#getTotalPhysicalMemorySize()" title="class or interface in com.sun.management" class="external-link" target="_blank">getTotalPhysicalMemorySize</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.management.OperatingSystemMXBean">Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">OperatingSystemMXBean</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getArch()" title="class or interface in java.lang.management" class="external-link" target="_blank">getArch</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getAvailableProcessors()" title="class or interface in java.lang.management" class="external-link" target="_blank">getAvailableProcessors</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getName()" title="class or interface in java.lang.management" class="external-link" target="_blank">getName</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getSystemLoadAverage()" title="class or interface in java.lang.management" class="external-link" target="_blank">getSystemLoadAverage</a>, <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getVersion()" title="class or interface in java.lang.management" class="external-link" target="_blank">getVersion</a></code></div>
@@ -366,25 +351,6 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the <a href="ExtendedOperatingSystemMXBeanImpl.html" title="class in com.ibm.lang.management.internal"><code>ExtendedOperatingSystemMXBeanImpl</code></a> singleton.</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getFreePhysicalMemorySize()">
-<h3>getFreePhysicalMemorySize</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getFreePhysicalMemorySize</span>()</div>
-<div class="block">Returns the amount of physical memory that is available on the system in bytes.
- Returns -1 if the value is unavailable on this platform or in the case of an error.
- <ul>
- <li>This information is not available on the z/OS platform.
- </ul></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../OperatingSystemMXBean.html#getFreePhysicalMemorySize()">getFreePhysicalMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="../OperatingSystemMXBean.html" title="interface in com.ibm.lang.management">OperatingSystemMXBean</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html#getFreePhysicalMemorySize()" title="class or interface in com.sun.management" class="external-link" target="_blank">getFreePhysicalMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html" title="class or interface in com.sun.management" class="external-link" target="_blank">OperatingSystemMXBean</a></code></dd>
-<dt>Returns:</dt>
-<dd>amount of physical memory available in bytes.</dd>
 </dl>
 </section>
 </li>
@@ -625,61 +591,6 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../OperatingSystemMXBean.html#getProcessVirtualMemorySize()">getProcessVirtualMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="../OperatingSystemMXBean.html" title="interface in com.ibm.lang.management">OperatingSystemMXBean</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getSystemCpuLoad()">
-<h3>getSystemCpuLoad</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getSystemCpuLoad</span>()</div>
-<div class="block">Returns the recent CPU usage for the whole system. This value is a double in
- the [0.0,1.0] interval. A value of 0.0 means all CPUs were idle in the recent
- period of time observed, while a value of 1.0 means that all CPUs were actively
- running 100% of the time during the recent period of time observed. All values
- between 0.0 and 1.0 are possible. The first call to the method always
- returns <a href="../CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a>.ERROR_VALUE
- (-1.0), which marks the starting point. If the Java Virtual Machine's recent CPU
- usage is not available, the method returns a negative error code from
- <a href="../CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a>.
- <p>getSystemCpuLoad might not return the same value that is reported by operating system
- utilities such as Unix <code>top</code> or Windows task manager.</p></div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../OperatingSystemMXBean.html#getSystemCpuLoad()">getSystemCpuLoad</a></code>&nbsp;in interface&nbsp;<code><a href="../OperatingSystemMXBean.html" title="interface in com.ibm.lang.management">OperatingSystemMXBean</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html#getSystemCpuLoad()" title="class or interface in com.sun.management" class="external-link" target="_blank">getSystemCpuLoad</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html" title="class or interface in com.sun.management" class="external-link" target="_blank">OperatingSystemMXBean</a></code></dd>
-<dt>Returns:</dt>
-<dd>A value between 0 and 1.0, or a negative error code from
-         <a href="../CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a> in case
-         of an error. On the first call to the API,
-         <a href="../CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a>.ERROR_VALUE
-         (-1.0) shall be returned.
- <ul>
- <li>Because this information is not available on z/OS, the call returns
- <a href="../CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a>.UNSUPPORTED_VALUE
- (-3.0).
- </ul></dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="../CpuLoadCalculationConstants.html" title="interface in com.ibm.lang.management"><code>CpuLoadCalculationConstants</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getTotalPhysicalMemorySize()">
-<h3>getTotalPhysicalMemorySize</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getTotalPhysicalMemorySize</span>()</div>
-<div class="block">Returns the total available physical memory on the system in bytes.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../OperatingSystemMXBean.html#getTotalPhysicalMemorySize()">getTotalPhysicalMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="../OperatingSystemMXBean.html" title="interface in com.ibm.lang.management">OperatingSystemMXBean</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html#getTotalPhysicalMemorySize()" title="class or interface in com.sun.management" class="external-link" target="_blank">getTotalPhysicalMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/jdk.management/com/sun/management/OperatingSystemMXBean.html" title="class or interface in com.sun.management" class="external-link" target="_blank">OperatingSystemMXBean</a></code></dd>
-<dt>Returns:</dt>
-<dd>the total available physical memory on the system in bytes.</dd>
 </dl>
 </section>
 </li>

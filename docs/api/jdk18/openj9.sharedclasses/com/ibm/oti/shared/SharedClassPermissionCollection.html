@@ -111,7 +111,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SharedClassPermissionCollection</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/PermissionCollection.html" title="class or interface in java.security" class="external-link" target="_blank">PermissionCollection</a></span></div>
-<div class="block">SharedClassPermissionCollection provides permission collection to support SharedClassPermission</div>
+<div class="block">SharedClassPermissionCollection provides permission collection to support SharedClassPermission.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -133,7 +133,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">SharedClassPermissionCollection</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block"><span class="deprecated-label">Deprecated.</span></div>
+</div>
 </div>
 </section>
 </li>
@@ -151,18 +153,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#add(java.security.Permission)" class="member-name-link">add</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/Permission.html" title="class or interface in java.security" class="external-link" target="_blank">Permission</a>&nbsp;perm)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds a permission to this collection</div>
+<div class="block">Adds a permission to this collection.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/Enumeration.html" title="class or interface in java.util" class="external-link" target="_blank">Enumeration</a>&lt;<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/Permission.html" title="class or interface in java.security" class="external-link" target="_blank">Permission</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#elements()" class="member-name-link">elements</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns permissions as an enumeration</div>
+<div class="block">Returns permissions as an enumeration.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#implies(java.security.Permission)" class="member-name-link">implies</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/Permission.html" title="class or interface in java.security" class="external-link" target="_blank">Permission</a>&nbsp;perm)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns <code>true</code> if the permission given is implied by any of the
- permissions in the collection</div>
+ permissions in the collection.</div>
 </div>
 </div>
 </div>
@@ -187,7 +189,10 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>SharedClassPermissionCollection</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SharedClassPermissionCollection</span>()</div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link" target="_blank">@Deprecated</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="element-name">SharedClassPermissionCollection</span>()</div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span></div>
+<div class="block">Constructs a new instance of this class.</div>
 </section>
 </li>
 </ul>
@@ -202,14 +207,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="add(java.security.Permission)">
 <h3>add</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/Permission.html" title="class or interface in java.security" class="external-link" target="_blank">Permission</a>&nbsp;perm)</span></div>
-<div class="block">Adds a permission to this collection
- <p></div>
+<div class="block">Adds a permission to this collection.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/PermissionCollection.html#add(java.security.Permission)" title="class or interface in java.security" class="external-link" target="_blank">add</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/PermissionCollection.html" title="class or interface in java.security" class="external-link" target="_blank">PermissionCollection</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>perm</code> - java.security.Permission.
-                                        The Permission object to add</dd>
+<dd><code>perm</code> - Permission the permission object to add</dd>
 </dl>
 </section>
 </li>
@@ -217,14 +220,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="elements()">
 <h3>elements</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/Enumeration.html" title="class or interface in java.util" class="external-link" target="_blank">Enumeration</a>&lt;<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/Permission.html" title="class or interface in java.security" class="external-link" target="_blank">Permission</a>&gt;</span>&nbsp;<span class="element-name">elements</span>()</div>
-<div class="block">Returns permissions as an enumeration
- <p></div>
+<div class="block">Returns permissions as an enumeration.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/PermissionCollection.html#elements()" title="class or interface in java.security" class="external-link" target="_blank">elements</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/PermissionCollection.html" title="class or interface in java.security" class="external-link" target="_blank">PermissionCollection</a></code></dd>
 <dt>Returns:</dt>
-<dd>java.util.Enumeration.
-                                        The Permissions as an enumeration</dd>
+<dd>Enumeration the permissions as an enumeration</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
@@ -239,17 +240,15 @@ loadScripts(document, 'script');</script>
 <h3>implies</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">implies</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/Permission.html" title="class or interface in java.security" class="external-link" target="_blank">Permission</a>&nbsp;perm)</span></div>
 <div class="block">Returns <code>true</code> if the permission given is implied by any of the
- permissions in the collection
- <p></div>
+ permissions in the collection.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/PermissionCollection.html#implies(java.security.Permission)" title="class or interface in java.security" class="external-link" target="_blank">implies</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/security/PermissionCollection.html" title="class or interface in java.security" class="external-link" target="_blank">PermissionCollection</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>perm</code> - java.security.Permission.
-                                        The permission to check</dd>
+<dd><code>perm</code> - Permission the permission to check</dd>
 <dt>Returns:</dt>
-<dd>java.util.Enumeration.
-                                        The Permissions as an enumeration</dd>
+<dd>boolean whether the given permission is implied by any of the
+ permissions in this collection</dd>
 </dl>
 </section>
 </li>
