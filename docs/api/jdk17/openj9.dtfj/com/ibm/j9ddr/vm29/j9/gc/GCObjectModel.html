@@ -14,12 +14,13 @@
 <meta name="keywords" content="adjustSizeInBytes()">
 <meta name="keywords" content="getClassShape()">
 <meta name="keywords" content="isIndexable()">
-<meta name="keywords" content="isDeadObject()">
-<meta name="keywords" content="isSingleSlotDeadObject()">
-<meta name="keywords" content="getSizeInBytesMultiSlotDeadObject()">
-<meta name="keywords" content="getSizeInBytesSingleSlotDeadObject()">
+<meta name="keywords" content="isHoleObject()">
+<meta name="keywords" content="isSingleSlotHoleObject()">
+<meta name="keywords" content="getSizeInBytesMultiSlotHoleObject()">
+<meta name="keywords" content="getSizeInBytesSingleSlotHoleObject()">
 <meta name="keywords" content="getObjectAlignmentInBytes()">
-<meta name="keywords" content="getSizeInBytesDeadObject()">
+<meta name="keywords" content="getSizeInBytesHoleObject()">
+<meta name="keywords" content="isDarkMatterObject()">
 <meta name="keywords" content="getSizeInBytesWithHeader()">
 <meta name="keywords" content="getTotalFootprintInBytesWithHeader()">
 <meta name="keywords" content="getConsumedSizeInBytesWithHeader()">
@@ -243,19 +244,19 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getScanType(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getScanType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSizeInBytesDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getSizeInBytesDeadObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSizeInBytesHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getSizeInBytesHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the size in bytes of a dead object.</div>
+<div class="block">Returns the size in bytes of a hole object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSizeInBytesMultiSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getSizeInBytesMultiSlotDeadObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSizeInBytesMultiSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getSizeInBytesMultiSlotHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the size, in bytes, of a multi-slot dead object.</div>
+<div class="block">Returns the size, in bytes, of a multi-slot hole object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSizeInBytesSingleSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getSizeInBytesSingleSlotDeadObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSizeInBytesSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getSizeInBytesSingleSlotHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the size, in bytes, of a single slot dead object.</div>
+<div class="block">Returns the size, in bytes, of a single slot hole object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSizeInBytesWithHeader(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getSizeInBytesWithHeader</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
@@ -288,37 +289,42 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns TRUE if an object has been moved after being hashed, FALSE otherwise.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isDeadObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isDarkMatterObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns TRUE if an object is dead, FALSE otherwise.</div>
+<div class="block">Returns TRUE if an object is dark matter, FALSE otherwise.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns TRUE if an object is a hole, FALSE otherwise.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns TRUE if an class is indexable, FALSE otherwise.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns TRUE if an object is indexable, FALSE otherwise.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isInlineContiguousArraylet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isOld(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isOld</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isInlineContiguousArraylet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isOld(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isOld</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns TRUE if an object is old, FALSE otherwise.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isRemembered(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isRemembered</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isRemembered(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isRemembered</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns TRUE if an object is remembered, FALSE otherwise.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isSingleSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isSingleSlotDeadObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns TRUE if an object is a dead single slot object, FALSE otherwise.</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isSingleSlotHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Returns TRUE if an object is a single slot hole object, FALSE otherwise.</div>
 </div>
 </div>
 </div>
@@ -417,7 +423,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the shape of an object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to object whose shape is required.</dd>
+<dd><code>object</code> - Pointer to object whose shape is required.</dd>
 <dt>Returns:</dt>
 <dd>The shape of the object</dd>
 <dt>Throws:</dt>
@@ -433,7 +439,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the shape of a class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to J9Object whose shape is required.</dd>
+<dd><code>clazz</code> - Pointer to J9ClassPointer whose shape is required.</dd>
 <dt>Returns:</dt>
 <dd>The shape of the class</dd>
 <dt>Throws:</dt>
@@ -449,7 +455,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns TRUE if an object is indexable, FALSE otherwise.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>TRUE if an object is indexable, FALSE otherwise</dd>
 <dt>Throws:</dt>
@@ -474,63 +480,63 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="isDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
-<h3>isDeadObject</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDeadObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
+<section class="detail" id="isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<h3>isHoleObject</h3>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isHoleObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
                               throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<div class="block">Returns TRUE if an object is dead, FALSE otherwise.</div>
+<div class="block">Returns TRUE if an object is a hole, FALSE otherwise.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
-<dd>TRUE if an object is dead, FALSE otherwise</dd>
+<dd>TRUE if an object is a hole, FALSE otherwise</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="isSingleSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
-<h3>isSingleSlotDeadObject</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSingleSlotDeadObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
+<section class="detail" id="isSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<h3>isSingleSlotHoleObject</h3>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSingleSlotHoleObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
                                         throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<div class="block">Returns TRUE if an object is a dead single slot object, FALSE otherwise.</div>
+<div class="block">Returns TRUE if an object is a single slot hole object, FALSE otherwise.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
-<dd>TRUE if an object is a dead single slot object, FALSE otherwise</dd>
+<dd>TRUE if an object is a single slot hole object, FALSE otherwise</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="getSizeInBytesMultiSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
-<h3>getSizeInBytesMultiSlotDeadObject</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">getSizeInBytesMultiSlotDeadObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
+<section class="detail" id="getSizeInBytesMultiSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<h3>getSizeInBytesMultiSlotHoleObject</h3>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">getSizeInBytesMultiSlotHoleObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
                                                  throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<div class="block">Returns the size, in bytes, of a multi-slot dead object.</div>
+<div class="block">Returns the size, in bytes, of a multi-slot hole object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
-<dd>The size, in bytes, of a multi-slot dead object</dd>
+<dd>The size, in bytes, of a multi-slot hole object</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="getSizeInBytesSingleSlotDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
-<h3>getSizeInBytesSingleSlotDeadObject</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">getSizeInBytesSingleSlotDeadObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span></div>
-<div class="block">Returns the size, in bytes, of a single slot dead object.</div>
+<section class="detail" id="getSizeInBytesSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<h3>getSizeInBytesSingleSlotHoleObject</h3>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">getSizeInBytesSingleSlotHoleObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span></div>
+<div class="block">Returns the size, in bytes, of a single slot hole object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
-<dd>The size, in bytes, of a single slot dead object</dd>
+<dd>The size, in bytes, of a single slot hole object</dd>
 </dl>
 </section>
 </li>
@@ -546,16 +552,32 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getSizeInBytesDeadObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
-<h3>getSizeInBytesDeadObject</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">getSizeInBytesDeadObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
+<section class="detail" id="getSizeInBytesHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<h3>getSizeInBytesHoleObject</h3>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">getSizeInBytesHoleObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
                                         throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<div class="block">Returns the size in bytes of a dead object.</div>
+<div class="block">Returns the size in bytes of a hole object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
-<dd>The size in bytes of a dead object</dd>
+<dd>The size in bytes of a hole object</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<h3>isDarkMatterObject</h3>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDarkMatterObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
+                                    throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<div class="block">Returns TRUE if an object is dark matter, FALSE otherwise.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>object</code> - Pointer to an object</dd>
+<dt>Returns:</dt>
+<dd>TRUE if an object is dark matter, FALSE otherwise</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
@@ -569,7 +591,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the size of an object, in bytes, including the header.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>The size of an object, in bytes, including the header</dd>
 <dt>Throws:</dt>
@@ -605,7 +627,7 @@ loadScripts(document, 'script');</script>
  object alignment and minimum object size</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>The consumed heap size of an object, in bytes, including the header</dd>
 <dt>Throws:</dt>
@@ -621,7 +643,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the size of an object, in slots, including the header.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>The size of an object, in slots, including the header</dd>
 <dt>Throws:</dt>
@@ -639,7 +661,7 @@ loadScripts(document, 'script');</script>
  object alignment and minimum object size</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>The consumed heap size of an object, in slots, including the header</dd>
 <dt>Throws:</dt>
@@ -655,7 +677,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the age of an object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>The age of the object</dd>
 <dt>Throws:</dt>
@@ -671,7 +693,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns TRUE if an object is remembered, FALSE otherwise.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>TRUE if an object is remembered, FALSE otherwise</dd>
 <dt>Throws:</dt>
@@ -687,7 +709,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the collector bits from object's header.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>collector bits</dd>
 <dt>Throws:</dt>
@@ -703,7 +725,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns TRUE if an object is old, FALSE otherwise.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>TRUE if an object is in the old area, FALSE otherwise</dd>
 <dt>Throws:</dt>
@@ -748,7 +770,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns TRUE if an object has been hashed, FALSE otherwise.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>TRUE if an object has been hashed, FALSE otherwise</dd>
 <dt>Throws:</dt>
@@ -764,7 +786,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns TRUE if an object has been moved after being hashed, FALSE otherwise.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>TRUE if an object has been moved after being hashed, FALSE otherwise</dd>
 <dt>Throws:</dt>
@@ -823,7 +845,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns the size of an object header, in bytes.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objectPtr</code> - Pointer to an object</dd>
+<dd><code>object</code> - Pointer to an object</dd>
 <dt>Returns:</dt>
 <dd>The size of an object header, in bytes.</dd>
 <dt>Throws:</dt>

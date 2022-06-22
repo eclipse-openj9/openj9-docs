@@ -126,18 +126,19 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getDataHelper(java.lang.ClassLoader)">
 <h3>getDataHelper</h3>
 <div class="member-signature"><span class="return-type"><a href="SharedDataHelper.html" title="interface in com.ibm.oti.shared">SharedDataHelper</a></span>&nbsp;<span class="element-name">getDataHelper</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang" class="external-link" target="_blank">ClassLoader</a>&nbsp;owner)</span></div>
-<div class="block">Return a SharedDataHelper for a given ClassLoader.<p>
- Creates a new SharedDataHelper if one cannot be found,
-   otherwise if a SharedDataHelper already exists for the ClassLoader, the existing Helper is returned. <br>
- Returns null if a SecurityManager is installed and there is no SharedClassPermission for the ClassLoader specified.
- <p></div>
+<div class="block">Return a SharedDataHelper for a given ClassLoader.
+
+ <p>Creates a new SharedDataHelper if one cannot be found, otherwise
+ if a SharedDataHelper already exists for the ClassLoader, the
+ existing Helper is returned.
+
+ <p>Returns null if a SecurityManager is installed and there is no
+ SharedClassPermission for the ClassLoader specified.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>owner</code> - ClassLoader.
-                                        The ClassLoader which owns the SharedDataHelper</dd>
+<dd><code>owner</code> - the ClassLoader which owns the SharedDataHelper</dd>
 <dt>Returns:</dt>
-<dd>SharedDataHelper.
-                                        A new or existing SharedDataHelper</dd>
+<dd>SharedDataHelper a new or existing SharedDataHelper</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
