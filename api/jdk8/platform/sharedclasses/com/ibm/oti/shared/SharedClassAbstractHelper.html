@@ -148,7 +148,9 @@ implements <a href="../../../../com/ibm/oti/shared/SharedClassHelper.html" title
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../com/ibm/oti/shared/SharedClassAbstractHelper.html#SharedClassAbstractHelper--">SharedClassAbstractHelper</a></span>()</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../com/ibm/oti/shared/SharedClassAbstractHelper.html#SharedClassAbstractHelper--">SharedClassAbstractHelper</a></span>()</code>
+<div class="block">Constructs a new instance of this class.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -174,7 +176,8 @@ implements <a href="../../../../com/ibm/oti/shared/SharedClassHelper.html" title
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/oti/shared/SharedClassAbstractHelper.html#isSharedClassCookie-byte:A-">isSharedClassCookie</a></span>(byte[]&nbsp;classBytes)</code>
-<div class="block">Utility function.</div>
+<div class="block">Determines whether a byte array being passed to defineClass is a class found
+ in the shared class cache, or a class found locally.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -226,6 +229,7 @@ implements <a href="../../../../com/ibm/oti/shared/SharedClassHelper.html" title
 <li class="blockList">
 <h4>SharedClassAbstractHelper</h4>
 <pre>public&nbsp;SharedClassAbstractHelper()</pre>
+<div class="block">Constructs a new instance of this class.</div>
 </li>
 </ul>
 </li>
@@ -243,14 +247,13 @@ implements <a href="../../../../com/ibm/oti/shared/SharedClassHelper.html" title
 <li class="blockList">
 <h4>isSharedClassCookie</h4>
 <pre>public&nbsp;boolean&nbsp;isSharedClassCookie(byte[]&nbsp;classBytes)</pre>
-<div class="block">Utility function. Determines whether a byte array being passed to defineClass is a class found
- in the shared class cache, or a class found locally.
- <p></div>
+<div class="block">Determines whether a byte array being passed to defineClass is a class found
+ in the shared class cache, or a class found locally.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>classBytes</code> - A potential shared class cookie</dd>
+<dd><code>classBytes</code> - a potential shared class cookie</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if bytes are a cookie.</dd>
+<dd>true if bytes are a cookie</dd>
 </dl>
 </li>
 </ul>
@@ -261,15 +264,15 @@ implements <a href="../../../../com/ibm/oti/shared/SharedClassHelper.html" title
 <li class="blockList">
 <h4>setSharingFilter</h4>
 <pre>public&nbsp;void&nbsp;setSharingFilter(<a href="../../../../com/ibm/oti/shared/SharedClassFilter.html" title="interface in com.ibm.oti.shared">SharedClassFilter</a>&nbsp;filter)</pre>
-<div class="block">Sets the SharedClassFilter for a helper instance.  Supplying
- null removes any filter that is currently associated with the
- helper instance.
- <p></div>
+<div class="block">Sets the SharedClassFilter for a helper instance.
+
+ <p>Supplying null removes any filter that is currently associated
+ with the helper instance.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/ibm/oti/shared/SharedClassHelper.html#setSharingFilter-com.ibm.oti.shared.SharedClassFilter-">setSharingFilter</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/ibm/oti/shared/SharedClassHelper.html" title="interface in com.ibm.oti.shared">SharedClassHelper</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>filter</code> - The filter to use when finding and storing classes.</dd>
+<dd><code>filter</code> - the filter to use when finding and storing classes</dd>
 </dl>
 </li>
 </ul>
@@ -280,13 +283,12 @@ implements <a href="../../../../com/ibm/oti/shared/SharedClassHelper.html" title
 <li class="blockList">
 <h4>getSharingFilter</h4>
 <pre>public&nbsp;<a href="../../../../com/ibm/oti/shared/SharedClassFilter.html" title="interface in com.ibm.oti.shared">SharedClassFilter</a>&nbsp;getSharingFilter()</pre>
-<div class="block">Returns the SharedClassFilter associated with this helper.
- <p></div>
+<div class="block">Returns the SharedClassFilter associated with this helper.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/ibm/oti/shared/SharedClassHelper.html#getSharingFilter--">getSharingFilter</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/ibm/oti/shared/SharedClassHelper.html" title="interface in com.ibm.oti.shared">SharedClassHelper</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The filter instance, or null if none is associated</dd>
+<dd>the filter instance, or null if none is associated</dd>
 </dl>
 </li>
 </ul>
