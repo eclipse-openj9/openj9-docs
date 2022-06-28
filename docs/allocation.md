@@ -89,7 +89,7 @@ The overall size of the LOA is calculated when the heap is initialized, and reca
 
 You can control the size of the LOA by using the [`-Xloainitial`, `-Xloaminimum`, and `-Xloamaximum`](xloaminimum.md) command line options. If the LOA is not used, the garbage collector contracts the LOA after a few cycles, down to the value of `-Xloaminimum`. You can also specify [`-Xnoloa`](xloa.md) to prevent an LOA being created.
 
-An SOA and LOA are used by the OpenJ9 GC policies: `gencon`, `optavgpause` and `optthruput`. For the `gencon` policy, the LOA and SOA are contained within the tenure area, which is designated for ageing objects. For more information about policies, see [Garbage collection policies](gc.md).
+An SOA and LOA are used by the OpenJ9 GC policies: `gencon`, `optavgpause`, and `optthruput`. For the `gencon` policy, the LOA and SOA are contained within the tenure area, which is designated for ageing objects. For more information about policies, see [Garbage collection policies](gc.md).
 
 ### Region-based heaps
 
@@ -109,7 +109,7 @@ There are a number of advantages to using arraylets.
 
 - Additionally, the garbage collector never needs to move an arraylet leaf once it has been allocated. The cost of relocating an array is therefore limited to the cost of relocating the spine, so large arrays do not contribute to higher defragmentation times.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Despite the general advantage of using arraylets, they can slow down processing when the Java Native Interface (JNI) is being used. The JNI provides flexibility by enabling Java programs to call native code; for example C or C++, and if direct addressability to the inside of an object is needed, a JNI critical section can be used. However, that requires the object to be in a contiguous region of memory, or at least _appear_ to be so. The JNI therefore creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Despite the general advantage of using arraylets, they can slow down processing when the Java Native Interface (JNI) is being used. The JNI provides flexibility by enabling Java programs to call native code; for example, C or C++, and if direct addressability to the inside of an object is needed, a JNI critical section can be used. However, that requires the object to be in a contiguous region of memory, or at least _appear_ to be so. The JNI, therefore, creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.
 
 ## Heap sizing
 
@@ -139,13 +139,26 @@ Heap contraction occurs under certain conditions and might be preceded by heap c
 
 When the heap contracts, physical memory is not released unless paging is supported by the underlying operating system.
 
+#### `balanced` GC policy
+
+For the `balanced` GC policy, if the `-Xminf`/`-Xmaxf` and/or `-Xmint`/`-Xmaxt` criteria are not being met and this results in a heap resize, then the heap resize that occurs, happens only on non-eden heap (similar to how these options apply to tenure part for gencon).
+
+The non-eden heap resizing occurs at the end of a GMP cycle, or global collection. At this point, heap resizing decision is made by observing both `-Xmint`/`-Xmaxt` and `-Xminf`/`-Xmaxf` and comparing them to the appropriate proportion of time spent in GC, and free heap respectively.
+
+If either `-Xmint`/`-Xmaxt` and/or `-Xminf`/`-Xmaxf` criteria are not being met, there is no guarantee that a heap resize will occur. The heap sizing logic is looking at the following two things:
+
+- if % of time in GC pauses is between `-Xmint`/`-Xmaxt`. If it's greater than `-Xmaxt`, the VM will try to expand the heap, if it's less than `-Xmint`, then contract it.
+- if % of free heap is between `-Xminf`/`-Xmaxf`. If it's too high, i.e. greater than `-Xmaxf`(too much free), heap size will contract, if too low, i.e. lesser than `-Xminf`, it will expand.
+
+Since these two criteria may be providing opposite recommendations (for example, lots of free memory, but high % of time in GC) causing oscillations in heap size, the `balanced` GC heap sizing logic finds a balance between these two criteria.
+
 
 ### Compressed references
 
 On 64-bit systems, the VM can use compressed references to decrease the size of Java objects and make better use of the available space in the Java heap. By storing objects in a 32-bit representation, the object size is identical to that in a 32-bit VM, which creates a smaller memory footprint. These 4 byte (32-bit) compressed references are converted to 64-bit values at runtime with minimal overhead. Smaller objects enable larger heap sizes that result in less frequent garbage collection and improve memory cache utilization. Overall, the performance of 64-bit applications that store compressed rather than uncompressed 64-bit object references is significantly improved.
 
 Compressed references are used by default when the maximum Java heap size is in the range 0 - 57 GB on AIX&reg;, Linux&reg;, and Windows&reg; systems. The upper limit is also 57 GB on z/OS&reg; systems that have APAR OA49416
-installed (25 GB without APAR OA49416). All GC policies observe these limits except for the [`metronome`](gc.md#metronome-policy) policy, which can only support a heap size of up to 25 GB with compressed references.
+installed (25 GB without APAR OA49416). All GC policies observe these limits except for the [`metronome`](gc.md#metronome-policy) policy, which can support a heap size of up to 25 GB only with compressed references.
 
 When the VM uses compressed references, classes, threads, and monitors are stored in the lowest 4 GB of address space. However, this area of memory is also used by native libraries, the operating system, and for small Java heaps. If you receive native memory `OutOfMemoryError` exceptions in the lowest 4 GB when running with compressed references enabled, these errors might result from the lowest 4 GB of address space becoming full. Try specifying a large heap with the [`-Xmx`](xms.md) option, which puts the Java heap into a higher area of address space or using the [`-Xmcrs`](xmcrs.md) option to reserve space in the lowest 4 GB of address space for compressed references.
 

@@ -38,14 +38,16 @@ If the free space is above or below these limits, the OpenJ9 VM attempts to adju
 
 The value range is 0.0 - 1.0.
 
+- For the `balanced` GC policy, these values apply only to the non-eden space part of the heap. The non-eden heap resizing decision is made by observing both `-Xmint`/`-Xmaxt` and `-Xminf`/`-Xmaxf`. Free memory in eden space is not considered for `-Xminf`/`-Xmaxf` purposes.
 - For the `gencon` GC policy, the values apply only to the tenure part of the heap and only at global GC points.
 - For the `optthruput` and `optavgpause` GC policies, these values apply to the whole heap at every GC point.
-
-This option cannot be used with the metronome GC policy (`-Xgcpolicy:metronome`) because the heap is always fully expanded.
+- This option cannot be used with the metronome GC policy (`-Xgcpolicy:metronome`) because the heap is always fully expanded.
 
 ## See also
 
 - [Heap expansion and contraction](allocation.md#expansion-and-contraction)
+- [Garbage collection policies](gc.md)
+
 
 
 <!-- ==== END OF TOPIC ==== xminf.md ==== -->
