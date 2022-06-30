@@ -49,13 +49,13 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 | [`-Xverify:mode`](xverify.md)                                    | Enables or disables the verifier.                                                                                                            |
 | [`-XX:ConcGCThreads`](xxconcgcthreads.md)                        | Configures the number of GC mutator background threads.                                                                                      |
 | [`-XX:[+|-]AlwaysPreTouch`](xxalwayspretouch.md)                 | Enables/disables committing of memory during initial heap inflation or heap expansion.                                                          |
-| [`-XX:[+|-]CompactStrings`](xxcompactstrings.md)                 | Enables/disables `String` compression                                                                                                        |
-| ![Start of content that applies to Java 16 plus](cr/java16plus.png) [`-XX:DiagnoseSyncOnValueBasedClasses=<number>`](xxdiagnosesynconvaluebasedclasses.md) | Configure warnings for value-based classes |
+| [`-XX:[+|-]CompactStrings`](xxcompactstrings.md)                 | Enables/disables `String` compression.:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Unlike HotSpot, this option is disabled by default in OpenJ9.                                                                                                  |
+| ![Start of content that applies to Java 16 plus](cr/java16plus.png) [`-XX:DiagnoseSyncOnValueBasedClasses=<number>`](xxdiagnosesynconvaluebasedclasses.md) | Configure warnings for value-based classes. |
 | [`-XX:[+|-]DisableExplicitGC`](xxdisableexplicitgc.md)           | Enables/disables explicit `System.gc()` calls. (Alias for [`-Xdisableexplicitgc` / `-Xenableexplicitgc`](xenableexplicitgc.md))                       |
 | [`-XX:[+|-]ExitOnOutOfMemoryError`](xxexitonoutofmemoryerror.md) | Triggers VM shutdown on out-of-memory conditions.                                                                                            |
 | [`-XX:[+|-]HeapDumpOnOutOfMemory`](xxheapdumponoutofmemory.md)   | Enables/disables dumps on out-of-memory conditions.                                                                                          |
 | [`-XX:HeapDumpPath`](xxheapdumppath.md)                          | Specifies a directory for all VM dumps including heap dumps, javacores, and system dumps. (Alias for [`-Xdump:directory`](xdump.md#syntax))  |
-| [`-XX:[+|-]IgnoreUnrecognizedVMOptions`](xxignoreunrecognizedvmoptions.md) | Specifies whether to ignore unrecognized top-level VM options |                                                                    |
+| [`-XX:[+|-]IgnoreUnrecognizedVMOptions`](xxignoreunrecognizedvmoptions.md) | Specifies whether to ignore unrecognized top-level VM options. |                                                                    |
 | [`-XX:InitialHeapSize`](xxinitialheapsize.md)                    | Sets the initial size of the heap. (Alias for [`-Xms`](xms.md))                                                                              |
 | [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md)          | Sets the initial size of the Java heap as a percentage of total memory.                                                                      |
 | [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md)            | Sets a limit on the amount of memory that can be reserved for all direct byte buffers.                                                       |
@@ -100,7 +100,8 @@ You can set the following options to make OpenJ9 behave in the same way as HotSp
 |---------------------------------------------|-----------------------------------------------------------------|
 | ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) [`-Djava.lang.string.substring.nocopy=true`](djavalangstringsubstringnocopy.md) |  Avoid String sharing by `String.substring()`. |
 | [`-Xnuma:none`](xnumanone.md)               | Disable non-uniform memory architecture (NUMA) awareness.       |
-| [`-XXHandleSIGABRT`](xxhandlesigabrt.md)    | Force handling of SIGABRT signals to be compatible with HotSpot |
+| ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png)[`-XX:+CompactStrings`](xxcompactstrings.md)| Enables `String` compression.                 |
+| [`-XXHandleSIGABRT`](xxhandlesigabrt.md)    | Force handling of SIGABRT signals to be compatible with HotSpot. |
 
 
 ## Compatible environment variables
