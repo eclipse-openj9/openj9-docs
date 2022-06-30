@@ -69,6 +69,25 @@ If a JITServer server crashes, the client is forced to perform compilations loca
 
 You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x or 1.1.x (JITServer technology currently does not support OpenSSL 3.0.x). To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see [-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts](xxjitserversslcert.md).
 
+## Monitoring in the cloud
+
+For performance monitoring, JITServer can optionally export custom metrics on an http port. This feature is enabled by `-XX:+JITServerMetrics` command line option. A monitoring agent like [Prometheus](https://prometheus.io/) can scrape these performance metrics by issuing an http `GET` request to the following url: `http://jitserveraddress:port/metrics`. The default value of the port is 38500, but you can change it with [-XX:JITServerMetricsPort=<NNN>](xxjitservermetricsport.md) command line option. Note that there is a limit of maximum four concurrent `GET` requests at any given time.
+
+The metrics exported by JITServer are sent in clear text and follow the [OpenMetrics](https://openmetrics.io/) exposition format, which is 100% compatible with Prometheus. In future releases, the metrics sent by JITServer will offer the possibility of encryption.
+
+Currently, JITServer exports the following custom metrics:
+
+ Metric name | Explanation
+ ----------- | -----------
+jitserver_cpu_utilization   | Cpu utilization of the JITServer process (100 == 1 vCPU)
+jitserver_available_memory  | Available physical memory for the JITServer process
+jitserver_connected_clients | Number of client JVMs connected to JITServer
+jitserver_active_threads    | Number of active compilation threads
+
+For more information about the options related to this feature see [-XX:[+|-]JITServerMetrics](xxjitservermetrics.md)  and  [-XX:JITServerMetricsPort](xxjitservermetricsport.md).
+
+
+
 ## Tuning JITServer
 
 For best practices regarding JITServer configuration and tuning, please see the document [JITServer tuning and practical considerations](jitserver_tuning.md).
