@@ -30,7 +30,7 @@ The following new features and notable changes since version 0.29.0 are included
 - [Changes to the shared classes cache generation number](#changes-to-the-shared-classes-cache-generation-number)
 - [Ignored options now captured in java dumps](#ignored-options-captured-in-java-dumps)
 - [New `-XX:[+|-]EnsureHashed` option added](#new-xx-ensurehashed-option-added)
-- [Redesigned heap resizing for balanced GC policy](#redesigned-heap-resizing-for-balanced-gc-policy)
+- [Redesigned heap resizing for the the `balanced` GC policy](#redesigned-heap-resizing-for-the-balanced-gc-policy)
 
 ## Features and changes
 
@@ -46,7 +46,7 @@ The format of classes that are stored in the shared classes cache is changed, wh
 
 ### Ignored options captured in java dumps
 
-For improved compatibility with other Java implementations, OpenJ9 ignores many command-line options. If any were ignored, they are now listed in java dump files. For example, this command
+For improved compatibility with other Java implementations, OpenJ9 ignores many command-line options. If any were ignored, they are now listed in the java dump files. For example, the command
 <pre>
 java -Xdump:java:events=vmstop -XX:+UseCompressedOop -XX:CompressedClassSpaceSize=528482304 -version
 </pre>
@@ -61,28 +61,26 @@ would yield the following in the <tt>ENVINFO</tt> section after the complete lis
 
 This option specifies/unspecifies classes of objects that will be hashed and extended with a hash slot upon object creation or first move. This option may improve performance for applications that frequently hash objects of a certain type. See [-XX:[+|-]EnsureHashed](xxensurehashed.md) for more details.
 
-### Redesigned heap resizing for balanced GC policy
+### Redesigned heap resizing for the `balanced` GC policy
 
-Heap resizing heuristics have been redesigned for balanced GC. This includes both total heap resizing including Eden and non-Eden components indenpendantly, and also balancing between these two components when heap is fully expanded. The heuristics now combine both CPU overhead (for both Partial GCs and Global Mark Phase) and heap occupancy criteria. The balancing between Eden and non-Eden for fully expanded heaps is far more dynamic (instead of being mostly fixed to ratio 1:4).
+Heap resizing heuristics have been redesigned for the `balanced` GC policy. This includes both total heap resizing including eden and non-eden components independently, and also balancing between these two components when the heap is fully expanded. The heuristics now combine both the CPU overhead (for Partial GCs as well as Global Mark Phase) and the heap occupancy criteria. The balancing between eden and non-eden for fully expanded heaps is far more dynamic (instead of being mostly fixed in the ratio 1:4).
 
-As a consequence there should typically be less need for heap sizing tuning options, most notably for Eden sizing options [-Xmn/mns/mnx](xmn.md). 
+As a consequence, there should typically be less need for heap sizing tuning options, most notably for eden sizing options [-Xmn, -Xmns, and -Xmnx](xmn.md). 
 
-Also, a new soft limit pause target is added for Partial GCs, that defaults to 200ms. This criteria is combined with PGC CPU overhead critera for a balanced compromise between minimizing footprint, maximizing throughput and meeting the paused time target.
+Also, a new soft limit pause target is added for Partial GCs, which defaults to 200ms. This criterion is combined with the PGC CPU overhead criterion for a balanced compromise between minimizing footprint, maximizing throughput, and meeting the paused time target.
 
-More details about the new heurstics can be found at:
+More details about the new heuristics can be found at:
 
 [https://blog.openj9.org/2021/09/24/balanced-gc-performance-improvements-eden-heap-sizing-improvements/](https://blog.openj9.org/2021/09/24/balanced-gc-performance-improvements-eden-heap-sizing-improvements/)
 
-The heuristcs now obey existing options
+The heuristics now obey the following existing options that were previously used for the `optthruput`, `optavgpause`, and `gencon` GC policies:
 
-[-Xmint/-Xmaxt](xmint.md) and <br /> 
-[-Xgc:dnssExpectedTimeRatioMaximum/Minimum](xgc.md#dnssexpectedtimeratiomaximum)
+- [-Xmint/-Xmaxt](xmint.md)  
+- [-Xgc:dnssExpectedTimeRatioMaximum/Minimum](xgc.md#dnssexpectedtimeratiomaximum)
 
-previously used for optthruput/optavgpause/gencon GC policies and also
+The heuristics also use the [-Xgc:targetPausetime](xgc.md#targetpausetime) option that was previously used only for the `metronome` GC policy.
 
-[-Xgc:targetPausetime](xgc.md#targetpausetime)
-
-previosly used only for Metronome GC policy.
+For more information about GC policies, see [Garbage collection policies](gc.md).
 
 
 ## Known problems and full release information
