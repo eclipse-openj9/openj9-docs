@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.30.0 are included
 - ![Start of content that applies to Java 11](cr/java11.png) [XL C++ Runtime required on AIX](#xl-c-runtime-required-on-aix)
 - ![Start of content that applies to Java 17 plus](cr/java17plus.png) [Linux reference compiler updated to gcc 10.3](#linux-reference-compiler-updated-to-gcc-103)
 - [Control groups v2 support](#control-groups-v2-support)
+- ![Start of content that applies to Java 17 plus](cr/java17plus.png) [Default stack size increased on x64 platforms](#default-stack-size-increased-on-x64-platforms)
 
 ## Features and changes
 
@@ -53,6 +54,10 @@ Linux builds for all platforms now use gcc 10.3 instead of gcc 7.5. See the list
 ### Control groups v2 support
 
 The Linux kernel has two variants of [control groups (cgroups): v1 and v2](https://man7.org/linux/man-pages/man7/cgroups.7.html). Many Linux operating systems are gradually transitioning from cgroups v1 to v2 as their default choice. Now, OpenJ9 has added cgroups v2 support which is identical to the support for cgroups v1.
+
+### ![Start of content that applies to Java 17 plus](cr/java17plus.png) Default stack size increased on x64 platforms
+
+The default OS stack size, as controlled by [-Xmso](xmso.md), increased from 256 KB to 512 KB on Windows x64, macOS x64, and Linux x64.
 
 ## Known problems and full release information
 
