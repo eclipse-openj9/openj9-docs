@@ -24,11 +24,18 @@
 # JITServer tuning and practical considerations
 
 ## Server caches
+
+### Client-session caches
+
 Multiple client JVMs can be connected at the same time to a single JIT server. For each client, the server maintains a client-session cache with information about the environment the client is running in (Java classes, class hierarchy, profiling information, JVM options, etc.). Typically, the information in these caches is kept separately, per client. However, if you specify the `-XX:+JITServerShareROMClasses` option, the read-only part of the Java classes (ROMClasses in OpenJ9 parlance) is shared between the different clients. This option can generate memory savings at the server when the connected clients run identical or similar Java applications.
 
 The client-session caches are deleted when the clients terminate, but this can happen only if the clients are shutdown gracefully, giving them the opportunity to send a termination message to the server. To address the scenario of clients ending abruptly, the server also deletes the cache for a client that hasn’t issued a compilation request for 1000 minutes, or 5 minutes under memory pressure. If needed, you can change these values with the following options:
 
     -Xjit:oldAge=<time-in-ms>,oldAgeUnderLowMemory=<time-in-ms>
+
+### AOT caches
+
+If you specify the [`-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md) option, the JITServer server caches method bodies that it compiles using AOT compilation. When a client requests an AOT compilation for a method that exists in the cache, the server doesn't have to recompile it, which improves CPU usage of the server and of the whole cluster.
 
 ## Number of concurrent clients
 
@@ -46,11 +53,11 @@ Another idea is to use the `-Xjit:enableJITServerHeuristics` command line option
 
 Roughly speaking, the server uses two types of memory:
 1. "Scratch" memory. This is allocated during a compilation (for JIT internal data structures) and released to the operating system at the end of the compilation.
-2. "Persistent" memory. This is used for client-session caches and only gets deleted when a client terminates gracefully (or when JITServer purging mechanism is triggered).
+2. "Persistent" memory. This is used for client-session caches and gets deleted only when a client terminates gracefully (or when the JITServer purging mechanism is triggered).
 
-The total amount of scratch memory at any given moment depends on how many compilations are in progress and how expensive those compilations are. To reduce this amount, you can start the clients in a staggered fashion as suggested above, or reduce the number of compilation threads per client. Note that the latter already happens automatically: when the server senses that it is about to run out of memory, it provides feedback to the connected clients to reduce their number of active compilation threads.
+The total amount of scratch memory at any given moment depends on how many compilations are in progress and how expensive those compilations are. To reduce this amount, you can start the clients in a staggered fashion as suggested previously, or reduce the number of compilation threads per client. Note that the latter already happens automatically: when the server senses that it is about to run out of memory, it provides feedback to the connected clients to reduce their number of active compilation threads.
 
-To reduce the amount of persistent memory you can use the techniques described in section [Server caches](#server-caches).
+To reduce the amount of persistent memory, you can use the techniques described in section [Server caches](#server-caches).
 
 ## Traffic encryption
 
@@ -66,7 +73,7 @@ This option instructs the client JVM to perform the synchronous compilations loc
 
 ## Session affinity
 
-For technical reasons, a client JVM must use a single JITServer at a time. In a Kubernetes environment, where a JITServer service can be backed up by several server instances, you can satisfy this requirement by using session affinity. Note that if a server crashes (or gets terminated by the Kubernetes controller) the clients can connect to another server instance. This scenario imposes some performance penalty because the client-session caches that the server maintains need to be built anew. Below we show an example of a Kubernetes service definition that uses sessionAffinity:
+For technical reasons, a client JVM must use a single JITServer at a time. In a Kubernetes environment, where a JITServer service can be backed up by several server instances, you can satisfy this requirement by using session affinity. Note that if a server crashes (or gets terminated by the Kubernetes controller) the clients can connect to another server instance. This scenario imposes some performance penalty because the client-session caches that the server maintains need to be built anew. Following is an example of a Kubernetes service definition that uses sessionAffinity:
 
 ```
 apiVersion: v1
@@ -91,9 +98,19 @@ selector:
 
 If the client JVM does not find a compatible server to connect to, compilations are performed locally, by the client itself. To account for the case where the server is temporarily unavailable (e.g, server crash followed by Kubernetes launching another server instance), from time to time the client retries to connect to a server at the indicated address and port. The retry mechanism uses an exponential back-off where the retry interval is doubled with each unsuccessful attempt.
 
-## Monitoring
+## Monitoring in the cloud
 
-There are several ways to inspect the behavior of a JITServer instance, but all are based on the [OpenJ9 verbose logging facility](https://blog.openj9.org/2018/06/07/reading-verbose-jit-logs/). Note that if the name of the verbose log is not specified, the relevant information is printed to stderr.
+### Performance metrics
+
+You can enable the provision of performance metrics by specifying the `-XX:+JITServerMetrics` command line option. After enabling this option, you can use a monitoring tool that follows the OpenMetrics standard, such as Prometheus, to collect the data by issuing an http `GET` request to the following url: `http://jitserveraddress:port/metrics`. 
+
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** There is a limit of maximum four concurrent `GET` requests at any given time.
+
+For more information, including the types of metrics that are provided, see the [`-XX:[+|-]JITServerMetrics`](xxjitservermetrics.md) topic.
+
+### Verbose logging
+
+You can inspect the behavior of a JITServer instance by using the [OpenJ9 verbose logging facility](https://blog.openj9.org/2018/06/07/reading-verbose-jit-logs/). Note that if the name of the verbose log is not specified, the relevant information is printed to stderr.
 When you use the `-XX:+JITServerLogConnections` command line option, the server prints a message to the verbose log every time a new client JVM connects to it or disconnects from it. This is an easy way to determine that the clients are able to reach the server. Example of output:
 ```
 #JITServer: t= 74232 A new client (clientUID=14692403771747196083) connected. Server allocated a new client session.

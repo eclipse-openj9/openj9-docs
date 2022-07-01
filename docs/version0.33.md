@@ -27,6 +27,7 @@
 The following new features and notable changes since version 0.30.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [JITServer AOT caching and performance metrics](#jitserver-aot-caching-and-performance-metrics)
 - ![Start of content that applies to Java 11](cr/java11.png) [XL C++ Runtime required on AIX](#xl-c-runtime-required-on-aix)
 - ![Start of content that applies to Java 17 plus](cr/java17plus.png) [Linux reference compiler updated to gcc 10.3](#linux-reference-compiler-updated-to-gcc-103)
 - [Control groups v2 support](#control-groups-v2-support)
@@ -41,6 +42,13 @@ OpenJ9 Windows&reg; builds for OpenJDK 8 are now compiled with Microsoft&reg; Vi
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
+### JITServer AOT caching and performance metrics
+
+The JITServer technology feature is updated to provide the following new capabilities, which are disabled by default:
+
+- The caching of AOT-compiled methods on the server. The AOT cache improves CPU usage when clients request the compilation of methods that were previously cached. Use the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) command line option to enable this feature.
+- The provision of metrics to a monitoring tool that follows the OpenMetrics standard. The following metrics are available for a JITServer server: CPU usage, available memory, number of clients connected, and number of active compilation threads. Use the [`-XX:+JITServerMetrics`](xxjitservermetrics.md) command line option to enable this feature.
+
 ### ![Start of content that applies to Java 11](cr/java11.png) XL C++ Runtime required on AIX
 
 AIX OpenJ9 builds now require version 16.1 of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
@@ -52,7 +60,7 @@ Linux builds for all platforms now use gcc 10.3 instead of gcc 7.5. See the list
 
 ### Control groups v2 support
 
-The Linux kernel has two variants of [control groups (cgroups): v1 and v2](https://man7.org/linux/man-pages/man7/cgroups.7.html). Many Linux operating systems are gradually transitioning from cgroups v1 to v2 as their default choice. Now, OpenJ9 has added cgroups v2 support which is identical to the support for cgroups v1.
+The Linux kernel has two variants of [control groups (cgroups): v1 and v2](https://man7.org/linux/man-pages/man7/cgroups.7.html). Many Linux operating systems are gradually transitioning from cgroups v1 to v2 as their default choice. Now, OpenJ9 has added cgroups v2 support, which is identical to the support for cgroups v1.
 
 ## Known problems and full release information
 
