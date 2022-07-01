@@ -24,11 +24,32 @@
 # JITServer tuning and practical considerations
 
 ## Server caches
+
+### Client-session caches
+
 Multiple client JVMs can be connected at the same time to a single JIT server. For each client, the server maintains a client-session cache with information about the environment the client is running in (Java classes, class hierarchy, profiling information, JVM options, etc.). Typically, the information in these caches is kept separately, per client. However, if you specify the `-XX:+JITServerShareROMClasses` option, the read-only part of the Java classes (ROMClasses in OpenJ9 parlance) is shared between the different clients. This option can generate memory savings at the server when the connected clients run identical or similar Java applications.
 
 The client-session caches are deleted when the clients terminate, but this can happen only if the clients are shutdown gracefully, giving them the opportunity to send a termination message to the server. To address the scenario of clients ending abruptly, the server also deletes the cache for a client that hasn’t issued a compilation request for 1000 minutes, or 5 minutes under memory pressure. If needed, you can change these values with the following options:
 
     -Xjit:oldAge=<time-in-ms>,oldAgeUnderLowMemory=<time-in-ms>
+
+### JITServer AOT cache
+
+ The JITServer technology can cache AOT compiled methods at the server.
+ The JITServer can, therefore, avoid carrying out an AOT compilation when a compatible AOT method body already exists in the cache, thereby saving CPU resource and improving remote compilation latency. This mechanism works in conjunction with the [dynamic AOT technology](https://www.eclipse.org/openj9/docs/aot/) at the client and therefore the client needs to have the [shared class cache](https://www.eclipse.org/openj9/docs/shrc/) (SCC) enabled (the SCC is the repository for the AOT code).
+
+ When the JITServer receives an AOT compilation request, it checks its AOT cache for a compatible compiled method body. If one is not found, the server performs the AOT compilation, sends the response to the client JVM, then serializes the compiled method and stores it in its local AOT cache, for future use. If a compatible compiled method is found, the server sends the client the serialized compiled method from its cache, thus avoiding a compilation. The client deserializes the response, stores the result in its local SCC, and loads the compiled method as a regular dynamic AOT code.
+
+ To enable this feature, specify the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) command line option, both at the server and at the client JVM.
+
+ A JITServer instance can have several AOT caches, each with its own name. This addresses the situation when client JVMs with significantly different profiles of execution use the same JITServer instance. A client JVM can indicate a specific AOT cache it wants to use by providing its name with the following command line option [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md). The default is to use a nameless cache.
+
+ Current limitations:
+
+ - The amount of memory that an AOT cache can consume at the server is not limited. The number of caches that a JITServer can hold is also not limited.
+ - The AOT cache is a non-persistent in-memory cache. If the JITServer instance ends, the cache content is lost.
+ - AOT cache entries are not shared between different JITServer instances.
+ - Caching works only for AOT compilation requests. For this reason, when JITServer AOT caching is enabled, the client JVM will attempt to generate as many AOT requests as possible.
 
 ## Number of concurrent clients
 
@@ -46,11 +67,11 @@ Another idea is to use the `-Xjit:enableJITServerHeuristics` command line option
 
 Roughly speaking, the server uses two types of memory:
 1. "Scratch" memory. This is allocated during a compilation (for JIT internal data structures) and released to the operating system at the end of the compilation.
-2. "Persistent" memory. This is used for client-session caches and only gets deleted when a client terminates gracefully (or when JITServer purging mechanism is triggered).
+2. "Persistent" memory. This is used for client-session caches and gets deleted only when a client terminates gracefully (or when the JITServer purging mechanism is triggered).
 
-The total amount of scratch memory at any given moment depends on how many compilations are in progress and how expensive those compilations are. To reduce this amount, you can start the clients in a staggered fashion as suggested above, or reduce the number of compilation threads per client. Note that the latter already happens automatically: when the server senses that it is about to run out of memory, it provides feedback to the connected clients to reduce their number of active compilation threads.
+The total amount of scratch memory at any given moment depends on how many compilations are in progress and how expensive those compilations are. To reduce this amount, you can start the clients in a staggered fashion as suggested previously, or reduce the number of compilation threads per client. Note that the latter already happens automatically: when the server senses that it is about to run out of memory, it provides feedback to the connected clients to reduce their number of active compilation threads.
 
-To reduce the amount of persistent memory you can use the techniques described in section [Server caches](#server-caches).
+To reduce the amount of persistent memory, you can use the techniques described in section [Server caches](#server-caches).
 
 ## Traffic encryption
 
@@ -66,7 +87,7 @@ This option instructs the client JVM to perform the synchronous compilations loc
 
 ## Session affinity
 
-For technical reasons, a client JVM must use a single JITServer at a time. In a Kubernetes environment, where a JITServer service can be backed up by several server instances, you can satisfy this requirement by using session affinity. Note that if a server crashes (or gets terminated by the Kubernetes controller) the clients can connect to another server instance. This scenario imposes some performance penalty because the client-session caches that the server maintains need to be built anew. Below we show an example of a Kubernetes service definition that uses sessionAffinity:
+For technical reasons, a client JVM must use a single JITServer at a time. In a Kubernetes environment, where a JITServer service can be backed up by several server instances, you can satisfy this requirement by using session affinity. Note that if a server crashes (or gets terminated by the Kubernetes controller) the clients can connect to another server instance. This scenario imposes some performance penalty because the client-session caches that the server maintains need to be built anew. Following is an example of a Kubernetes service definition that uses sessionAffinity:
 
 ```
 apiVersion: v1
@@ -89,11 +110,21 @@ selector:
 
 ## Resilience
 
-If the client JVM does not find a compatible server to connect to, compilations are performed locally, by the client itself. To account for the case where the server is temporarily unavailable (e.g, server crash followed by Kubernetes launching another server instance), from time to time the client retries to connect to a server at the indicated address and port. The retry mechanism uses an exponential back-off where the retry interval is doubled with each unsuccessful attempt.
+If the client JVM does not find a compatible server to connect to, compilations are performed locally, by the client itself. To account for the case where the server is temporarily unavailable (for example, server crash followed by Kubernetes launching another server instance), from time to time the client retries to connect to a server at the indicated address and port. The retry mechanism uses an exponential back-off where the retry interval is doubled with each unsuccessful attempt.
 
 ## Monitoring
 
-There are several ways to inspect the behavior of a JITServer instance, but all are based on the [OpenJ9 verbose logging facility](https://blog.openj9.org/2018/06/07/reading-verbose-jit-logs/). Note that if the name of the verbose log is not specified, the relevant information is printed to stderr.
+### Performance metrics
+
+You can enable the provision of performance metrics by specifying the `-XX:+JITServerMetrics` command line option. After enabling this option, you can use a monitoring tool that follows the OpenMetrics standard, such as Prometheus, to collect the data by issuing an HTTP `GET` request to the following url: `http://<jitserveraddress>:<port>/metrics`.
+
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** There is a limit of four concurrent `GET` requests at any given time.
+
+For more information, including the types of metrics that are provided, see the [`-XX:[+|-]JITServerMetrics`](xxjitservermetrics.md) topic.
+
+### Verbose logging
+
+You can inspect the behavior of a JITServer instance by using the [OpenJ9 verbose logging facility](https://blog.openj9.org/2018/06/07/reading-verbose-jit-logs/). Note that if the name of the verbose log is not specified, the relevant information is printed to stderr.
 When you use the `-XX:+JITServerLogConnections` command line option, the server prints a message to the verbose log every time a new client JVM connects to it or disconnects from it. This is an easy way to determine that the clients are able to reach the server. Example of output:
 ```
 #JITServer: t= 74232 A new client (clientUID=14692403771747196083) connected. Server allocated a new client session.
@@ -120,6 +151,6 @@ A value greater than 0 for the `Compilation Queue Size` is a sign that the serve
 
     -XcompilationThreads<N> (default is 63)
 
-More detailed diagnostics can be obtained with the option `-Xjit:verbose={JITServer},verbose={compilePerformance}` which is typically used for debugging server behavior.
+More detailed diagnostics can be obtained with the option `-Xjit:verbose={JITServer},verbose={compilePerformance}`, which is typically used for debugging server behavior.
 
 <!-- ==== END OF TOPIC ==== jitservertuning.md ==== -->
