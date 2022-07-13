@@ -65,7 +65,9 @@ You can use command line options to further configure the JITServer and the clie
 - [`-XX:[+|-]JITServerShareROMClasses`](xxjitservershareromclasses.md): Specifies whether the server shares cached ROM classes between clients
 - [`-XX:[+|-]JITServerLocalSyncCompiles`](xxjitserverlocalsynccompiles.md): Improves performance for real-time applications by compiling synchronous JIT compilations locally, with a remote asynchronous recompilation scheduled at a later point
 - [`-XX:[+|-]JITServerLogConnections`](xxjitserverlogconnections.md): Enables logging of connection/disconnection events between the server and the client
-- [`-XX:JITServerAOTCacheName`](xxjitserveraotcachename.md): Specifies the name of the server-side AOT cache to use
+- [`-XX:[+|-]JITServerMetrics`](xxjitservermetrics.md): Specifies whether the JITServer custom metrics exporter is enabled or disabled
+- [`-XX:JITServerMetricsPort=<port>`](xxjitservemetricsport.md): Specifies the port number on which the JITServer metrics are provided to a monitoring agent
+- [`-XX:JITServerAOTCacheName=<cache-name>`](xxjitserveraotcachename.md): Specifies the name of the server-side AOT cache to use
 - [`-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md): Specifies whether the server caches AOT-compiled methods
 
 If a JITServer server crashes, the client is forced to perform compilations locally. You can change this behavior by using the [`-XX:[+|-]RequireJITServer`](xxrequirejitserver.md) option so that the client crashes with an assert when it detects that the server is unavailable. This feature is useful when you are running a test suite with JITServer enabled and you want the server crash to cause the test to fail.
@@ -73,6 +75,12 @@ If a JITServer server crashes, the client is forced to perform compilations loca
 ## Security
 
 You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x, 1.1.x, or 3.0). To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see [-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts](xxjitserversslcert.md).
+
+### Performance metrics
+
+For performance monitoring, JITServer can optionally export custom metrics on an http port. You can enable the provision of performance metrics by specifying the `-XX:+JITServerMetrics` command line option. After enabling this option, you can use a monitoring tool that follows the OpenMetrics standard, such as Prometheus, to collect the data by issuing an http `GET` request to the following url: `http://jitserveraddress:port/metrics`.
+
+For more information, including the types of metrics that are provided, see the [`-XX:[+|-]JITServerMetrics`](xxjitservermetrics.md) topic.
 
 ## JITServer AOT cache
 

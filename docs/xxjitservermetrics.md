@@ -72,17 +72,17 @@ HTTP request:
 JITServer response:
 
    ```
-   # HELP cpu_utilization Cpu utilization of the JITServer
-   # TYPE cpu_utilization gauge
+   # HELP jitserver_cpu_utilization Cpu utilization of the JITServer
+   # TYPE jitserver_cpu_utilization gauge
    jitserver_cpu_utilization 12.000000
-   # HELP available_memory Available memory for JITServer
-   # TYPE available_memory gauge
+   # HELP jitserver_available_memory Available memory for JITServer
+   # TYPE jitserver_available_memory gauge
    jitserver_available_memory 32036204544.000000
-   # HELP connected_clients Number of connected clients
-   # TYPE connected_clients gauge
+   # HELP jitserver_connected_clients Number of connected clients
+   # TYPE jitserver_connected_clients gauge
    jitserver_connected_clients 1.000000
-   # HELP active_threads Number of active compilation threads
-   # TYPE active_threads gauge
+   # HELP jitserver_active_threads Number of active compilation threads
+   # TYPE jitserver_active_threads gauge
    jitserver_active_threads 1.000000
    ```
 
