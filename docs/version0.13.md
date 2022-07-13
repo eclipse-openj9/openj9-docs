@@ -33,6 +33,7 @@ The following new features and notable changes since version 0.12.1 are included
 - [Writing a Java dump to STDOUT or STDERR](#writing-a-java-dump-to-stdout-or-stderr)
 - [Better diagnostic information for Linux systems that implement control groups](#better-diagnostic-information-for-linux-systems-that-implement-control-groups)
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
+- ![Start of content that applies only to Java 12 plus](cr/java12plus.png) [New JDK 12 features](#new-jdk-12-features)
 
 ## Features and changes
 
@@ -84,6 +85,18 @@ Concurrent scavenge mode is now supported on the following platforms:
 - AIX
 
 For more information, see the [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge) option.
+
+### ![Start of content that applies to Java 12 plus](cr/java12plus.png) New JDK 12 features
+
+The following feature is supported by OpenJ9:
+
+- [JEP 334](https://openjdk.org/jeps/334): JVM Constants API
+
+The following feature is implemented in OpenJDK and available in any builds of OpenJDK 12 with OpenJ9:
+
+- [JEP 325](https://openjdk.org/jeps/325): Switch Expressions (Preview) 
+
+You can find the full list of features for JDK 12 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/12/). Any remaining features that are listed do not apply to OpenJ9.
 
 ## Full release information
 

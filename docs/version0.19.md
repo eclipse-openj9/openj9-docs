@@ -33,6 +33,7 @@
 - [![Start of content that applies to Java 14+](cr/java14plus.png) jpackage packaging tool platform support](#jpackage-packaging-tool-platform-support)
 - [![Start of content that applies to Java 14+](cr/java14plus.png) Extended messages for `NullPointerException` not yet implemented](#extended-messages-for-nullpointerexception-not-yet-implemented)
 - [Compiler changes for Linux](#compiler-changes-for-linux)
+- ![Start of content that applies only to Java 14plus](cr/java14plus.png) [New JDK 14 features](#new-jdk-14-features)
 
 ## Features and changes
 
@@ -69,6 +70,23 @@ The `jpackage` utility is described in JEP 343 as a tool that "packages a Java a
 
 Linux x86 64-bit, Linux on POWER&reg; LE 64-bit, and Linux on IBM Z&reg; 64-bit have all moved to the gcc 7.5 compiler. See [Supported environments](openj9_support.md).
 
+### ![Start of content that applies to Java 14 plus](cr/java14plus.png) New JDK 14 features
+
+The following features are supported by OpenJ9:
+
+- [JEP 343](https://openjdk.org/jeps/343): Packaging Tool (Incubator)<br>:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** `jpackage` is supported on only the following OpenJ9 platforms: Linux&reg;, macOS&reg;, and Windows&trade;. It is _not_ supported on AIX&reg; or z/OS&reg; platforms.
+- [JEP 352](https://openjdk.org/jeps/352): Non-Volatile Mapped Byte Buffers
+- [JEP 358](https://openjdk.org/jeps/358): Helpful NullPointerExceptions
+- [JEP 359](https://openjdk.org/jeps/359): Records (Preview)
+
+The following features are implemented in OpenJDK and available in any builds of OpenJDK 14 with OpenJ9:
+
+- [JEP 305](https://openjdk.org/jeps/305): Pattern Matching for instanceof (Preview) 
+- [JEP 361](https://openjdk.org/jeps/361): Switch Expressions (Standard)
+- [JEP 367](https://openjdk.org/jeps/367): Remove the Pack200 Tools and API
+- [JEP 368](https://openjdk.org/jeps/368): Text Blocks (Second Preview)
+
+You can find the full list of features for JDK 14 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/14/). Any remaining features that are listed do not apply to OpenJ9.
 
 ## Full release information
 

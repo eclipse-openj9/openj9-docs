@@ -130,6 +130,10 @@ nav:
             - "Version 0.9.0"                                                    : version0.9.md
             - "Version 0.8.0"                                                    : version0.8.md
 
+    - "Migrating" :
+        - "Migrating from Java 8 to Java 11"                                     : migrating8to11.md
+        - "Migrating from Java 11 to Java 17"                                    : migrating11to17.md
+        
     - "Configuring your system"                                                  : configuring.md
 
     - "Memory management" :
