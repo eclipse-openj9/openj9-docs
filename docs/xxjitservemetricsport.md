@@ -26,7 +26,7 @@
 
 This option specifies the port number on which the JITServer metrics are provided to a monitoring agent.
 
-Use this option with the `-XX:JITServerMetrics` option, which enables the provision of the JITServer metrics.
+Use this option with the `-XX:+JITServerMetrics` option, which enables the provision of the JITServer metrics.
 
 ## Syntax
 

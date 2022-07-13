@@ -65,13 +65,32 @@ You can use command line options to further configure the JITServer and the clie
 - [`-XX:[+|-]JITServerShareROMClasses`](xxjitservershareromclasses.md): Specifies whether the server shares cached ROM classes between clients
 - [`-XX:[+|-]JITServerLocalSyncCompiles`](xxjitserverlocalsynccompiles.md): Improves performance for real-time applications by compiling synchronous JIT compilations locally, with a remote asynchronous recompilation scheduled at a later point
 - [`-XX:[+|-]JITServerLogConnections`](xxjitserverlogconnections.md): Enables logging of connection/disconnection events between the server and the client
+- [`-XX:JITServerAOTCacheName`](xxjitserveraotcachename.md): Specifies the name of the server-side AOT cache to use
 - [`-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md): Specifies whether the server caches AOT-compiled methods
 
 If a JITServer server crashes, the client is forced to perform compilations locally. You can change this behavior by using the [`-XX:[+|-]RequireJITServer`](xxrequirejitserver.md) option so that the client crashes with an assert when it detects that the server is unavailable. This feature is useful when you are running a test suite with JITServer enabled and you want the server crash to cause the test to fail.
 
 ## Security
 
-You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x or 1.1.x (JITServer technology currently does not support OpenSSL 3.0.x). To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see [-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts](xxjitserversslcert.md).
+You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x, 1.1.x, or 3.0). To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see [-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts](xxjitserversslcert.md).
+
+## JITServer AOT cache
+
+ The JITServer technology provides an optional mechanism that allows caching of AOT compiled methods at the server.
+ This allows the JITServer to avoid carrying out an AOT compilation when a compatible AOT method body already exists in the cache, thereby saving CPU and improving remote compilation latency. This mechanism works in conjunction with the [dynamic AOT technology](https://www.eclipse.org/openj9/docs/aot/) at the client and therefore the client needs to have the [shared class cache](https://www.eclipse.org/openj9/docs/shrc/) (SCC) enabled (the SCC is the repository for the AOT code).
+
+ When the JITServer receives an AOT compilation request, first it will check its AOT cache for a compatible compiled method body. In case of a cache miss, the server will perform the AOT compilation as usual, and send the response to the client JVM. Moreover, the server will serialize the compiled method and store it in its local AOT cache, for future use. In case of a cache hit, the server will directly send the client the serialized compiled method from its cache, thus avoiding a compilation. The client will deserialize the response, store the result in its local SCC and load the compiled method as regular dynamic AOT code.
+
+ To enable this feature you must add [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) command line option, both at the server and at the client JVM.
+
+ A JITserver instance can have several AOT caches, each with its own name. This addresses the situation when client JVMs with significantly different profiles of execution use the same JITServer instance. A client JVM can indicate a specific AOT cache it wants to use by providing its name with the following command line option [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md). The default is to use a nameless cache.
+
+ Limitations that may be lifted in future releases:
+
+ - Currently, there is no limit on the amount of memory an AOT cache can consume at the server. Moreover, there is no limit on the number of caches a JITServer can hold.
+ - The AOT cache is a non-persistent in-memory cache. If the JITServer instance terminates, the cache content is lost.
+ - There is no sharing of AOT cache entries among different JITServer instances.
+ - Caching works only for AOT compilation requests. For this reason, when JITServer AOT caching is enabled, the client JVM will attempt to generate as many AOT requests as possible.
 
 ## Tuning JITServer
 
