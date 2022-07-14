@@ -41,7 +41,7 @@ Note that the `-XX:+JITServerShareROMClasses` option is enabled by default at th
 
 Enable this option when multiple clients that are running identical or similar applications connect to a single server.
 
-This option enables a caching optimization that allows the server to use ROM classes that are cached for one client while compiling for a different client. This behavior reduces the memory usage at the server. Moreover, footprint at the server can be reduced because only a single copy of a particular Java&trade; class is cached.
+This option enables a caching optimization that allows the server to use ROM classes that are cached for one client while compiling for a different client. This behavior reduces the memory usage at the server because only a single copy of a particular Java&trade; class is cached.
 
 ## See also
 
