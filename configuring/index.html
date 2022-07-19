@@ -4770,11 +4770,16 @@ virtual memory          (kbytes, -v) unlimited
 <td><strong>IPCSEMNSEMS</strong></td>
 <td>1000</td>
 </tr>
+<tr>
+<td><strong>SHRLIBRGNSIZE</strong></td>
+<td>67 108 864</td>
+</tr>
 </tbody>
 </table>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The number of threads that can be created by a Java process is limited by the lower of the two values for <strong>MAXTHREADS</strong> and <strong>MAXTHREADSTASKS</strong>.</p>
 <p>You can change these settings dynamically without re-IPLing the system. For example, to set <strong>MACPROCUSER</strong> to 256, run <code>SETOMVS MAXPROCUSER=256</code></p>
 <p>z/OS uses region sizes to determine the amount of storage available to running programs. For a Java runtime environment, the  region size must be sufficiently large to avoid storage related error messages or abends. Rather than restricting region size, allow the VM to use what it needs. Region size can be affected by one of the following parameters: <strong>JCL REGION</strong>, <strong>BPXPRMxx MAXASSIZE</strong>, the RACF OMVS segment <strong>ASSIZEMAX</strong>, or IEFUSI (Step initiation exit).</p>
+<p><strong>SHRLIBRGNSIZE</strong> controls how much storage is reserved in each address space for mapping shared DLLs that have the +l extended attribute set. If this storage space is exceeded, DLLs are loaded into the address space instead of using a single copy of z/OS UNIX System Services storage that is shared between the address spaces. The z/OS command <strong>D OMVS,L</strong> shows the <strong>SHRLIBRGNSIZE</strong> size and peak usage. If this size is set to a much higher value than is needed, the Java application might have problems acquiring native storage. These problems can cause a z/OS abend, such as <code>878-10</code>, or a Java <code>OutOfMemoryError</code>.</p>
 <h3 id="configuring-language-environment-runtime-options">Configuring Language Environment runtime options</h3>
 <p>Language Environment&reg; runtime options affect performance and storage usage. These options can be optimized for your application.</p>
 <p>Runtime options are typically embedded in programs by using <strong>#pragma runopts</strong> settings. In many cases, these options provide suitable default values that are known to produce good performance results. However, these options can be overridden to tune the runtime environment of your application.</p>
