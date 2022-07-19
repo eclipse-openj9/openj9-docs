@@ -116,14 +116,11 @@ Example of output:
 #JITServer: CpuLoad 206% (AvgUsage 25%) JvmCpu 113%
 ...
 ```
-A value greater than 0 for the `Compilation Queue Size` is a sign that the server is overloaded. Compilation requests that wait in the compilation queue face greater delays and run the risk of exceeding network timeouts. To avoid this scenario, you can reduce the number of connected clients, use the techniques described in section [Alleviating CPU congestion at the server](#alleviating-CPU-congestion-at-the-server) or increase the number of compilation threads at the server with the following option:
+A value greater than 0 for the `Compilation Queue Size` is a sign that the server is overloaded. Compilation requests that wait in the compilation queue face greater delays and run the risk of exceeding network timeouts. To avoid this scenario, you can reduce the number of connected clients, use the techniques described in section [Alleviating CPU congestion at the server](#alleviating-CPU-congestion-at-the-server), or increase the number of compilation threads at the server with the following option:
 
-    -XcompilationThreads<N> (default is 63)
+    -XcompilationThreads<N> (default is 63, maximum is 999)
 
-![Start of content that applies to Java 8+](cr/java8plus.png) You can specify a larger number of threads with `-XcompilationThreads<N>` on the JITServer (999) and the JIT client (16). The default number of threads is kept at 63. 
-
-![Start of content that applies to Java 8+](cr/java8plus.png) Increasing the maximum number of client threads can improve performance in high network latency settings since there can be more in-flight concurrent compilation requests. Increasing the number of threads at the server can improve performance if it has many CPU cores available and serves a large number of clients concurrently.
-
+![Start of content that applies to Java 8+](cr/java8plus.png) Increasing the maximum number of client threads (upper limit is 15) can improve performance in high network latency settings since there can be more in-flight concurrent compilation requests. Increasing the number of threads at the server (upper limit is 999) can improve performance if it has many CPU cores available and serves a large number of clients concurrently.
 
 More detailed diagnostics can be obtained with the option `-Xjit:verbose={JITServer},verbose={compilePerformance}`, which is typically used for debugging server behavior.
 

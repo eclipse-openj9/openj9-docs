@@ -32,17 +32,11 @@ Use this option to specify the number of compilation threads that are used by th
         -XcompilationThreads<n>
 
 : where `<n>` is the number of threads, in the range 1-7 inclusive. Any number outside this range is ignored.
-
-: The default number of threads is 7 on the client on most platforms and 63 at the server.
-![Start of content that applies to Java 8+](cr/java8plus.png) The ranges of valid values for the `-XcompilationThreads<n>` option are different on both the JITServer and the JIT client. The server supports up to 999 compilation threads (1000 including the statistics/diagnostic thread), and the client (as well as the JVM not using the JITServer) supports up to 16.
-
-: ![Start of content that applies to Java 8+](cr/java8plus.png) Increasing the maximum number of client threads improves performance in high network latency settings since there can be more in-flight concurrent compilation requests. 
-
-: ![Start of content that applies to Java 8+](cr/java8plus.png) Increasing the number of threads at the server improves performance if it has many CPU cores available and serves a large number of clients concurrently.
-
-: ![Start of content that applies to Java 8+](cr/java8plus.png) If the number of threads is larger than the limit of 999, a diagnostic message is printed to stderr, and the default number of threads (63) is used.
-
 : Setting the compilation threads to zero does not prevent the JIT from working. Instead, if you do not want the JIT to work, use the [`-Xint`](xint.md) option.
+
+: The default number of compilation threads is determined by the internal JIT heuristics that take into consideration the number of CPUs the JVM is allowed to use.
+
+![Start of content that applies to Java 8+](cr/java8plus.png) Starting with OpenJ9 release 0.33.0, the maximum number of compilation threads is 15. When operating in the JITServer mode, the maximum number of compilation threads is 999, while the default value is 63.
 
 ## Explanation
 
