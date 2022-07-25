@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.30.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 11](cr/java11.png) [XL C++ Runtime required on AIX](#xl-c-runtime-required-on-aix)
 - ![Start of content that applies to Java 17 plus](cr/java17plus.png) [Linux reference compiler updated to gcc 10.3](#linux-reference-compiler-updated-to-gcc-103)
+- [The maximum number of compilation threads that are used by the JIT compiler increased](#the-maximum-number-of-compilation-threads-that-are-used-by-the-jit-compiler-increased)
 - [Control groups v2 support](#control-groups-v2-support)
 
 ## Features and changes
@@ -49,6 +50,10 @@ This was already required for OpenJDK 17 and is now also required from 11.0.16 t
 ### ![Start of content that applies to Java 17 plus](cr/java17plus.png) Linux reference compiler updated to gcc 10.3
 
 Linux builds for all platforms now use gcc 10.3 instead of gcc 7.5. See the list of [build environments](openj9_support.md#build-environments).
+
+### The maximum number of compilation threads that are used by the JIT compiler increased
+
+The maximum number of compilation threads increased from 7 to 15 if the VM is running with the JITServer feature enabled (JIT and JITServer client). The maximum number of compilation threads on the JITServer server is increased to 999.
 
 ### Control groups v2 support
 

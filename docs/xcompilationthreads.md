@@ -31,12 +31,14 @@ Use this option to specify the number of compilation threads that are used by th
 
         -XcompilationThreads<n>
 
-: where `<n>` is the number of threads, in the range 1-7 inclusive. Any number outside this range is ignored.
-: Setting the compilation threads to zero does not prevent the JIT from working. Instead, if you do not want the JIT to work, use the [`-Xint`](xint.md) option.
+: Where <n\> is the number of threads. The minimum value is 1. The default and maximum values depend on whether the VM is running with the JITServer feature enabled and if so, whether the VM is running as a JITServer server, as shown in the following table:
 
-: The default number of compilation threads is determined by the internal JIT heuristics that take into consideration the number of CPUs the JVM is allowed to use.
+| JIT compiler scenario &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;                                            | Default value | Maximum value |                                 
+|-------------------------------------------------|---------|:---------------------------------------------:|
+| JIT and JITServer client &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;       | Determined by internal JIT heuristics that consider the number of CPUs that the VM is allowed to use  | 15                                                                                    | 
+| JITServer server | 63 | 999                                         |   
 
-![Start of content that applies to Java 8+](cr/java8plus.png) Starting with OpenJ9 release 0.33.0, the maximum number of compilation threads is 15. When operating in the JITServer mode, the maximum number of compilation threads is 999, while the default value is 63.
+: Any number outside this range is ignored. Setting the compilation threads to zero does not disable the JIT compiler. If you want to disable the JIT, use the [`-Xint`](xint.md) option.
 
 ## Explanation
 
