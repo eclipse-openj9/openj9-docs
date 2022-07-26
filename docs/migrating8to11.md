@@ -29,7 +29,7 @@ Support for OpenJDK 11 was added in OpenJ9 version 0.10.0.
 
 The following new OpenJ9 features and notable changes apply when OpenJ9 is built with Java SE 11 class libraries. This information exists elsewhere in the documentation but is summarized here for convenience.
 
-### Support for JDK enhancement proposals (JEP)
+## Support for JDK enhancement proposals (JEP)
 
 The new JEPs that are supported are listed in the following topics:
 
@@ -37,7 +37,7 @@ The new JEPs that are supported are listed in the following topics:
 - JDK 10: [What's new in version 0.9.0](version0.9.md)
 - JDK 11: [What's new in version 0.10.0](version0.10.md)
 
-### New OpenJ9 features and changes
+## New OpenJ9 features and changes
 
 The following table lists the new OpenJ9 features and notable changes with the OpenJ9 release in which they were added:
 

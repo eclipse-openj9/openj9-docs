@@ -113,6 +113,7 @@ The suggested minimum values for Java applications are shown in the following ta
 |**IPCSHMNSEGS**    | 10         |
 |**IPCSEMNIDS**	    | 500        |
 |**IPCSEMNSEMS**	  | 1000       |
+|**SHRLIBRGNSIZE**	  | 67 108 864       |
 
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The number of threads that can be created by a Java process is limited by the lower of the two values for **MAXTHREADS** and **MAXTHREADSTASKS**.
@@ -120,6 +121,8 @@ The suggested minimum values for Java applications are shown in the following ta
 You can change these settings dynamically without re-IPLing the system. For example, to set **MACPROCUSER** to 256, run `SETOMVS MAXPROCUSER=256`
 
 z/OS uses region sizes to determine the amount of storage available to running programs. For a Java runtime environment, the  region size must be sufficiently large to avoid storage related error messages or abends. Rather than restricting region size, allow the VM to use what it needs. Region size can be affected by one of the following parameters: **JCL REGION**, **BPXPRMxx MAXASSIZE**, the RACF OMVS segment **ASSIZEMAX**, or IEFUSI (Step initiation exit).
+
+**SHRLIBRGNSIZE** controls how much storage is reserved in each address space for mapping shared DLLs that have the +l extended attribute set. If this storage space is exceeded, DLLs are loaded into the address space instead of using a single copy of z/OS UNIX System Services storage that is shared between the address spaces. The z/OS command **D OMVS,L** shows the **SHRLIBRGNSIZE** size and peak usage. If this size is set to a much higher value than is needed, the Java application might have problems acquiring native storage. These problems can cause a z/OS abend, such as `878-10`, or a Java `OutOfMemoryError`.
 
 
 ### Configuring Language Environment runtime options
