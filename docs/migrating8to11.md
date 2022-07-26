@@ -48,4 +48,3 @@ The following table lists the new OpenJ9 features and notable changes with the O
 | OpenSSL support for the ChaCha20 and ChaCha20-Poly1305 algorithms is available. The version of OpenSSL must be version 1.1.x or later. For more information, see [`-Djdk.nativeChaCha20`](djdknativechacha20.md).          | 0.15.0                 |
 | The [`-verbose:module`](cmdline_general.md) option, which writes information to stderr for each module that is loaded and unloaded, is now supported.     | 0.25.0       |
 |The default value of the [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md) option, which limits the amount of heap memory that is used for direct byte buffers, is the same as the maximum heap size. For JDK 8, the VM default value is 87.5% of the maximum heap size.              | 0.32.0   |
-
