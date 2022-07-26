@@ -41,7 +41,7 @@ The new JEPs that are supported are listed in the following topics:
 
 The following table lists the new OpenJ9 features and notable changes with the OpenJ9 release in which they were added:
 
-| Features and changes  | OpenJ9 release &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;|
+| Features and changes  | OpenJ9 release|
 |-----------------------|-------------------------------------|
 |The path that is specified by the default [`-Xoptionsfile`](xoptionsfile.md) value is the `<java_home>/lib` directory, where `<java_home>` is the directory for your runtime environment. For Java 8, the path is the VM directory that is listed in [Directory conventions](openj9_directories.md).              | First release   |
 | Low-overhead heap profiling is supported. [JEP 331](http://openjdk.java.net/jeps/331) provides a mechanism for sampling Java heap allocations with a low overhead via the JVM Tool Interface (JVMTI).<br><br>:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** JEP 331 is implemented for OpenJ9 with the following limitations:<ul><li>The `balanced` and `metronome` garbage collection policies are not supported.</li><li>The JEP331 JVMTI agent and the Health Center agent both set a sampling interval, which by default is different. If both agents are used at the same time the Health Center agent will get incorrect results, unless the sampling intervals are adjusted to use the same value.</li>    |  0.15.0     |
