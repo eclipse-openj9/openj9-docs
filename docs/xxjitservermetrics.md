@@ -49,9 +49,9 @@ You can use the [`-XX:JITServerMetricsPort`](xxjitservemetricsport.md) option to
 ## Explanation
 
  When you enable this option, the JITServer process will open a TCP port, which can be used by monitoring agents (like Prometheus) to collect custom metrics exported by JITServer. Monitoring agents must issue http `GET` requests to a url of the form: `http://jitserveraddress:metricsport/metrics`. The path for the http request must be `/metrics`.
- 
+
  The default value of `metricsport` is 38500 and can be changed with [`-XX:JITServerMetricsPort=<NNN\>`](xxjitservemetricsport.md) command line option.
- 
+
  The exposition format for the metrics returned by JITServer follows the [OpenMetrics](https://openmetrics.io/) protocol.
 
 ## Example
