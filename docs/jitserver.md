@@ -74,7 +74,7 @@ If a JITServer server crashes, the client is forced to perform compilations loca
 
 ## Security
 
-You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x, 1.1.x, or 3.0). To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see [-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts](xxjitserversslcert.md).
+You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x, 1.1.x, or 3.0.x. To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see [-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts](xxjitserversslcert.md).
 
 ### Performance metrics
 
@@ -91,7 +91,7 @@ For more information, including the types of metrics that are provided, see the 
 
  To enable this feature you must add [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) command line option, both at the server and at the client JVM.
 
- A JITserver instance can have several AOT caches, each with its own name. This addresses the situation when client JVMs with significantly different profiles of execution use the same JITServer instance. A client JVM can indicate a specific AOT cache it wants to use by providing its name with the following command line option [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md). The default is to use a nameless cache.
+ A JITServer instance can have several AOT caches, each with its own name. This addresses the situation when client JVMs with significantly different profiles of execution use the same JITServer instance. A client JVM can indicate a specific AOT cache it wants to use by providing its name with the following command line option [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md). The default is to use a nameless cache.
 
  Limitations that may be lifted in future releases:
 
