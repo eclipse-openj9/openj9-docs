@@ -4499,7 +4499,7 @@
 <h1 id="migrating-from-java-11-to-java-17">Migrating from Java 11 to Java 17</h1>
 <p>Support for OpenJDK 17 was added in OpenJ9 version 0.29.1.</p>
 <p>The following new OpenJ9 changes apply when OpenJ9 is built with Java SE 17 class libraries. This information exists elsewhere in the documentation but is summarized here for convenience.</p>
-<h3 id="support-for-jdk-enhancement-proposals-jep">Support for JDK enhancement proposals (JEP)</h3>
+<h2 id="support-for-jdk-enhancement-proposals-jep">Support for JDK enhancement proposals (JEP)</h2>
 <p>The new JEPs that are supported are listed in the following topics:</p>
 <ul>
 <li>JDK 12: <a href="../version0.13/">What's new in version 0.13.0</a></li>
@@ -4509,18 +4509,22 @@
 <li>JDK 16: <a href="../version0.25/">What's new in version 0.25.0</a></li>
 <li>JDK 17: <a href="../version0.29.1/">What's new in version 0.29.1</a></li>
 </ul>
-<h3 id="new-openj9-features-and-changes">New OpenJ9 features and changes</h3>
+<h2 id="new-openj9-features-and-changes">New OpenJ9 features and changes</h2>
 <p>The following table lists the new OpenJ9 features and notable changes with the OpenJ9 release in which they were added:</p>
 <table>
 <thead>
 <tr>
 <th>Features and changes</th>
-<th>OpenJ9 release &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</th>
+<th>OpenJ9 release</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Linux builds for all platforms use gcc 10.3 instead of gcc 7.5. See the list of <a href="../openj9_support/#build-environments">build environments</a>.</td>
+<td>0.33.0</td>
+</tr>
+<tr>
+<td>The default operating system stack size on x64 platforms is increased from 256 KB to 512 KB to accommodate vector support. You can change the operating system stack size by using the <a href="../xmso/">-Xmso</a> option.</td>
 <td>0.33.0</td>
 </tr>
 </tbody>

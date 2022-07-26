@@ -360,6 +360,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#default-operating-system-stack-size-increased-on-x64-platforms" class="md-nav__link">
+    Default operating system stack size increased on x64 platforms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#control-groups-v2-support" class="md-nav__link">
     Control groups v2 support
   </a>
@@ -4516,6 +4523,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#default-operating-system-stack-size-increased-on-x64-platforms" class="md-nav__link">
+    Default operating system stack size increased on x64 platforms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#control-groups-v2-support" class="md-nav__link">
     Control groups v2 support
   </a>
@@ -4584,6 +4598,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><img alt="Start of content that applies to Java 11" src="../cr/java11.png" /> <a href="#xl-c-runtime-required-on-aix">XL C++ Runtime required on AIX</a></li>
 <li><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> <a href="#linux-reference-compiler-updated-to-gcc-103">Linux reference compiler updated to gcc 10.3</a></li>
+<li><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> <a href="#default-operating-system-stack-size-increased-on-x64-platforms">Default operating system stack size increased on x64 platforms</a></li>
 <li><a href="#control-groups-v2-support">Control groups v2 support</a></li>
 <li><a href="#support-for-openssl-30x">Support for OpenSSL 3.0.x</a></li>
 </ul>
@@ -4597,6 +4612,8 @@
 This was already required for OpenJDK 17 and is now also required from 11.0.16 to accommodate a security update to the HarfBuzz text shaping library.</p>
 <h3 id="linux-reference-compiler-updated-to-gcc-103"><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> Linux reference compiler updated to gcc 10.3</h3>
 <p>Linux builds for all platforms now use gcc 10.3 instead of gcc 7.5. See the list of <a href="../openj9_support/#build-environments">build environments</a>.</p>
+<h3 id="default-operating-system-stack-size-increased-on-x64-platforms"><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> Default operating system stack size increased on x64 platforms</h3>
+<p>The default operating system stack size on Windows x64, macOS&reg; x64, and Linux x64 platforms is increased from 256 KB to 512 KB to accommodate vector support. You can change the operating system stack size by using the <a href="../xmso/">-Xmso</a> option.</p>
 <h3 id="control-groups-v2-support">Control groups v2 support</h3>
 <p>The Linux kernel has two variants of <a href="https://man7.org/linux/man-pages/man7/cgroups.7.html">control groups (cgroups): v1 and v2</a>. Many Linux operating systems are gradually transitioning from cgroups v1 to v2 as their default choice. Now, OpenJ9 has added cgroups v2 support which is identical to the support for cgroups v1.</p>
 <h3 id="support-for-openssl-30x">Support for OpenSSL 3.0.x</h3>
