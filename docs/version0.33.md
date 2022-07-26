@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.30.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 11](cr/java11.png) [XL C++ Runtime required on AIX](#xl-c-runtime-required-on-aix)
 - ![Start of content that applies to Java 17 plus](cr/java17plus.png) [Linux reference compiler updated to gcc 10.3](#linux-reference-compiler-updated-to-gcc-103)
+- ![Start of content that applies to Java 17 plus](cr/java17plus.png) [Default operating system stack size increased on x64 platforms](#default-operating-system-stack-size-increased-on-x64-platforms)
 - [Control groups v2 support](#control-groups-v2-support)
 - [Support for OpenSSL 3.0.x](#support-for-openssl-30x)
 
@@ -50,6 +51,10 @@ This was already required for OpenJDK 17 and is now also required from 11.0.16 t
 ### ![Start of content that applies to Java 17 plus](cr/java17plus.png) Linux reference compiler updated to gcc 10.3
 
 Linux builds for all platforms now use gcc 10.3 instead of gcc 7.5. See the list of [build environments](openj9_support.md#build-environments).
+
+### ![Start of content that applies to Java 17 plus](cr/java17plus.png) Default operating system stack size increased on x64 platforms
+
+The default operating system stack size on Windows x64, macOS&reg; x64, and Linux x64 platforms is increased from 256 KB to 512 KB to accommodate vector support. You can change the operating system stack size by using the [-Xmso](xmso.md) option.
 
 ### Control groups v2 support
 

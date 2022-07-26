@@ -29,7 +29,7 @@ Support for OpenJDK 17 was added in OpenJ9 version 0.29.1.
 
 The following new OpenJ9 changes apply when OpenJ9 is built with Java SE 17 class libraries. This information exists elsewhere in the documentation but is summarized here for convenience.
 
-### Support for JDK enhancement proposals (JEP)
+## Support for JDK enhancement proposals (JEP)
 
 The new JEPs that are supported are listed in the following topics:
 
@@ -40,10 +40,11 @@ The new JEPs that are supported are listed in the following topics:
 - JDK 16: [What's new in version 0.25.0](version0.25.md)
 - JDK 17: [What's new in version 0.29.1](version0.29.1.md)
 
-### New OpenJ9 features and changes
+## New OpenJ9 features and changes
 
 The following table lists the new OpenJ9 features and notable changes with the OpenJ9 release in which they were added:
 
-| Features and changes  | OpenJ9 release &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;|
-|-----------------------|-------------------------------------|
-|Linux builds for all platforms use gcc 10.3 instead of gcc 7.5. See the list of [build environments](openj9_support.md#build-environments).               | 0.33.0  |
+| Features and changes  | OpenJ9 release|
+|-----------------------|---------------|
+|Linux builds for all platforms use gcc 10.3 instead of gcc 7.5. See the list of [build environments](openj9_support.md#build-environments).| 0.33.0  |
+|The default operating system stack size on x64 platforms is increased from 256 KB to 512 KB to accommodate vector support. You can change the operating system stack size by using the [-Xmso](xmso.md) option.| 0.33.0   |
