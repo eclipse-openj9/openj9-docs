@@ -360,6 +360,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#the-maximum-number-of-jit-compilation-threads-is-increased" class="md-nav__link">
+    The maximum number of JIT compilation threads is increased
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#default-operating-system-stack-size-increased-on-x64-platforms" class="md-nav__link">
     Default operating system stack size increased on x64 platforms
   </a>
@@ -4523,6 +4530,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#the-maximum-number-of-jit-compilation-threads-is-increased" class="md-nav__link">
+    The maximum number of JIT compilation threads is increased
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#default-operating-system-stack-size-increased-on-x64-platforms" class="md-nav__link">
     Default operating system stack size increased on x64 platforms
   </a>
@@ -4598,6 +4612,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><img alt="Start of content that applies to Java 11" src="../cr/java11.png" /> <a href="#xl-c-runtime-required-on-aix">XL C++ Runtime required on AIX</a></li>
 <li><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> <a href="#linux-reference-compiler-updated-to-gcc-103">Linux reference compiler updated to gcc 10.3</a></li>
+<li><a href="#the-maximum-number-of-jit-compilation-threads-is-increased">The maximum number of JIT compilation threads is increased</a></li>
 <li><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> <a href="#default-operating-system-stack-size-increased-on-x64-platforms">Default operating system stack size increased on x64 platforms</a></li>
 <li><a href="#control-groups-v2-support">Control groups v2 support</a></li>
 <li><a href="#support-for-openssl-30x">Support for OpenSSL 3.0.x</a></li>
@@ -4611,7 +4626,9 @@
 <p>AIX OpenJ9 builds now require version 16.1 of the <a href="https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X">IBM XL C++ Runtime</a>.
 This was already required for OpenJDK 17 and is now also required from 11.0.16 to accommodate a security update to the HarfBuzz text shaping library.</p>
 <h3 id="linux-reference-compiler-updated-to-gcc-103"><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> Linux reference compiler updated to gcc 10.3</h3>
-<p>Linux builds for all platforms now use gcc 10.3 instead of gcc 7.5. See the list of <a href="../openj9_support/#build-environments">build environments</a>.</p>
+<p>Linux&reg; builds for all platforms now use gcc 10.3 instead of gcc 7.5. See the list of <a href="../openj9_support/#build-environments">build environments</a>.</p>
+<h3 id="the-maximum-number-of-jit-compilation-threads-is-increased">The maximum number of JIT compilation threads is increased</h3>
+<p>The maximum number of JIT compilation threads is increased from 7 to 15. If the JITServer feature is enabled, the maximum number of JIT compilation threads is increased further on the server, to 999. You can set the number of compilation threads to be used by specifying the <a href="../xcompilationthreads/"><code>-XcompilationThreads</code></a> command line option.</p>
 <h3 id="default-operating-system-stack-size-increased-on-x64-platforms"><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> Default operating system stack size increased on x64 platforms</h3>
 <p>The default operating system stack size on Windows x64, macOS&reg; x64, and Linux x64 platforms is increased from 256 KB to 512 KB to accommodate vector support. You can change the operating system stack size by using the <a href="../xmso/">-Xmso</a> option.</p>
 <h3 id="control-groups-v2-support">Control groups v2 support</h3>
