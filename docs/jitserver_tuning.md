@@ -46,11 +46,11 @@ Another idea is to use the `-Xjit:enableJITServerHeuristics` command line option
 
 Roughly speaking, the server uses two types of memory:
 1. "Scratch" memory. This is allocated during a compilation (for JIT internal data structures) and released to the operating system at the end of the compilation.
-2. "Persistent" memory. This is used for client-session caches and only gets deleted when a client terminates gracefully (or when JITServer purging mechanism is triggered).
+2. "Persistent" memory. This is used for client-session caches and gets deleted only when a client terminates gracefully (or when JITServer purging mechanism is triggered).
 
-The total amount of scratch memory at any given moment depends on how many compilations are in progress and how expensive those compilations are. To reduce this amount, you can start the clients in a staggered fashion as suggested above, or reduce the number of compilation threads per client. Note that the latter already happens automatically: when the server senses that it is about to run out of memory, it provides feedback to the connected clients to reduce their number of active compilation threads.
+The total amount of scratch memory at any given moment depends on how many compilations are in progress and how expensive those compilations are. To reduce this amount, you can start the clients in a staggered fashion as suggested previously, or reduce the number of compilation threads per client. Note that the latter already happens automatically: when the server senses that it is about to run out of memory, it provides feedback to the connected clients to reduce their number of active compilation threads.
 
-To reduce the amount of persistent memory you can use the techniques described in section [Server caches](#server-caches).
+To reduce the amount of persistent memory, you can use the techniques described in section [Server caches](#server-caches).
 
 ## Traffic encryption
 
@@ -58,7 +58,7 @@ Enabling network encryption can increase the CPU overhead, both at the client an
 
 ## Minimizing application stalls
 
-For the most part, the compilation threads in OpenJ9 JVM execute in parallel with Java application threads. However, for correctness reasons a small number of compilations are performed synchronously, meaning that Java application threads have to wait for the compilation result before being allowed to execute the method being compiled. Since remote compilations typically take longer to complete due to network latency, application stalls caused by synchronous compilations can be more severe in a JITServer setting. If this becomes a problem, you should add the following command line option at the client:
+Usually, the compilation threads in OpenJ9 JVM execute in parallel with Java application threads. However, for correctness reasons a small number of compilations are performed synchronously, meaning that Java application threads have to wait for the compilation result before being allowed to execute the method being compiled. Since remote compilations typically take longer to complete due to network latency, application stalls caused by synchronous compilations can be more severe in a JITServer setting. If this becomes a problem, you should add the following command line option at the client:
 
     -XX:+JITServerLocalSyncCompiles
 
@@ -66,7 +66,7 @@ This option instructs the client JVM to perform the synchronous compilations loc
 
 ## Session affinity
 
-For technical reasons, a client JVM must use a single JITServer at a time. In a Kubernetes environment, where a JITServer service can be backed up by several server instances, you can satisfy this requirement by using session affinity. Note that if a server crashes (or gets terminated by the Kubernetes controller) the clients can connect to another server instance. This scenario imposes some performance penalty because the client-session caches that the server maintains need to be built anew. Below we show an example of a Kubernetes service definition that uses sessionAffinity:
+For technical reasons, a client JVM must use a single JITServer at a time. In a Kubernetes environment, where a JITServer service can be backed up by several server instances, you can satisfy this requirement by using session affinity. Note that if a server crashes (or gets terminated by the Kubernetes controller) the clients can connect to another server instance. This scenario imposes some performance penalty because the client-session caches that the server maintains need to be built anew. Following is an example of a Kubernetes service definition that uses sessionAffinity:
 
 ```
 apiVersion: v1
@@ -89,7 +89,7 @@ selector:
 
 ## Resilience
 
-If the client JVM does not find a compatible server to connect to, compilations are performed locally, by the client itself. To account for the case where the server is temporarily unavailable (e.g, server crash followed by Kubernetes launching another server instance), from time to time the client retries to connect to a server at the indicated address and port. The retry mechanism uses an exponential back-off where the retry interval is doubled with each unsuccessful attempt.
+If the client JVM does not find a compatible server to connect to, compilations are performed locally, by the client itself. To account for the case where the server is temporarily unavailable (for example, server crash followed by Kubernetes launching another server instance), from time to time the client retries to connect to a server at the indicated address and port. The retry mechanism uses an exponential back-off where the retry interval is doubled with each unsuccessful attempt.
 
 ## Monitoring
 
@@ -116,10 +116,10 @@ Example of output:
 #JITServer: CpuLoad 206% (AvgUsage 25%) JvmCpu 113%
 ...
 ```
-A value greater than 0 for the `Compilation Queue Size` is a sign that the server is overloaded. Compilation requests that wait in the compilation queue face greater delays and run the risk of exceeding network timeouts. To avoid this scenario, you can reduce the number of connected clients, use the techniques described in section [Alleviating CPU congestion at the server](#alleviating-CPU-congestion-at-the-server) or increase the number of compilation threads at the server with the following option:
+A value greater than 0 for the `Compilation Queue Size` is a sign that the server is overloaded. Compilation requests that wait in the compilation queue face greater delays and run the risk of exceeding network timeouts. To avoid this scenario, you can reduce the number of connected clients, use the techniques described in section [Alleviating CPU congestion at the server](#alleviating-CPU-congestion-at-the-server), or increase the number of compilation threads at the server by using the [`-XcompilationThreads`](xcompilationthreads.md) option.
 
-    -XcompilationThreads<N> (default is 63)
+Increasing the maximum number of client threads can improve performance in high network latency settings because there can be more in-progress concurrent compilation requests. Increasing the number of threads at the server can improve performance if the server has many CPU cores available and serves a large number of clients concurrently.
 
-More detailed diagnostics can be obtained with the option `-Xjit:verbose={JITServer},verbose={compilePerformance}` which is typically used for debugging server behavior.
+More detailed diagnostics can be obtained with the option `-Xjit:verbose={JITServer},verbose={compilePerformance}`, which is typically used for debugging server behavior.
 
 <!-- ==== END OF TOPIC ==== jitservertuning.md ==== -->
