@@ -35,11 +35,13 @@ This option enables the JITServer server to share cached ROM classes between JIT
 |`-XX:+JITServerShareROMClasses`           | Enable |                                                                                    |
 |`-XX:-JITServerShareROMClasses`           | Disable| :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
+ :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The `-XX:+JITServerShareROMClasses` option is enabled by default at the server on specifying the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) option.
+
 ## Explanation
 
 Enable this option when multiple clients that are running identical or similar applications connect to a single server.
 
-This option enables a caching optimization that allows the server to use ROM classes that are cached for one client while compiling for a different client. This behavior reduces the amount of network communication required between the server and the clients, improving startup time and reducing clients' CPU usage. Moreover, footprint at the server can be reduced because only a single copy of a particular Java&trade; class is cached.
+This option enables a caching optimization that allows the server to use ROM classes that are cached for one client while compiling for a different client. This behavior reduces the memory usage at the server because only a single copy of a particular Java&trade; class is cached.
 
 ## See also
 

@@ -34,7 +34,10 @@ This technology can improve quality of service, robustness, and performance of J
 - The application is running in an environment with limited CPU or memory, which can worsen interference from the JIT compiler.
 - The network latency between JITServer and client VM is relatively low.
 
-For more details about JITServer technology, its pros and cons, and when best to use it, see the blog post [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/).
+For more details about JITServer technology, including its advantages and disadvantages and when best to use it, see blog posts such as the following:
+
+- [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/)
+- [JITServer - Optimize your Java cloud-native applications](https://developer.ibm.com/articles/jitserver-optimize-your-java-cloud-native-applications/)
 
 ## Using JITServer technology
 
@@ -62,6 +65,10 @@ You can use command line options to further configure the JITServer and the clie
 - [`-XX:[+|-]JITServerShareROMClasses`](xxjitservershareromclasses.md): Specifies whether the server shares cached ROM classes between clients
 - [`-XX:[+|-]JITServerLocalSyncCompiles`](xxjitserverlocalsynccompiles.md): Improves performance for real-time applications by compiling synchronous JIT compilations locally, with a remote asynchronous recompilation scheduled at a later point
 - [`-XX:[+|-]JITServerLogConnections`](xxjitserverlogconnections.md): Enables logging of connection/disconnection events between the server and the client
+- [`-XX:[+|-]JITServerMetrics`](xxjitservermetrics.md): Specifies whether the JITServer custom metrics exporter is enabled or disabled
+- [`-XX:JITServerMetricsPort=<port>`](xxjitservermetricsport.md): Specifies the port number on which the JITServer metrics are provided to a monitoring agent
+- [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md): Specifies the name of the server-side AOT cache to use
+- [`-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md): Specifies whether the server caches AOT-compiled methods
 
 If a JITServer server crashes, the client is forced to perform compilations locally. You can change this behavior by using the [`-XX:[+|-]RequireJITServer`](xxrequirejitserver.md) option so that the client crashes with an assert when it detects that the server is unavailable. This feature is useful when you are running a test suite with JITServer enabled and you want the server crash to cause the test to fail.
 
@@ -71,7 +78,7 @@ You can encrypt network communication between the client VM and JITServer by usi
 
 ## Tuning JITServer
 
-For best practices regarding JITServer configuration and tuning, please see the document [JITServer tuning and practical considerations](jitserver_tuning.md).
+For best practices regarding JITServer configuration and tuning, see the document [JITServer tuning and practical considerations](jitserver_tuning.md).
 
 ## Building a JDK with JITServer technology
 
