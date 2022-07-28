@@ -3589,6 +3589,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxjitserveraotcachename/" class="md-nav__link">
+        -XX:JITServerAOTCacheName
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserveruseaotcache/" class="md-nav__link">
+        -XX:[+|-]JITServerUseAOTCache
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxjitserverlocalsynccompiles/" class="md-nav__link">
         -XX:[+|-]JITServerLocalSyncCompiles
       </a>
@@ -3603,6 +3627,30 @@
     <li class="md-nav__item">
       <a href="../xxjitserverlogconnections/" class="md-nav__link">
         -XX:[+|-]JITServerLogConnections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitservermetrics/" class="md-nav__link">
+        -XX:JITServerMetrics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitservermetricsport/" class="md-nav__link">
+        -XX:JITServerMetricsPort
       </a>
     </li>
   
@@ -4599,7 +4647,11 @@
 <li>The application is running in an environment with limited CPU or memory, which can worsen interference from the JIT compiler.</li>
 <li>The network latency between JITServer and client VM is relatively low.</li>
 </ul>
-<p>For more details about JITServer technology, its pros and cons, and when best to use it, see the blog post <a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a>.</p>
+<p>For more details about JITServer technology, including its advantages and disadvantages and when best to use it, see blog posts such as the following:</p>
+<ul>
+<li><a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a></li>
+<li><a href="https://developer.ibm.com/articles/jitserver-optimize-your-java-cloud-native-applications/">JITServer - Optimize your Java cloud-native applications</a></li>
+</ul>
 <h2 id="using-jitserver-technology">Using JITServer technology</h2>
 <p>JITServer technology is not enabled by default: you must explicitly invoke it. Running OpenJ9 without either of the following options launches it as a regular VM with embedded JIT compilation.</p>
 <h3 id="launch-openj9-in-client-mode">Launch OpenJ9 in client mode</h3>
@@ -4619,12 +4671,16 @@
 <li><a href="../xxjitservershareromclasses/"><code>-XX:[+|-]JITServerShareROMClasses</code></a>: Specifies whether the server shares cached ROM classes between clients</li>
 <li><a href="../xxjitserverlocalsynccompiles/"><code>-XX:[+|-]JITServerLocalSyncCompiles</code></a>: Improves performance for real-time applications by compiling synchronous JIT compilations locally, with a remote asynchronous recompilation scheduled at a later point</li>
 <li><a href="../xxjitserverlogconnections/"><code>-XX:[+|-]JITServerLogConnections</code></a>: Enables logging of connection/disconnection events between the server and the client</li>
+<li><a href="../xxjitservermetrics/"><code>-XX:[+|-]JITServerMetrics</code></a>: Specifies whether the JITServer custom metrics exporter is enabled or disabled</li>
+<li><a href="../xxjitservermetricsport/"><code>-XX:JITServerMetricsPort=&lt;port&gt;</code></a>: Specifies the port number on which the JITServer metrics are provided to a monitoring agent</li>
+<li><a href="../xxjitserveraotcachename/"><code>-XX:JITServerAOTCacheName=&lt;cache_name&gt;</code></a>: Specifies the name of the server-side AOT cache to use</li>
+<li><a href="../xxjitserveruseaotcache/"><code>-XX:[+|-]JITServerUseAOTCache</code></a>: Specifies whether the server caches AOT-compiled methods</li>
 </ul>
 <p>If a JITServer server crashes, the client is forced to perform compilations locally. You can change this behavior by using the <a href="../xxrequirejitserver/"><code>-XX:[+|-]RequireJITServer</code></a> option so that the client crashes with an assert when it detects that the server is unavailable. This feature is useful when you are running a test suite with JITServer enabled and you want the server crash to cause the test to fail.</p>
 <h2 id="security">Security</h2>
 <p>You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x, 1.1.x, or 3.0.x. To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see <a href="../xxjitserversslcert/">-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts</a>.</p>
 <h2 id="tuning-jitserver">Tuning JITServer</h2>
-<p>For best practices regarding JITServer configuration and tuning, please see the document <a href="../jitserver_tuning/">JITServer tuning and practical considerations</a>.</p>
+<p>For best practices regarding JITServer configuration and tuning, see the document <a href="../jitserver_tuning/">JITServer tuning and practical considerations</a>.</p>
 <h2 id="building-a-jdk-with-jitserver-technology">Building a JDK with JITServer technology</h2>
 <p>If you want to build a JDK with JITServer technology, see Appendix A of <a href="https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/">Free your JVM from the JIT with JITServer Technology</a>.</p>
 <h2 id="see-also">See also</h2>

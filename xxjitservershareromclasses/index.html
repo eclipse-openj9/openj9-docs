@@ -3498,6 +3498,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxjitserveraotcachename/" class="md-nav__link">
+        -XX:JITServerAOTCacheName
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserveruseaotcache/" class="md-nav__link">
+        -XX:[+|-]JITServerUseAOTCache
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxjitserverlocalsynccompiles/" class="md-nav__link">
         -XX:[+|-]JITServerLocalSyncCompiles
       </a>
@@ -3512,6 +3536,30 @@
     <li class="md-nav__item">
       <a href="../xxjitserverlogconnections/" class="md-nav__link">
         -XX:[+|-]JITServerLogConnections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitservermetrics/" class="md-nav__link">
+        -XX:JITServerMetrics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitservermetricsport/" class="md-nav__link">
+        -XX:JITServerMetricsPort
       </a>
     </li>
   
@@ -4538,9 +4586,10 @@
 </tr>
 </tbody>
 </table>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The <code>-XX:+JITServerShareROMClasses</code> option is enabled by default at the server on specifying the <a href="../xxjitserveruseaotcache/"><code>-XX:+JITServerUseAOTCache</code></a> option.</p>
 <h2 id="explanation">Explanation</h2>
 <p>Enable this option when multiple clients that are running identical or similar applications connect to a single server.</p>
-<p>This option enables a caching optimization that allows the server to use ROM classes that are cached for one client while compiling for a different client. This behavior reduces the amount of network communication required between the server and the clients, improving startup time and reducing clients' CPU usage. Moreover, footprint at the server can be reduced because only a single copy of a particular Java&trade; class is cached.</p>
+<p>This option enables a caching optimization that allows the server to use ROM classes that are cached for one client while compiling for a different client. This behavior reduces the memory usage at the server because only a single copy of a particular Java&trade; class is cached.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../jitserver/">JITServer technology</a></li>

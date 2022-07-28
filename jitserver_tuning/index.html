@@ -897,6 +897,26 @@
     Server caches
   </a>
   
+    <nav class="md-nav" aria-label="Server caches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-session-caches" class="md-nav__link">
+    Client-session caches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jitserver-aot-cache" class="md-nav__link">
+    JITServer AOT cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -952,6 +972,26 @@
   <a href="#monitoring" class="md-nav__link">
     Monitoring
   </a>
+  
+    <nav class="md-nav" aria-label="Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    Performance metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verbose-logging" class="md-nav__link">
+    Verbose logging
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3590,6 +3630,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxjitserveraotcachename/" class="md-nav__link">
+        -XX:JITServerAOTCacheName
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserveruseaotcache/" class="md-nav__link">
+        -XX:[+|-]JITServerUseAOTCache
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxjitserverlocalsynccompiles/" class="md-nav__link">
         -XX:[+|-]JITServerLocalSyncCompiles
       </a>
@@ -3604,6 +3668,30 @@
     <li class="md-nav__item">
       <a href="../xxjitserverlogconnections/" class="md-nav__link">
         -XX:[+|-]JITServerLogConnections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitservermetrics/" class="md-nav__link">
+        -XX:JITServerMetrics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitservermetricsport/" class="md-nav__link">
+        -XX:JITServerMetricsPort
       </a>
     </li>
   
@@ -4497,6 +4585,26 @@
     Server caches
   </a>
   
+    <nav class="md-nav" aria-label="Server caches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-session-caches" class="md-nav__link">
+    Client-session caches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jitserver-aot-cache" class="md-nav__link">
+    JITServer AOT cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4553,6 +4661,26 @@
     Monitoring
   </a>
   
+    <nav class="md-nav" aria-label="Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    Performance metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verbose-logging" class="md-nav__link">
+    Verbose logging
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -4593,10 +4721,24 @@
 -->
 <h1 id="jitserver-tuning-and-practical-considerations">JITServer tuning and practical considerations</h1>
 <h2 id="server-caches">Server caches</h2>
+<h3 id="client-session-caches">Client-session caches</h3>
 <p>Multiple client JVMs can be connected at the same time to a single JIT server. For each client, the server maintains a client-session cache with information about the environment the client is running in (Java classes, class hierarchy, profiling information, JVM options, etc.). Typically, the information in these caches is kept separately, per client. However, if you specify the <code>-XX:+JITServerShareROMClasses</code> option, the read-only part of the Java classes (ROMClasses in OpenJ9 parlance) is shared between the different clients. This option can generate memory savings at the server when the connected clients run identical or similar Java applications.</p>
 <p>The client-session caches are deleted when the clients terminate, but this can happen only if the clients are shutdown gracefully, giving them the opportunity to send a termination message to the server. To address the scenario of clients ending abruptly, the server also deletes the cache for a client that hasn’t issued a compilation request for 1000 minutes, or 5 minutes under memory pressure. If needed, you can change these values with the following options:</p>
 <pre><code>-Xjit:oldAge=&lt;time-in-ms&gt;,oldAgeUnderLowMemory=&lt;time-in-ms&gt;
 </code></pre>
+<h3 id="jitserver-aot-cache">JITServer AOT cache</h3>
+<p>The JITServer technology can cache AOT compiled methods at the server.
+ The JITServer can, therefore, avoid carrying out an AOT compilation when a compatible AOT method body already exists in the cache, thereby saving CPU resource and improving remote compilation latency. This mechanism works in conjunction with the <a href="https://www.eclipse.org/openj9/docs/aot/">dynamic AOT technology</a> at the client and therefore the client needs to have the <a href="https://www.eclipse.org/openj9/docs/shrc/">shared class cache</a> (SCC) enabled (the SCC is the repository for the AOT code).</p>
+<p>When the JITServer receives an AOT compilation request, it checks its AOT cache for a compatible compiled method body. If one is not found, the server performs the AOT compilation, sends the response to the client JVM, then serializes the compiled method and stores it in its local AOT cache, for future use. If a compatible compiled method is found, the server sends the client the serialized compiled method from its cache, thus avoiding a compilation. The client deserializes the response, stores the result in its local SCC, and loads the compiled method as a regular dynamic AOT code.</p>
+<p>To enable this feature, specify the <a href="../xxjitserveruseaotcache/"><code>-XX:+JITServerUseAOTCache</code></a> command line option, both at the server and at the client JVM.</p>
+<p>A JITServer instance can have several AOT caches, each with its own name. This addresses the situation when client JVMs with significantly different profiles of execution use the same JITServer instance. A client JVM can indicate a specific AOT cache it wants to use by providing its name with the following command line option <a href="../xxjitserveraotcachename/"><code>-XX:JITServerAOTCacheName=&lt;cache_name&gt;</code></a>. The default is to use a nameless cache.</p>
+<p>Current limitations:</p>
+<ul>
+<li>The amount of memory that an AOT cache can consume at the server is not limited. The number of caches that a JITServer can hold is also not limited.</li>
+<li>The AOT cache is a non-persistent in-memory cache. If the JITServer instance ends, the cache content is lost.</li>
+<li>AOT cache entries are not shared between different JITServer instances.</li>
+<li>Caching works only for AOT compilation requests. For this reason, when JITServer AOT caching is enabled, the client JVM will attempt to generate as many AOT requests as possible.</li>
+</ul>
 <h2 id="number-of-concurrent-clients">Number of concurrent clients</h2>
 <p>The amount of CPU and memory resources consumed by the server is expected to increase with the number of connected clients. Finding the appropriate number of clients to connect to a server is a tricky proposition that depends on many factors: number of methods that need to be compiled by the clients, optimization levels for these compilations, how clients are started (staggered or not), how clients are shutdown (gracefully or not), etc.</p>
 <p>As a rule of thumb, you should have 10-20 JVMs simultaneously connected to a server with 1-2 GB of memory. With respect to CPU resources, in Kubernetes you might want to set a low "request" value at the server (1-2 vCPUs) and a larger "limit" value (4-8 vCPUs) in order to soak all those idle cycles. It is possible to connect even more clients to one server instance if memory and CPU resources are increased, but in general, two medium-sized server instances placed on different nodes are better than a single, larger server.</p>
@@ -4606,7 +4748,7 @@
 <h2 id="avoiding-memory-shortages-at-the-server">Avoiding memory shortages at the server</h2>
 <p>Roughly speaking, the server uses two types of memory:
 1. "Scratch" memory. This is allocated during a compilation (for JIT internal data structures) and released to the operating system at the end of the compilation.
-2. "Persistent" memory. This is used for client-session caches and gets deleted only when a client terminates gracefully (or when JITServer purging mechanism is triggered).</p>
+2. "Persistent" memory. This is used for client-session caches and gets deleted only when a client terminates gracefully (or when the JITServer purging mechanism is triggered).</p>
 <p>The total amount of scratch memory at any given moment depends on how many compilations are in progress and how expensive those compilations are. To reduce this amount, you can start the clients in a staggered fashion as suggested previously, or reduce the number of compilation threads per client. Note that the latter already happens automatically: when the server senses that it is about to run out of memory, it provides feedback to the connected clients to reduce their number of active compilation threads.</p>
 <p>To reduce the amount of persistent memory, you can use the techniques described in section <a href="#server-caches">Server caches</a>.</p>
 <h2 id="traffic-encryption">Traffic encryption</h2>
@@ -4638,7 +4780,12 @@ selector:
 <h2 id="resilience">Resilience</h2>
 <p>If the client JVM does not find a compatible server to connect to, compilations are performed locally, by the client itself. To account for the case where the server is temporarily unavailable (for example, server crash followed by Kubernetes launching another server instance), from time to time the client retries to connect to a server at the indicated address and port. The retry mechanism uses an exponential back-off where the retry interval is doubled with each unsuccessful attempt.</p>
 <h2 id="monitoring">Monitoring</h2>
-<p>There are several ways to inspect the behavior of a JITServer instance, but all are based on the <a href="https://blog.openj9.org/2018/06/07/reading-verbose-jit-logs/">OpenJ9 verbose logging facility</a>. Note that if the name of the verbose log is not specified, the relevant information is printed to stderr.
+<h3 id="performance-metrics">Performance metrics</h3>
+<p>You can enable the provision of performance metrics by specifying the <code>-XX:+JITServerMetrics</code> command line option. After enabling this option, you can use a monitoring tool that follows the OpenMetrics standard, such as Prometheus, to collect the data by issuing an HTTP <code>GET</code> request to the following url: <code>http://&lt;jitserveraddress&gt;:&lt;port&gt;/metrics</code>.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> There is a limit of four concurrent <code>GET</code> requests at any given time.</p>
+<p>For more information, including the types of metrics that are provided, see the <a href="../xxjitservermetrics/"><code>-XX:[+|-]JITServerMetrics</code></a> topic.</p>
+<h3 id="verbose-logging">Verbose logging</h3>
+<p>You can inspect the behavior of a JITServer instance by using the <a href="https://blog.openj9.org/2018/06/07/reading-verbose-jit-logs/">OpenJ9 verbose logging facility</a>. Note that if the name of the verbose log is not specified, the relevant information is printed to stderr.
 When you use the <code>-XX:+JITServerLogConnections</code> command line option, the server prints a message to the verbose log every time a new client JVM connects to it or disconnects from it. This is an easy way to determine that the clients are able to reach the server. Example of output:</p>
 <pre><code>#JITServer: t= 74232 A new client (clientUID=14692403771747196083) connected. Server allocated a new client session.
 #JITServer: t= 74282 A new client (clientUID=2599593246759846167) connected. Server allocated a new client session.
