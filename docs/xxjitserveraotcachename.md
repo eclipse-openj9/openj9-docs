@@ -24,27 +24,25 @@
 
 # -XX:JITServerAOTCacheName
 
- This option, used at client JVMs, specifies the name of the AOT cache to be used at the JITServer server.
+ This option, used at the JITServer client JVMs, specifies the name of the AOT cache to be used at the JITServer server.
 
 ## Syntax
 
-         -XX:JITServerAOTCacheName=<cache-name>
+         -XX:JITServerAOTCacheName=<cache_name>
 
- | Setting                 | Effect | Default                                                            |
- |-------------------------|--------|:------------------------------------------------------------------:|
- |`-XX:JITServerAOTCacheName` | Specifies the name of the server-side AOT cache to use | No name         |
+:   where `<cache_name>` specifies the name of the server-side AOT cache to be used.
 
 ## Explanation
 
- A single JITServer instance can use multiple AOT caches that are distinguished by their name.
- The idea behind this design choice is to allow clients running applications with significantly different execution profiles to connect to the same JITServer instance.
- This option must be specified at the client JVM. If no such option is provided, the client will use a nameless cache.
+ A single JITServer instance can use multiple AOT caches, which are distinguished by their name.
+ Clients that are running applications with significantly different execution profiles can, therefore, connect to the same JITServer instance.
+ Specify this option at the client JVM. If you do not specify this option, the client uses a nameless cache.
 
- Note that [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) must also be specified, otherwise the `-XX:JITServerAOTCacheName` option is ignored.
+ :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You must specify [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md), otherwise the `-XX:JITServerAOTCacheName` option is ignored.
 
 ## See also
 
- - [`JITServer technology`](jitserver.md)
- - [`-XX:JITServerUseAOTCache`](xxjitserveruseaotcache.md)
+ - [JITServer technology](jitserver.md)
+ - [`-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md)
 
-<!-- ==== END OF TOPIC ==== xxjitserveruseaotcache.md ==== -->
+<!-- ==== END OF TOPIC ==== xxjitserveraotcachename.md ==== -->

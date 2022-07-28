@@ -27,7 +27,7 @@
 The following new features and notable changes since version 0.30.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [JITServer technology features updated](#jitserver-technology-features-updated)
+- [JITServer technology feature updated](#jitserver-technology-feature-updated)
 - ![Start of content that applies to Java 11](cr/java11.png) [XL C++ Runtime required on AIX](#xl-c-runtime-required-on-aix)
 - ![Start of content that applies to Java 17 plus](cr/java17plus.png) [Linux reference compiler updated to gcc 10.3](#linux-reference-compiler-updated-to-gcc-103)
 - [Control groups v2 support](#control-groups-v2-support)
@@ -42,7 +42,7 @@ OpenJ9 Windows&reg; builds for OpenJDK 8 are now compiled with Microsoft&reg; Vi
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### JITServer technology features updated
+### JITServer technology feature updated
 
 The JITServer technology feature is updated to provide the following new capabilities, which are disabled by default:
 

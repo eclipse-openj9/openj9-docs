@@ -33,9 +33,23 @@ The client-session caches are deleted when the clients terminate, but this can h
 
     -Xjit:oldAge=<time-in-ms>,oldAgeUnderLowMemory=<time-in-ms>
 
-### AOT caches
+### JITServer AOT cache
 
-If you specify the [`-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md) option, the JITServer server caches method bodies that it compiles using AOT compilation. When a client requests an AOT compilation for a method that exists in the cache, the server doesn't have to recompile it, which improves CPU usage of the server and of the whole cluster.
+ The JITServer technology can cache AOT compiled methods at the server.
+ The JITServer can, therefore, avoid carrying out an AOT compilation when a compatible AOT method body already exists in the cache, thereby saving CPU resource and improving remote compilation latency. This mechanism works in conjunction with the [dynamic AOT technology](https://www.eclipse.org/openj9/docs/aot/) at the client and therefore the client needs to have the [shared class cache](https://www.eclipse.org/openj9/docs/shrc/) (SCC) enabled (the SCC is the repository for the AOT code).
+
+ When the JITServer receives an AOT compilation request, it checks its AOT cache for a compatible compiled method body. If one is not found, the server performs the AOT compilation, sends the response to the client JVM, then serializes the compiled method and stores it in its local AOT cache, for future use. If a compatible compiled method is found, the server sends the client the serialized compiled method from its cache, thus avoiding a compilation. The client deserializes the response, stores the result in its local SCC, and loads the compiled method as a regular dynamic AOT code.
+
+ To enable this feature, specify the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) command line option, both at the server and at the client JVM.
+
+ A JITServer instance can have several AOT caches, each with its own name. This addresses the situation when client JVMs with significantly different profiles of execution use the same JITServer instance. A client JVM can indicate a specific AOT cache it wants to use by providing its name with the following command line option [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md). The default is to use a nameless cache.
+
+ Current limitations:
+
+ - The amount of memory that an AOT cache can consume at the server is not limited. The number of caches that a JITServer can hold is also not limited.
+ - The AOT cache is a non-persistent in-memory cache. If the JITServer instance ends, the cache content is lost.
+ - AOT cache entries are not shared between different JITServer instances.
+ - Caching works only for AOT compilation requests. For this reason, when JITServer AOT caching is enabled, the client JVM will attempt to generate as many AOT requests as possible.
 
 ## Number of concurrent clients
 
@@ -96,15 +110,15 @@ selector:
 
 ## Resilience
 
-If the client JVM does not find a compatible server to connect to, compilations are performed locally, by the client itself. To account for the case where the server is temporarily unavailable (e.g, server crash followed by Kubernetes launching another server instance), from time to time the client retries to connect to a server at the indicated address and port. The retry mechanism uses an exponential back-off where the retry interval is doubled with each unsuccessful attempt.
+If the client JVM does not find a compatible server to connect to, compilations are performed locally, by the client itself. To account for the case where the server is temporarily unavailable (for example, server crash followed by Kubernetes launching another server instance), from time to time the client retries to connect to a server at the indicated address and port. The retry mechanism uses an exponential back-off where the retry interval is doubled with each unsuccessful attempt.
 
-## Monitoring in the cloud
+## Monitoring
 
 ### Performance metrics
 
-You can enable the provision of performance metrics by specifying the `-XX:+JITServerMetrics` command line option. After enabling this option, you can use a monitoring tool that follows the OpenMetrics standard, such as Prometheus, to collect the data by issuing an http `GET` request to the following url: `http://jitserveraddress:port/metrics`.
+You can enable the provision of performance metrics by specifying the `-XX:+JITServerMetrics` command line option. After enabling this option, you can use a monitoring tool that follows the OpenMetrics standard, such as Prometheus, to collect the data by issuing an HTTP `GET` request to the following url: `http://<jitserveraddress>:<port>/metrics`.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** There is a limit of maximum four concurrent `GET` requests at any given time.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** There is a limit of four concurrent `GET` requests at any given time.
 
 For more information, including the types of metrics that are provided, see the [`-XX:[+|-]JITServerMetrics`](xxjitservermetrics.md) topic.
 
@@ -137,6 +151,6 @@ A value greater than 0 for the `Compilation Queue Size` is a sign that the serve
 
     -XcompilationThreads<N> (default is 63)
 
-More detailed diagnostics can be obtained with the option `-Xjit:verbose={JITServer},verbose={compilePerformance}` which is typically used for debugging server behavior.
+More detailed diagnostics can be obtained with the option `-Xjit:verbose={JITServer},verbose={compilePerformance}`, which is typically used for debugging server behavior.
 
 <!-- ==== END OF TOPIC ==== jitservertuning.md ==== -->

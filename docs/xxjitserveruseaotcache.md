@@ -39,9 +39,11 @@ This option enables the caching of AOT-compiled methods in the JITServer server.
 
 When you enable this option, the JITServer server caches the AOT-compiled methods. When a JITServer client requests an AOT compilation and the requested method exists in the cache, the server does not have to recompile the method. This feature, therefore, improves the CPU utilization of the JITServer technology and of the cluster.
 
-You must specify this option both at the client JVM and at the server to benefit from this feature. Moreover, the client JVM must have the [shared class cache](https://www.eclipse.org/openj9/docs/shrc/) feature enabled and be allowed to generate AOT compilation requests.
+ :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This option has the following requirements:
+ - You must specify this option both at the client JVM and at the server. 
+ - The client JVM must have the [shared class cache](https://www.eclipse.org/openj9/docs/shrc/) feature enabled and be allowed to generate AOT compilation requests.
 
-The [`-XX:+JITServerShareROMClasses`](xxjitservershareromclasses.md) option is enabled by default at the server when the`-XX:+JITServerUseAOTCache` option is specified.
+The [`-XX:+JITServerShareROMClasses`](xxjitservershareromclasses.md) option is enabled by default at the server on specifying the`-XX:+JITServerUseAOTCache` option.
 
 ## See also
 

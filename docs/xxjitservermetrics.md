@@ -24,7 +24,7 @@
 
 # -XX:[+|-]JITServerMetrics
 
-This option enables the provision of JITServer performance metrics to a monitoring agent that follows the [OpenMetrics](https://openmetrics.io/) standard.
+This option enables the provision of JITServer performance metrics to a monitoring agent that follows the OpenMetrics standard.
 
 When you enable this option, the following JITServer metrics are provided:
 
@@ -34,8 +34,6 @@ When you enable this option, the following JITServer metrics are provided:
 - The number of active compilation threads in the JITServer
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The data is currently not encrypted.
-
-You can use the [`-XX:JITServerMetricsPort`](xxjitservemetricsport.md) option to specify the port number on which JITServer metrics are provided to the monitoring agent.
 
 ## Syntax
 
@@ -48,11 +46,11 @@ You can use the [`-XX:JITServerMetricsPort`](xxjitservemetricsport.md) option to
 
 ## Explanation
 
- When you enable this option, the JITServer process will open a TCP port, which can be used by monitoring agents (like Prometheus) to collect custom metrics exported by JITServer. Monitoring agents must issue http `GET` requests to a url of the form: `http://jitserveraddress:metricsport/metrics`. The path for the http request must be `/metrics`.
+ When you enable this option, the JITServer process opens a TCP port, which can be used by monitoring agents (like Prometheus) to collect the custom metrics exported by the JITServer. Monitoring agents must issue HTTP `GET` requests to a URL of the form: `http://<jitserveraddress>:<port>/metrics`. The path for the HTTP request must be `/metrics`.
 
- The default value of `metricsport` is 38500 and can be changed with [`-XX:JITServerMetricsPort=<NNN\>`](xxjitservemetricsport.md) command line option.
+ The default value of `<port>` is 38500. You can change this value by using the [`-XX:JITServerMetricsPort=<NNN>`](xxjitservermetricsport.md) command line option.
 
- The exposition format for the metrics returned by JITServer follows the [OpenMetrics](https://openmetrics.io/) protocol.
+ The format for the metrics returned by the JITServer follows the [OpenMetrics](https://openmetrics.io/) protocol.
 
 ## Example
 
@@ -88,7 +86,7 @@ JITServer response:
 
 ## See also
 
-- [-XX:JITServerMetricsPort](xxjitservemetricsport.md)
+- [-XX:JITServerMetricsPort](xxjitservermetricsport.md)
 - [JITServer technology](jitserver.md)
 
 <!-- ==== END OF TOPIC ==== xxjitservermetrics.md ==== -->

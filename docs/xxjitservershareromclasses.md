@@ -35,7 +35,7 @@ This option enables the JITServer server to share cached ROM classes between JIT
 |`-XX:+JITServerShareROMClasses`           | Enable |                                                                                    |
 |`-XX:-JITServerShareROMClasses`           | Disable| :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-Note that the `-XX:+JITServerShareROMClasses` option is enabled by default at the server when the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) option is specified.
+ :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The `-XX:+JITServerShareROMClasses` option is enabled by default at the server on specifying the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) option.
 
 ## Explanation
 
