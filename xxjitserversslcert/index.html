@@ -4595,7 +4595,7 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>You can encrypt network communication by using OpenSSL 1.0.x or 1.1.x (the JITServer technology feature currently does not support OpenSSL 3.0.x). To enable encryption, specify the private key (<code>&lt;key&gt;.pem</code>) and the certificate (<code>&lt;cert&gt;.pem</code>) at the server:</p>
+<p>You can encrypt network communication by using OpenSSL 1.0.x, 1.1.x, or 3.0.x. To enable encryption, specify the private key (<code>&lt;key&gt;.pem</code>) and the certificate (<code>&lt;cert&gt;.pem</code>) at the server:</p>
 <pre><code>-XX:JITServerSSLKey=&lt;key&gt;.pem -XX:JITServerSSLCert=&lt;cert&gt;.pem
 </code></pre>
 <p>and use the certificate at the client:</p>
