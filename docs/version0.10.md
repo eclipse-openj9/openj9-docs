@@ -31,6 +31,7 @@ The following new features and notable changes since v.0.9.0 are included in thi
 - [Change to the default shared classes cache size for OpenJDK 8 builds](#change-to-the-default-shared-classes-cache-size)
 - [New information for the SHARED CLASSES section of a Javadump file](#new-information-for-the-shared-classes-section-of-a-java-dump-file)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
+- ![Start of content that applies only to Java 11plus](cr/java11plus.png) [New JDK 11 features](#new-jdk-11-features)
 
 ## Features and changes
 
@@ -61,6 +62,24 @@ For compatibility, the following OpenJDK HotSpot options are now supported by Op
 - [-XX:HeapDumpPath](xxheapdumppath.md)
 - [-XX:\[+|-\]HeapDumpOnOutOfMemory](xxheapdumponoutofmemory.md)
 - [-XX:ActiveProcessorCount](xxactiveprocessorcount.md)
+
+### ![Start of content that applies to Java 11 plus](cr/java11plus.png) New JDK 11 features
+
+The following features are supported by OpenJ9:
+
+- [JEP 181](https://openjdk.org/jeps/181): Nest-Based Access Control
+- [JEP 309](https://openjdk.org/jeps/309): Dynamic Class-File Constants
+- [JEP 320](https://openjdk.org/jeps/320): Remove the Java EE and CORBA Modules
+- [JEP 321](https://openjdk.org/jeps/321): HTTP Client (Standard)
+- [JEP 323](https://openjdk.org/jeps/323): Local-Variable Syntax for Lambda Parameters
+- [JEP 324](https://openjdk.org/jeps/324): Key Agreement with Curve25519 and Curve448
+- [JEP 329](https://openjdk.org/jeps/329): ChaCha20 and Poly1305 Cryptographic Algorithms
+- [JEP 330](https://openjdk.org/jeps/330): Launch Single-File Source-Code Programs
+- [JEP 332](https://openjdk.org/jeps/332): Transport Layer Security (TLS) 1.3
+- [JEP 335](https://openjdk.org/jeps/335): Deprecate the Nashorn JavaScript Engine
+- [JEP 336](https://openjdk.org/jeps/336): Deprecate the Pack200 Tools and API
+
+You can find the full list of features for JDK 11 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/11/). Any remaining features that are listed do not apply to OpenJ9.
 
 ## Full release information
 

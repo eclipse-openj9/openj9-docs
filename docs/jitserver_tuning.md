@@ -79,7 +79,7 @@ Enabling network encryption can increase the CPU overhead, both at the client an
 
 ## Minimizing application stalls
 
-For the most part, the compilation threads in OpenJ9 JVM execute in parallel with Java application threads. However, for correctness reasons a small number of compilations are performed synchronously, meaning that Java application threads have to wait for the compilation result before being allowed to execute the method being compiled. Since remote compilations typically take longer to complete due to network latency, application stalls caused by synchronous compilations can be more severe in a JITServer setting. If this becomes a problem, you should add the following command line option at the client:
+Usually, the compilation threads in OpenJ9 JVM execute in parallel with Java application threads. However, for correctness reasons a small number of compilations are performed synchronously, meaning that Java application threads have to wait for the compilation result before being allowed to execute the method being compiled. Since remote compilations typically take longer to complete due to network latency, application stalls caused by synchronous compilations can be more severe in a JITServer setting. If this becomes a problem, you should add the following command line option at the client:
 
     -XX:+JITServerLocalSyncCompiles
 
@@ -147,9 +147,9 @@ Example of output:
 #JITServer: CpuLoad 206% (AvgUsage 25%) JvmCpu 113%
 ...
 ```
-A value greater than 0 for the `Compilation Queue Size` is a sign that the server is overloaded. Compilation requests that wait in the compilation queue face greater delays and run the risk of exceeding network timeouts. To avoid this scenario, you can reduce the number of connected clients, use the techniques described in section [Alleviating CPU congestion at the server](#alleviating-CPU-congestion-at-the-server) or increase the number of compilation threads at the server with the following option:
+A value greater than 0 for the `Compilation Queue Size` is a sign that the server is overloaded. Compilation requests that wait in the compilation queue face greater delays and run the risk of exceeding network timeouts. To avoid this scenario, you can reduce the number of connected clients, use the techniques described in section [Alleviating CPU congestion at the server](#alleviating-CPU-congestion-at-the-server), or increase the number of compilation threads at the server by using the [`-XcompilationThreads`](xcompilationthreads.md) option.
 
-    -XcompilationThreads<N> (default is 63)
+Increasing the maximum number of client threads can improve performance in high network latency settings because there can be more in-progress concurrent compilation requests. Increasing the number of threads at the server can improve performance if the server has many CPU cores available and serves a large number of clients concurrently.
 
 More detailed diagnostics can be obtained with the option `-Xjit:verbose={JITServer},verbose={compilePerformance}`, which is typically used for debugging server behavior.
 

@@ -31,9 +31,14 @@ Use this option to specify the number of compilation threads that are used by th
 
         -XcompilationThreads<n>
 
-: where `<n>` is the number of threads, in the range 1-7 inclusive. Any number outside this range is ignored.
+: Where <n\> is the number of threads. The minimum value is 1. The default and maximum values depend on whether the VM is running with the JITServer feature enabled and if so, whether the VM is running as a JITServer server, as shown in the following table:
 
-: Setting the compilation threads to zero does not prevent the JIT from working. Instead, if you do not want the JIT to work, use the [`-Xint`](xint.md) option.
+| JIT compiler scenario| Default value | Maximum value |
+|----------------------|---------------|:-------------:|
+| JIT and JITServer client| Determined by internal JIT heuristics that consider the number of CPUs that the VM is allowed to use                         | 15            |
+| JITServer server        | 63         | 999           |
+
+: Any number outside this range is ignored. Setting the compilation threads to zero does not disable the JIT compiler. If you want to disable the JIT, use the [`-Xint`](xint.md) option.
 
 ## Explanation
 
@@ -49,7 +54,9 @@ For example, the second compilation thread has ID 1. The result is that the corr
 
     <specified_filename>.<date>.<time>.<pid>.1
 
+## See also
 
+- [JITServer technology](jitserver.md)
 
 <!-- ==== END OF TOPIC ==== xcompilationthreads.md ==== -->
 
