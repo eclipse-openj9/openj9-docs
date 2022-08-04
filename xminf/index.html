@@ -4573,13 +4573,15 @@
 </table>
 <p>The value range is 0.0 - 1.0.</p>
 <ul>
+<li>For the <code>balanced</code> GC policy, these values apply only to the non-eden space part of the heap. The non-eden heap resizing decision is made by observing both <code>-Xmint</code>/<code>-Xmaxt</code> and <code>-Xminf</code>/<code>-Xmaxf</code>. Free memory in eden space is not considered for <code>-Xminf</code>/<code>-Xmaxf</code> purposes.</li>
 <li>For the <code>gencon</code> GC policy, the values apply only to the tenure part of the heap and only at global GC points.</li>
 <li>For the <code>optthruput</code> and <code>optavgpause</code> GC policies, these values apply to the whole heap at every GC point.</li>
+<li>This option cannot be used with the metronome GC policy (<code>-Xgcpolicy:metronome</code>) because the heap is always fully expanded.</li>
 </ul>
-<p>This option cannot be used with the metronome GC policy (<code>-Xgcpolicy:metronome</code>) because the heap is always fully expanded.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../allocation/#expansion-and-contraction">Heap expansion and contraction</a></li>
+<li><a href="../gc/">Garbage collection policies</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xminf.md ==== -->
 <!-- ==== END OF TOPIC ==== xmaxf.md ==== -->

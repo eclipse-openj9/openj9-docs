@@ -842,6 +842,19 @@
     Expansion and contraction
   </a>
   
+    <nav class="md-nav" aria-label="Expansion and contraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#balanced-gc-policy" class="md-nav__link">
+    balanced GC policy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4641,6 +4654,19 @@
     Expansion and contraction
   </a>
   
+    <nav class="md-nav" aria-label="Expansion and contraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#balanced-gc-policy" class="md-nav__link">
+    balanced GC policy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4732,7 +4758,7 @@ reach the maximum requested TLH size more quickly.</p>
 <p>The GC action that is triggered by the allocation failure depends on the GC policy in force.</p>
 <p>The overall size of the LOA is calculated when the heap is initialized, and recalculated at the end of each global GC cycle. The garbage collector can expand or contract the LOA, depending on usage, to avoid allocation failures.</p>
 <p>You can control the size of the LOA by using the <a href="../xloaminimum/"><code>-Xloainitial</code>, <code>-Xloaminimum</code>, and <code>-Xloamaximum</code></a> command line options. If the LOA is not used, the garbage collector contracts the LOA after a few cycles, down to the value of <code>-Xloaminimum</code>. You can also specify <a href="../xloa/"><code>-Xnoloa</code></a> to prevent an LOA being created.</p>
-<p>An SOA and LOA are used by the OpenJ9 GC policies: <code>gencon</code>, <code>optavgpause</code> and <code>optthruput</code>. For the <code>gencon</code> policy, the LOA and SOA are contained within the tenure area, which is designated for ageing objects. For more information about policies, see <a href="../gc/">Garbage collection policies</a>.</p>
+<p>An SOA and LOA are used by the OpenJ9 GC policies: <code>gencon</code>, <code>optavgpause</code>, and <code>optthruput</code>. For the <code>gencon</code> policy, the LOA and SOA are contained within the tenure area, which is designated for ageing objects. For more information about policies, see <a href="../gc/">Garbage collection policies</a>.</p>
 <h3 id="region-based-heaps">Region-based heaps</h3>
 <p>The Java heap can also be subdivided into multiple regions. The <code>balanced</code> GC policy uses a heap that is divided into thousands of equal size regions in order to manage multiple generations of objects. The <code>metronome</code> GC policy also uses multiple regions, which are grouped by size-class to manage a singe generation of objects. To learn more about how the regions are configured for each policy, see <a href="../gc/">Garbage collection policies</a>.</p>
 <p>In addition to regions, the <code>balanced</code> and <code>metronome</code> policies use structures called <em>arraylets</em> to store large arrays in the heap.</p>
@@ -4748,7 +4774,7 @@ reach the maximum requested TLH size more quickly.</p>
 <p>Additionally, the garbage collector never needs to move an arraylet leaf once it has been allocated. The cost of relocating an array is therefore limited to the cost of relocating the spine, so large arrays do not contribute to higher defragmentation times.</p>
 </li>
 </ul>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Despite the general advantage of using arraylets, they can slow down processing when the Java Native Interface (JNI) is being used. The JNI provides flexibility by enabling Java programs to call native code; for example C or C++, and if direct addressability to the inside of an object is needed, a JNI critical section can be used. However, that requires the object to be in a contiguous region of memory, or at least <em>appear</em> to be so. The JNI therefore creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Despite the general advantage of using arraylets, they can slow down processing when the Java Native Interface (JNI) is being used. The JNI provides flexibility by enabling Java programs to call native code; for example, C or C++, and if direct addressability to the inside of an object is needed, a JNI critical section can be used. However, that requires the object to be in a contiguous region of memory, or at least <em>appear</em> to be so. The JNI, therefore, creates a temporary contiguous array that is the same size as the original array and copies everything, element by element, to the temporary array. After the JNI critical section is finished, everything is copied from the temporary array back to the arraylet, element by element.</p>
 <h2 id="heap-sizing">Heap sizing</h2>
 <p>The overall size of the Java heap is determined by two command-line options, <code>-Xms</code>, which sets the initial size of the heap, and <code>-Xmx</code>, which sets the maximum size of the heap. Finer tuning of the heap depends on the heap configuration that is being used by a GC policy. For example, an LOA within the heap can be sized by using the <a href="../xloaminimum/"><code>-Xloainitial</code>, <code>-Xloaminimum</code>, and <code>-Xloamaximum</code></a> command-line options. A nursery area within the heap can be sized by using the <a href="../xmn/"><code>-Xmn</code>, <code>-Xmns</code>, and <code>-Xmnx</code></a> command-line options. For more information about policies and the heap configurations that are used, see <a href="../gc/">GC policies</a>. To determine the values that are in use for the Java heap, use the <code>-verbose:sizes</code> option when you run your Java application.</p>
 <p>When the Java heap runs out of space, <code>OutOfMemoryError</code> exceptions are generated. If you are confident that your heap settings are appropriate for your application but are still receiving an <code>OutOfMemoryError</code> exception, check the Java dump file that gets automatically generated when the error occurs. A Java dump file can tell you more about what your application was attempting to do at the time of the error. For example, see the <a href="../dump_javadump/#java-outofmemoryerror">Java OutOfMemoryError</a> scenario.</p>
@@ -4768,10 +4794,19 @@ reach the maximum requested TLH size more quickly.</p>
 <p>Expansion can also be triggered if more time is being spent on GC processing than is specified by the <code>-Xmaxt</code> option. In this case, the heap expands by an amount that provides 17% more free space, within the limits imposed by the <code>-Xmine</code> and <code>-Xmaxe</code> values.</p>
 <p>Heap contraction occurs under certain conditions and might be preceded by heap compaction. If the last three GC cycles caused a heap expansion, contraction does not occur. Otherwise, contraction is triggered when the proportion of free heap space that is specified by the <code>-Xmaxf</code> option is reached. The amount of memory to reduce the heap by is calculated to the nearest 1024-byte boundary, down to the minimum size specified for the initial Java heap (<code>-Xms</code>). To prevent heap contraction, set the <code>-Xmaxf</code> value to <code>1</code>, which sets the maximum free space allowed on the heap to 100%.</p>
 <p>When the heap contracts, physical memory is not released unless paging is supported by the underlying operating system.</p>
+<h4 id="balanced-gc-policy"><code>balanced</code> GC policy</h4>
+<p>For the <code>balanced</code> GC policy, if the <code>-Xminf</code>/<code>-Xmaxf</code> and/or <code>-Xmint</code>/<code>-Xmaxt</code> criteria are not being met and this results in a heap resize, then the heap resize that occurs, happens only on non-eden heap (similar to how these options apply to tenure part for gencon).</p>
+<p>The non-eden heap resizing occurs at the end of a GMP cycle, or global collection. At this point, heap resizing decision is made by observing both <code>-Xmint</code>/<code>-Xmaxt</code> and <code>-Xminf</code>/<code>-Xmaxf</code> and comparing them to the appropriate proportion of time spent in GC, and free heap respectively.</p>
+<p>If either <code>-Xmint</code>/<code>-Xmaxt</code> and/or <code>-Xminf</code>/<code>-Xmaxf</code> criteria are not being met, there is no guarantee that a heap resize will occur. The heap sizing logic is looking at the following two things:</p>
+<ul>
+<li>if % of time in GC pauses is between <code>-Xmint</code>/<code>-Xmaxt</code>. If it's greater than <code>-Xmaxt</code>, the VM will try to expand the heap, if it's less than <code>-Xmint</code>, then contract it.</li>
+<li>if % of free heap is between <code>-Xminf</code>/<code>-Xmaxf</code>. If it's too high, i.e. greater than <code>-Xmaxf</code>(too much free), heap size will contract, if too low, i.e. lesser than <code>-Xminf</code>, it will expand.</li>
+</ul>
+<p>Since these two criteria may be providing opposite recommendations (for example, lots of free memory, but high % of time in GC) causing oscillations in heap size, the <code>balanced</code> GC heap sizing logic finds a balance between these two criteria.</p>
 <h3 id="compressed-references">Compressed references</h3>
 <p>On 64-bit systems, the VM can use compressed references to decrease the size of Java objects and make better use of the available space in the Java heap. By storing objects in a 32-bit representation, the object size is identical to that in a 32-bit VM, which creates a smaller memory footprint. These 4 byte (32-bit) compressed references are converted to 64-bit values at runtime with minimal overhead. Smaller objects enable larger heap sizes that result in less frequent garbage collection and improve memory cache utilization. Overall, the performance of 64-bit applications that store compressed rather than uncompressed 64-bit object references is significantly improved.</p>
 <p>Compressed references are used by default when the maximum Java heap size is in the range 0 - 57 GB on AIX&reg;, Linux&reg;, and Windows&reg; systems. The upper limit is also 57 GB on z/OS&reg; systems that have APAR OA49416
-installed (25 GB without APAR OA49416). All GC policies observe these limits except for the <a href="../gc/#metronome-policy"><code>metronome</code></a> policy, which can only support a heap size of up to 25 GB with compressed references.</p>
+installed (25 GB without APAR OA49416). All GC policies observe these limits except for the <a href="../gc/#metronome-policy"><code>metronome</code></a> policy, which can support a heap size of up to 25 GB only with compressed references.</p>
 <p>When the VM uses compressed references, classes, threads, and monitors are stored in the lowest 4 GB of address space. However, this area of memory is also used by native libraries, the operating system, and for small Java heaps. If you receive native memory <code>OutOfMemoryError</code> exceptions in the lowest 4 GB when running with compressed references enabled, these errors might result from the lowest 4 GB of address space becoming full. Try specifying a large heap with the <a href="../xms/"><code>-Xmx</code></a> option, which puts the Java heap into a higher area of address space or using the <a href="../xmcrs/"><code>-Xmcrs</code></a> option to reserve space in the lowest 4 GB of address space for compressed references.</p>
 <p>To turn off compressed references, use the <a href="../xcompressedrefs/"><code>-Xnocompressedrefs</code></a> command-line option.</p>
 <!-- ==== END OF TOPIC ==== allocation.md ==== -->

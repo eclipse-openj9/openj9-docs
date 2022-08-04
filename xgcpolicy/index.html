@@ -4748,7 +4748,7 @@
 <dl>
 <dd>The Balanced policy requires a multi-region heap to manage multiple generations of objects. The policy uses a global GC cycle that involves an incremental concurrent <em>mark</em> operation (global mark phase), followed by <em>stop-the-world</em> (STW) <em>sweep</em> operation. The policy also uses a partial GC cycle to run <em>copy forward</em> or <em>mark-compact</em> operations. Regions are individually managed to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The policy tries to avoid global collections by matching object allocation and survival rates. With the <code>balanced</code> policy, the global mark and partial GC cycles interleave. The global STW <em>sweep</em> operation runs within the same GC increment as the first partial GC cycle that follows the global mark phase.</dd>
 <dd>The <code>balanced</code> policy also exploits large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), which might further improve application throughput.</dd>
-<dd><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> If you are using this GC policy in a Docker container that uses the default <code>seccomp</code> Docker profile, you must start the container with <code>--security-opt seccomp=unconfined</code> to exploit NUMA characteristics. These options are not required if you are running in Kubernetes, because <code>unconfined</code> is set by default (see <a href="https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp">Seccomp</a>).</dd>
+<dd><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> If you are using this GC policy in a Docker container that uses the default <code>seccomp</code> Docker profile, you must start the container with <code>--security-opt seccomp=unconfined</code> to exploit NUMA characteristics. These options are not required if you are running in Kubernetes because <code>unconfined</code> is set by default (see <a href="https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp">Seccomp</a>).</dd>
 <dd>To learn more about this policy, how it works, and when to use it, see <a href="../gc/#balanced-policy">Garbage collection: <code>balanced</code> policy</a>.</dd>
 </dl>
 <h4 id="balanced-defaults-and-options"><code>balanced</code> defaults and options</h4>
@@ -4788,6 +4788,8 @@
 <dd>Forces compaction in explicit Global GC cycles, such as those invoked by <code>System.gc()</code>. Compaction in implicit Global GC remains optional, triggered by internal heuristics.</dd>
 <dt><a href="../xcompactexplicitgc/"><code>-Xnocompactexplicitgc</code></a></dt>
 <dd>Disables compaction in explicit Global GC cycles. Compaction in implicit Global GC remains optional, triggered by internal heuristics.</dd>
+<dt><a href="../xgc/#targetpausetime"><code>-Xgc:targetPausetime</code></a></dt>
+<dd>Uses the specified GC pause time as a soft GC pause time target.</dd>
 </dl>
 <p>The following options are ignored when specified with <code>-Xgcpolicy:balanced</code>:</p>
 <ul>
@@ -4841,10 +4843,10 @@
 <li><a href="../xgc/#nosynchronousgconoom"><code>-Xgc:nosynchronousGCOnOOM</code></a></li>
 <li><a href="../xgc/#overridehirestimercheck"><code>-Xgc:overrideHiresTimerCheck</code></a></li>
 <li><a href="../xgc/#synchronousgconoom"><code>-Xgc:synchronousGCOnOOM</code></a></li>
-<li><a href="../xgc/#targetpausetime"><code>-Xgc:targetPausetime</code></a></li>
 <li><a href="../xgc/#targetutilization"><code>-Xgc:targetUtilization</code></a></li>
 <li><a href="../xgc/#verbosegccycletime"><code>-Xgc:verbosegcCycleTime</code></a></li>
 </ul>
+<p><a href="../xgc/#targetpausetime"><code>-Xgc:targetPausetime</code></a> option also applies to the <code>metronome</code> GC policy. This option applies only to the <code>metronome</code> and <code>balanced</code> GC policies.</p>
 <h3 id="nogc"><code>nogc</code></h3>
 <pre><code>    -Xgcpolicy:nogc
 </code></pre>

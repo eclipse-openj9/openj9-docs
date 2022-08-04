@@ -4547,7 +4547,7 @@
 -->
 
 <h1 id="-xmint-xmaxt">-Xmint / -Xmaxt</h1>
-<p>Sets the minimum and maximum proportion of time to spend in the garbage collection (GC) process as a percentage of the overall running time that included the last three GC runs.</p>
+<p>Sets the minimum and maximum proportion of time to spend in the garbage collection (GC) process as a percentage of the overall running time that included the last three GC runs. Therefore, the time spent in the GC process includes time spent in global mark phase and global GC operations but excludes partial garbage collection pauses because the latter apply only to the eden space.</p>
 <ul>
 <li>If the percentage of time drops to less than the minimum, the OpenJ9 VM tries to shrink the heap.</li>
 <li>If the percentage of time exceeds the maximum, the VM tries to expand the heap.</li>
@@ -4562,26 +4562,35 @@
 <tr>
 <th>Setting</th>
 <th>Effect</th>
-<th>Default</th>
+<th align="center">Default for balanced policy</th>
+<th align="center">Default for other policies</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>-Xmint&lt;value&gt;</code></td>
 <td>Set minimum time in GC</td>
-<td>0.05</td>
+<td align="center">0.02</td>
+<td align="center">0.05</td>
 </tr>
 <tr>
 <td><code>-Xmaxt&lt;value&gt;</code></td>
 <td>Set maximum time in GC</td>
-<td>0.13</td>
+<td align="center">0.05</td>
+<td align="center">0.13</td>
 </tr>
 </tbody>
 </table>
-<p>For the <code>gencon</code> GC policy, the values apply only to the tenure part of the heap. For the <code>balanced</code>, <code>optthruput</code>, and <code>optavgpause</code> GC policies, these values apply to the whole heap. This option cannot be used with the metronome GC policy (<code>-Xgcpolicy:metronome</code>) because the heap is always fully expanded.</p>
+<ul>
+<li>For the <code>balanced</code> GC policy, the values apply only to the non-eden space part of the heap. The non-eden heap resizing decision is made by observing both <code>-Xmint</code>/<code>-Xmaxt</code> and <code>-Xminf</code>/<code>-Xmaxf</code>.</li>
+<li>For the <code>gencon</code> GC policy, the values apply only to the tenure part of the heap.</li>
+<li>For the <code>optthruput</code>, and <code>optavgpause</code> GC policies, these values apply to the whole heap.</li>
+<li>This option cannot be used with the <code>metronome</code> GC policy (<code>-Xgcpolicy:metronome</code>) because the heap is always fully expanded.</li>
+</ul>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../allocation/#expansion-and-contraction">Heap expansion and contraction</a></li>
+<li><a href="../gc/">Garbage collection policies</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xmint.md ==== -->
 <!-- ==== END OF TOPIC ==== xmaxt.md ==== -->
