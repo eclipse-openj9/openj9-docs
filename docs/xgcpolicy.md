@@ -61,7 +61,7 @@ For a detailed description of the policies, when to use them, and how they work,
 
 : The `balanced` policy also exploits large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), which might further improve application throughput.
 
-: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you are using this GC policy in a Docker container that uses the default `seccomp` Docker profile, you must start the container with `--security-opt seccomp=unconfined` to exploit NUMA characteristics. These options are not required if you are running in Kubernetes, because `unconfined` is set by default (see [Seccomp]( https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp)).
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you are using this GC policy in a Docker container that uses the default `seccomp` Docker profile, you must start the container with `--security-opt seccomp=unconfined` to exploit NUMA characteristics. These options are not required if you are running in Kubernetes because `unconfined` is set by default (see [Seccomp]( https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp)).
 
 : To learn more about this policy, how it works, and when to use it, see [Garbage collection: `balanced` policy](gc.md#balanced-policy).
 
@@ -108,6 +108,9 @@ The behavior of the following options is different when specified with `-Xgcpoli
 
 [`-Xnocompactexplicitgc`](xcompactexplicitgc.md)
 : Disables compaction in explicit Global GC cycles. Compaction in implicit Global GC remains optional, triggered by internal heuristics.
+
+[`-Xgc:targetPausetime`](xgc.md#targetpausetime)
+: Uses the specified GC pause time as a soft GC pause time target.
 
 The following options are ignored when specified with `-Xgcpolicy:balanced`:
 
@@ -162,9 +165,10 @@ The following options are specific to the `metronome` GC policy:
 - [`-Xgc:nosynchronousGCOnOOM`](xgc.md#nosynchronousgconoom)
 - [`-Xgc:overrideHiresTimerCheck`](xgc.md#overridehirestimercheck)
 - [`-Xgc:synchronousGCOnOOM`](xgc.md#synchronousgconoom)
-- [`-Xgc:targetPausetime`](xgc.md#targetpausetime)
 - [`-Xgc:targetUtilization`](xgc.md#targetutilization)
 - [`-Xgc:verbosegcCycleTime`](xgc.md#verbosegccycletime)
+
+[`-Xgc:targetPausetime`](xgc.md#targetpausetime) option also applies to the `metronome` GC policy. This option applies only to the `metronome` and `balanced` GC policies.
 
 ### `nogc`
 
