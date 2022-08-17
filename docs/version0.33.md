@@ -22,9 +22,9 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# What's new in version 0.33.0
+# What's new in version 0.33.x
 
-The following new features and notable changes since version 0.30.0 are included in this release:
+The following new features and notable changes since version 0.32.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 11](cr/java11.png) [XL C++ Runtime required on AIX](#xl-c-runtime-required-on-aix)
@@ -35,9 +35,11 @@ The following new features and notable changes since version 0.30.0 are included
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.33.0 supports OpenJDK 8, 11, 17, and 18.
+OpenJ9 release 0.33.x supports OpenJDK 8, 11, 17, and 18.
 
 OpenJ9 Windows&reg; builds for OpenJDK 8 are now compiled with Microsoft&reg; Visual Studio 2017. The Visual Studio redistributable files included with the build are updated to match.
+
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Binaries that are labeled 0.33.1 include additional bug fixes. For more information, see the [release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.33/0.33.md).
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -56,6 +58,6 @@ The Linux kernel has two variants of [control groups (cgroups): v1 and v2](https
 
 ## Known problems and full release information
 
-To see known problems and a complete list of changes between Eclipse OpenJ9 v0.32.0 and v0.33.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.33/0.33.md).
+To see known problems and a complete list of changes between Eclipse OpenJ9 v0.32.0 and v0.33.x, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.33/0.33.md).
 
 <!-- ==== END OF TOPIC ==== version0.33.md ==== -->
