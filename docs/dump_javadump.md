@@ -24,7 +24,7 @@
 
 # Java dump
 
-Java dumps, sometimes referred to as *Java cores*, are produced when the VM ends unexpectedly because of an operating system signal, `OutOfMemoryError`, or a user-initiated keystroke combination. You can also generate a Java dump by calling the Dump API programmatically from your application or specifying the `-Xdump:java` option on the command line.
+Java&reg; dumps, sometimes referred to as *Java cores*, are produced when the VM ends unexpectedly because of an operating system signal, `OutOfMemoryError`, or a user-initiated keystroke combination. You can also generate a Java dump by calling the Dump API programmatically from your application or specifying the `-Xdump:java` option on the command line.
 
 If your Java application crashes or hangs, Java dumps can provide useful information to help you diagnose the root cause.
 
@@ -34,7 +34,7 @@ If your Java application crashes or hangs, Java dumps can provide useful informa
 - If your application hangs, you can trigger the generation of a Java dump by sending a SIGQUIT signal (`kill -3`) to the VM.
 
     :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On Windows, if you started the VM in a console window you can force the VM to produce a Java dump in response to a SIGBREAK signal
-    (Ctrl-Break keyboard combination). If you didn't start in a console window there is no equivalent to a Linux `kill` command on Windows for sending signals.
+    (Ctrl-Break keyboard combination). If you didn't start in a console window, there is no equivalent to a Linux `kill` command on Windows&reg; for sending signals.
     The only option here is to trigger a full system dump by finding the VM process in the **Processes** tab of the Windows Task Manager and clicking
     **Create dump file**.
 
@@ -98,7 +98,7 @@ following line in the output:
 1XHFLAGS       VM flags:0000000000000000
 ```
 
-The hexadecimal number recorded for `VM flags` ends in MSSSS, where M is the VM component and SSSS is component-specific code as shown in the following table:
+The hexadecimal number that is recorded for `VM flags` ends in MSSSS, where M is the VM component and SSSS is component-specific code as shown in the following table:
 
 | Component     | Code value |
 |---------------|------------|
@@ -309,7 +309,7 @@ internal memory, memory used for classes, the JIT code cache, and JIT data cache
 You can also find out which garbage collection policy is in use when the dump is produced.
 
 The object memory area (`1STHEAPTYPE`) records each memory region in use, its start and end address, and region size.
-Further information is recorded about the memory segments used for internal memory, class memory, the JIT code cache and JIT data cache (`1STSEGMENT`).
+Further information is recorded about the memory segments that are used for internal memory, class memory, the JIT code cache and JIT data cache (`1STSEGMENT`).
 This information includes the address of the segment control data structure, the start and end address of the native memory segment, as well as
 the segment size.
 
@@ -426,7 +426,7 @@ Java thread priorities are mapped to operating system priority values. Thread st
 | P                  | Parked         | The thread is parked by `java.util.concurrent`  |
 | B                  | Blocked        | The thread is waiting to obtain a lock          |
 
-For threads that are parked (P), blocked (B), or waiting (CW), an additional line (`3XMTHREADBLOCK`) is included in the output that shows what the thread is parked on, blocked on, or waiting for.
+For threads that are parked (P), blocked (B), or waiting (CW), an additional line (`3XMTHREADBLOCK`) is included in the output that shows what the thread is parked on, blocked on, or waiting for. For threads that are waiting for a class initialization lock (`java/lang/J9VMInternals$ClassInitializationLock`), this line includes the name of the thread that is currently working to progress the initialization of the class. You can use this information to diagnose deadlocks that are caused by class initialization, which might not be detected and reported in the LOCKS section.
 
 For clarity, the following example shows a shortened version of a typical THREADS section, where `...` indicates that lines are removed:
 
@@ -436,68 +436,73 @@ NULL           -----------------------------------------------------------------
 NULL           =================================
 NULL
 1XMPOOLINFO    JVM Thread pool info:
-2XMPOOLTOTAL       Current total number of pooled threads: 18
-2XMPOOLLIVE        Current total number of live threads: 16
+2XMPOOLTOTAL       Current total number of pooled threads: 19
+2XMPOOLLIVE        Current total number of live threads: 18
 2XMPOOLDAEMON      Current total number of live daemon threads: 15
 NULL
 1XMTHDINFO     Thread Details
 NULL
-3XMTHREADINFO      "JIT Diagnostic Compilation Thread-7 Suspended" J9VMThread:0x0000000000EFC500, omrthread_t:0x00007FF4F00A77E8, java/lang/Thread:0x00000000FFE97480, state:R, prio=10
-3XMJAVALTHREAD            (java/lang/Thread getId:0xA, isDaemon:true)
-3XMTHREADINFO1            (native thread ID:0x7657, native priority:0xB, native policy:UNKNOWN, vmstate:CW, vm thread flags:0x00000081)
-3XMTHREADINFO2            (native stack address range from:0x00007FF4CCC36000, to:0x00007FF4CCD36000, size:0x100000)
-3XMCPUTIME               CPU usage total: 0.000037663 secs, current category="JIT"
+...
+3XMTHREADINFO      "JIT Diagnostic Compilation Thread-007 Suspended" J9VMThread:0x0000000000035200, omrthread_t:0x00007F3F8C0D02C8, java/lang/Thread:0x00000000FFF42120, state:R, prio=10
+3XMJAVALTHREAD            (java/lang/Thread getId:0x9, isDaemon:true)
+3XMJAVALTHRCCL            sun/misc/Launcher$AppClassLoader(0x00000000FFF3BF98)
+3XMTHREADINFO1            (native thread ID:0x618F, native priority:0xB, native policy:UNKNOWN, vmstate:CW, vm thread flags:0x00000081)
+3XMTHREADINFO2            (native stack address range from:0x00007F3F879C5000, to:0x00007F3F87AC5000, size:0x100000)
+3XMCPUTIME               CPU usage total: 0.052410771 secs, current category="JIT"
 3XMHEAPALLOC             Heap bytes allocated since last GC cycle=0 (0x0)
 3XMTHREADINFO3           No Java callstack associated with this thread
-3XMTHREADINFO3           No native callstack available for this thread
+...
 NULL
 ...
-3XMTHREADINFO      "Common-Cleaner" J9VMThread:0x0000000000FD0100, omrthread_t:0x00007FF4F022A520, java/lang/Thread:0x00000000FFE26F40, state:CW, prio=8
-3XMJAVALTHREAD            (java/lang/Thread getId:0x2, isDaemon:true)
-3XMTHREADINFO1            (native thread ID:0x765A, native priority:0x8, native policy:UNKNOWN, vmstate:CW, vm thread flags:0x00080181)
-3XMTHREADINFO2            (native stack address range from:0x00007FF4CC0B8000, to:0x00007FF4CC0F8000, size:0x40000)
-3XMCPUTIME               CPU usage total: 0.000150926 secs, current category="Application"
-3XMTHREADBLOCK     Waiting on: java/lang/ref/ReferenceQueue@0x00000000FFE26A10 Owned by: <unowned>
-3XMHEAPALLOC             Heap bytes allocated since last GC cycle=0 (0x0)
+3XMTHREADINFO      "Class Initialization Thread 2" J9VMThread:0x0000000000124D00, omrthread_t:0x00007F3F8C1494C8, java/lang/Thread:0x00000000FFF53EE8, state:CW, prio=5
+3XMJAVALTHREAD            (java/lang/Thread getId:0x13, isDaemon:false)
+3XMJAVALTHRCCL            sun/misc/Launcher$AppClassLoader(0x00000000FFF3BF98)
+3XMTHREADINFO1            (native thread ID:0x6199, native priority:0x5, native policy:UNKNOWN, vmstate:CW, vm thread flags:0x00000181)
+3XMTHREADINFO2            (native stack address range from:0x00007F3F74AB4000, to:0x00007F3F74AF4000, size:0x40000)
+3XMCPUTIME               CPU usage total: 0.008712260 secs, current category="Application"
+3XMTHREADBLOCK     Waiting on: java/lang/J9VMInternals$ClassInitializationLock@0x00000000FFF61C90 Owned by: <unowned> Initializing thread: "Class Initialization Thread 1"
+3XMHEAPALLOC             Heap bytes allocated since last GC cycle=4096 (0x1000)
 3XMTHREADINFO3           Java callstack:
-4XESTACKTRACE                at java/lang/Object.wait(Native Method)
-4XESTACKTRACE                at java/lang/Object.wait(Object.java:221)
-4XESTACKTRACE                at java/lang/ref/ReferenceQueue.remove(ReferenceQueue.java:138)
-5XESTACKTRACE                   (entered lock: java/lang/ref/ReferenceQueue@0x00000000FFE26A10, entry count: 1)
-4XESTACKTRACE                at jdk/internal/ref/CleanerImpl.run(CleanerImpl.java:148)
-4XESTACKTRACE                at java/lang/Thread.run(Thread.java:835)
-4XESTACKTRACE                at jdk/internal/misc/InnocuousThread.run(InnocuousThread.java:122)
-3XMTHREADINFO3           No native callstack available for this thread
-NULL
-NULL
-3XMTHREADINFO      "IProfiler" J9VMThread:0x0000000000F03D00, omrthread_t:0x00007FF4F00B06F8, java/lang/Thread:0x00000000FFE97B60, state:R, prio=5
-3XMJAVALTHREAD            (java/lang/Thread getId:0xC, isDaemon:true)
-3XMTHREADINFO1            (native thread ID:0x7659, native priority:0x5, native policy:UNKNOWN, vmstate:CW, vm thread flags:0x00000081)
-3XMTHREADINFO2            (native stack address range from:0x00007FF4F8940000, to:0x00007FF4F8960000, size:0x20000)
-3XMCPUTIME               CPU usage total: 0.004753103 secs, current category="JIT"
-3XMHEAPALLOC             Heap bytes allocated since last GC cycle=0 (0x0)
-3XMTHREADINFO3           No Java callstack associated with this thread
-3XMTHREADINFO3           No native callstack available for this thread
+4XESTACKTRACE                at java/lang/Class.forNameImpl(Native Method)
+4XESTACKTRACE                at java/lang/Class.forName(Class.java:339)
+4XESTACKTRACE                at ClassInitLockBug$ClassInitThread.run(ClassInitLockBug.java:16)
+...
 NULL
 ...
-1XMWLKTHDERR   The following was reported while collecting native stacks:
-2XMWLKTHDERR             unable to count threads(3, -2)
+NULL
+3XMTHREADINFO      "Class Initialization Thread 1" J9VMThread:0x0000000000124100, omrthread_t:0x00007F3F8C148F50, java/lang/Thread:0x00000000FFF53D80, state:CW, prio=5
+3XMJAVALTHREAD            (java/lang/Thread getId:0x12, isDaemon:false)
+3XMJAVALTHRCCL            sun/misc/Launcher$AppClassLoader(0x00000000FFF3BF98)
+3XMTHREADINFO1            (native thread ID:0x6198, native priority:0x5, native policy:UNKNOWN, vmstate:CW, vm thread flags:0x00000481)
+3XMTHREADINFO2            (native stack address range from:0x00007F3F74AF5000, to:0x00007F3F74B35000, size:0x40000)
+3XMCPUTIME               CPU usage total: 0.010221701 secs, current category="Application"
+3XMHEAPALLOC             Heap bytes allocated since last GC cycle=12736 (0x31C0)
+3XMTHREADINFO3           Java callstack:
+4XESTACKTRACE                at java/lang/Thread.sleepImpl(Native Method)
+4XESTACKTRACE                at java/lang/Thread.sleep(Thread.java:983)
+4XESTACKTRACE                at java/lang/Thread.sleep(Thread.java:966)
+4XESTACKTRACE                at TestClass.<clinit>(ClassInitLockBug.java:29)
+4XESTACKTRACE                at java/lang/Class.forNameImpl(Native Method)
+4XESTACKTRACE                at java/lang/Class.forName(Class.java:339)
+4XESTACKTRACE                at ClassInitLockBug$ClassInitThread.run(ClassInitLockBug.java:16)
+...
+NULL
+...
 NULL
 1XMTHDSUMMARY  Threads CPU Usage Summary
 NULL           =========================
 NULL
 1XMTHDCATINFO  Warning: to get more accurate CPU times for the GC, the option -XX:-ReduceCPUMonitorOverhead can be used. See the user guide for more information.
 NULL
-1XMTHDCATEGORY All JVM attached threads: 0.280083000 secs
+1XMTHDCATEGORY All JVM attached threads: 0.698865000 secs
 1XMTHDCATEGORY |
-2XMTHDCATEGORY +--System-JVM: 0.270814000 secs
+2XMTHDCATEGORY +--System-JVM: 0.653723000 secs
 2XMTHDCATEGORY |  |
-3XMTHDCATEGORY |  +--GC: 0.000599000 secs
+3XMTHDCATEGORY |  +--GC: 0.047248000 secs
 2XMTHDCATEGORY |  |
-3XMTHDCATEGORY |  +--JIT: 0.071904000 secs
+3XMTHDCATEGORY |  +--JIT: 0.512971000 secs
 1XMTHDCATEGORY |
-2XMTHDCATEGORY +--Application: 0.009269000 secs
-NULL
+2XMTHDCATEGORY +--Application: 0.045142000 secs
 ```
 
 ### HOOKS
@@ -553,7 +558,7 @@ NULL
 
 ### SHARED CLASSES
 
-If the shared classes cache is enabled at run time, the information provided in a Java dump file describes settings that were used when creating the cache, together with summary information about the size and content of the cache.
+If the shared classes cache is enabled at run time, the information that is provided in a Java dump file describes settings that were used when creating the cache, together with summary information about the size and content of the cache.
 
 In the following example, the shared classes cache was created with a Class Debug Area (`-Xnolinenumbers=false`). Byte code instrumentation (BCI) is enabled, which is the default, and VMs sharing the cache are allowed to store classpaths, which is also the default.
 
@@ -741,7 +746,7 @@ NULL
 
 The classes section shows information about class loaders. The first part is a summary that records each available class loader (`2CLTEXTCLLOADER`) followed by the number of libraries and classes that it loaded. This information is followed by a more detailed list of libraries (`1CLTEXTCLLIB`) and classes (`1CLTEXTCLLO`) that are loaded.
 
-In the example you can see that the `java/lang/InternalAnonymousClassLoader` loaded 2 classes, `jdk/internal/loader/BuiltinClassLoader$$Lambda$2/00000000F03876A0(0x0000000001030F00)` and `jdk/internal/loader/BuiltinClassLoader$$Lambda$1/00000000F00D2460(0x0000000001018A00)`.
+In the example you can see that the `java/lang/InternalAnonymousClassLoader` loaded two classes, `jdk/internal/loader/BuiltinClassLoader$$Lambda$2/00000000F03876A0(0x0000000001030F00)` and `jdk/internal/loader/BuiltinClassLoader$$Lambda$1/00000000F00D2460(0x0000000001018A00)`.
 
 ```
 NULL           ------------------------------------------------------------------------
@@ -905,11 +910,11 @@ The MEMINFO section records how much memory is allocated to the Java heap (`1STH
 your problem might be as simple as setting a larger heap size when you start your application.
 
 If you don't know what size the Java heap was set to, you might find that information in the ENVINFO section, which records the command line options that
-were used when the application started. Look or search for the `1CIUSERARGS    UserArgs:` string and review the entries recorded for all lines that
+were used when the application started. Look or search for the `1CIUSERARGS    UserArgs:` string and review the entries that are recorded for all lines that
 start `2CIUSERARG`. The Java heap size is set by the `-Xmx` option. If the size has not been set on the command line by `-Xmx`, the default value applies, which
 you can find in [Default Settings](openj9_defaults.md).
 
-In this scenario the solution to the problem is not an adjustment to the Java heap size. Here is the MEMINFO section:
+In this scenario, the solution to the problem is not an adjustment to the Java heap size. Here is the MEMINFO section:
 
 ```
 0SECTION       MEMINFO subcomponent dump routine
@@ -927,8 +932,7 @@ NULL
 1STHEAPFREE    Total memory free:    234267752 (0x0DF6A468)
 ```
 
-The output shows that only 56% of the Java heap is in use, so this suggests that the application is trying to do something sub-optimal. To
-investigate further you need to work out which thread was the current thread when the OOM occurred to see what it was trying to do. As in the previous scenario, you can find the
+The output shows that only 56% of the Java heap is in use, so this suggests that the application is trying to do something sub-optimal. To investigate further, you need to work out which thread was the current thread when the OOM occurred to see what it was trying to do. As in the previous scenario, you can find the
 **current thread** in the THREADS section. Here is an extract from the output:
 
 ```
@@ -1023,14 +1027,14 @@ Although the Java code that was used in this scenario deliberately triggered an 
 The next step in diagnosing the problem is to open the system dump that gets generated automatically when an `OutOfMemoryError` occurs. Open
 the dump with the [Eclipse Memory Analyzer tool (MAT)](https://www.eclipse.org/mat/) and search for the `StringBuffer` object, which should provide further clues about what went wrong. A common example is seeing the same `String` duplicated over and over again, which might indicate that code is stuck in a loop.
 
-  :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you want to use MAT to analyze your system dump, you must install the Diagnostic Tool Framework for Java (DTFJ) plugin in the Eclipse IDE. Select the following menu items:
+  :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you want to use MAT to analyze your system dump, you must install the Diagnostic Tool Framework for Java (DTFJ) plug-in in the Eclipse IDE. Select the following menu items:
 
 ```
 Help > Install New Software > Work with "IBM Diagnostic Tool Framework for Java" >
 ```
 
 If, unlike the previous scenario, you receive an `OutOfMemoryError` and the MEMINFO section shows that there is very little space left
-on the Java heap, the current thread information is typically not important. The current thread is simply the thread that happened to be current when the space ran out. In this situation you might want to increase your Java heap size. For help with this task, see [How to do heap sizing](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_heapsizing.html).
+on the Java heap, the current thread information is typically not important. The current thread is simply the thread that happened to be current when the space ran out. In this situation, you might want to increase your Java heap size. For help with this task, see [How to do heap sizing](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/mm_heapsizing.html).
 
 ### Native OutOfMemoryError
 
@@ -1157,13 +1161,13 @@ NULL           =================================
 NULL
 ```
 
-In the `VM Class Libraries` section, the amount of memory allocated for `Direct Byte Buffers` is shown. Because the `NativeOutOfMemoryError` was received on a small 32-bit system, a value of `2,598,510,480 bytes` indicates that the operating system has run out of memory. On a larger UNIX system, the process might have run out of memory because of the `ulimit` setting. Increasing the value for `ulimit` might avoid the error, which you can do temporarily by setting  `ulimit -f unlimited` in your current session.
+In the `VM Class Libraries` section, the amount of memory allocated for `Direct Byte Buffers` is shown. Because the `NativeOutOfMemoryError` was received on a small 32-bit system, a value of `2,598,510,480 bytes` indicates that the operating system has run out of memory. On a larger UNIX&reg; system, the process might have run out of memory because of the `ulimit` setting. Increasing the value for `ulimit` might avoid the error, which you can do temporarily by setting  `ulimit -f unlimited` in your current session.
 
-The theoretical maximum size for a 32-bit process is the size of the 32-bit address space, which is 4 GB. On most operating systems a portion of the address space for each process is used by the kernel, such that the real limit for 32-bit processes is actually significantly less than 4GB. As a result, running out of native memory with a 32-bit VM is quite common.
+The theoretical maximum size for a 32-bit process is the size of the 32-bit address space, which is 4 GB. On most operating systems a portion of the address space for each process is used by the kernel, such that the real limit for 32-bit processes is actually significantly less than 4 GB. As a result, running out of native memory with a 32-bit VM is quite common.
 
 The same 4 GB limit is also important if you are using a 64-bit VM with compressed references. In compressed references mode, all references to objects, classes, threads, and monitors are represented by 32-bit values for performance reasons, so these structures can be allocated only at 32-bit addresses. However, the operating system might place other allocations within this 4 GB of address space, and if this area becomes sufficiently full or fragmented, the VM throws a native `NativeOutOfMemoryError` error. These errors typically occur when the VM tries to create a new thread or load a class. The **Current Thread History** section should contain more information about what the thread was doing at the VM level when the `NativeOutOfMemoryError` error occurred.
 
-You can usually avoid this type of problem by using the `-Xmcrs` option to reserve a contiguous area of memory within the lowest 4GB of memory at VM startup.
+You can usually avoid this type of problem by using the `-Xmcrs` option to reserve a contiguous area of memory within the lowest 4 GB of memory at VM startup.
 
 Another common cause of a `NativeOutOfMemoryError` is when an application loads duplicate classes. Classes are allocated outside of the Java heap in native memory. If the value reported for `Classes` in the NATIVEMEMINFO section is very large, duplicate classes might be the cause of your problem. The [Eclipse Memory Analyzer Tool (MAT)](https://www.eclipse.org/mat/) can tell you if you have duplicate classes by using the *Class Loader Explorer* feature. Because a system dump is automatically generated as well as a Java dump in response to a `NativeOutOfMemoryError`, simply open the system dump in MAT to continue your diagnosis.
 
@@ -1198,7 +1202,7 @@ NULL
 2LKDEADLOCKTHR  Thread "Worker Thread 2" (0x94501D00)
 ```
 
-This output tells you that `Worker Thread 2` is waiting for `Worker Thread 3`, which is waiting for `Worker Thread 1`. Because `Worker Thread 1` is also waiting for `Worker Thread 2`, there is a deadlock. The next place to look is the output for Java and native stacks, in the THREADS section. By looking at the stack for each of these worker threads you can trace the problem back to specific lines in your application code.
+This output tells you that `Worker Thread 2` is waiting for `Worker Thread 3`, which is waiting for `Worker Thread 1`. Because `Worker Thread 1` is also waiting for `Worker Thread 2`, there is a deadlock. The next place to look is the output for Java and native stacks, in the THREADS section. By looking at the stack for each of these worker threads, you can trace the problem back to specific lines in your application code.
 
 In this example, you can see from the following output that for all worker threads, the stack traces (`4XESTACKTRACE`/`5XESTACKTRACE`) indicate a problem in line 35 of the application `DeadLockTest.java`:
 
@@ -1309,6 +1313,6 @@ It is important to remember that each Java dump represents a single snapshot in 
 
 In this example, the threads do not move and the investigation needs to focus on the logic in `WorkerThread.doWork` to understand why `Worker Thread 0` entered the `java/lang/Thread.sleep` call.
 
-Another common scenario is where each Java dump shows a number of threads waiting for a lock owned by another thread, but the list of waiting threads and the lock-owning thread change over time. In this case the cause is likely to be a bottleneck caused by thread contention, where the threads are continually competing for the same lock. In severe cases, the lock is held only for a small amount of time but there are lots of threads trying to obtain it. Because more time is spent handling the lock and scheduling the thread than executing application code, the degradation in performance is manifested as a hang. Thread contention is usually caused by an application design problem. You can use a similar approach to the one used in this scenario to determime which lines of code are responsible for the contention.
+Another common scenario is where each Java dump shows a number of threads waiting for a lock owned by another thread, but the list of waiting threads and the lock-owning thread change over time. In this case, the cause is likely to be a bottleneck caused by thread contention, where the threads are continually competing for the same lock. In severe cases, the lock is held only for a small amount of time but there are lots of threads trying to obtain it. Because more time is spent handling the lock and scheduling the thread than executing application code, the degradation in performance is manifested as a hang. Thread contention is usually caused by an application design problem. You can use a similar approach to the one used in this scenario to determine which lines of code are responsible for the contention.
 
 <!-- ==== END OF TOPIC ==== dump_javadump.md ==== -->
