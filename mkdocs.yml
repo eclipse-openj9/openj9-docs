@@ -421,6 +421,7 @@ nav:
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
             - "-XX:[+|-]ShareUnsafeClasses"                                      : xxshareunsafeclasses.md
             - "-XX:[+|-]ShowHiddenFrames"                                        : xxshowhiddenframes.md
+            - "-XX:[+|-]ShowNativeStackSymbols"                                  : xxshownativestacksymbols.md
             - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
             - "-XX:[+|-]TransparentHugePage"                                     : xxtransparenthugepage.md
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
