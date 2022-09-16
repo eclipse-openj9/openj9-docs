@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.33.1 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Java&reg; dump files contain more information about waiting threads](#java-dump-files-contain-more-information-about-waiting-threads)
+- [New `-XX:[+|-]ShowNativeStackSymbols` option added](#new-xx-shownativestacksymbols-option-added)
 
 ## Features and changes
 
@@ -46,6 +47,12 @@ For threads that are waiting for a class initialization lock, the Java dump outp
 `3XMTHREADBLOCK Waiting on: java/lang/J9VMInternals$ClassInitializationLock@0x00000000FFF5DC90 Owned by: <unowned> Initializing thread: "Class Initialization Thread 1"`
 
 For more information, see [Threads](dump_javadump.md#threads).
+
+### New `-XX:[+|-]ShowNativeStackSymbols` option added
+
+This option controls whether Java dumps show the names of functions in native call stacks.
+
+For more information, see [`-XX:[+|-]ShowNativeStackSymbols`](xxshownativestacksymbols.md).
 
 ## Known problems and full release information
 
