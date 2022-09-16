@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xlockword/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxshownativestacksymbols/">
       
       <link rel="icon" href="../cr/openj9-logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
-        <title>-Xlockword -  </title>
+        <title>-XX:[+|-]ShowNativeStackSymbols -  </title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xlockword" class="md-skip">
+        <a href="#-xx-shownativestacksymbols" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Xlockword
+              -XX:[+|-]ShowNativeStackSymbols
             
           </span>
         </div>
@@ -1730,14 +1730,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_5" type="checkbox" id="__nav_16_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_5" type="checkbox" id="__nav_16_5" >
       
       <label class="md-nav__link" for="__nav_16_5">
         JVM -X options
@@ -2317,85 +2315,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          -Xlockword
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xlockword/" class="md-nav__link">
         -Xlockword
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="On this page...">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page...
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mode" class="md-nav__link">
-    mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nolockword" class="md-nav__link">
-    nolockword
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what" class="md-nav__link">
-    what
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3165,12 +3089,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_6" type="checkbox" id="__nav_16_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_6" type="checkbox" id="__nav_16_6" checked>
       
       <label class="md-nav__link" for="__nav_16_6">
         JVM -XX options
@@ -4062,11 +3988,58 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../xxshownativestacksymbols/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          -XX:[+|-]ShowNativeStackSymbols
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         -XX:[+|-]ShowNativeStackSymbols
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page...
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4554,36 +4527,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
+  <a href="#explanation" class="md-nav__link">
+    Explanation
   </a>
-  
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mode" class="md-nav__link">
-    mode
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nolockword" class="md-nav__link">
-    nolockword
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what" class="md-nav__link">
-    what
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4624,40 +4570,45 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xlockword">-Xlockword</h1>
-<p>Test whether performance optimizations are negatively impacting an application.</p>
+<h1 id="-xx-shownativestacksymbols">-XX:[+|-]ShowNativeStackSymbols</h1>
+<p>This option controls whether Java&reg; dumps show the names of functions in native call stacks.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -Xlockword:&lt;parameters&gt;
+<pre><code>    -XX:-ShowNativeStackSymbols
+    -XX:+ShowNativeStackSymbols=&lt;value&gt;
 </code></pre>
-<h2 id="parameters">Parameters</h2>
-<h3 id="mode"><code>mode</code></h3>
-<pre><code>    -Xlockword:mode=all
-    -Xlockword:mode=default
-</code></pre>
-<p>Locking optimizations typically reduce memory usage and improve performance. However, there might be some situations where a smaller heap size is achieved for an application, but overall application performance decreases.</p>
-<p>For example, if your application synchronizes on objects that are not typically synchronized on, such as <code>Java.lang.String</code>, run the following test:<br />
-Use the following command-line option to revert to behavior that is closer to earlier versions and monitor application performance:</p>
-<pre><code>-Xlockword:mode=all
-</code></pre>
-<p>If performance does not improve, remove the previous command-line options or use the following command-line option to reestablish the new behavior:</p>
-<pre><code>-Xlockword:mode=default
-</code></pre>
-<h3 id="nolockword"><code>nolockword</code></h3>
-<pre><code>    -Xlockword:nolockword=&lt;class_name&gt;
-</code></pre>
-<dl>
-<dd>
-<p>Removes the lockword from object instances of the class <code>&lt;class_name&gt;</code>, reducing the space required for these objects. However, this action might have an adverse effect on synchronization for those objects.</p>
-<p>You should only use this option for troubleshooting.</p>
-</dd>
-</dl>
-<h3 id="what"><code>what</code></h3>
-<pre><code>    -Xlockword:what
-</code></pre>
-<dl>
-<dd>Shows the current lockword configuration.</dd>
-</dl>
-<!-- ==== END OF TOPIC ==== xlockword.md ==== -->
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Effect</th>
+<th align="center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-XX:-ShowNativeStackSymbols</code></td>
+<td></td>
+<td>Don't show native stack symbols, not even in response to a signal, such as a fault signal</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><code>-XX:+ShowNativeStackSymbols</code></td>
+<td>basic</td>
+<td>Show all the available native stack symbols for a signaled or faulting thread, but only easily acquired native stack symbols for other threads</td>
+<td align="center"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
+</tr>
+<tr>
+<td><code>-XX:+ShowNativeStackSymbols</code></td>
+<td>all</td>
+<td>Show all the available native stack symbols for all threads</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explanation">Explanation</h2>
+<p>Java dumps take longer to produce when the native stack symbols are included. If your Java application has a lot of threads, you might get an incomplete Java dump. You can avoid this situation by reducing the number of native stack symbols in the Java dump or by omitting them altogether.</p>
+<!-- ==== END OF TOPIC ==== xxshownativestacksymbols.md ==== -->
                 
               
               

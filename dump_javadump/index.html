@@ -4154,6 +4154,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxshownativestacksymbols/" class="md-nav__link">
+        -XX:[+|-]ShowNativeStackSymbols
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxstacktraceinthrowable/" class="md-nav__link">
         -XX:-StackTraceInThrowable
       </a>
@@ -4803,8 +4815,8 @@
 </li>
 <li>
 <p>If your application hangs, you can trigger the generation of a Java dump by sending a SIGQUIT signal (<code>kill -3</code>) to the VM.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> On Windows, if you started the VM in a console window you can force the VM to produce a Java dump in response to a SIGBREAK signal
-(Ctrl-Break keyboard combination). If you didn't start in a console window, there is no equivalent to a Linux <code>kill</code> command on Windows&reg; for sending signals.
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> On Windows&reg;, if you started the VM in a console window you can force the VM to produce a Java dump in response to a SIGBREAK signal
+(Ctrl-Break keyboard combination). If you didn't start in a console window, there is no equivalent to a Linux <code>kill</code> command on Windows for sending signals.
 The only option here is to trigger a full system dump by finding the VM process in the <strong>Processes</strong> tab of the Windows Task Manager and clicking
 <strong>Create dump file</strong>.</p>
 </li>
@@ -4822,7 +4834,7 @@ The only option here is to trigger a full system dump by finding the VM process 
 The file is made up of a number of sections that provide different types of information.</p>
 <h3 id="title">TITLE</h3>
 <p>The first section of the Java dump file provides information about the event that triggered the production of the dump.
-In the following example you can see that a <code>vmstop</code> event triggered the dump at a specified date and time.</p>
+In the following example, you can see that a <code>vmstop</code> event triggered the dump at a specified date and time.</p>
 <pre><code>0SECTION       TITLE subcomponent dump routine
 NULL           ===============================
 1TICHARSET     UTF-8
@@ -5016,7 +5028,7 @@ NULL
 <h3 id="nativememinfo">NATIVEMEMINFO</h3>
 <p>This section records information about native memory that is requested by using library functions such as <code>malloc()</code> and <code>mmap()</code>.
 Values are provided as a breakdown, per component, indicating the total number of bytes allocated and the number of native memory allocations.
-In the following example, 4,682,840 bytes of native memory are allocated (but not yet freed) to VM Classes, which corresponds to 141 allocations.</p>
+In the following example, 4,682,840 bytes of native memory are allocated (but not yet freed) to VM Classes, which correspond to 141 allocations.</p>
 <pre><code>NULL           ------------------------------------------------------------------------
 0SECTION       NATIVEMEMINFO subcomponent dump routine
 NULL           =================================
@@ -5085,7 +5097,7 @@ value recorded by operating system tools.</p>
 internal memory, memory used for classes, the JIT code cache, and JIT data cache in decimal and hexadecimal format.
 You can also find out which garbage collection policy is in use when the dump is produced.</p>
 <p>The object memory area (<code>1STHEAPTYPE</code>) records each memory region in use, its start and end address, and region size.
-Further information is recorded about the memory segments that are used for internal memory, class memory, the JIT code cache and JIT data cache (<code>1STSEGMENT</code>).
+Further information is recorded about the memory segments that are used for internal memory, class memory, the JIT code cache, and JIT data cache (<code>1STSEGMENT</code>).
 This information includes the address of the segment control data structure, the start and end address of the native memory segment, as well as
 the segment size.</p>
 <p>For clarity, the following example shows a shortened version of this section, where <code>...</code> indicates that lines are removed:</p>
@@ -5177,7 +5189,7 @@ NULL
 <li><code>3XMJAVALTHREAD</code>: The Java thread ID and daemon status from the thread object.</li>
 <li><code>3XMTHREADINFO1</code>: The native operating system thread ID, priority, scheduling policy, internal VM thread state, and VM thread flags.</li>
 <li><code>3XMTHREADINFO2</code>: The native stack address range.</li>
-<li><code>3XMTHREADINFO3</code>: Java callstack information (<code>4XESTACKTRACE</code>) or Native call stack information (<code>4XENATIVESTACK</code>).</li>
+<li><code>3XMTHREADINFO3</code>: Java call stack information (<code>4XESTACKTRACE</code>) or Native call stack information (<code>4XENATIVESTACK</code>).</li>
 <li><code>5XESTACKTRACE</code>: This line indicates whether locks were taken by a specific method.</li>
 </ul>
 <p>Java thread priorities are mapped to operating system priority values. Thread states are shown in the following table:</p>
@@ -5641,12 +5653,22 @@ NULL
 4XENATIVESTACK               (0xB7719F72 [libpthread.so.0+0x6f72])
 4XENATIVESTACK               clone+0x5e (0xB763543E [libc.so.6+0xee43e])
 </code></pre>
-<p>The extract tells you that the current thread was <code>java/lang/Thread</code>, and information is provided about the Java callstack and native callstack
+<p>The extract tells you that the current thread was <code>java/lang/Thread</code>, and information is provided about the Java call stack and native call stack
 (<code>3XMTHREADINFO3</code>) at the point at which the crash occurred. To simulate a crash caused by a bug in an application, this example
-calls a JNI method whose native implementation causes a crash. The Java callstack shows the call to the JNI native method (<code>JNIcrasher</code>), and the
-native callstack shows the point of failure. In this example, the native call stack does not include any function names to help you isolate the error
+calls a JNI method whose native implementation causes a crash. The Java call stack shows the call to the JNI native method (<code>JNIcrasher</code>), and the
+native call stack shows the point of failure. In this example, the native call stack does not include any function names to help you isolate the error
 in the native code. You can get this information from a system dump, which is usually produced alongside the Java dump. Open the
 system dump with the <a href="../tool_jdmpview/">Dump viewer</a> and use the <code>info thread</code> command to print the Java and native stack for the current thread.</p>
+<p>The next time you run the application, you can use the <a href="../xxshownativestacksymbols/">-XX:+ShowNativeStackSymbols=all</a> command line option to display the corresponding function names in the native call stack.</p>
+<pre><code>4XENATIVESTACK               protectedBacktrace+0x12 (0x00007F3F9213E312 [libj9prt29.so+0x25312])
+4XENATIVESTACK               omrsig_protect+0x1e3 (0x00007F3F92142AD3 [libj9prt29.so+0x29ad3])
+4XENATIVESTACK               omrintrospect_backtrace_thread_raw+0xbf (0x00007F3F9213E80F [libj9prt29.so+0x2580f])
+4XENATIVESTACK               omrsig_protect+0x1e3 (0x00007F3F92142AD3 [libj9prt29.so+0x29ad3])
+4XENATIVESTACK               omrintrospect_backtrace_thread+0x70 (0x00007F3F9213E1D0 [libj9prt29.so+0x251d0])
+4XENATIVESTACK               setup_native_thread+0x1d2 (0x00007F3F9213F652 [libj9prt29.so+0x26652])
+4XENATIVESTACK               omrintrospect_threads_startDo_with_signal+0x474 (0x00007F3F921403F4 [libj9prt29.so+0x273f4])
+4XENATIVESTACK               omrsig_protect+0x1e3 (0x00007F3F92142AD3 [libj9prt29.so+0x29ad3])
+</code></pre>
 <h3 id="java-outofmemoryerror">Java OutOfMemoryError</h3>
 <p>In this scenario, the Java heap runs out of memory, causing an <code>OutOfMemoryError</code>, which automatically generates a Java dump file.</p>
 <p>The first section of the file (TITLE) tells you that a <code>systhrow</code> event triggered the Java dump as a result of an OOM (<code>java/lang/OutOfMemoryError</code>) for
@@ -5665,7 +5687,7 @@ NULL           ===============================
 </code></pre>
 <p>The MEMINFO section records how much memory is allocated to the Java heap (<code>1STHEAPTYPE Object Memory</code>), how much is in use, and how much is free. Solving
 your problem might be as simple as setting a larger heap size when you start your application.</p>
-<p>If you don't know what size the Java heap was set to, you might find that information in the ENVINFO section, which records the command line options that
+<p>If you don't know what size the Java heap was set to, you might find that information in the ENVINFO section, which records the command-line options that
 were used when the application started. Look or search for the <code>1CIUSERARGS    UserArgs:</code> string and review the entries that are recorded for all lines that
 start <code>2CIUSERARG</code>. The Java heap size is set by the <code>-Xmx</code> option. If the size has not been set on the command line by <code>-Xmx</code>, the default value applies, which
 you can find in <a href="../openj9_defaults/">Default Settings</a>.</p>
@@ -5684,7 +5706,7 @@ NULL
 1STHEAPINUSE   Total memory in use:  302603160 (0x12095B98)
 1STHEAPFREE    Total memory free:    234267752 (0x0DF6A468)
 </code></pre>
-<p>The output shows that only 56% of the Java heap is in use, so this suggests that the application is trying to do something sub-optimal. To investigate further, you need to work out which thread was the current thread when the OOM occurred to see what it was trying to do. As in the previous scenario, you can find the
+<p>The output shows that only 56% of the Java heap is in use, so this suggests that the application is trying to do something suboptimal. To investigate further, you need to work out which thread was the current thread when the OOM occurred to see what it was trying to do. As in the previous scenario, you can find the
 <strong>current thread</strong> in the THREADS section. Here is an extract from the output:</p>
 <pre><code>0SECTION       THREADS subcomponent dump routine
 NULL           =================================
@@ -5718,7 +5740,7 @@ NULL
 4XENATIVESTACK               (0xB6C4E9CD [libj9prt29.so+0x369cd])
 4XENATIVESTACK               (0xB6C502FA [libj9prt29.so+0x382fa])
 </code></pre>
-<p>To simulate a Java <code>OutOfMemoryError</code>, this example application repeatedly appends characters to a <code>StringBuffer</code> object in an infinite loop. The Java callstack shows the <code>HeapBreaker.main</code> method appending characters (<code>java/lang/StringGuffer.append</code>) until the method <code>java/lang/StringBuffer.ensureCapacityImpl()</code> throws the <code>OutOfMemoryError</code>.</p>
+<p>To simulate a Java <code>OutOfMemoryError</code>, this example application repeatedly appends characters to a <code>StringBuffer</code> object in an infinite loop. The Java call stack shows the <code>HeapBreaker.main</code> method appending characters (<code>java/lang/StringGuffer.append</code>) until the method <code>java/lang/StringBuffer.ensureCapacityImpl()</code> throws the <code>OutOfMemoryError</code>.</p>
 <p>StringBuffer objects are wrappers for character arrays (<code>char[]</code>) and when the capacity of the underlying array is reached, the contents are automatically copied into a new, larger array. The new array is created in the <code>StringBuffer.ensureCapacity()</code> method, which more or less doubles the size of the old array. In this scenario, the array takes up all the remaining space in the Java heap.</p>
 <p>The MEMINFO section of the Java dump file can also tell you when an unexpectedly large allocation request causes an OOM. Look for the GC History (<code>1STGCHTYPE</code>) section, which details allocation requests that trigger GC activity. In the sample output you can see that a large allocation request (<code>requestedbytes=603979784</code>) triggered a global GC. When the GC could not free up sufficient space in the heap to satisfy the request, the allocation failure generated the OOM.</p>
 <pre><code>1STGCHTYPE     GC History
@@ -5828,7 +5850,7 @@ NULL
 4XENATIVESTACK               clone+0x5e (0xB76A043E [libc.so.6+0xee43e])
 </code></pre>
 <p>For clarity in the <code>Native callstack</code> output, <code>...</code> indicates that some lines are removed.</p>
-<p>The Java callstack shows the transition from Java to native code (<code>sun/misc/Unsafe.allocateDBBMemory(Native Method)</code>), indicating a request for Direct Byte Buffer (DBB) storage. DBB storage is backed by native memory, with the Java heap containing only a reference to the native heap buffer. In this scenario, DBB storage is the likely culprit for this <code>NativeOutOfMemoryError</code>.</p>
+<p>The Java call stack shows the transition from Java to native code (<code>sun/misc/Unsafe.allocateDBBMemory(Native Method)</code>), indicating a request for Direct Byte Buffer (DBB) storage. DBB storage is backed by native memory, with the Java heap containing only a reference to the native heap buffer. In this scenario, DBB storage is the likely culprit for this <code>NativeOutOfMemoryError</code>.</p>
 <p>The next step is to investigate the NATIVEMEMINFO section of the Java dump file, which reports the amount of memory used by the JRE process, broken down into component areas.</p>
 <pre><code>0SECTION       NATIVEMEMINFO subcomponent dump routine
 NULL           =================================
@@ -5886,8 +5908,8 @@ NULL           =================================
 2MEMUSER       +--Unknown: 2,112 bytes / 16 allocations
 NULL
 </code></pre>
-<p>In the <code>VM Class Libraries</code> section, the amount of memory allocated for <code>Direct Byte Buffers</code> is shown. Because the <code>NativeOutOfMemoryError</code> was received on a small 32-bit system, a value of <code>2,598,510,480 bytes</code> indicates that the operating system has run out of memory. On a larger UNIX&reg; system, the process might have run out of memory because of the <code>ulimit</code> setting. Increasing the value for <code>ulimit</code> might avoid the error, which you can do temporarily by setting  <code>ulimit -f unlimited</code> in your current session.</p>
-<p>The theoretical maximum size for a 32-bit process is the size of the 32-bit address space, which is 4 GB. On most operating systems a portion of the address space for each process is used by the kernel, such that the real limit for 32-bit processes is actually significantly less than 4 GB. As a result, running out of native memory with a 32-bit VM is quite common.</p>
+<p>In the <code>VM Class Libraries</code> section, the amount of memory allocated for <code>Direct Byte Buffers</code> is shown. Because the <code>NativeOutOfMemoryError</code> was received on a small 32-bit system, a value of <code>2,598,510,480 bytes</code> indicates that the operating system has run out of memory. On a larger UNIX&reg; system, the process might have run out of memory because of the <code>ulimit</code> setting. Increasing the value for <code>ulimit</code> might avoid the error, which you can do temporarily by setting <code>ulimit -f unlimited</code> in your current session.</p>
+<p>The theoretical maximum size for a 32-bit process is the size of the 32-bit address space, which is 4 GB. On most operating systems, a portion of the address space for each process is used by the kernel, such that the real limit for 32-bit processes is actually significantly less than 4 GB. As a result, running out of native memory with a 32-bit VM is quite common.</p>
 <p>The same 4 GB limit is also important if you are using a 64-bit VM with compressed references. In compressed references mode, all references to objects, classes, threads, and monitors are represented by 32-bit values for performance reasons, so these structures can be allocated only at 32-bit addresses. However, the operating system might place other allocations within this 4 GB of address space, and if this area becomes sufficiently full or fragmented, the VM throws a native <code>NativeOutOfMemoryError</code> error. These errors typically occur when the VM tries to create a new thread or load a class. The <strong>Current Thread History</strong> section should contain more information about what the thread was doing at the VM level when the <code>NativeOutOfMemoryError</code> error occurred.</p>
 <p>You can usually avoid this type of problem by using the <code>-Xmcrs</code> option to reserve a contiguous area of memory within the lowest 4 GB of memory at VM startup.</p>
 <p>Another common cause of a <code>NativeOutOfMemoryError</code> is when an application loads duplicate classes. Classes are allocated outside of the Java heap in native memory. If the value reported for <code>Classes</code> in the NATIVEMEMINFO section is very large, duplicate classes might be the cause of your problem. The <a href="https://www.eclipse.org/mat/">Eclipse Memory Analyzer Tool (MAT)</a> can tell you if you have duplicate classes by using the <em>Class Loader Explorer</em> feature. Because a system dump is automatically generated as well as a Java dump in response to a <code>NativeOutOfMemoryError</code>, simply open the system dump in MAT to continue your diagnosis.</p>
@@ -6005,7 +6027,7 @@ NULL
 4XESTACKTRACE                at WorkerThread.run(HangTest.java:31)
 5XESTACKTRACE                   (entered lock: java/lang/Object@0xB56658D8, entry count: 1)
 </code></pre>
-<p>In the last line of this output you can see where the thread acquired the lock. Working up from this line, you can see that <code>WorkerThread.run</code> was called, which in turn called <code>WorkerThread.doWork</code>. The stack shows that the thread then entered a call to <code>java/lang/Thread.sleep</code> in HangTest.java on line 37, which is preventing the thread from completing its work and releasing the lock. In this example the <code>sleep</code> call was added to induce a hang, but in real-world scenarios the cause could be any blocking operation, such as reading from an input stream or socket. Another possibility is that the thread is waiting for <em>another</em> lock owned by yet another thread.</p>
+<p>In the last line of this output, you can see where the thread acquired the lock. Working up from this line, you can see that <code>WorkerThread.run</code> was called, which in turn called <code>WorkerThread.doWork</code>. The stack shows that the thread then entered a call to <code>java/lang/Thread.sleep</code> in HangTest.java on line 37, which is preventing the thread from completing its work and releasing the lock. In this example, the <code>sleep</code> call was added to induce a hang, but in real-world scenarios the cause could be any blocking operation, such as reading from an input stream or socket. Another possibility is that the thread is waiting for <em>another</em> lock owned by yet another thread.</p>
 <p>It is important to remember that each Java dump represents a single snapshot in time. You should generate at least three Java dumps separated by a short pause, for example 30 seconds, and compare the output. This comparison tells you whether the threads involved are stuck in a fixed state or whether they are moving.</p>
 <p>In this example, the threads do not move and the investigation needs to focus on the logic in <code>WorkerThread.doWork</code> to understand why <code>Worker Thread 0</code> entered the <code>java/lang/Thread.sleep</code> call.</p>
 <p>Another common scenario is where each Java dump shows a number of threads waiting for a lock owned by another thread, but the list of waiting threads and the lock-owning thread change over time. In this case, the cause is likely to be a bottleneck caused by thread contention, where the threads are continually competing for the same lock. In severe cases, the lock is held only for a small amount of time but there are lots of threads trying to obtain it. Because more time is spent handling the lock and scheduling the thread than executing application code, the degradation in performance is manifested as a hang. Thread contention is usually caused by an application design problem. You can use a similar approach to the one used in this scenario to determine which lines of code are responsible for the contention.</p>
