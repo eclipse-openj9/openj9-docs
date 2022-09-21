@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.33.1 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Java&reg; dump files contain more information about waiting threads](#java-dump-files-contain-more-information-about-waiting-threads)
 - [New `-XX:[+|-]ShowNativeStackSymbols` option added](#new-xx-shownativestacksymbols-option-added)
+- [New `-XX:[+|-]PerfTool` option added](#new--xx-perftool-option-added)
 
 ## Features and changes
 
@@ -53,6 +54,14 @@ For more information, see [Threads](dump_javadump.md#threads).
 This option controls whether Java dumps show the names of functions in native call stacks.
 
 For more information, see [`-XX:[+|-]ShowNativeStackSymbols`](xxshownativestacksymbols.md).
+
+### New `-XX:[+|-]PerfTool` option added
+
+This option enables or disables the JIT support for the `perf` tool without affecting the existing `Xjit` options.
+
+Since this option creates a file that is used by the Linux&reg; system profiler, `perf`, it applies only to Linux.
+
+For more information, see [`-XX:[+|-]PerfTool`](xxperftool.md).
 
 ## Known problems and full release information
 
