@@ -26,7 +26,7 @@
 
 Signals used by the OpenJ9 VM include the following types:
 
-- Exceptions (Exc): Raised synchronously by the operating system whenever an unrecoverable condition occurs (not applicable on Windows systems).
+- Exceptions (Exc): Raised synchronously by the operating system whenever an unrecoverable condition occurs (not applicable on Windows&trade; systems).
 - Errors (Err): Raised by the OpenJ9 VM when an unrecoverable condition occurs.
 - Interrupts (Int): Raised asynchronously from outside a VM process to request a VM exit.
 - Controls (Con): Other signals that are used by the VM for control purposes.
@@ -39,7 +39,7 @@ For exceptions and errors, if the VM cannot handle the condition and recover, du
 
 Control signals are used for internal control purposes and do not cause the VM to end.
 
-The VM takes control of any signals for Java threads. For non-Java threads, the VM passes control to an application handler, if one is installed. If the application does not install a signal handler, or signal chaining is turned off, the signal is either ignored or the default action is taken. Signal chaining is controlled by the [-Xsigchain / -Xnosigchain](xsigchain.md) command-line option.
+The VM takes control of any signals for Java&trade; threads. For non-Java threads, the VM passes control to an application handler, if one is installed. If the application does not install a signal handler, or signal chaining is turned off, the signal is either ignored or the default action is taken. Signal chaining is controlled by the [`-Xsigchain` / `-Xnosigchain`](xsigchain.md) command-line option.
 
 The signals relevant to each platform are detailed in the sections that follow.
 
@@ -59,10 +59,11 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 | `SIGINT (2)`      | Int  | Interactive attention (CTRL-C), VM exits normally                  | `-Xrs` |
 | `SIGTERM (15)`    | Int  | Termination request, VM exits normally                             | `-Xrs`  |
 | `SIGHUP (1)`      | Int  | Hang up, VM exits normally                                         | `-Xrs` |
+| `SIGUSR2 (12)`    | Int  | User-defined signal for triggering a dump agent                    | `-Xrs` |
 | `SIGQUIT (3)`     | Con  | Quit signal from a terminal, which triggers a Java dump by default | `-Xrs` |
 | `SIGTRAP (5)`     | Con  | Used by the JIT                                                    | `-Xrs` or `-Xrs:sync` |
 | `SIGRTMIN (34)`   | Con  | Used by the VM for thread introspection                       | - |
-| `SIGRTMIN +1 (35)`| Con  | Used by the VM for Runtime Instrumentation (Linux for IBM Z systems only)| - |
+| `SIGRTMIN +1 (35)`| Con  | Used by the VM for Runtime Instrumentation (Linux for IBM Z&reg; systems only)| - |
 | `SIGRTMAX -2 (62)`| Con  | Used by the `java.net` class library code                                         | - |
 | `SIGCHLD (17)`    | Con  | Used by the `java.lang.Process` implementation                     | - |
 
@@ -83,6 +84,7 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 | `SIGINT (2)`      | Int  | Interactive attention (CTRL-C), VM exits normally                  | `-Xrs` |
 | `SIGTERM (15)`    | Int  | Termination request, VM exits normally                             | `-Xrs` |
 | `SIGHUP (1)`      | Int  | Hang up, VM exits normally                                         | `-Xrs` |
+| `SIGUSR2 (31)`    | Int  | User-defined signal for triggering a dump agent                    | `-Xrs` |
 | `SIGQUIT (3)`     | Con  | Quit signal from a terminal, which triggers a Java dump by default | `-Xrs` |
 | `SIGTRAP (5)`     | Con  | Used by the JIT                                                    | `-Xrs` or `-Xrs:sync` |
 | `SIGCHLD (20)`    | Con  | Used by the `java.lang.Process` implementation                     | - |
@@ -92,7 +94,6 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:**
 
 - The handling of `SIGABRT` is configurable with the `-XX[+|-]HandleSIGABRT` option.
-
 
 ## Signals on Windows
 
@@ -112,7 +113,6 @@ The following mechanisms are used by OpenJ9 for signal handling:
 
 All mechanisms can be disabled by using the `-Xrs` option. However, only structured exception handling and the use of the `AddVectoredExceptionHandler()` API can be disabled  by using the `-Xrs:sync` option. The option `-Xnosigchain`, which turns off signal handler chaining, is ignored on Windows systems.
 
-
 ## Signals on z/OS
 
 | Signal            | Type | Description                                                        | Option to disable signal  |
@@ -125,12 +125,13 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 | `SIGINT (2)`      | Int  | Interactive attention (CTRL-C), VM exits normally                  | `-Xrs` |
 | `SIGTERM (15)`    | Int  | Termination request, VM exits normally                             | `-Xrs` |
 | `SIGHUP (1)`      | Int  | Hang up, VM exits normally                                         | `-Xrs` |
+| `SIGUSR2 (17)`    | Int  | User-defined signal for triggering a dump agent                    | `-Xrs` |
 | `SIGQUIT (24)`    | Con  | Quit signal from a terminal, triggers a Java dump by default       | `-Xrs` |
 | `SIGTRAP (26)`    | Con  | Used by the JIT                                                    | `-Xrs` or `-Xrs:sync` |
 | `SIGCHLD (20)`    | Con  | Used by the `java.lang.Process` implementation                     | - |
 | `SIGUSR1 (16)`    | Con  | Used by the `java.net` class library code                          | - |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:**
 
 - The handling of `SIGABRT` is configurable with the `-XX[+|-]HandleSIGABRT` option.
 
@@ -146,6 +147,7 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 | `SIGINT (2)`      | Int  | Interactive attention (CTRL-C), VM exits normally                  | `-Xrs` |
 | `SIGTERM (15)`    | Int  | Termination request, VM exits normally                             | `-Xrs`  |
 | `SIGHUP (1)`      | Int  | Hang up, VM exits normally                                         | `-Xrs` |
+| `SIGUSR2 (31)`    | Int  | User-defined signal for triggering a dump agent                    | `-Xrs` |
 | `SIGQUIT (3)`     | Con  | Triggers a Java dump by default                                    | `-Xrs` |
 | `No Name (40)`    | Con  | Used by the VM for control purposes                                | `-Xrs` |
 | `SIGRECONFIG (58)`| Con  | Reserved to detect changes to resources (CPUs, processing capacity, or physical memory)| `-Xrs` |
@@ -172,7 +174,7 @@ command line syntax to use with the compiler, where available:
 
 |Operating system        | Shared library | Method for linking |
 |------------------------|----------------|--------------------|
-| Linux, macOS, and z/OS | `libjsig.so`   | `gcc -L$JAVA_HOME/bin -ljsig -L$JAVA_HOME/lib/j9vm -ljvm <java_application>.c` |
+| Linux&reg;, macOS&reg;, and z/OS&reg; | `libjsig.so`   | `gcc -L$JAVA_HOME/bin -ljsig -L$JAVA_HOME/lib/j9vm -ljvm <java_application>.c` |
 | Windows                | `jsig.dll`     | Link the DLL with the application that creates or embeds a VM |
 | AIX                    | `libjsig.so`   | `cc_r [-q64] <other_compile/link_parameter> -L<java_install_dir> -ljsig -L<java_install_dir>/lib/j9vm -ljvm <java_application>.c` |
 

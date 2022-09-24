@@ -27,8 +27,9 @@
 The following new features and notable changes since version 0.33.1 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [Java&reg; dump files contain more information about waiting threads](#java-dump-files-contain-more-information-about-waiting-threads)
-- [New `-XX:[+|-]ShowNativeStackSymbols` option added](#new-xx-shownativestacksymbols-option-added)
+- [Java&trade; dump files contain more information about waiting threads](#java-dump-files-contain-more-information-about-waiting-threads)
+- [New `-XX:[+|-]ShowNativeStackSymbols` option added](#new--xx-shownativestacksymbols-option-added)
+- [New `user2` event added for the `-Xdump` option](#new-user2-event-added-for-the--xdump-option)
 - [New `-XX:[+|-]PerfTool` option added](#new--xx-perftool-option-added)
 
 ## Features and changes
@@ -54,6 +55,14 @@ For more information, see [Threads](dump_javadump.md#threads).
 This option controls whether Java dumps show the names of functions in native call stacks.
 
 For more information, see [`-XX:[+|-]ShowNativeStackSymbols`](xxshownativestacksymbols.md).
+
+### New `user2` event added for the `-Xdump` option
+
+On operating systems other than Windows&trade;, you can now use the `user2` event for the `-Xdump` option. This event is triggered when the VM receives the `SIGUSR2` signal.
+
+There is a change in the `SIGUSR2` signal behavior as well whereby, the process does not exit in response to this signal.
+
+For more information, see [`-Xdump`](xdump.md#dump-events) and [Signal handling](openj9_signals.md).
 
 ### New `-XX:[+|-]PerfTool` option added
 
