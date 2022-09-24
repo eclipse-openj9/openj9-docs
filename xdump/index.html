@@ -5243,7 +5243,7 @@
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Multiple suboptions that follow an <code>Xdump</code> suboption must be split with a comma (,), for example:</p>
 <pre><code>java -Xdump:java:events=vmstart,file=/STDERR/ -version
 </code></pre>
-<p>For more detailed information on the these parameters and suboptions, including examples, see <a href="#parameters">Parameters</a>.</p>
+<p>For more detailed information on these parameters and suboptions, including examples, see <a href="#parameters">Parameters</a>.</p>
 <h2 id="dump-agents">Dump agents</h2>
 <p>A dump agent performs diagnostic tasks when triggered. Most dump agents save information on the state of the VM in some form of dump or trace file for later analysis.
 An exception is the "tool" agent, which can be used to trigger external processes when specific events occur.</p>
@@ -5393,7 +5393,7 @@ Registered dump agents
 </tr>
 <tr>
 <td>%H</td>
-<td>Hour ( 2 digits)</td>
+<td>Hour (2 digits)</td>
 </tr>
 <tr>
 <td>%M</td>
@@ -5461,7 +5461,7 @@ Registered dump agents
 </tbody>
 </table>
 <h3 id="merging-dump-agents">Merging dump agents</h3>
-<p>If you configure more than one dump agent, each responds to events according to its configuration. However, the internal structures representing the dump agent configuration might not match the command line, because dump agents are merged for efficiency. Two sets of options can be merged as long as none of the agent settings conflict. This means that the list of installed dump agents and their parameters produced by <code>-Xdump:what</code> might not be grouped in the same way as the original <code>-Xdump</code> options that configured them.</p>
+<p>If you configure more than one dump agent, each responds to events according to its configuration. However, the internal structures representing the dump agent configuration might not match the command line because dump agents are merged for efficiency. Two sets of options can be merged as long as none of the agent settings conflict. This means that the list of installed dump agents and their parameters produced by <code>-Xdump:what</code> might not be grouped in the same way as the original <code>-Xdump</code> options that configured them.</p>
 <p>For example, you can use the following command to specify that a dump agent creates a Java dump file on class unload:</p>
 <pre><code>java -Xdump:java:events=unload -Xdump:what
 </code></pre>
@@ -5521,7 +5521,7 @@ Registered dump agents
 <tr>
 <th>Event</th>
 <th>Triggered when....</th>
-<th>Filters on ....</th>
+<th>Filters on....</th>
 </tr>
 </thead>
 <tbody>
@@ -5533,6 +5533,11 @@ Registered dump agents
 <tr>
 <td><strong>user</strong></td>
 <td>The VM receives the SIGQUIT (Linux, macOS&reg;, AIX&reg;, z/OS) or SIGBREAK (Windows&trade;) signal from the operating system.</td>
+<td>Not applicable</td>
+</tr>
+<tr>
+<td><strong>user2</strong></td>
+<td>The VM receives the SIGUSR2 (Linux, AIX, z/OS, and macOS) signal from the operating system.</td>
 <td>Not applicable</td>
 </tr>
 <tr>
@@ -5602,13 +5607,13 @@ Registered dump agents
 </tr>
 <tr>
 <td><strong>slow</strong></td>
-<td>A thread takes longer than 50ms to respond to an internal VM request.</td>
-<td>Time taken; for example, filter=#300ms will trigger when a thread takes longer than 300ms to respond to an internal VM request.</td>
+<td>A thread takes longer than 50 ms to respond to an internal VM request.</td>
+<td>Time taken; for example, filter=#300ms will trigger when a thread takes longer than 300 ms to respond to an internal VM request.</td>
 </tr>
 <tr>
 <td><strong>allocation</strong></td>
 <td>A Java object is allocated with a size matching the given filter specification.</td>
-<td>Object size; a filter must be supplied. For example, filter=#5m will trigger on objects larger than 5 Mb. Ranges are also supported; for example, filter=#256k..512k will trigger on objects between 256 Kb and 512 Kb in size.</td>
+<td>Object size; a filter must be supplied. For example, filter=#5m will trigger on objects larger than 5 Mb. Ranges are also supported; for example, filter=#256k..512k will trigger on objects 256 - 512 Kb in size.</td>
 </tr>
 <tr>
 <td><strong>traceassert</strong></td>
@@ -5627,7 +5632,12 @@ Registered dump agents
 </tr>
 </tbody>
 </table>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> The <strong>gpf</strong>, <strong>traceassert</strong>, and <strong>abort</strong> events cannot trigger a heap dump, prepare the heap (request=prepwalk), or compact the heap (request=compact).</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Notes:</strong>
+- The <strong>gpf</strong>, <strong>traceassert</strong>, and <strong>abort</strong> events cannot trigger a heap dump, prepare the heap (request=prepwalk), or compact the heap (request=compact).
+- The Java dump agent behaves differently when triggered by the <code>user</code> and <code>user2</code> events. For more information, see <a href="#requestrequests"><code>request=&lt;requests&gt;</code></a>.
+- The <code>user2</code> event is commonly used for taking system dump files with exclusive access without overriding the <code>user</code> event, which is generally left for taking Java dump files for performance investigations. For example:</p>
+<pre><code>-Xdump:system:events=user2,request=exclusive+prepwalk
+</code></pre>
 <h2 id="parameters">Parameters</h2>
 <p><code>-Xdump:&lt;agent&gt;:&lt;suboptions&gt;</code> descriptions and examples.</p>
 <h3 id="help"><code>help</code></h3>
@@ -5679,7 +5689,7 @@ Registered dump agents
 <pre><code>-Xdump:java:defaults:file=javacore.%job.%H%M%S.txt
 </code></pre>
 <p>This option does not add a Java dump agent; it updates the default settings for Java dump agents. Further Java dump agents will then create dump files using this specification for filenames, unless overridden.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Changing the defaults for a dump type will also affect the default agents for that dump type added by the VM during initialization. For example if you change the default file name for Java dump files, that will change the file name used by the default Java dump agents. However, changing the default range option will not change the range used by the default Java dump agents, because those agents override the range option with specific values.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Changing the defaults for a dump type will also affect the default agents for that dump type added by the VM during initialization. For example, if you change the default file name for Java dump files, that will change the file name used by the default Java dump agents. However, changing the default range option will not change the range used by the default Java dump agents, because those agents override the range option with specific values.</p>
 <h3 id="eventsevent"><code>events=&lt;event&gt;</code></h3>
 <p>To trigger a dump as a result of an event, use the <code>-Xdump:&lt;agent&gt;:events=&lt;event&gt;</code> suboption. For a list of possible events, see <a href="#dump-events">Dump events</a>.</p>
 <p>For example, the following command instructs the VM to create a dump agent at startup that produces a Heap dump whenever the <em>vmstop</em> event happens:</p>
@@ -5817,7 +5827,7 @@ You can prevent the VM reverting to different dump locations by using the <code>
 <p>For example, to trigger dumps on allocations greater than 5 Mb in size, use:</p>
 <pre><code>-Xdump:stack:events=allocation,filter=#5m
 </code></pre>
-<p>To trigger dumps on allocations between 256Kb and 512Kb in size, use:</p>
+<p>To trigger dumps on allocations between 256 Kb and 512 Kb in size, use:</p>
 <pre><code>-Xdump:stack:events=allocation,filter=#256k..512k
 </code></pre>
 <h4 id="other-events">Other events</h4>
@@ -5828,7 +5838,7 @@ You can prevent the VM reverting to different dump locations by using the <code>
 <pre><code>-Xdump:&lt;agent&gt;:events=&lt;event&gt;,msg_filter=&lt;filter&gt;`
 </code></pre>
 <p>where <code>&lt;filter&gt;</code> is a text string from the exceptions that you want to include in the dump file. This suboption supports asterisks as wild cards.</p>
-<p>The following example filters <code>java/lang/VerifyError</code> exceptions that contains the text string <em>class format</em>:</p>
+<p>The following example filters <code>java/lang/VerifyError</code> exceptions that contain the text string <em>class format</em>:</p>
 <pre><code>-Xdump:java:events=throw,filter=java/lang/VerifyError,msg_filter=*class format*
 </code></pre>
 <h3 id="optsoptions"><code>opts=&lt;options&gt;</code></h3>
@@ -5862,7 +5872,7 @@ You can prevent the VM reverting to different dump locations by using the <code>
 <p>This option starts the process, waits for the process to end, and then waits a further 1 second (1000 milliseconds) before continuing.</p>
 <pre><code>-Xdump:tool:events=vmstop,exec=myProgram,opts=ASYNC+WAIT10000
 </code></pre>
-<p>Finally the last example starts the process and waits for 10 seconds before continuing, whether the process is still running or not. This last form is useful if you are starting a process that does not end, but requires time to initialize properly.</p>
+<p>Finally, the last example starts the process and waits for 10 seconds before continuing, whether the process is still running or not. This last form is useful if you are starting a process that does not end, but requires time to initialize properly.</p>
 <h3 id="priority0-999"><code>priority=&lt;0-999&gt;</code></h3>
 <p>One event can generate multiple dump files. The agents that produce each dump file run sequentially and their order is determined by the priority keyword set for each agent. The full syntax for this command is <code>-Xdump:&lt;agent&gt;:priority=&lt;0-999&gt;</code>.</p>
 <p>Examination of the output from <code>-Xdump:what</code> shows that a <strong>gpf</strong> event produces a snap trace, a Java dump file, and a system dump file. In this example, the system dump runs first, with priority 999. The snap dump runs second, with priority 500. The Java dump runs last, with priority 10:</p>
@@ -5936,6 +5946,14 @@ As an alternative, you can use the <code>com.ibm.jvm.Dump.triggerDump()</code> A
 <p>The default setting of the <code>request</code> suboption for Java dump files is <code>request=exclusive+preempt</code>. To change the settings so that Java dump files are produced without pre-empting threads to collect native stack traces, use the following option:</p>
 <pre><code>-Xdump:java:request=exclusive
 </code></pre>
+<p>The Java dump agent ignores the <code>request=exclusive</code> setting if a <code>user</code> event occurs and another event already has exclusive access. In this scenario, the Java dump agent shares the access instead. This behavior is useful because it allows you to obtain a Java dump file during a deadlock situation, when exclusive access is not released. However, the resulting Java dump file, even in other situations, might omit thread stacks and contain inconsistent thread information, as indicated by the following line in the file:</p>
+<pre><code>1TIPREPINFO    Exclusive VM access not taken: data may not be consistent across javacore sections
+</code></pre>
+<p>On operating systems other than Windows, you can enforce exclusive access and obtain a complete dump file by specifying that the <code>user2</code> event triggers the Java dump agent instead of the <code>user</code> event. For example:</p>
+<pre><code>-Xdump:java:events=user2,request=exclusive+prepwalk
+</code></pre>
+<p>When a <code>user2</code> event occurs, for example, when you enter <code>kill -USR2 &lt;pid&gt;</code> on the command line, the Java dump agent accepts the <code>request=exclusive</code> setting and waits for exclusive access before creating the Java dump file.</p>
+<p>For more information about events, see <a href="#dump-events">Dump events</a>.</p>
 <p>In general, the default request options are sufficient.</p>
 <h2 id="dump-output">Dump output</h2>
 <p>Dump output is written to different files, depending on the type of dump and the platform. File names include a time stamp.</p>

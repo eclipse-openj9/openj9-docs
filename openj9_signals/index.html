@@ -4641,7 +4641,7 @@
 <h1 id="signal-handling">Signal handling</h1>
 <p>Signals used by the OpenJ9 VM include the following types:</p>
 <ul>
-<li>Exceptions (Exc): Raised synchronously by the operating system whenever an unrecoverable condition occurs (not applicable on Windows systems).</li>
+<li>Exceptions (Exc): Raised synchronously by the operating system whenever an unrecoverable condition occurs (not applicable on Windows&trade; systems).</li>
 <li>Errors (Err): Raised by the OpenJ9 VM when an unrecoverable condition occurs.</li>
 <li>Interrupts (Int): Raised asynchronously from outside a VM process to request a VM exit.</li>
 <li>Controls (Con): Other signals that are used by the VM for control purposes.</li>
@@ -4653,7 +4653,7 @@
 <li>The VM does any final clean up.</li>
 </ol>
 <p>Control signals are used for internal control purposes and do not cause the VM to end.</p>
-<p>The VM takes control of any signals for Java threads. For non-Java threads, the VM passes control to an application handler, if one is installed. If the application does not install a signal handler, or signal chaining is turned off, the signal is either ignored or the default action is taken. Signal chaining is controlled by the <a href="../xsigchain/">-Xsigchain / -Xnosigchain</a> command-line option.</p>
+<p>The VM takes control of any signals for Java&trade; threads. For non-Java threads, the VM passes control to an application handler, if one is installed. If the application does not install a signal handler, or signal chaining is turned off, the signal is either ignored or the default action is taken. Signal chaining is controlled by the <a href="../xsigchain/"><code>-Xsigchain</code> / <code>-Xnosigchain</code></a> command-line option.</p>
 <p>The signals relevant to each platform are detailed in the sections that follow.</p>
 <p>When reading each table, a number supplied after the signal name is the standard numerical value for that signal.</p>
 <p>Note that certain signals on VM threads cause OpenJ9 to shutdown. An application signal handler should not attempt to recover from these signals unless it no longer requires the VM.</p>
@@ -4717,6 +4717,12 @@
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
+<td><code>SIGUSR2 (12)</code></td>
+<td>Int</td>
+<td>User-defined signal for triggering a dump agent</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
 <td><code>SIGQUIT (3)</code></td>
 <td>Con</td>
 <td>Quit signal from a terminal, which triggers a Java dump by default</td>
@@ -4737,7 +4743,7 @@
 <tr>
 <td><code>SIGRTMIN +1 (35)</code></td>
 <td>Con</td>
-<td>Used by the VM for Runtime Instrumentation (Linux for IBM Z systems only)</td>
+<td>Used by the VM for Runtime Instrumentation (Linux for IBM Z&reg; systems only)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -4816,6 +4822,12 @@
 <td><code>SIGHUP (1)</code></td>
 <td>Int</td>
 <td>Hang up, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGUSR2 (31)</code></td>
+<td>Int</td>
+<td>User-defined signal for triggering a dump agent</td>
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
@@ -4953,6 +4965,12 @@
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
+<td><code>SIGUSR2 (17)</code></td>
+<td>Int</td>
+<td>User-defined signal for triggering a dump agent</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
 <td><code>SIGQUIT (24)</code></td>
 <td>Con</td>
 <td>Quit signal from a terminal, triggers a Java dump by default</td>
@@ -4978,7 +4996,7 @@
 </tr>
 </tbody>
 </table>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Notes:</strong></p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong></p>
 <ul>
 <li>The handling of <code>SIGABRT</code> is configurable with the <code>-XX[+|-]HandleSIGABRT</code> option.</li>
 </ul>
@@ -5039,6 +5057,12 @@
 <td><code>SIGHUP (1)</code></td>
 <td>Int</td>
 <td>Hang up, VM exits normally</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGUSR2 (31)</code></td>
+<td>Int</td>
+<td>User-defined signal for triggering a dump agent</td>
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
@@ -5108,7 +5132,7 @@ command line syntax to use with the compiler, where available:</p>
 </thead>
 <tbody>
 <tr>
-<td>Linux, macOS, and z/OS</td>
+<td>Linux&reg;, macOS&reg;, and z/OS&reg;</td>
 <td><code>libjsig.so</code></td>
 <td><code>gcc -L$JAVA_HOME/bin -ljsig -L$JAVA_HOME/lib/j9vm -ljvm &lt;java_application&gt;.c</code></td>
 </tr>
