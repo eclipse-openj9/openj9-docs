@@ -24,7 +24,7 @@
 
 # Java dump
 
-Java&reg; dumps, sometimes referred to as *Java cores*, are produced when the VM ends unexpectedly because of an operating system signal, `OutOfMemoryError`, or a user-initiated keystroke combination. You can also generate a Java dump by calling the Dump API programmatically from your application or specifying the `-Xdump:java` option on the command line.
+Java&trade; dumps, sometimes referred to as *Java cores*, are produced when the VM ends unexpectedly because of an operating system signal, `OutOfMemoryError`, or a user-initiated keystroke combination. You can also generate a Java dump by calling the Dump API programmatically from your application or specifying the `-Xdump:java` option on the command line.
 
 If your Java application crashes or hangs, Java dumps can provide useful information to help you diagnose the root cause.
 
