@@ -28,9 +28,10 @@ The following new features and notable changes since version 0.33.1 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Java&trade; dump files contain more information about waiting threads](#java-dump-files-contain-more-information-about-waiting-threads)
-- [New `-XX:[+|-]ShowNativeStackSymbols` option added](#new--xx-shownativestacksymbols-option-added)
-- [New `user2` event added for the `-Xdump` option](#new-user2-event-added-for-the--xdump-option)
-- [New `-XX:[+|-]PerfTool` option added](#new--xx-perftool-option-added)
+- [New `-XX:[+|-]ShowNativeStackSymbols` option added](#new-xx-shownativestacksymbols-option-added)
+- [New `user2` event added for the `-Xdump` option](#new-user2-event-added-for-the-xdump-option)
+- [New `-XX:[+|-]PerfTool` option added](#new-xx-perftool-option-added)
+- [New default options added in the `options.default` file](#new-default-options-added-in-the-optionsdefault-file)
 
 ## Features and changes
 
@@ -71,6 +72,12 @@ This option enables or disables the JIT support for the `perf` tool without affe
 Since this option creates a file that is used by the Linux&reg; system profiler, `perf`, it applies only to Linux.
 
 For more information, see [`-XX:[+|-]PerfTool`](xxperftool.md).
+
+### New default options added in the `options.default` file
+
+`-XX:+EnsureHashed:java/lang/Class,java/lang/Thread` is added to the list of default options in the `options.default` file to improve performance.
+
+For more information, see [`XX:[+|-]EnsureHashed`](xxensurehashed.md).
 
 ## Known problems and full release information
 
