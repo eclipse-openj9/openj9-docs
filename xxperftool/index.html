@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxshareanonymousclasses/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxperftool/">
       
       <link rel="icon" href="../cr/openj9-logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
-        <title>-XX:[+|-]ShareAnonymousClasses -  </title>
+        <title>-XX:[+|-]PerfTool -  </title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xx-shareanonymousclasses" class="md-skip">
+        <a href="#-xx-perftool" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -XX:[+|-]ShareAnonymousClasses
+              -XX:[+|-]PerfTool
             
           </span>
         </div>
@@ -3808,11 +3808,65 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../xxperftool/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          -XX:[+|-]PerfTool
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         -XX:[+|-]PerfTool
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page...
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3928,58 +3982,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          -XX:[+|-]ShareAnonymousClasses
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xxshareanonymousclasses/" class="md-nav__link">
         -XX:[+|-]ShareAnonymousClasses
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="On this page...">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page...
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4539,6 +4546,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#see-also" class="md-nav__link">
     See also
   </a>
@@ -4582,12 +4596,11 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xx-shareanonymousclasses">-XX:[+|-]ShareAnonymousClasses</h1>
-<p>This option enables and disables the storage of VM anonymous classes, those created by <code>Unsafe.defineAnonymousClass</code>, in the shared classes cache.</p>
-<p><img alt="Start of content that applies to Java 15+" src="../cr/java15plus.png" /> In OpenJDK 15 and later versions, this option also enables and disables the storage of hidden classes in the shared classes cache.</p>
-<p>The option is enabled by default, which means that anonymous classes (and hidden classes, in OpenJDK 15 and later) are stored in the shared classes cache and are therefore available for ahead-of-time (AOT) compilation, potentially improving startup performance.</p>
+<h1 id="-xx-perftool">-XX:[+|-]PerfTool</h1>
+<p>This option enables or disables JIT support for the <code>perf</code> tool without affecting the existing <code>Xjit</code> options.</p>
+<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg></span> <strong>Restriction:</strong> Since this option creates a file that is used by the Linux&reg; system profiler, <code>perf</code>, it applies only to Linux.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:[+|-]ShareAnonymousClasses
+<pre><code>    -XX:[+|-]PerfTool
 </code></pre>
 <table>
 <thead>
@@ -4599,25 +4612,25 @@
 </thead>
 <tbody>
 <tr>
-<td><code>-XX:+ShareAnonymousClasses</code></td>
+<td><code>-XX:+PerfTool</code></td>
 <td>Enable</td>
-<td align="center"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td><code>-XX:-ShareAnonymousClasses</code></td>
+<td><code>-XX:-PerfTool</code></td>
 <td>Disable</td>
-<td align="center"></td>
+<td align="center"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
 </tr>
 </tbody>
 </table>
+<h2 id="explanation">Explanation</h2>
+<p>The <code>-XX:+PerfTool</code> option is a stand-alone alternative for the existing <code>-Xjit:perfTool</code> option. If multiple <code>-Xjit</code> options exist, only the last option takes effect. Therefore, if the <code>-Xjit:perfTool</code> option is added later, it overrides the existing <code>-Xjit</code> options. To overcome this issue, the <code>XX:+PerfTool</code> option enables JIT support for the <code>perf</code> tool without having any impact on the existing <code>Xjit</code> options. This enabling option creates a <code>/tmp/perf-&lt;pid&gt;.map</code> file that is used by the <code>perf</code> tool to map the samples in the JIT-compiled code to the corresponding Java method names.</p>
+<p>To disable the JIT support for the <code>perf</code> tool, set the <code>-XX:-PerfTool</code> option on the command line.</p>
 <h2 id="see-also">See also</h2>
 <ul>
-<li><a href="../aot/">AOT compiler</a></li>
-<li><a href="../shrc/">Introduction to class data sharing</a></li>
-<li><a href="../xshareclasses/">-Xshareclasses</a></li>
-<li><a href="../xxshareunsafeclasses/">-XX:[+|-]ShareUnsafeClasses</a></li>
+<li><a href="../xjit/"><code>xjit</code></a></li>
 </ul>
-<!-- ==== END OF TOPIC ==== xxshareanonymousclasses.md ==== -->
+<!-- ==== END OF TOPIC ==== xxperftool.md ==== -->
                 
               
               

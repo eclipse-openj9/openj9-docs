@@ -2801,6 +2801,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#perftool" class="md-nav__link">
+    perfTool
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3967,6 +3974,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxperftool/" class="md-nav__link">
+        -XX:[+|-]PerfTool
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxportablesharedcache/" class="md-nav__link">
         -XX:[+|-]PortableSharedCache
       </a>
@@ -4707,6 +4726,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#perftool" class="md-nav__link">
+    perfTool
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4871,6 +4897,10 @@
 <td><a href="#vlog"><code>vlog</code>          </a></td>
 <td>Sends verbose output to a file.</td>
 </tr>
+<tr>
+<td><a href="#perftool"><code>perfTool</code>      </a></td>
+<td>Facilitates JIT-compiled code symbol resolution when profiling the VM on Linux.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="count"><code>count</code></h3>
@@ -4891,7 +4921,7 @@
 <pre><code>    -Xjit:enableGPU
 </code></pre>
 <dl>
-<dd>Enables the JIT compiler to offload certain processing tasks to a graphics processing unit (GPU). The JIT determines which functions to offload based on performance heuristics. Systems must support NVIDIA Compute Unified Device Architecture (CUDA).  The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0.</dd>
+<dd>Enables the JIT compiler to offload certain processing tasks to a graphics processing unit (GPU). The JIT determines which functions to offload based on performance heuristics. Systems must support NVIDIA Compute Unified Device Architecture (CUDA). The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0.</dd>
 <dd>To troubleshoot operations between the JIT compiler and the GPU, use <code>-Xjit:enableGPU={verbose}</code>, which provides output showing the processing tasks that are offloaded and their status. To send this output to a file (<code>output.txt</code>), run <code>-Xjit:enableGPU={verbose},vlog=output.txt</code> when you start your application.</dd>
 </dl>
 <h3 id="exclude"><code>exclude</code></h3>
@@ -4913,7 +4943,7 @@ Similarly, <code>-Xjit:exclude={*}</code> excludes <em>all</em> methods.</p>
 <pre><code>    -Xjit:limit={&lt;method_name&gt;}
 </code></pre>
 <dl>
-<dd>Only the Java methods specified are included when code is compiled or loaded from the shared classes cache. <code>&lt;method_name&gt;</code> is the method or methods that are to be included (the wildcard <code>*</code> may be used, see <a href="#exclude"><code>-Xjit:exclude</code></a> for details).</dd>
+<dd>Only the Java&trade; methods specified are included when code is compiled or loaded from the shared classes cache. <code>&lt;method_name&gt;</code> is the method or methods that are to be included (the wildcard <code>*</code> can be used, see <a href="#exclude"><code>-Xjit:exclude</code></a> for details).</dd>
 <dd><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> <code>limit</code> has the same effect regardless of whether it is specified on <a href="../xaot/"><code>-Xaot</code></a> or <code>-Xjit</code>. In consequence, if you specify <code>-Xjit:limit</code>, AOT compilation is also restricted to those methods specified; other methods are always interpreted.</dd>
 </dl>
 <h3 id="limitfile"><code>limitFile</code></h3>
@@ -4933,16 +4963,16 @@ Similarly, <code>-Xjit:exclude={*}</code> excludes <em>all</em> methods.</p>
 <pre><code>    -Xjit:verbose
 </code></pre>
 <dl>
-<dd>Generates a JIT verbose log. The log provides a summary of which methods were compiled by the JIT and some of the compilation heurisic decisions that were taken while the JIT operates inside the OpenJ9 VM.<pre><code>-Xjit:verbose={compileStart}
+<dd>Generates a JIT verbose log. The log provides a summary of which methods were compiled by the JIT and some of the compilation heuristic decisions that were taken while the JIT operates inside the OpenJ9 VM.<pre><code>-Xjit:verbose={compileStart}
 </code></pre>
 </dd>
 <dd>
-<p>Prints out a line when the JIT is about to start compiling a method.</p>
+<p>Prints a line when the JIT is about to start compiling a method.</p>
 <pre><code>-Xjit:verbose={compileEnd}
 </code></pre>
 </dd>
 <dd>
-<p>Prints out a line when the JIT stops compiling a method.</p>
+<p>Prints a line when the JIT stops compiling a method.</p>
 <pre><code>-Xjit:verbose={compilePerformance}
 </code></pre>
 </dd>
@@ -4971,6 +5001,13 @@ Similarly, <code>-Xjit:exclude={*}</code> excludes <em>all</em> methods.</p>
 <dl>
 <dd>Sends verbose output to a file, of the format <code>&lt;vlog_filename&gt;.&lt;date&gt;.&lt;time&gt;.&lt;JVM_process_ID&gt;</code>, which is created in your current directory. Running the command multiple times produces multiple distinct versions of this file. If you do not specify this parameter, the output is sent to the standard error output stream (STDERR). This type of log file can be used with the <a href="#limitfile"><code>limitFile</code></a> suboption to target the compilation of specific methods.</dd>
 </dl>
+<h3 id="perftool"><code>perfTool</code></h3>
+<pre><code>    -Xjit:perfTool
+</code></pre>
+<dl>
+<dd>generates a <code>/tmp/perf-&lt;pid&gt;.map</code> file for the JIT-compiled code. This file is used by the Linux&reg; system profiler, <code>perf</code>, to map the samples in the JIT-compiled code to the corresponding Java method names for profiling the VM.</dd>
+</dl>
+<p>For more information, see <a href="../xxperftool/"><code>-XX:[+|-]PerfTool</code></a>.</p>
 <h2 id="examples">Examples</h2>
 <h3 id="generating-a-jit-verbose-log">Generating a JIT verbose log</h3>
 <p>The following example requests a JIT verbose log of the <code>java -version</code> command:</p>
