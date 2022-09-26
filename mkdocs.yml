@@ -406,6 +406,7 @@ nav:
             - "-XX:ParallelCMSThreads"                                           : xxparallelcmsthreads.md
             - "-XX:ParallelGCMaxThreads"                                         : xxparallelgcmaxthreads.md
             - "-XX:ParallelGCThreads"                                            : xxparallelgcthreads.md
+            - "-XX:[+|-]PerfTool"                                                : xxperftool.md
             - "-XX:[+|-]PortableSharedCache"                                     : xxportablesharedcache.md
             - "-XX:[+|-]PositiveIdentityHash"                                    : xxpositiveidentityhash.md
             - "-XX:[+|-]PrintCodeCache"                                          : xxprintcodecache.md

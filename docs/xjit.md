@@ -51,17 +51,18 @@ Parameters such as `exclude` are additive so you can specify them multiple times
 
 These parameters can be used to modify the behavior of `-Xjit`:
 
-| Parameter                           | Effect                                                                                  |
-|-------------------------------------|-----------------------------------------------------------------------------------------|
-| [`count`         ](#count         ) | Specifies the number of times a method is called before it is compiled.                 |
-| [`disableRMODE64`](#disablermode64) | Allows the JIT to allocate executable code caches above the 2 GB memory bar.            |
-| [`enableGPU`     ](#enablegpu     ) | Allows the JIT to offload certain processing tasks to a graphics processing unit (GPU)  |
-| [`exclude`       ](#exclude       ) | Excludes the specified method from compilation.                                         |
-| [`limit`         ](#limit         ) | Includes the specified method in compilation.                                           |
-| [`limitFile`     ](#limitfile     ) | Compile methods that are listed in the limit file.                                      |
-| [`optlevel`      ](#optlevel      ) | Forces the JIT compiler to compile all methods at a specific optimization level.        |
-| [`verbose`       ](#verbose       ) | Reports information about the JIT and AOT compiler configuration and method compilation.|
-| [`vlog`          ](#vlog          ) | Sends verbose output to a file.                                                         |
+| Parameter                           | Effect                                                                                   |
+|-------------------------------------|------------------------------------------------------------------------------------------|
+| [`count`         ](#count         ) | Specifies the number of times a method is called before it is compiled.                  |
+| [`disableRMODE64`](#disablermode64) | Allows the JIT to allocate executable code caches above the 2 GB memory bar.             |
+| [`enableGPU`     ](#enablegpu     ) | Allows the JIT to offload certain processing tasks to a graphics processing unit (GPU)   |
+| [`exclude`       ](#exclude       ) | Excludes the specified method from compilation.                                          |
+| [`limit`         ](#limit         ) | Includes the specified method in compilation.                                            |
+| [`limitFile`     ](#limitfile     ) | Compile methods that are listed in the limit file.                                       |
+| [`optlevel`      ](#optlevel      ) | Forces the JIT compiler to compile all methods at a specific optimization level.         |
+| [`verbose`       ](#verbose       ) | Reports information about the JIT and AOT compiler configuration and method compilation. |
+| [`vlog`          ](#vlog          ) | Sends verbose output to a file.                                                          |
+| [`perfTool`      ](#perftool      ) | Facilitates JIT-compiled code symbol resolution when profiling the VM on Linux.          |
 
 
 ### `count`
@@ -84,7 +85,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
         -Xjit:enableGPU
 
-: Enables the JIT compiler to offload certain processing tasks to a graphics processing unit (GPU). The JIT determines which functions to offload based on performance heuristics. Systems must support NVIDIA Compute Unified Device Architecture (CUDA).  The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0.
+: Enables the JIT compiler to offload certain processing tasks to a graphics processing unit (GPU). The JIT determines which functions to offload based on performance heuristics. Systems must support NVIDIA Compute Unified Device Architecture (CUDA). The JIT requires the CUDA Toolkit 7.5 and your GPU device must have a minimum compute capability of 3.0.
 
 : To troubleshoot operations between the JIT compiler and the GPU, use `-Xjit:enableGPU={verbose}`, which provides output showing the processing tasks that are offloaded and their status. To send this output to a file (`output.txt`), run `-Xjit:enableGPU={verbose},vlog=output.txt` when you start your application.
 
@@ -106,7 +107,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
         -Xjit:limit={<method_name>}
 
-: Only the Java methods specified are included when code is compiled or loaded from the shared classes cache. `<method_name>` is the method or methods that are to be included (the wildcard `*` may be used, see [`-Xjit:exclude`](#exclude) for details).
+: Only the Java&trade; methods specified are included when code is compiled or loaded from the shared classes cache. `<method_name>` is the method or methods that are to be included (the wildcard `*` can be used, see [`-Xjit:exclude`](#exclude) for details).
 
 : :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limit` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limit`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
 
@@ -128,15 +129,15 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
         -Xjit:verbose
 
-: Generates a JIT verbose log. The log provides a summary of which methods were compiled by the JIT and some of the compilation heurisic decisions that were taken while the JIT operates inside the OpenJ9 VM.
+: Generates a JIT verbose log. The log provides a summary of which methods were compiled by the JIT and some of the compilation heuristic decisions that were taken while the JIT operates inside the OpenJ9 VM.
 
         -Xjit:verbose={compileStart}
 
-: Prints out a line when the JIT is about to start compiling a method.
+: Prints a line when the JIT is about to start compiling a method.
 
         -Xjit:verbose={compileEnd}
 
-: Prints out a line when the JIT stops compiling a method.
+: Prints a line when the JIT stops compiling a method.
 
         -Xjit:verbose={compilePerformance}
 
@@ -154,11 +155,18 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
         java '-Xjit:verbose={compileStart|compileEnd|inlining}' -version
 
-
 ### `vlog`
         -Xjit:vlog=<vlog_filename>
 
 : Sends verbose output to a file, of the format `<vlog_filename>.<date>.<time>.<JVM_process_ID>`, which is created in your current directory. Running the command multiple times produces multiple distinct versions of this file. If you do not specify this parameter, the output is sent to the standard error output stream (STDERR). This type of log file can be used with the [`limitFile`](#limitfile) suboption to target the compilation of specific methods.
+
+### `perfTool`
+
+        -Xjit:perfTool
+
+: generates a `/tmp/perf-<pid>.map` file for the JIT-compiled code. This file is used by the Linux&reg; system profiler, `perf`, to map the samples in the JIT-compiled code to the corresponding Java method names for profiling the VM.
+
+For more information, see [`-XX:[+|-]PerfTool`](xxperftool.md).
 
 ## Examples
 
