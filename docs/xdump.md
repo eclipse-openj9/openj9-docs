@@ -314,6 +314,7 @@ The following table shows the events that are available as dump agent triggers:
 | **excessivegc** | An excessive amount of time is being spent in the garbage collector.        | Not applicable                                                 |
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+
 - The **gpf**, **traceassert**, and **abort** events cannot trigger a heap dump, prepare the heap (request=prepwalk), or compact the heap (request=compact).
 - The Java dump agent behaves differently when triggered by the `user` and `user2` events. For more information, see [`request=<requests>`](#requestrequests).
 - The `user2` event is commonly used for taking system dump files with exclusive access without overriding the `user` event, which is generally left for taking Java dump files for performance investigations. For example:

@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.33.1 are included
 - [Java&trade; dump files contain more information about waiting threads](#java-dump-files-contain-more-information-about-waiting-threads)
 - [New `-XX:[+|-]ShowNativeStackSymbols` option added](#new--xx-shownativestacksymbols-option-added)
 - [New `user2` event added for the `-Xdump` option](#new-user2-event-added-for-the--xdump-option)
+- [New `-XX:[+|-]PerfTool` option added](#new--xx-perftool-option-added)
 
 ## Features and changes
 
@@ -62,6 +63,14 @@ On operating systems other than Windows&trade;, you can now use the `user2` even
 There is a change in the `SIGUSR2` signal behavior as well whereby, the process does not exit in response to this signal.
 
 For more information, see [`-Xdump`](xdump.md#dump-events) and [Signal handling](openj9_signals.md).
+
+### New `-XX:[+|-]PerfTool` option added
+
+This option enables or disables the JIT support for the `perf` tool without affecting the existing `Xjit` options.
+
+Since this option creates a file that is used by the Linux&reg; system profiler, `perf`, it applies only to Linux.
+
+For more information, see [`-XX:[+|-]PerfTool`](xxperftool.md).
 
 ## Known problems and full release information
 
