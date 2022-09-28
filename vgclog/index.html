@@ -4663,7 +4663,7 @@
 <p>For definitions of GC cycles and operations, see <a href="../gc_overview/">Garbage collection</a>. For definitions of GC increments, see <a href="#gc-increments-and-interleaving">GC increments and interleaving</a>.</p>
 <p>The logs record when GC cycles and their increments start and end, and list the GC operations that run within these increments to manage or reclaim memory. You can also determine which type of event triggered the cycle or increment, and the amount of memory available to your application before and after processing.  </p>
 <h3 id="initialization">Initialization</h3>
-<p>The log begins by recording the configuration of the OpenJ9 runtime virtual environment (VM) and details of the GC configuration(GC). The configuration is recorded by using child elements of the <code>&lt;initialized&gt;</code> element, for example:  </p>
+<p>The log begins by recording the configuration of the Eclipse OpenJ9&trade; runtime virtual environment (VM) and details of the GC configuration(GC). The configuration is recorded by using child elements of the <code>&lt;initialized&gt;</code> element, for example:</p>
 <pre><code class="language-xml">
 &lt;initialized id=&quot;1&quot; timestamp=&quot;2020-10-18T13:27:07.691&quot;&gt;
   &lt;attribute name=&quot;gcPolicy&quot; value=&quot;-Xgcpolicy:gencon&quot; /&gt;

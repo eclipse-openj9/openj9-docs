@@ -4527,13 +4527,12 @@
 <p>Use the <code>jmap</code> tool to get memory information for a particular Java&trade; process, or list of processes. The tool shows statistics about classes on the heap, including the number of objects and their aggregate size. The command syntax is as follows:</p>
 <pre><code>jmap [&lt;option&gt;] [&lt;vmid&gt;]
 </code></pre>
-<p><code>&lt;vmid&gt;</code> is the Attach API virtual machine identifier for the Java process. This ID is typically the same as
-the operating system <em>process ID</em>, unless you specified the <code>-Dcom.ibm.tools.attach.id</code> system property when you started the process.</p>
+<p><code>&lt;vmid&gt;</code> is the Attach API virtual machine identifier for the Java process. This ID is typically the same as the operating system <em>process ID</em>, unless you specified the <code>-Dcom.ibm.tools.attach.id</code> system property when you started the process.</p>
 <p>VMID is shown in <code>jps</code> or other Attach API-based tools. Multiple VMIDs can be specified, separated by a space.</p>
 <p>If you do not specify a VMID, the command reads input from <code>stdin</code>. You can therefore get information for all processes by piping the output of the <a href="../tool_jps/"><code>jps</code></a> command to <code>jmap</code>:</p>
 <p><code>jps -q | jmap -histo</code></p>
 <p>IDs of dead processes are silently ignored.</p>
-<p>On its own, <code>jmap</code> prints help information. To obtain memory information, a <code>-histo</code> argument must be supplied, where the available <code>&lt;options&gt;</code> are as follows:    </p>
+<p>On its own, <code>jmap</code> prints help information. To obtain memory information, a <code>-histo</code> argument must be supplied, where the available <code>&lt;options&gt;</code> are as follows:</p>
 <ul>
 <li><code>-histo</code>: Prints statistics about classes on the heap, including the number of objects and their aggregate size</li>
 <li><code>-histo:live</code>: Prints statistics for live objects only</li>
@@ -4551,7 +4550,7 @@ the operating system <em>process ID</em>, unless you specified the <code>-Dcom.i
   7            151           7248    jdk.internal.org.objectweb.asm.Item
   8            396           6336    [Ljava.lang.Object;
 </code></pre>
-<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg></span> <strong>Restrictions:</strong> This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9.</p>
+<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg></span> <strong>Restrictions:</strong> This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to Eclipse OpenJ9&trade;.</p>
 <p>The following tool limitations apply:</p>
 <ul>
 <li>Displays information only for local processes that are owned by the current user, due to security considerations. You can display information for remote processes by  using <code>ssh user@host jmap &lt;options&gt; &lt;pid&gt;</code>.</li>

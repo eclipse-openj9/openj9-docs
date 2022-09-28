@@ -4814,7 +4814,7 @@ for analysis.</p>
 <a href="../api-jvm/">JVM diagnostic utilities API documentation</a>. <!-- Link to API --></li>
 </ul>
 <h2 id="analyzing-dumps">Analyzing dumps</h2>
-<p>The best method to analyze a PHD heap dump is to use the <a href="https://www.eclipse.org/mat/">Eclipse Memory Analyzer tool (MAT)</a> or the <a href="https://www.ibm.com/support/knowledgecenter/en/SSYKE2_8.0.0/com.ibm.java.80.doc/diag/tools/tool_memoryanalyzer.html">IBM Memory Analyzer tool</a>. These tools process the dump file and provide a visual representation of the objects in the Java Heap. Both tools require the Diagnostic Tool Framework for Java (DTFJ) plugin. To install the DTFJ plugin in the Eclipse IDE, select the following menu items:</p>
+<p>The best method to analyze a PHD heap dump is to use the <a href="https://www.eclipse.org/mat/">Eclipse Memory Analyzer&trade; tool (MAT)</a> or the <a href="https://www.ibm.com/support/knowledgecenter/en/SSYKE2_8.0.0/com.ibm.java.80.doc/diag/tools/tool_memoryanalyzer.html">IBM Memory Analyzer tool</a>. These tools process the dump file and provide a visual representation of the objects in the Java Heap. Both tools require the Diagnostic Tool Framework for Java (DTFJ) plugin. To install the DTFJ plugin in the Eclipse IDE, select the following menu items:</p>
 <pre><code>Help &gt; Install New Software &gt; Work with &quot;IBM Diagnostic Tool Framework for Java&quot; &gt; IBM Monitoring and Diagnostic Tools &gt; Diagnostic Tool Framework for Java   
 </code></pre>
 <p>The following sections contain detailed information about the content of each type of heap dump file.</p>
@@ -4858,7 +4858,7 @@ Primitive numbers are used to describe the file format, as detailed in the follo
 <li>An <code>int</code> containing the PHD version number</li>
 <li>An <code>int</code> containing flags:<ul>
 <li><code>1</code> indicates that the <code>word</code> length is 64-bit.</li>
-<li><code>2</code> indicates that all the objects in the dump are hashed. This flag is set for heap dumps that use 16-bit hash codes. OpenJ9 heap dumps use 32-bit hash codes that are created only when used. For example, these hash codes are created when the APIs <code>Object.hashCode()</code> or <code>Object.toString()</code> are called in a Java application. If this flag is not set, the presence of a hash code is indicated by the hash code flag on the individual PHD records.</li>
+<li><code>2</code> indicates that all the objects in the dump are hashed. This flag is set for heap dumps that use 16-bit hash codes. Eclipse OpenJ9&trade; heap dumps use 32-bit hash codes that are created only when used. For example, these hash codes are created when the APIs <code>Object.hashCode()</code> or <code>Object.toString()</code> are called in a Java application. If this flag is not set, the presence of a hash code is indicated by the hash code flag on the individual PHD records.</li>
 <li><code>4</code> indicates that the dump is from an OpenJ9 VM.</li>
 </ul>
 </li>

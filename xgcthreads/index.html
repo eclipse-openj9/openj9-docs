@@ -4592,7 +4592,7 @@
 <h2 id="explanation">Explanation</h2>
 <p>The total number of GC threads is composed of one application thread with the remainder being dedicated GC threads. By default, the number is set to <code>n-1</code>, where <code>n</code> is the number of reported CPUs, up to a maximum of 64. Where SMT or hyperthreading is in place, the number of reported CPUs is larger than the number of physical CPUs. Likewise, where virtualization is in place, the number of reported CPUs is the number of virtual CPUs assigned to the operating system. To set it to a different number, for example 4, use <code>-Xgcthreads4</code>. The minimum valid value is 1, which disables parallel operations, at the cost of performance. No advantage is gained if you increase the number of threads to more than the default setting.</p>
 <p>On systems running multiple VMs or in LPAR environments where multiple VMs can share the same physical CPUs, you might want to restrict the number of GC threads used by each VM. The restriction helps prevent the total number of parallel operation GC threads for all VMs exceeding the number of physical CPUs present, when multiple VMs perform garbage collection at the same time.</p>
-<p>This option is directly mapped to the HotSpot option <a href="../xxparallelgcthreads/"><code>-XX:ParallelGCThreads</code></a> and can be used with all OpenJ9 GC policies.</p>
+<p>This option is directly mapped to the HotSpot option <a href="../xxparallelgcthreads/"><code>-XX:ParallelGCThreads</code></a> and can be used with all Eclipse OpenJ9&trade; GC policies.</p>
 <!-- ==== END OF TOPIC ==== xgcthreads.md ==== -->
                 
               

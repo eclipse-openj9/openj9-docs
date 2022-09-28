@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openj9-command-line-options" class="md-skip">
+        <a href="#eclipse-openj9-command-line-options" class="md-skip">
           Skip to content
         </a>
       
@@ -4580,7 +4580,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="openj9-command-line-options">OpenJ9 command-line options</h1>
+<h1 id="eclipse-openj9-command-line-options">Eclipse OpenJ9 command-line options</h1>
 <p>When you start a Java&trade; application you can specify various options on the command line to configure the runtime environment. These options include:</p>
 <ul>
 <li><a href="../d_jvm_commands/">System properties</a></li>
@@ -4588,7 +4588,7 @@
 <li><a href="../x_jvm_commands/">Nonstandard (or -X) options</a></li>
 <li><a href="../xx_jvm_commands/">-XX options</a></li>
 </ul>
-<p>Although the command line is the traditional way to specify command-line options, you can also pass options to the OpenJ9 virtual machine (VM) by using a manifest file, options files, and environment variables.</p>
+<p>Although the command line is the traditional way to specify command-line options, you can also pass options to the Eclipse OpenJ9&trade; virtual machine (VM) by using a manifest file, options files, and environment variables.</p>
 <p>Options specified on the command line override the equivalent environment variables. For example, specifying <code>java -cp &lt;dir1&gt;</code> completely overrides setting the environment variable <code>CLASSPATH=&lt;dir2&gt;</code>.</p>
 <h2 id="quotation-marks">Quotation marks</h2>
 <p>Use single or double quotation marks for command-line options only when explicitly directed to do so. Single and double quotation marks have different meanings on different platforms, operating systems, and shells. Do not use <code>'-X&lt;option&gt;'</code> or <code>"-X&lt;option&gt;"</code>. Instead, you must use <code>-X&lt;option&gt;</code>. For example, do not use <code>'-Xmx500m'</code> and <code>"-Xmx500m"</code>. Write this option as <code>-Xmx500m</code>.</p>

@@ -4741,7 +4741,7 @@
 -->
 
 <h1 id="configuring-your-system">Configuring your system</h1>
-<p>Configuring your local system can help you optimize the runtime environment for your Java application. Options include setting operating system environment variables and configuring system resources so that OpenJ9 can exploit the underlying operating system and hardware capabilities.</p>
+<p>Configuring your local system can help you optimize the runtime environment for your Java application. Options include setting operating system environment variables and configuring system resources so that Eclipse OpenJ9&trade; can exploit the underlying operating system and hardware capabilities.</p>
 <p>When you install a Java&trade; runtime environment on your system you can set the <strong>PATH</strong> environment variable so that the operating system can find the Java programs and utilities to run your application. To tell your application where to find user classes, you can use the <strong>-cp</strong> option or set the <strong>CLASSPATH</strong> environment variable. However, if you set <strong>CLASSPATH</strong> globally, all invocations of Java are affected. How to set these environment variables is covered in many publications about Java, such as <a href="https://docs.oracle.com/javase/tutorial/essential/environment/paths.html">The Java Tutorials: PATH and CLASSPATH</a>.</p>
 <p>On some systems, a further environment variable might be required if your application requires shared libraries but does not specify their exact location. You can set the following environment variables to specify the directory location of the shared libraries, although setting a global value affects all invocations of Java:</p>
 <ul>

@@ -4607,7 +4607,7 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>From Eclipse OpenJ9 0.24.0, the <code>-Xlog</code> option is replaced by the <a href="../xsyslog/"><code>-Xsyslog</code></a> option. The <code>-XX:[+|-]LegacyXlogOption</code> controls how the <code>-Xlog</code> option is processed.</p>
+<p>From Eclipse OpenJ9&trade; 0.24.0, the <code>-Xlog</code> option is replaced by the <a href="../xsyslog/"><code>-Xsyslog</code></a> option. The <code>-XX:[+|-]LegacyXlogOption</code> controls how the <code>-Xlog</code> option is processed.</p>
 <ul>
 <li>When <code>-XX:-LegacyXlogOption</code> is set, the <code>-Xlog</code> option is recognized only when a form of this option is run that requests garbage collection (GC) logging (for example, <code>-Xlog:gc[:stderr|:file=&lt;filename&gt;]</code>). For more information, see <a href="../xlog/"><code>-Xlog</code></a>.</li>
 <li>When <code>-XX:+LegacyXlogOption</code> is set, the legacy <code>-Xlog</code> behavior is enabled. When enabled, the option is equivalent to the <a href="../xsyslog/"><code>-Xsyslog</code></a> option. That is, the <code>-Xlog</code> option can be used with the parameters documented in <a href="../xsyslog/"><code>-Xsyslog</code></a>.</li>

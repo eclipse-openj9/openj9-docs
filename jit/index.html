@@ -4619,7 +4619,7 @@
 -->
 
 <h1 id="the-jit-compiler">The JIT compiler</h1>
-<p>The Just-In-Time (JIT) compiler is a key component of the OpenJ9 VM that improves the performance of Java applications by compiling platform-neutral Java bytecode into native machine code at run time. Without the JIT, the VM has to interpret the bytecodes itself - a process that requires extra CPU and memory.</p>
+<p>The Just-In-Time (JIT) compiler is a key component of the Eclipse OpenJ9&trade; VM that improves the performance of Java applications by compiling platform-neutral Java bytecode into native machine code at run time. Without the JIT, the VM has to interpret the bytecodes itself - a process that requires extra CPU and memory.</p>
 <p>The JIT compiler doesn't compile every method that gets called because thousands of methods can be called at startup. Instead, OpenJ9 records the number of times a method is called. When the count reaches a pre-defined <em>invocation threshold</em>, JIT compilation is triggered. Once a method has been compiled by the JIT, the VM can call the compiled method rather than interpreting it.</p>
 <h2 id="optimization-levels">Optimization levels</h2>
 <p>The JIT compiler can compile a method at different optimization levels: <strong>cold</strong>, <strong>warm</strong>, <strong>hot</strong>, <strong>very hot (with profiling)</strong>, or <strong>scorching</strong>. The hotter the optimization level, the better the expected performance, but the higher the cost in terms of CPU and memory.</p>
