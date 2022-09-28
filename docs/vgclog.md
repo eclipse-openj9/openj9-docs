@@ -58,7 +58,7 @@ The logs record when GC cycles and their increments start and end, and list the 
 
 ### Initialization
 
-The log begins by recording the configuration of the OpenJ9 runtime virtual environment (VM) and details of the GC configuration(GC). The configuration is recorded by using child elements of the `<initialized>` element, for example:  
+The log begins by recording the configuration of the Eclipse OpenJ9&trade; runtime virtual environment (VM) and details of the GC configuration(GC). The configuration is recorded by using child elements of the `<initialized>` element, for example:
 
 ```xml
 

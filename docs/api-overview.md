@@ -24,8 +24,7 @@
 
 # API documentation
 
-The Eclipse OpenJ9 VM provides supplementary application programming interfaces and extensions, which can be used to improve performance, assist with problem determination, or help monitor and manage the OpenJ9 VM. The documentation also includes links to the API documentation for the Java&trade; SE and JDK reference implementation.
-
+The Eclipse OpenJ9&trade; VM provides supplementary application programming interfaces and extensions, which can be used to improve performance, assist with problem determination, or help monitor and manage the OpenJ9 VM. The documentation also includes links to the API documentation for the Java&trade; SE and JDK reference implementation.
 
 ## Native data operations
 
@@ -49,9 +48,6 @@ The Diagnostic Tool Framework for Java (DTFJ) API packages (`com.ibm.dtfj.*`) al
 
 The shared classes API package (`com.ibm.oti.shared`) provides a large number of classes for managing permissions, finding and storing classes and byte data, and obtaining statistics about a shared classes cache. Classes are also available to enable class sharing for a custom class loader implementation.
 
-OpenJ9 includes MXBean extensions to the `java.lang.management` API  (`com.ibm.lang.management` and  `openj9.lang.management`), which can be used to monitor and manage the VM. These extensions provide access to information about the state of the OpenJ9 VM and the environment in which it is running.
-
-
-
+OpenJ9 includes MXBean extensions to the `java.lang.management` API (`com.ibm.lang.management` and `openj9.lang.management`), which can be used to monitor and manage the VM. These extensions provide access to information about the state of the OpenJ9 VM and the environment in which it is running.
 
 <!-- ==== END OF TOPIC ==== api-overview.md ==== -->

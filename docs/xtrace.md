@@ -24,7 +24,7 @@
 
 # -Xtrace
 
-OpenJ9 VM tracing is a powerful feature to help you diagnose problems with minimal effect on performance. Tracing is enabled by default, together with a small set of trace points going to memory buffers. You can enable tracepoints at run time by using levels, components, group names, or individual tracepoint identifiers to trace VM internal operations and instrumented Java&trade; applications. You can also trace Java methods. See the [About trace](#about-trace) section that follows for more detail.
+Eclipse OpenJ9&trade; VM tracing is a powerful feature to help you diagnose problems with minimal effect on performance. Tracing is enabled by default, together with a small set of trace points going to memory buffers. You can enable tracepoints at run time by using levels, components, group names, or individual tracepoint identifiers to trace VM internal operations and instrumented Java&trade; applications. You can also trace Java methods. See the [About trace](#about-trace) section that follows for more detail.
 
 Trace data can be output in human-readable or in compressed binary formats. The VM provides a tool to process and convert the compressed binary data into a readable format. See [Trace formatter](tool_traceformat.md).  
 

@@ -26,7 +26,7 @@
 
 **(64-bit only)**
 
-This Oracle HotSpot option enables or disables compressed references in 64-bit JVMs. The option is recognized by the OpenJ9 VM and is provided to help when porting applications from the HotSpot JVM to the OpenJ9 VM. This option might not be supported in subsequent releases.
+This Oracle HotSpot option enables or disables compressed references in 64-bit JVMs. The option is recognized by the Eclipse OpenJ9&trade; VM and is provided to help when porting applications from the HotSpot JVM to the OpenJ9 VM. This option might not be supported in subsequent releases.
 
 ## Syntax
 

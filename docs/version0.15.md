@@ -47,7 +47,7 @@
 
 ### Binaries and supported environments
 
- OpenJ9 release 0.15.0 and 0.15.1 supports OpenJDK 8, 11, and 12.
+ Eclipse OpenJ9&trade; 0.15.0 and 0.15.1 supports OpenJDK 8, 11, and 12.
 
  Binaries are available from the AdoptOpenJDK community at the following links:
  

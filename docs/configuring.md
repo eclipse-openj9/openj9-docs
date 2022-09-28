@@ -24,7 +24,7 @@
 
 # Configuring your system
 
-Configuring your local system can help you optimize the runtime environment for your Java application. Options include setting operating system environment variables and configuring system resources so that OpenJ9 can exploit the underlying operating system and hardware capabilities.
+Configuring your local system can help you optimize the runtime environment for your Java application. Options include setting operating system environment variables and configuring system resources so that Eclipse OpenJ9&trade; can exploit the underlying operating system and hardware capabilities.
 
 When you install a Java&trade; runtime environment on your system you can set the **PATH** environment variable so that the operating system can find the Java programs and utilities to run your application. To tell your application where to find user classes, you can use the **-cp** option or set the **CLASSPATH** environment variable. However, if you set **CLASSPATH** globally, all invocations of Java are affected. How to set these environment variables is covered in many publications about Java, such as [The Java Tutorials: PATH and CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html).
 

@@ -29,7 +29,7 @@ Enables operating system message logging.
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
 - Changes made to message logging by using the `-Xsyslog` option do not affect messages written to the standard error stream (`stderr`).
-- This option replaces the OpenJ9 [`-Xlog`](xlog.md) option in Eclipse OpenJ9 version 0.24.0. If the [`-XX:+LegacyXlogOption`](xxlegacyxlogoption.md) is set, `-Xlog` behaves in the same way as `-Xsyslog` and with the same parameters.
+- This option replaces the Eclipse OpenJ9&trade; [`-Xlog`](xlog.md) option in Eclipse OpenJ9 version 0.24.0. If the [`-XX:+LegacyXlogOption`](xxlegacyxlogoption.md) is set, `-Xlog` behaves in the same way as `-Xsyslog` and with the same parameters.
 
 ## Syntax
 

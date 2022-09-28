@@ -24,7 +24,7 @@
 
 # -Dcom.ibm.gpu.enable
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This system property is supported only on Java&trade; 11 and later
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This system property is supported only on Java&trade; 11 and later.
 
 Use this system property to control the type of processing that can be offloaded to a graphics processing unit (GPU) when processing requirements meet a specific threshold. This feature can improve the performance of certain Java functions.
 

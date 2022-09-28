@@ -162,7 +162,7 @@ Options that change the behavior of the garbage collector.
 
     The default value is 95, which means that anything over 95% of total application run time spent on GC is deemed excessive. This option can be used only when [`-Xenableexcessivegc`](xenableexcessivegc.md) is set (enabled by default).
 
-: This option can be used with all OpenJ9 GC policies.
+: This option can be used with all Eclipse OpenJ9&trade; GC policies.
 
 ### `hierarchicalScanOrdering`
 

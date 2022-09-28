@@ -41,7 +41,7 @@ Enable logging for Attach API events.
 
 ## Explanation
 
-Turn on tracing and logging of Attach API events to help diagnose problems. One timestamped log file is created for each Java process in the current directory for the running JVM .
+Turn on tracing and logging of Attach API events to help diagnose problems. One timestamped log file is created for each Java&trade; process in the current directory for the running JVM .
 
 ## See also
 

@@ -24,7 +24,7 @@
 
 # Language management interface
 
-Eclipse OpenJ9 provides MXBean extensions to the standard `java.lang.management` API, which can be used to monitor and manage the Java&trade; virtual machine.
+Eclipse OpenJ9&trade; provides MXBean extensions to the standard `java.lang.management` API, which can be used to monitor and manage the Java&trade; virtual machine.
 These extensions provide access to information about the state of the OpenJ9 VM and the environment in which it is running. The following
 tables list the MXBeans by package and describe the monitoring or management capabilities.
 

@@ -36,7 +36,7 @@ Use this command-line option to enable and disable network queries from being us
 | `-XX:+ReadIPInfoForRAS` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
 | `-XX:-ReadIPInfoForRAS` | Disable |                                                                                    |
 
-OpenJ9 captures the host name and IP address by default, for use in diagnosing problems. But if a nameserver cannot be contacted when a network query is made, the program will wait until the resolver times out.
+Eclipse OpenJ9&trade; captures the host name and IP address by default, for use in diagnosing problems. But if a nameserver cannot be contacted when a network query is made, the program will wait until the resolver times out.
 
 You can avoid this situation by using the `-XX:-ReadIPInfoForRAS` command-line option to prevent the query from being performed.
 

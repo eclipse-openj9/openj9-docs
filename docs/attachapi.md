@@ -28,7 +28,7 @@ With the Attach API, your application can connect to a running VM and load an ag
 
 For example, if you wanted to start monitoring an application that is already running with the Attach API enabled, you could use a tool such as the [IBM Health Center](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/introduction.html). In this case, a Health Center agent can start in its own VM and attach to the target VM where the application  is running to start recording and sending data to the Health Center client.
 
-The OpenJ9 implementation of the Attach API is equivalent to the reference implementation (API documentation is available on the [Oracle website](https://docs.oracle.com/javase/8/docs/jdk/api/attach/spec/index.html)). However, you can only use the Attach API to connect to another OpenJ9 VM.
+The Eclipse OpenJ9&trade; implementation of the Attach API is equivalent to the reference implementation (API documentation is available on the [Oracle website](https://docs.oracle.com/javase/8/docs/jdk/api/attach/spec/index.html)). However, you can only use the Attach API to connect to another OpenJ9 VM.
 
 When you run a Java&trade; application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on  z/OS,
 processes that use the default z/OS OMVS segment cannot enable the Attach API.

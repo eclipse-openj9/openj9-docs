@@ -34,7 +34,7 @@ You can specify this option on both the server and the client sides.
 
 | Setting                 | Effect | Default                                                                            |
 |-------------------------|--------|:----------------------------------------------------------------------------------:|
-|`-XX:JITServerTimeout`           | Set the timeout value in milliseconds for socket operations | 30000 ms for the JITServer process and 10000 ms when OpenJ9 is launched as a client VM                                                                                    |
+|`-XX:JITServerTimeout`           | Set the timeout value in milliseconds for socket operations | 30000 ms for the JITServer process and 10000 ms when Eclipse OpenJ9&trade; is launched as a client VM                                                                                    |
 
 
 ## See also

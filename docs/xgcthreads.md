@@ -41,7 +41,7 @@ The total number of GC threads is composed of one application thread with the re
 
 On systems running multiple VMs or in LPAR environments where multiple VMs can share the same physical CPUs, you might want to restrict the number of GC threads used by each VM. The restriction helps prevent the total number of parallel operation GC threads for all VMs exceeding the number of physical CPUs present, when multiple VMs perform garbage collection at the same time.
 
-This option is directly mapped to the HotSpot option [`-XX:ParallelGCThreads`](xxparallelgcthreads.md) and can be used with all OpenJ9 GC policies.
+This option is directly mapped to the HotSpot option [`-XX:ParallelGCThreads`](xxparallelgcthreads.md) and can be used with all Eclipse OpenJ9&trade; GC policies.
 
 
 <!-- ==== END OF TOPIC ==== xgcthreads.md ==== -->

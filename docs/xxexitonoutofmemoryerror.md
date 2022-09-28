@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]ExitOnOutOfMemoryError
 
-This HotSpot option is recognized by OpenJ9. You can use the option to trigger a shut down on VM out-of-memory conditions.
+This HotSpot option is recognized by Eclipse OpenJ9&trade;. You can use the option to trigger a shut down on VM out-of-memory conditions.
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Java&trade;, heap, snap, and system dumps are enabled by default but can be disabled by including [`-XX:-HeapDumpOnOutOfMemoryError`](xxheapdumponoutofmemory.md).
 

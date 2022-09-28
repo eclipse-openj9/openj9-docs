@@ -25,7 +25,7 @@
 
 # Migrating from Java 11 to Java 17
 
-Support for OpenJDK 17 was added in OpenJ9 version 0.29.1.
+Support for OpenJDK 17 was added in Eclipse OpenJ9&trade; version 0.29.1.
 
 The following new OpenJ9 changes apply when OpenJ9 is built with Java SE 17 class libraries. This information exists elsewhere in the documentation but is summarized here for convenience.
 

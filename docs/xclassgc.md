@@ -24,7 +24,7 @@
 
 # -Xclassgc / -Xnoclassgc
 
-Enables and disables the garbage collection (GC) of storage that is associated with Java classes that are no longer being used by the OpenJ9 VM.
+Enables and disables the garbage collection (GC) of storage that is associated with Java classes that are no longer being used by the Eclipse OpenJ9&trade; VM.
 
 When enabled, GC occurs only on class loader changes. To always enable dynamic class unloading regardless of class loader changes, set [`-Xalwaysclassgc`](xalwaysclassgc.md).
 

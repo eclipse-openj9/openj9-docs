@@ -24,7 +24,7 @@
 
 # Eclipse OpenJ9
 
-Welcome to the user documentation for the Eclipse OpenJ9 virtual machine (VM).
+Welcome to the user documentation for the Eclipse OpenJ9&trade; virtual machine (VM).
 
 This user documentation supports the configuration, tuning, and diagnosis of the OpenJ9 VM in an OpenJDK runtime. However, due to differences between the Java SE class libraries, specific options might apply only to one Java SE version. Icons are used to indicate where differences apply. For example:
 

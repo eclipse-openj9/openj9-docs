@@ -54,7 +54,7 @@ jcmd 31452 help Dump.heap
 jcmd 31452 Dump.heap myHeapDump
 ```
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9. For information about the differences between these two implementations, see [Switching to OpenJ9](tool_migration.md).
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to Eclipse OpenJ9&trade;. For information about the differences between these two implementations, see [Switching to OpenJ9](tool_migration.md).
 
 The tool uses the Attach API, and has the following limitations:
 

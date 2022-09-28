@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]PageAlignDirectMemory
 
-This Oracle HotSpot option affects the alignment of direct byte buffer allocation and is implemented by the OpenJ9 VM for compatibility.
+This Oracle HotSpot option affects the alignment of direct byte buffer allocation and is implemented by the Eclipse OpenJ9&trade; VM for compatibility.
 
 ## Syntax
 

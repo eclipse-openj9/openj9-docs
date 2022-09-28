@@ -24,7 +24,7 @@
 
 # Directory conventions
 
-The following tables provide a quick reference to the OpenJ9 VM directory location on different Java&trade; versions and different platform architectures. Some
+The following tables provide a quick reference to the Eclipse OpenJ9&trade; VM directory location on different Java&trade; versions and different platform architectures. Some
 pages refer to the VM directory location as `<vm_dir>`.
 
 

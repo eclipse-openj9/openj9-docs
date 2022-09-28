@@ -65,7 +65,7 @@ If you require a system dump that contains details of all the native threads tha
 
 ## Analyzing a system dump
 
-To examine a system dump you can use the [OpenJ9 dump viewer](tool_jdmpview.md) (`jdmpview`), a platform-specific debugging tool, or the [Eclipse Memory Analyzer tool (MAT)](https://www.eclipse.org/mat/).
+To examine a system dump you can use the [Dump viewer](tool_jdmpview.md) (`jdmpview`), a platform-specific debugging tool, or the [Eclipse Memory Analyzer&trade; tool](https://www.eclipse.org/mat/) (MAT).
 
 If you want to use MAT to analyze your system dump, you must install the  Diagnostic Tool Framework for Java (DTFJ) plugin in the Eclipse IDE. Select the following menu items:
 

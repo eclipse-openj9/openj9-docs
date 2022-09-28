@@ -25,7 +25,7 @@
 
 # Garbage collection policies
 
-OpenJ9 provides several garbage collection (GC) policies that are designed around different application workloads and service level agreements. Each GC policy consists of a set of characteristics and features that aim to optimize one or more performance aspects of a running application. These performance aspects include application throughput, memory footprint, average pause times, worst-case pause times, and startup time.
+Eclipse OpenJ9&trade; provides several garbage collection (GC) policies that are designed around different application workloads and service level agreements. Each GC policy consists of a set of characteristics and features that aim to optimize one or more performance aspects of a running application. These performance aspects include application throughput, memory footprint, average pause times, worst-case pause times, and startup time.
 
 Different policies require a Java heap that is configured in different ways in order to achieve different goals. The simplest configuration consists of a single area of memory, often referred to as a *flat* heap. Other configurations divide the heap into different areas or regions, which might contain objects of different ages (*generations*) or sizes.
 

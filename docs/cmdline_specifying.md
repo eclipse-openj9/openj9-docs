@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# OpenJ9 command-line options
+# Eclipse OpenJ9 command-line options
 
 When you start a Java&trade; application you can specify various options on the command line to configure the runtime environment. These options include:
 
@@ -31,7 +31,7 @@ When you start a Java&trade; application you can specify various options on the 
 - [Nonstandard (or -X) options](x_jvm_commands.md)
 - [-XX options](xx_jvm_commands.md)
 
-Although the command line is the traditional way to specify command-line options, you can also pass options to the OpenJ9 virtual machine (VM) by using a manifest file, options files, and environment variables.
+Although the command line is the traditional way to specify command-line options, you can also pass options to the Eclipse OpenJ9&trade; virtual machine (VM) by using a manifest file, options files, and environment variables.
 
 Options specified on the command line override the equivalent environment variables. For example, specifying `java -cp <dir1>` completely overrides setting the environment variable `CLASSPATH=<dir2>`.
 

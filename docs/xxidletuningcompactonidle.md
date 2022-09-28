@@ -26,7 +26,7 @@
 
 **(Linux&reg; only)**
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** From OpenJ9 version 0.23.0 this option has no effect.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** From Eclipse OpenJ9&trade; version 0.23.0 this option has no effect.
 
 In versions of OpenJ9 before 0.23.0, this option controls garbage collection processing with compaction when the state of the OpenJ9 VM is set to idle.
 

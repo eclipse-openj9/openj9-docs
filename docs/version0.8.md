@@ -24,7 +24,7 @@
 
 # Release notes - version 0.8.0
 
-Version 0.8.0 is the first release of Eclipse OpenJ9, as defined in the [release plan](https://projects.eclipse.org/projects/technology.openj9/releases/0.8/plan).
+Version 0.8.0 is the first release of Eclipse OpenJ9&trade;, as defined in the [release plan](https://projects.eclipse.org/projects/technology.openj9/releases/0.8/plan).
 
 This release supports OpenJDK Version 8 binaries at [AdoptOpenJDK.net](https://adoptopenjdk.net/?variant=openjdk8-openj9) that contain the Eclipse OpenJ9 virtual machine.
 

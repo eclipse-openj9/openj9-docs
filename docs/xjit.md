@@ -129,7 +129,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
         -Xjit:verbose
 
-: Generates a JIT verbose log. The log provides a summary of which methods were compiled by the JIT and some of the compilation heuristic decisions that were taken while the JIT operates inside the OpenJ9 VM.
+: Generates a JIT verbose log. The log provides a summary of which methods were compiled by the JIT and some of the compilation heuristic decisions that were taken while the JIT operates inside the Eclipse OpenJ9&trade; VM.
 
         -Xjit:verbose={compileStart}
 

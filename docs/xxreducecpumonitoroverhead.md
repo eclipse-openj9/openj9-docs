@@ -47,7 +47,7 @@ JVMJ9VM145E -XX:-ReduceCPUMonitorOverhead is unsupported on z/OS. Error: Could n
 
 
 When you enable this option, the VM does not maintain information on the amount of CPU usage that non-GC threads spend in doing work on behalf of GC.
-If you set `-XX:-ReduceCPUMonitorOverhead`, the OpenJ9 VM monitors the amount of GC work that a non-GC thread does and accounts for it in the GC category. This information is made available in the `com.ibm.lang.management.JvmCpuMonitorMXBean`. Setting this option results in a small increase in application startup time, which varies according to platform.
+If you set `-XX:-ReduceCPUMonitorOverhead`, the Eclipse OpenJ9&trade; VM monitors the amount of GC work that a non-GC thread does and accounts for it in the GC category. This information is made available in the `com.ibm.lang.management.JvmCpuMonitorMXBean`. Setting this option results in a small increase in application startup time, which varies according to platform.
 
 ## See also
 

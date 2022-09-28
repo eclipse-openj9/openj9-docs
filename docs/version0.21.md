@@ -39,7 +39,7 @@ The following new features and notable changes since version 0.20.0 are included
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.21.0 supports OpenJDK 8, 11, and 14. Binaries are available from the AdoptOpenJDK community at the following links:
+Eclipse OpenJ9&trade; release 0.21.0 supports OpenJDK 8, 11, and 14. Binaries are available from the AdoptOpenJDK community at the following links:
 
 - [OpenJDK version 8](https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=openj9)
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)

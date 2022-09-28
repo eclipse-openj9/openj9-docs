@@ -26,7 +26,7 @@
 
 Disables JIT sampling after a specified amount of time. 
 
-When the JIT sampling thread is disabled, no processor cycles are used by an idle OpenJ9 VM.
+When the JIT sampling thread is disabled, no processor cycles are used by an idle Eclipse OpenJ9&trade; VM.
 
 Use this option with care; after the sampling thread is disabled, you cannot reactivate it. However, because the profiling frequency is automatically reduced, you should not have to use this option. 
 

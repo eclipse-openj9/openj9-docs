@@ -23,9 +23,9 @@
 -->
 
 
-# New to OpenJ9?
+# New to Eclipse OpenJ9?
 
-The Eclipse OpenJ9 virtual machine (VM) implements the [Java Virtual Machine Specification](https://docs.oracle.com/javase/specs/index.html). Most Java applications should run on an OpenJDK that contains the OpenJ9 VM without changing anything. However, because it is an independent implementation there are some differences compared to the HotSpot VM, which is the default OpenJDK VM and is also included in an Oracle JDK.
+The Eclipse OpenJ9&trade; virtual machine (VM) implements the [Java Virtual Machine Specification](https://docs.oracle.com/javase/specs/index.html). Most Java applications should run on an OpenJDK that contains the OpenJ9 VM without changing anything. However, because it is an independent implementation there are some differences compared to the HotSpot VM, which is the default OpenJDK VM and is also included in an Oracle JDK.
 
 ## Command-line options
 
@@ -75,7 +75,7 @@ OpenJ9 provides support for a number of monitoring and diagnostic tools that can
 
 - [**Health Center:**](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-health-center) Provides real-time monitoring of running applications with minimal overhead over the network. You can monitor a whole range of operations including, class loading, CPU usage, GC heap and pause times, I/O activity, lock contention, method trace, native memory usage, profiling, and live threads. For more information, read the [Health Center documentation](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/homepage/plugin-homepage-hc.html).
 - [**Garbage Collection Memory Vizualizer (GCMV):**](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv) Plots GC and native memory data over time. You can view and save data as a report, raw log, tabulated data, or in graphical format. The tool helps to diagnose problems such as memory leaks with data presented in various visual formats for analysis. Tuning recommendations are also provided. For more information, read the [GCMV documentation](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.visualizer.doc/homepage/plugin-homepage-gcmv.html).
-- [**Memory Analyzer:**](https://marketplace.eclipse.org/content/memory-analyzer-0) Examines the Java object heap to help find memory leaks or reduce memory consumption. Support is available for OpenJ9 via the DTFJ interface (Install from the Eclipse Help menu; Install New Software > Work with "IBM Diagnostic Tool Framework for Java" > IBM Monitoring and Diagnostic Tools > Diagnostic Tool Framework for Java). More information about Eclipse MAT can be found on the [project website page](https://www.eclipse.org/mat/).
+- [**Eclipse Memory Analyzer&trade;:**](https://marketplace.eclipse.org/content/memory-analyzer-0) Examines the Java object heap to help find memory leaks or reduce memory consumption. Support is available for OpenJ9 via the DTFJ interface (Install from the Eclipse Help menu; Install New Software > Work with "IBM Diagnostic Tool Framework for Java" > IBM Monitoring and Diagnostic Tools > Diagnostic Tool Framework for Java). More information about Eclipse MAT can be found on the [project website page](https://www.eclipse.org/mat/).
 
 If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, the Java VisualVM utility is functionally similar to Health Center. Most of the other tools provided with HotSpot are not officially supported, but equivalent functionality is available in OpenJ9 through command-line
 options, dump agents, and AttachAPI.

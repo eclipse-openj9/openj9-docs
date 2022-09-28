@@ -31,7 +31,7 @@ The following new features and notable changes since version 0.11.0 are included
 
 - [Improved flexibility for managing the size of the JIT code cache](#improved-flexibility-for-managing-the-size-of-the-jit-code-cache)
 <!-- - [Class data sharing is enabled by default](#class-data-sharing-is-enabled-by-default) -->
-- [Idle-tuning is enabled by default when OpenJ9 runs in a docker container](#idle-tuning-is-enabled-by-default-when-openj9-runs-in-a-docker-container)
+- [Idle-tuning is enabled by default when Eclipse OpenJ9&trade; runs in a docker container](#idle-tuning-is-enabled-by-default-when-openj9-runs-in-a-docker-container)
 - [Changes to default shared classes cache directory permissions (not Windows)](#changes-to-default-shared-classes-cache-directory-permissions-not-windows)
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [OpenSSL is now supported for improved native cryptographic performance](#openssl-is-now-supported-for-improved-native-cryptographic-performance)
 - [Improved support for pause-less garbage collection](#improved-support-for-pause-less-garbage-collection)
@@ -46,7 +46,7 @@ was identified with OpenSSL V1.1.x acceleration of the cryptographic Digest algo
 
 #### Binaries and supported environments
 
-OpenJ9 release 0.12.0 provides support for *OpenJDK 8 with OpenJ9* and *OpenJDK 11 with OpenJ9*. In this release support is extended to the 64-bit macOS&reg; platform on OpenJDK with OpenJ9.
+Eclipse OpenJ9 release 0.12.0 provides support for *OpenJDK 8 with OpenJ9* and *OpenJDK 11 with OpenJ9*. In this release support is extended to the 64-bit macOS&reg; platform on OpenJDK with OpenJ9.
 
 Builds for all platforms are available from the AdoptOpenJDK project at the following links:
 

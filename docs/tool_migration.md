@@ -22,11 +22,11 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Switching to OpenJ9
+# Switching to Eclipse OpenJ9
 
-OpenJ9 provides the following tools, which might differ in behavior from the HotSpot equivalent.
+Eclipse OpenJ9&trade; provides the following tools, which might differ in behavior from the HotSpot equivalent.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** For information about HotSpot equivalences and differences for items other than tools, see [New to OpenJ9?](openj9_newuser.md)
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** For information about HotSpot equivalences and differences for items other than tools, see [New to Eclipse OpenJ9?](openj9_newuser.md)
 
 #### Java diagnostic command tool (`jcmd`)
 

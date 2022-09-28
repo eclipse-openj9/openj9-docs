@@ -22,10 +22,10 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# OpenJ9 builds
+# Eclipse OpenJ9 builds
 
 Eclipse Foundation projects are not permitted to distribute, market or promote JDK binaries unless they have
-passed a Java SE Technology Compatibility Kit licensed from Oracle, to which the OpenJ9 project does
+passed a Java SE Technology Compatibility Kit licensed from Oracle, to which the Eclipse OpenJ9&trade; project does
 not currently have access. See the [Eclipse Adoptium Project Charter](https://projects.eclipse.org/projects/adoptium/charter).
 
 ## Supported platforms

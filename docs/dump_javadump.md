@@ -118,7 +118,7 @@ A value of `0000000000000000` (0x00000) indicates that a crash occurred outside 
 This section contains useful information about the environment in which the crash took place, including the following data:
 
 - Java version (`1CIJAVAVERSION`)
-- OpenJ9 VM and subcomponent version information (`1CIVMVERSION`, `1CIJ9VMVERSION`, `1CIJITVERSION`, `1CIOMRVERSION`, `1CIJCLVERSION`)
+- Eclipse OpenJ9&trade; VM and subcomponent version information (`1CIVMVERSION`, `1CIJ9VMVERSION`, `1CIJITVERSION`, `1CIOMRVERSION`, `1CIJCLVERSION`)
 - VM start time (`1CISTARTTIME`) and process information (`1CIPROCESSID`)
 - Java home (`1CIJAVAHOMEDIR`) and DLL (`1CIJAVADLLDIR`) directories
 - User arguments passed on the command line (`1CIUSERARGS`), identifying those that are ignored (`1CIIGNOREDARGS`)
@@ -1038,7 +1038,7 @@ The MEMINFO section of the Java dump file can also tell you when an unexpectedly
 Although the Java code that was used in this scenario deliberately triggered an `OutOfMemoryError` in a pronounced way, similar allocation issues can and do occur when dealing with large data sets such as XML files.
 
 The next step in diagnosing the problem is to open the system dump that gets generated automatically when an `OutOfMemoryError` occurs. Open
-the dump with the [Eclipse Memory Analyzer tool (MAT)](https://www.eclipse.org/mat/) and search for the `StringBuffer` object, which should provide further clues about what went wrong. A common example is seeing the same `String` duplicated over and over again, which might indicate that code is stuck in a loop.
+the dump with the [Eclipse Memory Analyzer&trade; tool (MAT)](https://www.eclipse.org/mat/) and search for the `StringBuffer` object, which should provide further clues about what went wrong. A common example is seeing the same `String` duplicated over and over again, which might indicate that code is stuck in a loop.
 
   :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you want to use MAT to analyze your system dump, you must install the Diagnostic Tool Framework for Java (DTFJ) plug-in in the Eclipse IDE. Select the following menu items:
 
@@ -1182,7 +1182,7 @@ The same 4 GB limit is also important if you are using a 64-bit VM with compress
 
 You can usually avoid this type of problem by using the `-Xmcrs` option to reserve a contiguous area of memory within the lowest 4 GB of memory at VM startup.
 
-Another common cause of a `NativeOutOfMemoryError` is when an application loads duplicate classes. Classes are allocated outside of the Java heap in native memory. If the value reported for `Classes` in the NATIVEMEMINFO section is very large, duplicate classes might be the cause of your problem. The [Eclipse Memory Analyzer Tool (MAT)](https://www.eclipse.org/mat/) can tell you if you have duplicate classes by using the *Class Loader Explorer* feature. Because a system dump is automatically generated as well as a Java dump in response to a `NativeOutOfMemoryError`, simply open the system dump in MAT to continue your diagnosis.
+Another common cause of a `NativeOutOfMemoryError` is when an application loads duplicate classes. Classes are allocated outside of the Java heap in native memory. If the value reported for `Classes` in the NATIVEMEMINFO section is very large, duplicate classes might be the cause of your problem. The [Eclipse Memory Analyzer tool (MAT)](https://www.eclipse.org/mat/) can tell you if you have duplicate classes by using the *Class Loader Explorer* feature. Because a system dump is automatically generated as well as a Java dump in response to a `NativeOutOfMemoryError`, simply open the system dump in MAT to continue your diagnosis.
 
 ### Deadlock
 

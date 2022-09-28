@@ -26,7 +26,7 @@
 
 **(z/OS&reg; only)**
 
-This option controls the behavior of OpenJ9 VM signal handlers.
+This option controls the behavior of Eclipse OpenJ9&trade; VM signal handlers.
 
 ## Syntax
 

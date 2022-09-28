@@ -24,7 +24,7 @@
 
 # -Xbootclasspath
 
-This Oracle&reg; HotSpot&trade; option specifies the search path for bootstrap classes and resources. The default is to search for bootstrap classes and resources in the internal VM directories and `.jar` files. The option is recognized by the OpenJ9 VM.
+This Oracle&reg; HotSpot&trade; option specifies the search path for bootstrap classes and resources. The default is to search for bootstrap classes and resources in the internal VM directories and `.jar` files. The option is recognized by the Eclipse OpenJ9&trade; VM.
 
 ## Syntax
 

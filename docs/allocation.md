@@ -31,7 +31,7 @@ The allocator assigns areas of the heap for Java objects. Objects are considered
 
 The garbage collector reclaims memory by removing objects when they are no longer required. To find out more about the garbage collector, see [Garbage collection](gc_overview.md).
 
-Depending on your application workload or service level agreement, you can choose from a number of OpenJ9 *garbage collection (GC) policies*. Each GC policy uses a different strategy to manage memory on the heap. The structure of the heap also depends on the strategy in force. For more information about choosing a GC policy, see [Garbage collection policies](gc.md).
+Depending on your application workload or service level agreement, you can choose from a number of Eclipse OpenJ9&trade; *garbage collection (GC) policies*. Each GC policy uses a different strategy to manage memory on the heap. The structure of the heap also depends on the strategy in force. For more information about choosing a GC policy, see [Garbage collection policies](gc.md).
 
 ## The allocator
 

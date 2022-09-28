@@ -24,7 +24,7 @@
 
 # -XX:ParallelGCThreads
 
-This Oracle HotSpot option specifies the number of threads that are used during parallel operations of the default garbage collector. This option is recognized by OpenJ9 and provided for compatibility.
+This Oracle HotSpot option specifies the number of threads that are used during parallel operations of the default garbage collector. This option is recognized by Eclipse OpenJ9&trade; and provided for compatibility.
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 

@@ -24,7 +24,7 @@
 
 # -Xint
 
-As described in the [Oracle "Non-Standard Options" documentation](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html#BABHDABI), this VM option runs an application in interpreted-only mode. For compatibility, this option is also supported by the OpenJ9 VM.
+As described in the [Oracle "Non-Standard Options" documentation](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html#BABHDABI), this VM option runs an application in interpreted-only mode. For compatibility, this option is also supported by the Eclipse OpenJ9&trade; VM.
 
 ## Syntax
 

@@ -24,7 +24,7 @@
 
 # -Xcheck
 
-You can use the `-Xcheck` option to run checks during OpenJ9 virtual machine (VM) startup, such as memory checks or checks on JNI functions.
+You can use the `-Xcheck` option to run checks during Eclipse OpenJ9&trade; virtual machine (VM) startup, such as memory checks or checks on JNI functions.
 
 ## Syntax
 

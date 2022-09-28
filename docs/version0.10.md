@@ -37,7 +37,7 @@ The following new features and notable changes since v.0.9.0 are included in thi
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.10.0 supports OpenJDK 11, which is available from the AdoptOpenJDK community at the following link:
+Eclipse OpenJ9&trade; release 0.10.0 supports OpenJDK 11, which is available from the AdoptOpenJDK community at the following link:
 
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 

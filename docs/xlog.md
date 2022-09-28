@@ -24,7 +24,7 @@
 
 # -Xlog
 
-This option is supported for better compatibility with the reference implementation. However, only forms of `-Xlog` that enable garbage collection (GC) logging are recognized. Note that the behavior of this option changed in Eclipse OpenJ9 0.24.0.
+This option is supported for better compatibility with the reference implementation. However, only forms of `-Xlog` that enable garbage collection (GC) logging are recognized. Note that the behavior of this option changed in Eclipse OpenJ9&trade; 0.24.0.
 
 ## Syntax
 

@@ -22,9 +22,9 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# OpenJ9 VM messages
+# Eclipse OpenJ9 VM messages
 
-Messages are issued by the OpenJ9 virtual machine (VM) in response to certain conditions. Understanding what the messages
+Messages are issued by the Eclipse OpenJ9&trade; virtual machine (VM) in response to certain conditions. Understanding what the messages
 mean can help you with problem determination.
 
 ## Message categories

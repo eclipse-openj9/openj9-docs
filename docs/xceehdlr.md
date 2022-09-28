@@ -26,7 +26,7 @@
 
 **(31-bit z/OS&reg; only)**
 
-Controls OpenJ9 VM Language Environment&reg; condition handling.
+Controls Eclipse OpenJ9&trade; VM Language Environment&reg; condition handling.
 
 ## Syntax
 

@@ -24,7 +24,7 @@
 
 # -XX:ConcGCThreads
 
-This Oracle HotSpot option affects the number of threads used by the concurrent garbage collector. This option is recognized by OpenJ9 and provided for compatibility.
+This Oracle HotSpot option affects the number of threads used by the concurrent garbage collector. This option is recognized by Eclipse OpenJ9&trade; and provided for compatibility.
 
 ## Syntax
 

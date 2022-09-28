@@ -24,7 +24,7 @@
 
 # Java statistics monitoring (`jstat`) tool
 
-Use the `jstat` tool to obtain Java Virtual Machine (JVM) statistics. The tool is similar to the HotSpot tool of the same name; the OpenJ9 version of `jstat` is an independent implementation, added for compatibility.
+Use the `jstat` tool to obtain Java Virtual Machine (JVM) statistics. The tool is similar to the HotSpot tool of the same name; the Eclipse OpenJ9&trade; version of `jstat` is an independent implementation, added for compatibility.
 
 The command syntax is as follows:
 

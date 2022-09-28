@@ -32,7 +32,7 @@ Speculatively prefetches bytes in the thread local heap (TLH) ahead of the curre
 
         -XtlhPrefetch
 
-This option can be used with all OpenJ9 GC policies.
+This option can be used with all Eclipse OpenJ9&trade; GC policies.
 
 
 

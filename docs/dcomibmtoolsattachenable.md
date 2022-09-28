@@ -54,7 +54,7 @@ A useful reference for information about the Java&trade; Attach API can be found
 
 A usage example is to late attach the IBM&reg; Health Center agent to a virtual machine (VM) that is already running.
 
-The OpenJ9 implementation of the Attach API is equivalent to the Oracle implementation. However, the OpenJ9 implementation cannot be used to attach to, or accept attach requests from, other VM implementations.
+The Eclipse OpenJ9&trade; implementation of the Attach API is equivalent to the Oracle implementation. However, the OpenJ9 implementation cannot be used to attach to, or accept attach requests from, other VM implementations.
 
 ## See also
 

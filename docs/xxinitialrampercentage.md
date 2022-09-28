@@ -24,7 +24,7 @@
 
 # -XX:InitialRAMPercentage / -XX:MaxRAMPercentage
 
-These Oracle HotSpot options can be used to specify the initial and maximum size of the Java heap as a percentage of the total memory available to the VM. The options are recognized by OpenJ9 and provided for compatibility.
+These Oracle HotSpot options can be used to specify the initial and maximum size of the Java heap as a percentage of the total memory available to the VM. The options are recognized by Eclipse OpenJ9&trade; and provided for compatibility.
 
 ## Syntax
 

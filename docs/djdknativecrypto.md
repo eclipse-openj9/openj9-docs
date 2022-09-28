@@ -41,7 +41,7 @@ This option controls the use of OpenSSL native cryptographic support.
 OpenSSL support is enabled by default for the Digest, CBC, GCM, RSA, and ChaCha20 and ChaCha20-Poly1305 algorithms. If you want to turn off the OpenSSL implementation, set this option to `false`.
 
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:**  ![Start of content that applies to Java 8 (LTS)](cr/java8.png) The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java 8. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:**  ![Start of content that applies to Java 8 (LTS)](cr/java8.png) The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java&trade; 8. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
 
 If you want to turn off the algorithms individually, use the following system properties:
