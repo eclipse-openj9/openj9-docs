@@ -76,7 +76,7 @@ JEP 396 if they make use of internal APIs. You should update your application to
 
 ```
 WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by org.openj9.test.com.ibm.jit.Test_JITHelpers (file:/home/jenkins/workspace/Test_openjdk11_j9_sanity.functional_ppc64_aix_Nightly_testList_1/jvmtest/functional/Java8andUp/GeneralTest.jar) to field java.lang.String.value
+WARNING: Illegal reflective access by org.openj9.test.com.ibm.jit.Test_JITHelpers (file:/home/jenkins/workspace/Test_openjdk11_j9.functional_ppc64_aix_Nightly_testList_1/jvmtest/functional/Java8andUp/GeneralTest.jar) to field java.lang.String.value
 WARNING: Please consider reporting this to the maintainers of org.openj9.test.com.ibm.jit.Test_JITHelpers
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
