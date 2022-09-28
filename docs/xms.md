@@ -25,7 +25,7 @@
 # -Xms / -Xmx
 
 
-These Oracle&reg; HotSpot&trade; options set the initial/minimum Java&trade; heap size, and the maximum heap size respectively. These options are recognized by the OpenJ9 VM.
+These Oracle&reg; HotSpot&trade; options set the initial/minimum Java&trade; heap size, and the maximum heap size respectively. These options are recognized by the Eclipse OpenJ9&trade; VM.
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 

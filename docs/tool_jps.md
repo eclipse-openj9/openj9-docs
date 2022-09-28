@@ -53,7 +53,7 @@ For example:
     5462
     14332
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to Eclipse OpenJ9&trade;.
 
 The tool uses the Attach API, and has the following limitations:
 

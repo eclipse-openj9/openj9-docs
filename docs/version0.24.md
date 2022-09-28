@@ -42,7 +42,7 @@ The following new features and notable changes since version 0.23.0 are included
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.24.0 supports OpenJDK 8, 11, and 15.
+Eclipse OpenJ9&trade; release 0.24.0 supports OpenJDK 8, 11, and 15.
 
 Windows&reg; builds for Java&trade; 8 are now compiled with Microsoft&reg; Visual Studio 2013. The Visual Studio redistributable files included with the build are updated to match.
 

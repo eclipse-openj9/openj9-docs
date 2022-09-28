@@ -24,7 +24,7 @@
 
 # Environment variables
 
-Although the OpenJ9 virtual machine (VM) recognizes many environment variables, most are superseded by command-line arguments. Use command-line arguments rather than environment variables, which are retained only for compatibility.
+Although the Eclipse OpenJ9&trade; virtual machine (VM) recognizes many environment variables, most are superseded by command-line arguments. Use command-line arguments rather than environment variables, which are retained only for compatibility.
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Environment variables are overridden by command-line arguments.
 

@@ -25,7 +25,7 @@
 # Dump viewer (`jdmpview`)
 
 
-The dump viewer is a command-line tool that allows you to examine the contents of system dumps produced from the OpenJ9 VM. The dump viewer allows you to view both Java&trade; and native information from the time the dump was produced. You can run the dump viewer on one platform to work with dumps from another platform.
+The dump viewer is a command-line tool that allows you to examine the contents of system dumps produced from the Eclipse OpenJ9&trade; VM. The dump viewer allows you to view both Java&trade; and native information from the time the dump was produced. You can run the dump viewer on one platform to work with dumps from another platform.
 
 For long running tasks, the dump viewer can also be run in batch mode.
 

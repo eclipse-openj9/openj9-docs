@@ -24,7 +24,7 @@
 
 # -XX:InitialHeapSize / -XX:MaxHeapSize
 
-These HotSpot options for specifying heap size are recognized by OpenJ9 for compatibility. See [-Xms / -Xmx](xms.md) for details.
+These HotSpot options for specifying heap size are recognized by Eclipse OpenJ9&trade; for compatibility. See [-Xms / -Xmx](xms.md) for details.
 
 ## Syntax
 

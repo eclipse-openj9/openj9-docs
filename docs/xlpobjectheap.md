@@ -25,7 +25,7 @@
 # -Xlp:objectheap
 
 
-Requests the OpenJ9 VM to allocate the Java&trade; object heap by using large page sizes.
+Requests the Eclipse OpenJ9&trade; VM to allocate the Java&trade; object heap by using large page sizes.
 
 To find out the large page sizes available and the current setting, use the `-verbose:sizes` option. Note that the current settings are the requested sizes and not the sizes obtained. For object heap size information, check the `-verbose:gc` output.
 

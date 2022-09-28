@@ -39,7 +39,7 @@ The following new features and notable changes since version 0.12.1 are included
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.13.0 supports OpenJDK 12, which is available from the AdoptOpenJDK community at the following link:
+Eclipse OpenJ9&trade; release 0.13.0 supports OpenJDK 12, which is available from the AdoptOpenJDK community at the following link:
 
 - [OpenJDK version 12](https://adoptopenjdk.net/archive.html?variant=openjdk12&jvmVariant=openj9)
 

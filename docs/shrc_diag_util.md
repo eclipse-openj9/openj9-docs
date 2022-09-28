@@ -24,7 +24,7 @@
 
 # Diagnosing problems with class data sharing
 
-If you encounter problems with class data sharing, VM messages are typically generated that point to an underlying cause. In some situations, a cache might fail to initialize correctly. In other situations classes might not be found or stored in the shared classes cache. To provide more information about a problem, you can generate verbose output, use diagnostic cache utilities, or use the OpenJ9 trace facility.
+If you encounter problems with class data sharing, VM messages are typically generated that point to an underlying cause. In some situations, a cache might fail to initialize correctly. In other situations classes might not be found or stored in the shared classes cache. To provide more information about a problem, you can generate verbose output, use diagnostic cache utilities, or use the Eclipse OpenJ9&trade; trace facility.
 
 ## Initialization problems
 

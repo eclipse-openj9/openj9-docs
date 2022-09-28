@@ -40,7 +40,7 @@ If your application is running in a container that imposes a memory limit, the V
 | `-XX:+UseContainerSupport` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |
 
 
-When using container technology, applications are typically run on their own and do not need to compete for memory. The OpenJ9 VM detects when it is running inside a container that imposes a memory limit, and adjusts the maximum Java heap size appropriately.
+When using container technology, applications are typically run on their own and do not need to compete for memory. The Eclipse OpenJ9&trade; VM detects when it is running inside a container that imposes a memory limit, and adjusts the maximum Java heap size appropriately.
 
 The following table shows the values that are used when `-XX:+UseContainerSupport` is set:
 

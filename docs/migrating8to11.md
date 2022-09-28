@@ -25,7 +25,7 @@
 
 # Migrating from Java 8 to Java 11
 
-Support for OpenJDK 11 was added in OpenJ9 version 0.10.0.
+Support for OpenJDK 11 was added in Eclipse OpenJ9&trade; version 0.10.0.
 
 The following new OpenJ9 features and notable changes apply when OpenJ9 is built with Java SE 11 class libraries. This information exists elsewhere in the documentation but is summarized here for convenience.
 

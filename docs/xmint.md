@@ -27,7 +27,7 @@
 
 Sets the minimum and maximum proportion of time to spend in the garbage collection (GC) process as a percentage of the overall running time that included the last three GC runs. Therefore, the time spent in the GC process includes time spent in global mark phase and global GC operations but excludes partial garbage collection pauses because the latter apply only to the eden space.
 
-- If the percentage of time drops to less than the minimum, the OpenJ9 VM tries to shrink the heap.
+- If the percentage of time drops to less than the minimum, the Eclipse OpenJ9&trade; VM tries to shrink the heap.
 - If the percentage of time exceeds the maximum, the VM tries to expand the heap.
 
 :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:**

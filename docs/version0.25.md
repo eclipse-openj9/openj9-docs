@@ -38,7 +38,7 @@ The following new features and notable changes since version 0.24.0 are included
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.25.0 supports OpenJDK 16. OpenJDK 16 with Eclipse OpenJ9 is *not* a long term support (LTS) release.
+Eclipse OpenJ9&trade; release 0.25.0 supports OpenJDK 16. OpenJDK 16 with Eclipse OpenJ9 is *not* a long term support (LTS) release.
 
 Although it might be possible to build an OpenJDK 8 or OpenJDK 11 with OpenJ9 release 0.25.0, testing at the project is not complete and therefore support for new features that apply to these Java versions is not available.
 

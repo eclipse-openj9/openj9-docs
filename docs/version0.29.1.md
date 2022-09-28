@@ -33,7 +33,7 @@ The following new features and notable changes since version 0.29.0 are included
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.29.1 supports OpenJDK 17.
+Eclipse OpenJ9&trade; release 0.29.1 supports OpenJDK 17.
 
 AArch64 Linux is now a fully supported, production-ready target for OpenJDK 17.
 

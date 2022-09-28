@@ -43,9 +43,9 @@ For more details about JITServer technology, including its advantages and disadv
 
 JITServer technology is not enabled by default: you must explicitly invoke it. Running OpenJ9 without either of the following options launches it as a regular VM with embedded JIT compilation.
 
-### Launch OpenJ9 in client mode
+### Launch Eclipse OpenJ9 in client mode
 
-Use the following command-line option to launch OpenJ9 in client mode. In this mode, the VM sends compilation requests to an available JITServer. The client operates as a regular VM with its own JIT compiler if a server is not available.
+Use the following command-line option to launch Eclipse OpenJ9&trade; in client mode. In this mode, the VM sends compilation requests to an available JITServer. The client operates as a regular VM with its own JIT compiler if a server is not available.
 
      -XX:+UseJITServer
 

@@ -26,7 +26,7 @@
 
 **(Linux&reg; only)**
 
-This option controls whether a garbage collection cycle takes place when the state of the OpenJ9 VM is set to idle. Compaction of the heap is also attempted during the idle GC when certain triggers are met.
+This option controls whether a garbage collection cycle takes place when the state of the Eclipse OpenJ9&trade; VM is set to idle. Compaction of the heap is also attempted during the idle GC when certain triggers are met.
 
 :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This option applies only to Linux architectures when the Generational Concurrent (`gencon`) garbage collection policy is in use. This option is not effective if the object heap is configured to use large pages.
 

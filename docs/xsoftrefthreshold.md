@@ -35,7 +35,7 @@ Sets the value used by the garbage collector to determine the number of garbage 
 
 The default value is 32.
 
-This option can be used with all OpenJ9 GC policies.
+This option can be used with all Eclipse OpenJ9&trade; GC policies.
 
 ## Explanation
 

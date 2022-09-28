@@ -39,7 +39,7 @@ The following new features and notable changes since version 0.26.0 are included
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.27.1 supports OpenJDK 8, 11, and 16.
+Eclipse OpenJ9&trade; release 0.27.1 supports OpenJDK 8, 11, and 16.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 

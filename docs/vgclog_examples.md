@@ -945,7 +945,7 @@ The partial cycle begins its only GC increment, recorded by using the `<gc-start
 
 As expected, at the start of this increment, the eden regions are full. 856 MB (897,581,056 B) of the total 4096 MB (4294,967,296 B) heap, equivalent to 20% of the heap, is available as free memory.
 
-The status of the *remembered set*, a metastructure specific to OpenJ9 generational garbage collectors, is reported by the `<remembered-set>` element. The remembered set metastructure keeps a record of any object references that cross different regions. Each region corresponds to a single remembered set.
+The status of the *remembered set*, a metastructure specific to Eclipse OpenJ9&trade; generational garbage collectors, is reported by the `<remembered-set>` element. The remembered set metastructure keeps a record of any object references that cross different regions. Each region corresponds to a single remembered set.
 
 The partial GC cycle uses and prunes the remembered set. The `regionsoverflowed` value records the number of regions that exceeded the non-object heap memory allocation that is reserved for the remembered set. The partial GC cycle cannot reclaim memory from these overflow regions. The partial GC cycle also cannot reclaim memory from any regions whose remembered set is being rebuilt by an increment of a global mark cycle that is in progress.
 

@@ -22,11 +22,11 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Switching to OpenJ9
+# Switching to Eclipse OpenJ9
 
-If you are already familiar with HotSpot command-line options but want the advantages of OpenJ9, the following information will prove helpful. In all cases, check individual topics for minor discrepancies in the way these options might work.
+If you are already familiar with HotSpot command-line options but want the advantages of Eclipse OpenJ9&trade;, the following information will prove helpful. In all cases, check individual topics for minor discrepancies in the way these options might work.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** For information about HotSpot equivalences and differences for items other than command-line options, see [New to OpenJ9?](openj9_newuser.md)
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** For information about HotSpot equivalences and differences for items other than command-line options, see [New to Eclipse OpenJ9?](openj9_newuser.md)
 
 ## Compatible options
 

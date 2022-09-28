@@ -28,7 +28,7 @@
 
 On some operating systems, copies of executable files and libraries are required for a full analysis of a core dump (you can get some information from the dump without these files, but not as much). Run the `jpackcore` utility to collect these extra files and package them into an archive file along with the core dump. To analyze the output, use the [dump viewer (`jdmpview`)](tool_jdmpview.md).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This tool replaces `jextract`, which is deprecated in OpenJ9 version 0.26.0.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This tool replaces `jextract`, which is deprecated in Eclipse OpenJ9&trade; version 0.26.0.
 
 ## Syntax
 

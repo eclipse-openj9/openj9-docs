@@ -24,7 +24,7 @@
 
 # Java stack (`jstack`) tool
 
-Use the `jstack` tool to obtain Java stack traces and thread information for processes. The tool is similar to the HotSpot tool of the same name; the OpenJ9 version of `jstack` is an independent implementation, added for compatibility.
+Use the `jstack` tool to obtain Java stack traces and thread information for processes. The tool is similar to the HotSpot tool of the same name; the Eclipse OpenJ9&trade; version of `jstack` is an independent implementation, added for compatibility.
 
 The command syntax is as follows:
 

@@ -35,7 +35,7 @@ Controls processing of the `-Xlog` option.
 
 ## Explanation
 
-From Eclipse OpenJ9 0.24.0, the `-Xlog` option is replaced by the [`-Xsyslog`](xsyslog.md) option. The `-XX:[+|-]LegacyXlogOption` controls how the `-Xlog` option is processed.
+From Eclipse OpenJ9&trade; 0.24.0, the `-Xlog` option is replaced by the [`-Xsyslog`](xsyslog.md) option. The `-XX:[+|-]LegacyXlogOption` controls how the `-Xlog` option is processed.
 
 - When `-XX:-LegacyXlogOption` is set, the `-Xlog` option is recognized only when a form of this option is run that requests garbage collection (GC) logging (for example, `-Xlog:gc[:stderr|:file=<filename>]`). For more information, see [`-Xlog`](xlog.md).
 - When `-XX:+LegacyXlogOption` is set, the legacy `-Xlog` behavior is enabled. When enabled, the option is equivalent to the [`-Xsyslog`](xsyslog.md) option. That is, the `-Xlog` option can be used with the parameters documented in [`-Xsyslog`](xsyslog.md).

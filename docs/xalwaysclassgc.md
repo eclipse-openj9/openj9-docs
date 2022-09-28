@@ -34,7 +34,7 @@ Always perform dynamic class unloading during global garbage collection.
 
 If you don't set this option, the default behavior is defined by [`-Xclassgc`](xclassgc.md).
 
-This option can be used with all OpenJ9 GC policies.
+This option can be used with all Eclipse OpenJ9&trade; GC policies.
 
 ## See also
 

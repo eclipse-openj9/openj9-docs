@@ -24,7 +24,7 @@
 
 # -XX:DiagnoseSyncOnValueBasedClasses
 
-![Start of content that applies only to Java 16 and later](cr/java16plus.png) This HotSpot option provides warnings about improper attempts to synchronize on instances of a value-based class. The option is recognized by OpenJ9 for compatibility.
+![Start of content that applies only to Java 16 and later](cr/java16plus.png) This HotSpot option provides warnings about improper attempts to synchronize on instances of a value-based class. The option is recognized by Eclipse OpenJ9&trade; for compatibility.
 
 
 ## Syntax

@@ -39,7 +39,7 @@
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.19.0 supports OpenJDK 14, which is available from the AdoptOpenJDK community at the following link:
+Eclipse OpenJ9&trade; release 0.19.0 supports OpenJDK 14, which is available from the AdoptOpenJDK community at the following link:
 
 - [OpenJDK version 14](https://adoptopenjdk.net/archive.html?variant=openjdk14&jvmVariant=openj9)
 

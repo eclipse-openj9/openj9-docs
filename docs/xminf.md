@@ -27,7 +27,7 @@
 
 Specifies the minimum and maximum proportion of the heap that must remain free after a global garbage collection (GC) cycle.
 
-If the free space is above or below these limits, the OpenJ9 VM attempts to adjust the heap size so that: `-Xminf` &le; free space &le; `-Xmaxf`.
+If the free space is above or below these limits, the Eclipse OpenJ9&trade; VM attempts to adjust the heap size so that: `-Xminf` &le; free space &le; `-Xmaxf`.
 
 ## Syntax
 

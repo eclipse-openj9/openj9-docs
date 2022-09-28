@@ -31,7 +31,7 @@ The following new features and notable changes since version 0.10.0 are included
 - ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) [OpenSSL is now supported for improved native cryptographic performance](#openssl-is-now-supported-for-improved-native-cryptographic-performance)
 - ![Start of content that applies only to Java 11 (LTS)](cr/java11.png) [Changes to the location of the default shared cache and cache snapshot directory](#changes-to-the-location-of-the-default-shared-cache-and-cache-snapshot-directory)
 - [New class data sharing suboptions](#new-class-data-sharing-suboptions)
-- [Container awareness in the OpenJ9 VM is now enabled by default](#container-awareness-in-the-openj9-vm-is-now-enabled-by-default)
+- [Container awareness in the Eclipse OpenJ9&trade; VM is now enabled by default](#container-awareness-in-the-openj9-vm-is-now-enabled-by-default)
 - [Pause-less garbage collection mode is now available on Linux x86 platforms](#pause-less-garbage-collection-mode-is-now-available-on-linux-x86-platforms)
 - [You can now restrict identity hash codes to non-negative values](#you-can-now-restrict-identity-hash-codes-to-non-negative-values)
 - [Support for OpenJDK HotSpot options](#support-for-openjdk-hotspot-options)
@@ -40,7 +40,7 @@ The following new features and notable changes since version 0.10.0 are included
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.11.0 provides limited support for the macOS&reg; platform on OpenJDK 11. Early builds of OpenJDK 11 with OpenJ9 on macOS are available at the AdoptOpenJDK project at the following link:  
+Eclipse OpenJ9 release 0.11.0 provides limited support for the macOS&reg; platform on OpenJDK 11. Early builds of OpenJDK 11 with OpenJ9 on macOS are available at the AdoptOpenJDK project at the following link:
 
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 

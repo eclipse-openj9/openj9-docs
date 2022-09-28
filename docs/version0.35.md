@@ -35,7 +35,7 @@ The following new features and notable changes since version 0.33.1 are included
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.35.0 supports OpenJDK 8, 11, and 17.
+Eclipse OpenJ9&trade; release 0.35.0 supports OpenJDK 8, 11, and 17.
 
 OpenJ9 Windows&reg; builds for OpenJDK 11 are now compiled with Microsoft&reg; Visual Studio 2019. The Visual Studio redistributable files included with the build are updated to match.
 

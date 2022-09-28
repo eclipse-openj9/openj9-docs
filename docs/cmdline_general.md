@@ -25,7 +25,7 @@
 # Standard command-line options
 
 
-The OpenJ9 virtual machine supports the standard Java&trade; options that are common to all Java virtual machine implementations, including Oracle's HotSpot VM.
+The Eclipse OpenJ9&trade; virtual machine supports the standard Java&trade; options that are common to all Java virtual machine implementations, including Oracle's HotSpot VM.
 Some of the common options supported are summarised in the following table:
 
 | Standard option name                                                | Purpose                                                                                                                   |

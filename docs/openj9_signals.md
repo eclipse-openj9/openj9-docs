@@ -24,7 +24,7 @@
 
 # Signal handling
 
-Signals used by the OpenJ9 VM include the following types:
+Signals used by the Eclipse OpenJ9&trade; VM include the following types:
 
 - Exceptions (Exc): Raised synchronously by the operating system whenever an unrecoverable condition occurs (not applicable on Windows&trade; systems).
 - Errors (Err): Raised by the OpenJ9 VM when an unrecoverable condition occurs.

@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]PositiveIdentityHash
 
-OpenJ9 allows both positive and negative identity hashcodes (`System.identityHashCode` / `Object.hashCode`). This is problematic for programs that incorrectly assume hashcodes can only be positive.
+Eclipse OpenJ9&trade; allows both positive and negative identity hashcodes (`System.identityHashCode` / `Object.hashCode`). This is problematic for programs that incorrectly assume hashcodes can only be positive.
 
 When enabled, this option limits identity hash codes to non-negative values.
 

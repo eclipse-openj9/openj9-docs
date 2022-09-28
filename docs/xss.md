@@ -42,7 +42,7 @@ You can use the `-verbose:sizes` option to find out the values that the VM is cu
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.  
 
-See [Default settings for the OpenJ9 VM](openj9_defaults.md) for more about default values.
+See [Default settings for the Eclipse OpenJ9&trade; VM](openj9_defaults.md) for more about default values.
 
 ## See also
 

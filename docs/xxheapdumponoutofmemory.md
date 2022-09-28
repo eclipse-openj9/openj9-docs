@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]HeapDumpOnOutOfMemory
 
-This HotSpot option is recognized by OpenJ9. You can use the option to to disable Java&trade;, heap, snap, and system dumps on out-of-memory conditions, which are enabled by default. 
+This HotSpot option is recognized by Eclipse OpenJ9&trade;. You can use the option to to disable Java&trade;, heap, snap, and system dumps on out-of-memory conditions, which are enabled by default.
 
 ## Syntax
 

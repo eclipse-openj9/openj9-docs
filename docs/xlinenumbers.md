@@ -35,7 +35,7 @@ Enables or disables line numbers in stack traces for debugging.
 
 ## Explanation
 
-If you start the OpenJ9 VM with `-Xnolinenumbers` when creating a new shared classes cache, the Class Debug Area is not created. The option `-Xnolinenumbers` advises the VM not to load any class debug information, so there is no need for this region. If [`-Xscdmx`](xscdmx.md) is also used on the command line to specify a non zero debug area size, then a debug area is created despite the use of `-Xnolinenumbers`.
+If you start the Eclipse OpenJ9&trade; VM with `-Xnolinenumbers` when creating a new shared classes cache, the Class Debug Area is not created. The option `-Xnolinenumbers` advises the VM not to load any class debug information, so there is no need for this region. If [`-Xscdmx`](xscdmx.md) is also used on the command line to specify a non zero debug area size, then a debug area is created despite the use of `-Xnolinenumbers`.
 
 
 <!-- ==== END OF TOPIC ==== xlinenumbers.md ==== -->

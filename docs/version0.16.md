@@ -42,7 +42,7 @@ The following new features and notable changes since version 0.15.1 are included
 
 ### Binaries and supported environments
 
-OpenJ9 release 0.16.0 supports OpenJDK 13, which is available from the AdoptOpenJDK community at the following link:
+Eclipse OpenJ9&trade; release 0.16.0 supports OpenJDK 13, which is available from the AdoptOpenJDK community at the following link:
 
 - [OpenJDK version 13](https://adoptopenjdk.net/archive.html?variant=openjdk13&jvmVariant=openj9)
 

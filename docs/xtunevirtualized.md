@@ -24,7 +24,7 @@
 
 # -Xtune:virtualized
 
-Optimizes OpenJ9 VM function for virtualized environments, such as a cloud, by reducing OpenJ9 VM CPU consumption when idle.
+Optimizes Eclipse OpenJ9&trade; VM function for virtualized environments, such as a cloud, by reducing OpenJ9 VM CPU consumption when idle.
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Performance is optimized if there is a large shared classes cache (SCC) and AOT space in the SCC is not capped.
 

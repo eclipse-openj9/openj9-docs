@@ -215,7 +215,7 @@ Some things to note from the diagram:
 - `Image` and `Java` classes are linked using a `ManagedRuntime` class (which is extended by `JavaRuntime`).
 - An `Image` object contains one `ImageAddressSpace` object (or, on z/OS®, possibly more).
 - An `ImageAddressSpace` object contains one `ImageProcess` object (or, on z/OS, possibly more).
-- Conceptually, you can apply the `Image` model to any program running with the `ImageProcess`. For the purposes of this document discussion is limited to the OpenJ9 virtual machine implementations.
+- Conceptually, you can apply the `Image` model to any program running with the `ImageProcess`. For the purposes of this document discussion is limited to the Eclipse OpenJ9&trade; virtual machine implementations.
 - There is a link from a `JavaThread` object to its corresponding `ImageThread` object. Use this link to find out about native code associated with a Java thread, for example JNI functions that have been called from Java.
 - If a `JavaThread` was not running Java code when the dump was taken, the `JavaThread` object has no `JavaStackFrame` objects. In these cases, use the link to the corresponding `ImageThread` object to find out what native code was running in that thread. This situation is typically the case with the JIT compilation thread and Garbage Collection threads.
 - The DTFJ interface enables you to obtain information about native memory. Native memory is memory requested from the operating system using library functions such as `malloc()` and `mmap()`. When the Java runtime allocates native memory, the memory is associated with a high-level memory category. For more information about native memory detailed in a Java dump, see [Java dump: `NATIVEMEMINFO`](dump_javadump.md#nativememinfo)

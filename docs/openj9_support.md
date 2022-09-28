@@ -24,7 +24,7 @@
 
 # Supported environments
 
-The Eclipse OpenJ9 project source code can be built against multiple JDK levels starting with JDK8,
+The Eclipse OpenJ9&trade; project source code can be built against multiple JDK levels starting with JDK8,
 so the question of support has a more complicated answer than at OpenJDK. Our community is committed
 to supporting JDK levels as long as they are supported at the OpenJDK open source project with a significant
 user base. Currently, Eclipse OpenJ9 produces a new release every quarter that can build against all JDK levels

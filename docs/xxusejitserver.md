@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]UseJITServer
 
-This option starts the OpenJ9 VM in JITServer client mode.
+This option starts the Eclipse OpenJ9&trade; VM in JITServer client mode.
 
 ## Syntax
 

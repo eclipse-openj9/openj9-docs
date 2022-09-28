@@ -24,7 +24,7 @@
 
 # Introduction to class data sharing
 
-Sharing class data between OpenJ9 VMs improves start up performance and reduces memory footprint. Consider the following outcomes for two VMs that are running similar Java applications but sharing class data:
+Sharing class data between Eclipse OpenJ9&trade; VMs improves start up performance and reduces memory footprint. Consider the following outcomes for two VMs that are running similar Java applications but sharing class data:
 
 - Start up performance is improved by placing classes that each application needs when initializing into a shared classes cache. The next time the application runs, it takes less time to start because the classes are already available.
 

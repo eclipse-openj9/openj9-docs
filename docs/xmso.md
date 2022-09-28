@@ -40,7 +40,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 ## Default setting
 
-Default values vary by platform. See [Default settings for the OpenJ9 VM](openj9_defaults.md).
+Default values vary by platform. See [Default settings for the Eclipse OpenJ9&trade; VM](openj9_defaults.md).
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On 64-bit z/OS, the default size is the minimum that can be allocated by the operating system. So if you set a value that is smaller, that value is ignored by the VM.
 

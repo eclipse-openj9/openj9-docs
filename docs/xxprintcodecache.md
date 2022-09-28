@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]PrintCodeCache
 
-This Oracle HotSpot option prints the code cache memory usage when the application exits. This option is recognized by OpenJ9 and provided for compatibility.
+This Oracle HotSpot option prints the code cache memory usage when the application exits. This option is recognized by Eclipse OpenJ9&trade; and provided for compatibility.
 
 ## Syntax
 

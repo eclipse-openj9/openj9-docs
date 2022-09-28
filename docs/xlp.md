@@ -24,7 +24,7 @@
 
 # -Xlp
 
-Requests the OpenJ9 VM to allocate the Java&trade; object heap and JIT code cache memory with large pages.
+Requests the Eclipse OpenJ9&trade; VM to allocate the Java&trade; object heap and JIT code cache memory with large pages.
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This option is deprecated in all versions later than Java 8. Use the [`-Xlp:codecache`](xlpcodecache.md) and [`-Xlp:objectheap`](xlpobjectheap.md) options instead.
 

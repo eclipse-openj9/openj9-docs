@@ -24,7 +24,7 @@
 
 # The JIT compiler
 
-The Just-In-Time (JIT) compiler is a key component of the OpenJ9 VM that improves the performance of Java applications by compiling platform-neutral Java bytecode into native machine code at run time. Without the JIT, the VM has to interpret the bytecodes itself - a process that requires extra CPU and memory.
+The Just-In-Time (JIT) compiler is a key component of the Eclipse OpenJ9&trade; VM that improves the performance of Java applications by compiling platform-neutral Java bytecode into native machine code at run time. Without the JIT, the VM has to interpret the bytecodes itself - a process that requires extra CPU and memory.
 
 The JIT compiler doesn't compile every method that gets called because thousands of methods can be called at startup. Instead, OpenJ9 records the number of times a method is called. When the count reaches a pre-defined *invocation threshold*, JIT compilation is triggered. Once a method has been compiled by the JIT, the VM can call the compiled method rather than interpreting it.
 

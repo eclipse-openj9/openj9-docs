@@ -43,7 +43,7 @@ The following new features and notable changes from v.0.8.0 are included in this
 
 ### Binaries and supported platforms
 
-The following additional OpenJDK binaries that contain the OpenJ9 VM are now available from the AdoptOpenJDK community:
+The following additional OpenJDK binaries that contain the Eclipse OpenJ9&trade; VM are now available from the AdoptOpenJDK community:
 
 - [OpenJDK version 10](https://adoptopenjdk.net/?variant=openjdk10-openj9)
 - [OpenJDK version 8 for 32-bit Windows](https://adoptopenjdk.net/releases.html?variant=openjdk8-openj9#x32_win)
@@ -119,7 +119,7 @@ Changes are made to the `com.ibm.oti.shared` API to support nested jar files.
 ### Direct Dump Reader enabled on Linux and Windows
 
 Direct Dump Reader (DDR) support is now enabled for the OpenJ9 VM on all Linux architectures and on Windows. The DDR code enables the VM to read system dump data by using the OpenJ9 Diagnostic Tool
-Framework for Java (DTFJ) API or the [`jdmpview`](tool_jdmpview.md) tool. If you use the [Eclipse Memory Analyzer Tool (MAT)](https://www.eclipse.org/mat/), you can also analyze OpenJ9 or IBM VMs by installing the DTFJ plugin.
+Framework for Java (DTFJ) API or the [`jdmpview`](tool_jdmpview.md) tool. If you use the [Eclipse Memory Analyzer&trade; tool (MAT)](https://www.eclipse.org/mat/), you can also analyze OpenJ9 or IBM VMs by installing the DTFJ plugin.
 (Install from the Eclipse Help menu; Install New Software > Work with "IBM Diagnostic Tool Framework for Java" > IBM Monitoring and  Diagnostic Tools > Diagnostic Tool Framework for Java)
 
 You must use a 32-bit VM to look at a 32-bit core, and a 64-bit VM to look at a 64-bit core. This restriction will be fixed in a later version of OpenJ9.

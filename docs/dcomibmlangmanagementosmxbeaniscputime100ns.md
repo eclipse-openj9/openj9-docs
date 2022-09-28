@@ -37,7 +37,7 @@ Changes the unit of the return value of the `OperatingSystemMXBean.getProcessCpu
 
 ## Explanation
 
-The Oracle `java.lang.management` package includes MBean categories such as `Memory`, `OperatingSystem`, and `GarbageCollector`. The OpenJ9 VM  provides additional MXBeans to extend the monitoring and management capabilities. For example, the `OperatingSystemMXBean`, which monitors operating system settings such as physical and virtual memory size, processor capacity, and processor utilization.
+The Oracle `java.lang.management` package includes MBean categories such as `Memory`, `OperatingSystem`, and `GarbageCollector`. The Eclipse OpenJ9&trade; VM  provides additional MXBeans to extend the monitoring and management capabilities. For example, the `OperatingSystemMXBean`, which monitors operating system settings such as physical and virtual memory size, processor capacity, and processor utilization.
 
 The `OperatingSystemMXBean.getProcessCpuTime()` method returns a value in nanoseconds (10<sup>-9</sup> s), for compatibility with the `com.sun.management.OperatingSystemMXBean` and `UnixOperatingSystemMXBean` interfaces.
 

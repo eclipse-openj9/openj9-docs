@@ -26,7 +26,7 @@
 
 **(z/OS&reg; only)**
 
-When compressed references are used with a 64-bit OpenJ9 VM on z/OS&reg;, this option forces the VM to use 31-bit memory allocation functions provided by z/OS.
+When compressed references are used with a 64-bit Eclipse OpenJ9&trade; VM on z/OS&reg;, this option forces the VM to use 31-bit memory allocation functions provided by z/OS.
 
 ## Syntax
 

@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]IgnoreUnrecognizedXXColonOptions
 
-By default, any `-XX:` options that you specify on the command line are ignored if they are not recognized, which prevents an application failing to start. However, if you want to determine whether any of your `-XX:` options are unrecognized, you can turn off the behavior with this option. You might want to do this, for example, if you are switching to OpenJ9 from an alternative VM implementation where you are using `-XX:` options to tune the
+By default, any `-XX:` options that you specify on the command line are ignored if they are not recognized, which prevents an application failing to start. However, if you want to determine whether any of your `-XX:` options are unrecognized, you can turn off the behavior with this option. You might want to do this, for example, if you are switching to Eclipse OpenJ9&trade; from an alternative VM implementation where you are using `-XX:` options to tune the
 runtime environment.
 
 ## Syntax

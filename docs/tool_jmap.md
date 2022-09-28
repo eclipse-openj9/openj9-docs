@@ -28,8 +28,7 @@ Use the `jmap` tool to get memory information for a particular Java&trade; proce
 
     jmap [<option>] [<vmid>]
 
-`<vmid>` is the Attach API virtual machine identifier for the Java process. This ID is typically the same as
-the operating system *process ID*, unless you specified the `-Dcom.ibm.tools.attach.id` system property when you started the process.
+`<vmid>` is the Attach API virtual machine identifier for the Java process. This ID is typically the same as the operating system *process ID*, unless you specified the `-Dcom.ibm.tools.attach.id` system property when you started the process.
 
 VMID is shown in `jps` or other Attach API-based tools. Multiple VMIDs can be specified, separated by a space.
 
@@ -39,8 +38,7 @@ If you do not specify a VMID, the command reads input from `stdin`. You can ther
 
 IDs of dead processes are silently ignored.
 
-On its own, `jmap` prints help information. To obtain memory information, a `-histo` argument must be supplied, where the available `<options>` are as follows:    
-
+On its own, `jmap` prints help information. To obtain memory information, a `-histo` argument must be supplied, where the available `<options>` are as follows:
 
 - `-histo`: Prints statistics about classes on the heap, including the number of objects and their aggregate size
 - `-histo:live`: Prints statistics for live objects only
@@ -61,7 +59,7 @@ num   object count     total size    class name
   8            396           6336    [Ljava.lang.Object;
 ```
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9.
+:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to Eclipse OpenJ9&trade;.
 
 The following tool limitations apply:
 

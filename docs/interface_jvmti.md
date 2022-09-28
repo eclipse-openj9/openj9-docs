@@ -48,9 +48,9 @@ For more information about JVMTI, see [https://docs.oracle.com/javase/8/docs/tec
 
 For a guide about writing a JVMTI agent, see [http://www.oracle.com/technetwork/articles/javase/jvmti-136367.html](https://www.oracle.com/technetwork/articles/javase/jvmti-136367.html).
 
-## OpenJ9 extensions
+## Eclipse OpenJ9 extensions
 
-OpenJ9 extensions to the JVMTI allow a JVMTI agent to query or automatically trigger operations in the VM, including the following tasks:
+Eclipse OpenJ9&trade; extensions to the JVMTI allow a JVMTI agent to query or automatically trigger operations in the VM, including the following tasks:
 
 
 | Task  | OpenJ9 extensions |

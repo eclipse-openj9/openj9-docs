@@ -35,7 +35,7 @@ Specifies the total number of work packets available in the global collector.
 
 If you do not specify a value, the collector allocates a number of packets based on the maximum heap size.
 
-This option can be used with all OpenJ9 GC policies.
+This option can be used with all Eclipse OpenJ9&trade; GC policies.
 
 
 

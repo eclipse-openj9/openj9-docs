@@ -24,7 +24,7 @@
 
 # -Xlp:codecache
 
-Requests the OpenJ9 VM to allocate the JIT code cache by using large page sizes.
+Requests the Eclipse OpenJ9&trade; VM to allocate the JIT code cache by using large page sizes.
 
 If the requested large page size is not available, the VM starts, but the JIT code cache is allocated by using a platform-defined size. A warning is displayed when the requested page size is not available.
 

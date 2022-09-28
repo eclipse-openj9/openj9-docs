@@ -24,7 +24,7 @@
 
 # Contributing to the documentation
 
-This short guide will help you if you want to make a contribution to the Eclipse OpenJ9 user documentation.
+This short guide will help you if you want to make a contribution to the Eclipse OpenJ9&trade; user documentation.
 
 **Note:** There is a short video presentation explaining the process for contributing to the OpenJ9 documentation. (Save and open the [`.zip` file](process/Contributing.to.OpenJ9.docs.zip) in the `/process` directory to view the `.mp4` video.) You can also view the [PowerPoint presentation](process/openj9-doc-contibutions.pptx) used in that video. (Either save the file to view locally, or click "View raw".)
 

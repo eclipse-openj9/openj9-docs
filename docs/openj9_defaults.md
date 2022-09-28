@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# Default settings for the OpenJ9 VM
+# Default settings for the Eclipse OpenJ9&trade; VM
 
 The following tables provide a quick reference to the default settings for the VM when it is first installed.
 
