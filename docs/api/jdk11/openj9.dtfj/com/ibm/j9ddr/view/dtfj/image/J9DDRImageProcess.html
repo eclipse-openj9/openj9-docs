@@ -23,15 +23,16 @@
 <meta name="keywords" content="getVersion()">
 <meta name="keywords" content="getProperties()">
 <link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
-<link rel="stylesheet" type="text/css" href="../../../../../../../jquery/jquery-ui.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../../../../jquery/jquery-ui.min.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../../../script.js"></script>
 <script type="text/javascript" src="../../../../../../../jquery/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="../../../../../../../jquery/jszip-utils/dist/jszip-utils.min.js"></script>
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../../jquery/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="../../../../../../../jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="../../../../../../../jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
 <script type="text/javascript"><!--
@@ -167,7 +168,7 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 <ul class="blockList">
 <li class="blockList">
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="constructor.summary">
 <!--   -->
@@ -188,7 +189,7 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 </ul>
 </section>
 <!-- ========== METHOD SUMMARY =========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.summary">
 <!--   -->
@@ -213,12 +214,12 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCurrentThread()">getCurrentThread</a></span>()</code></th>
 <td class="colLast">
 <div class="block">This method returns the ImageThread that matches the TID stored in the J9RAS data structure,
-  or
-  case 1: if no J9RAS structure available return null
-  case 2: if J9RAS structure available but no TID field (old JVMs, old jextract behaviour) 
-                - return the first thread, or null if no threads
-  case 3: if J9RAS structure available with TID field but TID is zero (eg dump triggered outside JVM)
-                - platform specific code if core readers have identified a current thread, else...</div>
+ or
+ case 1: if no J9RAS structure available return null
+ case 2: if J9RAS structure available but no TID field (old JVMs, old jextract behaviour)
+         - return the first thread, or null if no threads
+ case 3: if J9RAS structure available with TID field but TID is zero (eg dump triggered outside JVM)
+         - platform specific code if core readers have identified a current thread, else...</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -242,7 +243,7 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getVersion()">getVersion</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Returns the build version(e.g. 23-26) of the first VM in the process (useful for testing).</div>
+<div class="block">Return the build version (e.g. 29) of the first VM in the process (useful for testing).</div>
 </td>
 </tr>
 </table>
@@ -270,7 +271,7 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 <ul class="blockList">
 <li class="blockList">
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="constructor.detail">
 <!--   -->
@@ -289,7 +290,7 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 </ul>
 </section>
 <!-- ============ METHOD DETAIL ========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.detail">
 <!--   -->
@@ -314,7 +315,7 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
                       throws <a href="../../../../dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
                              <a href="../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
 <div class="block">This method tries to get command line of the program that generated core file.
- 
+
  We can't get the command line from the core dump on zOS, or on recent Windows versions. On Linux
  it may be truncated. The java launcher stores the command line in an environment variable, so for
  all platforms we now try that first, with the core reader as a fallback.</div>
@@ -338,13 +339,13 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 <pre class="methodSignature">public&nbsp;<a href="../../../../dtfj/image/ImageThread.html" title="interface in com.ibm.dtfj.image">ImageThread</a>&nbsp;getCurrentThread()
                              throws <a href="../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
 <div class="block">This method returns the ImageThread that matches the TID stored in the J9RAS data structure,
-  or
-  case 1: if no J9RAS structure available return null
-  case 2: if J9RAS structure available but no TID field (old JVMs, old jextract behaviour) 
-                - return the first thread, or null if no threads
-  case 3: if J9RAS structure available with TID field but TID is zero (eg dump triggered outside JVM)
-                - platform specific code if core readers have identified a current thread, else...
-  case 4: if J9RAS structure available with TID field but no match (eg Linux), return a stub ImageThread</div>
+ or
+ case 1: if no J9RAS structure available return null
+ case 2: if J9RAS structure available but no TID field (old JVMs, old jextract behaviour)
+         - return the first thread, or null if no threads
+ case 3: if J9RAS structure available with TID field but TID is zero (eg dump triggered outside JVM)
+         - platform specific code if core readers have identified a current thread, else...
+ case 4: if J9RAS structure available with TID field but no match (eg Linux), return a stub ImageThread</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../dtfj/image/ImageProcess.html#getCurrentThread()">getCurrentThread</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../dtfj/image/ImageProcess.html" title="interface in com.ibm.dtfj.image">ImageProcess</a></code></dd>
@@ -367,7 +368,7 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
                           throws <a href="../../../../dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
                                  <a href="../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
 <div class="block">This method gets the environment variables.
- First it tries to extract it from RAS structure. 
+ First it tries to extract it from RAS structure.
  If not, it tries to get it from loaded modules.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -396,11 +397,11 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 <li class="blockList">
 <h4>getVersion</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getVersion()</pre>
-<div class="block">Returns the build version(e.g. 23-26) of the first VM in the process (useful for testing).
-  
-  Would be nice if DTFJJavaRuntime could implement this method, but that would be complicated
-  as there are multiple version-packaged DTFJJavaRuntimes (e.g. j9ddr.vmxx.view.dtfj.java.DTFJJavaRunTime)
-  and tests are not version-packaged.</div>
+<div class="block">Return the build version (e.g. 29) of the first VM in the process (useful for testing).
+
+ Would be nice if DTFJJavaRuntime could implement this method, but that would be complicated
+ as there are multiple version-packaged DTFJJavaRuntimes (e.g. j9ddr.vmxx.view.dtfj.java.DTFJJavaRunTime)
+ and tests are not version-packaged.</div>
 </li>
 </ul>
 </li>
