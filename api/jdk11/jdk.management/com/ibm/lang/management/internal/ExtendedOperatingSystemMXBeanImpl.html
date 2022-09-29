@@ -29,15 +29,16 @@
 <meta name="keywords" content="getNotificationInfo()">
 <meta name="keywords" content="isProcessRunning()">
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
-<link rel="stylesheet" type="text/css" href="../../../../../../jquery/jquery-ui.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../../../jquery/jquery-ui.min.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../../script.js"></script>
 <script type="text/javascript" src="../../../../../../jquery/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils.min.js"></script>
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../jquery/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="../../../../../../jquery/jquery-ui.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
 <script type="text/javascript"><!--
@@ -49,8 +50,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":42,"i5":42,"i6":42,"i7":10,"i8":10,"i9":10};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var data = {"i0":10,"i1":10,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -185,14 +186,14 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 <ul class="blockList">
 <li class="blockList">
 <!-- ========== METHOD SUMMARY =========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.summary">
 <!--   -->
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -231,34 +232,13 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProcessCpuTimeByNS()">getProcessCpuTimeByNS</a></span>()</code></th>
-<td class="colLast">
-<div class="block"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</td>
-</tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getProcessVirtualMemorySize()">getProcessVirtualMemorySize</a></span>()</code></th>
-<td class="colLast">
-<div class="block"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTotalPhysicalMemory()">getTotalPhysicalMemory</a></span>()</code></th>
-<td class="colLast">
-<div class="block"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</td>
-</tr>
-<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeNotificationListener(javax.management.NotificationListener)">removeNotificationListener</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/NotificationListener.html?is-external=true" title="class or interface in javax.management" class="externalLink" target="_blank">NotificationListener</a>&nbsp;listener)</code></th>
 <td class="colLast">
 <div class="block">Removes a listener from this MBean.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeNotificationListener(javax.management.NotificationListener,javax.management.NotificationFilter,java.lang.Object)">removeNotificationListener</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/NotificationListener.html?is-external=true" title="class or interface in javax.management" class="externalLink" target="_blank">NotificationListener</a>&nbsp;listener,
                           <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/NotificationFilter.html?is-external=true" title="class or interface in javax.management" class="externalLink" target="_blank">NotificationFilter</a>&nbsp;filter,
@@ -267,7 +247,7 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 <div class="block">Removes a listener from this MBean.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#sendNotification(javax.management.Notification)">sendNotification</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/javax/management/Notification.html?is-external=true" title="class or interface in javax.management" class="externalLink" target="_blank">Notification</a>&nbsp;notification)</code></th>
 <td class="colLast">
@@ -294,7 +274,7 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 <!--   -->
 </a>
 <h3>Methods declared in interface&nbsp;com.ibm.lang.management.<a href="../OperatingSystemMXBean.html" title="interface in com.ibm.lang.management">OperatingSystemMXBean</a></h3>
-<code><a href="../OperatingSystemMXBean.html#getCommittedVirtualMemorySize()">getCommittedVirtualMemorySize</a>, <a href="../OperatingSystemMXBean.html#getFreeSwapSpaceSize()">getFreeSwapSpaceSize</a>, <a href="../OperatingSystemMXBean.html#getProcessCpuLoad()">getProcessCpuLoad</a>, <a href="../OperatingSystemMXBean.html#getProcessCpuTime()">getProcessCpuTime</a>, <a href="../OperatingSystemMXBean.html#getProcessingCapacity()">getProcessingCapacity</a>, <a href="../OperatingSystemMXBean.html#getProcessPhysicalMemorySize()">getProcessPhysicalMemorySize</a>, <a href="../OperatingSystemMXBean.html#getProcessPrivateMemorySize()">getProcessPrivateMemorySize</a>, <a href="../OperatingSystemMXBean.html#getTotalSwapSpaceSize()">getTotalSwapSpaceSize</a>, <a href="../OperatingSystemMXBean.html#isHardwareEmulated()">isHardwareEmulated</a>, <a href="../OperatingSystemMXBean.html#isProcessRunning(long)">isProcessRunning</a>, <a href="../OperatingSystemMXBean.html#retrieveMemoryUsage()">retrieveMemoryUsage</a>, <a href="../OperatingSystemMXBean.html#retrieveMemoryUsage(com.ibm.lang.management.MemoryUsage)">retrieveMemoryUsage</a>, <a href="../OperatingSystemMXBean.html#retrieveProcessorUsage()">retrieveProcessorUsage</a>, <a href="../OperatingSystemMXBean.html#retrieveProcessorUsage(com.ibm.lang.management.ProcessorUsage%5B%5D)">retrieveProcessorUsage</a>, <a href="../OperatingSystemMXBean.html#retrieveTotalProcessorUsage()">retrieveTotalProcessorUsage</a>, <a href="../OperatingSystemMXBean.html#retrieveTotalProcessorUsage(com.ibm.lang.management.ProcessorUsage)">retrieveTotalProcessorUsage</a></code></li>
+<code><a href="../OperatingSystemMXBean.html#getCommittedVirtualMemorySize()">getCommittedVirtualMemorySize</a>, <a href="../OperatingSystemMXBean.html#getFreeSwapSpaceSize()">getFreeSwapSpaceSize</a>, <a href="../OperatingSystemMXBean.html#getProcessCpuLoad()">getProcessCpuLoad</a>, <a href="../OperatingSystemMXBean.html#getProcessCpuTime()">getProcessCpuTime</a>, <a href="../OperatingSystemMXBean.html#getProcessCpuTimeByNS()">getProcessCpuTimeByNS</a>, <a href="../OperatingSystemMXBean.html#getProcessingCapacity()">getProcessingCapacity</a>, <a href="../OperatingSystemMXBean.html#getProcessPhysicalMemorySize()">getProcessPhysicalMemorySize</a>, <a href="../OperatingSystemMXBean.html#getProcessPrivateMemorySize()">getProcessPrivateMemorySize</a>, <a href="../OperatingSystemMXBean.html#getProcessVirtualMemorySize()">getProcessVirtualMemorySize</a>, <a href="../OperatingSystemMXBean.html#getTotalPhysicalMemory()">getTotalPhysicalMemory</a>, <a href="../OperatingSystemMXBean.html#getTotalSwapSpaceSize()">getTotalSwapSpaceSize</a>, <a href="../OperatingSystemMXBean.html#isHardwareEmulated()">isHardwareEmulated</a>, <a href="../OperatingSystemMXBean.html#isProcessRunning(long)">isProcessRunning</a>, <a href="../OperatingSystemMXBean.html#retrieveMemoryUsage()">retrieveMemoryUsage</a>, <a href="../OperatingSystemMXBean.html#retrieveMemoryUsage(com.ibm.lang.management.MemoryUsage)">retrieveMemoryUsage</a>, <a href="../OperatingSystemMXBean.html#retrieveProcessorUsage()">retrieveProcessorUsage</a>, <a href="../OperatingSystemMXBean.html#retrieveProcessorUsage(com.ibm.lang.management.ProcessorUsage%5B%5D)">retrieveProcessorUsage</a>, <a href="../OperatingSystemMXBean.html#retrieveTotalProcessorUsage()">retrieveTotalProcessorUsage</a>, <a href="../OperatingSystemMXBean.html#retrieveTotalProcessorUsage(com.ibm.lang.management.ProcessorUsage)">retrieveTotalProcessorUsage</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.com.sun.management.OperatingSystemMXBean">
@@ -327,7 +307,7 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 <ul class="blockList">
 <li class="blockList">
 <!-- ============ METHOD DETAIL ========== -->
-<section role="region">
+<section>
 <ul class="blockList">
 <li class="blockList"><a id="method.detail">
 <!--   -->
@@ -366,59 +346,6 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
  UnsupportedOperationException will also be thrown if the operation is implemented but it
  cannot be performed because the system does not satisfy all the requirements, for example,
  an OS service is not installed.</dd>
-</dl>
-</li>
-</ul>
-<a id="getProcessCpuTimeByNS()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getProcessCpuTimeByNS</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink" target="_blank">forRemoval</a>=true,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink" target="_blank">since</a>="1.8")
-public final&nbsp;long&nbsp;getProcessCpuTimeByNS()</pre>
-<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Deprecated. Use getProcessCpuTime()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../OperatingSystemMXBean.html#getProcessCpuTimeByNS()">getProcessCpuTimeByNS</a></code>&nbsp;in interface&nbsp;<code><a href="../OperatingSystemMXBean.html" title="interface in com.ibm.lang.management">OperatingSystemMXBean</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="getProcessVirtualMemorySize()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getProcessVirtualMemorySize</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink" target="_blank">forRemoval</a>=true,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink" target="_blank">since</a>="1.8")
-public final&nbsp;long&nbsp;getProcessVirtualMemorySize()</pre>
-<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Deprecated: use getCommittedVirtualMemorySize()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../OperatingSystemMXBean.html#getProcessVirtualMemorySize()">getProcessVirtualMemorySize</a></code>&nbsp;in interface&nbsp;<code><a href="../OperatingSystemMXBean.html" title="interface in com.ibm.lang.management">OperatingSystemMXBean</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="getTotalPhysicalMemory()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getTotalPhysicalMemory</h4>
-<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#forRemoval()" title="class or interface in java.lang" class="externalLink" target="_blank">forRemoval</a>=true,
-            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html?is-external=true#since()" title="class or interface in java.lang" class="externalLink" target="_blank">since</a>="1.8")
-public final&nbsp;long&nbsp;getTotalPhysicalMemory()</pre>
-<div class="deprecationBlock"><span class="deprecatedLabel">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-<div class="block">Deprecated: use getTotalPhysicalMemorySize()</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../OperatingSystemMXBean.html#getTotalPhysicalMemory()">getTotalPhysicalMemory</a></code>&nbsp;in interface&nbsp;<code><a href="../OperatingSystemMXBean.html" title="interface in com.ibm.lang.management">OperatingSystemMXBean</a></code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>the total available physical memory on the system in bytes.</dd>
 </dl>
 </li>
 </ul>
