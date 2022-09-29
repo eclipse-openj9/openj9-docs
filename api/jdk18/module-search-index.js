@@ -1,1 +1,0 @@
-moduleSearchIndex = [{"l":"jdk.management"},{"l":"openj9.cuda"},{"l":"openj9.dataaccess"},{"l":"openj9.dtfj"},{"l":"openj9.dtfjview"},{"l":"openj9.gpu"},{"l":"openj9.jvm"},{"l":"openj9.sharedclasses"},{"l":"openj9.traceformat"},{"l":"openj9.zosconditionhandling"}];updateSearchResults();
