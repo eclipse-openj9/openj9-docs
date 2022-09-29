@@ -28,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../../../script-dir/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../../../../../../../script-dir/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../../../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -142,12 +142,12 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentThread()" class="member-name-link">getCurrentThread</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">This method returns the ImageThread that matches the TID stored in the J9RAS data structure,
-  or
-  case 1: if no J9RAS structure available return null
-  case 2: if J9RAS structure available but no TID field (old JVMs, old jextract behaviour) 
-                - return the first thread, or null if no threads
-  case 3: if J9RAS structure available with TID field but TID is zero (eg dump triggered outside JVM)
-                - platform specific code if core readers have identified a current thread, else...</div>
+ or
+ case 1: if no J9RAS structure available return null
+ case 2: if J9RAS structure available but no TID field (old JVMs, old jextract behaviour)
+         - return the first thread, or null if no threads
+ case 3: if J9RAS structure available with TID field but TID is zero (eg dump triggered outside JVM)
+         - platform specific code if core readers have identified a current thread, else...</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link" target="_blank">Properties</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEnvironment()" class="member-name-link">getEnvironment</a>()</code></div>
@@ -210,7 +210,7 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVersion()" class="member-name-link">getVersion</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the build version(e.g. 23-26) of the first VM in the process (useful for testing).</div>
+<div class="block">Return the build version (e.g. 29) of the first VM in the process (useful for testing).</div>
 </div>
 </div>
 </div>
@@ -256,7 +256,7 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
                       throws <span class="exceptions"><a href="../../../../dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
 <a href="../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
 <div class="block">This method tries to get command line of the program that generated core file.
- 
+
  We can't get the command line from the core dump on zOS, or on recent Windows versions. On Linux
  it may be truncated. The java launcher stores the command line in an environment variable, so for
  all platforms we now try that first, with the core reader as a fallback.</div>
@@ -277,13 +277,13 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../dtfj/image/ImageThread.html" title="interface in com.ibm.dtfj.image">ImageThread</a></span>&nbsp;<span class="element-name">getCurrentThread</span>()
                              throws <span class="exceptions"><a href="../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
 <div class="block">This method returns the ImageThread that matches the TID stored in the J9RAS data structure,
-  or
-  case 1: if no J9RAS structure available return null
-  case 2: if J9RAS structure available but no TID field (old JVMs, old jextract behaviour) 
-                - return the first thread, or null if no threads
-  case 3: if J9RAS structure available with TID field but TID is zero (eg dump triggered outside JVM)
-                - platform specific code if core readers have identified a current thread, else...
-  case 4: if J9RAS structure available with TID field but no match (eg Linux), return a stub ImageThread</div>
+ or
+ case 1: if no J9RAS structure available return null
+ case 2: if J9RAS structure available but no TID field (old JVMs, old jextract behaviour)
+         - return the first thread, or null if no threads
+ case 3: if J9RAS structure available with TID field but TID is zero (eg dump triggered outside JVM)
+         - platform specific code if core readers have identified a current thread, else...
+ case 4: if J9RAS structure available with TID field but no match (eg Linux), return a stub ImageThread</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../../../dtfj/image/ImageProcess.html#getCurrentThread()">getCurrentThread</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../dtfj/image/ImageProcess.html" title="interface in com.ibm.dtfj.image">ImageProcess</a></code></dd>
@@ -307,7 +307,7 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
                           throws <span class="exceptions"><a href="../../../../dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
 <a href="../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
 <div class="block">This method gets the environment variables.
- First it tries to extract it from RAS structure. 
+ First it tries to extract it from RAS structure.
  If not, it tries to get it from loaded modules.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -515,11 +515,11 @@ implements <a href="../../../../dtfj/image/ImageProcess.html" title="interface i
 <section class="detail" id="getVersion()">
 <h3>getVersion</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getVersion</span>()</div>
-<div class="block">Returns the build version(e.g. 23-26) of the first VM in the process (useful for testing).
-  
-  Would be nice if DTFJJavaRuntime could implement this method, but that would be complicated
-  as there are multiple version-packaged DTFJJavaRuntimes (e.g. j9ddr.vmxx.view.dtfj.java.DTFJJavaRunTime)
-  and tests are not version-packaged.</div>
+<div class="block">Return the build version (e.g. 29) of the first VM in the process (useful for testing).
+
+ Would be nice if DTFJJavaRuntime could implement this method, but that would be complicated
+ as there are multiple version-packaged DTFJJavaRuntimes (e.g. j9ddr.vmxx.view.dtfj.java.DTFJJavaRunTime)
+ and tests are not version-packaged.</div>
 </section>
 </li>
 <li>
