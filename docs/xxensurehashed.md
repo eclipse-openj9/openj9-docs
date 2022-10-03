@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]EnsureHashed
 
-Objects allocated from the specified classes will be hashed and extended with a slot to store the hash upon object creation or first move. This option may improve performance for applications that frequently hash objects of a certain type.
+This option specifies the classes whose objects should be assigned hash values or those classes that should be ignored and hence not considered for assigning the hash values. The objects are hashed and extended with a slot to store the assigned hash value at the time of the object creation or first move during the garbage collection process. This option might improve performance for applications that frequently hash objects of a certain type.
 
 ## Syntax
 
@@ -33,13 +33,22 @@ Objects allocated from the specified classes will be hashed and extended with a 
 
 | Setting                     | Effect           |
 |-----------------------------|------------------|
-|`-XX:+EnsureHashed:<classes>`| Specify classes  |
-|`-XX:-EnsureHashed:<classes>`| Ignore classes|
+| `-XX:+EnsureHashed:<classes>` | Specify classes  |
+| `-XX:-EnsureHashed:<classes>` | Ignore classes |
 
-Where `<classes>` is a comma-separated list of fully qualified class names, e.g. `java/lang/String`.
+Where `<classes>` is a comma-separated list of fully qualified class names, for example, `java/lang/String`.
+
+## Explanation
 
 The `-XX:+EnsureHashed:<classes>` option specifies the classes and the `-XX:-EnsureHashed:<classes>` option ignores classes that were previously specified. These options are parsed left to right.
 
 For example, `-XX:+EnsureHashed:Class1,Class2,Class3 -XX:-EnsureHashed:Class2 -XX:+EnsureHashed:Class2,Class4 -XX:-EnsureHashed:Class1,Class3` results in the set of `EnsureHashed` classes {`Class2`, `Class4`}.
 
-<!-- ==== END OF TOPIC ==== xensurehashed.md ==== -->
+Objects that are created from classes `Thread` and `Class` are allocated in the tenure region directly and therefore, do not get moved by the garbage collector often. It takes time for such pre-tenured objects to get hashed and extended with a slot. To pre-hash those objects from the start and hence, improve the performance,`-XX:+EnsureHashed:java/lang/Class,java/lang/Thread` is added to the list of default options in the `options.default` file.
+
+## See also
+
+- [`-Xoptionsfile`](xoptionsfile.md)
+- [GC processing](gc.md#gc-processing)
+
+<!-- ==== END OF TOPIC ==== xxensurehashed.md ==== -->

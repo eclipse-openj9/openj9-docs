@@ -59,7 +59,7 @@ would yield the following in the <tt>ENVINFO</tt> section after the complete lis
 
 ### New `-XX:[+|-]EnsureHashed` option added
 
-This option specifies/unspecifies classes of objects that will be hashed and extended with a hash slot upon object creation or first move. This option may improve performance for applications that frequently hash objects of a certain type. See [-XX:[+|-]EnsureHashed](xxensurehashed.md) for more details.
+This option specifies the classes whose objects should be assigned hash values or those classes that should be ignored. This option might improve performance for applications that frequently hash objects of a certain type. See [-XX:[+|-]EnsureHashed](xxensurehashed.md) for more details.
 
 ### Redesigned heap resizing for the `balanced` GC policy
 
