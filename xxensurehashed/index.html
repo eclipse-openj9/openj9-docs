@@ -3321,6 +3321,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4519,6 +4533,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4557,7 +4585,7 @@
 -->
 
 <h1 id="-xx-ensurehashed">-XX:[+|-]EnsureHashed</h1>
-<p>Objects allocated from the specified classes will be hashed and extended with a slot to store the hash upon object creation or first move. This option may improve performance for applications that frequently hash objects of a certain type.</p>
+<p>This option specifies the classes whose objects should be assigned hash values or those classes that should be ignored and hence not considered for assigning the hash values. The objects are hashed and extended with a slot to store the assigned hash value at the time of the object creation or first move during the garbage collection process. This option might improve performance for applications that frequently hash objects of a certain type.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:+EnsureHashed:&lt;classes&gt;
     -XX:-EnsureHashed:&lt;classes&gt;
@@ -4580,10 +4608,17 @@
 </tr>
 </tbody>
 </table>
-<p>Where <code>&lt;classes&gt;</code> is a comma-separated list of fully qualified class names, e.g. <code>java/lang/String</code>.</p>
+<p>Where <code>&lt;classes&gt;</code> is a comma-separated list of fully qualified class names, for example, <code>java/lang/String</code>.</p>
+<h2 id="explanation">Explanation</h2>
 <p>The <code>-XX:+EnsureHashed:&lt;classes&gt;</code> option specifies the classes and the <code>-XX:-EnsureHashed:&lt;classes&gt;</code> option ignores classes that were previously specified. These options are parsed left to right.</p>
 <p>For example, <code>-XX:+EnsureHashed:Class1,Class2,Class3 -XX:-EnsureHashed:Class2 -XX:+EnsureHashed:Class2,Class4 -XX:-EnsureHashed:Class1,Class3</code> results in the set of <code>EnsureHashed</code> classes {<code>Class2</code>, <code>Class4</code>}.</p>
-<!-- ==== END OF TOPIC ==== xensurehashed.md ==== -->
+<p>Objects that are created from classes <code>Thread</code> and <code>Class</code> are allocated in the tenure region directly and therefore, do not get moved by the garbage collector often. It takes time for such pre-tenured objects to get hashed and extended with a slot. To pre-hash those objects from the start and hence, improve the performance,<code>-XX:+EnsureHashed:java/lang/Class,java/lang/Thread</code> is added to the list of default options in the <code>options.default</code> file.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../xoptionsfile/"><code>-Xoptionsfile</code></a></li>
+<li><a href="../gc/#gc-processing">GC processing</a></li>
+</ul>
+<!-- ==== END OF TOPIC ==== xxensurehashed.md ==== -->
                 
               
               

@@ -4678,7 +4678,7 @@ java -Xdump:java:events=vmstop -XX:+UseCompressedOop -XX:CompressedClassSpaceSiz
 </pre>
 
 <h3 id="new-xx-ensurehashed-option-added">New <code>-XX:[+|-]EnsureHashed</code> option added</h3>
-<p>This option specifies/unspecifies classes of objects that will be hashed and extended with a hash slot upon object creation or first move. This option may improve performance for applications that frequently hash objects of a certain type. See <a href="../xxensurehashed/">-XX:[+|-]EnsureHashed</a> for more details.</p>
+<p>This option specifies the classes whose objects should be assigned hash values or those classes that should be ignored. This option might improve performance for applications that frequently hash objects of a certain type. See <a href="../xxensurehashed/">-XX:[+|-]EnsureHashed</a> for more details.</p>
 <h3 id="redesigned-heap-resizing-for-the-balanced-gc-policy">Redesigned heap resizing for the <code>balanced</code> GC policy</h3>
 <p>Heap resizing heuristics have been redesigned for the <code>balanced</code> GC policy. This includes both total heap resizing including eden and non-eden components independently, and also balancing between these two components when the heap is fully expanded. The heuristics now combine both the CPU overhead (for Partial GCs as well as Global Mark Phase) and the heap occupancy criteria. The balancing between eden and non-eden for fully expanded heaps is far more dynamic (instead of being mostly fixed in the ratio 1:4).</p>
 <p>As a consequence, there should typically be less need for heap sizing tuning options, most notably for eden sizing options <a href="../xmn/">-Xmn, -Xmns, and -Xmnx</a>.</p>
