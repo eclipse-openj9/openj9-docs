@@ -253,7 +253,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Linux AArch64 64-bit          | CentOS 7.9             | gcc 7.5                               |
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0                        |
+| AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0.11                     |
 
 ### OpenJDK 17
 
@@ -265,7 +265,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                               |
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0                        |
+| AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0.11                     |
 
 ### OpenJDK 18
 
@@ -277,4 +277,4 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                               |
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0                        |
+| AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0.11                     |
