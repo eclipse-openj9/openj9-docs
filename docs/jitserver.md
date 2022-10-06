@@ -39,6 +39,10 @@ For more details about JITServer technology, including its advantages and disadv
 - [Free your JVM from the JIT with JITServer Technology](https://blog.openj9.org/2020/01/09/free-your-jvm-from-the-jit-with-jitserver-technology/)
 - [JITServer - Optimize your Java cloud-native applications](https://developer.ibm.com/articles/jitserver-optimize-your-java-cloud-native-applications/)
 
+For a more in-depth description of the JITServer design and implementation, see the following research paper:
+
+- [JITServer: Disaggregated Caching JIT Compiler for the JVM in the Cloud](https://www.usenix.org/conference/atc22/presentation/khrabrov)
+
 ## Using JITServer technology
 
 JITServer technology is not enabled by default: you must explicitly invoke it. Running OpenJ9 without either of the following options launches it as a regular VM with embedded JIT compilation.
