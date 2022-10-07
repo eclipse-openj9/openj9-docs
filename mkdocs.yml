@@ -387,6 +387,8 @@ nav:
             - "-XX:[+|-]JITServerLogConnections"                                 : xxjitserverlogconnections.md
             - "-XX:JITServerMetrics"                                             : xxjitservermetrics.md
             - "-XX:JITServerMetricsPort"                                         : xxjitservermetricsport.md
+            - "-XX:JITServerMetricsSSLCert"                                      : xxjitservermetricssslkey.md
+            - "-XX:JITServerMetricsSSLKey"                                       : xxjitservermetricssslkey.md
             - "-XX:JITServerPort"                                                : xxjitserverport.md
             - "-XX:JITServerShareROMClasses"                                     : xxjitservershareromclasses.md
             - "-XX:JITServerSSLCert"                                             : xxjitserversslcert.md
