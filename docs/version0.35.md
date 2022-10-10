@@ -32,6 +32,7 @@ The following new features and notable changes since version 0.33.1 are included
 - [New `user2` event added for the `-Xdump` option](#new-user2-event-added-for-the-xdump-option)
 - [New `-XX:[+|-]PerfTool` option added](#new-xx-perftool-option-added)
 - [New default options added in the `options.default` file](#new-default-options-added-in-the-optionsdefault-file)
+- ![Start of content that applies to Java 11 and later](cr/java11plus.png) [XL C++ Runtime 16.1.0.7 or later required on AIX](#xl-c-runtime-16107-or-later-required-on-aix)
 
 ## Features and changes
 
@@ -78,6 +79,10 @@ For more information, see [`-XX:[+|-]PerfTool`](xxperftool.md).
 `-XX:+EnsureHashed:java/lang/Class,java/lang/Thread` is added to the list of default options in the `options.default` file to improve performance.
 
 For more information, see [`XX:[+|-]EnsureHashed`](xxensurehashed.md).
+
+### ![Start of content that applies to Java 11 and later](cr/java11plus.png) XL C++ Runtime 16.1.0.7 or later required on AIX
+
+AIX OpenJ9 builds now require version 16.1.0.7 or later of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
 
 ## Known problems and full release information
 
