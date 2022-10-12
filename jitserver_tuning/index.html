@@ -3714,6 +3714,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxjitservermetricssslkey/" class="md-nav__link">
+        -XX:JITServerMetricsSSLCert
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitservermetricssslkey/" class="md-nav__link">
+        -XX:JITServerMetricsSSLKey
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxjitserverport/" class="md-nav__link">
         -XX:JITServerPort
       </a>
@@ -4807,6 +4831,7 @@ selector:
 <h3 id="performance-metrics">Performance metrics</h3>
 <p>You can enable the provision of performance metrics by specifying the <code>-XX:+JITServerMetrics</code> command line option. After enabling this option, you can use a monitoring tool that follows the OpenMetrics standard, such as Prometheus, to collect the data by issuing an HTTP <code>GET</code> request to the following url: <code>http://&lt;jitserveraddress&gt;:&lt;port&gt;/metrics</code>.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> There is a limit of four concurrent <code>GET</code> requests at any given time.</p>
+<p>You can use the <a href="../xxjitservermetricssslkey/"><code>-XX:JITServerMetricsSSLKey</code></a> and <a href="../xxjitservermetricssslkey/"><code>-XX:JITServerMetricsSSLCert</code></a> options to encrypt the data with TLS or SSL.</p>
 <p>For more information, including the types of metrics that are provided, see the <a href="../xxjitservermetrics/"><code>-XX:[+|-]JITServerMetrics</code></a> topic.</p>
 <h3 id="verbose-logging">Verbose logging</h3>
 <p>You can inspect the behavior of a JITServer instance by using the <a href="https://blog.openj9.org/2018/06/07/reading-verbose-jit-logs/">OpenJ9 verbose logging facility</a>. Note that if the name of the verbose log is not specified, the relevant information is printed to stderr.
