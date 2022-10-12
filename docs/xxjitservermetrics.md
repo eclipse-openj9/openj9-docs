@@ -33,7 +33,7 @@ When you enable this option, the following JITServer metrics are provided:
 - The number of clients that are connected to the JITServer
 - The number of active compilation threads in the JITServer
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The data is currently not encrypted.
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You can use the [`-XX:JITServerMetricsSSLKey`](xxjitservermetricssslkey.md) and [`-XX:JITServerMetricsSSLCert`](xxjitservermetricssslkey.md) options for encrypting the data with SSL or TLS.
 
 ## Syntax
 
@@ -88,5 +88,6 @@ JITServer response:
 
 - [-XX:JITServerMetricsPort](xxjitservermetricsport.md)
 - [JITServer technology](jitserver.md)
+- [`-XX:JITServerMetricsSSLKey`](xxjitservermetricssslkey.md)
 
 <!-- ==== END OF TOPIC ==== xxjitservermetrics.md ==== -->
