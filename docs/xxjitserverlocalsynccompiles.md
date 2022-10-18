@@ -30,10 +30,12 @@ When you specify this JITServer option, synchronous JIT compilations are downgra
 
         -XX:[+|-]JITServerLocalSyncCompiles
 
-| Setting                 | Effect | Default                                                                            |
+| Setting                 | Effect | Default                                                                             |
 |-------------------------|--------|:----------------------------------------------------------------------------------:|
-|`-XX:+JITServerLocalSyncCompiles`           | Enable |                                                                                    |
-|`-XX:-JITServerLocalSyncCompiles`           | Disable| :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+|`-XX:+JITServerLocalSyncCompiles`           | Enable |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>                                                          |
+|`-XX:-JITServerLocalSyncCompiles`           | Disable|                             |
+
+The option `-XX:[+|-]JITServerLocalSyncCompiles` is enabled by default in most cases. The option remains disabled when you specify [`-Xjit:count=0`](xjit.md#count) and in a few advanced use cases such as running the JVM in debug mode (as described in the [Improved JVM debug mode based on OSR](https://blog.openj9.org/2019/04/30/introduction-to-full-speed-debug-base-on-osr/) post in the Eclipse OpenJ9&trade; blog).
 
 ## Explanation
 
