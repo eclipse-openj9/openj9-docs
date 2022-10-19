@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]EnsureHashed
 
-This option specifies the classes whose objects should be assigned hash values or those classes that should be ignored and hence not considered for assigning the hash values. The objects are hashed and extended with a slot to store the assigned hash value at the time of the object creation or first move during the garbage collection process. This option might improve performance for applications that frequently hash objects of a certain type.
+This option specifies classes to be pre-hashed. Objects that are created from these classes are hashed and extended with a slot to store the assigned hash value when the object is created or first moved during the garbage collection process. This option might improve performance for applications that frequently hash objects of a certain type.
 
 ## Syntax
 
