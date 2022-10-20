@@ -120,6 +120,8 @@ You can enable the provision of performance metrics by specifying the `-XX:+JITS
 
 :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** There is a limit of four concurrent `GET` requests at any given time.
 
+You can use the [`-XX:JITServerMetricsSSLKey`](xxjitservermetricssslkey.md) and [`-XX:JITServerMetricsSSLCert`](xxjitservermetricssslkey.md) options to encrypt the data with TLS or SSL.
+
 For more information, including the types of metrics that are provided, see the [`-XX:[+|-]JITServerMetrics`](xxjitservermetrics.md) topic.
 
 ### Verbose logging

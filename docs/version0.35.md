@@ -32,7 +32,9 @@ The following new features and notable changes since version 0.33.1 are included
 - [New `user2` event added for the `-Xdump` option](#new-user2-event-added-for-the-xdump-option)
 - [New `-XX:[+|-]PerfTool` option added](#new-xx-perftool-option-added)
 - [New default options added in the `options.default` file](#new-default-options-added-in-the-optionsdefault-file)
+- [New options added to encrypt the JITServer exported metrics](#new-options-added-to-encrypt-the-jitserver-exported-metrics)
 - ![Start of content that applies to Java 11 and later](cr/java11plus.png) [XL C++ Runtime 16.1.0.7 or later required on AIX](#xl-c-runtime-16107-or-later-required-on-aix)
+- [`-XX:[+|-]JITServerLocalSyncCompiles` enabled by default](#-xx-jitserverlocalsynccompiles-enabled-by-default)
 
 ## Features and changes
 
@@ -82,9 +84,17 @@ For more information, see [`-XX:[+|-]PerfTool`](xxperftool.md).
 
 For more information, see [`XX:[+|-]EnsureHashed`](xxensurehashed.md).
 
+### New options added to encrypt the JITServer exported metrics
+
+You can use the [`-XX:JITServerMetricsSSLKey`](xxjitservermetricssslkey.md) and [`-XX:JITServerMetricsSSLCert`](xxjitservermetricssslkey.md) options to encrypt the custom metrics with TLS or SSL.
+
 ### ![Start of content that applies to Java 11 and later](cr/java11plus.png) XL C++ Runtime 16.1.0.7 or later required on AIX
 
 AIX OpenJ9 builds now require version 16.1.0.7 or later of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
+
+### `-XX:[+|-]JITServerLocalSyncCompiles` enabled by default
+
+The `-XX:[+|-]JITServerLocalSyncCompiles` option is now enabled by default in most cases. For more information, see [`-XX:[+|-]JITServerLocalSyncCompiles`](xxjitserverlocalsynccompiles.md).
 
 ## Known problems and full release information
 
