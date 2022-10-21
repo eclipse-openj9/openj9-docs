@@ -138,9 +138,11 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 | Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-| macOS         | x64                                                                                  | AArch64                                                                                                |
-|---------------|--------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| OS X 10.11+   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS         | x64                                                                                  | AArch64 (Apple silicon) |
+|---------------|--------------------------------------------------------------------------------------|:-----------------------:|
+| OS X 10.11+   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span> |
+| macOS 11       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 12   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
@@ -181,9 +183,11 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 | Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-| macOS         | x64                                                                                  | AArch64                                                                               |
-|---------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| OS X 10.14+   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                                              |
+|---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
+| macOS 10.14+   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span>                                                                                 |
+| macOS 11       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 12   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
