@@ -772,7 +772,7 @@ The Java dump agent ignores the `request=exclusive` setting if a `user` event oc
 On operating systems other than Windows, you can enforce exclusive access and obtain a complete dump file by specifying that the `user2` event triggers the Java dump agent instead of the `user` event. For example:
 
 ```
--Xdump:java:events=user2,request=exclusive+prepwalk
+-Xdump:java:events=user2,request=exclusive+preempt
 ```
 When a `user2` event occurs, for example, when you enter `kill -USR2 <pid>` on the command line, the Java dump agent accepts the `request=exclusive` setting and waits for exclusive access before creating the Java dump file.
 
