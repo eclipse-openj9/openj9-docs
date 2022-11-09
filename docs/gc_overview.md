@@ -199,7 +199,7 @@ cleared. For example, a software cache. The garbage collector handles the refere
 |----------------|----------------------------------|----------------------------|
 | soft         | `java.lang.ref.SoftReference`    | A soft reference is cleared only when its *referent* is not marked for a number of GC cycles or if space on the heap is likely to cause an out of memory error. Use the [-Xsoftrefthreshold](xsoftrefthreshold.md) option to control the collection of soft reference objects. |
 | weak         | `java.lang.ref.WeakReference`    | A weak reference is cleared as soon as its *referent* is not marked by a GC cycle. |
-| phantom      | `java.lang.ref.PhantomReference` | A phantom reference is added to a reference queue and cleared after any objects that require finalization. |  
+| phantom      | `java.lang.ref.PhantomReference` | A phantom reference is cleared automatically as soon as its *referent* is not marked by a GC cycle. The cleared reference is then added to the associated reference queue at the same time or later. |
 
 If your application uses the Java Native Interface (JNI) to interact with other application types, you can also create weak JNI object references. These references have a similar life cycle to a weak Java reference. The garbage collector processes weak JNI references after all other Java reference types.
 

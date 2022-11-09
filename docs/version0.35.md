@@ -35,6 +35,7 @@ The following new features and notable changes since version 0.33.1 are included
 - [New options added to encrypt the JITServer exported metrics](#new-options-added-to-encrypt-the-jitserver-exported-metrics)
 - ![Start of content that applies to Java 11 and later](cr/java11plus.png) [XL C++ Runtime 16.1.0.7 or later required on AIX](#xl-c-runtime-16107-or-later-required-on-aix)
 - [`-XX:[+|-]JITServerLocalSyncCompiles` enabled by default](#-xx-jitserverlocalsynccompiles-enabled-by-default)
+- ![Start of content that applies to Java 8](cr/java8.png) [Support for changes to the maintenance specifications of JSR 337 in Java 8](#support-for-changes-to-the-maintenance-specifications-of-jsr-337-in-java-8)
 
 ## Features and changes
 
@@ -93,6 +94,12 @@ AIX OpenJ9 builds now require version 16.1.0.7 or later of the [IBM XL C++ Runti
 ### `-XX:[+|-]JITServerLocalSyncCompiles` enabled by default
 
 The `-XX:[+|-]JITServerLocalSyncCompiles` option is now enabled by default in most cases. For more information, see [`-XX:[+|-]JITServerLocalSyncCompiles`](xxjitserverlocalsynccompiles.md).
+
+### ![Start of content that applies to Java 8](cr/java8.png) Support for changes to the maintenance specifications of JSR 337 in Java 8
+
+OpenJ9 now supports changes to the maintenance specifications in Java 8 as listed in the [JSR 337 Maintenance Release 4](https://jcp.org/aboutJava/communityprocess/maintenance/jsr337/jsr337-mr4-changes.html) document.
+
+These changes include the change in the garbage collector behavior for handling the phantom references in Java 8. The garbage collector handles both the phantom as well as the weak references similarly, which is the current behavior in Java 11 and later. For more information, see [Weak reference processing](gc_overview.md#weak-reference-processing).
 
 ## Known problems and full release information
 
