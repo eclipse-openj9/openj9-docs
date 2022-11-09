@@ -4902,7 +4902,7 @@ cleared. For example, a software cache. The garbage collector handles the refere
 <tr>
 <td>phantom</td>
 <td><code>java.lang.ref.PhantomReference</code></td>
-<td>A phantom reference is added to a reference queue and cleared after any objects that require finalization.</td>
+<td>A phantom reference is cleared automatically as soon as its <em>referent</em> is not marked by a GC cycle. The cleared reference is then added to the associated reference queue at the same time or later.</td>
 </tr>
 </tbody>
 </table>
