@@ -42,11 +42,12 @@ The client-session caches are deleted when the clients terminate, but this can h
 
  To enable this feature, specify the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) command line option, both at the server and at the client JVM.
 
- A JITServer instance can have several AOT caches, each with its own name. This addresses the situation when client JVMs with significantly different profiles of execution use the same JITServer instance. A client JVM can indicate a specific AOT cache it wants to use by providing its name with the following command line option [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md). The default is to use a nameless cache.
+ A JITServer instance can have several AOT caches, each with its own name. This addresses the situation when client JVMs with significantly different profiles of execution use the same JITServer instance. A client JVM can indicate a specific AOT cache it wants to use by providing its name with the following command line option [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md). If the client doesn't specify a name for the AOT cache, the server uses a cache named `default`.
+
+ The maximum amount of memory that all the AOT cache instances combined can use at the server is 300 MB, by default. You can change this value by using the [`-XX:JITServerAOTmx=<size>`](xxjitserveraotmx.md) option. When the cache size reaches the specified limit, new clients cannot create new AOT cache instances or add new compiled methods to the existing AOT cache instances.
 
  Current limitations:
 
- - The amount of memory that an AOT cache can consume at the server is not limited. The number of caches that a JITServer can hold is also not limited.
  - The AOT cache is a non-persistent in-memory cache. If the JITServer instance ends, the cache content is lost.
  - AOT cache entries are not shared between different JITServer instances.
  - Caching works only for AOT compilation requests. For this reason, when JITServer AOT caching is enabled, the client JVM will attempt to generate as many AOT requests as possible.
