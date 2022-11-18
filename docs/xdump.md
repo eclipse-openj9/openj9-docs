@@ -60,7 +60,7 @@ The following options can be used to control the production of diagnostic data:
 | `-Xdump:suspendwith=<offset>`| Modifies the signal that is used to suspend VM threads while a dump file is being written. Use `<offset>` to change the default signal number. (Linux&reg; only) |
 | `-Xdump:<agent>:<suboptions>`| Provides detailed suboptions per dump agent that provide more granular control.                                                                             |
 
-Dump agents can be configured at a very granular level by specifying suboptions. The `<events>` suboption is the prime trigger mechanism. The full set of suboptions are listed in the following table:
+Dump agents can be configured at a very granular level by specifying suboptions. The `<events>` suboption is the prime trigger mechanism. If no events are specified explicitly, then the default settings for the corresponding agent are added. For more information, see [Default dump agents](#default-dump-agents). You can update the default dump settings by using the [`defaults`](#defaults) suboption. The full set of suboptions are listed in the following table:
 
 | Dump agent suboptions                                 | Result                                                                     |
 |-------------------------------------------------------|----------------------------------------------------------------------------|
@@ -119,7 +119,7 @@ Registered dump agents
 ----------------------
 -Xdump:system:
     events=gpf+abort+traceassert+corruptcache,
-    label=/home/user/core.%Y%m%d.%H%M%S.%pid.%seq.dmp,
+    file=/home/user/core.%Y%m%d.%H%M%S.%pid.%seq.dmp,
     range=1..0,
     priority=999,
     request=serial
@@ -127,7 +127,7 @@ Registered dump agents
 -Xdump:system:
     events=systhrow,
     filter=java/lang/OutOfMemoryError,
-    label=/home/user/core.%Y%m%d.%H%M%S.%pid.%seq.dmp,
+    file=/home/user/core.%Y%m%d.%H%M%S.%pid.%seq.dmp,
     range=1..1,
     priority=999,
     request=exclusive+compact+prepwalk
@@ -135,7 +135,7 @@ Registered dump agents
 -Xdump:heap:
     events=systhrow,
     filter=java/lang/OutOfMemoryError,
-    label=/home/user/heapdump.%Y%m%d.%H%M%S.%pid.%seq.phd,
+    file=/home/user/heapdump.%Y%m%d.%H%M%S.%pid.%seq.phd,
     range=1..4,
     priority=500,
     request=exclusive+compact+prepwalk,
@@ -143,7 +143,7 @@ Registered dump agents
 ----------------------
 -Xdump:java:
     events=gpf+user+abort+traceassert+corruptcache,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
+    file=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
     range=1..0,
     priority=400,
     request=exclusive+preempt
@@ -151,14 +151,14 @@ Registered dump agents
 -Xdump:java:
     events=systhrow,
     filter=java/lang/OutOfMemoryError,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
+    file=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
     range=1..4,
     priority=400,
     request=exclusive+preempt
 ----------------------
 -Xdump:snap:
     events=gpf+abort+traceassert+corruptcache,
-    label=/home/user/Snap.%Y%m%d.%H%M%S.%pid.%seq.trc,
+    file=/home/user/Snap.%Y%m%d.%H%M%S.%pid.%seq.trc,
     range=1..0,
     priority=300,
     request=serial
@@ -166,14 +166,14 @@ Registered dump agents
 -Xdump:snap:
     events=systhrow,
     filter=java/lang/OutOfMemoryError,
-    label=/home/user/Snap.%Y%m%d.%H%M%S.%pid.%seq.trc,
+    file=/home/user/Snap.%Y%m%d.%H%M%S.%pid.%seq.trc,
     range=1..4,
     priority=300,
     request=serial
 ----------------------
 -Xdump:jit:
     events=gpf+abort,
-    label=/home/user/jitdump.%Y%m%d.%H%M%S.%pid.%seq.dmp,
+    file=/home/user/jitdump.%Y%m%d.%H%M%S.%pid.%seq.dmp,
     range=1..0,
     priority=200,
     request=serial
@@ -227,7 +227,7 @@ This command does not create a new agent, as can be seen in the results from the
 ----------------------
 -Xdump:java:
     events=gpf+user+abort+unload+traceassert+corruptcache,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
+    file=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
     range=1..0,
     priority=400,
     request=exclusive+preempt
@@ -249,21 +249,21 @@ The results of the `-Xdump:what` option in the command are as follows.
 ----------------------
 -Xdump:java:
     events=unload,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
+    file=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
     range=1..0,
     priority=100,
     request=exclusive+preempt
 ----------------------
 -Xdump:java:
     events=gpf+user+abort+traceassert+corruptcache,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
+    file=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
     range=1..0,
     priority=400,
     request=exclusive+preempt
 ----------------------
 ```
 
-To merge dump agents, the *request*, *filter*, *opts*, *label*, and *range* parameters must match exactly. If you specify multiple agents that filter on the same string, but keep all other parameters the same, the agents are merged. For example:
+To merge dump agents, the *request*, *filter*, *opts*, *file*, and *range* parameters must match exactly. If you specify multiple agents that filter on the same string, but keep all other parameters the same, the agents are merged. For example:
 ```
 java -Xdump:none -Xdump:java:events=uncaught,filter=java/lang/NullPointerException -Xdump:java:events=unload,filter=java/lang/NullPointerException -Xdump:what
 ```
@@ -276,7 +276,7 @@ Registered dump agents
 -Xdump:java:
     events=unload+uncaught,
     filter=java/lang/NullPointerException,
-    label=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
+    file=/home/user/javacore.%Y%m%d.%H%M%S.%pid.%seq.txt,
     range=1..0,
     priority=400,
     request=exclusive+preempt
