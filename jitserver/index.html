@@ -296,6 +296,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.36/" class="md-nav__link">
+        Version 0.36.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.35/" class="md-nav__link">
         Version 0.35.0
       </a>
@@ -359,14 +371,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
       
-      <label class="md-nav__link" for="__nav_5_7">
+      <label class="md-nav__link" for="__nav_5_8">
         Earlier releases
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Earlier releases" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_7">
+        <label class="md-nav__title" for="__nav_5_8">
           <span class="md-nav__icon md-icon"></span>
           Earlier releases
         </label>
@@ -3613,8 +3625,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxjitserveruseaotcache/" class="md-nav__link">
-        -XX:[+|-]JITServerUseAOTCache
+      <a href="../xxjitserveraotmx/" class="md-nav__link">
+        -XX:JITServerAOTmx
       </a>
     </li>
   
@@ -3759,6 +3771,18 @@
     <li class="md-nav__item">
       <a href="../xxjitservertimeout/" class="md-nav__link">
         -XX:JITServerTimeout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserveruseaotcache/" class="md-nav__link">
+        -XX:[+|-]JITServerUseAOTCache
       </a>
     </li>
   
@@ -4723,6 +4747,7 @@
 <li><a href="../xxjitservermetricsport/"><code>-XX:JITServerMetricsPort=&lt;port&gt;</code></a>: Specifies the port number on which the JITServer metrics are provided to a monitoring agent</li>
 <li><a href="../xxjitserveraotcachename/"><code>-XX:JITServerAOTCacheName=&lt;cache_name&gt;</code></a>: Specifies the name of the server-side AOT cache to use</li>
 <li><a href="../xxjitserveruseaotcache/"><code>-XX:[+|-]JITServerUseAOTCache</code></a>: Specifies whether the server caches AOT-compiled methods</li>
+<li><a href="../xxjitserveraotmx/"><code>-XX:JITServerAOTmx=&lt;size&gt;</code></a>: Specifies the maximum amount of memory that can be used by the JITServer AOT cache</li>
 </ul>
 <p>If a JITServer server crashes, the client is forced to perform compilations locally. You can change this behavior by using the <a href="../xxrequirejitserver/"><code>-XX:[+|-]RequireJITServer</code></a> option so that the client crashes with an assert when it detects that the server is unavailable. This feature is useful when you are running a test suite with JITServer enabled and you want the server crash to cause the test to fail.</p>
 <h2 id="security">Security</h2>
