@@ -69,6 +69,7 @@ You can use command line options to further configure the JITServer and the clie
 - [`-XX:JITServerMetricsPort=<port>`](xxjitservermetricsport.md): Specifies the port number on which the JITServer metrics are provided to a monitoring agent
 - [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md): Specifies the name of the server-side AOT cache to use
 - [`-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md): Specifies whether the server caches AOT-compiled methods
+- [`-XX:JITServerAOTmx=<size>`](xxjitserveraotmx.md): Specifies the maximum amount of memory that can be used by the JITServer AOT cache
 
 If a JITServer server crashes, the client is forced to perform compilations locally. You can change this behavior by using the [`-XX:[+|-]RequireJITServer`](xxrequirejitserver.md) option so that the client crashes with an assert when it detects that the server is unavailable. This feature is useful when you are running a test suite with JITServer enabled and you want the server crash to cause the test to fail.
 
