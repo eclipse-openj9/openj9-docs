@@ -27,8 +27,7 @@ ARCHIVE = 'doc.tar.gz'
 HTTP = 'https://'
 OPENJ9_REPO = 'github.com/eclipse-openj9/openj9-docs'
 OPENJ9_STAGING_REPO = 'github.com/eclipse-openj9/openj9-docs-staging'
-ECLIPSE_REPO = 'ssh://genie.openj9@git.eclipse.org:29418/www.eclipse.org/openj9/docs.git'
-SSH_CREDENTIAL_ID = 'git.eclipse.org-bot-ssh'
+OPENJ9_WEBSITE_REPO = 'github.com/eclipse-openj9/openj9-website-publish'
 
 BUILD_DIR = 'built_doc'
 CREDENTIAL_ID = 'github-bot'
@@ -58,15 +57,15 @@ switch (params.BUILD_TYPE) {
         MERGE_COMMIT = ghprbActualCommit
         break
     case "RELEASE":
-        PUSH_REPO = ECLIPSE_REPO
-        PUSH_BRANCH = 'master'
+        PUSH_REPO = OPENJ9_WEBSITE_REPO
+        PUSH_BRANCH = 'main'
         REFSPEC = "+refs/heads/*:refs/remotes/origin/*"
         GET_SHA = true
         if (!params.RELEASE_BRANCH) {
-            error("Must specify what release branch to push to Eclipse")
+            error("Must specify what release branch to push to the web site")
         }
         CLONE_BRANCH = "refs/heads/${RELEASE_BRANCH}"
-        SERVER = 'Eclipse'
+        SERVER = 'Github'
         ZIP_FILENAME="${RELEASE_BRANCH}.zip"
         break
     default:
@@ -188,11 +187,11 @@ timeout(time: 6, unit: 'HOURS') {
                             sh "tar -zxf ${ARCHIVE}"
                         }
                         dir('eclipse') {
-                            git branch: PUSH_BRANCH, url: PUSH_REPO, credentialsId: SSH_CREDENTIAL_ID
-                            copy_built_doc(BUILD_DIR)
-                            sshagent(credentials:["${SSH_CREDENTIAL_ID}"]) {
-                                push_doc(PUSH_REPO, PUSH_BRANCH, "Generated from commit: ${MERGE_COMMIT}")
-                            }
+                            git branch: PUSH_BRANCH, url: "${HTTP}${PUSH_REPO}", credentialsId: CREDENTIAL_ID
+                            dir('docs') {
+	                            copy_built_doc(BUILD_DIR)
+	                            push_doc_with_cred(PUSH_REPO, PUSH_BRANCH, "Generated from commit: ${MERGE_COMMIT}")
+	                        }
                         }
                         // Set status on the Github commit for release builds
                         setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
