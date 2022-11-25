@@ -32,7 +32,7 @@ If you do not specify a directory for the shared classes cache by using the `cac
 
 - On Windows&reg; systems, this directory is created in the user's `C:\Users\<username>\AppData\Local\` directory.
 - On z/OS&reg; systems, this directory is created in the `/tmp` directory.
-- On other systems, this directory is located in the user's home directory. Do not set the user's home directory on an NFS mount or a shared mount across systems or LPARs.
+- On other systems, this directory is located in the `.cache` directory in the user's home directory. Do not set the user's home directory on an NFS mount or a shared mount across systems or LPARs.
 
 Initialization problems can occur on systems other than Windows because caches are created with read/write access for the user only and subsequent users do not have permission to write to the home directory. If you specify the `-Xshareclasses:groupAccess` suboption, the cache is created in the `/tmp` directory instead where all users have permission to write to the cache.
 
