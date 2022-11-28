@@ -38,10 +38,10 @@ See also the [Class data sharing](shrc.md) topic, which includes some [best prac
 
 When you specify `-Xshareclasses` without any parameters and without specifying either the `-Xscmx` or `-XX:SharedCacheHardLimit` options, a shared classes cache is created with a default size, as follows:
 
-  - For 64-bit platforms, the default size is 300 MB, with a "soft" maximum limit for the initial size of the cache (`-Xscmx`) of 64MB, with the following exceptions:
+  - For 64-bit platforms, the default size is 300 MB, with a "soft" maximum limit for the initial size of the cache (`-Xscmx`) of 64 MB, with the following exceptions:
     - For a persistent cache, if the free disk space is less than 6 GB, the default size is set to 64 MB and an `-Xscmx` size is not set.
-    - For a non-persistent cache on Linux&reg; or macOS&reg; systems, the cache size is limited by the maximum amount of memory that can be reserved by a process (`SHMMAX`). If `SHMMAX` is less than 300MB, the default shared cache size is set to equal `SHMMAX`. If `SHMMAX` is greater than 80 MB, `-Xscmx` is set to 64 MB. If `SHMMAX` is less than 80MB an `-Xscmx` size is not set.
-  - For other platforms, the default size is 16MB.
+    - For a non-persistent cache on Linux&reg; or macOS&reg; systems, the cache size is limited by the maximum amount of memory that can be reserved by a process (`SHMMAX`). If `SHMMAX` is less than 300 MB, the default shared cache size is set to equal `SHMMAX`. If `SHMMAX` is greater than 80 MB, `-Xscmx` is set to 64 MB. If `SHMMAX` is less than 80 MB an `-Xscmx` size is not set.
+  - For other platforms, the default size is 16 MB.
 
 ## Parameters
 
@@ -91,11 +91,11 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
         -Xshareclasses:cacheDir=<directory>
 
-: Sets the directory in which cache data is read and written. Please do not set the cache directory on a NFS mount or a shared mount across systems or LPARs. The following defaults apply:
+: Sets the directory in which cache data is read and written. Please do not set the cache directory on an NFS mount or a shared mount across systems or LPARs. The following defaults apply:
 
     - On Windows&trade; systems, `<directory>` is the user's `C:\Users\<username>\AppData\Local\javasharedresources` directory.
     - On z/OS&reg; systems, `<directory>` is the `/tmp/javasharedresources` directory.
-    - On other operating systems, `<directory>` is `javasharedresources` in the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`. Do not set user's home directory on a NFS or shared mount.
+    - On other operating systems, `<directory>` is `.cache/javasharedresources` in the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`. Do not set user's home directory on a NFS or shared mount.
 
 : On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system.
 
@@ -110,7 +110,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : Otherwise, persistent caches are created with the same permissions as non-persistent caches. The permissions for non-persistent caches are `-rw-r-----`, or `-rw-rw----` if you also specify `-Xshareclasses:groupAccess`.
 
-: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** It is good practice to set an application-specific cache directory  to avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** It is good practice to set an application-specific cache directory to avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
 ### `cacheDirPerm`
 
@@ -124,16 +124,16 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : If you set this suboption to 0000, the default directory permissions are used. If you set this suboption to 1000, the machine default directory permissions are used, but the sticky bit is enabled.
 
-: If the cache directory is the platform default directory, `/tmp/javasharedresources`, this suboption is ignored and the cache directory permissions are set to 0777.
+: If the cache directory is the platform default directory, `<HomeDir>/.cache/javasharedresources`, <HomeDir> being the user's home directory, this suboption is ignored and the cache directory permissions are set to 0777.
 
 : If you do not set this suboption, the default permissions are used according to the following conditions:
 
 | Condition | Permissions |
 | ---------- | ----------- |
-| The cache directory is `/tmp/javasharedresources`. If this directory already exists with different permissions, the permissions are changed when the cache is opened.† | 0777 |
+| The cache directory is `<HomeDir>/.cache/javasharedresources`. If this directory already exists with different permissions, the permissions are changed when the cache is opened.† | 0777 |
 | The cache directory is a new directory and you also specify the `groupAcess` suboption | 0770 |
 | The cache directory is a new directory and you do not specify the `groupAccess` suboption | 0700 |
-| The cache directory already exists and is not `/tmp/javasharedresources` | Unchanged |
+| The cache directory already exists and is not `<HomeDir>/.cache/javasharedresources` | Unchanged |
 
 : †On z/OS&reg; systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
 

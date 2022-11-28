@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.35.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:JITServerAOTmx` option added](#new-xxjitserveraotmx-option-added)
+- [Changes to the location of the default directory for the shared cache and snapshot](#changes-to-the-location-of-the-default-directory-for-the-shared-cache-and-snapshot)
 
 ## Features and changes
 
@@ -42,6 +43,30 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 This option specifies the maximum amount of memory that can be used by the JITServer AOT cache. Instead of unlimited memory consumption, the maximum amount of memory that all AOT cache instances combined can use at the server is now limited to 300 MB, by default.
 
 For more information, see [`-XX:JITServerAOTmx`](xxjitserveraotmx.md).
+
+### Changes to the location of the default directory for the shared cache and snapshot
+
+On non-Windows&trade; and non-z/OS&reg; systems platforms, the default shared classes cache directory in the user's home directory is changed from `javasharedresources` to `.cache/javasharedresources`. This change is to avoid cluttering of the home directory. If you specify `-Xshareclasses:groupAccess`, the default directory remains `/tmp/javasharedresources/`.
+
+If the `javasharedresources` directory in the user's home directory is empty, the `javasharedresources` directory can be deleted.
+
+You can find and remove caches or snapshots in the old default directory on non-Windows and non-z/OS platforms by using the following command-line options:
+
+For persistent caches:
+
+- `-Xshareclasses:cacheDir=<HomeDir>/javasharedresources/,listAllCaches` to find the caches
+- `-Xshareclasses:cacheDir=<HomeDir>/javasharedresources/,name=<cacheName>,destroy` to remove a particular cache
+- `-Xshareclasses:cacheDir=<HomeDir>/javasharedresources/,destroyAll` to remove all caches
+- `-Xshareclasses:cacheDir=<HomeDir>/javasharedresources/,destroyAllLayers` to remove multi-layer caches
+
+For nonpersistent caches or snapshots:
+
+- `-Xshareclasses:cacheDir=<HomeDir>,listAllCaches` to find the cache or snapshot
+- `-Xshareclasses:cacheDir=<HomeDir>,name=<cacheName>,destroy` to remove a particular shared cache
+- `-Xshareclasses:cacheDir=<HomeDir>,destroyAll` to remove all caches
+- `-Xshareclasses:cacheDir=<HomeDir>,destroyAllLayers` to remove multi-layer caches
+- `-Xshareclasses:cacheDir=<HomeDir>,name=<snapshotName>,destroySnapshot` to remove a particular snapshot
+- `-Xshareclasses:cacheDir=<HomeDir>,destroyAllSnapshots` to remove all snapshots
 
 ## Known problems and full release information
 
