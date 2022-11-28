@@ -4908,7 +4908,7 @@
 <p>Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container.
 Default behavior includes the following characteristics:</p>
 <ul>
-<li>On Windows&reg;, the cache is created in the user's <code>C:\Users\&lt;username&gt;\AppData\Local\javasharedresources</code> directory. On z/OS&reg;, the default cache directory is <code>/tmp/javasharedresources</code>. On other systems, the cache is created in the <code>javasharedresources</code> directory in the users home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is created in <code>/tmp/javasharedresources</code>. Please do not set the home directory on a NFS mount or shared mount across systems or LPARs. </li>
+<li>On Windows&reg;, the cache is created in the user's <code>C:\Users\&lt;username&gt;\AppData\Local\javasharedresources</code> directory. On z/OS&reg;, the default cache directory is <code>/tmp/javasharedresources</code>. On other systems, the cache is created in the <code>.cache/javasharedresources</code> directory in the user's home directory, unless the <code>groupAccess</code> parameter is specified, in which case it is created in <code>/tmp/javasharedresources</code>. Please do not set the home directory on a NFS mount or shared mount across systems or LPARs.</li>
 <li>The cache name is <code>sharedcc_%u</code>, where <code>%u</code> is the current user name.</li>
 <li>If class data sharing fails, the VM still starts without printing any errors.</li>
 </ul>
