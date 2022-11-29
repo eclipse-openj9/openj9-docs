@@ -31,7 +31,8 @@ Specifying `-Xjit` with no parameters has no effect because the JIT compiler is 
 
 Specifying `-Xnojit` turns off the JIT compiler but does not affect the AOT compiler.
 
-Specify the `-Xjit` option only once. If you specify this option multiple times, only the last option takes effect. 
+Specify the `-Xjit` option only once. By default, if you specify this option multiple times, only the last option takes effect.
+You can use the [`-XX:+MergeCompilerOptions`](xxmergecompileroptions.md) option to merge all the existing instances of the `-Xjit` options logically.
 
 You can specify multiple parameters for the `-Xjit` option by using commas to separate the parameters. For example: 
 

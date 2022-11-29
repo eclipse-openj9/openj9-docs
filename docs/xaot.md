@@ -52,7 +52,10 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 |`-Xaot:<parameter>[=<value>]` (See **Note**) | Enable AOT with modifications |           |
 |`-Xnoaot`      | Disable AOT  |           |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You can concatenate several parameters in a comma-separated list, for example: `-Xaot:<parameter1>[=<value1>], <parameter2>[=<value2>]`
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You can concatenate several parameters in a comma-separated list, for example: `-Xaot:<parameter1>[=<value1>], <parameter2>[=<value2>]`.
+
+Specify the `-Xaot` option only once. By default, if you specify this option multiple times, only the last option takes effect.
+You can use the [`-XX:+MergeCompilerOptions`](xxmergecompileroptions.md) option to merge all the existing instances of the `-Xaot` options logically.
 
 
 ## Parameters for `-Xaot`

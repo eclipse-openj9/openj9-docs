@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.35.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:JITServerAOTmx` option added](#new-xxjitserveraotmx-option-added)
 - [Changes to the location of the default directory for the shared cache and snapshot](#changes-to-the-location-of-the-default-directory-for-the-shared-cache-and-snapshot)
+- [New `-XX:[+|-]MergeCompilerOptions` option added](#new-xx-mergecompileroptions-option-added)
 
 ## Features and changes
 
@@ -68,8 +69,14 @@ For nonpersistent caches or snapshots:
 - `-Xshareclasses:cacheDir=<HomeDir>,name=<snapshotName>,destroySnapshot` to remove a particular snapshot
 - `-Xshareclasses:cacheDir=<HomeDir>,destroyAllSnapshots` to remove all snapshots
 
+### New `-XX:[+|-]MergeCompilerOptions` option added
+
+This option enables or disables the merging of multiple `-Xjit` or `-Xaot` options into a single `-Xjit` or `-Xaot` option.
+
+For more information, see [`-XX:[+|-]MergeCompilerOptions`](xxmergecompileroptions.md).
+
 ## Known problems and full release information
 
-To see known problems and a complete list of changes between Eclipse OpenJ9 v0.33.1 and v0.35.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.35/0.35.md).
+To see known problems and a complete list of changes between Eclipse OpenJ9 v0.35.0 and v0.36.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.36/0.36.md).
 
 <!-- ==== END OF TOPIC ==== version0.35.md ==== -->
