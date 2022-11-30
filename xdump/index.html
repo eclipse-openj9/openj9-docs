@@ -6000,7 +6000,7 @@ As an alternative, you can use the <code>com.ibm.jvm.Dump.triggerDump()</code> A
 <pre><code>1TIPREPINFO    Exclusive VM access not taken: data may not be consistent across javacore sections
 </code></pre>
 <p>On operating systems other than Windows, you can enforce exclusive access and obtain a complete dump file by specifying that the <code>user2</code> event triggers the Java dump agent instead of the <code>user</code> event. For example:</p>
-<pre><code>-Xdump:java:events=user2,request=exclusive+prepwalk
+<pre><code>-Xdump:java:events=user2,request=exclusive+preempt
 </code></pre>
 <p>When a <code>user2</code> event occurs, for example, when you enter <code>kill -USR2 &lt;pid&gt;</code> on the command line, the Java dump agent accepts the <code>request=exclusive</code> setting and waits for exclusive access before creating the Java dump file.</p>
 <p>For more information about events, see <a href="#dump-events">Dump events</a>.</p>
