@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxoriginaljdk8heapsizecompatibilitymode/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxmergecompileroptions/">
       
       <link rel="icon" href="../cr/openj9-logo.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
-        <title>-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode -  </title>
+        <title>-XX:[+|-]MergeCompilerOptions -  </title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xx-originaljdk8heapsizecompatibilitymode" class="md-skip">
+        <a href="#-xx-mergecompileroptions" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode
+              -XX:[+|-]MergeCompilerOptions
             
           </span>
         </div>
@@ -3760,11 +3760,106 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../xxmergecompileroptions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          -XX:[+|-]MergeCompilerOptions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         -XX:[+|-]MergeCompilerOptions
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="On this page...">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page...
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-compiler-options" class="md-nav__link">
+    No compiler options:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-xjit-option" class="md-nav__link">
+    One -Xjit option:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-xjit-options" class="md-nav__link">
+    Multiple -Xjit options:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#both-xxmergecompileroptions-and-xx-mergecompileroptions" class="md-nav__link">
+    Both -XX:+MergeCompilerOptions and -XX:-MergeCompilerOptions:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3796,51 +3891,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          -XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xxoriginaljdk8heapsizecompatibilitymode/" class="md-nav__link">
         -XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="On this page...">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page...
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4579,6 +4634,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-compiler-options" class="md-nav__link">
+    No compiler options:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-xjit-option" class="md-nav__link">
+    One -Xjit option:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-xjit-options" class="md-nav__link">
+    Multiple -Xjit options:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#both-xxmergecompileroptions-and-xx-mergecompileroptions" class="md-nav__link">
+    Both -XX:+MergeCompilerOptions and -XX:-MergeCompilerOptions:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4616,11 +4726,10 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xx-originaljdk8heapsizecompatibilitymode">-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode</h1>
-<p><img alt="Start of content that applies only to Java 8 (LTS)" src="../cr/java8.png" /> The default value for the maximum heap size (<code>-Xmx</code>) is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. In Eclipse OpenJ9&trade; 0.18.0 and earlier releases the default is half the available memory with a minimum of 16 MB and a maximum of 512 MB. Enable this option to revert to the earlier default value.</p>
-<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg></span> <strong>Restriction:</strong> This option is supported only on Java&trade; 8. It is ignored on Java 11 and later versions.</p>
+<h1 id="-xx-mergecompileroptions">-XX:[+|-]MergeCompilerOptions</h1>
+<p>This option enables or disables the merging of multiple <code>-Xjit</code> or <code>-Xaot</code> options into a single <code>-Xjit</code> or <code>-Xaot</code> option.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>-XX:[+|-]OriginalJDK8HeapSizeCompatibilityMode
+<pre><code>    -XX:[+|-]MergeCompilerOptions
 </code></pre>
 <table>
 <thead>
@@ -4632,18 +4741,66 @@
 </thead>
 <tbody>
 <tr>
-<td>-XX:+OriginalJDK8HeapSizeCompatibilityMode</td>
+<td><code>-XX:+MergeCompilerOptions</code></td>
 <td>Enable</td>
 <td align="center"></td>
 </tr>
 <tr>
-<td>-XX:-OriginalJDK8HeapSizeCompatibilityMode</td>
+<td><code>-XX:-MergeCompilerOptions</code></td>
 <td>Disable</td>
 <td align="center"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
 </tr>
 </tbody>
 </table>
-<p><img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" /></p>
+<h2 id="explanation">Explanation</h2>
+<p>By default, if you specify <code>-Xjit</code> option (or <code>-Xaot</code> option) multiple times, only its last option takes effect. Therefore, on adding an <code>-Xjit</code> option, the resultant behavior might not be as expected, if any instance of this option already exists. It is time-consuming to find the existing instances and try combining them manually so that the system behaves as required.</p>
+<p>You can use the <code>-XX:+MergeCompilerOptions</code> option to merge all the existing instances of the <code>-Xjit</code> options logically. To retain the default behavior, whereby only the last option takes effect, you can use the <code>-XX:-MergeCompilerOptions</code> option.</p>
+<p>If both <code>-Xjit</code> and <code>-Xaot</code> options exist and you use the <code>-XX:+MergeCompilerOptions</code> option, then multiple <code>-Xjit</code> options are merged into a single <code>-Xjit</code> option and multiple <code>-Xaot</code> options are merged into a single <code>-Xaot</code> option.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="no-compiler-options">No compiler options:</h3>
+<pre><code>java -Xshareclasses:none -version
+</code></pre>
+<p><code>-Xjit</code> option applied - N/A</p>
+<pre><code>java -XX:+MergeCompilerOptions -Xshareclasses:none -version
+</code></pre>
+<p><code>-Xjit</code> option applied - N/A</p>
+<pre><code>java -XX:-MergeCompilerOptions -Xshareclasses:none -version
+</code></pre>
+<p><code>-Xjit</code> option applied - N/A</p>
+<h3 id="one-xjit-option">One <code>-Xjit</code> option:</h3>
+<pre><code>java -Xshareclasses:none  -Xjit:version -version
+</code></pre>
+<p><code>-Xjit</code> option applied - <code>version</code></p>
+<pre><code>java -XX:+MergeCompilerOptions -Xshareclasses:none  -Xjit:version -version
+</code></pre>
+<p><code>-Xjit</code> option applied - <code>version</code></p>
+<pre><code>java -XX:-MergeCompilerOptions -Xshareclasses:none  -Xjit:version -version
+</code></pre>
+<p><code>-Xjit</code> option applied - <code>version</code></p>
+<h3 id="multiple-xjit-options">Multiple <code>-Xjit</code> options:</h3>
+<pre><code>java -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
+</code></pre>
+<p><code>-Xjit</code> option applied - <code>version</code></p>
+<pre><code>java -XX:+MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
+</code></pre>
+<p><code>-Xjit</code> options applied - <code>verbose={compilePerformance}</code>,<code>vlog=vlog</code>,<code>version</code></p>
+<pre><code>java -XX:-MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
+</code></pre>
+<p><code>-Xjit</code> option applied - <code>version</code></p>
+<h3 id="both-xxmergecompileroptions-and-xx-mergecompileroptions">Both <code>-XX:+MergeCompilerOptions</code> and <code>-XX:-MergeCompilerOptions</code>:</h3>
+<p>If there are multiple <code>-XX:[+|-]MergeCompilerOptions</code> options with multiple <code>-Xjit</code> options, the last <code>-XX:[+|-]MergeCompilerOptions</code> setting takes effect before the <code>-Xjit</code> options are processed.</p>
+<pre><code>java -XX:+MergeCompilerOptions -XX:-MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
+</code></pre>
+<p><code>-Xjit</code> option applied - <code>version</code></p>
+<pre><code>java -XX:-MergeCompilerOptions -XX:+MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
+</code></pre>
+<p><code>-Xjit</code> options applied - <code>{compilePerformance}</code>,<code>vlog=vlog</code>,<code>version</code></p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../xjit/">-Xjit</a></li>
+<li><a href="../xaot/">-Xaot</a></li>
+</ul>
+<!-- ==== END OF TOPIC ==== xxmergecompileroptions.md ==== -->
                 
               
               

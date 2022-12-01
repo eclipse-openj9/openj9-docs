@@ -3926,6 +3926,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxmergecompileroptions/" class="md-nav__link">
+        -XX:[+|-]MergeCompilerOptions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxonoutofmemoryerror/" class="md-nav__link">
         -XX:OnOutOfMemoryError
       </a>
@@ -4856,7 +4868,8 @@
 <p>Use this option to control the behavior of the JIT compiler.</p>
 <p>Specifying <code>-Xjit</code> with no parameters has no effect because the JIT compiler is enabled by default.</p>
 <p>Specifying <code>-Xnojit</code> turns off the JIT compiler but does not affect the AOT compiler.</p>
-<p>Specify the <code>-Xjit</code> option only once. If you specify this option multiple times, only the last option takes effect. </p>
+<p>Specify the <code>-Xjit</code> option only once. By default, if you specify this option multiple times, only the last option takes effect.
+You can use the <a href="../xxmergecompileroptions/"><code>-XX:+MergeCompilerOptions</code></a> option to merge all the existing instances of the <code>-Xjit</code> options logically.</p>
 <p>You can specify multiple parameters for the <code>-Xjit</code> option by using commas to separate the parameters. For example: </p>
 <p><code>-Xjit:enableGPU,exclude={ilog/rules/engine/sequential/generated/*}</code> </p>
 <p>Parameters such as <code>exclude</code> are additive so you can specify them multiple times within the same <code>-Xjit</code> option.</p>
