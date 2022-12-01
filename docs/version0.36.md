@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.35.0 are included
 - [New `-XX:JITServerAOTmx` option added](#new-xxjitserveraotmx-option-added)
 - [Changes to the location of the default directory for the shared cache and snapshot](#changes-to-the-location-of-the-default-directory-for-the-shared-cache-and-snapshot)
 - [New `-XX:[+|-]MergeCompilerOptions` option added](#new-xx-mergecompileroptions-option-added)
+- [Default JITServer AOT cache name changed](#default-jitserver-aot-cache-name-changed)
 
 ## Features and changes
 
@@ -47,11 +48,11 @@ For more information, see [`-XX:JITServerAOTmx`](xxjitserveraotmx.md).
 
 ### Changes to the location of the default directory for the shared cache and snapshot
 
-On non-Windows&trade; and non-z/OS&reg; systems platforms, the default shared classes cache directory in the user's home directory is changed from `javasharedresources` to `.cache/javasharedresources`. This change is to avoid cluttering of the home directory. If you specify `-Xshareclasses:groupAccess`, the default directory remains `/tmp/javasharedresources/`.
+On operating systems other than Windows&trade; and z/OS&reg;, the default shared classes cache directory in the user's home directory is changed from `javasharedresources` to `.cache/javasharedresources`. This change is to avoid cluttering of the home directory. If you specify `-Xshareclasses:groupAccess`, the default directory remains `/tmp/javasharedresources/`.
 
 If the `javasharedresources` directory in the user's home directory is empty, the `javasharedresources` directory can be deleted.
 
-You can find and remove caches or snapshots in the old default directory on non-Windows and non-z/OS platforms by using the following command-line options:
+You can find and remove caches or snapshots in the old default directory by using the following command-line options:
 
 For persistent caches:
 
@@ -74,6 +75,14 @@ For nonpersistent caches or snapshots:
 This option enables or disables the merging of multiple `-Xjit` or `-Xaot` options into a single `-Xjit` or `-Xaot` option.
 
 For more information, see [`-XX:[+|-]MergeCompilerOptions`](xxmergecompileroptions.md).
+
+### Default JITServer AOT cache name changed
+
+A JITServer instance can have several AOT caches, each with its own name. Client JVMs with different profiles of execution can specify a particular AOT cache name with the `-XX:JITServerAOTCacheName` option to use the same JITServer instance. Earlier, if the cache name was not specified in this option, the default was to use a nameless cache. The default AOT cache name is now changed to `default`.
+
+This change is to allow AOT cache persistence, whereby JITServer can periodically save its AOT caches to files with names that include the name of the cache. JITServer can then load caches from such files when a client requests a particular cache.
+
+For more information, see [`-XX:JITServerAOTCacheName`](xxjitserveraotcachename.md) and `-XX:[+|-]JITServerAOTCachePersistence`.
 
 ## Known problems and full release information
 

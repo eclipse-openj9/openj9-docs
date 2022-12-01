@@ -52,6 +52,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 The JITServer technology feature is updated to provide the following new capabilities, which are disabled by default:
 
 - The caching of AOT-compiled methods on the server. The AOT cache improves CPU usage when clients request the compilation of methods that were previously cached. Use the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) command line option to enable this feature.
+Use the [`-XX:JITServerAOTCacheName`](xxjitserveraotcachename.md) option to specify the name of the AOT cache to be used at the JITServer server.
 - The provision of metrics to a monitoring tool that follows the OpenMetrics standard. The following metrics are available for a JITServer server: CPU usage, available memory, number of clients connected, and number of active compilation threads. Use the [`-XX:+JITServerMetrics`](xxjitservermetrics.md) command line option to enable this feature.
 
 ### ![Start of content that applies to Java 11](cr/java11.png) XL C++ Runtime required on AIX
