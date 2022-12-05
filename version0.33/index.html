@@ -4773,7 +4773,8 @@
 <h3 id="jitserver-technology-feature-updated">JITServer technology feature updated</h3>
 <p>The JITServer technology feature is updated to provide the following new capabilities, which are disabled by default:</p>
 <ul>
-<li>The caching of AOT-compiled methods on the server. The AOT cache improves CPU usage when clients request the compilation of methods that were previously cached. Use the <a href="../xxjitserveruseaotcache/"><code>-XX:+JITServerUseAOTCache</code></a> command line option to enable this feature.</li>
+<li>The caching of AOT-compiled methods on the server. The AOT cache improves CPU usage when clients request the compilation of methods that were previously cached. Use the <a href="../xxjitserveruseaotcache/"><code>-XX:+JITServerUseAOTCache</code></a> command line option to enable this feature.
+Use the <a href="../xxjitserveraotcachename/"><code>-XX:JITServerAOTCacheName</code></a> option to specify the name of the AOT cache to be used at the JITServer server.</li>
 <li>The provision of metrics to a monitoring tool that follows the OpenMetrics standard. The following metrics are available for a JITServer server: CPU usage, available memory, number of clients connected, and number of active compilation threads. Use the <a href="../xxjitservermetrics/"><code>-XX:+JITServerMetrics</code></a> command line option to enable this feature.</li>
 </ul>
 <h3 id="xl-c-runtime-required-on-aix"><img alt="Start of content that applies to Java 11" src="../cr/java11.png" /> XL C++ Runtime required on AIX</h3>
