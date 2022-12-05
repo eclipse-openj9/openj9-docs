@@ -36,7 +36,7 @@
 
  A single JITServer instance can use multiple AOT caches, which are distinguished by their name.
  Clients that are running applications with significantly different execution profiles can, therefore, connect to the same JITServer instance.
- Specify this option at the client JVM. If you do not specify this option, the client uses a nameless cache.
+ Specify this option at the client JVM. If you do not specify this option, the client uses a cache named `default`.
 
  :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You must specify [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md), otherwise the `-XX:JITServerAOTCacheName` option is ignored.
 
