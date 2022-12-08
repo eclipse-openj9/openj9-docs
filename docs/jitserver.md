@@ -70,6 +70,8 @@ You can use command line options to further configure the JITServer and the clie
 - [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md): Specifies the name of the server-side AOT cache to use
 - [`-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md): Specifies whether the server caches AOT-compiled methods
 - [`-XX:JITServerAOTmx=<size>`](xxjitserveraotmx.md): Specifies the maximum amount of memory that can be used by the JITServer AOT cache
+- [`-XX:[+|-]JITServerAOTCachePersistence`](xxjitserveraotcachepersistence.md): Specifies whether the JITServer server allows other JITServer instances to reuse AOT caches
+- [`-XX:JITServerAOTCacheDir=<directory>`](xxjitserveraotcachedir.md): Specifies the directory to be used for saving and loading JITServer AOT cache files
 
 If a JITServer server crashes, the client is forced to perform compilations locally. You can change this behavior by using the [`-XX:[+|-]RequireJITServer`](xxrequirejitserver.md) option so that the client crashes with an assert when it detects that the server is unavailable. This feature is useful when you are running a test suite with JITServer enabled and you want the server crash to cause the test to fail.
 

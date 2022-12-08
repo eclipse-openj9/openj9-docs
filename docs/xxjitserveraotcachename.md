@@ -44,5 +44,7 @@
 
  - [JITServer technology](jitserver.md)
  - [`-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md)
+ - [`-XX:JITServerAOTCacheDir`](xxjitserveraotcachedir.md)
+ - [`-XX:[+|-]JITServerAOTCachePersistence`](xxjitserveraotcachepersistence.md)
 
 <!-- ==== END OF TOPIC ==== xxjitserveraotcachename.md ==== -->

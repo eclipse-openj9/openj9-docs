@@ -382,7 +382,9 @@ nav:
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
             - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
             - "-XX:JITServerAddress"                                             : xxjitserveraddress.md
+            - "-XX:JITServerAOTCacheDir"                                         : xxjitserveraotcachedir.md
             - "-XX:JITServerAOTCacheName"                                        : xxjitserveraotcachename.md
+            - "-XX:[+|-]JITServerAOTCachePersistence"                            : xxjitserveraotcachepersistence.md
             - "-XX:JITServerAOTmx"                                               : xxjitserveraotmx.md
             - "-XX:[+|-]JITServerLocalSyncCompiles"                              : xxjitserverlocalsynccompiles.md
             - "-XX:[+|-]JITServerLogConnections"                                 : xxjitserverlogconnections.md
