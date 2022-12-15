@@ -373,6 +373,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-xx-jitserveraotcachepersistence-option-added" class="md-nav__link">
+    New -XX:[+|-]JITServerAOTCachePersistence option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-xxjitserveraotcachedir-option-added" class="md-nav__link">
+    New -XX:JITServerAOTCacheDir option added
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3608,8 +3622,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxjitserveraotcachedir/" class="md-nav__link">
+        -XX:JITServerAOTCacheDir
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxjitserveraotcachename/" class="md-nav__link">
         -XX:JITServerAOTCacheName
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserveraotcachepersistence/" class="md-nav__link">
+        -XX:[+|-]JITServerAOTCachePersistence
       </a>
     </li>
   
@@ -4661,6 +4699,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-xx-jitserveraotcachepersistence-option-added" class="md-nav__link">
+    New -XX:[+|-]JITServerAOTCachePersistence option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-xxjitserveraotcachedir-option-added" class="md-nav__link">
+    New -XX:JITServerAOTCacheDir option added
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4718,6 +4770,8 @@
 <li><a href="#changes-to-the-location-of-the-default-directory-for-the-shared-cache-and-snapshot">Changes to the location of the default directory for the shared cache and snapshot</a></li>
 <li><a href="#new-xx-mergecompileroptions-option-added">New <code>-XX:[+|-]MergeCompilerOptions</code> option added</a></li>
 <li><a href="#default-jitserver-aot-cache-name-changed">Default JITServer AOT cache name changed</a></li>
+<li><a href="#new-xx-jitserveraotcachepersistence-option-added">New <code>-XX:[+|-]JITServerAOTCachePersistence</code> option added</a></li>
+<li><a href="#new-xxjitserveraotcachedir-option-added">New <code>-XX:JITServerAOTCacheDir</code> option added</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -4752,7 +4806,13 @@
 <h3 id="default-jitserver-aot-cache-name-changed">Default JITServer AOT cache name changed</h3>
 <p>A JITServer instance can have several AOT caches, each with its own name. Client JVMs with different profiles of execution can specify a particular AOT cache name with the <code>-XX:JITServerAOTCacheName</code> option to use the same JITServer instance. Earlier, if the cache name was not specified in this option, the default was to use a nameless cache. The default AOT cache name is now changed to <code>default</code>.</p>
 <p>This change is to allow AOT cache persistence, whereby JITServer can periodically save its AOT caches to files with names that include the name of the cache. JITServer can then load caches from such files when a client requests a particular cache.</p>
-<p>For more information, see <a href="../xxjitserveraotcachename/"><code>-XX:JITServerAOTCacheName</code></a> and <code>-XX:[+|-]JITServerAOTCachePersistence</code>.</p>
+<p>For more information, see <a href="../xxjitserveraotcachename/"><code>-XX:JITServerAOTCacheName</code></a> and <a href="../xxjitserveraotcachepersistence/"><code>-XX:[+|-]JITServerAOTCachePersistence</code></a>.</p>
+<h3 id="new-xx-jitserveraotcachepersistence-option-added">New <code>-XX:[+|-]JITServerAOTCachePersistence</code> option added</h3>
+<p>The AOT cache was a non-persistent in-memory cache. If the JITServer instance terminated, the cache content was lost. Now, with the <code>-XX:+JITServerAOTCachePersistence</code> option, the JITServer server periodically saves its AOT caches to files, and allows other JITServer instances to load these caches from files the first time a client requests a particular cache.</p>
+<p>For more information, see <a href="../xxjitserveraotcachepersistence/"><code>-XX:[+|-]JITServerAOTCachePersistence</code></a>.</p>
+<h3 id="new-xxjitserveraotcachedir-option-added">New <code>-XX:JITServerAOTCacheDir</code> option added</h3>
+<p>You can specify the directory for saving or loading the AOT cache files with the <code>-XX:JITServerAOTCacheDir=&lt;directory&gt;</code> option. If the option is not used, AOT cache files are saved to (or loaded from) the current working directory of the JITServer server.</p>
+<p>For more information, see <a href="../xxjitserveraotcachedir/"><code>-XX:JITServerAOTCacheDir</code></a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.35.0 and v0.36.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.36/0.36.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.35.md ==== -->

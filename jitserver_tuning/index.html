@@ -3654,8 +3654,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxjitserveraotcachedir/" class="md-nav__link">
+        -XX:JITServerAOTCacheDir
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxjitserveraotcachename/" class="md-nav__link">
         -XX:JITServerAOTCacheName
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxjitserveraotcachepersistence/" class="md-nav__link">
+        -XX:[+|-]JITServerAOTCachePersistence
       </a>
     </li>
   
@@ -4815,12 +4839,15 @@
  The JITServer can, therefore, avoid carrying out an AOT compilation when a compatible AOT method body already exists in the cache, thereby saving CPU resource and improving remote compilation latency. This mechanism works in conjunction with the <a href="https://www.eclipse.org/openj9/docs/aot/">dynamic AOT technology</a> at the client and therefore the client needs to have the <a href="https://www.eclipse.org/openj9/docs/shrc/">shared class cache</a> (SCC) enabled (the SCC is the repository for the AOT code).</p>
 <p>When the JITServer receives an AOT compilation request, it checks its AOT cache for a compatible compiled method body. If one is not found, the server performs the AOT compilation, sends the response to the client JVM, then serializes the compiled method and stores it in its local AOT cache, for future use. If a compatible compiled method is found, the server sends the client the serialized compiled method from its cache, thus avoiding a compilation. The client deserializes the response, stores the result in its local SCC, and loads the compiled method as a regular dynamic AOT code.</p>
 <p>To enable this feature, specify the <a href="../xxjitserveruseaotcache/"><code>-XX:+JITServerUseAOTCache</code></a> command line option, both at the server and at the client JVM.</p>
-<p>A JITServer instance can have several AOT caches, each with its own name. This addresses the situation when client JVMs with significantly different profiles of execution use the same JITServer instance. A client JVM can indicate a specific AOT cache it wants to use by providing its name with the following command line option <a href="../xxjitserveraotcachename/"><code>-XX:JITServerAOTCacheName=&lt;cache_name&gt;</code></a>. If the client doesn't specify a name for the AOT cache, the server uses a cache named <code>default</code>.</p>
+<p>A JITServer instance can have several AOT caches, each with its own name. This addresses the situation when client JVMs with significantly different profiles of execution use the same JITServer instance. A client JVM can indicate a specific AOT cache it wants to use by providing its name with the following command-line option <a href="../xxjitserveraotcachename/"><code>-XX:JITServerAOTCacheName=&lt;cache_name&gt;</code></a>. If the client doesn't specify a name for the AOT cache, the server uses a cache named <code>default</code>.</p>
 <p>The maximum amount of memory that all the AOT cache instances combined can use at the server is 300 MB, by default. You can change this value by using the <a href="../xxjitserveraotmx/"><code>-XX:JITServerAOTmx=&lt;size&gt;</code></a> option. When the cache size reaches the specified limit, new clients cannot create new AOT cache instances or add new compiled methods to the existing AOT cache instances.</p>
-<p>Current limitations:</p>
+<p>Typically, each JITServer server populates its own AOT caches independently of other existing servers. To help with JITServer auto-scaling, and in particular with scaling down to zero, JITServer instances can save their AOT caches to files by setting the <a href="../xxjitserveraotcachepersistence/"><code>-XX:+JITServerAOTCachePersistence</code></a> command-line option. Other JITServer instances that are started later can load the existing AOT cache files into their memory, and then continue to gradually add new AOT compiled methods. Saving an AOT cache to a file is performed periodically based on the following conditions:</p>
 <ul>
-<li>The AOT cache is a non-persistent in-memory cache. If the JITServer instance ends, the cache content is lost.</li>
-<li>AOT cache entries are not shared between different JITServer instances.</li>
+<li>The number of extra AOT methods added to the in-memory cache since the last save operation is equal to or more than the value specified by the <code>-Xjit:aotCachePersistenceMinDeltaMethods=&lt;number_of_methods&gt;</code> option (default value - 200 methods), and</li>
+<li>The time passed since the last AOT cache save is equal to or later than the time specified by the <code>-Xjit:aotCachePersistenceMinPeriodMs=&lt;milliseconds&gt;</code> option (default time gap - 10000 milliseconds).</li>
+</ul>
+<p>Current limitation:</p>
+<ul>
 <li>Caching works only for AOT compilation requests. For this reason, when JITServer AOT caching is enabled, the client JVM will attempt to generate as many AOT requests as possible.</li>
 </ul>
 <h2 id="number-of-concurrent-clients">Number of concurrent clients</h2>
