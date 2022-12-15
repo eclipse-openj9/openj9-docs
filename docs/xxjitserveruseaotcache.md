@@ -50,5 +50,7 @@ The [`-XX:+JITServerShareROMClasses`](xxjitservershareromclasses.md) option is e
 
 - [JITServer technology](jitserver.md)
 - [`-XX:JITServerAOTCacheName`](xxjitserveraotcachename.md)
+- [`-XX:JITServerAOTCacheDir`](xxjitserveraotcachedir.md)
+- [`-XX:[+|-]JITServerAOTCachePersistence`](xxjitserveraotcachepersistence.md)
 
 <!-- ==== END OF TOPIC ==== xxjitserveruseaotcache.md ==== -->

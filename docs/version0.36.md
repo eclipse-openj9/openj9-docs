@@ -31,6 +31,8 @@ The following new features and notable changes since version 0.35.0 are included
 - [Changes to the location of the default directory for the shared cache and snapshot](#changes-to-the-location-of-the-default-directory-for-the-shared-cache-and-snapshot)
 - [New `-XX:[+|-]MergeCompilerOptions` option added](#new-xx-mergecompileroptions-option-added)
 - [Default JITServer AOT cache name changed](#default-jitserver-aot-cache-name-changed)
+- [New `-XX:[+|-]JITServerAOTCachePersistence` option added](#new-xx-jitserveraotcachepersistence-option-added)
+- [New `-XX:JITServerAOTCacheDir` option added](#new-xxjitserveraotcachedir-option-added)
 
 ## Features and changes
 
@@ -82,7 +84,19 @@ A JITServer instance can have several AOT caches, each with its own name. Client
 
 This change is to allow AOT cache persistence, whereby JITServer can periodically save its AOT caches to files with names that include the name of the cache. JITServer can then load caches from such files when a client requests a particular cache.
 
-For more information, see [`-XX:JITServerAOTCacheName`](xxjitserveraotcachename.md) and `-XX:[+|-]JITServerAOTCachePersistence`.
+For more information, see [`-XX:JITServerAOTCacheName`](xxjitserveraotcachename.md) and [`-XX:[+|-]JITServerAOTCachePersistence`](xxjitserveraotcachepersistence.md).
+
+### New `-XX:[+|-]JITServerAOTCachePersistence` option added
+
+The AOT cache was a non-persistent in-memory cache. If the JITServer instance terminated, the cache content was lost. Now, with the `-XX:+JITServerAOTCachePersistence` option, the JITServer server periodically saves its AOT caches to files, and allows other JITServer instances to load these caches from files the first time a client requests a particular cache.
+
+For more information, see [`-XX:[+|-]JITServerAOTCachePersistence`](xxjitserveraotcachepersistence.md).
+
+### New `-XX:JITServerAOTCacheDir` option added
+
+You can specify the directory for saving or loading the AOT cache files with the `-XX:JITServerAOTCacheDir=<directory>` option. If the option is not used, AOT cache files are saved to (or loaded from) the current working directory of the JITServer server.
+
+For more information, see [`-XX:JITServerAOTCacheDir`](xxjitserveraotcachedir.md).
 
 ## Known problems and full release information
 
