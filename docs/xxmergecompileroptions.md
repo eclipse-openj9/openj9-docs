@@ -37,7 +37,7 @@ This option enables or disables the merging of multiple `-Xjit` or `-Xaot` optio
 
 ## Explanation
 
- By default, if you specify `-Xjit` option (or `-Xaot` option) multiple times, only its last option takes effect. Therefore, on adding an `-Xjit` option, the resultant behavior might not be as expected, if any instance of this option already exists. It is time-consuming to find the existing instances and try combining them manually so that the system behaves as required.
+ By default, if you specify `-Xjit` option (or `-Xaot` option) multiple times, only the last option takes effect. Therefore, on adding an `-Xjit` option, the resultant behavior might not be as expected, if any instance of this option already exists. It is time-consuming to find the existing instances and try combining them manually so that the system behaves as required.
 
  You can use the `-XX:+MergeCompilerOptions` option to merge all the existing instances of the `-Xjit` options logically. To retain the default behavior, whereby only the last option takes effect, you can use the `-XX:-MergeCompilerOptions` option.
 
@@ -45,70 +45,53 @@ This option enables or disables the merging of multiple `-Xjit` or `-Xaot` optio
 
 ## Examples
 
-### No compiler options:
-
-```
-java -Xshareclasses:none -version
-```
-`-Xjit` option applied - N/A
-
-```
-java -XX:+MergeCompilerOptions -Xshareclasses:none -version
-```
-`-Xjit` option applied - N/A
-
-```
-java -XX:-MergeCompilerOptions -Xshareclasses:none -version
-```
-`-Xjit` option applied - N/A
-
-### One `-Xjit` option:
+### One `-Xjit` option
 
 ```
 java -Xshareclasses:none  -Xjit:version -version
 ```
-`-Xjit` option applied - `version`
+`-Xjit` option that is applied - `version`
 
 ```
 java -XX:+MergeCompilerOptions -Xshareclasses:none  -Xjit:version -version
 ```
-`-Xjit` option applied - `version`
+`-Xjit` option that is applied - `version`
 
 ```
 java -XX:-MergeCompilerOptions -Xshareclasses:none  -Xjit:version -version
 ```
-`-Xjit` option applied - `version`
+`-Xjit` option that is applied - `version`
 
-### Multiple `-Xjit` options:
+### Multiple `-Xjit` options
 
 ```
 java -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 ```
-`-Xjit` option applied - `version`
+`-Xjit` option that is applied - `version`
 
 ```
 java -XX:+MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 ```
-`-Xjit` options applied - `verbose={compilePerformance}`,`vlog=vlog`,`version`
+`-Xjit` options that are applied - `verbose={compilePerformance}`,`vlog=vlog`,`version`
 
 ```
 java -XX:-MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 ```
-`-Xjit` option applied - `version`
+`-Xjit` option that is applied - `version`
 
-### Both `-XX:+MergeCompilerOptions` and `-XX:-MergeCompilerOptions`:
+### Both `-XX:+MergeCompilerOptions` and `-XX:-MergeCompilerOptions`
 
 If there are multiple `-XX:[+|-]MergeCompilerOptions` options with multiple `-Xjit` options, the last `-XX:[+|-]MergeCompilerOptions` setting takes effect before the `-Xjit` options are processed.
 
 ```
 java -XX:+MergeCompilerOptions -XX:-MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 ```
-`-Xjit` option applied - `version`
+`-Xjit` option that is applied - `version`
 
 ```
 java -XX:-MergeCompilerOptions -XX:+MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 ```
-`-Xjit` options applied - `{compilePerformance}`,`vlog=vlog`,`version`
+`-Xjit` options that are applied - `{compilePerformance}`,`vlog=vlog`,`version`
 
 ## See also
 

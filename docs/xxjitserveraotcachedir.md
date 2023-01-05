@@ -36,7 +36,7 @@ This option specifies the directory to be used for saving and loading JITServer 
 
 ## Explanation
 
- A JITServer instance can have several AOT caches, each with its own name. To allow reusing of the AOT caches by other JITServer instances (such as the instances started later), you can use the [`-XX:+JITServerAOTCachePersistence`](xxjitserveraotcachepersistence.md) option. With this option enabled, JITServer server periodically saves its AOT caches to files, allowing its other instances to load caches from these files the first time a client requests a particular cache.
+ A JITServer instance can have several AOT caches, each with its own name. To enable reusing of the AOT caches by other JITServer instances (such as the instances started later), you can use the [`-XX:+JITServerAOTCachePersistence`](xxjitserveraotcachepersistence.md) option. With this option enabled, JITServer server periodically saves its AOT caches to files. Other JITServer instances can then load these caches the first time a client requests a particular cache.
 
  You can specify the directory for saving the AOT cache files with the `-XX:JITServerAOTCacheDir=<directory>` option. When the server receives the location of the requested AOT cache file through the `-XX:JITServerAOTCacheDir` option and a request for a specific cache name, if that cache does not exist in-memory, the server searches the specified cache directory for the file with the matching name and loads it, if available.
 
