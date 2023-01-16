@@ -4822,6 +4822,7 @@
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
 <p>Eclipse OpenJ9&trade; release 0.35.0 supports OpenJDK 8, 11, and 17.</p>
 <p>OpenJ9 Windows&reg; builds for OpenJDK 11 are now compiled with Microsoft&reg; Visual Studio 2019. The Visual Studio redistributable files included with the build are updated to match.</p>
+<p>Apple silicon macOS&reg; is now a fully supported, production-ready target for OpenJDK 11 and later.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="java-dump-files-contain-more-information-about-waiting-threads">Java dump files contain more information about waiting threads</h3>
 <p>For threads that are waiting for a class initialization lock, the Java dump output now shows the thread that is currently working to progress the initialization of the class. This thread is indicated by the new <code>Initializing thread: &lt;thread_name&gt;</code> string in the existing <code>3XMTHREADBLOCK</code> line in the Java dump output. For example:</p>
@@ -4846,7 +4847,7 @@
 <h3 id="xl-c-runtime-16107-or-later-required-on-aix"><img alt="Start of content that applies to Java 11 and later" src="../cr/java11plus.png" /> XL C++ Runtime 16.1.0.7 or later required on AIX</h3>
 <p>AIX OpenJ9 builds now require version 16.1.0.7 or later of the <a href="https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X">IBM XL C++ Runtime</a>.</p>
 <h3 id="-xx-jitserverlocalsynccompiles-enabled-by-default"><code>-XX:[+|-]JITServerLocalSyncCompiles</code> enabled by default</h3>
-<p>The <code>-XX:[+|-]JITServerLocalSyncCompiles</code> option is now enabled by default in most cases. For more information, see <a href="../xxjitserverlocalsynccompiles/"><code>-XX:[+|-]JITServerLocalSyncCompiles</code></a>.</p>
+<p>The <code>-XX:[+|-]JITServerLocalSyncCompiles</code> option is now enabled in most cases. For more information, see <a href="../xxjitserverlocalsynccompiles/"><code>-XX:[+|-]JITServerLocalSyncCompiles</code></a>.</p>
 <h3 id="support-for-changes-to-the-maintenance-specifications-of-jsr-337-in-java-8"><img alt="Start of content that applies to Java 8" src="../cr/java8.png" /> Support for changes to the maintenance specifications of JSR 337 in Java 8</h3>
 <p>OpenJ9 now supports changes to the maintenance specifications in Java 8 as listed in the <a href="https://jcp.org/aboutJava/communityprocess/maintenance/jsr337/jsr337-mr4-changes.html">JSR 337 Maintenance Release 4</a> document.</p>
 <p>These changes include the change in the garbage collector behavior for handling the phantom references in Java 8. The garbage collector handles both the phantom as well as the weak references similarly, which is the current behavior in Java 11 and later. For more information, see <a href="../gc_overview/#weak-reference-processing">Weak reference processing</a>.</p>

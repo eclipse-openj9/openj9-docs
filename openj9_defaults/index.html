@@ -4761,8 +4761,9 @@
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Notes:</strong></p>
 <ol>
 <li>
-<p>On AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade;: Enabled for <strong>-Xmx</strong> values &le; 57 GB, otherwise disabled.</p></p>
+<p>On AIX&reg;, Linux&reg;, macOS&reg; x86, and Windows&trade;: Enabled for <strong>-Xmx</strong> values &le; 57 GB, otherwise disabled.</p></p>
 <p>On z/OS&reg;: Enabled for <strong>-Xmx</strong> values &le; 25 GB, otherwise disabled. With <a href="https://www.ibm.com/support/docview.wss?uid=isg1OA49416">APAR OA49416</a>, enabled for <strong>-Xmx</strong> values &le; 57 GB.</p>
+<p>On macOS AArch64 (Apple silicon): Disabled.</p>
 </li>
 <li>
 <p>AOT is not used by the VM unless shared classes are also enabled.</p>
@@ -4896,7 +4897,7 @@
 <td>Stack size for OS Threads <strong>(64-bit)</strong>. Use <code>-Xmso&lt;size&gt;</code></td>
 <td>512 KB</td>
 <td><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> 512 KB (256 KB on IBM Z&reg;) <img alt="End of content that applies only to Java 17 (LTS) and later" src="../cr/java_close_lts.png" /><br/><br/>Earlier Java versions: 256 KB (512 KB on PPC)</td>
-<td><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> 512 KB <img alt="End of content that applies only to Java 17 (LTS) and later" src="../cr/java_close_lts.png" /><br/><br/>Earlier Java versions: 256 KB</td>
+<td><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> Architecture: x86: 512 KB, AArch64 (Apple silicon): 256 KB <img alt="End of content that applies only to Java 17 (LTS) and later" src="../cr/java_close_lts.png" /><br/><br/>Earlier Java versions: 256 KB</td>
 <td><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> 512 KB <img alt="End of content that applies only to Java 17 (LTS) and later" src="../cr/java_close_lts.png" /><br/><br>Earlier Java versions: 256 KB</td>
 <td>1 MB</td>
 <td><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
@@ -4925,8 +4926,8 @@
 <tr>
 <td>Page size for the Java object heap and code cache (For restrictions, see the <code>-Xlp:codecache</code> and <code>-Xlp:objectheap</code> options).</td>
 <td>Operating system default</td>
-<td>Architecture: x86: 2MB, IBM Z: 1MB, Other architectures: Operating system default</td>
-<td>4 KB</td>
+<td>Architecture: x86: 2 MB, IBM Z: 1 MB, Other architectures: Operating system default</td>
+<td>Architecture: x86: 4 KB, AArch64 (Apple silicon): 16 KB</td>
 <td>Operating system default</td>
 <td>1M pageable</td>
 <td><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span><span class="sr-only">yes</span></td>
