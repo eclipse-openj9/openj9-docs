@@ -27,10 +27,10 @@
 The following new features and notable changes since version 0.35.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [New `-XX:JITServerAOTmx` option added](#new-xxjitserveraotmx-option-added)
 - [Changes to the location of the default directory for the shared cache and snapshot](#changes-to-the-location-of-the-default-directory-for-the-shared-cache-and-snapshot)
 - [New `-XX:[+|-]MergeCompilerOptions` option added](#new-xx-mergecompileroptions-option-added)
 - [Default JITServer AOT cache name changed](#default-jitserver-aot-cache-name-changed)
+- [New `-XX:JITServerAOTmx` option added](#new-xxjitserveraotmx-option-added)
 - [New `-XX:[+|-]JITServerAOTCachePersistence` option added](#new-xx-jitserveraotcachepersistence-option-added)
 - [New `-XX:JITServerAOTCacheDir` option added](#new-xxjitserveraotcachedir-option-added)
 
@@ -41,12 +41,6 @@ The following new features and notable changes since version 0.35.0 are included
 Eclipse OpenJ9&trade; release 0.36.0 supports OpenJDK 8, 11, and 17.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
-
-### New `-XX:JITServerAOTmx` option added
-
-This option specifies the maximum amount of memory that can be used by the JITServer AOT cache. Instead of unlimited memory consumption, the maximum amount of memory that all AOT cache instances combined can use at the server is now limited to 300 MB, by default.
-
-For more information, see [`-XX:JITServerAOTmx`](xxjitserveraotmx.md).
 
 ### Changes to the location of the default directory for the shared cache and snapshot
 
@@ -86,9 +80,15 @@ This change is to allow AOT cache persistence, whereby JITServer can periodicall
 
 For more information, see [`-XX:JITServerAOTCacheName`](xxjitserveraotcachename.md) and [`-XX:[+|-]JITServerAOTCachePersistence`](xxjitserveraotcachepersistence.md).
 
+### New `-XX:JITServerAOTmx` option added
+
+This option specifies the maximum amount of memory that can be used by the JITServer AOT cache. Instead of unlimited memory consumption, the maximum amount of memory that all AOT cache instances combined can use at the server is now limited to 300 MB, by default.
+
+For more information, see [`-XX:JITServerAOTmx`](xxjitserveraotmx.md).
+
 ### New `-XX:[+|-]JITServerAOTCachePersistence` option added
 
-The AOT cache was a non-persistent in-memory cache. If the JITServer instance terminated, the cache content was lost. Now, with the `-XX:+JITServerAOTCachePersistence` option, the JITServer server periodically saves its AOT caches to files, and allows other JITServer instances to load these caches from files the first time a client requests a particular cache.
+The AOT cache was a non-persistent in-memory cache. If the JITServer instance terminated, the cache content was lost. Now, with the `-XX:+JITServerAOTCachePersistence` option, the JITServer server periodically saves its AOT caches to files. Other JITServer instances can then load these caches from files the first time a client requests a particular cache.
 
 For more information, see [`-XX:[+|-]JITServerAOTCachePersistence`](xxjitserveraotcachepersistence.md).
 

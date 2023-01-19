@@ -39,7 +39,7 @@ This option enables or disables the JITServer server's ability to allow other JI
 
 ## Explanation
 
- With the `-XX:+JITServerAOTCachePersistence` option, the JITServer server periodically saves its AOT caches to files, allowing other JITServer instances to load these caches from files the first time a client requests a particular named cache. It is useful to improve performance, especially in scenarios where JITServer instances are started up and shut down regularly.
+ With the `-XX:+JITServerAOTCachePersistence` option, the JITServer server periodically saves its AOT caches to files. Other JITServer instances can then load these caches from files the first time a client requests a particular named cache. This feature is useful to improve performance, especially in scenarios where JITServer instances are started up and shut down regularly.
 
  This feature depends on the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) command-line option, which is used to enable caching of AOT-compiled methods. You must specify this option both at the client JVM and at the server.
 
