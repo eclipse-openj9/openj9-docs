@@ -3841,29 +3841,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#no-compiler-options" class="md-nav__link">
-    No compiler options:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#one-xjit-option" class="md-nav__link">
-    One -Xjit option:
+    One -Xjit option
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#multiple-xjit-options" class="md-nav__link">
-    Multiple -Xjit options:
+    Multiple -Xjit options
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#both-xxmergecompileroptions-and-xx-mergecompileroptions" class="md-nav__link">
-    Both -XX:+MergeCompilerOptions and -XX:-MergeCompilerOptions:
+    Both -XX:+MergeCompilerOptions and -XX:-MergeCompilerOptions
   </a>
   
 </li>
@@ -4674,29 +4667,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#no-compiler-options" class="md-nav__link">
-    No compiler options:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#one-xjit-option" class="md-nav__link">
-    One -Xjit option:
+    One -Xjit option
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#multiple-xjit-options" class="md-nav__link">
-    Multiple -Xjit options:
+    Multiple -Xjit options
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#both-xxmergecompileroptions-and-xx-mergecompileroptions" class="md-nav__link">
-    Both -XX:+MergeCompilerOptions and -XX:-MergeCompilerOptions:
+    Both -XX:+MergeCompilerOptions and -XX:-MergeCompilerOptions
   </a>
   
 </li>
@@ -4777,48 +4763,38 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>By default, if you specify <code>-Xjit</code> option (or <code>-Xaot</code> option) multiple times, only its last option takes effect. Therefore, on adding an <code>-Xjit</code> option, the resultant behavior might not be as expected, if any instance of this option already exists. It is time-consuming to find the existing instances and try combining them manually so that the system behaves as required.</p>
+<p>By default, if you specify <code>-Xjit</code> option (or <code>-Xaot</code> option) multiple times, only the last option takes effect. Therefore, on adding an <code>-Xjit</code> option, the resultant behavior might not be as expected, if any instance of this option already exists. It is time-consuming to find the existing instances and try combining them manually so that the system behaves as required.</p>
 <p>You can use the <code>-XX:+MergeCompilerOptions</code> option to merge all the existing instances of the <code>-Xjit</code> options logically. To retain the default behavior, whereby only the last option takes effect, you can use the <code>-XX:-MergeCompilerOptions</code> option.</p>
 <p>If both <code>-Xjit</code> and <code>-Xaot</code> options exist and you use the <code>-XX:+MergeCompilerOptions</code> option, then multiple <code>-Xjit</code> options are merged into a single <code>-Xjit</code> option and multiple <code>-Xaot</code> options are merged into a single <code>-Xaot</code> option.</p>
 <h2 id="examples">Examples</h2>
-<h3 id="no-compiler-options">No compiler options:</h3>
-<pre><code>java -Xshareclasses:none -version
-</code></pre>
-<p><code>-Xjit</code> option applied - N/A</p>
-<pre><code>java -XX:+MergeCompilerOptions -Xshareclasses:none -version
-</code></pre>
-<p><code>-Xjit</code> option applied - N/A</p>
-<pre><code>java -XX:-MergeCompilerOptions -Xshareclasses:none -version
-</code></pre>
-<p><code>-Xjit</code> option applied - N/A</p>
-<h3 id="one-xjit-option">One <code>-Xjit</code> option:</h3>
+<h3 id="one-xjit-option">One <code>-Xjit</code> option</h3>
 <pre><code>java -Xshareclasses:none  -Xjit:version -version
 </code></pre>
-<p><code>-Xjit</code> option applied - <code>version</code></p>
+<p><code>-Xjit</code> option that is applied - <code>version</code></p>
 <pre><code>java -XX:+MergeCompilerOptions -Xshareclasses:none  -Xjit:version -version
 </code></pre>
-<p><code>-Xjit</code> option applied - <code>version</code></p>
+<p><code>-Xjit</code> option that is applied - <code>version</code></p>
 <pre><code>java -XX:-MergeCompilerOptions -Xshareclasses:none  -Xjit:version -version
 </code></pre>
-<p><code>-Xjit</code> option applied - <code>version</code></p>
-<h3 id="multiple-xjit-options">Multiple <code>-Xjit</code> options:</h3>
+<p><code>-Xjit</code> option that is applied - <code>version</code></p>
+<h3 id="multiple-xjit-options">Multiple <code>-Xjit</code> options</h3>
 <pre><code>java -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 </code></pre>
-<p><code>-Xjit</code> option applied - <code>version</code></p>
+<p><code>-Xjit</code> option that is applied - <code>version</code></p>
 <pre><code>java -XX:+MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 </code></pre>
-<p><code>-Xjit</code> options applied - <code>verbose={compilePerformance}</code>,<code>vlog=vlog</code>,<code>version</code></p>
+<p><code>-Xjit</code> options that are applied - <code>verbose={compilePerformance}</code>,<code>vlog=vlog</code>,<code>version</code></p>
 <pre><code>java -XX:-MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 </code></pre>
-<p><code>-Xjit</code> option applied - <code>version</code></p>
-<h3 id="both-xxmergecompileroptions-and-xx-mergecompileroptions">Both <code>-XX:+MergeCompilerOptions</code> and <code>-XX:-MergeCompilerOptions</code>:</h3>
+<p><code>-Xjit</code> option that is applied - <code>version</code></p>
+<h3 id="both-xxmergecompileroptions-and-xx-mergecompileroptions">Both <code>-XX:+MergeCompilerOptions</code> and <code>-XX:-MergeCompilerOptions</code></h3>
 <p>If there are multiple <code>-XX:[+|-]MergeCompilerOptions</code> options with multiple <code>-Xjit</code> options, the last <code>-XX:[+|-]MergeCompilerOptions</code> setting takes effect before the <code>-Xjit</code> options are processed.</p>
 <pre><code>java -XX:+MergeCompilerOptions -XX:-MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 </code></pre>
-<p><code>-Xjit</code> option applied - <code>version</code></p>
+<p><code>-Xjit</code> option that is applied - <code>version</code></p>
 <pre><code>java -XX:-MergeCompilerOptions -XX:+MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 </code></pre>
-<p><code>-Xjit</code> options applied - <code>{compilePerformance}</code>,<code>vlog=vlog</code>,<code>version</code></p>
+<p><code>-Xjit</code> options that are applied - <code>{compilePerformance}</code>,<code>vlog=vlog</code>,<code>version</code></p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../xjit/">-Xjit</a></li>
