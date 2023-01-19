@@ -157,25 +157,12 @@ timeout(time: 6, unit: 'HOURS') {
                             sh "tar -zcf ${ARCHIVE} site/"
                             stash includes: "${ARCHIVE}", name: 'doc'
 
-                            // Cleanup and rebuild the Doc for push to Github repo as a downlaodable zip.
-                            // Build, save zip file, cleanup and checkout master branch, bring back zip file and commit/push.
                             sh """
-                                git clean -ffxd
-                                git status
-                                sed -i "s|site_dir: 'site'|use_directory_urls: false\\nsite_dir: 'site'|" mkdocs.yml
-                                sed -i "/- search/d" mkdocs.yml
-                                mkdocs build -v
-                                cd site
-                                zip -r ${ZIP_FILENAME} *
-                                mv ${ZIP_FILENAME} ${WORKSPACE}/
-                                cd ..
                                 git clean -ffxd
                                 git reset --hard
                                 git status
                                 git checkout master
-                                mv ${WORKSPACE}/${ZIP_FILENAME} downloads/
                             """
-                            push_doc_with_cred(OPENJ9_REPO, 'master', "Add zip download of ${RELEASE_BRANCH} release user documentation")
                         }
                     }
                 } // Exit container
