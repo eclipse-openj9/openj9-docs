@@ -83,10 +83,14 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
 | Ubuntu 20.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Ubuntu 22.04                              | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no </span>  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Not all of these distributions are tested, but the following distributions are expected to function without problems:
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
-- Linux distributions that have a minimum glibc version 2.12 (x) or 2.17 (others)
-- RHEL 9.0 and Ubuntu 22.04 distributions on AArch64 architecture
+- Not all of these distributions are tested, but the following distributions are expected to function without problems:
+
+    - Linux distributions that have a minimum glibc version 2.12 (x) or 2.17 (others)
+    - RHEL 9.0 and Ubuntu 22.04 distributions on AArch64 architecture
+
+- Support for OpenJ9 on CentOS 6.10 might be available even though CentOS 6 is no longer supported by the CentOS project. However, this support is deprecated and will be removed in a future release.
 
 | Windows&trade;                              | x32                                                                                  |  x64                                                                                 |
 |-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
@@ -126,10 +130,14 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 | Ubuntu 20.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Ubuntu 22.04                              | :fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Not all of these distributions are tested, but the following distributions are expected to function without problems:
+:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
 
-- Linux distributions that have a minimum glibc version 2.12 (x) or 2.17 (others)
-- RHEL 9.0 and Ubuntu 22.04 distributions on AArch64 architecture
+- Not all of these distributions are tested, but the following distributions are expected to function without problems:
+
+    - Linux distributions that have a minimum glibc version 2.12 (x) or 2.17 (others)
+    - RHEL 9.0 and Ubuntu 22.04 distributions on AArch64 architecture
+
+- Support for OpenJ9 on CentOS 6.10 might be available even though CentOS 6 is no longer supported by the CentOS project. However, this support is deprecated and will be removed in a future release.
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
