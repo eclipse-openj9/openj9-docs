@@ -30,9 +30,9 @@ The following new features and notable changes since version 0.35.0 are included
 - [Changes to the location of the default directory for the shared cache and snapshot](#changes-to-the-location-of-the-default-directory-for-the-shared-cache-and-snapshot)
 - [New `-XX:[+|-]MergeCompilerOptions` option added](#new-xx-mergecompileroptions-option-added)
 - [Default JITServer AOT cache name changed](#default-jitserver-aot-cache-name-changed)
-- [New `-XX:JITServerAOTmx` option added](#new--xxjitserveraotmx-option-added)
-- [New `-XX:[+|-]JITServerAOTCachePersistence` option added](#new--xx-jitserveraotcachepersistence-option-added)
-- [New `-XX:JITServerAOTCacheDir` option added](#new--xxjitserveraotcachedir-option-added)
+- [New `-XX:JITServerAOTmx` option added](#new-xxjitserveraotmx-option-added)
+- [New `-XX:[+|-]JITServerAOTCachePersistence` option added](#new-xx-jitserveraotcachepersistence-option-added)
+- [New `-XX:JITServerAOTCacheDir` option added](#new-xxjitserveraotcachedir-option-added)
 
 ## Features and changes
 
