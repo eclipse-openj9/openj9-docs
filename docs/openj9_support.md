@@ -90,7 +90,7 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
     - Linux distributions that have a minimum glibc version 2.12 (x) or 2.17 (others)
     - RHEL 9.0 and Ubuntu 22.04 distributions on AArch64 architecture
 
-- Support for OpenJ9 on CentOS 6.10 might be available even though CentOS 6 is no longer supported by the CentOS project. However, this support is deprecated and will be removed in a future release.
+- Support for OpenJ9 on CentOS 6.10 might be available even though CentOS 6 is no longer supported by the CentOS project. However, this support is deprecated and will be removed in a future release. With the removal of support, the minimum glibc version (x) will be increased from 2.12 to 2.17.
 
 | Windows&trade;                              | x32                                                                                  |  x64                                                                                 |
 |-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
@@ -137,7 +137,7 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
     - Linux distributions that have a minimum glibc version 2.12 (x) or 2.17 (others)
     - RHEL 9.0 and Ubuntu 22.04 distributions on AArch64 architecture
 
-- Support for OpenJ9 on CentOS 6.10 might be available even though CentOS 6 is no longer supported by the CentOS project. However, this support is deprecated and will be removed in a future release.
+- Support for OpenJ9 on CentOS 6.10 might be available even though CentOS 6 is no longer supported by the CentOS project. However, this support is deprecated and will be removed in a future release. With the removal of support, the minimum glibc version (x) will be increased from 2.12 to 2.17.
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
