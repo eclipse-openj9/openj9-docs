@@ -34,7 +34,7 @@ This option controls the behavior of Eclipse OpenJ9&trade; VM signal handlers.
 
 ## Parameters
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** You cannot use these parameters together.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** You cannot use these parameters together.
 
 ### `posixSignalHandler`
 

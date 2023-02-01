@@ -28,7 +28,7 @@ Tune performance by improving the resolution time for classes when the field cou
 
 If profiling tools show significant costs in field resolution, change the threshold until the costs are reduced. If you enable this option, additional memory is used when the threshold is exceeded.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The use of this option is deprecated.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The use of this option is deprecated.
 
 ## Syntax
 

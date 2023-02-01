@@ -26,7 +26,7 @@
 
 This option enables and disables the recording of class relationships in the verifier to delay validation until triggered by class loading.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You cannot use this setting in conjunction with [`-Xfuture`](xfuture.md) or [`-Xverify:all`](xverify.md), which itself enables `-Xfuture`.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You cannot use this setting in conjunction with [`-Xfuture`](xfuture.md) or [`-Xverify:all`](xverify.md), which itself enables `-Xfuture`.
 
 ## Syntax
 

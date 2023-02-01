@@ -30,7 +30,7 @@ Sets the minimum and maximum proportion of time to spend in the garbage collecti
 - If the percentage of time drops to less than the minimum, the Eclipse OpenJ9&trade; VM tries to shrink the heap.
 - If the percentage of time exceeds the maximum, the VM tries to expand the heap.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:**
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:**
 
 - This option applies only to GC policies that include stop-the-world (STW) operations, such as `-Xgcpolicy:optthruput`.  
 

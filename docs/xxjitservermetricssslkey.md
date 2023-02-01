@@ -47,7 +47,7 @@ Custom metrics are exported by the JITServer server and collected by a monitorin
 
 You must specify both the options for TLS or SSL authentication and encryption.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** To enable the export of custom metrics, you must specify the [`-XX:[+|-]JITServerMetrics`](xxjitservermetrics.md) option.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** To enable the export of custom metrics, you must specify the [`-XX:[+|-]JITServerMetrics`](xxjitservermetrics.md) option.
 
 ## See also
 

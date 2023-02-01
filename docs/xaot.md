@@ -52,7 +52,7 @@ The AOT compiler is enabled by default, but is only active for classes that are 
 |`-Xaot:<parameter>[=<value>]` (See **Note**) | Enable AOT with modifications |           |
 |`-Xnoaot`      | Disable AOT  |           |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You can concatenate several parameters in a comma-separated list, for example: `-Xaot:<parameter1>[=<value1>], <parameter2>[=<value2>]`.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You can concatenate several parameters in a comma-separated list, for example: `-Xaot:<parameter1>[=<value1>], <parameter2>[=<value2>]`.
 
 Specify the `-Xaot` option only once. By default, if you specify this option multiple times, only the last option takes effect.
 You can use the [`-XX:+MergeCompilerOptions`](xxmergecompileroptions.md) option to merge all the existing instances of the `-Xaot` options logically.
@@ -98,7 +98,7 @@ You can use the [`-XX:+MergeCompilerOptions`](xxmergecompileroptions.md) option 
     However, `-Xaot:exclude={test/sample/MyClass.testMethod()*}` excludes the method regardless of return type.  
     Similarly, `-Xaot:exclude={*}` excludes _all_ methods.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `exclude` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:exclude`, JIT compilation is also prevented and the methods specified are always interpreted.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** `exclude` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:exclude`, JIT compilation is also prevented and the methods specified are always interpreted.
 
 
 ### `limit`
@@ -107,7 +107,7 @@ You can use the [`-XX:+MergeCompilerOptions`](xxmergecompileroptions.md) option 
 
 : Only the Java methods specified are included when AOT code is compiled from the shared classes cache. `<method_name>` is the method or methods that are to be included (the wildcard `*` may be used, see [`-Xaot:exclude`](#exclude) for details).
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limit` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:limit`, JIT compilation is also restricted to those methods specified; other methods are always interpreted.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** `limit` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:limit`, JIT compilation is also restricted to those methods specified; other methods are always interpreted.
 
 
 ### `limitFile`
@@ -116,7 +116,7 @@ You can use the [`-XX:+MergeCompilerOptions`](xxmergecompileroptions.md) option 
 
 : Compiles or loads only the methods listed on lines `<m>` to, and including, `<n>` in the specified limit file, `<filename>`. Methods not listed in the limit file and methods listed on lines outside the range are not compiled or loaded.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limitFile` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:limitFile`, JIT compilation is also restricted to those methods specified; other methods are always interpreted.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** `limitFile` has the same effect regardless of whether it's specified on [`-Xjit`](xjit.md) or `-Xaot`. In consequence, if you specify `-Xaot:limitFile`, JIT compilation is also restricted to those methods specified; other methods are always interpreted.
 
 
 ### `loadExclude`
@@ -127,7 +127,7 @@ You can use the [`-XX:+MergeCompilerOptions`](xxmergecompileroptions.md) option 
 
     `<method_name>` is the method or methods that are to be excluded (the wildcard `*` may be used, see [`-Xaot:exclude`](#exclude) for details). This option does _not_ prevent the method from being compiled.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `loadExclude` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md).
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** `loadExclude` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md).
 
 
 ### `loadLimit`
@@ -138,7 +138,7 @@ You can use the [`-XX:+MergeCompilerOptions`](xxmergecompileroptions.md) option 
 
     `<method_name>` is the method or methods that are to be included (the wildcard `*` may be used; see [`-Xaot:exclude`](#exclude) for details).
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `loadLimit` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md). This option filters what AOT code the compiler is allowed to load from the shared classes cache. 
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** `loadLimit` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md). This option filters what AOT code the compiler is allowed to load from the shared classes cache.
 
 ### `loadLimitFile`
 
@@ -148,7 +148,7 @@ You can use the [`-XX:+MergeCompilerOptions`](xxmergecompileroptions.md) option 
 
     `<filename>`. Methods not listed in the limit file and methods listed on lines outside the range are not loaded.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `loadLimitFile` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md).
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** `loadLimitFile` can only be specified on `-Xaot`; it does not have an equivalent on [`-Xjit`](xjit.md).
 
 
 ## See also

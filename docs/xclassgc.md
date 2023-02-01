@@ -28,7 +28,7 @@ Enables and disables the garbage collection (GC) of storage that is associated w
 
 When enabled, GC occurs only on class loader changes. To always enable dynamic class unloading regardless of class loader changes, set [`-Xalwaysclassgc`](xalwaysclassgc.md).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Disabling class GC is not recommended because unlimited native memory growth can occur, which can lead to out-of-memory errors.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Disabling class GC is not recommended because unlimited native memory growth can occur, which can lead to out-of-memory errors.
 
 ## Syntax
 

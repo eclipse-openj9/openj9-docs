@@ -107,7 +107,7 @@ You can use the `-Xcheck` option to run checks during Eclipse OpenJ9&trade; virt
 
 : Identifies memory leaks inside the VM by using strict checks that cause the VM to exit on failure.
 
-: :fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** You cannot include `-Xcheck:memory` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
+: :fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** You cannot include `-Xcheck:memory` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
 
 : The available parameters are as follows:
 

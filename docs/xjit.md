@@ -102,7 +102,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
     However, `-Xjit:exclude={test/sample/MyClass.testMethod()*}` excludes the method regardless of return type.  
     Similarly, `-Xjit:exclude={*}` excludes _all_ methods.
 
-: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `exclude` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:exclude`, AOT compilation is also prevented and the methods specified are always interpreted.
+: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** `exclude` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:exclude`, AOT compilation is also prevented and the methods specified are always interpreted.
 
 ### `limit`
 
@@ -110,7 +110,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Only the Java&trade; methods specified are included when code is compiled or loaded from the shared classes cache. `<method_name>` is the method or methods that are to be included (the wildcard `*` can be used, see [`-Xjit:exclude`](#exclude) for details).
 
-: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limit` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limit`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
+: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** `limit` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limit`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
 
 ### `limitFile`
 
@@ -118,7 +118,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Compile only the methods that are listed on lines `<m>` to `<n>` in the specified limit file, where the limit file is a verbose log that you generated with the `-Xjit:verbose,vlog=<vlog_filename>` option. Methods that are not listed in the limit file and methods that are listed on lines outside the range are not compiled.
 
-: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** `limitFile` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limitFile`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
+: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** `limitFile` has the same effect regardless of whether it is specified on [`-Xaot`](xaot.md) or `-Xjit`. In consequence, if you specify `-Xjit:limitFile`, AOT compilation is also restricted to those methods specified; other methods are always interpreted.
 
 ### `optlevel`
 
@@ -152,7 +152,7 @@ These parameters can be used to modify the behavior of `-Xjit`:
 
 : Shows the methods that are inlined.
 
-: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Suboptions can be chained together by using a pipe (`|`) symbol. When used, you must enclose the full option name in single quotation marks (`'`) to avoid the shell misinterpreting these characters as pipe commands. For example:
+: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Suboptions can be chained together by using a pipe (`|`) symbol. When used, you must enclose the full option name in single quotation marks (`'`) to avoid the shell misinterpreting these characters as pipe commands. For example:
 
         java '-Xjit:verbose={compileStart|compileEnd|inlining}' -version
 

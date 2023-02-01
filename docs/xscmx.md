@@ -70,7 +70,7 @@ The theoretical cache size limit is 2 GB. The size of the cache that you can spe
 
 Non-persistent caches are stored in shared memory and are removed when a system is rebooted. On systems other than Windows, non-persistent caches are allocated by using the System V IPC shared memory mechanism. To ensure that sufficient shared memory is available for class data sharing, see [Setting shared memory values](configuring.md#setting-shared-memory-values).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** By default, a cache is persistent on all platforms, except z/OS.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** By default, a cache is persistent on all platforms, except z/OS.
 
 
 ## See also

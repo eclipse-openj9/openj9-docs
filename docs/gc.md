@@ -46,7 +46,7 @@ The following table shows the heap configuration and the GC cycles and operation
 |`metronome`     | Multiple regions by size class <br> One generation | Global GC cycle: incremental STW *mark-sweep* operation in small interruptible steps |
 |` nogc`         | One area: flat | No GC cycles |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** All OpenJ9 GC policies support compressed references on 64-bit platforms, which compresses heap pointers to 32 bits if the total heap size does not exceed the theoretical upper bound of 64 GB. Applications that require more heap space can select any heap size within the bounds imposed by the operating system and available system RAM, without using compressed references. For more information, see [compressed references](allocation.md#compressed-references).
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** All OpenJ9 GC policies support compressed references on 64-bit platforms, which compresses heap pointers to 32 bits if the total heap size does not exceed the theoretical upper bound of 64 GB. Applications that require more heap space can select any heap size within the bounds imposed by the operating system and available system RAM, without using compressed references. For more information, see [compressed references](allocation.md#compressed-references).
 
 
 ## Policy selection and tuning
@@ -136,7 +136,7 @@ With the `balanced` policy, a global GC cycle is sometimes required in addition 
 
 Most objects are easily contained within the minimum region size of 512 KB. However, to support large arrays, which cannot be contained in a region, the `balanced` GC policy uses an *arraylet* representation in the heap. For more information about structure and layout, see [Arraylets](allocation.md#arraylets).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** With arraylets, JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** With arraylets, JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing.
 
 To learn about the default heap size and the tuning options that can be used with the `balanced` policy, see [`-Xgcpolicy:balanced`](xgcpolicy.md#balanced-defaults-and-options).
 
@@ -190,7 +190,7 @@ The Java heap is allocated as a contiguous range of memory, partitioned into sma
 
 Each region of the heap is either empty, or contains only objects in one of 16 size classes. The heap also supports [Arraylets](allocation.md#arraylets) for dealing with large arrays. This organization improves the use of available heap space, reducing the need for heap compaction and defragmentation, and providing more precise control over the incremental sweep operation.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** With arraylets, JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** With arraylets, JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing.
 
 Although high application utilization is desirable for optimal throughput, the GC must be able to keep up with the application's memory allocation rate.
 
@@ -219,7 +219,7 @@ This policy is not suited to the majority of Java applications. However, the fol
 
     - Similarly, when memory application is well understood or where there is rarely memory to be reclaimed, you might prefer to avoid unnecessary GC cycles and rely on a failover mechanism to occasionally restart the VM.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You should be especially careful when using any of the following techniques with `nogc` because memory is never released under this policy:  
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You should be especially careful when using any of the following techniques with `nogc` because memory is never released under this policy:
 
 - Finalization  
 - Direct memory access  

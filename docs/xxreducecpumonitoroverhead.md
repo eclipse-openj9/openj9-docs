@@ -30,7 +30,7 @@ This option relates to the CPU usage of thread categories that can be obtained w
 
 Most GC policies require non-GC threads to do some GC housekeeping work in proportion to the amount of memory allocation that they do. Ideally the exact amount of CPU time that the thread spends doing this housekeeping work should be accounted for in the GC thread category. However there is an overhead that is associated with maintaining the CPU usage data in the correct thread category.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This option is not supported on z/OS&reg;. If you attempt to use this option, the following message is generated:
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** This option is not supported on z/OS&reg;. If you attempt to use this option, the following message is generated:
 
 ```
 JVMJ9VM145E -XX:-ReduceCPUMonitorOverhead is unsupported on z/OS. Error: Could not create the Java Virtual Machine.

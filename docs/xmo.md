@@ -38,7 +38,7 @@ You can use the `-verbose:sizes` option to find out the values that the VM is cu
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** If you try to set `-Xmo` with either `-Xmos` or `-Xmox`, the VM does not start, returning an error.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** If you try to set `-Xmo` with either `-Xmos` or `-Xmox`, the VM does not start, returning an error.
 
 To set the size of the nursery area of the heap, see [`-Xmn/-Xmns/-Xmnx`](xmn.md).
 

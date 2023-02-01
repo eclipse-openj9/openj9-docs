@@ -35,7 +35,7 @@ These Oracle HotSpot options can be used to specify the initial and maximum size
 
 : Where N is a value between 0 and 100, which can be of type "double". For example, 12.3456.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you set a value for [`-Xms`](xms.md), the `-XX:InitialRAMPercentage` option is ignored.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you set a value for [`-Xms`](xms.md), the `-XX:InitialRAMPercentage` option is ignored.
 If you set a value for [`-Xmx`](xms.md), the `-XX:MaxRAMPercentage` option is ignored.
 
 If your application is running in a container and you have specified [`-XX:+UseContainerSupport`](xxusecontainersupport.md), both the default heap size for containers, the `-XX:InitialRAMPercentage` option, and the `-XX:MaxRAMPercentage` option are based on the available container memory.

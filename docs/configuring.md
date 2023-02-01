@@ -73,7 +73,7 @@ Another use case for changing resource limits is to ensure that there is suffici
 - On Linux systems, the **SHMMAX** setting limits the amount of shared memory that can be allocated, which affects the shared classes cache size. You can find the value of **SHMMAX** for your system in the `/proc/sys/kernel/shmmax` file. For non-persistent caches, set this value to an appropriate size for your applications. To make these changes permanent, edit `/etc/sysctl.conf` and reboot your system.
 - On macOS systems, you must set **kern.sysv.shmmax** and **kern.sysv.shmall** when using a nonpersistent cache. Modify the settings in your `/etc/sysctl.conf` file and reboot your system. To check the value, run `sysctl kern.sysv.shmmax`.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The virtual address space of a process is shared between the shared classes cache and the Java heap. Increasing the maximum size for the shared classes cache might reduce the size of the Java heap that you can create.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The virtual address space of a process is shared between the shared classes cache and the Java heap. Increasing the maximum size for the shared classes cache might reduce the size of the Java heap that you can create.
 
 Shared memory limits are also important when configuring large page memory allocation on Linux systems. For more information, see [Configuring large page memory allocation: Linux systems](#linux-systems).
 
@@ -116,7 +116,7 @@ The suggested minimum values for Java applications are shown in the following ta
 |**SHRLIBRGNSIZE**	  | 67 108 864       |
 
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The number of threads that can be created by a Java process is limited by the lower of the two values for **MAXTHREADS** and **MAXTHREADSTASKS**.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The number of threads that can be created by a Java process is limited by the lower of the two values for **MAXTHREADS** and **MAXTHREADSTASKS**.
 
 You can change these settings dynamically without re-IPLing the system. For example, to set **MACPROCUSER** to 256, run `SETOMVS MAXPROCUSER=256`
 
@@ -146,7 +146,7 @@ A suitable **MEMLIMIT** value is also required. The OpenJ9 VM requirement is the
 - The JIT data cache maximum size.
 - The JIT code cache maximum size, if **RMODE64** is supported.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you intend to use the Concurrent Scavenge mode of the default Generational Concurrent (`gencon`) garbage collection policy by using hardware-based support, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit to a larger value than the maximum heap size. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you intend to use the Concurrent Scavenge mode of the default Generational Concurrent (`gencon`) garbage collection policy by using hardware-based support, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit to a larger value than the maximum heap size. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
 
 The following guides are available to help you configure Language Environment runtime options and callable services:
 
@@ -154,7 +154,7 @@ The following guides are available to help you configure Language Environment ru
 - See [z/OS Language Environment Programming Reference](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea300/abstract.htm) for a full list of the available runtime options.
 - See [z/OS Language Environment Debugging Guide](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.ceea100/abstract.htm) for tuning guidance by using **RPTSTG (ON)**.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Changing the runtime options can often degrade performance.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Warning:** Changing the runtime options can often degrade performance.
 
 ## Configuring large page memory allocation
 
@@ -239,7 +239,7 @@ When available, 1 MB pageable pages are the default size for the object heap and
 | 1 MB nonpageable | System z10 processor or later             | Not supported    | Supported (64-bit VM only) |
 | 1 MB pageable    | IBM zEnterprise EC12 processor or later (see Note) |Supported| Supported                  |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The Flash Express feature (#0402) helps avoid demoting 1 MB pageable pages to 4 KB pages when there is system paging activity.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The Flash Express feature (#0402) helps avoid demoting 1 MB pageable pages to 4 KB pages when there is system paging activity.
 
 If a particular page size cannot be allocated, a smaller page size is attempted, in descending order. For example, if 2 GB nonpageable pages are requested but not available, the VM tries to allocate 1MB nonpageable pages. If 1 MB nonpageable pages are not available, the VM tries to allocate 1MB pageable pages. If large pages are not available, 4 KB pages are allocated.
 

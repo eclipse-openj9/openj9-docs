@@ -26,7 +26,7 @@
 
 Eclipse OpenJ9&trade; provides the following tools, which might differ in behavior from the HotSpot equivalent.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** For information about HotSpot equivalences and differences for items other than tools, see [New to Eclipse OpenJ9?](openj9_newuser.md)
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** For information about HotSpot equivalences and differences for items other than tools, see [New to Eclipse OpenJ9?](openj9_newuser.md)
 
 #### Java diagnostic command tool (`jcmd`)
 

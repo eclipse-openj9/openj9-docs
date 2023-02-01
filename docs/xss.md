@@ -30,7 +30,7 @@ If you exceed the maximum Java thread stack size, a `java/lang/OutOfMemoryError`
 
 You can use the `-verbose:sizes` option to find out the values that the VM is currently using.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Java methods and native methods run on two different stacks and the VM handles switching between them for JNI calls. Each stack is sized using separate options; these options apply to the Java stack only. For the native stack option, see the link in the [See also](#see-also) section.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Java methods and native methods run on two different stacks and the VM handles switching between them for JNI calls. Each stack is sized using separate options; these options apply to the Java stack only. For the native stack option, see the link in the [See also](#see-also) section.
 
 ## Syntax
 

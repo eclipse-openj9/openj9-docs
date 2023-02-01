@@ -55,7 +55,7 @@
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 - [OpenJDK version 12](https://adoptopenjdk.net/archive.html?variant=openjdk12&jvmVariant=openj9)
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The binaries at AdoptOpenJDK are labeled 0.15.1 due to a missing change.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The binaries at AdoptOpenJDK are labeled 0.15.1 due to a missing change.
 
  To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -89,7 +89,7 @@ The VM now supports the allocation of huge pages on Linux when you use the `madv
 [JEP 331](http://openjdk.java.net/jeps/331) provides a mechanism for sampling Java heap allocations with a low overhead via
 the JVM Tool Interface (JVMTI).
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** JEP 331 is implemented for OpenJ9 with the following limitations:
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:** JEP 331 is implemented for OpenJ9 with the following limitations:
 
 - The `balanced` and `metronome` garbage collection policies are not supported.
 - The JEP331 JVMTI agent and the Health Center agent both set a sampling interval, which by default is different. If both agents are used at the same time the Health Center agent will get incorrect results, unless the sampling intervals are adjusted to use the same value.
@@ -120,7 +120,7 @@ OpenJ9 now automatically compacts the heap when certain triggers are met during 
 
 In earlier releases, the shared classes cache checks timestamps of `jar` or `zip` files every time a class is loaded and reloads a class if the timestamp has changed. This behavior is now changed; timestamps are checked only when `zip` or `jar` files are added to class loaders and used for the first time to look for a class, which can improve class-loading performance. If `jar` or `zip` files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. To revert to the behavior of earlier releases, set the [`-Xshareclasses:checkURLTimestamps`](xshareclasses.md#checkurltimestamps) option on the command line when you start your application.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Multiple `-Xshareclasses:` options are not combined, only the last one is used.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Multiple `-Xshareclasses:` options are not combined, only the last one is used.
 
 ## Full release information
 

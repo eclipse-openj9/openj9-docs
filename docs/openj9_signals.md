@@ -67,7 +67,7 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 | `SIGRTMAX -2 (62)`| Con  | Used by the `java.net` class library code                                         | - |
 | `SIGCHLD (17)`    | Con  | Used by the `java.lang.Process` implementation                     | - |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 - The use of `SIGRTMIN` is configurable with the `-Xdump:suspendwith=<num>` option.
 - The handling of `SIGABRT` is configurable with the `-XX[+|-]HandleSIGABRT` option.
@@ -91,7 +91,7 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 | `SIGUSR1 (30)`    | Con  | Used by the VM for thread introspection                                       | - |
 | `SIGIO (23)`      | Con  | Used by the `java.net` class library code                                        | - |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:**
 
 - The handling of `SIGABRT` is configurable with the `-XX[+|-]HandleSIGABRT` option.
 
@@ -103,7 +103,7 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 | `SIGTERM (15)`    | Int  | Termination request, VM exits normally                                 | `-Xrs` |
 | `SIGBREAK`        | Con  | A break signal from a terminal. By default, this triggers a Java dump  | `-Xrs` |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 The following mechanisms are used by OpenJ9 for signal handling:
 
@@ -131,7 +131,7 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 | `SIGCHLD (20)`    | Con  | Used by the `java.lang.Process` implementation                     | - |
 | `SIGUSR1 (16)`    | Con  | Used by the `java.net` class library code                          | - |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:**
 
 - The handling of `SIGABRT` is configurable with the `-XX[+|-]HandleSIGABRT` option.
 
@@ -156,7 +156,7 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 | `SIGRTMAX -1 (56)`| Con  | Used by the `java.net` class library code                                         | - |
 | `SIGCHLD (20)`    | Con  | Used by the `java.lang.Process` implementation                     | - |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 - VM performance is affected if you install a signal handler for SIGTRAP (5) or SIGRECONFIG (58) because these signals are used for internal control purposes.
 - If you want to generate floating point exceptions, use the following call in your code to generate a `SIGFPE` signal: `fp_trap( P_TRAP_SYNC)`. Although you can use the C compiler `-qflttrap` setting to generate `SIGTRAP` signals to trap floating point exceptions, this mechanism can affect the JIT compiler.
@@ -178,7 +178,7 @@ command line syntax to use with the compiler, where available:
 | Windows                | `jsig.dll`     | Link the DLL with the application that creates or embeds a VM |
 | AIX                    | `libjsig.so`   | `cc_r [-q64] <other_compile/link_parameter> -L<java_install_dir> -ljsig -L<java_install_dir>/lib/j9vm -ljvm <java_application>.c` |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On Linux, macOS, and z/OS systems, you can use the `LD_PRELOAD`
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** On Linux, macOS, and z/OS systems, you can use the `LD_PRELOAD`
 environment variable as an alternative method to the command line for linking the shared library as shown in the following list:
 
 - bash and ksh shells: `export LD_PRELOAD=$JAVA_HOME/lib/libjsig.so; <java_application>`

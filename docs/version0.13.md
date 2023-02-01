@@ -57,7 +57,7 @@ OpenSSL cryptographic support is extended to include OpenSSL 1.0.2 for the Diges
 
 In addition, support for the OpenSSL Digest algorithm is re-enabled in this release following the resolution of issue [#4530](https://github.com/eclipse-openj9/openj9/issues/4530).
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Earlier versions of OpenJDK with OpenJ9 from the AdoptOpenJDK project bundle OpenSSL as part of the binary package. On Linux and AIX systems, OpenSSL is no longer bundled and the libraries are expected to be available on the system path.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Warning:** Earlier versions of OpenJDK with OpenJ9 from the AdoptOpenJDK project bundle OpenSSL as part of the binary package. On Linux and AIX systems, OpenSSL is no longer bundled and the libraries are expected to be available on the system path.
 
 ![End of content that applies only to Java 12](cr/java_close.png)
 

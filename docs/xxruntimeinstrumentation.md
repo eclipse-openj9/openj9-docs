@@ -40,7 +40,7 @@ The RI facility is a feature that is available in POWER8&reg;, zEC12, and later 
 | `-XX:-RuntimeInstrumentation` | Disable |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>|
 
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On Linux, the RI facility on Power 8 and later processors uses the Performance Monitoring Unit (PMU) inside the processor. However, the PMU is also used by system profilers like **oprofile** or **perf**. Due to the current Linux kernel implementation, a user cannot reliably profile a Java&trade; application when RI is enabled. Although this limitation might be addressed in future Linux kernels, for reliable profiling on Power systems that use Linux, the `-XX:-RuntimeInstrumentation` option must be used.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** On Linux, the RI facility on Power 8 and later processors uses the Performance Monitoring Unit (PMU) inside the processor. However, the PMU is also used by system profilers like **oprofile** or **perf**. Due to the current Linux kernel implementation, a user cannot reliably profile a Java&trade; application when RI is enabled. Although this limitation might be addressed in future Linux kernels, for reliable profiling on Power systems that use Linux, the `-XX:-RuntimeInstrumentation` option must be used.
 
 
 <!-- ==== END OF TOPIC ==== xxruntimeinstrumentation.md ==== -->

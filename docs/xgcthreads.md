@@ -27,7 +27,7 @@
 
 Sets the number of threads that the garbage collector uses for parallel operations.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 This option enforces a fixed thread count and cannot be used with the [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md) option, which enables the garbage collector to adjust the number of parallel threads based on heuristics. If you want to use [`-XX:+AdaptiveGCThreading`](xxadaptivegcthreading.md), use [`-Xgcmaxthreads`](xgcmaxthreads.md) instead of `-Xgcthreads`.
 

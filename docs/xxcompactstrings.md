@@ -32,7 +32,7 @@ If the option is not enabled, the JIT compiler is nevertheless optimized so that
 
 Further details are available at [JEP 254: Compact Strings](https://openjdk.java.net/jeps/254).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** With OpenJ9, this option is supported on OpenJDK version 8 and later versions, whereas HotSpot supports it only from Java version 9.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** With OpenJ9, this option is supported on OpenJDK version 8 and later versions, whereas HotSpot supports it only from Java version 9.
 
 ## Syntax
 

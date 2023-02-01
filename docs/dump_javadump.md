@@ -33,7 +33,7 @@ If your Java application crashes or hangs, Java dumps can provide useful informa
     - the VM runs out of memory
 - If your application hangs, you can trigger the generation of a Java dump by sending a SIGQUIT signal (`kill -3`) to the VM.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On Windows&reg;, if you started the VM in a console window you can force the VM to produce a Java dump in response to a SIGBREAK signal
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** On Windows&reg;, if you started the VM in a console window you can force the VM to produce a Java dump in response to a SIGBREAK signal
     (Ctrl-Break keyboard combination). If you didn't start in a console window, there is no equivalent to a Linux `kill` command on Windows for sending signals.
     The only option here is to trigger a full system dump by finding the VM process in the **Processes** tab of the Windows Task Manager and clicking
     **Create dump file**.
@@ -1040,7 +1040,7 @@ Although the Java code that was used in this scenario deliberately triggered an 
 The next step in diagnosing the problem is to open the system dump that gets generated automatically when an `OutOfMemoryError` occurs. Open
 the dump with the [Eclipse Memory Analyzer&trade; tool (MAT)](https://www.eclipse.org/mat/) and search for the `StringBuffer` object, which should provide further clues about what went wrong. A common example is seeing the same `String` duplicated over and over again, which might indicate that code is stuck in a loop.
 
-  :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you want to use MAT to analyze your system dump, you must install the Diagnostic Tool Framework for Java (DTFJ) plug-in in the Eclipse IDE. Select the following menu items:
+  :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you want to use MAT to analyze your system dump, you must install the Diagnostic Tool Framework for Java (DTFJ) plug-in in the Eclipse IDE. Select the following menu items:
 
 ```
 Help > Install New Software > Work with "IBM Diagnostic Tool Framework for Java" >

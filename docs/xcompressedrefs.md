@@ -29,7 +29,7 @@
 
 Enables or disables the use of compressed references.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** You cannot include `-Xcompressedrefs` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** You cannot include `-Xcompressedrefs` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
 
 ## Syntax
 

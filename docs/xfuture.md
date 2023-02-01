@@ -34,7 +34,7 @@ As described in the [Oracle "Non-Standard Options" documentation](https://docs.o
 
 Oracle recommend that you use this flag when you are developing new code because stricter checks will become the default in future releases.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You cannot use this setting in conjunction with [-XX:+ClassRelationshipVerifier](xxclassrelationshipverifier.md). 
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You cannot use this setting in conjunction with [-XX:+ClassRelationshipVerifier](xxclassrelationshipverifier.md).
 
 ## Default behavior
 

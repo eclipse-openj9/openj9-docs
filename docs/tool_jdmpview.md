@@ -47,9 +47,9 @@ The dump viewer is useful for diagnosing `OutOfMemoryError` exceptions in Java&t
 | `-J-Dcom.ibm.j9ddr.path.mapping=<mappings>` | The variable `<mappings>` is a list of native library mappings of the form `old-path=new-path`, using the usual path separator (a semi-colon (';') on Windows, and a colon (':') on other platforms). |
 | `-J-Dcom.ibm.j9ddr.library.path=<path>` | The variable `<path>` is a list of paths to search for native libraries, using the usual path separator (a semi-colon (';') on Windows, and a colon (':') on other platforms). |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The `-core` option can be used with the `-zip` option to specify the core file in the compressed file. With these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The `-core` option can be used with the `-zip` option to specify the core file in the compressed file. With these options, `jdmpview` shows multiple contexts, one for each source file that it identified in the compressed file.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On AIX and Linux, some `jdmpview` commands must locate the executable and the native libraries that are referenced by the core. For example, commands that relate to call-sites.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** On AIX and Linux, some `jdmpview` commands must locate the executable and the native libraries that are referenced by the core. For example, commands that relate to call-sites.
 A common scenario involves using `jdmpview` to examine core files that originate on different systems. However, if the executable and the libraries are in their original locations, `jdmpview` might not consider them. Therefore, first check the executable and the list of native libraries by running `jdmpview` on a core with the `info mod` command.
 
 - One way to assist `jdmpview` to locate those files is by specifying on the command line one or both of the path mapping option (`-J-Dcom.ibm.j9ddr.path.mapping=<mappings>`) and the library path option (`-J-Dcom.ibm.j9ddr.library.path=<path>`).
@@ -222,7 +222,7 @@ You can also use `charsFrom` and `charsTo` together, separated by a vertical bar
     lib/ppc64le/libjava.so
     lib/ppc64le/compressedrefs/libj9jit29.so
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The line will not be displayed if the `charsFrom` and `charsTo` are used together, but only one of the patterns are matched in a line. Furthermore, the line will not be displayed if both patterns are matched in a line, but the `charsTo` pattern appears before, and not after, the `charsFrom` pattern.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The line will not be displayed if the `charsFrom` and `charsTo` are used together, but only one of the patterns are matched in a line. Furthermore, the line will not be displayed if both patterns are matched in a line, but the `charsTo` pattern appears before, and not after, the `charsFrom` pattern.
 
 #### Using `grep`
 
@@ -310,7 +310,7 @@ When `jdmpview` is started, many parameters can be used during the session to in
 
 : Lists all *expert* parameters that can be used in a session, with a brief description.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The *expert* parameters are subject to change and not intended as a supported interface.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The *expert* parameters are subject to change and not intended as a supported interface.
 
 ### cd
 
@@ -584,25 +584,25 @@ When `jdmpview` is started, many parameters can be used during the session to in
 
 : Displays information about a particular object, or all objects of a class. If `<class_name>` is supplied, all static fields with their values are shown, followed by all objects of that class with their fields and values. If an object address (in hex) is supplied, static fields for that object's class are not shown; the other fields and values of that object are printed along with its address.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This command ignores the number of items and unit size passed to it by the `x/` command.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This command ignores the number of items and unit size passed to it by the `x/` command.
 
 ### x/D <`0xaddr`>
 
 : Displays the integer at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big-endian architecture.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} This command uses the number of items and unit size passed to it by the `x/` command.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} This command uses the number of items and unit size passed to it by the `x/` command.
 
 ### x/X <`0xaddr`>
 
 : Displays the hex value of the bytes at the specified address, adjusted for the hardware architecture this dump file is from. For example, the file might be from a big-endian architecture.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This command uses the number of items and unit size passed to it by the `x/` command.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This command uses the number of items and unit size passed to it by the `x/` command.
 
 ### x/K <`0xaddr`>
 
 : Where the size is defined by the pointer size of the architecture, this parameter shows the value of each section of memory. The output is adjusted for the hardware architecture this dump file is from, starting at the specified address. It also displays a module with a module section and an offset from the start of that module section in memory if the pointer points to that module section. If no symbol is found, it displays a "\*" and an offset from the current address if the pointer points to an address in 4KB (4096 bytes) of the current address. Although this command can work on an arbitrary section of memory, it is probably more useful on a section of memory that refers to a stack frame. To find the memory section of a thread stack frame, use the info thread command.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This command uses the number of items and unit size passed to it by the `x/` command.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This command uses the number of items and unit size passed to it by the `x/` command.
 
 
 ## Example

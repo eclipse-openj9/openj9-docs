@@ -37,7 +37,7 @@ Some of the common options supported are summarised in the following table:
 | `-verbose:<option>[,<option>]`                                      | Enables verbose output. Options include `class`, `dynload`, `gc`, `init`, `jni`, `sizes`, `stack`, and `module`. (See **Notes**)     |
 | `-version`                                                          | Prints the full build and version information a VM                                                                        |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 - `-verbose:class`: Writes an entry to `stderr` for each class that is loaded.
 - `-verbose:dynload`: Writes detailed class information to `stderr` as each bootstrap class is loaded by the VM:

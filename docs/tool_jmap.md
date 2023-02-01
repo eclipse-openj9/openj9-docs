@@ -59,7 +59,7 @@ num   object count     total size    class name
   8            396           6336    [Ljava.lang.Object;
 ```
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to Eclipse OpenJ9&trade;.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to Eclipse OpenJ9&trade;.
 
 The following tool limitations apply:
 
@@ -70,7 +70,7 @@ The following tool limitations apply:
 The tool uses the Attach API, and has the following limitations:
 
 - Displays information for OpenJ9 Java processes only
-- Does not show information for processes whose Attach API is disabled. :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The Attach API is disabled by default on z/OS.
+- Does not show information for processes whose Attach API is disabled. :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The Attach API is disabled by default on z/OS.
 
 For more information about the Attach API, including how to enable and secure it, see [Java Attach API](attachapi.md).
 

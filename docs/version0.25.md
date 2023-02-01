@@ -71,7 +71,7 @@ The following features are implemented in OpenJDK and available in any builds of
 
 You can find the full list of features for JDK 16 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/16/). Any remaining features that are listed do not apply to OpenJ9.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Applications might be adversely affected by
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Applications might be adversely affected by
 JEP 396 if they make use of internal APIs. You should update your application to use standard APIs. To temporarily work around this problem, set `--illegal-access=permit` on the command line, which prints a warning that is similar to the following example when an illegal access call is made:
 
 ```

@@ -24,11 +24,11 @@
 
 # -XX:\[+|-\]AdaptiveGCThreading
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** Currently, this feature is available only with the `gencon` GC policy.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** Currently, this feature is available only with the `gencon` GC policy.
 
 When this option is enabled, the active GC thread count is adjusted for each garbage collection (GC) cycle based on heuristics. That is, when a GC cycle successfully completes, the collector evaluates parallelism using aggregated thread statistics gathered during the completed cycle and projects a new thread count for the next cycle. For example, the thread count might be reduced if it is determined that an unnecessary overhead was incurred as a result of synchronization, lack of work sharing, or CPU availability. Similarly, the thread count may be increased if there's an opportunity to gain benefits from increased parallelism. 
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 - This option is ignored when the GC thread count is enforced, for example when using the [`-xgcthreads`](xgcthreads.md) or [`-XX:ParallelGCThreads`](xxparallelgcthreads.md) options.
 - By default, the number of GC threads is based on the number of CPUs reported by the operating system. This value is used as the maximum thread count. However, an upper bound can be specified by using [`-xgcmaxthreads`](xgcmaxthreads.md) or [` XX:ParallelGCMaxThreads`](xxparallelgcmaxthreads.md).

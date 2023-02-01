@@ -24,7 +24,7 @@
 
 # -XX:\[+|-\]DisclaimJitScratch  
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This option is deprecated; the option is accepted but ignored.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** This option is deprecated; the option is accepted but ignored.
 
 **(Linux&reg; only)**
 

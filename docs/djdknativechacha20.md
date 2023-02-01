@@ -26,7 +26,7 @@
 
 This option enables or disables OpenSSL native cryptographic support for the ChaCha20 and ChaCha20-Poly1305 algorithms.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:**
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:**
 
 - ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java&trade; 8. ![End of content that applies only to Java 8](cr/java_close_lts.png)
 - These algorithms are not supported on OpenSSL 1.0.x.

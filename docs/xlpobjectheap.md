@@ -69,7 +69,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 :    -   `strict` causes an error message to be generated if large pages are requested but cannot be obtained. This option causes the VM to end.
     -   `warn` causes a warning message to be generated if large pages are requested but cannot be obtained. This option allows the VM to continue.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If both `strict` and `warn` are specified, `strict` takes precedence.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If both `strict` and `warn` are specified, `strict` takes precedence.
 
 ### `pageable`|`nonpageable`
 

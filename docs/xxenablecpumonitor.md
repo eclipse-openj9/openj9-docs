@@ -26,7 +26,7 @@
 
 This option relates to the information about the CPU usage of thread categories that is available with the `com.ibm.lang.management.JvmCpuMonitorMXBean` application programming interface.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This option might not be supported in subsequent releases.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** This option might not be supported in subsequent releases.
 
 ## Syntax
 

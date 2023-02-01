@@ -27,7 +27,7 @@
 
 These Oracle&reg; HotSpot&trade; options set the initial/minimum Java&trade; heap size, and the maximum heap size respectively. These options are recognized by the Eclipse OpenJ9&trade; VM.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 - If you set `-Xms` &gt; `-Xmx`, the VM fails with the message `-Xms too large for -Xmx`.
 - If you exceed the limit set by the `-Xmx` option, the VM generates an `OutofMemoryError`.
