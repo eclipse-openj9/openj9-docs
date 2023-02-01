@@ -10,11 +10,16 @@
       
       
       
-      
         <link rel="canonical" href="https://www.eclipse.org/openj9/docs/shrc/">
       
+      
+        <link rel="prev" href="../aot/">
+      
+      
+        <link rel="next" href="../shrc_diag_util/">
+      
       <link rel="icon" href="../cr/openj9-logo.svg">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -22,32 +27,32 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f56500e0.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#009485">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
       
+      
+
     
     
     
       
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../stylesheets/oj9.css">
     
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
+    
     
     
   </head>
@@ -58,10 +63,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="cyan">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -78,7 +82,14 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title=" " class="md-header__button md-logo" aria-label=" " data-md-component="logo">
       
@@ -86,7 +97,7 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -108,21 +119,24 @@
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -139,11 +153,10 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/eclipse-openj9/openj9" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/eclipse-openj9/openj9" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     eclipse-openj9/openj9
@@ -152,11 +165,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       <!--Ghpages site notice --><div class="md-container"><div style="margin:-2rem 0 -2rem 0; background: linear-gradient(white, #ffa02e, white); color:white; text-align:center; font-size:1.5rem; font-weight:bold; text-shadow: 2px 2px 4px #000000;"><p style="padding:2rem 0 2rem 0;"><i class="fa fa-cogs" aria-hidden="true"></i> CAUTION: This site hosts draft documentation for the next release. For published content of the latest release, visit <a style="color:#af6e3d; text-shadow:none; padding-left:1rem;" href="http://www.eclipse.org/openj9/docs/index.html">www.eclipse.org/openj9/docs</a></p></div>
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -181,11 +197,10 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/eclipse-openj9/openj9" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/eclipse-openj9/openj9" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     eclipse-openj9/openj9
@@ -268,10 +283,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
-      <label class="md-nav__link" for="__nav_5">
-        Release notes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Release notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Release notes" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
@@ -280,6 +299,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -290,8 +310,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -302,8 +324,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -314,8 +338,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -326,8 +352,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -338,8 +366,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -350,8 +380,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -362,8 +394,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -373,10 +407,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
       
-      <label class="md-nav__link" for="__nav_5_8">
-        Earlier releases
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_8">
+          Earlier releases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Earlier releases" data-md-level="2">
         <label class="md-nav__title" for="__nav_5_8">
           <span class="md-nav__icon md-icon"></span>
@@ -385,6 +423,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -395,8 +434,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -407,8 +448,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -419,8 +462,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -431,8 +476,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -443,8 +490,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -455,8 +504,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -467,8 +518,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -479,8 +532,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -491,8 +546,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -503,8 +560,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -515,8 +574,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -527,8 +588,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -539,8 +602,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -551,8 +616,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -563,8 +630,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -575,8 +644,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -587,8 +658,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -599,8 +672,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -611,8 +686,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -623,8 +700,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -635,8 +714,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -647,12 +728,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -673,10 +756,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="__nav_6">
-        Migrating
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Migrating
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Migrating" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
@@ -685,6 +772,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -695,8 +783,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -707,6 +797,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -742,10 +833,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
-      <label class="md-nav__link" for="__nav_8">
-        Memory management
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Memory management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Memory management" data-md-level="1">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
@@ -754,6 +849,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -764,8 +860,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -776,8 +874,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -788,8 +888,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -799,10 +901,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_4" type="checkbox" id="__nav_8_4" >
       
-      <label class="md-nav__link" for="__nav_8_4">
-        Troubleshooting GC
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_4">
+          Troubleshooting GC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Troubleshooting GC" data-md-level="2">
         <label class="md-nav__title" for="__nav_8_4">
           <span class="md-nav__icon md-icon"></span>
@@ -811,6 +917,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -821,8 +928,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -833,12 +942,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -921,10 +1032,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
       
-      <label class="md-nav__link" for="__nav_13">
-        Class data sharing
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13">
+          Class data sharing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Class data sharing" data-md-level="1">
         <label class="md-nav__title" for="__nav_13">
           <span class="md-nav__icon md-icon"></span>
@@ -933,6 +1048,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
     
@@ -956,7 +1072,8 @@
       </a>
       
         
-<nav class="md-nav md-nav--secondary" aria-label="On this page...">
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -965,7 +1082,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page...
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1118,8 +1235,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1130,6 +1249,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1165,10 +1285,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
       
-      <label class="md-nav__link" for="__nav_15">
-        Diagnostics
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_15">
+          Diagnostics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Diagnostics" data-md-level="1">
         <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
@@ -1177,6 +1301,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1187,8 +1312,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1198,10 +1325,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_2" type="checkbox" id="__nav_15_2" >
       
-      <label class="md-nav__link" for="__nav_15_2">
-        Dumps
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_15_2">
+          Dumps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Dumps" data-md-level="2">
         <label class="md-nav__title" for="__nav_15_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1210,6 +1341,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1220,8 +1352,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1232,8 +1366,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1244,14 +1380,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1261,10 +1400,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_3" type="checkbox" id="__nav_15_3" >
       
-      <label class="md-nav__link" for="__nav_15_3">
-        Tools
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_15_3">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Tools" data-md-level="2">
         <label class="md-nav__title" for="__nav_15_3">
           <span class="md-nav__icon md-icon"></span>
@@ -1273,6 +1416,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1283,8 +1427,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1295,8 +1441,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1307,8 +1455,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1319,8 +1469,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1331,8 +1483,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1343,8 +1497,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1355,8 +1511,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1367,8 +1525,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1379,8 +1539,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1391,14 +1553,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1408,10 +1573,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_4" type="checkbox" id="__nav_15_4" >
       
-      <label class="md-nav__link" for="__nav_15_4">
-        Interfaces
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_15_4">
+          Interfaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Interfaces" data-md-level="2">
         <label class="md-nav__title" for="__nav_15_4">
           <span class="md-nav__icon md-icon"></span>
@@ -1420,6 +1589,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1430,8 +1600,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1442,8 +1614,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1454,12 +1628,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1480,10 +1656,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
       
-      <label class="md-nav__link" for="__nav_16">
-        Command-line options
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16">
+          Command-line options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Command-line options" data-md-level="1">
         <label class="md-nav__title" for="__nav_16">
           <span class="md-nav__icon md-icon"></span>
@@ -1492,6 +1672,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1502,8 +1683,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1514,8 +1697,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1526,8 +1711,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1537,10 +1724,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_4" type="checkbox" id="__nav_16_4" >
       
-      <label class="md-nav__link" for="__nav_16_4">
-        System property options
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16_4">
+          System property options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="System property options" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_4">
           <span class="md-nav__icon md-icon"></span>
@@ -1549,6 +1740,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1559,8 +1751,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1571,8 +1765,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1583,8 +1779,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1595,8 +1793,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1607,8 +1807,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1619,8 +1821,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1631,8 +1835,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1643,8 +1849,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1655,8 +1863,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1667,8 +1877,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1679,8 +1891,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1691,8 +1905,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1703,8 +1919,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1715,8 +1933,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1727,8 +1947,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1739,8 +1961,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1751,8 +1975,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1763,8 +1989,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1775,8 +2003,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1787,8 +2017,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1799,8 +2031,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1811,8 +2045,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1823,8 +2059,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1835,8 +2073,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1847,8 +2087,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1859,8 +2101,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1871,8 +2115,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1883,8 +2129,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1895,8 +2143,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1907,14 +2157,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1924,10 +2177,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_5" type="checkbox" id="__nav_16_5" >
       
-      <label class="md-nav__link" for="__nav_16_5">
-        JVM -X options
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16_5">
+          JVM -X options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="JVM -X options" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_5">
           <span class="md-nav__icon md-icon"></span>
@@ -1936,6 +2193,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1946,8 +2204,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1958,8 +2218,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1970,8 +2232,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1982,8 +2246,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1994,8 +2260,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2006,8 +2274,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2018,8 +2288,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2030,8 +2302,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2042,8 +2316,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2054,8 +2330,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2066,8 +2344,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2078,8 +2358,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2090,8 +2372,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2102,8 +2386,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2114,8 +2400,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2126,8 +2414,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2138,8 +2428,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2150,8 +2442,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2162,8 +2456,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2174,8 +2470,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2186,8 +2484,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2198,8 +2498,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2210,8 +2512,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2222,8 +2526,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2234,8 +2540,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2246,8 +2554,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2258,8 +2568,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2270,8 +2582,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2282,8 +2596,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2294,8 +2610,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2306,8 +2624,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2318,8 +2638,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2330,8 +2652,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2342,8 +2666,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2354,8 +2680,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2366,8 +2694,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2378,8 +2708,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2390,8 +2722,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2402,8 +2736,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2414,8 +2750,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2426,8 +2764,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2438,8 +2778,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2450,8 +2792,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2462,8 +2806,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2474,8 +2820,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2486,8 +2834,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2498,8 +2848,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2510,8 +2862,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2522,8 +2876,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2534,8 +2890,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2546,8 +2904,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2558,8 +2918,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2570,8 +2932,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2582,8 +2946,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2594,8 +2960,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2606,8 +2974,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2618,8 +2988,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2630,8 +3002,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2642,8 +3016,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2654,8 +3030,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2666,8 +3044,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2678,8 +3058,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2690,8 +3072,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2702,8 +3086,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2714,8 +3100,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2726,8 +3114,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2738,8 +3128,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2750,8 +3142,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2762,8 +3156,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2774,8 +3170,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2786,8 +3184,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2798,8 +3198,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2810,8 +3212,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2822,8 +3226,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2834,8 +3240,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2846,8 +3254,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2858,8 +3268,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2870,8 +3282,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2882,8 +3296,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2894,8 +3310,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2906,8 +3324,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2918,8 +3338,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2930,8 +3352,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2942,8 +3366,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2954,8 +3380,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2966,8 +3394,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2978,8 +3408,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2990,8 +3422,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3002,8 +3436,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3014,8 +3450,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3026,8 +3464,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3038,8 +3478,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3050,8 +3492,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3062,8 +3506,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3074,8 +3520,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3086,8 +3534,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3098,8 +3548,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3110,8 +3562,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3122,8 +3576,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3134,8 +3590,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3146,8 +3604,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3158,8 +3618,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3170,8 +3632,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3182,8 +3646,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3194,8 +3660,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3206,8 +3674,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3218,8 +3688,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3230,8 +3702,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3242,8 +3716,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3254,8 +3730,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3266,14 +3744,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3283,10 +3764,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_6" type="checkbox" id="__nav_16_6" >
       
-      <label class="md-nav__link" for="__nav_16_6">
-        JVM -XX options
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16_6">
+          JVM -XX options
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="JVM -XX options" data-md-level="2">
         <label class="md-nav__title" for="__nav_16_6">
           <span class="md-nav__icon md-icon"></span>
@@ -3295,6 +3780,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -3305,8 +3791,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3317,8 +3805,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3329,8 +3819,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3341,8 +3833,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3353,8 +3847,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3365,8 +3861,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3377,8 +3875,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3389,8 +3889,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3401,8 +3903,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3413,8 +3917,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3425,8 +3931,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3437,8 +3945,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3449,8 +3959,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3461,8 +3973,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3473,8 +3987,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3485,8 +4001,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3497,8 +4015,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3509,8 +4029,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3521,8 +4043,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3533,8 +4057,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3545,8 +4071,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3557,8 +4085,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3569,8 +4099,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3581,8 +4113,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3593,8 +4127,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3605,8 +4141,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3617,8 +4155,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3629,8 +4169,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3641,8 +4183,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3653,8 +4197,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3665,8 +4211,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3677,8 +4225,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3689,8 +4239,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3701,8 +4253,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3713,8 +4267,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3725,8 +4281,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3737,8 +4295,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3749,8 +4309,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3761,8 +4323,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3773,8 +4337,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3785,8 +4351,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3797,8 +4365,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3809,8 +4379,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3821,8 +4393,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3833,8 +4407,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3845,8 +4421,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3857,8 +4435,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3869,8 +4449,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3881,8 +4463,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3893,8 +4477,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3905,8 +4491,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3917,8 +4505,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3929,8 +4519,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3941,8 +4533,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3953,8 +4547,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3965,8 +4561,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3977,8 +4575,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3989,8 +4589,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4001,8 +4603,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4013,8 +4617,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4025,8 +4631,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4037,8 +4645,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4049,8 +4659,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4061,8 +4673,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4073,8 +4687,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4085,8 +4701,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4097,8 +4715,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4109,8 +4729,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4121,8 +4743,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4133,8 +4757,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4145,8 +4771,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4157,8 +4785,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4169,8 +4799,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4181,8 +4813,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4193,8 +4827,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4205,8 +4841,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4217,8 +4855,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4229,8 +4869,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4241,8 +4883,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4253,8 +4897,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4265,8 +4911,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4277,8 +4925,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4289,8 +4939,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4301,8 +4953,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4313,8 +4967,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4325,8 +4981,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4337,8 +4995,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4349,8 +5009,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4361,8 +5023,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4373,8 +5037,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4385,12 +5051,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -4411,10 +5079,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17" type="checkbox" id="__nav_17" >
       
-      <label class="md-nav__link" for="__nav_17">
-         Reference
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17">
+           Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label=" Reference" data-md-level="1">
         <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
@@ -4423,6 +5095,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -4433,8 +5106,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4445,8 +5120,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4457,8 +5134,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4469,8 +5148,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4481,8 +5162,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4493,6 +5176,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -4513,10 +5197,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18" type="checkbox" id="__nav_18" >
       
-      <label class="md-nav__link" for="__nav_18">
-        API documentation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18">
+          API documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="API documentation" data-md-level="1">
         <label class="md-nav__title" for="__nav_18">
           <span class="md-nav__icon md-icon"></span>
@@ -4525,6 +5213,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -4535,8 +5224,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4546,10 +5237,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18_2" type="checkbox" id="__nav_18_2" >
       
-      <label class="md-nav__link" for="__nav_18_2">
-        Java 8 API
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_18_2">
+          Java 8 API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Java 8 API" data-md-level="2">
         <label class="md-nav__title" for="__nav_18_2">
           <span class="md-nav__icon md-icon"></span>
@@ -4558,6 +5253,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -4568,8 +5264,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4580,8 +5278,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4592,8 +5292,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4604,8 +5306,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4616,8 +5320,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4628,8 +5334,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4640,8 +5348,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4652,14 +5362,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4670,8 +5383,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -4682,6 +5397,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -4716,7 +5432,8 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary" aria-label="On this page...">
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -4725,7 +5442,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      On this page...
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -4879,12 +5596,15 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                
-                <!--
+                  
+
+
+
+<!--
 * Copyright (c) 2017, 2023 IBM Corp. and others
 *
 * This program and the accompanying materials are made
@@ -5033,7 +5753,7 @@ If you are using a non-persistent cache, you can use a cache utility to create a
 <p>If you are creating a new cache, set an application-specific cache name (<a href="../xshareclasses/#name"><code>-Xshareclasses:name=&lt;name&gt;</code></a>).</p>
 <p>If a cache with the specified name doesn't already exist, a new cache is created.</p>
 <p>This avoids sharing your application cache with a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> You cannot change the size of a default cache that already exists by using the <a href="../xscmx/"><code>-Xscmx</code></a> option, as that option has no effect on a pre-existing cache.</p>
+<p>:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} <strong>Note:</strong> You cannot change the size of a default cache that already exists by using the <a href="../xscmx/"><code>-Xscmx</code></a> option, as that option has no effect on a pre-existing cache.</p>
 </li>
 <li>
 <p>Set a specific cache directory (<a href="../xshareclasses/#cachedir"><code>-Xshareclasses:cacheDir=&lt;directory&gt;</code></a>).</p>
@@ -5106,7 +5826,7 @@ MyCache                 Java8 64-bit  persistent      cr              2         
 <p>Typically, after a system is reinitialized, the snapshot file is used to restore the copy of the non-persistent cache into shared memory, by using the <a href="../xshareclasses/#restorefromsnapshot"><code>-Xshareclasses:restoreFromSnapshot</code></a> cache utility. Because this process removes all non-persistent caches from shared memory, restoring the cache from the snapshot file can result in better VM startup performance, because the contents of the shared cache, including classes and AOT code, do not have to be re-created.</p>
 <p>The <a href="../xshareclasses/#listallcaches"><code>-Xshareclasses:listAllCaches</code></a> cache utility can be used to identify snapshots on a system.</p>
 <p>A snapshot can be created only if the user has sufficient permissions to create the destination snapshot file. If a snapshot of the same name exists already, it is overwritten. On platforms that support persistent caches, the <code>nonpersistent</code> suboption must be specified in order to create a snapshot. For information about removing snapshot files, see the <code>destroySnapshot</code> and <code>destroyAllSnapshots</code> cache utilities in <a href="#housekeeping">Housekeeping</a>.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Notes:</strong></p>
+<p>:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} <strong>Notes:</strong></p>
 <ul>
 <li>Persistent caches are not supported on z/OS.</li>
 <li>The <code>snapshotCache</code> and <code>restoreFromCache</code> cache utilities cannot be used on Windows systems.</li>
@@ -5120,7 +5840,7 @@ MyCache                 Java8 64-bit  persistent      cr              2         
 <li><a href="../xshareclasses/#destroyallsnapshots"><code>-Xshareclasses:destroyAllSnapshots</code></a>: Removes all cache snapshots from disk that are found by specifying the <code>cacheDir</code> suboption.</li>
 <li><a href="../xshareclasses/#destroyalllayers"><code>-Xshareclasses:destroyAllLayers</code></a>: Removes all shared cache layers that are specified by the <code>name</code> and <code>cacheDir</code> suboptions.</li>
 </ul>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> You must always use the utilities to remove non-persistent caches correctly from shared memory.</p>
+<p>:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} <strong>Note:</strong> You must always use the utilities to remove non-persistent caches correctly from shared memory.</p>
 <p>Caches can also be removed if they are unused for a specified amount of time. To configure time-based housekeeping, use the <a href="../xshareclasses/#expire">-Xshareclasses:expire</a> option.</p>
 <p>If you want to remove a cache but allow it to be re-created when the VM restarts, use the <a href="../xshareclasses/#reset"><code>-Xshareclasses:reset</code></a> option.</p>
 <h2 id="support-for-custom-class-loaders">Support for custom class loaders</h2>
@@ -5177,7 +5897,7 @@ For more information about using a modification context, see <a href="#sharing-m
 <h4 id="sharedclasshelper-cache-partitions"><code>SharedClassHelper</code> cache partitions</h4>
 <p>Another method of structuring and protecting classes in the shared classes cache can be implemented by using the <code>SharedClassHelper</code> API with a custom class loader. This mechanism creates partitions by using a string key to identify a set of classes, which can be stored and retrieved by the class loader. A use case for this mechanism is Aspect Oriented Programming (AOP) where aspects are woven in to bytecode when a class is loaded into the VM. Being able to partition the cache provides a suitable level of granularity when you want to use different aspect paths.</p>
 <p>Although it is possible to combine partitions and modification contexts, this practice is not recommended because the cache will contain partitions within partitions.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m497.9 142.1-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg></span> <strong>Note:</strong> Partitions are not supported by the bootstrap class loader or the default application class loader.</p>
+<p>:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} <strong>Note:</strong> Partitions are not supported by the bootstrap class loader or the default application class loader.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../aot/">AOT compiler</a></li>
@@ -5185,15 +5905,16 @@ For more information about using a modification context, see <a href="#sharing-m
 <li><a href="../shrc_diag_util/">Diagnosing problems with class data sharing</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== shrc.md ==== -->
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
@@ -5268,35 +5989,33 @@ For more information about using a modification context, see <a href="#sharing-m
       <span class="below-line-links"><a href="https://www.eclipse.org/legal/copyright.php" rel="noopener noreferrer" target="_blank">Copyright Agent</a></span>
       <span class="below-line-links"><a href="https://www.eclipse.org/legal/" rel="noopener noreferrer" target="_blank">Legal</a></span>
       <div class="below-line-social-media-icons">
-      
-  <div class="md-footer-social">
+      <div class="md-social">
+  
     
-      
-      
-      <a href="https://github.com/eclipse-openj9/openj9" target="_blank" rel="noopener" title="OpenJ9 in GitHub" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
     
-      
-      
-      <a href="https://openj9.slack.com" target="_blank" rel="noopener" title="OpenJ9 on Slack" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
-      </a>
+    <a href="https://github.com/eclipse-openj9/openj9" target="_blank" rel="noopener" title="OpenJ9 in GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
     
-      
-      
-      <a href="https://twitter.com/openj9" target="_blank" rel="noopener" title="OpenJ9 on Twitter" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-      </a>
     
-      
-      
-      <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
-      </a>
+    <a href="https://openj9.slack.com" target="_blank" rel="noopener" title="OpenJ9 on Slack" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
     
-  </div>
-
+    
+    <a href="https://twitter.com/openj9" target="_blank" rel="noopener" title="OpenJ9 on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+    </a>
+  
+</div>
       </div>
     </div>
 
@@ -5305,35 +6024,33 @@ For more information about using a modification context, see <a href="#sharing-m
 
 
 <!--
-      
-  <div class="md-footer-social">
+      <div class="md-social">
+  
     
-      
-      
-      <a href="https://github.com/eclipse-openj9/openj9" target="_blank" rel="noopener" title="OpenJ9 in GitHub" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
     
-      
-      
-      <a href="https://openj9.slack.com" target="_blank" rel="noopener" title="OpenJ9 on Slack" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
-      </a>
+    <a href="https://github.com/eclipse-openj9/openj9" target="_blank" rel="noopener" title="OpenJ9 in GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
     
-      
-      
-      <a href="https://twitter.com/openj9" target="_blank" rel="noopener" title="OpenJ9 on Twitter" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-      </a>
     
-      
-      
-      <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
-      </a>
+    <a href="https://openj9.slack.com" target="_blank" rel="noopener" title="OpenJ9 on Slack" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
     
-  </div>
-
+    
+    <a href="https://twitter.com/openj9" target="_blank" rel="noopener" title="OpenJ9 on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://stackoverflow.com/search?q=OpenJ9" target="_blank" rel="noopener" title="OpenJ9 on StackOverflow" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+    </a>
+  
+</div>
 -->
   </div>
 </footer>
@@ -5344,10 +6061,11 @@ For more information about using a modification context, see <a href="#sharing-m
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": 2.0}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": 2.0}</script>
     
     
-      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../javascripts/oj9.js"></script>
       
