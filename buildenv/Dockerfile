@@ -21,12 +21,12 @@
 # Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 #
 
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 MAINTAINER openj9.bot <openj9.bot@gmail.com>
 
 # Install basic requirementes from APT. Set up for SSH (including SSH login fix to prevent user being logged out), install and setup  virtualenv from pip3
 COPY requirements.* /tmp/
-RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-dev python3-pip git openjdk-8-jdk zip \
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-dev python3-pip git openjdk-11-jdk zip \
     && DEBIAN_FRONTEND="noninteractive" apt-get -q upgrade -y -o Dpkg::Options::="--force-confnew" --no-install-recommends \
     && DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends openssh-server \
     && rm -rf /var/lib/apt/lists/* \
