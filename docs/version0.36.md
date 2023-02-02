@@ -22,7 +22,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-# What's new in version 0.36.0
+# What's new in version 0.36.x
 
 The following new features and notable changes since version 0.35.0 are included in this release:
 
@@ -38,9 +38,11 @@ The following new features and notable changes since version 0.35.0 are included
 
 ### Binaries and supported environments
 
-Eclipse OpenJ9&trade; release 0.36.0 supports OpenJDK 8, 11, and 17.
+Eclipse OpenJ9&trade; release 0.36.0 supports OpenJDK 8 and 17.
 
-Support for running OpenJDK 8 and OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. OpenJ9 will not be tested with OpenJDK 11 on CentOS 6.10 after 0.36.0 release.
+Release 0.36.1 supports OpenJDK 11.
+
+Support for running OpenJDK 8 and OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. OpenJ9 will not be tested with OpenJDK 11 on CentOS 6.10 after the 0.36.1 release.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -102,6 +104,6 @@ For more information, see [`-XX:JITServerAOTCacheDir`](xxjitserveraotcachedir.md
 
 ## Known problems and full release information
 
-To see known problems and a complete list of changes between Eclipse OpenJ9 v0.35.0 and v0.36.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.36/0.36.md).
+To see known problems and a complete list of changes between Eclipse OpenJ9 v0.35.0 and v0.36.x releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.36/0.36.md).
 
 <!-- ==== END OF TOPIC ==== version0.36.md ==== -->
