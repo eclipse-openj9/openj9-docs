@@ -23,7 +23,7 @@
     
     
       
-        <title>Version 0.36.0 -  </title>
+        <title>Version 0.36.x -  </title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#whats-new-in-version-0360" class="md-skip">
+        <a href="#whats-new-in-version-036x" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Version 0.36.0
+              Version 0.36.x
             
           </span>
         </div>
@@ -330,12 +330,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Version 0.36.0
+          Version 0.36.x
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Version 0.36.0
+        Version 0.36.x
       </a>
       
         
@@ -5482,7 +5482,7 @@
 * Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="whats-new-in-version-0360">What's new in version 0.36.0</h1>
+<h1 id="whats-new-in-version-036x">What's new in version 0.36.x</h1>
 <p>The following new features and notable changes since version 0.35.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
@@ -5495,8 +5495,9 @@
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
-<p>Eclipse OpenJ9&trade; release 0.36.0 supports OpenJDK 8, 11, and 17.</p>
-<p>Support for running OpenJDK 8 and OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. OpenJ9 will not be tested with OpenJDK 11 on CentOS 6.10 after 0.36.0 release.</p>
+<p>Eclipse OpenJ9&trade; release 0.36.0 supports OpenJDK 8 and 17.</p>
+<p>Release 0.36.1 supports OpenJDK 11.</p>
+<p>Support for running OpenJDK 8 and OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. OpenJ9 will not be tested with OpenJDK 11 on CentOS 6.10 after the 0.36.1 release.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="changes-to-the-location-of-the-default-directory-for-the-shared-cache-and-snapshot">Changes to the location of the default directory for the shared cache and snapshot</h3>
 <p>On operating systems other than Windows&trade; and z/OS&reg;, the default shared classes cache directory in the user's home directory is changed from <code>javasharedresources</code> to <code>.cache/javasharedresources</code>. This change is to avoid cluttering of the home directory. If you specify <code>-Xshareclasses:groupAccess</code>, the default directory remains <code>/tmp/javasharedresources/</code>.</p>
@@ -5535,7 +5536,7 @@
 <p>You can specify the directory for saving or loading the JITServer AOT cache files with the <code>-XX:JITServerAOTCacheDir=&lt;directory&gt;</code> option. If the option is not used, AOT cache files are saved to (or loaded from) the current working directory of the JITServer server.</p>
 <p>For more information, see <a href="../xxjitserveraotcachedir/"><code>-XX:JITServerAOTCacheDir</code></a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
-<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.35.0 and v0.36.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.36/0.36.md">Release notes</a>.</p>
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.35.0 and v0.36.x releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.36/0.36.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.36.md ==== -->
 
 
