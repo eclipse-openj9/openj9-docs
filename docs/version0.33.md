@@ -43,7 +43,7 @@ Eclipse OpenJ9&trade; release 0.33.x supports OpenJDK 8, 11, 17, and 18.
 
 OpenJ9 Windows&reg; builds for OpenJDK 8 are now compiled with Microsoft&reg; Visual Studio 2017. The Visual Studio redistributable files included with the build are updated to match.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Binaries that are labeled 0.33.1 include additional bug fixes. For more information, see the [release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.33/0.33.md).
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Binaries that are labeled 0.33.1 include additional bug fixes. For more information, see the [release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.33/0.33.md).
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 

@@ -97,7 +97,7 @@ Options that change the behavior of the garbage collector.
 
     If you set this option, the VM attempts to reduce GC pause times for response-time sensitive, large-heap applications. This mode can be enabled with hardware-based support (Linux on IBM Z&reg; and z/OS&reg;) and software-based support (64-bit: Linux on (x86-64, POWER&reg;, IBM Z&reg;) AIX&reg;, macOS&reg;, and z/OS).
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note: Linux on IBM Z and z/OS**
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note: Linux on IBM Z and z/OS**
 
     This option is supported by all generations of IBM Z hardware to enable pause-less GC with two modes of operation: hardware-based and software-based operations. IBM z13&trade; and earlier hardware operates in software-based pause-less GC mode; IBM z14&trade; and later hardware (with supported software) operates in hardware-based mode.
 
@@ -118,7 +118,7 @@ Options that change the behavior of the garbage collector.
 
     If these requirements are not met, the option is ignored.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by `ulimit -M`, to a larger value than the maximum heap size.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by `ulimit -M`, to a larger value than the maximum heap size.
 
 ### `dnssExpectedTimeRatioMaximum`
 
@@ -202,7 +202,7 @@ Options that change the behavior of the garbage collector.
 
 : This option disables pause-less garbage collection that you might have enabled with the [`-Xgc:concurrentScavenge`](#concurrentscavenge) option when using the default [`gencon`](xgcpolicy.md#gencon) GC policy. This option applies only to the `gencon` GC policy.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** No concurrent scavenge is the default state, but the `noConcurrentScavenge` option is useful as it will disable concurrent scavenge even if it has been enabled by a previous option; the right-most option always takes precedence.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** No concurrent scavenge is the default state, but the `noConcurrentScavenge` option is useful as it will disable concurrent scavenge even if it has been enabled by a previous option; the right-most option always takes precedence.
 
 ### `nosynchronousGCOnOOM`
 
@@ -218,7 +218,7 @@ Options that change the behavior of the garbage collector.
 
 : When the VM starts, the GC checks that the operating system can meet the timer resolution requirements for the requested target pause time. Typically, this check correctly identifies operating systems that can deliver adequate time resolution. However, in some cases the operating system provides a more conservative answer than strictly necessary for GC pause time management, which prevents startup. Specifying this parameter causes the GC to ignore the answer returned by the operating system. The VM starts, but GC pause time management remains subject to operating system performance, which might not provide adequate timer resolution.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Use this option with caution, and only when you are unable to use a supported operating system.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Use this option with caution, and only when you are unable to use a supported operating system.
 
 : This option applies only to the `metronome` GC policy.
 
@@ -292,7 +292,7 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 
 : When this option is specified with the `balanced` policy, the GC will use the specified pause time as a *soft* pause time target. If this option is not specified when using the `balanced` policy, the default pause time target is set to 200 milliseconds. If the GC pauses are longer than the specified target, then the GC may shrink the amount of eden regions in order to satisfy the target pause time. If the percentage of time spent in PGC pauses is higher than `dnssExpectedTimeRatioMaximum` *and* the GC pauses are longer than the specified pause time target, then the target pause time may not be satisfied, in order to balance reaching the target pause time goal and percentage of time in GC pause goal.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Specifying an ultra low `targetPausetime` with the Balanced GC policy may cause the percentage of time spent in GC pauses to noticeably increase.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Specifying an ultra low `targetPausetime` with the Balanced GC policy may cause the percentage of time spent in GC pauses to noticeably increase.
 
 : This option applies only to the `metronome` and `balanced` GC policies.
 
@@ -354,7 +354,7 @@ Larger TLHs can help reduce heap lock contention, but might also reduce heap uti
 
 : `N` is the time in milliseconds that the summary information should be logged.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The cycle time does not mean that the summary information is logged precisely at that time, but when the last GC event that meets this time criterion passes.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The cycle time does not mean that the summary information is logged precisely at that time, but when the last GC event that meets this time criterion passes.
 
 : This option applies only to the `metronome` GC policy.
 

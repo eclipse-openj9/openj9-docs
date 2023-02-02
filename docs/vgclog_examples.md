@@ -103,7 +103,7 @@ You can analyze the increments and operations that are associated with a particu
 </tbody>
 </table>
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** For more information about the XML structure of GC cycles, see [GC cycles](vgclog.md#gc-cycles). For more information about GC cycle increments, see [GC increments and interleaving](vgclog.md#gc-increments-and-interleaving).
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** For more information about the XML structure of GC cycles, see [GC cycles](vgclog.md#gc-cycles). For more information about GC cycle increments, see [GC increments and interleaving](vgclog.md#gc-increments-and-interleaving).
 
 The following examples use log excerpts to show how the different types of `gencon` cycle are logged.
 
@@ -499,7 +499,7 @@ For this example, the `remainingFree` bytes value of 31.4 MB (32,933,776B) is ap
 
 This cycle aims to trace 228 MB (239,014,924B) during the concurrent increment. If the concurrent increment is interrupted by a card cleaning threshold value before it traces all 228 MB, the final STW increment completes the tracing during the STW pause.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** To analyze specific parts of a cycle, you can search for the elements that mark a specific increment of the cycle. For example, you can search for the <concurrent-global-final> element to locate the final increment of the `gencon` global cycle. See the details of a particular cycle, such as the [`gencon` global GC cycle](vgclog_examples.md#gencon-global-gc-cycle), to determine the element names for particular STW or concurrent GC increments or operations.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** To analyze specific parts of a cycle, you can search for the elements that mark a specific increment of the cycle. For example, you can search for the <concurrent-global-final> element to locate the final increment of the `gencon` global cycle. See the details of a particular cycle, such as the [`gencon` global GC cycle](vgclog_examples.md#gencon-global-gc-cycle), to determine the element names for particular STW or concurrent GC increments or operations.
 
 The next element recorded in the log, the `<exclusive-start>`element, records the start of an STW pause:
 
@@ -561,7 +561,7 @@ The `reason` attribute of the `<concurrent-trace-info>` child element indicates 
 
 In the next section that begins with the `gc-start` element, you can find information about the amount of memory available (`<mem-info>`) and where it is located in the java object heap. This snapshot is taken before the final increment's operations and suboperations are run and can be compared with a similar snapshot that is taken afterward to understand the effect on the heap. The child element attribute values of the`<mem>` and `<mem-info>` elements indicate the status of the memory.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You can double check that the increment is associated with the GC global cycle in the example by checking the `contextid` attribute value matches the `id=12364` attribute value of the cycle's <gc-cycle> element.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You can double check that the increment is associated with the GC global cycle in the example by checking the `contextid` attribute value matches the `id=12364` attribute value of the cycle's <gc-cycle> element.
 
 ```xml
 <gc-start id="12380" type="global" contextid="12364" timestamp="2020-10-18T13:35:44.594">
@@ -616,7 +616,7 @@ The `<gc-op>` elements and their child elements contain information about the op
 4. `classunload`
 5. `sweep`
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The final increment of a `gencon` global cycle can include an optional `compact` suboperation.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The final increment of a `gencon` global cycle can include an optional `compact` suboperation.
 
 For more information about the different types of GC operation, see [GC operations](gc_overview.md#gc-operations).
 
@@ -700,7 +700,7 @@ The end of the increment is recorded with `<gc-end>` and provides another snapsh
 - The nursery area, which gained 0.9 MB of free memory. The nursery area now has 224.6 MB (235,516,088B) available as free memory. At the start of the final increment, the nursery area had 223.7 MB (234,609,440B) of free memory available.
 - The tenure area, which gained 355.2 MB (372,521,216B) of free memory. (the tenure area now has 395.7 MB (414,960,416B) available as free memory. At the start of the final increment, the tenure area had 40.5 MB (42,439,200B) of free memory available).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The global GC cycle runs to reclaim memory in the tenure area. The freeing up of memory in the nursery area is achieved by using the partial GC cycle. For more information, see [`gencon` policy (default)](gc.md#gencon-policy-default).
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The global GC cycle runs to reclaim memory in the tenure area. The freeing up of memory in the nursery area is achieved by using the partial GC cycle. For more information, see [`gencon` policy (default)](gc.md#gencon-policy-default).
 
 After the final increment of the global cycle completes, the global cycle ends and the STW pause ends, as shown in the following output:
 

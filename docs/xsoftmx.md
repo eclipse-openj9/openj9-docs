@@ -48,7 +48,7 @@ If you reduce the `-Xsoftmx` value, the garbage collector attempts to respect th
 
 When the heap shrinks, the garbage collector might release memory. The ability of the operating system to reclaim and use this memory varies based on the capabilities of the operating system.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 - When using `-Xgcpolicy:gencon` with `-Xsoftmx`, the proportion of heap space used for nursery within the `-Xsoftmx` limit is proportional to the maximum amount of nursery space specified (see [Xmn/Xmnx](xmn.md)) relative to the `-Xmx` value. For example, if the following is specified on the command line `-Xsoftmx2g -Xmnx4g  -Xmx8g`, nursery space is allowed to use 50%(4G/8G) of the specified `-Xsoftmx` value, which in this example is 1G.
 - When using `-Xgcpolicy:balanced` with `-Xsoftmx` and `-Xmn`/`-Xmnx`/`-Xmns` options,  the maximum and minimum size for eden are absolute (rather than the proportional nursery behaviour for gencon), and do not depend on the `-Xsoftmx` value specified. For example, if `-Xmnx1G` is specified, then eden will be able to grow up to `1G` in size, regardless of the `-Xsoftmx` value specified.

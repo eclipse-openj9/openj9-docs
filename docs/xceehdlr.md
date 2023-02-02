@@ -61,10 +61,10 @@ When the `-XCEEHDLR` option is used, condition handler actions take place in the
 
 1. All severity 0 and severity 1 conditions are percolated.
 2. If a Language Environment condition is triggered in JNI code as a result of an arithmetic operation, the VM condition handler resumes executing Java code as if the JNI native code had thrown a `com.ibm.le.conditionhandling.ConditionException` exception. This exception class is a subclass of `java.lang.RuntimeException`.  
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The Language Environment conditions that correspond to arithmetic operations are `CEE3208S` through `CEE3234S`. However, the Language Environment does not deliver conditions `CEE3208S`, `CEE3213S`, or `CEE3234S` to C applications, so the VM condition handler will not receive them.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The Language Environment conditions that correspond to arithmetic operations are `CEE3208S` through `CEE3234S`. However, the Language Environment does not deliver conditions `CEE3208S`, `CEE3213S`, or `CEE3234S` to C applications, so the VM condition handler will not receive them.
 3. If the condition handling reaches this step, the condition is considered to be unrecoverable. RAS diagnostic information is generated, and the VM ends by calling the `CEE3AB2()` service with abend code 3565, reason code 0, and cleanup code 0.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** You cannot use `-Xsignal:userConditionHandler=percolate` and `-XCEEHDLR` together.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** You cannot use `-Xsignal:userConditionHandler=percolate` and `-XCEEHDLR` together.
 
 
 ## See also

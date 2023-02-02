@@ -220,11 +220,11 @@ If you believe that a diagram can be used to enhance the content, add the .gif o
 [Font-awesome](http://fontawesome.io/icons/) icons can also be used to highlight user "notes" and "restrictions". The following examples show how to embed these icons:
 
 ```
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Here is something you should be aware of...
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Here is something you should be aware of...
 ```
 
 ```
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** Here is some limitations...
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:** Here is some limitations...
 ```
 
 Font-awesome icons are also used in option tables to indicate defaults. The following examples show how to embed these "ticks" and "crosses".
@@ -234,7 +234,7 @@ Font-awesome icons are also used in option tables to indicate defaults. The foll
 ```
 
 ```
-:fontawesome-solid-times:{: .no aria-hidden="true"}<span class="sr-only">no</span>
+:fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>
 ```
 
 Note that these require an extra `<span>`, which is used by screen readers.

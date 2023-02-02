@@ -28,7 +28,7 @@ Eclipse OpenJ9&trade; VM tracing is a powerful feature to help you diagnose prob
 
 Trace data can be output in human-readable or in compressed binary formats. The VM provides a tool to process and convert the compressed binary data into a readable format. See [Trace formatter](tool_traceformat.md).  
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You can also control trace by using the `com.ibm.jvm.Trace` API or by using JVMTI from an external agent.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You can also control trace by using the `com.ibm.jvm.Trace` API or by using JVMTI from an external agent.
 
 ## Xtrace Option Builder
 
@@ -72,7 +72,7 @@ The following parameters can be used to configure trace. (Follow links for more 
 | [`-Xtrace:suspendcount=<count>`](#suspendcount)                    | Suspends tracing at a thread level after a specified count.                                        |
 | [`-Xtrace:trigger=<clause>`](#trigger)                             | Determines when various triggered trace actions occur, including turning trace on or off.          |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If an option value contains commas, it must be enclosed in braces. For example: `methods={java/lang/*,com/ibm/*}`
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If an option value contains commas, it must be enclosed in braces. For example: `methods={java/lang/*,com/ibm/*}`
 
 ### Controlling tracepoint activation
 
@@ -89,7 +89,7 @@ The following parameters can be used to control tracepoint activation. (Follow l
 | [`-Xtrace:external<tracepoint_specification>`](#external-tracepoint)          | Routes trace data to trace listeners, which are registered by using the JVMTI APIs. |
 | [`-Xtrace:none[=<tracepoint_specification>]`](#none-tracepoint)               | Prevents the trace engine from loading if it is the only trace option specified.    |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** These options control which individual tracepoints are activated at run time and the implicit destination of the trace data. All these properties are independent of each other and can be mixed and matched in any way that you choose. For more information, see [Tracepoint activation](#tracepoint-activation).
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** These options control which individual tracepoints are activated at run time and the implicit destination of the trace data. All these properties are independent of each other and can be mixed and matched in any way that you choose. For more information, see [Tracepoint activation](#tracepoint-activation).
 
 ## About trace
 
@@ -255,7 +255,7 @@ The following table lists the possible Java components (`<component>`). To inclu
 | **simplepool**  | VM storage pool support                                                        |
 | **sunvmi**      | VM class library interface                                                     |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** When specifying the **mt** component you must also specify the `methods` option.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** When specifying the **mt** component you must also specify the `methods` option.
 
 The following table lists all the tracepoint groups (`<group>`). Each group is associated with one or more Java components:
 
@@ -318,7 +318,7 @@ or
 
 In the first example, tracepoints that have a level of 5 or less are enabled for all components. In the second example, all level 1 tracepoints are enabled. All level 2 tracepoints in **j9mm** are enabled. All tracepoints up to level 9 are enabled in **j9bcu**.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The level applies only to the current component. If multiple trace selection components are found in a trace properties file, the level is reset to the default for each new component.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The level applies only to the current component. If multiple trace selection components are found in a trace properties file, the level is reset to the default for each new component.
 Level specifications do not apply to explicit tracepoint specifications that use the **TPNID** keyword.
 
 When the not operator is specified, the level is inverted; that is, `!j9mm{level5}` disables all tracepoints of level 6 or greater for the **j9mm** component. The following example enables trace for all components at level 9 (the default), but disables level 6 and higher for the **locking** component, and level 7 and higher for the **storage** component:
@@ -358,7 +358,7 @@ If external trace is enabled, the number of buffers is doubled; that is, each th
 
 The `dynamic` and `nodynamic` suboptions have meaning only when tracing to an output file.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If `nodynamic` is specified, you might lose trace data if the volume of trace data exceeds the bandwidth of the trace output file. Message **UTE115** is issued when the first trace entry is lost, and message **UTE018** is issued when the VM ends.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If `nodynamic` is specified, you might lose trace data if the volume of trace data exceeds the bandwidth of the trace output file. Message **UTE115** is issued when the first trace entry is lost, and message **UTE018** is issued when the VM ends.
 
 Here are some command line examples:
 
@@ -394,7 +394,7 @@ The `exception` option allows low-volume tracing in buffers and files that are d
 
 This form of tracing is channeled through a single set of buffers, as opposed to the buffer-per-thread approach for normal trace. Buffer contention might occur if high volumes of trace data are collected. A difference exists in the `<tracepoint_specification>` defaults for exception tracing;  see [Tracepoint specification](#tracepoint-specification).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 - The exception trace buffers are intended for low-volume tracing. By default, the exception trace buffers log garbage collection (GC) event tracepoints, see Default tracing. You can send additional tracepoints to the exception buffers or turn off the GC tracepoints. Changing the exception trace buffers alters the contents of the GC History section in any Javadumps.
 - When exception trace is entered for an active tracepoint, the current thread ID is checked against the previous caller's thread ID. If it is a different thread, or this is the first call to exception trace, a context tracepoint is put into the trace buffer first. This context tracepoint consists only of the current thread ID, which is necessary because of the single set of buffers for exception trace. (The formatter identifies all trace entries as coming from the Exception trace pseudo thread when it formats exception trace files.)
@@ -621,7 +621,7 @@ yyyymmdd" format), *%p%* (process ID number of the process generating the trace)
 - Optionally, `<size>` is a value in megabytes (MB), for example, use *4m* to specify 4 MB. When full, it wraps to the beginning. If you do not limit the file, it grows indefinitely, until limited by disk space.
 - Optionally, `<generations>` is a value 2 through 36. These values cause up to 36 files to be used sequentially as each file reaches its `<size>` threshold. When a file needs to be reused, it is overwritten. If `<generations>` is specified, the filename must contain a **#** (hash, pound symbol), which will be substituted with its generation identifier, the sequence of which is 0 through 9 followed by A through Z.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** When tracing to a file, buffers for each thread are written when the buffer is full or when the VM ends. If a thread has been inactive for a period of time before the VM ends, what seems to be 'old' trace data is written to the file. When formatted, it then seems that trace data is missing from the other threads, but this is an unavoidable side-effect of the buffer-per-thread design. This effect becomes especially noticeable when you use the generation facility, and format individual earlier generations.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** When tracing to a file, buffers for each thread are written when the buffer is full or when the VM ends. If a thread has been inactive for a period of time before the VM ends, what seems to be 'old' trace data is written to the file. When formatted, it then seems that trace data is missing from the other threads, but this is an unavoidable side-effect of the buffer-per-thread design. This effect becomes especially noticeable when you use the generation facility, and format individual earlier generations.
 
 Here are some examples:
 
@@ -707,7 +707,7 @@ This trace option determines whether tracing is enabled for each thread.
 
 If `<count>` is greater than zero, each thread initially has its tracing disabled and must receive `<count>` `resumethis` actions before it starts tracing. This option is used with the [trigger](#trigger) option.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You cannot use `resumecount` and `suspendcount` together because they use the same internal counter.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You cannot use `resumecount` and `suspendcount` together because they use the same internal counter.
 
 The following example starts with all tracing turned off. Each thread starts tracing when it has had three `resumethis` actions performed on it:
 
@@ -749,7 +749,7 @@ This trace option determines whether tracing is enabled for each thread.
 
 If `<count>` is greater than zero, each thread initially has its tracing enabled and must receive `<count>` `suspendthis` actions before it stops tracing.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} You cannot use `resumecount` and `suspendcount` together because they both set the same internal counter.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} You cannot use `resumecount` and `suspendcount` together because they both set the same internal counter.
 
 This trace option is for use with the [trigger](#trigger) option.
 
@@ -832,13 +832,13 @@ To produce a Java dump when a class constructor is called, specify the following
 ```
 "-Xtrace:trigger=method{java/lang/Thread.<init>,javadump}"
 ```
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This trace option is enclosed in quotation marks to avoid unwanted shell expansion of some of the characters.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This trace option is enclosed in quotation marks to avoid unwanted shell expansion of some of the characters.
 
 To produce a Java dump when a class static initializer is called, specify the following command:
 ```
 "-Xtrace:trigger=method{java/lang/Thread.<clinit>,javadump}"
 ```
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This trace option is enclosed in quotation marks to avoid unwanted shell expansion of some of the characters.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This trace option is enclosed in quotation marks to avoid unwanted shell expansion of some of the characters.
 
 To produce a Java dump when a method is entered 1000 times and 1001 times, specify the following command:
 

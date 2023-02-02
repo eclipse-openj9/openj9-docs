@@ -38,7 +38,7 @@ The following new features and notable changes since version 0.11.0 are included
 - [RSA algorithm support for OpenSSL](#rsa-algorithm-support-for-openssl)
 - [`IBM_JAVA_OPTIONS` is deprecated](#ibm_java_options-is-deprecated)
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Warning:** Following the release of OpenJ9 0.12.0, an intermittent problem
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Warning:** Following the release of OpenJ9 0.12.0, an intermittent problem
 was identified with OpenSSL V1.1.x acceleration of the cryptographic Digest algorithm. For more information about the issue, see [#4530](https://github.com/eclipse-openj9/openj9/issues/4530). You can turn off the Digest algorithm by setting the [-Djdk.nativeDigest](djdknativedigest.md) system property to `false`. A new release of OpenJ9 (0.12.1) is available that disables the Digest algorithm by default.
 
 
@@ -87,7 +87,7 @@ For more information, see [`-Xshareclasses`](xshareclasses.md#cachedirperm).
 
 OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which provides improved cryptographic performance compared to the in-built OpenJDK Java cryptographic implementation. The OpenSSL V1.1.x implementation is enabled by default and  supported for the Digest, CBC, and GCM algorithms. Binaries obtained from AdoptOpenJDK include OpenSSL v1.1.x (see Note). For more information about tuning the OpenSSL implementation, see [Performance tuning](introduction.md#cryptographic-operations).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** OpenJDK 8 with OpenJ9 includes OpenSSL support since version 0.11.0. Currently, OpenSSL is not bundled as part of the AdoptOpenJDK AIX binaries due to an unresolved problem.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** OpenJDK 8 with OpenJ9 includes OpenSSL support since version 0.11.0. Currently, OpenSSL is not bundled as part of the AdoptOpenJDK AIX binaries due to an unresolved problem.
 
 ![End of content that applies only to Java 11 (LTS)](cr/java_close_lts.png)
 

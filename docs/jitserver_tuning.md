@@ -122,7 +122,7 @@ If the client JVM does not find a compatible server to connect to, compilations 
 
 You can enable the provision of performance metrics by specifying the `-XX:+JITServerMetrics` command line option. After enabling this option, you can use a monitoring tool that follows the OpenMetrics standard, such as Prometheus, to collect the data by issuing an HTTP `GET` request to the following url: `http://<jitserveraddress>:<port>/metrics`.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** There is a limit of four concurrent `GET` requests at any given time.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** There is a limit of four concurrent `GET` requests at any given time.
 
 You can use the [`-XX:JITServerMetricsSSLKey`](xxjitservermetricssslkey.md) and [`-XX:JITServerMetricsSSLCert`](xxjitservermetricssslkey.md) options to encrypt the data with TLS or SSL.
 

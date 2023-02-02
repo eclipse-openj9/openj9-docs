@@ -54,7 +54,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 OpenSSL is a native open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which provides improved cryptographic performance compared to the in-built OpenJDK Java cryptographic implementation. The OpenSSL V1.1.x implementation is enabled by default and  supported for the Digest, CBC, and GCM algorithms. Binaries obtained from AdoptOpenJDK include OpenSSL v1.1.x (see Note). For more information about tuning the OpenSSL implementation, see [Performance tuning](introduction.md#cryptographic-operations).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Currently, OpenSSL is not bundled as part of the AdoptOpenJDK AIX binary due to an unresolved problem.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Currently, OpenSSL is not bundled as part of the AdoptOpenJDK AIX binary due to an unresolved problem.
 
 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 
@@ -64,7 +64,7 @@ OpenSSL is a native open source cryptographic toolkit for Transport Layer Securi
 
 To increase security, the default shared classes cache directory is changed on non-Windows platforms from `/tmp/javasharedresources/` to the user's home directory, unless you specify `-Xshareclasses:groupAccess`. If you use the `groupAccess` suboption, the default directory is unchanged because some members of the group might not have access to the user home directory.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** For persistent caches, the shared classes cache directory cannot be on an NFS mount. If your user home directory is on an NFS mount, either move it or use the `-Xshareclasses:cacheDir=<directory>` suboption to specify a different directory for the cache.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** For persistent caches, the shared classes cache directory cannot be on an NFS mount. If your user home directory is on an NFS mount, either move it or use the `-Xshareclasses:cacheDir=<directory>` suboption to specify a different directory for the cache.
 
 In general, caches cannot be shared across different Java releases, so you cannot re-use a cache that was created by a previous level of Java 11; if you use the name and cacheDir suboptions to specify an existing cache, the VM attempts to delete the cache and create a new one. However, on Windows, the cache cannot be deleted if it is in use, in which case the VM continues to use the existing cache.
 
@@ -98,7 +98,7 @@ about the Java heap size set for a container, see [-XX:\[+|-\]UseContainerSuppor
 
 Pause-less garbage collection mode is aimed at large heap, response-time sensitive applications. When enabled, the VM attempts to reduce GC pause times. In earlier releases, pause-less garbage collection mode ([`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge)) was available only on IBM z14 hardware. This mode is now available on 64-bit x86 Linux platforms.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:**
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:**
 
 - The Generational Concurrent (`gencon`) garbage collection policy must be used. (This is the default policy.)
 - Compressed references must be used. See [`-Xcompressedrefs`](xcompressedrefs.md). Compressed references are enabled by default when the maximum heap size (`-Xmx`) ≤ 57 GB. The concurrent scavenge option is ignored if the maximum heap size is > 57 GB.

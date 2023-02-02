@@ -26,7 +26,7 @@
 
 This option enables or disables JIT support for the `perf` tool without affecting the existing `Xjit` options.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** Since this option creates a file that is used by the Linux&reg; system profiler, `perf`, it applies only to Linux.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** Since this option creates a file that is used by the Linux&reg; system profiler, `perf`, it applies only to Linux.
 
 ## Syntax
 

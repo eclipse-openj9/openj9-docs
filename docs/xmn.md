@@ -39,9 +39,9 @@ You can use the `-verbose:sizes` option to find out the value that is being used
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** If you try to set `-Xmn` with either `-Xmns` or `-Xmnx`, the VM does not start, returning an error.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** If you try to set `-Xmn` with either `-Xmns` or `-Xmnx`, the VM does not start, returning an error.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 - When using the `balanced` GC policy without specifying `-Xmn` or `-Xmns`, the GC may decide to shrink eden size below its initial size (25% of `-Xms`) if it determines that doing so will improve GC performance.
 - When using the `balanced` GC policy, specifying `-Xmn`/`-Xmns`/`-Xmnx` may affect `balanced` GC's ability to satisfy [`-Xgc:targetPausetime`](xgc.md#targetpausetime)

@@ -88,7 +88,7 @@ On Linux and AIX operating systems, the OpenSSL 1.0.x or 1.1.x library is expect
 
 If you have multiple versions of OpenSSL on your system, the OpenJ9 VM uses the latest version.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** OpenSSL 3.0.x does not support initialization vector (IV) sizes above 16 Bytes for the GCM algorithm. (In earlier OpenSSL versions, you can use such sizes but they might cause unpredictable behavior.) If you need to use a larger size, disable OpenSSL support for the GCM algorithm.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** OpenSSL 3.0.x does not support initialization vector (IV) sizes above 16 Bytes for the GCM algorithm. (In earlier OpenSSL versions, you can use such sizes but they might cause unpredictable behavior.) If you need to use a larger size, disable OpenSSL support for the GCM algorithm.
 
 OpenSSL support is enabled by default for all supported algorithms. If you want to limit support to specific algorithms, a number of
 system properties are available for tuning the implementation.
@@ -97,7 +97,7 @@ Each algorithm can be disabled individually by setting the following system prop
 
 
 - To turn off **Digest**, set `-Djdk.nativeDigest=false`
-- To turn off **ChaCha20** and **ChaCha20-Poly1305**, set `-Djdk.nativeChaCha20=false`. :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+- To turn off **ChaCha20** and **ChaCha20-Poly1305**, set `-Djdk.nativeChaCha20=false`. :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 - To turn off **CBC**, set `-Djdk.nativeCBC=false`
 - To turn off **GCM**, set `-Djdk.nativeGCM=false`
 - To turn off **RSA**, set `-Djdk.nativeRSA=false`
@@ -114,7 +114,7 @@ To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow 
 - [OpenJDK 11 with OpenJ9](https://github.com/eclipse-openj9/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
 - [OpenJDK 17 with OpenJ9](https://github.com/eclipse-openj9/openj9/blob/master/doc/build-instructions/Build_Instructions_V17.md).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you obtain an OpenJDK with OpenJ9 build that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgements apply in accordance with the license terms:
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you obtain an OpenJDK with OpenJ9 build that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgements apply in accordance with the license terms:
 
 - *This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/).*
 - *This product includes cryptographic software written by Eric Young (eay@cryptsoft.com).*

@@ -53,14 +53,14 @@ For example:
     5462
     14332
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to Eclipse OpenJ9&trade;.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to Eclipse OpenJ9&trade;.
 
 The tool uses the Attach API, and has the following limitations:
 
 - Does not list Java processes on other hosts, to enhance security
 - Does not list Java processes owned by other users
 - Does not list non-OpenJ9 Java processes
-- Does not list processes whose attach API is disabled. :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The Attach API is disabled by default on z/OS.
+- Does not list processes whose attach API is disabled. :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The Attach API is disabled by default on z/OS.
 
 For more information about the Attach API, including how to enable and secure it, see [Java Attach API](attachapi.md).
 

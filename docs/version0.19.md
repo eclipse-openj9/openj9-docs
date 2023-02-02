@@ -74,7 +74,7 @@ Linux x86 64-bit, Linux on POWER&reg; LE 64-bit, and Linux on IBM Z&reg; 64-bit 
 
 The following features are supported by OpenJ9:
 
-- [JEP 343](https://openjdk.org/jeps/343): Packaging Tool (Incubator)<br>:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:** `jpackage` is supported on only the following OpenJ9 platforms: Linux&reg;, macOS&reg;, and Windows&trade;. It is _not_ supported on AIX&reg; or z/OS&reg; platforms.
+- [JEP 343](https://openjdk.org/jeps/343): Packaging Tool (Incubator)<br>:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:** `jpackage` is supported on only the following OpenJ9 platforms: Linux&reg;, macOS&reg;, and Windows&trade;. It is _not_ supported on AIX&reg; or z/OS&reg; platforms.
 - [JEP 352](https://openjdk.org/jeps/352): Non-Volatile Mapped Byte Buffers
 - [JEP 358](https://openjdk.org/jeps/358): Helpful NullPointerExceptions
 - [JEP 359](https://openjdk.org/jeps/359): Records (Preview)

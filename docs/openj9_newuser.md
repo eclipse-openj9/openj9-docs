@@ -101,7 +101,7 @@ If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, you 
 |`VMOption`                  | OpenJ9 Java dump (option `-Xdump:java`) |
 |`DiagnosticCommandMBean`    | None                     |
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** OpenJ9 implements the following `com.sun.management` interfaces: `GarbageCollectorMXBean`, `GarbageCollectionNotificationInfo`, `GcInfo`, `OperatingSystemMXBean`, `UnixOperatingSystemMXBean`.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** OpenJ9 implements the following `com.sun.management` interfaces: `GarbageCollectorMXBean`, `GarbageCollectionNotificationInfo`, `GcInfo`, `OperatingSystemMXBean`, `UnixOperatingSystemMXBean`.
 
 For information about OpenJ9 application programming interfaces, see [API documentation](api-overview.md).
 

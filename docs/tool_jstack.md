@@ -40,7 +40,7 @@ The values for `<options>*` are as follows:
 - `-h`: prints help information
 
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restrictions:**
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:**
 
 - This tool is not supported and is subject to change or removal in future releases.
 - Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to OpenJ9. For more information about differences, see [Switching to OpenJ9](tool_migration.md).
@@ -49,7 +49,7 @@ The tool uses the Attach API, and has the following limitations:
 
 - Displays information only for local processes that are owned by the current user, due to security considerations.
 - Displays information for OpenJ9 Java processes only
-- Does not show information for processes whose Attach API is disabled. :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** The Attach API is disabled by default on z/OS.
+- Does not show information for processes whose Attach API is disabled. :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The Attach API is disabled by default on z/OS.
 
 For more information about the Attach API, including how to enable and secure it, see [Java Attach API](attachapi.md).
 

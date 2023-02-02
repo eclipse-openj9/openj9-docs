@@ -61,7 +61,7 @@ For a detailed description of the policies, when to use them, and how they work,
 
 : The `balanced` policy also exploits large systems that have Non-Uniform Memory Architecture (NUMA) characteristics (x86 and POWER&trade; platforms only), which might further improve application throughput.
 
-: :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you are using this GC policy in a Docker container that uses the default `seccomp` Docker profile, you must start the container with `--security-opt seccomp=unconfined` to exploit NUMA characteristics. These options are not required if you are running in Kubernetes because `unconfined` is set by default (see [Seccomp]( https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp)).
+: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you are using this GC policy in a Docker container that uses the default `seccomp` Docker profile, you must start the container with `--security-opt seccomp=unconfined` to exploit NUMA characteristics. These options are not required if you are running in Kubernetes because `unconfined` is set by default (see [Seccomp]( https://kubernetes.io/docs/concepts/policy/pod-security-policy/#seccomp)).
 
 : To learn more about this policy, how it works, and when to use it, see [Garbage collection: `balanced` policy](gc.md#balanced-policy).
 

@@ -65,7 +65,7 @@ When [`-XX:MaxRAMPercentage` / `-XX:InitialRAMPercentage`](xxinitialrampercentag
 
     -XX:+UseContainerSupport -XX:MaxRAMPercentage=80
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** If you set a value for [`-Xms`](xms.md), the `-XX:InitialRAMPercentage` option is ignored.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you set a value for [`-Xms`](xms.md), the `-XX:InitialRAMPercentage` option is ignored.
 If you set a value for [`-Xmx`](xms.md), the `-XX:MaxRAMPercentage` option is ignored.
 
 <!-- ==== END OF TOPIC ==== xxusecontainersupport.md ==== -->

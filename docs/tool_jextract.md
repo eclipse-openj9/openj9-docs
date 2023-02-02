@@ -28,7 +28,7 @@
 
 On some operating systems, copies of executable files and libraries are required for a full analysis of a core dump (you can get some information from the dump without these files, but not as much). Run the `jpackcore` utility to collect these extra files and package them into an archive file along with the core dump. To analyze the output, use the [dump viewer (`jdmpview`)](tool_jdmpview.md).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This tool replaces `jextract`, which is deprecated in Eclipse OpenJ9&trade; version 0.26.0.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This tool replaces `jextract`, which is deprecated in Eclipse OpenJ9&trade; version 0.26.0.
 
 ## Syntax
 
@@ -41,7 +41,7 @@ where:
 - `<core file name>` is the name of the system dump.
 - `<zip_file>` is the name you want to give to the processed file. If you do not specify a name, output is written to `<core file name>.zip` by default. The output is written to the same directory as the core file.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** You should run `jpackcore` on the same system that produced the system dump in order to collect the correct executables and libraries referenced in the system dump. You should also run `jpackcore` using the same VM level, to avoid any problems. From Eclipse OpenJ9 V0.24.0, the utility always checks that the build ID of the SDK that created the dump file matches the `jpackcore` build ID. Where these IDs do not match, the following exception is thrown:
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** You should run `jpackcore` on the same system that produced the system dump in order to collect the correct executables and libraries referenced in the system dump. You should also run `jpackcore` using the same VM level, to avoid any problems. From Eclipse OpenJ9 V0.24.0, the utility always checks that the build ID of the SDK that created the dump file matches the `jpackcore` build ID. Where these IDs do not match, the following exception is thrown:
 
 ```
 J9RAS.buildID is incorrect (found XXX, expecting YYY). This version of jpackcore is incompatible with this dump (use '-r' option to relax this check).

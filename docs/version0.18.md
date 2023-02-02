@@ -55,7 +55,7 @@ Eclipse OpenJ9&trade; releases 0.18.0 and 0.18.1 support OpenJDK 8, 11, and 13. 
 - [OpenJDK version 11](https://adoptopenjdk.net/archive.html?variant=openjdk11&jvmVariant=openj9)
 - [OpenJDK version 13](https://adoptopenjdk.net/archive.html?variant=openjdk13&jvmVariant=openj9)
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Binaries at AdoptOpenJDK that are labeled 0.18.1 include additional bug fixes. For more information, see the [release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.18/0.18.md).
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Binaries at AdoptOpenJDK that are labeled 0.18.1 include additional bug fixes. For more information, see the [release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.18/0.18.md).
 
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).

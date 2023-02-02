@@ -137,7 +137,7 @@ The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing y
 
     This avoids sharing your application cache with a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache.
 
 - Set a specific cache directory ([`-Xshareclasses:cacheDir=<directory>`](xshareclasses.md#cachedir)).
 
@@ -221,7 +221,7 @@ The [`-Xshareclasses:listAllCaches`](xshareclasses.md#listallcaches) cache utili
 
 A snapshot can be created only if the user has sufficient permissions to create the destination snapshot file. If a snapshot of the same name exists already, it is overwritten. On platforms that support persistent caches, the `nonpersistent` suboption must be specified in order to create a snapshot. For information about removing snapshot files, see the `destroySnapshot` and `destroyAllSnapshots` cache utilities in [Housekeeping](#housekeeping).
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 - Persistent caches are not supported on z/OS.
 - The `snapshotCache` and `restoreFromCache` cache utilities cannot be used on Windows systems.
@@ -236,7 +236,7 @@ Caches can be deleted if they contain many stale classes or if the cache is full
 - [`-Xshareclasses:destroyAllSnapshots`](xshareclasses.md#destroyallsnapshots): Removes all cache snapshots from disk that are found by specifying the `cacheDir` suboption.
 - [`-Xshareclasses:destroyAllLayers`](xshareclasses.md#destroyalllayers): Removes all shared cache layers that are specified by the `name` and `cacheDir` suboptions.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** You must always use the utilities to remove non-persistent caches correctly from shared memory.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You must always use the utilities to remove non-persistent caches correctly from shared memory.
 
 Caches can also be removed if they are unused for a specified amount of time. To configure time-based housekeeping, use the [-Xshareclasses:expire](xshareclasses.md#expire) option.
 
@@ -321,7 +321,7 @@ Another method of structuring and protecting classes in the shared classes cache
 
 Although it is possible to combine partitions and modification contexts, this practice is not recommended because the cache will contain partitions within partitions.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Partitions are not supported by the bootstrap class loader or the default application class loader.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Partitions are not supported by the bootstrap class loader or the default application class loader.
 
 
 

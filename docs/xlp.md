@@ -26,9 +26,9 @@
 
 Requests the Eclipse OpenJ9&trade; VM to allocate the Java&trade; object heap and JIT code cache memory with large pages.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This option is deprecated in all versions later than Java 8. Use the [`-Xlp:codecache`](xlpcodecache.md) and [`-Xlp:objectheap`](xlpobjectheap.md) options instead.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This option is deprecated in all versions later than Java 8. Use the [`-Xlp:codecache`](xlpcodecache.md) and [`-Xlp:objectheap`](xlpobjectheap.md) options instead.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This option does not work on macOS&reg;.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** This option does not work on macOS&reg;.
 
 If you use the [`-Xgc:preferredHeapBase`](xgc.md#preferredheapbase) option with `-Xlp`, the preferredHeapBase address must be a multiple of the large page size. If you specify an inaccurate heap base address, the heap is allocated with the default page size.
 
@@ -60,7 +60,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
     If large pages are not available, the VM does not start and produces an error message. The VM uses `shmget()` to allocate large pages for the heap. Large pages are supported by systems that have Linux kernels v2.6 or higher.
 
-    :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Linux for IBM Z&reg; supports only a large page size of 1 M.
+    :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Linux for IBM Z&reg; supports only a large page size of 1 M.
 
     Depending on the architecture, 1 MB or 2 MB large pages, when available, are the default size for the object heap and the code cache. The options that control these sizes are [`Xlp:codecache`](xlpcodecache.md) and [`-Xlp:objectheap`](xlpobjectheap.md).
 

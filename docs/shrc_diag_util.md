@@ -320,7 +320,7 @@ The following summary data is displayed:
 - `Data bytes`
     - The number of bytes of non-class data stored by the VM.
 - `Metadata bytes`
-    - The number of bytes of data stored to describe the cached classes. :fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** This field is available only in the top layer cache output or when a cache is not layered.
+    - The number of bytes of data stored to describe the cached classes. :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This field is available only in the top layer cache output or when a cache is not layered.
 - `Metadata % used`
     - The proportion of metadata bytes to class bytes, which indicates how efficiently cache space is being used. The value shown does consider the `Class debug area size`.
 - `Class debug area size`

@@ -68,7 +68,7 @@ The following features are implemented in OpenJDK and available in any build of 
 You can find the full list of features for JDK 17 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/17/).
 Any remaining features that are listed do not apply to OpenJ9.
 
-:fontawesome-solid-pencil-alt:{: .note aria-hidden="true"} **Note:** Applications might be adversely affected by JEP 403
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Applications might be adversely affected by JEP 403
 if they make use of internal APIs. You should update your application to use standard APIs. To temporarily work around
 this problem, use `--add-opens`, `--add-exports` on the command line for each package required.
 

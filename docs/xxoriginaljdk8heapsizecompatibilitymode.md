@@ -26,7 +26,7 @@
 
 ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) The default value for the maximum heap size (`-Xmx`) is 25% of the available memory with a maximum of 25 GB. However, where there is 2 GB or less of physical memory, the value set is 50% of available memory with a minimum value of 16 MB and a maximum value of 512 MB. In Eclipse OpenJ9&trade; 0.18.0 and earlier releases the default is half the available memory with a minimum of 16 MB and a maximum of 512 MB. Enable this option to revert to the earlier default value.
 
-:fontawesome-solid-exclamation-triangle:{: .warn aria-hidden="true"} **Restriction:** This option is supported only on Java&trade; 8. It is ignored on Java 11 and later versions.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** This option is supported only on Java&trade; 8. It is ignored on Java 11 and later versions.
 
 ## Syntax
 
