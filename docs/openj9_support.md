@@ -107,8 +107,7 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
 
 | AIX&reg;                                  | ppc32                                                                                | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| AIX 7.1 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| AIX 7.2 TL4                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| AIX 7.2 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
@@ -155,8 +154,7 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| AIX 7.1 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| AIX 7.2 TL4                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| AIX 7.2 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 :fontawesome-solid-bell:{: .warn aria-hidden="true"} **Important:** AIX OpenJ9 builds require the [XL C++ Runtime 16.1.0.7 or later](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
 
@@ -200,8 +198,7 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| AIX 7.1 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| AIX 7.2 TL4                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| AIX 7.2 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 :fontawesome-solid-bell:{: .warn aria-hidden="true"} **Important:** AIX OpenJ9 builds require the [XL C++ Runtime 16.1.0.7 or later](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
 
@@ -222,7 +219,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 32-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2017          |
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2017          |
 | macOS x86 64-bit              | OSX 10.15.7            | xcode 12.4 and clang 12.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 13.1.3                        |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 13.1.3                        |
 
 ### OpenJDK 11
 
@@ -235,7 +232,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0.11                     |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.11                     |
 
 ### OpenJDK 17
 
@@ -248,4 +245,4 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.1 TL05           | xlc/C++ 16.1.0.11                     |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.11                     |
