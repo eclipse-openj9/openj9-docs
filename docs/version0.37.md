@@ -33,11 +33,11 @@ The following new features and notable changes since version 0.36.x are included
 
 ### Binaries and supported environments
 
-Eclipse OpenJ9&trade; release 0.36.0 supports OpenJDK 8 and 17.
+Eclipse OpenJ9&trade; release 0.37.0 supports OpenJDK 19.
 
-Release 0.36.1 supports OpenJDK 11.
+RHEL 8.2 is out of support. RHEL 8.4 is the new minimum operating system level.
 
-Support for running OpenJDK 8 and OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. OpenJ9 will not be tested with OpenJDK 11 on CentOS 6.10 after the 0.36.1 release.
+Support for running OpenJDK 8 and OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. OpenJ9 will not be tested with OpenJDK 11 on CentOS 6.10 for the 0.37.0 release.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
