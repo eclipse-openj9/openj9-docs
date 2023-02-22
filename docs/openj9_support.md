@@ -243,3 +243,16 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
 | AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.11                     |
+
+### OpenJDK 19 and later
+
+| Platform                      | Operating system       | Compiler                              |
+|-------------------------------|------------------------|---------------------------------------|
+| Linux x86 64-bit              | CentOS 7.9             | gcc 11.2                              |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 11.2                              |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 11.2                              |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
+| Windows x86 64-bit            | Windows Server 2012 R2 | Microsoft Visual Studio 2019          |
+| macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
+| macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.11                     |
