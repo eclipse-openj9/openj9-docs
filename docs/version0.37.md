@@ -40,6 +40,8 @@ RHEL 8.2 is out of support. RHEL 8.4 is the new minimum operating system level.
 
 Support for running OpenJDK 8 and OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. OpenJ9 will not be tested with OpenJDK 11 on CentOS 6.10 for the 0.37.0 release.
 
+OpenJ9 Windows&reg; builds for OpenJDK 19 and later are now compiled with Microsoft&reg; Visual Studio 2022. The Visual Studio redistributable files included with the build are updated to match.
+
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
 ### AIX is now built on AIX 7.2 TL5
