@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.36.x are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [AIX is now built on AIX 7.2 TL5](#aix-is-now-built-on-aix-72-tl5)
+- ![Start of content that applies to Java 19 plus](cr/java19plus.png) [Linux&reg; reference compiler updated to gcc 11.2](#linux-reference-compiler-updated-to-gcc-112)
 
 ## Features and changes
 
@@ -46,6 +47,10 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 All AIX compiles are now moved from AIX 7.1 TL5 to AIX 7.2 TL5.
 
 For more information, see [Supported environments](openj9_support.md).
+
+### ![Start of content that applies to Java 19 plus](cr/java19plus.png) Linux reference compiler updated to gcc 11.2
+
+Linux builds for platforms Linux x86 64-bit, Linux on POWER LE 64-bit, and Linux on IBM Z 64-bit now use gcc 11.2 instead of gcc 10.3. Linux AArch64 64-bit continues to use the gcc 10.3 compiler. See the list of [build environments](openj9_support.md#build-environments).
 
 ## Known problems and full release information
 
