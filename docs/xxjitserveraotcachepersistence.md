@@ -43,7 +43,7 @@ This option enables or disables the JITServer server's ability to allow other JI
 
  This feature depends on the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) command-line option, which is used to enable caching of AOT-compiled methods. You must specify this option both at the client JVM and at the server.
 
- Use the [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename) option at the client to request a particular AOT cache. If the requested cache does not exist at the server in-memory, but the AOT cache persistence feature is enabled (`-XX:+JITServerAOTCachePersistence`), the server checks whether a file for that cache exists. If the AOT cache file exists, it is loaded in the background. If the AOT cache file does not exist or the AOT cache persistence feature is disabled (`-XX:-JITServerAOTCachePersistence`), the server creates an empty AOT cache and gradually populates it with AOT method bodies it compiles.
+ Use the [`-XX:JITServerAOTCacheName=<cache_name>`](xxjitserveraotcachename.md) option at the client to request a particular AOT cache. If the requested cache does not exist at the server in-memory, but the AOT cache persistence feature is enabled (`-XX:+JITServerAOTCachePersistence`), the server checks whether a file for that cache exists. If the AOT cache file exists, it is loaded in the background. If the AOT cache file does not exist or the AOT cache persistence feature is disabled (`-XX:-JITServerAOTCachePersistence`), the server creates an empty AOT cache and gradually populates it with AOT method bodies it compiles.
 
  You can use the [`-XX:JITServerAOTCacheDir=<directory>`](xxjitserveraotcachedir.md) option to specify the directory where the AOT cache must be saved to or loaded from.
 
