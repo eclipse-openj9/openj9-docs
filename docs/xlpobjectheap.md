@@ -61,6 +61,8 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 : On macOS, the default page size is 4 KB.
 
+: On z/OS systems, the default page size is 1 MB pageable large pages. For more information, see [`pageable`|`nonpageable`](#pageablenonpageable).
+
 ### `strict` | `warn`
 
         -Xlp:objectheap:strict
