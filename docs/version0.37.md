@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.36.x are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [AIX is now built on AIX 7.2 TL5](#aix-is-now-built-on-aix-72-tl5)
 - ![Start of content that applies to Java 19 plus](cr/java19plus.png) [Linux&reg; reference compiler updated to gcc 11.2](#linux-reference-compiler-updated-to-gcc-112)
+- [Support added for the `com.sun.management.ThreadMXBean` interface](#support-added-for-the-comsunmanagementthreadmxbean-interface)
 
 ## Features and changes
 
@@ -53,6 +54,13 @@ For more information, see [Supported environments](openj9_support.md).
 ### ![Start of content that applies to Java 19 plus](cr/java19plus.png) Linux reference compiler updated to gcc 11.2
 
 Linux builds for platforms Linux x86 64-bit, Linux on POWER LE 64-bit, and Linux on IBM Z 64-bit now use gcc 11.2 instead of gcc 10.3. Linux AArch64 64-bit continues to use the gcc 10.3 compiler. See the list of [build environments](openj9_support.md#build-environments).
+
+### Support added for the `com.sun.management.ThreadMXBean` interface
+
+The OpenJ9 [`ThreadMXbean` interface](https://www.eclipse.org/openj9/docs/api-langmgmt/) (`com.ibm.lang.management.ThreadMXBean`) was extending the [`java.lang.management.ThreadMXBean`](https://docs.oracle.com/javase/8/docs/api/java/lang/management/ThreadMXBean.html) interface. With this release, the OpenJ9 `ThreadMXBean` interface extends the [`com.sun.management.ThreadMXBean`](https://docs.oracle.com/javase/8/docs/jre/api/management/extension/com/sun/management/ThreadMXBean.html) interface, whereby it now contains all the methods of the `java.lang.management.ThreadMXBean` interface with additional methods from the `com.sun.management.ThreadMXBean` interface.
+
+The OpenJ9 VM implementation does not support thread memory allocation measurement (`isThreadAllocatedMemorySupported` method returns false).
+
 
 ## Known problems and full release information
 
