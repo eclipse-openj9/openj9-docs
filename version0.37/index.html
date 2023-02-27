@@ -382,6 +382,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#support-added-for-the-comsunmanagementthreadmxbean-interface" class="md-nav__link">
+    Support added for the com.sun.management.ThreadMXBean interface
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5388,6 +5395,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#support-added-for-the-comsunmanagementthreadmxbean-interface" class="md-nav__link">
+    Support added for the com.sun.management.ThreadMXBean interface
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5446,6 +5460,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#aix-is-now-built-on-aix-72-tl5">AIX is now built on AIX 7.2 TL5</a></li>
 <li><img alt="Start of content that applies to Java 19 plus" src="../cr/java19plus.png" /> <a href="#linux-reference-compiler-updated-to-gcc-112">Linux&reg; reference compiler updated to gcc 11.2</a></li>
+<li><a href="#support-added-for-the-comsunmanagementthreadmxbean-interface">Support added for the <code>com.sun.management.ThreadMXBean</code> interface</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -5459,6 +5474,9 @@
 <p>For more information, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="linux-reference-compiler-updated-to-gcc-112"><img alt="Start of content that applies to Java 19 plus" src="../cr/java19plus.png" /> Linux reference compiler updated to gcc 11.2</h3>
 <p>Linux builds for platforms Linux x86 64-bit, Linux on POWER LE 64-bit, and Linux on IBM Z 64-bit now use gcc 11.2 instead of gcc 10.3. Linux AArch64 64-bit continues to use the gcc 10.3 compiler. See the list of <a href="../openj9_support/#build-environments">build environments</a>.</p>
+<h3 id="support-added-for-the-comsunmanagementthreadmxbean-interface">Support added for the <code>com.sun.management.ThreadMXBean</code> interface</h3>
+<p>The OpenJ9 <a href="https://www.eclipse.org/openj9/docs/api-langmgmt/"><code>ThreadMXbean</code> interface</a> (<code>com.ibm.lang.management.ThreadMXBean</code>) was extending the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/ThreadMXBean.html"><code>java.lang.management.ThreadMXBean</code></a> interface. With this release, the OpenJ9 <code>ThreadMXBean</code> interface extends the <a href="https://docs.oracle.com/javase/8/docs/jre/api/management/extension/com/sun/management/ThreadMXBean.html"><code>com.sun.management.ThreadMXBean</code></a> interface, whereby it now contains all the methods of the <code>java.lang.management.ThreadMXBean</code> interface with additional methods from the <code>com.sun.management.ThreadMXBean</code> interface.</p>
+<p>The OpenJ9 VM implementation does not support thread memory allocation measurement (<code>isThreadAllocatedMemorySupported</code> method returns false).</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.36.x and v0.37.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.37/0.37.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.37.md ==== -->
