@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.36.x are included
 - [AIX is now built on AIX 7.2 TL5](#aix-is-now-built-on-aix-72-tl5)
 - ![Start of content that applies to Java 19 plus](cr/java19plus.png) [Linux&reg; reference compiler updated to gcc 11.2](#linux-reference-compiler-updated-to-gcc-112)
 - [Support added for the `com.sun.management.ThreadMXBean` interface](#support-added-for-the-comsunmanagementthreadmxbean-interface)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for PKCS#11 token labels added on z/OS&reg; and Linux on IBM Z&reg;](#support-for-pkcs11-token-labels-added-on-zos-and-linux-on-ibm-z)
 
 ## Features and changes
 
@@ -38,8 +39,6 @@ The following new features and notable changes since version 0.36.x are included
 Eclipse OpenJ9&trade; release 0.37.0 supports OpenJDK 19.
 
 RHEL 8.2 is out of support. RHEL 8.4 is the new minimum operating system level.
-
-Support for running OpenJDK 8 and OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. OpenJ9 will not be tested with OpenJDK 11 on CentOS 6.10 for the 0.37.0 release.
 
 OpenJ9 Windows&reg; builds for OpenJDK 19 and later are now compiled with Microsoft&reg; Visual Studio 2022. The Visual Studio redistributable files included with the build are updated to match.
 
@@ -61,6 +60,13 @@ The OpenJ9 [`ThreadMXbean` interface](https://www.eclipse.org/openj9/docs/api-la
 
 The OpenJ9 VM implementation does not support thread memory allocation measurement (`isThreadAllocatedMemorySupported` method returns false).
 
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for PKCS#11 token labels added on z/OS and Linux on IBM Z
+
+ On restarting an application, or creating or removing of tokens, the token might move to a different slot. An application that uses the `slot` or `slotListIndex` attributes might fail if it doesn’t first check which slot the token is in.
+
+ OpenJ9 now supports the use of an extra attribute, `tokenlabel`, in the SunPKCS11 configuration file on z/OS and Linux on IBM Z, which helps to avoid this issue.
+
+ For more information, see [Support for PKCS#11 token labels](enhancementstoopenjdksecurity.md#support-for-pkcs11-token-labels).
 
 ## Known problems and full release information
 

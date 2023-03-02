@@ -197,6 +197,10 @@ nav:
             - "DTFJ"                                                             : interface_dtfj.md
             - "Language Management"                                              : interface_lang_management.md
 
+    - "Security" :
+        - "OpenSSL"                                                              : openssl.md
+        - "Enhancements to OpenJDK security"                                     : enhancementstoopenjdksecurity.md
+
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md
         - "Standard options"                                                     : cmdline_general.md
