@@ -180,8 +180,14 @@ The user documentation supports the configuration, tuning, and diagnosis of the 
 - ![Java 17 (LTS) and later](docs/cr/java17plus.png) -  For content that applies to an OpenJDK version 17 or later version.
 - ![Java 18](docs/cr/java18.png) - For content that applies only to an OpenJDK version 18.
 - ![Java 18 and later](docs/cr/java18plus.png) -  For content that applies to an OpenJDK version 18 or later version.
+- ![Java 19](docs/cr/java19.png) - For content that applies only to an OpenJDK version 19.
+- ![Java 19 and later](docs/cr/java19plus.png) -  For content that applies to an OpenJDK version 19 or later version.
+- ![Java 20](docs/cr/java20.png) - For content that applies only to an OpenJDK version 20.
+- ![Java 20 and later](docs/cr/java20plus.png) -  For content that applies to an OpenJDK version 20 or later version.
 
 Different colors are used for the icons to differentiate long term service (LTS) releases from feature releases. For accessibility reasons it is important to use alternative text with these icons that differentiates an LTS release.
+
+The icons are created by using the GIMP editor, from the `_version.xcf` file in the same folder as the icons.
 
 Follow these guidelines:
 
