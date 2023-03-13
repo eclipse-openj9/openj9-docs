@@ -159,6 +159,10 @@ nav:
 
     - "Java Attach API"                                                          : attachapi.md
 
+    - "Security" :
+        - "OpenSSL"                                                              : openssl.md
+        - "Enhancements to OpenJDK security"                                     : enhancementstoopenjdksecurity.md
+
     - "Diagnostics" :
 
         - "Overview"                                                             : diag_overview.md
@@ -196,10 +200,6 @@ nav:
             - "JVMTI"                                                            : interface_jvmti.md
             - "DTFJ"                                                             : interface_dtfj.md
             - "Language Management"                                              : interface_lang_management.md
-
-    - "Security" :
-        - "OpenSSL"                                                              : openssl.md
-        - "Enhancements to OpenJDK security"                                     : enhancementstoopenjdksecurity.md
 
     - "Command-line options" :
         - "Specifying options"                                                   : cmdline_specifying.md

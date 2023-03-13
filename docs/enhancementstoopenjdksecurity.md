@@ -36,7 +36,7 @@ The number of slots and their order depend on the number of tokens in the ICSF t
 
 You can specify only one of the attributes - `slot`, `slotListIndex`, or `tokenlabel`. If you do not specify any of these attributes, the default behavior is that the `slotListIndex` attribute is set to 0.
 
-For more information, see [PKCS#11 Reference Guide](https://docs.oracle.com/en/java/javase/11/security/pkcs11-reference-guide1.html).
+For more information about the SunPKCS11 configuration file, see [PKCS#11 Reference Guide](https://docs.oracle.com/en/java/javase/11/security/pkcs11-reference-guide1.html).
 
 
 <!-- ==== END OF TOPIC ==== enhancementstoopenjdksecurity.md ==== -->
