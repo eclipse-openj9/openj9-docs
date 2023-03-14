@@ -159,6 +159,10 @@ nav:
 
     - "Java Attach API"                                                          : attachapi.md
 
+    - "Security" :
+        - "OpenSSL"                                                              : openssl.md
+        - "Enhancements to OpenJDK security"                                     : enhancementstoopenjdksecurity.md
+
     - "Diagnostics" :
 
         - "Overview"                                                             : diag_overview.md
