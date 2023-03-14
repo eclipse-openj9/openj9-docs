@@ -130,6 +130,10 @@ timeout(time: 6, unit: 'HOURS') {
                     if ((params.BUILD_TYPE == "PR") || (params.BUILD_TYPE == "MERGE")) {
                         stage("Push Doc") {
                             dir('push_repo') {
+                                // avoid "fatal: unable to create threaded lstat" from git status
+                                sh """
+                                    git config --global core.preloadIndex false
+                                    """
                                 checkout changelog: false, poll: false,
                                     scm: [$class: 'GitSCM',
                                         branches: [[name: PUSH_BRANCH]],
