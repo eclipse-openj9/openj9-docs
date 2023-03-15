@@ -467,5 +467,6 @@ nav:
             - "Shared classes"                                                    : api-shrc.md
         - "Java 11 API"                                                           : api-jdk11.md
         - "Java 17 API"                                                           : api-jdk17.md
+        - "Java 19 API"                                                           : api-jdk19.md
 
     - "Legal"                                                                     : legal.md
