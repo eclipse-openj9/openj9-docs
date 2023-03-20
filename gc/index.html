@@ -5859,7 +5859,7 @@
 <p><strong>(64-bit only)</strong></p>
 <p>The Balanced GC policy (<a href="../xgcpolicy/#balanced"><code>-Xgcpolicy:balanced</code></a>) evens out pause times and reduces the overhead of some of the costlier operations that are typically associated with garbage collection, such as compaction and class unloading. The Java heap is divided into a large number of regions (1,000 - 2,000), which are managed individually by an incremental generational collector to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates.</p>
 <h3 id="when-to-use">When to use</h3>
-<p>The Balanced policy suits applications that require large heaps (&gt;64 MB) on 64-bit platforms. This policy might be a good alternative for applications that experience unacceptable pause times with <code>gencon</code>.</p>
+<p>The Balanced policy might be a good alternative for applications that experience unacceptable pause times with <code>gencon</code>.</p>
 <ul>
 <li>
 <p>If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance.</p>
