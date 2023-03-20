@@ -106,7 +106,7 @@ The Balanced GC policy ([`-Xgcpolicy:balanced`](xgcpolicy.md#balanced)) evens ou
 
 ###  When to use
 
-The Balanced policy suits applications that require large heaps (>64 MB) on 64-bit platforms. This policy might be a good alternative for applications that experience unacceptable pause times with `gencon`.
+The Balanced policy might be a good alternative for applications that experience unacceptable pause times with `gencon`.
 
 
 - If you have problems with application pause times that are caused by global garbage collections, particularly compactions, this policy might improve application performance.
