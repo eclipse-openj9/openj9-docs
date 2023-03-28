@@ -803,9 +803,119 @@ Linux does not provide an operating system API for generating a system dump from
 
 The system dump file for the child process contains an exact copy of the memory areas used in the parent. The [dump viewer](tool_jdmpview.md) can obtain information about the Java threads, classes, and heap from the system dump. However, the dump viewer, and other system dump debuggers show only the single native thread that was running in the child process.
 
-You can use the Linux `kernel.core_pattern` setting to specify the name and path for system dumps. The VM dump agents override the Linux system dump name and path by renaming the dump as specified in the `-Xdump` options. If the `kernel.core_pattern` setting specifies a different file system to the `-Xdump` options, the VM dump agents might be unable to change the file path. In this case the VM renames the dump file, but leaves the file path unchanged. You can find the dump file name and location in the JVMDUMP010I message.
+You can use the Linux `kernel.core_pattern` setting to specify the name and path for system dumps. The VM dump agents override the Linux system dump name and path by renaming the dump as specified in the `-Xdump` options. If the `kernel.core_pattern` setting specifies a different file system to the `-Xdump` options, the VM dump agents might be unable to change the file path. In this case the VM renames the dump file, but leaves the file path unchanged. You can find the dump file name and location in the `JVMDUMP010I` message.
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you use the `%t` specifier in the `kernel.core_pattern` setting, the VM does not rename the dump. The VM cannot determine the exact time that Linux generated the core file, and therefore cannot be certain which Linux dump file is the correct one to rename.
+
+#### Piped system dumps
+
+The Linux option, `kernel.core_pattern=|<program>`, might be set to pipe system dumps to a system dump processing program (specified by `<program>`). If such a program is specified and the VM cannot find the system dump, you will see the following messages:
+
+- `JVMPORT030W`
+- `JVMDUMP012E`
+- `JVMPORT049I`
+
+These messages do not necessarily indicate a problem with the system dump. Review the documentation for the program listed in the `kernel.core_pattern` property to find the location of the system dump and how to configure the program to ensure that the dump file is not truncated.
+
+You can find the current setting of `kernel.core_pattern` by running one of the following commands. For example,
+
+```
+$ cat /proc/sys/kernel/core_pattern
+|/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h
+```
+```
+$ sysctl kernel.core_pattern
+kernel.core_pattern = |/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h
+```
+The `kernel.core_pattern` setting is also available in a Java dump. For example:
+
+```
+2CISYSINFO     /proc/sys/kernel/core_pattern = |/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h
+```
+
+Here are some of the most common system dump processing programs and their default system dump locations:
+
+- **systemd-coredump**:
+
+    - Sample setting - `kernel.core_pattern=|/usr/lib/systemd/systemd-coredump`
+    - By default, dump files go to `/var/lib/systemd/coredump/`.
+    - Versions before v251 truncate 64-bit Java dumps at 2 GB. To avoid this, consider updating the configuration file, `/etc/systemd/coredump.conf` to increase the values of the `ProcessSizeMax` and `ExternalSizeMax` properties and load the updated configuration by running the `systemctl daemon-reload` command. For v251 and later versions, similar changes are needed if the dump files are greater than 32 GB.
+
+- **apport**:
+
+    - Sample setting - `kernel.core_pattern=|/usr/share/apport/apport`
+    - By default, dump files go to `/var/crash/` or `/var/lib/apport/coredump/`.
+    - Default settings do not truncate the dump files.
+
+- **abrt-hook-ccpp**:
+
+    - Sample setting - `kernel.core_pattern=|/usr/libexec/abrt-hook-ccpp`
+    - By default, dump files go to `/var/spool/abrt`.
+    - Default settings might truncate the dump files. Consider updating `/etc/abrt/abrt.conf` to set `MaxCrashReportsSize=0` and restart `abrtd`.
+
+- **Dynatrace rdp**:
+
+    - Sample setting - `kernel.core_pattern=|/opt/dynatrace/oneagent/agent/rdp`
+    - The program passes the dump files to the underlying system dump processing program specified in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`.
+
+In container environments, such as OpenShift, piped system dump files are stored in the worker node rather than in the container. Here is one example method for retrieving a dump file that was piped to the `systemd-coredump` program:
+
+1. To access the system dump files, you must have access to the cluster as a user that has the `cluster-admin` role.
+2. Find the worker node of the pod. For example:
+
+    ```
+    oc get pod --namespace MyNamespace --output "jsonpath={.spec.nodeName}{'\n'}" MyPodname
+    ```
+
+    Where, MyNamespace and MyPodname are names of your namespace and pod.
+
+3. Start a debug pod on the worker node. For example:
+
+    ```
+    oc debug node/MyNode -t
+    ```
+
+    Where, MyNode is the worker node retrieved in step 2.
+
+4. List the available system dump files. For example:
+
+```
+#chroot /host coredumpctl
+
+TIME                             PID        UID   GID SIG COREFILE  EXE
+
+Wed 2022-08-03 18:52:29 UTC  2923161 1000650000     0  11 present   /opt/java/semeru/jre/bin/java
+```
+
+5. Find the line for the system dump that you want to download, copy the PID number from that row, and then pass it to the `info` sub-command to search for the dump location. For example:
+
+```
+# chroot /host coredumpctl info 2923161 | grep Storage:
+Storage: /var/lib/systemd/coredump/core.kernel-command-.1000650000.08b9e28f46b348f3aabdffc6896838e0.2923161.1659552745000000.lz4
+```
+
+6. Run a command to print output on a loop so that the debug pod doesn't timeout:</li>
+
+    ```
+    while true; do echo 'Sleeping'; sleep 8; done
+    ```
+
+7. Open a new terminal and then find the debug pod and namespace. For example:
+
+```
+$ oc get pods --field-selector=status.phase==Running --all-namespaces | grep debug
+openshift-debug-node-pwcn42r47f       worker3-debug       1/1     Running            0                  3m38s
+```
+
+8. Use the namespace (first column) and pod name (second column) that you retrieved in step 7 to download the system dump file from the `Storage` location that was listed in the output of step 5 on the worker node. Ensure that you prefix the `Storage` location with `/host/`. For example:
+
+```
+oc cp --namespace openshift-debug-node-pwcn42r47f worker3-debug:/host/var/lib/systemd/coredump/core.kernel-command-.1000650000.08b9e28f46b348f3aabdffc6896838e0.2923161.1659552745000000.lz4 core.dmp.lz4
+```
+This example stores the system dump locally in a compressed file, `core.dmp.lz4`.
+
+9. After the download completes, in the first terminal window, exit the loop by pressing `Ctrl+C` and end the debug pod by typing `exit`.
+
 
 ## See also
 

@@ -31,6 +31,7 @@ The following new features and notable changes since version 0.36.x are included
 - ![Start of content that applies to Java 19 plus](cr/java19plus.png) [Linux&reg; reference compiler updated to gcc 11.2](#linux-reference-compiler-updated-to-gcc-112)
 - [Support added for the `com.sun.management.ThreadMXBean` interface](#support-added-for-the-comsunmanagementthreadmxbean-interface)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for PKCS#11 token labels added on z/OS&reg; and Linux on IBM Z&reg;](#support-for-pkcs11-token-labels-added-on-zos-and-linux-on-ibm-z)
+- [New message added to help find system dumps on Linux](#new-message-added-to-help-find-system-dumps-on-linux)
 
 ## Features and changes
 
@@ -62,11 +63,17 @@ The OpenJ9 VM implementation does not support thread memory allocation measureme
 
 ### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for PKCS#11 token labels added on z/OS and Linux on IBM Z
 
- On restarting an application, or creating or removing of tokens, the token might move to a different slot. An application that uses the `slot` or `slotListIndex` attributes might fail if it doesn’t first check which slot the token is in.
+On restarting an application, or creating or removing of tokens, the token might move to a different slot. An application that uses the `slot` or `slotListIndex` attributes might fail if it doesn’t first check which slot the token is in.
 
- OpenJ9 now supports the use of an extra attribute, `tokenlabel`, in the SunPKCS11 configuration file on z/OS and Linux on IBM Z, which helps to avoid this issue.
+OpenJ9 now supports the use of an extra attribute, `tokenlabel`, in the SunPKCS11 configuration file on z/OS and Linux on IBM Z, which helps to avoid this issue.
 
- For more information, see [Support for PKCS#11 token labels](enhancementstoopenjdksecurity.md#support-for-pkcs11-token-labels).
+For more information, see [Support for PKCS#11 token labels](enhancementstoopenjdksecurity.md#support-for-pkcs11-token-labels).
+
+### New message added to help find system dumps on Linux
+
+A new message, `JVMPORT049I`, is added to help find the system dump files for `kernel.core_pattern` piped programs on Linux.
+
+For more information about system dumps and piped system dumps, see [System dumps on Linux](xdump.md#system-dumps-on-linux).
 
 ## Known problems and full release information
 
