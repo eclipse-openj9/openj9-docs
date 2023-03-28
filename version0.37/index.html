@@ -396,6 +396,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-message-added-to-help-find-system-dumps-on-linux" class="md-nav__link">
+    New message added to help find system dumps on Linux
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5492,6 +5499,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-message-added-to-help-find-system-dumps-on-linux" class="md-nav__link">
+    New message added to help find system dumps on Linux
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5552,6 +5566,7 @@
 <li><img alt="Start of content that applies to Java 19 plus" src="../cr/java19plus.png" /> <a href="#linux-reference-compiler-updated-to-gcc-112">Linux&reg; reference compiler updated to gcc 11.2</a></li>
 <li><a href="#support-added-for-the-comsunmanagementthreadmxbean-interface">Support added for the <code>com.sun.management.ThreadMXBean</code> interface</a></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#support-for-pkcs11-token-labels-added-on-zos-and-linux-on-ibm-z">Support for PKCS#11 token labels added on z/OS&reg; and Linux on IBM Z&reg;</a></li>
+<li><a href="#new-message-added-to-help-find-system-dumps-on-linux">New message added to help find system dumps on Linux</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -5571,6 +5586,9 @@
 <p>On restarting an application, or creating or removing of tokens, the token might move to a different slot. An application that uses the <code>slot</code> or <code>slotListIndex</code> attributes might fail if it doesn’t first check which slot the token is in.</p>
 <p>OpenJ9 now supports the use of an extra attribute, <code>tokenlabel</code>, in the SunPKCS11 configuration file on z/OS and Linux on IBM Z, which helps to avoid this issue.</p>
 <p>For more information, see <a href="../enhancementstoopenjdksecurity/#support-for-pkcs11-token-labels">Support for PKCS#11 token labels</a>.</p>
+<h3 id="new-message-added-to-help-find-system-dumps-on-linux">New message added to help find system dumps on Linux</h3>
+<p>A new message, <code>JVMPORT049I</code>, is added to help find the system dump files for <code>kernel.core_pattern</code> piped programs on Linux.</p>
+<p>For more information about system dumps and piped system dumps, see <a href="../xdump/#system-dumps-on-linux">System dumps on Linux</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.36.x and v0.37.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.37/0.37.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.37.md ==== -->
