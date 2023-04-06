@@ -27,6 +27,7 @@
 The following new features and notable changes since version 0.37.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [New `-XX:[+|-]HandleSIGUSR2` option added](#new-xx-handlesigusr2-option-added)
 
 
 ## Features and changes
@@ -38,6 +39,12 @@ Eclipse OpenJ9&trade; release 0.38.0 supports OpenJDK 8, 11 and 17.
 OpenJ9 Windows&reg; builds for OpenJDK 8 are now compiled with Microsoft&reg; Visual Studio 2019. The Visual Studio redistributable files included with the build are updated to match.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### New `-XX:[+|-]HandleSIGUSR2` option added
+
+This option controls the handling of the `SIGUSR2` signal by the VM signal handler. The VM signal handler is installed only if this option is enabled.
+
+For more information, see [`-XX[+|-]HandleSIGUSR2`](xxhandlesigusr2.md).
 
 
 ## Known problems and full release information
