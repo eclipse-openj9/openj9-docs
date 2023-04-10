@@ -36,7 +36,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../../../../script-dir/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../../../../../script-dir/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../../../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -244,7 +244,7 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isArray()" class="member-name-link">isArray</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Is this object an array ?</div>
+<div class="block">Is this object an array?</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDerivedObject()" class="member-name-link">isDerivedObject</a>()</code></div>
@@ -333,6 +333,7 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
 <a href="../../../../../dtfj/image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html#arraycopy(int,java.lang.Object,int,int)">JavaObject</a></code></span></div>
 <div class="block">Copies data from the image array into a local Java array.
+
  The dst object must be an array of the appropriate type --
  a base type array for base types, or a JavaObject array
  for reference arrays.</div>
@@ -361,8 +362,7 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
 <dt>Specified by:</dt>
 <dd><code><a href="../../../../../dtfj/java/JavaObject.html#getArraySize()">getArraySize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a></code></dd>
 <dt>Returns:</dt>
-<dd>the number of elements in this array
- <p></dd>
+<dd>the number of elements in this array</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
 </dl>
@@ -375,15 +375,16 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
                  throws <span class="exceptions"><a href="../../../../../dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
 <a href="../../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html#getHashcode()">JavaObject</a></code></span></div>
-<div class="block">Fetch the basic hash code for the object. This is the hash code which
- would be returned if a Java thread had requested it. Typically the hash 
- code is based on the address of an object, and may change if the object
- is moved by a garbage collect cycle.</div>
+<div class="block">Fetch the basic hash code for the object.
+
+ This is the hash code which would be returned if a Java thread had requested
+ it. Typically the hash code is based on the address of an object, and may
+ change if the object is moved by a garbage collection cycle.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../../../../dtfj/java/JavaObject.html#getHashcode()">getHashcode</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a></code></dd>
 <dt>Returns:</dt>
-<dd>the basic hash code of the object in the image.</dd>
+<dd>the basic hash code of the object in the image</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../../../dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - if the hash code cannot be determined</dd>
 <dd><code><a href="../../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
@@ -408,10 +409,10 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
 <dt>Specified by:</dt>
 <dd><code><a href="../../../../../dtfj/java/JavaObject.html#getHeap()">getHeap</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a></code></dd>
 <dt>Returns:</dt>
-<dd>the <code>JavaHeap</code> instance representing the heap where this object is stored in memory.</dd>
+<dd>the <code>JavaHeap</code> instance representing the heap where this object is stored in memory</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code> - if the heap information for this object is corrupt.</dd>
-<dd><code><a href="../../../../../dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - if the heap information for this object is not available.</dd>
+<dd><code><a href="../../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code> - if the heap information for this object is corrupt</dd>
+<dd><code><a href="../../../../../dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - if the heap information for this object is not available</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
@@ -427,7 +428,8 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../../dtfj/image/ImagePointer.html" title="interface in com.ibm.dtfj.image">ImagePointer</a></span>&nbsp;<span class="element-name">getID</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html#getID()">JavaObject</a></code></span></div>
 <div class="block">The ID of an object is a unique address is memory which identifies the object.
- The data at this memory is implementation defined. The object may be 
+
+ The data at this memory is implementation defined. The object may be
  non-contiguous. Portions of the object may appear below or above this address.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -461,10 +463,11 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
                            throws <span class="exceptions"><a href="../../../../../dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
 <a href="../../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html#getPersistentHashcode()">JavaObject</a></code></span></div>
-<div class="block">Fetch the basic hash code of the object in the image. This hash code
- is guaranteed to be persistent between multiple snapshots of the same Image.
- If the hash code cannot be determined, or if the hash code for this object
- could change between snapshots, an exception is thrown.
+<div class="block">Fetch the basic hash code of the object in the image.
+
+ This hash code is guaranteed to be persistent between multiple snapshots
+ of the same Image. If the hash code cannot be determined, or if the hash
+ code for this object could change between snapshots, an exception is thrown.
  <p>
  <i>If the VM uses a 'hasBeenHashed' bit, the value of this bit can be
  inferred by calling getPersistentHashcode(). If the persistent hash code
@@ -494,8 +497,8 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link" target="_blank">Iterator</a></span>&nbsp;<span class="element-name">getReferences</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html#getReferences()">JavaObject</a></code></span></div>
 <div class="block">Get the set of references from this object.
- <p>
- Corrupt references will be returned as CorruptData objects by the Iterator</div>
+
+ Corrupt references will be returned as CorruptData objects by the Iterator.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../../../../dtfj/java/JavaObject.html#getReferences()">getReferences</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a></code></dd>
@@ -517,17 +520,18 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link" target="_blank">Iterator</a></span>&nbsp;<span class="element-name">getSections</span>()</div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html#getSections()">JavaObject</a></code></span></div>
 <div class="block">An object is represented in the Java runtime by one or more regions of memory.
+
  These include the object's header and the data in the object.
 
- In certain allocation strategies, an object's header and data may be allocated 
+ In certain allocation strategies, an object's header and data may be allocated
  contiguously. In this case, this method may return an iterator for a single
  section.
- 
+
  In other schemes, the header may be separate from the data or the data may be
  broken up into multiple regions. Additionally, this function does not guarantee
  that the memory used by this object is not also shared by one or more other
  objects.
- 
+
  Callers should not make any assumptions about the contents of the memory.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -551,7 +555,8 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
              throws <span class="exceptions"><a href="../../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html#getSize()">JavaObject</a></code></span></div>
 <div class="block">Get the number of bytes of memory occupied by this object on the heap.
- The memory may not necessarily be contiguous</div>
+
+ The memory may not necessarily be contiguous.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../../../../dtfj/java/JavaObject.html#getSize()">getSize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a></code></dd>
@@ -566,7 +571,7 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isArray</span>()
                 throws <span class="exceptions"><a href="../../../../../dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html#isArray()">JavaObject</a></code></span></div>
-<div class="block">Is this object an array ?</div>
+<div class="block">Is this object an array?</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../../../../../dtfj/java/JavaObject.html#isArray()">isArray</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dtfj/java/JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a></code></dd>
@@ -687,7 +692,7 @@ implements <a href="../../../../../dtfj/java/JavaObject.html" title="interface i
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022 IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2023 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>

@@ -36,11 +36,12 @@
 <meta name="keywords" content="hasValidEyeCatcher()">
 <meta name="keywords" content="areExtensionsEnabled()">
 <meta name="keywords" content="isAnonymousClass()">
+<meta name="keywords" content="isRefOrValSignature()">
 <link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../../../script-dir/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../../../../script-dir/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -210,34 +211,39 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isObsolete(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isObsolete</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;j9class)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSameOrSuperClassOf(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isSameOrSuperClassOf</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;superClazz,
- com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isRefOrValSignature(char)" class="member-name-link">isRefOrValSignature</a><wbr>(char&nbsp;firstChar)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Queries if a given char is the first character of a reference or value type signature.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSwappedOut(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isSwappedOut</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSameOrSuperClassOf(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isSameOrSuperClassOf</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;superClazz,
+ com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#oldVTable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">oldVTable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSwappedOut(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isSwappedOut</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setFieldOffsetCache(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset,java.lang.String,java.lang.String)" class="member-name-link">setFieldOffsetCache</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#oldVTable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">oldVTable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setFieldOffsetCache(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset,java.lang.String,java.lang.String)" class="member-name-link">setFieldOffsetCache</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
  <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;fieldName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;signature)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
  com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;vm)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#superclass(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">superclass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#vTable(com.ibm.j9ddr.vm29.pointer.generated.J9VTableHeaderPointer)" class="member-name-link">vTable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9VTableHeaderPointer&nbsp;vTableHeader)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#superclass(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">superclass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9VTableHeaderPointer</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#vTableHeader(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">vTableHeader</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#vTable(com.ibm.j9ddr.vm29.pointer.generated.J9VTableHeaderPointer)" class="member-name-link">vTable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9VTableHeaderPointer&nbsp;vTableHeader)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9VTableHeaderPointer</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#vTableHeader(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">vTableHeader</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -564,6 +570,20 @@ loadScripts(document, 'script');</script>
 </dl>
 </section>
 </li>
+<li>
+<section class="detail" id="isRefOrValSignature(char)">
+<h3>isRefOrValSignature</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRefOrValSignature</span><wbr><span class="parameters">(char&nbsp;firstChar)</span></div>
+<div class="block">Queries if a given char is the first character of a reference or value type signature.
+ Equivalent to J9's IS_REF_OR_VAL_SIGNATURE macro.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>firstChar</code> - the first character of the signature being checked</dd>
+<dt>Returns:</dt>
+<dd>true if the character indicates the beginning of a reference or value signature, false otherwise</dd>
+</dl>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -573,7 +593,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022 IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2023 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>

@@ -23,7 +23,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../../../script-dir/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../../../../script-dir/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -103,7 +103,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">BaseCommand</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a>
 implements <a href="ICommand.html" title="interface in com.ibm.java.diagnostics.utils.commands">ICommand</a></span></div>
-<div class="block">Base command which supplies basic support</div>
+<div class="block">Base command which supplies basic support.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -136,9 +136,11 @@ implements <a href="ICommand.html" title="interface in com.ibm.java.diagnostics.
 <section class="constructor-summary" id="constructor-summary">
 <h2>Constructor Summary</h2>
 <div class="caption"><span>Constructors</span></div>
-<div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>protected </code></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">BaseCommand</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -258,7 +260,7 @@ implements <a href="ICommand.html" title="interface in com.ibm.java.diagnostics.
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>BaseCommand</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">BaseCommand</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">BaseCommand</span>()</div>
 </section>
 </li>
 </ul>
@@ -278,12 +280,12 @@ implements <a href="ICommand.html" title="interface in com.ibm.java.diagnostics.
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>name</code> - Command Name</dd>
-<dd><code>argDescription</code> - Brief name of any optional or required arguments</dd>
-<dd><code>helpDescription</code> - One-liner Description of the command
- 
- argDescription should be a word describing the argument name. 
-        e.g:  <address>    to specify an address argument that is mandatory
-        [address]    to specify an address argument that is optional</dd>
+<dd><code>argDescription</code> - brief description of any optional or required arguments</dd>
+<dd><code>helpDescription</code> - one-line description of the command
+
+ argDescription should be a word describing the argument name,
+ e.g:  &lt;address>    to specify an address argument that is mandatory, or
+       [address]    to specify an address argument that is optional</dd>
 </dl>
 </section>
 </li>
@@ -368,7 +370,7 @@ implements <a href="ICommand.html" title="interface in com.ibm.java.diagnostics.
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022 IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2023 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>
