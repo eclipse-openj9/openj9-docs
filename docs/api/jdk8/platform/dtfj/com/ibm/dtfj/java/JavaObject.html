@@ -215,7 +215,7 @@ var activeTableTab = "activeTableTab";
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/dtfj/java/JavaObject.html#isArray--">isArray</a></span>()</code>
-<div class="block">Is this object an array ?</div>
+<div class="block">Is this object an array?</div>
 </td>
 </tr>
 </table>
@@ -258,7 +258,7 @@ var activeTableTab = "activeTableTab";
 <h4>isArray</h4>
 <pre>boolean&nbsp;isArray()
          throws <a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
-<div class="block">Is this object an array ?</div>
+<div class="block">Is this object an array?</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>true if the receiver represents an instance of an array, or
@@ -279,8 +279,7 @@ var activeTableTab = "activeTableTab";
 <div class="block">Get the number of elements in this array.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the number of elements in this array
- <p></dd>
+<dd>the number of elements in this array</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the receiver is not an array</dd>
@@ -300,6 +299,7 @@ var activeTableTab = "activeTableTab";
         throws <a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
                <a href="../../../../com/ibm/dtfj/image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></pre>
 <div class="block">Copies data from the image array into a local Java array.
+
  The dst object must be an array of the appropriate type --
  a base type array for base types, or a JavaObject array
  for reference arrays.</div>
@@ -329,7 +329,8 @@ var activeTableTab = "activeTableTab";
 <pre>long&nbsp;getSize()
       throws <a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
 <div class="block">Get the number of bytes of memory occupied by this object on the heap.
- The memory may not necessarily be contiguous</div>
+
+ The memory may not necessarily be contiguous.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
@@ -345,13 +346,14 @@ var activeTableTab = "activeTableTab";
 <pre>long&nbsp;getHashcode()
           throws <a href="../../../../com/ibm/dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
                  <a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
-<div class="block">Fetch the basic hash code for the object. This is the hash code which
- would be returned if a Java thread had requested it. Typically the hash 
- code is based on the address of an object, and may change if the object
- is moved by a garbage collect cycle.</div>
+<div class="block">Fetch the basic hash code for the object.
+
+ This is the hash code which would be returned if a Java thread had requested
+ it. Typically the hash code is based on the address of an object, and may
+ change if the object is moved by a garbage collection cycle.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the basic hash code of the object in the image.</dd>
+<dd>the basic hash code of the object in the image</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../com/ibm/dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - if the hash code cannot be determined</dd>
 <dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
@@ -369,10 +371,11 @@ var activeTableTab = "activeTableTab";
 <pre>long&nbsp;getPersistentHashcode()
                     throws <a href="../../../../com/ibm/dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
                            <a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
-<div class="block">Fetch the basic hash code of the object in the image. This hash code
- is guaranteed to be persistent between multiple snapshots of the same Image.
- If the hash code cannot be determined, or if the hash code for this object
- could change between snapshots, an exception is thrown.
+<div class="block">Fetch the basic hash code of the object in the image.
+
+ This hash code is guaranteed to be persistent between multiple snapshots
+ of the same Image. If the hash code cannot be determined, or if the hash
+ code for this object could change between snapshots, an exception is thrown.
  <p>
  <i>If the VM uses a 'hasBeenHashed' bit, the value of this bit can be
  inferred by calling getPersistentHashcode(). If the persistent hash code
@@ -398,7 +401,8 @@ var activeTableTab = "activeTableTab";
 <h4>getID</h4>
 <pre><a href="../../../../com/ibm/dtfj/image/ImagePointer.html" title="interface in com.ibm.dtfj.image">ImagePointer</a>&nbsp;getID()</pre>
 <div class="block">The ID of an object is a unique address is memory which identifies the object.
- The data at this memory is implementation defined. The object may be 
+
+ The data at this memory is implementation defined. The object may be
  non-contiguous. Portions of the object may appear below or above this address.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -414,17 +418,18 @@ var activeTableTab = "activeTableTab";
 <h4>getSections</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util">Iterator</a>&nbsp;getSections()</pre>
 <div class="block">An object is represented in the Java runtime by one or more regions of memory.
+
  These include the object's header and the data in the object.
 
- In certain allocation strategies, an object's header and data may be allocated 
+ In certain allocation strategies, an object's header and data may be allocated
  contiguously. In this case, this method may return an iterator for a single
  section.
- 
+
  In other schemes, the header may be separate from the data or the data may be
  broken up into multiple regions. Additionally, this function does not guarantee
  that the memory used by this object is not also shared by one or more other
  objects.
- 
+
  Callers should not make any assumptions about the contents of the memory.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -443,8 +448,8 @@ var activeTableTab = "activeTableTab";
 <h4>getReferences</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" target="_blank" title="class or interface in java.util">Iterator</a>&nbsp;getReferences()</pre>
 <div class="block">Get the set of references from this object.
- <p>
- Corrupt references will be returned as CorruptData objects by the Iterator</div>
+
+ Corrupt references will be returned as CorruptData objects by the Iterator.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an iterator of JavaReference and CorruptData objects</dd>
@@ -466,10 +471,10 @@ var activeTableTab = "activeTableTab";
 <div class="block">Gets the heap where this object is located.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the <code>JavaHeap</code> instance representing the heap where this object is stored in memory.</dd>
+<dd>the <code>JavaHeap</code> instance representing the heap where this object is stored in memory</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code> - if the heap information for this object is corrupt.</dd>
-<dd><code><a href="../../../../com/ibm/dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - if the heap information for this object is not available.</dd>
+<dd><code><a href="../../../../com/ibm/dtfj/image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code> - if the heap information for this object is corrupt</dd>
+<dd><code><a href="../../../../com/ibm/dtfj/image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - if the heap information for this object is not available</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/ibm/dtfj/java/JavaHeap.html" title="interface in com.ibm.dtfj.java"><code>JavaHeap</code></a></dd>
 </dl>
@@ -482,7 +487,6 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>equals</h4>
 <pre>boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" target="_blank" title="class or interface in java.lang">Object</a>&nbsp;obj)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">java.lang.Object</a></code></span></div>
 <div class="block">Compares the argument to the receiver, and answers true
  if they represent the <em>same</em> object using a class
  specific comparison. The implementation in Object answers
@@ -492,9 +496,14 @@ var activeTableTab = "activeTableTab";
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" target="_blank" title="class or interface in java.lang">Object</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>obj</code> - </dd>
+<dd><code>obj</code> - Object
+                                        the object to compare with this object.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>True if the given object refers to the same Java Object in the image</dd>
+<dd>boolean
+                                        <code>true</code>
+                                                if the object is the same as this object
+                                        <code>false</code>
+                                                if it is different from this object.</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang"><code>Object.hashCode()</code></a></dd>
 </dl>
@@ -507,7 +516,6 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>hashCode</h4>
 <pre>int&nbsp;hashCode()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">java.lang.Object</a></code></span></div>
 <div class="block">Answers an integer hash code for the receiver. Any two
  objects which answer <code>true</code> when passed to
  <code>.equals</code> must answer the same value for this
@@ -592,6 +600,6 @@ var activeTableTab = "activeTableTab";
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse OpenJ9 issue.</a><br> Copyright &copy; 2004, 2022 IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse OpenJ9 issue.</a><br> Copyright &copy; 2004, 2023 IBM Corp. and others.</small></p>
 </body>
 </html>
