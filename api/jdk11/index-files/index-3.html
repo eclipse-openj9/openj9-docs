@@ -14,7 +14,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../jquery/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -891,6 +891,10 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Checks that the padding associated with the memory block has not been
  corrupted</div>
+</dd>
+<dt><span class="memberNameLink"><a href="../openj9.criu/org/eclipse/openj9/criu/CRIUSupport.html#checkpointJVM()">checkpointJVM()</a></span> - Method in class org.eclipse.openj9.criu.<a href="../openj9.criu/org/eclipse/openj9/criu/CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></dt>
+<dd>
+<div class="block">Checkpoint the JVM.</div>
 </dd>
 <dt><a href="../openj9.dtfj/com/ibm/j9ddr/vm29/tools/ddrinteractive/gccheck/CheckReporter.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck"><span class="typeNameLink">CheckReporter</span></a> - Class in <a href="../openj9.dtfj/com/ibm/j9ddr/vm29/tools/ddrinteractive/gccheck/package-summary.html">com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck</a></dt>
 <dd>&nbsp;</dd>
@@ -2034,10 +2038,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><a href="../openj9.dtfj/com/ibm/java/diagnostics/utils/ContextFactory.html" title="class in com.ibm.java.diagnostics.utils"><span class="typeNameLink">ContextFactory</span></a> - Class in <a href="../openj9.dtfj/com/ibm/java/diagnostics/utils/package-summary.html">com.ibm.java.diagnostics.utils</a></dt>
 <dd>
-<div class="block">Factory for creating different types of context</div>
+<div class="block">Factory for creating different types of contexts.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="../openj9.dtfj/com/ibm/java/diagnostics/utils/ContextFactory.html#%3Cinit%3E()">ContextFactory()</a></span> - Constructor for class com.ibm.java.diagnostics.utils.<a href="../openj9.dtfj/com/ibm/java/diagnostics/utils/ContextFactory.html" title="class in com.ibm.java.diagnostics.utils">ContextFactory</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="../openj9.dtfj/com/ibm/j9ddr/vm29/pointer/helper/J9IndexableObjectHelper.html#contiguousHeaderSize()">contiguousHeaderSize()</a></span> - Static method in class com.ibm.j9ddr.vm29.pointer.helper.<a href="../openj9.dtfj/com/ibm/j9ddr/vm29/pointer/helper/J9IndexableObjectHelper.html" title="class in com.ibm.j9ddr.vm29.pointer.helper">J9IndexableObjectHelper</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="../openj9.traceformat/com/ibm/jvm/format/Util.html#convertAndCheckEyecatcher(int)">convertAndCheckEyecatcher(int)</a></span> - Static method in class com.ibm.jvm.format.<a href="../openj9.traceformat/com/ibm/jvm/format/Util.html" title="class in com.ibm.jvm.format">Util</a></dt>
@@ -2661,6 +2663,24 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dt><span class="memberNameLink"><a href="../openj9.dtfj/com/ibm/dtfj/utils/file/FileManager.html#createTempDir(java.io.File)">createTempDir(File)</a></span> - Static method in class com.ibm.dtfj.utils.file.<a href="../openj9.dtfj/com/ibm/dtfj/utils/file/FileManager.html" title="class in com.ibm.dtfj.utils.file">FileManager</a></dt>
 <dd>
 <div class="block">Creates a unique temporary directory under the specified parent</div>
+</dd>
+<dt><a href="../openj9.criu/org/eclipse/openj9/criu/CRIUDumpPermission.html" title="class in org.eclipse.openj9.criu"><span class="typeNameLink">CRIUDumpPermission</span></a> - Class in <a href="../openj9.criu/org/eclipse/openj9/criu/package-summary.html">org.eclipse.openj9.criu</a></dt>
+<dd>
+<div class="block">The permission class for operations on the org.eclipse.openj9.criu.CRIUSupport class.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="../openj9.criu/org/eclipse/openj9/criu/CRIUDumpPermission.html#%3Cinit%3E()">CRIUDumpPermission()</a></span> - Constructor for class org.eclipse.openj9.criu.<a href="../openj9.criu/org/eclipse/openj9/criu/CRIUDumpPermission.html" title="class in org.eclipse.openj9.criu">CRIUDumpPermission</a></dt>
+<dd>
+<div class="block">Creates CRIUDumpPermission</div>
+</dd>
+<dt><a href="../openj9.criu/org/eclipse/openj9/criu/CRIUSupport.html" title="class in org.eclipse.openj9.criu"><span class="typeNameLink">CRIUSupport</span></a> - Class in <a href="../openj9.criu/org/eclipse/openj9/criu/package-summary.html">org.eclipse.openj9.criu</a></dt>
+<dd>
+<div class="block">CRIU Support API
+
+ A checkpoint is the act of halting the JVM, saving its state and writing it out to a file(s).</div>
+</dd>
+<dt><span class="memberNameLink"><a href="../openj9.criu/org/eclipse/openj9/criu/CRIUSupport.html#%3Cinit%3E(java.nio.file.Path)">CRIUSupport(Path)</a></span> - Constructor for class org.eclipse.openj9.criu.<a href="../openj9.criu/org/eclipse/openj9/criu/CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></dt>
+<dd>
+<div class="block">Constructs a new <code>CRIUSupport</code>.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="../openj9.dtfj/com/ibm/dtfj/javacore/parser/j9/section/nativememory/NativeMemoryPatternMatchers.html#crossminusminus">crossminusminus</a></span> - Static variable in class com.ibm.dtfj.javacore.parser.j9.section.nativememory.<a href="../openj9.dtfj/com/ibm/dtfj/javacore/parser/j9/section/nativememory/NativeMemoryPatternMatchers.html" title="class in com.ibm.dtfj.javacore.parser.j9.section.nativememory">NativeMemoryPatternMatchers</a></dt>
 <dd>&nbsp;</dd>

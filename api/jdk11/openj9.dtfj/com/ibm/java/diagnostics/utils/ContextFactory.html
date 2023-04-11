@@ -17,7 +17,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -96,13 +96,13 @@ loadScripts(document, 'script');</script>
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
-<li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
@@ -140,34 +140,13 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">ContextFactory</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a></pre>
-<div class="block">Factory for creating different types of context</div>
+<div class="block">Factory for creating different types of contexts.</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- ======== CONSTRUCTOR SUMMARY ======== -->
-<section>
-<ul class="blockList">
-<li class="blockList"><a id="constructor.summary">
-<!--   -->
-</a>
-<h3>Constructor Summary</h3>
-<table class="memberSummary">
-<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Constructor</th>
-<th class="colLast" scope="col">Description</th>
-</tr>
-<tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">ContextFactory</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-</table>
-</li>
-</ul>
-</section>
 <!-- ========== METHOD SUMMARY =========== -->
 <section>
 <ul class="blockList">
@@ -188,10 +167,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
           int&nbsp;minor,
           <a href="../../../dtfj/image/Image.html" title="interface in com.ibm.dtfj.image">Image</a>&nbsp;image,
           <a href="../../../dtfj/image/ImageAddressSpace.html" title="interface in com.ibm.dtfj.image">ImageAddressSpace</a>&nbsp;space,
-          <a href="../../../dtfj/image/ImageProcess.html" title="interface in com.ibm.dtfj.image">ImageProcess</a>&nbsp;proc,
-          <a href="../../../dtfj/java/JavaRuntime.html" title="interface in com.ibm.dtfj.java">JavaRuntime</a>&nbsp;rt)</code></th>
+          <a href="../../../dtfj/image/ImageProcess.html" title="interface in com.ibm.dtfj.image">ImageProcess</a>&nbsp;process,
+          <a href="../../../dtfj/java/JavaRuntime.html" title="interface in com.ibm.dtfj.java">JavaRuntime</a>&nbsp;runtime)</code></th>
 <td class="colLast">
-<div class="block">Create a DTFJ context</div>
+<div class="block">Create a DTFJ context.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -199,7 +178,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getEmptyContext(int,int)">getEmptyContext</a></span>&#8203;(int&nbsp;major,
                int&nbsp;minor)</code></th>
 <td class="colLast">
-<div class="block">Create a stub DTFJ context which just contains the global commands</div>
+<div class="block">Create a stub DTFJ context which just contains the global commands.</div>
 </td>
 </tr>
 </table>
@@ -219,25 +198,6 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
-<!-- ========= CONSTRUCTOR DETAIL ======== -->
-<section>
-<ul class="blockList">
-<li class="blockList"><a id="constructor.detail">
-<!--   -->
-</a>
-<h3>Constructor Detail</h3>
-<a id="&lt;init&gt;()">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>ContextFactory</h4>
-<pre>public&nbsp;ContextFactory()</pre>
-</li>
-</ul>
-</li>
-</ul>
-</section>
 <!-- ============ METHOD DETAIL ========== -->
 <section>
 <ul class="blockList">
@@ -255,16 +215,17 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
                                       int&nbsp;minor,
                                       <a href="../../../dtfj/image/Image.html" title="interface in com.ibm.dtfj.image">Image</a>&nbsp;image,
                                       <a href="../../../dtfj/image/ImageAddressSpace.html" title="interface in com.ibm.dtfj.image">ImageAddressSpace</a>&nbsp;space,
-                                      <a href="../../../dtfj/image/ImageProcess.html" title="interface in com.ibm.dtfj.image">ImageProcess</a>&nbsp;proc,
-                                      <a href="../../../dtfj/java/JavaRuntime.html" title="interface in com.ibm.dtfj.java">JavaRuntime</a>&nbsp;rt)</pre>
-<div class="block">Create a DTFJ context</div>
+                                      <a href="../../../dtfj/image/ImageProcess.html" title="interface in com.ibm.dtfj.image">ImageProcess</a>&nbsp;process,
+                                      <a href="../../../dtfj/java/JavaRuntime.html" title="interface in com.ibm.dtfj.java">JavaRuntime</a>&nbsp;runtime)</pre>
+<div class="block">Create a DTFJ context.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>major</code> - DTFJ API major version to be supported</dd>
 <dd><code>minor</code> - DTFJ minor version to be supported</dd>
+<dd><code>image</code> - the source image for the context</dd>
 <dd><code>space</code> - address space for this context (cannot be null)</dd>
-<dd><code>process</code> - in this address space</dd>
-<dd><code>rt</code> - Java runtime for this context (may be null)</dd>
+<dd><code>process</code> - process in this address space</dd>
+<dd><code>runtime</code> - Java runtime for this context (may be null)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the context</dd>
 </dl>
@@ -278,8 +239,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>getEmptyContext</h4>
 <pre class="methodSignature">public static&nbsp;<a href="IDTFJContext.html" title="interface in com.ibm.java.diagnostics.utils">IDTFJContext</a>&nbsp;getEmptyContext&#8203;(int&nbsp;major,
                                            int&nbsp;minor)</pre>
-<div class="block">Create a stub DTFJ context which just contains the global commands</div>
+<div class="block">Create a stub DTFJ context which just contains the global commands.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>major</code> - DTFJ API major version to be supported</dd>
+<dd><code>minor</code> - DTFJ minor version to be supported</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>the context</dd>
 </dl>

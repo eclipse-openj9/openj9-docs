@@ -18,7 +18,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -132,7 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">PlatformManagedObject</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/ThreadMXBean.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">ThreadMXBean</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">PlatformManagedObject</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">ThreadMXBean</a></code>, <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/ThreadMXBean.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">ThreadMXBean</a></code></dd>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
@@ -140,7 +140,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">ThreadMXBean</span>
-extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/ThreadMXBean.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">ThreadMXBean</a></pre>
+extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">ThreadMXBean</a></pre>
 <div class="block">The OpenJ9 extension interface to <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/ThreadMXBean.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank"><code>ThreadMXBean</code></a>.  It publishes
  APIs specific to <a href="package-summary.html"><code>com.ibm.lang.management</code></a>, exposing additional
  information than what the standard ThreadMXBean does.</div>
@@ -196,6 +196,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 </a>
 <h3>Methods declared in interface&nbsp;java.lang.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true" title="class or interface in java.lang.management" class="externalLink" target="_blank">PlatformManagedObject</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.management/java/lang/management/PlatformManagedObject.html?is-external=true#getObjectName()" title="class or interface in java.lang.management" class="externalLink" target="_blank">getObjectName</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a id="methods.inherited.from.class.com.sun.management.ThreadMXBean">
+<!--   -->
+</a>
+<h3>Methods declared in interface&nbsp;com.sun.management.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true" title="class or interface in com.sun.management" class="externalLink" target="_blank">ThreadMXBean</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true#getCurrentThreadAllocatedBytes()" title="class or interface in com.sun.management" class="externalLink" target="_blank">getCurrentThreadAllocatedBytes</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true#getThreadAllocatedBytes(long)" title="class or interface in com.sun.management" class="externalLink" target="_blank">getThreadAllocatedBytes</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true#getThreadAllocatedBytes(long%5B%5D)" title="class or interface in com.sun.management" class="externalLink" target="_blank">getThreadAllocatedBytes</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true#getThreadCpuTime(long%5B%5D)" title="class or interface in com.sun.management" class="externalLink" target="_blank">getThreadCpuTime</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true#getThreadUserTime(long%5B%5D)" title="class or interface in com.sun.management" class="externalLink" target="_blank">getThreadUserTime</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true#isThreadAllocatedMemoryEnabled()" title="class or interface in com.sun.management" class="externalLink" target="_blank">isThreadAllocatedMemoryEnabled</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true#isThreadAllocatedMemorySupported()" title="class or interface in com.sun.management" class="externalLink" target="_blank">isThreadAllocatedMemorySupported</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/jdk.management/com/sun/management/ThreadMXBean.html?is-external=true#setThreadAllocatedMemoryEnabled(boolean)" title="class or interface in com.sun.management" class="externalLink" target="_blank">setThreadAllocatedMemoryEnabled</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.management.ThreadMXBean">
