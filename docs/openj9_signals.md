@@ -69,9 +69,9 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
-- The use of `SIGRTMIN` is configurable with the `-Xdump:suspendwith=<num>` option.
-- The handling of `SIGABRT` is configurable with the `-XX[+|-]HandleSIGABRT` option.
-- The handling of `SIGUSR2` is configurable with the [`-XX[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
+- The use of `SIGRTMIN` is configurable with the [`-Xdump:suspendwith=<num>`](xdump.md) option.
+- The handling of `SIGABRT` is configurable with the [`-XX:[+-]HandleSIGABRT`](xxhandlesigabrt.md) option.
+- The handling of `SIGUSR2` is configurable with the [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
 
 ## Signals on macOS
 
@@ -94,8 +94,8 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:**
 
-- The handling of `SIGABRT` is configurable with the `-XX[+|-]HandleSIGABRT` option.
-- The handling of `SIGUSR2` is configurable with the [`-XX[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
+- The handling of `SIGABRT` is configurable with the [`-XX:[+-]HandleSIGABRT`](xxhandlesigabrt.md) option.
+- The handling of `SIGUSR2` is configurable with the [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
 
 ## Signals on Windows
 
@@ -135,8 +135,8 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:**
 
-- The handling of `SIGABRT` is configurable with the `-XX[+|-]HandleSIGABRT` option.
-- The handling of `SIGUSR2` is configurable with the [`-XX[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
+- The handling of `SIGABRT` is configurable with the [`-XX:[+-]HandleSIGABRT`](xxhandlesigabrt.md) option.
+- The handling of `SIGUSR2` is configurable with the [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
 
 ## Signals on AIX
 
@@ -163,8 +163,8 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 
 - VM performance is affected if you install a signal handler for SIGTRAP (5) or SIGRECONFIG (58) because these signals are used for internal control purposes.
 - If you want to generate floating point exceptions, use the following call in your code to generate a `SIGFPE` signal: `fp_trap( P_TRAP_SYNC)`. Although you can use the C compiler `-qflttrap` setting to generate `SIGTRAP` signals to trap floating point exceptions, this mechanism can affect the JIT compiler.
-- The handling of `SIGABRT` is configurable with the `-XX[+|-]HandleSIGABRT` option.
-- The handling of `SIGUSR2` is configurable with the [`-XX[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
+- The handling of `SIGABRT` is configurable with the [`-XX:[+-]HandleSIGABRT`](xxhandlesigabrt.md) option.
+- The handling of `SIGUSR2` is configurable with the [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
 
 ## Signal chaining
 
@@ -181,7 +181,7 @@ command line syntax to use with the compiler, where available:
 
 In the absence of signal chaining, the VM does not allow application signal handlers for certain signals that are used internally by the VM, including the `SIGUSR2` signal. You can use the `-XX:-HandleSIGUSR2` option instead, whereby the VM signal handler is not installed on VM startup. Therefore, the application signal handler, if available, takes over the handling of the `SIGUSR2` signal. If there is no application signal handler, then the operating system's default signal handler is used.
 
-For more information about this option that affects the handling of the `SIGUSR2` signal, see [`-XX[+|-]HandleSIGUSR2`](xxhandlesigusr2.md).
+For more information about this option that affects the handling of the `SIGUSR2` signal, see [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md).
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** On Linux, macOS, and z/OS systems, you can use the `LD_PRELOAD`
 environment variable as an alternative method to the command line for linking the shared library as shown in the following list:

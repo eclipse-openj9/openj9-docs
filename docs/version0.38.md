@@ -44,7 +44,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 This option controls the handling of the `SIGUSR2` signal by the VM signal handler. The VM signal handler is installed only if this option is enabled.
 
-For more information, see [`-XX[+|-]HandleSIGUSR2`](xxhandlesigusr2.md).
+For more information, see [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md).
 
 
 ## Known problems and full release information
