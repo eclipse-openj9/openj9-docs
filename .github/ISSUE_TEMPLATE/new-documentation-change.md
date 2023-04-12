@@ -21,8 +21,8 @@ about: Request updates as a result of external changes at github.com/eclipse-ope
 
 **For new command line options:**
 
-- Option name and syntax: *e.g. -XX[+|-]NewOptionName*
-- If values are set:  
+- Option name and syntax: *e.g. -XX:[+|-]NewOptionName*
+- If values are set:
 	- Units for setting: *e.g. %, MB*
 	- Range: *e.g. 0-100*
 	- Default value: *e.g. 50*

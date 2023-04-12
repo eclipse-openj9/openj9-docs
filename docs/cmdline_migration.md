@@ -76,7 +76,7 @@ You can use the following command-line options in OpenJ9, just as you did in Hot
 These HotSpot command-line options have equivalents in OpenJ9 that are not specified in the same way, but perform a related function:
 
 | HotSpot Option          | OpenJ9 Option                                    | Usage                                                     |
-|-------------------------|--------------------------------------------------|-----------------------------------------------------------|                                                                        
+|-------------------------|--------------------------------------------------|-----------------------------------------------------------|
 | `-Xcomp`                | [`-Xjit:count=0`](xjit.md#count)**<sup>1</sup>** | `-Xcomp` disables interpreted method invocations.         |
 | `-Xgc`                  | [`-Xgcpolicy`](xgcpolicy.md)**<sup>2</sup>**     | Configuring your garbage collection policy.               |
 | `-XX:+UseNUMA`          | [`-Xnuma:none`](xnumanone.md)**<sup>3</sup>**    | Controls non-uniform memory architecture (NUMA) awareness.|
@@ -101,7 +101,7 @@ You can set the following options to make OpenJ9 behave in the same way as HotSp
 | ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) [`-Djava.lang.string.substring.nocopy=true`](djavalangstringsubstringnocopy.md) |  Avoid String sharing by `String.substring()`. |
 | [`-Xnuma:none`](xnumanone.md)               | Disable non-uniform memory architecture (NUMA) awareness.       |
 | ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png)[`-XX:+CompactStrings`](xxcompactstrings.md)| Enables `String` compression.                 |
-| [`-XXHandleSIGABRT`](xxhandlesigabrt.md)    | Force handling of SIGABRT signals to be compatible with HotSpot. |
+| [`-XX:[+-]HandleSIGABRT`](xxhandlesigabrt.md)    | Force handling of SIGABRT signals to be compatible with HotSpot. |
 
 
 ## Compatible environment variables
