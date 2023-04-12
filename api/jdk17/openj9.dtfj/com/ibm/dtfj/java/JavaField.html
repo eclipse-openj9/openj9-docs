@@ -26,7 +26,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../script-dir/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../../script-dir/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -103,7 +103,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">JavaField</span><span class="extends-implements">
 extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMember</a></span></div>
 <div class="block"><p>Represents a Java field declaration.</p>
- 
+
  <p>This interface is modeled on java.lang.reflect.Field.</p></div>
 </section>
 <section class="summary">
@@ -119,71 +119,64 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a>&nbsp;obj)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(com.ibm.dtfj.java.JavaObject)" class="member-name-link">get</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Compares the argument to the receiver, and answers true
- if they represent the <em>same</em> object using a class
- specific comparison.</div>
+<div class="block">Get the contents of an Object field.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(com.ibm.dtfj.java.JavaObject)" class="member-name-link">get</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBoolean(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getBoolean</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the contents of an Object field</div>
+<div class="block">Get the contents of a boolean field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBoolean(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getBoolean</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>byte</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getByte(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getByte</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the contents of a boolean field</div>
+<div class="block">Get the contents of a byte field.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>byte</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getByte(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getByte</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>char</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getChar(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getChar</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the contents of a byte field</div>
+<div class="block">Get the contents of a char field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>char</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getChar(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getChar</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDouble(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getDouble</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the contents of a char field</div>
+<div class="block">Get the contents of a double field.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDouble(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getDouble</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFloat(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getFloat</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the contents of a double field</div>
+<div class="block">Get the contents of a float field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFloat(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getFloat</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getInt(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getInt</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the contents of a float field</div>
+<div class="block">Get the contents of an int field.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getInt(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getInt</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLong(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getLong</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the contents of an int field</div>
+<div class="block">Get the contents of a long field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLong(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getLong</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>short</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getShort(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getShort</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the contents of a long field</div>
+<div class="block">Get the contents of a short field.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>short</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getShort(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getShort</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getString(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getString</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the contents of a short field</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getString(com.ibm.dtfj.java.JavaObject)" class="member-name-link">getString</a><wbr>(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the contents of a string field</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#isNestedPacked()" class="member-name-link">isNestedPacked</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated.</span></div>
+<div class="block">Get the contents of a string field.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#isNestedPackedArray()" class="member-name-link">isNestedPackedArray</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#isNestedPacked()" class="member-name-link">isNestedPacked</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated.</span></div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#isNestedPackedArray()" class="member-name-link">isNestedPackedArray</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 </div>
 </div>
@@ -191,7 +184,7 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.ibm.dtfj.java.JavaMember">Methods declared in interface&nbsp;com.ibm.dtfj.java.<a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMember</a></h3>
-<code><a href="JavaMember.html#getDeclaringClass()">getDeclaringClass</a>, <a href="JavaMember.html#getModifiers()">getModifiers</a>, <a href="JavaMember.html#getName()">getName</a>, <a href="JavaMember.html#getSignature()">getSignature</a>, <a href="JavaMember.html#hashCode()">hashCode</a></code></div>
+<code><a href="JavaMember.html#equals(java.lang.Object)">equals</a>, <a href="JavaMember.html#getDeclaringClass()">getDeclaringClass</a>, <a href="JavaMember.html#getModifiers()">getModifiers</a>, <a href="JavaMember.html#getName()">getName</a>, <a href="JavaMember.html#getSignature()">getSignature</a>, <a href="JavaMember.html#hashCode()">hashCode</a></code></div>
 </section>
 </li>
 </ul>
@@ -209,18 +202,16 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</span>
     throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
 <a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
-<div class="block">Get the contents of an Object field</div>
+<div class="block">Get the contents of an Object field.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>object</code> - to fetch the field from. Ignored for static
- fields.</dd>
+<dd><code>object</code> - to fetch the field from. Ignored for static fields.</dd>
 <dt>Returns:</dt>
 <dd>a JavaObject instance for reference type fields,
- an instance of a subclass of Number, Boolean, or Character 
- for primitive fields, or null for null reference fields.
- <p>
- This field must be declared in the object's class or in a superclass
- <p></dd>
+ an instance of a subclass of Number, Boolean, or Character
+ for primitive fields, or null for null reference fields
+
+ This field must be declared in the object's class or in a superclass.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code></dd>
 <dd><code><a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></code></dd>
@@ -250,7 +241,7 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">getBoolean</span><wbr><span class="parameters">(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</span>
             throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
 <a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
-<div class="block">Get the contents of a boolean field</div>
+<div class="block">Get the contents of a boolean field.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>object</code> - to fetch the field from. Ignored for static fields.</dd>
@@ -271,10 +262,10 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="member-signature"><span class="return-type">byte</span>&nbsp;<span class="element-name">getByte</span><wbr><span class="parameters">(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</span>
       throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
 <a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
-<div class="block">Get the contents of a byte field</div>
+<div class="block">Get the contents of a byte field.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>object</code> - to fetch the field from. Ignored for static fields.</dd>
+<dd><code>object</code> - to fetch the field from. Ignored for static fields</dd>
 <dt>Returns:</dt>
 <dd>the field contents</dd>
 <dt>Throws:</dt>
@@ -292,7 +283,7 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="member-signature"><span class="return-type">char</span>&nbsp;<span class="element-name">getChar</span><wbr><span class="parameters">(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</span>
       throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
 <a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
-<div class="block">Get the contents of a char field</div>
+<div class="block">Get the contents of a char field.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>object</code> - to fetch the field from. Ignored for static fields.</dd>
@@ -313,7 +304,7 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="member-signature"><span class="return-type">double</span>&nbsp;<span class="element-name">getDouble</span><wbr><span class="parameters">(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</span>
           throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
 <a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
-<div class="block">Get the contents of a double field</div>
+<div class="block">Get the contents of a double field.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>object</code> - to fetch the field from. Ignored for static fields.</dd>
@@ -334,7 +325,7 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="member-signature"><span class="return-type">float</span>&nbsp;<span class="element-name">getFloat</span><wbr><span class="parameters">(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</span>
         throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
 <a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
-<div class="block">Get the contents of a float field</div>
+<div class="block">Get the contents of a float field.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>object</code> - to fetch the field from. Ignored for static fields.</dd>
@@ -355,7 +346,7 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getInt</span><wbr><span class="parameters">(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</span>
     throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
 <a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
-<div class="block">Get the contents of an int field</div>
+<div class="block">Get the contents of an int field.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>object</code> - to fetch the field from. Ignored for static fields.</dd>
@@ -376,7 +367,7 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="member-signature"><span class="return-type">long</span>&nbsp;<span class="element-name">getLong</span><wbr><span class="parameters">(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</span>
       throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
 <a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
-<div class="block">Get the contents of a long field</div>
+<div class="block">Get the contents of a long field.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>object</code> - to fetch the field from. Ignored for static fields.</dd>
@@ -397,7 +388,7 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="member-signature"><span class="return-type">short</span>&nbsp;<span class="element-name">getShort</span><wbr><span class="parameters">(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</span>
         throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
 <a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
-<div class="block">Get the contents of a short field</div>
+<div class="block">Get the contents of a short field.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>object</code> - to fetch the field from. Ignored for static fields.</dd>
@@ -418,7 +409,7 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getString</span><wbr><span class="parameters">(<a href="JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a>&nbsp;object)</span>
           throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a>,
 <a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></span></div>
-<div class="block">Get the contents of a string field</div>
+<div class="block">Get the contents of a string field.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>object</code> - to fetch the field from. Ignored for static fields.</dd>
@@ -430,34 +421,6 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 <dd><code><a href="../image/MemoryAccessException.html" title="class in com.ibm.dtfj.image">MemoryAccessException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link" target="_blank">IllegalArgumentException</a></code> - if the specified field is not a String</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link" target="_blank">NullPointerException</a></code> - if the field is an instance field, and object is null</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="equals(java.lang.Object)">
-<h3>equals</h3>
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a>&nbsp;obj)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link" target="_blank">java.lang.Object</a></code></span></div>
-<div class="block">Compares the argument to the receiver, and answers true
- if they represent the <em>same</em> object using a class
- specific comparison. The implementation in Object answers
- true only if the argument is the exact same object as the
- receiver (==).</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="JavaMember.html#equals(java.lang.Object)">equals</a></code>&nbsp;in interface&nbsp;<code><a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMember</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link" target="_blank">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a></code></dd>
-<dt>Parameters:</dt>
-<dd><code>obj</code> - </dd>
-<dt>Returns:</dt>
-<dd>True if the given object refers to the same Java Field in the image</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link" target="_blank"><code>Object.hashCode()</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
@@ -500,7 +463,7 @@ extends <a href="JavaMember.html" title="interface in com.ibm.dtfj.java">JavaMem
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2022 IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2023 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>

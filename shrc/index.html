@@ -4113,8 +4113,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxhandlesigxfsz/" class="md-nav__link">
-        -XX:[+|-]HandleSIGXFSZ
+      <a href="../xxhandlesigabrt/" class="md-nav__link">
+        -XX:[+|-]HandleSIGABRT
       </a>
     </li>
   
@@ -4127,8 +4127,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxhandlesigabrt/" class="md-nav__link">
-        -XX:[+|-]HandleSIGABRT
+      <a href="../xxhandlesigusr2/" class="md-nav__link">
+        -XX:[+|-]HandleSIGUSR2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxhandlesigxfsz/" class="md-nav__link">
+        -XX:[+|-]HandleSIGXFSZ
       </a>
     </li>
   
@@ -5874,7 +5888,7 @@ If you are using a non-persistent cache, you can use a cache utility to create a
 <p>In most cases, setting this option allows your application to start even if there is a problem opening or creating the shared cache. The VM will continue to start <em>without</em> class data sharing.</p>
 </li>
 <li>
-<p>Set a soft maximum size for the cache by specifying the <a href="../xscmx/">-Xscmx</a> option with the <a href="../xxsharedcachehardlimit/"><code>-XXSharedCacheHardLimit</code></a> option.  </p>
+<p>Set a soft maximum size for the cache by specifying the <a href="../xscmx/">-Xscmx</a> option with the <a href="../xxsharedcachehardlimit/"><code>-XX:SharedCacheHardLimit</code></a> option.</p>
 <p>For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the <code>-Xscmx</code> option, to limit the data stored in the cache (<code>-XX:SharedCacheHardLimit=64m -Xscmx16m</code>). You can then adjust the soft maximum size by using the <a href="../xshareclasses/#adjustsoftmx"><code>-Xshareclasses:adjustsoftmx</code></a> cache utility or the  <code>MemoryMXBean.setSharedClassCacheSoftmxBytes()</code> method in the <code>com.ibm.lang.management</code> API. For more information, see <a href="../xscmx/#setting-a-soft-maximum-size">Setting a soft maximum size</a>.</p>
 </li>
 </ul>
@@ -5909,7 +5923,7 @@ MyCache                 Java8 64-bit  persistent      cr              0         
 Cache name              level         cache-type      feature         layer       OS shmid       OS semid       last detach time
 
 Compatible shared caches
-MyCache                 Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019   
+MyCache                 Java8 64-bit  persistent      cr              0                                         Mon Sep 23 11:41:04 2019
 MyCache                 Java8 64-bit  persistent      cr              1                                         Mon Sep 23 11:46:25 2019
 MyCache                 Java8 64-bit  persistent      cr              2                                         In use
 </code></pre>
@@ -5988,7 +6002,7 @@ For more information about using a modification context, see <a href="#sharing-m
 <p>Redefined classes contain replacement bytecode that is provided by an agent at run time by using the JVMTI <code>RedefineClasses</code> or <code>Instrumentation.redefineClasses</code> function. A typical use case is for debugging, where function is added for log output. These classes are never stored in the cache.</p>
 </li>
 <li>
-<p>Retransformed classes contain bytecode that can be changed without any reference to the original bytecode by using the JVMTI <code>RetransformClasses</code> or <code>Instrumentation.retransformClasses</code> functions. A typical use case is a profiling agent that adds or removes profiling calls with each retransformation. These classes can be modified multiple times and are not stored in the cache by default. If you want to store these modified classes for reuse, you can do so by setting the <a href="../xshareclasses/#cacheretransformed"><code>-Xshareclasses:cacheRetransformed</code></a> suboption when you start your application. This option turns off bytecode instrumentation support, forcing cache creation into <a href="../xshareclasses/#disablebci"><code>-Xshareclasses:disableBCI</code></a> mode.  </p>
+<p>Retransformed classes contain bytecode that can be changed without any reference to the original bytecode by using the JVMTI <code>RetransformClasses</code> or <code>Instrumentation.retransformClasses</code> functions. A typical use case is a profiling agent that adds or removes profiling calls with each retransformation. These classes can be modified multiple times and are not stored in the cache by default. If you want to store these modified classes for reuse, you can do so by setting the <a href="../xshareclasses/#cacheretransformed"><code>-Xshareclasses:cacheRetransformed</code></a> suboption when you start your application. This option turns off bytecode instrumentation support, forcing cache creation into <a href="../xshareclasses/#disablebci"><code>-Xshareclasses:disableBCI</code></a> mode.</p>
 </li>
 </ul>
 <h3 id="sharing-modified-bytecode">Sharing modified bytecode</h3>
