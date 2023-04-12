@@ -921,6 +921,7 @@ This example stores the system dump locally in a compressed file, `core.dmp.lz4`
 
 - [`-Xtrace`](xtrace.md)
 - [`-Xdisablejavadump`](xdisablejavadump.md)
+- [`-XX[+|-]HandleSIGUSR2`](xxhandlesigusr2.md)
 
 
 <!-- ==== END OF TOPIC ==== xdump.md ==== -->
