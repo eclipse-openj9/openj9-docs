@@ -70,7 +70,7 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
 - The use of `SIGRTMIN` is configurable with the [`-Xdump:suspendwith=<num>`](xdump.md) option.
-- The handling of `SIGABRT` is configurable with the [`-XX:[+-]HandleSIGABRT`](xxhandlesigabrt.md) option.
+- The handling of `SIGABRT` is configurable with the [`-XX:[+|-]HandleSIGABRT`](xxhandlesigabrt.md) option.
 - The handling of `SIGUSR2` is configurable with the [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
 
 ## Signals on macOS
@@ -94,7 +94,7 @@ Note that certain signals on VM threads cause OpenJ9 to shutdown. An application
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:**
 
-- The handling of `SIGABRT` is configurable with the [`-XX:[+-]HandleSIGABRT`](xxhandlesigabrt.md) option.
+- The handling of `SIGABRT` is configurable with the [`-XX:[+|-]HandleSIGABRT`](xxhandlesigabrt.md) option.
 - The handling of `SIGUSR2` is configurable with the [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
 
 ## Signals on Windows
@@ -135,7 +135,7 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:**
 
-- The handling of `SIGABRT` is configurable with the [`-XX:[+-]HandleSIGABRT`](xxhandlesigabrt.md) option.
+- The handling of `SIGABRT` is configurable with the [`-XX:[+|-]HandleSIGABRT`](xxhandlesigabrt.md) option.
 - The handling of `SIGUSR2` is configurable with the [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
 
 ## Signals on AIX
@@ -163,7 +163,7 @@ All mechanisms can be disabled by using the `-Xrs` option. However, only structu
 
 - VM performance is affected if you install a signal handler for SIGTRAP (5) or SIGRECONFIG (58) because these signals are used for internal control purposes.
 - If you want to generate floating point exceptions, use the following call in your code to generate a `SIGFPE` signal: `fp_trap( P_TRAP_SYNC)`. Although you can use the C compiler `-qflttrap` setting to generate `SIGTRAP` signals to trap floating point exceptions, this mechanism can affect the JIT compiler.
-- The handling of `SIGABRT` is configurable with the [`-XX:[+-]HandleSIGABRT`](xxhandlesigabrt.md) option.
+- The handling of `SIGABRT` is configurable with the [`-XX:[+|-]HandleSIGABRT`](xxhandlesigabrt.md) option.
 - The handling of `SIGUSR2` is configurable with the [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md) option.
 
 ## Signal chaining
