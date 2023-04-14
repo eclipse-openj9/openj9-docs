@@ -37,7 +37,7 @@ The following new features and notable changes since version 0.36.x are included
 
 ### Binaries and supported environments
 
-Eclipse OpenJ9&trade; release 0.37.0 supports OpenJDK 19.
+Eclipse OpenJ9&trade; release 0.37.0 works with OpenJDK 19. OpenJDK 19 is out of support at the time of the 0.37.0 release. Builds of 0.37.0 should not be used in production and might contain known security vulnerabilities as of 18 April 2023.
 
 RHEL 8.2 is out of support. RHEL 8.4 is the new minimum operating system level.
 
