@@ -158,6 +158,17 @@ nav:
         - "Introduction"                                                         : shrc.md
         - "Diagnosing problems"                                                  : shrc_diag_util.md
 
+    - "CRIU" :
+        - "CRIU support"                                                         : criusupport.md
+        - "Command-line options" :
+           - "-Dorg.eclipse.openj9.criu.ImmutableEnvVars"                        : dorgeclipseopenj9criuimmutableenvvars.md
+           - "-Xrs:onRestore / -Xrs:syncOnRestore"                               : xrsonrestoresynconrestore.md
+           - "-Xshareclasses:disableOnRestore"                                   : xshareclassesdisableonrestore.md
+           - "-XX:CheckpointGCThreads"                                           : xxcheckpointgcthread.md
+           - "-XX:[+|-]CRIURestoreNonPortableMode"                               : xxcriurestorenonportablemode.md
+           - "-XX:[+|-]EnableCRIUSupport"                                        : xxenablecriusupport.md
+           - "-XX:[+|-]IgnoreUnrecognizedRestoreOptions"                         : xxignoreunrecognizedrestoreoptions.md
+
     - "Java Attach API"                                                          : attachapi.md
 
     - "Security" :
