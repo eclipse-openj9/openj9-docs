@@ -94,7 +94,7 @@ The following features are implemented in OpenJDK and available in any builds of
 - [JEP 354](https://openjdk.org/jeps/354): Switch Expressions (Preview)
 - [JEP 355](https://openjdk.org/jeps/355): Text Blocks (Preview)
 
-You can find the full list of features for JDK 13 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/13/). Any remaining features that are listed do not apply to OpenJ9.
+You can find the full list of features for JDK 13 at the [OpenJDK project](https://openjdk.org/projects/jdk/13/). Any remaining features that are listed do not apply to OpenJ9.
 
 ## Full release information
 

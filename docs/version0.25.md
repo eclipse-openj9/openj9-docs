@@ -48,28 +48,28 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 The following features are supported by OpenJ9:
 
-- [JEP 338](https://openjdk.java.net/jeps/338): Vector API (incubator)
+- [JEP 338](https://openjdk.org/jeps/338): Vector API (incubator)
     - OpenJ9 adds optimizations for this feature.
-- [JEP 390](https://openjdk.java.net/jeps/390): Warnings for value-based classes
+- [JEP 390](https://openjdk.org/jeps/390): Warnings for value-based classes
     - OpenJ9 adds option [`-XX:DiagnoseSyncOnValueBasedClasses=<number>`](xxdiagnosesynconvaluebasedclasses.md) for compatibility with the reference implementation.
-- [JEP 395](https://openjdk.java.net/jeps/395): Records
-- [JEP 397](https://openjdk.java.net/jeps/397): Sealed Classes (second preview)
+- [JEP 395](https://openjdk.org/jeps/395): Records
+- [JEP 397](https://openjdk.org/jeps/397): Sealed Classes (second preview)
 
 The following features will be supported by OpenJ9 in a future release:
 
-- [JEP 389](https://openjdk.java.net/jeps/389): Foreign linker API (incubator)
-- [JEP 393](https://openjdk.java.net/jeps/393): Foreign-memory access API (third incubator)
+- [JEP 389](https://openjdk.org/jeps/389): Foreign linker API (incubator)
+- [JEP 393](https://openjdk.org/jeps/393): Foreign-memory access API (third incubator)
 
 The following features are implemented in OpenJDK and available in any builds of OpenJDK 16 with OpenJ9:
 
-- [JEP 347](https://openjdk.java.net/jeps/347): Enable C++ 14 language features
-- [JEP 380](https://openjdk.java.net/jeps/380): Unix-domain socket channels
-- [JEP 394](https://openjdk.java.net/jeps/394): Pattern matching for `instanceof`
-- [JEP 396](https://openjdk.java.net/jeps/396): Strongly encapsulate JDK internals by default
-- [JEP 392](https://openjdk.java.net/jeps/392): Packaging tool
+- [JEP 347](https://openjdk.org/jeps/347): Enable C++ 14 language features
+- [JEP 380](https://openjdk.org/jeps/380): Unix-domain socket channels
+- [JEP 394](https://openjdk.org/jeps/394): Pattern matching for `instanceof`
+- [JEP 396](https://openjdk.org/jeps/396): Strongly encapsulate JDK internals by default
+- [JEP 392](https://openjdk.org/jeps/392): Packaging tool
     - **(Linux&reg;, macOS&reg;, and Windows&trade; only)** Promoted from incubation to a production-ready feature in this release. See [Using `jpackage`](introduction.md#using-jpackage) for details.
 
-You can find the full list of features for JDK 16 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/16/). Any remaining features that are listed do not apply to OpenJ9.
+You can find the full list of features for JDK 16 at the [OpenJDK project](https://openjdk.org/projects/jdk/16/). Any remaining features that are listed do not apply to OpenJ9.
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Applications might be adversely affected by
 JEP 396 if they make use of internal APIs. You should update your application to use standard APIs. To temporarily work around this problem, set `--illegal-access=permit` on the command line, which prints a warning that is similar to the following example when an illegal access call is made:

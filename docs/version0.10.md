@@ -79,7 +79,7 @@ The following features are supported by OpenJ9:
 - [JEP 335](https://openjdk.org/jeps/335): Deprecate the Nashorn JavaScript Engine
 - [JEP 336](https://openjdk.org/jeps/336): Deprecate the Pack200 Tools and API
 
-You can find the full list of features for JDK 11 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/11/). Any remaining features that are listed do not apply to OpenJ9.
+You can find the full list of features for JDK 11 at the [OpenJDK project](https://openjdk.org/projects/jdk/11/). Any remaining features that are listed do not apply to OpenJ9.
 
 ## Full release information
 

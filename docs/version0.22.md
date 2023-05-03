@@ -85,7 +85,7 @@ The following features are implemented in OpenJDK and available in any builds of
 - [JEP 378](https://openjdk.org/jeps/378): Text Blocks
 - [JEP 385](https://openjdk.org/jeps/385): Deprecate RMI Activation for Removal
 
-You can find the full list of features for JDK 15 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/15/). Any remaining features that are listed do not apply to OpenJ9.
+You can find the full list of features for JDK 15 at the [OpenJDK project](https://openjdk.org/projects/jdk/15/). Any remaining features that are listed do not apply to OpenJ9.
 
 ## Full release information
 

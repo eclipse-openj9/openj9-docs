@@ -78,25 +78,25 @@ The default value of the [`-XX:MaxDirectMemorySize`](xxmaxdirectmemorysize.md) o
 
 The following features are supported by OpenJ9:
 
-- [JEP 400](https://openjdk.java.net/jeps/400): UTF-8 by Default
-- [JEP 416](https://openjdk.java.net/jeps/416): Reimplement Core Reflection with Method Handles
-- [JEP 421](https://openjdk.java.net/jeps/421): Deprecate Finalization for Removal
+- [JEP 400](https://openjdk.org/jeps/400): UTF-8 by Default
+- [JEP 416](https://openjdk.org/jeps/416): Reimplement Core Reflection with Method Handles
+- [JEP 421](https://openjdk.org/jeps/421): Deprecate Finalization for Removal
 
 The following features will be supported by OpenJ9 in a future release:
 
-- [JEP 391](https://openjdk.java.net/jeps/391): macOS/AArch64 Port
+- [JEP 391](https://openjdk.org/jeps/391): macOS/AArch64 Port
     - An early access build is available in this release
-- [JEP 417](https://openjdk.java.net/jeps/417): Vector API (Third Incubator)
-- [JEP 419](https://openjdk.java.net/jeps/419): Foreign Function & Memory API (Second Incubator)
+- [JEP 417](https://openjdk.org/jeps/417): Vector API (Third Incubator)
+- [JEP 419](https://openjdk.org/jeps/419): Foreign Function & Memory API (Second Incubator)
 
 The following features are implemented in OpenJDK and available in any build of OpenJDK 18 with OpenJ9:
 
-- [JEP 408](https://openjdk.java.net/jeps/408): Simple Web Server
-- [JEP 413](https://openjdk.java.net/jeps/413): Code Snippets in Java API Documentation
-- [JEP 418](https://openjdk.java.net/jeps/418): Internet-Address Resolution SPI
-- [JEP 420](https://openjdk.java.net/jeps/420): Pattern Matching for switch (Second Preview)
+- [JEP 408](https://openjdk.org/jeps/408): Simple Web Server
+- [JEP 413](https://openjdk.org/jeps/413): Code Snippets in Java API Documentation
+- [JEP 418](https://openjdk.org/jeps/418): Internet-Address Resolution SPI
+- [JEP 420](https://openjdk.org/jeps/420): Pattern Matching for switch (Second Preview)
 
-You can find the full list of features for JDK 18 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/18/).
+You can find the full list of features for JDK 18 at the [OpenJDK project](https://openjdk.org/projects/jdk/18/).
 
 
 ## Known problems and full release information

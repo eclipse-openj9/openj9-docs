@@ -30,7 +30,7 @@ This feature provides heap space savings by using an 8-bit character set interna
 
 If the option is not enabled, the JIT compiler is nevertheless optimized so that although there is no saving in heap space, there is also no performance penalty.
 
-Further details are available at [JEP 254: Compact Strings](https://openjdk.java.net/jeps/254).
+Further details are available at [JEP 254: Compact Strings](https://openjdk.org/jeps/254).
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** With OpenJ9, this option is supported on OpenJDK version 8 and later versions, whereas HotSpot supports it only from Java version 9.
 

@@ -69,7 +69,7 @@ The following blog post describes the benefits of using this feature: [Are you s
 
 ### New GC policy
 
-A new GC policy is introduced for [JEP 318: Epsilon: A No-Op Garbage Collector](http://openjdk.java.net/jeps/318).
+A new GC policy is introduced for [JEP 318: Epsilon: A No-Op Garbage Collector](https://openjdk.org/jeps/318).
 
 When this policy is enabled, the Java object heap is expanded in the normal way until the limit is
 reached, but memory is not reclaimed through garbage collection. When the limit is reached the VM shuts down.
@@ -209,7 +209,7 @@ The following features are supported by OpenJ9:
 - [JEP 298](https://openjdk.org/jeps/298): Remove Demos and Samples
 - [JEP 299](https://openjdk.org/jeps/299): Reorganize Documentation
 
-You can find the full list of features for JDK 9 at the [OpenJDK project](http://openjdk.java.net/projects/jdk9/). Any remaining features that are listed do not apply to OpenJ9.
+You can find the full list of features for JDK 9 at the [OpenJDK project](https://openjdk.org/projects/jdk9/). Any remaining features that are listed do not apply to OpenJ9.
 
 ### ![Start of content that applies to Java 10 plus](cr/java10plus.png) New JDK 10 features
 
@@ -221,7 +221,7 @@ The following features are supported by OpenJ9:
 - [JEP 319](https://openjdk.org/jeps/319): Root Certificates
 - [JEP 322](https://openjdk.org/jeps/322): Time-Based Release Versioning
 
-You can find the full list of features for JDK 10 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/10/). Any remaining features that are listed do not apply to OpenJ9.
+You can find the full list of features for JDK 10 at the [OpenJDK project](https://openjdk.org/projects/jdk/10/). Any remaining features that are listed do not apply to OpenJ9.
 
 ## Full release information
 

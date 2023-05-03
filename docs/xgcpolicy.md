@@ -185,7 +185,7 @@ The following options are specific to the `metronome` GC policy:
 
 This policy can also be enabled with the [`-XX:+UseNoGC`](xxusenogc.md) option.
 
-Further details are available at [JEP 318: Epsilon: A No-Op Garbage Collector](http://openjdk.java.net/jeps/318).
+Further details are available at [JEP 318: Epsilon: A No-Op Garbage Collector](https://openjdk.org/jeps/318).
 
 
 

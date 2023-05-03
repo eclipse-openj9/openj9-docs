@@ -86,7 +86,7 @@ The VM now supports the allocation of huge pages on Linux when you use the `madv
 
 ###  ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for low-overhead heap profiling
 
-[JEP 331](http://openjdk.java.net/jeps/331) provides a mechanism for sampling Java heap allocations with a low overhead via
+[JEP 331](https://openjdk.org/jeps/331) provides a mechanism for sampling Java heap allocations with a low overhead via
 the JVM Tool Interface (JVMTI).
 
 :fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:** JEP 331 is implemented for OpenJ9 with the following limitations:
