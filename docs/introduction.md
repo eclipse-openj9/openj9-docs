@@ -111,7 +111,7 @@ If you do not require translations from the English language, the translation fi
 ## ![Start of content that applies to Java 16 and later](cr/java16plus.png) Using jpackage
 **(Linux, macOS, and Windows only)**
 
-You can use the `jpackage` utility to package a Java application into a platform-specific package that includes all of the necessary dependencies. Full details of the tool are available at [JEP 392: Packaging Tool](https://openjdk.java.net/jeps/392). Instructions for using it and the various options available, are documented in the Oracle Tool Specifications: [The jpackage Command](https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html).
+You can use the `jpackage` utility to package a Java application into a platform-specific package that includes all of the necessary dependencies. Full details of the tool are available at [JEP 392: Packaging Tool](https://openjdk.org/jeps/392). Instructions for using it and the various options available, are documented in the Oracle Tool Specifications: [The jpackage Command](https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html).
 
 ## Troubleshooting
 

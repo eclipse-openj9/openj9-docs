@@ -51,7 +51,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 ### Changes to message logging
 
-[JEP 158](https://openjdk.java.net/jeps/158) introduces the `-Xlog` option as a common logging system for all components of a Java virtual machine. To avoid confusion with the reference implementation, the [`-Xsyslog`](xsyslog.md) option replaces the existing OpenJ9 [`-Xlog`](xlog.md) option for message logging. For compatibility with the reference implementation, a limited set of `-Xlog` suboptions are supported.
+[JEP 158](https://openjdk.org/jeps/158) introduces the `-Xlog` option as a common logging system for all components of a Java virtual machine. To avoid confusion with the reference implementation, the [`-Xsyslog`](xsyslog.md) option replaces the existing OpenJ9 [`-Xlog`](xlog.md) option for message logging. For compatibility with the reference implementation, a limited set of `-Xlog` suboptions are supported.
 
 A new option, [`-XX:[+|-]LegacyXlogOption`](xxlegacyxlogoption.md), controls how `-Xlog` is processed when set on the command line.
 

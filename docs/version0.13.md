@@ -96,7 +96,7 @@ The following feature is implemented in OpenJDK and available in any builds of O
 
 - [JEP 325](https://openjdk.org/jeps/325): Switch Expressions (Preview) 
 
-You can find the full list of features for JDK 12 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/12/). Any remaining features that are listed do not apply to OpenJ9.
+You can find the full list of features for JDK 12 at the [OpenJDK project](https://openjdk.org/projects/jdk/12/). Any remaining features that are listed do not apply to OpenJ9.
 
 ## Full release information
 
