@@ -5606,34 +5606,34 @@
 <h3 id="new-jdk-16-features"><img alt="Start of content that applies to Java 16 plus" src="../cr/java16plus.png" /> New JDK 16 features</h3>
 <p>The following features are supported by OpenJ9:</p>
 <ul>
-<li><a href="https://openjdk.java.net/jeps/338">JEP 338</a>: Vector API (incubator)<ul>
+<li><a href="https://openjdk.org/jeps/338">JEP 338</a>: Vector API (incubator)<ul>
 <li>OpenJ9 adds optimizations for this feature.</li>
 </ul>
 </li>
-<li><a href="https://openjdk.java.net/jeps/390">JEP 390</a>: Warnings for value-based classes<ul>
+<li><a href="https://openjdk.org/jeps/390">JEP 390</a>: Warnings for value-based classes<ul>
 <li>OpenJ9 adds option <a href="../xxdiagnosesynconvaluebasedclasses/"><code>-XX:DiagnoseSyncOnValueBasedClasses=&lt;number&gt;</code></a> for compatibility with the reference implementation.</li>
 </ul>
 </li>
-<li><a href="https://openjdk.java.net/jeps/395">JEP 395</a>: Records</li>
-<li><a href="https://openjdk.java.net/jeps/397">JEP 397</a>: Sealed Classes (second preview)</li>
+<li><a href="https://openjdk.org/jeps/395">JEP 395</a>: Records</li>
+<li><a href="https://openjdk.org/jeps/397">JEP 397</a>: Sealed Classes (second preview)</li>
 </ul>
 <p>The following features will be supported by OpenJ9 in a future release:</p>
 <ul>
-<li><a href="https://openjdk.java.net/jeps/389">JEP 389</a>: Foreign linker API (incubator)</li>
-<li><a href="https://openjdk.java.net/jeps/393">JEP 393</a>: Foreign-memory access API (third incubator)</li>
+<li><a href="https://openjdk.org/jeps/389">JEP 389</a>: Foreign linker API (incubator)</li>
+<li><a href="https://openjdk.org/jeps/393">JEP 393</a>: Foreign-memory access API (third incubator)</li>
 </ul>
 <p>The following features are implemented in OpenJDK and available in any builds of OpenJDK 16 with OpenJ9:</p>
 <ul>
-<li><a href="https://openjdk.java.net/jeps/347">JEP 347</a>: Enable C++ 14 language features</li>
-<li><a href="https://openjdk.java.net/jeps/380">JEP 380</a>: Unix-domain socket channels</li>
-<li><a href="https://openjdk.java.net/jeps/394">JEP 394</a>: Pattern matching for <code>instanceof</code></li>
-<li><a href="https://openjdk.java.net/jeps/396">JEP 396</a>: Strongly encapsulate JDK internals by default</li>
-<li><a href="https://openjdk.java.net/jeps/392">JEP 392</a>: Packaging tool<ul>
+<li><a href="https://openjdk.org/jeps/347">JEP 347</a>: Enable C++ 14 language features</li>
+<li><a href="https://openjdk.org/jeps/380">JEP 380</a>: Unix-domain socket channels</li>
+<li><a href="https://openjdk.org/jeps/394">JEP 394</a>: Pattern matching for <code>instanceof</code></li>
+<li><a href="https://openjdk.org/jeps/396">JEP 396</a>: Strongly encapsulate JDK internals by default</li>
+<li><a href="https://openjdk.org/jeps/392">JEP 392</a>: Packaging tool<ul>
 <li><strong>(Linux&reg;, macOS&reg;, and Windows&trade; only)</strong> Promoted from incubation to a production-ready feature in this release. See <a href="../introduction/#using-jpackage">Using <code>jpackage</code></a> for details.</li>
 </ul>
 </li>
 </ul>
-<p>You can find the full list of features for JDK 16 at the <a href="http://openjdk.java.net/projects/jdk/16/">OpenJDK project</a>. Any remaining features that are listed do not apply to OpenJ9.</p>
+<p>You can find the full list of features for JDK 16 at the <a href="https://openjdk.org/projects/jdk/16/">OpenJDK project</a>. Any remaining features that are listed do not apply to OpenJ9.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Note:</strong> Applications might be adversely affected by
 JEP 396 if they make use of internal APIs. You should update your application to use standard APIs. To temporarily work around this problem, set <code>--illegal-access=permit</code> on the command line, which prints a warning that is similar to the following example when an illegal access call is made:</p>
 <pre><code>WARNING: An illegal reflective access operation has occurred

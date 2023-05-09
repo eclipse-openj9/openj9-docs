@@ -6686,6 +6686,7 @@ Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_REGISTER_VE
 </code></pre>
 <p>The subscriber function must be of type <code>jvmtiVerboseGCSubscriber</code>, which is declared in <code>ibmjvmti.h</code>.</p>
 <p>This function is called with each record of verbose logging data produced by the VM.</p>
+<p>This function runs under the same restrictions as the <code>GarbageCollectionStart</code> and <code>GarbageCollectionFinish</code> events in the standard JVMTI specification. For more information about these events, see the <a href="https://docs.oracle.com/en/java/javase/20/docs/specs/jvmti.html#EventIndex">JVMTI Event Index</a> for your OpenJDK version.</p>
 <p>The verbose logging record supplied to the subscriber function is valid only for the duration of the function. If the subscriber wants to save the data, the data must be copied elsewhere.</p>
 <p>If the subscriber function returns an error, the alarm function is called, and the subscription is deregistered.</p>
 <p><strong>Subscriber function parameters</strong></p>
@@ -6704,6 +6705,7 @@ Macro declaration in the <code>ibmjvmti.h</code> file: <code>COM_IBM_REGISTER_VE
 <pre><code>typedef jvmtiError (*jvmtiVerboseGCAlarm)(jvmtiEnv *jvmti_env, void *subscription_id, void *user_data);
 </code></pre>
 <p>The alarm function must be of type <code>jvmtiVerboseGCAlarm</code>, which is declared in <code>ibmjvmti.h</code>. This function is called if the subscriber function returns an error.</p>
+<p>This function runs under the same restrictions as the <code>GarbageCollectionStart</code> and <code>GarbageCollectionFinish</code> events in the standard JVMTI specification. For more information about these events, see the <a href="https://docs.oracle.com/en/java/javase/20/docs/specs/jvmti.html#EventIndex">JVMTI Event Index</a> for your OpenJDK version.</p>
 <p><strong>Alarm function parameters</strong></p>
 <ul>
 <li><code>jvmti_env</code>: A pointer to the JVMTI environment.</li>
