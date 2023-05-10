@@ -75,7 +75,7 @@ switch (params.BUILD_TYPE) {
 
 timeout(time: 6, unit: 'HOURS') {
     timestamps {
-        node('hw.arch.x86&&sw.tool.docker') {
+        node('hw.arch.x86&&sw.tool.docker&&sw.os.cent') {
             try {
                 def TMP_DESC = (currentBuild.description) ? currentBuild.description + "<br>" : ""
                 currentBuild.description = TMP_DESC + "<a href=${JENKINS_URL}computer/${NODE_NAME}>${NODE_NAME}</a>"
