@@ -36,6 +36,8 @@ The following new features and notable changes since version 0.37.0 are included
 
 Eclipse OpenJ9&trade; release 0.38.0 supports OpenJDK 8, 11 and 17.
 
+Support for running OpenJ9 with OpenJDK 8 or OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. Since release 0.37, OpenJ9 is no longer tested with OpenJDK 11 on CentOS 6.10. Testing of OpenJ9 with OpenJDK 8 on CentOS 6.10 is likely to end in a future release.
+
 OpenJ9 Windows&reg; builds for OpenJDK 8 are now compiled with Microsoft&reg; Visual Studio 2019. The Visual Studio redistributable files included with the build are updated to match.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
