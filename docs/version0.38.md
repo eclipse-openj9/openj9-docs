@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.37.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:[+|-]HandleSIGUSR2` option added](#new-xx-handlesigusr2-option-added)
+- [Technical preview of CRIU support](#technical-preview-of-criu-support)
 
 
 ## Features and changes
@@ -45,6 +46,12 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 This option controls the handling of the `SIGUSR2` signal by the VM signal handler. The VM signal handler is installed only if this option is enabled.
 
 For more information, see [`-XX:[+|-]HandleSIGUSR2`](xxhandlesigusr2.md).
+
+### Technical preview of CRIU support
+
+This release supports, as a technical preview, the Checkpoint/Restore In Userspace (CRIU) tool that is included with many Linux distributions. This tool is available for OpenJDK 11 and later running on Linux&reg; x86, Linux on POWER&reg; (Little Endian), and Linux on IBM Z&reg; only.
+
+You can use the CRIU feature to stop the VM at a checkpoint, save its state, then run the VM from the point where it was stopped. You can restore the checkpoint image in multiple other environments with improved start-up time. This capability means that the CRIU support is particularly useful in container environments. For more information, see [CRIU support](criusupport.md).
 
 
 ## Known problems and full release information
