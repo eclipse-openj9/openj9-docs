@@ -42,7 +42,7 @@ Eclipse OpenJ9&trade; release 0.36.0 supports OpenJDK 8 and 17.
 
 Release 0.36.1 supports OpenJDK 11.
 
-Support for running OpenJDK 8 and OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. OpenJ9 will not be tested with OpenJDK 11 on CentOS 6.10 after the 0.36.1 release.
+Support for running OpenJ9 with OpenJDK 8 or OpenJDK 11 on CentOS 6.10 is deprecated and might be removed in a future release. OpenJ9 will not be tested with OpenJDK 11 on CentOS 6.10 after the 0.36.1 release.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
