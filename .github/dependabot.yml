@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: docker
+    directory: /buildenv
+    schedule:
+      interval: daily
+
+  - package-ecosystem: pip
+    directory: /buildenv
+    schedule:
+      interval: daily
