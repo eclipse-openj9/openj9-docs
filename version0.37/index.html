@@ -320,6 +320,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.39/" class="md-nav__link">
+        Version 0.39.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.38/" class="md-nav__link">
         Version 0.38.0
       </a>
@@ -404,8 +418,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#support-for-pkcs11-token-labels-added-on-zos-and-linux-on-ibm-z" class="md-nav__link">
-    Support for PKCS#11 token labels added on z/OS and Linux on IBM Z
+  <a href="#support-for-pkcs11-token-labels-added-on-linux-on-ibm-z" class="md-nav__link">
+    Support for PKCS#11 token labels added on Linux on IBM Z
   </a>
   
 </li>
@@ -413,6 +427,13 @@
           <li class="md-nav__item">
   <a href="#new-message-added-to-help-find-system-dumps-on-linux" class="md-nav__link">
     New message added to help find system dumps on Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-jdk-19-features" class="md-nav__link">
+    New JDK 19 features
   </a>
   
 </li>
@@ -531,18 +552,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_10" type="checkbox" id="__nav_5_10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_11" type="checkbox" id="__nav_5_11" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5_10">
+        <label class="md-nav__link" for="__nav_5_11">
           Earlier releases
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Earlier releases" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_10">
+        <label class="md-nav__title" for="__nav_5_11">
           <span class="md-nav__icon md-icon"></span>
           Earlier releases
         </label>
@@ -5700,8 +5721,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#support-for-pkcs11-token-labels-added-on-zos-and-linux-on-ibm-z" class="md-nav__link">
-    Support for PKCS#11 token labels added on z/OS and Linux on IBM Z
+  <a href="#support-for-pkcs11-token-labels-added-on-linux-on-ibm-z" class="md-nav__link">
+    Support for PKCS#11 token labels added on Linux on IBM Z
   </a>
   
 </li>
@@ -5709,6 +5730,13 @@
           <li class="md-nav__item">
   <a href="#new-message-added-to-help-find-system-dumps-on-linux" class="md-nav__link">
     New message added to help find system dumps on Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-jdk-19-features" class="md-nav__link">
+    New JDK 19 features
   </a>
   
 </li>
@@ -5772,8 +5800,9 @@
 <li><a href="#aix-is-now-built-on-aix-72-tl5">AIX is now built on AIX 7.2 TL5</a></li>
 <li><img alt="Start of content that applies to Java 19 plus" src="../cr/java19plus.png" /> <a href="#linux-reference-compiler-updated-to-gcc-112">Linux&reg; reference compiler updated to gcc 11.2</a></li>
 <li><a href="#support-added-for-the-comsunmanagementthreadmxbean-interface">Support added for the <code>com.sun.management.ThreadMXBean</code> interface</a></li>
-<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#support-for-pkcs11-token-labels-added-on-zos-and-linux-on-ibm-z">Support for PKCS#11 token labels added on z/OS&reg; and Linux on IBM Z&reg;</a></li>
+<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#support-for-pkcs11-token-labels-added-on-linux-on-ibm-z">Support for PKCS#11 token labels added on Linux on IBM Z&reg;</a></li>
 <li><a href="#new-message-added-to-help-find-system-dumps-on-linux">New message added to help find system dumps on Linux</a></li>
+<li><img alt="Start of content that applies to Java 19 plus" src="../cr/java19plus.png" /> <a href="#new-jdk-19-features">New JDK 19 features</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -5789,13 +5818,27 @@
 <h3 id="support-added-for-the-comsunmanagementthreadmxbean-interface">Support added for the <code>com.sun.management.ThreadMXBean</code> interface</h3>
 <p>The OpenJ9 <a href="https://www.eclipse.org/openj9/docs/api-langmgmt/"><code>ThreadMXbean</code> interface</a> (<code>com.ibm.lang.management.ThreadMXBean</code>) was extending the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/ThreadMXBean.html"><code>java.lang.management.ThreadMXBean</code></a> interface. With this release, the OpenJ9 <code>ThreadMXBean</code> interface extends the <a href="https://docs.oracle.com/javase/8/docs/jre/api/management/extension/com/sun/management/ThreadMXBean.html"><code>com.sun.management.ThreadMXBean</code></a> interface, whereby it now contains all the methods of the <code>java.lang.management.ThreadMXBean</code> interface with additional methods from the <code>com.sun.management.ThreadMXBean</code> interface.</p>
 <p>The OpenJ9 VM implementation does not support thread memory allocation measurement (<code>isThreadAllocatedMemorySupported</code> method returns false).</p>
-<h3 id="support-for-pkcs11-token-labels-added-on-zos-and-linux-on-ibm-z"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> Support for PKCS#11 token labels added on z/OS and Linux on IBM Z</h3>
+<h3 id="support-for-pkcs11-token-labels-added-on-linux-on-ibm-z"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> Support for PKCS#11 token labels added on Linux on IBM Z</h3>
 <p>On restarting an application, or creating or removing of tokens, the token might move to a different slot. An application that uses the <code>slot</code> or <code>slotListIndex</code> attributes might fail if it doesn’t first check which slot the token is in.</p>
-<p>OpenJ9 now supports the use of an extra attribute, <code>tokenlabel</code>, in the SunPKCS11 configuration file on z/OS and Linux on IBM Z, which helps to avoid this issue.</p>
+<p>OpenJ9 now supports the use of an extra attribute, <code>tokenlabel</code>, in the SunPKCS11 configuration file on Linux on IBM Z, which helps to avoid this issue.</p>
 <p>For more information, see <a href="../enhancementstoopenjdksecurity/#support-for-pkcs11-token-labels">Support for PKCS#11 token labels</a>.</p>
 <h3 id="new-message-added-to-help-find-system-dumps-on-linux">New message added to help find system dumps on Linux</h3>
 <p>A new message, <code>JVMPORT049I</code>, is added to help find the system dump files for <code>kernel.core_pattern</code> piped programs on Linux.</p>
 <p>For more information about system dumps and piped system dumps, see <a href="../xdump/#system-dumps-on-linux">System dumps on Linux</a>.</p>
+<h3 id="new-jdk-19-features"><img alt="Start of content that applies to Java 19 plus" src="../cr/java19plus.png" /> New JDK 19 features</h3>
+<p>The following features are supported by OpenJ9:</p>
+<ul>
+<li><a href="https://openjdk.java.net/jeps/424">JEP 424</a>: Foreign Function &amp; Memory API (Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/425">JEP 425</a>: Virtual Threads (Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/426">JEP 426</a>: Vector API (Fourth Incubator)</li>
+</ul>
+<p>The following features are implemented in OpenJDK and available in any build of OpenJDK 19 with OpenJ9:</p>
+<ul>
+<li><a href="https://openjdk.java.net/jeps/405">JEP 405</a>: Record Patterns (Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/427">JEP 427</a>: Pattern Matching for switch (Third Preview)</li>
+</ul>
+<p>You can find the full list of features for JDK 19 at the <a href="http://openjdk.java.net/projects/jdk/19/">OpenJDK project</a>.
+Any remaining features that are listed are not implemented and hence not applicable to OpenJ9 in this release.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.36.x and v0.37.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.37/0.37.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.37.md ==== -->
