@@ -30,8 +30,9 @@ The following new features and notable changes since version 0.36.x are included
 - [AIX is now built on AIX 7.2 TL5](#aix-is-now-built-on-aix-72-tl5)
 - ![Start of content that applies to Java 19 plus](cr/java19plus.png) [Linux&reg; reference compiler updated to gcc 11.2](#linux-reference-compiler-updated-to-gcc-112)
 - [Support added for the `com.sun.management.ThreadMXBean` interface](#support-added-for-the-comsunmanagementthreadmxbean-interface)
-- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for PKCS#11 token labels added on z/OS&reg; and Linux on IBM Z&reg;](#support-for-pkcs11-token-labels-added-on-zos-and-linux-on-ibm-z)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for PKCS#11 token labels added on Linux on IBM Z&reg;](#support-for-pkcs11-token-labels-added-on-linux-on-ibm-z)
 - [New message added to help find system dumps on Linux](#new-message-added-to-help-find-system-dumps-on-linux)
+- ![Start of content that applies to Java 19 plus](cr/java19plus.png) [New JDK 19 features](#new-jdk-19-features)
 
 ## Features and changes
 
@@ -61,11 +62,11 @@ The OpenJ9 [`ThreadMXbean` interface](https://www.eclipse.org/openj9/docs/api-la
 
 The OpenJ9 VM implementation does not support thread memory allocation measurement (`isThreadAllocatedMemorySupported` method returns false).
 
-### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for PKCS#11 token labels added on z/OS and Linux on IBM Z
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for PKCS#11 token labels added on Linux on IBM Z
 
 On restarting an application, or creating or removing of tokens, the token might move to a different slot. An application that uses the `slot` or `slotListIndex` attributes might fail if it doesn’t first check which slot the token is in.
 
-OpenJ9 now supports the use of an extra attribute, `tokenlabel`, in the SunPKCS11 configuration file on z/OS and Linux on IBM Z, which helps to avoid this issue.
+OpenJ9 now supports the use of an extra attribute, `tokenlabel`, in the SunPKCS11 configuration file on Linux on IBM Z, which helps to avoid this issue.
 
 For more information, see [Support for PKCS#11 token labels](enhancementstoopenjdksecurity.md#support-for-pkcs11-token-labels).
 
@@ -74,6 +75,22 @@ For more information, see [Support for PKCS#11 token labels](enhancementstoopenj
 A new message, `JVMPORT049I`, is added to help find the system dump files for `kernel.core_pattern` piped programs on Linux.
 
 For more information about system dumps and piped system dumps, see [System dumps on Linux](xdump.md#system-dumps-on-linux).
+
+### ![Start of content that applies to Java 19 plus](cr/java19plus.png) New JDK 19 features
+
+The following features are supported by OpenJ9:
+
+- [JEP 424](https://openjdk.java.net/jeps/424): Foreign Function & Memory API (Preview)
+- [JEP 425](https://openjdk.java.net/jeps/425): Virtual Threads (Preview)
+- [JEP 426](https://openjdk.java.net/jeps/426): Vector API (Fourth Incubator)
+
+The following features are implemented in OpenJDK and available in any build of OpenJDK 19 with OpenJ9:
+
+- [JEP 405](https://openjdk.java.net/jeps/405): Record Patterns (Preview)
+- [JEP 427](https://openjdk.java.net/jeps/427): Pattern Matching for switch (Third Preview)
+
+You can find the full list of features for JDK 19 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/19/).
+Any remaining features that are listed are not implemented and hence not applicable to OpenJ9 in this release.
 
 ## Known problems and full release information
 
