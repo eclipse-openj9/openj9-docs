@@ -95,9 +95,11 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
 | Windows&trade;                              | x32                                                                                  |  x64                                                                                 |
 |-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
 | Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows 11                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2012 R2                    | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2022                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | macOS&reg;                                | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
@@ -140,9 +142,11 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
 | Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows 11                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2012 R2                    | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2022                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | macOS         | x64                                                                                  | AArch64 (Apple silicon) |
 |---------------|--------------------------------------------------------------------------------------|:-----------------------:|
@@ -177,19 +181,64 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Not all of these distributions are tested, but the following distributions are expected to function without problems:
 
-- Linux distributions that have a minimum glibc version 2.12 (x) or 2.17 (others)
+- Linux distributions that have a minimum glibc version 2.17
 - RHEL 9.0 and Ubuntu 22.04 distributions on AArch64 architecture
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
 | Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows 11                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2012 R2                    | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2022                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                                              |
 |---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
 | macOS 10.14+   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>                                                                                 |
+| macOS 11       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 12   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+| AIX                                       | ppc64                                                                                |
+|-------------------------------------------|--------------------------------------------------------------------------------------|
+| AIX 7.2 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+:fontawesome-solid-bell:{: .warn aria-hidden="true"} **Important:** AIX OpenJ9 builds require the [XL C++ Runtime 16.1.0.7 or later](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
+
+When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
+
+### OpenJDK 20
+
+OpenJDK 20 binaries are expected to function on the minimum operating system levels shown in the following tables:
+
+
+| Linux (**Note 1**)                        | AArch64                                                                              | x64                                                                                  | ppc64le                                                                              | Z64                                                                                  |
+|-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| CentOS 7.9                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no </span>  |
+| CentOS Stream 8                           | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no </span>  |
+| RHEL 7.8                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| RHEL 8.6                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| RHEL 9.0                                  | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| SUSE Linux Enterprise Server (SLES) 12 SP5| :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no </span>  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Ubuntu 20.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Ubuntu 22.04                              | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Not all of these distributions are tested, but the following distributions are expected to function without problems:
+
+- Linux distributions that have a minimum glibc version 2.17
+- RHEL 9.0 and Ubuntu 22.04 distributions on AArch64 architecture
+
+| Windows                                   | x64                                                                                  |
+|-------------------------------------------|--------------------------------------------------------------------------------------|
+| Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows 11                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2012 R2                    | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2022                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+| macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                                              |
+|---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
 | macOS 11       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 12   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
@@ -244,7 +293,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
 | AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.11                     |
 
-### OpenJDK 19 and later
+### OpenJDK 20 and later
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
