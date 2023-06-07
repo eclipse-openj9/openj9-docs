@@ -26,7 +26,10 @@
 
 **(Linux&reg; x86, Linux on POWER&reg; (Little Endian), and Linux on IBM Z&reg; only)**
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Support for the Checkpoint/Restore In Userspace (CRIU) tool is currently provided as a technical preview in container environments. CRIU support is available for the CRIU version that is packaged with the Semeru container image. This preview is supported for use in production environments, however, all APIs and command-line options are subject to change.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
+
+- Support for the Checkpoint/Restore In Userspace (CRIU) tool is currently provided as a technical preview in container environments. CRIU support is available for the customized CRIU version that is packaged with the Semeru container image. This preview is supported for use in production environments, however, all APIs and command-line options are subject to change.
+- CRIU support is not available on OpenJDK 20 in version 0.39.0 release.
 
 In OpenJ9, the CRIU support includes an API that you can use to stop the VM at a checkpoint, save its state, and then run the VM from the point where it was stopped. The period of time between when the VM starts and when the application takes a checkpoint is referred to as the *checkpoint phase*. The application writes the VM state that was saved at the checkpoint to one or more image files. The saved state includes memory pages, methods, file systems, processes, and network connections. You can restore the VM from these files multiple times from the same point and in multiple environments.
 
