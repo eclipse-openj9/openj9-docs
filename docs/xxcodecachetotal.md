@@ -31,6 +31,8 @@ This option is an alias for the [`-Xcodecachetotal`](xcodecachetotal.md) option.
 
 : See [Using -X command-line options](x_jvm_commands.md) for more information about specifying the `<size>` parameter.
 
+## See also
 
+- [`-XX:codecachetotalMaxRAMPercentage`](xxcodecachetotalmaxrampercentage.md)
 
 <!-- ==== END OF TOPIC ==== xxcodecachetotal.md ==== -->

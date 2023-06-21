@@ -101,6 +101,7 @@ nav:
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.40.0"                                                       : version0.40.md
         - "Version 0.39.0"                                                       : version0.39.md
         - "Version 0.38.0"                                                       : version0.38.md
         - "Version 0.37.0"                                                       : version0.37.md
@@ -374,6 +375,7 @@ nav:
             - "-XX:[+|-]ClassRelationshipVerifier"                               : xxclassrelationshipverifier.md
             - "-XX:ConcGCThreads"                                                : xxconcgcthreads.md
             - "-XX:codecachetotal"                                               : xxcodecachetotal.md
+            - "-XX:codecachetotalMaxRAMPercentage"                               : xxcodecachetotalmaxrampercentage.md
             - "-XX:[+|-]CompactStrings"                                          : xxcompactstrings.md
             - "-XX:DiagnoseSyncOnValueBasedClasses"                              : xxdiagnosesynconvaluebasedclasses.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md

@@ -36,7 +36,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
 
 ## Explanation
 
-By default, the total size of the JIT code cache is 256 MB for a 64-bit VM and 64 MB for a 31/32-bit VM. Long-running, complex, server-type applications can fill the JIT code cache, which can cause performance problems because not all of the important methods can be JIT-compiled. Use the `-Xcodecachetotal` option to increase or decrease the maximum code cache size to a setting that suits your application. The minimum size of the code cache is restricted to 2 MB.
+By default, the total JIT code cache size is 256 MB for a 64-bit VM and 64 MB for a 31/32-bit VM or 25% of the physical memory available to the VM process, whichever is lesser. Long-running, complex, server-type applications can fill the JIT code cache, which can cause performance problems because not all of the important methods can be JIT-compiled. Use the `-Xcodecachetotal` option to increase or decrease the maximum code cache size to a setting that suits your application. The minimum size of the code cache is restricted to 2 MB.
 
 The value that you specify is rounded up to a multiple of the code cache block size, as specified by the [-Xcodecache](xcodecache.md) option. If you specify a value for the `-Xcodecachetotal` option that is smaller than the default setting, that value is ignored.
 
@@ -46,6 +46,7 @@ The maximum size limits, for both the JIT code and data caches, that are in use 
 
 ## See also
 
+- [`-XX:codecachetotalMaxRAMPercentage`](xxcodecachetotalmaxrampercentage.md)
 - [-Xjit](xjit.md)
 
 
