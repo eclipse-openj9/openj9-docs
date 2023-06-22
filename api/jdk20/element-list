@@ -7,6 +7,8 @@ com.sun.management
 com.sun.management.internal
 openj9.lang.management
 openj9.lang.management.internal
+module:openj9.criu
+org.eclipse.openj9.criu
 module:openj9.cuda
 com.ibm.cuda
 com.ibm.cuda.internal
