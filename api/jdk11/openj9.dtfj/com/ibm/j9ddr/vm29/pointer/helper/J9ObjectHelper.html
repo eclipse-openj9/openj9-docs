@@ -27,6 +27,7 @@
 <meta name="keywords" content="getBooleanField()">
 <meta name="keywords" content="getLongField()">
 <meta name="keywords" content="getObjectField()">
+<meta name="keywords" content="getFieldOffset()">
 <meta name="keywords" content="getByteFromArrayByIndex()">
 <meta name="keywords" content="reportClassCacheStats()">
 <link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
@@ -51,7 +52,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -290,6 +291,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </td>
 </tr>
 <tr id="i8" class="altColor">
+<td class="colFirst"><code>static <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFieldOffset(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,java.lang.String,java.lang.String)">getFieldOffset</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;name,
+              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;signature)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static float</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFloatField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)">getFloatField</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
              <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></th>
@@ -297,7 +305,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns a float field from the object or its super classes.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getIntField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)">getIntField</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
            <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></th>
@@ -305,12 +313,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns an int field from the object or its super classes.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getJavaName(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">getJavaName</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getLongField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)">getLongField</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
             <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></th>
@@ -318,7 +326,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns an long field from the object or its super classes.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getObjectField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)">getObjectField</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
               <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></th>
@@ -326,7 +334,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns an Object field from the object or its super classes.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static short</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getShortField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)">getShortField</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
              <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></th>
@@ -334,7 +342,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns a short field from the object or its super classes.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStringField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)">getStringField</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
               <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></th>
@@ -342,34 +350,34 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Returns a String field from the object or its super classes.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>static long</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#headerSize()">headerSize</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isIndexable</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an object is indexable, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">monitor</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rawClazz(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">rawClazz</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reportClassCacheStats()">reportClassCacheStats</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stringValue(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">stringValue</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -779,6 +787,22 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd>the J9Object value of the field</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there is a problem reading the underlying data from the core file</dd>
+</dl>
+</li>
+</ul>
+<a id="getFieldOffset(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,java.lang.String,java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFieldOffset</h4>
+<pre class="methodSignature">public static&nbsp;<a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;getFieldOffset&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
+                                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;name,
+                                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;signature)
+                                          throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
 </li>
 </ul>
