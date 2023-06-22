@@ -29,6 +29,7 @@
 <meta name="keywords" content="getBooleanField()">
 <meta name="keywords" content="getLongField()">
 <meta name="keywords" content="getObjectField()">
+<meta name="keywords" content="getFieldOffset()">
 <meta name="keywords" content="getByteFromArrayByIndex()">
 <meta name="keywords" content="reportClassCacheStats()">
 <link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
@@ -194,65 +195,70 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a double field from the object or its super classes.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getFloatField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getFloatField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getFieldOffset(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,java.lang.String,java.lang.String)" class="member-name-link">getFieldOffset</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;signature)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static float</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getFloatField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getFloatField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
  <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a float field from the object or its super classes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getIntField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getIntField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getIntField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getIntField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
  <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns an int field from the object or its super classes.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getJavaName(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getJavaName</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLongField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getLongField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getJavaName(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getJavaName</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLongField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getLongField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
  <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns an long field from the object or its super classes.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getObjectField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getObjectField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
- <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns an Object field from the object or its super classes.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static short</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getShortField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getShortField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getObjectField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getObjectField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
  <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns a short field from the object or its super classes.</div>
+<div class="block">Returns an Object field from the object or its super classes.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getStringField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getStringField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static short</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getShortField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getShortField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
  <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Returns a short field from the object or its super classes.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getStringField(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.J9ObjectFieldOffset)" class="member-name-link">getStringField</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
+ <a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a>&nbsp;offset)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a String field from the object or its super classes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#headerSize()" class="member-name-link">headerSize</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#headerSize()" class="member-name-link">headerSize</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns TRUE if an object is indexable, FALSE otherwise.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">monitor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rawClazz(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">rawClazz</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">monitor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#reportClassCacheStats()" class="member-name-link">reportClassCacheStats</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rawClazz(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">rawClazz</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stringValue(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">stringValue</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#reportClassCacheStats()" class="member-name-link">reportClassCacheStats</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#stringValue(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">stringValue</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -581,6 +587,19 @@ loadScripts(document, 'script');</script>
 <dd>the J9Object value of the field</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there is a problem reading the underlying data from the core file</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFieldOffset(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,java.lang.String,java.lang.String)">
+<h3>getFieldOffset</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../j9/J9ObjectFieldOffset.html" title="class in com.ibm.j9ddr.vm29.j9">J9ObjectFieldOffset</a></span>&nbsp;<span class="element-name">getFieldOffset</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;name,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;signature)</span>
+                                          throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
 </section>
 </li>
