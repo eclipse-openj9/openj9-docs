@@ -318,6 +318,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.40/" class="md-nav__link">
+        Version 0.40.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.39/" class="md-nav__link">
         Version 0.39.0
       </a>
@@ -447,18 +461,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_11" type="checkbox" id="__nav_5_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_12" type="checkbox" id="__nav_5_12" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5_11">
+        <label class="md-nav__link" for="__nav_5_12">
           Earlier releases
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Earlier releases" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_11">
+        <label class="md-nav__title" for="__nav_5_12">
           <span class="md-nav__icon md-icon"></span>
           Earlier releases
         </label>
@@ -4061,6 +4075,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxcodecachetotalmaxrampercentage/" class="md-nav__link">
+        -XX:codecachetotalMaxRAMPercentage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxcompactstrings/" class="md-nav__link">
         -XX:[+|-]CompactStrings
       </a>
@@ -5706,12 +5734,13 @@
 <p>The default size is 256 MB for a 64-bit VM and 64 MB for a 31/32-bit VM.</p>
 <p>See <a href="../x_jvm_commands/">Using -X command-line options</a> for more information about specifying the <code>&lt;size&gt;</code> parameter.</p>
 <h2 id="explanation">Explanation</h2>
-<p>By default, the total size of the JIT code cache is 256 MB for a 64-bit VM and 64 MB for a 31/32-bit VM. Long-running, complex, server-type applications can fill the JIT code cache, which can cause performance problems because not all of the important methods can be JIT-compiled. Use the <code>-Xcodecachetotal</code> option to increase or decrease the maximum code cache size to a setting that suits your application. The minimum size of the code cache is restricted to 2 MB.</p>
+<p>By default, the total JIT code cache size is 256 MB for a 64-bit VM and 64 MB for a 31/32-bit VM or 25% of the physical memory available to the VM process, whichever is lesser. Long-running, complex, server-type applications can fill the JIT code cache, which can cause performance problems because not all of the important methods can be JIT-compiled. Use the <code>-Xcodecachetotal</code> option to increase or decrease the maximum code cache size to a setting that suits your application. The minimum size of the code cache is restricted to 2 MB.</p>
 <p>The value that you specify is rounded up to a multiple of the code cache block size, as specified by the <a href="../xcodecache/">-Xcodecache</a> option. If you specify a value for the <code>-Xcodecachetotal</code> option that is smaller than the default setting, that value is ignored.</p>
 <p>When you use this option, the maximum size limit for the JIT data cache, which holds metadata about compiled methods, is increased or decreased proportionally to support the JIT compilations.</p>
 <p>The maximum size limits, for both the JIT code and data caches, that are in use by the VM are shown in Javadump output. Look for lines that begin with <code>1STSEGLIMIT</code>. Use this information together with verbose JIT tracing to determine suitable values for this option on your system. For example Javadump output, see <a href="../dump_javadump/#meminfo">Java dump: Storage Management (MEMINFO)</a>.</p>
 <h2 id="see-also">See also</h2>
 <ul>
+<li><a href="../xxcodecachetotalmaxrampercentage/"><code>-XX:codecachetotalMaxRAMPercentage</code></a></li>
 <li><a href="../xjit/">-Xjit</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xcodecachetotal.md ==== -->
