@@ -23,7 +23,7 @@
 
 # -XX:CheckpointGCThreads
 
-**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), and Linux on IBM Z&reg; only)**
+**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), Linux on AArch64, and Linux on IBM Z&reg; only)**
 
 At the VM startup, you can set the number of threads that the garbage collector uses for parallel operations ([`-Xgcthreads`](xgcthreads.md)). At the time of taking the checkpoint, the `-XX:CheckpointGCThreads` option reduces the number of garbage collection (GC) threads that was set at startup.
 

@@ -23,7 +23,7 @@
 
 # -XX:\[+|-\]CRIURestoreNonPortableMode
 
-**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), and Linux on IBM Z&reg; only)**
+**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), Linux on AArch64, and Linux on IBM Z&reg; only)**
 
 This option specifies whether the JIT and AOT compilers generate nonportable compiled code on restore.
 

@@ -23,7 +23,7 @@
 
 # -Xshareclasses:disableOnRestore
 
-**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), and Linux on IBM Z&reg; only)**
+**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), Linux on AArch64, and Linux on IBM Z&reg; only)**
 
 The `-Xshareclasses` option is an existing option and `disableOnRestore` is its new parameter that can be used if the CRIU feature is available. This option is disabled by default.
 

@@ -23,7 +23,7 @@
 
 # CRIU support
 
-**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), and Linux on IBM Z&reg; only)**
+**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), Linux on AArch64, and Linux on IBM Z&reg; only)**
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 

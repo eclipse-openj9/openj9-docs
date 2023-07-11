@@ -23,7 +23,7 @@
 
 # -XX:\[+|-\]EnableCRIUSupport
 
-**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), and Linux on IBM Z&reg; only)**
+**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), Linux on AArch64, and Linux on IBM Z&reg; only)**
 
  This option enables or disables support for Checkpoint/Restore In Userspace (CRIU).
 
@@ -31,7 +31,16 @@
 
 - you cannot use a Java&trade; security manager. If you try to specify a Java security manager, for example by using the `-Djava.security.manager` system property on the Java command line or the `java.lang.System.setSecurityManager` method in your application, the VM throws the `java.lang.UnsupportedOperationException` error.
 - `CRIUSECProvider` is the only security provider that is available in the checkpoint phase until restore.
-- JITServer is disabled in the checkpoint phase even if the server exists and you have specified the `-XX:+UseJITServer` option. When you specify the `-XX:+EnableCRIUSupport` and `-XX:+CRIURestoreNonPortableMode` options along with the `-XX:+UseJITServer` option, and the server exists, the VM enables the JITServer server automatically at the restore point.
+- JITServer is disabled in the checkpoint phase even if the server exists and you have specified the `-XX:+UseJITServer` option. When you specify the `-XX:+EnableCRIUSupport` and [`-XX:+CRIURestoreNonPortableMode`](xxcriurestorenonportablemode.md) options along with the [`-XX:+UseJITServer`](xxusejitserver.md) option, and the server exists, the VM enables the JITServer server automatically at the restore point. The VM client connects to a JITServer in the context of CRIU as outlined in the following table (where :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> means that the VM connects to a JITServer instance and :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span> means that the VM does not connect to a JITServer instance):
+
+|                               | Nonportable mode (default) <br> Pre-checkpoint | Nonportable mode (default) <br> Post restore | Portable mode Pre-checkpoint | Portable mode Post restore|
+|-------------------------------|:-----------------:|:------------------:|:-------------:|:-------------:|
+| Pre-checkpoint: No options <br>Post restore: No options  | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>    | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>  | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>  | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>  |
+| Pre-checkpoint: No options <br>Post restore: `-XX:+UseJITServer` | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>    | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>  |  :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>    |
+| Pre-checkpoint: `-XX:+UseJITServer`<br>Post restore: No options | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>           | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |
+| Pre-checkpoint: `-XX:+UseJITServer`<br>Post restore: `-XX:-UseJITServer` | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>    | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>  |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>    |
+| Pre-checkpoint: `-XX:-UseJITServer`<br>Post restore: `-XX:+UseJITServer` | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>  | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>  | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>    | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>    |
+
 - you cannot use the `balanced` and `metronome` garbage collection (GC) policies. If you use the `-Xgcpolicy:balanced` or `-Xgcpolicy:metronome` options to specify those policies, the VM throws the following errors:
 
       ```

@@ -23,7 +23,7 @@
 
 # -Xrs:onRestore / -Xrs:syncOnRestore
 
-**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), and Linux on IBM Z&reg; only)**
+**(Linux&reg; x86, Linux on POWER&reg; (Little Endian), Linux on AArch64, and Linux on IBM Z&reg; only)**
 
 The `-Xrs` option is an existing option for disabling signal handling in the VM. CRIU support adds new suboptions `onRestore` and `syncOnRestore` for disabling signal handling when you restore a VM.
 
