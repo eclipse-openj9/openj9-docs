@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.39.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:codecachetotalMaxRAMPercentage` option added](#new-xxcodecachetotalmaxrampercentage-option-added)
+- [Support for persistent shared classes cache added on z/OS](#support-for-persistent-shared-classes-cache-added-on-zos)
 
 ## Features and changes
 
@@ -41,6 +42,10 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 In environments with low physical memory availability, the VM might use too much memory for JIT code caches, leaving little memory for critical operations. With the `-XX:codecachetotalMaxRAMPercentage` option, you can set an upper limit for the total code cache size, where the upper limit is specified as a percentage of the physical memory the VM process is allowed to use.
 
 For more information, see [`-XX:codecachetotalMaxRAMPercentage`](xxcodecachetotalmaxrampercentage.md).
+
+### Support for persistent shared classes cache added on z/OS
+
+Persistent shared caches are now supported on z/OS systems. The default cache type on z/OS is still non-persistent. You can use the [`-Xshareclasses:persistent`](xshareclasses.md#persistent) option to switch to persistent shared cache.
 
 ## Known problems and full release information
 
