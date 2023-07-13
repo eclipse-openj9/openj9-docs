@@ -419,7 +419,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:nonpersistent
 
-:   Uses a non-persistent cache. The cache is lost when the operating system shuts down. Non-persistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a non-persistent cache. z/OS supports only non-persistent caches.
+:   Uses a non-persistent cache. The cache is lost when the operating system shuts down. Non-persistent and persistent caches can have the same name. On Linux, macOS, and Windows systems, you must always use the `nonpersistent` suboption when you run utilities such as `destroy` on a non-persistent cache.
 
 :   :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** On macOS systems, you must set `kern.sysv.shmmax` and `kern.sysv.shmall` when using a non-persistent cache.
 
@@ -437,7 +437,28 @@ behavior, which can improve the performance of class loading from the shared cla
 
 :   Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Non-persistent and persistent caches can have the same name. On AIX, you must always use the `persistent` suboption when you run utilities such as `destroy` on a persistent cache.
 
-:   :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Persisent caches are not supported on z/OS systems. z/OS supports only non-persistent caches.
+:   :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
+
+:    - With the 31-bit VM on all versions of z/OS, the shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared class cache is limited by the system limit `MAXMMAPAREA`. For more information about the suggested value for the `MAXMMAPAREA` limit, see [Setting resource limits (z/OS)](https://www.eclipse.org/openj9/docs/configuring/#setting-resource-limits-zos).
+     - With the 64-bit VM, the shared cache is mapped as follows:
+         - On z/OS version 2.3 and earlier, the persistent shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared class cache is limited by the system limit `MAXMMAPAREA`.
+         - On z/OS version 2.4 and later, the persistent shared cache is mapped above the 2 GB address range. The maximum size of persistent shared class cache is limited by the `MAXSHARE` value within the `SMFLIMxx` member of `SYS1.PARMLIB`. You can use the following machine configuration to create up to 1 GB shared class cache mapped above the 2 GB address range:
+
+              1. Add the following line in the SMFLIMxx member of SYS1.PARMLIB.
+
+             ```
+              REGION JOBNAME(*) MAXSHARE(262144)
+             ```
+
+              2. Load the change with the following command in the SDSF panel.
+
+             ```
+              /SET SMFLIM=xx
+             ```
+
+        For more information about the SMFLIMxx member of SYS1.PARMLIB, see [Statements and parameters for SMFLIMxx](https://www.ibm.com/docs/en/zos/2.5.0?topic=values-statements-parameters-smflimxx).
+
+        On z/OS version 2.4, fixes for APARs [OA60306](https://www.ibm.com/support/pages/apar/OA60306) and [PH32235](https://www.ibm.com/support/pages/apar/PH32235) must be installed for the support of this memory mapping. On z/OS version 2.5 and later, the fixes for APARs OA60306 and PH32235 are included by default.
 
 ### `printAllStats` (Cache utility)
 

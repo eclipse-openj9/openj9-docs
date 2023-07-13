@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.39.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:codecachetotalMaxRAMPercentage` option added](#new-xxcodecachetotalmaxrampercentage-option-added)
 - [VM starts with a warning message after the container detection fails](#vm-starts-with-a-warning-message-after-the-container-detection-fails)
+- [Support for persistent shared classes cache added on z/OS](#support-for-persistent-shared-classes-cache-added-on-zos)
 
 ## Features and changes
 
@@ -48,6 +49,10 @@ For more information, see [`-XX:codecachetotalMaxRAMPercentage`](xxcodecachetota
 If you mount the `/proc` file system with the `hidepid=2` option on Linux® systems and the VM does not have root privileges, it cannot access the `/proc` file system. In previous releases, the VM exits when it encounters this scenario. From this release, the VM starts with a warning message after the container detection fails.
 
 For more information, see the [Cloud optimizations](introduction.md#cloud-optimizations) topic.
+
+### Support for persistent shared classes cache added on z/OS
+
+Persistent shared caches are now supported on z/OS systems. The default cache type on z/OS is still non-persistent. You can use the [`-Xshareclasses:persistent`](xshareclasses.md#persistent) option to switch to persistent shared cache.
 
 ## Known problems and full release information
 
