@@ -376,6 +376,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#vm-starts-with-a-warning-message-after-the-container-detection-fails" class="md-nav__link">
+    VM starts with a warning message after the container detection fails
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#support-for-persistent-shared-classes-cache-added-on-zos" class="md-nav__link">
     Support for persistent shared classes cache added on z/OS
   </a>
@@ -5707,6 +5714,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#vm-starts-with-a-warning-message-after-the-container-detection-fails" class="md-nav__link">
+    VM starts with a warning message after the container detection fails
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#support-for-persistent-shared-classes-cache-added-on-zos" class="md-nav__link">
     Support for persistent shared classes cache added on z/OS
   </a>
@@ -5769,15 +5783,19 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#new-xxcodecachetotalmaxrampercentage-option-added">New <code>-XX:codecachetotalMaxRAMPercentage</code> option added</a></li>
+<li><a href="#vm-starts-with-a-warning-message-after-the-container-detection-fails">VM starts with a warning message after the container detection fails</a></li>
 <li><a href="#support-for-persistent-shared-classes-cache-added-on-zos">Support for persistent shared classes cache added on z/OS</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
-<p>Eclipse OpenJ9&trade; release 0.40.0 supports OpenJDK 8, 11, 17, and 20.</p>
+<p>Eclipse OpenJ9&trade; release 0.40.0 supports OpenJDK 8, 11, 17 and 20.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="new-xxcodecachetotalmaxrampercentage-option-added">New <code>-XX:codecachetotalMaxRAMPercentage</code> option added</h3>
 <p>In environments with low physical memory availability, the VM might use too much memory for JIT code caches, leaving little memory for critical operations. With the <code>-XX:codecachetotalMaxRAMPercentage</code> option, you can set an upper limit for the total code cache size, where the upper limit is specified as a percentage of the physical memory the VM process is allowed to use.</p>
 <p>For more information, see <a href="../xxcodecachetotalmaxrampercentage/"><code>-XX:codecachetotalMaxRAMPercentage</code></a>.</p>
+<h3 id="vm-starts-with-a-warning-message-after-the-container-detection-fails">VM starts with a warning message after the container detection fails</h3>
+<p>If you mount the <code>/proc</code> file system with the <code>hidepid=2</code> option on Linux® systems and the VM does not have root privileges, it cannot access the <code>/proc</code> file system. In previous releases, the VM exits when it encounters this scenario. From this release, the VM starts with a warning message after the container detection fails.</p>
+<p>For more information, see the <a href="../introduction/#cloud-optimizations">Cloud optimizations</a> topic.</p>
 <h3 id="support-for-persistent-shared-classes-cache-added-on-zos">Support for persistent shared classes cache added on z/OS</h3>
 <p>Persistent shared caches are now supported on z/OS systems. The default cache type on z/OS is still non-persistent. You can use the <a href="../xshareclasses/#persistent"><code>-Xshareclasses:persistent</code></a> option to switch to persistent shared cache.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
