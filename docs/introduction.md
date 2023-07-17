@@ -47,7 +47,7 @@ OpenJ9 is configured to start with a set of default options that provide the opt
 OpenJ9 includes several garbage collection policies. To learn more about these policies and the types of application workload that can benefit from them, see [Garbage collection policies](gc.md).
 
 ### Class data sharing
-You can share class data between running VMs, which can reduce the startup time for a VM once the cache has been created. For more information, see [Introduction to class data sharing](shrc.md).
+You can share class data between running VMs, which can reduce the startup time for a VM after the cache has been created. For more information, see [Introduction to class data sharing](shrc.md).
 
 ### Native data operations
 If your Java application manipulates native data, consider writing your application to take advantage of methods in the Data Access Accelerator (DAA) API.
@@ -69,9 +69,39 @@ For more information, see the [API documentation](api-overview.md).
 ### Cloud optimizations
 To improve the performance of applications that run in containers, try setting the following tuning options:
 
-- Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For persistence, store the cache in a volume that you map to your container. For more information, see [Inroduction to class data sharing](shrc.md) and [AOT Compiler](aot.md).
+- Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For persistence, store the cache in a volume that you map to your container. For more information, see [Introduction to class data sharing](shrc.md) and [AOT Compiler](aot.md).
 
 - Use the [-Xtune:virtualized](xtunevirtualized.md) option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.
+
+- Provide access to the `/proc` file system for container detection on Linux systems since the detection code requires access to the `/proc/1/cgroup` and `/proc/1/sched` files. If you mount the `/proc` file system with the `hidepid=2` option on Linux systems and the VM does not have root privileges, it cannot access the `/proc` file system and the container detection fails. Even though the container detection fails, the VM does start with a warning message. For example:
+
+    ```
+    JVMPORT050W Failed to identify if the JVM is running inside a container; error message: fopen failed to open /proc/1/cgroup file with errno=2.
+    ```
+
+    Although the VM starts after the container detection fails, the VM assumes that it is running outside a container. Therefore, if the VM is running in a container, the VM cannot adapt to the container's limitations and might use an undesirable amount of resources. You can evaluate the impact on performance because of the container detection failure and take steps to resolve the performance issue, if so required. Some of the steps that you can take are as follows:
+
+    - Remount the `/proc` file system with the `hidepid=0` option: You can use this option to allow the VM to access the `/proc` file system. This action allows all processes access to `/proc` not just the VM.
+
+            # Remount /proc with hidepid=0 to read the contents of /proc/<PID>
+            mount -o remount,rw,hidepid=0 /proc
+
+            # Apply the change to /proc persistently by editing /etc/fstab
+            proc            /proc           proc    rw,nosuid,nodev,noexec,relatime,hidepid=0   0 0
+
+    - Remount the `/proc` file system with the `gid` and `hidepid=2` options: You can use this option to allow only certain processes to access the `/proc` file system. You can add the processes in a group and provide access to that group with the `gid` option.
+
+            # Create a group to allow certain users to read the contents of /proc/<PID>
+            groupadd -g 1000 procaccess
+
+            # Add a user to the group procaccess
+            usermod -a -G procaccess <USER>
+
+            # Remount /proc with the gid option to allow users in group procaccess to access /proc
+            mount -o remount,rw,hidepid=2,gid=1000 /proc
+
+            # Apply the change to /proc persistently by editing /etc/fstab
+            proc            /proc           proc    rw,nosuid,nodev,noexec,relatime,hidepid=2,gid=1000   0 0
 
 The OpenJ9 VM automatically detects when it is running in a docker container and uses a mechanism to detect when the VM is idle. When an idle state is detected, OpenJ9 runs a garbage collection cycle and releases free memory pages back to the operating system. The object heap is also compacted to make best use of the available memory for further application processing. Compaction is triggered by internal heuristics that look into the number of fragmented pages. Typically there is no need to force a compaction.
 

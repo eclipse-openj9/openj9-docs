@@ -27,13 +27,14 @@ The following new features and notable changes since version 0.39.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:codecachetotalMaxRAMPercentage` option added](#new-xxcodecachetotalmaxrampercentage-option-added)
+- [VM starts with a warning message after the container detection fails](#vm-starts-with-a-warning-message-after-the-container-detection-fails)
 - [Support for persistent shared classes cache added on z/OS](#support-for-persistent-shared-classes-cache-added-on-zos)
 
 ## Features and changes
 
 ### Binaries and supported environments
 
-Eclipse OpenJ9&trade; release 0.40.0 supports OpenJDK 8, 11, 17, and 20.
+Eclipse OpenJ9&trade; release 0.40.0 supports OpenJDK 8, 11, 17 and 20.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -42,6 +43,12 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 In environments with low physical memory availability, the VM might use too much memory for JIT code caches, leaving little memory for critical operations. With the `-XX:codecachetotalMaxRAMPercentage` option, you can set an upper limit for the total code cache size, where the upper limit is specified as a percentage of the physical memory the VM process is allowed to use.
 
 For more information, see [`-XX:codecachetotalMaxRAMPercentage`](xxcodecachetotalmaxrampercentage.md).
+
+### VM starts with a warning message after the container detection fails
+
+If you mount the `/proc` file system with the `hidepid=2` option on Linux® systems and the VM does not have root privileges, it cannot access the `/proc` file system. In previous releases, the VM exits when it encounters this scenario. From this release, the VM starts with a warning message after the container detection fails.
+
+For more information, see the [Cloud optimizations](introduction.md#cloud-optimizations) topic.
 
 ### Support for persistent shared classes cache added on z/OS
 
