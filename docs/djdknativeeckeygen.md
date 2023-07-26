@@ -21,31 +21,25 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-# -Djdk.nativeChaCha20
+# -Djdk.nativeECKeyGen
 
-This option enables or disables OpenSSL native cryptographic support for the ChaCha20 and ChaCha20-Poly1305 algorithms.
-
-:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:**
-
-- ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java&trade; 8. ![End of content that applies only to Java 8](cr/java_close_lts.png)
-- These algorithms are not supported on OpenSSL 1.0.x.
-
+This option enables or disables OpenSSL native cryptographic support for the EC key generation algorithm.
 
 ## Syntax
 
-        -Djdk.nativeChaCha20=[true|false]
+        -Djdk.nativeECKeyGen=[true|false]
 
 
 | Setting           | value    | Default                                                                        |
 |-------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeChaCha20` | true     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| `-Djdk.nativeChaCha20` | false    |                                                                                |
+| `-Djdk.nativeECKeyGen` | true     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| `-Djdk.nativeECKeyGen` | false    |                                                                                |
 
 ## Explanation
 
-OpenSSL support is enabled by default for the ChaCha20 and ChaCha20-Poly1305 algorithms. If you want to turn off support for these algorithms only, set this option to `false`. To turn off support for these and other algorithms, see the [`-Djdk.nativeCrypto`](djdknativecrypto.md) system property command line option.
+OpenSSL support is enabled by default for the EC key generation algorithm. If you want to turn off support for this algorithm only, set this option to `false`. To turn off support for this and other algorithms, see the [`-Djdk.nativeCrypto`](djdknativecrypto.md) system property command line option.
 
 
 
 
-<!-- ==== END OF TOPIC ==== djdknativechacha20.md ==== -->
+<!-- ==== END OF TOPIC ==== djdknativeeckeygen.md ==== -->

@@ -23,7 +23,7 @@
 
 # OpenSSL
 
-OpenJDK uses the in-built Java&trade; cryptographic implementation by default but Eclipse OpenJ9&trade; also provides some support for the OpenSSL cryptographic library. OpenSSL is an open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. Because it is a native library, OpenSSL might provide better performance. To use OpenSSL cryptographic acceleration, install OpenSSL 1.0.x, 1.1.x, or 3.0.x (Linux&reg; only) on your system. The OpenSSL V1.0.x, V1.1.x, and V3.0.x implementations are currently supported for the Digest, CBC, GCM, and RSA algorithms. The OpenSSL V1.1.x and V3.0.x implementations are also supported for the ChaCha20 and ChaCha20-Poly1305 algorithms.
+OpenJDK uses the in-built Java&trade; cryptographic implementation by default but Eclipse OpenJ9&trade; also provides some support for the OpenSSL cryptographic library. OpenSSL is an open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. Because it is a native library, OpenSSL might provide better performance. To use OpenSSL cryptographic acceleration, install OpenSSL 1.0.x, 1.1.x, or 3.0.x (Linux&reg; only) on your system. The OpenSSL V1.0.x, V1.1.x, and V3.0.x implementations are currently supported for the Digest, CBC, GCM, RSA, ECDH key agreement, and EC key generation algorithms. The OpenSSL V1.1.x and V3.0.x implementations are also supported for the ChaCha20 and ChaCha20-Poly1305 algorithms. The OpenSSL V1.1.1 onwards implementations are supported for the XDH key agreement and XDH key generation algorithms.
 
 On Linux and AIX&reg; operating systems, the OpenSSL 1.0.x or 1.1.x library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On other operating systems, the OpenSSL 1.1.x library is typically bundled. Later levels of some Linux operating systems might bundle OpenSSL 3.0.x.
 
@@ -41,6 +41,10 @@ Each algorithm can be disabled individually by setting the following system prop
 - To turn off **CBC**, set `-Djdk.nativeCBC=false`
 - To turn off **GCM**, set `-Djdk.nativeGCM=false`
 - To turn off **RSA**, set `-Djdk.nativeRSA=false`
+- To turn off **ECDH key agreement**, set `-Djdk.nativeEC=false`
+- To turn off **EC key generation**, set `-Djdk.nativeECKeyGen=false`
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) To turn off **XDH key agreement**, set `-Djdk.nativeXDHKeyAgreement=false`
+- To turn off **XDH key generation**, set `-Djdk.nativeXDHKeyGen=false` ![End of content that applies to Java 11 (LTS) and later](cr/java_close_lts.png)
 
 You can turn off all the algorithms by setting the following system property on the command line:
 

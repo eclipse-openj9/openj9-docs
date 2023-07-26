@@ -26,6 +26,7 @@
 The following new features and notable changes since version 0.38.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [EC key generation algorithm support for OpenSSL](#ec-key-generation-algorithm-support-for-openssl)
 - [New JDK 20 features](#new-jdk-20-features)
 
 ## Features and changes
@@ -39,6 +40,10 @@ OpenJDK 20 with Eclipse OpenJ9 is *not* a long term support (LTS) release.
 RHEL 8.4 is out of support. RHEL 8.6 is the new minimum operating system level.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### EC key generation algorithm support for OpenSSL
+
+The EC key generation algorithm can now use the native OpenSSL library for OpenJDK 20. For more information, see [`-Djdk.nativeECKeyGen`](djdknativeeckeygen.md).
 
 ### ![Start of content that applies to Java 20 plus](cr/java20plus.png) New JDK 20 features
 

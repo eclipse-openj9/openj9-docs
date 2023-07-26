@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.39.0 are included
 - [New `-XX:codecachetotalMaxRAMPercentage` option added](#new-xxcodecachetotalmaxrampercentage-option-added)
 - [VM starts with a warning message after the container detection fails](#vm-starts-with-a-warning-message-after-the-container-detection-fails)
 - [Support for persistent shared classes cache added on z/OS](#support-for-persistent-shared-classes-cache-added-on-zos)
+- [EC key generation algorithm and XDH key agreement and generation algorithms support for OpenSSL](#ec-key-generation-algorithm-and-xdh-key-agreement-and-generation-algorithms-support-for-openssl)
 
 ## Features and changes
 
@@ -53,6 +54,10 @@ For more information, see the [Cloud optimizations](introduction.md#cloud-optimi
 ### Support for persistent shared classes cache added on z/OS
 
 Persistent shared caches are now supported on z/OS systems. The default cache type on z/OS is still non-persistent. You can use the [`-Xshareclasses:persistent`](xshareclasses.md#persistent) option to switch to persistent shared cache.
+
+### EC key generation algorithm and XDH key agreement and generation algorithms support for OpenSSL
+
+The EC key generation algorithm can now use the native OpenSSL library for all OpenJDK versions.![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) The XDH key agreement and generation algorithms can also use the native OpenSSL library.![End of content that applies to Java 11 (LTS) and later](cr/java_close_lts.png) For more information, see [`-Djdk.nativeECKeyGen`](djdknativeeckeygen.md), [`-Djdk.nativeXDHKeyAgreement`](djdknativexdhkeyagreement.md), and [`-Djdk.nativeXDHKeyGen`](djdknativexdhkeygen.md).
 
 ## Known problems and full release information
 
