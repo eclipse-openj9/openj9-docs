@@ -33,6 +33,7 @@ The following new features and notable changes since version 0.32.0 are included
 - ![Start of content that applies to Java 17 plus](cr/java17plus.png) [Default operating system stack size increased on x64 platforms](#default-operating-system-stack-size-increased-on-x64-platforms)
 - [Control groups v2 support](#control-groups-v2-support)
 - [Support for OpenSSL 3.0.x](#support-for-openssl-30x)
+- [EC key agreement algorithm support for OpenSSL](#ec-key-agreement-algorithm-support-for-openssl)
 
 ## Features and changes
 
@@ -78,6 +79,10 @@ The Linux kernel has two variants of [control groups (cgroups): v1 and v2](https
 ### Support for OpenSSL 3.0.x
 
 The JITServer technology feature now supports OpenSSL 3.0.x. For more information about OpenSSL support, see [`Cryptographic operations`](introduction.md#cryptographic-operations).
+
+### EC key agreement algorithm support for OpenSSL
+
+The EC key agreement algorithm can now use the native OpenSSL library. For more information, see [`-Djdk.nativeEC`](djdknativeec.md).
 
 ## Known problems and full release information
 
