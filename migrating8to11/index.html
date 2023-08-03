@@ -2306,6 +2306,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../djdknativeec/" class="md-nav__link">
+        -Djdk.nativeEC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativeeckeygen/" class="md-nav__link">
+        -Djdk.nativeECKeyGen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativexdhkeyagreement/" class="md-nav__link">
+        -Djdk.nativeXDHKeyAgreement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativexdhkeygen/" class="md-nav__link">
+        -Djdk.nativeXDHKeyGen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../djdknativegcm/" class="md-nav__link">
         -Djdk.nativeGCM
       </a>
@@ -5735,7 +5791,7 @@
 <td>First release</td>
 </tr>
 <tr>
-<td>Low-overhead heap profiling is supported. <a href="https://openjdk.org/jeps/331">JEP 331</a> provides a mechanism for sampling Java heap allocations with a low overhead via the JVM Tool Interface (JVMTI).<br><br><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg></span> <strong>Restrictions:</strong> JEP 331 is implemented for OpenJ9 with the following limitations:<ul><li>The <code>balanced</code> and <code>metronome</code> garbage collection policies are not supported.</li><li>The JEP331 JVMTI agent and the Health Center agent both set a sampling interval, which by default is different. If both agents are used at the same time the Health Center agent will get incorrect results, unless the sampling intervals are adjusted to use the same value.</li></td>
+<td>Low-overhead heap profiling is supported. <a href="https://openjdk.org/jeps/331">JEP 331</a> provides a mechanism for sampling Java heap allocations with a low overhead via the JVM Tool Interface (JVMTI).<br><br><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg></span> <strong>Restrictions:</strong> JEP 331 is implemented for OpenJ9 with the following limitations:<ul><li>The <code>balanced</code> and <code>metronome</code> garbage collection policies are not supported.</li><li>The JEP331 JVMTI agent and the Health Center agent both set a sampling interval, which by default is different. If both agents are used at the same time the Health Center agent will get incorrect results, unless the sampling intervals are adjusted to use the same value.</li></ul></td>
 <td>0.15.0</td>
 </tr>
 <tr>
@@ -5749,6 +5805,10 @@
 <tr>
 <td>The default value of the <a href="../xxmaxdirectmemorysize/"><code>-XX:MaxDirectMemorySize</code></a> option, which limits the amount of heap memory that is used for direct byte buffers, is the same as the maximum heap size. For JDK 8, the VM default value is 87.5% of the maximum heap size.</td>
 <td>0.32.0</td>
+</tr>
+<tr>
+<td>OpenSSL support is added for the following algorithms:<br><ul><li><a href="../djdknativexdhkeyagreement/"><code>-Djdk.nativeXDHKeyAgreement</code></a></li><li><a href="../djdknativexdhkeygen/"><code>-Djdk.nativeXDHKeyGen</code></a></li></ul>The version of OpenSSL must be version 1.1.1 or later for the <code>-Djdk.nativeXDHKeyAgreement</code> and <code>-Djdk.nativeXDHKeyGen</code> algorithms.</td>
+<td>0.40.0</td>
 </tr>
 </tbody>
 </table>

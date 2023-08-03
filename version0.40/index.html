@@ -389,6 +389,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ec-key-generation-algorithm-and-xdh-key-agreement-and-generation-algorithms-support-for-openssl" class="md-nav__link">
+    EC key generation algorithm and XDH key agreement and generation algorithms support for OpenSSL
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2328,6 +2335,62 @@
     <li class="md-nav__item">
       <a href="../djdknativedigest/" class="md-nav__link">
         -Djdk.nativeDigest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativeec/" class="md-nav__link">
+        -Djdk.nativeEC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativeeckeygen/" class="md-nav__link">
+        -Djdk.nativeECKeyGen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativexdhkeyagreement/" class="md-nav__link">
+        -Djdk.nativeXDHKeyAgreement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativexdhkeygen/" class="md-nav__link">
+        -Djdk.nativeXDHKeyGen
       </a>
     </li>
   
@@ -5727,6 +5790,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ec-key-generation-algorithm-and-xdh-key-agreement-and-generation-algorithms-support-for-openssl" class="md-nav__link">
+    EC key generation algorithm and XDH key agreement and generation algorithms support for OpenSSL
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5785,6 +5855,7 @@
 <li><a href="#new-xxcodecachetotalmaxrampercentage-option-added">New <code>-XX:codecachetotalMaxRAMPercentage</code> option added</a></li>
 <li><a href="#vm-starts-with-a-warning-message-after-the-container-detection-fails">VM starts with a warning message after the container detection fails</a></li>
 <li><a href="#support-for-persistent-shared-classes-cache-added-on-zos">Support for persistent shared classes cache added on z/OS</a></li>
+<li><a href="#ec-key-generation-algorithm-and-xdh-key-agreement-and-generation-algorithms-support-for-openssl">EC key generation algorithm and XDH key agreement and generation algorithms support for OpenSSL</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -5798,6 +5869,8 @@
 <p>For more information, see the <a href="../introduction/#cloud-optimizations">Cloud optimizations</a> topic.</p>
 <h3 id="support-for-persistent-shared-classes-cache-added-on-zos">Support for persistent shared classes cache added on z/OS</h3>
 <p>Persistent shared caches are now supported on z/OS systems. The default cache type on z/OS is still non-persistent. You can use the <a href="../xshareclasses/#persistent"><code>-Xshareclasses:persistent</code></a> option to switch to persistent shared cache.</p>
+<h3 id="ec-key-generation-algorithm-and-xdh-key-agreement-and-generation-algorithms-support-for-openssl">EC key generation algorithm and XDH key agreement and generation algorithms support for OpenSSL</h3>
+<p>The EC key generation algorithm can now use the native OpenSSL library for all OpenJDK versions.<img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> The XDH key agreement and generation algorithms can also use the native OpenSSL library.<img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close_lts.png" /> For more information, see <a href="../djdknativeeckeygen/"><code>-Djdk.nativeECKeyGen</code></a>, <a href="../djdknativexdhkeyagreement/"><code>-Djdk.nativeXDHKeyAgreement</code></a>, and <a href="../djdknativexdhkeygen/"><code>-Djdk.nativeXDHKeyGen</code></a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.39.0 and v0.40.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.40/0.40.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.40.md ==== -->

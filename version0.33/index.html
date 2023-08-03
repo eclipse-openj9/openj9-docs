@@ -529,6 +529,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ec-key-agreement-algorithm-support-for-openssl" class="md-nav__link">
+    EC key agreement algorithm support for OpenSSL
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2358,6 +2365,62 @@
     <li class="md-nav__item">
       <a href="../djdknativedigest/" class="md-nav__link">
         -Djdk.nativeDigest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativeec/" class="md-nav__link">
+        -Djdk.nativeEC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativeeckeygen/" class="md-nav__link">
+        -Djdk.nativeECKeyGen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativexdhkeyagreement/" class="md-nav__link">
+        -Djdk.nativeXDHKeyAgreement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativexdhkeygen/" class="md-nav__link">
+        -Djdk.nativeXDHKeyGen
       </a>
     </li>
   
@@ -5785,6 +5848,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ec-key-agreement-algorithm-support-for-openssl" class="md-nav__link">
+    EC key agreement algorithm support for OpenSSL
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5847,6 +5917,7 @@
 <li><img alt="Start of content that applies to Java 17 plus" src="../cr/java17plus.png" /> <a href="#default-operating-system-stack-size-increased-on-x64-platforms">Default operating system stack size increased on x64 platforms</a></li>
 <li><a href="#control-groups-v2-support">Control groups v2 support</a></li>
 <li><a href="#support-for-openssl-30x">Support for OpenSSL 3.0.x</a></li>
+<li><a href="#ec-key-agreement-algorithm-support-for-openssl">EC key agreement algorithm support for OpenSSL</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -5874,6 +5945,8 @@ This was already required for OpenJDK 17 and is now also required from 11.0.16 t
 <p>The Linux kernel has two variants of <a href="https://man7.org/linux/man-pages/man7/cgroups.7.html">control groups (cgroups): v1 and v2</a>. Many Linux operating systems are gradually transitioning from cgroups v1 to v2 as their default choice. Now, OpenJ9 has added cgroups v2 support, which is identical to the support for cgroups v1.</p>
 <h3 id="support-for-openssl-30x">Support for OpenSSL 3.0.x</h3>
 <p>The JITServer technology feature now supports OpenSSL 3.0.x. For more information about OpenSSL support, see <a href="../introduction/#cryptographic-operations"><code>Cryptographic operations</code></a>.</p>
+<h3 id="ec-key-agreement-algorithm-support-for-openssl">EC key agreement algorithm support for OpenSSL</h3>
+<p>The EC key agreement algorithm can now use the native OpenSSL library. For more information, see <a href="../djdknativeec/"><code>-Djdk.nativeEC</code></a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.32.0 and v0.33.x, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.33/0.33.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.33.md ==== -->

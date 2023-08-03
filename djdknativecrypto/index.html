@@ -2308,6 +2308,62 @@
   
   
     <li class="md-nav__item">
+      <a href="../djdknativeec/" class="md-nav__link">
+        -Djdk.nativeEC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativeeckeygen/" class="md-nav__link">
+        -Djdk.nativeECKeyGen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativexdhkeyagreement/" class="md-nav__link">
+        -Djdk.nativeXDHKeyAgreement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativexdhkeygen/" class="md-nav__link">
+        -Djdk.nativeXDHKeyGen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../djdknativegcm/" class="md-nav__link">
         -Djdk.nativeGCM
       </a>
@@ -5739,8 +5795,8 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>OpenSSL support is enabled by default for the Digest, CBC, GCM, RSA, and ChaCha20 and ChaCha20-Poly1305 algorithms. If you want to turn off the OpenSSL implementation, set this option to <code>false</code>.</p>
-<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg></span> <strong>Restriction:</strong>  <img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java&trade; 8. <img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" /></p>
+<p>OpenSSL support is enabled by default for the Digest, CBC, GCM, RSA, ChaCha20 and ChaCha20-Poly1305, ECDH key agreement, EC key generation, XDH key agreement, and XDH key generation algorithms. If you want to turn off the OpenSSL implementation, set this option to <code>false</code>.</p>
+<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/></svg></span> <strong>Restriction:</strong>  <img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java&trade; 8. The XDH key agreement and XDH key generation algorithms also are not supported on Java 8. <img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" /></p>
 <p>If you want to turn off the algorithms individually, use the following system properties:</p>
 <ul>
 <li><a href="../djdknativecbc/"><code>-Djdk.nativeCBC</code></a></li>
@@ -5748,6 +5804,10 @@
 <li><a href="../djdknativegcm/"><code>-Djdk.nativeGCM</code></a></li>
 <li><a href="../djdknativersa/"><code>-Djdk.nativeRSA</code></a></li>
 <li><a href="../djdknativedigest/"><code>-Djdk.nativeDigest</code></a></li>
+<li><a href="../djdknativeec/"><code>-Djdk.nativeEC</code></a></li>
+<li><a href="../djdknativeeckeygen/"><code>-Djdk.nativeECKeyGen</code></a></li>
+<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="../djdknativexdhkeyagreement/"><code>-Djdk.nativeXDHKeyAgreement</code></a></li>
+<li><a href="../djdknativexdhkeygen/"><code>-Djdk.nativeXDHKeyGen</code></a> <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 </ul>
 <!-- ==== END OF TOPIC ==== djdknativecrypto.md ==== -->
 
