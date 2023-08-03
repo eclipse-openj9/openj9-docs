@@ -38,6 +38,8 @@ This option removes stack traces from exceptions.
 
     When this option is enabled, `Throwable.getStackTrace()` returns an empty array and the stack trace is displayed when an uncaught exception occurs. `Thread.getStackTrace()` and `Thread.getAllStackTraces()` are not affected by this option.
 
+## See also
 
+- [`-XX:\[+|-\]ShowCarrierFrames`](xxshowcarrierframes.md)
 
 <!-- ==== END OF TOPIC ==== xxstacktraceinthrowable.md ==== -->
