@@ -88,7 +88,7 @@ The OpenJ9 class data sharing feature is implemented by using shared memory segm
 - **IPCSHMMPAGES**
 - **IPCSHMNSEGS**
 
-Incorrect or suboptimal settings might prevent shared classes from working or impact performance. By default, the VM attempts to create a 16 MB cache. If you set a cache size for your application by specifying the [`-Xscmx`](xscmx.md) option on the command line, the VM rounds the value up to the nearest megabyte. Ensure that the value set for **IPCSHMMPAGES** takes this adjustment into consideration.
+Incorrect or suboptimal settings might prevent shared classes from working or impact performance. By default, the VM attempts to create a 16 MB cache on Java 8 and a 300 MB cache on Java 11 and later. If you set a cache size for your application by specifying the [`-Xscmx`](xscmx.md) option on the command line, the VM rounds the value up to the nearest megabyte. Ensure that the value set for **IPCSHMMPAGES** takes this adjustment into consideration.
 
 To see the current settings, enter the following z/OS operator command:
 
@@ -108,7 +108,7 @@ The suggested minimum values for Java applications are shown in the following ta
 |**MAXCPUTIME**	    | 2147483647 |
 |**MAXMMAPAREA** 	  | 40960      |
 |**IPCSHMSPAGES**   | 262144     |
-|**IPCSHMMPAGES**   | 256        |
+|**IPCSHMMPAGES**   | 25600        |
 |**IPCSHMNSEGS**    | 10         |
 |**IPCSEMNIDS**	    | 500        |
 |**IPCSEMNSEMS**	  | 1000       |
