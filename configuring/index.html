@@ -5975,7 +5975,7 @@ virtual memory          (kbytes, -v) unlimited
 <li><strong>IPCSHMMPAGES</strong></li>
 <li><strong>IPCSHMNSEGS</strong></li>
 </ul>
-<p>Incorrect or suboptimal settings might prevent shared classes from working or impact performance. By default, the VM attempts to create a 16 MB cache. If you set a cache size for your application by specifying the <a href="../xscmx/"><code>-Xscmx</code></a> option on the command line, the VM rounds the value up to the nearest megabyte. Ensure that the value set for <strong>IPCSHMMPAGES</strong> takes this adjustment into consideration.</p>
+<p>Incorrect or suboptimal settings might prevent shared classes from working or impact performance. By default, the VM attempts to create a 16 MB cache on Java 8 and a 300 MB cache on Java 11 and later. If you set a cache size for your application by specifying the <a href="../xscmx/"><code>-Xscmx</code></a> option on the command line, the VM rounds the value up to the nearest megabyte. Ensure that the value set for <strong>IPCSHMMPAGES</strong> takes this adjustment into consideration.</p>
 <p>To see the current settings, enter the following z/OS operator command:</p>
 <pre><code>D OMVS,O
 </code></pre>
@@ -6026,7 +6026,7 @@ virtual memory          (kbytes, -v) unlimited
 </tr>
 <tr>
 <td><strong>IPCSHMMPAGES</strong></td>
-<td>256</td>
+<td>25600</td>
 </tr>
 <tr>
 <td><strong>IPCSHMNSEGS</strong></td>
