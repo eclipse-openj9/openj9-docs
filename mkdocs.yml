@@ -101,6 +101,7 @@ nav:
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.41.0"                                                       : version0.41.md
         - "Version 0.40.0"                                                       : version0.40.md
         - "Version 0.39.0"                                                       : version0.39.md
         - "Version 0.38.0"                                                       : version0.38.md
@@ -452,6 +453,7 @@ nav:
             - "-XX:ShareClassesEnableBCI"                                        : xxshareclassesenablebci.md
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
             - "-XX:[+|-]ShareUnsafeClasses"                                      : xxshareunsafeclasses.md
+            - "-XX:[+|-]ShowCarrierFrames"                                       : xxshowcarrierframes.md
             - "-XX:[+|-]ShowHiddenFrames"                                        : xxshowhiddenframes.md
             - "-XX:[+|-]ShowNativeStackSymbols"                                  : xxshownativestacksymbols.md
             - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
