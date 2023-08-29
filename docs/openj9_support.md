@@ -101,7 +101,9 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
 | macOS&reg;                                | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
 | OS X&reg; 10.10.0+                        | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-
+| macOS 11                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 12                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 13                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | AIX&reg;                                  | ppc32                                                                                | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
@@ -145,11 +147,12 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2022                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-| macOS         | x64                                                                                  | AArch64 (Apple silicon) |
-|---------------|--------------------------------------------------------------------------------------|:-----------------------:|
-| OS X 10.11+   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span> |
-| macOS 11       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| macOS 12   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                              |
+|---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
+| OS X 10.11+   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   |
+| macOS 11      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 12      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 13      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
@@ -190,11 +193,12 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2022                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-| macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                                              |
+| macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                              |
 |---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
-| macOS 10.14+   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>                                                                                 |
-| macOS 11       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| macOS 12   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 10.14+  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   |
+| macOS 11      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 12      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 13      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
@@ -234,10 +238,11 @@ OpenJDK 20 binaries are expected to function on the minimum operating system lev
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2022                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-| macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                                              |
+| macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                              |
 |---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
-| macOS 11       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| macOS 12   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 11      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 12      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 13      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
