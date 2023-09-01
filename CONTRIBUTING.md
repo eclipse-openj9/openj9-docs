@@ -183,10 +183,10 @@ The user documentation supports the configuration, tuning, and diagnosis of the 
 - ![Java 19 and later](docs/cr/java19plus.png) -  For content that applies to an OpenJDK version 19 or later version.
 - ![Java 20](docs/cr/java20.png) - For content that applies only to an OpenJDK version 20.
 - ![Java 20 and later](docs/cr/java20plus.png) -  For content that applies to an OpenJDK version 20 or later version.
+- ![Java 21](docs/cr/java21.png) - For content that applies only to an OpenJDK version 21.
+- ![Java 21 and later](docs/cr/java21plus.png) -  For content that applies to an OpenJDK version 21 or later version.
 
 Different colors are used for the icons to differentiate long term service (LTS) releases from feature releases. For accessibility reasons it is important to use alternative text with these icons that differentiates an LTS release.
-
-The icons are created by using the GIMP editor, from the `_version.xcf` file in the same folder as the icons.
 
 Follow these guidelines:
 
@@ -203,6 +203,27 @@ Here are some examples:
 ```
 ![Start of content that applies only to Java 16 and later](cr/java16plus.png) This sentence applies only to Java 16 or later runtime environments that include the OpenJ9 VM. ![End of content that applies only to Java 16 and later](cr/java_close.png)
 ```
+
+The icons are created by using the GIMP editor, from the `_version.xcf` file in the same `/docs/cr` folder as the icons.
+
+#### Creating icons by using the GIMP editor
+
+To create a new version icon:
+
+1. In the GIMP editor, from the `/docs/cr` folder, open the `_version.xcf` file.
+The file opens with the last image that was saved. In the bottom-right panel, you can see the different layers of the existing icon. You can use an existing icon to create a new icon.
+2. In the bottom-right panel, `Layers` tab, right-click on the most recent version number layer and then click `Duplicate Layer`.
+A new layer is added with the suffix `#1`.
+3. To rename the layer, double-click on the name of the new layer and specify the new name.
+4. Zoom in to the image in the canvas for ease of editing.
+You can either use the menu option (`View` -> `Zoom` -> zoom percentage) or use the Zoom tool in the top-left panel.
+5. In the `Layer` panel, click the eye icon next to the last version icon layer to make it invisible.
+6. In the canvas, double-click on the number in the icon image and delete the number.
+7. Type the new number (the font size should be 14 with bold formatting).
+8. Move the number to position it in the middle of the colour background. To move the number, press the Alt key (the option key in Mac) and click and drag the number.
+9. In the `Layers` tab, use the eye icon next to the different layers to change the colour and other attributes of the image.
+For example, use the eye icon next to the Plus layer to make that visible.
+10. To generate the new icon, click `File` -> `Export As` and export the image as `.png` file with the required name.
 
 ### Trademarks
 
