@@ -5783,7 +5783,7 @@
 -->
 
 <h1 id="-xx-compactstrings">-XX:[+|-]CompactStrings</h1>
-<p><img alt="Start of content that applies only to Java 8 and later" src="../cr/java8plus.png" /> This HotSpot option is reimplemented by Eclipse OpenJ9&trade; and when enabled causes an ISO8859-1 (also known as Latin-1) character representation to be used internally for <code>String</code> objects, while preserving full API compatibility.</p>
+<p>This HotSpot option is reimplemented by Eclipse OpenJ9&trade; and when enabled causes an ISO8859-1 (also known as Latin-1) character representation to be used internally for <code>String</code> objects, while preserving full API compatibility.</p>
 <p>This feature provides heap space savings by using an 8-bit character set internally. Most benefit is gained when the majority of the <code>String</code> objects that your application uses can be encoded using the ISO8859-1 character encoding. </p>
 <p>If the option is not enabled, the JIT compiler is nevertheless optimized so that although there is no saving in heap space, there is also no performance penalty.</p>
 <p>Further details are available at <a href="https://openjdk.org/jeps/254">JEP 254: Compact Strings</a>.</p>
@@ -5801,12 +5801,12 @@
 <tr>
 <td><code>-XX:+CompactStrings</code></td>
 <td>Enable <code>String</code> compression</td>
-<td align="center"></td>
+<td align="center"><img alt="Start of content that applies only to Java 11+ (LTS)" src="../cr/java11plus.png" /> <span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span>  <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></td>
 </tr>
 <tr>
 <td><code>-XX:-CompactStrings</code></td>
 <td>Disable <code>String</code> compression</td>
-<td align="center"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
+<td align="center"><img alt="Start of content that applies only to Java 8" src="../cr/java8.png" /> <span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span> <img alt="End of content that applies only to Java 8" src="../cr/java_close_lts.png" /></td>
 </tr>
 </tbody>
 </table>
