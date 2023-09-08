@@ -23,7 +23,7 @@
 
 # -XX:[+|-]CompactStrings
 
-![Start of content that applies only to Java 8 and later](cr/java8plus.png) This HotSpot option is reimplemented by Eclipse OpenJ9&trade; and when enabled causes an ISO8859-1 (also known as Latin-1) character representation to be used internally for `String` objects, while preserving full API compatibility.
+This HotSpot option is reimplemented by Eclipse OpenJ9&trade; and when enabled causes an ISO8859-1 (also known as Latin-1) character representation to be used internally for `String` objects, while preserving full API compatibility.
 
 This feature provides heap space savings by using an 8-bit character set internally. Most benefit is gained when the majority of the `String` objects that your application uses can be encoded using the ISO8859-1 character encoding. 
 
@@ -37,7 +37,8 @@ Further details are available at [JEP 254: Compact Strings](https://openjdk.org/
 
 | Setting                  | Effect                       | Default |
 |--------------------------|------------------------------|:-------:|
-| `-XX:+CompactStrings`    | Enable `String` compression  |         |
-| `-XX:-CompactStrings`    | Disable `String` compression | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| `-XX:+CompactStrings`    | Enable `String` compression  |  ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png) :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>  ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)      |
+| `-XX:-CompactStrings`    | Disable `String` compression |  ![Start of content that applies only to Java 8](cr/java8.png) :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> ![End of content that applies only to Java 8](cr/java_close_lts.png) |
+
 
 <!-- ==== END OF TOPIC ==== xxcompactstrings.md ==== -->

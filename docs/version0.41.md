@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.40.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [New `-XX:[+|-]ShowCarrierFrames` option added](#new-xx-showcarrierframes-option-added) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
+- ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png) [`-XX:+CompactStrings` option enabled by default](#-xxcompactstrings-option-enabled-by-default) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 
 ## Features and changes
 
@@ -41,6 +42,12 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 A VM maintains multiple platform threads that are used as carrier threads to run the virtual threads. Although the virtual thread runs on a carrier thread, the stack trace of the virtual thread and its carrier thread are separate. You can use the `-XX:+ShowCarrierFrames` option to add the stack trace of the carrier thread in addition to the virtual thread stack trace to the `Throwable.getStackTrace()` method, if an exception occurs.
 
 For more information, see [`-XX:[+|-]ShowCarrierFrames`](xxshowcarrierframes.md). ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
+
+### ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png) `-XX:+CompactStrings` option enabled by default
+
+Like HotSpot, the`-XX:+CompactStrings` option is now enabled by default on Java 11 and later. In the earlier versions, this option is disabled by default.
+
+For more information, see [`-XX:[+|-]CompactStrings`](xxcompactstrings.md). ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 
 ## Known problems and full release information
 
