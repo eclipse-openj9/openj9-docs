@@ -50,6 +50,8 @@ The client-session caches are deleted when the clients terminate, but this can h
  - The number of extra AOT methods added to the in-memory cache since the last save operation is equal to or more than the value specified by the `-Xjit:aotCachePersistenceMinDeltaMethods=<number_of_methods>` option (default value - 200 methods), and
  - The time passed since the last AOT cache save is equal to or later than the time specified by the `-Xjit:aotCachePersistenceMinPeriodMs=<milliseconds>` option (default time gap - 10000 milliseconds).
 
+ If the JITServer AOT cache feature and the [`-Xshareclasses:readonly`](xshareclasses.md#readonly) option are both enabled at the same time at a JITServer client, the shared class cache startup creates a temporary new (writable) top layer that the JITServer AOT cache can use to store data that it needs to function.
+
  Current limitation:
 
  - Caching works only for AOT compilation requests. For this reason, when JITServer AOT caching is enabled, the client JVM will attempt to generate as many AOT requests as possible.
