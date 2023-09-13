@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.40.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [New `-XX:[+|-]ShowCarrierFrames` option added](#new-xx-showcarrierframes-option-added) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 - ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png) [`-XX:+CompactStrings` option enabled by default](#-xxcompactstrings-option-enabled-by-default) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
+- [Change in behavior of `-Xshareclasses:readonly`](#change-in-behavior-of-xshareclassesreadonly)
 
 ## Features and changes
 
@@ -45,9 +46,15 @@ For more information, see [`-XX:[+|-]ShowCarrierFrames`](xxshowcarrierframes.md)
 
 ### ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png) `-XX:+CompactStrings` option enabled by default
 
-Like HotSpot, the`-XX:+CompactStrings` option is now enabled by default on Java 11 and later. In the earlier versions, this option is disabled by default.
+Like HotSpot, the`-XX:+CompactStrings` option is now enabled by default on Java&trade; 11 and later. In the earlier versions, this option is disabled by default.
 
 For more information, see [`-XX:[+|-]CompactStrings`](xxcompactstrings.md). ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
+
+### Change in behavior of `-Xshareclasses:readonly`
+
+In the earlier releases, if the `-Xshareclasses:readonly` option and the JITServer AOT cache feature were both enabled at the same time at a JITServer client, the client could not use the JITServer AOT cache because the cache for storing data that the JITServer AOT cache needed was read-only.
+
+Now, with the change in behavior of the [`-Xshareclasses:readonly`](xshareclasses.md#readonly) option, the shared class cache startup creates a temporary new (writable) top layer that the JITServer AOT cache can use to store data that it needs to function.
 
 ## Known problems and full release information
 

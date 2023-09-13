@@ -90,7 +90,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
         -Xshareclasses:cacheDir=<directory>
 
-: Sets the directory in which cache data is read and written. Please do not set the cache directory on an NFS mount or a shared mount across systems or LPARs. The following defaults apply:
+: Sets the directory in which cache data is read and written. Do not set the cache directory on an NFS mount or a shared mount across systems or LPARs. The following defaults apply:
 
     - On Windows&trade; systems, `<directory>` is the user's `C:\Users\<username>\AppData\Local\javasharedresources` directory.
     - On z/OS&reg; systems, `<directory>` is the `/tmp/javasharedresources` directory.
@@ -491,6 +491,16 @@ behavior, which can improve the performance of class loading from the shared cla
 : On AIX, Linux, and macOS systems, this access is permitted only if the cache was created by using the [`-Xshareclasses:cacheDir`](#cachedir) option to specify a directory with appropriate permissions. If you do not use the `-Xshareclasses:cacheDir` option, the cache is created with default permissions, which do not permit access by other users or groups.
 
 : By default, this suboption is not specified.
+
+: The `-Xshareclasses:readonly` option is ignored under the following conditions:
+
+: - The JITServer AOT cache feature is enabled ([`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md)), and the VM is a client.
+ - The VM is running in a container.
+ - AOT compilation is enabled.<br>
+For more information about AOT compilation, see the [Ahead-Of-Time (AOT) compiler](aot.md) topic.
+ - The shared class cache is persistent. ([`-Xshareclasses:persistent`](xshareclasses.md#persistent))
+
+: If a persistent shared class cache is started under the mentioned conditions, the cache startup creates a temporary new (writable) top layer. The JITServer AOT cache uses the new top layer to store a small amount of metadata that the cache needs to function. With this top layer, the JITServer AOT cache can be used without modifying the existing layers.
 
 ### `reset`
 
