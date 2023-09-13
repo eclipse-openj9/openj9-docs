@@ -6657,7 +6657,7 @@
 </code></pre>
 <dl>
 <dd>
-<p>Sets the directory in which cache data is read and written. Please do not set the cache directory on an NFS mount or a shared mount across systems or LPARs. The following defaults apply:</p>
+<p>Sets the directory in which cache data is read and written. Do not set the cache directory on an NFS mount or a shared mount across systems or LPARs. The following defaults apply:</p>
 <ul>
 <li>On Windows&trade; systems, <code>&lt;directory&gt;</code> is the user's <code>C:\Users\&lt;username&gt;\AppData\Local\javasharedresources</code> directory.</li>
 <li>On z/OS&reg; systems, <code>&lt;directory&gt;</code> is the <code>/tmp/javasharedresources</code> directory.</li>
@@ -7084,6 +7084,19 @@ behavior, which can improve the performance of class loading from the shared cla
 <dd>By default, a shared classes cache is created with read/write access. Use the <code>readonly</code> suboption to open an existing cache with read-only permissions. Opening a cache read-only prevents the VM from making any updates to the cache. If you specify this suboption, the VM can connect to caches that were created by other users or groups without requiring write access.</dd>
 <dd>On AIX, Linux, and macOS systems, this access is permitted only if the cache was created by using the <a href="#cachedir"><code>-Xshareclasses:cacheDir</code></a> option to specify a directory with appropriate permissions. If you do not use the <code>-Xshareclasses:cacheDir</code> option, the cache is created with default permissions, which do not permit access by other users or groups.</dd>
 <dd>By default, this suboption is not specified.</dd>
+<dd>The <code>-Xshareclasses:readonly</code> option is ignored under the following conditions:</dd>
+<dd>
+<ul>
+<li>The JITServer AOT cache feature is enabled (<a href="../xxjitserveruseaotcache/"><code>-XX:+JITServerUseAOTCache</code></a>), and the VM is a client.</li>
+<li>The VM is running in a container.</li>
+<li>AOT compilation is enabled.<br>
+For more information about AOT compilation, see the <a href="../aot/">Ahead-Of-Time (AOT) compiler</a> topic.</li>
+<li>The shared class cache is persistent. (<a href="./#persistent"><code>-Xshareclasses:persistent</code></a>)</li>
+</ul>
+</dd>
+<dd>
+<p>If a persistent shared class cache is started under the mentioned conditions, the cache startup creates a temporary new (writable) top layer. The JITServer AOT cache uses the new top layer to store a small amount of metadata that the cache needs to function. With this top layer, the JITServer AOT cache can be used without modifying the existing layers.</p>
+</dd>
 </dl>
 <h3 id="reset"><code>reset</code></h3>
 <pre><code>    -Xshareclasses:reset

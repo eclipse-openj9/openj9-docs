@@ -382,6 +382,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-behavior-of-xshareclassesreadonly" class="md-nav__link">
+    Change in behavior of -Xshareclasses:readonly
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5797,6 +5804,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-behavior-of-xshareclassesreadonly" class="md-nav__link">
+    Change in behavior of -Xshareclasses:readonly
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5854,6 +5868,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#new-xx-showcarrierframes-option-added">New <code>-XX:[+|-]ShowCarrierFrames</code> option added</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 <li><img alt="Start of content that applies only to Java 11+ (LTS)" src="../cr/java11plus.png" /> <a href="#-xxcompactstrings-option-enabled-by-default"><code>-XX:+CompactStrings</code> option enabled by default</a> <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></li>
+<li><a href="#change-in-behavior-of-xshareclassesreadonly">Change in behavior of <code>-Xshareclasses:readonly</code></a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -5863,8 +5878,11 @@
 <p>A VM maintains multiple platform threads that are used as carrier threads to run the virtual threads. Although the virtual thread runs on a carrier thread, the stack trace of the virtual thread and its carrier thread are separate. You can use the <code>-XX:+ShowCarrierFrames</code> option to add the stack trace of the carrier thread in addition to the virtual thread stack trace to the <code>Throwable.getStackTrace()</code> method, if an exception occurs.</p>
 <p>For more information, see <a href="../xxshowcarrierframes/"><code>-XX:[+|-]ShowCarrierFrames</code></a>. <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></p>
 <h3 id="-xxcompactstrings-option-enabled-by-default"><img alt="Start of content that applies only to Java 11+ (LTS)" src="../cr/java11plus.png" /> <code>-XX:+CompactStrings</code> option enabled by default</h3>
-<p>Like HotSpot, the<code>-XX:+CompactStrings</code> option is now enabled by default on Java 11 and later. In the earlier versions, this option is disabled by default.</p>
+<p>Like HotSpot, the<code>-XX:+CompactStrings</code> option is now enabled by default on Java&trade; 11 and later. In the earlier versions, this option is disabled by default.</p>
 <p>For more information, see <a href="../xxcompactstrings/"><code>-XX:[+|-]CompactStrings</code></a>. <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></p>
+<h3 id="change-in-behavior-of-xshareclassesreadonly">Change in behavior of <code>-Xshareclasses:readonly</code></h3>
+<p>In the earlier releases, if the <code>-Xshareclasses:readonly</code> option and the JITServer AOT cache feature were both enabled at the same time at a JITServer client, the client could not use the JITServer AOT cache because the cache for storing data that the JITServer AOT cache needed was read-only.</p>
+<p>Now, with the change in behavior of the <a href="../xshareclasses/#readonly"><code>-Xshareclasses:readonly</code></a> option, the shared class cache startup creates a temporary new (writable) top layer that the JITServer AOT cache can use to store data that it needs to function.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.40.0 and v0.41.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.41/0.41.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.41.md ==== -->

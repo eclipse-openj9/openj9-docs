@@ -5988,6 +5988,7 @@
 <li>The number of extra AOT methods added to the in-memory cache since the last save operation is equal to or more than the value specified by the <code>-Xjit:aotCachePersistenceMinDeltaMethods=&lt;number_of_methods&gt;</code> option (default value - 200 methods), and</li>
 <li>The time passed since the last AOT cache save is equal to or later than the time specified by the <code>-Xjit:aotCachePersistenceMinPeriodMs=&lt;milliseconds&gt;</code> option (default time gap - 10000 milliseconds).</li>
 </ul>
+<p>If the JITServer AOT cache feature and the <a href="../xshareclasses/#readonly"><code>-Xshareclasses:readonly</code></a> option are both enabled at the same time at a JITServer client, the shared class cache startup creates a temporary new (writable) top layer that the JITServer AOT cache can use to store data that it needs to function.</p>
 <p>Current limitation:</p>
 <ul>
 <li>Caching works only for AOT compilation requests. For this reason, when JITServer AOT caching is enabled, the client JVM will attempt to generate as many AOT requests as possible.</li>
