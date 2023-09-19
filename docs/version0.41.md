@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.40.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [New `-XX:[+|-]ShowCarrierFrames` option added](#new-xx-showcarrierframes-option-added) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
+- ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [New `-XX:ContinuationCache` option added](#new-xxcontinuationcache-option-added) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 - ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png) [`-XX:+CompactStrings` option enabled by default](#-xxcompactstrings-option-enabled-by-default) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 - [Change in behavior of `-Xshareclasses:readonly`](#change-in-behavior-of-xshareclassesreadonly)
 
@@ -43,6 +44,12 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 A VM maintains multiple platform threads that are used as carrier threads to run the virtual threads. Although the virtual thread runs on a carrier thread, the stack trace of the virtual thread and its carrier thread are separate. You can use the `-XX:+ShowCarrierFrames` option to add the stack trace of the carrier thread in addition to the virtual thread stack trace to the `Throwable.getStackTrace()` method, if an exception occurs.
 
 For more information, see [`-XX:[+|-]ShowCarrierFrames`](xxshowcarrierframes.md). ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
+
+### ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) New `-XX:ContinuationCache` option added
+
+When a virtual thread is created, it is associated with a continuation, which holds the target task of the virtual thread. The VM saves the current thread state in an internal data structure that is linked with the continuation and allocates the memory for that structure. The VM stores the internal data structure in a continuation cache. New continuations can reuse the cached structure instead of allocating new memory for it.
+
+You can optimize the virtual thread performance by tuning the continuation tier 1 and 2 cache size with the [`-XX:ContinuationCache`](xxcontinuationcache.md) option. ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 
 ### ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png) `-XX:+CompactStrings` option enabled by default
 
