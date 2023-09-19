@@ -376,6 +376,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-xxcontinuationcache-option-added" class="md-nav__link">
+    New -XX:ContinuationCache option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-xxcompactstrings-option-enabled-by-default" class="md-nav__link">
     -XX:+CompactStrings option enabled by default
   </a>
@@ -4198,6 +4205,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxcontinuationcache/" class="md-nav__link">
+        -XX:ContinuationCache
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxdiagnosesynconvaluebasedclasses/" class="md-nav__link">
         -XX:DiagnoseSyncOnValueBasedClasses
       </a>
@@ -5798,6 +5819,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-xxcontinuationcache-option-added" class="md-nav__link">
+    New -XX:ContinuationCache option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-xxcompactstrings-option-enabled-by-default" class="md-nav__link">
     -XX:+CompactStrings option enabled by default
   </a>
@@ -5867,6 +5895,7 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#new-xx-showcarrierframes-option-added">New <code>-XX:[+|-]ShowCarrierFrames</code> option added</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
+<li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#new-xxcontinuationcache-option-added">New <code>-XX:ContinuationCache</code> option added</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 <li><img alt="Start of content that applies only to Java 11+ (LTS)" src="../cr/java11plus.png" /> <a href="#-xxcompactstrings-option-enabled-by-default"><code>-XX:+CompactStrings</code> option enabled by default</a> <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></li>
 <li><a href="#change-in-behavior-of-xshareclassesreadonly">Change in behavior of <code>-Xshareclasses:readonly</code></a></li>
 </ul>
@@ -5877,6 +5906,9 @@
 <h3 id="new-xx-showcarrierframes-option-added"><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> New <code>-XX:[+|-]ShowCarrierFrames</code> option added</h3>
 <p>A VM maintains multiple platform threads that are used as carrier threads to run the virtual threads. Although the virtual thread runs on a carrier thread, the stack trace of the virtual thread and its carrier thread are separate. You can use the <code>-XX:+ShowCarrierFrames</code> option to add the stack trace of the carrier thread in addition to the virtual thread stack trace to the <code>Throwable.getStackTrace()</code> method, if an exception occurs.</p>
 <p>For more information, see <a href="../xxshowcarrierframes/"><code>-XX:[+|-]ShowCarrierFrames</code></a>. <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></p>
+<h3 id="new-xxcontinuationcache-option-added"><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> New <code>-XX:ContinuationCache</code> option added</h3>
+<p>When a virtual thread is created, it is associated with a continuation, which holds the target task of the virtual thread. The VM saves the current thread state in an internal data structure that is linked with the continuation and allocates the memory for that structure. The VM stores the internal data structure in a continuation cache. New continuations can reuse the cached structure instead of allocating new memory for it.</p>
+<p>You can optimize the virtual thread performance by tuning the continuation tier 1 and 2 cache size with the <a href="../xxcontinuationcache/"><code>-XX:ContinuationCache</code></a> option. <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></p>
 <h3 id="-xxcompactstrings-option-enabled-by-default"><img alt="Start of content that applies only to Java 11+ (LTS)" src="../cr/java11plus.png" /> <code>-XX:+CompactStrings</code> option enabled by default</h3>
 <p>Like HotSpot, the<code>-XX:+CompactStrings</code> option is now enabled by default on Java&trade; 11 and later. In the earlier versions, this option is disabled by default.</p>
 <p>For more information, see <a href="../xxcompactstrings/"><code>-XX:[+|-]CompactStrings</code></a>. <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></p>

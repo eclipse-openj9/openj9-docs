@@ -10,20 +10,20 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.30/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxcontinuationcache/">
       
       
-        <link rel="prev" href="../version0.30.1/">
+        <link rel="prev" href="../xxcompactstrings/">
       
       
-        <link rel="next" href="../version0.29.1/">
+        <link rel="next" href="../xxdiagnosesynconvaluebasedclasses/">
       
       <link rel="icon" href="../cr/openj9-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
-        <title>Version 0.30.0 -  </title>
+        <title>-XX:ContinuationCache -  </title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#whats-new-in-version-0300" class="md-skip">
+        <a href="#-xxcontinuationcache" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Version 0.30.0
+              -XX:ContinuationCache
             
           </span>
         </div>
@@ -276,14 +276,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
@@ -388,14 +386,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
       
       
@@ -486,100 +482,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Version 0.30.0
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../version0.30/" class="md-nav__link">
         Version 0.30.0
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#features-and-changes" class="md-nav__link">
-    Features and changes
-  </a>
-  
-    <nav class="md-nav" aria-label="Features and changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#binaries-and-supported-environments" class="md-nav__link">
-    Binaries and supported environments
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#changes-to-the-shared-classes-cache-generation-number" class="md-nav__link">
-    Changes to the shared classes cache generation number
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ignored-options-captured-in-java-dumps" class="md-nav__link">
-    Ignored options captured in java dumps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#new-xx-ensurehashed-option-added" class="md-nav__link">
-    New -XX:[+|-]EnsureHashed option added
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#redesigned-heap-resizing-for-the-balanced-gc-policy" class="md-nav__link">
-    Redesigned heap resizing for the balanced GC policy
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-problems-and-full-release-information" class="md-nav__link">
-    Known problems and full release information
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1875,12 +1782,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18" type="checkbox" id="__nav_18" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18" type="checkbox" id="__nav_18" checked>
       
       
       
@@ -4039,12 +3948,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18_6" type="checkbox" id="__nav_18_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18_6" type="checkbox" id="__nav_18_6" checked>
       
       
       
@@ -4205,11 +4116,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../xxcontinuationcache/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          -XX:ContinuationCache
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         -XX:ContinuationCache
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5799,56 +5765,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features-and-changes" class="md-nav__link">
-    Features and changes
+  <a href="#syntax" class="md-nav__link">
+    Syntax
   </a>
-  
-    <nav class="md-nav" aria-label="Features and changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#binaries-and-supported-environments" class="md-nav__link">
-    Binaries and supported environments
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#changes-to-the-shared-classes-cache-generation-number" class="md-nav__link">
-    Changes to the shared classes cache generation number
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ignored-options-captured-in-java-dumps" class="md-nav__link">
-    Ignored options captured in java dumps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#new-xx-ensurehashed-option-added" class="md-nav__link">
-    New -XX:[+|-]EnsureHashed option added
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#redesigned-heap-resizing-for-the-balanced-gc-policy" class="md-nav__link">
-    Redesigned heap resizing for the balanced GC policy
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#known-problems-and-full-release-information" class="md-nav__link">
-    Known problems and full release information
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
   </a>
   
 </li>
@@ -5870,7 +5802,7 @@
 
 
 <!--
-* Copyright (c) 2017, 2023 IBM Corp. and others
+* Copyright (c) 2017, 2022 IBM Corp. and others
 *
 * This program and the accompanying materials are made
 * available under the terms of the Eclipse Public License 2.0
@@ -5887,56 +5819,51 @@
 * License, version 2 with the OpenJDK Assembly Exception [2].
 *
 * [1] https://www.gnu.org/software/classpath/license.html
-* [2] https://openjdk.org/legal/assembly-exception.html
+* [2] http://openjdk.java.net/legal/assembly-exception.html
 *
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="whats-new-in-version-0300">What's new in version 0.30.0</h1>
-<p>The following new features and notable changes since version 0.29.0 are included in this release:</p>
+<h1 id="-xxcontinuationcache">-XX:ContinuationCache</h1>
+<p><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> This option sets the continuation tier 1 and 2 cache size to optimize virtual thread performance.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code>    -XX:ContinuationCache:t1=&lt;size&gt;,t2=&lt;size&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th align="center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>t1=&lt;size&gt;</code></td>
+<td>0-2^32 (4,294,967,295)</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td><code>t2=&lt;size&gt;</code></td>
+<td>0-2^32 (4,294,967,295)</td>
+<td align="center">Number of processors x 2</td>
+</tr>
+</tbody>
+</table>
+<p>Where <code>t1</code> is the tier 1 cache and <code>t2</code> is the tier 2 cache.</p>
+<p>The tier 1 cache holds data that is not shareable between threads.</p>
+<p>The tier 2 cache holds data that can be shared globally between threads.</p>
+<h2 id="explanation">Explanation</h2>
+<p>When a virtual thread is created, it is associated with a continuation, which holds the target task of the virtual thread. When a virtual thread starts, the VM saves the current thread (carrier thread) state in an internal data structure that is linked with the continuation. When the associated continuation starts, the VM allocates the memory for the internal data structure and stores its reference in the continuation. When the continuation finishes, the VM stores the internal data structure in a cache instead of freeing the associated memory. New continuations can reuse the cached structure instead of allocating new memory for it. The VM can resume thread execution from the saved state later, typically on a different thread.</p>
+<p>If the virtual thread stops, the VM loads the state of the previous thread from the continuation and runs that thread. When the virtual thread does not complete running, the last state of the virtual thread is stored in the continuation during the stop operation. At a later point, the scheduler runs the incomplete virtual thread using the thread state stored in the continuation.</p>
+<p>Reusing the cached structure improves the performance of creating virtual threads. The performance benefits are more evident in applications that scale to millions of virtual threads.</p>
+<p>The continuation cache is implemented in two tiers, tier 1 and tier 2. You can set the maximum size for the two tiers with the <code>-XX:ContinuationCache</code> option. If an application uses more than 10000 virtual threads, setting a larger cache size might improve performance.</p>
+<p>When the size of the cache increases, the number of allocations reduces but the cache lookup time might also increase. Evaluate both the number of allocations and the optimal lookup time to set the appropriate cache size. <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></p>
+<h2 id="see-also">See also</h2>
 <ul>
-<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
-<li><a href="#changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</a></li>
-<li><a href="#ignored-options-captured-in-java-dumps">Ignored options now captured in java dumps</a></li>
-<li><a href="#new-xx-ensurehashed-option-added">New <code>-XX:[+|-]EnsureHashed</code> option added</a></li>
-<li><a href="#redesigned-heap-resizing-for-the-balanced-gc-policy">Redesigned heap resizing for the <code>balanced</code> GC policy</a></li>
+<li><a href="../xxshowcarrierframes/"><code>-XX:[+|-]ShowCarrierFrames</code></a></li>
 </ul>
-<h2 id="features-and-changes">Features and changes</h2>
-<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
-<p>Eclipse OpenJ9&trade; release 0.30.0 supports OpenJDK 8, 11 and 17.</p>
-<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
-<h3 id="changes-to-the-shared-classes-cache-generation-number">Changes to the shared classes cache generation number</h3>
-<p>The format of classes that are stored in the shared classes cache is changed, which causes the JVM to create a new shared classes cache rather than re-creating or reusing an existing cache. To save space, you can remove all existing shared caches unless they are in use by an earlier release. For more information about the <code>-Xshareclasses</code> option, including the <code>destroy</code> options that you can use to remove caches, see <a href="../xshareclasses/"><code>-Xshareclasses</code></a>.</p>
-<h3 id="ignored-options-captured-in-java-dumps">Ignored options captured in java dumps</h3>
-<p>For improved compatibility with other Java implementations, OpenJ9 ignores many command-line options. If any were ignored, they are now listed in the java dump files. For example, the command</p>
-<pre>
-java -Xdump:java:events=vmstop -XX:+UseCompressedOop -XX:CompressedClassSpaceSize=528482304 -version
-</pre>
-<p>would yield the following in the <tt>ENVINFO</tt> section after the complete list of all command-line arguments</p>
-<pre>
-1CIIGNOREDARGS Ignored Args:
-2CIIGNOREDARG            -XX:+UseCompressedOop
-2CIIGNOREDARG            -XX:CompressedClassSpaceSize=528482304
-</pre>
-
-<h3 id="new-xx-ensurehashed-option-added">New <code>-XX:[+|-]EnsureHashed</code> option added</h3>
-<p>This option specifies the classes whose objects should be assigned hash values or those classes that should be ignored. This option might improve performance for applications that frequently hash objects of a certain type. See <a href="../xxensurehashed/">-XX:[+|-]EnsureHashed</a> for more details.</p>
-<h3 id="redesigned-heap-resizing-for-the-balanced-gc-policy">Redesigned heap resizing for the <code>balanced</code> GC policy</h3>
-<p>Heap resizing heuristics have been redesigned for the <code>balanced</code> GC policy. This includes both total heap resizing including eden and non-eden components independently, and also balancing between these two components when the heap is fully expanded. The heuristics now combine both the CPU overhead (for Partial GCs as well as Global Mark Phase) and the heap occupancy criteria. The balancing between eden and non-eden for fully expanded heaps is far more dynamic (instead of being mostly fixed in the ratio 1:4).</p>
-<p>As a consequence, there should typically be less need for heap sizing tuning options, most notably for eden sizing options <a href="../xmn/">-Xmn, -Xmns, and -Xmnx</a>.</p>
-<p>Also, a new soft limit pause target is added for Partial GCs, which defaults to 200ms. This criterion is combined with the PGC CPU overhead criterion for a balanced compromise between minimizing footprint, maximizing throughput, and meeting the paused time target.</p>
-<p>More details about the new heuristics can be found at:</p>
-<p><a href="https://blog.openj9.org/2021/09/24/balanced-gc-performance-improvements-eden-heap-sizing-improvements/">https://blog.openj9.org/2021/09/24/balanced-gc-performance-improvements-eden-heap-sizing-improvements/</a></p>
-<p>The heuristics now obey the following existing options that were previously used for the <code>optthruput</code>, <code>optavgpause</code>, and <code>gencon</code> GC policies:</p>
-<ul>
-<li><a href="../xmint/">-Xmint/-Xmaxt</a></li>
-<li><a href="../xgc/#dnssexpectedtimeratiomaximum">-Xgc:dnssExpectedTimeRatioMaximum/Minimum</a></li>
-</ul>
-<p>The heuristics also use the <a href="../xgc/#targetpausetime">-Xgc:targetPausetime</a> option that was previously used only for the <code>metronome</code> GC policy.</p>
-<p>For more information about GC policies, see <a href="../gc/">Garbage collection policies</a>.</p>
-<h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
-<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.29.0 and v0.30.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.30/0.30.md">Release notes</a>.</p>
-<!-- ==== END OF TOPIC ==== version0.30.md ==== -->
+<!-- ==== END OF TOPIC ==== xxcontinuationcache.md ==== -->
 
 
 
