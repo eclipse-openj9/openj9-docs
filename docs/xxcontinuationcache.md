@@ -29,10 +29,10 @@
 
         -XX:ContinuationCache:t1=<size>,t2=<size>
 
-| Setting                 | Value      | Default                     |
-|-------------------------|------------|:---------------------------:|
-| `t1=<size>`    |  0-2^32 (4,294,967,295) |  1                       |
-| `t2=<size>`    |  0-2^32 (4,294,967,295) |  Number of processors x 2                       |
+| Setting | Value | Default |
+|---------|-------|:-------:|
+| `t1=<size>` | 0 to 2<sup>32</sup> - 1 (4,294,967,295) | 1 |
+| `t2=<size>` | 0 to 2<sup>32</sup> - 1 (4,294,967,295) | Number of processors x 2 |
 
 Where `t1` is the tier 1 cache and `t2` is the tier 2 cache.
 
