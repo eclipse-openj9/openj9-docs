@@ -25,11 +25,11 @@
 
 With the Attach API, your application can connect to a running VM and load an agent into that VM to run tasks. The typical use case for this feature is to load an agent that can be used to monitor the application that's running in the target VM.
 
-For example, if you wanted to start monitoring an application that is already running with the Attach API enabled, you could use a tool such as the [IBM Health Center](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/introduction.html). In this case, a Health Center agent can start in its own VM and attach to the target VM where the application  is running to start recording and sending data to the Health Center client.
+For example, if you wanted to start monitoring an application that is already running with the Attach API enabled, you could use a tool such as the [IBM Health Center](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/introduction.html). In this case, a Health Center agent can start in its own VM and attach to the target VM where the application is running to start recording and sending data to the Health Center client.
 
-The Eclipse OpenJ9&trade; implementation of the Attach API is equivalent to the reference implementation (API documentation is available on the [Oracle website](https://docs.oracle.com/javase/8/docs/jdk/api/attach/spec/index.html)). However, you can only use the Attach API to connect to another OpenJ9 VM.
+The Eclipse OpenJ9&trade; implementation of the Attach API is equivalent to the reference implementation (API documentation is available on the [Oracle website](https://docs.oracle.com/javase/8/docs/jdk/api/attach/spec/index.html)). However, you can use the Attach API only to connect to another OpenJ9 VM.
 
-When you run a Java&trade; application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on  z/OS,
+When you run a Java&trade; application, VM support for the Attach API is enabled by default on all platforms except z/OS&reg;. For security reasons on z/OS,
 processes that use the default z/OS OMVS segment cannot enable the Attach API.
 
 To enable or disable the Attach API, use the [`-Dcom.ibm.tools.attach.enable=[yes|no]`](dcomibmtoolsattachenable.md) command line option.
@@ -39,10 +39,12 @@ To enable or disable the Attach API, use the [`-Dcom.ibm.tools.attach.enable=[ye
 Because the Attach API can be used to connect to a running application, you must control access to it to ensure that only
 authorized users or processes can use it. Disable the Attach API if you do not intend to use it.
 
+If you do not want to disable the Attach API but want to control the unauthorized dynamic loading of agents into the VM by using the Attach API, use the [`-XX:-EnableDynamicAgentLoading`](xxenabledynamicagentloading.md) option.
+
 On Windows systems, the Attach API uses the system temporary directory, which is typically `C:\Users\<USERNAME>\AppData\Local\Temp`.
 The Attach API creates a common subdirectory, which is `.com_ibm_tools_attach` by default. Because files and directories in the system temporary directory are handled by Windows security, only the process owner can connect to their processes.
 
-On UNIX systems, the Attach API uses `/tmp` and creates a common subdirectory, which is `.com_ibm_tools_attach` by default. The common subdirectory must be on a local drive, not a network drive. Security is handled by POSIX file permissions. The Attach API directory must be owned by `root` user and must have read, write, and execute file permissions for `user`, `group`, and `other` (`drwxrwxrwx`). The sticky bit is set so that only the owner and `root` can delete or rename files or directories within it. A process using the Java Attach API must be owned by the same UNIX user ID as the target process.
+On UNIX systems, the Attach API uses `/tmp` and creates a common subdirectory, which is `.com_ibm_tools_attach` by default. The common subdirectory must be on a local drive, not a network drive. Security is handled by POSIX file permissions. The Attach API directory must be owned by `root` user and must have read, write, and execute file permissions for `user`, `group`, and `other` (`drwxrwxrwx`). The sticky bit is set so that only the owner and `root` can delete or rename files or directories within it. A process that uses the Java Attach API must be owned by the same UNIX user ID as the target process.
 
 ```
 ~/tmp $ ls -al

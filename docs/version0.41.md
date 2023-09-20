@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.40.0 are included
 - ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [New `-XX:ContinuationCache` option added](#new-xxcontinuationcache-option-added) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 - ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png) [`-XX:+CompactStrings` option enabled by default](#-xxcompactstrings-option-enabled-by-default) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 - [Change in behavior of `-Xshareclasses:readonly`](#change-in-behavior-of-xshareclassesreadonly)
+- [New `-XX:[+|-]EnableDynamicAgentLoading` option added](#new-xx-enabledynamicagentloading-option-added)
 
 ## Features and changes
 
@@ -62,6 +63,14 @@ For more information, see [`-XX:[+|-]CompactStrings`](xxcompactstrings.md). ![En
 In the earlier releases, if the `-Xshareclasses:readonly` option and the JITServer AOT cache feature were both enabled at the same time at a JITServer client, the client could not use the JITServer AOT cache because the cache for storing data that the JITServer AOT cache needed was read-only.
 
 Now, with the change in behavior of the [`-Xshareclasses:readonly`](xshareclasses.md#readonly) option, the shared class cache startup creates a temporary new (writable) top layer that the JITServer AOT cache can use to store data that it needs to function.
+
+### New `-XX:[+|-]EnableDynamicAgentLoading` option added
+
+This option enables or disables the dynamic loading of agents into a running VM. The `-XX:+EnableDynamicAgentLoading` option is the default setting.
+
+![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) For Java 21 and later, warnings are issued when the agents are loaded dynamically into a running VM after startup without specifying the `-XX:+EnableDynamicAgentLoading` option and the same agents were not loaded before. ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
+
+For more information, see [`-XX:[+|-]EnableDynamicAgentLoading`](xxenabledynamicagentloading.md).
 
 ## Known problems and full release information
 
