@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxenablecpumonitor/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxusezlibnx/">
       
       
-        <link rel="prev" href="../xxenable3164interoperability/">
+        <link rel="prev" href="../xxusenogc/">
       
       
-        <link rel="next" href="../xxenabledynamicagentloading/">
+        <link rel="next" href="../xxutfcache/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-XX:[+|-]EnableCPUMonitor -  </title>
+        <title>-XX:[+|-]UseZlibNX -  </title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xx-enablecpumonitor" class="md-skip">
+        <a href="#-xx-usezlibnx" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -XX:[+|-]EnableCPUMonitor
+              -XX:[+|-]UseZlibNX
             
           </span>
         </div>
@@ -5773,29 +5773,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    -XX:[+|-]EnableCPUMonitor
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xxenablecpumonitor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5804,47 +5784,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    Explanation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -7394,9 +7333,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../xxusezlibnx/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    -XX:[+|-]UseZlibNX
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -7405,6 +7364,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -8073,11 +8073,11 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-xx-enablecpumonitor">-XX:[+|-]EnableCPUMonitor</h1>
-<p>This option relates to the information about the CPU usage of thread categories that is available with the <code>com.ibm.lang.management.JvmCpuMonitorMXBean</code> application programming interface.</p>
-<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg></span> <strong>Restriction:</strong> This option might not be supported in subsequent releases.</p>
+<h1 id="-xx-usezlibnx">-XX:[+|-]UseZlibNX</h1>
+<p><strong>AIX&reg; with IBM POWER9&reg; and later only</strong></p>
+<p>This option enables or disables the adding of the <code>zlibNX</code> library directory location to the <code>LIBPATH</code> environment variable.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:[+|-]EnableCPUMonitor
+<pre><code>    -XX:[+|-]UseZlibNX
 </code></pre>
 <table>
 <thead>
@@ -8089,25 +8089,26 @@
 </thead>
 <tbody>
 <tr>
-<td><code>-XX:+EnableCPUMonitor</code></td>
+<td><code>-XX:+UseZlibNX</code></td>
 <td>Enable</td>
 <td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
 </tr>
 <tr>
-<td><code>-XX:-EnableCPUMonitor</code></td>
+<td><code>-XX:-UseZlibNX</code></td>
 <td>Disable</td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>The <code>-XX:+EnableCPUMonitor</code> option enables CPU monitoring, which allows a JMX bean to track CPU usage on a per thread basis and attributes the usage against different categories. For more information, see the <code>JvmCpuMonitorMXBean</code> interface in the <code>com.ibm.lang.management</code> API documentation.</p>
-<p>To turn off CPU monitoring, set the <code>-XX:-EnableCPUMonitor</code> option on the command line.</p>
+<p>AIX system adds the <code>zlibNX</code> library location, if available, to the <code>LIBPATH</code> variable by default. But having the <code>zlibNX</code> library directory location in the <code>LIBPATH</code> variable might cause some issues. For example, Git clone fails when executed from Java&reg; when <code>zlibNX</code> is on the <code>LIBPATH</code> in the environment.</p>
+<p>You can disable adding of the <code>zlibNX</code> library location to the <code>LIBPATH</code> variable with the <code>-XX:-UseZlibNX</code> option.</p>
 <h2 id="see-also">See also</h2>
 <ul>
-<li><a href="../xxreducecpumonitoroverhead/">-XX:[+|-]ReduceCPUMonitorOverhead</a></li>
+<li><a href="../introduction/#hardware-acceleration">Hardware acceleration</a></li>
+<li><a href="../configuring/">Configuring your system</a></li>
 </ul>
-<!-- ==== END OF TOPIC ==== xxenablecpumonitor.md ==== -->
+<!-- ==== END OF TOPIC ==== xxusezlibnx.md ==== -->
 
 
 
