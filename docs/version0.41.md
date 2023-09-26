@@ -31,6 +31,7 @@ The following new features and notable changes since version 0.40.0 are included
 - ![Start of content that applies only to Java 11+ (LTS)](cr/java11plus.png) [`-XX:+CompactStrings` option enabled by default](#-xxcompactstrings-option-enabled-by-default) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 - [Change in behavior of `-Xshareclasses:readonly`](#change-in-behavior-of-xshareclassesreadonly)
 - [New `-XX:[+|-]EnableDynamicAgentLoading` option added](#new-xx-enabledynamicagentloading-option-added)
+- [New `-XX:[+|-]UseZlibNX` option added](#new-xx-usezlibnx-option-added)
 
 ## Features and changes
 
@@ -71,6 +72,10 @@ This option enables or disables the dynamic loading of agents into a running VM.
 ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) For Java 21 and later, warnings are issued when the agents are loaded dynamically into a running VM after startup without specifying the `-XX:+EnableDynamicAgentLoading` option and the same agents were not loaded before. ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 
 For more information, see [`-XX:[+|-]EnableDynamicAgentLoading`](xxenabledynamicagentloading.md).
+
+### New `-XX:[+|-]UseZlibNX` option added
+
+AIX&reg; system adds the `zlibnx` library directory path in the `LIBPATH` environment variable by default, if it is available in the system. You can control the loading of the `zlibnx` library by using the [`-XX:[+|-]UseZlibNX`](xxusezlibnx.md) option.
 
 ## Known problems and full release information
 
