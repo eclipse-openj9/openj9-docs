@@ -1,0 +1,52 @@
+<!--
+* Copyright (c) 2017, 2023 IBM Corp. and others
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which accompanies this distribution and is available at
+* https://www.eclipse.org/legal/epl-2.0/ or the Apache
+* License, Version 2.0 which accompanies this distribution and
+* is available at https://www.apache.org/licenses/LICENSE-2.0.
+*
+* This Source Code may also be made available under the
+* following Secondary Licenses when the conditions for such
+* availability set forth in the Eclipse Public License, v. 2.0
+* are satisfied: GNU General Public License, version 2 with
+* the GNU Classpath Exception [1] and GNU General Public
+* License, version 2 with the OpenJDK Assembly Exception [2].
+*
+* [1] https://www.gnu.org/software/classpath/license.html
+* [2] https://openjdk.org/legal/assembly-exception.html
+*
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
+-->
+
+# -XX:\[+|-\]UseZlibNX
+
+**AIX&reg; with IBM POWER9&reg; and later only**
+
+This option enables or disables the adding of the `zlibNX` library directory location to the `LIBPATH` environment variable.
+
+
+## Syntax
+
+        -XX:[+|-]UseZlibNX
+
+| Setting               | Effect  | Default                                                                            |
+|-----------------------|---------|:----------------------------------------------------------------------------------:|
+| `-XX:+UseZlibNX` |  Enable  |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>         |
+| `-XX:-UseZlibNX` | Disable |     |
+
+
+## Explanation
+
+AIX system adds the `zlibNX` library location, if available, to the `LIBPATH` variable by default. But having the `zlibNX` library directory location in the `LIBPATH` variable might cause some issues. For example, Git clone fails when executed from Java&reg; when `zlibNX` is on the `LIBPATH` in the environment.
+
+You can disable adding of the `zlibNX` library location to the `LIBPATH` variable with the `-XX:-UseZlibNX` option.
+
+## See also
+
+- [Hardware acceleration](introduction.md#hardware-acceleration)
+- [Configuring your system](configuring.md)
+
+<!-- ==== END OF TOPIC ==== xxusezlibnx.md ==== -->
