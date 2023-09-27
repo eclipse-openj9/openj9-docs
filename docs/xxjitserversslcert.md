@@ -41,7 +41,7 @@ The files must all be in `.pem` file format.
 
 ## Explanation
 
-You can encrypt network communication by using OpenSSL 1.0.x, 1.1.x, or 3.0.x. To enable encryption, specify the private key (`<key>.pem`) and the certificate (`<cert>.pem`) at the server:
+You can encrypt network communication by using OpenSSL 1.0.x, 1.1.x, or 3.x. To enable encryption, specify the private key (`<key>.pem`) and the certificate (`<cert>.pem`) at the server:
 
     -XX:JITServerSSLKey=<key>.pem -XX:JITServerSSLCert=<cert>.pem
 
