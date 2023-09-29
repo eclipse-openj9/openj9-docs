@@ -8198,7 +8198,7 @@
 </ul>
 <p>If a JITServer server crashes, the client is forced to perform compilations locally. You can change this behavior by using the <a href="../xxrequirejitserver/"><code>-XX:[+|-]RequireJITServer</code></a> option so that the client crashes with an assert when it detects that the server is unavailable. This feature is useful when you are running a test suite with JITServer enabled and you want the server crash to cause the test to fail.</p>
 <h2 id="security">Security</h2>
-<p>You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x, 1.1.x, or 3.0.x. To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see <a href="../xxjitserversslcert/">-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts</a>.</p>
+<p>You can encrypt network communication between the client VM and JITServer by using OpenSSL 1.0.x, 1.1.x, or 3.x. To enable encryption, you specify the private key and the certificate at the server and use the certificate at the client. For more information, see <a href="../xxjitserversslcert/">-XX:JITServerSSLCert / -XX:JITServerSSLKey / -XX:JITServerSSLRootCerts</a>.</p>
 <h2 id="tuning-jitserver">Tuning JITServer</h2>
 <p>For best practices regarding JITServer configuration and tuning, see the document <a href="../jitserver_tuning/">JITServer tuning and practical considerations</a>.</p>
 <h2 id="building-a-jdk-with-jitserver-technology">Building a JDK with JITServer technology</h2>
