@@ -32,6 +32,7 @@ The following new features and notable changes since version 0.40.0 are included
 - [Change in behavior of `-Xshareclasses:readonly`](#change-in-behavior-of-xshareclassesreadonly)
 - [New `-XX:[+|-]EnableDynamicAgentLoading` option added](#new-xx-enabledynamicagentloading-option-added)
 - [New `-XX:[+|-]UseZlibNX` option added](#new-xx-usezlibnx-option-added)
+- [Support for OpenSSL 3.x](#support-for-openssl-3x)
 
 ## Features and changes
 
@@ -76,6 +77,10 @@ For more information, see [`-XX:[+|-]EnableDynamicAgentLoading`](xxenabledynamic
 ### New `-XX:[+|-]UseZlibNX` option added
 
 AIX&reg; system adds the `zlibnx` library directory path in the `LIBPATH` environment variable by default, if it is available in the system. You can control the loading of the `zlibnx` library by using the [`-XX:[+|-]UseZlibNX`](xxusezlibnx.md) option.
+
+### Support for OpenSSL 3.x
+
+OpenSSL 3.x is now supported on all operating systems. For more information about OpenSSL support, see [`Cryptographic operations`](introduction.md#cryptographic-operations).
 
 ## Known problems and full release information
 
