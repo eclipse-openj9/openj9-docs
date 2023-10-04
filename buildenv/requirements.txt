@@ -95,7 +95,7 @@ six==1.16.0
     # via python-dateutil
 termcolor==2.2.0
     # via mkdocs-macros-plugin
-urllib3==1.26.13
+urllib3==1.26.17
     # via requests
 watchdog==2.2.1
     # via mkdocs
