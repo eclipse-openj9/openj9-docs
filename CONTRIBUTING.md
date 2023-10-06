@@ -27,7 +27,7 @@ This short guide will help you if you want to make a contribution to the Eclipse
 
 **Note:** There is a short video presentation explaining the process for contributing to the OpenJ9 documentation. (Save and open the [`.zip` file](process/Contributing.to.OpenJ9.docs.zip) in the `/process` directory to view the `.mp4` video.) You can also view the [PowerPoint presentation](process/openj9-doc-contibutions.pptx) used in that video. (Either save the file to view locally, or click "View raw".)
 
-- If you don't want to contribute directly by modifying the documentation yourself, but you have a suggestion or want to report an error, please raise an issue in this repository.
+- If you don't want to contribute directly by modifying the documentation yourself, but you have a suggestion or want to report an error, raise an issue in this repository.
 
     The following templates are available to help you provide the correct information for someone else to handle any changes:
 
@@ -57,7 +57,7 @@ The user documentation is authored in Markdown and built into HTML using [Mkdocs
 
 ## Setting up a local MkDocs environment
 
-Basic pre-requisites:
+Basic prerequisites:
 
 - Git
 - Python 3
@@ -100,7 +100,7 @@ All files in the ROOT folder of this repository are concerned with the structure
 The key configuration file for the documentation is the `/mkdocs.yml` file, which controls the following aspects:
 
 - website and repository addresses
-- MKdocs theme and customisation values
+- MKdocs theme and customization values
 - structure and content, under the `pages:` section
 
 Under `pages:` in the `.yml` file, topics are added and indented to reflect their position in the table of contents. Care must be taken to preserve the indentation when making changes to this file.
@@ -108,14 +108,14 @@ Under `pages:` in the `.yml` file, topics are added and indented to reflect thei
 If you want to add a new file, see [Document files](#document-files) about file naming, and follow the existing structure and layout when you add a reference to it in the `.yml` file.
 Insert new options in the appropriate position in the list, which is typically arranged in alphabetical order within a section.
 
-**Note:** From version 1.0 of MkDocs, the `pages:` section is renamed to `nav:`
+**Note:** From version 1.0 of MkDocs, the `pages:` section is renamed to `nav:`.
 
 #### Document files
 
 Documentation content is contained in the following directories:
 
 - All Markdown files are in the `/docs` folder.
-- All diagrams used in content are in the `/docs/cr` folder.
+- All diagrams that are used in the content are in the `/docs/cr` folder.
 
 New file names should follow the existing naming convention. They _must_ be in lowercase. They typically omit punctuation and other symbols present in the full option title. Topics that form part of a group might have a distinguishing prefix.
 
@@ -137,11 +137,13 @@ If you haven't done so already, [join the channel](https://www.eclipse.org/openj
 Generally, follow the style and structure of existing topics.
 If you are creating a new topic, you might find it helpful to copy a similar existing topic and modify it. (Don't forget to modify the file name in the footer!)
 
+When you document HotSpot options in the OpenJ9 documents, use similar text to the previous HotSpot option additions in the What's New in version &lt;release number&gt; and option topics. Also, update the table in the [Switching to Eclipse OpenJ9](https://eclipse.dev/openj9/docs/cmdline_migration/) topic.
+
 However you create a new topic, you must ensure that the header comment with copyright and license information is copied exactly as it is from an existing topic. _Do not_ change either of the copyright dates, even for a new topic; the dates refer to the complete documentation set, not to individual files and so should be the same in all topics.
 
 ### Writing tips
 
-Make your contributions valuable to all users, including those who have English as a second language.  Ensure that you write clearly and precisely. For example:
+Make your contributions valuable to all users, including those users who have English as a second language. Ensure that you write clearly and precisely. For example:
 
 - Use simple language.
 - Avoid needless words.
@@ -159,7 +161,7 @@ When adding content to the user documentation that does not apply to all environ
 
       **(Linux&reg; only)**
 
-If content is not marked it should apply to any platform.
+If content is not marked, it should apply to any platform.
 
 See [Trademarks](#trademarks) for information about marking trade names appropriately.
 
@@ -211,29 +213,31 @@ The icons are created by using the GIMP editor, from the `_version.xcf` file in 
 To create a new version icon:
 
 1. In the GIMP editor, from the `/docs/cr` folder, open the `_version.xcf` file.
-The file opens with the last image that was saved. In the bottom-right panel, you can see the different layers of the existing icon. You can use an existing icon to create a new icon.
-2. In the bottom-right panel, `Layers` tab, right-click on the most recent version number layer and then click `Duplicate Layer`.
+The file opens with the last image that was saved. In the lower-right panel, you can see the different layers of the existing icon. You can use an existing icon to create a new icon.
+2. In the lower-right panel, `Layers` tab, right-click the most recent version number layer and then click `Duplicate Layer`.
 A new layer is added with the suffix `#1`.
-3. To rename the layer, double-click on the name of the new layer and specify the new name.
+3. To rename the layer, double-click the name of the new layer and specify the new name.
 4. Zoom in to the image in the canvas for ease of editing.
-You can either use the menu option (`View` -> `Zoom` -> zoom percentage) or use the Zoom tool in the top-left panel.
+You can either use the menu option (`View` -> `Zoom` -> zoom percentage) or use the Zoom tool in the upper-left panel.
 5. In the `Layer` panel, click the eye icon next to the last version icon layer to make it invisible.
-6. In the canvas, double-click on the number in the icon image and delete the number.
+6. In the canvas, double-click the number in the icon image and delete the number.
 7. Type the new number (the font size should be 14 with bold formatting).
-8. Move the number to position it in the middle of the colour background. To move the number, press the Alt key (the option key in Mac) and click and drag the number.
-9. In the `Layers` tab, use the eye icon next to the different layers to change the colour and other attributes of the image.
+8. Move the number to position it in the middle of the color background. To move the number, press the `Alt` key (the `option` key in Mac) and click and drag the number.
+9. In the `Layers` tab, use the eye icon next to the different layers to change the color and other attributes of the image.
 For example, use the eye icon next to the Plus layer to make that visible.
 10. To generate the new icon, click `File` -> `Export As` and export the image as `.png` file with the required name.
 
 ### Trademarks
 
-In each topic, the _first occurence only_ of trademarked terms should be marked appropriately. Avoid including trademark symbols in titles, headings, etc., unless the term appears nowhere else in the topic.
+In each topic, the _first occurrence only_ of trademarked terms should be marked appropriately. Avoid including trademark symbols in titles and headings, unless the term appears nowhere else in the topic.
 
 Here are some examples that you might come across:
 
 AIX&reg;, IBM&reg;, IBM z15&reg;, Java&trade;, Linux&reg;, Linux on IBM Z&reg;, Linux on Power Systems&trade;, macOS&reg;, MVS&trade;, OpenJ9 VM Language Environment&reg;, Oracle&reg;, Windows&trade;, z/OS&reg;.
 
 Mark trademarks&trade; with `&trade;` (as in `Java&trade;`) and registered trademarks&reg; with `&reg;` (as in `Linux&reg;`).
+
+The first reference to OpenJ9 in a topic should be Eclipse OpenJ9&trade;.
 
 ### Using images
 
@@ -269,21 +273,23 @@ For examples that embed Java version icons such as ![Java 8 icon](docs/cr/java8.
 
 ### Referencing non-Markdown pages
 
-The user documentation pulls in API documentation, which is pre-built as HTML files. These files have to be referenced in a specific way for the build process. The documentation has two builds, one for use in the web site and a special build for offline use. The offline build uses the Mkdocs `use_directory_urls: false` configuration setting, which alters the layout of the site and automatically adjusts relative urls between Markdown files. However, relative urls to non-Markdown pages, which are copied as-is into the `/site` directory, are not adjusted.
+The user documentation pulls in API documentation, which is pre-built as HTML files. These files have to be referenced in a specific way for the build process. The documentation has two builds, one for use in the website and a special build for offline use. The offline build uses the Mkdocs `use_directory_urls: false` configuration setting, which alters the layout of the site and automatically adjusts relative urls between Markdown files. However, relative urls to non-Markdown pages, which are copied as-is into the `/site` directory, are not adjusted.
 
-If you need to reference a specific API page from a Markdown file use the variable `config.use_directory_urls` provided by `mkdocs-macros` plugin. For example in the [OpenJ9 JDK 11 API documentation](docs/api-jdk11.md), the `iframe` element uses this technique in the `src` attribute:
+If you need to reference a specific API page from a Markdown file use the variable `config.use_directory_urls` provided by `mkdocs-macros` plug-in. For example in the [OpenJ9 JDK 11 API documentation](docs/api-jdk11.md), the `iframe` element uses this technique in the `src` attribute:
 
 ```
 {% if config.use_directory_urls %}../{% endif %}api/jdk11/index.html?view=embed
 ```
 
-To ensure that the contribution process is as simple as possible, the `mkdocs-macros` plugin should not be used for any other purpose than referencing pre-built API documentation.
+To ensure that the contribution process is as simple as possible, the `mkdocs-macros` plug-in should not be used for any other purpose than referencing pre-built API documentation.
+
+You must request the regeneration of API documentation for OpenJ9 (for example, in the Slack channel, #committers-public) for each release.
 
 ### Accessibility
 
 The accessibility of the documentation to users with disabilities is important to this project. Here are some things to consider:
 
-- Don't use terms that convey "position". For example, do not write "the example below", "the above table", "the right-hand column" and so on.
+- Don't use terms that convey "position". For example, do not write "the example below", "the above table", "the right column".
 - Don't use color on its own to differentiate text. For example, "the string shown in green" or "the code element in blue".
 - If you embed a diagram, use alternative text (ALT-TEXT) to describe the image for screen readers. See [Using images](using-images).
 - If you use icons to indicate content for a specific OpenJDK version, or for "notes" and "restrictions", add the correct attributes for screen readers. See [Using images](using-images).
@@ -294,7 +300,7 @@ The accessibility of the documentation to users with disabilities is important t
 When you've made the changes that you want to contribute, build and preview the website. If you have [set up an MkDocs environment locally](#setting-up-a-local-mkdocs-environment), follow these steps:
 
 - Run `mkdocs serve`.
-- Open a browser and view the following URL: http://127.0.0.1:8008 (specifically, the URL set in the `dev_addr:` section of the `mkdocs.yml` file.
+- Open a browser and view the following URL: http://127.0.0.1:8008 (specifically, the URL set in the `dev_addr:` section of the `mkdocs.yml` file).
 
 ## Submitting a contribution
 
@@ -304,9 +310,15 @@ In particular, if your changes address an issue, quote the issue number in the c
 
 If work is ongoing, or if there is further work to be done after you create your pull request, (either in the docs or in the code) add a "WIP" (Work In Progress) prefix to the title.
 
+Create milestones for the OpenJ9 document issues in the openj9-docs repository for tracking purposes. To create milestones, in the "Issues" or "Pull requests" tab, click the "Milestones" button next to the "New issue" (or "New pull request") button. In the "Milestones" tab, click the "New milestone" button and then specify the details to create a new milestone. The New milestone button is available only if you have the permissions to do so. You can otherwise contact the repository owners or administrators who have the permission to create milestones.
+
+You can also create labels to categorize issues and pull requests. To create labels, you must be added as a Contributor in the repository by the repository owner or administrator. You can see the list of contributors at https://projects.eclipse.org/projects/technology.openj9.
+
+If you are not marked as a Contributor, issues can be assigned to you only if you have interacted with the issue (for example, added a comment on it).
+
 ### Previewing pull requests
 
-Pull requests must be previewed before merging. Stage your pull request (i.e. create a temporary draft of your changes) by triggering a Jenkins-ci job. To run the job, add the following trigger comment into a pull request:  
+Pull requests must be previewed before merging. Stage your pull request (that is, create a temporary draft of your changes) by triggering a Jenkins-ci job. To run the job, add the following trigger comment into a pull request:
 ```
 Jenkins doc stage
 ```  
@@ -323,11 +335,13 @@ Project committers are responsible for checking pull requests and merging change
 
 Documentation pull requests must not be merged before code pull requests are merged in case subsequent code changes alter the documented behavior.
 
-Before merging, check with the developers involved and make sure that there is not work still to be done. This is usually indicated by a "WIP" prefix on the pull request title.
+Before merging, check with the developers involved and make sure that there is not any work still to be done. This is usually indicated by a "WIP" prefix on the pull request title.
 
 When pull requests are merged, the documentation is published to the gh-pages branch of the https://github.com/eclipse-openj9/openj9-docs repository as part of the "current working draft" at the following URL:
 
 https://eclipse-openj9.github.io/openj9-docs
+
+You can publish the OpenJ9 documents when the release is created. You need not wait for the build binaries to be available.
 
 When released, the latest version of Eclipse OpenJ9 is published at:
 
