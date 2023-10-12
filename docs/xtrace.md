@@ -25,7 +25,7 @@
 
 Eclipse OpenJ9&trade; VM tracing is a powerful feature to help you diagnose problems with minimal effect on performance. Tracing is enabled by default, together with a small set of trace points going to memory buffers. You can enable tracepoints at run time by using levels, components, group names, or individual tracepoint identifiers to trace VM internal operations and instrumented Java&trade; applications. You can also trace Java methods. See the [About trace](#about-trace) section that follows for more detail.
 
-Trace data can be output in human-readable or in compressed binary formats. The VM provides a tool to process and convert the compressed binary data into a readable format. See [Trace formatter](tool_traceformat.md).  
+Trace data can be output in human-readable or in compressed binary formats. The VM provides a tool to process and convert the compressed binary data into a readable format. See [Trace formatter](tool_traceformat.md).
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You can also control trace by using the `com.ibm.jvm.Trace` API or by using JVMTI from an external agent.
 
@@ -112,7 +112,7 @@ yyyymmdd.hhmmssth.process.trc`.
 
 You must also think carefully about which components need to be traced and what level of tracing is required. For example, if you are tracing a suspected shared classes problem, it might be enough to trace all components at level 1, and **j9shr** at level 9, while `maximal` can be used to show parameters and other information for the failing component. Tracepoint components and trace levels are described in the following sections: [Tracepoint specification](#tracepoint-specification) and [Trace levels](#trace-levels).
 
-There are two types of tracepoints inside the VM:  
+There are two types of tracepoints inside the VM:
 
 - Regular tracepoints include method tracepoints, application tracepoints, data tracepoints inside the VM and data tracepoints inside class libraries. You can display regular tracepoint data on the screen or save the data to a file. You can also use command line options to trigger specific actions when regular tracepoints fire.
 - Auxiliary tracepoints are a special type of tracepoint that can be fired only when another tracepoint is being processed. For example, the stack frame information produced by the jstacktrace `-Xtrace:trigger` command. You cannot control where auxiliary tracepoint data is sent and you cannot set triggers on auxiliary tracepoints. Auxiliary tracepoint data is sent to the same destination as the tracepoint that caused them to be generated.
@@ -186,15 +186,15 @@ The options that control which individual tracepoints are activated at run time 
 <!--
 The following options control which individual tracepoints are activated at run time and the implicit destination of the trace data. (Follow links for more information about individual options.)
 
-- [`-Xtrace:maximal=<tracepoint_specification>`](#maximal)          
-- [`-Xtrace:minimal=<tracepoint_specification>`](#minimal)          
-- [`-Xtrace:count=<tracepoint_specification>`](#count)              
-- [`-Xtrace:print=<tracepoint_specification>`](#print)              
-- [`-Xtrace:iprint=<tracepoint_specification>`](#iprint)            
-- [`-Xtrace:exception=<tracepoint_specification>`](#exception)      
+- [`-Xtrace:maximal=<tracepoint_specification>`](#maximal)
+- [`-Xtrace:minimal=<tracepoint_specification>`](#minimal)
+- [`-Xtrace:count=<tracepoint_specification>`](#count)
+- [`-Xtrace:print=<tracepoint_specification>`](#print)
+- [`-Xtrace:iprint=<tracepoint_specification>`](#iprint)
+- [`-Xtrace:exception=<tracepoint_specification>`](#exception)
 - [`-Xtrace:exception.output=<filename>[,<size>]`](#exceptionoutput)
-- [`-Xtrace:external<tracepoint_specification>`](#external)         
-- [`-Xtrace:none[=<tracepoint_specification>]`](#none)              
+- [`-Xtrace:external<tracepoint_specification>`](#external)
+- [`-Xtrace:none[=<tracepoint_specification>]`](#none)
 
 -->
 In some cases, you must use them with other options. For example, if you specify `maximal` or `minimal` tracepoints, the trace data is put into memory buffers. If you are going to send the data to a file, you must use an `output` option to specify the destination file name.
@@ -216,7 +216,7 @@ Where:
 - The `!` symbol is a logical *not*. That is, the tracepoints that are in a specification starting with ! are turned off.
 - `<component>` is a Java component.
 - `<group>` is a tracepoint group, which is a set of tracepoints that are defined within a component.
-- `<type>` is the tracepoint type: `entry`, `exit`, `event`, `exception`, and `eem`.
+- `<type>` is the tracepoint type: `entry`, `exit`, `event`, `exception`, and `mem`.
 - `<tracepoint_id>` is the tracepoint identifier. The tracepoint identifier constitutes the component name of the tracepoint, followed by its integer number inside that component. For example, `j9mm.49`, `j9shr.20-29`, `j9vm.15`. To understand these numbers, see Determining the tracepoint ID of a tracepoint.
 
 Some tracepoints can be both an `exit` and an `exception`; that is, the function ended with an error. If you specify either `exit` or `exception`, these tracepoints are included.
@@ -258,18 +258,18 @@ The following table lists the possible Java components (`<component>`). To inclu
 
 The following table lists all the tracepoint groups (`<group>`). Each group is associated with one or more Java components:
 
-|Component name or names     |	Group name       |	Description                                                                                                              |
+|Component name or names     |  Group name       |  Description                                                                                                              |
 |----------------------------|-------------------|---------------------------------------------------------------------------------------------------------------------------|
-|**j9mm**                    | `gclogger`	       | A set of tracepoints that record each garbage collection cycle. Equivalent to `-verbose:gc` output                        |
+|**j9mm**                    | `gclogger`        | A set of tracepoints that record each garbage collection cycle. Equivalent to `-verbose:gc` output                        |
 |**j9prt**                   | `nlsmessage`      | A set of tracepoints that record each NLS message that is issued by the VM.                                               |
-|**j9jcl**, **j9vm**         | `verboseclass`	   | A set of tracepoints that record each class as it is loaded. Equivalent to `-verbose:class` output.                       |
-|**j9jni**, **j9vm**         | `checkjni`	       | A set of tracepoints that record JNI function checks. Equivalent to `-Xcheck:jni` output.                                 |
-|**j9vm**	                   | `checkmemory`	   | A set of tracepoints that record memory checks. Equivalent to `-Xcheck:memory` output.                                    |
-|**j9vm**	                   | `checkvm`	       | A set of tracepoints that record VM checks. Equivalent to `-Xcheck:vm` output.                                            |
-|**j9jit**	                 | `verbose`	       | A set of tracepoints that record JIT compiler configuration and method compilation. Equivalent to `-Xjit:verbose` output. |
-|**mt**	                     | `compiledMethods` | A set of tracepoints that record compiled Java methods.                                                                   |
-|**mt**	                     | `nativeMethods`	 | A set of tracepoints that record Java native methods.                                                                     |
-|**mt**	                     | `staticMethods`	 | A set of tracepoints that record Java static methods.                                                                     |
+|**j9jcl**, **j9vm**         | `verboseclass`    | A set of tracepoints that record each class as it is loaded. Equivalent to `-verbose:class` output.                       |
+|**j9jni**, **j9vm**         | `checkjni`        | A set of tracepoints that record JNI function checks. Equivalent to `-Xcheck:jni` output.                                 |
+|**j9vm**                    | `checkmemory`     | A set of tracepoints that record memory checks. Equivalent to `-Xcheck:memory` output.                                    |
+|**j9vm**                    | `checkvm`         | A set of tracepoints that record VM checks. Equivalent to `-Xcheck:vm` output.                                            |
+|**j9jit**                   | `verbose`         | A set of tracepoints that record JIT compiler configuration and method compilation. Equivalent to `-Xjit:verbose` output. |
+|**mt**                      | `compiledMethods` | A set of tracepoints that record compiled Java methods.                                                                   |
+|**mt**                      | `nativeMethods`   | A set of tracepoints that record Java native methods.                                                                     |
+|**mt**                      | `staticMethods`   | A set of tracepoints that record Java static methods.                                                                     |
 
 Here are some examples:
 
@@ -371,7 +371,7 @@ To limit each thread to 2 trace buffers, each of 128 KB:
 
 ### `count` (tracepoint)
 
-    -Xtrace:count=<tracepoint_specification>             
+    -Xtrace:count=<tracepoint_specification>
 
 For further information about `<tracepoint_specification>` syntax, see [Tracepoint specification](#tracepoint-specification).
 
@@ -449,7 +449,7 @@ Displays general trace help
 
 ### `iprint` (tracepoint)
 
-    -Xtrace:iprint=<tracepoint_specification>          
+    -Xtrace:iprint=<tracepoint_specification>
 
 For further information about `<tracepoint_specification>` syntax, see [Tracepoint specification](#tracepoint-specification).
 
@@ -457,7 +457,7 @@ The `iprint` option is the same as the `print` option, but uses indenting to for
 
 ### `maximal` (tracepoint)
 
-    -Xtrace:maximal=<tracepoint_specification>         
+    -Xtrace:maximal=<tracepoint_specification>
 
 For further information about `<tracepoint_specification>` syntax, see [Tracepoint specification](#tracepoint-specification).
 
@@ -588,7 +588,7 @@ The output lines comprise of:
 
 ### `minimal` (tracepoint)
 
-    -Xtrace:minimal=<tracepoint_specification>          
+    -Xtrace:minimal=<tracepoint_specification>
 
 For further information about `<tracepoint_specification>` syntax, see [Tracepoint specification](#tracepoint-specification).
 
@@ -610,8 +610,7 @@ If you specify other tracepoints without specifying `-Xtrace:none`, the tracepoi
 
 Sends trace data to a file, optionally of a specific size and number of generations.
 
-
-    -Xtrace:output=<filename>[,<size>[,<generations>]]`   
+    -Xtrace:output=<filename>[,<size>[,<generations>]]`
 
 Where:
 
@@ -651,7 +650,7 @@ Trace output goes to a file whose name contains the time in *hhmmss* format (for
 
 ### `print` (tracepoint)
 
-    -Xtrace:print=<tracepoint_specification>            
+    -Xtrace:print=<tracepoint_specification>
 
 For further information about `<tracepoint_specification>` syntax, see [Tracepoint specification](#tracepoint-specification).
 
@@ -688,7 +687,6 @@ If any error is found when the file is accessed, VM initialization fails with an
 To use a file `trace.props` stored in the `c:\trc\gc` directory, specify the following command:
 
     -Xtrace:properties=c:\trc\gc\trace.props
-
 
 ### `resume`
 
@@ -803,16 +801,16 @@ Wherever an action (`<action>`, `<entryAction>`, or `<exitAction>`) must be spec
 | **`<action>`**              | Effect                                                                                                                                                           |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `abort`                     | Halt the VM.                                                                                                                                                     |
-| `ceedump`                   | This action is applicable to z/OS&reg; only. For more information, see [z/OS LE CEEDUMPs](xdump.md#dump-agents).                                                                         |
-| `coredump`                  | Produce a system dump. See [Dump agents (`-Xdump:system`)](xdump.md#dump-agents)                                                                          |
-| `heapdump`                  | Produce a heap dump. See [Heap dump](dump_heapdump.md).                    |
-| `javadump`                  | Produce a Java dump. See [Java dump](dump_javadump.md).                    |
-| `jstacktrace`               | Examine the Java stack of the current thread and generate auxiliary tracepoints for each stack frame. The auxiliary tracepoints are written to the same destination as the tracepoint or method trace that triggered the action. You can control the number of stack frames examined with the `stackdepth=n` option. See the [stackdepth](#stackdepth) option.   |
+| `ceedump`                   | This action is applicable to z/OS&reg; only. For more information, see [z/OS LE CEEDUMPs](xdump.md#dump-agents).                                                 |
+| `coredump`                  | Produce a system dump. See [Dump agents (`-Xdump:system`)](xdump.md#dump-agents)                                                                                 |
+| `heapdump`                  | Produce a heap dump. See [Heap dump](dump_heapdump.md).                                                                                                          |
+| `javadump`                  | Produce a Java dump. See [Java dump](dump_javadump.md).                                                                                                          |
+| `jstacktrace`               | Examine the Java stack of the current thread and generate auxiliary tracepoints for each stack frame. The auxiliary tracepoints are written to the same destination as the tracepoint or method trace that triggered the action. You can control the number of stack frames examined with the `stackdepth=n` option. See the [stackdepth](#stackdepth) option. |
 | `resume`                    | Resume all tracing (except for threads that are suspended by the action of the resumecount property and `Trace.suspendThis()` calls).                            |
 | `resumethis`                | Decrement the suspend count for this thread. If the suspend count is zero or less, resume tracing for this thread.                                               |
 | `segv`                      | Cause a segmentation violation. (Intended for use in debugging.)                                                                                                 |
 | `sleep`                     | Delay the current thread for a length of time controlled by the sleeptime option. The default is 30 seconds. See sleeptime option.                               |
-| `snap`                      | Snap all active trace buffers to a file in the current working directory. The file name has the format: `Snapnnnn.yyyymmdd.hhmmssth.ppppp.trc`, where *nnnn* is the sequence number of the snap file since VM startup, *yyyymmdd* is the date, *hhmmssth* is the time, and *ppppp* is the process ID in decimal with leading zeros removed.                                                                              |
+| `snap`                      | Snap all active trace buffers to a file in the current working directory. The file name has the format: `Snapnnnn.yyyymmdd.hhmmssth.ppppp.trc`, where *nnnn* is the sequence number of the snap file since VM startup, *yyyymmdd* is the date, *hhmmssth* is the time, and *ppppp* is the process ID in decimal with leading zeros removed.                                                                             |
 | `suspend`                   | Suspend all tracing (except for special trace points).                                                                                                           |
 | `suspendthis`               | Increment the suspend count for this thread. If the suspend-count is greater than zero, prevent all tracing for this thread.                                     |
 | `sysdump` (or `coredump`)   | Produce a system dump. See [Dump agents(`-Xdump:system`)](xdump.md#dump-agents). |
