@@ -109,14 +109,14 @@ timeout(time: 6, unit: 'HOURS') {
                             if (params.ghprbPullId) {
                                 // If a pull request, use staging site banner
                                 sh """
-                                    cp /myenv/lib/python3.10/site-packages/material/base.html theme/base.html
+                                    cp /myenv/lib/python3.10/site-packages/material/templates/base.html theme/base.html
                                     sed -i 's|{% block hero %}|<!--Staging site notice --><div class="md-container"><div style="margin:-2rem 0 -2rem 0; background: linear-gradient(white, #69c1bd, white); color:white; text-align:center; font-size:1.5rem; font-weight:bold; text-shadow: 2px 2px 4px #000000;"><p style="padding:2rem 0 2rem 0;"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> CAUTION: This site is for reviewing draft documentation. For published content, visit <a style="color:#af6e3d; text-shadow:none; padding-left:1rem;" href="http://www.eclipse.org/openj9/docs/index.html">www.eclipse.org/openj9/docs</a></p></div>{% block hero %}|' theme/base.html
                                     """
                             }
                             else if (params.BUILD_TYPE != "RELEASE") {
                                 // Otherwise, and if this isn't for a release, use ghpages site banner
                                 sh """
-                                    cp /myenv/lib/python3.10/site-packages/material/base.html theme/base.html
+                                    cp /myenv/lib/python3.10/site-packages/material/templates/base.html theme/base.html
                                     sed -i 's|{% block hero %}|<!--Ghpages site notice --><div class="md-container"><div style="margin:-2rem 0 -2rem 0; background: linear-gradient(white, #ffa02e, white); color:white; text-align:center; font-size:1.5rem; font-weight:bold; text-shadow: 2px 2px 4px #000000;"><p style="padding:2rem 0 2rem 0;"><i class="fa fa-cogs" aria-hidden="true"></i> CAUTION: This site hosts draft documentation for the next release. For published content of the latest release, visit <a style="color:#af6e3d; text-shadow:none; padding-left:1rem;" href="http://www.eclipse.org/openj9/docs/index.html">www.eclipse.org/openj9/docs</a></p></div>{% block hero %}|' theme/base.html
                                     """
                             }
@@ -192,9 +192,9 @@ timeout(time: 6, unit: 'HOURS') {
                         dir('eclipse') {
                             git branch: PUSH_BRANCH, url: "${HTTP}${PUSH_REPO}", credentialsId: CREDENTIAL_ID
                             dir('docs') {
-	                            copy_built_doc(BUILD_DIR)
-	                            push_doc_with_cred(PUSH_REPO, PUSH_BRANCH, "Generated from commit: ${MERGE_COMMIT}")
-	                        }
+                                copy_built_doc(BUILD_DIR)
+                                push_doc_with_cred(PUSH_REPO, PUSH_BRANCH, "Generated from commit: ${MERGE_COMMIT}")
+                            }
                         }
                         // Set status on the Github commit for release builds
                         setBuildStatus("${HTTP}${OPENJ9_REPO}", MERGE_COMMIT, 'SUCCESS', "Doc built and pushed to ${SERVER} openj9-docs:${PUSH_BRANCH}")
