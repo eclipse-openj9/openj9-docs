@@ -20,7 +20,7 @@
 # SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 #
 
-FROM ubuntu:22.04@sha256:9b8dec3bf938bc80fbe758d856e96fdfab5f56c39d44b0cff351e847bb1b01ea
+FROM ubuntu:22.04@sha256:a9038002b9b29c77c93b1c562ca2bee51313c6f5208c8d90b91929db62e96930
 MAINTAINER openj9.bot <openj9.bot@gmail.com>
 
 # Install basic requirementes from APT. Set up for SSH (including SSH login fix to prevent user being logged out), install and setup  virtualenv from pip3
