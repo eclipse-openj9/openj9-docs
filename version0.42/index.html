@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/gc_overview/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.42/">
       
       
-        <link rel="prev" href="../allocation/">
+        <link rel="prev" href="../openj9_releases/">
       
       
-        <link rel="next" href="../gc/">
+        <link rel="next" href="../version0.41/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Garbage Collection (GC) -  </title>
+        <title>Version 0.42.0 -  </title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#garbage-collection" class="md-skip">
+        <a href="#whats-new-in-version-0420" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Garbage Collection (GC)
+              Version 0.42.0
             
           </span>
         </div>
@@ -304,18 +304,20 @@
       
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -329,7 +331,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Release notes
@@ -360,9 +362,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../version0.42/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Version 0.42.0
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -371,6 +393,60 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-changes" class="md-nav__link">
+    Features and changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    Binaries and supported environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openj9-jextract-removed" class="md-nav__link">
+    OpenJ9 jextract removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    Known problems and full release information
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1193,20 +1269,18 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -1220,7 +1294,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Memory management
@@ -1251,29 +1325,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Garbage Collection (GC)
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../gc_overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1282,121 +1336,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#gc-operations" class="md-nav__link">
-    GC operations
-  </a>
-  
-    <nav class="md-nav" aria-label="GC operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gc-mark-operation" class="md-nav__link">
-    GC mark operation
-  </a>
-  
-    <nav class="md-nav" aria-label="GC mark operation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concurrent-mark-processing" class="md-nav__link">
-    Concurrent mark processing
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#incremental-concurrent-mark-processing" class="md-nav__link">
-    Incremental concurrent mark processing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc-sweep-operation" class="md-nav__link">
-    GC sweep operation
-  </a>
-  
-    <nav class="md-nav" aria-label="GC sweep operation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concurrent-sweep-processing" class="md-nav__link">
-    Concurrent sweep processing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc-scavenge-operation" class="md-nav__link">
-    GC scavenge operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc-copy-forward-operation" class="md-nav__link">
-    GC copy forward operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc-classunloading-operation" class="md-nav__link">
-    GC classunloading operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc-compact-operation" class="md-nav__link">
-    GC compact operation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#weak-reference-processing" class="md-nav__link">
-    Weak reference processing
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -8147,84 +8086,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gc-operations" class="md-nav__link">
-    GC operations
+  <a href="#features-and-changes" class="md-nav__link">
+    Features and changes
   </a>
   
-    <nav class="md-nav" aria-label="GC operations">
+    <nav class="md-nav" aria-label="Features and changes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gc-mark-operation" class="md-nav__link">
-    GC mark operation
-  </a>
-  
-    <nav class="md-nav" aria-label="GC mark operation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concurrent-mark-processing" class="md-nav__link">
-    Concurrent mark processing
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    Binaries and supported environments
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#incremental-concurrent-mark-processing" class="md-nav__link">
-    Incremental concurrent mark processing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc-sweep-operation" class="md-nav__link">
-    GC sweep operation
-  </a>
-  
-    <nav class="md-nav" aria-label="GC sweep operation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concurrent-sweep-processing" class="md-nav__link">
-    Concurrent sweep processing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc-scavenge-operation" class="md-nav__link">
-    GC scavenge operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc-copy-forward-operation" class="md-nav__link">
-    GC copy forward operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc-classunloading-operation" class="md-nav__link">
-    GC classunloading operation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gc-compact-operation" class="md-nav__link">
-    GC compact operation
+  <a href="#openj9-jextract-removed" class="md-nav__link">
+    OpenJ9 jextract removed
   </a>
   
 </li>
@@ -8235,8 +8113,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#weak-reference-processing" class="md-nav__link">
-    Weak reference processing
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    Known problems and full release information
   </a>
   
 </li>
@@ -8279,160 +8157,22 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="garbage-collection">Garbage collection</h1>
-<p>To prevent applications running out of memory, objects in the Java heap that are no longer required must be reclaimed. This process is known as <em>garbage collection</em> (GC). When garbage is collected, the garbage collector must obtain exclusive access to the heap, which causes an application to pause while the cleanup is done. This pause is often referred to as a <em>stop-the-world</em> (STW) pause because an application must halt until the process completes. In general, the first step in the GC process is to <em>mark</em> the objects that are reachable, which means they are still in use. The next step is to <em>sweep</em> away the unmarked objects to reclaim memory. The final step is to <em>compact</em> the heap if the heap is badly fragmented.</p>
-<p>A GC cycle is a repeatable process that involves a set of GC operations. These operations process all or parts of the Java heap. When operating on the
-whole of the Java heap, the cycle is referred to as a <em>global GC cycle</em>; When operating on part of the heap, the cycle is referred to as a <em>partial GC cycle</em>.</p>
-<p>A global GC cycle can be triggered explicitly or implicitly according to the following rules:</p>
+<h1 id="whats-new-in-version-0420">What's new in version 0.42.0</h1>
+<p>The following new features and notable changes since version 0.41.0 are included in this release:</p>
 <ul>
-<li>A global GC cycle is triggered implicitly if it occurs because of internal mechanisms, such as an allocation failure or a <em>taxation</em> threshold being reached.</li>
-<li>A global GC cycle is triggered explicitly if it is started directly by an application calling <code>System.gc()</code> or indirectly, for example when requesting a heap dump.</li>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#openj9-jextract-removed">OpenJ9 <code>jextract</code> removed</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 </ul>
-<p>Partial GC cycles are triggered only implicitly under the control of a particular GC policy. For more information about the GC policies available with Eclipse OpenJ9&trade;, see <a href="../gc/">Garbage collection policies</a>.</p>
-<p>The GC process is designed to operate without intervention from an application. Developers should not attempt to predict GC behavior, for example, by making calls to <code>System.gc()</code> to trigger a cycle or by using finalizers to clean up objects in memory. Such actions might degrade the performance of an application.</p>
-<h2 id="gc-operations">GC operations</h2>
-<p>GC operations run discrete functions on the Java heap. For example, a mark operation traces all objects in the heap to determine which ones are reachable. A sweep operation runs to clear away unreachable objects. Together, a mark and sweep operation are capable of reclaiming used memory as part of a GC cycle. Not all GC cycles include operations to reclaim memory. For example, the <code>balanced</code> GC policy involves a global cycle that includes only a mark operation; reclaiming the memory with a sweep operation occurs as part of a separate partial GC cycle that <em>evacuates</em> younger regions and defragments older regions.</p>
-<p>A GC operation might complete in one step, or it might involve multiple steps. For example, a mark operation consists of three steps, as described in the following section.</p>
-<h3 id="gc-mark-operation">GC mark operation</h3>
-<p>A mark operation identifies which objects on the Java heap are reachable from outside of the heap and which objects are unreachable. Reachable objects are in use and must be retained, whereas unreachable objects are not in use and can be cleared away as garbage.</p>
-<p>The process of marking involves a bit array called a <em>mark map</em> that is allocated by the VM at startup, based on the maximum heap size setting. Each bit in the mark map corresponds to 8 bytes of heap space. When an object is <em>marked</em>, its location in the heap is recorded by setting the appropriate bit in the mark map.</p>
-<p>A mark operation can be broken down into the following steps:</p>
-<ol>
-<li>
-<p>Initial</p>
-<p>A root object is an object that is accessible from outside of the heap such as a stack, class static field, or JNI reference. For other objects in the heap to be reachable, they must retain a connection from a root object. In the initial step, tracing identifies all root objects by running a root scan. Root objects are pushed onto a work stack for processing in the next step.</p>
-</li>
-<li>
-<p>Main</p>
-<p>The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap. Objects that are not marked are new objects and these are added to the work stack. If an object is reachable, the appropriate bit is set in the mark map.</p>
-</li>
-<li>
-<p>Final</p>
-<p>The final step processes weakly reachable roots such as finalizable objects, weak references, monitor sets, and string sets. For more information about the processing of <em>soft</em>, <em>weak</em>, and <em>phantom</em> references, see <a href="#weak-reference-processing">Weak reference processing</a>.</p>
-</li>
-</ol>
-<p>In general, helper threads are used in parallel to speed up mark operations on the heap. The helper threads share the work stack with the application thread and are involved in identifying root objects, tracing objects in the heap, and updating the mark map. By default, the number of helper threads is based on the number of CPUs reported by the operating system. You can control the number of helper threads available by specifying the <a href="../xgcthreads/">-Xgcthreads</a> command line option when starting your application.</p>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="mark"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
-<h4 id="concurrent-mark-processing">Concurrent mark processing</h4>
-<p>A mark operation can run with exclusive access to the heap, which requires application threads to pause while processing takes place. Alternatively, it can run concurrently with application threads to avoid pauses in application processing.</p>
-<p>With concurrent mark, the process of root scanning is handed over to application stack threads, which populate the work stack with root objects in their stack. The root objects in the work stack are then traced by a background thread and by each application thread during a heap lock allocation to find reachable objects and update the mark map. Because the mark operation runs concurrently with application threads, any changes to objects that are already traced must be updated. This process works by using a write barrier that can flag the update and trigger a further scan of part of the heap.</p>
-<p>To track updates to objects, concurrent mark operations use single-byte <em>cards</em> in a <em>card table</em>. Each card corresponds to a 512-byte section of the Java heap. When an object is updated, the start address for the object in the heap is marked on the appropriate card. These cards are used to determine what must be retraced later in the GC cycle.</p>
-<p>A GC cycle that includes concurrent mark operations aims to trace all reachable objects and complete processing at the same time as the heap is exhausted. Continuous adjustments are made to the start time of each cycle to get as close to heap exhaustion as possible. When the heap is exhausted a sweep operation is able to reclaim memory. This operation requires a STW pause. Before sweep operations start, the root objects are rescanned and the cards are checked to determine which areas of memory must be retraced.</p>
-<p>An advantage of concurrent mark operations over STW mark operations is reduced pause times, because the garbage collector is able to identify garbage without halting application threads. Pause times are also more consistent because the collector is able to tune start times to maximize heap usage.</p>
-<p>Disadvantages of concurrent mark operations include the additional CPU for operating the write barrier and additional work for application threads to trace objects when requesting a heap lock.</p>
-<p>Concurrent mark operations are used by the <a href="../gc/#gencon-policy-default"><code>gencon</code> GC policy</a> and the <a href="../gc/#optavgpause-policy"><code>optavgpause</code> GC policy</a>.</p>
-<h4 id="incremental-concurrent-mark-processing">Incremental concurrent mark processing</h4>
-<p>Incremental concurrent mark processing evens out pause times by avoiding global STW garbage collections. This type of marking is also known as the <em>global mark phase</em>, whereby mark operations take place incrementally across the entire heap. The global mark operations are interleaved with a partial GC cycle that is responsible for moving objects and clearing unreachable objects in the heap.</p>
-<p>These operations also use mark map in a card table to manage updates to objects that occur whilst mark operations are in progress. However, unlike the concurrent mark operations used by other policies, application threads are not involved in tracing objects; only background threads are used to trace objects and update the mark map.</p>
-<p>Incremental concurrent mark operations are used by the <a href="../gc/#balanced-policy"><code>balanced GC policy</code></a>.</p>
-<h3 id="gc-sweep-operation">GC sweep operation</h3>
-<p>The purpose of a sweep operation is to identify memory that can be reclaimed for object allocation and update a central record, known as the <em>freelist</em>.</p>
-<p>sweep operations occur in 2 steps:</p>
-<ol>
-<li>
-<p>Initial</p>
-<p>This step analyzes the mark map for free memory.</p>
-</li>
-<li>
-<p>Final</p>
-<p>Based on the analysis, the sections of the heap are connected to the freelist.</p>
-</li>
-</ol>
-<p>As with mark operations, multiple helper threads can be used to sweep the Java heap in parallel to speed up processing times. Because these helper threads are the same ones that are used for parallel mark operations, the number of threads can be controlled by using the <a href="../xgcthreads/">-Xgcthreads</a> option.</p>
-<p>Parallel sweep operations run on 256 KB sections of the heap. Each helper thread scans a section at a time. The results are stored and used to generate a freelist of empty regions.</p>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="sweep"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
-<h4 id="concurrent-sweep-processing">Concurrent sweep processing</h4>
-<p>Concurrent sweep processing works in tandem with concurrent mark processing and uses the same mark map. Concurrent sweep operations start after a STW collection and complete a section of the heap before concurrent mark operations continue.</p>
-<p>Concurrent sweep is used by the <code>optavgpause</code> GC policy.</p>
-<h3 id="gc-scavenge-operation">GC scavenge operation</h3>
-<p>A GC <em>scavenge</em> operation is triggered by an allocation failure in the <em>nursery</em> area of the heap. The operation occurs in the following 3 steps:</p>
-<ol>
-<li>
-<p>Initial</p>
-<p>A root object is an object that is accessible from outside of the heap such as a stack, class static field, or JNI reference. For other objects in the heap to be reachable, they must retain a connection from a root object. In the initial step, tracing identifies all root objects by running a root scan. Root objects are pushed onto a work stack for processing in the next step.</p>
-</li>
-<li>
-<p>Main</p>
-<p>The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap by using the <em>hierarchical scan ordering</em> mode (<a href="../xgc/#hierarchicalscanordering"><code>-Xgc:hierarchicalScanOrdering</code></a>). If new objects are found, they are added to the work stack. If an object is reachable, it is copied from the <em>allocate</em> space to the <em>survivor</em> space in the nursery area or to the <em>tenure</em> area if the object has reached a particular age.</p>
-</li>
-<li>
-<p>Final</p>
-<p>The final step processes weakly reachable roots such as finalizable objects, weak references, monitor sets, and string sets. For more information about the processing of soft, weak, and phantom references, see <a href="#weak-reference-processing">Weak reference processing</a>.</p>
-</li>
-</ol>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="scavenge"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
-<p>The scavenge operation is used by the <a href="../gc/#gencon-policy-default"><code>gencon</code> GC policy</a>.</p>
-<h3 id="gc-copy-forward-operation">GC copy forward operation</h3>
-<p>A GC <em>copy forward</em> operation is similar to a scavenge operation but is triggered by a taxation threshold being reached. The operation occurs in the following 3 steps:</p>
-<ol>
-<li>
-<p>Initial</p>
-<p>A root object is an object that is accessible from outside of the heap such as a stack, class static field, or JNI reference. For other objects in the heap to be reachable, they must retain a connection from a root object. In the initial step, tracing identifies all root objects by running a root scan. Root objects are pushed onto a work stack for processing in the next step.</p>
-</li>
-<li>
-<p>Main</p>
-<p>The list of reachable root objects in the work stack is recursively traced for references to other objects in the heap by using <em>dynamic breadth first scan ordering</em> mode (<a href="../xgc/#dynamicbreadthfirstscanordering"><code>-Xgc:dynamicBreadthFirstScanOrdering</code></a>). If new objects are found, they are added to the work stack. If an object is reachable, it is moved to another region of the same age or to an empty region of the same age in the heap. The age of all regions in the heap is then incremented by 1, except for the oldest region (age 24).</p>
-</li>
-<li>
-<p>Final</p>
-<p>The final step processes weakly reachable roots such as finalizable objects, weak references, monitor sets, and string sets. For more information about the processing of soft, weak, and phantom references, see <a href="#weak-reference-processing">Weak reference processing</a>.</p>
-</li>
-</ol>
-<p>The operation aims to empty or <em>evacuate</em> fragmented regions that can then be reclaimed for new object allocation.</p>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="copy forward"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
-<p>The copy forward operation is used by the <a href="../gc/#balanced-policy"><code>balanced GC policy</code></a>.</p>
-<h3 id="gc-classunloading-operation">GC classunloading operation</h3>
-<p>The <em>classunloading</em> operation is single threaded, not parallel threaded.</p>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="classunload"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
-<h3 id="gc-compact-operation">GC compact operation</h3>
-<p>Compaction of the heap is an expensive operation because when objects are moved to defragment the heap, the references to each object change. Therefore, compact operations do not occur by default but only when the following triggers occur:</p>
-<ul>
-<li>The <code>-Xcompactgc</code> option is specified on the command line.</li>
-<li>After sweeping the heap, there is not enough free space available to satisfy an allocation request.</li>
-<li>A <code>System.gc()</code> is requested and the last allocation failure that triggered a global GC cycle did not compact or <code>-Xcompactexplicitgc</code> is specified.</li>
-<li>At least half the previously available memory has been consumed by TLH allocations (ensuring an accurate sample) and the average TLH size falls to less than 1024 bytes.</li>
-<li>The largest object that the <code>gencon</code> GC policy failed to move to the tenure area in the most recent scavenge operation is bigger than the largest free slot in the tenure area.</li>
-<li>The heap is fully expanded and less than 4% of the tenure area is free.</li>
-<li>Less than 128 KB of the heap is free.</li>
-</ul>
-<p>The following two options can be used to control compaction:</p>
-<ul>
-<li><a href="../xcompactgc/"><code>-Xcompactgc</code></a> forces compaction of the heap.</li>
-<li><a href="../xcompactgc/"><code>-Xnocompactgc</code></a> avoids compaction of the heap as a result of all the triggers shown in the preceding list. However a compaction can still occur in rare circumstances.</li>
-</ul>
-<p>In a verbose GC log, this operation is shown by the <code>&lt;gc-op type="compact"&gt;</code> XML element. For more information, see <a href="../vgclog/">Verbose GC logs</a>.</p>
-<h2 id="weak-reference-processing">Weak reference processing</h2>
-<p>Weak reference processing includes soft references, weak references, and phantom references. These references are created by the user for specific use cases and allow
-some level of interaction with the garbage collector. For example, a soft reference to an object allows that object to persist in memory for a longer period of time before being
-cleared. For example, a software cache. The garbage collector handles the reference types in the order shown and with the behavior detailed in the following table:</p>
-<table>
-<thead>
-<tr>
-<th>Reference type</th>
-<th>Class</th>
-<th>Garbage collector behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>soft</td>
-<td><code>java.lang.ref.SoftReference</code></td>
-<td>A soft reference is cleared only when its <em>referent</em> is not marked for a number of GC cycles or if space on the heap is likely to cause an out of memory error. Use the <a href="../xsoftrefthreshold/">-Xsoftrefthreshold</a> option to control the collection of soft reference objects.</td>
-</tr>
-<tr>
-<td>weak</td>
-<td><code>java.lang.ref.WeakReference</code></td>
-<td>A weak reference is cleared as soon as its <em>referent</em> is not marked by a GC cycle.</td>
-</tr>
-<tr>
-<td>phantom</td>
-<td><code>java.lang.ref.PhantomReference</code></td>
-<td>A phantom reference is cleared automatically as soon as its <em>referent</em> is not marked by a GC cycle. The cleared reference is then added to the associated reference queue at the same time or later.</td>
-</tr>
-</tbody>
-</table>
-<p>If your application uses the Java Native Interface (JNI) to interact with other application types, you can also create weak JNI object references. These references have a similar life cycle to a weak Java reference. The garbage collector processes weak JNI references after all other Java reference types.</p>
-<!-- ==== END OF TOPIC ==== gc_overview.md ==== -->
+<h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>Eclipse OpenJ9&trade; release 0.42.0 supports OpenJDK 21.</p>
+<p>OpenJDK 21 with Eclipse OpenJ9 is a long term support (LTS) release and supersedes OpenJDK 20 with Eclipse OpenJ9.</p>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="openj9-jextract-removed"><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> OpenJ9 <code>jextract</code> removed</h3>
+<p>The dump extractor tool, OpenJ9 <code>jextract</code>, that was deprecated since the <a href="../version0.26/">0.26.0 release</a> is now removed from Java 21 and later. The <a href="../tool_jextract/"><code>jpackcore</code></a> tool replaced the OpenJ9 <code>jextract</code> tool after its deprecation. <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></p>
+<h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.41.0 and v0.42.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.42/0.42.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.42.md ==== -->
 
 
 
