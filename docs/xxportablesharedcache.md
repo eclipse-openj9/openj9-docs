@@ -48,6 +48,6 @@ This feature is particularly relevant for packaging a shared classes cache into 
 
 This option is _enabled_ by default in containers. To disable the option in a container, specify `-XX:-PortableSharedCache`.
 
-The option is _disabled_ by default outside containers. To enable the option outside a container, specify `-XX:+PortableSharedCache` for the initial JVM instance (when the creation of the shared class cache happens) as well as for every subsequent instance that makes use of the same shared class cache.
+The option is _disabled_ by default outside containers. To enable the option outside a container, specify `-XX:+PortableSharedCache` for the initial JVM instance (when the creation of the shared classes cache happens) as well as for every subsequent instance that makes use of the same shared classes cache.
 
 <!-- ==== END OF TOPIC ==== xxportablesharedcache.md ==== -->
