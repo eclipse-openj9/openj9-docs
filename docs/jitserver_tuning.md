@@ -35,7 +35,7 @@ The client-session caches are deleted when the clients terminate, but this can h
 ### JITServer AOT cache
 
  The JITServer technology can cache AOT compiled methods at the server.
- The JITServer can, therefore, avoid carrying out an AOT compilation when a compatible AOT method body already exists in the cache, thereby saving CPU resource and improving remote compilation latency. This mechanism works in conjunction with the [dynamic AOT technology](https://www.eclipse.org/openj9/docs/aot/) at the client and therefore the client needs to have the [shared class cache](https://www.eclipse.org/openj9/docs/shrc/) (SCC) enabled (the SCC is the repository for the AOT code).
+ The JITServer can, therefore, avoid carrying out an AOT compilation when a compatible AOT method body already exists in the cache, thereby saving CPU resource and improving remote compilation latency. This mechanism works in conjunction with the [dynamic AOT technology](https://www.eclipse.org/openj9/docs/aot/) at the client and therefore the client needs to have the [shared classes cache](https://www.eclipse.org/openj9/docs/shrc/) (SCC) enabled (the SCC is the repository for the AOT code).
 
  When the JITServer receives an AOT compilation request, it checks its AOT cache for a compatible compiled method body. If one is not found, the server performs the AOT compilation, sends the response to the client JVM, then serializes the compiled method and stores it in its local AOT cache, for future use. If a compatible compiled method is found, the server sends the client the serialized compiled method from its cache, thus avoiding a compilation. The client deserializes the response, stores the result in its local SCC, and loads the compiled method as a regular dynamic AOT code.
 
@@ -50,7 +50,7 @@ The client-session caches are deleted when the clients terminate, but this can h
  - The number of extra AOT methods added to the in-memory cache since the last save operation is equal to or more than the value specified by the `-Xjit:aotCachePersistenceMinDeltaMethods=<number_of_methods>` option (default value - 200 methods), and
  - The time passed since the last AOT cache save is equal to or later than the time specified by the `-Xjit:aotCachePersistenceMinPeriodMs=<milliseconds>` option (default time gap - 10000 milliseconds).
 
- If the JITServer AOT cache feature and the [`-Xshareclasses:readonly`](xshareclasses.md#readonly) option are both enabled at the same time at a JITServer client, the shared class cache startup creates a temporary new (writable) top layer that the JITServer AOT cache can use to store data that it needs to function.
+ If the JITServer AOT cache feature and the [`-Xshareclasses:readonly`](xshareclasses.md#readonly) option are both enabled at the same time at a JITServer client, the shared classes cache startup creates a temporary new (writable) top layer that the JITServer AOT cache can use to store data that it needs to function.
 
  Current limitation:
 
