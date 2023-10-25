@@ -9357,13 +9357,13 @@ behavior, which can improve the performance of class loading from the shared cla
 <dd><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Notes:</strong></dd>
 <dd>
 <ul>
-<li>With the 31-bit VM on all versions of z/OS, the shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared class cache is limited by the system limit <code>MAXMMAPAREA</code>. For more information about the suggested value for the <code>MAXMMAPAREA</code> limit, see <a href="https://www.eclipse.org/openj9/docs/configuring/#setting-resource-limits-zos">Setting resource limits (z/OS)</a>.</li>
+<li>With the 31-bit VM on all versions of z/OS, the shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared classes cache is limited by the system limit <code>MAXMMAPAREA</code>. For more information about the suggested value for the <code>MAXMMAPAREA</code> limit, see <a href="https://www.eclipse.org/openj9/docs/configuring/#setting-resource-limits-zos">Setting resource limits (z/OS)</a>.</li>
 <li>
 <p>With the 64-bit VM, the shared cache is mapped as follows:</p>
 <ul>
-<li>On z/OS version 2.3 and earlier, the persistent shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared class cache is limited by the system limit <code>MAXMMAPAREA</code>.</li>
+<li>On z/OS version 2.3 and earlier, the persistent shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared classes cache is limited by the system limit <code>MAXMMAPAREA</code>.</li>
 <li>
-<p>On z/OS version 2.4 and later, the persistent shared cache is mapped above the 2 GB address range. The maximum size of persistent shared class cache is limited by the <code>MAXSHARE</code> value within the <code>SMFLIMxx</code> member of <code>SYS1.PARMLIB</code>. You can use the following machine configuration to create up to 1 GB shared class cache mapped above the 2 GB address range:</p>
+<p>On z/OS version 2.4 and later, the persistent shared cache is mapped above the 2 GB address range. The maximum size of persistent shared classes cache is limited by the <code>MAXSHARE</code> value within the <code>SMFLIMxx</code> member of <code>SYS1.PARMLIB</code>. You can use the following machine configuration to create up to 1 GB shared classes cache mapped above the 2 GB address range:</p>
 <ol>
 <li>Add the following line in the SMFLIMxx member of SYS1.PARMLIB.</li>
 </ol>
@@ -9414,11 +9414,11 @@ behavior, which can improve the performance of class loading from the shared cla
 <li>The VM is running in a container.</li>
 <li>AOT compilation is enabled.<br>
 For more information about AOT compilation, see the <a href="../aot/">Ahead-Of-Time (AOT) compiler</a> topic.</li>
-<li>The shared class cache is persistent. (<a href="./#persistent"><code>-Xshareclasses:persistent</code></a>)</li>
+<li>The shared classes cache is persistent. (<a href="./#persistent"><code>-Xshareclasses:persistent</code></a>)</li>
 </ul>
 </dd>
 <dd>
-<p>If a persistent shared class cache is started under the mentioned conditions, the cache startup creates a temporary new (writable) top layer. The JITServer AOT cache uses the new top layer to store a small amount of metadata that the cache needs to function. With this top layer, the JITServer AOT cache can be used without modifying the existing layers.</p>
+<p>If a persistent shared classes cache is started under the mentioned conditions, the cache startup creates a temporary new (writable) top layer. The JITServer AOT cache uses the new top layer to store a small amount of metadata that the cache needs to function. With this top layer, the JITServer AOT cache can be used without modifying the existing layers.</p>
 </dd>
 </dl>
 <h3 id="reset"><code>reset</code></h3>
