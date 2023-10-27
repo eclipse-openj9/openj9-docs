@@ -33,6 +33,7 @@ The following new features and notable changes since version 0.40.0 are included
 - [New `-XX:[+|-]EnableDynamicAgentLoading` option added](#new-xx-enabledynamicagentloading-option-added)
 - [New `-XX:[+|-]UseZlibNX` option added](#new-xx-usezlibnx-option-added)
 - [Support for OpenSSL 3.x](#support-for-openssl-3x)
+- [Performance improvement](#performance-improvement)
 
 ## Features and changes
 
@@ -81,6 +82,10 @@ AIX&reg; system adds the `zlibnx` library directory path in the `LIBPATH` enviro
 ### Support for OpenSSL 3.x
 
 OpenSSL 3.x is now supported on all operating systems. For more information about OpenSSL support, see [`Cryptographic operations`](introduction.md#cryptographic-operations).
+
+### Performance improvement
+
+Performance of algorithms with the use of OpenSSL version 3 and later is now enhanced. Improved algorithms include SHA256, AES, HmacSHA256, and ChaCha20. To obtain these improved algorithms and further enhance the performance of these algorithms on Linux&reg; and AIX, use OpenSSL 3.0.12 or a later 3.0.x version, or 3.1.4 or a later 3.1.x version.
 
 ## Known problems and full release information
 
