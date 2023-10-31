@@ -34,6 +34,8 @@ A global GC cycle can be triggered explicitly or implicitly according to the fol
 - A global GC cycle is triggered implicitly if it occurs because of internal mechanisms, such as an allocation failure or a *taxation* threshold being reached.
 - A global GC cycle is triggered explicitly if it is started directly by an application calling `System.gc()` or indirectly, for example when requesting a heap dump.
 
+ The `System.gc()` call triggers the GC cycle twice internally to clear unreachable objects that were not identified during the first GC cycle. This call also triggers finalization to release resources that were used by the unreachable objects so that the resources can be reused.
+
 Partial GC cycles are triggered only implicitly under the control of a particular GC policy. For more information about the GC policies available with Eclipse OpenJ9&trade;, see [Garbage collection policies](gc.md).
 
 The GC process is designed to operate without intervention from an application. Developers should not attempt to predict GC behavior, for example, by making calls to `System.gc()` to trigger a cycle or by using finalizers to clean up objects in memory. Such actions might degrade the performance of an application.
