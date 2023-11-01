@@ -439,10 +439,10 @@ behavior, which can improve the performance of class loading from the shared cla
 
 :   :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
-:    - With the 31-bit VM on all versions of z/OS, the shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared class cache is limited by the system limit `MAXMMAPAREA`. For more information about the suggested value for the `MAXMMAPAREA` limit, see [Setting resource limits (z/OS)](https://www.eclipse.org/openj9/docs/configuring/#setting-resource-limits-zos).
+:    - With the 31-bit VM on all versions of z/OS, the shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared classes cache is limited by the system limit `MAXMMAPAREA`. For more information about the suggested value for the `MAXMMAPAREA` limit, see [Setting resource limits (z/OS)](https://www.eclipse.org/openj9/docs/configuring/#setting-resource-limits-zos).
      - With the 64-bit VM, the shared cache is mapped as follows:
-         - On z/OS version 2.3 and earlier, the persistent shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared class cache is limited by the system limit `MAXMMAPAREA`.
-         - On z/OS version 2.4 and later, the persistent shared cache is mapped above the 2 GB address range. The maximum size of persistent shared class cache is limited by the `MAXSHARE` value within the `SMFLIMxx` member of `SYS1.PARMLIB`. You can use the following machine configuration to create up to 1 GB shared class cache mapped above the 2 GB address range:
+         - On z/OS version 2.3 and earlier, the persistent shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared classes cache is limited by the system limit `MAXMMAPAREA`.
+         - On z/OS version 2.4 and later, the persistent shared cache is mapped above the 2 GB address range. The maximum size of persistent shared classes cache is limited by the `MAXSHARE` value within the `SMFLIMxx` member of `SYS1.PARMLIB`. You can use the following machine configuration to create up to 1 GB shared classes cache mapped above the 2 GB address range:
 
               1. Add the following line in the SMFLIMxx member of SYS1.PARMLIB.
 
@@ -498,9 +498,9 @@ behavior, which can improve the performance of class loading from the shared cla
  - The VM is running in a container.
  - AOT compilation is enabled.<br>
 For more information about AOT compilation, see the [Ahead-Of-Time (AOT) compiler](aot.md) topic.
- - The shared class cache is persistent. ([`-Xshareclasses:persistent`](xshareclasses.md#persistent))
+ - The shared classes cache is persistent. ([`-Xshareclasses:persistent`](xshareclasses.md#persistent))
 
-: If a persistent shared class cache is started under the mentioned conditions, the cache startup creates a temporary new (writable) top layer. The JITServer AOT cache uses the new top layer to store a small amount of metadata that the cache needs to function. With this top layer, the JITServer AOT cache can be used without modifying the existing layers.
+: If a persistent shared classes cache is started under the mentioned conditions, the cache startup creates a temporary new (writable) top layer. The JITServer AOT cache uses the new top layer to store a small amount of metadata that the cache needs to function. With this top layer, the JITServer AOT cache can be used without modifying the existing layers.
 
 ### `reset`
 
