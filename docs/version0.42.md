@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.41.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [OpenJ9 `jextract` removed](#openj9-jextract-removed) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
+- [Change in the `System.gc()` call behavior](#change-in-the-systemgc-call-behavior)
 
 ## Features and changes
 
@@ -41,6 +42,14 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 ### ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) OpenJ9 `jextract` removed
 
 The dump extractor tool, OpenJ9 `jextract`, that was deprecated since the [0.26.0 release](version0.26.md) is now removed from Java 21 and later. The [`jpackcore`](tool_jextract.md) tool replaced the OpenJ9 `jextract` tool after its deprecation. ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
+
+### Change in the `System.gc()` call behavior
+
+The `System.gc` call triggers a global garbage collection (GC) cycle, which is a stop-the-world GC. If the `System.gc()` call was made during an active GC cycle where the concurrent operation was in progress, the status of objects might not be updated. An object that was reachable when the concurrent operation started might be considered as reachable even if the object is no longer in use later. The `System.gc()` call had to be called twice explicitly to ensure that all unreachable objects are identified and cleared.
+
+Now, the `System.gc()` call triggers the GC cycle twice internally to clear the unreachable objects that were not identified during the first GC cycle. The call also triggers finalization of the objects in the Finalization queues.
+
+For more information, see [Garbage collection](gc_overview.md).
 
 ## Known problems and full release information
 
