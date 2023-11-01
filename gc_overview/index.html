@@ -8288,6 +8288,7 @@ whole of the Java heap, the cycle is referred to as a <em>global GC cycle</em>; 
 <li>A global GC cycle is triggered implicitly if it occurs because of internal mechanisms, such as an allocation failure or a <em>taxation</em> threshold being reached.</li>
 <li>A global GC cycle is triggered explicitly if it is started directly by an application calling <code>System.gc()</code> or indirectly, for example when requesting a heap dump.</li>
 </ul>
+<p>The <code>System.gc()</code> call triggers the GC cycle twice internally to clear unreachable objects that were not identified during the first GC cycle. This call also triggers finalization to release resources that were used by the unreachable objects so that the resources can be reused.</p>
 <p>Partial GC cycles are triggered only implicitly under the control of a particular GC policy. For more information about the GC policies available with Eclipse OpenJ9&trade;, see <a href="../gc/">Garbage collection policies</a>.</p>
 <p>The GC process is designed to operate without intervention from an application. Developers should not attempt to predict GC behavior, for example, by making calls to <code>System.gc()</code> to trigger a cycle or by using finalizers to clean up objects in memory. Such actions might degrade the performance of an application.</p>
 <h2 id="gc-operations">GC operations</h2>

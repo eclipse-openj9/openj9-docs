@@ -431,6 +431,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-the-systemgc-call-behavior" class="md-nav__link">
+    Change in the System.gc() call behavior
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8107,6 +8114,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-the-systemgc-call-behavior" class="md-nav__link">
+    Change in the System.gc() call behavior
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8162,6 +8176,7 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#openj9-jextract-removed">OpenJ9 <code>jextract</code> removed</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
+<li><a href="#change-in-the-systemgc-call-behavior">Change in the <code>System.gc()</code> call behavior</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8170,6 +8185,10 @@
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="openj9-jextract-removed"><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> OpenJ9 <code>jextract</code> removed</h3>
 <p>The dump extractor tool, OpenJ9 <code>jextract</code>, that was deprecated since the <a href="../version0.26/">0.26.0 release</a> is now removed from Java 21 and later. The <a href="../tool_jextract/"><code>jpackcore</code></a> tool replaced the OpenJ9 <code>jextract</code> tool after its deprecation. <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></p>
+<h3 id="change-in-the-systemgc-call-behavior">Change in the <code>System.gc()</code> call behavior</h3>
+<p>The <code>System.gc</code> call triggers a global garbage collection (GC) cycle, which is a stop-the-world GC. If the <code>System.gc()</code> call was made during an active GC cycle where the concurrent operation was in progress, the status of objects might not be updated. An object that was reachable when the concurrent operation started might be considered as reachable even if the object is no longer in use later. The <code>System.gc()</code> call had to be called twice explicitly to ensure that all unreachable objects are identified and cleared.</p>
+<p>Now, the <code>System.gc()</code> call triggers the GC cycle twice internally to clear the unreachable objects that were not identified during the first GC cycle. The call also triggers finalization of the objects in the Finalization queues.</p>
+<p>For more information, see <a href="../gc_overview/">Garbage collection</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.41.0 and v0.42.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.42/0.42.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.42.md ==== -->
