@@ -88,8 +88,8 @@ markdown_extensions:
   - sane_lists
   - attr_list
   - pymdownx.emoji:   # enable icons in markdown
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 
 nav:
