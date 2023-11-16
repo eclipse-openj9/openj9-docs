@@ -24,7 +24,7 @@
 # -Dcom.ibm.enableLegacyTraceSecurity
 
 
-To improve security, the security checks in certain `com.ibm.jvm.Trace` APIs are now enabled by default, when the `SecurityManger` is enabled. Use this system property to turn off security checking for these APIs.
+To improve security, the security checks in certain `com.ibm.jvm.Trace` APIs are now enabled by default, when the `SecurityManager` is enabled. Use this system property to turn off security checking for these APIs.
 
 ## Syntax
 
@@ -55,4 +55,4 @@ Security checking is enabled in the following APIs:
 
 
 
-<!-- ==== END OF TOPIC ==== dcomibmenableclasscaching.md ==== -->
+<!-- ==== END OF TOPIC ==== dcomibmenablelegacytracesecurity.md ==== -->
