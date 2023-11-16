@@ -24,7 +24,7 @@
 # -Dcom.ibm.enableLegacyDumpSecurity
 
 
-To improve security, the security checks in the certain `com.ibm.jvm.Dump` APIs are now enabled by default, when the `SecurityManger` is enabled. Use this system property to turn off security checking for these APIs.
+To improve security, the security checks in the certain `com.ibm.jvm.Dump` APIs are now enabled by default, when the `SecurityManager` is enabled. Use this system property to turn off security checking for these APIs.
 
 ## Syntax
 
@@ -49,4 +49,4 @@ Security checking is enabled in the following APIs:
 - [-Dcom.ibm.enableLegacyTraceSecurity](dcomibmenablelegacytracesecurity.md)
 
 
-<!-- ==== END OF TOPIC ==== dcomibmenableclasscaching.md ==== -->
+<!-- ==== END OF TOPIC ==== dcomibmenablelegacydumpsecurity.md ==== -->
