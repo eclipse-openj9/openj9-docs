@@ -507,6 +507,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8-and-11" class="md-nav__link">
+    Change in behavior of the -Djava.security.manager system property for OpenJDK version 8 and 11
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8219,6 +8226,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8-and-11" class="md-nav__link">
+    Change in behavior of the -Djava.security.manager system property for OpenJDK version 8 and 11
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8282,6 +8296,7 @@
 <li><a href="#support-for-openssl-3x">Support for OpenSSL 3.x</a></li>
 <li><a href="#performance-improvement">Performance improvement</a></li>
 <li><a href="#support-added-for-the-getthreadallocatedbytes-mxbean-api">Support added for the <code>getThreadAllocatedBytes MXBean</code> API</a></li>
+<li><a href="#change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8-and-11">Change in behavior of the <code>-Djava.security.manager</code> system property for OpenJDK version 8 and 11</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8312,6 +8327,9 @@
 <h3 id="support-added-for-the-getthreadallocatedbytes-mxbean-api">Support added for the <code>getThreadAllocatedBytes MXBean</code> API</h3>
 <p>With this release, the OpenJ9 VM implementation supports thread memory allocation measurement (<code>getThreadAllocatedBytes com.sun.management.ThreadMXBean</code> API). The <code>isThreadAllocatedMemorySupported</code> method now returns true. The <code>setThreadAllocatedMemoryEnabled()</code> and <code>isThreadAllocatedMemoryEnabled()</code> methods are also supported now.</p>
 <p>Support for the <code>getThreadAllocatedBytes MXBean</code> API is not added on z/OS&reg; platforms in this release.</p>
+<h3 id="change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8-and-11">Change in behavior of the <code>-Djava.security.manager</code> system property for OpenJDK version 8 and 11</h3>
+<p>From OpenJDK version 18 onwards, if you enable the <code>SecurityManager</code> at runtime by calling the <code>System.setSecurityManager()</code> API, you must set the <code>-Djava.security.manager=allow</code> option. To disable the <code>SecurityManager</code>, you must specify the <code>-Djava.security.manager=disallow</code> option. If an application is designed to run on multiple OpenJDK versions, the same command line might be used across multiple versions. Because of this use of the same command line across multiple versions, in OpenJDK versions before version 18, the runtime attempts to load a <code>SecurityManager</code> with the class name <code>allow</code> or <code>disallow</code> resulted in an error and the application was not starting.</p>
+<p>To resolve this issue, OpenJDK version 17 ignores these options. With this release, OpenJDK versions 8 and 11 also ignore the <code>allow</code> and <code>disallow</code> keywords, if specified.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.40.0 and v0.41.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.41/0.41.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.41.md ==== -->
