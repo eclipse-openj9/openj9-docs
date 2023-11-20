@@ -34,7 +34,7 @@ The following new features and notable changes since version 0.40.0 are included
 - [New `-XX:[+|-]UseZlibNX` option added](#new-xx-usezlibnx-option-added)
 - [Support for OpenSSL 3.x](#support-for-openssl-3x)
 - [Performance improvement](#performance-improvement)
-- [Support added for the `getThreadAllocatedBytes MXBean` API](#support-added-for-the-getthreadallocatedbytes-mxbean-api)
+- [Support added for the `com.sun.management.ThreadMXBean.getThreadAllocatedBytes()` API](#support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api)
 
 ## Features and changes
 
@@ -88,11 +88,11 @@ OpenSSL 3.x is now supported on all operating systems. For more information abou
 
 Performance of algorithms with the use of OpenSSL version 3 and later is now enhanced. Improved algorithms include SHA256, AES, HmacSHA256, and ChaCha20. To obtain these improved algorithms and further enhance the performance of these algorithms on Linux&reg; and AIX, use OpenSSL 3.0.12 or a later 3.0.x version, or 3.1.4 or a later 3.1.x version.
 
-### Support added for the `getThreadAllocatedBytes MXBean` API
+### Support added for the `com.sun.management.ThreadMXBean.getThreadAllocatedBytes()` API
 
-With this release, the OpenJ9 VM implementation supports thread memory allocation measurement (`getThreadAllocatedBytes com.sun.management.ThreadMXBean` API). The `isThreadAllocatedMemorySupported` method now returns true. The `setThreadAllocatedMemoryEnabled()` and `isThreadAllocatedMemoryEnabled()` methods are also supported now.
+With this release, the OpenJ9 VM implementation supports thread memory allocation measurement (`com.sun.management.ThreadMXBean.getThreadAllocatedBytes()` API). The `isThreadAllocatedMemorySupported()` method now returns true instead of false. The `setThreadAllocatedMemoryEnabled()` and `isThreadAllocatedMemoryEnabled()` methods do not throw the "UnsupportedOperationException" error now and are enabled by default.
 
-Support for the `getThreadAllocatedBytes MXBean` API is not added on z/OS&reg; platforms in this release.
+Support for the `com.sun.management.ThreadMXBean.getThreadAllocatedBytes()` API is not added on z/OS&reg; platforms in this release. In the coming future z/OS release, the support for this API will be added on z/OS platforms as well.
 
 ## Known problems and full release information
 
