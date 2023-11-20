@@ -438,6 +438,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-jdk-21-features" class="md-nav__link">
+    New JDK 21 features
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1237,6 +1244,26 @@
   
   <span class="md-ellipsis">
     Migrating from Java 11 to Java 17
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating17to21/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrating from Java 17 to Java 21
   </span>
   
 
@@ -8121,6 +8148,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-jdk-21-features" class="md-nav__link">
+    New JDK 21 features
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8177,6 +8211,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#openj9-jextract-removed">OpenJ9 <code>jextract</code> removed</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 <li><a href="#change-in-the-systemgc-call-behavior">Change in the <code>System.gc()</code> call behavior</a></li>
+<li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#new-jdk-21-features">New JDK 21 features</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8189,6 +8224,28 @@
 <p>The <code>System.gc</code> call triggers a global garbage collection (GC) cycle, which is a stop-the-world GC. If the <code>System.gc()</code> call was made during an active GC cycle where the concurrent operation was in progress, the status of objects might not be updated. An object that was reachable when the concurrent operation started might be considered as reachable even if the object is no longer in use later. The <code>System.gc()</code> call had to be called twice explicitly to ensure that all unreachable objects are identified and cleared.</p>
 <p>Now, the <code>System.gc()</code> call triggers the GC cycle twice internally to clear the unreachable objects that were not identified during the first GC cycle. The call also triggers finalization of the objects in the Finalization queues.</p>
 <p>For more information, see <a href="../gc_overview/">Garbage collection</a>.</p>
+<h3 id="new-jdk-21-features"><img alt="Start of content that applies to Java 21 plus" src="../cr/java21plus.png" /> New JDK 21 features</h3>
+<p>The following features are supported by OpenJ9:</p>
+<ul>
+<li><a href="https://openjdk.java.net/jeps/440">JEP 440</a>: Record Patterns</li>
+<li><a href="https://openjdk.java.net/jeps/442">JEP 442</a>: Foreign Function &amp; Memory API (Third Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/444">JEP 444</a>: Virtual Threads</li>
+<li><a href="https://openjdk.java.net/jeps/446">JEP 446</a>: Scoped Values (Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/448">JEP 448</a>: Vector API (Sixth Incubator)</li>
+<li><a href="https://openjdk.java.net/jeps/451">JEP 451</a>: Prepare to Disallow the Dynamic Loading of Agents</li>
+<li><a href="https://openjdk.java.net/jeps/453">JEP 453</a>: Structured Concurrency (Preview)</li>
+</ul>
+<p>The following features are implemented in OpenJDK and available in any build of OpenJDK 21 with OpenJ9:</p>
+<ul>
+<li><a href="https://openjdk.java.net/jeps/430">JEP 430</a>: String Templates (Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/431">JEP 431</a>: Sequenced Collections</li>
+<li><a href="https://openjdk.java.net/jeps/441">JEP 441</a>: Pattern Matching for switch</li>
+<li><a href="https://openjdk.java.net/jeps/443">JEP 443</a>: Unnamed Patterns and Variables (Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/445">JEP 445</a>: Unnamed Classes and Instance Main Methods (Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/452">JEP 452</a>: Key Encapsulation Mechanism API</li>
+</ul>
+<p>You can find the full list of features for JDK 21 at the <a href="http://openjdk.java.net/projects/jdk/21/">OpenJDK project</a>.
+Any remaining features that are listed either do not apply to OpenJ9 or are not implemented and hence not applicable to OpenJ9 in this release. <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.41.0 and v0.42.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.42/0.42.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.42.md ==== -->

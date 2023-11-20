@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xminf/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/migrating17to21/">
       
       
-        <link rel="prev" href="../xmine/">
+        <link rel="prev" href="../migrating11to17/">
       
       
-        <link rel="next" href="../xmint/">
+        <link rel="next" href="../configuring/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-Xminf -  </title>
+        <title>Migrating from Java 17 to Java 21 -  </title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xminf-xmaxf" class="md-skip">
+        <a href="#migrating-from-java-17-to-java-21" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Xminf
+              Migrating from Java 17 to Java 21
             
           </span>
         </div>
@@ -1091,18 +1091,20 @@
       
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1116,7 +1118,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Migrating
@@ -1167,9 +1169,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../migrating17to21/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Migrating from Java 17 to Java 21
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1178,6 +1200,40 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#support-for-jdk-enhancement-proposals-jep" class="md-nav__link">
+    Support for JDK enhancement proposals (JEP)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-openj9-features-and-changes" class="md-nav__link">
+    New OpenJ9 features and changes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2423,20 +2479,18 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
         
           
           <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
@@ -2450,7 +2504,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             Command-line options
@@ -3245,20 +3299,18 @@
                 
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" >
         
           
           <label class="md-nav__link" for="__nav_18_5" id="__nav_18_5_label" tabindex="0">
@@ -3272,7 +3324,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18_5">
             <span class="md-nav__icon md-icon"></span>
             JVM -X options
@@ -4345,7 +4397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./" class="md-nav__link">
+      <a href="../xminf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4463,29 +4515,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    -Xminf
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xminf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4494,40 +4526,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -8088,15 +8086,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
+  <a href="#support-for-jdk-enhancement-proposals-jep" class="md-nav__link">
+    Support for JDK enhancement proposals (JEP)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See also
+  <a href="#new-openj9-features-and-changes" class="md-nav__link">
+    New OpenJ9 features and changes
   </a>
   
 </li>
@@ -8136,48 +8134,49 @@
 * [1] https://www.gnu.org/software/classpath/license.html
 * [2] https://openjdk.org/legal/assembly-exception.html
 *
-* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
+* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH
+* Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
 -->
 
-<h1 id="-xminf-xmaxf"><code>-Xminf</code> / <code>-Xmaxf</code></h1>
-<p>Specifies the minimum and maximum proportion of the heap that must remain free after a global garbage collection (GC) cycle.</p>
-<p>If the free space is above or below these limits, the Eclipse OpenJ9&trade; VM attempts to adjust the heap size so that: <code>-Xminf</code> &le; free space &le; <code>-Xmaxf</code>.</p>
-<h2 id="syntax">Syntax</h2>
+<h1 id="migrating-from-java-17-to-java-21">Migrating from Java 17 to Java 21</h1>
+<p>Support for OpenJDK 21 was added in Eclipse OpenJ9&trade; version 0.42.0.</p>
+<p>The following new OpenJ9 changes apply when OpenJ9 is built with Java&reg; SE 21 class libraries. This information exists elsewhere in the documentation but is summarized here for convenience.</p>
+<h2 id="support-for-jdk-enhancement-proposals-jep">Support for JDK enhancement proposals (JEP)</h2>
+<p>The new JEPs that are supported are listed in the following topics:</p>
+<ul>
+<li>JDK 18: <a href="../version0.32/">What's new in version 0.32.0</a></li>
+<li>JDK 19: <a href="../version0.37/">What's new in version 0.37.0</a></li>
+<li>JDK 20: <a href="../version0.39/">What's new in version 0.39.0</a></li>
+<li>JDK 21: <a href="../version0.42/">What's new in version 0.42.0</a></li>
+</ul>
+<h2 id="new-openj9-features-and-changes">New OpenJ9 features and changes</h2>
+<p>The following table lists the new OpenJ9 features and notable changes with the OpenJ9 release in which they were added:</p>
 <table>
 <thead>
 <tr>
-<th>Setting</th>
-<th>Effect</th>
-<th>Default</th>
+<th>Features and changes</th>
+<th>OpenJ9 release</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>-Xminf&lt;value&gt;</code></td>
-<td>Set minimum free space</td>
-<td>0.3</td>
+<td>The OpenJ9 <code>jextract</code> tool is removed.</td>
+<td>0.41.0</td>
 </tr>
 <tr>
-<td><code>-Xmaxf&lt;value&gt;</code></td>
-<td>Set maximum free space</td>
-<td>0.6</td>
+<td>New <code>-XX:[+\|-]ShowCarrierFrames</code> option added. You can use the <code>-XX:+ShowCarrierFrames</code> option to add the stack trace of the carrier thread in addition to the virtual thread stack trace to the <code>Throwable.getStackTrace()</code> method, if an exception occurs.</td>
+<td>0.41.0</td>
+</tr>
+<tr>
+<td>New <code>-XX:ContinuationCache</code> option added. You can optimize the virtual thread performance by tuning the continuation tier 1 and 2 cache size with the <code>-XX:ContinuationCache</code> option</td>
+<td>0.41.0</td>
+</tr>
+<tr>
+<td>Warnings are issued when the agents are loaded dynamically into a running VM after startup without specifying the <code>-XX:+EnableDynamicAgentLoading</code> option and the same agents were not loaded before.</td>
+<td>0.41.0</td>
 </tr>
 </tbody>
 </table>
-<p>The value range is 0.0 - 1.0.</p>
-<ul>
-<li>For the <code>balanced</code> GC policy, these values apply only to the non-eden space part of the heap. The non-eden heap resizing decision is made by observing both <code>-Xmint</code>/<code>-Xmaxt</code> and <code>-Xminf</code>/<code>-Xmaxf</code>. Free memory in eden space is not considered for <code>-Xminf</code>/<code>-Xmaxf</code> purposes.</li>
-<li>For the <code>gencon</code> GC policy, the values apply only to the tenure part of the heap and only at global GC points.</li>
-<li>For the <code>optthruput</code> and <code>optavgpause</code> GC policies, these values apply to the whole heap at every GC point.</li>
-<li>This option cannot be used with the metronome GC policy (<code>-Xgcpolicy:metronome</code>) because the heap is always fully expanded.</li>
-</ul>
-<h2 id="see-also">See also</h2>
-<ul>
-<li><a href="../allocation/#expansion-and-contraction">Heap expansion and contraction</a></li>
-<li><a href="../gc/">Garbage collection policies</a></li>
-</ul>
-<!-- ==== END OF TOPIC ==== xminf.md ==== -->
-<!-- ==== END OF TOPIC ==== xmaxf.md ==== -->
 
 
 
