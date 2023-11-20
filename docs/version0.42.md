@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.41.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [OpenJ9 `jextract` removed](#openj9-jextract-removed) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 - [Change in the `System.gc()` call behavior](#change-in-the-systemgc-call-behavior)
+- ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [New JDK 21 features](#new-jdk-21-features) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 
 ## Features and changes
 
@@ -50,6 +51,32 @@ The `System.gc` call triggers a global garbage collection (GC) cycle, which is a
 Now, the `System.gc()` call triggers the GC cycle twice internally to clear the unreachable objects that were not identified during the first GC cycle. The call also triggers finalization of the objects in the Finalization queues.
 
 For more information, see [Garbage collection](gc_overview.md).
+
+### ![Start of content that applies to Java 21 plus](cr/java21plus.png) New JDK 21 features
+
+The following features are supported by OpenJ9:
+
+- [JEP 440](https://openjdk.java.net/jeps/440): Record Patterns
+- [JEP 442](https://openjdk.java.net/jeps/442): Foreign Function & Memory API (Third Preview)
+- [JEP 444](https://openjdk.java.net/jeps/444): Virtual Threads
+- [JEP 446](https://openjdk.java.net/jeps/446): Scoped Values (Preview)
+- [JEP 448](https://openjdk.java.net/jeps/448): Vector API (Sixth Incubator)
+- [JEP 451](https://openjdk.java.net/jeps/451): Prepare to Disallow the Dynamic Loading of Agents
+- [JEP 453](https://openjdk.java.net/jeps/453): Structured Concurrency (Preview)
+
+
+The following features are implemented in OpenJDK and available in any build of OpenJDK 21 with OpenJ9:
+
+- [JEP 430](https://openjdk.java.net/jeps/430): String Templates (Preview)
+- [JEP 431](https://openjdk.java.net/jeps/431): Sequenced Collections
+- [JEP 441](https://openjdk.java.net/jeps/441): Pattern Matching for switch
+- [JEP 443](https://openjdk.java.net/jeps/443): Unnamed Patterns and Variables (Preview)
+- [JEP 445](https://openjdk.java.net/jeps/445): Unnamed Classes and Instance Main Methods (Preview)
+- [JEP 452](https://openjdk.java.net/jeps/452): Key Encapsulation Mechanism API
+
+
+You can find the full list of features for JDK 21 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/21/).
+Any remaining features that are listed either do not apply to OpenJ9 or are not implemented and hence not applicable to OpenJ9 in this release. ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 
 ## Known problems and full release information
 
