@@ -501,8 +501,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#support-added-for-the-getthreadallocatedbytes-mxbean-api" class="md-nav__link">
-    Support added for the getThreadAllocatedBytes MXBean API
+  <a href="#support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api" class="md-nav__link">
+    Support added for the com.sun.management.ThreadMXBean.getThreadAllocatedBytes() API
   </a>
   
 </li>
@@ -8240,8 +8240,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#support-added-for-the-getthreadallocatedbytes-mxbean-api" class="md-nav__link">
-    Support added for the getThreadAllocatedBytes MXBean API
+  <a href="#support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api" class="md-nav__link">
+    Support added for the com.sun.management.ThreadMXBean.getThreadAllocatedBytes() API
   </a>
   
 </li>
@@ -8315,7 +8315,7 @@
 <li><a href="#new-xx-usezlibnx-option-added">New <code>-XX:[+|-]UseZlibNX</code> option added</a></li>
 <li><a href="#support-for-openssl-3x">Support for OpenSSL 3.x</a></li>
 <li><a href="#performance-improvement">Performance improvement</a></li>
-<li><a href="#support-added-for-the-getthreadallocatedbytes-mxbean-api">Support added for the <code>getThreadAllocatedBytes MXBean</code> API</a></li>
+<li><a href="#support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api">Support added for the <code>com.sun.management.ThreadMXBean.getThreadAllocatedBytes()</code> API</a></li>
 <li><a href="#change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8-and-11">Change in behavior of the <code>-Djava.security.manager</code> system property for OpenJDK version 8 and 11</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -8344,9 +8344,9 @@
 <p>OpenSSL 3.x is now supported on all operating systems. For more information about OpenSSL support, see <a href="../introduction/#cryptographic-operations"><code>Cryptographic operations</code></a>.</p>
 <h3 id="performance-improvement">Performance improvement</h3>
 <p>Performance of algorithms with the use of OpenSSL version 3 and later is now enhanced. Improved algorithms include SHA256, AES, HmacSHA256, and ChaCha20. To obtain these improved algorithms and further enhance the performance of these algorithms on Linux&reg; and AIX, use OpenSSL 3.0.12 or a later 3.0.x version, or 3.1.4 or a later 3.1.x version.</p>
-<h3 id="support-added-for-the-getthreadallocatedbytes-mxbean-api">Support added for the <code>getThreadAllocatedBytes MXBean</code> API</h3>
-<p>With this release, the OpenJ9 VM implementation supports thread memory allocation measurement (<code>getThreadAllocatedBytes com.sun.management.ThreadMXBean</code> API). The <code>isThreadAllocatedMemorySupported</code> method now returns true. The <code>setThreadAllocatedMemoryEnabled()</code> and <code>isThreadAllocatedMemoryEnabled()</code> methods are also supported now.</p>
-<p>Support for the <code>getThreadAllocatedBytes MXBean</code> API is not added on z/OS&reg; platforms in this release.</p>
+<h3 id="support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api">Support added for the <code>com.sun.management.ThreadMXBean.getThreadAllocatedBytes()</code> API</h3>
+<p>With this release, the OpenJ9 VM implementation supports thread memory allocation measurement (<code>com.sun.management.ThreadMXBean.getThreadAllocatedBytes()</code> API). The <code>isThreadAllocatedMemorySupported()</code> method now returns true instead of false. The <code>setThreadAllocatedMemoryEnabled()</code> and <code>isThreadAllocatedMemoryEnabled()</code> methods do not throw the "UnsupportedOperationException" error now and are enabled by default.</p>
+<p>Support for the <code>com.sun.management.ThreadMXBean.getThreadAllocatedBytes()</code> API is not added on z/OS&reg; platforms in this release. In the coming future z/OS release, the support for this API will be added on z/OS platforms as well.</p>
 <h3 id="change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8-and-11">Change in behavior of the <code>-Djava.security.manager</code> system property for OpenJDK version 8 and 11</h3>
 <p>From OpenJDK version 18 onwards, if you enable the <code>SecurityManager</code> at runtime by calling the <code>System.setSecurityManager()</code> API, you must set the <code>-Djava.security.manager=allow</code> option. To disable the <code>SecurityManager</code>, you must specify the <code>-Djava.security.manager=disallow</code> option. If an application is designed to run on multiple OpenJDK versions, the same command line might be used across multiple versions. Because of this use of the same command line across multiple versions, in OpenJDK versions before version 18, the runtime attempts to load a <code>SecurityManager</code> with the class name <code>allow</code> or <code>disallow</code> resulted in an error and the application was not starting.</p>
 <p>To resolve this issue, OpenJDK version 17 ignores these options. With this release, OpenJDK versions 8 and 11 also ignore the <code>allow</code> and <code>disallow</code> keywords, if specified.</p>
