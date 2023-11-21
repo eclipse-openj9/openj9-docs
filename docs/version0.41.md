@@ -35,6 +35,7 @@ The following new features and notable changes since version 0.40.0 are included
 - [Support for OpenSSL 3.x](#support-for-openssl-3x)
 - [Performance improvement](#performance-improvement)
 - [Support added for the `com.sun.management.ThreadMXBean.getThreadAllocatedBytes()` API](#support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api)
+- [Change in behavior of the `-Djava.security.manager` system property for OpenJDK version 8 and 11](#change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8-and-11)
 
 ## Features and changes
 
@@ -93,6 +94,12 @@ Performance of algorithms with the use of OpenSSL version 3 and later is now enh
 With this release, the OpenJ9 VM implementation supports thread memory allocation measurement (`com.sun.management.ThreadMXBean.getThreadAllocatedBytes()` API). The `isThreadAllocatedMemorySupported()` method now returns true instead of false. The `setThreadAllocatedMemoryEnabled()` and `isThreadAllocatedMemoryEnabled()` methods do not throw the "UnsupportedOperationException" error now and are enabled by default.
 
 Support for the `com.sun.management.ThreadMXBean.getThreadAllocatedBytes()` API is not added on z/OS&reg; platforms in this release. In the coming future z/OS release, the support for this API will be added on z/OS platforms as well.
+
+### Change in behavior of the `-Djava.security.manager` system property for OpenJDK version 8 and 11
+
+From OpenJDK version 18 onwards, if you enable the `SecurityManager` at runtime by calling the `System.setSecurityManager()` API, you must set the `-Djava.security.manager=allow` option. To disable the `SecurityManager`, you must specify the `-Djava.security.manager=disallow` option. If an application is designed to run on multiple OpenJDK versions, the same command line might be used across multiple versions. Because of this use of the same command line across multiple versions, in OpenJDK versions before version 18, the runtime attempts to load a `SecurityManager` with the class name `allow` or `disallow` resulted in an error and the application was not starting.
+
+To resolve this issue, OpenJDK version 17 ignores these options. With this release, OpenJDK versions 8 and 11 also ignore the `allow` and `disallow` keywords, if specified.
 
 ## Known problems and full release information
 

@@ -88,8 +88,8 @@ markdown_extensions:
   - sane_lists
   - attr_list
   - pymdownx.emoji:   # enable icons in markdown
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 
 nav:
@@ -140,6 +140,7 @@ nav:
     - "Migrating" :
         - "Migrating from Java 8 to Java 11"                                     : migrating8to11.md
         - "Migrating from Java 11 to Java 17"                                    : migrating11to17.md
+        - "Migrating from Java 17 to Java 21"                                    : migrating17to21.md
         
     - "Configuring your system"                                                  : configuring.md
 
