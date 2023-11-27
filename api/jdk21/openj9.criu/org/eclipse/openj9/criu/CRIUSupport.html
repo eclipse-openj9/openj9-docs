@@ -8,6 +8,8 @@
 <meta name="description" content="declaration: module: openj9.criu, package: org.eclipse.openj9.criu, class: CRIUSupport">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <meta name="keywords" content="org.eclipse.openj9.criu.CRIUSupport class">
+<meta name="keywords" content="LOWEST_USER_HOOK_PRIORITY">
+<meta name="keywords" content="HIGHEST_USER_HOOK_PRIORITY">
 <meta name="keywords" content="isCRIUSupportEnabled()">
 <meta name="keywords" content="isCheckpointAllowed()">
 <meta name="keywords" content="getErrorMessage()">
@@ -62,8 +64,8 @@ loadScripts(document, 'script');</script>
 <li>
 <p>Summary:</p>
 <ul>
-<li>Nested</li>
-<li>Field</li>
+<li><a href="#nested-class-summary">Nested</a></li>
+<li><a href="#field-summary">Field</a></li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -71,7 +73,7 @@ loadScripts(document, 'script');</script>
 <li>
 <p>Detail:</p>
 <ul>
-<li>Field</li>
+<li><a href="#field-detail">Field</a></li>
 <li><a href="#constructor-detail">Constr</a></li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -82,14 +84,14 @@ loadScripts(document, 'script');</script>
 <div id="navbar-sub-list">
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -128,6 +130,44 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="CRIUSupport.HookMode.html" class="type-name-link" title="enum class in org.eclipse.openj9.criu">CRIUSupport.HookMode</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">A hook can be one of the following states:
+
+ SINGLE_THREAD_MODE - a mode in which only the Java thread that requested a
+ checkpoint is permitted to run.</div>
+</div>
+</div>
+</section>
+</li>
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="caption"><span>Fields</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Field</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static int</code></div>
+<div class="col-second even-row-color"><code><a href="#HIGHEST_USER_HOOK_PRIORITY" class="member-name-link">HIGHEST_USER_HOOK_PRIORITY</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static int</code></div>
+<div class="col-second odd-row-color"><code><a href="#LOWEST_USER_HOOK_PRIORITY" class="member-name-link">LOWEST_USER_HOOK_PRIORITY</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -181,7 +221,21 @@ loadScripts(document, 'script');</script>
 <div class="block">User hook that is run after restoring a checkpoint image.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerPreCheckpointHook(java.lang.Runnable)" class="member-name-link">registerPreCheckpointHook</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerPostRestoreHook(java.lang.Runnable,org.eclipse.openj9.criu.CRIUSupport.HookMode,int)" class="member-name-link">registerPostRestoreHook</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook,
+ <a href="CRIUSupport.HookMode.html" title="enum class in org.eclipse.openj9.criu">CRIUSupport.HookMode</a>&nbsp;mode,
+ int&nbsp;priority)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">User hook that is run after restoring a checkpoint image.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerPreCheckpointHook(java.lang.Runnable)" class="member-name-link">registerPreCheckpointHook</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">User hook that is run before checkpointing the JVM.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerPreCheckpointHook(java.lang.Runnable,org.eclipse.openj9.criu.CRIUSupport.HookMode,int)" class="member-name-link">registerPreCheckpointHook</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook,
+ <a href="CRIUSupport.HookMode.html" title="enum class in org.eclipse.openj9.criu">CRIUSupport.HookMode</a>&nbsp;mode,
+ int&nbsp;priority)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">User hook that is run before checkpointing the JVM.</div>
 </div>
@@ -268,6 +322,26 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
+<!-- ============ FIELD DETAIL =========== -->
+<li>
+<section class="field-details" id="field-detail">
+<h2>Field Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="LOWEST_USER_HOOK_PRIORITY">
+<h3>LOWEST_USER_HOOK_PRIORITY</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">LOWEST_USER_HOOK_PRIORITY</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="HIGHEST_USER_HOOK_PRIORITY">
+<h3>HIGHEST_USER_HOOK_PRIORITY</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">HIGHEST_USER_HOOK_PRIORITY</span></div>
+</section>
+</li>
+</ul>
+</section>
+</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -594,7 +668,9 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="registerPostRestoreHook(java.lang.Runnable)">
 <h3>registerPostRestoreHook</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></span>&nbsp;<span class="element-name">registerPostRestoreHook</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook)</span></div>
-<div class="block">User hook that is run after restoring a checkpoint image.
+<div class="block">User hook that is run after restoring a checkpoint image. This is equivalent
+ to registerPostRestoreHook(hook, HookMode.SINGLE_THREAD_MODE,
+ DEFAULT_SINGLE_THREAD_MODE_HOOK_PRIORITY);
 
  Hooks will be run in single threaded mode, no other application threads
  will be active. Users should avoid synchronization of objects that are not owned
@@ -610,10 +686,56 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="registerPostRestoreHook(java.lang.Runnable,org.eclipse.openj9.criu.CRIUSupport.HookMode,int)">
+<h3>registerPostRestoreHook</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></span>&nbsp;<span class="element-name">registerPostRestoreHook</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook,
+ <a href="CRIUSupport.HookMode.html" title="enum class in org.eclipse.openj9.criu">CRIUSupport.HookMode</a>&nbsp;mode,
+ int&nbsp;priority)</span>
+                                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link" target="_blank">UnsupportedOperationException</a></span></div>
+<div class="block">User hook that is run after restoring a checkpoint image.
+
+ If SINGLE_THREAD_MODE is requested, no other application threads will be
+ active. Users should avoid synchronization of objects that are not owned by
+ the thread, terminally blocking operations and launching new threads in the
+ hook. If the thread attempts to acquire a lock that it doesn't own, an
+ exception will be thrown.
+
+ If CONCURRENT_MODE is requested, the hook will be run alongside all other
+ active Java threads.
+
+ High-priority hooks are run first after restore, and vice-versa for
+ low-priority hooks. The priority of the hook is with respect to the other
+ hooks run within that mode. CONCURRENT_MODE hooks are implicitly lower
+ priority than SINGLE_THREAD_MODE hooks. Ie. the lowest priority
+ SINGLE_THREAD_MODE hook is a higher priority than the highest priority
+ CONCURRENT_MODE hook. The hooks of the same mode with the same priority are
+ run in random order.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>hook</code> - user hook</dd>
+<dd><code>mode</code> - the mode in which the hook is run, either CONCURRENT_MODE or
+                 SINGLE_THREAD_MODE</dd>
+<dd><code>priority</code> - the priority of the hook, between LOWEST_USER_HOOK_PRIORITY -
+                 HIGHEST_USER_HOOK_PRIORITY. Throws
+                 UnsupportedOperationException otherwise.</dd>
+<dt>Returns:</dt>
+<dd>this</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link" target="_blank">UnsupportedOperationException</a></code> - if the hook mode is not
+                                       SINGLE_THREAD_MODE or CONCURRENT_MODE
+                                       or the priority is not between
+                                       LOWEST_USER_HOOK_PRIORITY and
+                                       HIGHEST_USER_HOOK_PRIORITY.</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="registerPreCheckpointHook(java.lang.Runnable)">
 <h3>registerPreCheckpointHook</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></span>&nbsp;<span class="element-name">registerPreCheckpointHook</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook)</span></div>
-<div class="block">User hook that is run before checkpointing the JVM.
+<div class="block">User hook that is run before checkpointing the JVM. This is equivalent to
+ registerPreCheckpointHook(hook, HookMode.SINGLE_THREAD_MODE,
+ DEFAULT_SINGLE_THREAD_MODE_HOOK_PRIORITY).
 
  Hooks will be run in single threaded mode, no other application threads
  will be active. Users should avoid synchronization of objects that are not owned
@@ -625,6 +747,50 @@ loadScripts(document, 'script');</script>
 <dd><code>hook</code> - user hook</dd>
 <dt>Returns:</dt>
 <dd>this</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="registerPreCheckpointHook(java.lang.Runnable,org.eclipse.openj9.criu.CRIUSupport.HookMode,int)">
+<h3>registerPreCheckpointHook</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></span>&nbsp;<span class="element-name">registerPreCheckpointHook</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook,
+ <a href="CRIUSupport.HookMode.html" title="enum class in org.eclipse.openj9.criu">CRIUSupport.HookMode</a>&nbsp;mode,
+ int&nbsp;priority)</span>
+                                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link" target="_blank">UnsupportedOperationException</a></span></div>
+<div class="block">User hook that is run before checkpointing the JVM.
+
+ If SINGLE_THREAD_MODE is requested, no other application threads will be
+ active. Users should avoid synchronization of objects that are not owned by
+ the thread, terminally blocking operations and launching new threads in the
+ hook. If the thread attempts to acquire a lock that it doesn't own, an
+ exception will be thrown.
+
+ If CONCURRENT_MODE is requested, the hook will be run alongside all other
+ active Java threads.
+
+ High-priority hooks are run last before checkpoint, and vice-versa for
+ low-priority hooks. The priority of the hook is with respect to the other
+ hooks run within that mode. CONCURRENT_MODE hooks are implicitly lower
+ priority than SINGLE_THREAD_MODEd hooks. Ie. the lowest priority
+ SINGLE_THREAD_MODE hook is a higher priority than the highest priority
+ CONCURRENT_MODE hook. The hooks of the same mode with the same priority are
+ run in random order.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>hook</code> - user hook</dd>
+<dd><code>mode</code> - the mode in which the hook is run, either CONCURRENT_MODE or
+                 SINGLE_THREAD_MODE</dd>
+<dd><code>priority</code> - the priority of the hook, between LOWEST_USER_HOOK_PRIORITY -
+                 HIGHEST_USER_HOOK_PRIORITY. Throws
+                 UnsupportedOperationException otherwise.</dd>
+<dt>Returns:</dt>
+<dd>this</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link" target="_blank">UnsupportedOperationException</a></code> - if the hook mode is not
+                                       SINGLE_THREAD_MODE or CONCURRENT_MODE
+                                       or the priority is not between
+                                       LOWEST_USER_HOOK_PRIORITY and
+                                       HIGHEST_USER_HOOK_PRIORITY.</dd>
 </dl>
 </section>
 </li>

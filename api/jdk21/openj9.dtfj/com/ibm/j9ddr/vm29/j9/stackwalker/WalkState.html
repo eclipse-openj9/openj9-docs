@@ -9,6 +9,10 @@
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <meta name="keywords" content="com.ibm.j9ddr.vm29.j9.stackwalker.WalkState class">
 <meta name="keywords" content="walkThread">
+<meta name="keywords" content="javaVM">
+<meta name="keywords" content="threadAddress">
+<meta name="keywords" content="osThread">
+<meta name="keywords" content="privateFlags">
 <meta name="keywords" content="flags">
 <meta name="keywords" content="bp">
 <meta name="keywords" content="unwindSP">
@@ -36,7 +40,9 @@
 <meta name="keywords" content="decompilationRecord">
 <meta name="keywords" content="searchFrameFound">
 <meta name="keywords" content="registerEAs">
-<meta name="keywords" content="walkedEntryLocalStorage">
+<meta name="keywords" content="oldEntryLocalStorage">
+<meta name="keywords" content="jitGlobalStorageBase">
+<meta name="keywords" content="jitFPRegisterStorageBase">
 <meta name="keywords" content="i2jState">
 <meta name="keywords" content="decompilationStack">
 <meta name="keywords" content="pcAddress">
@@ -48,6 +54,8 @@
 <meta name="keywords" content="previousFrameFlags">
 <meta name="keywords" content="slotIndex">
 <meta name="keywords" content="slotType">
+<meta name="keywords" content="getThreadHexAddress()">
+<meta name="keywords" content="fillElsFields()">
 <link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../script-dir/jquery-ui.min.css" title="Style">
 <script type="text/javascript" src="../../../../../../../script.js"></script>
@@ -93,7 +101,7 @@ loadScripts(document, 'script');</script>
 <ul>
 <li><a href="#field-detail">Field</a></li>
 <li><a href="#constructor-detail">Constr</a></li>
-<li>Method</li>
+<li><a href="#method-detail">Method</a></li>
 </ul>
 </li>
 </ul>
@@ -111,7 +119,7 @@ loadScripts(document, 'script');</script>
 <li>Detail:&nbsp;</li>
 <li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method-detail">Method</a></li>
 </ul>
 </div>
 <div class="nav-list-search"><a href="../../../../../../../search.html">SEARCH</a>
@@ -207,34 +215,52 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code><a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
 <div class="col-second even-row-color"><code><a href="#j2iFrame" class="member-name-link">j2iFrame</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer</code></div>
-<div class="col-second odd-row-color"><code><a href="#jitInfo" class="member-name-link">jitInfo</a></code></div>
+<div class="col-first odd-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer</code></div>
+<div class="col-second odd-row-color"><code><a href="#javaVM" class="member-name-link">javaVM</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer</code></div>
-<div class="col-second even-row-color"><code><a href="#literals" class="member-name-link">literals</a></code></div>
+<div class="col-first even-row-color"><code><a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#jitFPRegisterStorageBase" class="member-name-link">jitFPRegisterStorageBase</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>long</code></div>
-<div class="col-second odd-row-color"><code><a href="#maxFrames" class="member-name-link">maxFrames</a></code></div>
+<div class="col-first odd-row-color"><code><a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#jitGlobalStorageBase" class="member-name-link">jitGlobalStorageBase</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer</code></div>
-<div class="col-second even-row-color"><code><a href="#method" class="member-name-link">method</a></code></div>
+<div class="col-first even-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer</code></div>
+<div class="col-second even-row-color"><code><a href="#jitInfo" class="member-name-link">jitInfo</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#objectSlotBitVector" class="member-name-link">objectSlotBitVector</a></code></div>
+<div class="col-first odd-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer</code></div>
+<div class="col-second odd-row-color"><code><a href="#literals" class="member-name-link">literals</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color"><code><a href="#outgoingArgCount" class="member-name-link">outgoingArgCount</a></code></div>
+<div class="col-first even-row-color"><code>long</code></div>
+<div class="col-second even-row-color"><code><a href="#maxFrames" class="member-name-link">maxFrames</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#pc" class="member-name-link">pc</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Program counter</div>
-</div>
-<div class="col-first even-row-color"><code><a href="../../pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a></code></div>
-<div class="col-second even-row-color"><code><a href="#pcAddress" class="member-name-link">pcAddress</a></code></div>
+<div class="col-first odd-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer</code></div>
+<div class="col-second odd-row-color"><code><a href="#method" class="member-name-link">method</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../../pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#objectSlotBitVector" class="member-name-link">objectSlotBitVector</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer</code></div>
+<div class="col-second odd-row-color"><code><a href="#oldEntryLocalStorage" class="member-name-link">oldEntryLocalStorage</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../../../corereaders/osthread/IOSThread.html" title="interface in com.ibm.j9ddr.corereaders.osthread">IOSThread</a></code></div>
+<div class="col-second even-row-color"><code><a href="#osThread" class="member-name-link">osThread</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#previousFrameFlags" class="member-name-link">previousFrameFlags</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#outgoingArgCount" class="member-name-link">outgoingArgCount</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../../pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second even-row-color"><code><a href="#pc" class="member-name-link">pc</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Program counter</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="../../pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#pcAddress" class="member-name-link">pcAddress</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second even-row-color"><code><a href="#previousFrameFlags" class="member-name-link">previousFrameFlags</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#privateFlags" class="member-name-link">privateFlags</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a>[]</code></div>
 <div class="col-second even-row-color"><code><a href="#registerEAs" class="member-name-link">registerEAs</a></code></div>
@@ -268,11 +294,11 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Top-of-stack pointer</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
-<div class="col-second even-row-color"><code><a href="#unwindSP" class="member-name-link">unwindSP</a></code></div>
+<div class="col-first even-row-color"><code>long</code></div>
+<div class="col-second even-row-color"><code><a href="#threadAddress" class="member-name-link">threadAddress</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer</code></div>
-<div class="col-second odd-row-color"><code><a href="#walkedEntryLocalStorage" class="member-name-link">walkedEntryLocalStorage</a></code></div>
+<div class="col-first odd-row-color"><code><a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#unwindSP" class="member-name-link">unwindSP</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
 <div class="col-second even-row-color"><code><a href="#walkSP" class="member-name-link">walkSP</a></code></div>
@@ -302,6 +328,22 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel">
+<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fillElsFields(com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer)" class="member-name-link">fillElsFields</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer&nbsp;els)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThreadHexAddress()" class="member-name-link">getThreadHexAddress</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+</div>
+</div>
+</div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link" target="_blank">clone</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link" target="_blank">equals</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link" target="_blank">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link" target="_blank">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link" target="_blank">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link" target="_blank">notify</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link" target="_blank">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link" target="_blank">toString</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link" target="_blank">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link" target="_blank">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link" target="_blank">wait</a></code></div>
@@ -321,6 +363,30 @@ loadScripts(document, 'script');</script>
 <h3>walkThread</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer</span>&nbsp;<span class="element-name">walkThread</span></div>
 <div class="block">Thread to be walked</div>
+</section>
+</li>
+<li>
+<section class="detail" id="javaVM">
+<h3>javaVM</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer</span>&nbsp;<span class="element-name">javaVM</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="threadAddress">
+<h3>threadAddress</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">threadAddress</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="osThread">
+<h3>osThread</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../corereaders/osthread/IOSThread.html" title="interface in com.ibm.j9ddr.corereaders.osthread">IOSThread</a></span>&nbsp;<span class="element-name">osThread</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="privateFlags">
+<h3>privateFlags</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">privateFlags</span></div>
 </section>
 </li>
 <li>
@@ -504,9 +570,21 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="walkedEntryLocalStorage">
-<h3>walkedEntryLocalStorage</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer</span>&nbsp;<span class="element-name">walkedEntryLocalStorage</span></div>
+<section class="detail" id="oldEntryLocalStorage">
+<h3>oldEntryLocalStorage</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer</span>&nbsp;<span class="element-name">oldEntryLocalStorage</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="jitGlobalStorageBase">
+<h3>jitGlobalStorageBase</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></span>&nbsp;<span class="element-name">jitGlobalStorageBase</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="jitFPRegisterStorageBase">
+<h3>jitFPRegisterStorageBase</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></span>&nbsp;<span class="element-name">jitFPRegisterStorageBase</span></div>
 </section>
 </li>
 <li>
@@ -587,6 +665,31 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>WalkState</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">WalkState</span>()</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>Method Details</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="getThreadHexAddress()">
+<h3>getThreadHexAddress</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getThreadHexAddress</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="fillElsFields(com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer)">
+<h3>fillElsFields</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">fillElsFields</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer&nbsp;els)</span>
+                   throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
 </section>
 </li>
 </ul>

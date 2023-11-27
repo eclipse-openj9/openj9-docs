@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 <ul class="summary-list">
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
 <div id="class-summary.tabpanel" role="tabpanel">
 <div class="summary-table two-column-summary" aria-labelledby="class-summary-tab0">
 <div class="table-header col-first">Class</div>
@@ -98,28 +98,35 @@ loadScripts(document, 'script');</script>
 
  A checkpoint is the act of halting the JVM, saving its state and writing it out to a file(s).</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="JVMCheckpointException.html" title="class in org.eclipse.openj9.criu">JVMCheckpointException</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab5">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="CRIUSupport.HookMode.html" title="enum class in org.eclipse.openj9.criu">CRIUSupport.HookMode</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
+<div class="block">A hook can be one of the following states:
+
+ SINGLE_THREAD_MODE - a mode in which only the Java thread that requested a
+ checkpoint is permitted to run.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="JVMCheckpointException.html" title="class in org.eclipse.openj9.criu">JVMCheckpointException</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block">An exception representing a failure in the JVM before checkpoint.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="JVMCRIUException.html" title="class in org.eclipse.openj9.criu">JVMCRIUException</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab5">
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="JVMCRIUException.html" title="class in org.eclipse.openj9.criu">JVMCRIUException</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab5">
 <div class="block">Abstract CRIU exception superclass.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="JVMRestoreException.html" title="class in org.eclipse.openj9.criu">JVMRestoreException</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab5">
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="JVMRestoreException.html" title="class in org.eclipse.openj9.criu">JVMRestoreException</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block">An exception representing a JVM failure after restore.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SecurityProviders.html" title="class in org.eclipse.openj9.criu">SecurityProviders</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="SecurityProviders.html" title="class in org.eclipse.openj9.criu">SecurityProviders</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Handles the security providers.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="SystemCheckpointException.html" title="class in org.eclipse.openj9.criu">SystemCheckpointException</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab5">
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="SystemCheckpointException.html" title="class in org.eclipse.openj9.criu">SystemCheckpointException</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block">An exception representing a failed system operation before checkpoint.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="SystemRestoreException.html" title="class in org.eclipse.openj9.criu">SystemRestoreException</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab5">
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="SystemRestoreException.html" title="class in org.eclipse.openj9.criu">SystemRestoreException</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab5">
 <div class="block">An exception representing a system failure after restore.</div>
 </div>
 </div>

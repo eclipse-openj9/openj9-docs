@@ -142,14 +142,10 @@ loadScripts(document, 'script');</script>
 <div class="block">use thread's sp, arg0ea, pc, literal and entryLocalStorage.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="StackWalkResult.html" title="enum class in com.ibm.j9ddr.vm29.j9.stackwalker">StackWalkResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#walkStackFrames(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer,com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer,com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer)" class="member-name-link">walkStackFrames</a><wbr>(<a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
- <a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a>&nbsp;sp,
- <a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a>&nbsp;arg0ea,
- <a href="../../pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>&nbsp;pc,
- com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;literals,
- com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer&nbsp;entryLocalStorage)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#walkStackFrames(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,long)" class="member-name-link">walkStackFrames</a><wbr>(<a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+ long&nbsp;continuationAddress)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">use user provided sp, arg0ea, pc, literal and entryLocalStorage</div>
+<div class="block">use continuation's sp, arg0ea, pc, literal and entryLocalStorage.</div>
 </div>
 </div>
 </div>
@@ -190,15 +186,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="walkStackFrames(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer,com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer,com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer)">
+<section class="detail" id="walkStackFrames(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,long)">
 <h3>walkStackFrames</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="StackWalkResult.html" title="enum class in com.ibm.j9ddr.vm29.j9.stackwalker">StackWalkResult</a></span>&nbsp;<span class="element-name">walkStackFrames</span><wbr><span class="parameters">(<a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
- <a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a>&nbsp;sp,
- <a href="../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a>&nbsp;arg0ea,
- <a href="../../pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>&nbsp;pc,
- com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;literals,
- com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer&nbsp;entryLocalStorage)</span></div>
-<div class="block">use user provided sp, arg0ea, pc, literal and entryLocalStorage</div>
+ long&nbsp;continuationAddress)</span></div>
+<div class="block">use continuation's sp, arg0ea, pc, literal and entryLocalStorage.</div>
 </section>
 </li>
 <li>
