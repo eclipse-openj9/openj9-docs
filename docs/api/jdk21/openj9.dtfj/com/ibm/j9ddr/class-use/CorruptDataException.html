@@ -2375,174 +2375,177 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getCurrentByteCodeIndexAndIsSameReceiver(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,boolean%5B%5D)" class="member-name-link">getCurrentByteCodeIndexAndIsSameReceiver</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">WalkState.</span><code><a href="../vm29/j9/stackwalker/WalkState.html#fillElsFields(com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer)" class="member-name-link">fillElsFields</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer&nbsp;els)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getCurrentByteCodeIndexAndIsSameReceiver(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,boolean%5B%5D)" class="member-name-link">getCurrentByteCodeIndexAndIsSameReceiver</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
  <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap,
  <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;currentInlinedCallSite,
  boolean[]&nbsp;isSameReceiver)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getFirstInlinedCallSite(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getFirstInlinedCallSite</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
- <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getInlinedMethod(com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getInlinedMethod</a><wbr>(<a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;inlinedCallSite)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitDataResolvePushes()" class="member-name-link">getJitDataResolvePushes</a>()</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitGCStackAtlas(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer)" class="member-name-link">getJitGCStackAtlas</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;md)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getFirstInlinedCallSite(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getFirstInlinedCallSite</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
+ <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitInlinedCallInfo(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer)" class="member-name-link">getJitInlinedCallInfo</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;md)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getInlinedMethod(com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getInlinedMethod</a><wbr>(<a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;inlinedCallSite)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitInlineDepthFromCallSite(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getJitInlineDepthFromCallSite</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
- <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;inlinedCallSite)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitDataResolvePushes()" class="member-name-link">getJitDataResolvePushes</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitInternalPointerMap(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer)" class="member-name-link">getJitInternalPointerMap</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer&nbsp;sa)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/types/U16.html" title="class in com.ibm.j9ddr.vm29.types">U16</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitNumberOfMapBytes(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer)" class="member-name-link">getJitNumberOfMapBytes</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer&nbsp;sa)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/types/U16.html" title="class in com.ibm.j9ddr.vm29.types">U16</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitNumberOfParmSlots(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer)" class="member-name-link">getJitNumberOfParmSlots</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer&nbsp;sa)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitRegisterMap(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getJitRegisterMap</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
- <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitStackSlots(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getJitStackSlots</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;metaData,
- <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/types/I16.html" title="class in com.ibm.j9ddr.vm29.types">I16</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitTotalFrameSize(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer)" class="member-name-link">getJitTotalFrameSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;md)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/types/U8.html" title="class in com.ibm.j9ddr.vm29.types">U8</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getNextDescriptionBit(com.ibm.j9ddr.vm29.pointer.U8Pointer)" class="member-name-link">getNextDescriptionBit</a><wbr>(<a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>&nbsp;jitDescriptionCursor)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getNextDescriptionCursor(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer)" class="member-name-link">getNextDescriptionCursor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;metadata,
- <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap,
- <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>&nbsp;jitDescriptionCursor)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getNextInlinedCallSite(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getNextInlinedCallSite</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
- <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;inlinedCallSite)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getObjectArgScanCursor(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">getObjectArgScanCursor</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getObjectTempScanCursor(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">getObjectTempScanCursor</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitGCStackAtlas(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer)" class="member-name-link">getJitGCStackAtlas</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;md)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getStackAllocMapFromJitPC(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.types.UDATA,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getStackAllocMapFromJitPC</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitInlinedCallInfo(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer)" class="member-name-link">getJitInlinedCallInfo</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;md)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitInlineDepthFromCallSite(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getJitInlineDepthFromCallSite</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
+ <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;inlinedCallSite)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitInternalPointerMap(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer)" class="member-name-link">getJitInternalPointerMap</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer&nbsp;sa)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/U16.html" title="class in com.ibm.j9ddr.vm29.types">U16</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitNumberOfMapBytes(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer)" class="member-name-link">getJitNumberOfMapBytes</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer&nbsp;sa)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/types/U16.html" title="class in com.ibm.j9ddr.vm29.types">U16</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitNumberOfParmSlots(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer)" class="member-name-link">getJitNumberOfParmSlots</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer&nbsp;sa)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitRegisterMap(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getJitRegisterMap</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
+ <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitStackSlots(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getJitStackSlots</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;metaData,
+ <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/I16.html" title="class in com.ibm.j9ddr.vm29.types">I16</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getJitTotalFrameSize(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer)" class="member-name-link">getJitTotalFrameSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;md)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/types/U8.html" title="class in com.ibm.j9ddr.vm29.types">U8</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getNextDescriptionBit(com.ibm.j9ddr.vm29.pointer.U8Pointer)" class="member-name-link">getNextDescriptionBit</a><wbr>(<a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>&nbsp;jitDescriptionCursor)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getNextDescriptionCursor(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer)" class="member-name-link">getNextDescriptionCursor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;metadata,
+ <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap,
+ <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>&nbsp;jitDescriptionCursor)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getNextInlinedCallSite(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getNextInlinedCallSite</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
+ <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;inlinedCallSite)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getObjectArgScanCursor(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">getObjectArgScanCursor</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getObjectTempScanCursor(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">getObjectTempScanCursor</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getStackAllocMapFromJitPC(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.types.UDATA,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">getStackAllocMapFromJitPC</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
  com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
  <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;jitPC,
  <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;curStackMap)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getStackMapFromJitPC(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">getStackMapFromJitPC</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#getStackMapFromJitPC(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">getStackMapFromJitPC</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
  com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
  <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;jitPC)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#hasMoreInlinedMethods(com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">hasMoreInlinedMethods</a><wbr>(<a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;inlinedCallSite)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#JIT_RESOLVE_PARM(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,int)" class="member-name-link">JIT_RESOLVE_PARM</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#hasMoreInlinedMethods(com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">hasMoreInlinedMethods</a><wbr>(<a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;inlinedCallSite)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#JIT_RESOLVE_PARM(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,int)" class="member-name-link">JIT_RESOLVE_PARM</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  int&nbsp;parmNumber)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#jitAddSpilledRegisters(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">jitAddSpilledRegisters</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#jitAddSpilledRegisters(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">jitAddSpilledRegisters</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#jitAddSpilledRegisters(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">jitAddSpilledRegisters</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#jitAddSpilledRegisters(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">jitAddSpilledRegisters</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#jitAddSpilledRegistersForDataResolve(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">jitAddSpilledRegistersForDataResolve</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#jitGetMapsFromPC(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.types.UDATA,com.ibm.j9ddr.vm29.j9.stackwalker.MethodMetaData.JITMaps)" class="member-name-link">jitGetMapsFromPC</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#jitAddSpilledRegistersForDataResolve(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">jitAddSpilledRegistersForDataResolve</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#jitGetMapsFromPC(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.types.UDATA,com.ibm.j9ddr.vm29.j9.stackwalker.MethodMetaData.JITMaps)" class="member-name-link">jitGetMapsFromPC</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
  com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;methodMetaData,
  <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;jitPC,
  <a href="../vm29/j9/stackwalker/MethodMetaData.JITMaps.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">MethodMetaData.JITMaps</a>&nbsp;maps)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#markClassesInInlineRanges(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">markClassesInInlineRanges</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;metaData,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#markClassesInInlineRanges(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">markClassesInInlineRanges</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer&nbsp;metaData,
  <a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#swPrintMethod(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">swPrintMethod</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#swPrintMethod(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">swPrintMethod</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#swPrintMethod(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">swPrintMethod</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#swPrintMethod(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">swPrintMethod</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_I_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer)" class="member-name-link">WALK_I_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_I_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer)" class="member-name-link">WALK_I_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;slot)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_INDIRECT_I_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">WALK_INDIRECT_I_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
- <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;slot,
- <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;ind)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_INDIRECT_O_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">WALK_INDIRECT_O_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_INDIRECT_I_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">WALK_INDIRECT_I_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;slot,
  <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;ind)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_METHOD_CLASS(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">WALK_METHOD_CLASS</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_INDIRECT_O_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">WALK_INDIRECT_O_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+ <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;slot,
+ <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;ind)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_NAMED_I_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,java.lang.String)" class="member-name-link">WALK_NAMED_I_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_METHOD_CLASS(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">WALK_METHOD_CLASS</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_NAMED_I_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,java.lang.String)" class="member-name-link">WALK_NAMED_I_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;slot,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;tag)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_NAMED_INDIRECT_I_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,java.lang.String)" class="member-name-link">WALK_NAMED_INDIRECT_I_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_NAMED_INDIRECT_I_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,java.lang.String)" class="member-name-link">WALK_NAMED_INDIRECT_I_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;intSlot,
  <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;indirectSlot,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;tag)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_NAMED_INDIRECT_O_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,java.lang.String)" class="member-name-link">WALK_NAMED_INDIRECT_O_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_NAMED_INDIRECT_O_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,java.lang.String)" class="member-name-link">WALK_NAMED_INDIRECT_O_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;objectSlot,
  <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;indirectSlot,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;tag)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_NAMED_O_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,java.lang.String)" class="member-name-link">WALK_NAMED_O_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
- <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;slot,
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;tag)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_O_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer)" class="member-name-link">WALK_O_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
- <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;slot)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_NAMED_O_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,java.lang.String)" class="member-name-link">WALK_NAMED_O_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+ <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;slot,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;tag)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">StackWalker.</span><code><a href="../vm29/j9/stackwalker/StackWalker.html#walkBytecodeFrameSlots(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer,com.ibm.j9ddr.vm29.types.UDATA,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.types.UDATA,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">walkBytecodeFrameSlots</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-second even-row-color"><span class="type-name-label">StackWalkerUtils.</span><code><a href="../vm29/j9/stackwalker/StackWalkerUtils.html#WALK_O_SLOT(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer)" class="member-name-link">WALK_O_SLOT</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+ <a href="../vm29/pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;slot)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">StackWalker.</span><code><a href="../vm29/j9/stackwalker/StackWalker.html#walkBytecodeFrameSlots(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer,com.ibm.j9ddr.vm29.types.UDATA,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.types.UDATA,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">walkBytecodeFrameSlots</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method,
  <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;offsetPC,
  <a href="../vm29/pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a>&nbsp;pendingBase,
  <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;pendingStackHeight,
  <a href="../vm29/pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a>&nbsp;localBase,
  <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;numberOfLocals)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#walkJITFrameSlotsForInternalPointers(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.U8Pointer,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer)" class="member-name-link">walkJITFrameSlotsForInternalPointers</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MethodMetaData.</span><code><a href="../vm29/j9/stackwalker/MethodMetaData.html#walkJITFrameSlotsForInternalPointers(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.U8Pointer,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer)" class="member-name-link">walkJITFrameSlotsForInternalPointers</a><wbr>(<a href="../vm29/j9/stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>&nbsp;jitDescriptionCursor,
  <a href="../vm29/pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a>&nbsp;scanCursor,
  <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackMap,
  com.ibm.j9ddr.vm29.pointer.generated.J9JITStackAtlasPointer&nbsp;gcStackAtlas)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

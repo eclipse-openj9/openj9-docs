@@ -78,7 +78,21 @@ loadScripts(document, 'script');</script>
 <div class="block">User hook that is run after restoring a checkpoint image.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CRIUSupport.</span><code><a href="../CRIUSupport.html#registerPreCheckpointHook(java.lang.Runnable)" class="member-name-link">registerPreCheckpointHook</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CRIUSupport.</span><code><a href="../CRIUSupport.html#registerPostRestoreHook(java.lang.Runnable,org.eclipse.openj9.criu.CRIUSupport.HookMode,int)" class="member-name-link">registerPostRestoreHook</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook,
+ <a href="../CRIUSupport.HookMode.html" title="enum class in org.eclipse.openj9.criu">CRIUSupport.HookMode</a>&nbsp;mode,
+ int&nbsp;priority)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">User hook that is run after restoring a checkpoint image.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CRIUSupport.</span><code><a href="../CRIUSupport.html#registerPreCheckpointHook(java.lang.Runnable)" class="member-name-link">registerPreCheckpointHook</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook)</code></div>
+<div class="col-last even-row-color">
+<div class="block">User hook that is run before checkpointing the JVM.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CRIUSupport.</span><code><a href="../CRIUSupport.html#registerPreCheckpointHook(java.lang.Runnable,org.eclipse.openj9.criu.CRIUSupport.HookMode,int)" class="member-name-link">registerPreCheckpointHook</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook,
+ <a href="../CRIUSupport.HookMode.html" title="enum class in org.eclipse.openj9.criu">CRIUSupport.HookMode</a>&nbsp;mode,
+ int&nbsp;priority)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">User hook that is run before checkpointing the JVM.</div>
 </div>

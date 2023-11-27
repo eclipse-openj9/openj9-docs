@@ -133,20 +133,17 @@ implements <a href="IStackWalkerCallbacks.html" title="interface in com.ibm.j9dd
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fieldSlotWalkFunction(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.ObjectReferencePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">fieldSlotWalkFunction</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&nbsp;walkThread,
- <a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fieldSlotWalkFunction(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.ObjectReferencePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">fieldSlotWalkFunction</a><wbr>(<a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../../pointer/ObjectReferencePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">ObjectReferencePointer</a>&nbsp;objectSlot,
  <a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackLocation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">This callback doesn't exist in the native C.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FrameCallbackResult.html" title="enum class in com.ibm.j9ddr.vm29.j9.stackwalker">FrameCallbackResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#frameWalkFunction(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">frameWalkFunction</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&nbsp;walkThread,
- <a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#frameWalkFunction(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)" class="member-name-link">frameWalkFunction</a><wbr>(<a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#objectSlotWalkFunction(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">objectSlotWalkFunction</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&nbsp;walkThread,
- <a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#objectSlotWalkFunction(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">objectSlotWalkFunction</a><wbr>(<a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../../pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;objectSlot,
  <a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackLocation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -182,43 +179,40 @@ implements <a href="IStackWalkerCallbacks.html" title="interface in com.ibm.j9dd
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="frameWalkFunction(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)">
+<section class="detail" id="frameWalkFunction(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)">
 <h3>frameWalkFunction</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FrameCallbackResult.html" title="enum class in com.ibm.j9ddr.vm29.j9.stackwalker">FrameCallbackResult</a></span>&nbsp;<span class="element-name">frameWalkFunction</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&nbsp;walkThread,
- <a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FrameCallbackResult.html" title="enum class in com.ibm.j9ddr.vm29.j9.stackwalker">FrameCallbackResult</a></span>&nbsp;<span class="element-name">frameWalkFunction</span><wbr><span class="parameters">(<a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="IStackWalkerCallbacks.html#frameWalkFunction(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)">frameWalkFunction</a></code>&nbsp;in interface&nbsp;<code><a href="IStackWalkerCallbacks.html" title="interface in com.ibm.j9ddr.vm29.j9.stackwalker">IStackWalkerCallbacks</a></code></dd>
+<dd><code><a href="IStackWalkerCallbacks.html#frameWalkFunction(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState)">frameWalkFunction</a></code>&nbsp;in interface&nbsp;<code><a href="IStackWalkerCallbacks.html" title="interface in com.ibm.j9ddr.vm29.j9.stackwalker">IStackWalkerCallbacks</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="objectSlotWalkFunction(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">
+<section class="detail" id="objectSlotWalkFunction(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">
 <h3>objectSlotWalkFunction</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">objectSlotWalkFunction</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&nbsp;walkThread,
- <a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">objectSlotWalkFunction</span><wbr><span class="parameters">(<a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../../pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;objectSlot,
  <a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackLocation)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="IStackWalkerCallbacks.html#objectSlotWalkFunction(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">objectSlotWalkFunction</a></code>&nbsp;in interface&nbsp;<code><a href="IStackWalkerCallbacks.html" title="interface in com.ibm.j9ddr.vm29.j9.stackwalker">IStackWalkerCallbacks</a></code></dd>
+<dd><code><a href="IStackWalkerCallbacks.html#objectSlotWalkFunction(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">objectSlotWalkFunction</a></code>&nbsp;in interface&nbsp;<code><a href="IStackWalkerCallbacks.html" title="interface in com.ibm.j9ddr.vm29.j9.stackwalker">IStackWalkerCallbacks</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="fieldSlotWalkFunction(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.ObjectReferencePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">
+<section class="detail" id="fieldSlotWalkFunction(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.ObjectReferencePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">
 <h3>fieldSlotWalkFunction</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">fieldSlotWalkFunction</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&nbsp;walkThread,
- <a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">fieldSlotWalkFunction</span><wbr><span class="parameters">(<a href="WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../../pointer/ObjectReferencePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">ObjectReferencePointer</a>&nbsp;objectSlot,
  <a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackLocation)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="IStackWalkerCallbacks.html#fieldSlotWalkFunction(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.ObjectReferencePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">IStackWalkerCallbacks</a></code></span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="IStackWalkerCallbacks.html#fieldSlotWalkFunction(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.ObjectReferencePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">IStackWalkerCallbacks</a></code></span></div>
 <div class="block">This callback doesn't exist in the native C.
  
  It's purpose in DDR is passing back field slots in stack-allocated objects (which would be incorrectly handled by a PointerPointer)</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="IStackWalkerCallbacks.html#fieldSlotWalkFunction(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.ObjectReferencePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">fieldSlotWalkFunction</a></code>&nbsp;in interface&nbsp;<code><a href="IStackWalkerCallbacks.html" title="interface in com.ibm.j9ddr.vm29.j9.stackwalker">IStackWalkerCallbacks</a></code></dd>
+<dd><code><a href="IStackWalkerCallbacks.html#fieldSlotWalkFunction(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.ObjectReferencePointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">fieldSlotWalkFunction</a></code>&nbsp;in interface&nbsp;<code><a href="IStackWalkerCallbacks.html" title="interface in com.ibm.j9ddr.vm29.j9.stackwalker">IStackWalkerCallbacks</a></code></dd>
 </dl>
 </section>
 </li>
