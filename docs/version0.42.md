@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.41.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [OpenJ9 `jextract` removed](#openj9-jextract-removed) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 - [Change in the `System.gc()` call behavior](#change-in-the-systemgc-call-behavior)
+- [New `-XX:[+|-]IProfileDuringStartupPhase` option added](#new-xx-iprofileduringstartupphase-option-added)
 - ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [New JDK 21 features](#new-jdk-21-features) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 
 ## Features and changes
@@ -51,6 +52,10 @@ The `System.gc` call triggers a global garbage collection (GC) cycle, which is a
 Now, the `System.gc()` call triggers the GC cycle twice internally to clear the unreachable objects that were not identified during the first GC cycle. The call also triggers finalization of the objects in the Finalization queues.
 
 For more information, see [Garbage collection](gc_overview.md).
+
+### New `-XX:[+|-]IProfileDuringStartupPhase` option added
+
+The VM uses heuristics to decide whether to collect interpreter profiling information during the VM startup. You can overrule the heuristics and control the collection of the profiling information during the startup phase by using the [`-XX:[+|-]IProfileDuringStartupPhase`](xxiprofileduringstartupphase.md) option.
 
 ### ![Start of content that applies to Java 21 plus](cr/java21plus.png) New JDK 21 features
 

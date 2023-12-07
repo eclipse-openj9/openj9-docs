@@ -409,6 +409,7 @@ nav:
             - "-XX:InitialRAMPercentage"                                         : xxinitialrampercentage.md
             - "-XX:InitialHeapSize"                                              : xxinitialheapsize.md
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
+            - "-XX:[+|-]IProfileDuringStartupPhase"                              : xxiprofileduringstartupphase.md
             - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
             - "-XX:JITServerAddress"                                             : xxjitserveraddress.md
             - "-XX:JITServerAOTCacheDir"                                         : xxjitserveraotcachedir.md
