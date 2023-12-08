@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xconmeter/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxiprofileduringstartupphase/">
       
       
-        <link rel="prev" href="../xconcurrentslack/">
+        <link rel="prev" href="../xxinterleavememory/">
       
       
-        <link rel="next" href="../xenableexcessivegc/">
+        <link rel="next" href="../xxjitinlinewatches/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-Xconmeter -  </title>
+        <title>-XX:[+|-]IProfileDuringStartupPhase -  </title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xconmeter" class="md-skip">
+        <a href="#-xx-iprofileduringstartupphase" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Xconmeter
+              -XX:[+|-]IProfileDuringStartupPhase
             
           </span>
         </div>
@@ -3245,20 +3245,18 @@
                 
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" >
         
           
           <label class="md-nav__link" for="__nav_18_5" id="__nav_18_5_label" tabindex="0">
@@ -3272,7 +3270,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18_5">
             <span class="md-nav__icon md-icon"></span>
             JVM -X options
@@ -3683,29 +3681,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    -Xconmeter
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xconmeter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3714,74 +3692,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#soa" class="md-nav__link">
-    soa
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loa" class="md-nav__link">
-    loa
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dynamic" class="md-nav__link">
-    dynamic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-behavior" class="md-nav__link">
-    Default behavior
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5599,18 +5509,20 @@
                 
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_6" checked>
         
           
           <label class="md-nav__link" for="__nav_18_6" id="__nav_18_6_label" tabindex="0">
@@ -5624,7 +5536,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_18_6">
             <span class="md-nav__icon md-icon"></span>
             JVM -XX options
@@ -6335,9 +6247,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../xxiprofileduringstartupphase/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    -XX:[+|-]IProfileDuringStartupPhase
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -6346,6 +6278,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    Explanation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -8149,42 +8122,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
+  <a href="#explanation" class="md-nav__link">
+    Explanation
   </a>
-  
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#soa" class="md-nav__link">
-    soa
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loa" class="md-nav__link">
-    loa
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dynamic" class="md-nav__link">
-    dynamic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-behavior" class="md-nav__link">
-    Default behavior
+  <a href="#see-also" class="md-nav__link">
+    See also
   </a>
   
 </li>
@@ -8227,34 +8173,40 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-xconmeter">-Xconmeter</h1>
-<p>This option determines the usage of which area, LOA (large object area) or SOA (small object area), is metered and therefore which allocations are taxed during concurrent mark operations.</p>
+<h1 id="-xx-iprofileduringstartupphase">-XX:[+|-]IProfileDuringStartupPhase</h1>
+<p>This option enables or disables the data collection by the interpreter profiler during a VM startup.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -Xconmeter:&lt;parameter&gt;
+<pre><code>    -XX:[+|-]IProfileDuringStartupPhase
 </code></pre>
-<h2 id="parameters">Parameters</h2>
-<h3 id="soa"><code>soa</code></h3>
-<pre><code>    -Xconmeter:soa
-</code></pre>
-<dl>
-<dd>(Default) Applies the allocation tax to allocations from the small object area (SOA).</dd>
-</dl>
-<h3 id="loa"><code>loa</code></h3>
-<pre><code>    -Xconmeter:loa
-</code></pre>
-<dl>
-<dd>Applies the allocation tax to allocations from the large object area (LOA).</dd>
-</dl>
-<h3 id="dynamic"><code>dynamic</code></h3>
-<pre><code>    -Xconmeter:dynamic
-</code></pre>
-<dl>
-<dd>The collector dynamically determines which area to meter based on which area is exhausted first, whether it is the SOA or the LOA.</dd>
-</dl>
-<h2 id="default-behavior">Default behavior</h2>
-<p>By default, allocation tax is applied to the SOA.</p>
-<p>This option is not supported with the balanced GC policy (<code>-Xgcpolicy:balanced</code>) or metronome GC policy (<code>-Xgcpolicy:metronome</code>).</p>
-<!-- ==== END OF TOPIC ==== xconmeter.md ==== -->
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-XX:+IProfileDuringStartupPhase</code></td>
+<td>Enable</td>
+</tr>
+<tr>
+<td><code>-XX:-IProfileDuringStartupPhase</code></td>
+<td>Disable</td>
+</tr>
+</tbody>
+</table>
+<h2 id="explanation">Explanation</h2>
+<p>The VM collects interpreter profiling data that is used to optimize methods at the time of JIT compilation. To reduce the CPU usage of the interpreter profiler during the startup phase, the VM stores such profiling data in the shared classes cache. During startup, the VM uses heuristics to determine when to turn on data collection and when to rely on the data that was collected by a previous VM and stored in the cache. You can overrule the heuristics and control the collection of the profiling information during the startup phase by using the <code>-XX:[+|-]IProfileDuringStartupPhase</code> option.</p>
+<ul>
+<li>If the <code>-XX:+IProfileDuringStartupPhase</code> option is specified, the VM always collects the latest interpreter profiling information during startup and stores the information in the shared classes cache. By using this option, the quality of the generated code might increase, leading to better long-term throughput. But, this option might increase the startup time of applications.</li>
+<li>If the <code>-XX:-IProfileDuringStartupPhase</code> option is specified, the VM does not collect interpreter profiling information during the startup phase. Use this option if the shared classes cache already contains sufficient interpreter profiling information and therefore, you don't have to collect new information and affect the startup time.</li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../jit/">The JIT compiler</a></li>
+</ul>
+<!-- ==== END OF TOPIC ==== xxiprofileduringstartupphase.md ==== -->
 
 
 

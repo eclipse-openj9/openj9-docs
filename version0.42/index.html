@@ -439,6 +439,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-xx-iprofileduringstartupphase-option-added" class="md-nav__link">
+    New -XX:[+|-]IProfileDuringStartupPhase option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-jdk-21-features" class="md-nav__link">
     New JDK 21 features
   </a>
@@ -6335,6 +6342,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxiprofileduringstartupphase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -XX:[+|-]IProfileDuringStartupPhase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxjitinlinewatches/" class="md-nav__link">
         
   
@@ -8149,6 +8176,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-xx-iprofileduringstartupphase-option-added" class="md-nav__link">
+    New -XX:[+|-]IProfileDuringStartupPhase option added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-jdk-21-features" class="md-nav__link">
     New JDK 21 features
   </a>
@@ -8211,6 +8245,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#openj9-jextract-removed">OpenJ9 <code>jextract</code> removed</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 <li><a href="#change-in-the-systemgc-call-behavior">Change in the <code>System.gc()</code> call behavior</a></li>
+<li><a href="#new-xx-iprofileduringstartupphase-option-added">New <code>-XX:[+|-]IProfileDuringStartupPhase</code> option added</a></li>
 <li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#new-jdk-21-features">New JDK 21 features</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -8224,6 +8259,8 @@
 <p>The <code>System.gc</code> call triggers a global garbage collection (GC) cycle, which is a stop-the-world GC. If the <code>System.gc()</code> call was made during an active GC cycle where the concurrent operation was in progress, the status of objects might not be updated. An object that was reachable when the concurrent operation started might be considered as reachable even if the object is no longer in use later. The <code>System.gc()</code> call had to be called twice explicitly to ensure that all unreachable objects are identified and cleared.</p>
 <p>Now, the <code>System.gc()</code> call triggers the GC cycle twice internally to clear the unreachable objects that were not identified during the first GC cycle. The call also triggers finalization of the objects in the Finalization queues.</p>
 <p>For more information, see <a href="../gc_overview/">Garbage collection</a>.</p>
+<h3 id="new-xx-iprofileduringstartupphase-option-added">New <code>-XX:[+|-]IProfileDuringStartupPhase</code> option added</h3>
+<p>The VM uses heuristics to decide whether to collect interpreter profiling information during the VM startup. You can overrule the heuristics and control the collection of the profiling information during the startup phase by using the <a href="../xxiprofileduringstartupphase/"><code>-XX:[+|-]IProfileDuringStartupPhase</code></a> option.</p>
 <h3 id="new-jdk-21-features"><img alt="Start of content that applies to Java 21 plus" src="../cr/java21plus.png" /> New JDK 21 features</h3>
 <p>The following features are supported by OpenJ9:</p>
 <ul>
