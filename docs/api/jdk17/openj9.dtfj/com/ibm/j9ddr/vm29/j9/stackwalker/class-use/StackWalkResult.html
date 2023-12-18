@@ -87,14 +87,10 @@ the order they are declared.</div>
 <div class="block">use thread's sp, arg0ea, pc, literal and entryLocalStorage.</div>
 </div>
 <div class="col-first odd-row-color"><code>static <a href="../StackWalkResult.html" title="enum class in com.ibm.j9ddr.vm29.j9.stackwalker">StackWalkResult</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StackWalker.</span><code><a href="../StackWalker.html#walkStackFrames(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.pointer.UDATAPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer,com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer,com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer)" class="member-name-link">walkStackFrames</a><wbr>(<a href="../WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
- <a href="../../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a>&nbsp;sp,
- <a href="../../../pointer/UDATAPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">UDATAPointer</a>&nbsp;arg0ea,
- <a href="../../../pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>&nbsp;pc,
- com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;literals,
- com.ibm.j9ddr.vm29.pointer.generated.J9VMEntryLocalStoragePointer&nbsp;entryLocalStorage)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">StackWalker.</span><code><a href="../StackWalker.html#walkStackFrames(com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,long)" class="member-name-link">walkStackFrames</a><wbr>(<a href="../WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
+ long&nbsp;continuationAddress)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">use user provided sp, arg0ea, pc, literal and entryLocalStorage</div>
+<div class="block">use continuation's sp, arg0ea, pc, literal and entryLocalStorage.</div>
 </div>
 </div>
 </section>
