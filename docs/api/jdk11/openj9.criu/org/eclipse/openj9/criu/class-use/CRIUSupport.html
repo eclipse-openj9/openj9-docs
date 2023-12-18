@@ -141,7 +141,25 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#registerPostRestoreHook(java.lang.Runnable,org.eclipse.openj9.criu.CRIUSupport.HookMode,int)">registerPostRestoreHook</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Runnable</a>&nbsp;hook,
+                       <a href="../CRIUSupport.HookMode.html" title="enum in org.eclipse.openj9.criu">CRIUSupport.HookMode</a>&nbsp;mode,
+                       int&nbsp;priority)</code></th>
+<td class="colLast">
+<div class="block">User hook that is run after restoring a checkpoint image.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#registerPreCheckpointHook(java.lang.Runnable)">registerPreCheckpointHook</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Runnable</a>&nbsp;hook)</code></th>
+<td class="colLast">
+<div class="block">User hook that is run before checkpointing the JVM.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#registerPreCheckpointHook(java.lang.Runnable,org.eclipse.openj9.criu.CRIUSupport.HookMode,int)">registerPreCheckpointHook</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Runnable</a>&nbsp;hook,
+                         <a href="../CRIUSupport.HookMode.html" title="enum in org.eclipse.openj9.criu">CRIUSupport.HookMode</a>&nbsp;mode,
+                         int&nbsp;priority)</code></th>
 <td class="colLast">
 <div class="block">User hook that is run before checkpointing the JVM.</div>
 </td>
