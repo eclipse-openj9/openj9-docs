@@ -80,7 +80,7 @@ The following features are implemented in OpenJDK and available in any build of 
 - [JEP 452](https://openjdk.java.net/jeps/452): Key Encapsulation Mechanism API
 
 
-You can find the full list of features for JDK 21 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/21/).
+You can find the full list of features for JDK 21 at the [OpenJDK project](https://openjdk.org/projects/jdk/21/).
 Any remaining features that are listed either do not apply to OpenJ9 or are not implemented and hence not applicable to OpenJ9 in this release. ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 
 ## Known problems and full release information

@@ -88,7 +88,7 @@ The following features are implemented in OpenJDK and available in any build of 
 - [JEP 405](https://openjdk.java.net/jeps/405): Record Patterns (Preview)
 - [JEP 427](https://openjdk.java.net/jeps/427): Pattern Matching for switch (Third Preview)
 
-You can find the full list of features for JDK 19 at the [OpenJDK project](http://openjdk.java.net/projects/jdk/19/).
+You can find the full list of features for JDK 19 at the [OpenJDK project](https://openjdk.org/projects/jdk/19/).
 Any remaining features that are listed are not implemented and hence not applicable to OpenJ9 in this release.
 
 ## Known problems and full release information
