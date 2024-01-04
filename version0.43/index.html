@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxparallelgcmaxthreads/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.43/">
       
       
-        <link rel="prev" href="../xxparallelcmsthreads/">
+        <link rel="prev" href="../openj9_releases/">
       
       
-        <link rel="next" href="../xxparallelgcthreads/">
+        <link rel="next" href="../version0.42/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-XX:ParallelGCMaxThreads -  </title>
+        <title>Version 0.43.0 -  </title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xxparallelgcmaxthreads" class="md-skip">
+        <a href="#whats-new-in-version-0430" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -XX:ParallelGCMaxThreads
+              Version 0.43.0
             
           </span>
         </div>
@@ -304,18 +304,20 @@
       
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -329,7 +331,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Release notes
@@ -360,9 +362,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../version0.43/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Version 0.43.0
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -371,6 +393,60 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-changes" class="md-nav__link">
+    Features and changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    Binaries and supported environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiler-changes-for-linux" class="md-nav__link">
+    Compiler changes for Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    Known problems and full release information
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2443,20 +2519,18 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
         
           
           <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
@@ -2470,7 +2544,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             Command-line options
@@ -5529,20 +5603,18 @@
                 
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_6" >
         
           
           <label class="md-nav__link" for="__nav_18_6" id="__nav_18_6_label" tabindex="0">
@@ -5556,7 +5628,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18_6">
             <span class="md-nav__icon md-icon"></span>
             JVM -XX options
@@ -6907,29 +6979,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    -XX:ParallelGCMaxThreads
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xxparallelgcmaxthreads/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6938,33 +6990,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -8121,8 +8146,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
+  <a href="#features-and-changes" class="md-nav__link">
+    Features and changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    Binaries and supported environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiler-changes-for-linux" class="md-nav__link">
+    Compiler changes for Linux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    Known problems and full release information
   </a>
   
 </li>
@@ -8165,14 +8217,24 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-xxparallelgcmaxthreads">-XX:ParallelGCMaxThreads</h1>
-<p>This option specifies the maximum number of threads that can be used during parallel operations of the garbage collector. Unlike <a href="../xxparallelgcthreads/"><code>-XX:ParallelGCThreads</code></a>, this option does not enforce a thread count, but can be used to allow the garbage collector to adjust the number of parallel GC threads, if used with the <a href="../xxadaptivegcthreading/">Adaptive GC Threading</a> option.</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:ParallelGCMaxThreads=&lt;number&gt;
-</code></pre>
-<p>Where <code>&lt;number&gt;</code> is the maximum number of threads that can be used for parallel operations. </p>
-<p>This option is directly mapped to <a href="../xgcmaxthreads/"><code>-Xgcmaxthreads</code></a>.</p>
-<!-- ==== END OF TOPIC ==== xxparallelgcmaxthreads.md ==== -->
+<h1 id="whats-new-in-version-0430">What's new in version 0.43.0</h1>
+<p>The following new features and notable changes since version 0.42.0 are included in this release:</p>
+<ul>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#compiler-changes-for-linux">Compiler changes for Linux&reg;</a></li>
+</ul>
+<h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>Eclipse OpenJ9&trade; release 0.43.0 supports OpenJDK 8, 11, 17, and 21.</p>
+<p>OpenJ9 Windows&reg; builds for OpenJDK 8, 11, and 17 are now compiled with Microsoft&reg; Visual Studio 2022. The Visual Studio redistributable files included with the build are updated to match.</p>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="compiler-changes-for-linux">Compiler changes for Linux</h3>
+<p>Linux x86 64-bit, Linux on POWER&reg; LE 64-bit, and Linux on IBM Z&reg; 64-bit builds on OpenJDK 8, 11, and 17 now use gcc 11.2 compiler. Linux AArch64 64-bit moved to gcc 10.3 compiler from gcc 7.5 compiler on OpenJDK 8 and 11.</p>
+<p>On OpenJDK 19 and later, Linux reference compiler was already updated to gcc 11.2 in <a href="../version0.37/">release 0.37.0</a>.</p>
+<p>See <a href="../openj9_support/">Supported environments</a>.</p>
+<h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.42.0 and v0.43.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.43/0.43.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.43.md ==== -->
 
 
 
