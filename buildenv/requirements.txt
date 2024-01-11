@@ -79,7 +79,7 @@ python-dateutil==2.8.2
     # via
     #   ghp-import
     #   mkdocs-macros-plugin
-pyyaml==6.0
+pyyaml==6.0.1
     # via
     #   mkdocs
     #   mkdocs-macros-plugin
