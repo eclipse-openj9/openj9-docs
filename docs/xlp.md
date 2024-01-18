@@ -31,13 +31,19 @@ Requests the Eclipse OpenJ9&trade; VM to allocate the Java&trade; object heap an
 
 If you use the [`-Xgc:preferredHeapBase`](xgc.md#preferredheapbase) option with `-Xlp`, the preferredHeapBase address must be a multiple of the large page size. If you specify an inaccurate heap base address, the heap is allocated with the default page size.
 
-To find out the large page sizes available and the current setting, use the `-verbose:sizes` option. Note that the current settings are the requested sizes and not the sizes obtained. For object heap size information, check the `-verbose:gc` output.
+To find out the large page sizes available and the current setting, use the `-verbose:sizes` option. These current settings are the requested sizes and not the sizes obtained. For object heap size information, check the `-verbose:gc` output.
+
+To use the large pages in the VM, enable the large pages support in the operating system for the machine to be used. The process for enabling the large page support differs in different operating systems. For more information, see [Configuring large page memory allocation](configuring.md#configuring-large-page-memory-allocation).
+
+If the configured large page size is greater than the size of the total code cache for JIT, then the page size that is used for code cache allocation is recalculated. The next available lower page size on the system is identified and used for the code cache allocation.
+
+For example, if 1 GB, 2 MB and 4 KB pages are available on a system, the VM checks the total size of the JIT code cache. If the total JIT code cache size is not modified (by using the [`-Xcodecachetotal`](xcodecachetotal.md) option), then for a 64-bit VM, the JIT code cache size will be the default size, 256 MB. In this case, the VM does not use 1 GB pages for the code cache because the size of the page exceeds the total size of the code cache (256 MB for 64-bit systems). Thus, the next available page size lower than 256 MB is used for code cache allocation. In this example, the next available lower size page is 2 MB. 128 pages (of 2 MB each) are allocated for the code cache.
 
 ## Syntax
 
         -Xlp[<size>]
 
-See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
+For more information about the `<size>` parameter, see [Using -X command-line options](x_jvm_commands.md).
 
 ## Explanation
 

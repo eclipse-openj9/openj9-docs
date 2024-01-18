@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.42.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Compiler changes for Linux&reg;](#compiler-changes-for-linux)
+- [Change in the large page memory allocation behavior](#change-in-the-large-page-memory-allocation-behavior)
 
 ## Features and changes
 
@@ -42,9 +43,17 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 Linux x86 64-bit, Linux on POWER&reg; LE 64-bit, and Linux on IBM Z&reg; 64-bit builds on OpenJDK 8, 11, and 17 now use gcc 11.2 compiler. Linux AArch64 64-bit moved to gcc 10.3 compiler from gcc 7.5 compiler on OpenJDK 8 and 11.
 
-On OpenJDK 19 and later, Linux reference compiler was already updated to gcc 11.2 in [release 0.37.0](version0.37.md).
+On OpenJDK 19 and later, the Linux reference compiler was already updated to gcc 11.2 in [release 0.37.0](version0.37.md).
 
-See [Supported environments](openj9_support.md).
+For more information, see [Supported environments](openj9_support.md).
+
+### Change in the large page memory allocation behavior
+
+Earlier, the JIT code cache was allocated memory as a multiple of the available page size even if the configured large page size was greater than the total JIT code cache size.
+
+Now, if the configured large page size is greater than the size of the total code cache for JIT, then the page size that is used for code cache allocation is recalculated. The next available lower page size on the platform is used for the code cache allocation.
+
+For more information, see [`-Xlp:codecache`](xlpcodecache.md).
 
 ## Known problems and full release information
 

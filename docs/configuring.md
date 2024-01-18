@@ -159,12 +159,14 @@ The following guides are available to help you configure Language Environment ru
 
 If your application allocates a large amount of memory and frequently accesses that memory, you might be able to improve performance by enabling large page support on your system.
 
-Some Linux kernels implement Transparent HugePage Support (THP), which automates the provision of large pages to back virtual memory, as described in [Linux systems](#linux-systems). Alternatively, you can enable large page support by setting the [`-Xlp:objectheap`](xlpobjectheap.md) and [`-Xlp:codecache`](xlpcodecache.md) options on the command line when you start your application. These options have the following effects:
+Some Linux kernels implement Transparent HugePage Support (THP), which automates the provision of large pages to back virtual memory, as described in [Linux systems](#linux-systems). Alternatively, you can configure the VM to use large pages (if the large pages support is enabled on the system) by setting the [`-Xlp:objectheap`](xlpobjectheap.md) and [`-Xlp:codecache`](xlpcodecache.md) options on the command line when you start your application. These options have the following effects:
 
 - The `-Xlp:objectheap` option requests that the Java object heap is allocated by using large pages.
 - The `-Xlp:codecache` option requests that the JIT code cache is allocated by using large pages.
 
-You must also enable large pages on your local system. This process differs according to the operating system.
+    If the configured large page size is greater than the size of the total JIT code cache, the next available lower page size on the system is used for the code cache allocation.
+
+The process for enabling the large page support differs in different operating systems, as explained in the following sections.
 
 ### AIX systems
 
