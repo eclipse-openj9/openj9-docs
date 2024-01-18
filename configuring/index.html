@@ -8901,12 +8901,15 @@ virtual memory          (kbytes, -v) unlimited
 <p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg></span> <strong>Warning:</strong> Changing the runtime options can often degrade performance.</p>
 <h2 id="configuring-large-page-memory-allocation">Configuring large page memory allocation</h2>
 <p>If your application allocates a large amount of memory and frequently accesses that memory, you might be able to improve performance by enabling large page support on your system.</p>
-<p>Some Linux kernels implement Transparent HugePage Support (THP), which automates the provision of large pages to back virtual memory, as described in <a href="#linux-systems">Linux systems</a>. Alternatively, you can enable large page support by setting the <a href="../xlpobjectheap/"><code>-Xlp:objectheap</code></a> and <a href="../xlpcodecache/"><code>-Xlp:codecache</code></a> options on the command line when you start your application. These options have the following effects:</p>
+<p>Some Linux kernels implement Transparent HugePage Support (THP), which automates the provision of large pages to back virtual memory, as described in <a href="#linux-systems">Linux systems</a>. Alternatively, you can configure the VM to use large pages (if the large pages support is enabled on the system) by setting the <a href="../xlpobjectheap/"><code>-Xlp:objectheap</code></a> and <a href="../xlpcodecache/"><code>-Xlp:codecache</code></a> options on the command line when you start your application. These options have the following effects:</p>
 <ul>
 <li>The <code>-Xlp:objectheap</code> option requests that the Java object heap is allocated by using large pages.</li>
-<li>The <code>-Xlp:codecache</code> option requests that the JIT code cache is allocated by using large pages.</li>
+<li>
+<p>The <code>-Xlp:codecache</code> option requests that the JIT code cache is allocated by using large pages.</p>
+<p>If the configured large page size is greater than the size of the total JIT code cache, the next available lower page size on the system is used for the code cache allocation.</p>
+</li>
 </ul>
-<p>You must also enable large pages on your local system. This process differs according to the operating system.</p>
+<p>The process for enabling the large page support differs in different operating systems, as explained in the following sections.</p>
 <h3 id="aix-systems">AIX systems</h3>
 <p>AIX supports large page sizes of 64 KB and 16 MB, and a huge page size of 16 GB depending on the underlying system P hardware. To determine which page sizes are supported on a particular system, run <code>pagesize -a</code>.</p>
 <p>To use large pages to back an application's data and heap segments, specify the <strong>LDR_CNTRL</strong> environment variable. You can set different page sizes for different purposes. The following variables can be used:</p>

@@ -444,6 +444,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-the-large-page-memory-allocation-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change in the large page memory allocation behavior
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8549,6 +8558,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-in-the-large-page-memory-allocation-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change in the large page memory allocation behavior
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8606,6 +8624,7 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#compiler-changes-for-linux">Compiler changes for Linux&reg;</a></li>
+<li><a href="#change-in-the-large-page-memory-allocation-behavior">Change in the large page memory allocation behavior</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8614,8 +8633,12 @@
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="compiler-changes-for-linux">Compiler changes for Linux</h3>
 <p>Linux x86 64-bit, Linux on POWER&reg; LE 64-bit, and Linux on IBM Z&reg; 64-bit builds on OpenJDK 8, 11, and 17 now use gcc 11.2 compiler. Linux AArch64 64-bit moved to gcc 10.3 compiler from gcc 7.5 compiler on OpenJDK 8 and 11.</p>
-<p>On OpenJDK 19 and later, Linux reference compiler was already updated to gcc 11.2 in <a href="../version0.37/">release 0.37.0</a>.</p>
-<p>See <a href="../openj9_support/">Supported environments</a>.</p>
+<p>On OpenJDK 19 and later, the Linux reference compiler was already updated to gcc 11.2 in <a href="../version0.37/">release 0.37.0</a>.</p>
+<p>For more information, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="change-in-the-large-page-memory-allocation-behavior">Change in the large page memory allocation behavior</h3>
+<p>Earlier, the JIT code cache was allocated memory as a multiple of the available page size even if the configured large page size was greater than the total JIT code cache size.</p>
+<p>Now, if the configured large page size is greater than the size of the total code cache for JIT, then the page size that is used for code cache allocation is recalculated. The next available lower page size on the platform is used for the code cache allocation.</p>
+<p>For more information, see <a href="../xlpcodecache/"><code>-Xlp:codecache</code></a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.42.0 and v0.43.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.43/0.43.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.43.md ==== -->
