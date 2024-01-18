@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.41.0 are included
 - ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [OpenJ9 `jextract` removed](#openj9-jextract-removed) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 - [Change in the `System.gc()` call behavior](#change-in-the-systemgc-call-behavior)
 - [New `-XX:[+|-]IProfileDuringStartupPhase` option added](#new-xx-iprofileduringstartupphase-option-added)
+- ![Start of content that applies to Java 21 (LTS)](cr/java21.png) [New `-XX:[+|-]CRIUSecProvider` option added](#new-xx-criusecprovider-option-added) ![End of content that applies to Java 21 (LTS)](cr/java_close_lts.png)
 - ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) [New JDK 21 features](#new-jdk-21-features) ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 
 ## Features and changes
@@ -57,7 +58,15 @@ For more information, see [Garbage collection](gc_overview.md).
 
 The VM uses heuristics to decide whether to collect interpreter profiling information during the VM startup. You can overrule the heuristics and control the collection of the profiling information during the startup phase by using the [`-XX:[+|-]IProfileDuringStartupPhase`](xxiprofileduringstartupphase.md) option.
 
-### ![Start of content that applies to Java 21 plus](cr/java21plus.png) New JDK 21 features
+### ![Start of content that applies to Java 21 (LTS)](cr/java21.png) New `-XX:[+|-]CRIUSecProvider` option added
+
+When you enable CRIU support, all the existing security providers are removed from the security provider list during the checkpoint phase and `CRIUSECProvider` is added by default.
+
+You can now control the use of `CRIUSECProvider` during the checkpoint phase with the `-XX:[+|-]CRIUSecProvider` option. You can use all the existing security providers instead of the `CRIUSECProvider` by specifying the `-XX:-CRIUSecProvider` option.
+
+For more information, see [`-XX:[+|-]CRIUSecProvider`](xxcriusecprovider.md). ![End of content that applies to Java 21 (LTS)](cr/java_close_lts.png)
+
+### ![Start of content that applies to Java 21 (LTS) and later](cr/java21plus.png) New JDK 21 features
 
 The following features are supported by OpenJ9:
 
