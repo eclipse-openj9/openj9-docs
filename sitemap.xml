@@ -1146,6 +1146,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.eclipse.org/openj9/docs/xxcriusecprovider/</loc>
+         <lastmod>2024-01-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.eclipse.org/openj9/docs/xxdiagnosesynconvaluebasedclasses/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>

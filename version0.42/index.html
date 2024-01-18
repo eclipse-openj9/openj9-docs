@@ -484,6 +484,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-xx-criusecprovider-option-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      New -XX:[+|-]CRIUSecProvider option added
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-jdk-21-features" class="md-nav__link">
     <span class="md-ellipsis">
       New JDK 21 features
@@ -1938,6 +1947,27 @@
   
   <span class="md-ellipsis">
     -XX:[+|-]CRIURestoreNonPortableMode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxcriusecprovider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -XX:[+|-]CRIUSecProvider
   </span>
   
 
@@ -8595,6 +8625,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-xx-criusecprovider-option-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      New -XX:[+|-]CRIUSecProvider option added
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-jdk-21-features" class="md-nav__link">
     <span class="md-ellipsis">
       New JDK 21 features
@@ -8662,6 +8701,7 @@
 <li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#openj9-jextract-removed">OpenJ9 <code>jextract</code> removed</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 <li><a href="#change-in-the-systemgc-call-behavior">Change in the <code>System.gc()</code> call behavior</a></li>
 <li><a href="#new-xx-iprofileduringstartupphase-option-added">New <code>-XX:[+|-]IProfileDuringStartupPhase</code> option added</a></li>
+<li><img alt="Start of content that applies to Java 21 (LTS)" src="../cr/java21.png" /> <a href="#new-xx-criusecprovider-option-added">New <code>-XX:[+|-]CRIUSecProvider</code> option added</a> <img alt="End of content that applies to Java 21 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> <a href="#new-jdk-21-features">New JDK 21 features</a> <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -8677,7 +8717,11 @@
 <p>For more information, see <a href="../gc_overview/">Garbage collection</a>.</p>
 <h3 id="new-xx-iprofileduringstartupphase-option-added">New <code>-XX:[+|-]IProfileDuringStartupPhase</code> option added</h3>
 <p>The VM uses heuristics to decide whether to collect interpreter profiling information during the VM startup. You can overrule the heuristics and control the collection of the profiling information during the startup phase by using the <a href="../xxiprofileduringstartupphase/"><code>-XX:[+|-]IProfileDuringStartupPhase</code></a> option.</p>
-<h3 id="new-jdk-21-features"><img alt="Start of content that applies to Java 21 plus" src="../cr/java21plus.png" /> New JDK 21 features</h3>
+<h3 id="new-xx-criusecprovider-option-added"><img alt="Start of content that applies to Java 21 (LTS)" src="../cr/java21.png" /> New <code>-XX:[+|-]CRIUSecProvider</code> option added</h3>
+<p>When you enable CRIU support, all the existing security providers are removed from the security provider list during the checkpoint phase and <code>CRIUSECProvider</code> is added by default.</p>
+<p>You can now control the use of <code>CRIUSECProvider</code> during the checkpoint phase with the <code>-XX:[+|-]CRIUSecProvider</code> option. You can use all the existing security providers instead of the <code>CRIUSECProvider</code> by specifying the <code>-XX:-CRIUSecProvider</code> option.</p>
+<p>For more information, see <a href="../xxcriusecprovider/"><code>-XX:[+|-]CRIUSecProvider</code></a>. <img alt="End of content that applies to Java 21 (LTS)" src="../cr/java_close_lts.png" /></p>
+<h3 id="new-jdk-21-features"><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> New JDK 21 features</h3>
 <p>The following features are supported by OpenJ9:</p>
 <ul>
 <li><a href="https://openjdk.java.net/jeps/440">JEP 440</a>: Record Patterns</li>

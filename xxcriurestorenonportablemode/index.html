@@ -16,7 +16,7 @@
         <link rel="prev" href="../xxcheckpointgcthread/">
       
       
-        <link rel="next" href="../xxenablecriusupport/">
+        <link rel="next" href="../xxcriusecprovider/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -1902,6 +1902,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxcriusecprovider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -XX:[+|-]CRIUSecProvider
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -8580,7 +8601,7 @@
 <ul>
 <li>This option takes effect only when <a href="../xxenablecriusupport/"><code>-XX:+EnableCRIUSupport</code></a> is enabled.</li>
 <li>When you disable this option,<ul>
-<li><code>CRIUSECProvider</code> is the only security provider in both checkpoint and restore.</li>
+<li>By default, <code>CRIUSECProvider</code> is the only security provider in both checkpoint and restore. <img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> But, if <code>CRIUSECProvider</code> is disabled with the <a href="../xxcriusecprovider/"><code>-XX:-CRIUSecProvider</code></a> option, then the existing security providers are used during the checkpoint phase and restore phase. You can use any algorithm in the existing providers. <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></li>
 <li>JITServer technology is disabled both before you take a checkpoint and after you restore the VM.</li>
 <li>the VM generates only portable code, both before you take a checkpoint and after you restore the VM.</li>
 </ul>
@@ -8611,7 +8632,7 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>The JIT compiler can exploit hardware features of the system on which it is running, to generate compiled code. That code might therefore fail if it is included in a checkpoint image that you later restore on a different system. For example, the compiled code might try to exploit a hardware feature that doesn't exist on the new machine, then fail. To avoid this problem, the JIT compiler by default generates code that exploits only basic hardware features, therefore portable to different systems.</p>
+<p>The JIT compiler can use hardware features of the system on which it is running to generate compiled code. That code might therefore fail if it is included in a checkpoint image that you later restore on a different system. For example, the compiled code might try to use a hardware feature that doesn't exist on the new machine, then fail. To avoid this problem, the JIT compiler by default generates code that uses only basic hardware features, therefore portable to different systems.</p>
 <p>The <code>-XX:+CRIURestoreNonPortableMode</code> option is set by default so that on restore the JIT compiler can start generating nonportable compiled code. Likewise, the VM can also load nonportable AOT code post-restore. Generating nonportable compiled code also means that no further checkpoints are permitted. Only a single checkpoint can be taken in the VM's lifetime.</p>
 <p>If you require multiple checkpoints, you can use the <code>-XX:-CRIURestoreNonPortableMode</code> option to generate portable JIT compiled code after restore.</p>
 <h2 id="see-also">See also</h2>

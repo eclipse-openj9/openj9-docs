@@ -453,6 +453,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-xx-criusecprovider-option-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      New -XX:[+|-]CRIUSecProvider option added
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1920,6 +1929,27 @@
   
   <span class="md-ellipsis">
     -XX:[+|-]CRIURestoreNonPortableMode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxcriusecprovider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -XX:[+|-]CRIUSecProvider
   </span>
   
 
@@ -8567,6 +8597,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-xx-criusecprovider-option-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      New -XX:[+|-]CRIUSecProvider option added
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8625,6 +8664,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#compiler-changes-for-linux">Compiler changes for Linux&reg;</a></li>
 <li><a href="#change-in-the-large-page-memory-allocation-behavior">Change in the large page memory allocation behavior</a></li>
+<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#new-xx-criusecprovider-option-added">New <code>-XX:[+|-]CRIUSecProvider</code> option added</a> <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8639,6 +8679,10 @@
 <p>Earlier, the JIT code cache was allocated memory as a multiple of the available page size even if the configured large page size was greater than the total JIT code cache size.</p>
 <p>Now, if the configured large page size is greater than the size of the total code cache for JIT, then the page size that is used for code cache allocation is recalculated. The next available lower page size on the platform is used for the code cache allocation.</p>
 <p>For more information, see <a href="../xlpcodecache/"><code>-Xlp:codecache</code></a>.</p>
+<h3 id="new-xx-criusecprovider-option-added"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> New <code>-XX:[+|-]CRIUSecProvider</code> option added</h3>
+<p>When you enable CRIU support, all the existing security providers are removed from the security provider list during the checkpoint phase and <code>CRIUSECProvider</code> is added by default.</p>
+<p>You can now control the use of <code>CRIUSECProvider</code> during the checkpoint phase with the <code>-XX:[+|-]CRIUSecProvider</code> option. You can use all the existing security providers instead of the <code>CRIUSECProvider</code> by specifying the <code>-XX:-CRIUSecProvider</code> option.</p>
+<p>For more information, see <a href="../xxcriusecprovider/"><code>-XX:[+|-]CRIUSecProvider</code></a>. <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.42.0 and v0.43.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.43/0.43.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.43.md ==== -->

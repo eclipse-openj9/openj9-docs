@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxenablecriusupport/">
       
       
-        <link rel="prev" href="../xxcriurestorenonportablemode/">
+        <link rel="prev" href="../xxcriusecprovider/">
       
       
         <link rel="next" href="../xxignoreunrecognizedrestoreoptions/">
@@ -1831,6 +1831,27 @@
   
   <span class="md-ellipsis">
     -XX:[+|-]CRIURestoreNonPortableMode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxcriusecprovider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -XX:[+|-]CRIUSecProvider
   </span>
   
 
@@ -8579,7 +8600,7 @@
 <p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg></span> <strong>Restrictions:</strong> If CRIU support is enabled,</p>
 <ul>
 <li>you cannot use a Java&trade; security manager. If you try to specify a Java security manager, for example by using the <code>-Djava.security.manager</code> system property on the Java command line or the <code>java.lang.System.setSecurityManager</code> method in your application, the VM throws the <code>java.lang.UnsupportedOperationException</code> error.</li>
-<li><code>CRIUSECProvider</code> is the only security provider that is available in the checkpoint phase until restore.</li>
+<li>By default, <code>CRIUSECProvider</code> is the only security provider that is available in the checkpoint phase until restore. <img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> But, you can continue to use the existing security providers by disabling <code>CRIUSECProvider</code> with the <a href="../xxcriusecprovider/"><code>-XX:-CRIUSecProvider</code></a> option. <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></li>
 <li>JITServer is disabled in the checkpoint phase even if the server exists and you have specified the <code>-XX:+UseJITServer</code> option. When you specify the <code>-XX:+EnableCRIUSupport</code> and <a href="../xxcriurestorenonportablemode/"><code>-XX:+CRIURestoreNonPortableMode</code></a> options along with the <a href="../xxusejitserver/"><code>-XX:+UseJITServer</code></a> option, and the server exists, the VM enables the JITServer server automatically at the restore point. The VM client connects to a JITServer in the context of CRIU as outlined in the following table (where <span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span> means that the VM connects to a JITServer instance and <span aria-hidden="true" class="twemoji no"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3l105.4 105.3c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256l105.3-105.4z"/></svg></span><span class="sr-only">no</span> means that the VM does not connect to a JITServer instance):</li>
 </ul>
 <table>
