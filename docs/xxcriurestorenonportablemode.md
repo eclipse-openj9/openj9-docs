@@ -31,7 +31,7 @@ This option specifies whether the JIT and AOT compilers generate nonportable com
 
 - This option takes effect only when [`-XX:+EnableCRIUSupport`](xxenablecriusupport.md) is enabled.
 - When you disable this option,
-    - `CRIUSECProvider` is the only security provider in both checkpoint and restore.
+    - By default, `CRIUSECProvider` is the only security provider in both checkpoint and restore. ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) But, if `CRIUSECProvider` is disabled with the [`-XX:-CRIUSecProvider`](xxcriusecprovider.md) option, then the existing security providers are used during the checkpoint phase and restore phase. You can use any algorithm in the existing providers. ![End of content that applies to Java 11 (LTS) and later](cr/java_close.png)
     - JITServer technology is disabled both before you take a checkpoint and after you restore the VM.
     - the VM generates only portable code, both before you take a checkpoint and after you restore the VM.
 
@@ -48,7 +48,7 @@ This option specifies whether the JIT and AOT compilers generate nonportable com
 
 ## Explanation
 
-The JIT compiler can exploit hardware features of the system on which it is running, to generate compiled code. That code might therefore fail if it is included in a checkpoint image that you later restore on a different system. For example, the compiled code might try to exploit a hardware feature that doesn't exist on the new machine, then fail. To avoid this problem, the JIT compiler by default generates code that exploits only basic hardware features, therefore portable to different systems.
+The JIT compiler can use hardware features of the system on which it is running to generate compiled code. That code might therefore fail if it is included in a checkpoint image that you later restore on a different system. For example, the compiled code might try to use a hardware feature that doesn't exist on the new machine, then fail. To avoid this problem, the JIT compiler by default generates code that uses only basic hardware features, therefore portable to different systems.
 
 The `-XX:+CRIURestoreNonPortableMode` option is set by default so that on restore the JIT compiler can start generating nonportable compiled code. Likewise, the VM can also load nonportable AOT code post-restore. Generating nonportable compiled code also means that no further checkpoints are permitted. Only a single checkpoint can be taken in the VM's lifetime.
 
