@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.42.0 are included
 - [Compiler changes for Linux&reg;](#compiler-changes-for-linux)
 - [Change in the large page memory allocation behavior](#change-in-the-large-page-memory-allocation-behavior)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New `-XX:[+|-]CRIUSecProvider` option added](#new-xx-criusecprovider-option-added) ![End of content that applies to Java 11 (LTS) and later](cr/java_close.png)
+- [New `-XX:Compatibility` option added](#new-xxcompatibility-option-added)
 
 ## Features and changes
 
@@ -63,6 +64,14 @@ When you enable CRIU support, all the existing security providers are removed fr
 You can now control the use of `CRIUSECProvider` during the checkpoint phase with the `-XX:[+|-]CRIUSecProvider` option. You can use all the existing security providers instead of the `CRIUSECProvider` by specifying the `-XX:-CRIUSecProvider` option.
 
 For more information, see [`-XX:[+|-]CRIUSecProvider`](xxcriusecprovider.md). ![End of content that applies to Java 11 (LTS) and later](cr/java_close.png)
+
+### New `-XX:Compatibility` option added
+
+The Elasticsearch application was facing incompatibility issues when it was running on OpenJ9 and required many workarounds. With the `-XX:Compatibility` option, you can enable a compatibility mode that OpenJ9 can run in to support applications that require specific capabilities.
+
+In release 0.43.0, the compatibility mode is provided for the Elasticsearch application only.
+
+For more information, see [`-XX:Compatibility`](xxcompatibility.md).
 
 ## Known problems and full release information
 
