@@ -170,6 +170,7 @@ nav:
            - "-Xrs:onRestore / -Xrs:syncOnRestore"                               : xrsonrestoresynconrestore.md
            - "-Xshareclasses:disableOnRestore"                                   : xshareclassesdisableonrestore.md
            - "-XX:CheckpointGCThreads"                                           : xxcheckpointgcthread.md
+           - "-XX:Compatibility"                                                 : xxcompatibility.md
            - "-XX:[+|-]CRIURestoreNonPortableMode"                               : xxcriurestorenonportablemode.md
            - "-XX:[+|-]CRIUSecProvider"                                          : xxcriusecprovider.md
            - "-XX:[+|-]EnableCRIUSupport"                                        : xxenablecriusupport.md
