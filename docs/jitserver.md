@@ -23,7 +23,7 @@
 
 # JITServer technology
 
-**Linux&reg; on x86, Linux on IBM Power&reg; systems, and Linux on IBM Z&reg; systems (64-bit only)**
+**Linux&reg; on x86, Linux on IBM Power&reg; systems, Linux on AArch64 and Linux on IBM Z&reg; systems (64-bit only)**
 
 JITServer technology decouples the JIT compiler from the VM and lets the JIT compiler run remotely in its own process. This mechanism prevents your Java&trade; application suffering possible negative effects due to CPU and memory consumption caused by JIT compilation.
 
