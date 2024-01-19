@@ -462,6 +462,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-xxcompatibility-option-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      New -XX:Compatibility option added
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1908,6 +1917,27 @@
   
   <span class="md-ellipsis">
     -XX:CheckpointGCThreads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxcompatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -XX:Compatibility
   </span>
   
 
@@ -8606,6 +8636,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-xxcompatibility-option-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      New -XX:Compatibility option added
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8665,6 +8704,7 @@
 <li><a href="#compiler-changes-for-linux">Compiler changes for Linux&reg;</a></li>
 <li><a href="#change-in-the-large-page-memory-allocation-behavior">Change in the large page memory allocation behavior</a></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#new-xx-criusecprovider-option-added">New <code>-XX:[+|-]CRIUSecProvider</code> option added</a> <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></li>
+<li><a href="#new-xxcompatibility-option-added">New <code>-XX:Compatibility</code> option added</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8683,6 +8723,10 @@
 <p>When you enable CRIU support, all the existing security providers are removed from the security provider list during the checkpoint phase and <code>CRIUSECProvider</code> is added by default.</p>
 <p>You can now control the use of <code>CRIUSECProvider</code> during the checkpoint phase with the <code>-XX:[+|-]CRIUSecProvider</code> option. You can use all the existing security providers instead of the <code>CRIUSECProvider</code> by specifying the <code>-XX:-CRIUSecProvider</code> option.</p>
 <p>For more information, see <a href="../xxcriusecprovider/"><code>-XX:[+|-]CRIUSecProvider</code></a>. <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></p>
+<h3 id="new-xxcompatibility-option-added">New <code>-XX:Compatibility</code> option added</h3>
+<p>The Elasticsearch application was facing incompatibility issues when it was running on OpenJ9 and required many workarounds. With the <code>-XX:Compatibility</code> option, you can enable a compatibility mode that OpenJ9 can run in to support applications that require specific capabilities.</p>
+<p>In release 0.43.0, the compatibility mode is provided for the Elasticsearch application only.</p>
+<p>For more information, see <a href="../xxcompatibility/"><code>-XX:Compatibility</code></a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.42.0 and v0.43.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.43/0.43.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.43.md ==== -->
