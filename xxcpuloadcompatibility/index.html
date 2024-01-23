@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xlpcodecache/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxcpuloadcompatibility/">
       
       
-        <link rel="prev" href="../xlp/">
+        <link rel="prev" href="../xxcontinuationcache/">
       
       
-        <link rel="next" href="../xlpobjectheap/">
+        <link rel="next" href="../xxdiagnosesynconvaluebasedclasses/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-Xlp:codecache -  </title>
+        <title>-XX:[+|-]CpuLoadCompatibility -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xlpcodecache" class="md-skip">
+        <a href="#-xx-cpuloadcompatibility" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Xlp:codecache
+              -XX:[+|-]CpuLoadCompatibility
             
           </span>
         </div>
@@ -3442,21 +3442,19 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" >
         
           
           <label class="md-nav__link" for="__nav_18_5" id="__nav_18_5_label" tabindex="0">
@@ -3470,7 +3468,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18_5">
             <span class="md-nav__icon md-icon"></span>
             JVM -X options
@@ -4531,30 +4529,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    -Xlp:codecache
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xlpcodecache/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4563,95 +4541,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntax
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      Default values
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Default values">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aix" class="md-nav__link">
-    <span class="md-ellipsis">
-      AIX
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linux
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    <span class="md-ellipsis">
-      macOS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zos" class="md-nav__link">
-    <span class="md-ellipsis">
-      z/OS
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      See also
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5929,19 +5818,21 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_6" checked>
         
           
           <label class="md-nav__link" for="__nav_18_6" id="__nav_18_6_label" tabindex="0">
@@ -5955,7 +5846,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_18_6">
             <span class="md-nav__icon md-icon"></span>
             JVM -XX options
@@ -6197,10 +6088,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../xxcpuloadcompatibility/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    -XX:[+|-]CpuLoadCompatibility
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -6209,6 +6120,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -8623,60 +8572,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-values" class="md-nav__link">
+  <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
-      Default values
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Default values">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aix" class="md-nav__link">
-    <span class="md-ellipsis">
-      AIX
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linux
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    <span class="md-ellipsis">
-      macOS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zos" class="md-nav__link">
-    <span class="md-ellipsis">
-      z/OS
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      See also
+      Explanation
     </span>
   </a>
   
@@ -8720,57 +8618,37 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-xlpcodecache">-Xlp:codecache</h1>
-<p>Requests the Eclipse OpenJ9&trade; VM to allocate the JIT code cache by using large page sizes.</p>
-<p>If the requested large page size is not available, the VM starts, but the JIT code cache is allocated by using a platform-defined size. A warning is displayed when the requested page size is not available.</p>
-<p>To find out the large page sizes available and the current setting, use the <code>-verbose:sizes</code> option. These current settings are the requested sizes and not the sizes obtained. For object heap size information, check the <code>-verbose:gc</code> output.</p>
-<p>To use the large pages in the VM, enable the large pages support on your local system. The process for enabling the large page support differs in different operating systems. For more information, see <a href="../configuring/#configuring-large-page-memory-allocation">Configuring large page memory allocation</a>.</p>
-<p>If the configured large page size is greater than the size of the total code cache for JIT, then the page size that is used for code cache allocation is recalculated. The next available lower page size on the system is identified and used for the code cache allocation.</p>
-<p>For example, if 1 GB, 2 MB and 4 KB pages are available on a system, the VM checks the total size of the JIT code cache. If the total JIT code cache size is not modified (by using the <a href="../xcodecachetotal/"><code>-Xcodecachetotal</code></a> option), then for a 64-bit VM, the JIT code cache size will be the default size, 256 MB. In this case, the VM does not use 1 GB pages for the code cache because the size of the page exceeds the total size of the code cache (256 MB for 64-bit systems). Thus, the next available page size lower than 256 MB is used for code cache allocation. In this example, the next available lower size page is 2 MB. 128 pages (of 2 MB each) are allocated for the code cache.</p>
+<h1 id="-xx-cpuloadcompatibility">-XX:[+|-]CpuLoadCompatibility</h1>
+<p>This option enables or disables the OpenJDK behavior of the <code>getProcessCpuLoad()</code> and <code>getSystemCpuLoad()</code> methods in OpenJ9.</p>
 <h2 id="syntax">Syntax</h2>
-<p>AIX&reg;, Linux&reg;, macOS&reg;, and Windows&trade;:</p>
-<pre><code>    -Xlp:codecache:pagesize=&lt;size&gt;
+<pre><code>    -XX:[+|-]CpuLoadCompatibility
 </code></pre>
-<p>z/OS&reg;:</p>
-<pre><code>    -Xlp:codecache:pagesize=&lt;size&gt;,pageable
-</code></pre>
-<p>For more information about the <code>&lt;size&gt;</code> parameter, see <a href="../x_jvm_commands/">Using -X command-line options</a>.</p>
-<h2 id="default-values">Default values</h2>
-<h3 id="aix">AIX</h3>
-<dl>
-<dd>
-<p>The code cache page size is controlled by the <code>DATAPSIZE</code> setting of the <code>LDR_CNTRL</code> environment variable. The page size cannot be controlled by the <code>-Xlp:codecache:pagesize=&lt;size&gt;</code> option. Specifying any other page size results in a warning that the page size is not available. The <code>-verbose:sizes</code> output reflects the current operating system setting.</p>
-<p>For more information about the <code>LDR_CNTRL</code> environment variable, see <a href="../configuring/#aix-systems">Configuring large page memory allocation: AIX systems</a>.</p>
-</dd>
-</dl>
-<h3 id="linux">Linux</h3>
-<dl>
-<dd>
-<p>The default size for the code cache depends on the architecture:</p>
-<ul>
-<li>Linux on x86 and AMD64/EM64T systems: 2 MB large pages</li>
-<li>Linux on IBM Z&reg;: 1 MB large pages</li>
-<li>Linux on Power Systems&trade;: The code cache page size cannot be controlled by the <code>-Xlp:codecache:pagesize=&lt;size&gt;</code> option. Specifying any other page size results in a warning that the page size is not available. The <code>-verbose:sizes</code> output reflects the current operating system setting.</li>
-<li>On other architectures, the VM uses the default operating system page size.</li>
-</ul>
-</dd>
-</dl>
-<h3 id="macos">macOS</h3>
-<dl>
-<dd>The default size for the code cache is 4 KB large pages.</dd>
-</dl>
-<h3 id="zos">z/OS</h3>
-<dl>
-<dd>
-<p>1 MB pageable pages, when available, are the default size for the code cache.</p>
-<p>The <code>-Xlp:codecache:pagesize=&lt;size&gt;,pageable</code> option supports only a large page size of 1 MB pageable large pages. The use of 1 MB pageable large pages for the JIT code cache can improve the runtime performance of some Java&trade; applications. A page size of 4 KB can also be used.</p>
-</dd>
-</dl>
-<h2 id="see-also">See also</h2>
-<ul>
-<li><a href="../configuring/#configuring-large-page-memory-allocation">Configuring large page memory allocation</a></li>
-</ul>
-<!-- ==== END OF TOPIC ==== xlpcodecache.md ==== -->
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Effect</th>
+<th style="text-align: center;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-XX:+CpuLoadCompatibility</code></td>
+<td>Enable</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>-XX:-CpuLoadCompatibility</code></td>
+<td>Disable</td>
+<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explanation">Explanation</h2>
+<p>The <code>getProcessCpuLoad()</code> method in the <code>com.sun.management.OperatingSystemMXBean</code> class returns the recent CPU usage value for the Java virtual machine process, while the <code>getSystemCpuLoad()</code> method returns the recent CPU usage value for the whole system. When these methods were called in OpenJ9 for the first time, these methods were returning <code>-1</code> to indicate that the recent CPU usage is not available. It was difficult to identify whether the reason for the <code>-1</code> value was an error or because the call was the first call and therefore, no recent CPU usage was available.</p>
+<p>In OpenJDK, these methods return <code>0</code> value in the case of the first call, which makes it easier to differentiate between the first call behavior and an error that needs further investigation.</p>
+<p>The <code>-XX:+CpuLoadCompatibility</code> option is used to enable the OpenJDK behavior of the <code>getProcessCpuLoad()</code> and <code>getSystemCpuLoad()</code> methods in OpenJ9.</p>
+<!-- ==== END OF TOPIC ==== xxcpuloadcompatibility.md ==== -->
 
 
 

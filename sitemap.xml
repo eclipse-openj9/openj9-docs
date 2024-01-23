@@ -1146,6 +1146,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.eclipse.org/openj9/docs/xxcpuloadcompatibility/</loc>
+         <lastmod>2024-01-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.eclipse.org/openj9/docs/xxcriurestorenonportablemode/</loc>
          <lastmod>2024-01-23</lastmod>
          <changefreq>daily</changefreq>
