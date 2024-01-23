@@ -32,7 +32,13 @@
 
 In OpenJ9, the CRIU support includes an API that you can use to stop the VM at a checkpoint, save its state, and then run the VM from the point where it was stopped. The period of time between when the VM starts and when the application takes a checkpoint is referred to as the *checkpoint phase*. The application writes the VM state that was saved at the checkpoint to one or more image files. The saved state includes memory pages, methods, file systems, processes, and network connections. You can restore the VM from these files multiple times from the same point and in multiple environments.
 
-Because the checkpoint image files have the live state of the VM that is used to restore the VM in different systems, they should not contain cryptographically-sensitive security data. If the image files contain sensitive security data, the security components are vulnerable to exploitation even if you don't move the image files between systems. The CRIU technical preview introduces the `CRIUSECProvider` security provider, which provides the following limited set of security services: `MessageDigest` and `SecureRandom`. When you enable CRIU support, all existing security providers are removed from the security provider list during the checkpoint phase, by default and `CRIUSECProvider` is added. When you restore the VM in the nonportable restore mode ([`-XX:+CRIURestoreNonPortableMode`](xxcriurestorenonportablemode.md)), `CRIUSECProvider` is removed from the security provider list and the previous security providers are added back again.
+Because the checkpoint image files have the live state of the VM that is used to restore the VM in different systems, they should not contain cryptographically-sensitive security data. If the image files contain sensitive security data, the security components are vulnerable to exploitation even if you don't move the image files between systems. The CRIU technical preview introduces the `CRIUSECProvider` security provider, which provides the following limited set of security services:
+
+- `MessageDigest`: `MD5`, `SHA-1` and `SHA-256`
+- `SecureRandom`
+- `MAC: HmacSHA256`
+
+When you enable CRIU support, all existing security providers are removed from the security provider list during the checkpoint phase, by default and `CRIUSECProvider` is added. When you restore the VM in the nonportable restore mode ([`-XX:+CRIURestoreNonPortableMode`](xxcriurestorenonportablemode.md)), `CRIUSECProvider` is removed from the security provider list and the previous security providers are added back again.
 
 ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) You can disable `CRIUSECProvider` during the checkpoint phase with the `-XX:-CRIUSecProvider` option. For more information, see [`-XX:[+|-]CRIUSecProvider`](xxcriusecprovider.md). ![End of content that applies to Java 11 (LTS) and later](cr/java_close.png)
 
