@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.42.0 are included
 - [Change in the large page memory allocation behavior](#change-in-the-large-page-memory-allocation-behavior)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New `-XX:[+|-]CRIUSecProvider` option added](#new-xx-criusecprovider-option-added) ![End of content that applies to Java 11 (LTS) and later](cr/java_close.png)
 - [New `-XX:Compatibility` option added](#new-xxcompatibility-option-added)
+- [New `-XX:[+|-]CpuLoadCompatibility` option added](#new-xx-cpuloadcompatibility-option-added)
 
 ## Features and changes
 
@@ -72,6 +73,16 @@ The Elasticsearch application was facing incompatibility issues when it was runn
 In release 0.43.0, the compatibility mode is provided for the Elasticsearch application only.
 
 For more information, see [`-XX:Compatibility`](xxcompatibility.md).
+
+### New `-XX:[+|-]CpuLoadCompatibility` option added
+
+The `getProcessCpuLoad()` and `getSystemCpuLoad()` methods were returning `-1` to indicate that the recent CPU usage is not available when these methods were called in OpenJ9 for the first time. It was difficult to identify whether the reason for the `-1` value was an error or because the call was the first call and therefore, no recent CPU usage was available.
+
+In OpenJDK, these methods return `0` value in the case of the first call, which makes it easier to differentiate between the first call behavior and an error that needs further investigation.
+
+The `-XX:+CpuLoadCompatibility` option is used to enable the OpenJDK behavior of the `getProcessCpuLoad()` and `getSystemCpuLoad()` methods in OpenJ9 so that these methods return `0` when called in OpenJ9 for the first time.
+
+For more information, see [`-XX:[+|-]CpuLoadCompatibility`](xxcpuloadcompatibility.md).
 
 ## Known problems and full release information
 
