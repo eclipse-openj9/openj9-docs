@@ -35,6 +35,8 @@ The number of slots and their order depend on the number of tokens in the ICSF t
 
 You can specify only one of the attributes - `slot`, `slotListIndex`, or `tokenlabel`. If you do not specify any of these attributes, the default behavior is that the `slotListIndex` attribute is set to 0.
 
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** To configure an ICSF token, add the ICSF token to openCryptoki by using the `pkcsicsf` utility. The openCryptoki library loads the tokens that provide hardware or software specific support for cryptographic functions. An openCryptoki token uses an RSA key pair of public and private keys to encrypt and decrypt data. ![Start of content that applies to Java 17 plus](cr/java17plus.png) You must have openCryptoki version 3.22 or later to generate RSA private keys with the ICA, CCA and EP11 tokens that openCryptoki supports. ![End of content that applies only to Java 17 (LTS) and later](cr/java_close_lts.png)
+
 For more information about the SunPKCS11 configuration file, see [PKCS#11 Reference Guide](https://docs.oracle.com/en/java/javase/11/security/pkcs11-reference-guide1.html).
 
 
