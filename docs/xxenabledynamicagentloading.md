@@ -57,7 +57,9 @@ If the `-XX:+EnableDynamicAgentLoading` option is set, all agents that are dynam
 
 Eclipse OpenJ9&trade; supported operating systems other than AIX&reg; have APIs to determine whether the same agent was loaded before or not, even if an agent is loaded with a platform-independent name or an absolute path to the platform-dependent library.
 
-AIX systems cannot detect whether an agent was previously loaded or not if the agent was loaded through a platform-independent name or an absolute path to the platform-dependent library. Therefore, on AIX systems, the warnings are issued when an agent is loaded dynamically through the Attach API (`VirtualMachine.loadAgentLibrary(agent)`) even if the same agent was loaded before through the command-line option (`-agentpath:/Absolute/Path/to/agentLibrary`) at startup. ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
+AIX systems cannot detect whether an agent was previously loaded or not if the agent was loaded through a platform-independent name or an absolute path to the platform-dependent library. Therefore, on AIX systems, warnings are issued each time an agent is loaded dynamically through the Attach API (`VirtualMachine.loadAgentLibrary(agent)`) even if the same agent was loaded before through the command-line option (`-agentpath:/Absolute/Path/to/agentLibrary`) at startup.
+
+A fix to restrict this display of multiple warnings on loading the same agent will be available in a later version of OpenJ9. ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 
 ## See also
 
