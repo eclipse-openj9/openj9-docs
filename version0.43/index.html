@@ -480,6 +480,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api-on-zos-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support added for the com.sun.management.ThreadMXBean.getThreadAllocatedBytes() API on z/OS platforms
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8684,6 +8693,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api-on-zos-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support added for the com.sun.management.ThreadMXBean.getThreadAllocatedBytes() API on z/OS platforms
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8745,6 +8763,7 @@
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#new-xx-criusecprovider-option-added">New <code>-XX:[+|-]CRIUSecProvider</code> option added</a> <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></li>
 <li><a href="#new-xxcompatibility-option-added">New <code>-XX:Compatibility</code> option added</a></li>
 <li><a href="#new-xx-cpuloadcompatibility-option-added">New <code>-XX:[+|-]CpuLoadCompatibility</code> option added</a></li>
+<li><a href="#support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api-on-zos-platforms">Support added for the <code>com.sun.management.ThreadMXBean.getThreadAllocatedBytes()</code> API on z/OS platforms</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8772,6 +8791,8 @@
 <p>In OpenJDK, these methods return <code>0</code> value in the case of the first call, which makes it easier to differentiate between the first call behavior and an error that needs further investigation.</p>
 <p>The <code>-XX:+CpuLoadCompatibility</code> option is used to enable the OpenJDK behavior of the <code>getProcessCpuLoad()</code> and <code>getSystemCpuLoad()</code> methods in OpenJ9 so that these methods return <code>0</code> when called in OpenJ9 for the first time.</p>
 <p>For more information, see <a href="../xxcpuloadcompatibility/"><code>-XX:[+|-]CpuLoadCompatibility</code></a>.</p>
+<h3 id="support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api-on-zos-platforms">Support added for the <code>com.sun.management.ThreadMXBean.getThreadAllocatedBytes()</code> API on z/OS platforms</h3>
+<p>With this release, support for the <code>com.sun.management.ThreadMXBean.getThreadAllocatedBytes()</code> API is added on z/OS&reg; platforms as well.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.42.0 and v0.43.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.43/0.43.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.43.md ==== -->
