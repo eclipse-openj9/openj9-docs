@@ -31,6 +31,7 @@ The following new features and notable changes since version 0.42.0 are included
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New `-XX:[+|-]CRIUSecProvider` option added](#new-xx-criusecprovider-option-added) ![End of content that applies to Java 11 (LTS) and later](cr/java_close.png)
 - [New `-XX:Compatibility` option added](#new-xxcompatibility-option-added)
 - [New `-XX:[+|-]CpuLoadCompatibility` option added](#new-xx-cpuloadcompatibility-option-added)
+- [Support added for the `com.sun.management.ThreadMXBean.getThreadAllocatedBytes()` API on z/OS platforms](#support-added-for-the-comsunmanagementthreadmxbeangetthreadallocatedbytes-api-on-zos-platforms)
 
 ## Features and changes
 
@@ -83,6 +84,10 @@ In OpenJDK, these methods return `0` value in the case of the first call, which 
 The `-XX:+CpuLoadCompatibility` option is used to enable the OpenJDK behavior of the `getProcessCpuLoad()` and `getSystemCpuLoad()` methods in OpenJ9 so that these methods return `0` when called in OpenJ9 for the first time.
 
 For more information, see [`-XX:[+|-]CpuLoadCompatibility`](xxcpuloadcompatibility.md).
+
+### Support added for the `com.sun.management.ThreadMXBean.getThreadAllocatedBytes()` API on z/OS platforms
+
+With this release, support for the `com.sun.management.ThreadMXBean.getThreadAllocatedBytes()` API is added on z/OS&reg; platforms as well.
 
 ## Known problems and full release information
 
