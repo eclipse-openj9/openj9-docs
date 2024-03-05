@@ -442,6 +442,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#display-of-multiple-warnings-on-loading-the-same-agent-restricted-on-aix-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display of multiple warnings on loading the same agent restricted on AIX systems
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8593,6 +8602,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#display-of-multiple-warnings-on-loading-the-same-agent-restricted-on-aix-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display of multiple warnings on loading the same agent restricted on AIX systems
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8650,6 +8668,7 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8">Change in behavior of the <code>-Djava.security.manager</code> system property for OpenJDK version 8</a></li>
+<li><img alt="Start of content that applies to Java 21 (LTS)" src="../cr/java21.png" /> <a href="#display-of-multiple-warnings-on-loading-the-same-agent-restricted-on-aix-systems">Display of multiple warnings on loading the same agent restricted on AIX&reg; systems</a> <img alt="End of content that applies to Java 21 (LTS)" src="../cr/java_close_lts.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8658,6 +8677,10 @@
 <h3 id="change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8">Change in behavior of the <code>-Djava.security.manager</code> system property for OpenJDK version 8</h3>
 <p>From OpenJDK version 18 onwards, if you enable the <code>SecurityManager</code> at runtime by calling the <code>System.setSecurityManager()</code> API, you must set the <code>-Djava.security.manager=allow</code> option. To disable the <code>SecurityManager</code>, you must specify the <code>-Djava.security.manager=disallow</code> option. If an application is designed to run on multiple OpenJDK versions, the same command line might be used across multiple versions. Because of this use of the same command line across multiple versions, in OpenJDK versions before version 18, the runtime attempts to load a <code>SecurityManager</code> with the class name <code>allow</code> or <code>disallow</code> resulted in an error and the application was not starting.</p>
 <p>To resolve this issue, OpenJDK version 17 ignores these options and from 0.41.0 release onwards, OpenJDK version 11 also ignores these options. With this release, OpenJDK version 8 too ignores the <code>allow</code> and <code>disallow</code> keywords, if specified.</p>
+<h3 id="display-of-multiple-warnings-on-loading-the-same-agent-restricted-on-aix-systems"><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> Display of multiple warnings on loading the same agent restricted on AIX systems</h3>
+<p>Earlier, on AIX systems, warnings were issued each time the agents were loaded dynamically into a running VM after startup without specifying the <code>-XX:+EnableDynamicAgentLoading</code> option, even if the same agents were loaded before.</p>
+<p>Now, from 0.44.0 release onwards, AIX systems, like other OpenJ9 supported operating systems, can detect whether an agent was previously loaded or not. Therefore, like other platforms, on AIX systems also, the warnings are issued only once for the same agent when the <code>-XX:+EnableDynamicAgentLoading</code> option is not specified.</p>
+<p>For more information, see <a href="../xxenabledynamicagentloading/"><code>-XX:[+|-]EnableDynamicAgentLoading</code></a>. <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.43.0 and v0.44.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.44/0.44.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.44.md ==== -->
