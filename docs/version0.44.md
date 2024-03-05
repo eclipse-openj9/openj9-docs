@@ -28,6 +28,8 @@ The following new features and notable changes since version 0.43.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Change in behavior of the `-Djava.security.manager` system property for OpenJDK version 8](#change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8)
 - ![Start of content that applies to Java 21 (LTS)](cr/java21.png) [Display of multiple warnings on loading the same agent restricted on AIX&reg; systems](#display-of-multiple-warnings-on-loading-the-same-agent-restricted-on-aix-systems) ![End of content that applies to Java 21 (LTS)](cr/java_close_lts.png)
+- [XL C++ Runtime 16.1.0.7 or later required for AIX OpenJ9 builds on OpenJDK 8](#xl-c-runtime-16107-or-later-required-for-aix-openj9-builds-on-openjdk-8)
+
 ## Features and changes
 
 ### Binaries and supported environments
@@ -49,6 +51,10 @@ Earlier, on AIX systems, warnings were issued each time the agents were loaded d
 Now, from 0.44.0 release onwards, AIX systems, like other OpenJ9 supported operating systems, can detect whether an agent was previously loaded or not. Therefore, like other platforms, on AIX systems also, the warnings are issued only once for the same agent when the `-XX:+EnableDynamicAgentLoading` option is not specified.
 
 For more information, see [`-XX:[+|-]EnableDynamicAgentLoading`](xxenabledynamicagentloading.md). ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
+
+### XL C++ Runtime 16.1.0.7 or later required for AIX OpenJ9 builds on OpenJDK 8
+
+AIX OpenJ9 builds now require version 16.1.0.7 or later of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X) on OpenJDK 8 as well.
 
 ## Known problems and full release information
 
