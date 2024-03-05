@@ -109,6 +109,8 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
 |-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
 | AIX 7.2 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
+:fontawesome-solid-bell:{: .warn aria-hidden="true"} **Important:** AIX OpenJ9 builds require the [XL C++ Runtime 16.1.0.7 or later](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
+
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
 ### OpenJDK 11
@@ -264,7 +266,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 32-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | OSX 10.15.7            | xcode 12.4 and clang 12.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 13.1.3                        |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.11                        |
 
 ### OpenJDK 11
 
