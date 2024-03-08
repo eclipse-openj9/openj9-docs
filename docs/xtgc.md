@@ -95,6 +95,11 @@ Provides garbage collection tracing options.
 
 : Dumps the contents of the entire heap before and after a garbage collection. For each object or free chunk in the heap, a line of trace output is produced. Each line contains the base address, "a" if it is an allocated object, and "f" if it is a free chunk, the size of the chunk in bytes, and, if it is an object, its class name.
 
+### `allocation`
+
+        -Xtgc:allocation
+        
+: Prints both per thread and cumulative allocation stats: total bytes allocated since last GC, current TLH sizing, discarded TLH size etc.
 
 
 <!-- ==== END OF TOPIC ==== xtgc.md ==== -->
