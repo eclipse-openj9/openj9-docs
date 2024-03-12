@@ -464,6 +464,7 @@ nav:
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
             - "-XX:[+|-]ShareUnsafeClasses"                                      : xxshareunsafeclasses.md
             - "-XX:[+|-]ShowCarrierFrames"                                       : xxshowcarrierframes.md
+            - "-XX:[+|-]ShowCodeDetailsInExceptionMessages"                      : xxshowcodedetailsinexceptionmessages.md
             - "-XX:[+|-]ShowHiddenFrames"                                        : xxshowhiddenframes.md
             - "-XX:[+|-]ShowNativeStackSymbols"                                  : xxshownativestacksymbols.md
             - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
