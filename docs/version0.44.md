@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.43.0 are included
 - [Change in behavior of the `-Djava.security.manager` system property for OpenJDK version 8](#change-in-behavior-of-the-djavasecuritymanager-system-property-for-openjdk-version-8)
 - ![Start of content that applies to Java 21 (LTS)](cr/java21.png) [Display of multiple warnings on loading the same agent restricted on AIX&reg; systems](#display-of-multiple-warnings-on-loading-the-same-agent-restricted-on-aix-systems) ![End of content that applies to Java 21 (LTS)](cr/java_close_lts.png)
 - [XL C++ Runtime 16.1.0.7 or later required for AIX OpenJ9 builds on OpenJDK 8](#xl-c-runtime-16107-or-later-required-for-aix-openj9-builds-on-openjdk-8)
+- [New `-XX:[+|-]ShowUnmountedThreadStacks` option added](#new-xx-showunmountedthreadstacks-option-added)
 
 ## Features and changes
 
@@ -55,6 +56,14 @@ For more information, see [`-XX:[+|-]EnableDynamicAgentLoading`](xxenabledynamic
 ### XL C++ Runtime 16.1.0.7 or later required for AIX OpenJ9 builds on OpenJDK 8
 
 AIX OpenJ9 builds now require version 16.1.0.7 or later of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X) on OpenJDK 8 as well.
+
+### ![Start of content that applies to Java 21 (LTS)](cr/java21.png) New `-XX:[+|-]ShowUnmountedThreadStacks` option added
+
+Java&trade; core file lists stacks of only those threads that are mapped to platform threads. An unmounted virtual thread is not mapped to any platform thread. Therefore, the stack of any unmounted virtual thread is not included in the Java core file and thus, the virtual thread information remains incomplete.
+
+You can use the `-XX:+ShowUnmountedThreadStacks` option to include all the thread data that a VM is aware of, both regular Java threads and the unmounted virtual threads, in a Java core file.
+
+For more information, see [` -XX:[+|-]ShowUnmountedThreadStacks`](xxshowunmountedthreadstacks.md). ![End of content that applies to Java 21 (LTS)](cr/java_close_lts.png)
 
 ## Known problems and full release information
 
