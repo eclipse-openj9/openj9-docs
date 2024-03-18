@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/x/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxshowunmountedthreadstacks/">
       
       
-        <link rel="prev" href="../x_jvm_commands/">
+        <link rel="prev" href="../xxshownativestacksymbols/">
       
       
-        <link rel="next" href="../xaggressive/">
+        <link rel="next" href="../xxstacktraceinthrowable/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-X -  </title>
+        <title>-XX:[+|-]ShowUnmountedThreadStacks -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-x" class="md-skip">
+        <a href="#-xx-showunmountedthreadstacks" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -X
+              -XX:[+|-]ShowUnmountedThreadStacks
             
           </span>
         </div>
@@ -3433,19 +3433,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" >
         
           
           <label class="md-nav__link" for="__nav_18_5" id="__nav_18_5_label" tabindex="0">
@@ -3459,7 +3457,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18_5">
             <span class="md-nav__icon md-icon"></span>
             JVM -X options
@@ -3491,30 +3489,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    -X
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../x/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3523,35 +3501,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntax
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5858,17 +5807,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_6" checked>
         
           
           <label class="md-nav__link" for="__nav_18_6" id="__nav_18_6_label" tabindex="0">
@@ -5882,7 +5833,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_18_6">
             <span class="md-nav__icon md-icon"></span>
             JVM -XX options
@@ -7762,10 +7713,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../xxshowunmountedthreadstacks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    -XX:[+|-]ShowUnmountedThreadStacks
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -7774,6 +7745,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -8585,6 +8603,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -8623,12 +8659,44 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-x">-X</h1>
-<p>Displays help on nonstandard options.</p>
+<h1 id="-xx-showunmountedthreadstacks">-XX:[+|-]ShowUnmountedThreadStacks</h1>
+<p><img alt="Start of content that applies to Java 21 (LTS) and later" src="../cr/java21plus.png" /> This option enables or disables the inclusion of the unmounted virtual thread stacks in a Java&trade; core file.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -X
+<pre><code>    -XX:[+|-]ShowUnmountedThreadStacks
 </code></pre>
-<!-- ==== END OF TOPIC ==== x.md ==== -->
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Effect</th>
+<th style="text-align: center;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-XX:+ShowUnmountedThreadStacks</code></td>
+<td>Enable</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>-XX:-ShowUnmountedThreadStacks</code></td>
+<td>Disable</td>
+<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explanation">Explanation</h2>
+<p>In a VM, Java&trade; threads are mapped one-to-one to platform threads and each thread is allocated a new native Java stack.</p>
+<p>Virtual threads require platform threads to run because the operating system identifies only platform threads, but these virtual threads are not tied one-to-one to a platform thread. The VM mounts the virtual threads on available platform threads, called carrier threads. When the VM faces a blocking operation on a virtual thread, the thread is unmounted from its carrier thread and hence, the virtual thread is no longer mapped to a platform thread.</p>
+<p>Java core file lists stacks of only those threads that are mapped to platform threads. Therefore, the stack of any unmounted virtual thread is not included in the Java core file and thus, the virtual thread information remains incomplete. The unmounted threads also include the carrier thread if a virtual thread was mounted on it. Unmounting the virtual thread, unmounts the carrier thread itself. The stack of any unmounted carrier thread is also not included in the Java core file.</p>
+<p>You can use the <code>-XX:+ShowUnmountedThreadStacks</code> option to include all the thread data that a VM is aware of, both regular Java threads and the unmounted threads, in the Java core file.</p>
+<p>The <code>-XX:-ShowUnmountedThreadStacks</code> option is the default option because the chance of having issues with unmounted virtual threads is low. Usually the running or mounted threads are what causes failures. Including the unmounted virtual thread information increases the Java core file size and that might affect performance. <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../xxshowcarrierframes/"><code>-XX:[+|-]ShowCarrierFrames</code></a></li>
+<li><a href="../xxcontinuationcache/"><code>-XX:ContinuationCache</code></a></li>
+</ul>
+<!-- ==== END OF TOPIC ==== xxshowunmountedthreadstacks.md ==== -->
 
 
 
