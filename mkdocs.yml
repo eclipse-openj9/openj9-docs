@@ -467,6 +467,7 @@ nav:
             - "-XX:[+|-]ShowCodeDetailsInExceptionMessages"                      : xxshowcodedetailsinexceptionmessages.md
             - "-XX:[+|-]ShowHiddenFrames"                                        : xxshowhiddenframes.md
             - "-XX:[+|-]ShowNativeStackSymbols"                                  : xxshownativestacksymbols.md
+            - "-XX:[+|-]ShowUnmountedThreadStacks"                               : xxshowunmountedthreadstacks.md
             - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
             - "-XX:[+|-]TransparentHugePage"                                     : xxtransparenthugepage.md
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
