@@ -29,15 +29,22 @@ Use the `jcmd` tool to run diagnostic commands on a specified VM.
 
 The command syntax is as follows:
 
-    jcmd [<options>] [<vmid> <arguments>]
+    jcmd [<options>] [<vmid | display name | 0> <arguments>]
 
 Where:
 
-- The available `<options>` are:    
+- The available `<options>` are:
+    - `-l`: lists current Java&trade; processes recognized by the `jcmd` tool. The list includes VMID, which is usually the *process ID* (pid) and the display name, which refers to the target Java VM process that can be attached by `jcmd`. `-l` is the default option, therefore specifying `jcmd` without any options also displays the VMIDs.
     - `-J`: supplies arguments to the Java VM that is running the `jcmd` command. You can use multiple `-J` options, for example: `jcmd -J-Xmx10m -J-Dcom.ibm.tools.attach.enable=yes`
     - `-h`: prints the `jcmd` help
 
-- `<vmid>` is the Attach API virtual machine identifier for the Java&trade; VM process. This ID is often, but not always, the same as the operating system *process ID*. One example where the ID might be different is if you specified the system property `-Dcom.ibm.tools.attach.id` when you started the process. You can use the [`jps`](tool_jps.md) command to find the VMID.
+- `<vmid>` is the Attach API virtual machine identifier for the Java VM process. This ID is often, but not always, the same as the operating system pid. One example where the ID might be different is if you specified the system property `-Dcom.ibm.tools.attach.id` when you started the process. In addition to the `jcmd` command, you can also use the [`jps`](tool_jps.md) command to find the VMID.
+
+    You can also specify the full or partial target Java process display name instead of the VMID. The `jcmd` tool finds the corresponding VMID of the display name and runs the `jcmd` command.
+
+    You can specify the display name for a target VM through the [`com.ibm.tools.attach.displayName`](dcomibmtoolsattachdisplayname.md) system property. If the display name is not set through the system property, then the main class name along with the application arguments is set as the default display name.
+
+    If you specify `0`, the `jcmd` command is sent to all Java processes that are detected by the current `jcmd` command.
 
 - The available `arguments` are:
 
@@ -59,9 +66,13 @@ The tool uses the Attach API, and has the following limitations:
 
 - Displays information only for local processes that are owned by the current user, due to security considerations.
 - Displays information for OpenJ9 Java processes only
-- Does not show information for processes whose Attach API is disabled. :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The Attach API is disabled by default on z/OS.
+- Does not show information for processes whose Attach API is disabled. :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The Attached API is disabled by default on z/OS.
 
-For more information about the Attach API, including how to enable and secure it, see [Java Attach API](attachapi.md).
+For more information about the Attached API, including how to enable and secure it, see [Java Attach API](attachapi.md).
+
+## See Also
+
+-  [What's new in version 0.44.0](version0.44.md#vmid-query-in-the-jcmd-tool-enhanced)
 
 
 <!-- ==== END OF TOPIC ==== tool_jcmd.md ==== -->

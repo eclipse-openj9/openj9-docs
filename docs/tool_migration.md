@@ -33,8 +33,6 @@ Runs diagnostic commands on a specified VM. The main difference from the HotSpot
 
 - The `-f` option to read commands from a file.
 - The `Perfcounter.print` option for displaying performance counters for the target VM.
-- Selecting VMs by main class instead of VMID.
-- Specifying `0` as a VMID to target all VMs.
 
 #### Java memory map tool (`jmap`)
 

@@ -30,11 +30,13 @@ Change the default display name for the target virtual machine.
         -Dcom.ibm.tools.attach.displayName=<my_display_name>
 
 
-| Setting          | Value   | Default                                                     |
-|------------------|---------|-------------------------------------------------------------|
-| `<my_display_name>` | [string]| The command line invocation used to start the application   |
+| Setting          | Value   |
+|------------------|---------|
+| `<my_display_name>` | [string]|
 
 To change the value for `<my_display_name>` that is recorded by an agent, enter a character string of your choice.
+
+If the display name is not set through the `-Dcom.ibm.tools.attach.displayName` system property, then the main class name along with the application arguments is set as the default display name. For more information, see [Java diagnostic command (`jcmd`) tool](tool_jcmd.md).
 
 ## See also
 

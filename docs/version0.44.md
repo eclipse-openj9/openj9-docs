@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.43.0 are included
 - ![Start of content that applies to Java 21 (LTS)](cr/java21.png) [Display of multiple warnings on loading the same agent restricted on AIX&reg; systems](#display-of-multiple-warnings-on-loading-the-same-agent-restricted-on-aix-systems) ![End of content that applies to Java 21 (LTS)](cr/java_close_lts.png)
 - [XL C++ Runtime 16.1.0.7 or later required for AIX OpenJ9 builds on OpenJDK 8](#xl-c-runtime-16107-or-later-required-for-aix-openj9-builds-on-openjdk-8)
 - [New `-XX:[+|-]ShowUnmountedThreadStacks` option added](#new-xx-showunmountedthreadstacks-option-added)
+- [VMID query in the `jcmd` tool enhanced](#vmid-query-in-the-jcmd-tool-enhanced)
 
 ## Features and changes
 
@@ -64,6 +65,16 @@ Java&trade; core file lists stacks of only those threads that are mapped to plat
 You can use the `-XX:+ShowUnmountedThreadStacks` option to include all the thread data that a VM is aware of, both regular Java threads and the unmounted virtual threads, in a Java core file.
 
 For more information, see [` -XX:[+|-]ShowUnmountedThreadStacks`](xxshowunmountedthreadstacks.md). ![End of content that applies to Java 21 (LTS)](cr/java_close_lts.png)
+
+### VMID query in the `jcmd` tool enhanced
+
+Earlier in OpenJ9, when sending a `jcmd` command to a VM, you had to run `jcmd -l` to retrieve all the pids for all the VMs found on the machine. Then, you had to use `jcmd [vmid] [command]` to send the command to the specific VM.
+
+For OpenJDK compatibility, OpenJ9 now supports direct use of the Java process name, full or partial, as the ID to send the `jcmd` command.
+
+The `jcmd` tool also now supports specifying `0` as a VMID to target all VMs.
+
+For more information, see [Java diagnostic command (`jcmd`) tool](tool_jcmd.md).
 
 ## Known problems and full release information
 
