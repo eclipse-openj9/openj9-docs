@@ -140,8 +140,8 @@ implements com.ibm.sharedclasses.spi.SharedClassProvider</span></div>
 <h2>Method Summary</h2>
 <div id="method-summary-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
@@ -382,9 +382,9 @@ implements com.ibm.sharedclasses.spi.SharedClassProvider</span></div>
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/IntConsumer.html" title="class or interface in java.util.function" class="external-link" target="_blank">IntConsumer</a>&nbsp;indexConsumer)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code>com.ibm.sharedclasses.spi.SharedClassProvider</code></span></div>
 <div class="block"><p>Finds a class in the shared cache by using the class name given (implicitly using the caller's classpath).</p>
- 
+
  <p>See <q>Using classpaths</q> for rules on when a class will be found.<br>
- Null is returned if the class cannot be found, if it is stale (see <q>Dynamic cache updates</q>) 
+ Null is returned if the class cannot be found, if it is stale (see <q>Dynamic cache updates</q>)
  or if it is found for an unconfirmed entry (see <q>Using classpaths</q>).</p></div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -431,15 +431,15 @@ implements com.ibm.sharedclasses.spi.SharedClassProvider</span></div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">setURLClasspath</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/URL.html" title="class or interface in java.net" class="external-link" target="_blank">URL</a>[]&nbsp;newClasspath)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code>com.ibm.sharedclasses.spi.SharedClassProvider</code></span></div>
 <div class="block"><p>Updates the URLClasspath helper's classpath with a new classpath.</p>
- 
+
  <p>This function is useful for ClassLoaders that compute their classpath lazily. The initial classpath
  is passed to the constructor optimistically, but if the classloader discovers a change while reading
  an entry, it can update the classpath by using this function.</p>
  <p><b>Note:</b> It is essential that the helper's classpath is kept up-to-date with the classloader.</p>
- 
+
  <p>The classpath that is passed to this function must be exactly the same as the original
  classpath up to and including the right-most entry that classes have been loaded from (the right-most <q>confirmed</q> entry).</p>
- 
+
  <p>After the classpath has been updated, any indexes passed to storeSharedClassURLClasspath and returned from
  findSharedClassURLClasspath correspond to the new classpath.</p></div>
 <dl class="notes">
