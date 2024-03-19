@@ -154,20 +154,20 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaStream.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaStream.html#close--">close</a></span>()</code>
-<div class="block">Closes this stream.</div>
+<td class="colLast"><span class="typeNameLabel">CudaBuffer.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaBuffer.html#close--">close</a></span>()</code>
+<div class="block">Releases the region of device memory backing this buffer.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaEvent.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaEvent.html#close--">close</a></span>()</code>
-<div class="block">Releases resources associated with this event.</div>
+<td class="colLast"><span class="typeNameLabel">CudaStream.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaStream.html#close--">close</a></span>()</code>
+<div class="block">Closes this stream.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaBuffer.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaBuffer.html#close--">close</a></span>()</code>
-<div class="block">Releases the region of device memory backing this buffer.</div>
+<td class="colLast"><span class="typeNameLabel">CudaEvent.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaEvent.html#close--">close</a></span>()</code>
+<div class="block">Releases resources associated with this event.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -570,15 +570,15 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaFunction.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaFunction.html#getAttribute-int-">getAttribute</a></span>(int&nbsp;attribute)</code>
-<div class="block">Returns the value of the specified @{code attribute}.</div>
+<td class="colLast"><span class="typeNameLabel">CudaKernel.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaKernel.html#getAttribute-int-">getAttribute</a></span>(int&nbsp;attribute)</code>
+<div class="block">Returns the value of the specified @{code attribute} for the
+ <a href="../../../../com/ibm/cuda/CudaFunction.html" title="class in com.ibm.cuda"><code>function</code></a> associated with this kernel.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaKernel.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaKernel.html#getAttribute-int-">getAttribute</a></span>(int&nbsp;attribute)</code>
-<div class="block">Returns the value of the specified @{code attribute} for the
- <a href="../../../../com/ibm/cuda/CudaFunction.html" title="class in com.ibm.cuda"><code>function</code></a> associated with this kernel.</div>
+<td class="colLast"><span class="typeNameLabel">CudaFunction.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaFunction.html#getAttribute-int-">getAttribute</a></span>(int&nbsp;attribute)</code>
+<div class="block">Returns the value of the specified @{code attribute}.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -607,16 +607,16 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaDevice.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaDevice.html#getDriverVersion--">getDriverVersion</a></span>()</code>
-<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
-<div class="block"><span class="deprecationComment">Use Cuda.getDriverVersion() instead.</span></div>
-</div>
+<td class="colLast"><span class="typeNameLabel">Cuda.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/Cuda.html#getDriverVersion--">getDriverVersion</a></span>()</code>
+<div class="block">Returns a number identifying the driver version.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><span class="typeNameLabel">Cuda.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/Cuda.html#getDriverVersion--">getDriverVersion</a></span>()</code>
-<div class="block">Returns a number identifying the driver version.</div>
+<td class="colLast"><span class="typeNameLabel">CudaDevice.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaDevice.html#getDriverVersion--">getDriverVersion</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use Cuda.getDriverVersion() instead.</span></div>
+</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -675,16 +675,16 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaDevice.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaDevice.html#getRuntimeVersion--">getRuntimeVersion</a></span>()</code>
-<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
-<div class="block"><span class="deprecationComment">Use Cuda.getRuntimeVersion() instead.</span></div>
-</div>
+<td class="colLast"><span class="typeNameLabel">Cuda.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/Cuda.html#getRuntimeVersion--">getRuntimeVersion</a></span>()</code>
+<div class="block">Returns a number identifying the runtime version.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><span class="typeNameLabel">Cuda.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/Cuda.html#getRuntimeVersion--">getRuntimeVersion</a></span>()</code>
-<div class="block">Returns a number identifying the runtime version.</div>
+<td class="colLast"><span class="typeNameLabel">CudaDevice.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaDevice.html#getRuntimeVersion--">getRuntimeVersion</a></span>()</code>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use Cuda.getRuntimeVersion() instead.</span></div>
+</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -739,15 +739,15 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaFunction.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaFunction.html#setCacheConfig-com.ibm.cuda.CudaDevice.CacheConfig-">setCacheConfig</a></span>(<a href="../../../../com/ibm/cuda/CudaDevice.CacheConfig.html" title="enum in com.ibm.cuda">CudaDevice.CacheConfig</a>&nbsp;config)</code>
-<div class="block">Configures the cache for this function.</div>
+<td class="colLast"><span class="typeNameLabel">CudaKernel.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaKernel.html#setCacheConfig-com.ibm.cuda.CudaDevice.CacheConfig-">setCacheConfig</a></span>(<a href="../../../../com/ibm/cuda/CudaDevice.CacheConfig.html" title="enum in com.ibm.cuda">CudaDevice.CacheConfig</a>&nbsp;config)</code>
+<div class="block">Configures the cache for the <a href="../../../../com/ibm/cuda/CudaFunction.html" title="class in com.ibm.cuda"><code>function</code></a> associated
+ with this kernel.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaKernel.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaKernel.html#setCacheConfig-com.ibm.cuda.CudaDevice.CacheConfig-">setCacheConfig</a></span>(<a href="../../../../com/ibm/cuda/CudaDevice.CacheConfig.html" title="enum in com.ibm.cuda">CudaDevice.CacheConfig</a>&nbsp;config)</code>
-<div class="block">Configures the cache for the <a href="../../../../com/ibm/cuda/CudaFunction.html" title="class in com.ibm.cuda"><code>function</code></a> associated
- with this kernel.</div>
+<td class="colLast"><span class="typeNameLabel">CudaFunction.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaFunction.html#setCacheConfig-com.ibm.cuda.CudaDevice.CacheConfig-">setCacheConfig</a></span>(<a href="../../../../com/ibm/cuda/CudaDevice.CacheConfig.html" title="enum in com.ibm.cuda">CudaDevice.CacheConfig</a>&nbsp;config)</code>
+<div class="block">Configures the cache for this function.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -765,15 +765,15 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaFunction.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaFunction.html#setSharedMemConfig-com.ibm.cuda.CudaDevice.SharedMemConfig-">setSharedMemConfig</a></span>(<a href="../../../../com/ibm/cuda/CudaDevice.SharedMemConfig.html" title="enum in com.ibm.cuda">CudaDevice.SharedMemConfig</a>&nbsp;config)</code>
-<div class="block">Configures the shared memory of this function.</div>
+<td class="colLast"><span class="typeNameLabel">CudaKernel.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaKernel.html#setSharedMemConfig-com.ibm.cuda.CudaDevice.SharedMemConfig-">setSharedMemConfig</a></span>(<a href="../../../../com/ibm/cuda/CudaDevice.SharedMemConfig.html" title="enum in com.ibm.cuda">CudaDevice.SharedMemConfig</a>&nbsp;config)</code>
+<div class="block">Configures the shared memory of the <a href="../../../../com/ibm/cuda/CudaFunction.html" title="class in com.ibm.cuda"><code>function</code></a>
+ associated with this kernel.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="typeNameLabel">CudaKernel.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaKernel.html#setSharedMemConfig-com.ibm.cuda.CudaDevice.SharedMemConfig-">setSharedMemConfig</a></span>(<a href="../../../../com/ibm/cuda/CudaDevice.SharedMemConfig.html" title="enum in com.ibm.cuda">CudaDevice.SharedMemConfig</a>&nbsp;config)</code>
-<div class="block">Configures the shared memory of the <a href="../../../../com/ibm/cuda/CudaFunction.html" title="class in com.ibm.cuda"><code>function</code></a>
- associated with this kernel.</div>
+<td class="colLast"><span class="typeNameLabel">CudaFunction.</span><code><span class="memberNameLink"><a href="../../../../com/ibm/cuda/CudaFunction.html#setSharedMemConfig-com.ibm.cuda.CudaDevice.SharedMemConfig-">setSharedMemConfig</a></span>(<a href="../../../../com/ibm/cuda/CudaDevice.SharedMemConfig.html" title="enum in com.ibm.cuda">CudaDevice.SharedMemConfig</a>&nbsp;config)</code>
+<div class="block">Configures the shared memory of this function.</div>
 </td>
 </tr>
 <tr class="rowColor">
