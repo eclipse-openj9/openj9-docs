@@ -198,10 +198,24 @@ extends <a href="JVMCRIUException.html" title="class in org.eclipse.openj9.criu"
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">SystemCheckpointException</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;message)</code></th>
+<td class="colLast">
+<div class="block">Creates a SystemCheckpointException with the specified message and a default error code.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,int)">SystemCheckpointException</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;message,
                          int&nbsp;errorCode)</code></th>
 <td class="colLast">
 <div class="block">Creates a SystemCheckpointException with the specified message and error code.</div>
+</td>
+</tr>
+<tr class="altColor">
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,int,java.lang.Throwable)">SystemCheckpointException</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;message,
+                         int&nbsp;errorCode,
+                         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Throwable</a>&nbsp;causedBy)</code></th>
+<td class="colLast">
+<div class="block">Creates a SystemCheckpointException with the specified message, error code and throwable that caused the exception.</div>
 </td>
 </tr>
 </table>
@@ -252,10 +266,24 @@ extends <a href="JVMCRIUException.html" title="class in org.eclipse.openj9.criu"
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
+<a id="&lt;init&gt;(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SystemCheckpointException</h4>
+<pre>public&nbsp;SystemCheckpointException&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;message)</pre>
+<div class="block">Creates a SystemCheckpointException with the specified message and a default error code.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>message</code> - the message</dd>
+</dl>
+</li>
+</ul>
 <a id="&lt;init&gt;(java.lang.String,int)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>SystemCheckpointException</h4>
 <pre>public&nbsp;SystemCheckpointException&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;message,
@@ -265,6 +293,24 @@ extends <a href="JVMCRIUException.html" title="class in org.eclipse.openj9.criu"
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>message</code> - the message</dd>
 <dd><code>errorCode</code> - the error code</dd>
+</dl>
+</li>
+</ul>
+<a id="&lt;init&gt;(java.lang.String,int,java.lang.Throwable)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>SystemCheckpointException</h4>
+<pre>public&nbsp;SystemCheckpointException&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;message,
+                                 int&nbsp;errorCode,
+                                 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Throwable</a>&nbsp;causedBy)</pre>
+<div class="block">Creates a SystemCheckpointException with the specified message, error code and throwable that caused the exception.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>message</code> - the message</dd>
+<dd><code>errorCode</code> - the error code</dd>
+<dd><code>causedBy</code> - throwable that caused the exception</dd>
 </dl>
 </li>
 </ul>
