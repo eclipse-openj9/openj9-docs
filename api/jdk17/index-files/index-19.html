@@ -296,10 +296,6 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../openj9.dtfj/com/ibm/dtfj/javacore/parser/j9/SectionParserGrammar.html#%3Cinit%3E(java.lang.String)" class="member-name-link">SectionParserGrammar(String)</a> - Constructor for class com.ibm.dtfj.javacore.parser.j9.<a href="../openj9.dtfj/com/ibm/dtfj/javacore/parser/j9/SectionParserGrammar.html" title="class in com.ibm.dtfj.javacore.parser.j9">SectionParserGrammar</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="../openj9.criu/org/eclipse/openj9/criu/SecurityProviders.html" class="type-name-link" title="class in org.eclipse.openj9.criu">SecurityProviders</a> - Class in <a href="../openj9.criu/org/eclipse/openj9/criu/package-summary.html">org.eclipse.openj9.criu</a></dt>
-<dd>
-<div class="block">Handles the security providers.</div>
-</dd>
 <dt><a href="../openj9.dtfj/com/ibm/dtfj/corereaders/DumpReader.html#seek(long)" class="member-name-link">seek(long)</a> - Method in class com.ibm.dtfj.corereaders.<a href="../openj9.dtfj/com/ibm/dtfj/corereaders/DumpReader.html" title="class in com.ibm.dtfj.corereaders">DumpReader</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../openj9.dtfj/com/ibm/dtfj/corereaders/zos/dumpreader/Dump.html#seek(long)" class="member-name-link">seek(long)</a> - Method in class com.ibm.dtfj.corereaders.zos.dumpreader.<a href="../openj9.dtfj/com/ibm/dtfj/corereaders/zos/dumpreader/Dump.html" title="class in com.ibm.dtfj.corereaders.zos.dumpreader">Dump</a></dt>
@@ -787,6 +783,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="../openj9.cuda/com/ibm/cuda/CudaJitOptions.html#setGenerateLineInfo(boolean)" class="member-name-link">setGenerateLineInfo(boolean)</a> - Method in class com.ibm.cuda.<a href="../openj9.cuda/com/ibm/cuda/CudaJitOptions.html" title="class in com.ibm.cuda">CudaJitOptions</a></dt>
 <dd>
 <div class="block">Specifies whether to generate line number information.</div>
+</dd>
+<dt><a href="../openj9.criu/org/eclipse/openj9/criu/CRIUSupport.html#setGhostFileLimit(long)" class="member-name-link">setGhostFileLimit(long)</a> - Method in class org.eclipse.openj9.criu.<a href="../openj9.criu/org/eclipse/openj9/criu/CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></dt>
+<dd>
+<div class="block">Set the size limit for ghost files when taking a checkpoint.</div>
 </dd>
 <dt><a href="../openj9.traceformat/com/ibm/jvm/trace/format/api/ByteStream.html#setGuardBytes(int)" class="member-name-link">setGuardBytes(int)</a> - Method in class com.ibm.jvm.trace.format.api.<a href="../openj9.traceformat/com/ibm/jvm/trace/format/api/ByteStream.html" title="class in com.ibm.jvm.trace.format.api">ByteStream</a></dt>
 <dd>&nbsp;</dd>
@@ -3302,9 +3302,17 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">An exception representing a failed system operation before checkpoint.</div>
 </dd>
+<dt><a href="../openj9.criu/org/eclipse/openj9/criu/SystemCheckpointException.html#%3Cinit%3E(java.lang.String)" class="member-name-link">SystemCheckpointException(String)</a> - Constructor for exception org.eclipse.openj9.criu.<a href="../openj9.criu/org/eclipse/openj9/criu/SystemCheckpointException.html" title="class in org.eclipse.openj9.criu">SystemCheckpointException</a></dt>
+<dd>
+<div class="block">Creates a SystemCheckpointException with the specified message and a default error code.</div>
+</dd>
 <dt><a href="../openj9.criu/org/eclipse/openj9/criu/SystemCheckpointException.html#%3Cinit%3E(java.lang.String,int)" class="member-name-link">SystemCheckpointException(String, int)</a> - Constructor for exception org.eclipse.openj9.criu.<a href="../openj9.criu/org/eclipse/openj9/criu/SystemCheckpointException.html" title="class in org.eclipse.openj9.criu">SystemCheckpointException</a></dt>
 <dd>
 <div class="block">Creates a SystemCheckpointException with the specified message and error code.</div>
+</dd>
+<dt><a href="../openj9.criu/org/eclipse/openj9/criu/SystemCheckpointException.html#%3Cinit%3E(java.lang.String,int,java.lang.Throwable)" class="member-name-link">SystemCheckpointException(String, int, Throwable)</a> - Constructor for exception org.eclipse.openj9.criu.<a href="../openj9.criu/org/eclipse/openj9/criu/SystemCheckpointException.html" title="class in org.eclipse.openj9.criu">SystemCheckpointException</a></dt>
+<dd>
+<div class="block">Creates a SystemCheckpointException with the specified message, error code and throwable that caused the exception.</div>
 </dd>
 <dt><a href="../openj9.jvm/com/ibm/jvm/Dump.html#SystemDump()" class="member-name-link">SystemDump()</a> - Static method in class com.ibm.jvm.<a href="../openj9.jvm/com/ibm/jvm/Dump.html" title="class in com.ibm.jvm">Dump</a></dt>
 <dd>

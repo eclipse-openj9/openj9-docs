@@ -8,8 +8,6 @@
 <meta name="description" content="declaration: module: openj9.criu, package: org.eclipse.openj9.criu, class: CRIUSupport">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <meta name="keywords" content="org.eclipse.openj9.criu.CRIUSupport class">
-<meta name="keywords" content="LOWEST_USER_HOOK_PRIORITY">
-<meta name="keywords" content="HIGHEST_USER_HOOK_PRIORITY">
 <meta name="keywords" content="isCRIUSupportEnabled()">
 <meta name="keywords" content="enableCRIUSecProvider()">
 <meta name="keywords" content="isCheckpointAllowed()">
@@ -26,6 +24,7 @@
 <meta name="keywords" content="setTrackMemory()">
 <meta name="keywords" content="setWorkDir()">
 <meta name="keywords" content="setUnprivileged()">
+<meta name="keywords" content="setGhostFileLimit()">
 <meta name="keywords" content="registerRestoreEnvFile()">
 <meta name="keywords" content="registerRestoreOptionsFile()">
 <meta name="keywords" content="registerPostRestoreHook()">
@@ -72,13 +71,13 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
-<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -137,24 +136,6 @@ loadScripts(document, 'script');</script>
 </div>
 </section>
 </li>
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static int</code></div>
-<div class="col-second even-row-color"><code><a href="#HIGHEST_USER_HOOK_PRIORITY" class="member-name-link">HIGHEST_USER_HOOK_PRIORITY</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static int</code></div>
-<div class="col-second odd-row-color"><code><a href="#LOWEST_USER_HOOK_PRIORITY" class="member-name-link">LOWEST_USER_HOOK_PRIORITY</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -207,7 +188,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isCRIUSupportEnabled()" class="member-name-link">isCRIUSupportEnabled</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Queries if CRIU support is enabled and j9criu29 library has been loaded.</div>
+<div class="block">Queries if CRIU support is enabled and criu library has been loaded.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerPostRestoreHook(java.lang.Runnable)" class="member-name-link">registerPostRestoreHook</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link" target="_blank">Runnable</a>&nbsp;hook)</code></div>
@@ -260,48 +241,53 @@ loadScripts(document, 'script');</script>
 <div class="block">Controls whether to dump file locks.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setImageDir(java.nio.file.Path)" class="member-name-link">setImageDir</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link" target="_blank">Path</a>&nbsp;imageDir)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setGhostFileLimit(long)" class="member-name-link">setGhostFileLimit</a><wbr>(long&nbsp;limit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set the size limit for ghost files when taking a checkpoint.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setImageDir(java.nio.file.Path)" class="member-name-link">setImageDir</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link" target="_blank">Path</a>&nbsp;imageDir)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the directory that will hold the images upon checkpoint.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLeaveRunning(boolean)" class="member-name-link">setLeaveRunning</a><wbr>(boolean&nbsp;leaveRunning)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLeaveRunning(boolean)" class="member-name-link">setLeaveRunning</a><wbr>(boolean&nbsp;leaveRunning)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Controls whether process trees are left running after checkpoint.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLogFile(java.lang.String)" class="member-name-link">setLogFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;logFile)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLogFile(java.lang.String)" class="member-name-link">setLogFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;logFile)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Write log output to logFile.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLogLevel(int)" class="member-name-link">setLogLevel</a><wbr>(int&nbsp;logLevel)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setLogLevel(int)" class="member-name-link">setLogLevel</a><wbr>(int&nbsp;logLevel)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the verbosity of log output.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setShellJob(boolean)" class="member-name-link">setShellJob</a><wbr>(boolean&nbsp;shellJob)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setShellJob(boolean)" class="member-name-link">setShellJob</a><wbr>(boolean&nbsp;shellJob)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Controls ability to dump shell jobs.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTCPEstablished(boolean)" class="member-name-link">setTCPEstablished</a><wbr>(boolean&nbsp;tcpEstablished)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTCPEstablished(boolean)" class="member-name-link">setTCPEstablished</a><wbr>(boolean&nbsp;tcpEstablished)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Controls whether to re-establish TCP connects.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTrackMemory(boolean)" class="member-name-link">setTrackMemory</a><wbr>(boolean&nbsp;trackMemory)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTrackMemory(boolean)" class="member-name-link">setTrackMemory</a><wbr>(boolean&nbsp;trackMemory)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Controls whether memory tracking is enabled.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUnprivileged(boolean)" class="member-name-link">setUnprivileged</a><wbr>(boolean&nbsp;unprivileged)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUnprivileged(boolean)" class="member-name-link">setUnprivileged</a><wbr>(boolean&nbsp;unprivileged)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Controls whether CRIU will be invoked in privileged or unprivileged mode.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWorkDir(java.nio.file.Path)" class="member-name-link">setWorkDir</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link" target="_blank">Path</a>&nbsp;workDir)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setWorkDir(java.nio.file.Path)" class="member-name-link">setWorkDir</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link" target="_blank">Path</a>&nbsp;workDir)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the directory where non-image files are stored (e.g. logs).</div>
 </div>
 </div>
@@ -316,26 +302,6 @@ loadScripts(document, 'script');</script>
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="LOWEST_USER_HOOK_PRIORITY">
-<h3>LOWEST_USER_HOOK_PRIORITY</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">LOWEST_USER_HOOK_PRIORITY</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="HIGHEST_USER_HOOK_PRIORITY">
-<h3>HIGHEST_USER_HOOK_PRIORITY</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">HIGHEST_USER_HOOK_PRIORITY</span></div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
@@ -364,6 +330,8 @@ loadScripts(document, 'script');</script>
  <p>
  <code>fileLocks</code> = false
  <p>
+ <code>ghostFileLimit</code> = 1 MB
+ <p>
  <code>workDir</code> = imageDir, the directory where the images are to be created.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -389,10 +357,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="isCRIUSupportEnabled()">
 <h3>isCRIUSupportEnabled</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCRIUSupportEnabled</span>()</div>
-<div class="block">Queries if CRIU support is enabled and j9criu29 library has been loaded.</div>
+<div class="block">Queries if CRIU support is enabled and criu library has been loaded.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>TRUE if support is enabled and the library is loaded, FALSE otherwise</dd>
+<dd>TRUE if CRIU support is enabled and the library is loaded, FALSE otherwise</dd>
 </dl>
 </section>
 </li>
@@ -632,6 +600,24 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="setGhostFileLimit(long)">
+<h3>setGhostFileLimit</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></span>&nbsp;<span class="element-name">setGhostFileLimit</span><wbr><span class="parameters">(long&nbsp;limit)</span></div>
+<div class="block">Set the size limit for ghost files when taking a checkpoint. File limit
+ can not be greater than 2^32 - 1 or negative.
+
+ Default: 1MB set by CRIU</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>limit</code> - the file limit size in bytes.</dd>
+<dt>Returns:</dt>
+<dd>this</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link" target="_blank">UnsupportedOperationException</a></code> - if file limit is greater than 2^32 - 1 or negative.</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="registerRestoreEnvFile(java.nio.file.Path)">
 <h3>registerRestoreEnvFile</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></span>&nbsp;<span class="element-name">registerRestoreEnvFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link" target="_blank">Path</a>&nbsp;envFile)</span></div>
@@ -812,12 +798,10 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link" target="_blank">UnsupportedOperationException</a></code> - if CRIU is not supported
   or running in non-portable mode (only one checkpoint is allowed),
   and we have already checkpointed once.</dd>
-<dd><code><a href="JVMCheckpointException.html" title="class in org.eclipse.openj9.criu">JVMCheckpointException</a></code> - if a JVM error occurred before
-                                       checkpoint</dd>
+<dd><code><a href="JVMCheckpointException.html" title="class in org.eclipse.openj9.criu">JVMCheckpointException</a></code> - if a JVM error occurred before checkpoint</dd>
 <dd><code><a href="SystemCheckpointException.html" title="class in org.eclipse.openj9.criu">SystemCheckpointException</a></code> - if a System operation failed before checkpoint</dd>
 <dd><code><a href="SystemRestoreException.html" title="class in org.eclipse.openj9.criu">SystemRestoreException</a></code> - if a System operation failed during or after restore</dd>
-<dd><code><a href="JVMRestoreException.html" title="class in org.eclipse.openj9.criu">JVMRestoreException</a></code> - if an error occurred during or after
-                                       restore</dd>
+<dd><code><a href="JVMRestoreException.html" title="class in org.eclipse.openj9.criu">JVMRestoreException</a></code> - if an error occurred during or after restore</dd>
 </dl>
 </section>
 </li>

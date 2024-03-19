@@ -120,10 +120,20 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,int)" class="member-name-link">SystemCheckpointException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;message,
- int&nbsp;errorCode)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">SystemCheckpointException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;message)</code></div>
 <div class="col-last even-row-color">
+<div class="block">Creates a SystemCheckpointException with the specified message and a default error code.</div>
+</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,int)" class="member-name-link">SystemCheckpointException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;message,
+ int&nbsp;errorCode)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Creates a SystemCheckpointException with the specified message and error code.</div>
+</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,int,java.lang.Throwable)" class="member-name-link">SystemCheckpointException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;message,
+ int&nbsp;errorCode,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link" target="_blank">Throwable</a>&nbsp;causedBy)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Creates a SystemCheckpointException with the specified message, error code and throwable that caused the exception.</div>
 </div>
 </div>
 </section>
@@ -153,6 +163,17 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="&lt;init&gt;(java.lang.String)">
+<h3>SystemCheckpointException</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SystemCheckpointException</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;message)</span></div>
+<div class="block">Creates a SystemCheckpointException with the specified message and a default error code.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>message</code> - the message</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="&lt;init&gt;(java.lang.String,int)">
 <h3>SystemCheckpointException</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SystemCheckpointException</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;message,
@@ -162,6 +183,21 @@ loadScripts(document, 'script');</script>
 <dt>Parameters:</dt>
 <dd><code>message</code> - the message</dd>
 <dd><code>errorCode</code> - the error code</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(java.lang.String,int,java.lang.Throwable)">
+<h3>SystemCheckpointException</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SystemCheckpointException</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;message,
+ int&nbsp;errorCode,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link" target="_blank">Throwable</a>&nbsp;causedBy)</span></div>
+<div class="block">Creates a SystemCheckpointException with the specified message, error code and throwable that caused the exception.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>message</code> - the message</dd>
+<dd><code>errorCode</code> - the error code</dd>
+<dd><code>causedBy</code> - throwable that caused the exception</dd>
 </dl>
 </section>
 </li>
