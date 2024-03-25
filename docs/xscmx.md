@@ -71,7 +71,6 @@ Non-persistent caches are stored in shared memory and are removed when a system 
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** By default, a cache is persistent on all platforms, except z/OS.
 
-
 ## See also
 
 - [`-Xscdmx`](xscdmx.md) (control the size of the class debug area)

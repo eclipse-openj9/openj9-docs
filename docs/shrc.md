@@ -79,7 +79,7 @@ A shared classes cache can be *persistent* or *non-persistent* according to the 
 - persistent caches are written to memory-mapped files and remain in place, even after a system is rebooted.
 - non-persistent caches exist in shared memory and are automatically removed when the operating system is restarted.
 
-By default, a shared classes cache is persistent, except on the z/OS&reg; platform, where persistent caches are not supported.
+By default, a shared classes cache is persistent, except on the z/OS platform.
 If you are using a non-persistent cache, you can use a cache utility to create a snapshot of the cache, which can be reinitialized after a reboot. For more information see [Saving a non-persistent shared classes cache](#saving-a-non-persistent-shared-classes-cache).
 
 If you have multiple VMs and you do not change the default shared classes behavior, the VMs share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and re-created.
@@ -220,10 +220,7 @@ The [`-Xshareclasses:listAllCaches`](xshareclasses.md#listallcaches) cache utili
 
 A snapshot can be created only if the user has sufficient permissions to create the destination snapshot file. If a snapshot of the same name exists already, it is overwritten. On platforms that support persistent caches, the `nonpersistent` suboption must be specified in order to create a snapshot. For information about removing snapshot files, see the `destroySnapshot` and `destroyAllSnapshots` cache utilities in [Housekeeping](#housekeeping).
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
-
-- Persistent caches are not supported on z/OS.
-- The `snapshotCache` and `restoreFromCache` cache utilities cannot be used on Windows systems.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The `snapshotCache` and `restoreFromCache` cache utilities cannot be used on Windows systems.
 
 ## Housekeeping
 

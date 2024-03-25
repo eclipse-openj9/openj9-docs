@@ -96,7 +96,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
     - On z/OS&reg; systems, `<directory>` is the `/tmp/javasharedresources` directory.
     - On other operating systems, `<directory>` is `.cache/javasharedresources` in the user's home directory, unless the `groupAccess` parameter is specified, in which case it is `/tmp/javasharedresources`, because some members of the group might not have access to the user's home directory. You must have sufficient permissions in `<directory>`. Do not set user's home directory on a NFS or shared mount.
 
-: On AIX&reg;, Linux, macOS, and Windows systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system.
+: On all operating systems, the VM writes persistent cache files directly into the directory specified. Persistent cache files can be safely moved and deleted from the file system.
 
 : Non-persistent caches are stored in shared memory and have control files that describe the location of the memory. Control files are stored in a `javasharedresources` subdirectory of the `cacheDir` specified. Do not move or delete control files in this directory. The `listAllCaches` utility, the `destroyAll` utility, and the `expire` suboption work only in the scope of a given `cacheDir`.
 
@@ -134,7 +134,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 | The cache directory is a new directory and you do not specify the `groupAccess` suboption | 0700 |
 | The cache directory already exists and is not `<HomeDir>/.cache/javasharedresources` | Unchanged |
 
-: †On z/OS&reg; systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
+: †On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
 
 : :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
 
@@ -435,7 +435,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:persistent
 
-:   Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Non-persistent and persistent caches can have the same name. On AIX, you must always use the `persistent` suboption when you run utilities such as `destroy` on a persistent cache.
+:   Uses a persistent cache. The cache is created on disk, which persists beyond operating system restarts. Non-persistent and persistent caches can have the same name. On z/OS, you must always use the `persistent` suboption when you run utilities such as `destroy` on a persistent cache.
 
 :   :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
