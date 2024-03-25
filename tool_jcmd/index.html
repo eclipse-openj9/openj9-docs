@@ -2345,6 +2345,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Java command (jcmd) tool
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2354,6 +2365,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -8531,6 +8570,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -8571,19 +8627,23 @@
 <p>Use the <code>jcmd</code> tool to run diagnostic commands on a specified VM.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Note:</strong> Running diagnostic commands can significantly affect the performance of the target VM.</p>
 <p>The command syntax is as follows:</p>
-<pre><code>jcmd [&lt;options&gt;] [&lt;vmid&gt; &lt;arguments&gt;]
+<pre><code>jcmd [&lt;options&gt;] [&lt;vmid | display name | 0&gt; &lt;arguments&gt;]
 </code></pre>
 <p>Where:</p>
 <ul>
 <li>
-<p>The available <code>&lt;options&gt;</code> are:    </p>
+<p>The available <code>&lt;options&gt;</code> are:</p>
 <ul>
+<li><code>-l</code>: lists current Java&trade; processes recognized by the <code>jcmd</code> tool. The list includes VMID, which is usually the <em>process ID</em> (pid) and the display name, which refers to the target Java VM process that can be attached by <code>jcmd</code>. <code>-l</code> is the default option, therefore specifying <code>jcmd</code> without any options also displays the VMIDs.</li>
 <li><code>-J</code>: supplies arguments to the Java VM that is running the <code>jcmd</code> command. You can use multiple <code>-J</code> options, for example: <code>jcmd -J-Xmx10m -J-Dcom.ibm.tools.attach.enable=yes</code></li>
 <li><code>-h</code>: prints the <code>jcmd</code> help</li>
 </ul>
 </li>
 <li>
-<p><code>&lt;vmid&gt;</code> is the Attach API virtual machine identifier for the Java&trade; VM process. This ID is often, but not always, the same as the operating system <em>process ID</em>. One example where the ID might be different is if you specified the system property <code>-Dcom.ibm.tools.attach.id</code> when you started the process. You can use the <a href="../tool_jps/"><code>jps</code></a> command to find the VMID.</p>
+<p><code>&lt;vmid&gt;</code> is the Attach API virtual machine identifier for the Java VM process. This ID is often, but not always, the same as the operating system pid. One example where the ID might be different is if you specified the system property <code>-Dcom.ibm.tools.attach.id</code> when you started the process. In addition to the <code>jcmd</code> command, you can also use the <a href="../tool_jps/"><code>jps</code></a> command to find the VMID.</p>
+<p>You can also specify the full or partial target Java process display name instead of the VMID. The <code>jcmd</code> tool finds the corresponding VMID of the display name and runs the <code>jcmd</code> command.</p>
+<p>You can specify the display name for a target VM through the <a href="../dcomibmtoolsattachdisplayname/"><code>com.ibm.tools.attach.displayName</code></a> system property. If the display name is not set through the system property, then the main class name along with the application arguments is set as the default display name.</p>
+<p>If you specify <code>0</code>, the <code>jcmd</code> command is sent to all Java processes that are detected by the current <code>jcmd</code> command.</p>
 </li>
 <li>
 <p>The available <code>arguments</code> are:</p>
@@ -8604,9 +8664,13 @@ jcmd 31452 Dump.heap myHeapDump
 <ul>
 <li>Displays information only for local processes that are owned by the current user, due to security considerations.</li>
 <li>Displays information for OpenJ9 Java processes only</li>
-<li>Does not show information for processes whose Attach API is disabled. <span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Note:</strong> The Attach API is disabled by default on z/OS.</li>
+<li>Does not show information for processes whose Attach API is disabled. <span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Note:</strong> The Attached API is disabled by default on z/OS.</li>
 </ul>
-<p>For more information about the Attach API, including how to enable and secure it, see <a href="../attachapi/">Java Attach API</a>.</p>
+<p>For more information about the Attached API, including how to enable and secure it, see <a href="../attachapi/">Java Attach API</a>.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../version0.44/#vmid-query-in-the-jcmd-tool-enhanced">What's new in version 0.44.0</a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== tool_jcmd.md ==== -->
 
 

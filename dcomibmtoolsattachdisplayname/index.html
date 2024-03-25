@@ -8651,18 +8651,17 @@
 <tr>
 <th>Setting</th>
 <th>Value</th>
-<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>&lt;my_display_name&gt;</code></td>
 <td>[string]</td>
-<td>The command line invocation used to start the application</td>
 </tr>
 </tbody>
 </table>
 <p>To change the value for <code>&lt;my_display_name&gt;</code> that is recorded by an agent, enter a character string of your choice.</p>
+<p>If the display name is not set through the <code>-Dcom.ibm.tools.attach.displayName</code> system property, then the main class name along with the application arguments is set as the default display name. For more information, see <a href="../tool_jcmd/">Java diagnostic command (<code>jcmd</code>) tool</a>.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../attachapi/">Java&trade; Attach API</a></li>

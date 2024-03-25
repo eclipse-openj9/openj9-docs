@@ -469,6 +469,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vmid-query-in-the-jcmd-tool-enhanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMID query in the jcmd tool enhanced
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8689,6 +8698,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vmid-query-in-the-jcmd-tool-enhanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMID query in the jcmd tool enhanced
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8749,6 +8767,7 @@
 <li><img alt="Start of content that applies to Java 21 (LTS)" src="../cr/java21.png" /> <a href="#display-of-multiple-warnings-on-loading-the-same-agent-restricted-on-aix-systems">Display of multiple warnings on loading the same agent restricted on AIX&reg; systems</a> <img alt="End of content that applies to Java 21 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><a href="#xl-c-runtime-16107-or-later-required-for-aix-openj9-builds-on-openjdk-8">XL C++ Runtime 16.1.0.7 or later required for AIX OpenJ9 builds on OpenJDK 8</a></li>
 <li><a href="#new-xx-showunmountedthreadstacks-option-added">New <code>-XX:[+|-]ShowUnmountedThreadStacks</code> option added</a></li>
+<li><a href="#vmid-query-in-the-jcmd-tool-enhanced">VMID query in the <code>jcmd</code> tool enhanced</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8767,6 +8786,11 @@
 <p>Java&trade; core file lists stacks of only those threads that are mapped to platform threads. An unmounted virtual thread is not mapped to any platform thread. Therefore, the stack of any unmounted virtual thread is not included in the Java core file and thus, the virtual thread information remains incomplete.</p>
 <p>You can use the <code>-XX:+ShowUnmountedThreadStacks</code> option to include all the thread data that a VM is aware of, both regular Java threads and the unmounted virtual threads, in a Java core file.</p>
 <p>For more information, see <a href="../xxshowunmountedthreadstacks/"><code>-XX:[+|-]ShowUnmountedThreadStacks</code></a>. <img alt="End of content that applies to Java 21 (LTS)" src="../cr/java_close_lts.png" /></p>
+<h3 id="vmid-query-in-the-jcmd-tool-enhanced">VMID query in the <code>jcmd</code> tool enhanced</h3>
+<p>Earlier in OpenJ9, when sending a <code>jcmd</code> command to a VM, you had to run <code>jcmd -l</code> to retrieve all the pids for all the VMs found on the machine. Then, you had to use <code>jcmd [vmid] [command]</code> to send the command to the specific VM.</p>
+<p>For OpenJDK compatibility, OpenJ9 now supports direct use of the Java process name, full or partial, as the ID to send the <code>jcmd</code> command.</p>
+<p>The <code>jcmd</code> tool also now supports specifying <code>0</code> as a VMID to target all VMs.</p>
+<p>For more information, see <a href="../tool_jcmd/">Java diagnostic command (<code>jcmd</code>) tool</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.43.0 and v0.44.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.44/0.44.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.44.md ==== -->
