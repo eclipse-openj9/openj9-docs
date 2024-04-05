@@ -31,6 +31,7 @@ The following new features and notable changes since version 0.43.0 are included
 - [XL C++ Runtime 16.1.0.7 or later required for AIX OpenJ9 builds on OpenJDK 8](#xl-c-runtime-16107-or-later-required-for-aix-openj9-builds-on-openjdk-8)
 - [New `-XX:[+|-]ShowUnmountedThreadStacks` option added](#new-xx-showunmountedthreadstacks-option-added)
 - [VMID query in the `jcmd` tool enhanced](#vmid-query-in-the-jcmd-tool-enhanced)
+- [DDR field names in `J9BuildFlags` changed](#ddr-field-names-in-j9buildflags-changed)
 
 ## Features and changes
 
@@ -75,6 +76,17 @@ For OpenJDK compatibility, OpenJ9 now supports direct use of the Java process na
 The `jcmd` tool also now supports specifying `0` as a VMID to target all VMs.
 
 For more information, see [Java diagnostic command (`jcmd`) tool](tool_jcmd.md).
+
+### DDR field names in `J9BuildFlags` changed
+
+The Direct Dump Reader (DDR) code enables reading system dump data by using the OpenJ9
+Diagnostic Tool Framework for Java (DTFJ) API or the [`jdmpview`](tool_jdmpview.md) tool.
+DDR code uses fields of `J9BuildFlags` to access build flags in the system dump data.
+The names of `J9BuildFlags` fields changed over time and therefore, supporting system dumps with different build flags became a challenge.
+
+Earlier, field names in `J9BuildFlags` were based on names defined in `j9.flags`. Now, when the `J9BuildFlags` is generated for each build, the flag names are those names that are specified in `j9cfg.h` (derived from `j9cfg.h.ftl` or `j9cfg.h.in`) instead of the names that are defined in `j9.flags`. For example, `env_data64` is now referred to as `J9VM_ENV_DATA64`.
+
+You can extend the DDR code, adding your own commands, by writing plug-ins. If the user plug-in code contains references to fields of `J9BuildFlags` to read the build flags in the system dump data, you must change references to use the names as specified in `j9cfg.h`.
 
 ## Known problems and full release information
 
