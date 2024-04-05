@@ -32,6 +32,7 @@ The following new features and notable changes since version 0.43.0 are included
 - [New `-XX:[+|-]ShowUnmountedThreadStacks` option added](#new-xx-showunmountedthreadstacks-option-added)
 - [VMID query in the `jcmd` tool enhanced](#vmid-query-in-the-jcmd-tool-enhanced)
 - [DDR field names in `J9BuildFlags` changed](#ddr-field-names-in-j9buildflags-changed)
+- [New system property added to prevent the deletion of the Attach API control files within the `/tmp/` folder](#new-system-property-added-to-prevent-the-deletion-of-the-attach-api-control-files-within-the-tmp-folder)
 
 ## Features and changes
 
@@ -87,6 +88,12 @@ The names of `J9BuildFlags` fields changed over time and therefore, supporting s
 Earlier, field names in `J9BuildFlags` were based on names defined in `j9.flags`. Now, when the `J9BuildFlags` is generated for each build, the flag names are those names that are specified in `j9cfg.h` (derived from `j9cfg.h.ftl` or `j9cfg.h.in`) instead of the names that are defined in `j9.flags`. For example, `env_data64` is now referred to as `J9VM_ENV_DATA64`.
 
 You can extend the DDR code, adding your own commands, by writing plug-ins. If the user plug-in code contains references to fields of `J9BuildFlags` to read the build flags in the system dump data, you must change references to use the names as specified in `j9cfg.h`.
+
+### New system property added to prevent the deletion of the Attach API control files within the `/tmp/` folder
+
+You can use the `-Dcom.ibm.tools.attach.fileAccessUpdateTime` system property to prevent Linux&reg; `systemd-tmpfiles` from deleting the Attach API control files within the `/tmp/` folder. By updating the Attach API control file access times to avoid deletion by `systemd-tmpfiles`, the long-running Attach API can continue to use the control files to operate. This system property enables Attach API to update the control file access times at specific intervals.
+
+For more information, see [`-Dcom.ibm.tools.attach.fileAccessUpdateTime`](dcomibmtoolsattachfileaccessupdatetime.md).
 
 ## Known problems and full release information
 
