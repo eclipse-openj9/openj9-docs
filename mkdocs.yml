@@ -244,6 +244,7 @@ nav:
             - "-Dcom.ibm.tools.attach.directory"                                 : dcomibmtoolsattachdirectory.md
             - "-Dcom.ibm.tools.attach.displayName"                               : dcomibmtoolsattachdisplayname.md
             - "-Dcom.ibm.tools.attach.enable"                                    : dcomibmtoolsattachenable.md
+            - "-Dcom.ibm.tools.attach.fileAccessUpdateTime"                      : dcomibmtoolsattachfileaccessupdatetime.md
             - "-Dcom.ibm.tools.attach.id"                                        : dcomibmtoolsattachid.md
             - "-Dcom.ibm.tools.attach.logging"                                   : dcomibmtoolsattachlogging.md
             - "-Dcom.ibm.tools.attach.log.name"                                  : dcomibmtoolsattachlogname.md
