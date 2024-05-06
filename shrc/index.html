@@ -9022,8 +9022,8 @@ Default behavior includes the following characteristics:</p>
 <li>persistent caches are written to memory-mapped files and remain in place, even after a system is rebooted.</li>
 <li>non-persistent caches exist in shared memory and are automatically removed when the operating system is restarted.</li>
 </ul>
-<p>By default, a shared classes cache is persistent, except on the z/OS platform.
-If you are using a non-persistent cache, you can use a cache utility to create a snapshot of the cache, which can be reinitialized after a reboot. For more information see <a href="#saving-a-non-persistent-shared-classes-cache">Saving a non-persistent shared classes cache</a>.</p>
+<p>By default, a shared classes cache is persistent, except on the z/OS platform. Support for persistent shared class cache was added on z/OS in <a href="../version0.40/#support-for-persistent-shared-classes-cache-added-on-zos">0.40.0 release</a> but the default cache type on z/OS is still nonpersistent.</p>
+<p>If you are using a non-persistent cache, you can use a cache utility to create a snapshot of the cache, which can be reinitialized after a reboot. For more information see <a href="#saving-a-non-persistent-shared-classes-cache">Saving a non-persistent shared classes cache</a>.</p>
 <p>If you have multiple VMs and you do not change the default shared classes behavior, the VMs share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and re-created.</p>
 <p>For a set of best practices when using class data sharing, see <a href="#creating-a-shared-classes-cache">Creating a shared classes cache</a>.</p>
 <h2 id="class-data-sharing-operations">Class data sharing operations</h2>
