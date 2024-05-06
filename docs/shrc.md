@@ -79,7 +79,8 @@ A shared classes cache can be *persistent* or *non-persistent* according to the 
 - persistent caches are written to memory-mapped files and remain in place, even after a system is rebooted.
 - non-persistent caches exist in shared memory and are automatically removed when the operating system is restarted.
 
-By default, a shared classes cache is persistent, except on the z/OS platform.
+By default, a shared classes cache is persistent, except on the z/OS platform. Support for persistent shared class cache was added on z/OS in [0.40.0 release](version0.40.md#support-for-persistent-shared-classes-cache-added-on-zos) but the default cache type on z/OS is still nonpersistent.
+
 If you are using a non-persistent cache, you can use a cache utility to create a snapshot of the cache, which can be reinitialized after a reboot. For more information see [Saving a non-persistent shared classes cache](#saving-a-non-persistent-shared-classes-cache).
 
 If you have multiple VMs and you do not change the default shared classes behavior, the VMs share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and re-created.
