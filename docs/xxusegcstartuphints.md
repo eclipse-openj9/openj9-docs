@@ -50,7 +50,7 @@ The final value stored to the shared cache is not recorded in the verbose GC out
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
-- When enabled, this option overrides any initial heap size that is specified on the command line, for example by using the [`-Xms`](xms.md) option.
+- When enabled, this option overrides any initial heap size that is specified on the command line but only if the new size is within the initial heap size limits of that command-line option. For example, the new initial heap size will be greater than the initial heap size set by the [`-Xms`](xms.md) option or its default value.
 - Because the shared classes cache is used to store heap size information, this option does not work if class data sharing ([`-Xshareclasses`](xshareclasses.md)) is disabled.
 
 :fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** This feature is not currently available with the Balanced GC policy.
