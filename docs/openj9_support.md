@@ -205,9 +205,9 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
-### OpenJDK 21
+### OpenJDK 21 and later
 
-OpenJDK 21 binaries are expected to function on the minimum operating system levels shown in the following tables:
+OpenJDK 21 and later binaries are expected to function on the minimum operating system levels shown in the following tables:
 
 
 | Linux (**Note 1**)                        | AArch64                                                                              | x64                                                                                  | ppc64le                                                                              | Z64                                                                                  |
