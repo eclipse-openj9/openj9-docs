@@ -23,6 +23,8 @@
 
 # What's new in version 0.44.0
 
+**Version 0.44.0 will be released soon.**
+
 The following new features and notable changes since version 0.43.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
