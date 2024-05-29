@@ -118,7 +118,7 @@ Changes are made to the `com.ibm.oti.shared` API to support nested jar files.
 ### Direct Dump Reader enabled on Linux and Windows
 
 Direct Dump Reader (DDR) support is now enabled for the OpenJ9 VM on all Linux architectures and on Windows. The DDR code enables the VM to read system dump data by using the OpenJ9 Diagnostic Tool
-Framework for Java (DTFJ) API or the [`jdmpview`](tool_jdmpview.md) tool. If you use the [Eclipse Memory Analyzer&trade; tool (MAT)](https://www.eclipse.org/mat/), you can also analyze OpenJ9 or IBM VMs by installing the DTFJ plugin.
+Framework for Java (DTFJ) API or the [`jdmpview`](tool_jdmpview.md) tool. If you use the [Eclipse Memory Analyzer&trade; tool (MAT)](https://www.eclipse.org/mat/), you can also analyze OpenJ9 or IBM VMs by installing the DTFJ plug-in.
 (Install from the Eclipse Help menu; Install New Software > Work with "IBM Diagnostic Tool Framework for Java" > IBM Monitoring and  Diagnostic Tools > Diagnostic Tool Framework for Java)
 
 You must use a 32-bit VM to look at a 32-bit core, and a 64-bit VM to look at a 64-bit core. This restriction will be fixed in a later version of OpenJ9.
