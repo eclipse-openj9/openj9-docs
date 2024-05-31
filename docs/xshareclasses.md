@@ -123,16 +123,16 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : If you set this suboption to 0000, the default directory permissions are used. If you set this suboption to 1000, the machine default directory permissions are used, but the sticky bit is enabled.
 
-: If the cache directory is the platform default directory, `<HomeDir>/.cache/javasharedresources`, <HomeDir> being the user's home directory, this suboption is ignored and the cache directory permissions are set to 0777.
+: If the cache directory is the platform default directory, this suboption is ignored. The permission is set as specified in the following conditions and permissions table.
 
 : If you do not set this suboption, the default permissions are used according to the following conditions:
 
 | Condition | Permissions |
 | ---------- | ----------- |
-| The cache directory is `<HomeDir>/.cache/javasharedresources`. If this directory already exists with different permissions, the permissions are changed when the cache is opened.† | 0777 |
+| The cache directory is `/tmp/javasharedresources`. If this directory already exists with different permissions, the permissions are changed when the cache is opened.† | 0777 |
+| The cache directory already exists and is not `/tmp/javasharedresources` | Unchanged |
 | The cache directory is a new directory and you also specify the `groupAcess` suboption | 0770 |
 | The cache directory is a new directory and you do not specify the `groupAccess` suboption | 0700 |
-| The cache directory already exists and is not `<HomeDir>/.cache/javasharedresources` | Unchanged |
 
 : †On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
 
