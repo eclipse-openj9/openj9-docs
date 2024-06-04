@@ -8705,8 +8705,8 @@
 -->
 
 <h1 id="-xx-shareanonymousclasses">-XX:[+|-]ShareAnonymousClasses</h1>
-<p>This option enables and disables the storage of VM anonymous classes, those created by <code>Unsafe.defineAnonymousClass</code>, in the shared classes cache.</p>
-<p><img alt="Start of content that applies to Java 15+" src="../cr/java15plus.png" /> In OpenJDK 15 and later versions, this option also enables and disables the storage of hidden classes in the shared classes cache.</p>
+<p>This option enables or disables the storage of VM anonymous classes, those created by <code>Unsafe.defineAnonymousClass</code>, in the shared classes cache.</p>
+<p><img alt="Start of content that applies to Java 15+" src="../cr/java15plus.png" /> In OpenJDK 15 and later versions, this option also enables or disables the storage of hidden classes in the shared classes cache.</p>
 <p>The option is enabled by default, which means that anonymous classes (and hidden classes, in OpenJDK 15 and later) are stored in the shared classes cache and are therefore available for ahead-of-time (AOT) compilation, potentially improving startup performance.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]ShareAnonymousClasses
