@@ -23,7 +23,7 @@
 
 # -Xsigcatch / -Xnosigcatch
 
-Enables and disables VM signal handling code.
+These options enable or disable VM signal handling code.
 
 ## Syntax
 

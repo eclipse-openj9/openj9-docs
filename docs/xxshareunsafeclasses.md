@@ -23,7 +23,7 @@
 
 # -XX:[+|-]ShareUnsafeClasses
 
-This option enables and disables the storage of VM classes created through `Unsafe.defineClass` in the shared classes cache.
+This option enables or disables the storage of VM classes created through `Unsafe.defineClass` in the shared classes cache.
 
 The option is enabled by default, which means that unsafe classes are stored in the shared classes cache and are therefore available for ahead-of-time (AOT) compilation, potentially improving startup performance.
 

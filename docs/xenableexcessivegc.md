@@ -23,7 +23,7 @@
 
 # ‑Xenableexcessivegc / ‑Xdisableexcessivegc
 
-Enables or disables the throwing of an `OutOfMemory` exception if excessive time is spent in the GC.
+These options enable or disable the throwing of an `OutOfMemory` exception if excessive time is spent in the GC.
 
 If excessive time is spent in the GC, the option returns `null` for an allocate request and thus causes an `OutOfMemory` exception to be thrown.
 

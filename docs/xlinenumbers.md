@@ -23,7 +23,7 @@
 
 # -Xlinenumbers / -Xnolinenumbers
 
-Enables or disables line numbers in stack traces for debugging.
+These options enable or disable line numbers in stack traces for debugging.
 
 ## Syntax
 

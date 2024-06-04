@@ -23,7 +23,7 @@
 
 # ‑Xenablestringconstantgc / ‑Xdisablestringconstantgc
 
-Enables or disables the collection of strings from the string intern table.
+These options enable or disable the collection of strings from the string intern table.
 
 ## Syntax
 
