@@ -24,7 +24,7 @@
 # ‑Xenableexplicitgc / ‑Xdisableexplicitgc
 
 
-Enables and disables garbage collection (GC) when calls are made to `System.gc()`.
+The options enable or disable garbage collection (GC) when calls are made to `System.gc()`.
 
 ## Syntax
 

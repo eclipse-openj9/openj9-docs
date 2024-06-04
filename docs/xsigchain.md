@@ -23,7 +23,7 @@
 
 # -Xsigchain / -Xnosigchain
 
-Enables and disables signal handler chaining.
+These options enable or disable signal handler chaining.
 
 ## Syntax
 

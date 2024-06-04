@@ -23,8 +23,7 @@
 
 # -Xcompactgc / -Xnocompactgc
 
-
-Enables or disables full compaction on system and global garbage collection (GC) activities.
+These options enable or disable full compaction on system and global garbage collection (GC) activities.
 
 ## Syntax
 

@@ -71,7 +71,7 @@ The `-XX:[+|-]PortableSharedCache` option is now supported on IBM Z&reg; and POW
 
 ### ![Start of content that applies to Java 15+](cr/java15plus.png) `-XX:[+|-]ShareAnonymousClasses` option behavior update
 
-In earlier releases of OpenJ9, the `-XX:[+|-]ShareAnonymousClasses` option enables and disables the storage of VM anonymous classes in the shared classes cache. From OpenJ9 0.24.0 for OpenJDK 15 binaries, this option also controls the storage of hidden classes. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
+In earlier releases of OpenJ9, the `-XX:[+|-]ShareAnonymousClasses` option enables or disables the storage of VM anonymous classes in the shared classes cache. From OpenJ9 0.24.0 for OpenJDK 15 binaries, this option also controls the storage of hidden classes. See [`-XX:[+|-]ShareAnonymousClasses`](xxshareanonymousclasses.md) for more details about this option.
 
 
 ### Additional parameters for `jcmd Dump` commands

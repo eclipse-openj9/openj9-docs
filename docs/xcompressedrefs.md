@@ -26,7 +26,7 @@
 
 **(64-bit only)**
 
-Enables or disables the use of compressed references.
+These options enable or disable the use of compressed references.
 
 :fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** You cannot include `-Xcompressedrefs` in the options file (see [`-Xoptionsfile`](xoptionsfile.md)).
 

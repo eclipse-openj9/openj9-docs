@@ -23,8 +23,7 @@
 
 # ‑Xcompactexplicitgc / ‑Xnocompactexplicitgc
 
-
-Enables or disables full compaction each time `System.gc()` is called. 
+These options enable or disable full compaction each time `System.gc()` is called.
 
 Compaction takes place on global garbage collections if you specify `-Xcompactgc` or if compaction triggers are met. 
 
