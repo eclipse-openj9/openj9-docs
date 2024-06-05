@@ -9832,7 +9832,7 @@
 <p>If you set this suboption to 0000, the default directory permissions are used. If you set this suboption to 1000, the machine default directory permissions are used, but the sticky bit is enabled.</p>
 </dd>
 <dd>
-<p>If the cache directory is the platform default directory, <code>&lt;HomeDir&gt;/.cache/javasharedresources</code>, <HomeDir> being the user's home directory, this suboption is ignored and the cache directory permissions are set to 0777.</p>
+<p>If the cache directory is the platform default directory, this suboption is ignored. The permission is set as specified in the following conditions and permissions table.</p>
 </dd>
 <dd>
 <p>If you do not set this suboption, the default permissions are used according to the following conditions:</p>
@@ -9847,8 +9847,12 @@
 </thead>
 <tbody>
 <tr>
-<td>The cache directory is <code>&lt;HomeDir&gt;/.cache/javasharedresources</code>. If this directory already exists with different permissions, the permissions are changed when the cache is opened.†</td>
+<td>The cache directory is <code>/tmp/javasharedresources</code>. If this directory already exists with different permissions, the permissions are changed when the cache is opened.†</td>
 <td>0777</td>
+</tr>
+<tr>
+<td>The cache directory already exists and is not <code>/tmp/javasharedresources</code></td>
+<td>Unchanged</td>
 </tr>
 <tr>
 <td>The cache directory is a new directory and you also specify the <code>groupAcess</code> suboption</td>
@@ -9857,10 +9861,6 @@
 <tr>
 <td>The cache directory is a new directory and you do not specify the <code>groupAccess</code> suboption</td>
 <td>0700</td>
-</tr>
-<tr>
-<td>The cache directory already exists and is not <code>&lt;HomeDir&gt;/.cache/javasharedresources</code></td>
-<td>Unchanged</td>
 </tr>
 </tbody>
 </table>
