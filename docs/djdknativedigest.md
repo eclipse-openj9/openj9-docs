@@ -23,7 +23,7 @@
 
 # -Djdk.nativeDigest
 
-This option enables or disables OpenSSL native cryptographic support for the Digest algorithm.
+This option enables or disables OpenSSL native cryptographic support for the MD5, SHA-224, SHA-256, SHA-384, and SHA-512 digest algorithms.
 
 ## Syntax
 
@@ -38,7 +38,9 @@ This option enables or disables OpenSSL native cryptographic support for the Dig
 
 <!--OpenSSL support is enabled by default for the Digest algorithm. If you want to turn off this algorithm only, set this option to `false`.-->
 
- To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command line option.
+ To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command-line option.
+
+ :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The MD5 digest algorithm is not supported for OpenSSL on AIX&reg;. The Java implementation is always used for the MD5 digest algorithm on AIX.
 
 
 

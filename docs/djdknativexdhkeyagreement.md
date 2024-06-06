@@ -45,6 +45,7 @@
 
 OpenSSL support is enabled by default for the XDH key agreement algorithm. If you want to turn off support for this algorithm only, set this option to `false`. To turn off support for this and other algorithms, see the [`-Djdk.nativeCrypto`](djdknativecrypto.md) system property command line option.
 
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The XDH key agreement algorithm is not supported for OpenSSL on AIX&reg;. This option is ignored on AIX and the Java implementation is always used.
 
 
 
