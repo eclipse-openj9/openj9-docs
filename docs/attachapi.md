@@ -25,7 +25,7 @@
 
 With the Attach API, your application can connect to a running VM and load an agent into that VM to run tasks. The typical use case for this feature is to load an agent that can be used to monitor the application that's running in the target VM.
 
-For example, if you wanted to start monitoring an application that is already running with the Attach API enabled, you could use a tool such as the [IBM Health Center](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/introduction.html). In this case, a Health Center agent can start in its own VM and attach to the target VM where the application is running to start recording and sending data to the Health Center client.
+For example, if you wanted to start monitoring an application that is already running with the Attach API enabled, you can use a tool such as the [IBM Health Center](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/topics/introduction.html). In this case, a Health Center agent can start in its own VM and attach to the target VM where the application is running to start recording and sending data to the Health Center client.
 
 The Eclipse OpenJ9&trade; implementation of the Attach API is equivalent to the reference implementation (API documentation is available on the [Oracle website](https://docs.oracle.com/javase/8/docs/jdk/api/attach/spec/index.html)). However, you can use the Attach API only to connect to another OpenJ9 VM.
 
@@ -54,8 +54,9 @@ drwxr-xr-x+ 89 user_a staff  2848  6 Aug 17:11 ..
 drwxrwxrwx+  7 root   staff   224  6 Aug 17:22 .com_ibm_tools_attach
 ```
 
-In the default Attach API directory you can find certain files that start with an underscore `_*`, which are involved in synchronization.
-These files can be owned by any user but must have read and write permissions set. The files are empty and are automatically re-created if deleted.
+In the default Attach API directory, you can find certain files that start with an underscore `_*`, which are involved in synchronization.
+By default, any user that has read and write permissions can own these files. The files are empty and are automatically re-created if deleted. A user might interfere with the functioning of the Attach API by modifying the file permissions. To prevent such an interference, you can protect the file permissions by setting `root` as the owner of the files.
+
 When your application attaches to a VM, a process directory is created.
 
 ```
