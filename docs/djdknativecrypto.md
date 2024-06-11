@@ -37,11 +37,33 @@ This option controls the use of OpenSSL native cryptographic support.
 
 ## Explanation
 
-OpenSSL support is enabled by default for the Digest, CBC, GCM, RSA, ChaCha20 and ChaCha20-Poly1305, ECDH key agreement, EC key generation, XDH key agreement, and XDH key generation algorithms. If you want to turn off the OpenSSL implementation, set this option to `false`.
+OpenSSL support is enabled by default for the following algorithms:
 
+- CBC
+- ChaCha20 and ChaCha20-Poly1305
+- EC key generation
+- ECDH key agreement
+- GCM
+- MD5
+- RSA
+- SHA-224
+- SHA-256
+- SHA-384
+- SHA-512
+- XDH key agreement
+- XDH key generation
 
-:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:**  ![Start of content that applies to Java 8 (LTS)](cr/java8.png) The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java&trade; 8. The XDH key agreement and XDH key generation algorithms also are not supported on Java 8. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+If you want to turn off the OpenSSL implementation, set the `-Djdk.nativeCrypto` option to `false`.
 
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:**
+
+- ![Start of content that applies to Java 8 (LTS)](cr/java8.png) The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java&trade; 8. The XDH key agreement and XDH key generation algorithms also are not supported on Java 8. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+- OpenSSL native cryptographic support is not available for the following algorithms on AIX&reg;:
+
+    - EC key generation (`-Djdk.nativeECKeyGen`)
+    - MD5 (part of `-Djdk.nativeDigest`)
+    - XDH key generation (`-Djdk.nativeXDHKeyGen`)
+    - XDH key agreement (`-Djdk.nativeXDHKeyAgreement`)
 
 If you want to turn off the algorithms individually, use the following system properties:
 
