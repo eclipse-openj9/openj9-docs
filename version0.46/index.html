@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxcriurestorenonportablemode/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.46/">
       
       
-        <link rel="prev" href="../xxcompatibility/">
+        <link rel="prev" href="../openj9_releases/">
       
       
-        <link rel="next" href="../xxcriusecprovider/">
+        <link rel="next" href="../version0.45/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-XX:[+|-]CRIURestoreNonPortableMode -  </title>
+        <title>Version 0.46.0 -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xx-criurestorenonportablemode" class="md-skip">
+        <a href="#whats-new-in-version-0460" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -XX:[+|-]CRIURestoreNonPortableMode
+              Version 0.46.0
             
           </span>
         </div>
@@ -308,17 +308,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -332,7 +334,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Release notes
@@ -364,10 +366,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../version0.46/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Version 0.46.0
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -376,6 +398,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features and changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binaries and supported environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#md5-message-digest-algorithm-support-for-openssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      MD5 message digest algorithm support for OpenSSL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known problems and full release information
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1691,19 +1775,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
         
           
           <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
@@ -1717,7 +1799,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_14">
             <span class="md-nav__icon md-icon"></span>
             CRIU
@@ -1749,19 +1831,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" >
         
           
           <label class="md-nav__link" for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
@@ -1775,7 +1855,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_14_2">
             <span class="md-nav__icon md-icon"></span>
             Command-line options
@@ -1891,30 +1971,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    -XX:[+|-]CRIURestoreNonPortableMode
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xxcriurestorenonportablemode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1923,53 +1983,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntax
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      See also
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -8679,27 +8692,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
+  <a href="#features-and-changes" class="md-nav__link">
     <span class="md-ellipsis">
-      Syntax
+      Features and changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binaries and supported environments
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#md5-message-digest-algorithm-support-for-openssl" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation
+      MD5 message digest algorithm support for OpenSSL
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
     <span class="md-ellipsis">
-      See also
+      Known problems and full release information
     </span>
   </a>
   
@@ -8743,52 +8771,21 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-xx-criurestorenonportablemode">-XX:[+|-]CRIURestoreNonPortableMode</h1>
-<p><strong>(Linux&reg; x86, Linux on POWER&reg; (Little Endian), Linux on AArch64, and Linux on IBM Z&reg; only)</strong></p>
-<p>This option specifies whether the JIT and AOT compilers generate nonportable compiled code on restore.</p>
-<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg></span> <strong>Restrictions:</strong></p>
+<h1 id="whats-new-in-version-0460">What's new in version 0.46.0</h1>
+<p>The following new features and notable changes since version 0.45.0 are included in this release:</p>
 <ul>
-<li>This option takes effect only when <a href="../xxenablecriusupport/"><code>-XX:+EnableCRIUSupport</code></a> is enabled.</li>
-<li>When you disable this option,<ul>
-<li>By default, <code>CRIUSECProvider</code> is the only security provider in both checkpoint and restore. <img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> But, if <code>CRIUSECProvider</code> is disabled with the <a href="../xxcriusecprovider/"><code>-XX:-CRIUSecProvider</code></a> option, then the existing security providers are used during the checkpoint phase and restore phase. You can use any algorithm in the existing providers. <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></li>
-<li>JITServer technology is disabled both before you take a checkpoint and after you restore the VM.</li>
-<li>the VM generates only portable code, both before you take a checkpoint and after you restore the VM.</li>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#md5-message-digest-algorithm-support-for-openssl">MD5 message digest algorithm support for OpenSSL</a></li>
 </ul>
-</li>
-</ul>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:[+|-]CRIURestoreNonPortableMode
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Effect</th>
-<th style="text-align: center;">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-XX:+CRIURestoreNonPortableMode</code></td>
-<td>Enable</td>
-<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td><code>-XX:-CRIURestoreNonPortableMode</code></td>
-<td>Disable</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="explanation">Explanation</h2>
-<p>The JIT compiler can use hardware features of the system on which it is running to generate compiled code. That code might therefore fail if it is included in a checkpoint image that you later restore on a different system. For example, the compiled code might try to use a hardware feature that doesn't exist on the new machine, then fail. To avoid this problem, the JIT compiler by default generates code that uses only basic hardware features, therefore portable to different systems.</p>
-<p>The <code>-XX:+CRIURestoreNonPortableMode</code> option is set by default so that on restore the JIT compiler can start generating nonportable compiled code. Likewise, the VM can also load nonportable AOT code post-restore. Generating nonportable compiled code also means that no further checkpoints are permitted. Only a single checkpoint can be taken in the VM's lifetime.</p>
-<p>If you require multiple checkpoints, you can use the <code>-XX:-CRIURestoreNonPortableMode</code> option to generate portable JIT compiled code after restore.</p>
-<h2 id="see-also">See also</h2>
-<ul>
-<li><a href="../criusupport/">CRIU support</a></li>
-</ul>
-<!-- ==== END OF TOPIC ==== xxcriurestorenonportablemode.md ==== -->
+<h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>Eclipse OpenJ9&trade; release 0.46.0 supports OpenJDK 8, 11, 17, 21, and 22.</p>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="md5-message-digest-algorithm-support-for-openssl">MD5 message digest algorithm support for OpenSSL</h3>
+<p>OpenSSL native cryptographic support is added for the MD5 message digest algorithm, providing improved cryptographic performance. OpenSSL support is enabled by default. If you want to turn off support for the MD5 message digest algorithm, set the <a href="../djdknativedigest/"><code>-Djdk.nativedigest</code></a> system property to <code>false</code>.</p>
+<h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.45.0 and v0.46.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.46/0.46.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.46.md ==== -->
 
 
 

@@ -367,6 +367,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.46/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Version 0.46.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.45/" class="md-nav__link">
         
   
@@ -563,10 +584,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
         
           
-          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -577,8 +598,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_11">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
             <span class="md-nav__icon md-icon"></span>
             Earlier releases
           </label>
@@ -8731,8 +8752,36 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>OpenSSL support is enabled by default for the Digest, CBC, GCM, RSA, ChaCha20 and ChaCha20-Poly1305, ECDH key agreement, EC key generation, XDH key agreement, and XDH key generation algorithms. If you want to turn off the OpenSSL implementation, set this option to <code>false</code>.</p>
-<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg></span> <strong>Restriction:</strong>  <img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java&trade; 8. The XDH key agreement and XDH key generation algorithms also are not supported on Java 8. <img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" /></p>
+<p>OpenSSL support is enabled by default for the following algorithms:</p>
+<ul>
+<li>CBC</li>
+<li>ChaCha20 and ChaCha20-Poly1305</li>
+<li>EC key generation</li>
+<li>ECDH key agreement</li>
+<li>GCM</li>
+<li>MD5</li>
+<li>RSA</li>
+<li>SHA-224</li>
+<li>SHA-256</li>
+<li>SHA-384</li>
+<li>SHA-512</li>
+<li>XDH key agreement</li>
+<li>XDH key generation</li>
+</ul>
+<p>If you want to turn off the OpenSSL implementation, set the <code>-Djdk.nativeCrypto</code> option to <code>false</code>.</p>
+<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg></span> <strong>Restrictions:</strong></p>
+<ul>
+<li><img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> The ChaCha20 and ChaCha20-Poly1305 algorithms are not supported on Java&trade; 8. The XDH key agreement and XDH key generation algorithms also are not supported on Java 8. <img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" /></li>
+<li>
+<p>OpenSSL native cryptographic support is not available for the following algorithms on AIX&reg;:</p>
+<ul>
+<li>EC key generation (<code>-Djdk.nativeECKeyGen</code>)</li>
+<li>MD5 (part of <code>-Djdk.nativeDigest</code>)</li>
+<li>XDH key generation (<code>-Djdk.nativeXDHKeyGen</code>)</li>
+<li>XDH key agreement (<code>-Djdk.nativeXDHKeyAgreement</code>)</li>
+</ul>
+</li>
+</ul>
 <p>If you want to turn off the algorithms individually, use the following system properties:</p>
 <ul>
 <li><a href="../djdknativecbc/"><code>-Djdk.nativeCBC</code></a></li>
