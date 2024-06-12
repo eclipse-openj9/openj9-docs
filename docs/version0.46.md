@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.45.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [MD5 message digest algorithm support for OpenSSL](#md5-message-digest-algorithm-support-for-openssl)
+- [Support added for the `com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()` API](#support-added-for-the-comsunmanagementthreadmxbeangettotalthreadallocatedbytes-api)
 
 ## Features and changes
 
@@ -39,6 +40,12 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 ### MD5 message digest algorithm support for OpenSSL
 
 OpenSSL native cryptographic support is added for the MD5 message digest algorithm, providing improved cryptographic performance. OpenSSL support is enabled by default. If you want to turn off support for the MD5 message digest algorithm, set the [`-Djdk.nativedigest`](djdknativedigest.md) system property to `false`.
+
+### Support added for the `com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()` API
+
+With this release, the OpenJ9 VM implementation supports measurement of the total memory allocation for all threads (`com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()` API).
+
+The `getTotalThreadAllocatedBytes()` method now returns the total thread allocated bytes instead of `-1`.
 
 ## Known problems and full release information
 
