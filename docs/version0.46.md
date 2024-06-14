@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.45.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [MD5 message digest algorithm support for OpenSSL](#md5-message-digest-algorithm-support-for-openssl)
 - [Support added for the `com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()` API](#support-added-for-the-comsunmanagementthreadmxbeangettotalthreadallocatedbytes-api)
+- [The JITServer AOT caching feature enabled by default at the JITServer server](#the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server)
 
 ## Features and changes
 
@@ -46,6 +47,14 @@ OpenSSL native cryptographic support is added for the MD5 message digest algorit
 With this release, the OpenJ9 VM implementation supports measurement of the total memory allocation for all threads (`com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()` API).
 
 The `getTotalThreadAllocatedBytes()` method now returns the total thread allocated bytes instead of `-1`.
+
+### The JITServer AOT caching feature enabled by default at the JITServer server
+
+`-XX:+JITServerUseAOTCache` is the default setting at the JITServer server now. That means that you don't have to specify the `-XX:+JITServerUseAOTCache` option at the server to enable the JITServer AOT caching feature.
+
+Although this option is by default enabled at the server, it is still disabled for the JITServer clients. The clients that want to use the JITServer AOT caching, must still specify the `-XX:+JITServerUseAOTCache` option on the command line. Also, now the clients don't have to enable the [shared classes cache](https://www.eclipse.org/openj9/docs/shrc/) feature to use the `-XX:+JITServerUseAOTCache` option.
+
+For more information, see [ `-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md).
 
 ## Known problems and full release information
 

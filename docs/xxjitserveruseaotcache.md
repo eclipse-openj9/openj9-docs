@@ -23,7 +23,7 @@
 
 # -XX:\[+|-\]JITServerUseAOTCache
 
-This option enables the caching of AOT-compiled methods in the JITServer server.
+This option enables or disables the caching of AOT-compiled methods in the JITServer server.
 
 ## Syntax
 
@@ -31,19 +31,18 @@ This option enables the caching of AOT-compiled methods in the JITServer server.
 
 | Setting                    | Effect  | Default                                                                              |
 |----------------------------|---------|:------------------------------------------------------------------------------------:|
-|`-XX:+JITServerUseAOTCache` | Enable  |                                                                                      |
-|`-XX:-JITServerUseAOTCache` | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+|`-XX:+JITServerUseAOTCache` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+|`-XX:-JITServerUseAOTCache` | Disable |                                                                                      |
 
 ## Explanation
 
 When you enable this option, the JITServer server caches the AOT-compiled methods. When a JITServer client requests an AOT compilation and the requested method exists in the cache, the server does not have to recompile the method. This feature, therefore, improves the CPU utilization of the JITServer technology and of the cluster.
 
- :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This option has the following requirements:
+ :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This option must be enabled both at the client JVM and at the server. Although this option is by default enabled at the server, it is still disabled for the JITServer clients. That means that you don't have to specify the `-XX:+JITServerUseAOTCache` option at the server to enable the JITServer AOT caching feature, but you must specify this option for each client who wants to use this feature.
+ <!-- Deleted this point because from the 0.46.0 release onwards the local SCC is ignored by default
+ - The client JVM must have the [shared classes cache](https://www.eclipse.org/openj9/docs/shrc/) feature enabled and be allowed to generate AOT compilation requests. -->
 
- - You must specify this option both at the client JVM and at the server.
- - The client JVM must have the [shared classes cache](https://www.eclipse.org/openj9/docs/shrc/) feature enabled and be allowed to generate AOT compilation requests.
-
-The [`-XX:+JITServerShareROMClasses`](xxjitservershareromclasses.md) option is enabled by default at the server on specifying the`-XX:+JITServerUseAOTCache` option.
+The [`-XX:+JITServerShareROMClasses`](xxjitservershareromclasses.md) option is also enabled by default at the server because this option is a prerequisite for the `-XX:+JITServerUseAOTCache` option.
 
 ## See also
 
@@ -51,5 +50,7 @@ The [`-XX:+JITServerShareROMClasses`](xxjitservershareromclasses.md) option is e
 - [`-XX:JITServerAOTCacheName`](xxjitserveraotcachename.md)
 - [`-XX:JITServerAOTCacheDir`](xxjitserveraotcachedir.md)
 - [`-XX:[+|-]JITServerAOTCachePersistence`](xxjitserveraotcachepersistence.md)
+- [What's new in version 0.33.x](version0.33.md#jitserver-technology-feature-updated)
+- [What's new in version 0.46.0](version0.46.md#the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server)
 
 <!-- ==== END OF TOPIC ==== xxjitserveruseaotcache.md ==== -->

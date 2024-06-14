@@ -23,7 +23,7 @@
 
 # -XX:\[+|-\]JITServerShareROMClasses
 
-This option enables the JITServer server to share cached ROM classes between JITServer clients.
+This option enables or disables the JITServer server to share cached ROM classes between JITServer clients.
 
 ## Syntax
 
@@ -31,10 +31,10 @@ This option enables the JITServer server to share cached ROM classes between JIT
 
 | Setting                 | Effect | Default                                                                            |
 |-------------------------|--------|:----------------------------------------------------------------------------------:|
-|`-XX:+JITServerShareROMClasses`           | Enable |                                                                                    |
-|`-XX:-JITServerShareROMClasses`           | Disable| :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+|`-XX:+JITServerShareROMClasses`           | Enable |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>  |
+|`-XX:-JITServerShareROMClasses`           | Disable|                                                                                        |
 
- :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The `-XX:+JITServerShareROMClasses` option is enabled by default at the server on specifying the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) option.
+ :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The JITServer AOT caching feature is now enabled at the server by default with the [`-XX:+JITServerUseAOTCache`](xxjitserveruseaotcache.md) option. Because the `-XX:+JITServerShareROMClasses` option is a prerequisite for the `-XX:+JITServerUseAOTCache` option, therefore the `-XX:+JITServerShareROMClasses` option is also the default setting. If you disabled the JITServer AOT cache at the server (`-XX:-JITServerUseAOTCache`), specify the `-XX:+JITServerShareROMClasses` option explicitly to enable the sharing of the cached ROM classes feature.
 
 ## Explanation
 
