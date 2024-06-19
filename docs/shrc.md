@@ -320,8 +320,6 @@ Although it is possible to combine partitions and modification contexts, this pr
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Partitions are not supported by the bootstrap class loader or the default application class loader.
 
 
-
-
 ## See also
 
 - [AOT compiler](aot.md)
