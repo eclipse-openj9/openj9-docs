@@ -8744,7 +8744,7 @@
 -->
 
 <h1 id="-xx-jitserveruseaotcache">-XX:[+|-]JITServerUseAOTCache</h1>
-<p>This option enables the caching of AOT-compiled methods in the JITServer server.</p>
+<p>This option enables or disables the caching of AOT-compiled methods in the JITServer server.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]JITServerUseAOTCache
 </code></pre>
@@ -8760,29 +8760,30 @@
 <tr>
 <td><code>-XX:+JITServerUseAOTCache</code></td>
 <td>Enable</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
 </tr>
 <tr>
 <td><code>-XX:-JITServerUseAOTCache</code></td>
 <td>Disable</td>
-<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
 <p>When you enable this option, the JITServer server caches the AOT-compiled methods. When a JITServer client requests an AOT compilation and the requested method exists in the cache, the server does not have to recompile the method. This feature, therefore, improves the CPU utilization of the JITServer technology and of the cluster.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Note:</strong> This option has the following requirements:</p>
-<ul>
-<li>You must specify this option both at the client JVM and at the server.</li>
-<li>The client JVM must have the <a href="https://www.eclipse.org/openj9/docs/shrc/">shared classes cache</a> feature enabled and be allowed to generate AOT compilation requests.</li>
-</ul>
-<p>The <a href="../xxjitservershareromclasses/"><code>-XX:+JITServerShareROMClasses</code></a> option is enabled by default at the server on specifying the<code>-XX:+JITServerUseAOTCache</code> option.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Note:</strong> This option must be enabled both at the client JVM and at the server. Although this option is by default enabled at the server, it is still disabled for the JITServer clients. That means that you don't have to specify the <code>-XX:+JITServerUseAOTCache</code> option at the server to enable the JITServer AOT caching feature, but you must specify this option for each client who wants to use this feature.
+ <!-- Deleted this point because from the 0.46.0 release onwards the local SCC is ignored by default
+ - The client JVM must have the [shared classes cache](https://www.eclipse.org/openj9/docs/shrc/) feature enabled and be allowed to generate AOT compilation requests. -->
+</p>
+<p>The <a href="../xxjitservershareromclasses/"><code>-XX:+JITServerShareROMClasses</code></a> option is also enabled by default at the server because this option is a prerequisite for the <code>-XX:+JITServerUseAOTCache</code> option.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../jitserver/">JITServer technology</a></li>
 <li><a href="../xxjitserveraotcachename/"><code>-XX:JITServerAOTCacheName</code></a></li>
 <li><a href="../xxjitserveraotcachedir/"><code>-XX:JITServerAOTCacheDir</code></a></li>
 <li><a href="../xxjitserveraotcachepersistence/"><code>-XX:[+|-]JITServerAOTCachePersistence</code></a></li>
+<li><a href="../version0.33/#jitserver-technology-feature-updated">What's new in version 0.33.x</a></li>
+<li><a href="../version0.46/#the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server">What's new in version 0.46.0</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xxjitserveruseaotcache.md ==== -->
 
