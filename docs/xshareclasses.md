@@ -442,12 +442,12 @@ behavior, which can improve the performance of class loading from the shared cla
 :    - With the 31-bit VM on all versions of z/OS, the shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared classes cache is limited by the system limit `MAXMMAPAREA`. For more information about the suggested value for the `MAXMMAPAREA` limit, see [Setting resource limits (z/OS)](https://www.eclipse.org/openj9/docs/configuring/#setting-resource-limits-zos).
      - With the 64-bit VM, the shared cache is mapped as follows:
          - On z/OS version 2.3 and earlier, the persistent shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared classes cache is limited by the system limit `MAXMMAPAREA`.
-         - On z/OS version 2.4 and later, the persistent shared cache is mapped above the 2 GB address range. The maximum size of persistent shared classes cache is limited by the `MAXSHARE` value within the `SMFLIMxx` member of `SYS1.PARMLIB`. You can use the following machine configuration to create up to 1 GB shared classes cache mapped above the 2 GB address range:
+         - On z/OS version 2.4 and later, the persistent shared cache is mapped above the 2 GB address range. The maximum size of persistent shared classes cache is limited by the `MAXSHARE` value within the `SMFLIMxx` member of `SYS1.PARMLIB`. The default persistent shared cache size is 300MB, and the following machine configuration settings will allow a shared cache up to that size.
 
-              1. Add the following line in the SMFLIMxx member of SYS1.PARMLIB.
+              1. Add the following line in the `SMFLIMxx` member of `SYS1.PARMLIB`. `MAXSHARE` value is defined in number of 4K pages. The `JOBNAME(*)` filter should be customized to apply the setting to the relevant Java address spaces. The `JOBMSG(SUPPRESS)` parameter can be used to optionally suppress `IEF043I` diagnostic messages.
 
              ```
-              REGION JOBNAME(*) MAXSHARE(262144)
+              REGION JOBNAME(*) JOBMSG(SUPPRESS) MAXSHARE(76800)
              ```
 
               2. Load the change with the following command in the SDSF panel.
