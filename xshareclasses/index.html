@@ -10193,11 +10193,11 @@ behavior, which can improve the performance of class loading from the shared cla
 <ul>
 <li>On z/OS version 2.3 and earlier, the persistent shared cache is memory mapped within the 0-2 GB address range. The maximum size of the persistent shared classes cache is limited by the system limit <code>MAXMMAPAREA</code>.</li>
 <li>
-<p>On z/OS version 2.4 and later, the persistent shared cache is mapped above the 2 GB address range. The maximum size of persistent shared classes cache is limited by the <code>MAXSHARE</code> value within the <code>SMFLIMxx</code> member of <code>SYS1.PARMLIB</code>. You can use the following machine configuration to create up to 1 GB shared classes cache mapped above the 2 GB address range:</p>
+<p>On z/OS version 2.4 and later, the persistent shared cache is mapped above the 2 GB address range. The maximum size of persistent shared classes cache is limited by the <code>MAXSHARE</code> value within the <code>SMFLIMxx</code> member of <code>SYS1.PARMLIB</code>. The default persistent shared cache size is 300MB, and the following machine configuration settings will allow a shared cache up to that size.</p>
 <ol>
-<li>Add the following line in the SMFLIMxx member of SYS1.PARMLIB.</li>
+<li>Add the following line in the <code>SMFLIMxx</code> member of <code>SYS1.PARMLIB</code>. <code>MAXSHARE</code> value is defined in number of 4K pages. The <code>JOBNAME(*)</code> filter should be customized to apply the setting to the relevant Java address spaces. The <code>JOBMSG(SUPPRESS)</code> parameter can be used to optionally suppress <code>IEF043I</code> diagnostic messages.</li>
 </ol>
-<p><code>REGION JOBNAME(*) MAXSHARE(262144)</code></p>
+<p><code>REGION JOBNAME(*) JOBMSG(SUPPRESS) MAXSHARE(76800)</code></p>
 <ol start="2">
 <li>Load the change with the following command in the SDSF panel.</li>
 </ol>
