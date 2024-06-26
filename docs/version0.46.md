@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.45.0 are included
 - [MD5 message digest algorithm support for OpenSSL](#md5-message-digest-algorithm-support-for-openssl)
 - [Support added for the `com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()` API](#support-added-for-the-comsunmanagementthreadmxbeangettotalthreadallocatedbytes-api)
 - [The JITServer AOT caching feature enabled by default at the JITServer server](#the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server)
+- [New `-XX:[+|-]EnableExtendedHCR` option added](#new-xx-enableextendedhcr-option-added)
 
 ## Features and changes
 
@@ -55,6 +56,12 @@ The `getTotalThreadAllocatedBytes()` method now returns the total thread allocat
 Although this option is by default enabled at the server, it is still disabled for the JITServer clients. The clients that want to use the JITServer AOT caching, must still specify the `-XX:+JITServerUseAOTCache` option on the command line. Also, now the clients don't have to enable the [shared classes cache](https://www.eclipse.org/openj9/docs/shrc/) feature to use the `-XX:+JITServerUseAOTCache` option.
 
 For more information, see [ `-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md).
+
+### New `-XX:[+|-]EnableExtendedHCR` option added
+
+By default, the extended Hot Code Replace (HCR) capability in the VM is disabled for all OpenJDK versions. You can enable or disable the HCR capability by using the [`-XX:[+|-]EnableExtendedHCR`](xxenableextendedhcr.md) option.
+
+The extended HCR feature is deprecated in this release and will be removed in a future release. From OpenJDK 25 onwards, extended HCR will not be supported. Following that, the extended HCR support will be removed from other earlier OpenJDK versions also.
 
 ## Known problems and full release information
 
