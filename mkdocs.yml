@@ -399,6 +399,7 @@ nav:
             - "-XX:[+|-]Enable3164Interoperability"                              : xxenable3164interoperability.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
             - "-XX:[+|-]EnableDynamicAgentLoading"                               : xxenabledynamicagentloading.md
+            - "-XX:[+|-]EnableExtendedHCR"                                       : xxenableextendedhcr.md
             - "-XX:[+|-]EnsureHashed"                                            : xxensurehashed.md
             - "-XX:[+|-]ExitOnOutOfMemoryError"                                  : xxexitonoutofmemoryerror.md
             - "-XX:[+|-]GlobalLockReservation"                                   : xxgloballockreservation.md
