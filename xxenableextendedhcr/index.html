@@ -10,13 +10,9 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.46/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxenableextendedhcr/">
       
       
-        <link rel="prev" href="../openj9_releases/">
-      
-      
-        <link rel="next" href="../version0.45/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Version 0.46.0 -  </title>
+        <title>Xxenableextendedhcr -  </title>
       
     
     
@@ -76,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#whats-new-in-version-0460" class="md-skip">
+        <a href="#-xx-enableextendedhcr" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Version 0.46.0
+              Xxenableextendedhcr
             
           </span>
         </div>
@@ -308,19 +304,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -334,7 +328,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Release notes
@@ -366,30 +360,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Version 0.46.0
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../version0.46/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -398,95 +372,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#features-and-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features and changes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Features and changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#binaries-and-supported-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Binaries and supported environments
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#md5-message-digest-algorithm-support-for-openssl" class="md-nav__link">
-    <span class="md-ellipsis">
-      MD5 message digest algorithm support for OpenSSL
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#support-added-for-the-comsunmanagementthreadmxbeangettotalthreadallocatedbytes-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Support added for the com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes() API
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      The JITServer AOT caching feature enabled by default at the JITServer server
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#new-xx-enableextendedhcr-option-added" class="md-nav__link">
-    <span class="md-ellipsis">
-      New -XX:[+|-]EnableExtendedHCR option added
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-problems-and-full-release-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Known problems and full release information
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -8719,69 +8604,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features-and-changes" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Features and changes
+      Syntax
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Features and changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#binaries-and-supported-environments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Binaries and supported environments
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#md5-message-digest-algorithm-support-for-openssl" class="md-nav__link">
-    <span class="md-ellipsis">
-      MD5 message digest algorithm support for OpenSSL
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#support-added-for-the-comsunmanagementthreadmxbeangettotalthreadallocatedbytes-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Support added for the com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes() API
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      The JITServer AOT caching feature enabled by default at the JITServer server
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#new-xx-enableextendedhcr-option-added" class="md-nav__link">
-    <span class="md-ellipsis">
-      New -XX:[+|-]EnableExtendedHCR option added
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+  <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
-      Known problems and full release information
+      Explanation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
     </span>
   </a>
   
@@ -8825,34 +8668,42 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="whats-new-in-version-0460">What's new in version 0.46.0</h1>
-<p>The following new features and notable changes since version 0.45.0 are included in this release:</p>
+<h1 id="-xx-enableextendedhcr">-XX:[+|-]EnableExtendedHCR</h1>
+<p>This option enables or disables the extended Hot Code Replace (HCR) capability in the VM.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code>    -XX:[+|-]EnableExtendedHCR
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Effect</th>
+<th style="text-align: center;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-XX:+EnableExtendedHCR</code></td>
+<td>Enable</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>-XX:-EnableExtendedHCR</code></td>
+<td>Disable</td>
+<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="explanation">Explanation</h2>
+<p>Supporting extended HCR has a maintenance cost and because only few users use this capability, the extended HCR feature is deprecated and will be removed in a future release. From OpenJDK 25 onwards, extended HCR will not be supported. Following that, the extended HCR support will be removed from other earlier OpenJDK versions also.</p>
+<p>If the extended HCR support is disabled (<code>-XX:-EnableExtendedHCR</code>), it might result in a JVMTI failure. In case of such a failure, the following warning message is displayed:</p>
+<pre><code>Warning: Extended HCR is disabled, enable with -XX:+EnableExtendedHCR. This feature is deprecated. In the future, the extended HCR capability, and the option to enable it, will be completely removed from all versions.
+</code></pre>
+<h2 id="see-also">See also</h2>
 <ul>
-<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
-<li><a href="#md5-message-digest-algorithm-support-for-openssl">MD5 message digest algorithm support for OpenSSL</a></li>
-<li><a href="#support-added-for-the-comsunmanagementthreadmxbeangettotalthreadallocatedbytes-api">Support added for the <code>com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()</code> API</a></li>
-<li><a href="#the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server">The JITServer AOT caching feature enabled by default at the JITServer server</a></li>
-<li><a href="#new-xx-enableextendedhcr-option-added">New <code>-XX:[+|-]EnableExtendedHCR</code> option added</a></li>
+<li><a href="../version0.46/#new-xx-enableextendedhcr-option-added">What's new in version 0.46.0</a></li>
 </ul>
-<h2 id="features-and-changes">Features and changes</h2>
-<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
-<p>Eclipse OpenJ9&trade; release 0.46.0 supports OpenJDK 8, 11, 17, 21, and 22.</p>
-<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
-<h3 id="md5-message-digest-algorithm-support-for-openssl">MD5 message digest algorithm support for OpenSSL</h3>
-<p>OpenSSL native cryptographic support is added for the MD5 message digest algorithm, providing improved cryptographic performance. OpenSSL support is enabled by default. If you want to turn off support for the MD5 message digest algorithm, set the <a href="../djdknativedigest/"><code>-Djdk.nativedigest</code></a> system property to <code>false</code>.</p>
-<h3 id="support-added-for-the-comsunmanagementthreadmxbeangettotalthreadallocatedbytes-api">Support added for the <code>com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()</code> API</h3>
-<p>With this release, the OpenJ9 VM implementation supports measurement of the total memory allocation for all threads (<code>com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()</code> API).</p>
-<p>The <code>getTotalThreadAllocatedBytes()</code> method now returns the total thread allocated bytes instead of <code>-1</code>.</p>
-<h3 id="the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server">The JITServer AOT caching feature enabled by default at the JITServer server</h3>
-<p><code>-XX:+JITServerUseAOTCache</code> is the default setting at the JITServer server now. That means that you don't have to specify the <code>-XX:+JITServerUseAOTCache</code> option at the server to enable the JITServer AOT caching feature.</p>
-<p>Although this option is by default enabled at the server, it is still disabled for the JITServer clients. The clients that want to use the JITServer AOT caching, must still specify the <code>-XX:+JITServerUseAOTCache</code> option on the command line. Also, now the clients don't have to enable the <a href="https://www.eclipse.org/openj9/docs/shrc/">shared classes cache</a> feature to use the <code>-XX:+JITServerUseAOTCache</code> option.</p>
-<p>For more information, see <a href="../xxjitserveruseaotcache/"> <code>-XX:[+|-]JITServerUseAOTCache</code></a>.</p>
-<h3 id="new-xx-enableextendedhcr-option-added">New <code>-XX:[+|-]EnableExtendedHCR</code> option added</h3>
-<p>By default, the extended Hot Code Replace (HCR) capability in the VM is disabled for all OpenJDK versions. You can enable or disable the HCR capability by using the <a href="../xxenableextendedhcr/"><code>-XX:[+|-]EnableExtendedHCR</code></a> option.</p>
-<p>The extended HCR feature is deprecated in this release and will be removed in a future release. From OpenJDK 25 onwards, extended HCR will not be supported. Following that, the extended HCR support will be removed from other earlier OpenJDK versions also.</p>
-<h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
-<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.45.0 and v0.46.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.46/0.46.md">Release notes</a>.</p>
-<!-- ==== END OF TOPIC ==== version0.46.md ==== -->
+<!-- ==== END OF TOPIC ==== xxenableextendedhcr.md ==== -->
 
 
 
