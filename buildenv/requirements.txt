@@ -24,7 +24,7 @@
 #
 babel==2.12.1
     # via mkdocs-material
-certifi==2023.7.22
+certifi==2024.7.4
     # via requests
 charset-normalizer==2.1.1
     # via requests
