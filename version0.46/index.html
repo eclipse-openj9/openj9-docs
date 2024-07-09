@@ -8858,6 +8858,8 @@
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
 <p>Eclipse OpenJ9&trade; release 0.46.0 supports OpenJDK 8, 11, 17, 21, and 22.</p>
+<p>Support for running OpenJ9 with all versions of OpenJDK on CentOS 6, CentOS 7, Red Hat Enterprise Linux (RHEL) 6, and RHEL 7 is removed.</p>
+<p>RHEL 8.6 and 9.0 are out of support. RHEL 8.8 is the new minimum operating system level.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="md5-message-digest-algorithm-support-for-openssl">MD5 message digest algorithm support for OpenSSL</h3>
 <p>OpenSSL native cryptographic support is added for the MD5 message digest algorithm, providing improved cryptographic performance. OpenSSL support is enabled by default. If you want to turn off support for the MD5 message digest algorithm, set the <a href="../djdknativedigest/"><code>-Djdk.nativedigest</code></a> system property to <code>false</code>.</p>
