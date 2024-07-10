@@ -104,8 +104,8 @@ loadScripts(document, 'script');</script>
 <h2>Method Summary</h2>
 <div id="method-summary-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
@@ -299,9 +299,9 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">J9_CP_TYPE</span><wbr><span class="parameters">(<a href="../pointer/U32Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U32Pointer</a>&nbsp;cpShapeDescription,
  int&nbsp;index)</span>
                        throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<div class="block">This method is Java implementation of the define J9_CP_TYPE in j9cp.h in VM. 
- It basically find out the type of the constant pool entry at the given index.  
- 
+<div class="block">This method is Java implementation of the define J9_CP_TYPE in j9cp.h in VM.
+ It basically find out the type of the constant pool entry at the given index.
+
  #define J9_CP_TYPE(cpShapeDescription, index) \
         (((cpShapeDescription)[(index) / J9_CP_DESCRIPTIONS_PER_U32] >> \
         (((index) % J9_CP_DESCRIPTIONS_PER_U32) * J9_CP_BITS_PER_DESCRIPTION)) &amp; J9_CP_DESCRIPTION_MASK)</div>
