@@ -321,7 +321,7 @@ loadScripts(document, 'script');</script>
  long&nbsp;footerEyecatcher)</span>
                               throws <span class="exceptions"><a href="J9MemTagHelper.J9MemTagCheckError.html" title="class in com.ibm.j9ddr.vm29.pointer.helper">J9MemTagHelper.J9MemTagCheckError</a></span></div>
 <div class="block">Performs validation checks on the memory block starting at memoryPointer.
- 
+
  The memory passed in could fall into one of three categories:
  1) It could be a valid J9MemTag region with valid headers and footers
  2) It could be not be a J9MemTag region
@@ -402,7 +402,7 @@ loadScripts(document, 'script');</script>
                                             throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
 <div class="block">Given the address of the headerEyecatcher for the memory block, return
  the address of the footer padding.
- 
+
  Note that there not be any padding, in which case this returns the same
  as @ref j9mem_get_footer_tag(), the address of the footer tag.</div>
 <dl class="notes">
