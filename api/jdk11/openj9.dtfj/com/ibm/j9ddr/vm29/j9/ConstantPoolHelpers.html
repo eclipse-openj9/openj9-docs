@@ -427,9 +427,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <pre class="methodSignature">public static&nbsp;long&nbsp;J9_CP_TYPE&#8203;(<a href="../pointer/U32Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U32Pointer</a>&nbsp;cpShapeDescription,
                               int&nbsp;index)
                        throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
-<div class="block">This method is Java implementation of the define J9_CP_TYPE in j9cp.h in VM. 
- It basically find out the type of the constant pool entry at the given index.  
- 
+<div class="block">This method is Java implementation of the define J9_CP_TYPE in j9cp.h in VM.
+ It basically find out the type of the constant pool entry at the given index.
+
  #define J9_CP_TYPE(cpShapeDescription, index) \
         (((cpShapeDescription)[(index) / J9_CP_DESCRIPTIONS_PER_U32] >> \
         (((index) % J9_CP_DESCRIPTIONS_PER_U32) * J9_CP_BITS_PER_DESCRIPTION)) & J9_CP_DESCRIPTION_MASK)</div>
