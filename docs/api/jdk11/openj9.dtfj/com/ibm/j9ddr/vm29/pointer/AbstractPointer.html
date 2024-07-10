@@ -793,11 +793,11 @@ extends <a href="../j9/DataType.html" title="class in com.ibm.j9ddr.vm29.j9">Dat
              throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
 <div class="block">This method returns the memory values at the given index.
  For StructurePointer instance objects, UDATA.sizeof amount of bytes are read.
- Otherwise, amount of bytes to be read depend on the object type. 
+ Otherwise, amount of bytes to be read depend on the object type.
  For instance, if it is I16Pointer, then 2 bytes are read.
- 
+
  Note that this method returns bytes as they appear in the memory. It ignores endian-ization.
- For instance I16 value 0xABCD lays in the memory as CDAB on Little Endian platforms. 
+ For instance I16 value 0xABCD lays in the memory as CDAB on Little Endian platforms.
  And this method returns for this I16Pointer 0xCDAB and does not reverse the bytes.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -819,12 +819,12 @@ extends <a href="../j9/DataType.html" title="class in com.ibm.j9ddr.vm29.j9">Dat
              throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
 <div class="block">This method returns the memory values at the given index.
  For StructurePointer instance objects, UDATA.sizeof amount of bytes are read.
- Otherwise, amount of bytes to be read depend on the object type. 
+ Otherwise, amount of bytes to be read depend on the object type.
  For instance, if it is I16Pointer, then 2 bytes are read.
 
- 
+
  Note that this method returns bytes as they appear in the memory. It ignores endian-ization.
- For instance I16 value 0xABCD lays in the memory as CDAB on Little Endian platforms. 
+ For instance I16 value 0xABCD lays in the memory as CDAB on Little Endian platforms.
  And this method returns for this I16Pointer 0xCDAB and does not reverse the bytes.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -844,8 +844,8 @@ extends <a href="../j9/DataType.html" title="class in com.ibm.j9ddr.vm29.j9">Dat
 <h4>getHexValue</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getHexValue()
                    throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
-<div class="block">This method reads number of the bytes depending on the pointers' base size. 
- And if the platform is little endian, it reverses the bytes read and returns it as hex string. 
+<div class="block">This method reads number of the bytes depending on the pointers' base size.
+ And if the platform is little endian, it reverses the bytes read and returns it as hex string.
  If the platform is big endian, then it returns the read bytes as it is as an hex string.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
