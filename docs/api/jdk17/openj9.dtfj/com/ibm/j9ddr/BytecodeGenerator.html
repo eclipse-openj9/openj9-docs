@@ -8,7 +8,8 @@
 <meta name="description" content="declaration: module: openj9.dtfj, package: com.ibm.j9ddr, class: BytecodeGenerator">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <meta name="keywords" content="com.ibm.j9ddr.BytecodeGenerator class">
-<meta name="keywords" content="getConstantsAndAliases()">
+<meta name="keywords" content="shouldUseCNameFor()">
+<meta name="keywords" content="getFlagCName()">
 <meta name="keywords" content="getPointerClassBytes()">
 <meta name="keywords" content="getStructureClassBytes()">
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
@@ -110,14 +111,18 @@ loadScripts(document, 'script');</script>
 <h2>Method Summary</h2>
 <div id="method-summary-table">
 <div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link" target="_blank">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getConstantsAndAliases(com.ibm.j9ddr.StructureReader.StructureDescriptor)" class="member-name-link">getConstantsAndAliases</a><wbr>(<a href="StructureReader.StructureDescriptor.html" title="class in com.ibm.j9ddr">StructureReader.StructureDescriptor</a>&nbsp;structure)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getFlagCName(java.lang.String)" class="member-name-link">getFlagCName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;id)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">This produces the same "cname" as getDataModelExtension()
+ in com.ibm.j9.uma.platform.PlatformImplementation for flags
+ whose names don't already match what appears in native code.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPointerClassBytes(com.ibm.j9ddr.StructureReader,com.ibm.j9ddr.StructureTypeManager,com.ibm.j9ddr.StructureReader.StructureDescriptor,java.lang.String)" class="member-name-link">getPointerClassBytes</a><wbr>(<a href="StructureReader.html" title="class in com.ibm.j9ddr">StructureReader</a>&nbsp;reader,
  <a href="StructureTypeManager.html" title="class in com.ibm.j9ddr">StructureTypeManager</a>&nbsp;typeManager,
@@ -128,6 +133,11 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getStructureClassBytes(com.ibm.j9ddr.StructureReader.StructureDescriptor,java.lang.String)" class="member-name-link">getStructureClassBytes</a><wbr>(<a href="StructureReader.StructureDescriptor.html" title="class in com.ibm.j9ddr">StructureReader.StructureDescriptor</a>&nbsp;structure,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;className)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#shouldUseCNameFor(java.lang.String)" class="member-name-link">shouldUseCNameFor</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;className)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Should getFlagCName() be used to adjust fields names for className?</div>
+</div>
 </div>
 </div>
 </div>
@@ -160,9 +170,19 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="getConstantsAndAliases(com.ibm.j9ddr.StructureReader.StructureDescriptor)">
-<h3>getConstantsAndAliases</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link" target="_blank">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&gt;</span>&nbsp;<span class="element-name">getConstantsAndAliases</span><wbr><span class="parameters">(<a href="StructureReader.StructureDescriptor.html" title="class in com.ibm.j9ddr">StructureReader.StructureDescriptor</a>&nbsp;structure)</span></div>
+<section class="detail" id="shouldUseCNameFor(java.lang.String)">
+<h3>shouldUseCNameFor</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">shouldUseCNameFor</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;className)</span></div>
+<div class="block">Should getFlagCName() be used to adjust fields names for className?</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getFlagCName(java.lang.String)">
+<h3>getFlagCName</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getFlagCName</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;id)</span></div>
+<div class="block">This produces the same "cname" as getDataModelExtension()
+ in com.ibm.j9.uma.platform.PlatformImplementation for flags
+ whose names don't already match what appears in native code.</div>
 </section>
 </li>
 <li>
