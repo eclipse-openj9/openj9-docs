@@ -547,7 +547,7 @@ loadScripts(document, 'script');</script>
  <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a>&nbsp;ex)</span></div>
 <div class="block">Since walking OSlots touches a lot more code than just doing a frame walk, we have a layer of corruption handling
  just above the o-slots logic. We have oslotsCorruptionThreshold attempts, then give up.
- 
+
  This method is called in the catch block just below the top-level if (J9_STACKWALK_ITERATE_O_SLOTS) {} conditional.</div>
 </section>
 </li>
