@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.45.0 are included
 - [Support added for the `com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()` API](#support-added-for-the-comsunmanagementthreadmxbeangettotalthreadallocatedbytes-api)
 - [The JITServer AOT caching feature enabled by default at the JITServer server](#the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server)
 - [New `-XX:[+|-]EnableExtendedHCR` option added](#new-xx-enableextendedhcr-option-added)
+- [New system property added to improve `jcmd` attaching in case of the `SocketException` error on Windows&trade; platform](#new-system-property-added-to-improve-jcmd-attaching-in-case-of-the-socketexception-error-on-windows-platform)
 
 ## Features and changes
 
@@ -66,6 +67,10 @@ For more information, see [ `-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotca
 By default, the extended Hot Code Replace (HCR) capability in the VM is disabled for all OpenJDK versions. You can enable or disable the HCR capability by using the [`-XX:[+|-]EnableExtendedHCR`](xxenableextendedhcr.md) option.
 
 The extended HCR feature is deprecated in this release and will be removed in a future release. From OpenJDK 25 onwards, extended HCR will not be supported. Following that, the extended HCR support will be removed from other earlier OpenJDK versions also.
+
+### New system property added to improve `jcmd` attaching in case of the `SocketException` error on Windows platform
+
+When the `jcmd` tool sends a command to a running VM, the command might throw the `Socket Exception` error on Windows platform. Instead of failing the attaching request, you can specify the number of times the tool retries attaching to the target VM with the new system property, [`-Dcom.ibm.tools.attach.retry`](dcomibmtoolsattachretry.md).
 
 ## Known problems and full release information
 
