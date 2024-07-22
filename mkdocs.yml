@@ -250,6 +250,7 @@ nav:
             - "-Dcom.ibm.tools.attach.id"                                        : dcomibmtoolsattachid.md
             - "-Dcom.ibm.tools.attach.logging"                                   : dcomibmtoolsattachlogging.md
             - "-Dcom.ibm.tools.attach.log.name"                                  : dcomibmtoolsattachlogname.md
+            - "-Dcom.ibm.tools.attach.retry"                                     : dcomibmtoolsattachretry.md
             - "-Dcom.ibm.tools.attach.shutdown_timeout"                          : dcomibmtoolsattachshutdown_timeout.md
             - "-Dcom.ibm.tools.attach.timeout"                                   : dcomibmtoolsattachtimeout.md
             - "-Dfile.encoding"                                                  : dfileencoding.md
