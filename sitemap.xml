@@ -211,6 +211,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.eclipse.org/openj9/docs/dcomibmtoolsattachretry/</loc>
+         <lastmod>2024-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.eclipse.org/openj9/docs/dcomibmtoolsattachshutdown_timeout/</loc>
          <lastmod>2024-07-22</lastmod>
          <changefreq>daily</changefreq>

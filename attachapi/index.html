@@ -3220,6 +3220,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../dcomibmtoolsattachretry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Dcom.ibm.tools.attach.retry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../dcomibmtoolsattachshutdown_timeout/" class="md-nav__link">
         
   
@@ -8771,7 +8792,7 @@ processes that use the default z/OS OMVS segment cannot enable the Attach API.</
 <p>Because the Attach API can be used to connect to a running application, you must control access to it to ensure that only
 authorized users or processes can use it. Disable the Attach API if you do not intend to use it.</p>
 <p>If you do not want to disable the Attach API but want to control the unauthorized dynamic loading of agents into the VM by using the Attach API, use the <a href="../xxenabledynamicagentloading/"><code>-XX:-EnableDynamicAgentLoading</code></a> option.</p>
-<p>On Windows systems, the Attach API uses the system temporary directory, which is typically <code>C:\Users\&lt;USERNAME&gt;\AppData\Local\Temp</code>.
+<p>On Windows&trade; systems, the Attach API uses the system temporary directory, which is typically <code>C:\Users\&lt;USERNAME&gt;\AppData\Local\Temp</code>.
 The Attach API creates a common subdirectory, which is <code>.com_ibm_tools_attach</code> by default. Because files and directories in the system temporary directory are handled by Windows security, only the process owner can connect to their processes.</p>
 <p>On UNIX systems, the Attach API uses <code>/tmp</code> and creates a common subdirectory, which is <code>.com_ibm_tools_attach</code> by default. The common subdirectory must be on a local drive, not a network drive. Security is handled by POSIX file permissions. The Attach API directory must be owned by <code>root</code> user and must have read, write, and execute file permissions for <code>user</code>, <code>group</code>, and <code>other</code> (<code>drwxrwxrwx</code>). The sticky bit is set so that only the owner and <code>root</code> can delete or rename files or directories within it. A process that uses the Java Attach API must be owned by the same UNIX user ID as the target process.</p>
 <pre><code>~/tmp $ ls -al
@@ -8838,6 +8859,10 @@ total 4
 <td><a href="../dcomibmtoolsattachcommand_timeout/"><code>-Dcom.ibm.tools.attach.command_timeout=&lt;value_in_milliseconds&gt;</code></a></td>
 <td>Specify the timeout for sending a command to the target VM after initial attachment</td>
 </tr>
+<tr>
+<td><a href="../dcomibmtoolsattachretry/"><code>-Dcom.ibm.tools.attach.retry=&lt;number_of_retries&gt;</code></a></td>
+<td>Specify the number of times the <code>jcmd</code> tool retries attaching to a running VM when the tool encounters the <code>SocketException</code> error on Windows platform</td>
+</tr>
 </tbody>
 </table>
 <p>To learn more about each property, click the link in the table.</p>
@@ -8849,6 +8874,7 @@ total 4
 <li><code>com.sun.tools.attach.AgentNotSupportedException</code></li>
 <li><code>com.sun.tools.attach.AttachOperationFailedException</code></li>
 <li><code>java.io.IOException</code></li>
+<li><code>java.net.SocketException</code></li>
 </ul>
 <p>Exceptions from agents on the target VM go to <code>stderr</code> or <code>stdout</code> for the target VM. These exceptions are not reported in the output of the attaching VM.</p>
 <p>Here are some problems that you might encounter:</p>
