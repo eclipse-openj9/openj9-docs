@@ -461,9 +461,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-xx-enableextendedhcr-option-added" class="md-nav__link">
+  <a href="#the-extended-hot-code-replace-hcr-capability-disabled-and-xx-enableextendedhcr-option-added" class="md-nav__link">
     <span class="md-ellipsis">
-      New -XX:[+|-]EnableExtendedHCR option added
+      The extended Hot Code Replace (HCR) capability disabled and -XX:[+|-]EnableExtendedHCR option added
     </span>
   </a>
   
@@ -8816,9 +8816,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-xx-enableextendedhcr-option-added" class="md-nav__link">
+  <a href="#the-extended-hot-code-replace-hcr-capability-disabled-and-xx-enableextendedhcr-option-added" class="md-nav__link">
     <span class="md-ellipsis">
-      New -XX:[+|-]EnableExtendedHCR option added
+      The extended Hot Code Replace (HCR) capability disabled and -XX:[+|-]EnableExtendedHCR option added
     </span>
   </a>
   
@@ -8892,7 +8892,7 @@
 <li><a href="#md5-message-digest-algorithm-support-for-openssl">MD5 message digest algorithm support for OpenSSL</a></li>
 <li><a href="#support-added-for-the-comsunmanagementthreadmxbeangettotalthreadallocatedbytes-api">Support added for the <code>com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()</code> API</a></li>
 <li><a href="#the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server">The JITServer AOT caching feature enabled by default at the JITServer server</a></li>
-<li><a href="#new-xx-enableextendedhcr-option-added">New <code>-XX:[+|-]EnableExtendedHCR</code> option added</a></li>
+<li><a href="#the-extended-hot-code-replace-hcr-capability-disabled-and-xx-enableextendedhcr-option-added">The extended Hot Code Replace (HCR) capability disabled and <code>-XX:[+|-]EnableExtendedHCR</code> option added</a></li>
 <li><a href="#new-system-property-added-to-improve-jcmd-attaching-in-case-of-the-socketexception-error-on-windows-platform">New system property added to improve <code>jcmd</code> attaching in case of the <code>SocketException</code> error on Windows&trade; platform</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -8910,8 +8910,8 @@
 <p><code>-XX:+JITServerUseAOTCache</code> is the default setting at the JITServer server now. That means that you don't have to specify the <code>-XX:+JITServerUseAOTCache</code> option at the server to enable the JITServer AOT caching feature.</p>
 <p>Although this option is by default enabled at the server, it is still disabled for the JITServer clients. The clients that want to use the JITServer AOT caching, must still specify the <code>-XX:+JITServerUseAOTCache</code> option on the command line. Also, now the clients don't have to enable the <a href="https://www.eclipse.org/openj9/docs/shrc/">shared classes cache</a> feature to use the <code>-XX:+JITServerUseAOTCache</code> option.</p>
 <p>For more information, see <a href="../xxjitserveruseaotcache/"> <code>-XX:[+|-]JITServerUseAOTCache</code></a>.</p>
-<h3 id="new-xx-enableextendedhcr-option-added">New <code>-XX:[+|-]EnableExtendedHCR</code> option added</h3>
-<p>By default, the extended Hot Code Replace (HCR) capability in the VM is disabled for all OpenJDK versions. You can enable or disable the HCR capability by using the <a href="../xxenableextendedhcr/"><code>-XX:[+|-]EnableExtendedHCR</code></a> option.</p>
+<h3 id="the-extended-hot-code-replace-hcr-capability-disabled-and-xx-enableextendedhcr-option-added">The extended Hot Code Replace (HCR) capability disabled and <code>-XX:[+|-]EnableExtendedHCR</code> option added</h3>
+<p>By default, the extended HCR capability in the VM is disabled for all OpenJDK versions, which is a change from the previous releases. You can enable the HCR capability by using the new option, <a href="../xxenableextendedhcr/"><code>-XX:+EnableExtendedHCR</code></a> option.</p>
 <p>The extended HCR feature is deprecated in this release and will be removed in a future release. From OpenJDK 25 onwards, extended HCR will not be supported. Following that, the extended HCR support will be removed from other earlier OpenJDK versions also.</p>
 <h3 id="new-system-property-added-to-improve-jcmd-attaching-in-case-of-the-socketexception-error-on-windows-platform">New system property added to improve <code>jcmd</code> attaching in case of the <code>SocketException</code> error on Windows platform</h3>
 <p>When the <code>jcmd</code> tool sends a command to a running VM, the command might throw the <code>Socket Exception</code> error on Windows platform. Instead of failing the attaching request, you can specify the number of times the tool retries attaching to the target VM with the new system property, <a href="../dcomibmtoolsattachretry/"><code>-Dcom.ibm.tools.attach.retry</code></a>.</p>
