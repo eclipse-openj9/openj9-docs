@@ -31,15 +31,19 @@ You can use the `-verbose:sizes` option to find out the values that the VM is cu
 
 | Setting       | Effect                                            | Default                   |
 |---------------|---------------------------------------------------|---------------------------|
-| `-Xmo<size>`  | Equivalent to setting both `-Xmos` and `-Xmox`    | not set                   |            |
+| `-Xmo<size>`  | Equivalent to setting both `-Xmos` and `-Xmox`    | not set                   |
 | `-Xmos<size>` | Set initial size of the tenure area of the heap   | 75% of [`-Xms`](xms.md)   |
-| `-Xmox<size>` | Set maximum size of the tenure area of the heap   | Same as [`-Xmx`](xms.md)  |
+| `-Xmox<size>` | Set maximum size of the tenure area of the heap   | [`-Xmx`](xms.md) minus [`-Xmns`](xmn.md)  |
 
-See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
+where `-Xmx` refers to the maximum heap size and `-Xmns` refers to the minimum size of the nursery area of the heap.
 
-:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** If you try to set `-Xmo` with either `-Xmos` or `-Xmox`, the VM does not start, returning an error.
+Although the tenure and nursery areas of the heap have independent maximum sizes, `-Xmox` and `-Xmnx`, the sum of their current sizes cannot be larger than `-Xmx`.
 
 To set the size of the nursery area of the heap, see [`-Xmn/-Xmns/-Xmnx`](xmn.md).
+
+For more information about the `<size>` parameter, see [Using -X command-line options](x_jvm_commands.md).
+
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** If you try to set `-Xmo` with either `-Xmos` or `-Xmox`, the VM does not start, returning an error.
 
 ## See also
 
