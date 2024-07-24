@@ -31,6 +31,7 @@ The following new features and notable changes since version 0.45.0 are included
 - [The JITServer AOT caching feature enabled by default at the JITServer server](#the-jitserver-aot-caching-feature-enabled-by-default-at-the-jitserver-server)
 - [The extended Hot Code Replace (HCR) capability disabled and `-XX:[+|-]EnableExtendedHCR` option added](#the-extended-hot-code-replace-hcr-capability-disabled-and-xx-enableextendedhcr-option-added)
 - [New system property added to improve `jcmd` attaching in case of the `SocketException` error on Windows&trade; platform](#new-system-property-added-to-improve-jcmd-attaching-in-case-of-the-socketexception-error-on-windows-platform)
+- [`-Xtgc:allocation` report includes core allocation cache statistics per thread](#-xtgcallocation-report-includes-core-allocation-cache-statistics-per-thread)
 
 ## Features and changes
 
@@ -71,6 +72,10 @@ The extended HCR feature is deprecated in this release and will be removed in a 
 ### New system property added to improve `jcmd` attaching in case of the `SocketException` error on Windows platform
 
 When the `jcmd` tool sends a command to a running VM, the command might throw the `Socket Exception` error on Windows platform. Instead of failing the attaching request, you can specify the number of times the tool retries attaching to the target VM with the new system property, [`-Dcom.ibm.tools.attach.retry`](dcomibmtoolsattachretry.md).
+
+### `-Xtgc:allocation` report includes core allocation cache statistics per thread
+
+The [`-Xtgc:allocation`](xtgc.md#allocation) option prints thread-specific allocation cache (TLH) statistics in addition to the cumulative allocation statistics.
 
 ## Known problems and full release information
 
