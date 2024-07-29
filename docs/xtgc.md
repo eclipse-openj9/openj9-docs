@@ -34,6 +34,14 @@ Provides garbage collection tracing options.
 
 : Specify one one or more of the following parameters in a comma-separated list:
 
+### `allocation`
+
+        -Xtgc:allocation
+
+: Prints both per thread (TLH) and cumulative allocation cache statistics, such as total bytes allocated since last GC, current TLH sizing, and discarded TLH size.
+
+For more information about the allocation cache, see [Allocation caches](allocation.md#allocation-caches).
+
 ### `backtrace`
 
         -Xtgc:backtrace
