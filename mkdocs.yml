@@ -467,6 +467,7 @@ nav:
             - "-XX:ShareClassesDisableBCI"                                       : xxshareclassesenablebci.md         #redirect
             - "-XX:ShareClassesEnableBCI"                                        : xxshareclassesenablebci.md
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
+            - "-XX:[+|-]ShareOrphans"                                            : xxshareorphans.md
             - "-XX:[+|-]ShareUnsafeClasses"                                      : xxshareunsafeclasses.md
             - "-XX:[+|-]ShowCarrierFrames"                                       : xxshowcarrierframes.md
             - "-XX:[+|-]ShowCodeDetailsInExceptionMessages"                      : xxshowcodedetailsinexceptionmessages.md
