@@ -32,6 +32,7 @@ The following new features and notable changes since version 0.45.0 are included
 - [The extended Hot Code Replace (HCR) capability disabled and `-XX:[+|-]EnableExtendedHCR` option added](#the-extended-hot-code-replace-hcr-capability-disabled-and-xx-enableextendedhcr-option-added)
 - [New system property added to improve `jcmd` attaching in case of the `SocketException` error on Windows&trade; platform](#new-system-property-added-to-improve-jcmd-attaching-in-case-of-the-socketexception-error-on-windows-platform)
 - [`-Xtgc:allocation` report includes core allocation cache statistics per thread](#-xtgcallocation-report-includes-core-allocation-cache-statistics-per-thread)
+- [New `-XX:[+|-]ShareOrphans` option added](#new-xx-shareorphans-option-added)
 
 ## Features and changes
 
@@ -76,6 +77,14 @@ When the `jcmd` tool sends a command to a running VM, the command might throw th
 ### `-Xtgc:allocation` report includes core allocation cache statistics per thread
 
 The [`-Xtgc:allocation`](xtgc.md#allocation) option prints thread-specific allocation cache (TLH) statistics in addition to the cumulative allocation statistics.
+
+### New `-XX:[+|-]ShareOrphans` option added
+
+When `-Xshareclasses` was specified, only those class loaders that implemented the OpenJ9's public shared classes cache APIs (and its child class loaders) could store classes to the shared classes cache. Custom class loaders that did not implement these cache APIs cannot pass the module or class path information to the VM. Classes of such class loaders were not stored to the cache.
+
+You can enable class sharing from all class loaders, irrespective of whether the class loader implements the shared classes cache API, with the `-XX:+ShareOrphans` option.
+
+For more information, see [`-XX:[+|-]ShareOrphans`](xxshareorphans.md).
 
 ## Known problems and full release information
 
