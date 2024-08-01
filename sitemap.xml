@@ -1536,6 +1536,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.eclipse.org/openj9/docs/xxshareorphans/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.eclipse.org/openj9/docs/xxshareunsafeclasses/</loc>
          <lastmod>2024-08-01</lastmod>
          <changefreq>daily</changefreq>
