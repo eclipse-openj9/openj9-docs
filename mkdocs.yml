@@ -423,6 +423,7 @@ nav:
             - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
             - "-XX:JITServerAddress"                                             : xxjitserveraddress.md
             - "-XX:JITServerAOTCacheDir"                                         : xxjitserveraotcachedir.md
+            - "-XX:[+|-]JITServerAOTCacheIgnoreLocalSCC"                         : xxjitserveraotcacheignorelocalscc.md
             - "-XX:JITServerAOTCacheName"                                        : xxjitserveraotcachename.md
             - "-XX:[+|-]JITServerAOTCachePersistence"                            : xxjitserveraotcachepersistence.md
             - "-XX:JITServerAOTmx"                                               : xxjitserveraotmx.md

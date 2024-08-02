@@ -33,6 +33,7 @@ The following new features and notable changes since version 0.45.0 are included
 - [New system property added to improve `jcmd` attaching in case of the `SocketException` error on Windows&trade; platform](#new-system-property-added-to-improve-jcmd-attaching-in-case-of-the-socketexception-error-on-windows-platform)
 - [`-Xtgc:allocation` report includes core allocation cache statistics per thread](#-xtgcallocation-report-includes-core-allocation-cache-statistics-per-thread)
 - [New `-XX:[+|-]ShareOrphans` option added](#new-xx-shareorphans-option-added)
+- [New `-XX:[+|-]JITServerAOTCacheIgnoreLocalSCC` option added](#new-xx-jitserveraotcacheignorelocalscc-option-added)
 
 ## Features and changes
 
@@ -85,6 +86,10 @@ When `-Xshareclasses` was specified, only those class loaders that implemented t
 You can enable class sharing from all class loaders, irrespective of whether the class loader implements the shared classes cache API, with the `-XX:+ShareOrphans` option.
 
 For more information, see [`-XX:[+|-]ShareOrphans`](xxshareorphans.md).
+
+### New `-XX:[+|-]JITServerAOTCacheIgnoreLocalSCC` option added
+
+From this release onwards, the default behavior of the client when it uses the JITServer AOT cache is to bypass its local shared classes cache (if one is set up) during JITServer AOT cache compilations. You can control how the JITServer AOT cache feature interacts with the local cache at JITServer client VMs with the [`-XX:[+|-]JITServerAOTCacheIgnoreLocalSCC`](xxjitserveraotcacheignorelocalscc.md) option.
 
 ## Known problems and full release information
 
