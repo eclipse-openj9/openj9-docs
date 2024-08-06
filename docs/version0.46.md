@@ -34,6 +34,7 @@ The following new features and notable changes since version 0.45.0 are included
 - [`-Xtgc:allocation` report includes core allocation cache statistics per thread](#-xtgcallocation-report-includes-core-allocation-cache-statistics-per-thread)
 - [New `-XX:[+|-]ShareOrphans` option added](#new-xx-shareorphans-option-added)
 - [New `-XX:[+|-]JITServerAOTCacheIgnoreLocalSCC` option added](#new-xx-jitserveraotcacheignorelocalscc-option-added)
+- [New `-XdynamicHeapAdjustment` option added](#new-xdynamicheapadjustment-option-added)
 
 ## Features and changes
 
@@ -90,6 +91,12 @@ For more information, see [`-XX:[+|-]ShareOrphans`](xxshareorphans.md).
 ### New `-XX:[+|-]JITServerAOTCacheIgnoreLocalSCC` option added
 
 From this release onwards, the default behavior of the client when it uses the JITServer AOT cache is to bypass its local shared classes cache (if one is set up) during JITServer AOT cache compilations. You can control how the JITServer AOT cache feature interacts with the local cache at JITServer client VMs with the [`-XX:[+|-]JITServerAOTCacheIgnoreLocalSCC`](xxjitserveraotcacheignorelocalscc.md) option.
+
+### ![Java 11 (LTS) and later](docs/cr/java11plus.png) New `-XdynamicHeapAdjustment` option added
+
+By default, if a checkpoint is taken in a container with no memory limits and then restored in a container with memory limits, the restored VM instance does not detect the memory limits.
+
+You can now create a single image file and restore it on various nodes with different memory limits. The new option [`-XdynamicHeapAdjustment`](xdynamicheapadjustment.md) automatically adjusts the maximum Java heap size ([`-Xmx`](xms.md)) and minimum Java heap size ([`-Xms`](xms.md)) values such that they are within the physical memory limitations on the system. ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 ## Known problems and full release information
 

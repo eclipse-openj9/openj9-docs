@@ -295,6 +295,7 @@ nav:
             - "-Xdisablejavadump"                                                : xdisablejavadump.md
             - "-Xdisablestringconstantgc"                                        : xenablestringconstantgc.md         # redirect
             - "-Xdump"                                                           : xdump.md
+            - "-XdynamicHeapAdjustment"                                          : xdynamicheapadjustment.md
             - "-Xenableexcessivegc"                                              : xenableexcessivegc.md
             - "-Xenableexplicitgc"                                               : xenableexplicitgc.md
             - "-Xenablestringconstantgc"                                         : xenablestringconstantgc.md
