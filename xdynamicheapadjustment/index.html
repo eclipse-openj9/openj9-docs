@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/cmdline_general/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xdynamicheapadjustment/">
       
       
-        <link rel="prev" href="../cmdline_specifying/">
+        <link rel="prev" href="../xdump/">
       
       
-        <link rel="next" href="../cmdline_migration/">
+        <link rel="next" href="../xenableexcessivegc/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Standard options -  </title>
+        <title>-XdynamicHeapAdjustment -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#standard-command-line-options" class="md-skip">
+        <a href="#-xdynamicheapadjustment" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Standard options
+              -XdynamicHeapAdjustment
             
           </span>
         </div>
@@ -2676,30 +2676,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Standard options
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cmdline_general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2708,35 +2688,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#openj9-extensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      OpenJ9 extensions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3566,17 +3517,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" checked>
         
           
           <label class="md-nav__link" for="__nav_18_5" id="__nav_18_5_label" tabindex="0">
@@ -3590,7 +3543,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_18_5">
             <span class="md-nav__icon md-icon"></span>
             JVM -X options
@@ -4147,10 +4100,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../xdynamicheapadjustment/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    -XdynamicHeapAdjustment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -4159,6 +4132,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -8764,9 +8784,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#openj9-extensions" class="md-nav__link">
+  <a href="#syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      OpenJ9 extensions
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
     </span>
   </a>
   
@@ -8810,61 +8848,28 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="standard-command-line-options">Standard command-line options</h1>
-<p>The Eclipse OpenJ9&trade; virtual machine supports the standard Java&trade; options that are common to all Java virtual machine implementations, including Oracle's HotSpot VM.
-Some of the common options supported are summarised in the following table:</p>
-<table>
-<thead>
-<tr>
-<th>Standard option name</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-classpath:&lt;resource_name&gt;[:&lt;resource_name&gt;]</code></td>
-<td>Sets the search path for application classes and resources (directories and compressed or .jar files). <code>cp</code> can be used instead of <code>classpath</code>.</td>
-</tr>
-<tr>
-<td><code>-help</code>, <code>-?</code></td>
-<td>Prints a usage message.</td>
-</tr>
-<tr>
-<td><code>-fullversion</code></td>
-<td>Prints the build and version information for a VM</td>
-</tr>
-<tr>
-<td><code>-showversion</code></td>
-<td>Prints product version and continues.</td>
-</tr>
-<tr>
-<td><code>-verbose:&lt;option&gt;[,&lt;option&gt;]</code></td>
-<td>Enables verbose output. Options include <code>class</code>, <code>dynload</code>, <code>gc</code>, <code>init</code>, <code>jni</code>, <code>sizes</code>, <code>stack</code>, and <code>module</code>. (See <strong>Notes</strong>)</td>
-</tr>
-<tr>
-<td><code>-version</code></td>
-<td>Prints the full build and version information a VM</td>
-</tr>
-</tbody>
-</table>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Notes:</strong></p>
+<h1 id="-xdynamicheapadjustment">-XdynamicHeapAdjustment</h1>
+<p><strong>Linux&reg; on x86, Linux on IBM Power&reg; systems, Linux on AArch64 and Linux on IBM Z&reg; systems (64-bit only)</strong></p>
+<p><img alt="Java 11 (LTS) and later" src="docs/cr/java11plus.png" /> This option enables a VM capability that automatically adjusts the maximum Java heap size (<a href="../xms/"><code>-Xmx</code></a>) and minimum Java heap size (<a href="../xms/"><code>-Xms</code></a>) values such that they are within the physical memory limitations on the system.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code>    -XdynamicHeapAdjustment
+</code></pre>
+<p>The option is disabled by default. After it is enabled, the option cannot be disabled.</p>
+<h2 id="explanation">Explanation</h2>
+<p>Large <code>-Xmx</code> or <code>-Xms</code> values can cause problems or errors. If the <code>-Xmx</code> value is set larger than the available memory, errors, such as Out of memory error, excessive paging, or a bus error, might occur. If the <code>-Xms</code> value is set larger than the available memory or the soft maximum size of the cache (<a href="../xsoftmx/"><code>-Xsoftmx</code></a>), an unrecoverable error occurs.</p>
+<p>The <code>-XdynamicHeapAdjustment</code> option can be used to auto adjust the system, and avoid potential problems because of too large <code>-Xmx</code> or <code>-Xms</code> values. If the <code>-Xmx</code> or <code>-Xms</code> values are specified together with the <code>-XdynamicHeapAdjustment</code> option, VM automatically picks a size for <code>-Xmx</code> and <code>-Xms</code> that is within the limits of the available memory on the system. Typically, this size is 75% of the available memory.</p>
+<p>For example, if the system has 8 GB memory but <code>-Xmx</code> is set to 12 GB, then the VM sets the value of <code>xsoftmx</code>, 6 GB, as the default maximum size of the heap.</p>
+<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg></span> <strong>Restrictions:</strong></p>
 <ul>
-<li><code>-verbose:class</code>: Writes an entry to <code>stderr</code> for each class that is loaded.</li>
-<li><code>-verbose:dynload</code>: Writes detailed class information to <code>stderr</code> as each bootstrap class is loaded by the VM:</li>
-<li><code>-verbose:gc</code>: Provides verbose garbage collection information.</li>
-<li><code>-verbose:init</code>: Writes information to <code>stderr</code> describing VM initialization and termination.</li>
-<li><code>-verbose:jni</code>: Writes information to <code>stderr</code> describing the JNI services called by the application and VM.</li>
-<li><code>-verbose:sizes</code>: Writes information to <code>stderr</code> describing the active memory usage settings.</li>
-<li><code>-verbose:stack</code>: Writes information to <code>stderr</code> describing the Java and C stack usage for each thread.</li>
-<li><code>-verbose:module</code>: <img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> Writes information to <code>stderr</code> for each module that is loaded and unloaded.</li>
+<li>You can specify the <code>-XdynamicHeapAdjustment</code> option only at checkpoint time, and it applies to both checkpoint and restore.</li>
+<li>The <code>-XdynamicHeapAdjustment</code> option can be used only with the <code>-XX:+EnableCRIUSuport</code> option.</li>
 </ul>
-<p>For more information about standard options, see <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html#BABDJJFI">Oracle Java SE Standard Options</a></p>
-<h2 id="openj9-extensions">OpenJ9 extensions</h2>
-<p>OpenJ9 supports the following extension to the <code>-verbose</code> option:</p>
+<p><img alt="End of content that applies only to Java 11 and later" src="../cr/java_close.png" /></p>
+<h2 id="see-also">See also</h2>
 <ul>
-<li><code>-verbose:stacktrace</code> : Writes either the module name or the <code>Classloader</code> name (with the code source location when available) to the end of each line of a Java stack trace.</li>
+<li><a href="../version0.46/#new-xdynamicheapadjustment-option-added">What's new in version 0.46.0</a></li>
 </ul>
-<!-- ==== END OF TOPIC ==== cmdline_general.md ==== -->
+<!-- ==== END OF TOPIC ==== xdynamicheapadjustment.md ==== -->
 
 
 
