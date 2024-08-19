@@ -96,8 +96,8 @@ public class DTFJEX1 {
         if (args.length > 0) {
             File f = new File(args[0]);
             try {
-                Class factoryClass = Class.forName("com.ibm.dtfj.image.j9.ImageFactory");
-                ImageFactory factory = (ImageFactory) factoryClass.newInstance();
+                Class<?> factoryClass = Class.forName("com.ibm.dtfj.image.j9.ImageFactory");
+                ImageFactory factory = (ImageFactory) factoryClass.getDeclaredConstructor().newInstance();
                 image = factory.getImage(f);
             } catch (ClassNotFoundException e) {
                 System.err.println("Could not find DTFJ factory class");
@@ -105,7 +105,7 @@ public class DTFJEX1 {
             } catch (IllegalAccessException e) {
                 System.err.println("IllegalAccessException for DTFJ factory class");
                 e.printStackTrace(System.err);
-            } catch (InstantiationException e) {
+            } catch (ReflectiveOperationException e) {
                 System.err.println("Could not instantiate DTFJ factory class");
                 e.printStackTrace(System.err);
             } catch (IOException e) {
@@ -161,8 +161,8 @@ public class DTFJEX2 {
             File javacoreFile = new File(args[0]);
 
             try {
-                Class factoryClass = Class.forName("com.ibm.dtfj.image.javacore.JCImageFactory");
-                ImageFactory factory = (ImageFactory) factoryClass.newInstance();
+                Class<?> factoryClass = Class.forName("com.ibm.dtfj.image.javacore.JCImageFactory");
+                ImageFactory factory = (ImageFactory) factoryClass.getDeclaredConstructor().newInstance();
                 image = factory.getImage(javacoreFile);
             } catch (ClassNotFoundException e) {
                 System.err.println("Could not find DTFJ factory class");
@@ -170,7 +170,7 @@ public class DTFJEX2 {
             } catch (IllegalAccessException e) {
                 System.err.println("IllegalAccessException for DTFJ factory class");
                 e.printStackTrace(System.err);
-            } catch (InstantiationException e) {
+            } catch (ReflectiveOperationException e) {
                 System.err.println("Could not instantiate DTFJ factory class");
                 e.printStackTrace(System.err);
             } catch (IOException e) {
@@ -250,9 +250,9 @@ public class DTFJEX2
          File f = new File( args[0] );
          try
          {
-            Class factoryClass = Class
+            Class<?> factoryClass = Class
                   .forName( "com.ibm.dtfj.image.j9.ImageFactory" );
-            ImageFactory factory = (ImageFactory) factoryClass.newInstance( );
+            ImageFactory factory = (ImageFactory) factoryClass.getDeclaredConstructor().newInstance( );
             image = factory.getImage( f );
          }
          catch ( Exception ex )
