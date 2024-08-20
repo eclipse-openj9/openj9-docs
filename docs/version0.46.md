@@ -50,7 +50,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 ### MD5 message digest algorithm support for OpenSSL
 
-OpenSSL native cryptographic support is added for the MD5 message digest algorithm, providing improved cryptographic performance. OpenSSL support is enabled by default. If you want to turn off support for the MD5 message digest algorithm, set the [`-Djdk.nativedigest`](djdknativedigest.md) system property to `false`.
+OpenSSL native cryptographic support is added for the MD5 message digest algorithm, providing improved cryptographic performance. OpenSSL support is enabled by default. If you want to turn off support for the MD5 message digest algorithm, set the [`-Djdk.nativeDigest`](djdknativedigest.md) system property to `false`.
 
 ### Support added for the `com.sun.management.ThreadMXBean.getTotalThreadAllocatedBytes()` API
 
