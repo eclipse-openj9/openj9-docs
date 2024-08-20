@@ -42,6 +42,8 @@ This option enables or disables the merging of multiple `-Xjit` or `-Xaot` optio
 
  If both `-Xjit` and `-Xaot` options exist and you use the `-XX:+MergeCompilerOptions` option, then multiple `-Xjit` options are merged into a single `-Xjit` option and multiple `-Xaot` options are merged into a single `-Xaot` option.
 
+ By default, `-Xnojit`, `-Xnoaot`, and `-Xint` overrides any `-Xjit` and `-Xaot` option before them (`Xint` overrides both, while `-Xnojit` overrides `-Xjit` and `-Xnoaot` overrides `-Xaot`). However, the `-XX:+MergeCompilerOptions` option will merge all `-Xjit` and `-Xaot` options regardless of the existence of those options, as long as at least one of them appears after those options.
+
 ## Examples
 
 ### One `-Xjit` option
@@ -91,6 +93,33 @@ java -XX:+MergeCompilerOptions -XX:-MergeCompilerOptions -Xshareclasses:none '-X
 java -XX:-MergeCompilerOptions -XX:+MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
 ```
 `-Xjit` options that are applied - `{compilePerformance}`,`vlog=vlog`,`version`
+
+```
+java -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
+```
+`-Xjit` option that is applied - `version`
+
+```
+java -XX:+MergeCompilerOptions -Xshareclasses:none '-Xjit:verbose={compilePerformance},vlog=vlog' -Xjit:version -version
+```
+`-Xjit` options that are applied - `verbose={compilePerformance}`,`vlog=vlog`,`version`
+
+### Used alongside `-Xnojit`, `-Xnoaot`, or `-Xint`
+
+```
+java -Xshareclasses:none -Xjit:version -Xnojit -version
+```
+No `-Xjit` option is applied
+
+```
+java -XX:+MergeCompilerOptions -Xshareclasses:none -Xjit:verbose={compilePerformance} -Xjit:vlog=vlog -Xint -Xjit:version -version
+```
+`-Xjit` options that are applied - `verbose={compilePerformance}`,`vlog=vlog`,`version`
+
+```
+java -XX:+MergeCompilerOptions -Xshareclasses:none -Xjit:version -Xnojit -version
+```
+No `-Xjit` option is applied
 
 ## See also
 
