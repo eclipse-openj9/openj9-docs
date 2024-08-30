@@ -38,7 +38,9 @@ This option enables or disables sharing of orphan classes from class loaders tha
 
 In the previous versions, OpenJ9 stored only bootstrap classes and hidden classes in the shared classes cache by default, that is the `-Xshareclasses` option is not specified by default. When the `-Xshareclasses` option was specified, only those class loaders that implemented the OpenJ9's public shared classes cache APIs (and its child class loaders) could store classes to the shared classes cache. For classes from custom class loaders that did not implement the shared classes cache APIs, the VM does not have their module or class path information. Such classes were not stored to the cache.
 
-You can enable class sharing from all class loaders, irrespective of whether the class loader implements the cache API, with the `-XX:+ShareOrphans` option. This option automatically enables the `-Xshareclasses` option. When the class sharing from all class loaders is enabled, following is the sharing behavior:
+You can enable class sharing from all class loaders, irrespective of whether the class loader implements the cache API, with the `-XX:+ShareOrphans` option. This option automatically enables the `-Xshareclasses` option. Conversely, if the `-Xshareclasses` option is specified in the command line, it automatically enables the `-XX:+ShareOrphans` option (from release 0.47.0 onwards).
+
+When the class sharing from all class loaders is enabled, following is the sharing behavior:
 
 - For classes from class loaders that implement the shared class cache API, they are shared as normal ROM classes, which is same as enabling `-Xshareclasses`.
 
@@ -59,6 +61,7 @@ You can disable sharing class as orphans from class loader that does not impleme
 ## See also
 
 - [What's new in version 0.46.0](version0.46.md#new-xx-shareorphans-option-added)
+- [What's new in version 0.47.0](version0.47.md#-xshareclasses-option-automatically-enables-xxshareorphans)
 
 
 
