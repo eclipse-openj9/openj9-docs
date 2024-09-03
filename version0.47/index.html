@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/shrc_diag_util/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.47/">
       
       
-        <link rel="prev" href="../shrc/">
+        <link rel="prev" href="../openj9_releases/">
       
       
-        <link rel="next" href="../criusupport/">
+        <link rel="next" href="../version0.46/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Diagnosing problems -  </title>
+        <title>Version 0.47.0 -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#diagnosing-problems-with-class-data-sharing" class="md-skip">
+        <a href="#whats-new-in-version-0470" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Diagnosing problems
+              Version 0.47.0
             
           </span>
         </div>
@@ -308,17 +308,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -332,7 +334,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Release notes
@@ -364,10 +366,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../version0.47/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Version 0.47.0
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -376,6 +398,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features and changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binaries and supported environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-xshareclasses-option-automatically-enables-xxshareorphans" class="md-nav__link">
+    <span class="md-ellipsis">
+      -Xshareclasses option automatically enables -XX:+ShareOrphans
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known problems and full release information
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1628,19 +1712,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
           <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
@@ -1654,7 +1736,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             Class data sharing
@@ -1686,30 +1768,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Diagnosing problems
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../shrc_diag_util/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,215 +1780,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#initialization-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      Initialization problems
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problems-finding-or-storing-classes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problems finding or storing classes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-verbose-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Generating verbose output
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Generating verbose output">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#verbose" class="md-nav__link">
-    <span class="md-ellipsis">
-      verbose
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verboseio" class="md-nav__link">
-    <span class="md-ellipsis">
-      verboseIO
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verboseaot" class="md-nav__link">
-    <span class="md-ellipsis">
-      verboseAOT
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verbosehelper" class="md-nav__link">
-    <span class="md-ellipsis">
-      verboseHelper
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#diagnostic-cache-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagnostic cache utilities
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Diagnostic cache utilities">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#printstats" class="md-nav__link">
-    <span class="md-ellipsis">
-      printStats
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printallstats" class="md-nav__link">
-    <span class="md-ellipsis">
-      printAllStats
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="printAllStats">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#class-paths" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class paths
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#romclasses" class="md-nav__link">
-    <span class="md-ellipsis">
-      ROMClasses
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#aot-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      AOT methods
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#urls-and-tokens" class="md-nav__link">
-    <span class="md-ellipsis">
-      URLs and tokens
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zip-entry-caches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Zip entry caches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jit-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      JIT data
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#startup-hints" class="md-nav__link">
-    <span class="md-ellipsis">
-      Startup hints
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printtoplayerstats" class="md-nav__link">
-    <span class="md-ellipsis">
-      printTopLayerStats
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-trace-facility" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using the trace facility
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -8965,64 +8818,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#initialization-problems" class="md-nav__link">
+  <a href="#features-and-changes" class="md-nav__link">
     <span class="md-ellipsis">
-      Initialization problems
+      Features and changes
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problems-finding-or-storing-classes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problems finding or storing classes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-verbose-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Generating verbose output
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Generating verbose output">
+    <nav class="md-nav" aria-label="Features and changes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#verbose" class="md-nav__link">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
     <span class="md-ellipsis">
-      verbose
+      Binaries and supported environments
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verboseio" class="md-nav__link">
+  <a href="#-xshareclasses-option-automatically-enables-xxshareorphans" class="md-nav__link">
     <span class="md-ellipsis">
-      verboseIO
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verboseaot" class="md-nav__link">
-    <span class="md-ellipsis">
-      verboseAOT
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verbosehelper" class="md-nav__link">
-    <span class="md-ellipsis">
-      verboseHelper
+      -Xshareclasses option automatically enables -XX:+ShareOrphans
     </span>
   </a>
   
@@ -9034,120 +8851,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagnostic-cache-utilities" class="md-nav__link">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagnostic cache utilities
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Diagnostic cache utilities">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#printstats" class="md-nav__link">
-    <span class="md-ellipsis">
-      printStats
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printallstats" class="md-nav__link">
-    <span class="md-ellipsis">
-      printAllStats
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="printAllStats">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#class-paths" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class paths
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#romclasses" class="md-nav__link">
-    <span class="md-ellipsis">
-      ROMClasses
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#aot-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      AOT methods
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#urls-and-tokens" class="md-nav__link">
-    <span class="md-ellipsis">
-      URLs and tokens
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zip-entry-caches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Zip entry caches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jit-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      JIT data
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#startup-hints" class="md-nav__link">
-    <span class="md-ellipsis">
-      Startup hints
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#printtoplayerstats" class="md-nav__link">
-    <span class="md-ellipsis">
-      printTopLayerStats
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-the-trace-facility" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using the trace facility
+      Known problems and full release information
     </span>
   </a>
   
@@ -9191,491 +8897,22 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="diagnosing-problems-with-class-data-sharing">Diagnosing problems with class data sharing</h1>
-<p>If you encounter problems with class data sharing, VM messages are typically generated that point to an underlying cause. In some situations, a cache might fail to initialize correctly. In other situations classes might not be found or stored in the shared classes cache. To provide more information about a problem, you can generate verbose output, use diagnostic cache utilities, or use the Eclipse OpenJ9&trade; trace facility.</p>
-<h2 id="initialization-problems">Initialization problems</h2>
-<p>If you do not specify a directory for the shared classes cache by using the <code>cacheDir</code> suboption, the cache is created in the <code>javasharedresources</code> directory in the following default location:</p>
+<h1 id="whats-new-in-version-0470">What's new in version 0.47.0</h1>
+<p>The following new features and notable changes since version 0.46.0 are included in this release:</p>
 <ul>
-<li>On Windows&reg; systems, this directory is created in the user's <code>C:\Users\&lt;username&gt;\AppData\Local\</code> directory.</li>
-<li>On z/OS&reg; systems, this directory is created in the <code>/tmp</code> directory.</li>
-<li>On other systems, this directory is located in the <code>.cache</code> directory in the user's home directory. Do not set the user's home directory on an NFS mount or a shared mount across systems or LPARs.</li>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#-xshareclasses-option-automatically-enables-xxshareorphans"><code>-Xshareclasses</code> option automatically enables <code>-XX:+ShareOrphans</code></a></li>
 </ul>
-<p>Initialization problems can occur on systems other than Windows because caches are created with read/write access for the user only and subsequent users do not have permission to write to the home directory. If you specify the <code>-Xshareclasses:groupAccess</code> suboption, the cache is created in the <code>/tmp</code> directory instead where all users have permission to write to the cache.</p>
-<p>For a persistent cache, initialization problems can also occur if there is insufficient disk space available or if you are attempting to locate the cache on a remote networked file system, which is not supported.</p>
-<p>For a non-persistent cache, a shared memory area is required. Check that your system is configured with sufficient resources as described in <a href="../configuring/#setting-shared-memory-values">Setting shared memory values</a>. If initialization problems persist, try deleting the cache by using the <code>-Xshareclasses:destroyAll</code> cache utility, which removes all known shared memory areas and semaphores for caches in the <code>cacheDir</code> specified or the default directory. These actions force the VM to re-create the cache.</p>
-<h2 id="problems-finding-or-storing-classes">Problems finding or storing classes</h2>
-<p>The most common cause for classes not being stored in the cache is due to space constraints. Make sure that you set an appropriate size for the cache, as described in <a href="../shrc/#creating-a-shared-classes-cache">Creating a shared classes cache</a>. Setting a soft maximum size is recommended, because you can adjust the soft maximum size that is set for the cache after it is created. See <a href="../xscmx/#setting-a-soft-maximum-size">Setting a soft maximum size</a>.</p>
-<p>Storing classes can also be a problem if the cache is opened read-only or if the class does not exist on the file system because it is sourced from a URL location.</p>
-<p>If you are attempting to share modified bytecode, you must use a modification context, as described in <a href="../shrc/#sharing-modified-bytecode">Sharing modified bytecode</a>. Otherwise, classes are stored in a private area that is not accessible to other VMs.</p>
-<p>If you are using a custom class loader, class path entries in the <code>SharedClassURLClasspathHelper</code> must be <em>confirmed</em> before classes can be found for these entries. More information about confirmed entries is available in the <code>SharedClassURLClasspathHelper</code> interface in the <a href="../api-overview/#monitoring-and-management"><code>com.ibm.oti.shared</code> API documentation</a>.</p>
-<p>If you are instrumenting bytecode by using a JVMTI agent or <code>java.lang.instrument</code> agent, the following rules apply:</p>
-<ul>
-<li>Redefined classes are never stored in the cache.</li>
-<li>Retransformed classes are stored only if you specify the <code>-Xshareclasses:cacheRetransformed</code> suboption when you start your application.</li>
-</ul>
-<p>If a running application uses its own class loader and you are using a <code>SecurityManager</code>, you must grant the class loader permission to <code>SharedCachePermission</code> before they can share classes. For more information, see <a href="../shrc/#support-for-custom-class-loaders">Support for custom class loaders</a>.</p>
-<p>In very rare cases, problems with finding or storing classes might be due to cache corruption. If the VM detects that a cache is corrupt, it attempts to destroy the cache and re-create it. If the VM cannot re-create the cache, it starts only if the <code>-Xshareclasses:nonfatal</code> suboption is specified on the command line, but without using the shared cache. Try using the <code>-Xshareclasses:destroy</code> cache utility to remove the specific cache and re-create it. You might need to specify the <code>cacheDir=&lt;directory&gt;</code> and <code>name=&lt;cache_name&gt;</code> suboptions if the cache is not using the default settings.</p>
-<h2 id="generating-verbose-output">Generating verbose output</h2>
-<p>A number of <code>-Xshareclasses</code> suboptions are available for generating verbose output during class data sharing operations, which can help you identify the root cause of a problem.</p>
-<h3 id="verbose"><code>verbose</code></h3>
-<p>The <a href="../xshareclasses/#verbose"><code>-Xshareclasses:verbose</code></a> suboption provides basic output on cache usage. In the following example, a persistent cache is opened and attached to the VM for class sharing. Information is provided about the size of the cache, the unstored bytes due to the setting of a soft maximum size, and maximum AOT and JIT data size.</p>
-<pre><code>java -Xshareclasses:name=myCache,verbose HelloWorld
-[-Xshareclasses persistent cache enabled]
-[-Xshareclasses verbose output enabled]
-JVMSHRC237I Opened shared classes persistent cache myCache
-JVMSHRC246I Attached shared classes persistent cache myCache
-JVMSHRC765I Memory page protection on runtime data, string read-write data and partially filled pages is successfully enabled
-Hello World
-JVMSHRC168I Total shared class bytes read=2532416. Total bytes stored=268156
-JVMSHRC818I Total unstored bytes due to the setting of shared cache soft max is 0. Unstored AOT bytes due to the setting of -Xscmaxaot is 0. Unstored JIT bytes due to the setting of -Xscmaxjitdata is 0.
-
-</code></pre>
-<h3 id="verboseio"><code>verboseIO</code></h3>
-<p>The <a href="../xshareclasses/#verboseio"><code>-Xshareclasses:verboseIO</code></a> suboption provides more detailed information about class sharing operations. In the following example, some classes are found when the cache is accessed. However, class <code>openj9/internal/tools/attach/target/CommonDirectory</code> is not found and is therefore stored for sharing.</p>
-<pre><code>java -Xshareclasses:name=myCache,verboseIO HelloWorld
-[-Xshareclasses verbose I/O output enabled]
-Found class java/lang/Object in shared cache for class-loader id 0.
-Found class java/lang/J9VMInternals in shared cache for class-loader id 0.
-Found class com/ibm/oti/vm/VM in shared cache for class-loader id 0.
-Found class java/lang/J9VMInternals$ClassInitializationLock in shared cache for class-loader id 0.
-...
-Failed to find class openj9/internal/tools/attach/target/CommonDirectory in shared cache for class-loader id 0.
-Stored class openj9/internal/tools/attach/target/CommonDirectory in shared cache for class-loader id 0 with URL /root/sdk/jre/lib/amd64/compressedrefs/jclSC180/vm.jar (index 0).
-...
-</code></pre>
-<p>The bootstrap class loader has an ID of <code>0</code>; other class loaders are given a unique ID. Class loaders follow the class loader hierarchy by asking the parent class loader for a class. If a parent fails to find the class in the cache, the child class loader stores the class in the cache.</p>
-<p>In some situations, verbose output might not show classes being found. For example, classes are typically not found if the class is stale, as described in <a href="../shrc/#class-data-sharing-operations">Class data sharing operations</a>. Stale classes are redeemed if the same class is subsequently fetched by the class loader from another VM and checked against the stale class in the cache.</p>
-<h3 id="verboseaot"><code>verboseAOT</code></h3>
-<p>To troubleshoot AOT problems, use the <a href="../xshareclasses/#verboseaot"><code>-Xshareclasses:verboseAOT</code></a> suboption on the command line, which generates output about AOT code that is found or stored in the cache.</p>
-<p>In the following example output, a populated cache is being accessed to look for compiled AOT code. Some AOT code is found, which can be shared, and some AOT code is stored for reuse.</p>
-<pre><code>java -Xshareclasses:name=myCache,verboseAOT HelloWorld
-[-Xshareclasses AOT verbose output enabled]
-Found AOT code for ROMMethod 0x00007F658005C180 in shared cache.
-Found AOT code for ROMMethod 0x00007F65800723EC in shared cache.
-Found AOT code for ROMMethod 0x00007F6580071D14 in shared cache.
-Stored AOT code for ROMMethod 0x00007F65801847B8 in shared cache.
-Stored AOT code for ROMMethod 0x00007F65800D38A4 in shared cache.
-Stored AOT code for ROMMethod 0x00007F65800723CC in shared cache.
-Found AOT code for ROMMethod 0x00007F65800D38A4 in shared cache.
-Stored AOT code for ROMMethod 0x00007F65800724C4 in shared cache.
-...
-</code></pre>
-<h3 id="verbosehelper"><code>verboseHelper</code></h3>
-<p>To troubleshoot problems with custom class loaders that use the Java <code>SharedClassHelper</code> API, specify the <a href="../xshareclasses/#verbosehelper"><code>-Xshareclasses:verboseHelper</code></a> suboption. Information messages and error messages are generated in the output, which can help you diagnose problems with finding or storing classes in the shared cache.</p>
-<p>The following example output shows only information messages:</p>
-<pre><code>java -Xshareclasses:name=myCache,verboseHelper HelloWorld
-[-Xshareclasses Helper API verbose output enabled]
-Info for SharedClassURLClasspathHelper id 1: Verbose output enabled for SharedClassURLClasspathHelper id 1
-Info for SharedClassURLClasspathHelper id 1: Created SharedClassURLClasspathHelper with id 1
-Info for SharedClassURLClasspathHelper id 2: Verbose output enabled for SharedClassURLClasspathHelper id 2
-Info for SharedClassURLClasspathHelper id 2: Created SharedClassURLClasspathHelper with id 2
-Info for SharedClassURLClasspathHelper id 1: There are no confirmed elements in the classpath. Returning null.
-Info for SharedClassURLClasspathHelper id 2: There are no confirmed elements in the classpath. Returning null.
-Info for SharedClassURLClasspathHelper id 2: setClasspath() updated classpath. No invalid URLs found
-Info for SharedClassURLClasspathHelper id 2: Number of confirmed entries is now 1
-Hello World
-</code></pre>
-<h2 id="diagnostic-cache-utilities">Diagnostic cache utilities</h2>
-<p>These utilities display information about the contents of a shared classes cache. Run the utilities by specifying them as suboptions of <code>-Xshareclasses</code>. The utilities run on the default cache unless you specify a cache by adding the <code>name=&lt;cache_name&gt;</code> and <code>cacheDir=&lt;directory&gt;</code> suboptions.</p>
-<h3 id="printstats"><code>printStats</code></h3>
-<pre><code>-Xshareclasses:printStats
--Xshareclasses:printStats,name=&lt;cache_name&gt;
--Xshareclasses:printStats=&lt;data_type1&gt;[+&lt;data_type2&gt;][...],name=&lt;cache_name&gt;
-</code></pre>
-<p>Displays summary information about the cache. For layered caches, <code>-Xshareclasses:printStats</code> shows some information for the top layer cache, and summary information (bytes and counts only) for all layers combined. To see information for the top layer cache only, use <a href="#printtoplayerstats"><code>printTopLayerStats</code></a>.</p>
-<p>You can request more detail about items of a specific data type that are stored in the shared cache by using <code>printStats=&lt;data_type&gt;</code>. Use the plus symbol (+) to separate the data types. For example, use <code>printStats=romclass+url,name=myCache</code> to see information about <code>ROMClass</code> and <code>URL</code> items in all the layer caches of the cache called <code>Cache1</code>. The valid data types are as follows (case insensitive):</p>
-<ul>
-<li><code>help</code> (displays the list of valid data types)</li>
-<li><code>all</code> (equivalent to <code>printAllStats</code>)</li>
-<li><code>classpath</code></li>
-<li><code>url</code></li>
-<li><code>token</code></li>
-<li><code>romclass</code></li>
-<li><code>rommethod</code></li>
-<li><code>aot</code></li>
-<li><code>jitprofile</code></li>
-<li><code>jithint</code></li>
-<li><code>zipcache</code></li>
-<li><code>stale</code></li>
-<li><code>startuphint</code></li>
-</ul>
-<p>Example output for a traditional cache (no cache layers: <code>cache layer = 0</code>), with summary information only:</p>
-<pre><code>Current statistics for cache &quot;Cache1&quot;:
-
-Cache created with:
-        -Xnolinenumbers                      = false
-        BCI Enabled                          = true
-        Restrict Classpaths                  = false
-        Feature                              = cr
-
-Cache contains only classes with line numbers
-
-base address                         = 0x00007F60B807A000
-end address                          = 0x00007F60B905E000
-allocation pointer                   = 0x00007F60B81BE3A8
-
-cache layer                          = 0
-cache size                           = 16776608
-softmx bytes                         = 16776608
-free bytes                           = 12740572
-Reserved space for AOT bytes         = -1
-Maximum space for AOT bytes          = -1
-Reserved space for JIT data bytes    = -1
-Maximum space for JIT data bytes     = -1
-Metadata bytes                       = 30440
-Metadata % used                      = 0%
-Class debug area size                = 1331200
-Class debug area used bytes          = 189358
-Class debug area % used              = 14%
-
-ROMClass bytes                       = 1328040
-AOT bytes                            = 98404
-JIT data bytes                       = 168
-Zip cache bytes                      = 1133704
-Startup hint bytes                   = 0
-Data bytes                           = 114080
-
-# ROMClasses                         = 452
-# AOT Methods                        = 2
-# Classpaths                         = 1
-# URLs                               = 0
-# Tokens                             = 0
-# Zip caches                         = 21
-# Startup hints                      = 0
-# Stale classes                      = 0
-% Stale classes                      = 0%
-
-
-Cache is 24% full
-
-Cache is accessible to current user = true
-</code></pre>
-<p>Example output for a cache with 2 layers (<code>cache layer = 1</code>), with summary information only:</p>
-<pre><code>Current statistics for top layer of cache &quot;Cache1&quot;:
-
-Cache created with:
-        -Xnolinenumbers                      = false
-        BCI Enabled                          = true
-        Restrict Classpaths                  = false
-        Feature                              = cr
-
-
-base address                         = 0x00007FCAB2766000
-end address                          = 0x00007FCAB374A000
-allocation pointer                   = 0x00007FCAB2766000
-
-cache layer                          = 1
-cache size                           = 16776608
-softmx bytes                         = 16776608
-free bytes                           = 15299372
-Reserved space for AOT bytes         = -1
-Maximum space for AOT bytes          = -1
-Reserved space for JIT data bytes    = -1
-Maximum space for JIT data bytes     = -1
-Class debug area size                = 1331200
-Class debug area used bytes          = 0
-Class debug area % used              = 0%
-
-Cache is 8% full
-
-Cache is accessible to current user = true
----------------------------------------------------------
-
-Current statistics for all layers of cache &quot;Cache1&quot;:
-
-ROMClass bytes                       = 1328040
-AOT bytes                            = 128924
-JIT data bytes                       = 812
-Zip cache bytes                      = 1133704
-Startup hint bytes                   = 0
-Data bytes                           = 114080
-
-# ROMClasses                         = 452
-# AOT Methods                        = 20
-# Classpaths                         = 1
-# URLs                               = 0
-# Tokens                             = 0
-# Zip caches                         = 21
-# Startup hints                      = 0
-# Stale classes                      = 0
-% Stale classes                      = 0%
-</code></pre>
-<p>The <code>Cache created with</code> section indicates the options that were used when the cache was created. <code>BCI Enabled</code> relates to the <a href="../xshareclasses/#enablebci"><code>-Xshareclasses:enableBCI</code></a> option (enabled by default) and <code>Restrict Classpaths</code> relates to the <a href="../xshareclasses/#restrictclasspaths"><code>-Xshareclasses:restrictClasspaths</code></a> option. <code>Feature = cr</code> indicates that the cache is a 64-bit compressed references cache.</p>
-<p>Line number information for classes in the cache is then shown with one of the following messages:</p>
-<ul>
-<li><code>Cache contains only classes with line numbers</code> : VM line number processing was enabled for all the classes that were stored in this shared cache (the <code>-Xlinenumbers</code> option is enabled by default). All classes in the cache contain line numbers if the original classes contained line number data.</li>
-<li><code>Cache contains only classes without line numbers</code> : The <code>-Xnolinenumbers</code> option was used to disable VM line number processing for all the classes that were stored in this shared cache, so none of the classes contain line numbers.</li>
-<li><code>Cache contains classes with line numbers and classes without line numbers</code> : VM line number processing was enabled for some classes and disabled for others (the <code>-Xnolinenumbers</code> option was specified when some of the classes were added to the cache).</li>
-</ul>
-<p>The following summary data is displayed:</p>
-<ul>
-<li><code>baseAddress</code> and <code>endAddress</code><ul>
-<li>The boundary addresses of the shared memory area that contains the classes. These addresses vary from run to run, depending on where the operating system allocates the memory.</li>
-</ul>
-</li>
-<li><code>allocation pointer</code><ul>
-<li>The address where <code>ROMClass</code> data is currently being allocated in the cache.</li>
-</ul>
-</li>
-<li><code>cache layer</code><ul>
-<li>The layer number that the cache stats relate to.</li>
-</ul>
-</li>
-<li><code>cache size</code> and <code>free bytes</code><ul>
-<li><code>cache size</code> shows the total size of the shared memory area in bytes</li>
-<li><code>free bytes</code> shows the free bytes that remain. The free space is not necessarily all available for storing new classes. The cache contains separate areas for different data, and can reserve space for AOT and JIT data, as shown by subsequent summary data.</li>
-</ul>
-</li>
-<li><code>softmx bytes</code><ul>
-<li>The soft maximum size for the cache. For more information, see <a href="../xscmx/"><code>-Xscmx</code></a>.</li>
-</ul>
-</li>
-<li><code>ROMClass bytes</code><ul>
-<li>The number of bytes of class data in the cache, which does not include data that is stored in the class debug area (see separate output for the class debug area).</li>
-</ul>
-</li>
-<li><code>AOT bytes</code><ul>
-<li>The number of bytes of AOT-compiled code in the cache.</li>
-</ul>
-</li>
-<li><code>Reserved space for AOT bytes</code><ul>
-<li>The number of bytes reserved for AOT-compiled code in the cache.</li>
-</ul>
-</li>
-<li><code>Maximum space for AOT bytes</code><ul>
-<li>The maximum number of bytes of AOT-compiled code that can be stored in the cache.</li>
-</ul>
-</li>
-<li><code>JIT data bytes</code><ul>
-<li>The number of bytes of JIT-related data stored in the cache.</li>
-</ul>
-</li>
-<li><code>Reserved space for JIT data bytes</code><ul>
-<li>The number of bytes reserved for JIT-related data in the cache.</li>
-</ul>
-</li>
-<li><code>Maximum space for JIT data bytes</code><ul>
-<li>The maximum number of bytes of JIT-related data that can be stored in the cache.</li>
-</ul>
-</li>
-<li><code>Zip cache bytes</code><ul>
-<li>The number of zip entry cache bytes stored in the cache. On Java 11 and later, this value is zero unless a <code>jar</code> file is added to the boot classpath.</li>
-</ul>
-</li>
-<li><code>Startup hint bytes</code><ul>
-<li>The number of bytes of data stored to describe startup hints.</li>
-</ul>
-</li>
-<li><code>Data bytes</code><ul>
-<li>The number of bytes of non-class data stored by the VM.</li>
-</ul>
-</li>
-<li><code>Metadata bytes</code><ul>
-<li>The number of bytes of data stored to describe the cached classes. <span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Note:</strong> This field is available only in the top layer cache output or when a cache is not layered.</li>
-</ul>
-</li>
-<li><code>Metadata % used</code><ul>
-<li>The proportion of metadata bytes to class bytes, which indicates how efficiently cache space is being used. The value shown does consider the <code>Class debug area size</code>.</li>
-</ul>
-</li>
-<li><code>Class debug area size</code><ul>
-<li>The size in bytes of the class debug area. This area is reserved to store <code>LineNumberTable</code> and <code>LocalVariableTable</code> class attribute information.</li>
-</ul>
-</li>
-<li><code>Class debug area bytes used</code><ul>
-<li>The size in bytes of the Class Debug Area that contains data.</li>
-</ul>
-</li>
-<li><code>Class debug area % used</code><ul>
-<li>The percentage of the Class Debug Area that contains data.</li>
-</ul>
-</li>
-<li><code>ROMClasses</code><ul>
-<li>The number of classes in the cache. The cache stores <code>ROMClasses</code> (the class data itself, which is read-only) and information about the location from which the classes were loaded. This information is stored in different ways, depending on the Java <code>SharedClassHelper</code> API that was used to store the classes. For more information, see <a href="../shrc/#support-for-custom-class-loaders">Support for custom class loaders</a>.</li>
-</ul>
-</li>
-<li><code>AOT methods</code><ul>
-<li>Optionally, <code>ROMClass</code> methods can be compiled and the AOT code stored in the cache. The <code>AOT methods</code> information shows the total number of methods in the cache that have AOT code compiled for them. This number includes AOT code for stale classes.</li>
-</ul>
-</li>
-<li><code>Classpaths</code>, <code>URLs</code>, and <code>Tokens</code><ul>
-<li>The number of class paths, URLs, and tokens in the cache. Classes stored from a <code>SharedClassURLClasspathHelper</code> are stored with a Classpath. Classes stored using a <code>SharedClassURLHelper</code> are stored with a URL. Classes stored using a <code>SharedClassTokenHelper</code> are stored with a Token. Most class loaders, including the bootstrap and application class loaders, use a <code>SharedClassURLClasspathHelper</code>. The result is that it is most common to see class paths in the cache.</li>
-<li>The number of Classpaths, URLs, and Tokens stored is determined by a number of factors. For example, every time an element of a Classpath is updated, such as when a <code>.jar</code> file is rebuilt, a new Classpath is added to the cache. Additionally, if partitions or modification contexts are used, they are associated with the Classpath, URL, or Token. A Classpath, URL, or Token is stored for each unique combination of partition and modification context. For more information, see <a href="../shrc/#sharing-modified-bytecode">Sharing modified bytecode and <code>SharedClassHelper</code> cache partitions</a>.</li>
-</ul>
-</li>
-<li><code>Zip caches</code><ul>
-<li>The number of <code>.zip</code> files that have entry caches stored in the shared cache. On Java 11 and later, this value is zero unless a <code>jar</code> file is added to the boot classpath.</li>
-</ul>
-</li>
-<li><code>Startup hints</code><ul>
-<li>The number of startup hints stored in the cache. There can be a startup hint for each unique set of command line options used to start the VM.</li>
-</ul>
-</li>
-<li><code>Stale classes</code><ul>
-<li>The number of classes that have been marked as "potentially stale" by the cache code, because of a VM or Java application update. See <a href="../shrc/#class-data-sharing-operations">Class data sharing operations</a>.</li>
-</ul>
-</li>
-<li><code>% Stale classes</code><ul>
-<li>The percentage of classes in the cache that are stale.</li>
-</ul>
-</li>
-<li><code>Cache is XXX% full</code><ul>
-<li>The percentage of the cache that is currently used. This line is displayed only if the soft maximum size is not set. This value is calculated as follows:<ul>
-<li><code>% Full = (('Cache Size' - 'Free Bytes') * 100) / ('Cache Size')</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>Cache is XXX% soft full</code><ul>
-<li>The percentage of the soft maximum size that is currently used. This line is displayed only if the soft maximum size is set. The <code>free bytes</code> in the cache statistics means the free bytes within the soft maximum limit. This value is calculated as follows:<ul>
-<li><code>% soft Full = (('Soft max bytes' - 'Free Bytes') * 100) / ('Soft max  bytes')</code></li>
-</ul>
-</li>
-<li>For more information about the soft maximum size, see <a href="../xscmx/"><code>-Xscmx</code></a>.</li>
-</ul>
-</li>
-<li><code>Cache is accessible to current user</code><ul>
-<li>Whether the current user can access the cache.</li>
-</ul>
-</li>
-</ul>
-<h3 id="printallstats"><code>printAllStats</code></h3>
-<pre><code>-Xshareclasses:printAllStats
--Xshareclasses:printAllStats,name=&lt;cache_name&gt;
-</code></pre>
-<p>Displays the contents of the cache in chronological order. You can use this output to see the history of updates that were made to the cache. For layered caches, some information is shown for the top layer cache only, and some is shown for all layers combined. To see information for the top layer cache only, use <a href="#printtoplayerstats"><code>printTopLayerStats=all</code></a>.</p>
-<p>Each entry in the output starts with a VM ID, so you can see which VM wrote the associated data. Here are example entries for various types of cache data, with explanations:</p>
-<h4 id="class-paths">Class paths</h4>
-<p>The following example shows one class path with 4 entries:</p>
-<pre><code>    1: 0x2234FA6C CLASSPATH
-            /myVM/Apps/application1.jar
-            /myVM/Apps/application2.jar
-            /myVM/Apps/application3.jar
-            /myVM/Apps/application4.jar
-</code></pre>
-<ul>
-<li><code>1</code>: the ID of the VM that wrote this data.</li>
-<li><code>0x2234FA6C</code>: the address where this data is stored.</li>
-<li><code>CLASSPATH</code>: the type of data that was written.</li>
-</ul>
-<h4 id="romclasses">ROMClasses</h4>
-<p>This example shows an entry for a single <code>ROMClass</code>:</p>
-<pre><code>    1: 0x2234F7DC ROMCLASS: java/lang/Runnable at 0x213684A8
-            Index 1 in class path 0x2234FA6C
-</code></pre>
-<ul>
-<li><code>1</code>: the ID of the VM that wrote this data.</li>
-<li><code>0x2234F7DC</code>: the address where the metadata about the class is stored.</li>
-<li><code>ROMCLASS</code>: the type of data that was stored.</li>
-<li><code>java/lang/Runnable</code>: the name of the class.</li>
-<li><code>0x213684A8</code>: the address where the class was stored.</li>
-<li><code>Index 1</code>: the index in the class path where the class was loaded from.</li>
-<li><code>0x2234FA6C</code>: the address of the class path against which this class is stored.</li>
-</ul>
-<p>Stale classes are marked with <code>!STALE!</code>. Any partition or modification context that is used when the class is stored is also shown.</p>
-<h4 id="aot-methods">AOT methods</h4>
-<p>This example shows an entry for one AOT-compiled method:</p>
-<pre><code>    1: 0x00007F841A800554 AOT: hashCode Signature: ()I Address: 0x00007F83F6859280
-            for ROMClass java/lang/Object at 0x00007F83F6859000.
-</code></pre>
-<ul>
-<li><code>1</code>: the ID of the VM that wrote this data.</li>
-<li><code>0x00007F841A800554</code>: the address where the data is stored.</li>
-<li><code>AOT</code>: the type of data that was stored.</li>
-<li><code>hashCode</code>: the method for which AOT-compiled code is stored.</li>
-<li><code>()I</code>: the signature of the ROM method.</li>
-<li><code>0x00007F83F6859280</code>: the ROM method address.</li>
-<li><code>java/lang/Object</code>: the class that contains the method.</li>
-<li><code>0x00007F83F6859000</code>: the address of the class that contains the method.</li>
-</ul>
-<p>Stale methods are marked with <code>!STALE!</code>.</p>
-<h4 id="urls-and-tokens">URLs and tokens</h4>
-<p>The output for these data types has the same format as that for class paths, but with a single entry. A <code>Token</code> is a string that is passed to the Java <code>SharedClassHelper</code> API.</p>
-<h4 id="zip-entry-caches">Zip entry caches</h4>
-<p>The following example shows 4 separate entries for zip entry caches:</p>
-<pre><code>    1: 0x042FE07C ZIPCACHE: luni-kernel.jar_347075_1272300300_1 Address: 0x042FE094 Size: 7898
-    1: 0x042FA878 ZIPCACHE: luni.jar_598904_1272300546_1 Address: 0x042FA890 Size: 14195
-    1: 0x042F71F8 ZIPCACHE: nio.jar_405359_1272300546_1 Address: 0x042F7210 Size: 13808
-    1: 0x042F6D58 ZIPCACHE: annotation.jar_13417_1272300554_1 Address: 0x042F6D70 Size: 1023
-</code></pre>
-<ul>
-<li><code>1</code> : the ID of the VM that wrote this data.</li>
-<li><code>0x042FE07C</code> : the address where the metadata for the zip entry cache is stored.</li>
-<li><code>ZIPCACHE</code> : the type of data that was stored.</li>
-<li><code>luni-kernel.jar_347075_1272300300_1</code> : the name of the zip entry cache.</li>
-<li><code>0x042FE094</code> : the address where the data is stored.</li>
-<li><code>7898</code> : the size of the stored data, in bytes.</li>
-</ul>
-<h4 id="jit-data">JIT data</h4>
-<p>Information about JIT data is shown in <code>JITPROFILE</code> and <code>JITHINT</code> entries. For example:</p>
-<pre><code>    1: 0xD6290368 JITPROFILE: getKeyHash Signature: ()I Address: 0xD55118C0
-    for ROMClass java/util/Hashtable$Entry at 0xD5511640.
-    2: 0xD6283848 JITHINT: loadClass Signature: (Ljava/lang/String;)Ljava/lang/Class; Address: 0xD5558F98
-    for ROMClass com/ibm/oti/vm/BootstrapClassLoader at 0xD5558AE0.
-</code></pre>
-<h4 id="startup-hints">Startup hints</h4>
-<p>Information about startup hints is shown in <code>STARTUP HINTS KEY</code> and <code>STARTUP HINTS DETAIL</code>. For example:</p>
-<pre><code>    1: 0x000000002237C6E0 STARTUP HINTS KEY: -Xoptionsfile=jre\bin\compressedrefs\options.default -Xlockword:mode=default -Xjcl:jclse29 -Dcom.ibm.oti.vm.bootstrap.library.path=jre\bin\compressedrefs;jre\bin -Djava.home=jre -Djava.ext.dirs=jre\lib\ext -Duser.dir=bin -Djava.class.path=. -Dsun.java.launcher=SUN_STANDARD Address: 0x000000002237C700 Size: 96
-    STARTUP HINTS DETAIL Flags: 1 DATA1: 1677721 DATA2: 5033165
-</code></pre>
-<h3 id="printtoplayerstats"><code>printTopLayerStats</code></h3>
-<p>Use this utility with a layered cache. This utility works in the same way as <code>printStats</code>. By default, this utility shows information for the top layer cache. To view statistics for a specific layer, use the <code>layer=&lt;number&gt;</code> option. For example, to show statistics for the second layer in a 2-layer cache, run <code>printTopLayerStats,layer=1</code>.</p>
-<p>Example output:</p>
-<pre><code>Current statistics for cache &quot;Cache1&quot;:
-
-Cache created with:
-        -Xnolinenumbers                      = false
-        BCI Enabled                          = true
-        Restrict Classpaths                  = false
-        Feature                              = cr
-
-
-base address                         = 0x00007F234C054000
-end address                          = 0x00007F234D038000
-allocation pointer                   = 0x00007F234C054000
-
-cache layer                          = 1
-cache size                           = 16776608
-softmx bytes                         = 16776608
-free bytes                           = 15299372
-Reserved space for AOT bytes         = -1
-Maximum space for AOT bytes          = -1
-Reserved space for JIT data bytes    = -1
-Maximum space for JIT data bytes     = -1
-Metadata bytes                       = 792
-Metadata % used                      = 0%
-Class debug area size                = 1331200
-Class debug area used bytes          = 0
-Class debug area % used              = 0%
-
-ROMClass bytes                       = 0
-AOT bytes                            = 30520
-JIT data bytes                       = 644
-Zip cache bytes                      = 0
-Startup hint bytes                   = 0
-Data bytes                           = 114080
-
-# ROMClasses                         = 0
-# AOT Methods                        = 18
-# Classpaths                         = 0
-# URLs                               = 0
-# Tokens                             = 0
-# Zip caches                         = 0
-# Startup hints                      = 0
-# Stale classes                      = 0
-% Stale classes                      = 0%
-
-
-Cache is 8% full
-
-Cache is accessible to current user = true
-</code></pre>
-<h2 id="using-the-trace-facility">Using the trace facility</h2>
-<p>Trace output contains very detailed information that might be used by a VM developer to diagnose complex problems with class data sharing. Trace is configured by using the <a href="../xtrace/"><code>-Xtrace</code></a> option and the binary output of the trace facility must be processed by the <a href="../tool_traceformat/">Trace formatter</a> into a human-readable format.</p>
-<p>The trace component for class data sharing is <code>j9shr</code>. Five levels of trace are available, starting from basic initialization and runtime information in level 1 up to the most detailed trace output in level 5.</p>
-<p>To trace memory-mapped files, shared memory, and shared semaphores, include the <code>j9prt</code> trace component.</p>
-<p>To trace operations with Java Helper API methods, include the <code>j9jcl</code> trace component.</p>
-<!-- ==== END OF TOPIC ==== shrc_diag_util.md ==== -->
+<h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>Eclipse OpenJ9&trade; release 0.47.0 supports OpenJDK 23.</p>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="-xshareclasses-option-automatically-enables-xxshareorphans"><code>-Xshareclasses</code> option automatically enables <code>-XX:+ShareOrphans</code></h3>
+<p>The <code>-XX:+ShareOrphans</code> option automatically enables the <code>-Xshareclasses</code> option. From release 0.47.0 onwards, if the <code>-Xshareclasses</code> option is specified in the command line, it automatically enables the <code>-XX:+ShareOrphans</code> option.</p>
+<p>For more information, see <a href="../xxshareorphans/"><code>-XX:[+|-]ShareOrphans</code></a>.</p>
+<h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.46.0 and v0.47.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.47/0.47.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.47.md ==== -->
 
 
 

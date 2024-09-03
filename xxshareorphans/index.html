@@ -367,6 +367,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.47/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Version 0.47.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.46/" class="md-nav__link">
         
   
@@ -584,10 +605,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_13" >
         
           
-          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_13" id="__nav_5_13_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -598,8 +619,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_12">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_13">
             <span class="md-nav__icon md-icon"></span>
             Earlier releases
           </label>
@@ -8876,7 +8897,8 @@
 </table>
 <h2 id="explanation">Explanation</h2>
 <p>In the previous versions, OpenJ9 stored only bootstrap classes and hidden classes in the shared classes cache by default, that is the <code>-Xshareclasses</code> option is not specified by default. When the <code>-Xshareclasses</code> option was specified, only those class loaders that implemented the OpenJ9's public shared classes cache APIs (and its child class loaders) could store classes to the shared classes cache. For classes from custom class loaders that did not implement the shared classes cache APIs, the VM does not have their module or class path information. Such classes were not stored to the cache.</p>
-<p>You can enable class sharing from all class loaders, irrespective of whether the class loader implements the cache API, with the <code>-XX:+ShareOrphans</code> option. This option automatically enables the <code>-Xshareclasses</code> option. When the class sharing from all class loaders is enabled, following is the sharing behavior:</p>
+<p>You can enable class sharing from all class loaders, irrespective of whether the class loader implements the cache API, with the <code>-XX:+ShareOrphans</code> option. This option automatically enables the <code>-Xshareclasses</code> option. Conversely, if the <code>-Xshareclasses</code> option is specified in the command line, it automatically enables the <code>-XX:+ShareOrphans</code> option (from release 0.47.0 onwards).</p>
+<p>When the class sharing from all class loaders is enabled, following is the sharing behavior:</p>
 <ul>
 <li>
 <p>For classes from class loaders that implement the shared class cache API, they are shared as normal ROM classes, which is same as enabling <code>-Xshareclasses</code>.</p>
@@ -8897,6 +8919,7 @@
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../version0.46/#new-xx-shareorphans-option-added">What's new in version 0.46.0</a></li>
+<li><a href="../version0.47/#-xshareclasses-option-automatically-enables-xxshareorphans">What's new in version 0.47.0</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xxshareorphans.md ==== -->
 
