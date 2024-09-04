@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.46.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [`-Xshareclasses` option automatically enables `-XX:+ShareOrphans`](#-xshareclasses-option-automatically-enables-xxshareorphans)
+- [Restrictions in the `-XX:[+|-]ShareOrphans` option fixed](#restrictions-in-the-xx-shareorphans-option-fixed)
 
 ## Features and changes
 
@@ -41,6 +42,15 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 The `-XX:+ShareOrphans` option automatically enables the `-Xshareclasses` option. From release 0.47.0 onwards, if the `-Xshareclasses` option is specified in the command line, it automatically enables the `-XX:+ShareOrphans` option.
 
 For more information, see [`-XX:[+|-]ShareOrphans`](xxshareorphans.md).
+
+### Restrictions in the `-XX:[+|-]ShareOrphans` option fixed
+
+The `-XX:[+|-]ShareOrphans` option had the following restrictions:
+
+- The class comparison might not detect the removal of method access modifiers. For example, a change of a method from public to package-private.
+- `java.lang.StackTraceElement.getClassLoaderName()` might return null for classes that are stored in the shared cache.
+
+These restrictions are no longer applicable from this release onwards.
 
 ## Known problems and full release information
 

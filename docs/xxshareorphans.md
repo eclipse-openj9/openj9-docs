@@ -54,9 +54,8 @@ You can disable sharing class as orphans from class loader that does not impleme
 
 - Sharing classes as orphans requires more comparison on the classes by the VM. The comparison itself has a negative performance impact. However, the benefits of more AOT generated for the cached class might offset the negative impact.
 - More cached classes usually result in more AOT-compiled methods. The relative advantage of orphan sharing decreases when the CPUs are less. With more CPUs, the compilation threads can compile those additional methods in parallel with the application threads, while with fewer CPUs, extra compilation activity hinders application threads.
-- The class comparison might not detect the removal of method access modifiers. For example, a change of a method from public to package-private.
-- `java.lang.StackTraceElement.getClassLoaderName()` might return null for classes that are stored in the shared cache.
 
+For more information, see [What's new in version 0.47.0](version0.47.md#restrictions-in-the-xx-shareorphans-option-fixed).
 
 ## See also
 
