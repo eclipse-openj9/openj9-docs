@@ -671,6 +671,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.eclipse.org/openj9/docs/version0.46.1/</loc>
+         <lastmod>2024-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.eclipse.org/openj9/docs/version0.46/</loc>
          <lastmod>2024-09-05</lastmod>
          <changefreq>daily</changefreq>
