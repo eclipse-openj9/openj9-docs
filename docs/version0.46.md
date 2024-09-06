@@ -42,9 +42,9 @@ The following new features and notable changes since version 0.45.0 are included
 
 Eclipse OpenJ9&trade; release 0.46.0 supports OpenJDK 8, 11, 17, 21, and 22.
 
-Support for running OpenJ9 with all versions of OpenJDK on CentOS 6, CentOS 7, Red Hat Enterprise Linux (RHEL) 6, and RHEL 7 is removed.
+CentOS 6, CentOS 7, Red Hat Enterprise Linux (RHEL) 6, and RHEL 7 are removed from the list of supported platforms.
 
-RHEL 8.6 and 9.0 are out of support. RHEL 8.8 is the new minimum operating system level.
+RHEL 8.6 and 9.0 are out of support. RHEL 8.8 and 9.2 are the new minimum operating system levels.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
