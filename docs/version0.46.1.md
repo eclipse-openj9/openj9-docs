@@ -38,6 +38,6 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 ## Known problems and full release information
 
-To see known problems and a complete list of changes between Eclipse OpenJ9 v0.46.0 and v0.46.1 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.46.1/0.46.1.md).
+To see known problems and a complete list of changes between Eclipse OpenJ9 v0.46.0 and v0.46.1 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.46/0.46.1.md).
 
 <!-- ==== END OF TOPIC ==== version0.46.1.md ==== -->
