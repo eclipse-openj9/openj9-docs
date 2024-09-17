@@ -61,14 +61,16 @@ mkdocs==1.6.0
     #   mkdocs-material
 mkdocs-get-deps==0.2.0
     # via mkdocs
-mkdocs-macros-plugin==1.0.5
+mkdocs-macros-plugin==1.2.0
     # via -r requirements.in
 mkdocs-material==9.5.32
     # via -r requirements.in
 mkdocs-material-extensions==1.3
     # via mkdocs-material
 packaging==23.2
-    # via mkdocs
+    # via
+    #   mkdocs
+    #   mkdocs-macros-plugin
 paginate==0.5.6
     # via mkdocs-material
 pathspec==0.11.1
