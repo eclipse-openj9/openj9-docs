@@ -8894,15 +8894,16 @@
 </thead>
 <tbody>
 <tr>
-<td>Linux builds for all platforms use gcc 10.3 instead of gcc 7.5. See the list of <a href="../openj9_support/#build-environments">build environments</a>.</td>
-<td>0.33.0</td>
-</tr>
-<tr>
 <td>The default operating system stack size on x64 platforms is increased from 256 KB to 512 KB to accommodate vector support. You can change the operating system stack size by using the <a href="../xmso/">-Xmso</a> option.</td>
 <td>0.33.0</td>
 </tr>
+<tr>
+<td>When the VM loads an application native library (DLL), it searches for the library in the path that is specified in the <code>java.library.path</code> system property or in the following environment variables:<ul><li><code>LIBPATH</code> - z/OS&reg; and AIX&reg;</li><li><code>LD_LIBRARY_PATH</code> - Linux&reg;<li><code>PATH</code> - Windows&trade;</li></ul><br>In Java 11 and earlier versions, the VM searched for the application native libraries by using both the <code>java.library.path</code> system property and the environment variable.<br>From Java 17 onwards, the search is based on only the <code>java.library.path</code> system property value that is obtained when the VM starts. Changing the <code>java.library.path</code> system property value after VM startup doesn't change the search. If the path is set on the command line by using the <code>-Djava.library.path</code> option, only this path is used for the search. The path that is specified by the environment variable is not used to search for the application native libraries.<br>The default value of the <code>java.library.path</code> system property is still derived from the environment variable.</td>
+<td>0.29.1</td>
+</tr>
 </tbody>
 </table>
+<!--|Linux builds for all platforms use gcc 10.3 instead of gcc 7.5. See the list of [build environments](openj9_support.md#build-environments).| 0.33.0  | (SG - Commented this in 0.47.0 release It is an out-of-date statement because both 11 and 17 use gcc 11.2 now.)-->
 
 
 
