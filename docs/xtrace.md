@@ -228,11 +228,16 @@ The following table lists the possible Java components (`<component>`). To inclu
 |  Component name |  Description                                                                   |
 |-----------------|--------------------------------------------------------------------------------|
 | **avl**         | VM AVL tree support                                                            |
+| **cuda4j**      | VM Cuda support                                                                |
+| **dg**          | VM intrinsic tracepoints issued by the trace engine                            |
+| **hashtable**   | VM hashtables                                                                  |
 | **io**          | Class library java.io native code                                              |
 | **j9bcu**       | VM byte code utilities                                                         |
 | **j9bcverify**  | VM byte code verification                                                      |
 | **j9codertvm**  | VM byte code run time                                                          |
 | **j9dmp**       | VM dump                                                                        |
+| **j9hook**      | OMR hooks                                                                      |
+| **j9hshelp**    | VM hot swap helpers                                                            |
 | **j9jcl**       | VM class libraries                                                             |
 | **j9jit**       | VM JIT interface                                                               |
 | **j9jni**       | VM JNI support                                                                 |
@@ -241,35 +246,108 @@ The following table lists the possible Java components (`<component>`). To inclu
 | **j9prt**       | VM port library                                                                |
 | **j9scar**      | VM class library interface                                                     |
 | **j9shr**       | VM shared classes                                                              |
+| **j9thr**       | VM thread support                                                              |
 | **j9trc**       | VM trace                                                                       |
+| **j9trc_aux**   | VM trace auxiliary                                                             |
 | **j9util**      | VM utilities                                                                   |
+| **j9utilcore**  | OMR character decoding utilities                                               |
+| **j9vgc**       | OMR verbose GC utilities                                                       |
 | **j9vm**        | VM general                                                                     |
+| **j9vmchk**     | VM check command                                                               |
 | **j9vmutil**    | VM utilities                                                                   |
 | **j9vrb**       | VM verbose stack walker                                                        |
 | **map**         | VM mapped memory support                                                       |
+| **module**      | VM modularity                                                                  |
 | **mt**          | Java methods (see **Note**)                                                    |
 | **net**         | Class library TCP/IP networking native code                                    |
+| **omrmm         | OMR memory management                                                          |
+| **omrport**     | OMR port library                                                               |
+| **omrti**       | OMR tooling                                                                    |
+| **omrutil**     | OMR utilities                                                                  |
+| **omrvm**       | OMR VM general                                                                 |
 | **pool**        | VM storage pool support                                                        |
 | **rpc**         | VM RPC support                                                                 |
 | **simplepool**  | VM storage pool support                                                        |
+| **srphashtable** | VM SRP hashtables                                                             |
 | **sunvmi**      | VM class library interface                                                     |
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** When specifying the **mt** component you must also specify the `methods` option.
 
 The following table lists all the tracepoint groups (`<group>`). Each group is associated with one or more Java components:
 
-|Component name or names     |  Group name       |  Description                                                                                                              |
-|----------------------------|-------------------|---------------------------------------------------------------------------------------------------------------------------|
-|**j9mm**                    | `gclogger`        | A set of tracepoints that record each garbage collection cycle. Equivalent to `-verbose:gc` output                        |
-|**j9prt**                   | `nlsmessage`      | A set of tracepoints that record each NLS message that is issued by the VM.                                               |
-|**j9jcl**, **j9vm**         | `verboseclass`    | A set of tracepoints that record each class as it is loaded. Equivalent to `-verbose:class` output.                       |
-|**j9jni**, **j9vm**         | `checkjni`        | A set of tracepoints that record JNI function checks. Equivalent to `-Xcheck:jni` output.                                 |
-|**j9vm**                    | `checkmemory`     | A set of tracepoints that record memory checks. Equivalent to `-Xcheck:memory` output.                                    |
-|**j9vm**                    | `checkvm`         | A set of tracepoints that record VM checks. Equivalent to `-Xcheck:vm` output.                                            |
-|**j9jit**                   | `verbose`         | A set of tracepoints that record JIT compiler configuration and method compilation. Equivalent to `-Xjit:verbose` output. |
-|**mt**                      | `compiledMethods` | A set of tracepoints that record compiled Java methods.                                                                   |
-|**mt**                      | `nativeMethods`   | A set of tracepoints that record Java native methods.                                                                     |
-|**mt**                      | `staticMethods`   | A set of tracepoints that record Java static methods.                                                                     |
+|Component name or names     |  Group name            |  Description                                                                                                              |
+|----------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------|
+|**j9mm**                    | `adaptivethread`       | A set of tracepoints that record GC adaptive threading.                                                                   |
+|**j9mm**                    | `ageblending`          | A set of tracepoints that record GC age blending.                                                                         |
+|**j9mm**                    | `aging`                | A set of tracepoints that record GC aging.                                                                                |
+|**j9mm**                    | `allocate`             | A set of tracepoints that record GC allocation.                                                                           |
+|**j9mm**                    | `alloclarge`           | A set of tracepoints that record GC large allocation.                                                                     |
+|**j9mm**                    | `allocthreshold`       | A set of tracepoints that record GC allocation thresholds.                                                                |
+|**j9mm**, **omrmm**         | `arraylet`             | A set of tracepoints that record GC arraylet operations.                                                                  |
+|**mt**                      | `bytecodeMethods`      | A set of tracepoints that record method trace bytecode methods.                                                           |
+|**j9mm**                    | `cardscrubbing`        | A set of tracepoints that record GC card scrubbing.                                                                       |
+|**j9jni**, **j9vm**         | `checkjni`             | A set of tracepoints that record JNI function checks. Equivalent to `-Xcheck:jni` output.                                 |
+|**j9vm**                    | `checkvm`              | A set of tracepoints that record VM checks. Equivalent to `-Xcheck:vm` output.                                            |
+|**j9jcl**, **j9vm**         | `clasinit`             | A set of tracepoints that record class initialization.                                                                    |
+|**j9mm**, **omrmm**         | `compact`              | A set of tracepoints that record GC compaction.                                                                           |
+|**mt**                      | `compiledMethods`      | A set of tracepoints that record method trace compiled methods.                                                           |
+|**j9mm**                    | `concurrent`           | A set of tracepoints that record GC concurrency.                                                                          |
+|**j9mm**                    | `copyforwardscheme`    | A set of tracepoints that record GC copy forward scheme operations.                                                       |
+|**j9prt**, **omrport**      | `cuda`                 | A set of tracepoints that record cuda operations.                                                                         |
+|**j9mm**                    | `darkMatterComparison` | A set of tracepoints that record GC dark matter comparison.                                                               |
+|**j9mm**                    | `dispatcher`           | A set of tracepoints that record GC parallel dispatcher operations.                                                       |
+|**omrport**                 | `double_map`           | A set of tracepoints that record OMR double map operations.                                                               |
+|**j9mm**                    | `dynamiccollectionset` | A set of tracepoints that record GC dynamic collection set operations.                                                    |
+|**j9vm**                    | `exvmaccess`           | A set of tracepoints that record exclusive vm access operations.                                                          |
+|**omrport**                 | `file`                 | A set of tracepoints that record OMR portable file operations.                                                            |
+|**j9mm**, **omrmm**         | `gclogger`             | A set of tracepoints that record each garbage collection cycle. Equivalent to `-verbose:gc` output                        |
+|**omrport**                 | `heap`                 | A set of tracepoints that record OMR heap operations.                                                                     |
+|**j9prt**                   | `j9gs`                 | A set of tracepoints that record guarded storage operations.                                                              |
+|**j9prt**                   | `j9hypervisor`         | A set of tracepoints that record hypervisor operations.                                                                   |
+|**j9prt**                   | `j9ri`                 | A set of tracepoints that record runtime instrumentation operations.                                                      |
+|**j9prt**, **omrport**      | `j9shared`             | A set of tracepoints that record shared memory, semaphore and shared cache operations.                                    |
+|**j9prt**                   | `j9shmem`              | A set of tracepoints that record portable shared memory operations.                                                       |
+|**j9prt**                   | `j9shsem`              | A set of tracepoints that record portable shared semaphore operations.                                                    |
+|**j9prt**                   | `j9sock`               | A set of tracepoints that record portable socket operations.                                                              |
+|**j9prt**                   | `j9sysinfo`            | A set of tracepoints that record system information operations.                                                           |
+|**j9mm**                    | `kickoff`              | A set of tracepoints that record GC kickoff operations.                                                                   |
+|**j9mm**                    | `loaresize`            | A set of tracepoints that record GC LOA resize operations.                                                                |
+|**j9mm**                    | `markdelegate`         | A set of tracepoints that record GC mark delegate operations.                                                             |
+|**omrport**                 | `mem`                  | A set of tracepoints that record OMR portable memory allocation operations.                                               |
+|**mt**                      | `methodArguments`      | A set of tracepoints that record method trace method arguments.                                                           |
+|**omrport**                 | `mmap`                 | A set of tracepoints that record OMR portable mmap operations.                                                            |
+|**mt**                      | `nativeMethods`        | A set of tracepoints that record method trace native methods.                                                             |
+|**j9prt**                   | `nlsmessage`           | A set of tracepoints that record each NLS message that is issued by the VM.                                               |
+|**omrport**                 | `omrfilestream`        | A set of tracepoints that record OMR portable file stream operations.                                                     |
+|**omrport**                 | `omrshared`            | A set of tracepoints that record OMR portable shared classes operations.                                                  |
+|**omrport**                 | `omrshmem`             | A set of tracepoints that record OMR portable shared memory operations.                                                   |
+|**omrport**                 | `omrshsem`             | A set of tracepoints that record OMR portable shared semaphore operations.                                                |
+|**omrport**                 | `omrsock`              | A set of tracepoints that record OMR portable socket operations.                                                          |
+|**j9mm**                    | `oracle`               | A set of tracepoints that record GC oracle operations.                                                                    |
+|**j9shr**                   | `OSCache`              | A set of tracepoints that record shared classes OSCache operations.                                                       |
+|**j9mm**                    | `parallel`             | A set of tracepoints that record GC parallel operations.                                                                  |
+|**j9mm**, **omrmm**         | `percolate`            | A set of tracepoints that record GC percolate operations.                                                                 |
+|**j9jit**, **j9vm**, **omrti**| `perfmon`            | A set of tracepoints that record performance monitor operations.                                                          |
+|**j9vm**                    | `profilingbc`          | A set of tracepoints that record bytecode profiling                                  .                                    |
+|**j9mm**                    | `reclaim`              | A set of tracepoints that record GC reclaim operations.                                                                   |
+|**j9mm**                    | `rememberedset`        | A set of tracepoints that record GC remembered set operations.                                                            |
+|**j9mm**                    | `regionvalidator`      | A set of tracepoints that record GC region validation.                                                                    |
+|**j9mm**                    | `resize`               | A set of tracepoints that record GC resize operations.                                                                    |
+|**j9mm**                    | `runtimeexec`          | A set of tracepoints that record runtime execution.                                                                       |
+|**j9mm**                    | `scavenge`             | A set of tracepoints that record GC scavenge flip operations.                                                             |
+|**j9mm**                    | `scavenger`            | A set of tracepoints that record GC scavenger operations.                                                                 |
+|**omrport**                 | `signal`               | A set of tracepoints that record OMR portable signal operations.                                                          |
+|**omrport**                 | `sl`                   | A set of tracepoints that record OMR portable shared library operations.                                                  |
+|**j9mm**                    | `stackremember`        | A set of tracepoints that record GC stack remember operations.                                                            |
+|**j9mm**                    | `stackslotvalidator`   | A set of tracepoints that record stack slot validation.                                                                   |
+|**mt**                      | `staticMethods`        | A set of tracepoints that record method trace static methods.                                                             |
+|**j9mm**                    | `stringtable`          | A set of tracepoints that record GC string table operations.                                                              |
+|**omrport**                 | `sysinfo`              | A set of tracepoints that record OMR portable system information operations.                                              |
+|**omrport**                 | `syslog`               | A set of tracepoints that record OMR system logging operations.                                                           |
+|**j9mm**                    | `tarok`                | A set of tracepoints that record GC tarok operations.                                                                     |
+|**mt**                      | `throw`                | A set of tracepoints that record method trace throw operations.                                                           |
+|**j9mm**                    | `unload`               | A set of tracepoints that record GC class unload operations.                                                              |
+|**j9jcl**, **j9vrb**, **j9vm**| `verboseclass`       | A set of tracepoints that record each class as it is loaded. Equivalent to `-verbose:class` output.                       |
 
 Here are some examples:
 
