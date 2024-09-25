@@ -9808,6 +9808,18 @@ The following options control which individual tracepoints are activated at run 
 <td>VM AVL tree support</td>
 </tr>
 <tr>
+<td><strong>cuda4j</strong></td>
+<td>VM Cuda support</td>
+</tr>
+<tr>
+<td><strong>dg</strong></td>
+<td>VM intrinsic tracepoints issued by the trace engine</td>
+</tr>
+<tr>
+<td><strong>hashtable</strong></td>
+<td>VM hashtables</td>
+</tr>
+<tr>
 <td><strong>io</strong></td>
 <td>Class library java.io native code</td>
 </tr>
@@ -9826,6 +9838,14 @@ The following options control which individual tracepoints are activated at run 
 <tr>
 <td><strong>j9dmp</strong></td>
 <td>VM dump</td>
+</tr>
+<tr>
+<td><strong>j9hook</strong></td>
+<td>OMR hooks</td>
+</tr>
+<tr>
+<td><strong>j9hshelp</strong></td>
+<td>VM hot swap helpers</td>
 </tr>
 <tr>
 <td><strong>j9jcl</strong></td>
@@ -9860,16 +9880,36 @@ The following options control which individual tracepoints are activated at run 
 <td>VM shared classes</td>
 </tr>
 <tr>
+<td><strong>j9thr</strong></td>
+<td>VM thread support</td>
+</tr>
+<tr>
 <td><strong>j9trc</strong></td>
 <td>VM trace</td>
+</tr>
+<tr>
+<td><strong>j9trc_aux</strong></td>
+<td>VM trace auxiliary</td>
 </tr>
 <tr>
 <td><strong>j9util</strong></td>
 <td>VM utilities</td>
 </tr>
 <tr>
+<td><strong>j9utilcore</strong></td>
+<td>OMR character decoding utilities</td>
+</tr>
+<tr>
+<td><strong>j9vgc</strong></td>
+<td>OMR verbose GC utilities</td>
+</tr>
+<tr>
 <td><strong>j9vm</strong></td>
 <td>VM general</td>
+</tr>
+<tr>
+<td><strong>j9vmchk</strong></td>
+<td>VM check command</td>
 </tr>
 <tr>
 <td><strong>j9vmutil</strong></td>
@@ -9884,12 +9924,36 @@ The following options control which individual tracepoints are activated at run 
 <td>VM mapped memory support</td>
 </tr>
 <tr>
+<td><strong>module</strong></td>
+<td>VM modularity</td>
+</tr>
+<tr>
 <td><strong>mt</strong></td>
 <td>Java methods (see <strong>Note</strong>)</td>
 </tr>
 <tr>
 <td><strong>net</strong></td>
 <td>Class library TCP/IP networking native code</td>
+</tr>
+<tr>
+<td>**omrmm</td>
+<td>OMR memory management</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td>OMR port library</td>
+</tr>
+<tr>
+<td><strong>omrti</strong></td>
+<td>OMR tooling</td>
+</tr>
+<tr>
+<td><strong>omrutil</strong></td>
+<td>OMR utilities</td>
+</tr>
+<tr>
+<td><strong>omrvm</strong></td>
+<td>OMR VM general</td>
 </tr>
 <tr>
 <td><strong>pool</strong></td>
@@ -9902,6 +9966,10 @@ The following options control which individual tracepoints are activated at run 
 <tr>
 <td><strong>simplepool</strong></td>
 <td>VM storage pool support</td>
+</tr>
+<tr>
+<td><strong>srphashtable</strong></td>
+<td>VM SRP hashtables</td>
 </tr>
 <tr>
 <td><strong>sunvmi</strong></td>
@@ -9922,18 +9990,48 @@ The following options control which individual tracepoints are activated at run 
 <tbody>
 <tr>
 <td><strong>j9mm</strong></td>
-<td><code>gclogger</code></td>
-<td>A set of tracepoints that record each garbage collection cycle. Equivalent to <code>-verbose:gc</code> output</td>
+<td><code>adaptivethread</code></td>
+<td>A set of tracepoints that record GC adaptive threading.</td>
 </tr>
 <tr>
-<td><strong>j9prt</strong></td>
-<td><code>nlsmessage</code></td>
-<td>A set of tracepoints that record each NLS message that is issued by the VM.</td>
+<td><strong>j9mm</strong></td>
+<td><code>ageblending</code></td>
+<td>A set of tracepoints that record GC age blending.</td>
 </tr>
 <tr>
-<td><strong>j9jcl</strong>, <strong>j9vm</strong></td>
-<td><code>verboseclass</code></td>
-<td>A set of tracepoints that record each class as it is loaded. Equivalent to <code>-verbose:class</code> output.</td>
+<td><strong>j9mm</strong></td>
+<td><code>aging</code></td>
+<td>A set of tracepoints that record GC aging.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>allocate</code></td>
+<td>A set of tracepoints that record GC allocation.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>alloclarge</code></td>
+<td>A set of tracepoints that record GC large allocation.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>allocthreshold</code></td>
+<td>A set of tracepoints that record GC allocation thresholds.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong>, <strong>omrmm</strong></td>
+<td><code>arraylet</code></td>
+<td>A set of tracepoints that record GC arraylet operations.</td>
+</tr>
+<tr>
+<td><strong>mt</strong></td>
+<td><code>bytecodeMethods</code></td>
+<td>A set of tracepoints that record method trace bytecode methods.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>cardscrubbing</code></td>
+<td>A set of tracepoints that record GC card scrubbing.</td>
 </tr>
 <tr>
 <td><strong>j9jni</strong>, <strong>j9vm</strong></td>
@@ -9942,33 +10040,308 @@ The following options control which individual tracepoints are activated at run 
 </tr>
 <tr>
 <td><strong>j9vm</strong></td>
-<td><code>checkmemory</code></td>
-<td>A set of tracepoints that record memory checks. Equivalent to <code>-Xcheck:memory</code> output.</td>
-</tr>
-<tr>
-<td><strong>j9vm</strong></td>
 <td><code>checkvm</code></td>
 <td>A set of tracepoints that record VM checks. Equivalent to <code>-Xcheck:vm</code> output.</td>
 </tr>
 <tr>
-<td><strong>j9jit</strong></td>
-<td><code>verbose</code></td>
-<td>A set of tracepoints that record JIT compiler configuration and method compilation. Equivalent to <code>-Xjit:verbose</code> output.</td>
+<td><strong>j9jcl</strong>, <strong>j9vm</strong></td>
+<td><code>clasinit</code></td>
+<td>A set of tracepoints that record class initialization.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong>, <strong>omrmm</strong></td>
+<td><code>compact</code></td>
+<td>A set of tracepoints that record GC compaction.</td>
 </tr>
 <tr>
 <td><strong>mt</strong></td>
 <td><code>compiledMethods</code></td>
-<td>A set of tracepoints that record compiled Java methods.</td>
+<td>A set of tracepoints that record method trace compiled methods.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>concurrent</code></td>
+<td>A set of tracepoints that record GC concurrency.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>copyforwardscheme</code></td>
+<td>A set of tracepoints that record GC copy forward scheme operations.</td>
+</tr>
+<tr>
+<td><strong>j9prt</strong>, <strong>omrport</strong></td>
+<td><code>cuda</code></td>
+<td>A set of tracepoints that record cuda operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>darkMatterComparison</code></td>
+<td>A set of tracepoints that record GC dark matter comparison.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>dispatcher</code></td>
+<td>A set of tracepoints that record GC parallel dispatcher operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>double_map</code></td>
+<td>A set of tracepoints that record OMR double map operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>dynamiccollectionset</code></td>
+<td>A set of tracepoints that record GC dynamic collection set operations.</td>
+</tr>
+<tr>
+<td><strong>j9vm</strong></td>
+<td><code>exvmaccess</code></td>
+<td>A set of tracepoints that record exclusive vm access operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>file</code></td>
+<td>A set of tracepoints that record OMR portable file operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong>, <strong>omrmm</strong></td>
+<td><code>gclogger</code></td>
+<td>A set of tracepoints that record each garbage collection cycle. Equivalent to <code>-verbose:gc</code> output</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>heap</code></td>
+<td>A set of tracepoints that record OMR heap operations.</td>
+</tr>
+<tr>
+<td><strong>j9prt</strong></td>
+<td><code>j9gs</code></td>
+<td>A set of tracepoints that record guarded storage operations.</td>
+</tr>
+<tr>
+<td><strong>j9prt</strong></td>
+<td><code>j9hypervisor</code></td>
+<td>A set of tracepoints that record hypervisor operations.</td>
+</tr>
+<tr>
+<td><strong>j9prt</strong></td>
+<td><code>j9ri</code></td>
+<td>A set of tracepoints that record runtime instrumentation operations.</td>
+</tr>
+<tr>
+<td><strong>j9prt</strong>, <strong>omrport</strong></td>
+<td><code>j9shared</code></td>
+<td>A set of tracepoints that record shared memory, semaphore and shared cache operations.</td>
+</tr>
+<tr>
+<td><strong>j9prt</strong></td>
+<td><code>j9shmem</code></td>
+<td>A set of tracepoints that record portable shared memory operations.</td>
+</tr>
+<tr>
+<td><strong>j9prt</strong></td>
+<td><code>j9shsem</code></td>
+<td>A set of tracepoints that record portable shared semaphore operations.</td>
+</tr>
+<tr>
+<td><strong>j9prt</strong></td>
+<td><code>j9sock</code></td>
+<td>A set of tracepoints that record portable socket operations.</td>
+</tr>
+<tr>
+<td><strong>j9prt</strong></td>
+<td><code>j9sysinfo</code></td>
+<td>A set of tracepoints that record system information operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>kickoff</code></td>
+<td>A set of tracepoints that record GC kickoff operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>loaresize</code></td>
+<td>A set of tracepoints that record GC LOA resize operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>markdelegate</code></td>
+<td>A set of tracepoints that record GC mark delegate operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>mem</code></td>
+<td>A set of tracepoints that record OMR portable memory allocation operations.</td>
+</tr>
+<tr>
+<td><strong>mt</strong></td>
+<td><code>methodArguments</code></td>
+<td>A set of tracepoints that record method trace method arguments.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>mmap</code></td>
+<td>A set of tracepoints that record OMR portable mmap operations.</td>
 </tr>
 <tr>
 <td><strong>mt</strong></td>
 <td><code>nativeMethods</code></td>
-<td>A set of tracepoints that record Java native methods.</td>
+<td>A set of tracepoints that record method trace native methods.</td>
+</tr>
+<tr>
+<td><strong>j9prt</strong></td>
+<td><code>nlsmessage</code></td>
+<td>A set of tracepoints that record each NLS message that is issued by the VM.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>omrfilestream</code></td>
+<td>A set of tracepoints that record OMR portable file stream operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>omrshared</code></td>
+<td>A set of tracepoints that record OMR portable shared classes operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>omrshmem</code></td>
+<td>A set of tracepoints that record OMR portable shared memory operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>omrshsem</code></td>
+<td>A set of tracepoints that record OMR portable shared semaphore operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>omrsock</code></td>
+<td>A set of tracepoints that record OMR portable socket operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>oracle</code></td>
+<td>A set of tracepoints that record GC oracle operations.</td>
+</tr>
+<tr>
+<td><strong>j9shr</strong></td>
+<td><code>OSCache</code></td>
+<td>A set of tracepoints that record shared classes OSCache operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>parallel</code></td>
+<td>A set of tracepoints that record GC parallel operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong>, <strong>omrmm</strong></td>
+<td><code>percolate</code></td>
+<td>A set of tracepoints that record GC percolate operations.</td>
+</tr>
+<tr>
+<td><strong>j9jit</strong>, <strong>j9vm</strong>, <strong>omrti</strong></td>
+<td><code>perfmon</code></td>
+<td>A set of tracepoints that record performance monitor operations.</td>
+</tr>
+<tr>
+<td><strong>j9vm</strong></td>
+<td><code>profilingbc</code></td>
+<td>A set of tracepoints that record bytecode profiling                                  .</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>reclaim</code></td>
+<td>A set of tracepoints that record GC reclaim operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>rememberedset</code></td>
+<td>A set of tracepoints that record GC remembered set operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>regionvalidator</code></td>
+<td>A set of tracepoints that record GC region validation.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>resize</code></td>
+<td>A set of tracepoints that record GC resize operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>runtimeexec</code></td>
+<td>A set of tracepoints that record runtime execution.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>scavenge</code></td>
+<td>A set of tracepoints that record GC scavenge flip operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>scavenger</code></td>
+<td>A set of tracepoints that record GC scavenger operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>signal</code></td>
+<td>A set of tracepoints that record OMR portable signal operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>sl</code></td>
+<td>A set of tracepoints that record OMR portable shared library operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>stackremember</code></td>
+<td>A set of tracepoints that record GC stack remember operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>stackslotvalidator</code></td>
+<td>A set of tracepoints that record stack slot validation.</td>
 </tr>
 <tr>
 <td><strong>mt</strong></td>
 <td><code>staticMethods</code></td>
-<td>A set of tracepoints that record Java static methods.</td>
+<td>A set of tracepoints that record method trace static methods.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>stringtable</code></td>
+<td>A set of tracepoints that record GC string table operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>sysinfo</code></td>
+<td>A set of tracepoints that record OMR portable system information operations.</td>
+</tr>
+<tr>
+<td><strong>omrport</strong></td>
+<td><code>syslog</code></td>
+<td>A set of tracepoints that record OMR system logging operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>tarok</code></td>
+<td>A set of tracepoints that record GC tarok operations.</td>
+</tr>
+<tr>
+<td><strong>mt</strong></td>
+<td><code>throw</code></td>
+<td>A set of tracepoints that record method trace throw operations.</td>
+</tr>
+<tr>
+<td><strong>j9mm</strong></td>
+<td><code>unload</code></td>
+<td>A set of tracepoints that record GC class unload operations.</td>
+</tr>
+<tr>
+<td><strong>j9jcl</strong>, <strong>j9vrb</strong>, <strong>j9vm</strong></td>
+<td><code>verboseclass</code></td>
+<td>A set of tracepoints that record each class as it is loaded. Equivalent to <code>-verbose:class</code> output.</td>
 </tr>
 </tbody>
 </table>
