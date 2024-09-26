@@ -161,6 +161,14 @@ installed (25 GB without APAR OA49416). All GC policies observe these limits exc
 
 When the VM uses compressed references, classes, threads, and monitors are stored in the lowest 4 GB of address space. However, this area of memory is also used by native libraries, the operating system, and for small Java heaps. If you receive native memory `OutOfMemoryError` exceptions in the lowest 4 GB when running with compressed references enabled, these errors might result from the lowest 4 GB of address space becoming full. Try specifying a large heap with the [`-Xmx`](xms.md) option, which puts the Java heap into a higher area of address space or using the [`-Xmcrs`](xmcrs.md) option to reserve space in the lowest 4 GB of address space for compressed references.
 
+The following options allow for further control of the compressed reference allocation:
+
+- [`-Xgc:suballocatorInitialSize=<bytes>`](xgc.md#suballocatorinitialsize)
+- [`-Xgc:suballocatorIncrementSize=<bytes>`](xgc.md#suballocatorincrementsize)
+- [`-Xgc:suballocatorCommitSize=<bytes>`](xgc.md#suballocatorcommitsize)
+- [`-Xgc:suballocatorQuickAllocEnable`](xgc.md#suballocatorquickallocenable)
+- [`-Xgc:suballocatorQuickAllocDisable`](xgc.md#suballocatorquickallocdisable)
+
 To turn off compressed references, use the [`-Xnocompressedrefs`](xcompressedrefs.md) command-line option.
 
 

@@ -59,6 +59,11 @@ Options that change the behavior of the garbage collector.
 | [`tlhMaximumSize`                   ](#tlhmaximumsize                   ) | Sets the maximum size of the thread local heap.                                                           |
 | [`verboseFormat`                    ](#verboseformat                    ) | Sets the verbose GC format.                                                                               |
 | [`verbosegcCycleTime`               ](#verbosegccycletime                    ) | Sets the criteria for verbose GC logging.                                                                              |
+| [`suballocatorInitialSize`          ](#suballocatorinitialsize          ) | Sets the initial size in bytes for the heap used for compressed references.                               |
+| [`suballocatorIncrementSize`        ](#suballocatorincrementsize        ) | Sets the reservation increment size in bytes for the heap used for compressed references.                 |
+| [`suballocatorCommitSize`           ](#suballocatorcommitsize           ) | Sets the commit size in bytes for the heap used for compressed references.                                |
+| [`suballocatorQuickAllocEnable`     ](#suballocatorquickallocenable     ) | Enables mmap-based allocation for compressed references (affects Linux only).                             |
+| [`suballocatorQuickAllocDisable`    ](#suballocatorquickallocdisable    ) | Disable mmap-based allocation for compressed references (affects Linux only).                             |
 
 ### `breadthFirstScanOrdering`
 
@@ -357,4 +362,43 @@ Larger TLHs can help reduce heap lock contention, but might also reduce heap uti
 
 : This option applies only to the `metronome` GC policy.
 
+### `suballocatorInitialSize`
+
+        -Xgc:suballocatorInitialSize=<bytes>
+
+: Sets the initial size of the heap used for compressed references. The default size is 200 MB.
+
+: This option can be used with all OpenJ9 GC policies. It only affects builds using compressed references.
+
+### `suballocatorIncrementSize`
+
+        -Xgc:suballocatorIncrementSize=<bytes>
+
+: Sets the reservation increment size of the heap used for compressed references. When the memory of the current heap space is exhausted, the increment size determines the amount of additional memory to reserve. The default size is 8 MB for most platforms. The exception is AIX which defaults to 256 MB.
+
+: This option can be used with all OpenJ9 GC policies. It only affects builds using compressed references.
+
+### `suballocatorCommitSize`
+
+        -Xgc:suballocatorCommitSize=<bytes>
+
+: Sets the commit size of the heap used for compressed references. The default size is 50 MB.
+
+: This option can be used with all OpenJ9 GC policies. It only affects builds using compressed references.
+
+### `suballocatorQuickAllocEnable`
+
+        -Xgc:suballocatorQuickAllocEnable
+
+: Enables mmap-based allocation for compressed references (affects Linux only). Enabled by default.
+
+: This option can be used with all OpenJ9 GC policies. It only affects builds using compressed references.
+
+### `suballocatorQuickAllocDisable`
+
+        -Xgc:suballocatorQuickAllocDisable
+
+: Disables mmap-based allocation for compressed references (affects Linux only).
+
+: This option can be used with all OpenJ9 GC policies. It only affects builds using compressed references.
 <!-- ==== END OF TOPIC ==== xgc.md ==== -->
