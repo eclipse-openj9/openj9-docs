@@ -260,7 +260,7 @@ The following table lists the possible Java components (`<component>`). To inclu
 | **module**      | VM modularity                                                                  |
 | **mt**          | Java methods (see **Note**)                                                    |
 | **net**         | Class library TCP/IP networking native code                                    |
-| **omrmm         | OMR memory management                                                          |
+| **omrmm**       | OMR memory management                                                          |
 | **omrport**     | OMR port library                                                               |
 | **omrti**       | OMR tooling                                                                    |
 | **omrutil**     | OMR utilities                                                                  |
