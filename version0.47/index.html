@@ -451,6 +451,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-jdk-23-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New JDK 23 features
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8884,6 +8893,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-jdk-23-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New JDK 23 features
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8942,6 +8960,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#-xshareclasses-option-automatically-enables-xxshareorphans"><code>-Xshareclasses</code> option automatically enables <code>-XX:+ShareOrphans</code></a></li>
 <li><a href="#restrictions-in-the-xx-shareorphans-option-fixed">Restrictions in the <code>-XX:[+|-]ShareOrphans</code> option fixed</a></li>
+<li><img alt="Start of content that applies to Java 23 and later" src="../cr/java23plus.png" /> <a href="#new-jdk-23-features">New JDK 23 features</a> <img alt="End of content that applies to Java 23 and later" src="../cr/java_close.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8957,6 +8976,26 @@
 <li><code>java.lang.StackTraceElement.getClassLoaderName()</code> might return null for classes that are stored in the shared cache.</li>
 </ul>
 <p>These restrictions are no longer applicable from this release onwards.</p>
+<h3 id="new-jdk-23-features"><img alt="Start of content that applies to Java 23 and later" src="../cr/java23plus.png" /> New JDK 23 features</h3>
+<p>The following features are supported by OpenJ9:</p>
+<ul>
+<li><a href="https://openjdk.java.net/jeps/469">JEP 469</a>: Vector API (Eighth Incubator)</li>
+<li><a href="https://openjdk.java.net/jeps/471">JEP 471</a>: Deprecate the Memory-Access Methods in sun.misc.Unsafe for Removal</li>
+<li><a href="https://openjdk.java.net/jeps/481">JEP 481</a>: Scoped Values (Third Preview)</li>
+</ul>
+<p>The following features are implemented in OpenJDK and available in any build of OpenJDK 23 with OpenJ9:</p>
+<ul>
+<li><a href="https://openjdk.java.net/jeps/455">JEP 455</a>: Primitive Types in Patterns, instanceof, and switch (Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/466">JEP 466</a>: Class-File API (Second Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/467">JEP 467</a>: Markdown Documentation Comments</li>
+<li><a href="https://openjdk.java.net/jeps/473">JEP 473</a>: Stream Gatherers (Second Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/476">JEP 476</a>: Module Import Declarations (Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/477">JEP 477</a>: Implicitly Declared Classes and Instance Main Methods (Third Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/480">JEP 480</a>: Structured Concurrency (Third Preview)</li>
+<li><a href="https://openjdk.java.net/jeps/482">JEP 482</a>: Flexible Constructor Bodies (Second Preview)</li>
+</ul>
+<p>You can find the full list of features for JDK 23 at the <a href="https://openjdk.org/projects/jdk/23/">OpenJDK project</a>.
+Any remaining features that are listed either do not apply to OpenJ9 or are not implemented and hence not applicable to OpenJ9 in this release. <img alt="End of content that applies to Java 23 and later" src="../cr/java_close.png" /></p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.46.0 and v0.47.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.47/0.47.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.47.md ==== -->
