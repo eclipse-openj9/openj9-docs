@@ -54,7 +54,7 @@ mergedeep==1.3.4
     # via
     #   mkdocs
     #   mkdocs-get-deps
-mkdocs==1.5.3
+mkdocs==1.6.1
     # via
     #   -r requirements.in
     #   mkdocs-macros-plugin
