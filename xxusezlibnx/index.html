@@ -367,6 +367,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.48/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Version 0.48.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.47/" class="md-nav__link">
         
   
@@ -626,10 +647,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_15" >
         
           
-          <label class="md-nav__link" for="__nav_5_14" id="__nav_5_14_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_15" id="__nav_5_15_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -640,8 +661,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_14">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_15">
             <span class="md-nav__icon md-icon"></span>
             Earlier releases
           </label>
@@ -8908,22 +8929,24 @@
 <tr>
 <td><code>-XX:+UseZlibNX</code></td>
 <td>Enable</td>
-<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr>
 <td><code>-XX:-UseZlibNX</code></td>
 <td>Disable</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
 </tr>
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
 <p>AIX system adds the <code>zlibNX</code> library location, if available, to the <code>LIBPATH</code> variable by default. But having the <code>zlibNX</code> library directory location in the <code>LIBPATH</code> variable might cause some issues. For example, Git clone fails when executed from Java&reg; when <code>zlibNX</code> is on the <code>LIBPATH</code> in the environment.</p>
-<p>You can disable adding of the <code>zlibNX</code> library location to the <code>LIBPATH</code> variable with the <code>-XX:-UseZlibNX</code> option.</p>
+<p>You can enable adding of the <code>zlibNX</code> library location to the <code>LIBPATH</code> variable with the <code>-XX:+UseZlibNX</code> option.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../introduction/#hardware-acceleration">Hardware acceleration</a></li>
 <li><a href="../configuring/">Configuring your system</a></li>
+<li><a href="../version0.25/#enabling-zlibnx-hardware-accelerated-data-compression-and-decompression-on-aix">What's new in version 0.25.0</a></li>
+<li><a href="../version0.48/#loading-of-the-zlibnx-library-on-aix-is-disabled-by-default">What's new in version 0.48.0</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xxusezlibnx.md ==== -->
 

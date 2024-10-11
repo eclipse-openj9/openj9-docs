@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xlockword/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.48/">
       
       
-        <link rel="prev" href="../xlockreservation/">
+        <link rel="prev" href="../openj9_releases/">
       
       
-        <link rel="next" href="../xlog/">
+        <link rel="next" href="../version0.47/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-Xlockword -  </title>
+        <title>Version 0.48.0 -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xlockword" class="md-skip">
+        <a href="#whats-new-in-version-0480" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Xlockword
+              Version 0.48.0
             
           </span>
         </div>
@@ -308,17 +308,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -332,7 +334,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Release notes
@@ -364,10 +366,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../version0.48/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Version 0.48.0
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -376,6 +398,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features and changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binaries and supported environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-of-the-zlibnx-library-on-aix-is-disabled-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading of the zlibnx library on AIX is disabled by default
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known problems and full release information
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2681,19 +2765,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
         
           
           <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
@@ -2707,7 +2789,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             Command-line options
@@ -3580,19 +3662,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" >
         
           
           <label class="md-nav__link" for="__nav_18_5" id="__nav_18_5_label" tabindex="0">
@@ -3606,7 +3686,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18_5">
             <span class="md-nav__icon md-icon"></span>
             JVM -X options
@@ -4625,30 +4705,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    -Xlockword
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xlockword/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4657,77 +4717,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntax
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parameters
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      mode
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nolockword" class="md-nav__link">
-    <span class="md-ellipsis">
-      nolockword
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what" class="md-nav__link">
-    <span class="md-ellipsis">
-      what
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -8871,46 +8860,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
+  <a href="#features-and-changes" class="md-nav__link">
     <span class="md-ellipsis">
-      Syntax
+      Features and changes
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parameters
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parameters">
+    <nav class="md-nav" aria-label="Features and changes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mode" class="md-nav__link">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
     <span class="md-ellipsis">
-      mode
+      Binaries and supported environments
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nolockword" class="md-nav__link">
+  <a href="#loading-of-the-zlibnx-library-on-aix-is-disabled-by-default" class="md-nav__link">
     <span class="md-ellipsis">
-      nolockword
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what" class="md-nav__link">
-    <span class="md-ellipsis">
-      what
+      Loading of the zlibnx library on AIX is disabled by default
     </span>
   </a>
   
@@ -8918,6 +8889,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known problems and full release information
+    </span>
+  </a>
   
 </li>
       
@@ -8959,40 +8939,22 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-xlockword">-Xlockword</h1>
-<p>Test whether performance optimizations are negatively impacting an application.</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -Xlockword:&lt;parameters&gt;
-</code></pre>
-<h2 id="parameters">Parameters</h2>
-<h3 id="mode"><code>mode</code></h3>
-<pre><code>    -Xlockword:mode=all
-    -Xlockword:mode=default
-</code></pre>
-<p>Locking optimizations typically reduce memory usage and improve performance. However, there might be some situations where a smaller heap size is achieved for an application, but overall application performance decreases.</p>
-<p>For example, if your application synchronizes on objects that are not typically synchronized on, such as <code>Java.lang.String</code>, run the following test:<br />
-Use the following command-line option to revert to behavior that is closer to earlier versions and monitor application performance:</p>
-<pre><code>-Xlockword:mode=all
-</code></pre>
-<p>If performance does not improve, remove the previous command-line options or use the following command-line option to reestablish the new behavior:</p>
-<pre><code>-Xlockword:mode=default
-</code></pre>
-<h3 id="nolockword"><code>nolockword</code></h3>
-<pre><code>    -Xlockword:nolockword=&lt;class_name&gt;
-</code></pre>
-<dl>
-<dd>
-<p>Removes the lockword from object instances of the class <code>&lt;class_name&gt;</code>, reducing the space required for these objects. However, this action might have an adverse effect on synchronization for those objects.</p>
-<p>You should only use this option for troubleshooting.</p>
-</dd>
-</dl>
-<h3 id="what"><code>what</code></h3>
-<pre><code>    -Xlockword:what
-</code></pre>
-<dl>
-<dd>Shows the current lockword configuration.</dd>
-</dl>
-<!-- ==== END OF TOPIC ==== xlockword.md ==== -->
+<h1 id="whats-new-in-version-0480">What's new in version 0.48.0</h1>
+<p>The following new features and notable changes since version 0.47.0 are included in this release:</p>
+<ul>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#loading-of-the-zlibnx-library-on-aix-is-disabled-by-default">Loading of the <code>zlibnx</code> library on AIX is disabled by default</a></li>
+</ul>
+<h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>Eclipse OpenJ9&trade; release 0.48.0 supports OpenJDK 8, 11, 17, 21, and 23.</p>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="loading-of-the-zlibnx-library-on-aix-is-disabled-by-default">Loading of the <code>zlibnx</code> library on AIX is disabled by default</h3>
+<p>From release 0.25.0 onwards, <code>zlibNX</code> hardware-accelerated data compression and decompression was enabled by default on AIX&reg;. From this release onwards, loading of the <code>zlibnx</code> library on AIX is disabled by default because using <code>zlibNX</code> might cause a <code>ClassNotFoundException</code> error. You can enable adding of the <code>zlibNX</code> library by using the <code>-XX:+UseZlibNX</code> option.</p>
+<p>For more information, see <a href="../xxusezlibnx/"><code>-XX:[+|-]UseZlibNX</code></a>.</p>
+<h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.46.0 and v0.47.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.47/0.47.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.47.md ==== -->
 
 
 
