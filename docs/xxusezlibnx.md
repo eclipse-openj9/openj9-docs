@@ -34,19 +34,21 @@ This option enables or disables the adding of the `zlibNX` library directory loc
 
 | Setting               | Effect  | Default                                                                            |
 |-----------------------|---------|:----------------------------------------------------------------------------------:|
-| `-XX:+UseZlibNX` |  Enable  |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>         |
-| `-XX:-UseZlibNX` | Disable |     |
+| `-XX:+UseZlibNX` |  Enable  |           |
+| `-XX:-UseZlibNX` | Disable |   :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |
 
 
 ## Explanation
 
 AIX system adds the `zlibNX` library location, if available, to the `LIBPATH` variable by default. But having the `zlibNX` library directory location in the `LIBPATH` variable might cause some issues. For example, Git clone fails when executed from Java&reg; when `zlibNX` is on the `LIBPATH` in the environment.
 
-You can disable adding of the `zlibNX` library location to the `LIBPATH` variable with the `-XX:-UseZlibNX` option.
+You can enable adding of the `zlibNX` library location to the `LIBPATH` variable with the `-XX:+UseZlibNX` option.
 
 ## See also
 
 - [Hardware acceleration](introduction.md#hardware-acceleration)
 - [Configuring your system](configuring.md)
+- [What's new in version 0.25.0](version0.25.md#enabling-zlibnx-hardware-accelerated-data-compression-and-decompression-on-aix)
+- [What's new in version 0.48.0](version0.48.md#loading-of-the-zlibnx-library-on-aix-is-disabled-by-default)
 
 <!-- ==== END OF TOPIC ==== xxusezlibnx.md ==== -->
