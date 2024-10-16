@@ -39,9 +39,11 @@ or
 
     -agentpath:<path-to-agent>=<options>
 
-In the example that follows (see [Sample JVMTI agent](#sample-jvmti-agent)), the directory containing the `jdwp` library is assumed to  be on the library path. If you require a specific library, such as `jdwp`, with your JVMTI agent, you can specify the path at startup, for example:
+In the example that follows (see [Sample JVMTI agent](#sample-jvmti-agent)), the directory containing the `jdwp` library is assumed to be on the library path. If you require a specific library, such as `jdwp`, with your JVMTI agent, you can specify the path at startup, for example:
 
     -agentlib:jdwp=<options>
+
+For more information about `-agentlib:jdwp`, see [`-Xrunjdwp`](xrunjdwp.md).
 
 For more information about JVMTI, see [https://docs.oracle.com/javase/8/docs/technotes/guides/management/index.html](https://docs.oracle.com/javase/8/docs/technotes/guides/management/index.html).
 
