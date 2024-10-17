@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -173,10 +173,10 @@ loadScripts(document, 'script');</script>
  getBytecodeSections() or getCompiledSections() of the method returned by
  getMethod().
  <p>
- null may be returned, particularly for methods with no bytecode or 
+ null may be returned, particularly for methods with no bytecode or
  compiled sections (e.g. some native methods)
  <p>
- Although an offset into the method may be calculated using this 
+ Although an offset into the method may be calculated using this
  pointer, caution should be exercised in attempting to map this offset to
  an offset within the original class file. Various transformations may
  have been applied to the bytecodes by the VM or other agents which may
@@ -230,10 +230,10 @@ loadScripts(document, 'script');</script>
 <h3>getCompilationLevel</h3>
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getCompilationLevel</span>()
                  throws <span class="exceptions"><a href="../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
-<div class="block">Get the compilation level for this location. This is an implementation 
- defined number indicating the level at which the current location was 
- compiled. 0 indicates interpreted. Any positive number indicates some 
- level of JIT compilation. Typically, higher numbers indicate more 
+<div class="block">Get the compilation level for this location. This is an implementation
+ defined number indicating the level at which the current location was
+ compiled. 0 indicates interpreted. Any positive number indicates some
+ level of JIT compilation. Typically, higher numbers indicate more
  aggressive compilation strategies
  <p>
  For native methods, a non-zero compilation level indicates that some
