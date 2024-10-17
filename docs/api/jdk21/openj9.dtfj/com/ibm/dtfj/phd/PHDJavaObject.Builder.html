@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
 <script type="text/javascript" src="../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -106,15 +106,15 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public static class </span><span class="element-name type-name-label">PHDJavaObject.Builder</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a></span></div>
-<div class="block">The constructors for PHDJavaObject used to take up to 11 arguments, many of which were ints. This made it hard to tie up which 
+<div class="block">The constructors for PHDJavaObject used to take up to 11 arguments, many of which were ints. This made it hard to tie up which
  argument corresponded to which parameter and invited errors since there can be no type checking.
  <p>
  This is now fixed by the use of the Builder pattern as described in
- Effective Java Second Edition by Joshua Bloch (http://cyclo.ps/books/Prentice.Hall.Effective.Java.2nd.Edition.May.2008.pdf), 
+ Effective Java Second Edition by Joshua Bloch (http://cyclo.ps/books/Prentice.Hall.Effective.Java.2nd.Edition.May.2008.pdf),
  item 2 "Consider a builder when faced with many constructor parameters".
  <p>
- The only way to construct a PHDJavaObject is now using this Builder. Required arguments are set with 
- a call to the Builder constructor, then optional arguments are set, then build() is called, usually all 
+ The only way to construct a PHDJavaObject is now using this Builder. Required arguments are set with
+ a call to the Builder constructor, then optional arguments are set, then build() is called, usually all
  in one line using a fluent interface.</div>
 </section>
 <section class="summary">
