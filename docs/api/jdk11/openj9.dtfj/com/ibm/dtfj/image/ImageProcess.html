@@ -27,7 +27,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -233,7 +233,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSignalName()">getSignalName</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Get the name of the OS signal in this process which triggered the 
+<div class="block">Get the name of the OS signal in this process which triggered the
  creation of this image.</div>
 </td>
 </tr>
@@ -241,7 +241,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getSignalNumber()">getSignalNumber</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Get the OS signal number in this process which triggered the creation 
+<div class="block">Get the OS signal number in this process which triggered the creation
  of this image.</div>
 </td>
 </tr>
@@ -385,7 +385,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an iterator to iterate over each ImageThread in the image
- 
+
  There is not necessarily any relationship between JavaThreads and
  ImageThreads. A JVM implementation may use an n:m mapping of JavaThreads to
  ImageThreads, and not all ImageThreads are necessarily attached.</dd>
@@ -426,8 +426,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an iterator to iterate over all of the known ManagedRuntime
- environments in the image. 
- 
+ environments in the image.
+
  In a typical image, there will be only one runtime, and it will be
  an instance of JavaRuntime. However any user of this API should be aware
  that there is a possibility that other runtimes may exist in the image</dd>
@@ -447,11 +447,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre class="methodSignature">int&nbsp;getSignalNumber()
              throws <a href="DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
                     <a href="CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
-<div class="block">Get the OS signal number in this process which triggered the creation 
+<div class="block">Get the OS signal number in this process which triggered the creation
  of this image.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the OS signal number in this process which triggered the creation 
+<dd>the OS signal number in this process which triggered the creation
  of this image, or 0 if the image was not created because of a signal in this
  process</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -469,12 +469,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getSignalName()
               throws <a href="DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
                      <a href="CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></pre>
-<div class="block">Get the name of the OS signal in this process which triggered the 
+<div class="block">Get the name of the OS signal in this process which triggered the
  creation of this image.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the name of the OS signal in this process which triggered the 
- creation of this image, or null if the image was not created because of a 
+<dd>the name of the OS signal in this process which triggered the
+ creation of this image, or null if the image was not created because of a
  signal in this process</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - if the information cannot be provided</dd>
