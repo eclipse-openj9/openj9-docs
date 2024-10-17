@@ -24,7 +24,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -158,13 +158,13 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSignalName()" class="member-name-link">getSignalName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the name of the OS signal in this process which triggered the 
+<div class="block">Get the name of the OS signal in this process which triggered the
  creation of this image.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSignalNumber()" class="member-name-link">getSignalNumber</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Get the OS signal number in this process which triggered the creation 
+<div class="block">Get the OS signal number in this process which triggered the creation
  of this image.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link" target="_blank">Iterator</a></code></div>
@@ -292,7 +292,7 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>an iterator to iterate over each ImageThread in the image
- 
+
  There is not necessarily any relationship between JavaThreads and
  ImageThreads. A JVM implementation may use an n:m mapping of JavaThreads to
  ImageThreads, and not all ImageThreads are necessarily attached.</dd>
@@ -335,8 +335,8 @@ loadScripts(document, 'script');</script>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>an iterator to iterate over all of the known ManagedRuntime
- environments in the image. 
- 
+ environments in the image.
+
  In a typical image, there will be only one runtime, and it will be
  an instance of JavaRuntime. However any user of this API should be aware
  that there is a possibility that other runtimes may exist in the image</dd>
@@ -357,11 +357,11 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getSignalNumber</span>()
              throws <span class="exceptions"><a href="DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
 <a href="CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
-<div class="block">Get the OS signal number in this process which triggered the creation 
+<div class="block">Get the OS signal number in this process which triggered the creation
  of this image.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the OS signal number in this process which triggered the creation 
+<dd>the OS signal number in this process which triggered the creation
  of this image, or 0 if the image was not created because of a signal in this
  process</dd>
 <dt>Throws:</dt>
@@ -376,12 +376,12 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getSignalName</span>()
               throws <span class="exceptions"><a href="DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a>,
 <a href="CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
-<div class="block">Get the name of the OS signal in this process which triggered the 
+<div class="block">Get the name of the OS signal in this process which triggered the
  creation of this image.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the name of the OS signal in this process which triggered the 
- creation of this image, or null if the image was not created because of a 
+<dd>the name of the OS signal in this process which triggered the
+ creation of this image, or null if the image was not created because of a
  signal in this process</dd>
 <dt>Throws:</dt>
 <dd><code><a href="DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - if the information cannot be provided</dd>

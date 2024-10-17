@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -229,9 +229,9 @@ implements <a href="../image/ImageThread.html" title="interface in com.ibm.dtfj.
 <dd><code><a href="../image/ImageThread.html#getRegisters()">getRegisters</a></code>&nbsp;in interface&nbsp;<code><a href="../image/ImageThread.html" title="interface in com.ibm.dtfj.image">ImageThread</a></code></dd>
 <dt>Returns:</dt>
 <dd>an iterator to iterate over the state of the CPU registers
- when the image was created. The collection may be empty if the register 
+ when the image was created. The collection may be empty if the register
  state is not available for this thread.
- 
+
  If the CPU supports partial registers (e.g. AH, AL, AX, EAX, RAX on
  AMD64), only the largest version of the register will be included</dd>
 <dt>See Also:</dt>
@@ -254,7 +254,7 @@ implements <a href="../image/ImageThread.html" title="interface in com.ibm.dtfj.
 <dt>Specified by:</dt>
 <dd><code><a href="../image/ImageThread.html#getStackFrames()">getStackFrames</a></code>&nbsp;in interface&nbsp;<code><a href="../image/ImageThread.html" title="interface in com.ibm.dtfj.image">ImageThread</a></code></dd>
 <dt>Returns:</dt>
-<dd>an iterator to walk the native stack frames in order from 
+<dd>an iterator to walk the native stack frames in order from
  top-of-stack (that is, the most recent frame) to bottom-of-stack. Throws
  DataUnavailable if native stack frames are not available on this platform.</dd>
 <dt>Throws:</dt>
