@@ -27,7 +27,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../jquery-ui.overrides.css" title="Style">
 <script type="text/javascript" src="../../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -354,7 +354,7 @@ implements <a href="../JavaThread.html" title="interface in com.ibm.dtfj.java">J
 <dt>Throws:</dt>
 <dd><code><a href="../../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></code> - If the underlying resource describing the native representation of the thread
  is damaged</dd>
-<dd><code><a href="../../image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - If no mapping is provided due to missing or limited underlying resources (this 
+<dd><code><a href="../../image/DataUnavailable.html" title="class in com.ibm.dtfj.image">DataUnavailable</a></code> - If no mapping is provided due to missing or limited underlying resources (this
  exception added in DTFJ 1.1)</dd>
 <dt>See Also:</dt>
 <dd>
@@ -400,7 +400,7 @@ implements <a href="../JavaThread.html" title="interface in com.ibm.dtfj.java">J
 <dt>Specified by:</dt>
 <dd><code><a href="../JavaThread.html#getStackFrames()">getStackFrames</a></code>&nbsp;in interface&nbsp;<code><a href="../JavaThread.html" title="interface in com.ibm.dtfj.java">JavaThread</a></code></dd>
 <dt>Returns:</dt>
-<dd>an iterator to walk the managed stack frames in order from 
+<dd>an iterator to walk the managed stack frames in order from
  top-of-stack (that is, the most recent frame) to bottom-of-stack</dd>
 <dt>See Also:</dt>
 <dd>
@@ -419,7 +419,7 @@ implements <a href="../JavaThread.html" title="interface in com.ibm.dtfj.java">J
                throws <span class="exceptions"><a href="../../image/CorruptDataException.html" title="class in com.ibm.dtfj.image">CorruptDataException</a></span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../JavaThread.html#getName()">JavaThread</a></code></span></div>
 <div class="block">Return the name of the thread.
- 
+
  Usually this is derived from the object associated with the thread, but if the
  name cannot be derived this way (e.g. there is no object associated with the thread)
  DTFJ will synthesize a name for the thread.</div>
