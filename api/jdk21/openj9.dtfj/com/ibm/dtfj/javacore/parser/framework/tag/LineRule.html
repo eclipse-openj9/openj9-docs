@@ -29,7 +29,7 @@
 <link rel="stylesheet" type="text/css" href="../../../../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../../script-dir/jquery-ui.min.css" title="Style">
 <script type="text/javascript" src="../../../../../../../../script.js"></script>
-<script type="text/javascript" src="../../../../../../../../script-dir/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../../../../script-dir/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
@@ -153,10 +153,10 @@ implements <a href="ILineRule.html" title="interface in com.ibm.dtfj.javacore.pa
  return a list of tokens (generally a map, where the key is the token type, and the value is the token value)
  to the section parser that uses these line rules. A series of line rules
  can be registered into a Tag Parser, which in turn gets used by a Section Parser.
- 
+
  <br><br>
  Note that methods are provided to explicitly generate and add a token, and the concrete-class must
- call these methods explicitly to add a token. 
+ call these methods explicitly to add a token.
  <br><br></div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -264,7 +264,7 @@ implements <a href="ILineRule.html" title="interface in com.ibm.dtfj.javacore.pa
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addToken(java.lang.String,java.util.regex.Matcher)" class="member-name-link">addToken</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;type,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Matcher.html" title="class or interface in java.util.regex" class="external-link" target="_blank">Matcher</a>&nbsp;matcher)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds a token of the type specified via argument to the internal token map, and assigns it 
+<div class="block">Adds a token of the type specified via argument to the internal token map, and assigns it
  the value matched by the pattern matcher.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
@@ -425,7 +425,7 @@ implements <a href="ILineRule.html" title="interface in com.ibm.dtfj.javacore.pa
 <h3>addToken</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../scanner/IParserToken.html" title="interface in com.ibm.dtfj.javacore.parser.framework.scanner">IParserToken</a></span>&nbsp;<span class="element-name">addToken</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;type,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Matcher.html" title="class or interface in java.util.regex" class="external-link" target="_blank">Matcher</a>&nbsp;matcher)</span></div>
-<div class="block">Adds a token of the type specified via argument to the internal token map, and assigns it 
+<div class="block">Adds a token of the type specified via argument to the internal token map, and assigns it
  the value matched by the pattern matcher. The generated token is
  returned, or null if no pattern was matched.
  <br><br>
@@ -458,7 +458,7 @@ implements <a href="ILineRule.html" title="interface in com.ibm.dtfj.javacore.pa
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;value)</span></div>
 <div class="block">Adds a token of the type specified to the internal token list and assigns it the value specified by the argument.
  Returns the generated token.
- 
+
  <br><br>
  If the token type already exists in the token map, it overwrites the value with the new token.</div>
 <dl class="notes">
@@ -479,7 +479,7 @@ implements <a href="ILineRule.html" title="interface in com.ibm.dtfj.javacore.pa
  the latter as a token of a argument-specified type to the internal token list. All the aforementioned characters
  as well as the first pattern matched are removed from the source buffer. The matched pattern
  is not included in the token.
- 
+
  <br><br>
  If the token type already exists in the token map, it overwrites the value with the new token.</div>
 <dl class="notes">
@@ -498,7 +498,7 @@ implements <a href="ILineRule.html" title="interface in com.ibm.dtfj.javacore.pa
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Matcher.html" title="class or interface in java.util.regex" class="external-link" target="_blank">Matcher</a>&nbsp;matcher)</span></div>
 <div class="block">Grabs all characters up to but excluding the first match specified by the matcher,
  and adds the latter as a token of an argument-specified type.
- 
+
  <br><br>
  If the token type already exists in the token map, it overwrites the value with the new token.</div>
 <dl class="notes">
@@ -537,7 +537,7 @@ implements <a href="ILineRule.html" title="interface in com.ibm.dtfj.javacore.pa
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../scanner/IParserToken.html" title="interface in com.ibm.dtfj.javacore.parser.framework.scanner">IParserToken</a></span>&nbsp;<span class="element-name">addNonPrefixedHexToken</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;type)</span></div>
 <div class="block">Matches the first hexadecimal match encountered that is not prefixed by "0x" as a token. The latter
  is then prefixed to the value of the token before generating the token.
- 
+
  <br><br>
  If the token type already exists in the token map, it overwrites the value with the new token.</div>
 <dl class="notes">
@@ -621,7 +621,7 @@ implements <a href="ILineRule.html" title="interface in com.ibm.dtfj.javacore.pa
 <section class="detail" id="findFirst(java.util.regex.Matcher)">
 <h3>findFirst</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">findFirst</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/regex/Matcher.html" title="class or interface in java.util.regex" class="external-link" target="_blank">Matcher</a>&nbsp;matcher)</span></div>
-<div class="block">Finds the first match. No consumption or token generation occurs. 
+<div class="block">Finds the first match. No consumption or token generation occurs.
  The buffer state is left intact.
  <br></div>
 <dl class="notes">
