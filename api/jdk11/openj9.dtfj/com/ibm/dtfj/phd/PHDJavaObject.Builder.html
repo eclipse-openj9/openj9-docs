@@ -20,7 +20,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../jquery/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../jquery/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -147,15 +147,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public static class <span class="typeNameLabel">PHDJavaObject.Builder</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a></pre>
-<div class="block">The constructors for PHDJavaObject used to take up to 11 arguments, many of which were ints. This made it hard to tie up which 
+<div class="block">The constructors for PHDJavaObject used to take up to 11 arguments, many of which were ints. This made it hard to tie up which
  argument corresponded to which parameter and invited errors since there can be no type checking.
  <p>
  This is now fixed by the use of the Builder pattern as described in
- Effective Java Second Edition by Joshua Bloch (http://cyclo.ps/books/Prentice.Hall.Effective.Java.2nd.Edition.May.2008.pdf), 
+ Effective Java Second Edition by Joshua Bloch (http://cyclo.ps/books/Prentice.Hall.Effective.Java.2nd.Edition.May.2008.pdf),
  item 2 "Consider a builder when faced with many constructor parameters".
  <p>
- The only way to construct a PHDJavaObject is now using this Builder. Required arguments are set with 
- a call to the Builder constructor, then optional arguments are set, then build() is called, usually all 
+ The only way to construct a PHDJavaObject is now using this Builder. Required arguments are set with
+ a call to the Builder constructor, then optional arguments are set, then build() is called, usually all
  in one line using a fluent interface.</div>
 </li>
 </ul>

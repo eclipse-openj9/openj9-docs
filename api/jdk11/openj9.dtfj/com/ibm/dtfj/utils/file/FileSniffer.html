@@ -20,7 +20,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../jquery/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -143,7 +143,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">FileSniffer</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a></pre>
-<div class="block">Sniffs files attempting to determine the contents, typically from known 
+<div class="block">Sniffs files attempting to determine the contents, typically from known
  magic numbers/values.</div>
 </li>
 </ul>
@@ -427,7 +427,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Checks to see if the input stream is for a zip file, assumes that the stream is correctly positioned.
  This method will reset the stream if possible to it's starting position. The reason for using this
  method over just trying java.util.zip.ZipFile(File) and catching errors is that on some platforms
- the zip support is provided by native libraries. It is possible to cause the native library to 
+ the zip support is provided by native libraries. It is possible to cause the native library to
  crash when speculatively passing files into it.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

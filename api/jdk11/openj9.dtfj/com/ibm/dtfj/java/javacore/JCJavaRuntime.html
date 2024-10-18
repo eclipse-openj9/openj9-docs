@@ -50,7 +50,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../jquery/jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -178,7 +178,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">JCJavaRuntime</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a>
 implements <a href="../JavaRuntime.html" title="interface in com.ibm.dtfj.java">JavaRuntime</a></pre>
-<div class="block">A javacore-based implementation of 
+<div class="block">A javacore-based implementation of
  JavaRuntime. This supports partial object creation, meaning
  that a javaclass, javathread, etc.. can be partially constructed and
  stored, and at a later time during the javacore parsing, when
@@ -580,7 +580,7 @@ implements <a href="../JavaRuntime.html" title="interface in com.ibm.dtfj.java">
 <h4>getMonitors</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html?is-external=true" title="class or interface in java.util" class="externalLink" target="_blank">Iterator</a>&nbsp;getMonitors()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../JavaRuntime.html#getMonitors()">JavaRuntime</a></code></span></div>
-<div class="block">Provides access to the collection of monitors used in the JavaVM. This 
+<div class="block">Provides access to the collection of monitors used in the JavaVM. This
  collection includes both monitors associated with managed objects (e.g. object
  monitors) and monitors associated with internal control structures (e.g.
  raw monitors)</div>
@@ -677,7 +677,7 @@ implements <a href="../JavaRuntime.html" title="interface in com.ibm.dtfj.java">
 <dd><code><a href="../JavaRuntime.html#getTraceBuffer(java.lang.String,boolean)">getTraceBuffer</a></code>&nbsp;in interface&nbsp;<code><a href="../JavaRuntime.html" title="interface in com.ibm.dtfj.java">JavaRuntime</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>arg0</code> - a String naming the buffer to be fetched</dd>
-<dd><code>arg1</code> - true if formatting should be performed on the buffer, or 
+<dd><code>arg1</code> - true if formatting should be performed on the buffer, or
  false if the raw buffer contents should be returned</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an implementation specific result, depending on the parameters</dd>
