@@ -442,6 +442,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jdwp-support-on-checkpointrestore-in-userspace-criu-restore-is-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      JDWP support on Checkpoint/Restore In Userspace (CRIU) restore is enabled
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5548,6 +5557,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../xrunjdwp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Xrunjdwp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xsamplingexpirationtime/" class="md-nav__link">
         
   
@@ -8887,6 +8917,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jdwp-support-on-checkpointrestore-in-userspace-criu-restore-is-enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      JDWP support on Checkpoint/Restore In Userspace (CRIU) restore is enabled
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8944,6 +8983,7 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#loading-of-the-zlibnx-library-on-aix-is-disabled-by-default">Loading of the <code>zlibnx</code> library on AIX is disabled by default</a></li>
+<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#jdwp-support-on-checkpointrestore-in-userspace-criu-restore-is-enabled">JDWP support on Checkpoint/Restore In Userspace (CRIU) restore is enabled</a> <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8952,9 +8992,13 @@
 <h3 id="loading-of-the-zlibnx-library-on-aix-is-disabled-by-default">Loading of the <code>zlibnx</code> library on AIX is disabled by default</h3>
 <p>From release 0.25.0 onwards, <code>zlibNX</code> hardware-accelerated data compression and decompression was enabled by default on AIX&reg;. From this release onwards, loading of the <code>zlibnx</code> library on AIX is disabled by default because using <code>zlibNX</code> might cause a <code>ClassNotFoundException</code> error. You can enable adding of the <code>zlibNX</code> library by using the <code>-XX:+UseZlibNX</code> option.</p>
 <p>For more information, see <a href="../xxusezlibnx/"><code>-XX:[+|-]UseZlibNX</code></a>.</p>
+<h3 id="jdwp-support-on-checkpointrestore-in-userspace-criu-restore-is-enabled"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> JDWP support on Checkpoint/Restore In Userspace (CRIU) restore is enabled</h3>
+<p>You can use the options that enable the JDWP support both on CRIU pre-checkpoint, and on restore as well.</p>
+<p>Also, a new parameter <code>suspendOnRestore</code> for the <code>Xrunjdwp</code> option is added to control the suspension of the target VM application on restore. This option is specific to OpenJ9. You can use the <code>suspendOnRestore=n</code> setting to prevent the suspension of the target application.</p>
+<p>For more information, see <a href="../xrunjdwp/"><code>-Xrunjdwp</code></a>. <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
-<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.46.0 and v0.47.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.47/0.47.md">Release notes</a>.</p>
-<!-- ==== END OF TOPIC ==== version0.47.md ==== -->
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.47.0 and v0.48.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.48/0.48.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.48.md ==== -->
 
 
 

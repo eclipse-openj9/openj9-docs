@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xmr/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xrunjdwp/">
       
       
-        <link rel="prev" href="./">
+        <link rel="prev" href="../xrs/">
       
       
-        <link rel="next" href="../xms/">
+        <link rel="next" href="../xsamplingexpirationtime/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-Xmrx -  </title>
+        <title>-Xrunjdwp -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xmr-xmrx" class="md-skip">
+        <a href="#-xrunjdwp" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Xmrx
+              -Xrunjdwp
             
           </span>
         </div>
@@ -5069,7 +5069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./" class="md-nav__link">
+      <a href="../xmr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5087,30 +5087,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    -Xmrx
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xmr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5119,35 +5099,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntax
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5514,10 +5465,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../xrunjdwp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    -Xrunjdwp
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -5526,6 +5497,140 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#address" class="md-nav__link">
+    <span class="md-ellipsis">
+      address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    <span class="md-ellipsis">
+      help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      launch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onthrow" class="md-nav__link">
+    <span class="md-ellipsis">
+      onthrow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onuncaught" class="md-nav__link">
+    <span class="md-ellipsis">
+      onuncaught
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    <span class="md-ellipsis">
+      server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suspend" class="md-nav__link">
+    <span class="md-ellipsis">
+      suspend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suspendonrestore" class="md-nav__link">
+    <span class="md-ellipsis">
+      suspendOnRestore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      timeout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      transport
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -8850,9 +8955,114 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
+  <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Syntax
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#address" class="md-nav__link">
+    <span class="md-ellipsis">
+      address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    <span class="md-ellipsis">
+      help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      launch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onthrow" class="md-nav__link">
+    <span class="md-ellipsis">
+      onthrow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onuncaught" class="md-nav__link">
+    <span class="md-ellipsis">
+      onuncaught
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    <span class="md-ellipsis">
+      server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suspend" class="md-nav__link">
+    <span class="md-ellipsis">
+      suspend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suspendonrestore" class="md-nav__link">
+    <span class="md-ellipsis">
+      suspendOnRestore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      timeout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      transport
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
     </span>
   </a>
   
@@ -8896,34 +9106,89 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-xmr-xmrx">-Xmr / &nbsp; -Xmrx</h1>
-<p>Sets the initial and maximum size of the the garbage collection (GC) <em>remembered set</em> in the <code>gencon</code> GC policy. The remembered set is a list of objects in the tenure area of the heap that have references to objects in the new area.</p>
-<h2 id="syntax">Syntax</h2>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Effect</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-Xmr&lt;size&gt;</code></td>
-<td>Set initial size</td>
-<td>16 K</td>
-</tr>
-<tr>
-<td><code>-Xmrx&lt;size&gt;</code></td>
-<td>Set maximium size</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>See <a href="../x_jvm_commands/">Using -X command-line options</a> for more information about the <code>&lt;size&gt;</code> parameter.</p>
-<p>This option applies only to the <code>gencon</code> GC policy.</p>
-<!-- ==== END OF TOPIC ==== xmr.md ==== -->
-<!-- ==== END OF TOPIC ==== xmrx.md ==== -->
+<h1 id="-xrunjdwp">-Xrunjdwp</h1>
+<p>The <code>-Xrunjdwp</code> option enables the Java&trade; Debug Wire Protocol (JDWP) agent in the VM. The JDWP agent provides a connection point for the debugger to debug a Java application in that VM.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Note:</strong> You can enable the JDWP support on Checkpoint/Restore In Userspace (CRIU) restore by specifying the following command-line options pre-checkpoint:</p>
+<ul>
+<li><code>-Xrunjdwp</code></li>
+<li><code>-agentlib:jdwp</code></li>
+<li><code>-agentpath:/path/to/libjdwp.so</code></li>
+</ul>
+<!-- - In OpenJ9, instead of specifying `-Xrunjdwp`, `-agentlib:jdwp`, or `-agentpath:/path/to/libjdwp.so` as command-line options pre-checkpoint, you can add these command-line options in a restore option file and specify it by using the `CRIUSupport.registerRestoreOptionsFile` API when you restore a checkpoint image. [To be added in the next release when the -XX:debugOnRestore option is used in liberty]-->
+
+<h2 id="parameters">Parameters</h2>
+<p>These parameters are applicable for both the <code>-Xrunjdwp</code> and <code>-agentlib:jdwp</code> options.</p>
+<h3 id="address"><code>address</code></h3>
+<pre><code>    -Xrunjdwp:address=&lt;value&gt;
+</code></pre>
+<dl>
+<dd>Specifies the <em>transport</em> address for the connection. If <a href="#server"><code>server=y</code></a> and <code>address</code> is specified, the VM listens for a connection at this address. If <code>server=y</code> and <code>address</code> is not specified, the VM chooses a <a href="#transport"><code>transport</code></a> address to listen for a debugger application. If <code>server=n</code>, the <code>address</code> parameter is mandatory. The VM attempts to attach to the debugger application at the specified address.</dd>
+</dl>
+<h3 id="help"><code>help</code></h3>
+<pre><code>    -Xrunjdwp:help
+</code></pre>
+<dl>
+<dd>Prints a brief help message that describes all the available options for the <code>-Xrunjdwp</code> option and exits the VM.</dd>
+</dl>
+<h3 id="launch"><code>launch</code></h3>
+<pre><code>    -Xrunjdwp:launch=&lt;path&gt;
+</code></pre>
+<dl>
+<dd>Starts the debugger process from the specified path. The values of the <code>address</code> and <code>transport</code> parameters, if available, are also added to the specified path. These parameters help the debugger to connect to the target VM. This option is used with <code>onthrow</code>, <code>onuncaught</code> or both the parameters to provide <em>Just-In-Time debugging</em> in which a debugger process is started when a particular event occurs in this VM.</dd>
+</dl>
+<h3 id="onthrow"><code>onthrow</code></h3>
+<pre><code>    -Xrunjdwp:onthrow=&lt;exception&gt;
+</code></pre>
+<dl>
+<dd>Delays the debugging process until the specified exception is thrown in this VM. The JDWP agent attaches to the VM and starts debugging when the exception is thrown.</dd>
+</dl>
+<h3 id="onuncaught"><code>onuncaught</code></h3>
+<pre><code>    -Xrunjdwp:onuncaught=[y|n]
+</code></pre>
+<dl>
+<dd>If <code>onuncaught=y</code>, delays the debugging process until an uncaught exception is thrown in this VM.</dd>
+</dl>
+<h3 id="server"><code>server</code></h3>
+<pre><code>    -Xrunjdwp:server=[y|n]
+</code></pre>
+<dl>
+<dd>If <code>server=n</code>, the VM does not listen to any incoming debugger connection and it attempts to attach to the local debugger application at the specified <a href="#address"><code>address</code></a>. In this case, specifying the<code>address</code> parameter is mandatory. If <code>server=y</code>, the target VM acts as a server listening for an incoming debugger connection through the JDWP agent. If <code>server=y</code> and <code>address</code> is specified, the VM listens for a debugger connection at this address. If <code>server=y</code> and <code>address</code> is not specified, the VM selects a <a href="#transport"><code>transport</code></a> address at which to listen for a debugger application.</dd>
+</dl>
+<h3 id="suspend"><code>suspend</code></h3>
+<pre><code>    -Xrunjdwp:suspend=[y|n]
+</code></pre>
+<dl>
+<dd>If <code>suspend=y</code>, the VM suspends running of the target Java application until the debugger is attached successfully and is ready for debugging. If <code>suspend=n</code>, the VM does not suspend running of the target Java application while the debug connection is established. The VM continues running the application as normal. The debugger can attach to the running application at any time.</dd>
+<dd>When a debug session is restored from a checkpoint, the VM suspends the running of the Java application that was being debugged even if <code>suspend=n</code>. The VM waits for the debugger to send a <code>Resume</code> request before it restarts the Java application to continue the debug session. When the debug session is complete, the debugger disconnects from the JDWP agent, and the agent resumes normal running of the Java application.</dd>
+</dl>
+<h3 id="suspendonrestore"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <code>suspendOnRestore</code></h3>
+<p><strong>(Linux&reg; x86, Linux on POWER&reg; (Little Endian), Linux on AArch64, and Linux on IBM Z&reg; only)</strong></p>
+<p><code>suspendOnRestore</code> is an OpenJ9 specific parameter and is similar to the <code>suspend</code> parameter. But unlike <code>suspend</code>, this parameter only affects a VM on restore.</p>
+<pre><code>    -Xrunjdwp:suspendOnRestore=[y|n]
+</code></pre>
+<dl>
+<dd>If <code>suspendOnRestore=y</code>, the VM suspends running of the target Java application until the debugger is attached successfully and is ready for debugging on CRIU restore. If <code>suspendOnRestore=n</code>, the VM does not suspend the running of the target Java application while the debug connection is established on restore.</dd>
+<dd>If <a href="#suspend"><code>suspend=y</code></a> is set pre-checkpoint, the VM suspends the application pre-checkpoint, and on restore. The application remains suspended when you restore the VM even if you specify <code>suspend=n</code> pre-checkpoint. Therefore, to ensure that the application is not suspended on restore, you can use the <code>suspendOnRestore=n</code> setting. <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></dd>
+</dl>
+<h3 id="timeout"><code>timeout</code></h3>
+<pre><code>    -Xrunjdwp:timeout=&lt;milliseconds&gt;
+</code></pre>
+<dl>
+<dd>If <a href="#server"><code>server=y</code></a>, the <code>timeout</code> parameter specifies the time the VM waits for the debugger to attach before the VM ends the connection. If <code>server=n</code>, the parameter specifies the time until the VM tries attaching to the debugger before it ends the connection.</dd>
+</dl>
+<h3 id="transport"><code>transport</code></h3>
+<pre><code>    -Xrunjdwp:transport=&lt;value&gt;
+</code></pre>
+<dl>
+<dd>Specifies the name of the transport to use in connecting to the debugger application. Transport refers to a method of communication between a debugger and the VM that is being debugged. <code>&lt;value&gt;</code> can be <code>dt_socket</code> or <code>dt_shmem</code>. <code>dt_socket</code> or the socket transport relies on TCP sockets that listen on a port for debugger connections, and uses that connection to transfer the debug session packets. This transport mechanism enables debugging remote target VM application. <code>dt_shmem</code> or the shared memory transport uses shared memory to send and receive packets. This transport mechanism enables debugging only locally running applications.</dd>
+</dl>
+<p>For more information, see <a href="https://docs.oracle.com/en/java/javase/11/docs/specs/jpda/conninv.html#jdwpoptions">-agentlib:jdwp and -Xrunjdwp sub-options</a>.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../criusupport/">CRIU support</a></li>
+<li><a href="../version0.48/#jdwp-support-on-checkpointrestore-in-userspace-criu-restore-is-enabled">What's new in version 0.48.0</a></li>
+</ul>
+<!-- ==== END OF TOPIC ==== xrunjdwp.md ==== -->
 
 
 
