@@ -360,6 +360,7 @@ nav:
             - "-Xoptionsfile"                                                    : xoptionsfile.md
             - "-Xquickstart"                                                     : xquickstart.md
             - "-Xrs"                                                             : xrs.md
+            - "-Xrunjdwp"                                                        : xrunjdwp.md
             - "-XsamplingExpirationTime"                                         : xsamplingexpirationtime.md
             - "-Xscdmx"                                                          : xscdmx.md
             - "-Xscmaxaot"                                                       : xscminaot.md                       # redirect
