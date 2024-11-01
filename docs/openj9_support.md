@@ -44,13 +44,13 @@ columns will be removed over time.
 
 | OpenJ9 release | Release date  | JDK8 (LTS) | JDK11 (LTS) | JDK17 (LTS) | JDK21 (LTS) | JDK22 | JDK23 |
 |----------------|---------------|------------|-------------|-------------|-------------|-------|-------|
-| 0.43.0         | Feb 2024   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>       |         |         |
 | 0.44.0         | May 2024   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>       |        |           |
 | 0.45.0         | Jun 2024    |  :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>     |    :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>       |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>          |            |
 | 0.46.0         | Aug 2024   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>       |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>          |             |
 | 0.46.1         | Sep 2024   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>       |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>          |             |
 | 0.47.0         | Sep 2024 (2)   |  :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>     |    :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>       |    :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>          |     :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>              |
-| 0.48.0         | Nov 2024 (1)   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>       |     :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>              |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>             |
+| 0.48.0         | Nov 2024   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>       |     :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>              |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>             |
+| 0.49.0         | Feb 2025 (1)   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>       |     :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>              |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>             |
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
@@ -96,8 +96,6 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
 
 | macOS&reg;                                | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| OS X&reg; 10.10.0+                        | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| macOS 11                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 12                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 13                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 14                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
@@ -141,8 +139,6 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 
 | macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                              |
 |---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
-| OS X 10.11+   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   |
-| macOS 11      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 12      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 13      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 14      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
@@ -182,8 +178,6 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 
 | macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                              |
 |---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
-| macOS 10.14+  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   |
-| macOS 11      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 12      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 13      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 14      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
@@ -223,12 +217,10 @@ OpenJDK 21 and later binaries are expected to function on the minimum operating 
 
 | macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                              |
 |---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
-| macOS 11      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 12      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 13      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 14      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** OpenJDK 22 is supported only on macOS 12-14.
 
 | AIX                                       | ppc64                                                                                |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
