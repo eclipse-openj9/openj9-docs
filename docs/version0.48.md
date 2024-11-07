@@ -35,6 +35,8 @@ The following new features and notable changes since version 0.47.0 are included
 
 Eclipse OpenJ9&trade; release 0.48.0 supports OpenJDK 8, 11, 17, 21, and 23.
 
+macOS 11 is out of support. macOS 11 and earlier versions are removed from the list of supported platforms.
+
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
 ### Loading of the `zlibnx` library on AIX is disabled by default
@@ -47,7 +49,7 @@ For more information, see [`-XX:[+|-]UseZlibNX`](xxusezlibnx.md).
 
 You can use the options that enable the JDWP support both on CRIU pre-checkpoint, and on restore as well.
 
-Also, a new parameter `suspendOnRestore` for the `Xrunjdwp` option is added to control the suspension of the target VM application on restore. This option is specific to OpenJ9. You can use the `suspendOnRestore=n` setting to prevent the suspension of the target application.
+Also, a new parameter `suspendOnRestore` for the `-Xrunjdwp` option is added to control the suspension of the target VM application on restore. This option is specific to OpenJ9. You can use the `suspendOnRestore=n` setting to prevent the suspension of the target application.
 
 For more information, see [`-Xrunjdwp`](xrunjdwp.md). ![End of content that applies to Java 11 (LTS) and later](cr/java_close.png)
 
