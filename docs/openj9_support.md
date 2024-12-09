@@ -96,7 +96,6 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
 
 | macOS&reg;                                | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| macOS 12                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 13                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 14                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
@@ -139,7 +138,6 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 
 | macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                              |
 |---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
-| macOS 12      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 13      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 14      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
@@ -178,7 +176,6 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 
 | macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                              |
 |---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
-| macOS 12      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 13      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 14      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
@@ -217,7 +214,6 @@ OpenJDK 21 and later binaries are expected to function on the minimum operating 
 
 | macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                              |
 |---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
-| macOS 12      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 13      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | macOS 14      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
