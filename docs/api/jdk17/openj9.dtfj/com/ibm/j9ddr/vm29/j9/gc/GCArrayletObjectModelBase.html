@@ -15,6 +15,7 @@
 <meta name="keywords" content="arrayletLeafSize">
 <meta name="keywords" content="arrayletLeafLogSize">
 <meta name="keywords" content="arrayletLeafSizeMask">
+<meta name="keywords" content="enableVirtualLargeObjectHeap">
 <meta name="keywords" content="getSpineSize()">
 <meta name="keywords" content="getSizeInElements()">
 <meta name="keywords" content="getHeaderSize()">
@@ -23,8 +24,12 @@
 <meta name="keywords" content="getDataSizeInBytes()">
 <meta name="keywords" content="getArrayoidPointer()">
 <meta name="keywords" content="getDataPointerForContiguous()">
+<meta name="keywords" content="hasCorrectDataAddrPointer()">
 <meta name="keywords" content="getHashcodeOffset()">
 <meta name="keywords" content="isInlineContiguousArraylet()">
+<meta name="keywords" content="isArrayletDataAdjacentToHeader()">
+<meta name="keywords" content="isIndexableObjectOffHeap()">
+<meta name="keywords" content="isAddressWithinHeap()">
 <meta name="keywords" content="shouldAlignSpineDataSection()">
 <meta name="keywords" content="getElementAddress()">
 <meta name="keywords" content="numArraylets()">
@@ -137,9 +142,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>protected <a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#arrayletRangeTop" class="member-name-link">arrayletRangeTop</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color"><code><a href="#largestDesirableArraySpineSize" class="member-name-link">largestDesirableArraySpineSize</a></code></div>
+<div class="col-first even-row-color"><code>protected boolean</code></div>
+<div class="col-second even-row-color"><code><a href="#enableVirtualLargeObjectHeap" class="member-name-link">enableVirtualLargeObjectHeap</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#largestDesirableArraySpineSize" class="member-name-link">largestDesirableArraySpineSize</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -268,30 +276,56 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Get the total footprint of an object, in bytes, including the object header and all data.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">hasCorrectDataAddrPointer</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAddressWithinHeap(com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">isAddressWithinHeap</a><wbr>(<a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Check if the given address is within the heap.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isInlineContiguousArraylet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isArrayletDataAdjacentToHeader(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isArrayletDataAdjacentToHeader</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if the arraylet data of arrayPtr is adjacent to its header.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isArrayletDataAdjacentToHeader(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">isArrayletDataAdjacentToHeader</a><wbr>(<a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;dataSizeInBytes)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determine if the arraylet data of arrayPtr is adjacent to its header.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isIndexableObjectOffHeap(com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">isIndexableObjectOffHeap</a><wbr>(<a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;indexableDataAddr,
+ <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;dataSizeInBytes)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Check if the given indexable object is off heap.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isInlineContiguousArraylet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Check the given indexable object is inline contiguous</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#numArraylets(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">numArraylets</a><wbr>(<a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;unadjustedDataSizeInBytes)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#numArraylets(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">numArraylets</a><wbr>(<a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;unadjustedDataSizeInBytes)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return the total number of arraylets for an indexable object with a size of dataInSizeByte, including a (possibly empty) leaf in the spine.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#numExternalArraylets(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">numExternalArraylets</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#numExternalArraylets(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">numExternalArraylets</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return the total number of arraylets for an indexable object, not including the arraylet in the spine.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldAlignSpineDataSection(com.ibm.j9ddr.vm29.pointer.generated.J9ArrayClassPointer)" class="member-name-link">shouldAlignSpineDataSection</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ArrayClassPointer&nbsp;clazz)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldAlignSpineDataSection(com.ibm.j9ddr.vm29.pointer.generated.J9ArrayClassPointer)" class="member-name-link">shouldAlignSpineDataSection</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ArrayClassPointer&nbsp;clazz)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Determines whether or not a spine that represents an object of this
  class should have its data section aligned.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldAlignSpineDataSection(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">shouldAlignSpineDataSection</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldAlignSpineDataSection(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">shouldAlignSpineDataSection</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Determines whether or not a spine that represents an object of this
  class should have its data section aligned.</div>
 </div>
@@ -355,6 +389,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="arrayletLeafSizeMask">
 <h3>arrayletLeafSizeMask</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">arrayletLeafSizeMask</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="enableVirtualLargeObjectHeap">
+<h3>enableVirtualLargeObjectHeap</h3>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">enableVirtualLargeObjectHeap</span></div>
 </section>
 </li>
 </ul>
@@ -576,6 +616,23 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
+<h3>hasCorrectDataAddrPointer</h3>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasCorrectDataAddrPointer</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</span>
+                                           throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arrayPtr</code> - array object who's data address validity we are checking</dd>
+<dt>Returns:</dt>
+<dd>true if the data address of arrayPtr is valid, false otherwise</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing the indexable object dataAddr field</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/NoSuchFieldException.html" title="class or interface in java.lang" class="external-link" target="_blank">NoSuchFieldException</a></code> - if the indexable object dataAddr field does not exist on the build that generated the core file</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getHashcodeOffset(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
 <h3>getHashcodeOffset</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">getHashcodeOffset</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</span>
@@ -602,6 +659,72 @@ loadScripts(document, 'script');</script>
 <dd>true of array is inline contiguous</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isArrayletDataAdjacentToHeader(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
+<h3>isArrayletDataAdjacentToHeader</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isArrayletDataAdjacentToHeader</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</span>
+                                       throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<div class="block">Determine if the arraylet data of arrayPtr is adjacent to its header.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arrayPtr</code> - array object</dd>
+<dt>Returns:</dt>
+<dd>true if the arrayPtr has its data adjacent to its header</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - If there's a problem accessing the indexable object dataAddr field</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isArrayletDataAdjacentToHeader(com.ibm.j9ddr.vm29.types.UDATA)">
+<h3>isArrayletDataAdjacentToHeader</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isArrayletDataAdjacentToHeader</span><wbr><span class="parameters">(<a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;dataSizeInBytes)</span>
+                                       throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<div class="block">Determine if the arraylet data of arrayPtr is adjacent to its header.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arrayPtr</code> - array object</dd>
+<dt>Returns:</dt>
+<dd>true if the arrayPtr has its data adjacent to its header</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing the indexable object dataAddr field</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isIndexableObjectOffHeap(com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.types.UDATA)">
+<h3>isIndexableObjectOffHeap</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isIndexableObjectOffHeap</span><wbr><span class="parameters">(<a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;indexableDataAddr,
+ <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;dataSizeInBytes)</span>
+                                 throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<div class="block">Check if the given indexable object is off heap.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>indexableDataAddr</code> - indexable object to check if it is off heap</dd>
+<dd><code>dataSizeInBytes</code> - the size of indexable object</dd>
+<dt>Returns:</dt>
+<dd>true if the given indexable object is off heap</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing card table heap fields</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isAddressWithinHeap(com.ibm.j9ddr.vm29.pointer.VoidPointer)">
+<h3>isAddressWithinHeap</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAddressWithinHeap</span><wbr><span class="parameters">(<a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</span>
+                            throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<div class="block">Check if the given address is within the heap.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>address</code> - Address to check if it is within the heap</dd>
+<dt>Returns:</dt>
+<dd>true if the given address is within the heap</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing card table heap fields</dd>
 </dl>
 </section>
 </li>
