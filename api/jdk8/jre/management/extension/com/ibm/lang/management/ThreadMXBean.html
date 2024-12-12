@@ -150,7 +150,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/jre/api/management/extens
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>long[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/ibm/lang/management/ThreadMXBean.html#getNativeThreadIds-long:A-">getNativeThreadIds</a></span>(long[]&nbsp;threadIDs)</code>
-<div class="block">Fetches an array of the native (operating system assigned) identifiers 
+<div class="block">Fetches an array of the native (operating system assigned) identifiers
  corresponding to unique TIDs (as returned by java/lang/Thread.getId()) specified to it.</div>
 </td>
 </tr>
@@ -199,7 +199,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/jre/api/management/extens
 <pre>long[]&nbsp;getNativeThreadIds(long[]&nbsp;threadIDs)
                    throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang">IllegalArgumentException</a>,
                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang">SecurityException</a></pre>
-<div class="block">Fetches an array of the native (operating system assigned) identifiers 
+<div class="block">Fetches an array of the native (operating system assigned) identifiers
  corresponding to unique TIDs (as returned by java/lang/Thread.getId()) specified to it.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -211,7 +211,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/jre/api/management/extens
                         element of the returned array.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang">IllegalArgumentException</a></code> - is thrown if any of the thread identifiers passed is invalid (&lt;=0).</dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang">SecurityException</a></code> - is thrown if the caller does not have sufficient permissions 
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang">SecurityException</a></code> - is thrown if the caller does not have sufficient permissions
  (ManagementPermission("monitor"))</dd>
 </dl>
 </li>
@@ -226,7 +226,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/jre/api/management/extens
                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang">IllegalArgumentException</a>,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang">SecurityException</a></pre>
 <div class="block">Find the native (operating system assigned) thread identifiers corresponding
- to a unique TID (as returned by java/lang/Thread.getId()). When querying multiple threadIDs, 
+ to a unique TID (as returned by java/lang/Thread.getId()). When querying multiple threadIDs,
  consider using getNativeThreadIds(long[]) as it is more efficient than getNativeThreadId().</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -236,7 +236,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/jre/api/management/extens
                         ID is no longer alive or does not exist, -1 is returned.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" target="_blank" title="class or interface in java.lang">IllegalArgumentException</a></code> - is thrown if the thread identifier passed is invalid (&lt;=0).</dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang">SecurityException</a></code> - is thrown if the caller does not have sufficient permissions 
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang">SecurityException</a></code> - is thrown if the caller does not have sufficient permissions
  (ManagementPermission("monitor"))</dd>
 </dl>
 </li>
@@ -256,7 +256,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/jre/api/management/extens
  threads in the virtual machine during the time it is invoked.
  Fetches an array of ExtendedThreadInfo objects that provide native thread
  identifiers along with java.lang.management.ThreadInfo object representing the thread.
- Consider using dumpAllExtendedThreads() in place of dumpAllThreads() as it provides 
+ Consider using dumpAllExtendedThreads() in place of dumpAllThreads() as it provides
  additional thread identification information in an efficient manner.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -269,11 +269,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/jre/api/management/extens
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Array of ExtendedThreadInfo objects.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang">SecurityException</a></code> - is thrown if the caller does not have sufficient permissions 
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/SecurityException.html?is-external=true" target="_blank" title="class or interface in java.lang">SecurityException</a></code> - is thrown if the caller does not have sufficient permissions
  (ManagementPermission("monitor"))</dd>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/UnsupportedOperationException.html?is-external=true" target="_blank" title="class or interface in java.lang">UnsupportedOperationException</a></code> - is thrown if the JVM does not support monitoring
  object monitor usage or ownable synchronizer usage, even as it has been specified.</dd>
-<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InternalError.html?is-external=true" target="_blank" title="class or interface in java.lang">InternalError</a></code> - is thrown in case an error occurs while fetching thread information, 
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/InternalError.html?is-external=true" target="_blank" title="class or interface in java.lang">InternalError</a></code> - is thrown in case an error occurs while fetching thread information,
  typically, an internal error resulting from an inconsistency in the class library.</dd>
 </dl>
 </li>

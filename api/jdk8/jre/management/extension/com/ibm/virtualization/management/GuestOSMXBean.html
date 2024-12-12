@@ -146,7 +146,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
 	if (true != mbeanServer.isRegistered(mxbeanName)) {
 	   // GuestOSMXBean not registered
 	}
-	GuestOSMXBean guestBean = JMX.newMXBeanProxy(mbeanServer, mxbeanName, GuestOSMXBean.class); 
+	GuestOSMXBean guestBean = JMX.newMXBeanProxy(mbeanServer, mxbeanName, GuestOSMXBean.class);
    } catch (Exception e) {
 	// Exception Handling
    }
@@ -259,7 +259,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
 <pre><a href="../../../../com/ibm/virtualization/management/GuestOSProcessorUsage.html" title="class in com.ibm.virtualization.management">GuestOSProcessorUsage</a>&nbsp;retrieveProcessorUsage()
                                       throws <a href="../../../../com/ibm/virtualization/management/GuestOSInfoRetrievalException.html" title="class in com.ibm.virtualization.management">GuestOSInfoRetrievalException</a></pre>
 <div class="block">Function instantiates a <a href="../../../../com/ibm/virtualization/management/GuestOSProcessorUsage.html" title="class in com.ibm.virtualization.management"><code>GuestOSProcessorUsage</code></a> object and populates it with the
- current snapshot of Processor Usage statistics of the Guest as seen by the Hypervisor. 
+ current snapshot of Processor Usage statistics of the Guest as seen by the Hypervisor.
  The statistics are an aggregate across all physical CPUs assigned to the Guest by the Hypervisor.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -312,7 +312,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/management/
 <dd>The new <a href="../../../../com/ibm/virtualization/management/GuestOSMemoryUsage.html" title="class in com.ibm.virtualization.management"><code>GuestOSMemoryUsage</code></a> object.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../../com/ibm/virtualization/management/GuestOSInfoRetrievalException.html" title="class in com.ibm.virtualization.management">GuestOSInfoRetrievalException</a></code> - if it failed to obtain usage statistics.
- 
+
  <p>In case of an exception, the handler code can use toString() on the exception code
  to obtain a description of the exception.</dd>
 </dl>
