@@ -133,17 +133,17 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">DecimalData</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a></span></div>
 <div class="block">Routines to convert between decimal data types stored in byte arrays and Java binary types.
- 
+
  <p>
  All the converter routines require the precision of the decimal value to convert, which represents the number of
  decimal digits in the decimal value, not including the sign.
  </p>
- 
+
  <p>
  Unicode Decimal values can be represented as either a char array or as a byte array where every Unicode character is
  represented by a pair of adjacent bytes.
  </p>
- 
+
  <p>
  For embedded sign nibbles (4 bit integers representing values between <code>0x0</code> and <code>0xF</code>
  inclusive) in External Decimal or Packed Decimal data, <code>0xB</code> and <code>0xD</code> represent a negative
@@ -152,7 +152,7 @@ loadScripts(document, 'script');</script>
  <code>0xC</code> if the result is positive, and a preferred negative sign code of <code>0xD</code> if the result is
  negative. All values between <code>0x0</code> and <code>0xF</code> inclusive are interpreted as valid sign codes.
  </p>
- 
+
  <p>
  This library has full support for signed integers but only limited support for scale points (decimals). Scale points
  and other unrecognized characters found in input External, Unicode, or Packed Decimal byte arrays are not supported,
@@ -234,7 +234,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;decimalType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts a BigDecimal value to an External Decimal in a byte array
- 
+
  Overflow can happen if the BigDecimal does not fit into the result byte array.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
@@ -245,7 +245,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;checkOverflow)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts a BigDecimal into a Packed Decimal in a byte array
- 
+
  Overflow can happen if the BigDecimal does not fit into the result byte array.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
@@ -257,7 +257,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;decimalType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts a BigDecimal value to a Unicode Decimal in a char array
- 
+
  Overflow can happen if the BigDecimal does not fit into the result char array.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
@@ -269,7 +269,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;decimalType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts a BigInteger value into an External Decimal in a byte array
- 
+
  Overflow can happen if the BigInteger does not fit into the byte array.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
@@ -280,7 +280,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;checkOverflow)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts a BigInteger value into a Packed Decimal in a byte array
- 
+
  Overflow can happen if the BigInteger does not fit into the byte array.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
@@ -292,7 +292,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;decimalType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts a BigInteger value to a Unicode Decimal in a char array
- 
+
  Overflow can happen if the BigInteger does not fit into the char array.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html" title="class or interface in java.math" class="external-link" target="_blank">BigDecimal</a></code></div>
@@ -370,7 +370,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;unicodeType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts an integer to a Unicode Decimal in a char array
- 
+
  Overflow can happen if the resulting External Decimal value does not fit into the char array, given the offset and
  precision.</div>
 </div>
@@ -402,7 +402,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;decimalType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Converts a long to a Unicode Decimal in a char array
- 
+
  Overflow can happen if the resulting Unicode Decimal value does not fit into the char array, given its precision
  and offset .</div>
 </div>
@@ -650,7 +650,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;checkOverflow)</span></div>
 <div class="block">Converts a binary integer value into a signed Packed Decimal format. The Packed Decimal will be padded with zeros
  on the left if necessary.
- 
+
  Overflow can happen if the resulting Packed Decimal does not fit into the result byte array, given the offset and
  precision. In this case, when <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown,
  when false a truncated or invalid result is returned.</div>
@@ -680,7 +680,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;decimalType)</span></div>
 <div class="block">Converts an integer to an External Decimal in a byte array. The External Decimal will be padded with zeros on the
  left if necessary.
- 
+
  Overflow can happen if the resulting External Decimal value does not fit into the byte array, given the precision
  and offset. In this case, when <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown,
  when false a truncated or invalid result is returned.</div>
@@ -711,7 +711,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;checkoverflow,
  int&nbsp;unicodeType)</span></div>
 <div class="block">Converts an integer to a Unicode Decimal in a char array
- 
+
  Overflow can happen if the resulting External Decimal value does not fit into the char array, given the offset and
  precision. In this case, when <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown,
  when false a truncated or invalid result is returned.</div>
@@ -741,7 +741,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;checkOverflow)</span></div>
 <div class="block">Converts a binary long value into signed Packed Decimal format. The Packed Decimal will be padded with zeros on
  the left if necessary.
- 
+
  Overflow can happen if the resulting Packed Decimal does not fit into the result byte array, given the offset and
  precision . In this case, when <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown,
  when false a truncated or invalid result is returned.</div>
@@ -771,7 +771,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;decimalType)</span></div>
 <div class="block">Converts a long into an External Decimal in a byte array. The External Decimal will be padded with zeros on the
  left if necessary.
- 
+
  Overflow can happen if the External Decimal value does not fit into the byte array, given its precision and offset.
  In this case, when <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a
  truncated or invalid result is returned.</div>
@@ -801,7 +801,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;checkOverflow,
  int&nbsp;decimalType)</span></div>
 <div class="block">Converts a long to a Unicode Decimal in a char array
- 
+
  Overflow can happen if the resulting Unicode Decimal value does not fit into the char array, given its precision
  and offset . In this case, when <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown,
  when false a truncated or invalid result is returned.</div>
@@ -832,7 +832,7 @@ loadScripts(document, 'script');</script>
  Decimal is not valid then the digital part of the output will not be valid. The sign of the input Packed Decimal
  is assumed to be positive unless the sign nibble contains one of the negative sign codes, in which case the
  sign of the input Packed Decimal is interpreted as negative.
- 
+
  Overflow can happen if the Packed Decimal value does not fit into a binary integer. When
  <code>checkOverflow</code> is true overflow results in an <code>ArithmeticException</code>, when false a
  truncated or invalid result is returned.</div>
@@ -862,7 +862,7 @@ loadScripts(document, 'script');</script>
  Decimal is not valid then the digital part of the output will not be valid. The sign of the input Packed Decimal
  is assumed to be positive unless the sign nibble contains one of the negative sign codes, in which case the
  sign of the input Packed Decimal is interpreted as negative.
- 
+
  Overflow can happen if the Packed Decimal value does not fit into a binary long. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -948,7 +948,7 @@ loadScripts(document, 'script');</script>
  valid then the digital part of the output will not be valid. The sign of the input Packed Decimal is assumed to
  to be positive unless the sign nibble contains one of the negative sign codes, in which case the sign of the
  input Packed Decimal is interpreted as negative.
- 
+
  Overflow can happen if the Packed Decimal value does not fit into the BigInteger. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -979,7 +979,7 @@ loadScripts(document, 'script');</script>
  valid then the digital part of the output will not be valid. The sign of the input Packed Decimal is assumed to
  to be positive unless the sign nibble contains one of the negative sign codes, in which case the sign of the
  input Packed Decimal is interpreted as negative.
- 
+
  Overflow can happen if the Packed Decimal value does not fit into the BigDecimal. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1012,7 +1012,7 @@ loadScripts(document, 'script');</script>
  External Decimal is assumed to be positive unless the sign nibble or byte (depending on
  <code>decimalType</code>) contains one of the negative sign codes, in which case the sign of the input External
  Decimal is interpreted as negative.
- 
+
  Overflow can happen if the External Decimal value does not fit into a binary integer. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false the resulting number
  will be wrapped around starting at the minimum/maximum possible integer value.</div>
@@ -1046,7 +1046,7 @@ loadScripts(document, 'script');</script>
  is not valid then the digital part of the output will not be valid. The sign of the input External Decimal is
  assumed to be positive unless the sign nibble or byte (depending on <code>decimalType</code>) contains one of
  the negative sign codes, in which case the sign of the input External Decimal is interpreted as negative.
- 
+
  Overflow can happen if the External Decimal value does not fit into a binary long. When
  <code>checkOverflow</code> is true overflow results in an <code>ArithmeticException</code>, when false the
  resulting number will be wrapped around starting at the minimum/maximum possible long value.</div>
@@ -1108,7 +1108,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Convert an External Decimal in a byte array to a BigInteger. The sign of the input External Decimal is assumed to
  to be positive unless the sign nibble or byte (depending on <code>decimalType</code>) contains one of the
  negative sign codes, in which case the sign of the input External Decimal is interpreted as negative.
- 
+
  Overflow can happen if the External Decimal value does not fit into the BigInteger. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1143,7 +1143,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Converts an External Decimal in a byte array to a BigDecimal. The sign of the input External Decimal is assumed
  to be positive unless the sign nibble or byte (depending on <code>decimalType</code>) contains one of the
  negative sign codes, in which case the sign of the input External Decimal is interpreted as negative.
- 
+
  Overflow can happen if the External Decimal value does not fit into the BigDecimal. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1178,7 +1178,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Converts a Unicode Decimal value in a char array into a binary integer. The sign of the input Unicode Decimal is
  assumed to be positive unless the sign char contains the negative sign code, in which case the sign of the
  input Unicode Decimal is interpreted as negative.
- 
+
  Overflow can happen if the Unicode Decimal value does not fit into a binary int. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1211,7 +1211,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Converts a Unicode Decimal value in a char array into a binary long. The sign of the input Unicode Decimal is
  assumed to be positive unless the sign char contains the negative sign code, in which case the sign of the
  input Unicode Decimal is interpreted as negative.
- 
+
  Overflow can happen if the Unicode Decimal value does not fit into a binary long. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1272,7 +1272,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Convert a Unicode Decimal in a char array to a BigInteger. The sign of the input Unicode Decimal is assumed to
  be positive unless the sign byte contains the negative sign code, in which case the sign of the input Unicode
  Decimal is interpreted as negative.
- 
+
  Overflow can happen if the Unicode Decimal value does not fit into a binary long. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1307,7 +1307,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Converts a Unicode Decimal in a char array to a BigDecimal. The sign of the input Unicode Decimal is assumed to
  to be positive unless the sign byte contains the negative sign code, in which case the sign of the input Unicode
  Decimal is interpreted as negative.
- 
+
  Overflow can happen if the Unicode Decimal value does not fit into the BigDecimal. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1340,7 +1340,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;precision,
  boolean&nbsp;checkOverflow)</span></div>
 <div class="block">Converts a BigInteger value into a Packed Decimal in a byte array
- 
+
  Overflow can happen if the BigInteger does not fit into the byte array. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1369,7 +1369,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;checkOverflow,
  int&nbsp;decimalType)</span></div>
 <div class="block">Converts a BigInteger value into an External Decimal in a byte array
- 
+
  Overflow can happen if the BigInteger does not fit into the byte array. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1400,7 +1400,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;checkOverflow,
  int&nbsp;decimalType)</span></div>
 <div class="block">Converts a BigInteger value to a Unicode Decimal in a char array
- 
+
  Overflow can happen if the BigInteger does not fit into the char array. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1430,7 +1430,7 @@ loadScripts(document, 'script');</script>
  int&nbsp;precision,
  boolean&nbsp;checkOverflow)</span></div>
 <div class="block">Converts a BigDecimal into a Packed Decimal in a byte array
- 
+
  Overflow can happen if the BigDecimal does not fit into the result byte array. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1459,7 +1459,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;checkOverflow,
  int&nbsp;decimalType)</span></div>
 <div class="block">Converts a BigDecimal value to an External Decimal in a byte array
- 
+
  Overflow can happen if the BigDecimal does not fit into the result byte array. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
@@ -1490,7 +1490,7 @@ loadScripts(document, 'script');</script>
  boolean&nbsp;checkOverflow,
  int&nbsp;decimalType)</span></div>
 <div class="block">Converts a BigDecimal value to a Unicode Decimal in a char array
- 
+
  Overflow can happen if the BigDecimal does not fit into the result char array. In this case, when
  <code>checkOverflow</code> is true an <code>ArithmeticException</code> is thrown, when false a truncated or
  invalid result is returned.</div>
