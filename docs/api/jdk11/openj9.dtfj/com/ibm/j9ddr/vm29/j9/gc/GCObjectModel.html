@@ -38,6 +38,7 @@
 <meta name="keywords" content="getHeaderSize()">
 <meta name="keywords" content="getElementAddress()">
 <meta name="keywords" content="isInlineContiguousArraylet()">
+<meta name="keywords" content="hasCorrectDataAddrPointer()">
 <link rel="stylesheet" type="text/css" href="../../../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../jquery/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../jquery-ui.overrides.css" title="Style">
@@ -60,7 +61,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":9,"i2":6,"i3":6,"i4":6,"i5":6,"i6":10,"i7":10,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":10,"i21":6,"i22":6,"i23":6,"i24":6,"i25":6,"i26":6,"i27":6,"i28":10,"i29":6,"i30":6,"i31":6};
+var data = {"i0":6,"i1":9,"i2":6,"i3":6,"i4":6,"i5":6,"i6":10,"i7":10,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6,"i20":10,"i21":6,"i22":6,"i23":6,"i24":10,"i25":6,"i26":6,"i27":6,"i28":6,"i29":10,"i30":6,"i31":6,"i32":6};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -419,53 +420,60 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 </td>
 </tr>
 <tr id="i24" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">hasCorrectDataAddrPointer</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></th>
+<td class="colLast">
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+</td>
+</tr>
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isDarkMatterObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an object is dark matter, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isHoleObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an object is a hole, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">isIndexable</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an class is indexable, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isIndexable</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an object is indexable, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">isInlineContiguousArraylet</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isOld(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isOld</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an object is old, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isRemembered(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isRemembered</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
 <div class="block">Returns TRUE if an object is remembered, FALSE otherwise.</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>abstract boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">isSingleSlotHoleObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></th>
 <td class="colLast">
@@ -1140,7 +1148,7 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 <a id="isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>isInlineContiguousArraylet</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;isInlineContiguousArraylet&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)
@@ -1150,6 +1158,25 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 <dd><code>arrayPtr</code> - array object we are checking for isInlineContiguousArraylet</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - If there's a problem accessing the layout of the indexable object</dd>
+</dl>
+</li>
+</ul>
+<a id="hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>hasCorrectDataAddrPointer</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;hasCorrectDataAddrPointer&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)
+                                  throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>arrayPtr</code> - array object who's data address validity we are checking</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the data address of arrayPtr is valid, false otherwise</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing the indexable object dataAddr field</dd>
 </dl>
 </li>
 </ul>

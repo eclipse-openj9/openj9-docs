@@ -145,15 +145,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a></pre>
 <div class="block">Conversion routines to unmarshall Java binary types (short, int, long, float,
  double) from byte arrays.
- 
+
  <p>
  With sign extensions enabled, the marshalled data is interpreted as signed
  and the data will be appropriately converted into the return type container.
  With sign extensions disabled, unfilled bits in the container will be set to
- zero.  For example, <code>-1</code> as one signed byte is <code>0xFF</code>.  
- Using <code>readShort</code> with <code>signExtend</code> true, the resultant 
- short will contain <code>0xFFFF</code>, which is <code>-1</code> in Java's 
- signed format.  With <code>signExtend</code> false, the resultant short will 
+ zero.  For example, <code>-1</code> as one signed byte is <code>0xFF</code>.
+ Using <code>readShort</code> with <code>signExtend</code> true, the resultant
+ short will contain <code>0xFFFF</code>, which is <code>-1</code> in Java's
+ signed format.  With <code>signExtend</code> false, the resultant short will
  contain <code>0x00FF</code>, which is <code>255</code>.
  </p></div>
 </li>

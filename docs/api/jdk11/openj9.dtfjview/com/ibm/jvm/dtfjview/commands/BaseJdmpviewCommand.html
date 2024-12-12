@@ -164,14 +164,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public abstract class <span class="typeNameLabel">BaseJdmpviewCommand</span>
 extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/commands/BaseCommand.html" title="class in com.ibm.java.diagnostics.utils.commands">BaseCommand</a></pre>
-<div class="block">This the base command for all jdmpview commands. It ensures consistent 
+<div class="block">This the base command for all jdmpview commands. It ensures consistent
  behaviour with the legacy commands without breaking the generic command
  encapsulation.
- 
+
  There are a number of methods which allow DTFJ objects to be consistently
  displayed across different plugins e.g. getClassInfo(). Where the method
- name starts with getXYZ the output will be returned for further processing, 
- however where the method starts with writeXYZ then the output is written 
+ name starts with getXYZ the output will be returned for further processing,
+ however where the method starts with writeXYZ then the output is written
  immediately to the command's print stream.</div>
 </li>
 </ul>
@@ -313,7 +313,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
            <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/IContext.html" title="interface in com.ibm.java.diagnostics.utils">IContext</a>&nbsp;context,
            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)</code></th>
 <td class="colLast">
-<div class="block">Common processing to initialize the command and make the porting of 
+<div class="block">Common processing to initialize the command and make the porting of
  existing jdmpview commands easier.</div>
 </td>
 </tr>
@@ -328,7 +328,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toHexString(byte)">toHexString</a></span>&#8203;(byte&nbsp;num)</code></th>
 <td class="colLast">
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 </td>
 </tr>
@@ -336,7 +336,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toHexString(int)">toHexString</a></span>&#8203;(int&nbsp;num)</code></th>
 <td class="colLast">
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 </td>
 </tr>
@@ -344,7 +344,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toHexString(long)">toHexString</a></span>&#8203;(long&nbsp;num)</code></th>
 <td class="colLast">
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 </td>
 </tr>
@@ -352,7 +352,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toHexString(short)">toHexString</a></span>&#8203;(short&nbsp;num)</code></th>
 <td class="colLast">
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 </td>
 </tr>
@@ -513,7 +513,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
                                  <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/IContext.html" title="interface in com.ibm.java.diagnostics.utils">IContext</a>&nbsp;context,
                                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)
                           throws <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/commands/CommandException.html" title="class in com.ibm.java.diagnostics.utils.commands">CommandException</a></pre>
-<div class="block">Common processing to initialize the command and make the porting of 
+<div class="block">Common processing to initialize the command and make the porting of
  existing jdmpview commands easier.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -586,7 +586,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;handleException&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Throwable</a>&nbsp;cause)</pre>
 <div class="block">Lots of DTFJ methods will throw a standard set of exceptions such as corrupt data
  or data unavailable. This method provides a central point for handling these exceptions
- and attempts to provide more context as to whether or not this is an expected occurrence 
+ and attempts to provide more context as to whether or not this is an expected occurrence
  for the artifact type under analysis.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -619,7 +619,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
 <li class="blockList">
 <h4>toHexString</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;toHexString&#8203;(long&nbsp;num)</pre>
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -636,7 +636,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
 <li class="blockList">
 <h4>toHexString</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;toHexString&#8203;(short&nbsp;num)</pre>
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -653,7 +653,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
 <li class="blockList">
 <h4>toHexString</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;toHexString&#8203;(int&nbsp;num)</pre>
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -670,7 +670,7 @@ extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/co
 <li class="blockList">
 <h4>toHexString</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;toHexString&#8203;(byte&nbsp;num)</pre>
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>

@@ -466,11 +466,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <pre class="methodSignature">public&nbsp;boolean&nbsp;primeRecord&#8203;(<a href="TraceFile.html" title="class in com.ibm.jvm.format">TraceFile</a>&nbsp;traceFile)
                     throws <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">IOException</a></pre>
 <div class="block">primeRecord readies this UtTraceRecord to have its tracepoint data read.
- 
+
  Each tracepoint's length field is at the end of the tracepoint, so the tracepoints are
- formatted backwards out of the record. To enable forward iteration, the whole record 
+ formatted backwards out of the record. To enable forward iteration, the whole record
  must be formatted into a queue, which is then iterated over in reverse order.
- 
+
  The record should already have been primed with e.g. it's location in the tracefile
  through it's constructor.</div>
 <dl>
