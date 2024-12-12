@@ -744,7 +744,7 @@ loadScripts(document, 'script');</script>
  indexes from the end of the data. This is primarily because it's hard
  to be sure where the start of the data is in relation to the bytes we
  know we can modify, i.e. those bytes that are guarded.
- 
+
  put(data, -1) will insert the bytes in data in the last but one
  position of the stream, moving the last byte in the stream out by
  data.length and increase the count of guarded bytes by data.length</div>
