@@ -973,6 +973,13 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">OptInfo.</span><code><a href="../vm29/j9/OptInfo.html#getLineNumberForROMClass(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">getLineNumberForROMClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method,
  <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;relativePC)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">OptInfo.</span><code><a href="../vm29/j9/OptInfo.html#getLoadableDescriptorAtIndex(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer,int)" class="member-name-link">getLoadableDescriptorAtIndex</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass,
+ int&nbsp;index)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static int</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">OptInfo.</span><code><a href="../vm29/j9/OptInfo.html#getLoadableDescriptorsCount(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">getLoadableDescriptorsCount</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectMonitorPointer</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">ObjectAccessBarrier.</span><code><a href="../vm29/j9/ObjectAccessBarrier.html#getLockword(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getLockword</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
 <div class="col-last even-row-color">
@@ -1036,13 +1043,6 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">OptInfo.</span><code><a href="../vm29/j9/OptInfo.html#getPermittedSubclassNameAtIndex(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer,int)" class="member-name-link">getPermittedSubclassNameAtIndex</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass,
- int&nbsp;index)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static int</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">OptInfo.</span><code><a href="../vm29/j9/OptInfo.html#getPreloadClassCount(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">getPreloadClassCount</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">OptInfo.</span><code><a href="../vm29/j9/OptInfo.html#getPreloadClassNameAtIndex(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer,int)" class="member-name-link">getPreloadClassNameAtIndex</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass,
  int&nbsp;index)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
@@ -1133,268 +1133,273 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Returns TRUE if an object has been moved after being hashed, FALSE otherwise.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">HashTable.HashFunction.</span><code><a href="../vm29/j9/HashTable.HashFunction.html#hash(StructType)" class="member-name-link">hash</a><wbr>(<a href="../vm29/j9/HashTable.HashFunction.html" title="type parameter in HashTable.HashFunction">StructType</a>&nbsp;entry)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">JITLook.</span><code><a href="../vm29/j9/JITLook.html#hash_jit_artifact_search(com.ibm.j9ddr.vm29.pointer.generated.J9JITHashTablePointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">hash_jit_artifact_search</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITHashTablePointer&nbsp;table,
- <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;searchValue)</code></div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">hasCorrectDataAddrPointer</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">HashTable.HashFunction.</span><code><a href="../vm29/j9/HashTable.HashFunction.html#hash(StructType)" class="member-name-link">hash</a><wbr>(<a href="../vm29/j9/HashTable.HashFunction.html" title="type parameter in HashTable.HashFunction">StructType</a>&nbsp;entry)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>abstract boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ObjectMonitor.</span><code><a href="../vm29/j9/ObjectMonitor.html#isContended()" class="member-name-link">isContended</a>()</code></div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">JITLook.</span><code><a href="../vm29/j9/JITLook.html#hash_jit_artifact_search(com.ibm.j9ddr.vm29.pointer.generated.J9JITHashTablePointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">hash_jit_artifact_search</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JITHashTablePointer&nbsp;table,
+ <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;searchValue)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SystemMonitor.</span><code><a href="../vm29/j9/SystemMonitor.html#isContended()" class="member-name-link">isContended</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ObjectMonitor.</span><code><a href="../vm29/j9/ObjectMonitor.html#isContended()" class="member-name-link">isContended</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SystemMonitorSingleTier_V1.</span><code><a href="../vm29/j9/SystemMonitorSingleTier_V1.html#isContended()" class="member-name-link">isContended</a>()</code></div>
+<div class="col-first even-row-color"><code>abstract boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SystemMonitor.</span><code><a href="../vm29/j9/SystemMonitor.html#isContended()" class="member-name-link">isContended</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SystemMonitorThreeTier_V1.</span><code><a href="../vm29/j9/SystemMonitorThreeTier_V1.html#isContended()" class="member-name-link">isContended</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">SystemMonitorSingleTier_V1.</span><code><a href="../vm29/j9/SystemMonitorSingleTier_V1.html#isContended()" class="member-name-link">isContended</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isDarkMatterObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SystemMonitorThreeTier_V1.</span><code><a href="../vm29/j9/SystemMonitorThreeTier_V1.html#isContended()" class="member-name-link">isContended</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isDarkMatterObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Returns TRUE if an object is dark matter, FALSE otherwise.</div>
 </div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Returns TRUE if an object is a hole, FALSE otherwise.</div>
 </div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Returns TRUE if an class is indexable, FALSE otherwise.</div>
 </div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Returns TRUE if an object is indexable, FALSE otherwise.</div>
 </div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isInlineContiguousArraylet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ObjectAccessBarrier.</span><code><a href="../vm29/j9/ObjectAccessBarrier.html#isObjectInOwnableSynchronizerList(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isObjectInOwnableSynchronizerList</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isOld(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isOld</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Returns TRUE if an object is old, FALSE otherwise.</div>
-</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isRemembered(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isRemembered</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Returns TRUE if an object is remembered, FALSE otherwise.</div>
-</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isSingleSlotHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Returns TRUE if an object is a single slot hole object, FALSE otherwise.</div>
-</div>
-<div class="col-first odd-row-color"><code><a href="../vm29/j9/MonitorTableListIterator.html" title="class in com.ibm.j9ddr.vm29.j9">MonitorTableListIterator</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MonitorTableList.</span><code><a href="../vm29/j9/MonitorTableList.html#iterator()" class="member-name-link">iterator</a>()</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Returns an iterator that can be used to iterate over the J9ObjectMonitorPointers in the MonitorTableList</div>
-</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/types/U8.html" title="class in com.ibm.j9ddr.vm29.types">U8</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_ARG_COUNT_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_ARG_COUNT_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_BYTECODE_SIZE_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_BYTECODE_SIZE_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_BYTECODE_START_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_BYTECODE_START_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CLASS_FROM_CP(com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer)" class="member-name-link">J9_CLASS_FROM_CP</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer&nbsp;cp)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">use J9ConstantPoolPointer.ramClass() instead?</div>
-</div>
-<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CLASS_FROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">J9_CLASS_FROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_CLASS_FROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">J9_CLASS_FROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CP_FROM_CLASS(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">J9_CP_FROM_CLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last even-row-color">
-<div class="block">use J9ClassPointer.ramConstantPool() instead?</div>
-</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CP_FROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">J9_CP_FROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static long</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CP_TYPE(com.ibm.j9ddr.vm29.pointer.U32Pointer,int)" class="member-name-link">J9_CP_TYPE</a><wbr>(<a href="../vm29/pointer/U32Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U32Pointer</a>&nbsp;cpShapeDescription,
- int&nbsp;index)</code></div>
-<div class="col-last even-row-color">
-<div class="block">This method is Java implementation of the define J9_CP_TYPE in j9cp.h in VM.</div>
-</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CURRENT_CLASS(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">J9_CURRENT_CLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionInfoPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_EXCEPTION_DATA_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_EXCEPTION_DATA_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U32Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U32Pointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_EXTENDED_MODIFIERS_ADDR_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_EXTENDED_MODIFIERS_ADDR_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U32Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U32Pointer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_GENERIC_SIG_ADDR_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_GENERIC_SIG_ADDR_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_IS_CLASS_OBSOLETE(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">J9_IS_CLASS_OBSOLETE</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static long</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_METHOD_PARAMS_SIZE_FROM_NUMBER_OF_PARAMS(long)" class="member-name-link">J9_METHOD_PARAMS_SIZE_FROM_NUMBER_OF_PARAMS</a><wbr>(long&nbsp;numberOfParams)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMConstantPoolItemPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_ROM_CP_FROM_CP(com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer)" class="member-name-link">J9_ROM_CP_FROM_CP</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer&nbsp;cp)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">use J9ConstantPoolPointer.romConstantPool() instead?</div>
-</div>
-<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMConstantPoolItemPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_ROM_CP_FROM_ROM_CLASS(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">J9_ROM_CP_FROM_ROM_CLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
-<div class="col-last even-row-color">
-<div class="block">use J9ROMClassPointer.romConstantPool() instead?</div>
-</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_ROM_METHOD_FROM_RAM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">J9_ROM_METHOD_FROM_RAM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_ROUNDED_BYTECODE_SIZE_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_ROUNDED_BYTECODE_SIZE_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/types/U16.html" title="class in com.ibm.j9ddr.vm29.types">U16</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_TEMP_COUNT_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_TEMP_COUNT_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionHandlerPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9EXCEPTIONINFO_HANDLERS(com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionInfoPointer)" class="member-name-link">J9EXCEPTIONINFO_HANDLERS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionInfoPointer&nbsp;info)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/SelfRelativePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">SelfRelativePointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9EXCEPTIONINFO_THROWNAMES(com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionInfoPointer)" class="member-name-link">J9EXCEPTIONINFO_THROWNAMES</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionInfoPointer&nbsp;info)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9ROMMETHOD_SIGNATURE(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9ROMMETHOD_SIGNATURE</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9VM_J9CLASS_FROM_HEAPCLASS(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">J9VM_J9CLASS_FROM_HEAPCLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;clazzObject)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isInlineContiguousArraylet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9VM_J9CLASS_TO_HEAPCLASS(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">J9VM_J9CLASS_TO_HEAPCLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ObjectAccessBarrier.</span><code><a href="../vm29/j9/ObjectAccessBarrier.html#isObjectInOwnableSynchronizerList(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isObjectInOwnableSynchronizerList</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">JITLook.</span><code><a href="../vm29/j9/JITLook.html#jit_artifact_search(com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreePointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">jit_artifact_search</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreePointer&nbsp;tree,
- <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;searchValue)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>abstract long</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DataType.</span><code><a href="../vm29/j9/DataType.html#longValue()" class="member-name-link">longValue</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#nextROMMethod(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">nextROMMethod</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectMonitorPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">MonitorTableList.</span><code><a href="../vm29/j9/MonitorTableList.html#peek(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">peek</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isOld(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isOld</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Returns TRUE if an object is old, FALSE otherwise.</div>
+</div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isRemembered(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isRemembered</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
 <div class="col-last even-row-color">
+<div class="block">Returns TRUE if an object is remembered, FALSE otherwise.</div>
+</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ObjectModel.</span><code><a href="../vm29/j9/ObjectModel.html#isSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isSingleSlotHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Returns TRUE if an object is a single slot hole object, FALSE otherwise.</div>
+</div>
+<div class="col-first even-row-color"><code><a href="../vm29/j9/MonitorTableListIterator.html" title="class in com.ibm.j9ddr.vm29.j9">MonitorTableListIterator</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MonitorTableList.</span><code><a href="../vm29/j9/MonitorTableList.html#iterator()" class="member-name-link">iterator</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Returns an iterator that can be used to iterate over the J9ObjectMonitorPointers in the MonitorTableList</div>
+</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/U8.html" title="class in com.ibm.j9ddr.vm29.types">U8</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_ARG_COUNT_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_ARG_COUNT_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_BYTECODE_SIZE_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_BYTECODE_SIZE_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_BYTECODE_START_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_BYTECODE_START_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CLASS_FROM_CP(com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer)" class="member-name-link">J9_CLASS_FROM_CP</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer&nbsp;cp)</code></div>
+<div class="col-last even-row-color">
+<div class="block">use J9ConstantPoolPointer.ramClass() instead?</div>
+</div>
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CLASS_FROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">J9_CLASS_FROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_CLASS_FROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">J9_CLASS_FROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CP_FROM_CLASS(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">J9_CP_FROM_CLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">use J9ClassPointer.ramConstantPool() instead?</div>
+</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CP_FROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">J9_CP_FROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static long</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CP_TYPE(com.ibm.j9ddr.vm29.pointer.U32Pointer,int)" class="member-name-link">J9_CP_TYPE</a><wbr>(<a href="../vm29/pointer/U32Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U32Pointer</a>&nbsp;cpShapeDescription,
+ int&nbsp;index)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">This method is Java implementation of the define J9_CP_TYPE in j9cp.h in VM.</div>
+</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_CURRENT_CLASS(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">J9_CURRENT_CLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionInfoPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_EXCEPTION_DATA_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_EXCEPTION_DATA_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U32Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U32Pointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_EXTENDED_MODIFIERS_ADDR_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_EXTENDED_MODIFIERS_ADDR_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U32Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U32Pointer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_GENERIC_SIG_ADDR_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_GENERIC_SIG_ADDR_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_IS_CLASS_OBSOLETE(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">J9_IS_CLASS_OBSOLETE</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static long</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_METHOD_PARAMS_SIZE_FROM_NUMBER_OF_PARAMS(long)" class="member-name-link">J9_METHOD_PARAMS_SIZE_FROM_NUMBER_OF_PARAMS</a><wbr>(long&nbsp;numberOfParams)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMConstantPoolItemPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_ROM_CP_FROM_CP(com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer)" class="member-name-link">J9_ROM_CP_FROM_CP</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ConstantPoolPointer&nbsp;cp)</code></div>
+<div class="col-last even-row-color">
+<div class="block">use J9ConstantPoolPointer.romConstantPool() instead?</div>
+</div>
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMConstantPoolItemPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9_ROM_CP_FROM_ROM_CLASS(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">J9_ROM_CP_FROM_ROM_CLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">use J9ROMClassPointer.romConstantPool() instead?</div>
+</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_ROM_METHOD_FROM_RAM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">J9_ROM_METHOD_FROM_RAM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_ROUNDED_BYTECODE_SIZE_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_ROUNDED_BYTECODE_SIZE_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/types/U16.html" title="class in com.ibm.j9ddr.vm29.types">U16</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9_TEMP_COUNT_FROM_ROM_METHOD(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9_TEMP_COUNT_FROM_ROM_METHOD</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionHandlerPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9EXCEPTIONINFO_HANDLERS(com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionInfoPointer)" class="member-name-link">J9EXCEPTIONINFO_HANDLERS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionInfoPointer&nbsp;info)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/SelfRelativePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">SelfRelativePointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9EXCEPTIONINFO_THROWNAMES(com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionInfoPointer)" class="member-name-link">J9EXCEPTIONINFO_THROWNAMES</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ExceptionInfoPointer&nbsp;info)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#J9ROMMETHOD_SIGNATURE(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">J9ROMMETHOD_SIGNATURE</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9VM_J9CLASS_FROM_HEAPCLASS(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">J9VM_J9CLASS_FROM_HEAPCLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;clazzObject)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ConstantPoolHelpers.</span><code><a href="../vm29/j9/ConstantPoolHelpers.html#J9VM_J9CLASS_TO_HEAPCLASS(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">J9VM_J9CLASS_TO_HEAPCLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9JITExceptionTablePointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">JITLook.</span><code><a href="../vm29/j9/JITLook.html#jit_artifact_search(com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreePointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">jit_artifact_search</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreePointer&nbsp;tree,
+ <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;searchValue)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>abstract long</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DataType.</span><code><a href="../vm29/j9/DataType.html#longValue()" class="member-name-link">longValue</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ROMHelp.</span><code><a href="../vm29/j9/ROMHelp.html#nextROMMethod(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">nextROMMethod</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;romMethod)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectMonitorPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">MonitorTableList.</span><code><a href="../vm29/j9/MonitorTableList.html#peek(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">peek</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Search all the monitor tables in the J9JavaVM-&gt;monitorTables for the inflated monitor corresponding to the specified object</div>
 </div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/j9/gc/GCIterator.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCIterator</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootSet.</span><code><a href="../vm29/j9/RootSet.html#rootIterator(com.ibm.j9ddr.vm29.j9.RootSet.RootSetType)" class="member-name-link">rootIterator</a><wbr>(<a href="../vm29/j9/RootSet.RootSetType.html" title="enum class in com.ibm.j9ddr.vm29.j9">RootSet.RootSetType</a>&nbsp;rootSetType)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanAllSlots()" class="member-name-link">scanAllSlots</a>()</code></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><code>static <a href="../vm29/j9/gc/GCIterator.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCIterator</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootSet.</span><code><a href="../vm29/j9/RootSet.html#rootIterator(com.ibm.j9ddr.vm29.j9.RootSet.RootSetType)" class="member-name-link">rootIterator</a><wbr>(<a href="../vm29/j9/RootSet.RootSetType.html" title="enum class in com.ibm.j9ddr.vm29.j9">RootSet.RootSetType</a>&nbsp;rootSetType)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanAllSlots()" class="member-name-link">scanAllSlots</a>()</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Scan all slots which contain references into the heap.</div>
 </div>
-<div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanClasses()" class="member-name-link">scanClasses</a>()</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanClassLoaders()" class="member-name-link">scanClassLoaders</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanClasses()" class="member-name-link">scanClasses</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanClearable()" class="member-name-link">scanClearable</a>()</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>protected void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanClassLoaders()" class="member-name-link">scanClassLoaders</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanClearable()" class="member-name-link">scanClearable</a>()</code></div>
+<div class="col-last even-row-color">
 <div class="block">Scan all clearable root set references from the VM into the heap.</div>
 </div>
-<div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanFinalizableObjects()" class="member-name-link">scanFinalizableObjects</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanJNIGlobalReferences()" class="member-name-link">scanJNIGlobalReferences</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanFinalizableObjects()" class="member-name-link">scanFinalizableObjects</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanJNIWeakGlobalReferences()" class="member-name-link">scanJNIWeakGlobalReferences</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanJNIGlobalReferences()" class="member-name-link">scanJNIGlobalReferences</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanJVMTIObjectTagTables()" class="member-name-link">scanJVMTIObjectTagTables</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanJNIWeakGlobalReferences()" class="member-name-link">scanJNIWeakGlobalReferences</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanMonitorLookupCaches()" class="member-name-link">scanMonitorLookupCaches</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanJVMTIObjectTagTables()" class="member-name-link">scanJVMTIObjectTagTables</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanMonitorReferences()" class="member-name-link">scanMonitorReferences</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanMonitorLookupCaches()" class="member-name-link">scanMonitorLookupCaches</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanNonCollectableObjects()" class="member-name-link">scanNonCollectableObjects</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanMonitorReferences()" class="member-name-link">scanMonitorReferences</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanOwnableSynchronizerObjects()" class="member-name-link">scanOwnableSynchronizerObjects</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanNonCollectableObjects()" class="member-name-link">scanNonCollectableObjects</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanPermanentClasses()" class="member-name-link">scanPermanentClasses</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanOwnableSynchronizerObjects()" class="member-name-link">scanOwnableSynchronizerObjects</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanPhantomReferenceObjects()" class="member-name-link">scanPhantomReferenceObjects</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanPermanentClasses()" class="member-name-link">scanPermanentClasses</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanRememberedSet()" class="member-name-link">scanRememberedSet</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanPhantomReferenceObjects()" class="member-name-link">scanPhantomReferenceObjects</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanRoots()" class="member-name-link">scanRoots</a>()</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>protected void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanRememberedSet()" class="member-name-link">scanRememberedSet</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanRoots()" class="member-name-link">scanRoots</a>()</code></div>
+<div class="col-last even-row-color">
 <div class="block">Scan all root set references from the VM into the heap.</div>
 </div>
-<div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanSoftReferenceObjects()" class="member-name-link">scanSoftReferenceObjects</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanStringTable()" class="member-name-link">scanStringTable</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanSoftReferenceObjects()" class="member-name-link">scanSoftReferenceObjects</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanThreads()" class="member-name-link">scanThreads</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanStringTable()" class="member-name-link">scanStringTable</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanUnfinalizedObjects()" class="member-name-link">scanUnfinalizedObjects</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanThreads()" class="member-name-link">scanThreads</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanVMClassSlots()" class="member-name-link">scanVMClassSlots</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanUnfinalizedObjects()" class="member-name-link">scanUnfinalizedObjects</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanWeakReferenceObjects()" class="member-name-link">scanWeakReferenceObjects</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanVMClassSlots()" class="member-name-link">scanVMClassSlots</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>abstract com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreeNodePointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AVLTree.</span><code><a href="../vm29/j9/AVLTree.html#search(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">search</a><wbr>(<a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;searchValue)</code></div>
+<div class="col-first even-row-color"><code>protected void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">RootScanner.</span><code><a href="../vm29/j9/RootScanner.html#scanWeakReferenceObjects()" class="member-name-link">scanWeakReferenceObjects</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StringTable.</span><code><a href="../vm29/j9/StringTable.html#search(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">search</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objectPointer)</code></div>
+<div class="col-first odd-row-color"><code>abstract com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreeNodePointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AVLTree.</span><code><a href="../vm29/j9/AVLTree.html#search(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">search</a><wbr>(<a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;searchValue)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>int</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">IAVLSearchComparator.</span><code><a href="../vm29/j9/IAVLSearchComparator.html#searchComparator(com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreePointer,com.ibm.j9ddr.vm29.types.UDATA,com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreeNodePointer)" class="member-name-link">searchComparator</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreePointer&nbsp;tree,
+<div class="col-first even-row-color"><code>com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StringTable.</span><code><a href="../vm29/j9/StringTable.html#search(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">search</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objectPointer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>int</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">IAVLSearchComparator.</span><code><a href="../vm29/j9/IAVLSearchComparator.html#searchComparator(com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreePointer,com.ibm.j9ddr.vm29.types.UDATA,com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreeNodePointer)" class="member-name-link">searchComparator</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreePointer&nbsp;tree,
  <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;searchValue,
  com.ibm.j9ddr.vm29.pointer.generated.J9AVLTreeNodePointer&nbsp;node)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/j9/gc/GCIterator.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCIterator</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StackRoots.</span><code><a href="../vm29/j9/StackRoots.html#stackRootIterator()" class="member-name-link">stackRootIterator</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">LiveSetWalker.</span><code><a href="../vm29/j9/LiveSetWalker.html#walkLiveSet(com.ibm.j9ddr.vm29.j9.LiveSetWalker.ObjectVisitor)" class="member-name-link">walkLiveSet</a><wbr>(<a href="../vm29/j9/LiveSetWalker.ObjectVisitor.html" title="interface in com.ibm.j9ddr.vm29.j9">LiveSetWalker.ObjectVisitor</a>&nbsp;visitor)</code></div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/j9/gc/GCIterator.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCIterator</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StackRoots.</span><code><a href="../vm29/j9/StackRoots.html#stackRootIterator()" class="member-name-link">stackRootIterator</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LiveSetWalker.</span><code><a href="../vm29/j9/LiveSetWalker.html#walkLiveSet(com.ibm.j9ddr.vm29.j9.LiveSetWalker.ObjectVisitor,com.ibm.j9ddr.vm29.j9.RootSet.RootSetType)" class="member-name-link">walkLiveSet</a><wbr>(<a href="../vm29/j9/LiveSetWalker.ObjectVisitor.html" title="interface in com.ibm.j9ddr.vm29.j9">LiveSetWalker.ObjectVisitor</a>&nbsp;visitor,
- <a href="../vm29/j9/RootSet.RootSetType.html" title="enum class in com.ibm.j9ddr.vm29.j9">RootSet.RootSetType</a>&nbsp;rootSetType)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">LiveSetWalker.</span><code><a href="../vm29/j9/LiveSetWalker.html#walkLiveSet(com.ibm.j9ddr.vm29.j9.LiveSetWalker.ObjectVisitor)" class="member-name-link">walkLiveSet</a><wbr>(<a href="../vm29/j9/LiveSetWalker.ObjectVisitor.html" title="interface in com.ibm.j9ddr.vm29.j9">LiveSetWalker.ObjectVisitor</a>&nbsp;visitor)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LiveSetWalker.</span><code><a href="../vm29/j9/LiveSetWalker.html#walkLiveSet(com.ibm.j9ddr.vm29.j9.LiveSetWalker.ObjectVisitor,com.ibm.j9ddr.vm29.j9.RootSet.RootSetType)" class="member-name-link">walkLiveSet</a><wbr>(<a href="../vm29/j9/LiveSetWalker.ObjectVisitor.html" title="interface in com.ibm.j9ddr.vm29.j9">LiveSetWalker.ObjectVisitor</a>&nbsp;visitor,
+ <a href="../vm29/j9/RootSet.RootSetType.html" title="enum class in com.ibm.j9ddr.vm29.j9">RootSet.RootSetType</a>&nbsp;rootSetType)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <div class="caption"><span>Constructors in <a href="../vm29/j9/package-summary.html">com.ibm.j9ddr.vm29.j9</a> that throw <a href="../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
 <div class="summary-table three-column-summary">
@@ -1986,6 +1991,16 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Returns TRUE if an object has been moved after being hashed, FALSE otherwise.</div>
 </div>
+<div class="col-first odd-row-color"><code>abstract boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GCArrayletObjectModelBase.</span><code><a href="../vm29/j9/gc/GCArrayletObjectModelBase.html#hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">hasCorrectDataAddrPointer</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GCObjectModel.</span><code><a href="../vm29/j9/gc/GCObjectModel.html#hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">hasCorrectDataAddrPointer</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+</div>
 <div class="col-first odd-row-color"><code><a href="../vm29/j9/gc/GCModronAllocateHintIterator.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCModronAllocateHintIterator</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">GCMemoryPoolAddressOrderedList.</span><code><a href="../vm29/j9/gc/GCMemoryPoolAddressOrderedList.html#hintIterator()" class="member-name-link">hintIterator</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -2004,39 +2019,60 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">GCHeapRegionManager.</span><code><a href="../vm29/j9/gc/GCHeapRegionManager.html#initializeTableRegionDescriptors()" class="member-name-link">initializeTableRegionDescriptors</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GCHeapMap.</span><code><a href="../vm29/j9/gc/GCHeapMap.html#isBitSet(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isBitSet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;address)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GCArrayletObjectModelBase.</span><code><a href="../vm29/j9/gc/GCArrayletObjectModelBase.html#isAddressWithinHeap(com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">isAddressWithinHeap</a><wbr>(<a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
 <div class="col-last even-row-color">
+<div class="block">Check if the given address is within the heap.</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GCArrayletObjectModelBase.</span><code><a href="../vm29/j9/gc/GCArrayletObjectModelBase.html#isArrayletDataAdjacentToHeader(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isArrayletDataAdjacentToHeader</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Determine if the arraylet data of arrayPtr is adjacent to its header.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GCArrayletObjectModelBase.</span><code><a href="../vm29/j9/gc/GCArrayletObjectModelBase.html#isArrayletDataAdjacentToHeader(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">isArrayletDataAdjacentToHeader</a><wbr>(<a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;dataSizeInBytes)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Determine if the arraylet data of arrayPtr is adjacent to its header.</div>
+</div>
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GCHeapMap.</span><code><a href="../vm29/j9/gc/GCHeapMap.html#isBitSet(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isBitSet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;address)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Check if a bit is set in the GCHeapMap</div>
 </div>
-<div class="col-first odd-row-color"><code>protected boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GCHeapMap.</span><code><a href="../vm29/j9/gc/GCHeapMap.html#isBitSetNoCheck(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isBitSetNoCheck</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>protected boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GCHeapMap.</span><code><a href="../vm29/j9/gc/GCHeapMap.html#isBitSetNoCheck(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isBitSetNoCheck</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Check if a bit is set without checking the pointer.</div>
 </div>
-<div class="col-first even-row-color"><code>abstract boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GCObjectModel.</span><code><a href="../vm29/j9/gc/GCObjectModel.html#isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isDarkMatterObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>abstract boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GCObjectModel.</span><code><a href="../vm29/j9/gc/GCObjectModel.html#isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isDarkMatterObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Returns TRUE if an object is dark matter, FALSE otherwise.</div>
 </div>
-<div class="col-first odd-row-color"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GCScavengerForwardedHeader.</span><code><a href="../vm29/j9/gc/GCScavengerForwardedHeader.html#isForwardedPointer()" class="member-name-link">isForwardedPointer</a>()</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>abstract boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GCScavengerForwardedHeader.</span><code><a href="../vm29/j9/gc/GCScavengerForwardedHeader.html#isForwardedPointer()" class="member-name-link">isForwardedPointer</a>()</code></div>
+<div class="col-last even-row-color">
 <div class="block">Determine if the current object is forwarded.</div>
 </div>
-<div class="col-first even-row-color"><code>abstract boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GCObjectModel.</span><code><a href="../vm29/j9/gc/GCObjectModel.html#isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>abstract boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GCObjectModel.</span><code><a href="../vm29/j9/gc/GCObjectModel.html#isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Returns TRUE if an object is a hole, FALSE otherwise.</div>
 </div>
-<div class="col-first odd-row-color"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GCObjectModel.</span><code><a href="../vm29/j9/gc/GCObjectModel.html#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>abstract boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GCObjectModel.</span><code><a href="../vm29/j9/gc/GCObjectModel.html#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Returns TRUE if an class is indexable, FALSE otherwise.</div>
 </div>
-<div class="col-first even-row-color"><code>abstract boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">GCObjectModel.</span><code><a href="../vm29/j9/gc/GCObjectModel.html#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>abstract boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">GCObjectModel.</span><code><a href="../vm29/j9/gc/GCObjectModel.html#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Returns TRUE if an object is indexable, FALSE otherwise.</div>
+</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GCArrayletObjectModelBase.</span><code><a href="../vm29/j9/gc/GCArrayletObjectModelBase.html#isIndexableObjectOffHeap(com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">isIndexableObjectOffHeap</a><wbr>(<a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;indexableDataAddr,
+ <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;dataSizeInBytes)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Check if the given indexable object is off heap.</div>
 </div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">GCArrayletObjectModelBase.</span><code><a href="../vm29/j9/gc/GCArrayletObjectModelBase.html#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isInlineContiguousArraylet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></div>
@@ -3398,31 +3434,39 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasCodeTypeAnnotations(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasCodeTypeAnnotations</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasDebugInfo(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasDebugInfo</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-second even-row-color"><span class="type-name-label">J9IndexableObjectHelper.</span><code><a href="../vm29/pointer/helper/J9IndexableObjectHelper.html#hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">hasCorrectDataAddrPointer</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Determine the validity of the data address belonging to objPointer.</div>
+</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasDefaultAnnotation(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasDefaultAnnotation</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasDebugInfo(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasDebugInfo</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasEmptyFinalize(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasEmptyFinalize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasDefaultAnnotation(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasDefaultAnnotation</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasExceptionInfo(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasExceptionInfo</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasEmptyFinalize(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasEmptyFinalize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasExtendedModifiers(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasExtendedModifiers</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasExceptionInfo(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasExceptionInfo</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasFinalFields(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasFinalFields</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasExtendedModifiers(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasExtendedModifiers</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasGenericSignature(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasGenericSignature</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasFinalFields(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasFinalFields</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasImplicitCreationAttribute(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasImplicitCreationAttribute</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasGenericSignature(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasGenericSignature</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasJDBCNatives(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasJDBCNatives</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasImplicitCreationAttribute(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasImplicitCreationAttribute</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasJDBCNatives(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasJDBCNatives</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasLoadableDescriptorsAttribute(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasLoadableDescriptorsAttribute</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasMethodAnnotations(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasMethodAnnotations</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
@@ -3440,61 +3484,55 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasParameterAnnotations(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasParameterAnnotations</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasPreloadAttribute(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasPreloadAttribute</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasStackMap(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasStackMap</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasStackMap(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasStackMap</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#hasValidEyeCatcher(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">hasValidEyeCatcher</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#hasValidEyeCatcher(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">hasValidEyeCatcher</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">MM_HeapRegionDescriptorHelper.</span><code><a href="../vm29/pointer/helper/MM_HeapRegionDescriptorHelper.html#hasValidMarkMap(com.ibm.j9ddr.vm29.pointer.generated.MM_HeapRegionDescriptorPointer)" class="member-name-link">hasValidMarkMap</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.MM_HeapRegionDescriptorPointer&nbsp;region)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">MM_HeapRegionDescriptorHelper.</span><code><a href="../vm29/pointer/helper/MM_HeapRegionDescriptorHelper.html#hasValidMarkMap(com.ibm.j9ddr.vm29.pointer.generated.MM_HeapRegionDescriptorPointer)" class="member-name-link">hasValidMarkMap</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.MM_HeapRegionDescriptorPointer&nbsp;region)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasVerifyData(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasVerifyData</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#hasVerifyData(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">hasVerifyData</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasVTable(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasVTable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#hasVTable(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">hasVTable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isAbstract(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isAbstract</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isAbstract(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isAbstract</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#isAnonymousClass(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isAnonymousClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#isAnonymousClass(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isAnonymousClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isAnonymousClass(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isAnonymousClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isAnonymousClass(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isAnonymousClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isArray(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isArray</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isArray(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isArray</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ArrayClassHelper.</span><code><a href="../vm29/pointer/helper/J9ArrayClassHelper.html#isArrayClass(com.ibm.j9ddr.vm29.pointer.generated.J9ArrayClassPointer)" class="member-name-link">isArrayClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ArrayClassPointer&nbsp;clazz)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ArrayClassHelper.</span><code><a href="../vm29/pointer/helper/J9ArrayClassHelper.html#isArrayClass(com.ibm.j9ddr.vm29.pointer.generated.J9ArrayClassPointer)" class="member-name-link">isArrayClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ArrayClassPointer&nbsp;clazz)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#isArrayClass(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isArrayClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#isArrayClass(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isArrayClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isClonable(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isClonable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isClonable(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isClonable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isDying(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isDying</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isDying(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isDying</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#isEmpty(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">isEmpty</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#isEmpty(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">isEmpty</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isFieldInClassFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">isFieldInClassFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isFieldInClassFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">isFieldInClassFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
  com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShape)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Queries whether field is flattened of not.</div>
 </div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isFinal(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isFinal</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#isForwarder(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">isForwarder</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isFinal(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isFinal</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isGCSpecial(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isGCSpecial</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
@@ -3514,114 +3552,109 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isInterface(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isInterface</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9ClassAPrimitiveValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassAPrimitiveValueType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9ClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassAValueType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Queries if J9Class is a primitive value type</div>
-</div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9ClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassAValueType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last even-row-color">
 <div class="block">Queries if J9Class is a value type</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9ClassIsFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassIsFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9ClassIsFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassIsFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Queries if class is flattened</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9ClassLargestAlignmentConstraintDouble(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassLargestAlignmentConstraintDouble</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9ClassLargestAlignmentConstraintDouble(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassLargestAlignmentConstraintDouble</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Queries if class contains a field with a double (64 bit) alignment constraint</div>
 </div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9ClassLargestAlignmentConstraintReference(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassLargestAlignmentConstraintReference</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9ClassLargestAlignmentConstraintReference(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassLargestAlignmentConstraintReference</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Queries if class contains a field with a reference alignment constraint</div>
 </div>
-<div class="col-first even-row-color"><code>boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9FieldIsFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">isJ9FieldIsFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;fieldClazz,
+<div class="col-first odd-row-color"><code>boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isJ9FieldIsFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">isJ9FieldIsFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;fieldClazz,
  com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShape)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Queries if a field in a class is flattened</div>
 </div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#isNonEmptyObjectConstructor(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">isNonEmptyObjectConstructor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#isObsolete(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isObsolete</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;j9class)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#isNonEmptyObjectConstructor(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">isNonEmptyObjectConstructor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isPrimitiveType(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isPrimitiveType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#isObsolete(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isObsolete</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;j9class)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isPublic(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isPublic</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isPrimitiveType(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isPrimitiveType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isRomClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isRomClassAValueType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isPublic(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isPublic</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ValueTypeHelper.</span><code><a href="../vm29/pointer/helper/ValueTypeHelper.html#isRomClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isRomClassAValueType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Queries if J9ROMClass is a value type</div>
 </div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#isSameOrSuperClassOf(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isSameOrSuperClassOf</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;superClazz,
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#isSameOrSuperClassOf(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isSameOrSuperClassOf</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;superClazz,
  com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isSealed(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isSealed</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#isStatic(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">isStatic</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isSealed(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isSealed</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#isSwappedOut(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isSwappedOut</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMMethodHelper.</span><code><a href="../vm29/pointer/helper/J9ROMMethodHelper.html#isStatic(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer)" class="member-name-link">isStatic</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer&nbsp;method)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isSynthetic(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isSynthetic</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#isSwappedOut(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isSwappedOut</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isUnsafe(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isUnsafe</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isSynthetic(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isSynthetic</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ShcItemHelper.</span><code><a href="../vm29/pointer/helper/ShcItemHelper.html#ITEMEND(com.ibm.j9ddr.vm29.pointer.generated.ShcItemPointer)" class="member-name-link">ITEMEND</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.ShcItemPointer&nbsp;ptr)</code></div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#isUnsafe(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isUnsafe</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9MemTagHelper.</span><code><a href="../vm29/pointer/helper/J9MemTagHelper.html#j9mem_get_footer_padding(com.ibm.j9ddr.vm29.pointer.generated.J9MemTagPointer)" class="member-name-link">j9mem_get_footer_padding</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MemTagPointer&nbsp;headerEyeCatcherAddress)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ShcItemHelper.</span><code><a href="../vm29/pointer/helper/ShcItemHelper.html#ITEMEND(com.ibm.j9ddr.vm29.pointer.generated.ShcItemPointer)" class="member-name-link">ITEMEND</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.ShcItemPointer&nbsp;ptr)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9MemTagHelper.</span><code><a href="../vm29/pointer/helper/J9MemTagHelper.html#j9mem_get_footer_padding(com.ibm.j9ddr.vm29.pointer.generated.J9MemTagPointer)" class="member-name-link">j9mem_get_footer_padding</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MemTagPointer&nbsp;headerEyeCatcherAddress)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Given the address of the headerEyecatcher for the memory block, return
  the address of the footer padding.</div>
 </div>
-<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9MemTagPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9MemTagHelper.</span><code><a href="../vm29/pointer/helper/J9MemTagHelper.html#j9mem_get_footer_tag(com.ibm.j9ddr.vm29.pointer.generated.J9MemTagPointer)" class="member-name-link">j9mem_get_footer_tag</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MemTagPointer&nbsp;headerEyeCatcherAddress)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9MemTagPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9MemTagHelper.</span><code><a href="../vm29/pointer/helper/J9MemTagHelper.html#j9mem_get_footer_tag(com.ibm.j9ddr.vm29.pointer.generated.J9MemTagPointer)" class="member-name-link">j9mem_get_footer_tag</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MemTagPointer&nbsp;headerEyeCatcherAddress)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Given the address of the headerEyecatcher for the memory block, return
  the address of the corresponding footer tag.</div>
 </div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9IndexableObjectHelper.</span><code><a href="../vm29/pointer/helper/J9IndexableObjectHelper.html#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">monitor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ObjectHelper.</span><code><a href="../vm29/pointer/helper/J9ObjectHelper.html#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">monitor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9IndexableObjectHelper.</span><code><a href="../vm29/pointer/helper/J9IndexableObjectHelper.html#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">monitor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMFieldShapeHelper.</span><code><a href="../vm29/pointer/helper/J9ROMFieldShapeHelper.html#next(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">next</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShapePointer)</code></div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ObjectHelper.</span><code><a href="../vm29/pointer/helper/J9ObjectHelper.html#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">monitor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9MethodHelper.</span><code><a href="../vm29/pointer/helper/J9MethodHelper.html#nextMethod(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">nextMethod</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;methodPointer)</code></div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMFieldShapeHelper.</span><code><a href="../vm29/pointer/helper/J9ROMFieldShapeHelper.html#next(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">next</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShapePointer)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U32Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U32Pointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#optionalInfo(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">optionalInfo</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
+<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9MethodHelper.</span><code><a href="../vm29/pointer/helper/J9MethodHelper.html#nextMethod(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">nextMethod</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;methodPointer)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">PrintObjectFieldsHelper.</span><code><a href="../vm29/pointer/helper/PrintObjectFieldsHelper.html#printJ9ObjectFields(java.io.PrintStream,int,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,long)" class="member-name-link">printJ9ObjectFields</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U32Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U32Pointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#optionalInfo(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">optionalInfo</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">PrintObjectFieldsHelper.</span><code><a href="../vm29/pointer/helper/PrintObjectFieldsHelper.html#printJ9ObjectFields(java.io.PrintStream,int,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,long)" class="member-name-link">printJ9ObjectFields</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
  int&nbsp;tabLevel,
  com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;localClazz,
  <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>&nbsp;dataStart,
  com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;localObject,
  long&nbsp;address)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Prints all the j9object fields</div>
 </div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">PrintObjectFieldsHelper.</span><code><a href="../vm29/pointer/helper/PrintObjectFieldsHelper.html#printJ9ObjectFields(java.io.PrintStream,int,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,long,java.lang.String%5B%5D,boolean)" class="member-name-link">printJ9ObjectFields</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">PrintObjectFieldsHelper.</span><code><a href="../vm29/pointer/helper/PrintObjectFieldsHelper.html#printJ9ObjectFields(java.io.PrintStream,int,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,long,java.lang.String%5B%5D,boolean)" class="member-name-link">printJ9ObjectFields</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
  int&nbsp;tabLevel,
  com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;localClazz,
  <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>&nbsp;dataStart,
@@ -3629,79 +3662,79 @@ loadScripts(document, 'script');</script>
  long&nbsp;address,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>[]&nbsp;nestingHierarchy,
  boolean&nbsp;showNestedFields)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Prints all the j9object fields</div>
 </div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ObjectHelper.</span><code><a href="../vm29/pointer/helper/J9ObjectHelper.html#rawClazz(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">rawClazz</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9IndexableObjectHelper.</span><code><a href="../vm29/pointer/helper/J9IndexableObjectHelper.html#rawSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">rawSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ROMClassWrapperHelper.</span><code><a href="../vm29/pointer/helper/ROMClassWrapperHelper.html#RCWCLASSPATH(com.ibm.j9ddr.vm29.pointer.generated.ROMClassWrapperPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer%5B%5D)" class="member-name-link">RCWCLASSPATH</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.ROMClassWrapperPointer&nbsp;ptr,
- <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>[]&nbsp;cacheHeader)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ScopedROMClassWrapperHelper.</span><code><a href="../vm29/pointer/helper/ScopedROMClassWrapperHelper.html#RCWMODCONTEXT(com.ibm.j9ddr.vm29.pointer.generated.ScopedROMClassWrapperPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer%5B%5D)" class="member-name-link">RCWMODCONTEXT</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.ScopedROMClassWrapperPointer&nbsp;ptr,
- <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>[]&nbsp;cacheHeader)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ScopedROMClassWrapperHelper.</span><code><a href="../vm29/pointer/helper/ScopedROMClassWrapperHelper.html#RCWPARTITION(com.ibm.j9ddr.vm29.pointer.generated.ScopedROMClassWrapperPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer%5B%5D)" class="member-name-link">RCWPARTITION</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.ScopedROMClassWrapperPointer&nbsp;ptr,
- <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>[]&nbsp;cacheHeader)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ROMClassWrapperHelper.</span><code><a href="../vm29/pointer/helper/ROMClassWrapperHelper.html#RCWROMCLASS(com.ibm.j9ddr.vm29.pointer.generated.ROMClassWrapperPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer%5B%5D)" class="member-name-link">RCWROMCLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.ROMClassWrapperPointer&nbsp;ptr,
- <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>[]&nbsp;cacheHeader)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#referencePhantom(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">referencePhantom</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#referenceSoft(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">referenceSoft</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#referenceWeek(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">referenceWeek</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">OrphanWrapperHelper.</span><code><a href="../vm29/pointer/helper/OrphanWrapperHelper.html#romClass(com.ibm.j9ddr.vm29.pointer.generated.OrphanWrapperPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer%5B%5D)" class="member-name-link">romClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.OrphanWrapperPointer&nbsp;ptr,
- <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>[]&nbsp;cacheHeader)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMFieldShapeHelper.</span><code><a href="../vm29/pointer/helper/J9ROMFieldShapeHelper.html#romFieldSizeOf(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">romFieldSizeOf</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShapePointer)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9MethodHelper.</span><code><a href="../vm29/pointer/helper/J9MethodHelper.html#romMethod(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">romMethod</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;methodPointer)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#size(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
- com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;vm)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static <a href="../vm29/types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9IndexableObjectHelper.</span><code><a href="../vm29/pointer/helper/J9IndexableObjectHelper.html#size(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ObjectHelper.</span><code><a href="../vm29/pointer/helper/J9ObjectHelper.html#rawClazz(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">rawClazz</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static <a href="../vm29/types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9IndexableObjectHelper.</span><code><a href="../vm29/pointer/helper/J9IndexableObjectHelper.html#size(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9IndexableObjectHelper.</span><code><a href="../vm29/pointer/helper/J9IndexableObjectHelper.html#rawSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">rawSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ROMClassWrapperHelper.</span><code><a href="../vm29/pointer/helper/ROMClassWrapperHelper.html#RCWCLASSPATH(com.ibm.j9ddr.vm29.pointer.generated.ROMClassWrapperPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer%5B%5D)" class="member-name-link">RCWCLASSPATH</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.ROMClassWrapperPointer&nbsp;ptr,
+ <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>[]&nbsp;cacheHeader)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ScopedROMClassWrapperHelper.</span><code><a href="../vm29/pointer/helper/ScopedROMClassWrapperHelper.html#RCWMODCONTEXT(com.ibm.j9ddr.vm29.pointer.generated.ScopedROMClassWrapperPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer%5B%5D)" class="member-name-link">RCWMODCONTEXT</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.ScopedROMClassWrapperPointer&nbsp;ptr,
+ <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>[]&nbsp;cacheHeader)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ScopedROMClassWrapperHelper.</span><code><a href="../vm29/pointer/helper/ScopedROMClassWrapperHelper.html#RCWPARTITION(com.ibm.j9ddr.vm29.pointer.generated.ScopedROMClassWrapperPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer%5B%5D)" class="member-name-link">RCWPARTITION</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.ScopedROMClassWrapperPointer&nbsp;ptr,
+ <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>[]&nbsp;cacheHeader)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ROMClassWrapperHelper.</span><code><a href="../vm29/pointer/helper/ROMClassWrapperHelper.html#RCWROMCLASS(com.ibm.j9ddr.vm29.pointer.generated.ROMClassWrapperPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer%5B%5D)" class="member-name-link">RCWROMCLASS</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.ROMClassWrapperPointer&nbsp;ptr,
+ <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>[]&nbsp;cacheHeader)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#referencePhantom(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">referencePhantom</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static boolean</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#referenceSoft(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">referenceSoft</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMClassHelper.</span><code><a href="../vm29/pointer/helper/J9ROMClassHelper.html#referenceWeek(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">referenceWeek</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romclass)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">OrphanWrapperHelper.</span><code><a href="../vm29/pointer/helper/OrphanWrapperHelper.html#romClass(com.ibm.j9ddr.vm29.pointer.generated.OrphanWrapperPointer,com.ibm.j9ddr.vm29.pointer.U8Pointer%5B%5D)" class="member-name-link">romClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.OrphanWrapperPointer&nbsp;ptr,
+ <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a>[]&nbsp;cacheHeader)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMFieldShapeHelper.</span><code><a href="../vm29/pointer/helper/J9ROMFieldShapeHelper.html#romFieldSizeOf(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">romFieldSizeOf</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShapePointer)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ROMMethodPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9MethodHelper.</span><code><a href="../vm29/pointer/helper/J9MethodHelper.html#romMethod(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">romMethod</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;methodPointer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#size(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
+ com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;vm)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="../vm29/types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9IndexableObjectHelper.</span><code><a href="../vm29/pointer/helper/J9IndexableObjectHelper.html#size(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static <a href="../vm29/types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9IndexableObjectHelper.</span><code><a href="../vm29/pointer/helper/J9IndexableObjectHelper.html#size(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ObjectHelper.</span><code><a href="../vm29/pointer/helper/J9ObjectHelper.html#stringValue(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">stringValue</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ObjectHelper.</span><code><a href="../vm29/pointer/helper/J9ObjectHelper.html#stringValue(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">stringValue</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9UTF8Helper.</span><code><a href="../vm29/pointer/helper/J9UTF8Helper.html#stringValue(com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer)" class="member-name-link">stringValue</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer&nbsp;utf8pointer)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9UTF8Helper.</span><code><a href="../vm29/pointer/helper/J9UTF8Helper.html#stringValue(com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer)" class="member-name-link">stringValue</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer&nbsp;utf8pointer)</code></div>
+<div class="col-first even-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#superclass(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">superclass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">J9ClassHelper.</span><code><a href="../vm29/pointer/helper/J9ClassHelper.html#superclass(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">superclass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">J9ROMFieldShapeHelper.</span><code><a href="../vm29/pointer/helper/J9ROMFieldShapeHelper.html#toString(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">toString</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShapePointer)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">J9ROMFieldShapeHelper.</span><code><a href="../vm29/pointer/helper/J9ROMFieldShapeHelper.html#toString(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">toString</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShapePointer)</code></div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">OMRMemCategoryHelper.IOMRMemCategoryVisitor.</span><code><a href="../vm29/pointer/helper/OMRMemCategoryHelper.IOMRMemCategoryVisitor.html#visit(com.ibm.j9ddr.vm29.pointer.generated.OMRMemCategoryPointer)" class="member-name-link">visit</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.OMRMemCategoryPointer&nbsp;category)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">OMRMemCategoryHelper.IOMRMemCategoryVisitor.</span><code><a href="../vm29/pointer/helper/OMRMemCategoryHelper.IOMRMemCategoryVisitor.html#visit(com.ibm.j9ddr.vm29.pointer.generated.OMRMemCategoryPointer)" class="member-name-link">visit</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.OMRMemCategoryPointer&nbsp;category)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">OMRMemCategoryHelper.</span><code><a href="../vm29/pointer/helper/OMRMemCategoryHelper.html#visitMemoryCategoryChildren(com.ibm.j9ddr.vm29.pointer.generated.OMRMemCategoryPointer,com.ibm.j9ddr.vm29.pointer.helper.OMRMemCategoryHelper.IOMRMemCategoryVisitor)" class="member-name-link">visitMemoryCategoryChildren</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.OMRMemCategoryPointer&nbsp;startNode,
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">OMRMemCategoryHelper.</span><code><a href="../vm29/pointer/helper/OMRMemCategoryHelper.html#visitMemoryCategoryChildren(com.ibm.j9ddr.vm29.pointer.generated.OMRMemCategoryPointer,com.ibm.j9ddr.vm29.pointer.helper.OMRMemCategoryHelper.IOMRMemCategoryVisitor)" class="member-name-link">visitMemoryCategoryChildren</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.OMRMemCategoryPointer&nbsp;startNode,
  <a href="../vm29/pointer/helper/OMRMemCategoryHelper.IOMRMemCategoryVisitor.html" title="interface in com.ibm.j9ddr.vm29.pointer.helper">OMRMemCategoryHelper.IOMRMemCategoryVisitor</a>&nbsp;visitor)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Performs a depth-first walk of all the children of startNode, starting with startNode itself</div>
 </div>
 </div>
