@@ -132,7 +132,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.managem
 	if (true != mbeanServer.isRegistered(mxbeanName)) {
 	   // GuestOSMXBean not registered
 	}
-	GuestOSMXBean guestBean = JMX.newMXBeanProxy(mbeanServer, mxbeanName, GuestOSMXBean.class); 
+	GuestOSMXBean guestBean = JMX.newMXBeanProxy(mbeanServer, mxbeanName, GuestOSMXBean.class);
    } catch (Exception e) {
 	// Exception Handling
    }
@@ -230,7 +230,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.managem
 <div class="member-signature"><span class="return-type"><a href="GuestOSProcessorUsage.html" title="class in com.ibm.virtualization.management">GuestOSProcessorUsage</a></span>&nbsp;<span class="element-name">retrieveProcessorUsage</span>()
                                       throws <span class="exceptions"><a href="GuestOSInfoRetrievalException.html" title="class in com.ibm.virtualization.management">GuestOSInfoRetrievalException</a></span></div>
 <div class="block">Function instantiates a <a href="GuestOSProcessorUsage.html" title="class in com.ibm.virtualization.management"><code>GuestOSProcessorUsage</code></a> object and populates it with the
- current snapshot of Processor Usage statistics of the Guest as seen by the Hypervisor. 
+ current snapshot of Processor Usage statistics of the Guest as seen by the Hypervisor.
  The statistics are an aggregate across all physical CPUs assigned to the Guest by the Hypervisor.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -281,7 +281,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.managem
 <dd>The new <a href="GuestOSMemoryUsage.html" title="class in com.ibm.virtualization.management"><code>GuestOSMemoryUsage</code></a> object.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="GuestOSInfoRetrievalException.html" title="class in com.ibm.virtualization.management">GuestOSInfoRetrievalException</a></code> - if it failed to obtain usage statistics.
- 
+
  <p>In case of an exception, the handler code can use toString() on the exception code
  to obtain a description of the exception.</dd>
 </dl>

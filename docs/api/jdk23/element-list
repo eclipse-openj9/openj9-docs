@@ -6,6 +6,7 @@ com.ibm.virtualization.management.internal
 com.sun.management
 com.sun.management.internal
 jdk.crac.management
+jdk.crac.management.internal
 openj9.lang.management
 openj9.lang.management.internal
 module:openj9.criu
