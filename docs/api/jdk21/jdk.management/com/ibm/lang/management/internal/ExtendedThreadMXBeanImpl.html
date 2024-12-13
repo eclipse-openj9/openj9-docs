@@ -236,7 +236,7 @@ implements <a href="../ThreadMXBean.html" title="interface in com.ibm.lang.manag
  threads in the virtual machine during the time it is invoked.
  Fetches an array of ExtendedThreadInfo objects that provide native thread
  identifiers along with java.lang.management.ThreadInfo object representing the thread.
- Consider using dumpAllExtendedThreads() in place of dumpAllThreads() as it provides 
+ Consider using dumpAllExtendedThreads() in place of dumpAllThreads() as it provides
  additional thread identification information in an efficient manner.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -251,9 +251,9 @@ implements <a href="../ThreadMXBean.html" title="interface in com.ibm.lang.manag
 <dt>Returns:</dt>
 <dd>Array of ExtendedThreadInfo objects.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InternalError.html" title="class or interface in java.lang" class="external-link" target="_blank">InternalError</a></code> - is thrown in case an error occurs while fetching thread information, 
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/InternalError.html" title="class or interface in java.lang" class="external-link" target="_blank">InternalError</a></code> - is thrown in case an error occurs while fetching thread information,
  typically, an internal error resulting from an inconsistency in the class library.</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/SecurityException.html" title="class or interface in java.lang" class="external-link" target="_blank">SecurityException</a></code> - is thrown if the caller does not have sufficient permissions 
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/SecurityException.html" title="class or interface in java.lang" class="external-link" target="_blank">SecurityException</a></code> - is thrown if the caller does not have sufficient permissions
  (ManagementPermission("monitor"))</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/UnsupportedOperationException.html" title="class or interface in java.lang" class="external-link" target="_blank">UnsupportedOperationException</a></code> - is thrown if the JVM does not support monitoring
  object monitor usage or ownable synchronizer usage, even as it has been specified.</dd>

@@ -22,8 +22,8 @@
 <meta name="keywords" content="getSourceDebugExtensionForROMClass()">
 <meta name="keywords" content="getPermittedSubclassCount()">
 <meta name="keywords" content="getPermittedSubclassNameAtIndex()">
-<meta name="keywords" content="getPreloadClassCount()">
-<meta name="keywords" content="getPreloadClassNameAtIndex()">
+<meta name="keywords" content="getLoadableDescriptorsCount()">
+<meta name="keywords" content="getLoadableDescriptorAtIndex()">
 <meta name="keywords" content="getImplicitCreationFlags()">
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -168,6 +168,13 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLineNumberForROMClass(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">getLineNumberForROMClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method,
  <a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;relativePC)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLoadableDescriptorAtIndex(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer,int)" class="member-name-link">getLoadableDescriptorAtIndex</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass,
+ int&nbsp;index)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLoadableDescriptorsCount(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">getLoadableDescriptorsCount</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9MethodDebugInfoPointer</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getMethodDebugInfoForROMClass(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer)" class="member-name-link">getMethodDebugInfoForROMClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodPointer&nbsp;method)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
@@ -176,13 +183,6 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPermittedSubclassNameAtIndex(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer,int)" class="member-name-link">getPermittedSubclassNameAtIndex</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass,
- int&nbsp;index)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPreloadClassCount(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">getPreloadClassCount</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPreloadClassNameAtIndex(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer,int)" class="member-name-link">getPreloadClassNameAtIndex</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass,
  int&nbsp;index)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
@@ -379,10 +379,10 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getPreloadClassCount(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">
-<h3>getPreloadClassCount</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getPreloadClassCount</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</span>
-                                throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<section class="detail" id="getLoadableDescriptorsCount(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)">
+<h3>getLoadableDescriptorsCount</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getLoadableDescriptorsCount</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</span>
+                                       throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
@@ -390,11 +390,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getPreloadClassNameAtIndex(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer,int)">
-<h3>getPreloadClassNameAtIndex</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer</span>&nbsp;<span class="element-name">getPreloadClassNameAtIndex</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass,
+<section class="detail" id="getLoadableDescriptorAtIndex(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer,int)">
+<h3>getLoadableDescriptorAtIndex</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.ibm.j9ddr.vm29.pointer.generated.J9UTF8Pointer</span>&nbsp;<span class="element-name">getLoadableDescriptorAtIndex</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass,
  int&nbsp;index)</span>
-                                                                                     throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+                                                                                       throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>

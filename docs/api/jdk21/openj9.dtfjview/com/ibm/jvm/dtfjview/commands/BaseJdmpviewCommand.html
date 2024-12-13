@@ -120,14 +120,14 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">BaseJdmpviewCommand</span>
 <span class="extends-implements">extends <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/commands/BaseCommand.html" title="class in com.ibm.java.diagnostics.utils.commands">BaseCommand</a></span></div>
-<div class="block">This the base command for all jdmpview commands. It ensures consistent 
+<div class="block">This the base command for all jdmpview commands. It ensures consistent
  behaviour with the legacy commands without breaking the generic command
  encapsulation.
- 
+
  There are a number of methods which allow DTFJ objects to be consistently
  displayed across different plugins e.g. getClassInfo(). Where the method
- name starts with getXYZ the output will be returned for further processing, 
- however where the method starts with writeXYZ then the output is written 
+ name starts with getXYZ the output will be returned for further processing,
+ however where the method starts with writeXYZ then the output is written
  immediately to the command's print stream.</div>
 </section>
 <section class="summary">
@@ -222,7 +222,7 @@ loadScripts(document, 'script');</script>
  <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/IContext.html" title="interface in com.ibm.java.diagnostics.utils">IContext</a>&nbsp;context,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Common processing to initialize the command and make the porting of 
+<div class="block">Common processing to initialize the command and make the porting of
  existing jdmpview commands easier.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
@@ -233,25 +233,25 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toHexString(byte)" class="member-name-link">toHexString</a><wbr>(byte&nbsp;num)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toHexString(int)" class="member-name-link">toHexString</a><wbr>(int&nbsp;num)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toHexString(long)" class="member-name-link">toHexString</a><wbr>(long&nbsp;num)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toHexString(short)" class="member-name-link">toHexString</a><wbr>(short&nbsp;num)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
@@ -363,7 +363,7 @@ loadScripts(document, 'script');</script>
  <a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/IContext.html" title="interface in com.ibm.java.diagnostics.utils">IContext</a>&nbsp;context,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</span>
                           throws <span class="exceptions"><a href="../../../../../../openj9.dtfj/com/ibm/java/diagnostics/utils/commands/CommandException.html" title="class in com.ibm.java.diagnostics.utils.commands">CommandException</a></span></div>
-<div class="block">Common processing to initialize the command and make the porting of 
+<div class="block">Common processing to initialize the command and make the porting of
  existing jdmpview commands easier.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -424,7 +424,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">handleException</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link" target="_blank">Throwable</a>&nbsp;cause)</span></div>
 <div class="block">Lots of DTFJ methods will throw a standard set of exceptions such as corrupt data
  or data unavailable. This method provides a central point for handling these exceptions
- and attempts to provide more context as to whether or not this is an expected occurrence 
+ and attempts to provide more context as to whether or not this is an expected occurrence
  for the artifact type under analysis.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -451,7 +451,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="toHexString(long)">
 <h3>toHexString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">toHexString</span><wbr><span class="parameters">(long&nbsp;num)</span></div>
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -465,7 +465,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="toHexString(short)">
 <h3>toHexString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">toHexString</span><wbr><span class="parameters">(short&nbsp;num)</span></div>
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -479,7 +479,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="toHexString(int)">
 <h3>toHexString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">toHexString</span><wbr><span class="parameters">(int&nbsp;num)</span></div>
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -493,7 +493,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="toHexString(byte)">
 <h3>toHexString</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">toHexString</span><wbr><span class="parameters">(byte&nbsp;num)</span></div>
-<div class="block">Format a number with the correct number of zeros as padding according 
+<div class="block">Format a number with the correct number of zeros as padding according
  to the data type passed in.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
