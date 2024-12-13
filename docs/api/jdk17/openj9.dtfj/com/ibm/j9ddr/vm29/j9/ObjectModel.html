@@ -42,6 +42,7 @@
 <meta name="keywords" content="isPointerInRegion()">
 <meta name="keywords" content="isPointerInHeap()">
 <meta name="keywords" content="isInlineContiguousArraylet()">
+<meta name="keywords" content="hasCorrectDataAddrPointer()">
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../script-dir/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../jquery-ui.overrides.css" title="Style">
@@ -274,60 +275,65 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns TRUE if an object has been moved after being hashed, FALSE otherwise.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isDarkMatterObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">hasCorrectDataAddrPointer</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isDarkMatterObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isDarkMatterObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns TRUE if an object is dark matter, FALSE otherwise.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns TRUE if an object is a hole, FALSE otherwise.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns TRUE if an class is indexable, FALSE otherwise.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isIndexable(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isIndexable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns TRUE if an object is indexable, FALSE otherwise.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isInlineContiguousArraylet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isOld(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isOld</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">isInlineContiguousArraylet</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isOld(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isOld</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns TRUE if an object is old, FALSE otherwise.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isPointerInHeap(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.AbstractPointer)" class="member-name-link">isPointerInHeap</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isPointerInHeap(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.AbstractPointer)" class="member-name-link">isPointerInHeap</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
  <a href="../pointer/AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a>&nbsp;pointer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns true if a pointer is in stored in heap.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isPointerInRegion(com.ibm.j9ddr.vm29.pointer.AbstractPointer,com.ibm.j9ddr.vm29.j9.gc.GCHeapRegionDescriptor)" class="member-name-link">isPointerInRegion</a><wbr>(<a href="../pointer/AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a>&nbsp;pointer,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isPointerInRegion(com.ibm.j9ddr.vm29.pointer.AbstractPointer,com.ibm.j9ddr.vm29.j9.gc.GCHeapRegionDescriptor)" class="member-name-link">isPointerInRegion</a><wbr>(<a href="../pointer/AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a>&nbsp;pointer,
  <a href="gc/GCHeapRegionDescriptor.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCHeapRegionDescriptor</a>&nbsp;region)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns true if a pointer is in stored in specified region.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isRemembered(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isRemembered</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isRemembered(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isRemembered</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns TRUE if an object is remembered, FALSE otherwise.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isSingleSlotHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSingleSlotHoleObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isSingleSlotHoleObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns TRUE if an object is a single slot hole object, FALSE otherwise.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="gc/GCHeapRegionDescriptor.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCHeapRegionDescriptor</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#regionForAddress(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.j9.gc.GCHeapRegionManager,com.ibm.j9ddr.vm29.pointer.AbstractPointer)" class="member-name-link">regionForAddress</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="gc/GCHeapRegionDescriptor.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCHeapRegionDescriptor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#regionForAddress(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.j9.gc.GCHeapRegionManager,com.ibm.j9ddr.vm29.pointer.AbstractPointer)" class="member-name-link">regionForAddress</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;javaVM,
  <a href="gc/GCHeapRegionManager.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCHeapRegionManager</a>&nbsp;hrm,
  <a href="../pointer/AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a>&nbsp;pointer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the heap region for address of a pointer.</div>
 </div>
 </div>
@@ -913,6 +919,22 @@ loadScripts(document, 'script');</script>
 <dd><code>arrayPtr</code> - array object we are checking for isInlineContiguousArraylet</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - If there's a problem accessing the layout of the indexable object</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
+<h3>hasCorrectDataAddrPointer</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasCorrectDataAddrPointer</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</span>
+                                         throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>arrayPtr</code> - array object who's data address validity we are checking</dd>
+<dt>Returns:</dt>
+<dd>true if the data address of arrayPtr is valid, false otherwise</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing the indexable object dataAddr field</dd>
 </dl>
 </section>
 </li>

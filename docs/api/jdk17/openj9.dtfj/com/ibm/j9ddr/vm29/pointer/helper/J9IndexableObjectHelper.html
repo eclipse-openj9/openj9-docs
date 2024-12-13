@@ -18,6 +18,7 @@
 <meta name="keywords" content="discontiguousHeaderSize()">
 <meta name="keywords" content="getDataAddrForIndexable()">
 <meta name="keywords" content="getElementEA()">
+<meta name="keywords" content="hasCorrectDataAddrPointer()">
 <meta name="keywords" content="getData()">
 <meta name="keywords" content="getByteData()">
 <meta name="keywords" content="getCharData()">
@@ -256,18 +257,23 @@ loadScripts(document, 'script');</script>
  int&nbsp;length,
  int&nbsp;destStart)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">monitor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rawSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">rawSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">hasCorrectDataAddrPointer</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Determine the validity of the data address belonging to objPointer.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">monitor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rawSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">rawSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -426,6 +432,22 @@ loadScripts(document, 'script');</script>
 <dd>the address for the desired element in the array</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
+<h3>hasCorrectDataAddrPointer</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasCorrectDataAddrPointer</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</span>
+                                         throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<div class="block">Determine the validity of the data address belonging to objPointer.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>objPointer</code> - array object who's data address validity we are checking</dd>
+<dt>Returns:</dt>
+<dd>true if the data address of objPointer is valid, false otherwise</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing the indexable object dataAddr field</dd>
 </dl>
 </section>
 </li>
