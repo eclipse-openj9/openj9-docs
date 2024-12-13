@@ -1137,7 +1137,7 @@ public&nbsp;void&nbsp;setTraceType&#8203;(int&nbsp;type)</pre>
 <div class="block">This forces the trace to a given type. This should only be necessary if you have metadata from
  a VM when no subscribers were attached and data from a subscriber that was registered afterwards.
  The inverted case could be true as well, but is much less likely to occur.
- 
+
  If you're calling this then you should think about altering the sequence of calls used to get the
  metadata and trace data.</div>
 <dl>
@@ -1487,7 +1487,7 @@ public&nbsp;void&nbsp;setTraceType&#8203;(int&nbsp;type)</pre>
  that are awaiting data for completion across all threads. When a trace point iterator
  encounters one of the locations where data was discarded it will throw a MissingDataException
  as for records discarded by the trace engine.
- 
+
  This makes the assumption that the records are being supplied chronologically.</div>
 </li>
 </ul>

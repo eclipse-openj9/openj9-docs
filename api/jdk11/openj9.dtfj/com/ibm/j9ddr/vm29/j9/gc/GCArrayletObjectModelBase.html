@@ -13,6 +13,7 @@
 <meta name="keywords" content="arrayletLeafSize">
 <meta name="keywords" content="arrayletLeafLogSize">
 <meta name="keywords" content="arrayletLeafSizeMask">
+<meta name="keywords" content="enableVirtualLargeObjectHeap">
 <meta name="keywords" content="getSpineSize()">
 <meta name="keywords" content="getSizeInElements()">
 <meta name="keywords" content="getHeaderSize()">
@@ -21,8 +22,12 @@
 <meta name="keywords" content="getDataSizeInBytes()">
 <meta name="keywords" content="getArrayoidPointer()">
 <meta name="keywords" content="getDataPointerForContiguous()">
+<meta name="keywords" content="hasCorrectDataAddrPointer()">
 <meta name="keywords" content="getHashcodeOffset()">
 <meta name="keywords" content="isInlineContiguousArraylet()">
+<meta name="keywords" content="isArrayletDataAdjacentToHeader()">
+<meta name="keywords" content="isIndexableObjectOffHeap()">
+<meta name="keywords" content="isAddressWithinHeap()">
 <meta name="keywords" content="shouldAlignSpineDataSection()">
 <meta name="keywords" content="getElementAddress()">
 <meta name="keywords" content="numArraylets()">
@@ -50,7 +55,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":9,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":6,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":6,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10};
+var data = {"i0":10,"i1":9,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":6,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":6,"i18":6,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -216,6 +221,11 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#enableVirtualLargeObjectHeap">enableVirtualLargeObjectHeap</a></span></code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#largestDesirableArraySpineSize">largestDesirableArraySpineSize</a></span></code></th>
 <td class="colLast">&nbsp;</td>
@@ -397,27 +407,63 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 </td>
 </tr>
 <tr id="i18" class="altColor">
+<td class="colFirst"><code>abstract boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">hasCorrectDataAddrPointer</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)</code></th>
+<td class="colLast">
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+</td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isAddressWithinHeap(com.ibm.j9ddr.vm29.pointer.VoidPointer)">isAddressWithinHeap</a></span>&#8203;(<a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
+<td class="colLast">
+<div class="block">Check if the given address is within the heap.</div>
+</td>
+</tr>
+<tr id="i20" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isArrayletDataAdjacentToHeader(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">isArrayletDataAdjacentToHeader</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></th>
+<td class="colLast">
+<div class="block">Determine if the arraylet data of arrayPtr is adjacent to its header.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isArrayletDataAdjacentToHeader(com.ibm.j9ddr.vm29.types.UDATA)">isArrayletDataAdjacentToHeader</a></span>&#8203;(<a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;dataSizeInBytes)</code></th>
+<td class="colLast">
+<div class="block">Determine if the arraylet data of arrayPtr is adjacent to its header.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isIndexableObjectOffHeap(com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.types.UDATA)">isIndexableObjectOffHeap</a></span>&#8203;(<a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;indexableDataAddr,
+                        <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;dataSizeInBytes)</code></th>
+<td class="colLast">
+<div class="block">Check if the given indexable object is off heap.</div>
+</td>
+</tr>
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isInlineContiguousArraylet(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">isInlineContiguousArraylet</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></th>
 <td class="colLast">
 <div class="block">Check the given indexable object is inline contiguous</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#numArraylets(com.ibm.j9ddr.vm29.types.UDATA)">numArraylets</a></span>&#8203;(<a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;unadjustedDataSizeInBytes)</code></th>
 <td class="colLast">
 <div class="block">Return the total number of arraylets for an indexable object with a size of dataInSizeByte, including a (possibly empty) leaf in the spine.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>protected <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#numExternalArraylets(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">numExternalArraylets</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)</code></th>
 <td class="colLast">
 <div class="block">Return the total number of arraylets for an indexable object, not including the arraylet in the spine.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shouldAlignSpineDataSection(com.ibm.j9ddr.vm29.pointer.generated.J9ArrayClassPointer)">shouldAlignSpineDataSection</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ArrayClassPointer&nbsp;clazz)</code></th>
 <td class="colLast">
@@ -425,7 +471,7 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
  class should have its data section aligned.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shouldAlignSpineDataSection(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">shouldAlignSpineDataSection</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></th>
 <td class="colLast">
@@ -521,10 +567,19 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 <a id="arrayletLeafSizeMask">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>arrayletLeafSizeMask</h4>
 <pre>protected&nbsp;<a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a> arrayletLeafSizeMask</pre>
+</li>
+</ul>
+<a id="enableVirtualLargeObjectHeap">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>enableVirtualLargeObjectHeap</h4>
+<pre>protected&nbsp;boolean enableVirtualLargeObjectHeap</pre>
 </li>
 </ul>
 </li>
@@ -785,6 +840,26 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 </dl>
 </li>
 </ul>
+<a id="hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasCorrectDataAddrPointer</h4>
+<pre class="methodSignature">public abstract&nbsp;boolean&nbsp;hasCorrectDataAddrPointer&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;arrayPtr)
+                                           throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<div class="block">Determine the validity of the data address belonging to arrayPtr.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>arrayPtr</code> - array object who's data address validity we are checking</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the data address of arrayPtr is valid, false otherwise</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing the indexable object dataAddr field</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NoSuchFieldException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">NoSuchFieldException</a></code> - if the indexable object dataAddr field does not exist on the build that generated the core file</dd>
+</dl>
+</li>
+</ul>
 <a id="getHashcodeOffset(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
 <!--   -->
 </a>
@@ -818,6 +893,84 @@ extends <a href="GCBase.html" title="class in com.ibm.j9ddr.vm29.j9.gc">GCBase</
 <dd>true of array is inline contiguous</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="isArrayletDataAdjacentToHeader(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isArrayletDataAdjacentToHeader</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isArrayletDataAdjacentToHeader&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;array)
+                                       throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<div class="block">Determine if the arraylet data of arrayPtr is adjacent to its header.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>arrayPtr</code> - array object</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the arrayPtr has its data adjacent to its header</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - If there's a problem accessing the indexable object dataAddr field</dd>
+</dl>
+</li>
+</ul>
+<a id="isArrayletDataAdjacentToHeader(com.ibm.j9ddr.vm29.types.UDATA)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isArrayletDataAdjacentToHeader</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isArrayletDataAdjacentToHeader&#8203;(<a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;dataSizeInBytes)
+                                       throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<div class="block">Determine if the arraylet data of arrayPtr is adjacent to its header.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>arrayPtr</code> - array object</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the arrayPtr has its data adjacent to its header</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing the indexable object dataAddr field</dd>
+</dl>
+</li>
+</ul>
+<a id="isIndexableObjectOffHeap(com.ibm.j9ddr.vm29.pointer.VoidPointer,com.ibm.j9ddr.vm29.types.UDATA)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isIndexableObjectOffHeap</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isIndexableObjectOffHeap&#8203;(<a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;indexableDataAddr,
+                                        <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;dataSizeInBytes)
+                                 throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<div class="block">Check if the given indexable object is off heap.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>indexableDataAddr</code> - indexable object to check if it is off heap</dd>
+<dd><code>dataSizeInBytes</code> - the size of indexable object</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the given indexable object is off heap</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing card table heap fields</dd>
+</dl>
+</li>
+</ul>
+<a id="isAddressWithinHeap(com.ibm.j9ddr.vm29.pointer.VoidPointer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isAddressWithinHeap</h4>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;isAddressWithinHeap&#8203;(<a href="../../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)
+                            throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<div class="block">Check if the given address is within the heap.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>address</code> - Address to check if it is within the heap</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the given address is within the heap</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing card table heap fields</dd>
 </dl>
 </li>
 </ul>

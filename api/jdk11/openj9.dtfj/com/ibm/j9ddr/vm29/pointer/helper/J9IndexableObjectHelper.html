@@ -16,6 +16,7 @@
 <meta name="keywords" content="discontiguousHeaderSize()">
 <meta name="keywords" content="getDataAddrForIndexable()">
 <meta name="keywords" content="getElementEA()">
+<meta name="keywords" content="hasCorrectDataAddrPointer()">
 <meta name="keywords" content="getData()">
 <meta name="keywords" content="getByteData()">
 <meta name="keywords" content="getCharData()">
@@ -49,7 +50,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9};
+var data = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -377,21 +378,28 @@ extends <a href="J9ObjectHelper.html" title="class in com.ibm.j9ddr.vm29.pointer
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i20" class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">hasCorrectDataAddrPointer</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></th>
+<td class="colLast">
+<div class="block">Determine the validity of the data address belonging to objPointer.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">monitor</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rawSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">rawSize</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">size</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">size</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -603,6 +611,25 @@ extends <a href="J9ObjectHelper.html" title="class in com.ibm.j9ddr.vm29.pointer
 <dd>the address for the desired element in the array</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="hasCorrectDataAddrPointer(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasCorrectDataAddrPointer</h4>
+<pre class="methodSignature">public static&nbsp;boolean&nbsp;hasCorrectDataAddrPointer&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)
+                                         throws <a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<div class="block">Determine the validity of the data address belonging to objPointer.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>objPointer</code> - array object who's data address validity we are checking</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the data address of objPointer is valid, false otherwise</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code> - if there's a problem accessing the indexable object dataAddr field</dd>
 </dl>
 </li>
 </ul>
