@@ -154,7 +154,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
          "Resource-Monitor" threads are special because they do not participate in idle accounting.
          This means that any CPU usage of these threads does not count towards determining the state of the application.
      <li>A thread can be part of only one category at any given time but can change categories any number of times during its timeline.
-     <li>The usage information is in microseconds and increases monotonically. 
+     <li>The usage information is in microseconds and increases monotonically.
      <li>The CPU usage information consists of the following data:
      <ol>
          <li>Attached threads that are live.
@@ -172,7 +172,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
        </ol>
      </li>
  </ol>
- This information is based on repeatedly checking the CPU usage in the following use case scenarios: 
+ This information is based on repeatedly checking the CPU usage in the following use case scenarios:
  <ol>
      <li>Monitoring application idle and active behavior.
      <li>Calculating the JVM Overhead over a specific interval.
@@ -193,7 +193,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
       if (true != mbeanServer.isRegistered(mxbeanName)) {
          // JvmCpuMonitorMXBean not registered
       }
-      JvmCpuMonitorMXBean jcmBean = JMX.newMXBeanProxy(mbeanServer, mxbeanName, JvmCpuMonitorMXBean.class); 
+      JvmCpuMonitorMXBean jcmBean = JMX.newMXBeanProxy(mbeanServer, mxbeanName, JvmCpuMonitorMXBean.class);
    } catch (Exception e) {
       // Exception Handling
    }
@@ -334,7 +334,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  Some notes on the setting the thread categories
  <ol><li>"Application" threads cannot be changed to any "System-JVM" category.
  <li>Threads in the "System-JVM" category cannot be modified.
- <li>Once a thread is designated as "Resource-Monitor", it cannot be changed. 
+ <li>Once a thread is designated as "Resource-Monitor", it cannot be changed.
  </ol></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
