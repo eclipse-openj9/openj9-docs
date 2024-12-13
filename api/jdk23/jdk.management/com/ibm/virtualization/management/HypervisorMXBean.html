@@ -135,7 +135,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.managem
 	if (true != mbeanServer.isRegistered(mxbeanName)) {
 	   // HypervisorMXBean not registered
 	}
-	HypervisorMXBean hypBean = JMX.newMXBeanProxy(mbeanServer, mxbeanName, HypervisorMXBean.class); 
+	HypervisorMXBean hypBean = JMX.newMXBeanProxy(mbeanServer, mxbeanName, HypervisorMXBean.class);
    } catch (Exception e) {
 	// Exception Handling
    }

@@ -36,7 +36,7 @@
 <meta name="keywords" content="hasValidEyeCatcher()">
 <meta name="keywords" content="areExtensionsEnabled()">
 <meta name="keywords" content="isAnonymousClass()">
-<meta name="keywords" content="isRefOrValSignature()">
+<meta name="keywords" content="isClassSignature()">
 <link rel="stylesheet" type="text/css" href="../../../../../../../resource-files/jquery-ui.min.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../../resource-files/stylesheet.css" title="Style">
 <script type="text/javascript" src="../../../../../../../script-files/script.js"></script>
@@ -131,7 +131,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#hasValidEyeCatcher(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" tabindex="0">hasValidEyeCatcher(J9ClassPointer)</a></li>
 <li><a href="#areExtensionsEnabled()" tabindex="0">areExtensionsEnabled()</a></li>
 <li><a href="#isAnonymousClass(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" tabindex="0">isAnonymousClass(J9ClassPointer)</a></li>
-<li><a href="#isRefOrValSignature(char)" tabindex="0">isRefOrValSignature(char)</a></li>
+<li><a href="#isClassSignature(char)" tabindex="0">isClassSignature(char)</a></li>
 </ol>
 </li>
 </ol>
@@ -246,13 +246,13 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isArrayClass(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isArrayClass</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isObsolete(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isObsolete</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;j9class)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isRefOrValSignature(char)" class="member-name-link">isRefOrValSignature</a><wbr>(char&nbsp;firstChar)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isClassSignature(char)" class="member-name-link">isClassSignature</a><wbr>(char&nbsp;firstChar)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Queries if a given char is the first character of a reference or value type signature.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isObsolete(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isObsolete</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;j9class)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isSameOrSuperClassOf(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isSameOrSuperClassOf</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;superClazz,
  com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
@@ -667,12 +667,12 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="isRefOrValSignature(char)">
-<h3>isRefOrValSignature</h3>
+<section class="detail" id="isClassSignature(char)">
+<h3>isClassSignature</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isRefOrValSignature</span><wbr><span class="parameters">(char&nbsp;firstChar)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isClassSignature</span><wbr><span class="parameters">(char&nbsp;firstChar)</span></div>
 <div class="block">Queries if a given char is the first character of a reference or value type signature.
- Equivalent to J9's IS_REF_OR_VAL_SIGNATURE macro.</div>
+ Equivalent to J9's IS_CLASS_SIGNATURE macro.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>firstChar</code> - the first character of the signature being checked</dd>
