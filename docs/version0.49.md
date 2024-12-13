@@ -26,6 +26,7 @@
 The following new features and notable changes since version 0.48.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [Change to the shared classes cache generation number](#change-to-the-shared-classes-cache-generation-number)
 
 ## Features and changes
 
@@ -36,6 +37,14 @@ Eclipse OpenJ9&trade; release 0.49.0 supports OpenJDK 8, 11, 17, 21, and 23.
 macOS 12 is out of support and is removed from the list of supported platforms.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### Change to the shared classes cache generation number
+
+The shared classes cache generation number is incremented. The increment in the shared classes cache generation number causes the VM to create a new shared classes cache, rather than re-creating or reusing an existing cache.
+
+To save space, all existing shared caches can be removed unless they are in use by an earlier release. For more information, see [Housekeeping](shrc.md#housekeeping) and [`-Xshareclasses`](xshareclasses.md).
+
+The shared classes cache generation number is modified because of a change in the format of ROMClasses that are stored in the shared classes cache. A new flag `J9AccClassIsShared` is added to ROMClasses to indicate whether a ROMClass was loaded from a shared classes cache or from a VM.
 
 ## Known problems and full release information
 
