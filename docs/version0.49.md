@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.48.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Change to the shared classes cache generation number](#change-to-the-shared-classes-cache-generation-number)
+- [New shared classes cache suboption added to adjust the number of startup hints that can be stored](#new-shared-classes-cache-suboption-added-to-adjust-the-number-of-startup-hints-that-can-be-stored)
 
 ## Features and changes
 
@@ -45,6 +46,12 @@ The shared classes cache generation number is incremented. The increment in the 
 To save space, all existing shared caches can be removed unless they are in use by an earlier release. For more information, see [Housekeeping](shrc.md#housekeeping) and [`-Xshareclasses`](xshareclasses.md).
 
 The shared classes cache generation number is modified because of a change in the format of ROMClasses that are stored in the shared classes cache. A new flag `J9AccClassIsShared` is added to ROMClasses to indicate whether a ROMClass was loaded from a shared classes cache or from a VM.
+
+### New shared classes cache suboption added to adjust the number of startup hints that can be stored
+
+You can use the `-Xshareclasses:extraStartupHints=<number>` option to adjust the number of startup hints that can be stored in a shared cache. By default, you can store only up to 64 startup hints in a shared cache.
+
+For more information, see [`-Xshareclasses:extraStartupHints`](xshareclasses.md#extrastartuphints).
 
 ## Known problems and full release information
 
