@@ -5902,6 +5902,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#extrastartuphints" class="md-nav__link">
+    <span class="md-ellipsis">
+      extraStartupHints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#fatal" class="md-nav__link">
     <span class="md-ellipsis">
       fatal
@@ -6085,6 +6094,15 @@
   <a href="#printallstats-cache-utility" class="md-nav__link">
     <span class="md-ellipsis">
       printAllStats (Cache utility)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printdetails-cache-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      printDetails (Cache utility)
     </span>
   </a>
   
@@ -9589,6 +9607,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#extrastartuphints" class="md-nav__link">
+    <span class="md-ellipsis">
+      extraStartupHints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#fatal" class="md-nav__link">
     <span class="md-ellipsis">
       fatal
@@ -9772,6 +9799,15 @@
   <a href="#printallstats-cache-utility" class="md-nav__link">
     <span class="md-ellipsis">
       printAllStats (Cache utility)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printdetails-cache-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      printDetails (Cache utility)
     </span>
   </a>
   
@@ -10197,6 +10233,14 @@ case, the VM continues without using shared classes.</dd>
 <dl>
 <dd>Destroys all caches that are unused for the time that is specified before loading shared classes. This option is not a utility option because it does not cause the VM to exit. On Windows systems, which have NTFS file systems, the <code>expire</code> option is accurate to the nearest hour.</dd>
 </dl>
+<h3 id="extrastartuphints"><code>extraStartupHints</code></h3>
+<pre><code>    -Xshareclasses:extraStartupHints=&lt;number&gt;
+</code></pre>
+<dl>
+<dd>where, <code>&lt;number&gt;</code> is greater than or equal to 0.</dd>
+<dd>Adjusts the number of startup hints that can be stored in a shared cache. By default, you can store only up to 64 startup hints in a shared cache. This count decrements by 1 each time a startup hint is stored. After the count reaches 0, no more hints can be added to the cache. You can use <code>-Xshareclasses:extraStartupHints=&lt;number&gt;</code> to adjust this count as needed. For example, <code>-Xshareclasses:extraStartupHints=0</code> prevents any new hints to be stored and <code>-Xshareclasses:extraStartupHints=10</code> allows 10 more new hints in addition to the default number of 64 startup hints.</dd>
+<dd>You can use <a href="#printstats-cache-utility"><code>-Xshareclasses:printStats=startuphint</code></a> to check how many startup hints are already stored in the shared cache. You can also use <a href="#printdetails-cache-utility"><code>-Xshareclasses:printDetails</code></a> to check how many hints in addition to the default startup hints can be stored in the cache. In the output of the <code>printDetails</code> suboption, the number of extra startup hints that can be stored is found on the line <code># Additional startup hints allowed</code>.</dd>
+</dl>
 <h3 id="fatal"><code>fatal</code></h3>
 <pre><code>    -Xshareclasses:fatal
 </code></pre>
@@ -10425,6 +10469,12 @@ behavior, which can improve the performance of class loading from the shared cla
 </code></pre>
 <dl>
 <dd>Displays detailed information about the contents of the cache that is specified in the <a href="#name"><code>name</code></a> suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use <a href="#printtoplayerstats-cache-utility"><code>printTopLayerStats=all</code></a>). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see <a href="../shrc_diag_util/#shared-classes-cache-diagnostic-utilities">Shared classes cache diagnostic utilities</a>.</dd>
+</dl>
+<h3 id="printdetails-cache-utility"><code>printDetails</code> (Cache utility)</h3>
+<pre><code>    -Xshareclasses:printDetails
+</code></pre>
+<dl>
+<dd>Displays detailed cache statistics. The output of this suboption is similar to the output of <a href="#printstats-cache-utility"><code>-Xshareclasses:printStats</code></a> but with additional information. For example, instead of "AOT bytes" which is a total, the output shows "AOT code bytes", "AOT data bytes", "AOT class hierarchy bytes", and "AOT thunk bytes".</dd>
 </dl>
 <h3 id="printstats-cache-utility"><code>printStats</code> (Cache utility)</h3>
 <pre><code>    -Xshareclasses:printStats=&lt;data_type&gt;[+&lt;data_type&gt;]
