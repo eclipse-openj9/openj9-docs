@@ -239,6 +239,16 @@ case, the VM continues without using shared classes.
 
 : Destroys all caches that are unused for the time that is specified before loading shared classes. This option is not a utility option because it does not cause the VM to exit. On Windows systems, which have NTFS file systems, the `expire` option is accurate to the nearest hour.
 
+### `extraStartupHints`
+
+        -Xshareclasses:extraStartupHints=<number>
+
+: where, `<number>` is greater than or equal to 0.
+
+: Adjusts the number of startup hints that can be stored in a shared cache. By default, you can store only up to 64 startup hints in a shared cache. This count decrements by 1 each time a startup hint is stored. After the count reaches 0, no more hints can be added to the cache. You can use `-Xshareclasses:extraStartupHints=<number>` to adjust this count as needed. For example, `-Xshareclasses:extraStartupHints=0` prevents any new hints to be stored and `-Xshareclasses:extraStartupHints=10` allows 10 more new hints in addition to the default number of 64 startup hints.
+
+: You can use [`-Xshareclasses:printStats=startuphint`](#printstats-cache-utility) to check how many startup hints are already stored in the shared cache. You can also use [`-Xshareclasses:printDetails`](#printdetails-cache-utility) to check how many hints in addition to the default startup hints can be stored in the cache. In the output of the `printDetails` suboption, the number of extra startup hints that can be stored is found on the line `# Additional startup hints allowed`.
+
 ### `fatal`
 
         -Xshareclasses:fatal
@@ -465,6 +475,12 @@ behavior, which can improve the performance of class loading from the shared cla
         -Xshareclasses:printAllStats
 
 :   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats-cache-utility)). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see [Shared classes cache diagnostic utilities](shrc_diag_util.md#shared-classes-cache-diagnostic-utilities).
+
+### `printDetails` (Cache utility)
+
+        -Xshareclasses:printDetails
+
+:   Displays detailed cache statistics. The output of this suboption is similar to the output of [`-Xshareclasses:printStats`](#printstats-cache-utility) but with additional information. For example, instead of "AOT bytes" which is a total, the output shows "AOT code bytes", "AOT data bytes", "AOT class hierarchy bytes", and "AOT thunk bytes".
 
 ### `printStats` (Cache utility)
 
