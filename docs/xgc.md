@@ -51,6 +51,11 @@ Options that change the behavior of the garbage collector.
 | [`scvNoAdaptiveTenure`              ](#scvnoadaptivetenure              ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                               |
 | [`scvTenureAge`                     ](#scvtenureage                     ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                           |
 | [`stdGlobalCompactToSatisfyAllocate`](#stdglobalcompacttosatisfyallocate) | Prevents the GC from performing a compaction unless absolutely required.                                  |
+| [`suballocatorCommitSize`           ](#suballocatorcommitsize           ) | Sets the commit size in bytes for the heap that is used for compressed references.                                |
+| [`suballocatorIncrementSize`        ](#suballocatorincrementsize        ) | Sets the reservation increment size in bytes for the heap that is used for compressed references.                 |
+| [`suballocatorInitialSize`          ](#suballocatorinitialsize          ) | Sets the initial size in bytes for the heap that is used for compressed references.                               |
+| [`suballocatorQuickAllocDisable`    ](#suballocatorquickallocdisable    ) | Disable mmap-based allocation for compressed references (Linux only).                             |
+| [`suballocatorQuickAllocEnable`     ](#suballocatorquickallocenable     ) | Enables mmap-based allocation for compressed references (Linux only).                             |
 | [`synchronousGCOnOOM`               ](#synchronousgconoom               )     | Stops an application to allow GC activity.                                                                             |
 | [`targetPausetime`                  ](#targetpausetime                  )   | Sets the target GC pause time for the `metronome` and `balanced` GC policies.                            |
 | [`targetUtilization`                ](#targetutilization                )   | Sets application utilization for the `metronome` GC policy.                                                   |
@@ -272,6 +277,47 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 
 : This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`) or metronome GC policy (`-Xgcpolicy:metronome`).
 
+### `suballocatorCommitSize`
+
+        -Xgc:suballocatorCommitSize=<bytes>
+
+: Sets the commit size of the heap that is used for compressed references. The default size is 50 MB.
+
+: You can use this option with all OpenJ9 GC policies. The option affects only those builds that use compressed references.
+
+### `suballocatorIncrementSize`
+
+        -Xgc:suballocatorIncrementSize=<bytes>
+
+: Sets the reservation increment size of the heap that is used for compressed references. When the memory of the current heap space is exhausted, the increment size determines the amount of additional memory to reserve. The default size is 8 MB for all platforms except AIX. The default size for AIX is 256 MB.
+
+: You can use this option with all OpenJ9 GC policies. The option affects only those builds that use compressed references.
+
+### `suballocatorInitialSize`
+
+        -Xgc:suballocatorInitialSize=<bytes>
+
+: Sets the initial size of the heap that is used for compressed references. The default size is 200 MB.
+
+: You can use this option with all OpenJ9 GC policies. The option affects only those builds that use compressed references.
+
+### `suballocatorQuickAllocDisable`
+**Linux only**
+
+        -Xgc:suballocatorQuickAllocDisable
+
+: Disables mmap-based allocation for compressed references.
+
+: You can use this option with all OpenJ9 GC policies. The option affects only those builds that use compressed references.
+ 
+### `suballocatorQuickAllocEnable`
+**Linux only**
+
+        -Xgc:suballocatorQuickAllocEnable
+
+: Enables mmap-based allocation for compressed references. This option is enabled by default.
+
+: You can use this option with all OpenJ9 GC policies. The option affects only those builds that use compressed references.
 
 ### `synchronousGCOnOOM`
 
@@ -356,5 +402,8 @@ Larger TLHs can help reduce heap lock contention, but might also reduce heap uti
     :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The cycle time does not mean that the summary information is logged precisely at that time, but when the last GC event that meets this time criterion passes.
 
 : This option applies only to the `metronome` GC policy.
+
+
+ 
 
 <!-- ==== END OF TOPIC ==== xgc.md ==== -->
