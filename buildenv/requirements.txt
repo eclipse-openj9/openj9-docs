@@ -67,7 +67,7 @@ mkdocs-material==9.5.18
     # via -r requirements.in
 mkdocs-material-extensions==1.3
     # via mkdocs-material
-packaging==23.2
+packaging==24.0
     # via
     #   mkdocs
     #   mkdocs-macros-plugin
