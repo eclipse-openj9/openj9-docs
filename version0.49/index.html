@@ -451,6 +451,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#suballocator-related-xgc-options-are-added-to-control-the-compressed-reference-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      subAllocator related -Xgc options are added to control the compressed reference allocation
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8947,6 +8956,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#suballocator-related-xgc-options-are-added-to-control-the-compressed-reference-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      subAllocator related -Xgc options are added to control the compressed reference allocation
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -9005,6 +9023,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#change-to-the-shared-classes-cache-generation-number">Change to the shared classes cache generation number</a></li>
 <li><a href="#new-shared-classes-cache-suboption-added-to-adjust-the-number-of-startup-hints-that-can-be-stored">New shared classes cache suboption added to adjust the number of startup hints that can be stored</a></li>
+<li><a href="#suballocator-related-xgc-options-are-added-to-control-the-compressed-reference-allocation"><code>subAllocator</code> related <code>-Xgc</code> options are added to control the compressed reference allocation</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -9018,6 +9037,16 @@
 <h3 id="new-shared-classes-cache-suboption-added-to-adjust-the-number-of-startup-hints-that-can-be-stored">New shared classes cache suboption added to adjust the number of startup hints that can be stored</h3>
 <p>You can use the <code>-Xshareclasses:extraStartupHints=&lt;number&gt;</code> option to adjust the number of startup hints that can be stored in a shared cache. By default, you can store only up to 64 startup hints in a shared cache.</p>
 <p>For more information, see <a href="../xshareclasses/#extrastartuphints"><code>-Xshareclasses:extraStartupHints</code></a>.</p>
+<h3 id="suballocator-related-xgc-options-are-added-to-control-the-compressed-reference-allocation"><code>subAllocator</code> related <code>-Xgc</code> options are added to control the compressed reference allocation</h3>
+<p>The VM can use compressed references to decrease the size of Java objects and make better use of the available space in the Java heap. You can now control the compressed reference allocation with the following options:</p>
+<ul>
+<li><a href="../xgc/#suballocatorcommitsize"><code>-Xgc:suballocatorCommitSize=&lt;size&gt;</code></a></li>
+<li><a href="../xgc/#suballocatorincrementsize"><code>-Xgc:suballocatorIncrementSize=&lt;size&gt;</code></a></li>
+<li><a href="../xgc/#suballocatorinitialsize"><code>-Xgc:suballocatorInitialSize=&lt;size&gt;</code></a></li>
+<li><a href="../xgc/#suballocatorquickallocdisable"><code>-Xgc:suballocatorQuickAllocDisable</code></a></li>
+<li><a href="../xgc/#suballocatorquickallocenable"><code>-Xgc:suballocatorQuickAllocEnable</code></a></li>
+</ul>
+<p>For more information, see <a href="../allocation/#compressed-references">Compressed references</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.48.0 and v0.49.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.49/0.49.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.49.md ==== -->

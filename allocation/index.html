@@ -9233,6 +9233,14 @@ reach the maximum requested TLH size more quickly.</p>
 <p>Compressed references are used by default when the maximum Java heap size is in the range 0 - 57 GB on AIX&reg;, Linux&reg;, and Windows&reg; systems. The upper limit is also 57 GB on z/OS&reg; systems that have APAR OA49416
 installed (25 GB without APAR OA49416). All GC policies observe these limits except for the <a href="../gc/#metronome-policy"><code>metronome</code></a> policy, which can support a heap size of up to 25 GB only with compressed references.</p>
 <p>When the VM uses compressed references, classes, threads, and monitors are stored in the lowest 4 GB of address space. However, this area of memory is also used by native libraries, the operating system, and for small Java heaps. If you receive native memory <code>OutOfMemoryError</code> exceptions in the lowest 4 GB when running with compressed references enabled, these errors might result from the lowest 4 GB of address space becoming full. Try specifying a large heap with the <a href="../xms/"><code>-Xmx</code></a> option, which puts the Java heap into a higher area of address space or using the <a href="../xmcrs/"><code>-Xmcrs</code></a> option to reserve space in the lowest 4 GB of address space for compressed references.</p>
+<p>You can control the compressed reference allocation with the following options:</p>
+<ul>
+<li><a href="../xgc/#suballocatorcommitsize"><code>-Xgc:suballocatorCommitSize=&lt;size&gt;</code></a></li>
+<li><a href="../xgc/#suballocatorincrementsize"><code>-Xgc:suballocatorIncrementSize=&lt;size&gt;</code></a></li>
+<li><a href="../xgc/#suballocatorinitialsize"><code>-Xgc:suballocatorInitialSize=&lt;size&gt;</code></a></li>
+<li><a href="../xgc/#suballocatorquickallocdisable"><code>-Xgc:suballocatorQuickAllocDisable</code></a></li>
+<li><a href="../xgc/#suballocatorquickallocenable"><code>-Xgc:suballocatorQuickAllocEnable</code></a></li>
+</ul>
 <p>To turn off compressed references, use the <a href="../xcompressedrefs/"><code>-Xnocompressedrefs</code></a> command-line option.</p>
 <!-- ==== END OF TOPIC ==== allocation.md ==== -->
 
