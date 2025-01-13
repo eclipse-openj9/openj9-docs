@@ -51,6 +51,11 @@ Options that change the behavior of the garbage collector.
 | [`scvNoAdaptiveTenure`              ](#scvnoadaptivetenure              ) | Turns off the adaptive tenure age in the generational concurrent GC policy.                               |
 | [`scvTenureAge`                     ](#scvtenureage                     ) | Sets the initial scavenger tenure age in the generational concurrent GC policy.                           |
 | [`stdGlobalCompactToSatisfyAllocate`](#stdglobalcompacttosatisfyallocate) | Prevents the GC from performing a compaction unless absolutely required.                                  |
+| [`suballocatorCommitSize`           ](#suballocatorcommitsize           ) | Sets the commit size in bytes for the `subAllocator` area that is used for compressed references.                                |
+| [`suballocatorIncrementSize`        ](#suballocatorincrementsize        ) | Sets the reservation increment size in bytes for the `subAllocator` area that is used for compressed references.                 |
+| [`suballocatorInitialSize`          ](#suballocatorinitialsize          ) | Sets the initial size in bytes for the `subAllocator` area that is used for compressed references.                               |
+| [`suballocatorQuickAllocDisable`    ](#suballocatorquickallocdisable    ) | Disables mmap-based allocation of the compressed references `subAllocator` area. (Linux only)                            |
+| [`suballocatorQuickAllocEnable`     ](#suballocatorquickallocenable     ) | Enables mmap-based allocation of the compressed references `subAllocator` area. (Linux only)                            |
 | [`synchronousGCOnOOM`               ](#synchronousgconoom               )     | Stops an application to allow GC activity.                                                                             |
 | [`targetPausetime`                  ](#targetpausetime                  )   | Sets the target GC pause time for the `metronome` and `balanced` GC policies.                            |
 | [`targetUtilization`                ](#targetutilization                )   | Sets application utilization for the `metronome` GC policy.                                                   |
@@ -272,6 +277,55 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 
 : This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`) or metronome GC policy (`-Xgcpolicy:metronome`).
 
+### `suballocatorCommitSize`
+
+        -Xgc:suballocatorCommitSize=<size>
+
+: For more information about the `<size>` parameter, see [Using -X command-line options](x_jvm_commands.md).
+
+: Sets the commit size of the area in memory that is reserved within the lowest 4 GB memory area for any native classes, monitors, and threads that are used by compressed references. The default size is 50 MB.
+
+: This option is supported by all OpenJ9 GC policies. The option affects only those builds that use compressed references.
+
+### `suballocatorIncrementSize`
+
+        -Xgc:suballocatorIncrementSize=<size>
+
+: For more information about the `<size>` parameter, see [Using -X command-line options](x_jvm_commands.md).
+
+: Sets the reservation increment size of the area in memory that is reserved within the lowest 4 GB memory area for any native classes, monitors, and threads that are used by compressed references. When the memory of the current space is exhausted, the increment size determines the amount of additional memory to reserve. The default size is 8 MB for all platforms except AIX. The default size for AIX is 256 MB.
+
+: This option is supported by all OpenJ9 GC policies. The option affects only those builds that use compressed references.
+
+### `suballocatorInitialSize`
+
+        -Xgc:suballocatorInitialSize=<size>
+
+: For more information about the `<size>` parameter, see [Using -X command-line options](x_jvm_commands.md).
+
+: Sets the initial size of the area in memory that is reserved within the lowest 4 GB memory area for any native classes, monitors, and threads that are used by compressed references. The default size is 200 MB.
+
+: This option is supported by all OpenJ9 GC policies. The option affects only those builds that use compressed references.
+
+: The `-Xgc:suballocatorInitialSize` option overrides the [`-Xmcrs`](xmcrs.md) option irrespective of the order of the options on the command line. If the `-Xmcrs` option is thus overridden, the `-Xmcrs` output of `-verbose:sizes` shows the `suballocatorInitialSize` value.
+
+### `suballocatorQuickAllocDisable`
+**Linux only**
+
+        -Xgc:suballocatorQuickAllocDisable
+
+: Disables mmap-based allocation of an area in memory that is reserved within the lowest 4 GB memory area for any native classes, monitors, and threads that are used by compressed references.
+
+: This option is supported by all OpenJ9 GC policies. The option affects only those builds that use compressed references.
+
+### `suballocatorQuickAllocEnable`
+**Linux only**
+
+        -Xgc:suballocatorQuickAllocEnable
+
+: Enables mmap-based allocation of an area in memory that is reserved within the lowest 4 GB memory area for any native classes, monitors, and threads that are used by compressed references. This option is enabled by default.
+
+: This option is supported by all OpenJ9 GC policies. The option affects only those builds that use compressed references.
 
 ### `synchronousGCOnOOM`
 

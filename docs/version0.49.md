@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.48.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Change to the shared classes cache generation number](#change-to-the-shared-classes-cache-generation-number)
 - [New shared classes cache suboption added to adjust the number of startup hints that can be stored](#new-shared-classes-cache-suboption-added-to-adjust-the-number-of-startup-hints-that-can-be-stored)
+- [`subAllocator` related `-Xgc` options are added to control the compressed reference allocation](#suballocator-related-xgc-options-are-added-to-control-the-compressed-reference-allocation)
 
 ## Features and changes
 
@@ -52,6 +53,18 @@ The shared classes cache generation number is modified because of a change in th
 You can use the `-Xshareclasses:extraStartupHints=<number>` option to adjust the number of startup hints that can be stored in a shared cache. By default, you can store only up to 64 startup hints in a shared cache.
 
 For more information, see [`-Xshareclasses:extraStartupHints`](xshareclasses.md#extrastartuphints).
+
+### `subAllocator` related `-Xgc` options are added to control the compressed reference allocation
+
+The VM can use compressed references to decrease the size of Java objects and make better use of the available space in the Java heap. You can now control the compressed reference allocation with the following options:
+
+ - [`-Xgc:suballocatorCommitSize=<size>`](xgc.md#suballocatorcommitsize)
+ - [`-Xgc:suballocatorIncrementSize=<size>`](xgc.md#suballocatorincrementsize)
+ - [`-Xgc:suballocatorInitialSize=<size>`](xgc.md#suballocatorinitialsize)
+ - [`-Xgc:suballocatorQuickAllocDisable`](xgc.md#suballocatorquickallocdisable)
+ - [`-Xgc:suballocatorQuickAllocEnable`](xgc.md#suballocatorquickallocenable)
+
+For more information, see [Compressed references](allocation.md#compressed-references).
 
 ## Known problems and full release information
 
