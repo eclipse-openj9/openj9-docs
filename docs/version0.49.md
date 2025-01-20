@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.48.0 are included
 - [Change to the shared classes cache generation number](#change-to-the-shared-classes-cache-generation-number)
 - [New shared classes cache suboption added to adjust the number of startup hints that can be stored](#new-shared-classes-cache-suboption-added-to-adjust-the-number-of-startup-hints-that-can-be-stored)
 - [`subAllocator` related `-Xgc` options are added to control the compressed reference allocation](#suballocator-related-xgc-options-are-added-to-control-the-compressed-reference-allocation)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New `-XX:[+|-]FlightRecorder` option added](#new-xx-flightrecorder-option-added) ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 ## Features and changes
 
@@ -65,6 +66,12 @@ The VM can use compressed references to decrease the size of Java objects and ma
  - [`-Xgc:suballocatorQuickAllocEnable`](xgc.md#suballocatorquickallocenable)
 
 For more information, see [Compressed references](allocation.md#compressed-references).
+
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) New `-XX:[+|-]FlightRecorder` option added
+
+This release supports, as a technical preview, the Java Flight Recorder (JFR) tool that is available for OpenJDK 11 and later running on Linux&reg; x86 and Linux on AArch64 only.
+
+You can collect profiling and diagnostic information with the JFR tool. You can enable or disable the JFR tool in the VM with the [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md) option. ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 ## Known problems and full release information
 

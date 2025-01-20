@@ -409,6 +409,7 @@ nav:
             - "-XX:[+|-]EnableExtendedHCR"                                       : xxenableextendedhcr.md
             - "-XX:[+|-]EnsureHashed"                                            : xxensurehashed.md
             - "-XX:[+|-]ExitOnOutOfMemoryError"                                  : xxexitonoutofmemoryerror.md
+            - "-XX:[+|-]FlightRecorder"                                          : xxflightrecorder.md
             - "-XX:[+|-]GlobalLockReservation"                                   : xxgloballockreservation.md
             - "-XX:[+|-]HandleSIGABRT"                                           : xxhandlesigabrt.md
             - "-XX:[+|-]HandleSIGUSR2"                                           : xxhandlesigusr2.md
