@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxperftool/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/xxflightrecorder/">
       
       
-        <link rel="prev" href="../xxparallelgcthreads/">
+        <link rel="prev" href="../xxexitonoutofmemoryerror/">
       
       
-        <link rel="next" href="../xxportablesharedcache/">
+        <link rel="next" href="../xxgloballockreservation/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-XX:[+|-]PerfTool -  </title>
+        <title>-XX:[+|-]FlightRecorder -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xx-perftool" class="md-skip">
+        <a href="#-xx-flightrecorder" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -XX:[+|-]PerfTool
+              -XX:[+|-]FlightRecorder
             
           </span>
         </div>
@@ -6495,10 +6495,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../xxflightrecorder/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    -XX:[+|-]FlightRecorder
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -6507,6 +6527,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -7587,30 +7654,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    -XX:[+|-]PerfTool
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xxperftool/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -7619,53 +7666,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntax
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      See also
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -8930,7 +8930,7 @@
         <li class="md-nav__item">
   <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
-      See also
+      See Also
     </span>
   </a>
   
@@ -8974,11 +8974,12 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-xx-perftool">-XX:[+|-]PerfTool</h1>
-<p>This option enables or disables JIT support for the <code>perf</code> tool without affecting the existing <code>Xjit</code> options.</p>
-<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg></span> <strong>Restriction:</strong> Since this option creates a file that is used by the Linux&reg; system profiler, <code>perf</code>, it applies only to Linux.</p>
+<h1 id="-xx-flightrecorder">-XX:[+|-]FlightRecorder</h1>
+<p><strong>Linux&reg; on x86, Linux on AArch64</strong></p>
+<p><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> This option enables or disables the Java Flight Recorder (JFR) tool in the VM. This built-in profiling and troubleshooting tool in the VM collects profiling and diagnostic information.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2 22.6-22.7zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"/></svg></span> <strong>Note:</strong> Support for the JFR tool is currently provided as a technical preview. All JFR-related <code>jcmd</code> options might change in future releases.</p>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:[+|-]PerfTool
+<pre><code>    -XX:[+|-]FlightRecorder
 </code></pre>
 <table>
 <thead>
@@ -8990,25 +8991,45 @@
 </thead>
 <tbody>
 <tr>
-<td><code>-XX:+PerfTool</code></td>
+<td><code>-XX:+FlightRecorder</code></td>
 <td>Enable</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
 </tr>
 <tr>
-<td><code>-XX:-PerfTool</code></td>
+<td><code>-XX:-FlightRecorder</code></td>
 <td>Disable</td>
-<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>The <code>-XX:+PerfTool</code> option is a stand-alone alternative for the existing <code>-Xjit:perfTool</code> option. If multiple <code>-Xjit</code> options exist, only the last option takes effect. Therefore, if the <code>-Xjit:perfTool</code> option is added later, it overrides the existing <code>-Xjit</code> options. To overcome this issue, the <code>XX:+PerfTool</code> option enables JIT support for the <code>perf</code> tool without having any impact on the existing <code>Xjit</code> options. This enabling option creates a <code>/tmp/perf-&lt;pid&gt;.map</code> file that is used by the <code>perf</code> tool to map the samples in the JIT-compiled code to the corresponding Java method names.</p>
-<p>To disable the JIT support for the <code>perf</code> tool, set the <code>-XX:-PerfTool</code> option on the command line.</p>
-<h2 id="see-also">See also</h2>
+<p>If the JFR tool is enabled in the VM with the <code>-XX:+FlightRecorder</code> option, then you can trigger profile and diagnostic recording with the <a href="https://eclipse.dev/openj9/docs/tool_jcmd/"><code>jcmd</code></a> tool. Recording does not start automatically, it must be triggered.</p>
+<p>To start a recording, specify the following command:</p>
+<pre><code>jcmd &lt;vmid | display name | 0&gt; JFR.start [filename=&lt;file_name_with_path&gt;] [duration=&lt;time_with_unit_of_time&gt;]
+
+</code></pre>
+<p>where:</p>
 <ul>
-<li><a href="../xjit/"><code>xjit</code></a></li>
+<li>
+<p>Optional parameters are shown in brackets, [ ].</p>
+</li>
+<li>
+<p><code>filename=&lt;file_name_with_path&gt;</code> specifies the name of the file and its location where the recording is saved. The file name should have a <code>.jfr</code> extension. If a file name is not specified, the recording is saved in the <code>defaultJ9recording.jfr</code> file in the process working directory by default.</p>
+</li>
+<li>
+<p><code>duration=&lt;time_with_unit_of_time&gt;</code> specifies the duration of the recording. Units of time are <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), and <code>d</code> (days). You can specify only one unit of time, for example, 54s, 12m, 1h, or 2d. If the duration is not specified, the tool continues to record until the recording is manually stopped or the VM is shut down.</p>
+</li>
 </ul>
-<!-- ==== END OF TOPIC ==== xxperftool.md ==== -->
+<p>Example:</p>
+<pre><code>jcmd 1234 JFR.start filename=/path/ABCD.jfr duration=4s
+
+</code></pre>
+<p><img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../version0.49/#new-xx-flightrecorder-option-added">What's new in version 0.49.0</a></li>
+</ul>
+<!-- ==== END OF TOPIC ==== xxflightrecorder.md ==== -->
 
 
 
