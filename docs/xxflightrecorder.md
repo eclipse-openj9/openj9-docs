@@ -25,9 +25,9 @@
 
 **Linux&reg; on x86, Linux on AArch64**
 
-![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) This option enables or disables the Java Flight Recorder (JFR) tool in the VM. This built-in profiling and troubleshooting tool in the VM collects profiling and diagnostic information.
+![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) This option enables or disables JDK Flight Recorder (JFR) in the VM. This built-in profiling and troubleshooting feature in the VM collects profiling and diagnostic information.
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Support for the JFR tool is currently provided as a technical preview. All JFR-related `jcmd` options might change in future releases.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Support for JFR is currently provided as a technical preview. All JFR-related `jcmd` options might change in future releases.
 
 ## Syntax
 
@@ -40,7 +40,7 @@
 
 ## Explanation
 
-If the JFR tool is enabled in the VM with the `-XX:+FlightRecorder` option, then you can trigger profile and diagnostic recording with the [`jcmd`](https://eclipse.dev/openj9/docs/tool_jcmd/) tool. Recording does not start automatically, it must be triggered.
+If JFR is enabled in the VM with the `-XX:+FlightRecorder` option, then you can trigger profile and diagnostic recording with the [`jcmd`](https://eclipse.dev/openj9/docs/tool_jcmd/) tool. Recording does not start automatically, it must be triggered.
 
 To start a recording, specify the following command:
 
