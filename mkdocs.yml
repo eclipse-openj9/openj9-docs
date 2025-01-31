@@ -414,7 +414,7 @@ nav:
             - "-XX:[+|-]HandleSIGABRT"                                           : xxhandlesigabrt.md
             - "-XX:[+|-]HandleSIGUSR2"                                           : xxhandlesigusr2.md
             - "-XX:[+|-]HandleSIGXFSZ"                                           : xxhandlesigxfsz.md
-            - "-XX:[+|-]HeapDumpOnOutOfMemory"                                   : xxheapdumponoutofmemory.md
+            - "-XX:[+|-]HeapDumpOnOutOfMemoryError"                              : xxheapdumponoutofmemoryerror.md
             - "-XX:HeapDumpPath"                                                 : xxheapdumppath.md
             - "-XX:[+|-]HeapManagementMXBeanCompatibility"                       : xxheapmanagementmxbeancompatibility.md
             - "-XX:[+|-]IdleTuningCompactOnIdle"                                 : xxidletuningcompactonidle.md
