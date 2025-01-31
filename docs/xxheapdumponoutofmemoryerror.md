@@ -21,19 +21,19 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-# -XX:\[+|-\]HeapDumpOnOutOfMemory
+# -XX:\[+|-\]HeapDumpOnOutOfMemoryError
 
 This HotSpot option is recognized by Eclipse OpenJ9&trade;. You can use the option to to disable Java&trade;, heap, snap, and system dumps on out-of-memory conditions, which are enabled by default.
 
 ## Syntax
 
-        -XX:[+|-]HeapDumpOnOutOfMemory
+        -XX:[+|-]HeapDumpOnOutOfMemoryError
 
 | Setting                      | Effect  | Default                                                                        |
 |------------------------------|---------|:------------------------------------------------------------------------------:|
-| `-XX:+HeapDumpOnOutOfMemory` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| `-XX:-HeapDumpOnOutOfMemory` | Disable |                                                                                |
+| `-XX:+HeapDumpOnOutOfMemoryError` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| `-XX:-HeapDumpOnOutOfMemoryError` | Disable |                                                                                |
 
 
-<!-- ==== END OF TOPIC ==== xxheapdumponoutofmemory.md ==== -->
+<!-- ==== END OF TOPIC ==== xxheapdumponoutofmemoryerror.md ==== -->
 
