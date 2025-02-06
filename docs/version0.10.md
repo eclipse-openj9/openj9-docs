@@ -59,7 +59,7 @@ The value of the soft maximum size (`-Xscmx`) of the shared classes cache is now
 For compatibility, the following OpenJDK HotSpot options are now supported by OpenJ9:
 
 - [-XX:HeapDumpPath](xxheapdumppath.md)
-- [-XX:\[+|-\]HeapDumpOnOutOfMemory](xxheapdumponoutofmemory.md)
+- [-XX:\[+|-\]HeapDumpOnOutOfMemoryError](xxheapdumponoutofmemoryerror.md)
 - [-XX:ActiveProcessorCount](xxactiveprocessorcount.md)
 
 ### ![Start of content that applies to Java 11 plus](cr/java11plus.png) New JDK 11 features
