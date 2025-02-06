@@ -25,7 +25,7 @@
 
 This HotSpot option is recognized by Eclipse OpenJ9&trade;. You can use the option to trigger a shut down on VM out-of-memory conditions.
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Java&trade;, heap, snap, and system dumps are enabled by default but can be disabled by including [`-XX:-HeapDumpOnOutOfMemoryError`](xxheapdumponoutofmemory.md).
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Java&trade;, heap, snap, and system dumps are enabled by default but can be disabled by including [`-XX:-HeapDumpOnOutOfMemoryError`](xxheapdumponoutofmemoryerror.md).
 
 ## Syntax
 
