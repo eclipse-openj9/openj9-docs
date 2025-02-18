@@ -55,6 +55,7 @@ When the size of the cache increases, the number of allocations reduces but the 
 ## See also
 
 - [`-XX:[+|-]ShowCarrierFrames`](xxshowcarrierframes.md)
+- [What's new in version 0.41.0](version0.41.md#new-xxcontinuationcache-option-added)
 
 
 <!-- ==== END OF TOPIC ==== xxcontinuationcache.md ==== -->

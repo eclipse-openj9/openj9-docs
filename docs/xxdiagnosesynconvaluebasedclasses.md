@@ -36,6 +36,8 @@
 | 1                 | Generate `VirtualMachineError` error         |
 | 2                 | Print a warning message                      |
 
+## See also
 
+- [What's new in version 0.25.0](version0.25.md#new-jdk-16-features)
 
 <!-- ==== END OF TOPIC ==== xxdiagnosesynconvaluebasedclasses.md ==== -->

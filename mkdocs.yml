@@ -111,11 +111,11 @@ nav:
         - "Version 0.43.0"                                                       : version0.43.md
         - "Version 0.42.0"                                                       : version0.42.md
         - "Version 0.41.0"                                                       : version0.41.md
-        - "Version 0.40.0"                                                       : version0.40.md
-        - "Version 0.39.0"                                                       : version0.39.md
-        - "Version 0.38.0"                                                       : version0.38.md
-        - "Version 0.37.0"                                                       : version0.37.md
         - "Earlier releases" :
+            - "Version 0.40.0"                                                   : version0.40.md
+            - "Version 0.39.0"                                                   : version0.39.md
+            - "Version 0.38.0"                                                   : version0.38.md
+            - "Version 0.37.0"                                                   : version0.37.md
             - "Version 0.36.x"                                                   : version0.36.md
             - "Version 0.35.0"                                                   : version0.35.md
             - "Version 0.33.x"                                                   : version0.33.md

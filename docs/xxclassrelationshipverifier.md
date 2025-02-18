@@ -42,6 +42,9 @@ When enabled, this option delays validating the relationships between classes un
 
 A verify error is thrown if validation fails.
 
+## See also
+
+- [What's new in version 0.17.0](version0.17.md#option-to-record-class-relationships-in-the-verifier)
 
 <!-- ==== END OF TOPIC ==== xxclassrelationshipverifier.md ==== -->
 

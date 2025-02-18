@@ -43,4 +43,8 @@ When you set this option the following line in a Java dump file is updated to in
 
 If this option is not set, the value for this line is `0` Active CPUs.
 
+## See also
+
+- [What's new in version 0.10.0](version0.10.md#support-for-openjdk-hotspot-options)
+
 <!-- ==== END OF TOPIC ==== xxallowvmshutdown.md ==== -->

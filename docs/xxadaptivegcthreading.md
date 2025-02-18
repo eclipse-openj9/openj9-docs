@@ -56,4 +56,9 @@ You can check the active thread count value that is used by the garbage collecto
 <gc-end id="92" type="scavenge" contextid="88" durationms="0.195" usertimems="0.940" systemtimems="0.114" stalltimems="0.067" timestamp="2021-03-12T01:35:10.796" activeThreads="3">
 <gc-end id="104" type="scavenge" contextid="100" durationms="0.277" usertimems="0.899" systemtimems="0.118" stalltimems="0.139" timestamp="2021-03-12T01:35:10.797" activeThreads="3">
 ```
+
+## See also
+
+- [What's new in version 0.27.1](version0.27.md#new-xx-adaptivegcthreading-option-added)
+
 <!-- ==== END OF TOPIC ==== xxadaptivegcthreading.md ==== -->

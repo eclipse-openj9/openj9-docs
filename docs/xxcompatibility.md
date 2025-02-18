@@ -43,5 +43,8 @@ Although this option is available in all OpenJDK versions, the Elasticsearch app
 
 The Elasticsearch application was facing incompatibility issues when it was running on OpenJ9 and required many workarounds. With the `Elasticsearch` compatibility mode, OpenJ9 accepts and supports HotSpot-specific options or APIs that enhance compatibility to run the Elasticsearch application.
 
+## See also
+
+- [What's new in version 0.43.0](version0.43.md#new-xxcompatibility-option-added)
 
 <!-- ==== END OF TOPIC ==== xxcompatibility.md ==== -->

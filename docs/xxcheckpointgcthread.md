@@ -56,5 +56,6 @@ If the default thread count is lesser than the checkpoint thread count, then the
 ## See also
 
 - [CRIU support](criusupport.md)
+- [What's new in version 0.38.0](version0.38.md##technical-preview-of-criu-support)
 
 <!-- ==== END OF TOPIC ==== xxcheckpointgcthread.md ==== -->

@@ -42,6 +42,8 @@ In OpenJDK, these methods return `0` value in the case of the first call, which 
 
 The `-XX:+CpuLoadCompatibility` option is used to enable the OpenJDK behavior of the `getProcessCpuLoad()` and `getSystemCpuLoad()` methods in OpenJ9.
 
+## See also
 
+- [What's new in version 0.43.0](version0.43.md#new-xx-cpuloadcompatibility-option-added)
 
 <!-- ==== END OF TOPIC ==== xxcpuloadcompatibility.md ==== -->

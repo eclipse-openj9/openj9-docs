@@ -57,5 +57,6 @@ If you require multiple checkpoints, you can use the `-XX:-CRIURestoreNonPortabl
 ## See also
 
 - [CRIU support](criusupport.md)
+- [What's new in version 0.38.0](version0.38.md#technical-preview-of-criu-support)
 
 <!-- ==== END OF TOPIC ==== xxcriurestorenonportablemode.md ==== -->

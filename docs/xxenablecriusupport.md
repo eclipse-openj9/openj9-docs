@@ -78,5 +78,6 @@ For more information about the OpenJ9 compensations and Time APIs, see the Compe
 ## See also
 
 - [CRIU support](criusupport.md)
+- [What's new in version 0.38.0](version0.38.md#technical-preview-of-criu-support)
 
 <!-- ==== END OF TOPIC ==== xxenablecriusupport.md ==== -->
