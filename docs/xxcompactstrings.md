@@ -23,6 +23,8 @@
 
 # -XX:[+|-]CompactStrings
 
+<!-- Release 0.8.0 -->
+
 This HotSpot option is reimplemented by Eclipse OpenJ9&trade; and when enabled causes an ISO8859-1 (also known as Latin-1) character representation to be used internally for `String` objects, while preserving full API compatibility.
 
 This feature provides heap space savings by using an 8-bit character set internally. Most benefit is gained when the majority of the `String` objects that your application uses can be encoded using the ISO8859-1 character encoding. 

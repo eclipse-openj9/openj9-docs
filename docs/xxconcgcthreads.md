@@ -33,4 +33,8 @@ Where `<number>` is the number of low-priority background threads that are attac
 
 Within OpenJ9 this option is directly mapped to [`-Xconcurrentbackground`](xconcurrentbackground.md).
 
+## See also
+
+- [What's new in version 0.18.0](version0.18.md#support-for-openjdk-hotspot-options)
+
 <!-- ==== END OF TOPIC ==== xxparallelcmsthreads.md ==== -->

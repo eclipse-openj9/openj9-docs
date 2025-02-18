@@ -46,5 +46,6 @@ You can now choose to disable the use of `CRIUSECProvider` with the `-XX:-CRIUSe
 ## See also
 
 - [CRIU support](criusupport.md)
+- [What's new in version 0.38.0](version0.38.md#technical-preview-of-criu-support)
 
 <!-- ==== END OF TOPIC ==== xxcriusecprovider.md ==== -->

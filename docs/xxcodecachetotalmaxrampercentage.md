@@ -57,5 +57,9 @@ As an alternative, you can use the [`-XX:codecachetotal`](xxcodecachetotal.md) o
 - If the `-XX:codecachetotal` or `-Xcodecachetotal` option is specified, then the `-XX:codecachetotalMaxRAMPercentage` option is ignored.
 - The percentage of the available physical memory that is specified in the `-XX:codecachetotalMaxRAMPercentage` option is used only if the total cache value thus calculated is less than the default total code cache value set for the platform (minimum of the two limits).
 
+## See also
+
+[What's new in version 0.40.0](version0.40.md#new-xxcodecachetotalmaxrampercentage-option-added)
+
 
 <!-- ==== END OF TOPIC ==== xxcodecachetotalmaxrampercentage.md ==== -->

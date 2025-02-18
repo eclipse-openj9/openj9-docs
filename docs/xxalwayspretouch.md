@@ -34,4 +34,8 @@ This Oracle HotSpot option enables or disables the committing of memory during i
 |`-XX:+AlwaysPreTouch`     | Enable |                                                                  |
 |`-XX:-AlwaysPreTouch`     | Disable| :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
+## See also
+
+- [What's new in version 0.23.0](version0.23.md#support-for-openjdk-hotspot-options)
+
 <!-- ==== END OF TOPIC ==== xxalwayspretouch.md ==== -->
