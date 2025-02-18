@@ -576,6 +576,41 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Earlier releases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            Earlier releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../version0.40/" class="md-nav__link">
         
@@ -653,41 +688,6 @@
   
 
               
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_16" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_16" id="__nav_5_16_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Earlier releases
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_16_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_16">
-            <span class="md-nav__icon md-icon"></span>
-            Earlier releases
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -8939,6 +8939,8 @@
 -->
 
 <h1 id="-xx-compactstrings">-XX:[+|-]CompactStrings</h1>
+<!-- Release 0.8.0 -->
+
 <p>This HotSpot option is reimplemented by Eclipse OpenJ9&trade; and when enabled causes an ISO8859-1 (also known as Latin-1) character representation to be used internally for <code>String</code> objects, while preserving full API compatibility.</p>
 <p>This feature provides heap space savings by using an 8-bit character set internally. Most benefit is gained when the majority of the <code>String</code> objects that your application uses can be encoded using the ISO8859-1 character encoding. </p>
 <p>If the option is not enabled, the JIT compiler is nevertheless optimized so that although there is no saving in heap space, there is also no performance penalty.</p>

@@ -576,6 +576,41 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Earlier releases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            Earlier releases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../version0.40/" class="md-nav__link">
         
@@ -653,41 +688,6 @@
   
 
               
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_16" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_16" id="__nav_5_16_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Earlier releases
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_16_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_16">
-            <span class="md-nav__icon md-icon"></span>
-            Earlier releases
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -6351,6 +6351,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -8918,6 +8927,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See also
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -8986,6 +9004,10 @@
 <p>The <code>getProcessCpuLoad()</code> method in the <code>com.sun.management.OperatingSystemMXBean</code> class returns the recent CPU usage value for the Java virtual machine process, while the <code>getSystemCpuLoad()</code> method returns the recent CPU usage value for the whole system. When these methods were called in OpenJ9 for the first time, these methods were returning <code>-1</code> to indicate that the recent CPU usage is not available. It was difficult to identify whether the reason for the <code>-1</code> value was an error or because the call was the first call and therefore, no recent CPU usage was available.</p>
 <p>In OpenJDK, these methods return <code>0</code> value in the case of the first call, which makes it easier to differentiate between the first call behavior and an error that needs further investigation.</p>
 <p>The <code>-XX:+CpuLoadCompatibility</code> option is used to enable the OpenJDK behavior of the <code>getProcessCpuLoad()</code> and <code>getSystemCpuLoad()</code> methods in OpenJ9.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../version0.43/#new-xx-cpuloadcompatibility-option-added">What's new in version 0.43.0</a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xxcpuloadcompatibility.md ==== -->
 
 
