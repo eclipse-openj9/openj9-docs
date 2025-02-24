@@ -21,35 +21,72 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-# -Xloa / -Xnoloa
+# -Xloa / -Xnoloa / -Xloainitial / -Xloaminimum / -Xloamaximum
 
-This option enables or prevents the allocation of a large object area (LOA) during garbage collection (GC).
+The large object area (LOA) is an area of the tenure area of the heap set used solely to satisfy allocations for large objects. The LOA is used when the allocation request cannot be satisfied in the small object area (SOA), which is the main area of the tenure heap.
 
-## Syntax
+As objects are allocated and freed, the heap can become fragmented in such a way that allocation can be met only by time-consuming compactions. This problem is more pronounced if an application allocates large objects. In an attempt to alleviate this problem, the LOA is allocated. A large object in this context is considered to be any object 64 KB or greater in size. Allocations for new thread local heaps (TLH) objects are not considered to be large objects.
+
+You can use the following `-X` options to control the LOA allocation:
+
+- [`-Xloa` / `-Xnoloa`](#-xloa-xnoloa)
+- [`-Xloainitial`](#-xloainitial)
+- [`-Xloaminimum`](#-xloaminimum)
+- [`-Xloamaximum`](#-xloamaximum)
+
+## -Xloa / -Xnoloa
+
+The `-Xloa` option enables and the `-Xnoloa` option prevents the allocation of a large object area during garbage collection (GC).
+
+These options are not supported with the balanced GC policy (`-Xgcpolicy:balanced`) or metronome GC policy (`-Xgcpolicy:metronome`), which do not use an LOA. Any LOA options that are passed on the command line are ignored. These policies address the issues that are solved by an LOA by reorganizing object layout with the VM to reduce heap fragmentation and compaction requirements.
+
+### Syntax
 
 | Setting            | Effect      | Default                                                                                                                        |
 |--------------------|-------------|:------------------------------------------------------------------------------------------------------------------------------:|
-| `-Xloa`            | Enable LOA  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (see [Default behavior)](#default-behavior) |
-| `-Xnoloa`          | Disable LOA |                                                                                                                                |
+| `-Xloa`            |  Enable LOA  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> (see [Default behavior](#default-behavior)) |
+| `-Xnoloa`          |  Disable LOA  |                                                                                             |
 
-## Default behavior
+### Default behavior
 
-By default, allocations are made in the small object area (SOA). If there is no room in the SOA, and an object is larger than 64KB, the object is allocated in the LOA.
+By default, allocations are made in the SOA. If the SOA has no room, and an object is larger than 64 KB, the object is allocated in the LOA if you enable LOA with the `-Xloa` option.
 
 If the LOA is not used, it is shrunk to zero after a few collections. You can disable it explicitly by specifying the `-Xnoloa` option.
 
-## Explanation
+## -Xloainitial
 
-The LOA is an area of the tenure area of the heap set used solely to satisfy allocations for large objects. The LOA is used when the allocation request cannot be satisfied in the main area (the SOA of the tenure heap.
+This option specifies the initial proportion of the current tenure space that is allocated to the LOA.
 
-As objects are allocated and freed, the heap can become fragmented in such a way that allocation can be met only by time-consuming compactions. This problem is more pronounced if an application allocates large objects. In an attempt to alleviate this problem, the LOA is allocated. A large object in this context is considered to be any object 64 KB or greater in size. Allocations for new TLH objects are not considered to be large objects.
+### Syntax
 
-This option is not supported with the balanced GC policy (`-Xgcpolicy:balanced`) or metronome GC policy (`-Xgcpolicy:metronome`), which do not use an LOA. Any LOA options passed on the command line are ignored. These policies address the issues that are solved by an LOA by reorganizing object layout with the VM to reduce heap fragmentation and compaction requirements.
+| Setting               | Effect            | Default  |
+|-----------------------|-------------------|----------|
+| `-Xloainitial<value>` | Set initial space | `0.05`   |
+
+## -Xloaminimum
+
+This option specifies the minimum proportion of the current tenure space that is allocated to the LOA.
+
+The LOA does not shrink to less than the minimum value.
+
+### Syntax
+
+| Setting               | Effect            | Default  |
+|-----------------------|-------------------|----------|
+| `-Xloaminimum<value>` | Set minimum space | `0.01`   |
+
+## -Xloamaximum
+
+This option specifies the maximum proportion of the current tenure space that is allocated to the large object area (LOA).
+
+### Syntax
+
+| Setting               | Effect            | Default  |
+|-----------------------|-------------------|----------|
+| `-Xloamaximum<value>` | Set minimum space | `0.5`    |
 
 ## See also
 
-- [-Xloainitial / -Xloaminimum / -Xloamaximum](xloaminimum.md)
-
+- [Allocation caches](allocation.md#allocation-caches)
 
 <!-- ==== END OF TOPIC ==== xloa.md ==== -->
-<!-- ==== END OF TOPIC ==== xnoloa.md ==== -->
