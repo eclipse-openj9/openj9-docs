@@ -277,32 +277,29 @@ nav:
             - "-X"                                                               : x.md
             - "-Xaggressive"                                                     : xaggressive.md
             - "-Xalwaysclassgc"                                                  : xalwaysclassgc.md
-            - "-Xaot"                                                            : xaot.md
+            - "-Xaot / -Xnoaot"                                                  : xaot.md
             - "-Xargencoding"                                                    : xargencoding.md
             - "-Xbootclasspath"                                                  : xbootclasspath.md
             - "-XCEEHDLR"                                                        : xceehdlr.md
             - "-Xcheck"                                                          : xcheck.md
-            - "-Xclassgc"                                                        : xclassgc.md
+            - "-Xclassgc / -Xnoclassgc"                                          : xclassgc.md
             - "-Xcodecache"                                                      : xcodecache.md
             - "-Xcodecachetotal"                                                 : xcodecachetotal.md
             - "-Xcomp"                                                           : xcomp.md
-            - "-Xcompactexplicitgc"                                              : xcompactexplicitgc.md
-            - "-Xcompactgc"                                                      : xcompactgc.md
+            - "-Xcompactexplicitgc / -Xnocompactexplicitgc"                      : xcompactexplicitgc.md
+            - "-Xcompactgc / -Xnocompactgc"                                      : xcompactgc.md
             - "-XcompilationThreads"                                             : xcompilationthreads.md
-            - "-Xcompressedrefs"                                                 : xcompressedrefs.md
+            - "-Xcompressedref / -Xnocompressedrefs"                             : xcompressedrefs.md
             - "-Xconcurrentbackground"                                           : xconcurrentbackground.md
             - "-Xconcurrentlevel"                                                : xconcurrentlevel.md
             - "-Xconcurrentslack"                                                : xconcurrentslack.md
             - "-Xconmeter"                                                       : xconmeter.md
-            - "-Xdisableexcessivegc"                                             : xenableexcessivegc.md              # redirect
-            - "-Xdisableexplicitgc"                                              : xenableexplicitgc.md               # redirect
             - "-Xdisablejavadump"                                                : xdisablejavadump.md
-            - "-Xdisablestringconstantgc"                                        : xenablestringconstantgc.md         # redirect
             - "-Xdump"                                                           : xdump.md
             - "-XdynamicHeapAdjustment"                                          : xdynamicheapadjustment.md
-            - "-Xenableexcessivegc"                                              : xenableexcessivegc.md
-            - "-Xenableexplicitgc"                                               : xenableexplicitgc.md
-            - "-Xenablestringconstantgc"                                         : xenablestringconstantgc.md
+            - "-Xenableexcessivegc / -Xdisableexcessivegc"                       : xenableexcessivegc.md
+            - "-Xenableexplicitgc / -Xdisableexplicitgc"                         : xenableexplicitgc.md
+            - "-Xenablestringconstantgc / -Xdisablestringconstantgc"             : xenablestringconstantgc.md
             - "-Xfastresolve"                                                    : xfastresolve.md
             - "-Xfuture"                                                         : xfuture.md
             - "-Xgc"                                                             : xgc.md
@@ -312,51 +309,28 @@ nav:
             - "-Xgcthreads"                                                      : xgcthreads.md
             - "-Xgcworkpackets"                                                  : xgcworkpackets.md
             - "-Xint"                                                            : xint.md
-            - "-Xiss"                                                            : xss.md                             # redirect
-            - "-Xjit"                                                            : xjit.md
+            - "-Xiss / -Xss / -Xssi"                                             : xss.md
+            - "-Xjit / -Xnojit"                                                  : xjit.md
             - "-Xjni"                                                            : xjni.md
-            - "-Xlinenumbers"                                                    : xlinenumbers.md
-            - "-Xloa"                                                            : xloa.md
-            - "-Xloainitial"                                                     : xloaminimum.md                     # redirect
-            - "-Xloamaximum"                                                     : xloaminimum.md                     # redirect
-            - "-Xloaminimum"                                                     : xloaminimum.md
+            - "-Xlinenumbers / -Xnolinenumbers"                                  : xlinenumbers.md
+            - "-Xloa[...] / -Xnoloa"                                             : xloa.md
             - "-XlockReservation"                                                : xlockreservation.md
             - "-Xlockword"                                                       : xlockword.md
             - "-Xlog"                                                            : xlog.md
             - "-Xlp"                                                             : xlp.md
             - "-Xlp:codecache"                                                   : xlpcodecache.md
             - "-Xlp:objectheap"                                                  : xlpobjectheap.md
-            - "-Xmaxe"                                                           : xmine.md                           # redirect
-            - "-Xmaxf"                                                           : xminf.md                           # redirect
-            - "-Xmaxt"                                                           : xmint.md                           # redirect
-            - "-Xmca"                                                            : xmca.md
-            - "-Xmco"                                                            : xmca.md                            # redirect
+            - "-Xmaxe / -Xmine"                                                  : xmine.md
+            - "-Xmaxf / -Xminf"                                                  : xminf.md
+            - "-Xmaxt / -Xmint"                                                  : xmint.md
+            - "-Xmca / -Xmco"                                                    : xmca.md
             - "-Xmcrs"                                                           : xmcrs.md
-            - "-Xmine"                                                           : xmine.md
-            - "-Xminf"                                                           : xminf.md
-            - "-Xmint"                                                           : xmint.md
-            - "-Xmn"                                                             : xmn.md
-            - "-Xmns"                                                            : xmn.md                             # redirect
-            - "-Xmnx"                                                            : xmn.md                             # redirect
-            - "-Xmo"                                                             : xmo.md
+            - "-Xmn / -Xmns / -Xmnx"                                             : xmn.md
+            - "-Xmo / -Xmos / -Xmox"                                             : xmo.md
             - "-Xmoi"                                                            : xmoi.md
-            - "-Xmos"                                                            : xmo.md                             # redirect
-            - "-Xmox"                                                            : xmo.md                             # redirect
-            - "-Xmr"                                                             : xmr.md
-            - "-Xmrx"                                                            : xmr.md                             # redirect
-            - "-Xms"                                                             : xms.md
+            - "-Xmr / -Xmrx"                                                     : xmr.md
+            - "-Xms / -Xmx"                                                      : xms.md
             - "-Xmso"                                                            : xmso.md
-            - "-Xmx"                                                             : xms.md                             # redirect
-            - "-Xnoaot"                                                          : xaot.md                            # redirect
-            - "-Xnoclassgc"                                                      : xclassgc.md                        # redirect
-            - "-Xnocompactexplicitgc"                                            : xcompactexplicitgc.md              # redirect
-            - "-Xnocompactgc"                                                    : xcompactgc.md                      # redirect
-            - "-Xnocompressedrefs"                                               : xcompressedrefs.md                 # redirect
-            - "-Xnojit"                                                          : xjit.md                            # redirect
-            - "-Xnolinenumbers"                                                  : xlinenumbers.md                    # redirect
-            - "-Xnoloa"                                                          : xloa.md                            # redirect
-            - "-Xnosigcatch"                                                     : xsigcatch.md                       # redirect
-            - "-Xnosigchain"                                                     : xsigchain.md                       # redirect
             - "-Xnuma:none"                                                      : xnumanone.md
             - "-Xoptionsfile"                                                    : xoptionsfile.md
             - "-Xquickstart"                                                     : xquickstart.md
@@ -364,19 +338,15 @@ nav:
             - "-Xrunjdwp"                                                        : xrunjdwp.md
             - "-XsamplingExpirationTime"                                         : xsamplingexpirationtime.md
             - "-Xscdmx"                                                          : xscdmx.md
-            - "-Xscmaxaot"                                                       : xscminaot.md                       # redirect
-            - "-Xscmaxjitdata"                                                   : xscminjitdata.md                   # redirect
-            - "-Xscminaot"                                                       : xscminaot.md
-            - "-Xscminjitdata"                                                   : xscminjitdata.md
+            - "-Xscmaxaot / -Xscminaot"                                          : xscminaot.md
+            - "-Xscmaxjitdata / -Xscminjitdata"                                  : xscminjitdata.md
             - "-Xscmx"                                                           : xscmx.md
             - "-Xshareclasses"                                                   : xshareclasses.md
-            - "-Xsigcatch"                                                       : xsigcatch.md
-            - "-Xsigchain"                                                       : xsigchain.md
+            - "-Xsigcatch / -Xnosigcatch"                                        : xsigcatch.md
+            - "-Xsigchain / -Xnosigchain"                                        : xsigchain.md
             - "-Xsignal"                                                         : xsignal.md
             - "-Xsoftmx"                                                         : xsoftmx.md
             - "-Xsoftrefthreshold"                                               : xsoftrefthreshold.md
-            - "-Xss"                                                             : xss.md
-            - "-Xssi"                                                            : xss.md                             # redirect
             - "-Xsyslog"                                                         : xsyslog.md
             - "-Xtgc"                                                            : xtgc.md
             - "-Xthr"                                                            : xthr.md
@@ -423,8 +393,8 @@ nav:
             - "-XX:IdleTuningMinIdleWaitTime"                                    : xxidletuningminidlewaittime.md
             - "-XX:[+|-]IgnoreUnrecognizedVMOptions"                             : xxignoreunrecognizedvmoptions.md
             - "-XX:[+|-]IgnoreUnrecognizedXXColonOptions"                        : xxignoreunrecognizedxxcolonoptions.md
-            - "-XX:InitialRAMPercentage"                                         : xxinitialrampercentage.md
-            - "-XX:InitialHeapSize"                                              : xxinitialheapsize.md
+            - "-XX:InitialRAMPercentage / -XX:MaxRAMPercentage"                  : xxinitialrampercentage.md
+            - "-XX:InitialHeapSize / -XX:MaxHeapSize"                            : xxinitialheapsize.md
             - "-XX:[+|-]InterleaveMemory"                                        : xxinterleavememory.md
             - "-XX:[+|-]IProfileDuringStartupPhase"                              : xxiprofileduringstartupphase.md
             - "-XX:[+|-]JITInlineWatches"                                        : xxjitinlinewatches.md
@@ -438,20 +408,15 @@ nav:
             - "-XX:[+|-]JITServerLogConnections"                                 : xxjitserverlogconnections.md
             - "-XX:JITServerMetrics"                                             : xxjitservermetrics.md
             - "-XX:JITServerMetricsPort"                                         : xxjitservermetricsport.md
-            - "-XX:JITServerMetricsSSLCert"                                      : xxjitservermetricssslkey.md
-            - "-XX:JITServerMetricsSSLKey"                                       : xxjitservermetricssslkey.md
+            - "-XX:JITServerMetricsSSL[...]"                                     : xxjitservermetricssslkey.md
             - "-XX:JITServerPort"                                                : xxjitserverport.md
             - "-XX:JITServerShareROMClasses"                                     : xxjitservershareromclasses.md
-            - "-XX:JITServerSSLCert"                                             : xxjitserversslcert.md
-            - "-XX:JITServerSSLKey"                                              : xxjitserversslcert.md        #redirect
-            - "-XX:JITServerSSLRootCerts"                                        : xxjitserversslcert.md        #redirect
+            - "-XX:JITServerSSL[...]"                                            : xxjitserversslcert.md
             - "-XX:JITServerTimeout"                                             : xxjitservertimeout.md
             - "-XX:[+|-]JITServerUseAOTCache"                                    : xxjitserveruseaotcache.md
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
             - "-XX:[+|-]LegacyXLogOption"                                        : xxlegacyxlogoption.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
-            - "-XX:MaxHeapSize"                                                  : xxinitialheapsize.md              #redirect
-            - "-XX:MaxRAMPercentage"                                             : xxinitialrampercentage.md         #redirect
             - "-XX:[+|-]MergeCompilerOptions"                                    : xxmergecompileroptions.md
             - "-XX:OnOutOfMemoryError"                                           : xxonoutofmemoryerror.md
             - "-XX:[+|-]OpenJ9CommandLineEnv"                                    : xxopenj9commandlineenv.md
@@ -472,8 +437,7 @@ nav:
             - "-XX:[+|-]RuntimeInstrumentation"                                  : xxruntimeinstrumentation.md
             - "-XXsetHWPrefetch"                                                 : xxsethwprefetch.md
             - "-XX:[+|-]ShareAnonymousClasses"                                   : xxshareanonymousclasses.md
-            - "-XX:ShareClassesDisableBCI"                                       : xxshareclassesenablebci.md         #redirect
-            - "-XX:ShareClassesEnableBCI"                                        : xxshareclassesenablebci.md
+            - "-XX:ShareClassesEnableBCI / -XX:ShareClassesDisableBCI"           : xxshareclassesenablebci.md
             - "-XX:SharedCacheHardLimit"                                         : xxsharedcachehardlimit.md
             - "-XX:[+|-]ShareOrphans"                                            : xxshareorphans.md
             - "-XX:[+|-]ShareUnsafeClasses"                                      : xxshareunsafeclasses.md
