@@ -86,7 +86,7 @@ The GC action that is triggered by the allocation failure depends on the GC poli
 
 The overall size of the LOA is calculated when the heap is initialized, and recalculated at the end of each global GC cycle. The garbage collector can expand or contract the LOA, depending on usage, to avoid allocation failures.
 
-You can control the size of the LOA by using the [`-Xloainitial`, `-Xloaminimum`, and `-Xloamaximum`](xloaminimum.md) command line options. If the LOA is not used, the garbage collector contracts the LOA after a few cycles, down to the value of `-Xloaminimum`. You can also specify [`-Xnoloa`](xloa.md) to prevent an LOA being created.
+You can control the size of the LOA by using the [`-Xloainitial`, `-Xloaminimum`, and `-Xloamaximum`](xloa.md) command line options. If the LOA is not used, the garbage collector contracts the LOA after a few cycles, down to the value of `-Xloaminimum`. You can also specify [`-Xnoloa`](xloa.md) to prevent an LOA being created.
 
 An SOA and LOA are used by the OpenJ9 GC policies: `gencon`, `optavgpause`, and `optthruput`. For the `gencon` policy, the LOA and SOA are contained within the tenure area, which is designated for ageing objects. For more information about policies, see [Garbage collection policies](gc.md).
 
@@ -112,7 +112,7 @@ There are a number of advantages to using arraylets.
 
 ## Heap sizing
 
-The overall size of the Java heap is determined by two command-line options, `-Xms`, which sets the initial size of the heap, and `-Xmx`, which sets the maximum size of the heap. Finer tuning of the heap depends on the heap configuration that is being used by a GC policy. For example, an LOA within the heap can be sized by using the [`-Xloainitial`, `-Xloaminimum`, and `-Xloamaximum`](xloaminimum.md) command-line options. A nursery area within the heap can be sized by using the [`-Xmn`, `-Xmns`, and `-Xmnx`](xmn.md) command-line options. For more information about policies and the heap configurations that are used, see [GC policies](gc.md). To determine the values that are in use for the Java heap, use the `-verbose:sizes` option when you run your Java application.
+The overall size of the Java heap is determined by two command-line options, `-Xms`, which sets the initial size of the heap, and `-Xmx`, which sets the maximum size of the heap. Finer tuning of the heap depends on the heap configuration that is being used by a GC policy. For example, an LOA within the heap can be sized by using the [`-Xloainitial`, `-Xloaminimum`, and `-Xloamaximum`](xloa.md) command-line options. A nursery area within the heap can be sized by using the [`-Xmn`, `-Xmns`, and `-Xmnx`](xmn.md) command-line options. For more information about policies and the heap configurations that are used, see [GC policies](gc.md). To determine the values that are in use for the Java heap, use the `-verbose:sizes` option when you run your Java application.
 
 When the Java heap runs out of space, `OutOfMemoryError` exceptions are generated. If you are confident that your heap settings are appropriate for your application but are still receiving an `OutOfMemoryError` exception, check the Java dump file that gets automatically generated when the error occurs. A Java dump file can tell you more about what your application was attempting to do at the time of the error. For example, see the [Java OutOfMemoryError](dump_javadump.md#java-outofmemoryerror) scenario.
 
