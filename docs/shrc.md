@@ -60,7 +60,7 @@ These cache utilities are discussed in more detail in the sections that follow.
 Class data sharing is enabled by default for bootstrap classes, unless your application is running in a container.
 Default behavior includes the following characteristics:
 
-- On Windows&reg;, the cache is created in the user's `C:\Users\<username>\AppData\Local\javasharedresources` directory. On z/OS&reg;, the default cache directory is `/tmp/javasharedresources`. On other systems, the cache is created in the `.cache/javasharedresources` directory in the user's home directory, unless the `groupAccess` parameter is specified, in which case it is created in `/tmp/javasharedresources`. Please do not set the home directory on an NFS mount or shared mount across systems or LPARs.
+- On Windows&reg;, the cache is created in the user's `C:\Users\<username>\AppData\Local\javasharedresources` directory. On z/OS&reg;, the default cache directory is `/tmp/javasharedresources`. On other systems, the cache is created in the `.cache/javasharedresources` directory in the user's home directory, unless the `groupAccess` parameter is specified, in which case it is created in `/tmp/javasharedresources`. Do not set the home directory on an NFS mount or shared mount across systems or LPARs.
 - The cache name is `sharedcc_%u`, where `%u` is the current user name.
 - If class data sharing fails, the VM still starts without printing any errors.
 
@@ -81,7 +81,7 @@ A shared classes cache can be *persistent* or *non-persistent* according to the 
 
 By default, a shared classes cache is persistent, except on the z/OS platform. Support for persistent shared class cache was added on z/OS in [0.40.0 release](version0.40.md#support-for-persistent-shared-classes-cache-added-on-zos) but the default cache type on z/OS is still nonpersistent.
 
-If you are using a non-persistent cache, you can use a cache utility to create a snapshot of the cache, which can be reinitialized after a reboot. For more information see [Saving a non-persistent shared classes cache](#saving-a-non-persistent-shared-classes-cache).
+If you are using a non-persistent cache, you can use a cache utility to create a snapshot of the cache, which can be reinitialized after a reboot. For more information, see [Saving a non-persistent shared classes cache](#saving-a-non-persistent-shared-classes-cache).
 
 If you have multiple VMs and you do not change the default shared classes behavior, the VMs share a single default cache, assuming that the VMs are from a single Java installation. If the VMs are from different Java installations, the cache might be deleted and re-created.
 
@@ -98,7 +98,9 @@ Occasionally, caches that are created from one version of the VM might not be co
 
 Caches are not compatible between VMs that are using different object storage modes. For example, a 64-bit VM that uses compressed references to store 64-bit objects in a 32-bit representation, cannot share a cache with a 64-bit VM that is not using compressed references. For more information about object storage options, see [Compressed references](allocation.md#compressed-references).
 
-In the OpenJ9 implementation of `java.net.URLClassLoader`, classes are read from and written to the cache using the public Helper API. Therefore, any class loader that extends `java.net.URLClassLoader` gets class sharing support for free provided that it continues to use the methods in `java.net.URLClassLoader` to load classes. Custom class loaders that do not extend `java.net.URLClassLoader` must be adapted to share class data as described in [Support for custom class loaders](#support-for-custom-class-loaders).
+In the OpenJ9 implementation of `java.net.URLClassLoader`, classes are read from and written to the cache by using the public Helper API. Therefore, any class loader that extends `java.net.URLClassLoader` gets class sharing support for free provided that it continues to use the methods in `java.net.URLClassLoader` to load classes. Custom class loaders that do not extend `java.net.URLClassLoader` must be adapted to share class data as described in [Support for custom class loaders](#support-for-custom-class-loaders).
+
+In the 0.46.0 release, the [`-XX:+ShareOrphans`](xxshareorphans.md) option was introduced that automatically enables the `-Xshareclasses` option. You can enable class sharing from all class loaders, irrespective of whether the class loader implements the shared classes cache API. For classes from custom class loaders that did not implement the shared classes cache APIs, they are shared as orphans. From the 0.47.0 release onwards, if the `-Xshareclasses` option is specified in the command line, it automatically enables the `-XX:+ShareOrphans` option. Now you need not explicity specify the `-XX:+ShareOrphans` option.
 
 ### AOT code and JIT data
 
@@ -121,7 +123,7 @@ The following cache utilities are available to adjust the storage values when a 
 | AOT code  |[`-Xshareclasses:adjustminaot`](xshareclasses.md#adjustminaot) | [`-Xshareclasses:adjustmaxaot`](xshareclasses.md#adjustmaxaot) |
 | JIT code  |[`-Xshareclasses:adjustminjit`](xshareclasses.md#adjustminjit) | [`-Xshareclasses:adjustmaxjit`](xshareclasses.md#adjustmaxjit) |
 
-You can also use the `-Xshareclasses:findAotMethods` cache utility to list the AOT methods in a cache that match a method specification. This utility helps you identify methods that are causing a failure in an application. You can then invalidate the method without destroying the cache by using the `-Xshareclasses:invalidateAotMethods` cache utility. You can also revalidate an AOT method with the `-Xshareclasses:revalidateAotMethods` cache utility. To troubleshoot AOT problems, use the `-Xshareclasses:verboseAOT` suboption on the command line, which generates output about AOT code that is found or stored in the cache. For more information see [`-Xshareclasses`](xshareclasses.md).
+You can also use the `-Xshareclasses:findAotMethods` cache utility to list the AOT methods in a cache that match a method specification. This utility helps you identify methods that are causing a failure in an application. You can then invalidate the method without destroying the cache by using the `-Xshareclasses:invalidateAotMethods` cache utility. You can also revalidate an AOT method with the `-Xshareclasses:revalidateAotMethods` cache utility. To troubleshoot AOT problems, use the `-Xshareclasses:verboseAOT` suboption on the command line, which generates output about AOT code that is found or stored in the cache. For more information, see [`-Xshareclasses`](xshareclasses.md).
 
 ## Creating a shared classes cache
 
@@ -141,7 +143,7 @@ The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing y
 
 - Set a specific cache directory ([`-Xshareclasses:cacheDir=<directory>`](xshareclasses.md#cachedir)).
 
-    Set a cache directory that is specific to your application, to  avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory. Your application will be unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). Please do not set the cache directory on a NFS mount or a shared mount across systems or LPARs.
+    Set a cache directory that is specific to your application, to  avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory. Your application will be unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). Do not set the cache directory on an NFS mount or a shared mount across systems or LPARs.
 
     In addition, if you have VMs from different Java installations, of the same Java release and installed by the same user, each VM checks whether the existing default shared cache in the cache directory is from the same Java installation as the VM. If not, the VM deletes that shared cache, then creates a new one. Specifying a different cache directory for each Java installation avoids this situation.
 
@@ -157,7 +159,7 @@ The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing y
 
 - Set a soft maximum size for the cache by specifying the [-Xscmx](xscmx.md) option with the [`-XX:SharedCacheHardLimit`](xxsharedcachehardlimit.md) option.
 
-    For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the `-Xscmx` option, to limit the data stored in the cache (`-XX:SharedCacheHardLimit=64m -Xscmx16m`). You can then adjust the soft maximum size by using the [`-Xshareclasses:adjustsoftmx`](xshareclasses.md#adjustsoftmx) cache utility or the  `MemoryMXBean.setSharedClassCacheSoftmxBytes()` method in the `com.ibm.lang.management` API. For more information, see [Setting a soft maximum size](xscmx.md#setting-a-soft-maximum-size).
+    For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the `-Xscmx` option, to limit the data stored in the cache (`-XX:SharedCacheHardLimit=64m -Xscmx16m`). You can then adjust the soft maximum size by using the [`-Xshareclasses:adjustsoftmx`](xshareclasses.md#adjustsoftmx) cache utility or the `MemoryMXBean.setSharedClassCacheSoftmxBytes()` method in the `com.ibm.lang.management` API. For more information, see [Setting a soft maximum size](xscmx.md#setting-a-soft-maximum-size).
 
 
 ### Creating layer caches
@@ -244,6 +246,8 @@ If you want to remove a cache but allow it to be re-created when the VM restarts
 
 Classes are shared by the bootstrap class loader internally in the VM. The OpenJ9 implementation of `java.net.URLClassLoader` is modified to use `SharedClassURLClasspathHelper` and any class loaders that extend `java.net.URLClassLoader` can inherit this behavior. If you are using a custom class loader that does not extend `java.net.URLClassLoader`, you can use the Java Helper API to find and store classes in a shared classes cache.
 
+For classes from custom class loaders that did not implement the shared classes cache APIs and if the [`-XX:+ShareOrphans`](xxshareorphans.md) option is enabled, those classes will be shared as orphans. For more information, see [Class data sharing operations](#class-data-sharing-operations).
+
 If a running application uses its own class loader and you are using a `SecurityManager`, you must grant the class loader permission to `SharedCachePermission` before they can share classes. To grant permission, add shared class permissions to the `java.policy` file by specifying the `ClassLoader` class name. Permissions can be set for `read`, `write`, or `read,write`. For example:
 
 ```
@@ -270,7 +274,7 @@ The following main functions are available from the `SharedClassHelper` API:
 - `storeSharedClass`: Used to store a class in the cache.
 - `setSharingFilter`: A filter that can be used to decide which classes are found and stored in the cache. This filter can be applied to a particular package by implementing the `SharedClassFilter` interface. To apply a filter to all non-bootstrap class loaders that share classes, specify the [`-Dcom.ibm.oti.shared.SharedClassGlobalFilterClass`](dcomibmotisharedsharedclassglobalfilterclass.md) system property on the command line.
 
-You can also define partitions in a cache to store sets of classes separately from one another. For more information see [`SharedClassHelper` cache partitions](#sharedclasshelper-cache-partitions).
+You can also define partitions in a cache to store sets of classes separately from one another. For more information, see [`SharedClassHelper` cache partitions](#sharedclasshelper-cache-partitions).
 
 Each class loader that wants to share data must get a `SharedDataHelper` object from a `SharedDataHelperFactory`.
 A `SharedDataHelperFactory` provides an interface that can be used to create `SharedDataHelpers`, which are used for storing Java byte array data. A `SharedDataHelper` also has a one to one relationship with a class loader, although a class loader can exist without a `SharedDataHelper`.
