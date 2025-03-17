@@ -301,6 +301,8 @@ NULL
 This section does not record memory that is allocated by application or JNI code and is typically a little less than the
 value recorded by operating system tools.
 
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Different operating system tools record virtual memory, resident memory, or both. The memory usage reported by Java dumps in the NATIVEMEMINFO section is the virtual memory allocations rather than the resident memory usage.
+
 ### MEMINFO
 
 This section relates to memory management, providing a breakdown of memory usage in the VM for the object heap,
