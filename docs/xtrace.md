@@ -58,18 +58,19 @@ The following parameters can be used to configure trace. (Follow links for more 
 
 | Command                                                            | Result                                                                                             |
 |--------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
-| [`-Xtrace:properties[=<filename>]`](#properties)                   | Configures trace options based on a file                                                           |
-| [`-Xtrace:buffers=<size>[dynamic\|nodynamic]`](#buffers)           | Modifies the size of buffers that are used to store trace data                                     |
-| [`-Xtrace:exception.output=<filename>[,<size>]`](#exceptionoutput) | Redirects exceptions trace data to a file.                                          |
-| [`-Xtrace:methods=<method_specification>`](#methods)               | Traces methods                                                                                     |
-| [`-Xtrace:output=<filename>[,<size>[,<generations>]]`](#output)    | Sends trace data to a file, optionally of a specific size and number of generations.               |
-| [`-Xtrace:resume`](#resume)                                        | Resumes tracing globally.                                                                          |
-| [`-Xtrace:resumecount=<count>`](#resumecount)                      | Enables tracing at a thread level after a specified count.                                         |
-| [`-Xtrace:sleeptime=<time>`](#sleeptime)                           | Pauses trace operations for a specified length of time.                                            |
-| [`-Xtrace:stackdepth=<n>`](#stackdepth)                            | Limits the maximum number of stack frames reported by the jstacktrace trace trigger action.        |
-| [`-Xtrace:suspend`](#suspend)                                      | Suspends tracing globally.                                                                         |
-| [`-Xtrace:suspendcount=<count>`](#suspendcount)                    | Suspends tracing at a thread level after a specified count.                                        |
-| [`-Xtrace:trigger=<clause>`](#trigger)                             | Determines when various triggered trace actions occur, including turning trace on or off.          |
+| [`-Xtrace:buffers=<size>[dynamic\|nodynamic]`](#buffers)           | Modifies the size of buffers that are used to store trace data                      |
+| [`-Xtrace:exception.output=<filename>[,<size>]`](#exceptionoutput) | Redirects exceptions trace data to a file                                           |
+| [`-Xtrace:maxstringlength=[<length>]`](#maxstringlength)           | Records the string arguments sent to and the values that are returned from the methods as strings instead of string object addresses                  |
+| [`-Xtrace:methods=<method_specification>`](#methods)               | Traces methods                                                                       |
+| [`-Xtrace:output=<filename>[,<size>[,<generations>]]`](#output)    | Sends trace data to a file, optionally of a specific size and number of generations  |
+| [`-Xtrace:properties[=<filename>]`](#properties)                   | Configures trace options based on a file                                             |
+| [`-Xtrace:resume`](#resume)                                        | Resumes tracing globally                                                            |
+| [`-Xtrace:resumecount=<count>`](#resumecount)                      | Enables tracing at a thread level after a specified count                           |
+| [`-Xtrace:sleeptime=<time>`](#sleeptime)                           | Pauses trace operations for a specified length of time                              |
+| [`-Xtrace:stackdepth=<n>`](#stackdepth)                            | Limits the maximum number of stack frames reported by the jstacktrace trace trigger action    |
+| [`-Xtrace:suspend`](#suspend)                                      | Suspends tracing globally                                                           |
+| [`-Xtrace:suspendcount=<count>`](#suspendcount)                    | Suspends tracing at a thread level after a specified count                          |
+| [`-Xtrace:trigger=<clause>`](#trigger)                             | Determines when various triggered trace actions occur, including turning trace on or off          |
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If an option value contains commas, it must be enclosed in braces. For example: `methods={java/lang/*,com/ibm/*}`
 
@@ -79,14 +80,14 @@ The following parameters can be used to control tracepoint activation. (Follow l
 
 | Command                                                            | Result                                                                              |
 |--------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| [`-Xtrace:maximal=<tracepoint_specification>`](#maximal-tracepoint)           | Records all associated data.                                                        |
-| [`-Xtrace:minimal=<tracepoint_specification>`](#minimal-tracepoint)           | Records only the time stamp and tracepoint identifier.                              |
-| [`-Xtrace:count=<tracepoint_specification>`](#count-tracepoint)               | Counts the tracepoints that are used in a trace configuration.                      |
-| [`-Xtrace:print=<tracepoint_specification>`](#print-tracepoint)               | Prints the specified tracepoints to stderr in real time.                            |
-| [`-Xtrace:iprint=<tracepoint_specification>`](#iprint-tracepoint)             | Prints the specified tracepoints to stderr in real time with indentation.           |
-| [`-Xtrace:exception=<tracepoint_specification>`](#exception-tracepoint)       | Enables exception tracing.                                                          |
-| [`-Xtrace:external<tracepoint_specification>`](#external-tracepoint)          | Routes trace data to trace listeners, which are registered by using the JVMTI APIs. |
-| [`-Xtrace:none[=<tracepoint_specification>]`](#none-tracepoint)               | Prevents the trace engine from loading if it is the only trace option specified.    |
+| [`-Xtrace:count=<tracepoint_specification>`](#count-tracepoint)               | Counts the tracepoints that are used in a trace configuration                      |
+| [`-Xtrace:exception=<tracepoint_specification>`](#exception-tracepoint)       | Enables exception tracing                                                          |
+| [`-Xtrace:external<tracepoint_specification>`](#external-tracepoint)          | Routes trace data to trace listeners, which are registered by using the JVMTI APIs |
+| [`-Xtrace:iprint=<tracepoint_specification>`](#iprint-tracepoint)             | Prints the specified tracepoints to stderr in real time with indentation           |
+| [`-Xtrace:maximal=<tracepoint_specification>`](#maximal-tracepoint)           | Records all associated data                                                        |
+| [`-Xtrace:minimal=<tracepoint_specification>`](#minimal-tracepoint)           | Records only the time stamp and tracepoint identifier                              |
+| [`-Xtrace:none[=<tracepoint_specification>]`](#none-tracepoint)               | Prevents the trace engine from loading if it is the only trace option specified    |
+| [`-Xtrace:print=<tracepoint_specification>`](#print-tracepoint)               | Prints the specified tracepoints to stderr in real time                            |
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** These options control which individual tracepoints are activated at run time and the implicit destination of the trace data. All these properties are independent of each other and can be mixed and matched in any way that you choose. For more information, see [Tracepoint activation](#tracepoint-activation).
 
@@ -478,7 +479,7 @@ This form of tracing is channeled through a single set of buffers, as opposed to
 
 ### `exception.output`
 
-Use exception output to redirect exceptions trace data to a file.
+Use `exception.output` to redirect exceptions trace data to a file.
 
     -Xtrace:exception.output=<filename>[,<size>]
 
@@ -542,6 +543,34 @@ For further information about `<tracepoint_specification>` syntax, see [Tracepoi
 When specified, trace data is placed into internal trace buffers that can then be written to a snap file or written to the files that are specified in an output trace option. All associated data is traced.
 
 `minimal` and `maximal` traces are independent from any types that follow them. For example, if the `maximal` option is specified, it does not affect a later option such as `print`.
+
+### `maxstringlength`
+
+(**Added in the 0.50.0 release**)
+
+    -Xtrace:maxstringlength=[<length>]
+
+Use to print the string arguments sent to and the values that are returned from the methods as strings instead of addresses in a trace output. The range of the maximum string length that can be set is 0-128. If the length is not specified, 32 characters of the strings are printed by default. If `maxstringlength=0`, the string addresses are printed instead.
+
+This parameter is used with other method tracing options, such as `-Xtrace:methods={java/lang/String.concat'()'}`. While using such method tracing options, the argument is passed to this function as a string and the value is returned as a string. Without this parameter, you cannot capture the contents of the string arguments and return values. Only the address of the string object is displayed. If you want to see the string that is passed to and returned from a method for debugging purposes, use the `maxstringlength` parameter.
+
+For example, without `maxstringlength`, following is the trace output of `-Xtrace:methods={java/lang/String.concat'()'},print=mt`:
+
+```
+...
+11:19:45.789 0x8aff00              mt.18            - this: java/lang/String@00000000DFFF3D68 method arguments: (java/lang/String@00000000DFFF3D90)
+11:21:37.654 0x8aff00              mt.28           - return value: java/lang/String@00000000FFF2C408
+...
+```
+
+With `-Xtrace:methods={java/lang/String.concat'()'},print=mt,maxstringlength=32`, following is the trace output:
+
+```
+...
+11:19:45.789 0x8aff00              mt.18       - this: java/lang/String@00000000DFFF3D68 method arguments: ((String)"Lorem ipsum dolor sit amet, cons"...)
+11:21:37.654 0x8aff00              mt.28       - return value: (String)"Hello Lorem ipsum dolor sit amet"...
+...
+```
 
 ### `methods`
 
