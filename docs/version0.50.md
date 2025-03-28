@@ -26,6 +26,7 @@
 The following new features and notable changes since version 0.49.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- [New parameter `maxstringlength` added to the `-Xtrace` option](#new-parameter-maxstringlength-added-to-the-xtrace-option)
 - ![Start of content that applies to Java 24 and later](cr/java24plus.png) [New JDK 24 features](#new-jdk-24-features) ![End of content that applies to Java 24 and later](cr/java_close.png)
 
 ## Features and changes
@@ -38,7 +39,13 @@ OpenJDK 24 with Eclipse OpenJ9 is *not* a long term support (LTS) release.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### ### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
+### New parameter `maxstringlength` added to the `-Xtrace` option
+
+You can use the `maxstringlength` parameter of the `-Xtrace` option to specify the length of the string arguments and return values of a method that are now printed in a trace output in addition to the addresses.
+
+For more information, see [`maxstringlength`](xtrace.md#maxstringlength).
+
+### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
 
 The following features are supported by OpenJ9:
 
