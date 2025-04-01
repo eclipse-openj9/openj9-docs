@@ -5773,6 +5773,30 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#maxstringlength" class="md-nav__link">
+    <span class="md-ellipsis">
+      maxstringlength
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="maxstringlength">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#methods" class="md-nav__link">
     <span class="md-ellipsis">
       methods
@@ -9065,6 +9089,30 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#maxstringlength" class="md-nav__link">
+    <span class="md-ellipsis">
+      maxstringlength
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="maxstringlength">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#methods" class="md-nav__link">
     <span class="md-ellipsis">
       methods
@@ -9301,16 +9349,16 @@ The following table lists the parameters for `-Xtrace` that provide usage and co
 </thead>
 <tbody>
 <tr>
-<td><a href="#properties"><code>-Xtrace:properties[=&lt;filename&gt;]</code></a></td>
-<td>Configures trace options based on a file</td>
-</tr>
-<tr>
 <td><a href="#buffers"><code>-Xtrace:buffers=&lt;size&gt;[dynamic\|nodynamic]</code></a></td>
 <td>Modifies the size of buffers that are used to store trace data</td>
 </tr>
 <tr>
 <td><a href="#exceptionoutput"><code>-Xtrace:exception.output=&lt;filename&gt;[,&lt;size&gt;]</code></a></td>
-<td>Redirects exceptions trace data to a file.</td>
+<td>Redirects exceptions trace data to a file</td>
+</tr>
+<tr>
+<td><a href="#maxstringlength"><code>-Xtrace:maxstringlength=[&lt;length&gt;]</code></a></td>
+<td>Specifies the length of the string arguments and the return values of the methods that are printed in addition to the string object addresses in a trace output</td>
 </tr>
 <tr>
 <td><a href="#methods"><code>-Xtrace:methods=&lt;method_specification&gt;</code></a></td>
@@ -9318,35 +9366,39 @@ The following table lists the parameters for `-Xtrace` that provide usage and co
 </tr>
 <tr>
 <td><a href="#output"><code>-Xtrace:output=&lt;filename&gt;[,&lt;size&gt;[,&lt;generations&gt;]]</code></a></td>
-<td>Sends trace data to a file, optionally of a specific size and number of generations.</td>
+<td>Sends trace data to a file, optionally of a specific size and number of generations</td>
+</tr>
+<tr>
+<td><a href="#properties"><code>-Xtrace:properties[=&lt;filename&gt;]</code></a></td>
+<td>Configures trace options based on a file</td>
 </tr>
 <tr>
 <td><a href="#resume"><code>-Xtrace:resume</code></a></td>
-<td>Resumes tracing globally.</td>
+<td>Resumes tracing globally</td>
 </tr>
 <tr>
 <td><a href="#resumecount"><code>-Xtrace:resumecount=&lt;count&gt;</code></a></td>
-<td>Enables tracing at a thread level after a specified count.</td>
+<td>Enables tracing at a thread level after a specified count</td>
 </tr>
 <tr>
 <td><a href="#sleeptime"><code>-Xtrace:sleeptime=&lt;time&gt;</code></a></td>
-<td>Pauses trace operations for a specified length of time.</td>
+<td>Pauses trace operations for a specified length of time</td>
 </tr>
 <tr>
 <td><a href="#stackdepth"><code>-Xtrace:stackdepth=&lt;n&gt;</code></a></td>
-<td>Limits the maximum number of stack frames reported by the jstacktrace trace trigger action.</td>
+<td>Limits the maximum number of stack frames reported by the jstacktrace trace trigger action</td>
 </tr>
 <tr>
 <td><a href="#suspend"><code>-Xtrace:suspend</code></a></td>
-<td>Suspends tracing globally.</td>
+<td>Suspends tracing globally</td>
 </tr>
 <tr>
 <td><a href="#suspendcount"><code>-Xtrace:suspendcount=&lt;count&gt;</code></a></td>
-<td>Suspends tracing at a thread level after a specified count.</td>
+<td>Suspends tracing at a thread level after a specified count</td>
 </tr>
 <tr>
 <td><a href="#trigger"><code>-Xtrace:trigger=&lt;clause&gt;</code></a></td>
-<td>Determines when various triggered trace actions occur, including turning trace on or off.</td>
+<td>Determines when various triggered trace actions occur, including turning trace on or off</td>
 </tr>
 </tbody>
 </table>
@@ -9362,36 +9414,36 @@ The following table lists the parameters for `-Xtrace` that provide usage and co
 </thead>
 <tbody>
 <tr>
-<td><a href="#maximal-tracepoint"><code>-Xtrace:maximal=&lt;tracepoint_specification&gt;</code></a></td>
-<td>Records all associated data.</td>
-</tr>
-<tr>
-<td><a href="#minimal-tracepoint"><code>-Xtrace:minimal=&lt;tracepoint_specification&gt;</code></a></td>
-<td>Records only the time stamp and tracepoint identifier.</td>
-</tr>
-<tr>
 <td><a href="#count-tracepoint"><code>-Xtrace:count=&lt;tracepoint_specification&gt;</code></a></td>
-<td>Counts the tracepoints that are used in a trace configuration.</td>
-</tr>
-<tr>
-<td><a href="#print-tracepoint"><code>-Xtrace:print=&lt;tracepoint_specification&gt;</code></a></td>
-<td>Prints the specified tracepoints to stderr in real time.</td>
-</tr>
-<tr>
-<td><a href="#iprint-tracepoint"><code>-Xtrace:iprint=&lt;tracepoint_specification&gt;</code></a></td>
-<td>Prints the specified tracepoints to stderr in real time with indentation.</td>
+<td>Counts the tracepoints that are used in a trace configuration</td>
 </tr>
 <tr>
 <td><a href="#exception-tracepoint"><code>-Xtrace:exception=&lt;tracepoint_specification&gt;</code></a></td>
-<td>Enables exception tracing.</td>
+<td>Enables exception tracing</td>
 </tr>
 <tr>
 <td><a href="#external-tracepoint"><code>-Xtrace:external&lt;tracepoint_specification&gt;</code></a></td>
-<td>Routes trace data to trace listeners, which are registered by using the JVMTI APIs.</td>
+<td>Routes trace data to trace listeners, which are registered by using the JVMTI APIs</td>
+</tr>
+<tr>
+<td><a href="#iprint-tracepoint"><code>-Xtrace:iprint=&lt;tracepoint_specification&gt;</code></a></td>
+<td>Prints the specified tracepoints to stderr in real time with indentation</td>
+</tr>
+<tr>
+<td><a href="#maximal-tracepoint"><code>-Xtrace:maximal=&lt;tracepoint_specification&gt;</code></a></td>
+<td>Records all associated data</td>
+</tr>
+<tr>
+<td><a href="#minimal-tracepoint"><code>-Xtrace:minimal=&lt;tracepoint_specification&gt;</code></a></td>
+<td>Records only the time stamp and tracepoint identifier</td>
 </tr>
 <tr>
 <td><a href="#none-tracepoint"><code>-Xtrace:none[=&lt;tracepoint_specification&gt;]</code></a></td>
-<td>Prevents the trace engine from loading if it is the only trace option specified.</td>
+<td>Prevents the trace engine from loading if it is the only trace option specified</td>
+</tr>
+<tr>
+<td><a href="#print-tracepoint"><code>-Xtrace:print=&lt;tracepoint_specification&gt;</code></a></td>
+<td>Prints the specified tracepoints to stderr in real time</td>
 </tr>
 </tbody>
 </table>
@@ -10158,7 +10210,7 @@ how this parameter can be set:</p>
 <li>When exception trace is entered for an active tracepoint, the current thread ID is checked against the previous caller's thread ID. If it is a different thread, or this is the first call to exception trace, a context tracepoint is put into the trace buffer first. This context tracepoint consists only of the current thread ID, which is necessary because of the single set of buffers for exception trace. (The formatter identifies all trace entries as coming from the Exception trace pseudo thread when it formats exception trace files.)</li>
 </ul>
 <h3 id="exceptionoutput"><code>exception.output</code></h3>
-<p>Use exception output to redirect exceptions trace data to a file.</p>
+<p>Use <code>exception.output</code> to redirect exceptions trace data to a file.</p>
 <pre><code>-Xtrace:exception.output=&lt;filename&gt;[,&lt;size&gt;]
 </code></pre>
 <p>Where:</p>
@@ -10204,6 +10256,28 @@ yyyymmdd* format (for example, <code>traceout.20181025.trc</code>):</p>
 <p>For further information about <code>&lt;tracepoint_specification&gt;</code> syntax, see <a href="#tracepoint-specification">Tracepoint specification</a>.</p>
 <p>When specified, trace data is placed into internal trace buffers that can then be written to a snap file or written to the files that are specified in an output trace option. All associated data is traced.</p>
 <p><code>minimal</code> and <code>maximal</code> traces are independent from any types that follow them. For example, if the <code>maximal</code> option is specified, it does not affect a later option such as <code>print</code>.</p>
+<h3 id="maxstringlength"><code>maxstringlength</code></h3>
+<p>(<strong>Added in the 0.50.0 release</strong>)</p>
+<pre><code>-Xtrace:maxstringlength=[&lt;length&gt;]
+</code></pre>
+<p>Use to specify the length of the string arguments and return values that are printed in a trace output. The range of the maximum string length that can be set is 0-128. If the length is not specified, 32 characters of the strings are printed by default along with the addresses. If <code>maxstringlength=0</code>, only the string addresses are printed instead.</p>
+<p>This parameter is used with other method tracing options, such as <code>-Xtrace:methods={java/lang/String.concat'()'}</code> and affects only those tracing operations where addresses are printed for string arguments and return values. When using such method tracing options, the argument is passed to the function as a string and the value is returned as a string. Earlier, you could not capture the contents of the string arguments and return values, only the address of the string object was printed. Now, both the actual strings as well as the addresses can be printed.</p>
+<h4 id="examples">Examples</h4>
+<p>Default behavior - Address and 32 string characters</p>
+<p><code>-Xtrace:methods={java/lang/String.concat'()'},print=mt</code></p>
+<pre><code>12:31:00.323 0x25a00              mt.18       - this: java/lang/String@00000006049B84B8 method arguments: ((String)&quot;Lorem ipsum dolor sit amet, cons&quot;...)
+12:31:00.323 0x25a00              mt.28       - return value: java/lang/String@00000007FFF92A80 - (String)&quot;HelloLorem ipsum dolor sit amet,&quot;...
+</code></pre>
+<p><code>maxstringlength</code> set to <code>0</code> - Address only</p>
+<p><code>-Xtrace:methods={java/lang/String.concat'()'},print=mt,maxstringlength=0</code></p>
+<pre><code>12:35:58.213 0x25a00              mt.18       - this: java/lang/String@00000006049B84B8 method arguments: (java/lang/String@00000006049B84E0)
+12:35:58.213 0x25a00              mt.28       - return value: java/lang/String@00000007FFF92AD8
+</code></pre>
+<p><code>maxstringlength</code> set to a custom value - Address and custom number of string characters (<code>80</code> in this example)</p>
+<p><code>-Xtrace:methods={java/lang/String.concat'()'},print=mt,maxstringlength=80</code></p>
+<pre><code>12:37:52.935 0x25a00              mt.18       - this: java/lang/String@00000006049B84B8 method arguments: ((String)&quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula &quot;...)
+12:37:52.935 0x25a00              mt.28       - return value: java/lang/String@00000007FFF92AE0 - (String)&quot;HelloLorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo li&quot;...
+</code></pre>
 <h3 id="methods"><code>methods</code></h3>
 <p>Using method trace provides a complete and potentially large diagnosis of code paths inside your application and the system classes. Use wild cards and filtering to control method trace so that you can focus on the sections of code that interest you. Note that method trace is powerful but it also has a cost. Application throughput is affected by method trace.</p>
 <p>To specify one or more method specifications, use the following syntax:</p>
