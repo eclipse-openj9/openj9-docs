@@ -228,6 +228,8 @@ OpenJDK 21 and later binaries are expected to function on the minimum operating 
 
 :fontawesome-solid-bell:{: .warn aria-hidden="true"} **Important:** AIX OpenJ9 builds require the [XL C++ Runtime 16.1.0.7 or later](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
 
+![Start of content that applies to Java 24 and later](cr/java24plus.png) From the 0.50.0 release onwards, for OpenJDK 24, AIX OpenJ9 builds require the [XL C++ Runtime 16.1.0.10 or later](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X). ![End of content that applies to Java 24 and later](cr/java_close.png)
+
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
 ## Build environments
@@ -284,4 +286,4 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.11                     |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.11 <br>![Start of content that applies to Java 24 and later](cr/java24plus.png) xlc/C++ 16.1.0.20 ![End of content that applies to Java 24 and later](cr/java_close.png)                    |
