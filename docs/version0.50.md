@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.49.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New parameter `maxstringlength` added to the `-Xtrace` option](#new-parameter-maxstringlength-added-to-the-xtrace-option)
+- ![Start of content that applies to Java 24 and later](cr/java24plus.png) [XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds on OpenJDK 24](#xl-c-runtime-161010-or-later-required-for-aix-openj9-builds-on-openjdk-24) ![End of content that applies to Java 24 and later](cr/java_close.png)
 - ![Start of content that applies to Java 24 and later](cr/java24plus.png) [New JDK 24 features](#new-jdk-24-features) ![End of content that applies to Java 24 and later](cr/java_close.png)
 
 ## Features and changes
@@ -44,6 +45,10 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 You can use the `maxstringlength` parameter of the `-Xtrace` option to specify the length of the string arguments and return values of a method that are now printed in a trace output in addition to the addresses.
 
 For more information, see [`maxstringlength`](xtrace.md#maxstringlength).
+
+### ![Start of content that applies to Java 24 and later](cr/java24plus.png) XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds on OpenJDK 24
+
+AIX OpenJ9 builds now require version 16.1.0.10 or later of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X) on OpenJDK 24. ![End of content that applies to Java 24 and later](cr/java_close.png)
 
 ### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
 
