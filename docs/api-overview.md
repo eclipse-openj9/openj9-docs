@@ -32,6 +32,7 @@ If your Java application manipulates native data, the Data Access Accelerator AP
 - performing arithmetic, comparison, and validation of packed decimal data
 - converting between decimal data types as well as to and from `BigDecimal` and `BigInteger` types
 - marshalling Java binary types to and from byte arrays
+- validating the sign and digits of a given external decimal input before operating on the data.
 
 ## GPU acceleration
 
