@@ -57,12 +57,14 @@ The following functions are provided:
 - Arithmetic, comparison, shifting, and validation operations for packed decimal data.
 - Conversion operations between different binary coded decimal and Java binary types.
 - Marshalling operations: marshalling and unmarshalling Java binary types, such as `short`, `int`, `long`, `float`, and `double`, to and from byte arrays.
+- External decimals support with all four sign configurations: sign embedded trailing, sign embedded leading, sign separate trailing, and sign separate leading. It also accommodates sign embedded trailing with spaces.
 
 You can gain a number of benefits by using the APIs provided:
 
 - Improved application performance by avoiding object creation and intermediate processing, which can also put pressure on the Java heap.
 - Hardware acceleration by automatically exploiting available hardware features on specific platforms.
 - Platform independence for applications that are developed to take advantage of Data Access Acceleration.
+- Validate the sign and digits of a given external decimal input before operating on the data.
 
 For more information, see the [API documentation](api-overview.md).
 
@@ -113,8 +115,7 @@ OpenJDK uses the in-built Java cryptographic implementation by default. However,
 
 ### Exploiting GPUs
 
-OpenJ9 provides both the [CUDA4J API](api-cuda.md) <!-- Link to API --> and the [GPU API](api-gpu.md), <!-- Link to API -->
-which enables you to develop applications that can take advantage of graphics processing unit (GPU) processing for suitable functions, such as sorting arrays. You can also enable the JIT compiler to offload certain processing tasks to a GPU by specifying the [`-Xjit:enableGPU`](xjit.md#enablegpu) option on the command line. When enabled, the JIT compiler determines when to offload tasks based on performance heuristics.
+OpenJ9 provides both the [CUDA4J API](api-cuda.md)<!-- Link to API --> and the [GPU API](api-gpu.md), <!-- Link to API -->which enables you to develop applications that can take advantage of graphics processing unit (GPU) processing for suitable functions, such as sorting arrays. You can also enable the JIT compiler to offload certain processing tasks to a GPU by specifying the [`-Xjit:enableGPU`](xjit.md#enablegpu) option on the command line. When enabled, the JIT compiler determines when to offload tasks based on performance heuristics.
 
 GPU processing is supported only on Linux little-endian systems, such as x86-64 and IBM Power LE, and Windows x86-64 systems. For more information about enabling GPU processing, see [Exploiting graphics processing units](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/gpu_overview.html).
 
@@ -140,7 +141,7 @@ If you do not require translations from the English language, the translation fi
 ## ![Start of content that applies to Java 16 and later](cr/java16plus.png) Using jpackage
 **(Linux, macOS, and Windows only)**
 
-You can use the `jpackage` utility to package a Java application into a platform-specific package that includes all of the necessary dependencies. Full details of the tool are available at [JEP 392: Packaging Tool](https://openjdk.org/jeps/392). Instructions for using it and the various options available, are documented in the Oracle Tool Specifications: [The jpackage Command](https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html).
+You can use the `jpackage` utility to package a Java application into a platform-specific package that includes all of the necessary dependencies. Full details of the tool are available at [JEP 392: Packaging Tool](https://openjdk.org/jeps/392). Instructions for using it and the various options available are documented in the Oracle Tool Specifications: [The jpackage Command](https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html).
 
 ## Troubleshooting
 
