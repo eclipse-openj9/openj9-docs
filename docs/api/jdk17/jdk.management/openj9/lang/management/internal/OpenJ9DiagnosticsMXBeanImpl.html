@@ -10,6 +10,7 @@
 <meta name="keywords" content="openj9.lang.management.internal.OpenJ9DiagnosticsMXBeanImpl class">
 <meta name="keywords" content="resetDumpOptions()">
 <meta name="keywords" content="queryDumpOptions()">
+<meta name="keywords" content="getDumpOptions()">
 <meta name="keywords" content="setDumpOptions()">
 <meta name="keywords" content="triggerDump()">
 <meta name="keywords" content="triggerDumpToFile()">
@@ -114,46 +115,52 @@ implements <a href="../OpenJ9DiagnosticsMXBean.html" title="interface in openj9.
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../OpenJ9DiagnosticsMXBean.html" title="interface in openj9.lang.management">OpenJ9DiagnosticsMXBean</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDumpOptions()" class="member-name-link">getDumpOptions</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns the current dump configuration as a String, with multiple options separated by
+ a vertical bar, or null if an internal error occurs.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../OpenJ9DiagnosticsMXBean.html" title="interface in openj9.lang.management">OpenJ9DiagnosticsMXBean</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Singleton accessor method.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/ObjectName.html" title="class or interface in javax.management" class="external-link" target="_blank">ObjectName</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObjectName()" class="member-name-link">getObjectName</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/ObjectName.html" title="class or interface in javax.management" class="external-link" target="_blank">ObjectName</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObjectName()" class="member-name-link">getObjectName</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the object name of the MXBean.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#queryDumpOptions()" class="member-name-link">queryDumpOptions</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#queryDumpOptions()" class="member-name-link">queryDumpOptions</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the current dump configuration as an array of Strings, or null if an internal error occurs.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetDumpOptions()" class="member-name-link">resetDumpOptions</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetDumpOptions()" class="member-name-link">resetDumpOptions</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reset the JVM dump options to the settings specified when the JVM was started removing any additional
  configuration done since then.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDumpOptions(java.lang.String)" class="member-name-link">setDumpOptions</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;dumpOptions)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDumpOptions(java.lang.String)" class="member-name-link">setDumpOptions</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;dumpOptions)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">This function sets options for the dump subsystem.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#triggerClassicHeapDump()" class="member-name-link">triggerClassicHeapDump</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#triggerClassicHeapDump()" class="member-name-link">triggerClassicHeapDump</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">This function triggers the heap dump agent and requests for a heap dump in CLASSIC format.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#triggerDump(java.lang.String)" class="member-name-link">triggerDump</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;dumpAgent)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#triggerDump(java.lang.String)" class="member-name-link">triggerDump</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;dumpAgent)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">This function triggers the specified dump agent.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#triggerDumpToFile(java.lang.String,java.lang.String)" class="member-name-link">triggerDumpToFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;dumpAgent,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#triggerDumpToFile(java.lang.String,java.lang.String)" class="member-name-link">triggerDumpToFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;dumpAgent,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;fileNamePattern)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">This function triggers the specified dump agent.</div>
 </div>
 </div>
@@ -201,6 +208,26 @@ implements <a href="../OpenJ9DiagnosticsMXBean.html" title="interface in openj9.
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../OpenJ9DiagnosticsMXBean.html#queryDumpOptions()">queryDumpOptions</a></code>&nbsp;in interface&nbsp;<code><a href="../OpenJ9DiagnosticsMXBean.html" title="interface in openj9.lang.management">OpenJ9DiagnosticsMXBean</a></code></dd>
+<dt>Returns:</dt>
+<dd>the dump configuration as an array of Strings</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDumpOptions()">
+<h3>getDumpOptions</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getDumpOptions</span>()</div>
+<div class="block">Returns the current dump configuration as a String, with multiple options separated by
+ a vertical bar, or null if an internal error occurs.
+ The syntax of the option String is the same as the -Xdump command-line option,
+ with the initial -Xdump: omitted. See the -Xdump option section on dump agents in
+ the documentation for the OpenJ9 JVM.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../OpenJ9DiagnosticsMXBean.html#getDumpOptions()">getDumpOptions</a></code>&nbsp;in interface&nbsp;<code><a href="../OpenJ9DiagnosticsMXBean.html" title="interface in openj9.lang.management">OpenJ9DiagnosticsMXBean</a></code></dd>
+<dt>Returns:</dt>
+<dd>the dump configuration as a String, with multiple options separated by
+ a vertical bar</dd>
 </dl>
 </section>
 </li>
@@ -300,7 +327,7 @@ implements <a href="../OpenJ9DiagnosticsMXBean.html" title="interface in openj9.
 <dt>Specified by:</dt>
 <dd><code><a href="../OpenJ9DiagnosticsMXBean.html#triggerClassicHeapDump()">triggerClassicHeapDump</a></code>&nbsp;in interface&nbsp;<code><a href="../OpenJ9DiagnosticsMXBean.html" title="interface in openj9.lang.management">OpenJ9DiagnosticsMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>The file name of the dump that was created</dd>
+<dd>the file name of the dump that was created</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../InvalidOptionException.html" title="class in openj9.lang.management">InvalidOptionException</a></code> - if the dump operation fails</dd>
 </dl>
@@ -339,7 +366,7 @@ implements <a href="../OpenJ9DiagnosticsMXBean.html" title="interface in openj9.
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2024 IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2025 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>
