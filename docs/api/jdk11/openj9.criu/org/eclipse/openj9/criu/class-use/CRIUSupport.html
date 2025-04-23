@@ -133,13 +133,20 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><code>static <a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#getCRIUSupport()">getCRIUSupport</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the singleton CRIUSupport object.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#registerPostRestoreHook(java.lang.Runnable)">registerPostRestoreHook</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Runnable</a>&nbsp;hook)</code></th>
 <td class="colLast">
 <div class="block">User hook that is run after restoring a checkpoint image.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#registerPostRestoreHook(java.lang.Runnable,org.eclipse.openj9.criu.CRIUSupport.HookMode,int)">registerPostRestoreHook</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Runnable</a>&nbsp;hook,
                        <a href="../CRIUSupport.HookMode.html" title="enum in org.eclipse.openj9.criu">CRIUSupport.HookMode</a>&nbsp;mode,
@@ -148,14 +155,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">User hook that is run after restoring a checkpoint image.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#registerPreCheckpointHook(java.lang.Runnable)">registerPreCheckpointHook</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Runnable</a>&nbsp;hook)</code></th>
 <td class="colLast">
 <div class="block">User hook that is run before checkpointing the JVM.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#registerPreCheckpointHook(java.lang.Runnable,org.eclipse.openj9.criu.CRIUSupport.HookMode,int)">registerPreCheckpointHook</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Runnable</a>&nbsp;hook,
                          <a href="../CRIUSupport.HookMode.html" title="enum in org.eclipse.openj9.criu">CRIUSupport.HookMode</a>&nbsp;mode,
@@ -164,7 +171,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">User hook that is run before checkpointing the JVM.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#registerRestoreEnvFile(java.nio.file.Path)">registerRestoreEnvFile</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file" class="externalLink" target="_blank">Path</a>&nbsp;envFile)</code></th>
 <td class="colLast">
@@ -172,74 +179,81 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  restore.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#registerRestoreOptionsFile(java.nio.file.Path)">registerRestoreOptionsFile</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file" class="externalLink" target="_blank">Path</a>&nbsp;optionsFile)</code></th>
 <td class="colLast">
 <div class="block">Add new JVM options upon restore.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setAutoDedup(boolean)">setAutoDedup</a></span>&#8203;(boolean&nbsp;autoDedup)</code></th>
 <td class="colLast">
 <div class="block">Controls whether auto dedup of memory pages is enabled.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setExtUnixSupport(boolean)">setExtUnixSupport</a></span>&#8203;(boolean&nbsp;extUnixSupport)</code></th>
 <td class="colLast">
 <div class="block">Controls whether to dump only one end of a unix socket pair.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setFileLocks(boolean)">setFileLocks</a></span>&#8203;(boolean&nbsp;fileLocks)</code></th>
 <td class="colLast">
 <div class="block">Controls whether to dump file locks.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setGhostFileLimit(long)">setGhostFileLimit</a></span>&#8203;(long&nbsp;limit)</code></th>
 <td class="colLast">
 <div class="block">Set the size limit for ghost files when taking a checkpoint.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setImageDir(java.nio.file.Path)">setImageDir</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file" class="externalLink" target="_blank">Path</a>&nbsp;imageDir)</code></th>
 <td class="colLast">
 <div class="block">Sets the directory that will hold the images upon checkpoint.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setLeaveRunning(boolean)">setLeaveRunning</a></span>&#8203;(boolean&nbsp;leaveRunning)</code></th>
 <td class="colLast">
 <div class="block">Controls whether process trees are left running after checkpoint.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setLogFile(java.lang.String)">setLogFile</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;logFile)</code></th>
 <td class="colLast">
 <div class="block">Write log output to logFile.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setLogLevel(int)">setLogLevel</a></span>&#8203;(int&nbsp;logLevel)</code></th>
 <td class="colLast">
 <div class="block">Sets the verbosity of log output.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setShellJob(boolean)">setShellJob</a></span>&#8203;(boolean&nbsp;shellJob)</code></th>
 <td class="colLast">
 <div class="block">Controls ability to dump shell jobs.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setTCPClose(boolean)">setTCPClose</a></span>&#8203;(boolean&nbsp;tcpClose)</code></th>
+<td class="colLast">
+<div class="block">Controls whether to restore TCP sockets in closed state.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -251,19 +265,26 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setTCPSkipInFlight(boolean)">setTCPSkipInFlight</a></span>&#8203;(boolean&nbsp;tcpSkipInFlight)</code></th>
+<td class="colLast">
+<div class="block">Controls whether to skip in-flight TCP connections.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setTrackMemory(boolean)">setTrackMemory</a></span>&#8203;(boolean&nbsp;trackMemory)</code></th>
 <td class="colLast">
 <div class="block">Controls whether memory tracking is enabled.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setUnprivileged(boolean)">setUnprivileged</a></span>&#8203;(boolean&nbsp;unprivileged)</code></th>
 <td class="colLast">
 <div class="block">Controls whether CRIU will be invoked in privileged or unprivileged mode.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../CRIUSupport.html" title="class in org.eclipse.openj9.criu">CRIUSupport</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">CRIUSupport.</span><code><span class="memberNameLink"><a href="../CRIUSupport.html#setWorkDir(java.nio.file.Path)">setWorkDir</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file" class="externalLink" target="_blank">Path</a>&nbsp;workDir)</code></th>
 <td class="colLast">
@@ -280,7 +301,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 </main>
 <footer role="contentinfo">
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2024 IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2025 IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>
