@@ -554,14 +554,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><span class="typeNameLabel">JavaMember.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaMember.html#getModifiers--">getModifiers</a></span>()</code>
-<div class="block">Get the set of modifiers for this field or method - a set of bits</div>
+<td class="colLast"><span class="typeNameLabel">JavaClass.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClass.html#getModifiers--">getModifiers</a></span>()</code>
+<div class="block">Return the Java language modifiers for this class.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><span class="typeNameLabel">JavaClass.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClass.html#getModifiers--">getModifiers</a></span>()</code>
-<div class="block">Return the Java language modifiers for this class.</div>
+<td class="colLast"><span class="typeNameLabel">JavaMember.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaMember.html#getModifiers--">getModifiers</a></span>()</code>
+<div class="block">Get the set of modifiers for this field or method - a set of bits</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -585,26 +585,26 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="typeNameLabel">JavaMember.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaMember.html#getName--">getName</a></span>()</code>
-<div class="block">Get the name of the field or method</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="typeNameLabel">JavaClass.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClass.html#getName--">getName</a></span>()</code>
 <div class="block">Get the name of the class.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" target="_blank" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="typeNameLabel">JavaMember.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaMember.html#getName--">getName</a></span>()</code>
+<div class="block">Get the name of the field or method</div>
+</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../com/ibm/dtfj/java/JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a></code></td>
-<td class="colLast"><span class="typeNameLabel">JavaThread.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaThread.html#getObject--">getObject</a></span>()</code>
-<div class="block">Fetch the java.lang.Thread associated with this thread.</div>
+<td class="colLast"><span class="typeNameLabel">JavaClassLoader.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClassLoader.html#getObject--">getObject</a></span>()</code>
+<div class="block">Get the java.lang.ClassLoader instance associated with this class loader.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../com/ibm/dtfj/java/JavaObject.html" title="interface in com.ibm.dtfj.java">JavaObject</a></code></td>
-<td class="colLast"><span class="typeNameLabel">JavaClassLoader.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClassLoader.html#getObject--">getObject</a></span>()</code>
-<div class="block">Get the java.lang.ClassLoader instance associated with this class loader.</div>
+<td class="colLast"><span class="typeNameLabel">JavaThread.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaThread.html#getObject--">getObject</a></span>()</code>
+<div class="block">Fetch the java.lang.Thread associated with this thread.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -761,14 +761,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">JavaClass.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClass.html#isArray--">isArray</a></span>()</code>
-<div class="block">Is this an array class ?</div>
+<td class="colLast"><span class="typeNameLabel">JavaObject.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaObject.html#isArray--">isArray</a></span>()</code>
+<div class="block">Is this object an array?</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><span class="typeNameLabel">JavaObject.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaObject.html#isArray--">isArray</a></span>()</code>
-<div class="block">Is this object an array?</div>
+<td class="colLast"><span class="typeNameLabel">JavaClass.</span><code><span class="memberNameLink"><a href="../../../../../com/ibm/dtfj/java/JavaClass.html#isArray--">isArray</a></span>()</code>
+<div class="block">Is this an array class ?</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -884,6 +884,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse OpenJ9 issue.</a><br> Copyright &copy; 2004, 2024 IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse OpenJ9 issue.</a><br> Copyright &copy; 2004, 2025 IBM Corp. and others.</small></p>
 </body>
 </html>
