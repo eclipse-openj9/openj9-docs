@@ -481,6 +481,6 @@ nav:
         - "Java 11 API"                                                           : api-jdk11.md
         - "Java 17 API"                                                           : api-jdk17.md
         - "Java 21 API"                                                           : api-jdk21.md
-        - "Java 23 API"                                                           : api-jdk23.md
+        - "Java 24 API"                                                           : api-jdk24.md
 
     - "Legal"                                                                     : legal.md
