@@ -1464,7 +1464,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <td class="colFirst"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">OptInfo.</span><code><span class="memberNameLink"><a href="../vm29/j9/OptInfo.html#getV1VariableTableForMethodDebugInfo(com.ibm.j9ddr.vm29.pointer.generated.J9MethodDebugInfoPointer)">getV1VariableTableForMethodDebugInfo</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9MethodDebugInfoPointer&nbsp;methodInfo)</code></th>
 <td class="colLast">
-<div class="block">This method should be used when VM_LOCAL_VARIABLE_TABLE_VERSION >= 1</div>
+<div class="block">This method should be used when VM_LOCAL_VARIABLE_TABLE_VERSION >= 1.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -5279,10 +5279,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
-<th class="colSecond" scope="row"><span class="typeNameLabel">ThreadsCommand.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ThreadsCommand.html#getThreadName(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer)">getThreadName</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&nbsp;thread)</code></th>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#getModuleName(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer)">getModuleName</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer&nbsp;module)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
+<th class="colSecond" scope="row"><span class="typeNameLabel">ThreadsCommand.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ThreadsCommand.html#getThreadName(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer)">getThreadName</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&nbsp;thread)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iterateClassLoaderClasses(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ClassIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ClassOutput,java.lang.String,com.ibm.j9ddr.vm29.pointer.generated.J9ClassLoaderPointer)">iterateClassLoaderClasses</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out,
                          <a href="../vm29/tools/ddrinteractive/ModularityHelper.ClassIteratorFilter.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.ClassIteratorFilter</a>&nbsp;filter,
@@ -5294,7 +5299,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  classloader.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iterateClassLoaderPackages(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageOutput,java.lang.String,com.ibm.j9ddr.vm29.pointer.generated.J9ClassLoaderPointer)">iterateClassLoaderPackages</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out,
                           <a href="../vm29/tools/ddrinteractive/ModularityHelper.PackageIteratorFilter.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.PackageIteratorFilter</a>&nbsp;filter,
@@ -5306,7 +5311,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  owned by the given class loader.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iterateModules(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ModuleIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ModuleOutput,java.lang.String)">iterateModules</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out,
               <a href="../vm29/tools/ddrinteractive/ModularityHelper.ModuleIteratorFilter.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.ModuleIteratorFilter</a>&nbsp;filter,
@@ -5316,7 +5321,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Traverses through all loaded modules.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iteratePackages(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageOutput,java.lang.String)">iteratePackages</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out,
                <a href="../vm29/tools/ddrinteractive/ModularityHelper.PackageIteratorFilter.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.PackageIteratorFilter</a>&nbsp;filter,
@@ -5326,25 +5331,25 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Traverses through all loaded packages.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.ClassOutput.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.ClassOutput.html#print(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.io.PrintStream)">print</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;classPtr,
      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.ModuleOutput.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.ModuleOutput.html#print(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer,java.io.PrintStream)">print</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer&nbsp;modulePtr,
      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.PackageOutput.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.PackageOutput.html#print(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)">print</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">LinearDumper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/LinearDumper.html#printAllRegions(java.io.PrintStream,com.ibm.j9ddr.vm29.pointer.StructurePointer,long,com.ibm.j9ddr.vm29.tools.ddrinteractive.LinearDumper.J9ClassRegionNode,int)">printAllRegions</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out,
                <a href="../vm29/pointer/StructurePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">StructurePointer</a>&nbsp;clazz,
@@ -5353,7 +5358,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
                int&nbsp;nesting)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printJ9Class(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.io.PrintStream)">printJ9Class</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;classPtr,
             <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)</code></th>
@@ -5361,7 +5366,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Prints the name and hex address of a J9Class.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printJ9Module(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer,java.io.PrintStream)">printJ9Module</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer&nbsp;modulePtr,
              <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)</code></th>
@@ -5369,7 +5374,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Prints the name and hex address of a J9Module.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printJ9Package(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)">printJ9Package</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
               <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)</code></th>
@@ -5377,7 +5382,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="block">Prints the name and hex address of a J9Package.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printPackageExports(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)">printPackageExports</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
                    <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)</code></th>
@@ -5386,7 +5391,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  J9Modules the provided package is exported to.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printPackageExportVerbose(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)">printPackageExportVerbose</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
                          <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)</code></th>
@@ -5395,7 +5400,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
  J9Modules the provided package is exported to.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><span class="typeNameLabel">ModularityHelper.</span><code><span class="memberNameLink"><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printPackageJ9Module(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)">printPackageJ9Module</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
                     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html?is-external=true" title="class or interface in java.io" class="externalLink" target="_blank">PrintStream</a>&nbsp;out)</code></th>
@@ -5728,7 +5733,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 </main>
 <footer role="contentinfo">
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2024 IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2025 IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>

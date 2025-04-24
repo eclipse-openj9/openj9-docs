@@ -8,6 +8,7 @@
 <meta name="keywords" content="openj9.lang.management.OpenJ9DiagnosticsMXBean interface">
 <meta name="keywords" content="resetDumpOptions()">
 <meta name="keywords" content="queryDumpOptions()">
+<meta name="keywords" content="getDumpOptions()">
 <meta name="keywords" content="setDumpOptions()">
 <meta name="keywords" content="triggerDump()">
 <meta name="keywords" content="triggerDumpToFile()">
@@ -34,7 +35,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -191,13 +192,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDumpOptions()">getDumpOptions</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the current dump configuration as a String, with multiple options separated by
+ a vertical bar, or null if an internal error occurs.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queryDumpOptions()">queryDumpOptions</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the current dump configuration as an array of Strings, or null if an internal error occurs.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resetDumpOptions()">resetDumpOptions</a></span>()</code></th>
 <td class="colLast">
@@ -205,28 +214,28 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  configuration done since then.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDumpOptions(java.lang.String)">setDumpOptions</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;dumpOptions)</code></th>
 <td class="colLast">
 <div class="block">This function sets options for the dump subsystem.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#triggerClassicHeapDump()">triggerClassicHeapDump</a></span>()</code></th>
 <td class="colLast">
 <div class="block">This function triggers the heap dump agent and requests for a heap dump in CLASSIC format.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#triggerDump(java.lang.String)">triggerDump</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;dumpAgent)</code></th>
 <td class="colLast">
 <div class="block">This function triggers the specified dump agent.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#triggerDumpToFile(java.lang.String,java.lang.String)">triggerDumpToFile</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;dumpAgent,
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;fileNamePattern)</code></th>
@@ -289,6 +298,29 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
  with the initial -Xdump: omitted. See the -Xdump option section on dump agents in
  the documentation for the OpenJ9 JVM.</div>
 <dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the dump configuration as an array of Strings</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">SecurityException</a></code> - if there is a security manager and it doesn't allow the checks required to read the dump settings</dd>
+</dl>
+</li>
+</ul>
+<a id="getDumpOptions()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDumpOptions</h4>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;getDumpOptions()</pre>
+<div class="block">Returns the current dump configuration as a String, with multiple options separated by
+ a vertical bar, or null if an internal error occurs.
+ The syntax of the option String is the same as the -Xdump command-line option,
+ with the initial -Xdump: omitted. See the -Xdump option section on dump agents in
+ the documentation for the OpenJ9 JVM.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the dump configuration as a String, with multiple options separated by
+ a vertical bar</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/SecurityException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">SecurityException</a></code> - if there is a security manager and it doesn't allow the checks required to read the dump settings</dd>
 </dl>
@@ -401,7 +433,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 <div class="block">This function triggers the heap dump agent and requests for a heap dump in CLASSIC format.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>The file name of the dump that was created</dd>
+<dd>the file name of the dump that was created</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidOptionException.html" title="class in openj9.lang.management">InvalidOptionException</a></code> - if the dump operation fails</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">RuntimeException</a></code> - if the JVM does not contain RAS dump support</dd>
@@ -419,7 +451,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.managem
 </main>
 <!-- ========= END OF CLASS DATA ========= -->
 <footer role="contentinfo">
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2024 IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2025 IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>
