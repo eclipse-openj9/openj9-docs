@@ -632,6 +632,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-new-data-access-accelerator-library-api-comibmdataaccessexternaldecimalcheckexternaldecimal-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      A new Data Access Accelerator library API com/ibm/dataaccess/ExternalDecimal.checkExternalDecimal added
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8714,6 +8723,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-new-data-access-accelerator-library-api-comibmdataaccessexternaldecimalcheckexternaldecimal-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      A new Data Access Accelerator library API com/ibm/dataaccess/ExternalDecimal.checkExternalDecimal added
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8780,6 +8798,7 @@
 <li><a href="#new-xx-shareorphans-option-added">New <code>-XX:[+|-]ShareOrphans</code> option added</a></li>
 <li><a href="#new-xx-jitserveraotcacheignorelocalscc-option-added">New <code>-XX:[+|-]JITServerAOTCacheIgnoreLocalSCC</code> option added</a></li>
 <li><a href="#new-xdynamicheapadjustment-option-added">New <code>-XdynamicHeapAdjustment</code> option added</a></li>
+<li><a href="#a-new-data-access-accelerator-library-api-comibmdataaccessexternaldecimalcheckexternaldecimal-added">A new Data Access Accelerator library API <code>com/ibm/dataaccess/ExternalDecimal.checkExternalDecimal</code> added</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -8812,6 +8831,9 @@
 <h3 id="new-xdynamicheapadjustment-option-added"><img alt="Java 11 (LTS) and later" src="docs/cr/java11plus.png" /> New <code>-XdynamicHeapAdjustment</code> option added</h3>
 <p>By default, if a checkpoint is taken in a container with no memory limits and then restored in a container with memory limits, the restored VM instance does not detect the memory limits.</p>
 <p>You can now create a single image file and restore it on various nodes with different memory limits. The new option <a href="../xdynamicheapadjustment/"><code>-XdynamicHeapAdjustment</code></a> automatically adjusts the maximum Java heap size (<a href="../xms/"><code>-Xmx</code></a>) and minimum Java heap size (<a href="../xms/"><code>-Xms</code></a>) values such that they are within the physical memory limitations on the system. <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close.png" /></p>
+<h3 id="a-new-data-access-accelerator-library-api-comibmdataaccessexternaldecimalcheckexternaldecimal-added">A new Data Access Accelerator library API <code>com/ibm/dataaccess/ExternalDecimal.checkExternalDecimal</code> added</h3>
+<p>A new Data Access Accelerator (DAA) library class API <code>com/ibm/dataaccess/ExternalDecimal.checkExternalDecimal</code> is added to verify the validity of the sign and digits of a given external decimal input before operating on the data.</p>
+<p>For more information, see <a href="../introduction/#native-data-operations">Native Data Operations</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.45.0 and v0.46.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.46/0.46.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.46.md ==== -->
