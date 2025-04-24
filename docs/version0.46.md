@@ -35,6 +35,7 @@ The following new features and notable changes since version 0.45.0 are included
 - [New `-XX:[+|-]ShareOrphans` option added](#new-xx-shareorphans-option-added)
 - [New `-XX:[+|-]JITServerAOTCacheIgnoreLocalSCC` option added](#new-xx-jitserveraotcacheignorelocalscc-option-added)
 - [New `-XdynamicHeapAdjustment` option added](#new-xdynamicheapadjustment-option-added)
+- [A new Data Access Accelerator library API `com/ibm/dataaccess/ExternalDecimal.checkExternalDecimal` added](#a-new-data-access-accelerator-library-api-comibmdataaccessexternaldecimalcheckexternaldecimal-added)
 
 ## Features and changes
 
@@ -97,6 +98,12 @@ From this release onwards, the default behavior of the client when it uses the J
 By default, if a checkpoint is taken in a container with no memory limits and then restored in a container with memory limits, the restored VM instance does not detect the memory limits.
 
 You can now create a single image file and restore it on various nodes with different memory limits. The new option [`-XdynamicHeapAdjustment`](xdynamicheapadjustment.md) automatically adjusts the maximum Java heap size ([`-Xmx`](xms.md)) and minimum Java heap size ([`-Xms`](xms.md)) values such that they are within the physical memory limitations on the system. ![End of content that applies only to Java 11 and later](cr/java_close.png)
+
+### A new Data Access Accelerator library API `com/ibm/dataaccess/ExternalDecimal.checkExternalDecimal` added
+
+A new Data Access Accelerator (DAA) library class API `com/ibm/dataaccess/ExternalDecimal.checkExternalDecimal` is added to verify the validity of the sign and digits of a given external decimal input before operating on the data.
+
+For more information, see [Native Data Operations](introduction.md#native-data-operations).
 
 ## Known problems and full release information
 
