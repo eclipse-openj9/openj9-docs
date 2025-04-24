@@ -135,7 +135,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.mana
  a <code>CompositeData</code> to a <code>GarbageCollectionNotificationInfo</code>
  object. For example:
 
- <blockquote><pre>
+ <pre>
       Notification notif;
 
       // receive the notification emitted by a GarbageCollectorMXBean and save in notif
@@ -148,7 +148,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.mana
           GarbageCollectionNotificationInfo info = GarbageCollectionNotificationInfo.from(cd);
           ...
       }
- </pre></blockquote>
+ </pre>
 
  <p>
  The type of the notification emitted by a <code>GarbageCollectorMXBean</code> is:
@@ -345,8 +345,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.mana
 <div class="block">Returns a <code>GarbageCollectionNotificationInfo</code> object represented by the
  given <code>CompositeData</code>.
  The given <code>CompositeData</code> must contain the following attributes:
- <blockquote>
- <table border=1>
+ <br><br><table border=1>
  <caption>CompositeData attributes</caption>
  <tr>
    <th style="text-align:left">Attribute Name</th>
@@ -368,8 +367,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.mana
    <td>gcInfo</td>
    <td><code>com.ibm.lang.management.GcInfo</code></td>
  </tr>
- </table>
- </blockquote></div>
+ </table></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>cd</code> - <code>CompositeData</code> representing a
@@ -410,7 +408,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.mana
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2024 IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2025 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>
