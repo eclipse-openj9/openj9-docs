@@ -1109,7 +1109,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static <a href="../vm29/pointer/U8Pointer.html" title="class in com.ibm.j9ddr.vm29.pointer">U8Pointer</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">OptInfo.</span><code><a href="../vm29/j9/OptInfo.html#getV1VariableTableForMethodDebugInfo(com.ibm.j9ddr.vm29.pointer.generated.J9MethodDebugInfoPointer)" class="member-name-link">getV1VariableTableForMethodDebugInfo</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9MethodDebugInfoPointer&nbsp;methodInfo)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">This method should be used when VM_LOCAL_VARIABLE_TABLE_VERSION >= 1</div>
+<div class="block">This method should be used when VM_LOCAL_VARIABLE_TABLE_VERSION >= 1.</div>
 </div>
 <div class="col-first even-row-color"><code>abstract <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link" target="_blank">List</a>&lt;com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&gt;</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">ObjectMonitor.</span><code><a href="../vm29/j9/ObjectMonitor.html#getWaitingThreads()" class="member-name-link">getWaitingThreads</a>()</code></div>
@@ -3875,99 +3875,102 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns a tree of regions and slots.</div>
 </div>
 <div class="col-first odd-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ThreadsCommand.</span><code><a href="../vm29/tools/ddrinteractive/ThreadsCommand.html#getThreadName(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer)" class="member-name-link">getThreadName</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&nbsp;thread)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#getModuleName(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer)" class="member-name-link">getModuleName</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer&nbsp;module)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static int</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iterateClassLoaderClasses(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ClassIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ClassOutput,java.lang.String,com.ibm.j9ddr.vm29.pointer.generated.J9ClassLoaderPointer)" class="member-name-link">iterateClassLoaderClasses</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
+<div class="col-first even-row-color"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ThreadsCommand.</span><code><a href="../vm29/tools/ddrinteractive/ThreadsCommand.html#getThreadName(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer)" class="member-name-link">getThreadName</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9VMThreadPointer&nbsp;thread)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static int</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iterateClassLoaderClasses(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ClassIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ClassOutput,java.lang.String,com.ibm.j9ddr.vm29.pointer.generated.J9ClassLoaderPointer)" class="member-name-link">iterateClassLoaderClasses</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
  <a href="../vm29/tools/ddrinteractive/ModularityHelper.ClassIteratorFilter.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.ClassIteratorFilter</a>&nbsp;filter,
  <a href="../vm29/tools/ddrinteractive/ModularityHelper.ClassOutput.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.ClassOutput</a>&nbsp;outputter,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;filterArg,
  com.ibm.j9ddr.vm29.pointer.generated.J9ClassLoaderPointer&nbsp;classLoaderPtr)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Traverses through all loaded classes in a
  classloader.</div>
 </div>
-<div class="col-first odd-row-color"><code>static int</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iterateClassLoaderPackages(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageOutput,java.lang.String,com.ibm.j9ddr.vm29.pointer.generated.J9ClassLoaderPointer)" class="member-name-link">iterateClassLoaderPackages</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
+<div class="col-first even-row-color"><code>static int</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iterateClassLoaderPackages(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageOutput,java.lang.String,com.ibm.j9ddr.vm29.pointer.generated.J9ClassLoaderPointer)" class="member-name-link">iterateClassLoaderPackages</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
  <a href="../vm29/tools/ddrinteractive/ModularityHelper.PackageIteratorFilter.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.PackageIteratorFilter</a>&nbsp;filter,
  <a href="../vm29/tools/ddrinteractive/ModularityHelper.PackageOutput.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.PackageOutput</a>&nbsp;outputter,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;filterArg,
  com.ibm.j9ddr.vm29.pointer.generated.J9ClassLoaderPointer&nbsp;classLoaderPtr)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Traverses through all loaded packages that are
  owned by the given class loader.</div>
 </div>
-<div class="col-first even-row-color"><code>static int</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iterateModules(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ModuleIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ModuleOutput,java.lang.String)" class="member-name-link">iterateModules</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
+<div class="col-first odd-row-color"><code>static int</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iterateModules(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ModuleIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.ModuleOutput,java.lang.String)" class="member-name-link">iterateModules</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
  <a href="../vm29/tools/ddrinteractive/ModularityHelper.ModuleIteratorFilter.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.ModuleIteratorFilter</a>&nbsp;filter,
  <a href="../vm29/tools/ddrinteractive/ModularityHelper.ModuleOutput.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.ModuleOutput</a>&nbsp;outputter,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;filterArg)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Traverses through all loaded modules.</div>
 </div>
-<div class="col-first odd-row-color"><code>static int</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iteratePackages(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageOutput,java.lang.String)" class="member-name-link">iteratePackages</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
+<div class="col-first even-row-color"><code>static int</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#iteratePackages(java.io.PrintStream,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageIteratorFilter,com.ibm.j9ddr.vm29.tools.ddrinteractive.ModularityHelper.PackageOutput,java.lang.String)" class="member-name-link">iteratePackages</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
  <a href="../vm29/tools/ddrinteractive/ModularityHelper.PackageIteratorFilter.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.PackageIteratorFilter</a>&nbsp;filter,
  <a href="../vm29/tools/ddrinteractive/ModularityHelper.PackageOutput.html" title="interface in com.ibm.j9ddr.vm29.tools.ddrinteractive">ModularityHelper.PackageOutput</a>&nbsp;outputter,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;filterArg)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Traverses through all loaded packages.</div>
 </div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.ClassOutput.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.ClassOutput.html#print(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.io.PrintStream)" class="member-name-link">print</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;classPtr,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.ModuleOutput.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.ModuleOutput.html#print(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer,java.io.PrintStream)" class="member-name-link">print</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer&nbsp;modulePtr,
+<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.ClassOutput.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.ClassOutput.html#print(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.io.PrintStream)" class="member-name-link">print</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;classPtr,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.PackageOutput.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.PackageOutput.html#print(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)" class="member-name-link">print</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
+<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.ModuleOutput.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.ModuleOutput.html#print(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer,java.io.PrintStream)" class="member-name-link">print</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer&nbsp;modulePtr,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LinearDumper.</span><code><a href="../vm29/tools/ddrinteractive/LinearDumper.html#printAllRegions(java.io.PrintStream,com.ibm.j9ddr.vm29.pointer.StructurePointer,long,com.ibm.j9ddr.vm29.tools.ddrinteractive.LinearDumper.J9ClassRegionNode,int)" class="member-name-link">printAllRegions</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.PackageOutput.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.PackageOutput.html#print(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)" class="member-name-link">print</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">LinearDumper.</span><code><a href="../vm29/tools/ddrinteractive/LinearDumper.html#printAllRegions(java.io.PrintStream,com.ibm.j9ddr.vm29.pointer.StructurePointer,long,com.ibm.j9ddr.vm29.tools.ddrinteractive.LinearDumper.J9ClassRegionNode,int)" class="member-name-link">printAllRegions</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out,
  <a href="../vm29/pointer/StructurePointer.html" title="class in com.ibm.j9ddr.vm29.pointer">StructurePointer</a>&nbsp;clazz,
  long&nbsp;nestingThreshold,
  <a href="../vm29/tools/ddrinteractive/LinearDumper.J9ClassRegionNode.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive">LinearDumper.J9ClassRegionNode</a>&nbsp;regionNode,
  int&nbsp;nesting)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printJ9Class(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.io.PrintStream)" class="member-name-link">printJ9Class</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;classPtr,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printJ9Class(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.io.PrintStream)" class="member-name-link">printJ9Class</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;classPtr,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Prints the name and hex address of a J9Class.</div>
 </div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printJ9Module(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer,java.io.PrintStream)" class="member-name-link">printJ9Module</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer&nbsp;modulePtr,
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printJ9Module(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer,java.io.PrintStream)" class="member-name-link">printJ9Module</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ModulePointer&nbsp;modulePtr,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Prints the name and hex address of a J9Module.</div>
 </div>
-<div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printJ9Package(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)" class="member-name-link">printJ9Package</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
+<div class="col-first odd-row-color"><code>static void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printJ9Package(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)" class="member-name-link">printJ9Package</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Prints the name and hex address of a J9Package.</div>
 </div>
-<div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printPackageExports(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)" class="member-name-link">printPackageExports</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Prints the name and hex address of all
- J9Modules the provided package is exported to.</div>
-</div>
 <div class="col-first even-row-color"><code>static void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printPackageExportVerbose(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)" class="member-name-link">printPackageExportVerbose</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
+<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printPackageExports(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)" class="member-name-link">printPackageExports</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Prints the name and hex address of all
  J9Modules the provided package is exported to.</div>
 </div>
 <div class="col-first odd-row-color"><code>static void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printPackageJ9Module(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)" class="member-name-link">printPackageJ9Module</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
+<div class="col-second odd-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printPackageExportVerbose(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)" class="member-name-link">printPackageExportVerbose</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
 <div class="col-last odd-row-color">
+<div class="block">Prints the name and hex address of all
+ J9Modules the provided package is exported to.</div>
+</div>
+<div class="col-first even-row-color"><code>static void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ModularityHelper.</span><code><a href="../vm29/tools/ddrinteractive/ModularityHelper.html#printPackageJ9Module(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer,java.io.PrintStream)" class="member-name-link">printPackageJ9Module</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&nbsp;packagePtr,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html" title="class or interface in java.io" class="external-link" target="_blank">PrintStream</a>&nbsp;out)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Prints the details of the J9Module that owns a
  J9Package.</div>
 </div>
@@ -4230,7 +4233,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2024 IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2025 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>
