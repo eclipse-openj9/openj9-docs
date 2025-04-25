@@ -41,10 +41,12 @@ OpenSSL support is enabled by default for the following algorithms:
 
 - CBC
 - ChaCha20 and ChaCha20-Poly1305
-- EC key generation
 - ECDH key agreement
+- ECDSA signature
+- EC key generation
 - GCM
 - MD5
+- PBE cipher
 - RSA
 - SHA-224
 - SHA-256
@@ -69,11 +71,13 @@ If you want to turn off the algorithms individually, use the following system pr
 
 - [`-Djdk.nativeCBC`](djdknativecbc.md)
 - [`-Djdk.nativeChaCha20`](djdknativechacha20.md) (![Start of content that applies to Java 8 (LTS)](cr/java8.png) Not supported on Java 8. ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png))
-- [`-Djdk.nativeGCM`](djdknativegcm.md)
-- [`-Djdk.nativeRSA`](djdknativersa.md)
 - [`-Djdk.nativeDigest`](djdknativedigest.md)
 - [`-Djdk.nativeEC`](djdknativeec.md)
+- [`-Djdk.nativeECDSA`](djdknativeecdsa.md)
 - [`-Djdk.nativeECKeyGen`](djdknativeeckeygen.md)
+- [`-Djdk.nativeGCM`](djdknativegcm.md)
+- [`-Djdk.nativePBE`](djdknativepbe.md)
+- [`-Djdk.nativeRSA`](djdknativersa.md)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [`-Djdk.nativeXDHKeyAgreement`](djdknativexdhkeyagreement.md)
 - [`-Djdk.nativeXDHKeyGen`](djdknativexdhkeygen.md) ![End of content that applies to Java 11 (LTS) and later](cr/java_close_lts.png)
 

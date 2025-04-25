@@ -50,7 +50,7 @@ For more information, see [`maxstringlength`](xtrace.md#maxstringlength).
 
 AIX OpenJ9 builds now require version 16.1.0.10 or later of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
 
-<!--### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
+<!--0.50.0 release cancelled ### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
 
 The following features are supported by OpenJ9:
 
