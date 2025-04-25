@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.50/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.51/">
       
       
         <link rel="prev" href="../openj9_releases/">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Version 0.50.0 -  </title>
+        <title>Version 0.51.0 -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#whats-new-in-version-0500" class="md-skip">
+        <a href="#whats-new-in-version-0510" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Version 0.50.0
+              Version 0.51.0
             
           </span>
         </div>
@@ -388,7 +388,7 @@
           
   
   <span class="md-ellipsis">
-    Version 0.50.0
+    Version 0.51.0
     
   </span>
   
@@ -400,7 +400,7 @@
         
   
   <span class="md-ellipsis">
-    Version 0.50.0
+    Version 0.51.0
     
   </span>
   
@@ -451,9 +451,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-jdk-24-features" class="md-nav__link">
+  <a href="#xl-c-runtime-161010-or-later-required-for-aix-openj9-builds" class="md-nav__link">
     <span class="md-ellipsis">
-      New JDK 24 features
+      XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds
     </span>
   </a>
   
@@ -8580,9 +8580,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-jdk-24-features" class="md-nav__link">
+  <a href="#xl-c-runtime-161010-or-later-required-for-aix-openj9-builds" class="md-nav__link">
     <span class="md-ellipsis">
-      New JDK 24 features
+      XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds
     </span>
   </a>
   
@@ -8641,50 +8641,56 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="whats-new-in-version-0500">What's new in version 0.50.0</h1>
+<h1 id="whats-new-in-version-0510">What's new in version 0.51.0</h1>
 <p>The following new features and notable changes since version 0.49.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#new-parameter-maxstringlength-added-to-the-xtrace-option">New parameter <code>maxstringlength</code> added to the <code>-Xtrace</code> option</a></li>
-<li><img alt="Start of content that applies to Java 24 and later" src="../cr/java24plus.png" /> <a href="#new-jdk-24-features">New JDK 24 features</a> <img alt="End of content that applies to Java 24 and later" src="../cr/java_close.png" /></li>
+<li><a href="#xl-c-runtime-161010-or-later-required-for-aix-openj9-builds">XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds</a></li>
 </ul>
+<!--Release 0.50.0 cancelled- ![Start of content that applies to Java 24 and later](cr/java24plus.png) [New JDK 24 features](#new-jdk-24-features) ![End of content that applies to Java 24 and later](cr/java_close.png)-->
+
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
-<p>Eclipse OpenJ9&trade; release 0.50.0 supports OpenJDK 24.</p>
-<p>OpenJDK 24 with Eclipse OpenJ9 is <em>not</em> a long term support (LTS) release.</p>
+<p>Eclipse OpenJ9&trade; release 0.51.0 supports OpenJDK 8, 11, 17, and 21.</p>
+<p>Ubuntu 20.04 is removed from the list of supported platforms.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="new-parameter-maxstringlength-added-to-the-xtrace-option">New parameter <code>maxstringlength</code> added to the <code>-Xtrace</code> option</h3>
 <p>You can use the <code>maxstringlength</code> parameter of the <code>-Xtrace</code> option to specify the length of the string arguments and return values of a method that are now printed in a trace output in addition to the addresses.</p>
 <p>For more information, see <a href="../xtrace/#maxstringlength"><code>maxstringlength</code></a>.</p>
-<h3 id="new-jdk-24-features"><img alt="Start of content that applies to Java 24 and later" src="../cr/java24plus.png" /> New JDK 24 features</h3>
-<p>The following features are supported by OpenJ9:</p>
-<ul>
-<li><a href="https://openjdk.java.net/jeps/472">JEP 472</a>: Prepare to Restrict the Use of JNI</li>
-<li><a href="https://openjdk.java.net/jeps/486">JEP 486</a>: Permanently Disable the Security Manager</li>
-<li><a href="https://openjdk.java.net/jeps/491">JEP 491</a>: Synchronize Virtual Threads without Pinning</li>
-</ul>
-<p>The following features are implemented in OpenJDK and available in any build of OpenJDK 24 with OpenJ9:</p>
-<ul>
-<li><a href="https://openjdk.java.net/jeps/478">JEP 478</a>: Key Derivation Function API (Preview)</li>
-<li><a href="https://openjdk.java.net/jeps/484">JEP 484</a>: Class-File API</li>
-<li><a href="https://openjdk.java.net/jeps/485">JEP 485</a>: Stream Gatherers</li>
-<li><a href="https://openjdk.java.net/jeps/487">JEP 487</a>: Scoped Values (Fourth Preview)</li>
-<li><a href="https://openjdk.java.net/jeps/488">JEP 488</a>: Primitive Types in Patterns, instanceof, and switch (Second Preview)</li>
-<li><a href="https://openjdk.java.net/jeps/489">JEP 489</a>: Vector API (Ninth Incubator)</li>
-<li><a href="https://openjdk.java.net/jeps/492">JEP 492</a>: Flexible Constructor Bodies (Third Preview)</li>
-<li><a href="https://openjdk.java.net/jeps/493">JEP 493</a>: Linking Run-Time Images without JMODs</li>
-<li><a href="https://openjdk.java.net/jeps/494">JEP 494</a>: Module Import Declarations (Second Preview)</li>
-<li><a href="https://openjdk.java.net/jeps/495">JEP 495</a>: Simple Source Files and Instance Main Methods (Fourth Preview)</li>
-<li><a href="https://openjdk.java.net/jeps/496">JEP 496</a>: Quantum-Resistant Module-Lattice-Based Key Encapsulation Mechanism</li>
-<li><a href="https://openjdk.java.net/jeps/497">JEP 497</a>: Quantum-Resistant Module-Lattice-Based Digital Signature Algorithm</li>
-<li><a href="https://openjdk.java.net/jeps/498">JEP 498</a>: Warn upon Use of Memory-Access Methods in sun.misc.Unsafe</li>
-<li><a href="https://openjdk.java.net/jeps/499">JEP 499</a>: Structured Concurrency (Fourth Preview)</li>
-</ul>
-<p>You can find the full list of features for JDK 24 at the <a href="https://openjdk.org/projects/jdk/24/">OpenJDK project</a>.
-Any remaining features that are listed either do not apply to OpenJ9 or are not implemented and hence not applicable to OpenJ9 in this release. <img alt="End of content that applies to Java 24 and later" src="../cr/java_close.png" /></p>
+<h3 id="xl-c-runtime-161010-or-later-required-for-aix-openj9-builds">XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds</h3>
+<p>AIX OpenJ9 builds now require version 16.1.0.10 or later of the <a href="https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X">IBM XL C++ Runtime</a>.</p>
+<!--### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
+
+The following features are supported by OpenJ9:
+
+- [JEP 472](https://openjdk.java.net/jeps/472): Prepare to Restrict the Use of JNI
+- [JEP 486](https://openjdk.java.net/jeps/486): Permanently Disable the Security Manager
+- [JEP 491](https://openjdk.java.net/jeps/491): Synchronize Virtual Threads without Pinning
+
+The following features are implemented in OpenJDK and available in any build of OpenJDK 24 with OpenJ9:
+
+- [JEP 478](https://openjdk.java.net/jeps/478): Key Derivation Function API (Preview)
+- [JEP 484](https://openjdk.java.net/jeps/484): Class-File API
+- [JEP 485](https://openjdk.java.net/jeps/485): Stream Gatherers
+- [JEP 487](https://openjdk.java.net/jeps/487): Scoped Values (Fourth Preview)
+- [JEP 488](https://openjdk.java.net/jeps/488): Primitive Types in Patterns, instanceof, and switch (Second Preview)
+- [JEP 489](https://openjdk.java.net/jeps/489): Vector API (Ninth Incubator)
+- [JEP 492](https://openjdk.java.net/jeps/492): Flexible Constructor Bodies (Third Preview)
+- [JEP 493](https://openjdk.java.net/jeps/493): Linking Run-Time Images without JMODs
+- [JEP 494](https://openjdk.java.net/jeps/494): Module Import Declarations (Second Preview)
+- [JEP 495](https://openjdk.java.net/jeps/495): Simple Source Files and Instance Main Methods (Fourth Preview)
+- [JEP 496](https://openjdk.java.net/jeps/496): Quantum-Resistant Module-Lattice-Based Key Encapsulation Mechanism
+- [JEP 497](https://openjdk.java.net/jeps/497): Quantum-Resistant Module-Lattice-Based Digital Signature Algorithm
+- [JEP 498](https://openjdk.java.net/jeps/498): Warn upon Use of Memory-Access Methods in sun.misc.Unsafe
+- [JEP 499](https://openjdk.java.net/jeps/499): Structured Concurrency (Fourth Preview)
+
+You can find the full list of features for JDK 24 at the [OpenJDK project](https://openjdk.org/projects/jdk/24/).
+Any remaining features that are listed either do not apply to OpenJ9 or are not implemented and hence not applicable to OpenJ9 in this release. ![End of content that applies to Java 24 and later](cr/java_close.png)
+-->
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
-<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.49.0 and v0.50.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.50/0.50.md">Release notes</a>.</p>
-<!-- ==== END OF TOPIC ==== version0.50.md ==== -->
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.49.0 and v0.51.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.51/0.51.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.51.md ==== -->
 
 
 
