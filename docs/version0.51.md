@@ -21,21 +21,22 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-# What's new in version 0.50.0
+# What's new in version 0.51.0
 
 The following new features and notable changes since version 0.49.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New parameter `maxstringlength` added to the `-Xtrace` option](#new-parameter-maxstringlength-added-to-the-xtrace-option)
-- ![Start of content that applies to Java 24 and later](cr/java24plus.png) [New JDK 24 features](#new-jdk-24-features) ![End of content that applies to Java 24 and later](cr/java_close.png)
+- [XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds](#xl-c-runtime-161010-or-later-required-for-aix-openj9-builds)
+<!--Release 0.50.0 cancelled- ![Start of content that applies to Java 24 and later](cr/java24plus.png) [New JDK 24 features](#new-jdk-24-features) ![End of content that applies to Java 24 and later](cr/java_close.png)-->
 
 ## Features and changes
 
 ### Binaries and supported environments
 
-Eclipse OpenJ9&trade; release 0.50.0 supports OpenJDK 24.
+Eclipse OpenJ9&trade; release 0.51.0 supports OpenJDK 8, 11, 17, and 21.
 
-OpenJDK 24 with Eclipse OpenJ9 is *not* a long term support (LTS) release.
+Ubuntu 20.04 is removed from the list of supported platforms.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -45,7 +46,11 @@ You can use the `maxstringlength` parameter of the `-Xtrace` option to specify t
 
 For more information, see [`maxstringlength`](xtrace.md#maxstringlength).
 
-### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
+### XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds
+
+AIX OpenJ9 builds now require version 16.1.0.10 or later of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
+
+<!--### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
 
 The following features are supported by OpenJ9:
 
@@ -72,9 +77,9 @@ The following features are implemented in OpenJDK and available in any build of 
 
 You can find the full list of features for JDK 24 at the [OpenJDK project](https://openjdk.org/projects/jdk/24/).
 Any remaining features that are listed either do not apply to OpenJ9 or are not implemented and hence not applicable to OpenJ9 in this release. ![End of content that applies to Java 24 and later](cr/java_close.png)
-
+-->
 ## Known problems and full release information
 
-To see known problems and a complete list of changes between Eclipse OpenJ9 v0.49.0 and v0.50.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.50/0.50.md).
+To see known problems and a complete list of changes between Eclipse OpenJ9 v0.49.0 and v0.51.0 releases, see the [Release notes](https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.51/0.51.md).
 
-<!-- ==== END OF TOPIC ==== version0.50.md ==== -->
+<!-- ==== END OF TOPIC ==== version0.51.md ==== -->
