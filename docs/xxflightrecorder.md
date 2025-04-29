@@ -23,8 +23,6 @@
 
 # -XX:[+|-]FlightRecorder
 
-**Linux&reg; on x86, Linux on AArch64**
-
 ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) This option enables or disables JDK Flight Recorder (JFR) in the VM. This built-in profiling and troubleshooting feature in the VM collects profiling and diagnostic information.
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Support for JFR is currently provided as a technical preview. All JFR-related `jcmd` options might change in future releases.
@@ -68,6 +66,7 @@ jcmd 1234 JFR.start filename=/path/ABCD.jfr duration=4s
 ## See Also
 
 - [What's new in version 0.49.0](version0.49.md#new-xx-flightrecorder-option-added)
+- [What's new in version 0.51.0](version0.51.md#support-for-jdk-flight-recorder-jfr-in-the-vm-for-openjdk-11-and-later-running-on-all-platforms)
 
 
 <!-- ==== END OF TOPIC ==== xxflightrecorder.md ==== -->
