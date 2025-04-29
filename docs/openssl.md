@@ -23,7 +23,7 @@
 
 # OpenSSL
 
-OpenJDK uses the in-built Java&trade; cryptographic implementation by default but Eclipse OpenJ9&trade; also provides some support for the OpenSSL cryptographic library. OpenSSL is an open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. Because it is a native library, OpenSSL might provide better performance. To use OpenSSL cryptographic acceleration, install OpenSSL 1.0.x, 1.1.x, or 3.x on your system. The OpenSSL V1.0.x, V1.1.x, and V3.x implementations are currently supported for the Digest, CBC, GCM, RSA, ECDH key agreement, and EC key generation algorithms. The OpenSSL V1.1.x and V3.x implementations are also supported for the ChaCha20 and ChaCha20-Poly1305 algorithms. The OpenSSL V1.1.1 onwards implementations are supported for the XDH key agreement and XDH key generation algorithms.
+OpenJDK uses the in-built Java&trade; cryptographic implementation by default but Eclipse OpenJ9&trade; also provides some support for the OpenSSL cryptographic library. OpenSSL is an open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. Because it is a native library, OpenSSL might provide better performance. To use OpenSSL cryptographic acceleration, install OpenSSL 1.0.x, 1.1.x, or 3.x on your system. The OpenSSL V1.0.x, V1.1.x, and V3.x implementations are currently supported for the Digest, CBC, GCM, RSA, ECDH key agreement, PBE, and EC key generation algorithms. The OpenSSL V1.1.x and V3.x implementations are also supported for the ChaCha20 cipher, ChaCha20-Poly1305 cipher, and ECDSA signature algorithms. The OpenSSL V1.1.1 onwards implementations are supported for the XDH key agreement and XDH key generation algorithms.
 
 On Linux&reg; and AIX&reg; operating systems, the OpenSSL 1.0.x, 1.1.x, or 3.x library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On Windows&trade; and MacOS&reg; the OpenSSL 3.x library is bundled. Later levels of some Linux operating systems also bundle OpenSSL 3.x.
 
@@ -36,15 +36,17 @@ OpenSSL support is enabled by default for all supported algorithms. If you want 
 Each algorithm can be disabled individually by setting the following system properties on the command line:
 
 
-- To turn off **Digest**, set `-Djdk.nativeDigest=false`
-- To turn off **ChaCha20** and **ChaCha20-Poly1305**, set `-Djdk.nativeChaCha20=false`. :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
-- To turn off **CBC**, set `-Djdk.nativeCBC=false`
-- To turn off **GCM**, set `-Djdk.nativeGCM=false`
-- To turn off **RSA**, set `-Djdk.nativeRSA=false`
-- To turn off **ECDH key agreement**, set `-Djdk.nativeEC=false`
-- To turn off **EC key generation**, set `-Djdk.nativeECKeyGen=false`
-- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) To turn off **XDH key agreement**, set `-Djdk.nativeXDHKeyAgreement=false`
-- To turn off **XDH key generation**, set `-Djdk.nativeXDHKeyGen=false` ![End of content that applies to Java 11 (LTS) and later](cr/java_close_lts.png)
+- To turn off **Digest**, set [`-Djdk.nativeDigest=false`](djdknativedigest.md)
+- To turn off **ChaCha20** and **ChaCha20-Poly1305**, set [`-Djdk.nativeChaCha20=false`](djdknativechacha20.md). :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
+- To turn off **CBC**, set [`-Djdk.nativeCBC=false`](djdknativecbc.md)
+- To turn off **ECDH key agreement**, set [`-Djdk.nativeEC=false`](djdknativeec.md)
+- To turn off **ECDSA signature**, set [`-Djdk.nativeECDSA=false`](djdknativeecdsa.md)
+- To turn off **EC key generation**, set [`-Djdk.nativeECKeyGen=false`](djdknativeeckeygen.md)
+- To turn off **GCM**, set [`-Djdk.nativeGCM=false`](djdknativegcm.md)
+- To turn of **PBE cipher**, set [`-Djdk.nativePBE=false`](djdknativepbe.md)
+- To turn off **RSA**, set [`-Djdk.nativeRSA=false`](djdknativersa.md)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) To turn off **XDH key agreement**, set [`-Djdk.nativeXDHKeyAgreement=false`](djdknativexdhkeyagreement.md)
+- To turn off **XDH key generation**, set [`-Djdk.nativeXDHKeyGen=false`](djdknativexdhkeygen.md) ![End of content that applies to Java 11 (LTS) and later](cr/java_close_lts.png)
 
 You can turn off all the algorithms by setting the following system property on the command line:
 

@@ -268,10 +268,12 @@ nav:
             - "-Djdk.nativeDigest"                                               : djdknativedigest.md
             - "-Djdk.nativeEC"                                                   : djdknativeec.md
             - "-Djdk.nativeECKeyGen"                                             : djdknativeeckeygen.md
+            - "-Djdk.nativeECDSA"                                                : djdknativeecdsa.md
+            - "-Djdk.nativeGCM"                                                  : djdknativegcm.md
+            - "-Djdk.nativePBE"                                                  : djdknativepbe.md
+            - "-Djdk.nativeRSA"                                                  : djdknativersa.md
             - "-Djdk.nativeXDHKeyAgreement"                                      : djdknativexdhkeyagreement.md
             - "-Djdk.nativeXDHKeyGen"                                            : djdknativexdhkeygen.md
-            - "-Djdk.nativeGCM"                                                  : djdknativegcm.md
-            - "-Djdk.nativeRSA"                                                  : djdknativersa.md
 
         - "JVM -X options" :
             - "Using -X options"                                                 : x_jvm_commands.md
