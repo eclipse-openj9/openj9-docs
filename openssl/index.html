@@ -3686,33 +3686,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../djdknativexdhkeyagreement/" class="md-nav__link">
+      <a href="../djdknativeecdsa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    -Djdk.nativeXDHKeyAgreement
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../djdknativexdhkeygen/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    -Djdk.nativeXDHKeyGen
+    -Djdk.nativeECDSA
     
   </span>
   
@@ -3752,11 +3730,77 @@
   
   
     <li class="md-nav__item">
+      <a href="../djdknativepbe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Djdk.nativePBE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../djdknativersa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     -Djdk.nativeRSA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativexdhkeyagreement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeXDHKeyAgreement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativexdhkeygen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeXDHKeyGen
     
   </span>
   
@@ -8501,22 +8545,24 @@
 -->
 
 <h1 id="openssl">OpenSSL</h1>
-<p>OpenJDK uses the in-built Java&trade; cryptographic implementation by default but Eclipse OpenJ9&trade; also provides some support for the OpenSSL cryptographic library. OpenSSL is an open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. Because it is a native library, OpenSSL might provide better performance. To use OpenSSL cryptographic acceleration, install OpenSSL 1.0.x, 1.1.x, or 3.x on your system. The OpenSSL V1.0.x, V1.1.x, and V3.x implementations are currently supported for the Digest, CBC, GCM, RSA, ECDH key agreement, and EC key generation algorithms. The OpenSSL V1.1.x and V3.x implementations are also supported for the ChaCha20 and ChaCha20-Poly1305 algorithms. The OpenSSL V1.1.1 onwards implementations are supported for the XDH key agreement and XDH key generation algorithms.</p>
+<p>OpenJDK uses the in-built Java&trade; cryptographic implementation by default but Eclipse OpenJ9&trade; also provides some support for the OpenSSL cryptographic library. OpenSSL is an open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. Because it is a native library, OpenSSL might provide better performance. To use OpenSSL cryptographic acceleration, install OpenSSL 1.0.x, 1.1.x, or 3.x on your system. The OpenSSL V1.0.x, V1.1.x, and V3.x implementations are currently supported for the Digest, CBC, GCM, RSA, ECDH key agreement, PBE, and EC key generation algorithms. The OpenSSL V1.1.x and V3.x implementations are also supported for the ChaCha20 cipher, ChaCha20-Poly1305 cipher, and ECDSA signature algorithms. The OpenSSL V1.1.1 onwards implementations are supported for the XDH key agreement and XDH key generation algorithms.</p>
 <p>On Linux&reg; and AIX&reg; operating systems, the OpenSSL 1.0.x, 1.1.x, or 3.x library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On Windows&trade; and MacOS&reg; the OpenSSL 3.x library is bundled. Later levels of some Linux operating systems also bundle OpenSSL 3.x.</p>
 <p>If you have multiple versions of OpenSSL on your system, the OpenJ9 VM uses the latest version.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6"/></svg></span> <strong>Note:</strong> OpenSSL 3.x does not support initialization vector (IV) sizes above 16 Bytes for the GCM algorithm. (In earlier OpenSSL versions, you can use such sizes but they might cause unpredictable behavior.) If you need to use a larger size, disable OpenSSL support for the GCM algorithm.</p>
 <p>OpenSSL support is enabled by default for all supported algorithms. If you want to limit support to specific algorithms, a number of system properties are available for tuning the implementation.</p>
 <p>Each algorithm can be disabled individually by setting the following system properties on the command line:</p>
 <ul>
-<li>To turn off <strong>Digest</strong>, set <code>-Djdk.nativeDigest=false</code></li>
-<li>To turn off <strong>ChaCha20</strong> and <strong>ChaCha20-Poly1305</strong>, set <code>-Djdk.nativeChaCha20=false</code>. <span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6"/></svg></span> <strong>Note:</strong> <img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> These algorithms are not supported on Java 8 <img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" /></li>
-<li>To turn off <strong>CBC</strong>, set <code>-Djdk.nativeCBC=false</code></li>
-<li>To turn off <strong>GCM</strong>, set <code>-Djdk.nativeGCM=false</code></li>
-<li>To turn off <strong>RSA</strong>, set <code>-Djdk.nativeRSA=false</code></li>
-<li>To turn off <strong>ECDH key agreement</strong>, set <code>-Djdk.nativeEC=false</code></li>
-<li>To turn off <strong>EC key generation</strong>, set <code>-Djdk.nativeECKeyGen=false</code></li>
-<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> To turn off <strong>XDH key agreement</strong>, set <code>-Djdk.nativeXDHKeyAgreement=false</code></li>
-<li>To turn off <strong>XDH key generation</strong>, set <code>-Djdk.nativeXDHKeyGen=false</code> <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close_lts.png" /></li>
+<li>To turn off <strong>Digest</strong>, set <a href="../djdknativedigest/"><code>-Djdk.nativeDigest=false</code></a></li>
+<li>To turn off <strong>ChaCha20</strong> and <strong>ChaCha20-Poly1305</strong>, set <a href="../djdknativechacha20/"><code>-Djdk.nativeChaCha20=false</code></a>. <span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6"/></svg></span> <strong>Note:</strong> <img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> These algorithms are not supported on Java 8 <img alt="End of content that applies only to Java 8 (LTS)" src="../cr/java_close_lts.png" /></li>
+<li>To turn off <strong>CBC</strong>, set <a href="../djdknativecbc/"><code>-Djdk.nativeCBC=false</code></a></li>
+<li>To turn off <strong>ECDH key agreement</strong>, set <a href="../djdknativeec/"><code>-Djdk.nativeEC=false</code></a></li>
+<li>To turn off <strong>ECDSA signature</strong>, set <a href="../djdknativeecdsa/"><code>-Djdk.nativeECDSA=false</code></a></li>
+<li>To turn off <strong>EC key generation</strong>, set <a href="../djdknativeeckeygen/"><code>-Djdk.nativeECKeyGen=false</code></a></li>
+<li>To turn off <strong>GCM</strong>, set <a href="../djdknativegcm/"><code>-Djdk.nativeGCM=false</code></a></li>
+<li>To turn of <strong>PBE cipher</strong>, set <a href="../djdknativepbe/"><code>-Djdk.nativePBE=false</code></a></li>
+<li>To turn off <strong>RSA</strong>, set <a href="../djdknativersa/"><code>-Djdk.nativeRSA=false</code></a></li>
+<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> To turn off <strong>XDH key agreement</strong>, set <a href="../djdknativexdhkeyagreement/"><code>-Djdk.nativeXDHKeyAgreement=false</code></a></li>
+<li>To turn off <strong>XDH key generation</strong>, set <a href="../djdknativexdhkeygen/"><code>-Djdk.nativeXDHKeyGen=false</code></a> <img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close_lts.png" /></li>
 </ul>
 <p>You can turn off all the algorithms by setting the following system property on the command line:</p>
 <pre><code>-Djdk.nativeCrypto=false

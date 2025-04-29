@@ -221,11 +221,19 @@
          <lastmod>2025-04-29</lastmod>
     </url>
     <url>
+         <loc>https://www.eclipse.org/openj9/docs/djdknativeecdsa/</loc>
+         <lastmod>2025-04-29</lastmod>
+    </url>
+    <url>
          <loc>https://www.eclipse.org/openj9/docs/djdknativeeckeygen/</loc>
          <lastmod>2025-04-29</lastmod>
     </url>
     <url>
          <loc>https://www.eclipse.org/openj9/docs/djdknativegcm/</loc>
+         <lastmod>2025-04-29</lastmod>
+    </url>
+    <url>
+         <loc>https://www.eclipse.org/openj9/docs/djdknativepbe/</loc>
          <lastmod>2025-04-29</lastmod>
     </url>
     <url>
