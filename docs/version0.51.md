@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.49.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New parameter `maxstringlength` added to the `-Xtrace` option](#new-parameter-maxstringlength-added-to-the-xtrace-option)
 - [XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds](#xl-c-runtime-161010-or-later-required-for-aix-openj9-builds)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for JDK Flight Recorder (JFR) in the VM for OpenJDK 11 and later running on all platforms](#support-for-jdk-flight-recorder-jfr-in-the-vm-for-openjdk-11-and-later-running-on-all-platforms) ![End of content that applies only to Java 11 and later](cr/java_close.png)
 <!--Release 0.50.0 cancelled- ![Start of content that applies to Java 24 and later](cr/java24plus.png) [New JDK 24 features](#new-jdk-24-features) ![End of content that applies to Java 24 and later](cr/java_close.png)-->
 
 ## Features and changes
@@ -49,6 +50,10 @@ For more information, see [`maxstringlength`](xtrace.md#maxstringlength).
 ### XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds
 
 AIX OpenJ9 builds now require version 16.1.0.10 or later of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
+
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) Support for JDK Flight Recorder (JFR) in the VM for OpenJDK 11 and later running on all platforms
+
+This release now supports JFR in the VM as a technical preview for OpenJDK 11 and later running on all platforms. In the 0.49.0 release, the support for JFR was available on OpenJDK 11 and later running on Linux&reg; x86 and Linux on AArch64 only.  ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 <!--0.50.0 release cancelled ### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
 
