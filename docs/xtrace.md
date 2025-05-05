@@ -546,7 +546,7 @@ When specified, trace data is placed into internal trace buffers that can then b
 
 ### `maxstringlength`
 
-(**Added in the 0.50.0 release**)
+(**Added in the 0.51.0 release**)
 
     -Xtrace:maxstringlength=[<length>]
 
