@@ -10301,7 +10301,7 @@ yyyymmdd* format (for example, <code>traceout.20181025.trc</code>):</p>
 <p>When specified, trace data is placed into internal trace buffers that can then be written to a snap file or written to the files that are specified in an output trace option. All associated data is traced.</p>
 <p><code>minimal</code> and <code>maximal</code> traces are independent from any types that follow them. For example, if the <code>maximal</code> option is specified, it does not affect a later option such as <code>print</code>.</p>
 <h3 id="maxstringlength"><code>maxstringlength</code></h3>
-<p>(<strong>Added in the 0.50.0 release</strong>)</p>
+<p>(<strong>Added in the 0.51.0 release</strong>)</p>
 <pre><code>-Xtrace:maxstringlength=[&lt;length&gt;]
 </code></pre>
 <p>Use to specify the length of the string arguments and return values that are printed in a trace output. The range of the maximum string length that can be set is 0-128. If the length is not specified, 32 characters of the strings are printed by default along with the addresses. If <code>maxstringlength=0</code>, only the string addresses are printed instead.</p>
