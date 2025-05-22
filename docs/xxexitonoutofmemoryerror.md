@@ -36,5 +36,9 @@ This HotSpot option is recognized by Eclipse OpenJ9&trade;. You can use the opti
 | `-XX:+ExitOnOutOfMemoryError`     | Enable  |                                                                                |
 | `-XX:-ExitOnOutOfMemoryError`     | Disable | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
+## See also
+
+- [What's new in version 0.18.0](version0.18.md#new-exit-dump-agent-and-exitonoutofmemoryerror-option)
+- [What's new in version 0.20.0](version0.20.md#-xx-exitonoutofmemoryerror-option-behavior-update)
 
 <!-- ==== END OF TOPIC ==== xxexitonoutofmemoryerror.md ==== -->

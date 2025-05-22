@@ -63,5 +63,6 @@ From 0.44.0 release onwards, AIX systems also can detect whether an agent was pr
 
 - [Java Virtual Machine Tool Interface](interface_jvmti.md)
 - [Java Attach API](attachapi.md)
+- [What's new in version 0.41.0](version0.41.md#new-xx-enabledynamicagentloading-option-added)
 
 <!-- ==== END OF TOPIC ==== xxenabledynamicagentloading.md ==== -->

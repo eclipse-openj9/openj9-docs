@@ -52,5 +52,8 @@ When enabled, the `-XX:+IdleTuningGcOnIdle` option is used with the `-XX:IdleTun
 - [-XX:IdleTuningMinIdleWaitTime](xxidletuningminidlewaittime.md)
 - [-XX:IdleTuningMinFreeHeapOnIdle](xxidletuningminfreeheaponidle.md)
 - [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md) (From OpenJ9 version 0.23.0 this option has no effect.)
+- [What's new in version 0.9.0](version0.9.md#idle-tuning-feature)
+- [What's new in version 0.12.0](version0.12.md#idle-tuning-is-enabled-by-default-when-openj9-runs-in-a-docker-container)
+- [What's new in version 0.15.1](version0.15.md#change-in-behaviour-of-xxidletuningcompactonidle)
 
 <!-- ==== END OF TOPIC ==== xxidletuninggconidle.md ==== -->

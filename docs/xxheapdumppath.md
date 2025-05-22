@@ -33,4 +33,8 @@ This option sets the directory for all VM dumps including heap dumps, Java&trade
 
 where `<path>` is the directory to which all dump types are written. This directory path is prefixed to the path of all non-absolute dump file names, including the file names for the default dump agents.
 
+## See also
+
+- [What's new in version 0.10.0](version0.10.md#support-for-openjdk-hotspot-options)
+
 <!-- ==== END OF TOPIC ==== xxheapdumppath.md ==== -->

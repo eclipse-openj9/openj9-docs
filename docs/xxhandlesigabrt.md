@@ -44,4 +44,9 @@ When the option is disabled, the VM does not handle the signal `SIGABRT`. Genera
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Do not use the `-XX:+HandleSIGABRT` and [`-Xrs`](xrs.md) options together. An error is thrown if both options are enabled. To resolve this error, one of the options should be disabled.
 
+## See also
+
+- [What's new in version 0.21.0](version0.21.md#new-xx-handlesigabrt-option-added)
+
+
 <!-- ==== END OF TOPIC ==== xxhandlesigabrt.md ==== -->

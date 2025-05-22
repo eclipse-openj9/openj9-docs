@@ -42,7 +42,7 @@ The following `<parameters>` are available with the trace formatter:
 
 |  Option                                  | Explanation                                                                                                               |
 |------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| `-datfile=<file1.dat>[,<file2.dat>]`     | A comma-separated list of trace formatting data files. By default, the following files are used:$JAVA_HOME/lib/J9TraceFormat.dat and $JAVA_HOME/lib/TraceFormat.dat |
+| `-datfile=<file1.dat>[,<file2.dat>]`     | A comma-separated list of trace formatting data files. By default, the following files are used:<ul><li> $JAVA_HOME/lib/J9TraceFormat.dat</li><li>$JAVA_HOME/lib/TraceFormat.dat </li></ul>       |
 | `-format_time=yes|no`                    | Specifies whether to format the time stamps into human readable form. The default is `yes`.                               |
 | `-help`                                  | Displays usage information.                                                                                               |
 | `-indent`                                | Indents trace messages at each `Entry` trace point and outdents trace messages at each `Exit` trace point. The default is not to indent the messages. |
