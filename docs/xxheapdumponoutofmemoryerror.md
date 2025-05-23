@@ -34,6 +34,9 @@ This HotSpot option is recognized by Eclipse OpenJ9&trade;. You can use the opti
 | `-XX:+HeapDumpOnOutOfMemoryError` | Enable  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | `-XX:-HeapDumpOnOutOfMemoryError` | Disable |                                                                                |
 
+## See also
+
+- [What's new in version 0.10.0](version0.10.md#support-for-openjdk-hotspot-options)
 
 <!-- ==== END OF TOPIC ==== xxheapdumponoutofmemoryerror.md ==== -->
 

@@ -101,4 +101,9 @@ Advanced tuning parameters are shown in the following table:
 
 : Minimum ratio of reserved objects to flat objects to prevent class from being considered highly incompatible. Values of 65536 or higher are treated as infinity.
 
+## See also
+
+- [What's new in version 0.20.0](version0.20.md#new-xx-globallockreservation-option-added)
+- [What's new in version 0.27.0](version0.27.md#global-lock-reservation-enabled-by-default)
+
 <!-- ==== END OF TOPIC ==== xxgloballockreservation.md ==== -->

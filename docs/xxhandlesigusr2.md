@@ -52,5 +52,6 @@ For more information about the signals and signal handling, see [Signal handling
 
 - [-Xdump](xdump.md)
 - [-Xrs](xrs.md)
+- [What's new in version 0.38.0](version0.38.md#new-xx-handlesigusr2-option-added)
 
 <!-- ==== END OF TOPIC ==== xxhandlesigusr2.md ==== -->

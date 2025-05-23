@@ -49,5 +49,6 @@ Objects that are created from classes `Thread` and `Class` are allocated in the 
 
 - [`-Xoptionsfile`](xoptionsfile.md)
 - [GC processing](gc.md#gc-processing)
+- [What's new in version 0.30.0](version0.30.md#new-xx-ensurehashed-option-added)
 
 <!-- ==== END OF TOPIC ==== xxensurehashed.md ==== -->

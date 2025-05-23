@@ -37,4 +37,4 @@ Within OpenJ9 this option is directly mapped to [`-Xconcurrentbackground`](xconc
 
 - [What's new in version 0.18.0](version0.18.md#support-for-openjdk-hotspot-options)
 
-<!-- ==== END OF TOPIC ==== xxparallelcmsthreads.md ==== -->
+<!-- ==== END OF TOPIC ==== xxconcgcthreads.md ==== -->
