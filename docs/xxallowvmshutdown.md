@@ -27,7 +27,7 @@ This option is provided as a workaround for applications that cannot shut down c
 
 ## Syntax
 
-        -XX:allowvmshutdown:[false|true]
+        -XXallowvmshutdown:[false|true]
 
 | Setting | Effect  | Default                                                                            |
 |---------|---------|:----------------------------------------------------------------------------------:|
