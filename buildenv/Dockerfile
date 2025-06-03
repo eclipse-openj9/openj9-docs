@@ -20,7 +20,7 @@
 # SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 #
 
-FROM public.ecr.aws/lts/ubuntu:22.04_stable@sha256:bf2b982fe7f144cd1e13357956f82df64c05a3c221f25d3c2216ef0735b814a4
+FROM public.ecr.aws/lts/ubuntu:22.04_stable@sha256:1f2f4874fe588f11bed04ceca6032af87ab08adb938106edad98f990c20c1e1b
 MAINTAINER openj9.bot <openj9.bot@gmail.com>
 
 # Install basic requirementes from APT. Set up for SSH (including SSH login fix to prevent user being logged out), install and setup  virtualenv from pip3
