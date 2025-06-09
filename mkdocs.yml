@@ -101,6 +101,7 @@ nav:
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.53.0"                                                       : version0.53.md
         - "Version 0.51.0"                                                       : version0.51.md
         - "Version 0.49.0"                                                       : version0.49.md
         - "Version 0.48.0"                                                       : version0.48.md
@@ -271,6 +272,7 @@ nav:
             - "-Djdk.nativeECKeyGen"                                             : djdknativeeckeygen.md
             - "-Djdk.nativeGCM"                                                  : djdknativegcm.md
             - "-Djdk.nativePBE"                                                  : djdknativepbe.md
+            - "-Djdk.nativePBKDF2"                                               : djdknativepbkdf2.md
             - "-Djdk.nativeRSA"                                                  : djdknativersa.md
             - "-Djdk.nativeXDHKeyAgreement"                                      : djdknativexdhkeyagreement.md
             - "-Djdk.nativeXDHKeyGen"                                            : djdknativexdhkeygen.md
