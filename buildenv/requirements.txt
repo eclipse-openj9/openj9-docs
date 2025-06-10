@@ -107,7 +107,7 @@ pyyaml==6.0.1
     #   pyyaml-env-tag
 pyyaml-env-tag==0.1
     # via mkdocs
-requests==2.32.2
+requests==2.32.4
     # via mkdocs-material
 six==1.16.0
     # via python-dateutil
