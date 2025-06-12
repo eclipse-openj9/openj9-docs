@@ -47,6 +47,7 @@ OpenSSL support is enabled by default for the following algorithms:
 - GCM
 - MD5
 - PBE cipher
+- PBKDF2
 - RSA
 - SHA-224
 - SHA-256
@@ -77,6 +78,7 @@ If you want to turn off the algorithms individually, use the following system pr
 - [`-Djdk.nativeECKeyGen`](djdknativeeckeygen.md)
 - [`-Djdk.nativeGCM`](djdknativegcm.md)
 - [`-Djdk.nativePBE`](djdknativepbe.md)
+- [`-Djdk.nativePBKDF2`](djdknativepbkdf2.md)
 - [`-Djdk.nativeRSA`](djdknativersa.md)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [`-Djdk.nativeXDHKeyAgreement`](djdknativexdhkeyagreement.md)
 - [`-Djdk.nativeXDHKeyGen`](djdknativexdhkeygen.md) ![End of content that applies to Java 11 (LTS) and later](cr/java_close_lts.png)
