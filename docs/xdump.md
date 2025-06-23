@@ -729,7 +729,7 @@ The available suboptions are listed in the following table:
 
 | suboption value  | Description                                                                                                               |
 |------------------|---------------------------------------------------------------------------------------------------------------------------|
-| exclusive        | Request exclusive access to the VM.                                                                                       |
+| exclusive        | Request exclusive access to the VM.<br>:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** `-Xdump:request=exclusive` does not wait for exclusive access if the dump event is `user` or `slow` and another thread already has exclusive access. For such cases, use other events such as `user2` or other mechanisms such as `com.ibm.jvm.Dump.triggerDump`. For more information, see the content that follows the table.                          |
 | compact          | Run garbage collection. This option removes all unreachable objects from the heap before the dump file is generated.      |
 | prepwalk         | Prepare the heap for walking. You must also specify exclusive when you use this option.                                   |
 | serial           | Suspend other dumps until this dump is finished.                                                                          |
