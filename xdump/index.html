@@ -10690,7 +10690,7 @@ kernel.core_pattern = |/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h
 <p><strong>Dynatrace rdp</strong>:</p>
 <ul>
 <li>Sample setting - <code>kernel.core_pattern=|/opt/dynatrace/oneagent/agent/rdp</code></li>
-<li>The program passes the dump files to the underlying system dump processing program specified in <code>/opt/dynatrace/oneagent/agent/conf/original_core_pattern</code>.</li>
+<li>The program passes the dump files to the underlying system dump processing program specified in <code>/opt/dynatrace/oneagent/agent/conf/original_core_pattern</code> (in OneAgent version 1.301 or earlier) or <code>/var/lib/dynatrace/oneagent/agent/backup/original_core_pattern</code> (in OneAgent version 1.302 or later).</li>
 </ul>
 </li>
 </ul>
