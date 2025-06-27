@@ -855,7 +855,7 @@ Here are some of the most common system dump processing programs and their defau
 - **Dynatrace rdp**:
 
     - Sample setting - `kernel.core_pattern=|/opt/dynatrace/oneagent/agent/rdp`
-    - The program passes the dump files to the underlying system dump processing program specified in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`.
+    - The program passes the dump files to the underlying system dump processing program specified in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern` (in OneAgent version 1.301 or earlier) or `/var/lib/dynatrace/oneagent/agent/backup/original_core_pattern` (in OneAgent version 1.302 or later).
 
 In container environments, such as OpenShift, piped system dump files are stored in the worker node rather than in the container. Here is one example method for retrieving a dump file that was piped to the `systemd-coredump` program:
 
