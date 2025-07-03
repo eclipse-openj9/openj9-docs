@@ -34,6 +34,8 @@ The following new features and notable changes since version 0.51.0 are included
 
 Eclipse OpenJ9&trade; release 0.53.0 supports OpenJDK 8, 11, 17, and 21.
 
+RHEL 8.8 and 9.2 are out of support and are removed from the list of supported platforms. RHEL 8.10 and 9.4 are the new minimum operating system levels.
+
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
 ### OpenSSL support added for PBKDF2 algorithm
