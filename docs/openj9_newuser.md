@@ -70,7 +70,11 @@ For more information, see [Java dump](dump_javadump.md).
 
 ### Tools
 
-OpenJ9 provides support for a number of monitoring and diagnostic tools that can be found in the [Eclipse marketplace](https://marketplace.eclipse.org/). Each tool provides a graphical user interface to help you visualize data and, in some cases, can provide tuning or debugging recommendations.
+![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) **JDK Flight Recorder (JFR):** An integral component of OpenJ9, JFR is a proactive tool that runs in conjunction with the running Java application, collects application level and JVM level metrics, and records these metrics in the form of a JFR record. JFR records are binary files, and hence another tool, such as JDK Mission Control (JMC), is used to extract, interpret, and visualize the data.
+
+For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close.png)
+
+OpenJ9 also provides support for a number of monitoring and diagnostic tools that can be found in the [Eclipse marketplace](https://marketplace.eclipse.org/). Each tool provides a graphical user interface to help you visualize data and, in some cases, can provide tuning or debugging recommendations.
 
 - [**Health Center:**](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-health-center) Provides real-time monitoring of running applications with minimal overhead over the network. You can monitor a whole range of operations including, class loading, CPU usage, GC heap and pause times, I/O activity, lock contention, method trace, native memory usage, profiling, and live threads. For more information, read the [Health Center documentation](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.healthcenter.doc/homepage/plugin-homepage-hc.html).
 - [**Garbage Collection Memory Vizualizer (GCMV):**](https://marketplace.eclipse.org/content/ibm-monitoring-and-diagnostic-tools-garbage-collection-and-memory-visualizer-gcmv) Plots GC and native memory data over time. You can view and save data as a report, raw log, tabulated data, or in graphical format. The tool helps to diagnose problems such as memory leaks with data presented in various visual formats for analysis. Tuning recommendations are also provided. For more information, read the [GCMV documentation](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.visualizer.doc/homepage/plugin-homepage-gcmv.html).
