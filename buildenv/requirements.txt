@@ -26,7 +26,7 @@ babel==2.12.1
     # via mkdocs-material
 backrefs==5.8
     # via mkdocs-material
-certifi==2025.4.26
+certifi==2025.6.15
     # via requests
 charset-normalizer==2.1.1
     # via requests
