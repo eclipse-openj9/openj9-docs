@@ -78,9 +78,15 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">ModuleHashTable is used for accessing hash tables in J9Modules (e.g. readAccessHashTable)</div>
 </div>
-<div class="col-first even-row-color"><code>class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="../PackageHashTable.html" class="type-name-link" title="class in com.ibm.j9ddr.vm29.j9">PackageHashTable</a></code></div>
+<div class="col-first even-row-color"><code>final class&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="../ObjectToSparseDataHashTable.html" class="type-name-link" title="class in com.ibm.j9ddr.vm29.j9">ObjectToSparseDataHashTable</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">ObjectToSparseDataHashTable is used for accessing hash tables <a href="../HashTable.html" title="class in com.ibm.j9ddr.vm29.j9"><code>HashTable</code></a>
+ in SparseDataTableEntry <code>MM_SparseDataTableEntryPointer</code> (e.g. iterator).</div>
+</div>
+<div class="col-first odd-row-color"><code>class&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="../PackageHashTable.html" class="type-name-link" title="class in com.ibm.j9ddr.vm29.j9">PackageHashTable</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">PackageHashTable is used for accessing hash tables in J9Packages</div>
 </div>
 </div>
@@ -124,9 +130,14 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Opens J9HashTable from J9HashTablePointer</div>
 </div>
-<div class="col-first odd-row-color"><code>static <a href="../HashTable.html" title="class in com.ibm.j9ddr.vm29.j9">HashTable</a><wbr>&lt;com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">PackageHashTable.</span><code><a href="../PackageHashTable.html#fromJ9HashTable(com.ibm.j9ddr.vm29.pointer.generated.J9HashTablePointer)" class="member-name-link">fromJ9HashTable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9HashTablePointer&nbsp;structure)</code></div>
+<div class="col-first odd-row-color"><code>static <a href="../HashTable.html" title="class in com.ibm.j9ddr.vm29.j9">HashTable</a><wbr>&lt;com.ibm.j9ddr.vm29.pointer.generated.MM_SparseDataTableEntryPointer&gt;</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ObjectToSparseDataHashTable.</span><code><a href="../ObjectToSparseDataHashTable.html#fromJ9HashTable(com.ibm.j9ddr.vm29.pointer.generated.J9HashTablePointer)" class="member-name-link">fromJ9HashTable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9HashTablePointer&nbsp;structure)</code></div>
 <div class="col-last odd-row-color">
+<div class="block">Opens J9HashTable from J9HashTablePointer.</div>
+</div>
+<div class="col-first even-row-color"><code>static <a href="../HashTable.html" title="class in com.ibm.j9ddr.vm29.j9">HashTable</a><wbr>&lt;com.ibm.j9ddr.vm29.pointer.generated.J9PackagePointer&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">PackageHashTable.</span><code><a href="../PackageHashTable.html#fromJ9HashTable(com.ibm.j9ddr.vm29.pointer.generated.J9HashTablePointer)" class="member-name-link">fromJ9HashTable</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9HashTablePointer&nbsp;structure)</code></div>
+<div class="col-last even-row-color">
 <div class="block">Opens J9HashTable from J9HashTablePointer</div>
 </div>
 </div>
