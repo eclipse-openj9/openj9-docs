@@ -70,25 +70,6 @@ community, helping to ensure a faster analysis and turnaround. For more informat
 
 Because system dumps are binary files, OpenJ9 provides a dump viewer tool (`jdmpview`) to analyze the contents. This tool can work with dumps from any platforms independently of a system debugger. For more information, see [Dump viewer](tool_jdmpview.md).
 
-### Trace formatter
-
-The trace formatter tool converts binary trace point data in a trace file into a readable format for analysis. For more information, see
-[Trace formatter](tool_traceformat.md).
-
-### Option builder
-
-OpenJ9 contains an extensive set of command-line options to assist with problem diagnosis. Certain options are complex, containing
-many sub-options with numerous parameters. Whilst these offer a great degree of flexibility, the syntax can be difficult to construct.
-Option builder tools are available that provide a simple graphical user interface to help you construct your command-line argument.
-For more information, see [Option builder](tool_builder.md).
-
-### HotSpot-compatible tools
-
-A number of tools are available for compatibility with the reference implementation. These tools are independently implemented by
-OpenJ9 but have similar functions, allowing users to migrate more easily. The available tools are listed in the Tools section.  
-
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you are already familiar with tools that are provided with HotSpot, see [Switching to OpenJ9](tool_migration.md), which explains some of the differences you might encounter when using OpenJ9.
-
 ### Eclipse marketplace tools
 
 OpenJ9 provides support for a number of monitoring and diagnostic tools that can be found in the [Eclipse marketplace](https://marketplace.eclipse.org/). Each tool provides a graphical user interface to help you visualize data and, in some cases, can provide tuning or debugging recommendations.
@@ -98,6 +79,31 @@ OpenJ9 provides support for a number of monitoring and diagnostic tools that can
 - [**Eclipse Memory Analyzer&trade;:**](https://marketplace.eclipse.org/content/memory-analyzer-0) Examines the Java object heap to help find memory leaks or reduce memory consumption. Support is available for OpenJ9 via the DTFJ interface (Install from the Eclipse Help menu; Install New Software > Work with "IBM Diagnostic Tool Framework for Java" > IBM Monitoring and Diagnostic Tools > Diagnostic Tool Framework for Java). More information about Eclipse MAT can be found on the [project website page](https://www.eclipse.org/mat/).
 
 If you are familiar with using HotSpot as part of an Oracle JDK or OpenJDK, the Java VisualVM utility is functionally similar to Health Center.
+
+### HotSpot-compatible tools
+
+A number of tools are available for compatibility with the reference implementation. These tools are independently implemented by
+OpenJ9 but have similar functions, allowing users to migrate more easily. The available tools are listed in the Tools section.  
+
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you are already familiar with tools that are provided with HotSpot, see [Switching to OpenJ9](tool_migration.md), which explains some of the differences you might encounter when using OpenJ9.
+
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) JDK Flight Recorder
+
+JDK Flight Recorder (JFR) is an integral component of OpenJ9. The main function of JFR is to run in conjunction with the running Java application, collect application level and JVM level metrics, and record these metrics in the form of a JFR record. JFR records are binary files, and hence another tool, such as JDK Mission Control (JMC), is used to extract, interpret, and visualize the data.
+
+For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close.png)
+
+### Option builder
+
+OpenJ9 contains an extensive set of command-line options to assist with problem diagnosis. Certain options are complex, containing
+many sub-options with numerous parameters. Whilst these offer a great degree of flexibility, the syntax can be difficult to construct.
+Option builder tools are available that provide a simple graphical user interface to help you construct your command-line argument.
+For more information, see [Option builder](tool_builder.md).
+
+### Trace formatter
+
+The trace formatter tool converts binary trace point data in a trace file into a readable format for analysis. For more information, see
+[Trace formatter](tool_traceformat.md).
 
 ## Interfaces
 
