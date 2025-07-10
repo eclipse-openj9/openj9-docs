@@ -25,7 +25,7 @@
 
 ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) This option enables or disables JDK Flight Recorder (JFR) in the VM. This built-in profiling and troubleshooting feature in the VM collects profiling and diagnostic information.
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Support for JFR is currently provided as a technical preview. All JFR-related `jcmd` options might change in future releases.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** OpenJ9 offers limited support for JFR functionalities. JFR can be enabled on OpenJ9 only by using the `jcmd` options. The produced JFR file can be viewed by using the JDK Mission Control (JMC) tool.
 
 ## Syntax
 
@@ -60,6 +60,49 @@ Example:
 jcmd 1234 JFR.start filename=/path/ABCD.jfr duration=4s
 
 ```
+
+All JFR-related `jcmd` options might change in future releases.
+
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Limitations:**
+
+- JFR produces only the following events:
+
+```
+- ClassLoadingStatistics
+- CPUInformation
+- CPULoad
+- ExecutionSample
+- GCHeapConfig
+- InitialEnvironmentVariable
+- InitialSystemProperty
+- JVMInformation
+- MonitorEnter
+- MonitorWait
+- NativeLibrary
+- OSInformation
+- PhysicalMemory
+- SystemGC
+- SystemProcess
+- ThreadContextSwitchRate
+- ThreadCPULoad
+- ThreadDump
+- ThreadEnd
+- ThreadPark
+- ThreadSleep
+- ThreadStart
+- ThreadStatistics
+- VirtualizationInformation
+- YoungGenerationConfig
+
+```
+- Support for the following capabilities is not available:
+
+    - `-XX:StartFlightRecording` and `-XX:FlightRecorderOptions`
+    - JFR APIs (`jdk/jfr/*`classes)
+    - Controlling JFR with Java Management Extensions (JMX)
+    - JFR streaming
+
+Support for JFR will be expanded in future releases.
 
 ![End of content that applies to Java 11 (LTS) and later](cr/java_close.png)
 
