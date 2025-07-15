@@ -9067,7 +9067,7 @@
 
 <h1 id="-xx-flightrecorder">-XX:[+|-]FlightRecorder</h1>
 <p><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> This option enables or disables JDK Flight Recorder (JFR) in the VM. This built-in profiling and troubleshooting feature in the VM collects profiling and diagnostic information.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6"/></svg></span> <strong>Note:</strong> Support for JFR is currently provided as a technical preview. All JFR-related <code>jcmd</code> options might change in future releases.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6"/></svg></span> <strong>Note:</strong> OpenJ9 offers limited support for JFR functionalities. JFR can be enabled on OpenJ9 only by using the <code>jcmd</code> options. The produced JFR file can be viewed by using the JDK Mission Control (JMC) tool.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]FlightRecorder
 </code></pre>
@@ -9114,6 +9114,50 @@
 <pre><code>jcmd 1234 JFR.start filename=/path/ABCD.jfr duration=4s
 
 </code></pre>
+<p>All JFR-related <code>jcmd</code> options might change in future releases.</p>
+<p><span aria-hidden="true" class="twemoji warn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32m0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24m32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg></span> <strong>Limitations:</strong></p>
+<ul>
+<li>JFR produces only the following events:</li>
+</ul>
+<pre><code>- ClassLoadingStatistics
+- CPUInformation
+- CPULoad
+- ExecutionSample
+- GCHeapConfig
+- InitialEnvironmentVariable
+- InitialSystemProperty
+- JVMInformation
+- MonitorEnter
+- MonitorWait
+- NativeLibrary
+- OSInformation
+- PhysicalMemory
+- SystemGC
+- SystemProcess
+- ThreadContextSwitchRate
+- ThreadCPULoad
+- ThreadDump
+- ThreadEnd
+- ThreadPark
+- ThreadSleep
+- ThreadStart
+- ThreadStatistics
+- VirtualizationInformation
+- YoungGenerationConfig
+
+</code></pre>
+<ul>
+<li>
+<p>Support for the following capabilities is not available:</p>
+<ul>
+<li><code>-XX:StartFlightRecording</code> and <code>-XX:FlightRecorderOptions</code></li>
+<li>JFR APIs (<code>jdk/jfr/*</code>classes)</li>
+<li>Controlling JFR with Java Management Extensions (JMX)</li>
+<li>JFR streaming</li>
+</ul>
+</li>
+</ul>
+<p>Support for JFR will be expanded in future releases.</p>
 <p><img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close.png" /></p>
 <h2 id="see-also">See Also</h2>
 <ul>
