@@ -3968,6 +3968,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../djdknativemd5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeMD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../djdknativepbe/" class="md-nav__link">
         
   
@@ -4020,6 +4043,167 @@
   
   <span class="md-ellipsis">
     -Djdk.nativeRSA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha224/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA224
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA256
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha384/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA384
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha512/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA512
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha512_224/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA512_224
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha512_256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA512_256
     
   </span>
   
@@ -9048,7 +9232,7 @@
 -->
 
 <h1 id="-djdknativedigest">-Djdk.nativeDigest</h1>
-<p>This option enables or disables OpenSSL native cryptographic support for the MD5, SHA-224, SHA-256, SHA-384, and SHA-512 digest algorithms.</p>
+<p>This option enables or disables OpenSSL native cryptographic support for the MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256 digest algorithms.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -Djdk.nativeDigest=[true|false]
 </code></pre>
@@ -9076,6 +9260,17 @@
 <h2 id="explanation">Explanation</h2>
 <!--OpenSSL support is enabled by default for the Digest algorithm. If you want to turn off this algorithm only, set this option to `false`.-->
 
+<p>You can turn off specific digest algorithm with the following options:</p>
+<ul>
+<li><strong>MD5</strong> - Set <a href="../djdknativemd5/"><code>-Djdk.nativeMD5=false</code></a></li>
+<li><strong>SHA-1</strong> - Set <a href="../djdknativesha/"><code>-Djdk.nativeSHA=false</code></a></li>
+<li><strong>SHA-224</strong> - Set <a href="../djdknativesha224/"><code>-Djdk.nativeSHA224=false</code></a></li>
+<li><strong>SHA-256</strong> - Set <a href="../djdknativesha256/"><code>-Djdk.nativeSHA256=false</code></a></li>
+<li><strong>SHA-384</strong> - Set <a href="../djdknativesha384/"><code>-Djdk.nativeSHA384=false</code></a></li>
+<li><strong>SHA-512</strong> - Set <a href="../djdknativesha512/"><code>-Djdk.nativeSHA512=false</code></a></li>
+<li><strong>SHA-512/224</strong> - Set <a href="../djdknativesha512_224/"><code>-Djdk.nativeSHA512_224=false</code></a></li>
+<li><strong>SHA-512/256</strong> - Set <a href="../djdknativesha512_256/"><code>-Djdk.nativeSHA512_256=false</code></a></li>
+</ul>
 <p>To turn off all the algorithms, see the <a href="../djdknativecrypto/">-Djdk.nativeCrypto</a> system property command-line option.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6"/></svg></span> <strong>Note:</strong> The MD5 digest algorithm is not supported for OpenSSL on AIX&reg;. The Java implementation is always used for the MD5 digest algorithm on AIX.</p>
 <!-- ==== END OF TOPIC ==== djdknativedigest.md ==== -->

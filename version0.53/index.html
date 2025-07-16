@@ -462,6 +462,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#openssl-351-is-bundled-on-all-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenSSL 3.5.1 is bundled on all platforms
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3990,6 +3999,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../djdknativemd5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeMD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../djdknativepbe/" class="md-nav__link">
         
   
@@ -4042,6 +4074,167 @@
   
   <span class="md-ellipsis">
     -Djdk.nativeRSA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha224/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA224
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA256
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha384/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA384
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha512/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA512
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha512_224/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA512_224
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djdknativesha512_256/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djdk.nativeSHA512_256
     
   </span>
   
@@ -9040,6 +9233,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#openssl-351-is-bundled-on-all-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenSSL 3.5.1 is bundled on all platforms
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -9098,6 +9300,7 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#openssl-support-added-for-pbkdf2-algorithm">OpenSSL support added for PBKDF2 algorithm</a></li>
+<li><a href="#openssl-351-is-bundled-on-all-platforms">OpenSSL 3.5.1 is bundled on all platforms</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -9106,6 +9309,9 @@
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h3 id="openssl-support-added-for-pbkdf2-algorithm">OpenSSL support added for PBKDF2 algorithm</h3>
 <p>OpenSSL native cryptographic support is added for the Password based key derivation (PBKDF2) algorithm, providing improved cryptographic performance. OpenSSL support is enabled by default for the PBKDF2 algorithm. If you want to turn off support for the PBKDF2 algorithm, set the <a href="../djdknativepbkdf2/"><code>-Djdk.nativePBKDF2</code></a> system property to <code>false</code>.</p>
+<h3 id="openssl-351-is-bundled-on-all-platforms">OpenSSL 3.5.1 is bundled on all platforms</h3>
+<p>OpenSSL 3.5.1 is now supported and bundled on all platforms. You can use the <code>jdk.native.openssl.skipBundled</code> property to specify whether to load the pre-packaged OpenSSL library or the library available on the system path.</p>
+<p>For more informaiton, see <a href="../openssl/">OpenSSL</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.51.0 and v0.53.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.53/0.53.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.53.md ==== -->
