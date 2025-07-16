@@ -46,7 +46,7 @@ You can turn off specific digest algorithm with the following options:
 - **SHA-256** - Set [`-Djdk.nativeSHA256=false`](djdknativesha256.md)
 - **SHA-384** - Set [`-Djdk.nativeSHA384=false`](djdknativesha384.md)
 - **SHA-512** - Set [`-Djdk.nativeSHA512=false`](djdknativesha512.md)
-- **SHA-512/224** - Set [` -Djdk.nativeSHA512_224=false`](djdknativesha512_224.md)
+- **SHA-512/224** - Set [`-Djdk.nativeSHA512_224=false`](djdknativesha512_224.md)
 - **SHA-512/256** - Set [`-Djdk.nativeSHA512_256=false`](djdknativesha512_256.md)
 
 To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command-line option.
