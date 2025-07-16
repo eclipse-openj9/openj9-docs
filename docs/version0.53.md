@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.51.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [OpenSSL support added for PBKDF2 algorithm](#openssl-support-added-for-pbkdf2-algorithm)
+- [OpenSSL 3.5.1 is bundled on all platforms](#openssl-351-is-bundled-on-all-platforms)
 
 ## Features and changes
 
@@ -41,6 +42,12 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 ### OpenSSL support added for PBKDF2 algorithm
 
 OpenSSL native cryptographic support is added for the Password based key derivation (PBKDF2) algorithm, providing improved cryptographic performance. OpenSSL support is enabled by default for the PBKDF2 algorithm. If you want to turn off support for the PBKDF2 algorithm, set the [`-Djdk.nativePBKDF2`](djdknativepbkdf2.md) system property to `false`.
+
+### OpenSSL 3.5.1 is bundled on all platforms
+
+OpenSSL 3.5.1 is now supported and bundled on all platforms. You can use the `jdk.native.openssl.skipBundled` property to specify whether to load the pre-packaged OpenSSL library or the library available on the system path.
+
+For more informaiton, see [OpenSSL](openssl.md).
 
 ## Known problems and full release information
 

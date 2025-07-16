@@ -21,33 +21,24 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-# -Djdk.nativeDigest
+# -Djdk.nativeMD5
 
-This option enables or disables OpenSSL native cryptographic support for the MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256 digest algorithms.
+This option enables or disables OpenSSL native cryptographic support for the MD5 digest algorithm.
 
 ## Syntax
 
-        -Djdk.nativeDigest=[true|false]
+        -Djdk.nativeMD5=[true|false]
 
 | Setting              | value    | Default                                                                        |
 |----------------------|----------|:------------------------------------------------------------------------------:|
-| `-Djdk.nativeDigest` | true     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
-| `-Djdk.nativeDigest` | false    |  |
+| `-Djdk.nativeMD5` | true     | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| `-Djdk.nativeMD5` | false    |  |
 
 ## Explanation
 
 <!--OpenSSL support is enabled by default for the Digest algorithm. If you want to turn off this algorithm only, set this option to `false`.-->
 
-You can turn off specific digest algorithm with the following options:
-
-- **MD5** - Set [`-Djdk.nativeMD5=false`](djdknativemd5.md)
-- **SHA-1** - Set [`-Djdk.nativeSHA=false`](djdknativesha.md)
-- **SHA-224** - Set [`-Djdk.nativeSHA224=false`](djdknativesha224.md)
-- **SHA-256** - Set [`-Djdk.nativeSHA256=false`](djdknativesha256.md)
-- **SHA-384** - Set [`-Djdk.nativeSHA384=false`](djdknativesha384.md)
-- **SHA-512** - Set [`-Djdk.nativeSHA512=false`](djdknativesha512.md)
-- **SHA-512/224** - Set [` -Djdk.nativeSHA512_224=false`](djdknativesha512_224.md)
-- **SHA-512/256** - Set [`-Djdk.nativeSHA512_256=false`](djdknativesha512_256.md)
+To turn off all the digest algorthims, see the [`-Djdk.nativeDigest`](djdknativedigest.md).
 
 To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md) system property command-line option.
 
@@ -55,4 +46,4 @@ To turn off all the algorithms, see the [-Djdk.nativeCrypto](djdknativecrypto.md
 
 
 
-<!-- ==== END OF TOPIC ==== djdknativedigest.md ==== -->
+<!-- ==== END OF TOPIC ==== djdknativemd5.md ==== -->
