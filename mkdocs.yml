@@ -271,9 +271,17 @@ nav:
             - "-Djdk.nativeECDSA"                                                : djdknativeecdsa.md
             - "-Djdk.nativeECKeyGen"                                             : djdknativeeckeygen.md
             - "-Djdk.nativeGCM"                                                  : djdknativegcm.md
+            - "-Djdk.nativeMD5"                                                  : djdknativemd5.md
             - "-Djdk.nativePBE"                                                  : djdknativepbe.md
             - "-Djdk.nativePBKDF2"                                               : djdknativepbkdf2.md
             - "-Djdk.nativeRSA"                                                  : djdknativersa.md
+            - "-Djdk.nativeSHA"                                                  : djdknativesha.md
+            - "-Djdk.nativeSHA224"                                               : djdknativesha224.md
+            - "-Djdk.nativeSHA256"                                               : djdknativesha256.md
+            - "-Djdk.nativeSHA384"                                               : djdknativesha384.md
+            - "-Djdk.nativeSHA512"                                               : djdknativesha512.md
+            - "-Djdk.nativeSHA512_224"                                           : djdknativesha512_224.md
+            - "-Djdk.nativeSHA512_256"                                           : djdknativesha512_256.md
             - "-Djdk.nativeXDHKeyAgreement"                                      : djdknativexdhkeyagreement.md
             - "-Djdk.nativeXDHKeyGen"                                            : djdknativexdhkeygen.md
 

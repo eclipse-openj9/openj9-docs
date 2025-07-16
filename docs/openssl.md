@@ -23,20 +23,42 @@
 
 # OpenSSL
 
-OpenJDK uses the in-built Java&trade; cryptographic implementation by default but Eclipse OpenJ9&trade; also provides some support for the OpenSSL cryptographic library. OpenSSL is an open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. Because it is a native library, OpenSSL might provide better performance. To use OpenSSL cryptographic acceleration, install OpenSSL 1.0.x, 1.1.x, or 3.x on your system. The OpenSSL V1.0.x, V1.1.x, and V3.x implementations are currently supported for the Digest, CBC, GCM, RSA, ECDH key agreement, PBE, PBKDF2, and EC key generation algorithms. The OpenSSL V1.1.x and V3.x implementations are also supported for the ChaCha20 cipher, ChaCha20-Poly1305 cipher, and ECDSA signature algorithms. The OpenSSL V1.1.1 onwards implementations are supported for the XDH key agreement and XDH key generation algorithms.
+OpenJDK uses the built-in Java&trade; cryptographic implementation by default but Eclipse OpenJ9&trade; also provides some support for the OpenSSL cryptographic library. OpenSSL is an open source cryptographic toolkit for Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols, which is well established and used with many enterprise applications. Because it is a native library, OpenSSL often provides better performance.
 
-On Linux&reg; and AIX&reg; operating systems, the OpenSSL 1.0.x, 1.1.x, or 3.x library is expected to be found on the system path. If you use a package manager to install OpenSSL, the system path will be updated automatically. On Windows&trade; and MacOS&reg; the OpenSSL 3.x library is bundled. Later levels of some Linux operating systems also bundle OpenSSL 3.x.
+OpenSSL is bundled with Eclipse OpenJ9 and is enabled by default. The following algorithms are supported for OpenSSL:
 
-If you have multiple versions of OpenSSL on your system, the OpenJ9 VM uses the latest version.
+- AES-CBC cipher
+- AES-GCM cipher
+- ChaCha20 cipher
+- ChaCha20-Poly1305 cipher
+- ECDH key agreement
+- ECDSA signature
+- EC key generation
+- MD5 message digest
+- PBE cipher
+- PBKDF2 secret key factory
+- RSA cipher
+- SHA message digests
+- XDH key agreement
+- XDH key generation
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** OpenSSL 3.x does not support initialization vector (IV) sizes above 16 Bytes for the GCM algorithm. (In earlier OpenSSL versions, you can use such sizes but they might cause unpredictable behavior.) If you need to use a larger size, disable OpenSSL support for the GCM algorithm.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** OpenSSL 3.x and later does not support initialization vector (IV) sizes above 16 Bytes for the GCM algorithm. In earlier OpenSSL versions, you can use such sizes but they might cause unpredictable behavior. This should occur only when users are not using the default OpenSSL library that is bundled with Semeru. If you need to use a larger size, disable OpenSSL support for the GCM algorithm.
 
 OpenSSL support is enabled by default for all supported algorithms. If you want to limit support to specific algorithms, a number of system properties are available for tuning the implementation.
 
 Each algorithm can be disabled individually by setting the following system properties on the command line:
 
+- To turn off all **Digests**, set [`-Djdk.nativeDigest=false`](djdknativedigest.md)
 
-- To turn off **Digest**, set [`-Djdk.nativeDigest=false`](djdknativedigest.md)
+    - To turn off **MD5**, set [`-Djdk.nativeMD5=false`](djdknativemd5.md)
+    - To turn off **SHA-1**, set [`-Djdk.nativeSHA=false`](djdknativesha.md)
+    - To turn off **SHA-224**, set [`-Djdk.nativeSHA224=false`](djdknativesha224.md)
+    - To turn off **SHA-256**, set [`-Djdk.nativeSHA256=false`](djdknativesha256.md)
+    - To turn off **SHA-384**, set [`-Djdk.nativeSHA384=false`](djdknativesha384.md)
+    - To turn off **SHA-512**, set [`-Djdk.nativeSHA512=false`](djdknativesha512.md)
+    - To turn off **SHA-512/224**, set [` -Djdk.nativeSHA512_224=false`](djdknativesha512_224.md)
+    - To turn off **SHA-512/256**, set [`-Djdk.nativeSHA512_256=false`](djdknativesha512_256.md)
+
 - To turn off **ChaCha20** and **ChaCha20-Poly1305**, set [`-Djdk.nativeChaCha20=false`](djdknativechacha20.md). :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** ![Start of content that applies to Java 8 (LTS)](cr/java8.png) These algorithms are not supported on Java 8 ![End of content that applies only to Java 8 (LTS)](cr/java_close_lts.png)
 - To turn off **CBC**, set [`-Djdk.nativeCBC=false`](djdknativecbc.md)
 - To turn off **ECDH key agreement**, set [`-Djdk.nativeEC=false`](djdknativeec.md)
@@ -55,11 +77,16 @@ You can turn off all the algorithms by setting the following system property on 
 -Djdk.nativeCrypto=false
 ```
 
-To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow the steps in our detailed build instructions:
+You can set the `jdk.native.openssl.skipBundled` property to `true` to skip loading of the OpenSSL libraries that come with OpenJ9. The system will instead attempt to load the libraries from the system path where the libraries are expected to be available. When this value is set to `false`, the system will attempt to load the pre-packaged OpenSSL libraries. This option cannot be set in conjunction with `jdk.native.openssl.lib`.
+
+You can use the `jdk.native.openssl.lib` property to specify user-supplied OpenSSL libraries. This option can be set to a full path name from where you would like to explicitly load the libraries instead of the bundled OpenSSL libraries. This option cannot be set in conjunction with `jdk.native.openssl.skipBundled`.
+
+To build a version of OpenJDK with OpenJ9 that includes OpenSSL support, follow the steps in the detailed build instructions:
 
 - [OpenJDK 8 with OpenJ9](https://github.com/eclipse-openj9/openj9/blob/master/doc/build-instructions/Build_Instructions_V8.md).
 - [OpenJDK 11 with OpenJ9](https://github.com/eclipse-openj9/openj9/blob/master/doc/build-instructions/Build_Instructions_V11.md).
 - [OpenJDK 17 with OpenJ9](https://github.com/eclipse-openj9/openj9/blob/master/doc/build-instructions/Build_Instructions_V17.md).
+- [OpenJDK 21 with OpenJ9](https://github.com/eclipse-openj9/openj9/blob/master/doc/build-instructions/Build_Instructions_V21.md).
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you obtain an OpenJDK with OpenJ9 build that includes OpenSSL or build a version yourself that includes OpenSSL support, the following acknowledgments apply in accordance with the license terms:
 
