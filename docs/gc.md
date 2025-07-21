@@ -116,7 +116,6 @@ However, even though pause times are typically evened out across GC operations, 
 
 ### GC processing
 
-
 During VM startup, the GC divides the heap memory into regions of equal size. These regions remain static for the lifetime of the VM and are the basic unit of garbage collection and allocation operations. For example, when the heap is expanded or contracted, the memory committed or released corresponds to a certain number of regions. Although the Java heap is a contiguous range of memory addresses, any region within that range can be committed or released from a pool as required. This enables the Balanced GC to contract the heap more dynamically and aggressively than other garbage collectors, which typically require the committed portion of the heap to be contiguous.
 
 Regions impose a maximum object size. Objects are always allocated within the bounds of a single region and are never permitted to span regions. The region size is always a power of two; for example, 512 KB, 1 MB, and so on (where KB is 2<sup>10</sup> bytes and MB is 2<sup>20</sup> bytes). The region size is selected at startup based on the maximum heap size. The collector chooses the smallest power of two which will result in less than 2048 regions, with a minimum region size of 512 KB. Except for small heaps (less than about 512 MB) the VM aims to have between 1024 and 2047 regions.
@@ -133,9 +132,9 @@ A global sweep operation also runs to reclaim memory so that it can create empty
 
 With the `balanced` policy, a global GC cycle is sometimes required in addition to the global mark operations and partial GC cycle. This global GC cycle is rare, occurring only in very tight memory conditions when other GC cycles cannot free enough memory on the heap.
 
-Most objects are easily contained within the minimum region size of 512 KB. However, to support large arrays, which cannot be contained in a region, the `balanced` GC policy uses an *arraylet* representation in the heap. For more information about structure and layout, see [Arraylets](allocation.md#arraylets).
+Before the 0.53.0 release, to support large arrays, which cannot be contained in a region, the `balanced` GC policy used an *arraylet* representation in the heap. With arraylets, JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing. For more information about structure and layout, see [Arraylets](allocation.md#arraylets).
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** With arraylets, JNI access to array data might involve reconstituting arraylets as contiguous arrays, which can significantly slow down processing.
+From the 0.53.0 release onwards, the arraylets are no longer used in the `balanced` GC policy. All array's data are contiguous, but now if larger than a region size, the array's data are stored into a separate area. That area, the *Offheap*, is a few times larger than the main heap to prevent fragmentation, but it is only committed for the live arrays currently stored there. While increase of virtual address space will be observed, the total amount of committed memory (resident) will typically stay the same or increase marginally.
 
 To learn about the default heap size and the tuning options that can be used with the `balanced` policy, see [`-Xgcpolicy:balanced`](xgcpolicy.md#balanced-defaults-and-options).
 
@@ -226,7 +225,14 @@ This policy is not suited to the majority of Java applications. However, the fol
 
 ## Troubleshooting
 
-You can diagnose problems with garbage collection operations by turning on verbose GC logging. By default, the information is printed to STDERR but can be redirected to a file by specifying the `-Xverbosegclog` option. The log files contain detailed information about all operations, including initialization, STW processing, finalization, reference processing, and allocation failures. For more information, see [Verbose GC logs](vgclog.md).
+You can diagnose problems with garbage collection operations by turning on verbose GC logging. By default, the information is printed to STDERR but can be redirected to a file by specifying the `-Xverbosegclog` option. The log files contain detailed information about all operations, including initialization, STW processing, finalization, reference processing, and allocation failures.
+
+From the 0.53.0 release onwards, while running the balanced GC, the verbose GC logs include the following information:
+
+- The `<initialized>` XML element will indicate that Offheap is used and how large it is.
+- Each GC cycle will show how many Offheap live objects there are at GC start, how many have been allocated since the previous GC, how many have died this cycle, and how many live are left at GC end.
+
+For more information, see [Verbose GC logs](vgclog.md).
 
 If verbose logs do not provide enough information to help you diagnose GC problems, you can use GC trace to analyze operations at a more granular level. For more information, see [-Xtgc](xtgc.md).
 
