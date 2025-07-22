@@ -9318,8 +9318,13 @@
 <p>A summary of your GC configuration, which is captured in the <code>&lt;initialized&gt;</code> XML element.</p>
 </li>
 <li>
-<p>Information about the GC cycles that ran, including GC operations and GC increments.  </p>
+<p>Information about the GC cycles that ran, including GC operations and GC increments.</p>
 </li>
+</ul>
+<p>From the 0.53.0 release onwards, while running the balanced GC, the verbose GC logs include the following information:</p>
+<ul>
+<li>The <code>&lt;initialized&gt;</code> XML element will indicate that Offheap is used and how large it is.</li>
+<li>Each GC cycle will show how many Offheap live objects there are at GC start, how many have been allocated since the previous GC, how many have died this cycle, and how many live are left at GC end.</li>
 </ul>
 <p>For definitions of GC cycles and operations, see <a href="../gc_overview/">Garbage collection</a>. For definitions of GC increments, see <a href="#gc-increments-and-interleaving">GC increments and interleaving</a>.</p>
 <p>The logs record when GC cycles and their increments start and end, and list the GC operations that run within these increments to manage or reclaim memory. You can also determine which type of event triggered the cycle or increment, and the amount of memory available to your application before and after processing.  </p>
