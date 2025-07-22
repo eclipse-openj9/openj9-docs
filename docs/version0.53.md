@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.51.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [OpenSSL support added for PBKDF2 algorithm](#openssl-support-added-for-pbkdf2-algorithm)
 - [OpenSSL 3.5.1 is bundled on all platforms](#openssl-351-is-bundled-on-all-platforms)
+- [Offheap support is added for the `balanced` GC policy](#offheap-support-is-added-for-the-balanced-gc-policy)
 
 ## Features and changes
 
@@ -47,7 +48,13 @@ OpenSSL native cryptographic support is added for the Password based key derivat
 
 OpenSSL 3.5.1 is now supported and bundled on all platforms. You can use the `jdk.native.openssl.skipBundled` property to specify whether to load the pre-packaged OpenSSL library or the library available on the system path.
 
-For more informaiton, see [OpenSSL](openssl.md).
+For more information, see [OpenSSL](openssl.md).
+
+### Offheap support is added for the `balanced` GC policy
+
+Before the 0.53.0 release, the `balanced` GC policy used an arraylet representation in the heap to support large arrays that cannot be contained in a region. Now, if the array's data are larger than a region size, the data are stored into a separate area, Offheap.
+
+For more information, see [GC processing](gc.md#balanced-policy).
 
 ## Known problems and full release information
 

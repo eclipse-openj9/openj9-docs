@@ -49,7 +49,12 @@ The verbose GC logs are printed in XML format and consist of the following secti
 
 - A summary of your GC configuration, which is captured in the `<initialized>` XML element.
 
-- Information about the GC cycles that ran, including GC operations and GC increments.  
+- Information about the GC cycles that ran, including GC operations and GC increments.
+
+From the 0.53.0 release onwards, while running the balanced GC, the verbose GC logs include the following information:
+
+- The `<initialized>` XML element will indicate that Offheap is used and how large it is.
+- Each GC cycle will show how many Offheap live objects there are at GC start, how many have been allocated since the previous GC, how many have died this cycle, and how many live are left at GC end.
 
 For definitions of GC cycles and operations, see [Garbage collection](gc_overview.md). For definitions of GC increments, see [GC increments and interleaving](#gc-increments-and-interleaving).
 
