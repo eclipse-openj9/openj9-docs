@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.51.0 are included
 - [OpenSSL support added for PBKDF2 algorithm](#openssl-support-added-for-pbkdf2-algorithm)
 - [OpenSSL 3.5.1 is bundled on all platforms](#openssl-351-is-bundled-on-all-platforms)
 - [Offheap support is added for the `balanced` GC policy](#offheap-support-is-added-for-the-balanced-gc-policy)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New JDK Flight Recorder (JFR) events are added in this release](#new-jdk-flight-recorder-jfr-events-are-added-in-this-release) ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 ## Features and changes
 
@@ -55,6 +56,17 @@ For more information, see [OpenSSL](openssl.md).
 Before the 0.53.0 release, the `balanced` GC policy used an arraylet representation in the heap to support large arrays that cannot be contained in a region. Now, if the array's data are larger than a region size, the data are stored into a separate area, Offheap.
 
 For more information, see [GC processing](gc.md#balanced-policy).
+
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) New JDK Flight Recorder (JFR) events are added in this release
+
+In this release, the following new JFR events are added:
+
+- NativeLibrary (Linux&reg; only)
+- SystemGC
+- SystemProcess (Linux only)
+- YoungGenerationConfiguration
+
+For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 ## Known problems and full release information
 

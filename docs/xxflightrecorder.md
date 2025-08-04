@@ -78,11 +78,11 @@ All JFR-related `jcmd` options might change in future releases.
 - JVMInformation
 - MonitorEnter
 - MonitorWait
-- NativeLibrary
+- NativeLibrary (Linux&reg; only)
 - OSInformation
 - PhysicalMemory
 - SystemGC
-- SystemProcess
+- SystemProcess (Linux only)
 - ThreadContextSwitchRate
 - ThreadCPULoad
 - ThreadDump
@@ -110,6 +110,7 @@ Support for JFR will be expanded in future releases.
 
 - [What's new in version 0.49.0](version0.49.md#new-xx-flightrecorder-option-added)
 - [What's new in version 0.51.0](version0.51.md#support-for-jdk-flight-recorder-jfr-in-the-vm-for-openjdk-11-and-later-running-on-all-platforms)
+- [What's new in version 0.53.0](version0.53.md#new-java-flight-recorder-jfr-events-are-added-in-this-release)
 
 
 <!-- ==== END OF TOPIC ==== xxflightrecorder.md ==== -->
