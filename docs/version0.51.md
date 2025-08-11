@@ -29,7 +29,7 @@ The following new features and notable changes since version 0.49.0 are included
 - [New parameter `maxstringlength` added to the `-Xtrace` option](#new-parameter-maxstringlength-added-to-the-xtrace-option)
 - [XL C++ Runtime 16.1.0.10 or later required for AIX OpenJ9 builds](#xl-c-runtime-161010-or-later-required-for-aix-openj9-builds)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [Support for JDK Flight Recorder (JFR) in the VM for OpenJDK 11 and later running on all platforms](#support-for-jdk-flight-recorder-jfr-in-the-vm-for-openjdk-11-and-later-running-on-all-platforms) ![End of content that applies only to Java 11 and later](cr/java_close.png)
-- [OpenJDK system properties used to initialize default encodings and locales](#openjdk-system-properties-used-to-initialize-default-encodings-and-locales)
+- [OpenJDK system properties used to initialize some system properties](#openjdk-system-properties-used-to-initialize-some-system-properties)
 <!--Release 0.50.0 cancelled- ![Start of content that applies to Java 24 and later](cr/java24plus.png) [New JDK 24 features](#new-jdk-24-features) ![End of content that applies to Java 24 and later](cr/java_close.png)-->
 
 ## Features and changes
@@ -58,9 +58,11 @@ This release now supports JFR in the VM as a technical preview for OpenJDK 11 an
 
 For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md).  ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
-### OpenJDK system properties used to initialize default encodings and locales
+### OpenJDK system properties used to initialize some system properties
 
 A number of OpenJDK system properties that were not set before are now set. For example, on Windows&trade; the console encoding properties reflect the console charset. The default locale might be different from previous Semeru versions, and is now consistent with OpenJDK behavior. In particular, on macOS&reg; the default locale reflects the control panel settings rather than the environment variable settings. The locale script is set when available.
+
+Another example is that OpenJDK is now used to initialize the `java.io.tmpdir` system property. Earlier, the `TMPDIR=<directory>` environment variable set the value of the `java.io.tmpdir` property. Because of this change, even if the `TMPDIR=<directory>` variable is specified, it is ignored when setting the `java.io.tmpdir` property value. For more information about the `TMPDIR` variable, see [Environment variables](env_var.md#java-dump-options).
 
 <!--0.50.0 release cancelled ### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
 
