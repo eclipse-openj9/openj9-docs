@@ -483,7 +483,7 @@ If the directory does not exist, it is created.
 If the dump file cannot be written to the selected location, the VM reverts to using the following locations, in this order:
 
 1. On Windows platforms only, the system default location is `C:\WINDOWS`.
-2. The location specified by the `TMPDIR` environment variable.
+2. The location specified by the `TMPDIR` environment variable. For more information about the `TMPDIR` variable, see [Environment variables](env_var.md#java-dump-options).
 3. The `C:\Temp` on Windows operating systems, or the `/tmp` directory on other operating systems.
 
 This VM action does not apply to system dumps on z/OS operating systems that use the `dsn` option.
