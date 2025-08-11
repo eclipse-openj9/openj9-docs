@@ -9530,7 +9530,7 @@ ON&lt;condition&gt;(&lt;agent&gt;[&lt;count&gt;],...),...)"
 </tr>
 <tr>
 <td><code>TMPDIR=&lt;directory&gt;</code></td>
-<td>This variable specifies an alternative temporary directory. This directory is used only when Java dumps and Heap dumps cannot be written to their target directories, or the current working directory. The default is <code>/tmp</code> (<code>C:\temp</code> for Windows).</td>
+<td>This variable specifies an alternative temporary directory. This directory is used only when Java dumps and Heap dumps cannot be written to their target directories, or the current working directory. The default is <code>/tmp</code> (<code>C:\temp</code> for Windows).<br><br>From the 0.51.0 release onwards, in all the JDK versions except for the IBM Java 8, OpenJDK is used to initialize the <code>java.io.tmpdir</code> system property. Because of this change, even if the <code>TMPDIR=&lt;directory&gt;</code> variable is specified, it is ignored when setting the <code>java.io.tmpdir</code> system property. You can modify this system property directly by using the <code>-Djava.io.tmpdir=&lt;directory&gt;</code> command-line option.</td>
 </tr>
 </tbody>
 </table>
@@ -9571,7 +9571,7 @@ ON&lt;condition&gt;(&lt;agent&gt;[&lt;count&gt;],...),...)"
 </tr>
 <tr>
 <td><code>TMPDIR=&lt;directory&gt;</code></td>
-<td>This variable specifies an alternative temporary directory. This directory is used only when Java dumps and heap dumps cannot be written to their target directories, or the current working directory. The default is <code>/tmp</code> (<code>C:\temp</code> for Windows).</td>
+<td>This variable specifies an alternative temporary directory. This directory is used only when Java dumps and heap dumps cannot be written to their target directories, or the current working directory. The default is <code>/tmp</code> (<code>C:\temp</code> for Windows).<br><br>From the 0.51.0 release onwards, in all the JDK versions except for the IBM Java 8, OpenJDK is used to initialize the <code>java.io.tmpdir</code> system property. Because of this change, even if the <code>TMPDIR=&lt;directory&gt;</code> variable is specified, it is ignored when setting the <code>java.io.tmpdir</code> system property. You can modify this system property directly by using the <code>-Djava.io.tmpdir=&lt;directory&gt;</code> command-line option.</td>
 </tr>
 </tbody>
 </table>
