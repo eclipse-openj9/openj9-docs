@@ -102,7 +102,7 @@ Applications
 : VM trace contains an application trace facility that allows tracepoints to be placed in Java code, enabling you to combine trace data with the other forms of trace. This capability is supported by the `com.ibm.jvm.Trace` API. Note that an instrumented Java application runs only on an OpenJ9 VM. For more information, see [Application trace](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/trace_application.html).
 
 Java methods
-: Use method trace to debug and trace application code and the system classes provided with the VM. You can trace entry to and exit from Java methods run by the VM. You can select method trace by classname, method name, or both. You can also use wildcards to create complex method selections. For more information about command syntax, see [methods](#methods).
+: Use method trace to debug and trace application code and the system classes provided with the VM. You can trace entry to and exit from Java methods run by the VM. You can select method trace by class name, method name, or both. You can also use wildcards to create complex method selections. For more information about command syntax, see [methods](#methods).
 
 Trace can produce large amounts of data in a very short time. Before running trace, think carefully about what information you need in order to solve the problem. Here are some considerations:
 
