@@ -593,7 +593,7 @@ To specify one or more method specifications, use the following syntax:
 
 The syntax for `<method_specification>` can be further broken down to the following suboptions:
 
-    -Xtrace:methods={[!][*][<package>/]<class>[*],[[*]<method>[*]|[()]]}
+    -Xtrace:methods={[!][*][<package>/]<class>[*].[[*]<method>[*]|[()]]}
 
 Where:
 
