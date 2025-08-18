@@ -31,7 +31,9 @@ certifi==2025.6.15
 charset-normalizer==2.1.1
     # via requests
 click==8.1.3
-    # via mkdocs
+    # via
+    #   mkdocs
+    #   mkdocs-material
 colorama==0.4.6
     # via mkdocs-material
 ghp-import==2.1.0
@@ -74,7 +76,7 @@ mkdocs-get-deps==0.2.0
     # via mkdocs
 mkdocs-macros-plugin==1.3.7
     # via -r requirements.in
-mkdocs-material==9.6.14
+mkdocs-material==9.6.17
     # via -r requirements.in
 mkdocs-material-extensions==1.3
     # via mkdocs-material
