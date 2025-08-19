@@ -101,6 +101,7 @@ nav:
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.55.0"                                                       : version0.55.md
         - "Version 0.54.0"                                                       : version0.54.md
         - "Version 0.53.0"                                                       : version0.53.md
         - "Version 0.51.0"                                                       : version0.51.md
@@ -152,6 +153,7 @@ nav:
         - "Migrating from Java 8 to Java 11"                                     : migrating8to11.md
         - "Migrating from Java 11 to Java 17"                                    : migrating11to17.md
         - "Migrating from Java 17 to Java 21"                                    : migrating17to21.md
+        - "Migrating from Java 21 to Java 25"                                    : migrating21to25.md
         
     - "Configuring your system"                                                  : configuring.md
 
