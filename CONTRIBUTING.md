@@ -193,6 +193,8 @@ The user documentation supports the configuration, tuning, and diagnosis of the 
 - ![Java 23 and later](docs/cr/java23plus.png) -  For content that applies to an OpenJDK version 23 or later version.
 - ![Java 24](docs/cr/java24.png) - For content that applies only to an OpenJDK version 24.
 - ![Java 24 and later](docs/cr/java24plus.png) -  For content that applies to an OpenJDK version 24 or later version.
+- ![Java 25](docs/cr/java25.png) - For content that applies only to an OpenJDK version 25.
+- ![Java 25 and later](docs/cr/java25plus.png) -  For content that applies to an OpenJDK version 25 or later version.
 
 Different colors are used for the icons to differentiate long term service (LTS) releases from feature releases. For accessibility reasons it is important to use alternative text with these icons that differentiates an LTS release.
 
