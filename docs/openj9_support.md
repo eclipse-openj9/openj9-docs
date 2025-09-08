@@ -47,8 +47,9 @@ columns will be removed over time.
 | 0.51.0         | May 2025   |   :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |     :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>                              |         |       |
 | 0.53.0         | Jul 2025   |   :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>   |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>     |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>                 |          |          |
 | 0.54.0         | Aug 2025 (2)   |   :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   |   :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   |  :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>     |    :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>       |   :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>             |        |
-| 0.55.0         | Sep 2025 (1, 3)   |   :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   |   :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   |  :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>     |    :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>                 |  :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>       |   :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>                |
+| 0.55.0         | Sep 2025 (3)   |   :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   |   :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>   |  :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>     |    :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>                 |  :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>       |   :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>                |
 | 0.56.0         | Oct 2025 (1)   |   :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>         |   :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>        |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>           |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>                           |  :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>       |     :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>           |
+| 0.57.0         | Jan 2026 (1)   |   :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>         |   :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>        |  :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>           |    :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>                           |  :fontawesome-solid-xmark:{: .no aria-hidden="true"}<span class="sr-only">no</span>       |     :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>           |
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
@@ -188,9 +189,9 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
-### OpenJDK 21 and later
+### OpenJDK 21
 
-OpenJDK 21 and later binaries are expected to function on the minimum operating system levels shown in the following tables:
+OpenJDK 21 binaries are expected to function on the minimum operating system levels shown in the following tables:
 
 
 | Linux (**Note 1**)                        | AArch64                                                                              | x64                                                                                  | ppc64le                                                                              | Z64                                                                                  |
@@ -225,6 +226,46 @@ OpenJDK 21 and later binaries are expected to function on the minimum operating 
 | AIX 7.2 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
 :fontawesome-solid-bell:{: .warn aria-hidden="true"} **Important:** From the 0.51.0 release onwards, AIX OpenJ9 builds require the [XL C++ Runtime 16.1.0.10 or later](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X).
+
+When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
+
+### OpenJDK 25 and later
+
+OpenJDK 25 and later binaries are expected to function on the minimum operating system levels shown in the following tables:
+
+
+| Linux (**Note 1**)                        | AArch64                                                                              | x64                                                                                  | ppc64le                                                                              | Z64                                                                                  |
+|-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| CentOS Stream 9                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| RHEL 8.10                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| RHEL 9.4                                  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Ubuntu 22.04                              |:fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Ubuntu 24.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Not all of these distributions are tested, but the following distributions are expected to function without problems:
+
+- Linux distributions that have a minimum glibc version 2.17
+
+| Windows                                   | x64                                                                                  |
+|-------------------------------------------|--------------------------------------------------------------------------------------|
+| Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows 11                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| Windows Server 2022                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+| macOS         | x64                                                                                  | AArch64 (Apple silicon)                                                              |
+|---------------|--------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
+| macOS 13      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 14      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+| macOS 15      | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+
+| AIX                                       | ppc64                                                                                |
+|-------------------------------------------|--------------------------------------------------------------------------------------|
+| AIX 7.2 TL5                               | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
+
+:fontawesome-solid-bell:{: .warn aria-hidden="true"} **Important:** For OpenJDK 25 and later binaries, AIX OpenJ9 builds require the [XL C++ Runtime 17.1.3.0 or later](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#17130).
 
 When public support for an operating system version ends, OpenJ9 can no longer be supported on that level.
 
@@ -271,7 +312,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
 | AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.20                     |
 
-### OpenJDK 21 and later
+### OpenJDK 21
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
@@ -282,4 +323,17 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.20                    |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.20                     |
+
+### OpenJDK 25 and later
+
+| Platform                      | Operating system       | Compiler                              |
+|-------------------------------|------------------------|---------------------------------------|
+| Linux x86 64-bit              | CentOS 7.9             | gcc 13.2                              |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 13.2                              |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 13.2                              |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
+| Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
+| macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
+| macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.20                   |
