@@ -454,6 +454,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-system-property-added-to-support-a-list-of-javasecurity-property-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      New system property added to support a list of java.security property files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-jdk-25-features" class="md-nav__link">
     <span class="md-ellipsis">
       New JDK 25 features
@@ -3858,6 +3867,29 @@
   
   <span class="md-ellipsis">
     -Djava.lang.stringBuffer.growAggressively
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../djavasecuritypropertieslist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    -Djava.security.propertiesList
     
   </span>
   
@@ -9285,6 +9317,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#new-system-property-added-to-support-a-list-of-javasecurity-property-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      New system property added to support a list of java.security property files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-jdk-25-features" class="md-nav__link">
     <span class="md-ellipsis">
       New JDK 25 features
@@ -9350,6 +9391,7 @@
 <p>The following new features and notable changes since version 0.54.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#new-system-property-added-to-support-a-list-of-javasecurity-property-files">New system property added to support a list of java.security property files</a></li>
 <li><img alt="Start of content that applies to Java 24 and later" src="../cr/java25plus.png" /> <a href="#new-jdk-25-features">New JDK 25 features</a> <img alt="End of content that applies to Java 25 and later" src="../cr/java_close.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -9357,6 +9399,9 @@
 <p>Eclipse OpenJ9&trade; release 0.55.0 supports OpenJDK 25.</p>
 <p>OpenJDK 25 with Eclipse OpenJ9 is a long term support (LTS) release and supersedes OpenJDK 24 with Eclipse OpenJ9.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="new-system-property-added-to-support-a-list-of-javasecurity-property-files">New system property added to support a list of java.security property files</h3>
+<p>A new system property, <code>-Djava.security.propertiesList</code> is added to configure a superset of profile files in different java.security property files. Instead of putting those different profiles into a single java.security file, you can now specify a list of java.security property files that have the profiles that you want to use.</p>
+<p>For more information, see <a href="../djavasecuritypropertieslist/"><code>-Djava.security.propertiesList</code></a>.</p>
 <h3 id="new-jdk-25-features"><img alt="Start of content that applies to Java 25 and later" src="../cr/java25plus.png" /> New JDK 25 features</h3>
 <p>The following features are supported by OpenJ9:</p>
 <ul>
