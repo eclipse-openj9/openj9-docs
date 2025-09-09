@@ -266,6 +266,7 @@ nav:
             - "-Djava.compiler"                                                  : djavacompiler.md
             - "-Djava.lang.string.substring.nocopy"                              : djavalangstringsubstringnocopy.md
             - "-Djava.lang.stringBuffer.growAggressively"                        : djavalangstringbuffergrowaggressively.md
+            - "-Djava.security.propertiesList"                                   : djavasecuritypropertieslist.md
             - "-Djdk.nativeCBC"                                                  : djdknativecbc.md
             - "-Djdk.nativeChaCha20"                                             : djdknativechacha20.md
             - "-Djdk.nativeCrypto"                                               : djdknativecrypto.md
