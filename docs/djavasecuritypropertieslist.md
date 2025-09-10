@@ -32,7 +32,7 @@ This system property is used to specify different java.security property files t
 For example,
 
 Windows&trade; systems: `-Djava.security.propertiesList=file1;file2;file3`
-Unix&reg; type systems: `-Djava.security.propertiesList=file1:fil2:file3`
+Unix&reg; type systems: `-Djava.security.propertiesList=file1:file2:file3`
 
 ## See also
 
