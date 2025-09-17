@@ -38,7 +38,7 @@ This option enables or disables the OpenJDK behavior of the `getProcessCpuLoad()
 
 The `getProcessCpuLoad()` method in the `com.sun.management.OperatingSystemMXBean` class returns the recent CPU usage value for the Java virtual machine process, while the `getSystemCpuLoad()` method returns the recent CPU usage value for the whole system. When these methods were called in OpenJ9 for the first time, these methods were returning `-1` to indicate that the recent CPU usage is not available. It was difficult to identify whether the reason for the `-1` value was an error or because the call was the first call and therefore, no recent CPU usage was available.
 
-In OpenJDK, these methods return `0` value in the case of the first call, which makes it easier to differentiate between the first call behavior and an error that needs further investigation.
+In OpenJDK, `getProcessCpuLoad` returns `0` value on the first call, while `getSystemCpuLoad` collects two internal samples so that a valid CPU usage value can be returned. This makes it easier to differentiate between the first call behavior and an error that needs further investigation.
 
 The `-XX:+CpuLoadCompatibility` option is used to enable the OpenJDK behavior of the `getProcessCpuLoad()` and `getSystemCpuLoad()` methods in OpenJ9.
 
