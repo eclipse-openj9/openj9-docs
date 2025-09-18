@@ -70,7 +70,7 @@ All JFR-related `jcmd` options might change in future releases.
 ```
 - ClassLoadingStatistics
 - CPUInformation
-- CPULoad
+- CPULoad (except z/OS)
 - ExecutionSample
 - GCHeapConfig
 - InitialEnvironmentVariable
@@ -86,7 +86,7 @@ All JFR-related `jcmd` options might change in future releases.
 - SystemGC
 - SystemProcess (Linux only)
 - ThreadContextSwitchRate
-- ThreadCPULoad
+- ThreadCPULoad (except z/OS)
 - ThreadDump
 - ThreadEnd
 - ThreadPark
