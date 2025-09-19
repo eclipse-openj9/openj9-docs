@@ -463,6 +463,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#the-format-of-the-javavmversion-system-property-value-is-updated-to-be-compatible-with-the-runtimeversion-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      The format of the java.vm.version system property value is updated to be compatible with the Runtime.Version parser
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-jdk-25-features" class="md-nav__link">
     <span class="md-ellipsis">
       New JDK 25 features
@@ -9326,6 +9335,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#the-format-of-the-javavmversion-system-property-value-is-updated-to-be-compatible-with-the-runtimeversion-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      The format of the java.vm.version system property value is updated to be compatible with the Runtime.Version parser
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#new-jdk-25-features" class="md-nav__link">
     <span class="md-ellipsis">
       New JDK 25 features
@@ -9392,6 +9410,7 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#new-system-property-added-to-support-a-list-of-javasecurity-property-files">New system property added to support a list of java.security property files</a></li>
+<li><a href="#the-format-of-the-javavmversion-system-property-value-is-updated-to-be-compatible-with-the-runtimeversion-parser">The format of the <code>java.vm.version</code> system property value is updated to be compatible with the Runtime.Version parser</a></li>
 <li><img alt="Start of content that applies to Java 24 and later" src="../cr/java25plus.png" /> <a href="#new-jdk-25-features">New JDK 25 features</a> <img alt="End of content that applies to Java 25 and later" src="../cr/java_close.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
@@ -9402,6 +9421,15 @@
 <h3 id="new-system-property-added-to-support-a-list-of-javasecurity-property-files">New system property added to support a list of java.security property files</h3>
 <p>A new system property, <code>-Djava.security.propertiesList</code> is added to configure a superset of profile files in different java.security property files. Instead of putting those different profiles into a single java.security file, you can now specify a list of java.security property files that have the profiles that you want to use.</p>
 <p>For more information, see <a href="../djavasecuritypropertieslist/"><code>-Djava.security.propertiesList</code></a>.</p>
+<h3 id="the-format-of-the-javavmversion-system-property-value-is-updated-to-be-compatible-with-the-runtimeversion-parser">The format of the <code>java.vm.version</code> system property value is updated to be compatible with the Runtime.Version parser</h3>
+<p>The format of the <code>java.vm.version</code> system property value is modified from the previous releases. The new format of the value is standardized and structured and is parse-able by the <code>java.lang.Runtime.Version</code> class. This modification also changes the <code>-version</code> output. For example, <code>build openj9-0.55.0</code> changes to <code>build 25+36-openj9-0.55.0</code>. The OpenJ9 version, <code>openj9-0.55.0</code> in the example, is at the end of the optional component.</p>
+<p>With this new structured format, the <code>java.lang.Runtime.Version</code> class parses the value and you can extract specific information such as the information related to the VM version. For example, following information can be extracted from <code>java.vm.version = 25+36-openj9-0.55.0</code>:</p>
+<ul>
+<li><code>25</code> - Feature version of the OpenJDK</li>
+<li><code>36</code> - Build number of the OpenJDK</li>
+<li><code>openj9-0.55.0</code> - Additional build information</li>
+</ul>
+<p>For more information, see <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runtime.Version.html">Class Runtime.Version</a>.</p>
 <h3 id="new-jdk-25-features"><img alt="Start of content that applies to Java 25 and later" src="../cr/java25plus.png" /> New JDK 25 features</h3>
 <p>The following features are supported by OpenJ9:</p>
 <ul>
