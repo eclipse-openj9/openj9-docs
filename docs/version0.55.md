@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.54.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New system property added to support a list of java.security property files](#new-system-property-added-to-support-a-list-of-javasecurity-property-files)
+- [The format of the `java.vm.version` system property value is updated to be compatible with the Runtime.Version parser](#the-format-of-the-javavmversion-system-property-value-is-updated-to-be-compatible-with-the-runtimeversion-parser)
 - ![Start of content that applies to Java 24 and later](cr/java25plus.png) [New JDK 25 features](#new-jdk-25-features) ![End of content that applies to Java 25 and later](cr/java_close.png)
 
 ## Features and changes
@@ -44,6 +45,18 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 A new system property, `-Djava.security.propertiesList` is added to configure a superset of profile files in different java.security property files. Instead of putting those different profiles into a single java.security file, you can now specify a list of java.security property files that have the profiles that you want to use.
 
 For more information, see [`-Djava.security.propertiesList`](djavasecuritypropertieslist.md).
+
+### The format of the `java.vm.version` system property value is updated to be compatible with the Runtime.Version parser
+
+The format of the `java.vm.version` system property value is modified from the previous releases. The new format of the value is standardized and structured and is parse-able by the `java.lang.Runtime.Version` class. This modification also changes the `-version` output. For example, `build openj9-0.55.0` changes to `build 25+36-openj9-0.55.0`. The OpenJ9 version, `openj9-0.55.0` in the example, is at the end of the optional component.
+
+With this new structured format, the `java.lang.Runtime.Version` class parses the value and you can extract specific information such as the information related to the VM version. For example, following information can be extracted from `java.vm.version = 25+36-openj9-0.55.0`:
+
+- `25` - Feature version of the OpenJDK
+- `36` - Build number of the OpenJDK
+- `openj9-0.55.0` - Additional build information
+
+For more information, see [Class Runtime.Version](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runtime.Version.html).
 
 ### ![Start of content that applies to Java 25 and later](cr/java25plus.png) New JDK 25 features
 
