@@ -26,9 +26,10 @@
 The following new features and notable changes since version 0.54.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
+- ![Start of content that applies to Java 25 and later](cr/java25plus.png) [XL C++ Runtime 17.1.3.0 or later required for AIX OpenJ9 builds](#xl-c-runtime-17130-or-later-required-for-aix-openj9-builds) ![End of content that applies to Java 25 and later](cr/java_close.png)
 - [New system property added to support a list of java.security property files](#new-system-property-added-to-support-a-list-of-javasecurity-property-files)
 - [The format of the `java.vm.version` system property value is updated to be compatible with the Runtime.Version parser](#the-format-of-the-javavmversion-system-property-value-is-updated-to-be-compatible-with-the-runtimeversion-parser)
-- ![Start of content that applies to Java 24 and later](cr/java25plus.png) [New JDK 25 features](#new-jdk-25-features) ![End of content that applies to Java 25 and later](cr/java_close.png)
+- ![Start of content that applies to Java 25 and later](cr/java25plus.png) [New JDK 25 features](#new-jdk-25-features) ![End of content that applies to Java 25 and later](cr/java_close.png)
 
 ## Features and changes
 
@@ -39,6 +40,10 @@ Eclipse OpenJ9&trade; release 0.55.0 supports OpenJDK 25.
 OpenJDK 25 with Eclipse OpenJ9 is a long term support (LTS) release and supersedes OpenJDK 24 with Eclipse OpenJ9.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
+
+### ![Start of content that applies to Java 25 (LTS) and later](cr/java25plus.png) XL C++ Runtime 17.1.3.0 or later required for AIX OpenJ9 builds
+
+For OpenJDK 25 and later binaries, AIX OpenJ9 builds now require version 17.1.3.0 or later of the [IBM XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#17130).  ![End of content that applies only to Java 25 and later](cr/java_close.png)
 
 ### New system property added to support a list of java.security property files
 
