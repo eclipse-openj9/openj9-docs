@@ -329,9 +329,9 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
-| Linux x86 64-bit              | CentOS 7.9             | gcc 13.2                              |
-| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 13.2                              |
-| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 13.2                              |
+| Linux x86 64-bit              | CentOS 7.9             | gcc 11.2                              |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 11.2                              |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 11.2                              |
 | Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
