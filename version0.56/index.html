@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/djdknativesha512_224/">
+        <link rel="canonical" href="https://www.eclipse.org/openj9/docs/version0.56/">
       
       
-        <link rel="prev" href="../djdknativesha512/">
+        <link rel="prev" href="../openj9_releases/">
       
       
-        <link rel="next" href="../djdknativesha512_256/">
+        <link rel="next" href="../version0.55/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-Djdk.nativeSHA512_224 -  </title>
+        <title>Version 0.56.0 -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-djdknativesha512_224" class="md-skip">
+        <a href="#whats-new-in-version-0560" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Djdk.nativeSHA512_224
+              Version 0.56.0
             
           </span>
         </div>
@@ -319,18 +319,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -346,7 +348,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Release notes
@@ -380,10 +382,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../version0.56/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Version 0.56.0
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -394,6 +418,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features and changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binaries and supported environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-in-the-getcpuload-method-return-value-based-on-the-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change in the getCpuLoad() method return value based on the platform
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known problems and full release information
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3066,20 +3152,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
         
           
           <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
@@ -3095,7 +3179,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             Command-line options
@@ -3175,20 +3259,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_4" >
         
           
           <label class="md-nav__link" for="__nav_18_4" id="__nav_18_4_label" tabindex="0">
@@ -3204,7 +3286,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18_4">
             <span class="md-nav__icon md-icon"></span>
             System property options
@@ -4227,32 +4309,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    -Djdk.nativeSHA512_224
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../djdknativesha512_224/" class="md-nav__link">
         
   
   
@@ -4263,44 +4323,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntax
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -9290,18 +9312,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
+  <a href="#features-and-changes" class="md-nav__link">
     <span class="md-ellipsis">
-      Syntax
+      Features and changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binaries and supported environments
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#change-in-the-getcpuload-method-return-value-based-on-the-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change in the getCpuLoad() method return value based on the platform
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation
+      Known problems and full release information
     </span>
   </a>
   
@@ -9346,38 +9392,23 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-djdknativesha512_224">-Djdk.nativeSHA512_224</h1>
-<p>This option enables or disables OpenSSL native cryptographic support for the SHA-512/224 digest algorithm.</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -Djdk.nativeSHA512_224=[true|false]
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>value</th>
-<th style="text-align: center;">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-Djdk.nativeSHA512_224</code></td>
-<td>true</td>
-<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg></span><span class="sr-only">yes</span></td>
-</tr>
-<tr>
-<td><code>-Djdk.nativeSHA512_224</code></td>
-<td>false</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="explanation">Explanation</h2>
-<!--OpenSSL support is enabled by default for the Digest algorithm. If you want to turn off this algorithm only, set this option to `false`.-->
-
-<p>To turn off all the digest algorthims, see the <a href="../djdknativedigest/"><code>-Djdk.nativeDigest</code></a>.</p>
-<p>To turn off all the algorithms, see the <a href="../djdknativecrypto/">-Djdk.nativeCrypto</a> system property command-line option.</p>
-<!-- ==== END OF TOPIC ==== djdknativesha512_224.md ==== -->
+<h1 id="whats-new-in-version-0560">What's new in version 0.56.0</h1>
+<p>The following new features and notable changes since version 0.55.0 are included in this release:</p>
+<ul>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#change-in-the-getcpuload-method-return-value-based-on-the-platform">Change in the <code>getCpuLoad()</code> method return value based on the platform</a></li>
+</ul>
+<h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>Eclipse OpenJ9&trade; release 0.56.0 supports OpenJDK 8, 11, 17, 21, and 25.</p>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="change-in-the-getcpuload-method-return-value-based-on-the-platform">Change in the <code>getCpuLoad()</code> method return value based on the platform</h3>
+<p>In all platforms except z/OS&reg;, if the <code>-XX:+CpuLoadCompatibility</code> option is set to enable the OpenJDK behavior of the <code>getProcessCpuLoad()</code> and <code>getCpuLoad()</code> methods in OpenJ9, the <code>getCpuLoad()</code> method now collects two internal samples so that a valid CPU usage value can be returned instead of <code>0</code> return value on the first call.</p>
+<p>On z/OS, the CPU load that is reported by the <code>getCpuLoad</code> method is obtained directly from the system control blocks, without the need to collect samples. The <code>-XX:[+|-]CpuLoadCompatibility</code> option has no effect on z/OS, and a valid CPU usage value is always returned whatever be the setting of this option.</p>
+<p>For more information, <a href="../xxcpuloadcompatibility/"><code>-XX:[+|-]CpuLoadCompatibility</code></a>.</p>
+<h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.55.0 and v0.56.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.56/0.56.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.56.md ==== -->
 
 
 

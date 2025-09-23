@@ -383,6 +383,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.56/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Version 0.56.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.55/" class="md-nav__link">
         
   
@@ -713,10 +736,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_16" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_17" >
         
           
-          <label class="md-nav__link" for="__nav_5_16" id="__nav_5_16_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_17" id="__nav_5_17_label" tabindex="0">
             
   
   
@@ -729,8 +752,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_16_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_16">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_17">
             <span class="md-nav__icon md-icon"></span>
             Earlier releases
           </label>
@@ -9342,7 +9365,8 @@
 -->
 
 <h1 id="-xx-cpuloadcompatibility">-XX:[+|-]CpuLoadCompatibility</h1>
-<p>This option enables or disables the OpenJDK behavior of the <code>getProcessCpuLoad()</code> and <code>getSystemCpuLoad()</code> methods in OpenJ9.</p>
+<p>This option enables or disables the OpenJDK behavior of the <code>getProcessCpuLoad()</code> and <code>getCpuLoad()</code> methods in OpenJ9.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6"/></svg></span> <strong>Note:</strong> Before OpenJDK 14, the <code>getCpuLoad()</code> method name was <code>getSystemCpuLoad()</code>. Because OpenJDK 14 is no longer supported, the relevant LTS release where this change is visible is OpenJDK 17 and later.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]CpuLoadCompatibility
 </code></pre>
@@ -9368,12 +9392,14 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>The <code>getProcessCpuLoad()</code> method in the <code>com.sun.management.OperatingSystemMXBean</code> class returns the recent CPU usage value for the Java virtual machine process, while the <code>getSystemCpuLoad()</code> method returns the recent CPU usage value for the whole system. When these methods were called in OpenJ9 for the first time, these methods were returning <code>-1</code> to indicate that the recent CPU usage is not available. It was difficult to identify whether the reason for the <code>-1</code> value was an error or because the call was the first call and therefore, no recent CPU usage was available.</p>
-<p>In OpenJDK, these methods return <code>0</code> value in the case of the first call, which makes it easier to differentiate between the first call behavior and an error that needs further investigation.</p>
-<p>The <code>-XX:+CpuLoadCompatibility</code> option is used to enable the OpenJDK behavior of the <code>getProcessCpuLoad()</code> and <code>getSystemCpuLoad()</code> methods in OpenJ9.</p>
+<p>The <code>getProcessCpuLoad()</code> method in the <code>com.sun.management.OperatingSystemMXBean</code> class returns the recent CPU usage value for the Java virtual machine process, while the <code>getCpuLoad()</code> method returns the recent CPU usage value for the whole system. When these methods were called in OpenJ9 for the first time, these methods were returning <code>-1</code> to indicate that the recent CPU usage is not available. It was difficult to identify whether the reason for the <code>-1</code> value was an error or because the call was the first call and therefore, no recent CPU usage was available.</p>
+<p>In OpenJDK, <code>getProcessCpuLoad()</code> returns <code>0</code> value on the first call, while <code>getCpuLoad()</code> collects two internal samples so that a valid CPU usage value can be returned. This <code>0</code> return value on the first call and the two internal samples make it easier to differentiate between the first call behavior and an error that needs further investigation.</p>
+<p>The <code>-XX:+CpuLoadCompatibility</code> option is used to enable the OpenJDK behavior of the <code>getProcessCpuLoad()</code> and <code>getCpuLoad()</code> methods in OpenJ9.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6"/></svg></span> <strong>Note:</strong> The <code>-XX:[+|-]CpuLoadCompatibility</code> option is applicable to all platforms except z/OS&reg;. On z/OS, the CPU load that is reported by the <code>getCpuLoad</code> method is obtained directly from the system control blocks, without the need to collect samples. The <code>-XX:[+|-]CpuLoadCompatibility</code> option has no effect on z/OS, and a valid CPU usage value is always returned whatever be the setting of this option.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../version0.43/#new-xx-cpuloadcompatibility-option-added">What's new in version 0.43.0</a></li>
+<li><a href="../version0.56/#change-in-the-getcpuload-method-return-value-based-on-the-platform">What's new in version 0.56.0</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xxcpuloadcompatibility.md ==== -->
 
