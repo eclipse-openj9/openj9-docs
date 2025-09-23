@@ -72,7 +72,7 @@ mkdocs==1.6.1
     #   mkdocs-material
 mkdocs-get-deps==0.2.0
     # via mkdocs
-mkdocs-macros-plugin==1.3.7
+mkdocs-macros-plugin==1.4.0
     # via -r requirements.in
 mkdocs-material==9.6.14
     # via -r requirements.in
@@ -111,7 +111,7 @@ requests==2.32.4
     # via mkdocs-material
 six==1.16.0
     # via python-dateutil
-super-collections==0.5.0
+super-collections==0.5.7
     # via mkdocs-macros-plugin
 termcolor==2.2.0
     # via mkdocs-macros-plugin
