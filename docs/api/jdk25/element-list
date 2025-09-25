@@ -85,7 +85,6 @@ com.ibm.j9ddr.tools.ddrinteractive.commands
 com.ibm.j9ddr.tools.ddrinteractive.plugins
 com.ibm.j9ddr.tools.logging
 com.ibm.j9ddr.tools.store
-com.ibm.j9ddr.tools.xml
 com.ibm.j9ddr.util
 com.ibm.j9ddr.view.dtfj
 com.ibm.j9ddr.view.dtfj.image
