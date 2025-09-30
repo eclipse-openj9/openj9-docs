@@ -37,9 +37,11 @@ Options that change the behavior of the garbage collector.
 | [`classUnloadingKickoffThreshold`   ](#classunloadingkickoffthreshold   ) | Sets a threshold to start an early concurrent global garbage collection (GC) cycle due to recent, heavy class loading activity  |
 | [`classUnloadingThreshold`          ](#classunloadingthreshold          ) | Sets a threshold to trigger a class unloading operation in a global GC cycle                                     |
 | [`concurrentScavenge`               ](#concurrentscavenge               ) | Enables a GC mode with less pause times.                                             |
+| [`disableEstimateFragmentation`     ](#disableestimatefragmentation     ) | Disables the calculating and reporting of the estimates of the macro fragmentation                                             |
 | [`dnssExpectedTimeRatioMaximum`     ](#dnssexpectedtimeratiomaximum     ) | Sets the maximum percentage of time to spend on local GC pauses                                             |
 | [`dnssExpectedTimeRatioMinimum`     ](#dnssexpectedtimeratiominimum     ) | Sets the minimum percentage of time to spend on local GC pauses                                             |
 | [`dynamicBreadthFirstScanOrdering`  ](#dynamicbreadthfirstscanordering  ) | Sets scan mode to dynamic breadth first.                                             |
+| [`enableEstimateFragmentation`     ](#enableestimatefragmentation    )    | Enables the calculating and reporting of the estimates of the macro fragmentation                                             |
 | [`excessiveGCratio`                 ](#excessivegcratio                 ) | Sets a boundary value beyond which GC is deemed to be excessive.                                          |
 | [`hierarchicalScanOrdering`         ](#hierarchicalscanordering         ) | Sets scan mode to hierarchical.                                             |
 | [`minContractPercent`               ](#mincontractpercent               ) | Sets the minimum percentage of the heap that can be contracted at any given time.                         |
@@ -124,6 +126,16 @@ Options that change the behavior of the garbage collector.
 
     :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by `ulimit -M`, to a larger value than the maximum heap size.
 
+### `disableEstimateFragmentation`
+
+        -Xgc:disableEstimateFragmentation
+
+: This option disables the processing of various allocation and free memory statistics and the calculation of the macro fragmentation estimate. It also disables the reporting of the estimates of the macro fragmentation, as reported by Verbose GC, if the verbose garbage collection (GC) is enabled, at the end of Scavenge GCs.
+
+: Macro fragmented memory is a part of free tenure memory that is estimated to be unusable when accounting for recent allocation patterns. The estimate can be used for tuning, such as preventing too late Concurrent Global GC kickoff.
+
+: You can enable the calculation and reporting of the macro fragmentation estimates by using the [`-Xgc:enableEstimateFragmentation`](#enableestimatefragmentation) option.
+
 ### `dnssExpectedTimeRatioMaximum`
 
         -Xgc:dnssExpectedTimeRatioMaximum=<value>
@@ -153,6 +165,24 @@ Options that change the behavior of the garbage collector.
          -Xgc:dynamicBreadthFirstScanOrdering
 
 : This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (`gencon`) and copy forward operations (`balanced`)) to dynamic breadth first mode. This scan mode reflects the method for traversing the object graph and is a variant that adds *partial depth first traversal* on top of the breadth first scan mode. The aim of dynamic breadth first mode is driven by object field hotness. This mode is the default for the `balanced` GC policy.
+
+### `enableEstimateFragmentation`
+
+        -Xgc:enableEstimateFragmentation
+
+: This option enables the processing of various allocation and free memory statistics and the calculation of the macro fragmentation estimate. It also enables the reporting of the estimates of the macro fragmentation, as reported by Verbose GC (if the Verbose GC is enabled) at the end of Scavenge GCs.
+
+: For example,
+
+```
+<gc-end id="13623" type="scavenge"....
+....
+    <mem type="tenure" free="407392216" total="2147483648" percent="18" macro-fragmented="171732064">
+```
+
+: Macro fragmented memory is a part of free tenure memory that is estimated to be unusable when accounting for recent allocation patterns. The estimate can be used for tuning, such as preventing too late Concurrent Global GC kickoff.
+
+: This option is enabled by default. You can disable the calculation and reporting of the macro fragmentation estimates by using the [`-Xgc:disableEstimateFragmentation`](#disableestimatefragmentation) option.
 
 ### `excessiveGCratio`
 

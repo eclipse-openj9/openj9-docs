@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.55.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Change in the `getCpuLoad()` method return value based on the platform](#change-in-the-getcpuload-method-return-value-based-on-the-platform)
+- [New `-Xgc` parameters related to macro fragmentation added](#new-xgc-parameters-related-to-macro-fragmentation-added)
 
 ## Features and changes
 
@@ -42,7 +43,13 @@ In all platforms except z/OS&reg;, if the `-XX:+CpuLoadCompatibility` option is 
 
 On z/OS, the CPU load that is reported by the `getCpuLoad` method is obtained directly from the system control blocks, without the need to collect samples. The `-XX:[+|-]CpuLoadCompatibility` option has no effect on z/OS, and a valid CPU usage value is always returned whatever be the setting of this option.
 
-For more information, [`-XX:[+|-]CpuLoadCompatibility`](xxcpuloadcompatibility.md).
+For more information, see [`-XX:[+|-]CpuLoadCompatibility`](xxcpuloadcompatibility.md).
+
+### New `-Xgc` parameters related to macro fragmentation added
+
+New parameters, `enableEstimateFragmentation` and `disableEstimateFragmentation` are added to the `-Xgc` option. You can use these options to control the calculating and reporting of the estimates of the macro fragmentation, as reported by verbose garbage collection (GC) at the end of Scavenge GCs.
+
+For more information, see [`-Xgc`](xgc.md#disableestimatefragmentation).
 
 ## Known problems and full release information
 
