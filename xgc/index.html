@@ -5140,6 +5140,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#disableestimatefragmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      disableEstimateFragmentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dnssexpectedtimeratiomaximum" class="md-nav__link">
     <span class="md-ellipsis">
       dnssExpectedTimeRatioMaximum
@@ -5161,6 +5170,15 @@
   <a href="#dynamicbreadthfirstscanordering" class="md-nav__link">
     <span class="md-ellipsis">
       dynamicBreadthFirstScanOrdering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enableestimatefragmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      enableEstimateFragmentation
     </span>
   </a>
   
@@ -9630,6 +9648,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#disableestimatefragmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      disableEstimateFragmentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dnssexpectedtimeratiomaximum" class="md-nav__link">
     <span class="md-ellipsis">
       dnssExpectedTimeRatioMaximum
@@ -9651,6 +9678,15 @@
   <a href="#dynamicbreadthfirstscanordering" class="md-nav__link">
     <span class="md-ellipsis">
       dynamicBreadthFirstScanOrdering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enableestimatefragmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      enableEstimateFragmentation
     </span>
   </a>
   
@@ -9947,6 +9983,10 @@
 <td>Enables a GC mode with less pause times.</td>
 </tr>
 <tr>
+<td><a href="#disableestimatefragmentation"><code>disableEstimateFragmentation</code>     </a></td>
+<td>Disables the calculating and reporting of the estimates of the macro fragmentation</td>
+</tr>
+<tr>
 <td><a href="#dnssexpectedtimeratiomaximum"><code>dnssExpectedTimeRatioMaximum</code>     </a></td>
 <td>Sets the maximum percentage of time to spend on local GC pauses</td>
 </tr>
@@ -9957,6 +9997,10 @@
 <tr>
 <td><a href="#dynamicbreadthfirstscanordering"><code>dynamicBreadthFirstScanOrdering</code>  </a></td>
 <td>Sets scan mode to dynamic breadth first.</td>
+</tr>
+<tr>
+<td><a href="#enableestimatefragmentation"><code>enableEstimateFragmentation</code>     </a></td>
+<td>Enables the calculating and reporting of the estimates of the macro fragmentation</td>
 </tr>
 <tr>
 <td><a href="#excessivegcratio"><code>excessiveGCratio</code>                 </a></td>
@@ -10106,6 +10150,14 @@
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m410.3 231 11.3-11.3-33.9-33.9-62.1-62.1-33.9-33.9-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2l199.2-199.2zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9l-78.2 23 23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7l-14.4 14.5-22.6 22.6-11.4 11.3 33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5l-39.3-39.4c-25-25-65.5-25-90.5 0zm-47.4 168-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6"/></svg></span> <strong>Note:</strong> On z/OS, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit, specified by <code>ulimit -M</code>, to a larger value than the maximum heap size.</p>
 </dd>
 </dl>
+<h3 id="disableestimatefragmentation"><code>disableEstimateFragmentation</code></h3>
+<pre><code>    -Xgc:disableEstimateFragmentation
+</code></pre>
+<dl>
+<dd>This option disables the processing of various allocation and free memory statistics and the calculation of the macro fragmentation estimate. It also disables the reporting of the estimates of the macro fragmentation, as reported by Verbose GC, if the verbose garbage collection (GC) is enabled, at the end of Scavenge GCs.</dd>
+<dd>Macro fragmented memory is a part of free tenure memory that is estimated to be unusable when accounting for recent allocation patterns. The estimate can be used for tuning, such as preventing too late Concurrent Global GC kickoff.</dd>
+<dd>You can enable the calculation and reporting of the macro fragmentation estimates by using the <a href="#enableestimatefragmentation"><code>-Xgc:enableEstimateFragmentation</code></a> option.</dd>
+</dl>
 <h3 id="dnssexpectedtimeratiomaximum"><code>dnssExpectedTimeRatioMaximum</code></h3>
 <pre><code>    -Xgc:dnssExpectedTimeRatioMaximum=&lt;value&gt;
 </code></pre>
@@ -10169,6 +10221,23 @@
 </code></pre>
 <dl>
 <dd>This option sets the scan mode for GC operations that evacuate objects in the heap (scavenge operations (<code>gencon</code>) and copy forward operations (<code>balanced</code>)) to dynamic breadth first mode. This scan mode reflects the method for traversing the object graph and is a variant that adds <em>partial depth first traversal</em> on top of the breadth first scan mode. The aim of dynamic breadth first mode is driven by object field hotness. This mode is the default for the <code>balanced</code> GC policy.</dd>
+</dl>
+<h3 id="enableestimatefragmentation"><code>enableEstimateFragmentation</code></h3>
+<pre><code>    -Xgc:enableEstimateFragmentation
+</code></pre>
+<dl>
+<dd>This option enables the processing of various allocation and free memory statistics and the calculation of the macro fragmentation estimate. It also enables the reporting of the estimates of the macro fragmentation, as reported by Verbose GC (if the Verbose GC is enabled) at the end of Scavenge GCs.</dd>
+<dd>For example,</dd>
+<dt><pre><code>&lt;gc-end id=&quot;13623&quot; type=&quot;scavenge&quot;....
+....
+    &lt;mem type=&quot;tenure&quot; free=&quot;407392216&quot; total=&quot;2147483648&quot; percent=&quot;18&quot; macro-fragmented=&quot;171732064&quot;&gt;
+</code></pre></dt>
+<dd>
+<p>Macro fragmented memory is a part of free tenure memory that is estimated to be unusable when accounting for recent allocation patterns. The estimate can be used for tuning, such as preventing too late Concurrent Global GC kickoff.</p>
+</dd>
+<dd>
+<p>This option is enabled by default. You can disable the calculation and reporting of the macro fragmentation estimates by using the <a href="#disableestimatefragmentation"><code>-Xgc:disableEstimateFragmentation</code></a> option.</p>
+</dd>
 </dl>
 <h3 id="excessivegcratio"><code>excessiveGCratio</code></h3>
 <pre><code>    -Xgc:excessiveGCratio=&lt;value&gt;
