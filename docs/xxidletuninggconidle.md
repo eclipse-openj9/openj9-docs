@@ -23,7 +23,7 @@
 
 # -XX:\[+|-\]IdleTuningGcOnIdle  
 
-**(Linux&reg;, z/OS&reg;, macOS&reg;)**
+**(Linux&reg; only)**
 
 This option controls whether a garbage collection cycle takes place when the state of the Eclipse OpenJ9&trade; VM is set to idle. Compaction of the heap is also attempted during the idle GC when certain triggers are met.
 
