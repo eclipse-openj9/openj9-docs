@@ -23,7 +23,7 @@
 
 # -XX:IdleTuningMinFreeHeapOnIdle
 
-**(Linux&reg; only)**
+**(Linux&reg;, macOS&reg;, and z/OS&reg;)**
 
 This option controls the percentage of free memory pages in the object heap that can be released when the Eclipse OpenJ9&trade; VM is in an idle state.
 
