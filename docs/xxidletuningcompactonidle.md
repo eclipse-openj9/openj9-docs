@@ -23,7 +23,7 @@
 
 # -XX:\[+|-\]IdleTuningCompactOnIdle
 
-**(Linux&reg; only)**
+**(Linux&reg;, z/OS&reg;, macOS&reg;)**
 
 :fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Warning:** From Eclipse OpenJ9&trade; version 0.23.0 this option has no effect.
 
