@@ -80,11 +80,11 @@ All JFR-related `jcmd` options might change in future releases.
 - ModuleRequires
 - MonitorEnter
 - MonitorWait
-- NativeLibrary (Linux&reg; only)
+- NativeLibrary (except z/OS)
 - OSInformation
 - PhysicalMemory
 - SystemGC
-- SystemProcess (Linux only)
+- SystemProcess (except z/OS)
 - ThreadContextSwitchRate
 - ThreadCPULoad (except z/OS)
 - ThreadDump
@@ -97,6 +97,8 @@ All JFR-related `jcmd` options might change in future releases.
 - YoungGenerationConfig
 
 ```
+  :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** To record and analyze the SystemProcess JFR event on z/OS (2.5 and 3.1), you must install [APAR OA62757](https://www.ibm.com/support/pages/apar/OA62757).
+
 - Support for the following capabilities is not available:
 
     - `-XX:StartFlightRecording` and `-XX:FlightRecorderOptions`
@@ -106,7 +108,7 @@ All JFR-related `jcmd` options might change in future releases.
 
 Support for JFR will be expanded in future releases.
 
-![End of content that applies to Java 11 (LTS) and later](cr/java_close.png)
+![End of content that applies to Java 11 (LTS) and later](cr/java_close_lts.png)
 
 ## See Also
 
@@ -114,6 +116,7 @@ Support for JFR will be expanded in future releases.
 - [What's new in version 0.51.0](version0.51.md#support-for-jdk-flight-recorder-jfr-in-the-vm-for-openjdk-11-and-later-running-on-all-platforms)
 - [What's new in version 0.53.0](version0.53.md#new-java-flight-recorder-jfr-events-are-added-in-this-release)
 - [What's new in version 0.54.0](version0.54.md#new-jdk-flight-recorder-jfr-events-are-added-in-this-release)
+- [What's new in version 0.56.0](version0.56.md#the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos)
 
 
 <!-- ==== END OF TOPIC ==== xxflightrecorder.md ==== -->
