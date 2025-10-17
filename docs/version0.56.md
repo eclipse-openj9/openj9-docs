@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.55.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Change in the `getCpuLoad()` method return value based on the platform](#change-in-the-getcpuload-method-return-value-based-on-the-platform)
 - [New `-Xgc` parameters related to macro fragmentation added](#new-xgc-parameters-related-to-macro-fragmentation-added)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png)[The NativeLibrary and SystemProcess JFR events are supported in all platforms except z/OS](#the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 
 ## Features and changes
 
@@ -50,6 +51,14 @@ For more information, see [`-XX:[+|-]CpuLoadCompatibility`](xxcpuloadcompatibili
 New parameters, `enableEstimateFragmentation` and `disableEstimateFragmentation` are added to the `-Xgc` option. You can use these options to control the calculating and reporting of the estimates of the macro fragmentation, as reported by verbose garbage collection (GC) at the end of Scavenge GCs.
 
 For more information, see [`-Xgc`](xgc.md#disableestimatefragmentation).
+
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) The NativeLibrary and SystemProcess JFR events are supported in all platforms except z/OS
+
+From this release onwards, the NativeLibrary and SystemProcess JFR events are supported in all platforms except z/OS. Earlier, these JFR events were supported only in Linux&reg;.
+
+To record and analyze the SystemProcess JFR event on z/OS (2.5 and 3.1), you must install [APAR OA62757](https://www.ibm.com/support/pages/apar/OA62757).
+
+For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 
 ## Known problems and full release information
 
