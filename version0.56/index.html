@@ -471,6 +471,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos" class="md-nav__link">
+    <span class="md-ellipsis">
+      The NativeLibrary and SystemProcess JFR events are supported in all platforms except z/OS
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -9357,6 +9366,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos" class="md-nav__link">
+    <span class="md-ellipsis">
+      The NativeLibrary and SystemProcess JFR events are supported in all platforms except z/OS
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -9416,6 +9434,7 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#change-in-the-getcpuload-method-return-value-based-on-the-platform">Change in the <code>getCpuLoad()</code> method return value based on the platform</a></li>
 <li><a href="#new-xgc-parameters-related-to-macro-fragmentation-added">New <code>-Xgc</code> parameters related to macro fragmentation added</a></li>
+<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /><a href="#the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos">The NativeLibrary and SystemProcess JFR events are supported in all platforms except z/OS</a> <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -9428,6 +9447,10 @@
 <h3 id="new-xgc-parameters-related-to-macro-fragmentation-added">New <code>-Xgc</code> parameters related to macro fragmentation added</h3>
 <p>New parameters, <code>enableEstimateFragmentation</code> and <code>disableEstimateFragmentation</code> are added to the <code>-Xgc</code> option. You can use these options to control the calculating and reporting of the estimates of the macro fragmentation, as reported by verbose garbage collection (GC) at the end of Scavenge GCs.</p>
 <p>For more information, see <a href="../xgc/#disableestimatefragmentation"><code>-Xgc</code></a>.</p>
+<h3 id="the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> The NativeLibrary and SystemProcess JFR events are supported in all platforms except z/OS</h3>
+<p>From this release onwards, the NativeLibrary and SystemProcess JFR events are supported in all platforms except z/OS. Earlier, these JFR events were supported only in Linux&reg;.</p>
+<p>To record and analyze the SystemProcess JFR event on z/OS (2.5 and 3.1), you must install <a href="https://www.ibm.com/support/pages/apar/OA62757">APAR OA62757</a>.</p>
+<p>For more information, see <a href="../xxflightrecorder/"><code>-XX:[+|-]FlightRecorder</code></a>. <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.55.0 and v0.56.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.56/0.56.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.56.md ==== -->
