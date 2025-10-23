@@ -35,9 +35,10 @@ This option is recommended for CPU-constrained environments, such as those found
 
 When `-Xtune:virtualized` is used in conjunction with the [`-Xshareclasses`](xshareclasses.md) option, the JIT compiler is more aggressive with its use of [AOT-compiled code](aot.md) compared to setting only `-Xshareclasses`. This action provides additional CPU savings during application start-up and ramp-up, but comes at the expense of an additional small loss in throughput.
 
+<!-- 23 OCt 2025 - SK - The link given in the below example is now obsolete and is deleted in the given path.
 ## See also
 
-- For an example of the effect of using this option, see: [Measuring the strengths of OpenJDK with Eclipse OpenJ9](https://github.com/eclipse-openj9/openj9-website/blob/master/benchmark/daytrader3.md)
+- For an example of the effect of using this option, see: [Measuring the strengths of OpenJDK with Eclipse OpenJ9](https://github.com/eclipse-openj9/openj9-website/blob/master/benchmark/daytrader3.md)-->
 
 
 <!-- ==== END OF TOPIC ==== xtunevirtualized.md ==== -->
