@@ -69,7 +69,7 @@ The following features are supported by OpenJ9:
 
 - [JEP 508](https://openjdk.java.net/jeps/508): Vector API (Tenth Incubator)
 
-The following features are implemented in OpenJDK and available in any build of OpenJDK 24 with OpenJ9:
+The following features are implemented in OpenJDK and available in any build of OpenJDK 25 with OpenJ9:
 
 - [JEP 470](https://openjdk.java.net/jeps/470): PEM Encodings of Cryptographic Objects (Preview)
 - [JEP 502](https://openjdk.java.net/jeps/502): Stable Values (Preview)
