@@ -88,7 +88,6 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
 
 | Windows&trade;                              | x32                                                                                  |  x64                                                                                 |
 |-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows 11                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
@@ -131,7 +130,6 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows 11                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
@@ -170,7 +168,6 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows 11                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
@@ -209,7 +206,6 @@ OpenJDK 21 binaries are expected to function on the minimum operating system lev
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows 11                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
@@ -249,7 +245,6 @@ OpenJDK 25 and later binaries are expected to function on the minimum operating 
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
-| Windows 10                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows 11                                | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2016                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Windows Server 2019                       | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
