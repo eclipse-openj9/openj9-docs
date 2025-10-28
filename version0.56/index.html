@@ -480,6 +480,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-format-of-the-javavmversion-system-property-value-is-updated-to-be-compatible-with-the-runtimeversion-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      The format of the java.vm.version system property value is updated to be compatible with the Runtime.Version parser
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -9375,6 +9384,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-format-of-the-javavmversion-system-property-value-is-updated-to-be-compatible-with-the-runtimeversion-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      The format of the java.vm.version system property value is updated to be compatible with the Runtime.Version parser
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -9435,6 +9453,7 @@
 <li><a href="#change-in-the-getcpuload-method-return-value-based-on-the-platform">Change in the <code>getCpuLoad()</code> method return value based on the platform</a></li>
 <li><a href="#new-xgc-parameters-related-to-macro-fragmentation-added">New <code>-Xgc</code> parameters related to macro fragmentation added</a></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /><a href="#the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos">The NativeLibrary and SystemProcess JFR events are supported in all platforms except z/OS</a> <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></li>
+<li><a href="#the-format-of-the-javavmversion-system-property-value-is-updated-to-be-compatible-with-the-runtimeversion-parser">The format of the <code>java.vm.version</code> system property value is updated to be compatible with the Runtime.Version parser</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -9451,6 +9470,17 @@
 <p>From this release onwards, the NativeLibrary and SystemProcess JFR events are supported in all platforms except z/OS. Earlier, these JFR events were supported only in Linux&reg;.</p>
 <p>To record and analyze the SystemProcess JFR event on z/OS (2.5 and 3.1), you must install <a href="https://www.ibm.com/support/pages/apar/OA62757">APAR OA62757</a>.</p>
 <p>For more information, see <a href="../xxflightrecorder/"><code>-XX:[+|-]FlightRecorder</code></a>. <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></p>
+<h3 id="the-format-of-the-javavmversion-system-property-value-is-updated-to-be-compatible-with-the-runtimeversion-parser">The format of the <code>java.vm.version</code> system property value is updated to be compatible with the Runtime.Version parser</h3>
+<p>The format of the <code>java.vm.version</code> system property value is modified from the previous releases. This change was initiated in the 0.55.0 release and it affects 0.56.0 and all future releases.</p>
+<p>The new format of the value is standardized and structured and is parse-able by the <code>java.lang.Runtime.Version</code> class. This modification also changes the <code>-version</code> output. For example, <code>build openj9-0.56.0</code> changes to <code>build 11.0.29+7-openj9-0.56.0</code>. The OpenJ9 version, <code>openj9-0.56.0</code> in the example, is at the end of the optional component.</p>
+<p>With this new structured format, the <code>java.lang.Runtime.Version</code> class parses the value and you can extract specific information such as the information related to the VM version. For example, following information can be extracted from <code>java.vm.version = 11.0.29+7-openj9-0.56.0</code>:</p>
+<ul>
+<li><code>11.0.29</code> - Feature version of the OpenJDK</li>
+<li><code>7</code> - Build number of the OpenJDK</li>
+<li><code>openj9-0.56.0</code> - Additional build information</li>
+</ul>
+<p>This also applies to the z/OS releases. For example, <code>z/OS-Release-17.0.16.0-b01</code> is changed to <code>17.0.17+10-zOS-Release-17.0.17.0-b01</code>.</p>
+<p>For more information, see <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runtime.Version.html">Class Runtime.Version</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.55.0 and v0.56.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.56/0.56.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.56.md ==== -->
