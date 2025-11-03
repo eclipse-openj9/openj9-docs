@@ -31,7 +31,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends python3 python3
     && rm -rf /var/lib/apt/lists/* \
     && sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd \
     && mkdir -p /var/run/sshd \
-    && pip3 install -U pip \
     && pip3 install virtualenv \
     && virtualenv myenv -p python3
 # Update LANG to fix error with pip-tools
@@ -39,7 +38,7 @@ ENV LANG=C.UTF-8
 # Update path to include the virtual env install location
 ENV PATH /myenv/bin:$PATH
 # Activate the virtualenv environment, install build and test tools, create a new dependency list, and change permissions to ensure that Jenkins modify packages where necessary
-RUN /bin/bash -c "source /myenv/bin/activate && pip3 install setuptools pip-tools && pip3 install --requirement /tmp/requirements.txt && mv /tmp/requirements.txt /tmp/requirements.orig && pip-compile /tmp/requirements.in && chmod -R ugo+w /myenv"
+RUN /bin/bash -c "source /myenv/bin/activate && pip3 install 'pip<25.3' pip-tools setuptools && pip3 install --requirement /tmp/requirements.txt && mv /tmp/requirements.txt /tmp/requirements.orig && pip-compile /tmp/requirements.in && chmod -R ugo+w /myenv"
 # Setup jenkins user
 RUN  useradd -m -d /home/jenkins -s /bin/sh jenkins \
     && echo "jenkins:jenkinspass" | chpasswd \
