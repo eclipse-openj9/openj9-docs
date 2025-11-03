@@ -67,7 +67,7 @@ mkdocs==1.6.1
     #   mkdocs-material
 mkdocs-get-deps==0.2.0
     # via mkdocs
-mkdocs-macros-plugin==1.4.0
+mkdocs-macros-plugin==1.4.1
     # via -r requirements.in
 mkdocs-material==9.6.23
     # via -r requirements.in
@@ -103,10 +103,12 @@ pyyaml==6.0.1
 pyyaml-env-tag==0.1
     # via mkdocs
 requests==2.32.4
-    # via mkdocs-material
+    # via
+    #   mkdocs-macros-plugin
+    #   mkdocs-material
 six==1.16.0
     # via python-dateutil
-super-collections==0.5.7
+super-collections==0.6.2
     # via mkdocs-macros-plugin
 termcolor==2.2.0
     # via mkdocs-macros-plugin
