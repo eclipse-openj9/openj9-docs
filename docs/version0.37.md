@@ -57,7 +57,7 @@ Linux builds for platforms Linux x86 64-bit, Linux on POWER LE 64-bit, and Linux
 
 ### Support added for the `com.sun.management.ThreadMXBean` interface
 
-The OpenJ9 [`ThreadMXbean` interface](https://www.eclipse.org/openj9/docs/api-langmgmt/) (`com.ibm.lang.management.ThreadMXBean`) was extending the [`java.lang.management.ThreadMXBean`](https://docs.oracle.com/javase/8/docs/api/java/lang/management/ThreadMXBean.html) interface. With this release, the OpenJ9 `ThreadMXBean` interface extends the [`com.sun.management.ThreadMXBean`](https://docs.oracle.com/javase/8/docs/jre/api/management/extension/com/sun/management/ThreadMXBean.html) interface, whereby it now contains all the methods of the `java.lang.management.ThreadMXBean` interface with additional methods from the `com.sun.management.ThreadMXBean` interface.
+The OpenJ9 [`ThreadMXbean` interface](https://eclipse.dev/openj9/docs/api-langmgmt/) (`com.ibm.lang.management.ThreadMXBean`) was extending the [`java.lang.management.ThreadMXBean`](https://docs.oracle.com/javase/8/docs/api/java/lang/management/ThreadMXBean.html) interface. With this release, the OpenJ9 `ThreadMXBean` interface extends the [`com.sun.management.ThreadMXBean`](https://docs.oracle.com/javase/8/docs/jre/api/management/extension/com/sun/management/ThreadMXBean.html) interface, whereby it now contains all the methods of the `java.lang.management.ThreadMXBean` interface with additional methods from the `com.sun.management.ThreadMXBean` interface.
 
 The OpenJ9 VM implementation does not support thread memory allocation measurement (`isThreadAllocatedMemorySupported` method returns false).
 

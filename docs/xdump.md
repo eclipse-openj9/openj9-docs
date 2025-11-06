@@ -30,7 +30,7 @@ A large set of options and suboptions are available for controlling dumps, which
 
 ## Xdump Option Builder
 
-Use the <a href="https://www.eclipse.org/openj9/tools/xdump_option_builder.html" target="_blank">Xdump Option Builder tool</a> to help you specify the correct options and avoid incompatibilities.
+Use the <a href="https://eclipse.dev/openj9/tools/xdump_option_builder.html" target="_blank">Xdump Option Builder tool</a> to help you specify the correct options and avoid incompatibilities.
 
 ## Syntax
 

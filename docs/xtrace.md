@@ -31,7 +31,7 @@ Trace data can be output in human-readable or in compressed binary formats. The 
 
 ## Xtrace Option Builder
 
-Use the <a href="https://www.eclipse.org/openj9/tools/xtrace_option_builder.html" target="_blank">Xtrace Option Builder tool</a> to help you specify the correct options and avoid incompatibilities.
+Use the <a href="https://eclipse.dev/openj9/tools/xtrace_option_builder.html" target="_blank">Xtrace Option Builder tool</a> to help you specify the correct options and avoid incompatibilities.
 
 ## Syntax
 

@@ -63,7 +63,7 @@ The `getTotalThreadAllocatedBytes()` method now returns the total thread allocat
 
 `-XX:+JITServerUseAOTCache` is the default setting at the JITServer server now. That means that you don't have to specify the `-XX:+JITServerUseAOTCache` option at the server to enable the JITServer AOT caching feature.
 
-Although this option is by default enabled at the server, it is still disabled for the JITServer clients. The clients that want to use the JITServer AOT caching, must still specify the `-XX:+JITServerUseAOTCache` option on the command line. Also, now the clients don't have to enable the [shared classes cache](https://www.eclipse.org/openj9/docs/shrc/) feature to use the `-XX:+JITServerUseAOTCache` option.
+Although this option is by default enabled at the server, it is still disabled for the JITServer clients. The clients that want to use the JITServer AOT caching, must still specify the `-XX:+JITServerUseAOTCache` option on the command line. Also, now the clients don't have to enable the [shared classes cache](https://eclipse.dev/openj9/docs/shrc/) feature to use the `-XX:+JITServerUseAOTCache` option.
 
 For more information, see [ `-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotcache.md).
 
