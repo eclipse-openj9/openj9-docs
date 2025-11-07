@@ -24,7 +24,7 @@
 # Overview
 
 
-New releases of Eclipse OpenJ9&trade; are set to coincide with critical patch updates and new versions of the Java&trade; SE class libraries. To learn more about when these releases take place, and the OpenJ9 support lifecycle, see [Supported environments](https://www.eclipse.org/openj9/docs/openj9_support/).
+New releases of Eclipse OpenJ9&trade; are set to coincide with critical patch updates and new versions of the Java&trade; SE class libraries. To learn more about when these releases take place, and the OpenJ9 support lifecycle, see [Supported environments](https://eclipse.dev/openj9/docs/openj9_support/).
 
 If you are interested in the content of future releases, plans are published in the [Eclipse OpenJ9 project page](https://projects.eclipse.org/projects/technology.openj9).
 

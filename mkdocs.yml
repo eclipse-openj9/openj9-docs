@@ -23,7 +23,7 @@
 
 site_name: ' '
 
-site_url: https://www.eclipse.org/openj9/docs  # the canonical URL of the site. This will add a link tag with the canonical URL to the generated HTML header.
+site_url: https://eclipse.dev/openj9/docs  # the canonical URL of the site. This will add a link tag with the canonical URL to the generated HTML header.
 repo_name: eclipse-openj9/openj9
 repo_url : https://github.com/eclipse-openj9/openj9  # A link to your GitHub or Bitbucket repository on each page.
 edit_uri: ""

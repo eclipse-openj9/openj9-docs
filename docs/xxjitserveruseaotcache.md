@@ -40,7 +40,7 @@ When you enable this option, the JITServer server caches the AOT-compiled method
 
  :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** This option must be enabled both at the client JVM and at the server. Although this option is by default enabled at the server, it is still disabled for the JITServer clients. That means that you don't have to specify the `-XX:+JITServerUseAOTCache` option at the server to enable the JITServer AOT caching feature, but you must specify this option for each client who wants to use this feature.
  <!-- Deleted this point because from the 0.46.0 release onwards the local SCC is ignored by default
- - The client JVM must have the [shared classes cache](https://www.eclipse.org/openj9/docs/shrc/) feature enabled and be allowed to generate AOT compilation requests. -->
+ - The client JVM must have the [shared classes cache](https://eclipse.dev/openj9/docs/shrc/) feature enabled and be allowed to generate AOT compilation requests. -->
 
 The [`-XX:+JITServerShareROMClasses`](xxjitservershareromclasses.md) option is also enabled by default at the server because this option is a prerequisite for the `-XX:+JITServerUseAOTCache` option.
 

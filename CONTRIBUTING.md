@@ -132,7 +132,7 @@ Some examples:
 
 For consistency across the user documentation, there are a few style guidelines that you should follow.
 These are not set in stone, so if you have any suggestions or concerns, open up a discussion in the [Slack channel](https://openj9.slack.com/).
-If you haven't done so already, [join the channel](https://www.eclipse.org/openj9/oj9_joinslack.html).
+If you haven't done so already, [join the channel](https://openj9.slack.com/join/shared_invite/enQtNDU4MDI4Mjk0MTk2LWVhNTMzMGY1N2JkODQ1OWE0NTNmZjM4ZDcxOTBiMjk3NGFjM2U0ZDNhMmY0MDZlNzU0ZjAyNzQ1ODlmYjg3MjA).
 
 Generally, follow the style and structure of existing topics.
 If you are creating a new topic, you might find it helpful to copy a similar existing topic and modify it. (Don't forget to modify the file name in the footer!)
@@ -353,6 +353,6 @@ You can publish the OpenJ9 documents when the release is created. You need not w
 
 When released, the latest version of Eclipse OpenJ9 is published at:
 
-https://www.eclipse.org/openj9/docs
+https://eclipse.dev/openj9/docs
 
 For more information about the documentation release process, build process, and publication process, see the wiki section of this repository.
