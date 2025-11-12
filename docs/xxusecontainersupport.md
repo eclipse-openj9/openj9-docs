@@ -52,11 +52,13 @@ The following table shows the values that are used when `-XX:+UseContainerSuppor
 
 The default heap size is capped at 25 GB, which is the limit of heap size for 3-bit shift of compressed references (see [-Xcompressedrefs](xcompressedrefs.md)), to prevent silent switching to 4-bit shift of compressed references, which has possible performance penalties. You can use the [`-Xmx`](xms.md) option or the [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md) option to overwrite the 25 GB limit.
 
-The default heap size for containers takes affect only when the following conditions are met:
+The default heap size for containers takes effect only when the following conditions are met:
 
 1. The application is running in a container environment.
 2. The memory limit for the container is set.
 3. The `-XX:+UseContainerSupport` option is set, which is the default behavior.
+4. The memory limit set for the container is less than physical memory.</br>
+If the container memory limit is greater than or equal to the physical memory, then the default values outlined for the `-Xmx` option are used as the default maximum heap. For more information, see [Default settings for the Eclipse OpenJ9™ VM](https://eclipse.dev/openj9/docs/openj9_defaults/).
 
 To prevent the VM adjusting the maximum heap size when running in a container, set `-XX:-UseContainerSupport`.
 
