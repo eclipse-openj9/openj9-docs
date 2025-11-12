@@ -9380,11 +9380,13 @@
 </tbody>
 </table>
 <p>The default heap size is capped at 25 GB, which is the limit of heap size for 3-bit shift of compressed references (see <a href="../xcompressedrefs/">-Xcompressedrefs</a>), to prevent silent switching to 4-bit shift of compressed references, which has possible performance penalties. You can use the <a href="../xms/"><code>-Xmx</code></a> option or the <a href="../xxinitialrampercentage/"><code>-XX:MaxRAMPercentage</code></a> option to overwrite the 25 GB limit.</p>
-<p>The default heap size for containers takes affect only when the following conditions are met:</p>
+<p>The default heap size for containers takes effect only when the following conditions are met:</p>
 <ol>
 <li>The application is running in a container environment.</li>
 <li>The memory limit for the container is set.</li>
 <li>The <code>-XX:+UseContainerSupport</code> option is set, which is the default behavior.</li>
+<li>The memory limit set for the container is less than physical memory.</br>
+If the container memory limit is greater than or equal to the physical memory, then the default values outlined for the <code>-Xmx</code> option are used as the default maximum heap. For more information, see <a href="https://eclipse.dev/openj9/docs/openj9_defaults/">Default settings for the Eclipse OpenJ9™ VM</a>.</li>
 </ol>
 <p>To prevent the VM adjusting the maximum heap size when running in a container, set <code>-XX:-UseContainerSupport</code>.</p>
 <p>When <a href="../xxinitialrampercentage/"><code>-XX:MaxRAMPercentage</code> / <code>-XX:InitialRAMPercentage</code></a> are used with <code>-XX:+UseContainerSupport</code>, the corresponding heap setting is determined based on the memory limit of the container. For example, to set the maximum heap size to 80% of the container memory, specify the following options:</p>
