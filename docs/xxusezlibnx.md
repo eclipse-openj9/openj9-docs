@@ -40,7 +40,7 @@ This option enables or disables the adding of the `zlibNX` library directory loc
 
 ## Explanation
 
-AIX system adds the `zlibNX` library location, if available, to the `LIBPATH` variable by default. But having the `zlibNX` library directory location in the `LIBPATH` variable might cause some issues. For example, Git clone fails when executed from Java&reg; when `zlibNX` is on the `LIBPATH` in the environment.
+AIX system adds the `zlibNX` library location, if available, to the `LIBPATH` variable by default. But having the `zlibNX` library directory location in the `LIBPATH` variable might cause some issues. For example, Git clone fails when executed from Java&reg; when `zlibNX` is on the `LIBPATH` in the environment. Therefore, `-XX:-UseZlibNX` was made the default setting from release 0.48.0 onwards to disable the adding of the `zlibNX` library location.
 
 You can enable adding of the `zlibNX` library location to the `LIBPATH` variable with the `-XX:+UseZlibNX` option.
 
@@ -49,6 +49,7 @@ You can enable adding of the `zlibNX` library location to the `LIBPATH` variable
 - [Hardware acceleration](introduction.md#hardware-acceleration)
 - [Configuring your system](configuring.md)
 - [What's new in version 0.25.0](version0.25.md#enabling-zlibnx-hardware-accelerated-data-compression-and-decompression-on-aix)
+- [What's new in version 0.41.0](version0.41.md#new-xx-usezlibnx-option-added)
 - [What's new in version 0.48.0](version0.48.md#loading-of-the-zlibnx-library-on-aix-is-disabled-by-default)
 
 <!-- ==== END OF TOPIC ==== xxusezlibnx.md ==== -->
