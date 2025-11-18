@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://eclipse.dev/openj9/docs/xcodecache/">
+        <link rel="canonical" href="https://eclipse.dev/openj9/docs/version0.57/">
       
       
-        <link rel="prev" href="../xclassgc/">
+        <link rel="prev" href="../openj9_releases/">
       
       
-        <link rel="next" href="../xcodecachetotal/">
+        <link rel="next" href="../version0.56/">
       
       
       <link rel="icon" href="../cr/openj9-logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>-Xcodecache -  </title>
+        <title>Version 0.57.0 -  </title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xcodecache" class="md-skip">
+        <a href="#whats-new-in-version-0570" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -Xcodecache
+              Version 0.57.0
             
           </span>
         </div>
@@ -319,18 +319,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -346,7 +348,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Release notes
@@ -380,10 +382,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../version0.57/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Version 0.57.0
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -394,6 +418,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features-and-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features and changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binaries and supported environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-zlib-library-bundled-on-all-linux-platforms-except-linux-on-ibm-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      The zlib library bundled on all Linux platforms except Linux on IBM Z
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known problems and full release information
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3089,20 +3175,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
         
           
           <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
@@ -3118,7 +3202,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             Command-line options
@@ -4348,20 +4432,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_5" >
         
           
           <label class="md-nav__link" for="__nav_18_5" id="__nav_18_5_label" tabindex="0">
@@ -4377,7 +4459,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18_5">
             <span class="md-nav__icon md-icon"></span>
             JVM -X options
@@ -4618,32 +4700,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    -Xcodecache
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xcodecache/" class="md-nav__link">
         
   
   
@@ -4654,35 +4714,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Syntax
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -9304,9 +9335,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
+  <a href="#features-and-changes" class="md-nav__link">
     <span class="md-ellipsis">
-      Syntax
+      Features and changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Features and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaries-and-supported-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binaries and supported environments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-zlib-library-bundled-on-all-linux-platforms-except-linux-on-ibm-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      The zlib library bundled on all Linux platforms except Linux on IBM Z
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-problems-and-full-release-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known problems and full release information
     </span>
   </a>
   
@@ -9351,17 +9415,22 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-xcodecache">-Xcodecache</h1>
-<p>Use this option to tune performance.</p>
-<p>This option sets the size of each block of memory that is allocated to store the native code of compiled Java&trade; methods. By default, this size is selected internally according to the processor architecture and the capability of your system. The maximum value you can specify is 32 MB. If you set a value larger than 32 MB, the JIT ignores the input and sets the value to 32 MB.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> The JIT compiler might allocate more than one code cache for an application. Use the <a href="../xcodecachetotal/"><code>-Xcodecachetotal</code></a> option to set the maximum amount of memory that is used by all code caches.</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -Xcodecache&lt;size&gt;
-</code></pre>
-<dl>
-<dd>See <a href="../x_jvm_commands/">Using -X command-line options</a> for more information about specifying the <code>&lt;size&gt;</code> parameter.</dd>
-</dl>
-<!-- ==== END OF TOPIC ==== xcodecache.md ==== -->
+<h1 id="whats-new-in-version-0570">What's new in version 0.57.0</h1>
+<p>The following new features and notable changes since version 0.56.0 are included in this release:</p>
+<ul>
+<li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
+<li><a href="#the-zlib-library-bundled-on-all-linux-platforms-except-linux-on-ibm-z">The <code>zlib</code> library bundled on all Linux platforms except Linux on IBM Z</a></li>
+</ul>
+<h2 id="features-and-changes">Features and changes</h2>
+<h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
+<p>Eclipse OpenJ9&trade; release 0.57.0 supports OpenJDK 8, 11, 17, 21, and 25.</p>
+<p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="the-zlib-library-bundled-on-all-linux-platforms-except-linux-on-ibm-z">The <code>zlib</code> library bundled on all Linux platforms except Linux on IBM Z</h3>
+<p>The <code>zlib</code> compression library is now bundled on all Linux&reg; platforms except Linux on IBM Z&reg;. You don't have to specifically install the <code>zlib</code> library with the operating system for data compression and decompression.</p>
+<p>For more information on hardware-accelerated data compression and decompression, see <a href="../introduction/#hardware-acceleration">Hardware acceleration</a>.</p>
+<h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
+<p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.56.0 and v0.57.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.57/0.57.md">Release notes</a>.</p>
+<!-- ==== END OF TOPIC ==== version0.57.md ==== -->
 
 
 

@@ -383,6 +383,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.57/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Version 0.57.0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.56/" class="md-nav__link">
         
   
@@ -736,10 +759,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_17" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_18" >
         
           
-          <label class="md-nav__link" for="__nav_5_17" id="__nav_5_17_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_18" id="__nav_5_18_label" tabindex="0">
             
   
   
@@ -752,8 +775,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_17_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_17">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_18">
             <span class="md-nav__icon md-icon"></span>
             Earlier releases
           </label>
@@ -9392,13 +9415,14 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>AIX system adds the <code>zlibNX</code> library location, if available, to the <code>LIBPATH</code> variable by default. But having the <code>zlibNX</code> library directory location in the <code>LIBPATH</code> variable might cause some issues. For example, Git clone fails when executed from Java&reg; when <code>zlibNX</code> is on the <code>LIBPATH</code> in the environment.</p>
+<p>AIX system adds the <code>zlibNX</code> library location, if available, to the <code>LIBPATH</code> variable by default. But having the <code>zlibNX</code> library directory location in the <code>LIBPATH</code> variable might cause some issues. For example, Git clone fails when executed from Java&reg; when <code>zlibNX</code> is on the <code>LIBPATH</code> in the environment. Therefore, <code>-XX:-UseZlibNX</code> was made the default setting from release 0.48.0 onwards to disable the adding of the <code>zlibNX</code> library location.</p>
 <p>You can enable adding of the <code>zlibNX</code> library location to the <code>LIBPATH</code> variable with the <code>-XX:+UseZlibNX</code> option.</p>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../introduction/#hardware-acceleration">Hardware acceleration</a></li>
 <li><a href="../configuring/">Configuring your system</a></li>
 <li><a href="../version0.25/#enabling-zlibnx-hardware-accelerated-data-compression-and-decompression-on-aix">What's new in version 0.25.0</a></li>
+<li><a href="../version0.41/#new-xx-usezlibnx-option-added">What's new in version 0.41.0</a></li>
 <li><a href="../version0.48/#loading-of-the-zlibnx-library-on-aix-is-disabled-by-default">What's new in version 0.48.0</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xxusezlibnx.md ==== -->
