@@ -9458,7 +9458,7 @@
 -->
 
 <h1 id="signal-handling">Signal handling</h1>
-<p>Signals used by the Eclipse OpenJ9&trade; VM include the following types:</p>
+<p>Signals that are used by the Eclipse OpenJ9&trade; VM include the following types:</p>
 <ul>
 <li>Exceptions (Exc): Raised synchronously by the operating system whenever an unrecoverable condition occurs (not applicable on Windows&trade; systems).</li>
 <li>Errors (Err): Raised by the OpenJ9 VM when an unrecoverable condition occurs.</li>
@@ -9468,14 +9468,27 @@
 <p>For exceptions and errors, if the VM cannot handle the condition and recover, dumps are produced and a controlled shut down sequence takes place. Interrupts also cause the VM to enter a controlled shut down sequence, but without generating dumps. The shutdown sequence is equivalent to calling <code>System.exit()</code>, which results in the following steps:</p>
 <ol>
 <li>The VM calls the equivalent application signal handler.</li>
-<li>The VM calls any hooks installed by the application (unexpected shutdown hooks for exceptions or errors, shutdown or exit hooks for interrupts).</li>
+<li>The VM calls any hooks that are installed by the application (unexpected shutdown hooks for exceptions or errors, shutdown or exit hooks for interrupts).</li>
 <li>The VM does any final clean up.</li>
 </ol>
 <p>Control signals are used for internal control purposes and do not cause the VM to end.</p>
 <p>The VM takes control of any signals for Java&trade; threads. For non-Java threads, the VM passes control to an application handler, if one is installed. If the application does not install a signal handler, or signal chaining is turned off, the signal is either ignored or the default action is taken. Signal chaining is controlled by the <a href="../xsigchain/"><code>-Xsigchain</code> / <code>-Xnosigchain</code></a> command-line option.</p>
 <p>The signals relevant to each platform are detailed in the sections that follow.</p>
-<p>When reading each table, a number supplied after the signal name is the standard numerical value for that signal.</p>
+<p>When reading each table, a number that is supplied after the signal name is the standard numerical value for that signal.</p>
 <p>Note that certain signals on VM threads cause OpenJ9 to shutdown. An application signal handler should not attempt to recover from these signals unless it no longer requires the VM.</p>
+<p>On all platforms except Windows, when an asynchronous signal <code>SIGABRT</code>, <code>SIGQUIT</code>, or <code>SIGUSR2</code> occurs, the process ID (pid) and the name of the process that sent the signal is recorded and reported in a tracepoint. While <code>SIGABRT</code> creates a tracepoint, <code>SIGQUIT</code> and <code>SIGUSR2</code> might or might not create a tracepoint. For example, <code>SIGABRT</code> creates a <code>j9dmp.16</code> tracepoint with the following content that includes the pid and the process name:</p>
+<pre><code>j9dmp.16        - SIGABRT received from process id 608 name '/usr/bin/bash'
+</code></pre>
+<p><code>SIGQUIT</code>, <code>SIGUSR2</code> might create a tracepoint <code>j9jcl.540</code> with similar content.</p>
+<p>The sending pid information for these signals is also reported in the javacore. For example,</p>
+<pre><code>1TISIGPID      Signalling process id 608 name &quot;/usr/bin/bash&quot;
+</code></pre>
+<p>The <code>SIGINT</code>, <code>SIGHUP</code>, and <code>SIGTERM</code> signals create a tracepoint that includes the pid but these signals do not create javacore files.</p>
+<pre><code>j9vm.807       - SIGTERM received from process id 601 name '/usr/bin/bash'
+</code></pre>
+<p>On the z/OS&reg; platform, the pid is included in the tracepoint and reported in the javacore but the process name is not included. For example,</p>
+<pre><code>j9dmp.16        - SIGABRT received from process id 608
+</code></pre>
 <h2 id="signals-on-linux">Signals on Linux</h2>
 <table>
 <thead>
@@ -9494,9 +9507,9 @@
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
-<td><code>SIGSEGV (11)</code></td>
+<td><code>SIGFPE (8)</code></td>
 <td>Exc</td>
-<td>Incorrect memory access (write to inaccessible area)</td>
+<td>Floating point exception (divide by zero)</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
@@ -9506,9 +9519,9 @@
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
-<td><code>SIGFPE (8)</code></td>
+<td><code>SIGSEGV (11)</code></td>
 <td>Exc</td>
-<td>Floating point exception (divide by zero)</td>
+<td>Incorrect memory access (write to inaccessible area)</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
@@ -9516,6 +9529,12 @@
 <td>Err</td>
 <td>Abnormal termination, raised by the VM when a VM fault is detected</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGHUP (1)</code></td>
+<td>Int</td>
+<td>Hang up, VM exits normally</td>
+<td><code>-Xrs</code></td>
 </tr>
 <tr>
 <td><code>SIGINT (2)</code></td>
@@ -9530,16 +9549,16 @@
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
-<td><code>SIGHUP (1)</code></td>
-<td>Int</td>
-<td>Hang up, VM exits normally</td>
-<td><code>-Xrs</code></td>
-</tr>
-<tr>
 <td><code>SIGUSR2 (12)</code></td>
 <td>Int</td>
 <td>User-defined signal for triggering a dump agent</td>
 <td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGCHLD (17)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.lang.Process</code> implementation</td>
+<td>-</td>
 </tr>
 <tr>
 <td><code>SIGQUIT (3)</code></td>
@@ -9548,10 +9567,10 @@
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
-<td><code>SIGTRAP (5)</code></td>
+<td><code>SIGRTMAX -2 (62)</code></td>
 <td>Con</td>
-<td>Used by the JIT</td>
-<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+<td>Used by the <code>java.net</code> class library code</td>
+<td>-</td>
 </tr>
 <tr>
 <td><code>SIGRTMIN (34)</code></td>
@@ -9566,16 +9585,10 @@
 <td>-</td>
 </tr>
 <tr>
-<td><code>SIGRTMAX -2 (62)</code></td>
+<td><code>SIGTRAP (5)</code></td>
 <td>Con</td>
-<td>Used by the <code>java.net</code> class library code</td>
-<td>-</td>
-</tr>
-<tr>
-<td><code>SIGCHLD (17)</code></td>
-<td>Con</td>
-<td>Used by the <code>java.lang.Process</code> implementation</td>
-<td>-</td>
+<td>Used by the JIT</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 </tbody>
 </table>
@@ -9603,9 +9616,9 @@
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
-<td><code>SIGSEGV (11)</code></td>
+<td><code>SIGFPE (8)</code></td>
 <td>Exc</td>
-<td>Incorrect memory access (write to inaccessible area)</td>
+<td>Floating point exception (divide by zero)</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
@@ -9615,9 +9628,9 @@
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
-<td><code>SIGFPE (8)</code></td>
+<td><code>SIGSEGV (11)</code></td>
 <td>Exc</td>
-<td>Floating point exception (divide by zero)</td>
+<td>Incorrect memory access (write to inaccessible area)</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
@@ -9625,6 +9638,12 @@
 <td>Err</td>
 <td>Abnormal termination, raised by the VM when a VM fault is detected</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGHUP (1)</code></td>
+<td>Int</td>
+<td>Hang up, VM exits normally</td>
+<td><code>-Xrs</code></td>
 </tr>
 <tr>
 <td><code>SIGINT (2)</code></td>
@@ -9639,28 +9658,10 @@
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
-<td><code>SIGHUP (1)</code></td>
-<td>Int</td>
-<td>Hang up, VM exits normally</td>
-<td><code>-Xrs</code></td>
-</tr>
-<tr>
 <td><code>SIGUSR2 (31)</code></td>
 <td>Int</td>
 <td>User-defined signal for triggering a dump agent</td>
 <td><code>-Xrs</code></td>
-</tr>
-<tr>
-<td><code>SIGQUIT (3)</code></td>
-<td>Con</td>
-<td>Quit signal from a terminal, which triggers a Java dump by default</td>
-<td><code>-Xrs</code></td>
-</tr>
-<tr>
-<td><code>SIGTRAP (5)</code></td>
-<td>Con</td>
-<td>Used by the JIT</td>
-<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
 <td><code>SIGCHLD (20)</code></td>
@@ -9669,15 +9670,27 @@
 <td>-</td>
 </tr>
 <tr>
-<td><code>SIGUSR1 (30)</code></td>
+<td><code>SIGQUIT (3)</code></td>
 <td>Con</td>
-<td>Used by the VM for thread introspection</td>
-<td>-</td>
+<td>Quit signal from a terminal, which triggers a Java dump by default</td>
+<td><code>-Xrs</code></td>
 </tr>
 <tr>
 <td><code>SIGIO (23)</code></td>
 <td>Con</td>
 <td>Used by the <code>java.net</code> class library code</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>SIGTRAP (5)</code></td>
+<td>Con</td>
+<td>Used by the JIT</td>
+<td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGUSR1 (30)</code></td>
+<td>Con</td>
+<td>Used by the VM for thread introspection</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -9721,11 +9734,11 @@
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Notes:</strong></p>
 <p>The following mechanisms are used by OpenJ9 for signal handling:</p>
 <ul>
-<li>structured exception handling (32-bit VM only)</li>
+<li>Structured exception handling (32-bit VM only)</li>
 <li><code>AddVectoredExceptionHandler()</code> API (64-bit JVM only)</li>
 <li><code>SetConsoleCtrlHandler()</code> applicable</li>
 </ul>
-<p>All mechanisms can be disabled by using the <code>-Xrs</code> option. However, only structured exception handling and the use of the <code>AddVectoredExceptionHandler()</code> API can be disabled  by using the <code>-Xrs:sync</code> option. The option <code>-Xnosigchain</code>, which turns off signal handler chaining, is ignored on Windows systems.</p>
+<p>All mechanisms can be disabled by using the <code>-Xrs</code> option. However, only structured exception handling and the use of the <code>AddVectoredExceptionHandler()</code> API can be disabled by using the <code>-Xrs:sync</code> option. The option <code>-Xnosigchain</code>, which turns off signal handler chaining, is ignored on Windows systems.</p>
 <h2 id="signals-on-zos">Signals on z/OS</h2>
 <table>
 <thead>
@@ -9744,9 +9757,9 @@
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
-<td><code>SIGSEGV (11)</code></td>
+<td><code>SIGFPE (8)</code></td>
 <td>Exc</td>
-<td>Incorrect memory access (write to inaccessible area)</td>
+<td>Floating point exception (divide by zero)</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
@@ -9756,9 +9769,9 @@
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
-<td><code>SIGFPE (8)</code></td>
+<td><code>SIGSEGV (11)</code></td>
 <td>Exc</td>
-<td>Floating point exception (divide by zero)</td>
+<td>Incorrect memory access (write to inaccessible area)</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
@@ -9766,6 +9779,12 @@
 <td>Err</td>
 <td>Abnormal termination, raised by the VM when a VM fault is detected</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGHUP (1)</code></td>
+<td>Int</td>
+<td>Hang up, VM exits normally</td>
+<td><code>-Xrs</code></td>
 </tr>
 <tr>
 <td><code>SIGINT (2)</code></td>
@@ -9780,16 +9799,16 @@
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
-<td><code>SIGHUP (1)</code></td>
-<td>Int</td>
-<td>Hang up, VM exits normally</td>
-<td><code>-Xrs</code></td>
-</tr>
-<tr>
 <td><code>SIGUSR2 (17)</code></td>
 <td>Int</td>
 <td>User-defined signal for triggering a dump agent</td>
 <td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGCHLD (20)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.lang.Process</code> implementation</td>
+<td>-</td>
 </tr>
 <tr>
 <td><code>SIGQUIT (24)</code></td>
@@ -9802,12 +9821,6 @@
 <td>Con</td>
 <td>Used by the JIT</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
-</tr>
-<tr>
-<td><code>SIGCHLD (20)</code></td>
-<td>Con</td>
-<td>Used by the <code>java.lang.Process</code> implementation</td>
-<td>-</td>
 </tr>
 <tr>
 <td><code>SIGUSR1 (16)</code></td>
@@ -9840,9 +9853,9 @@
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
-<td><code>SIGSEGV (11)</code></td>
+<td><code>SIGFPE (8)</code></td>
 <td>Exc</td>
-<td>Incorrect memory access (write to inaccessible area)</td>
+<td>Floating point exception (divide by zero)</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
@@ -9852,9 +9865,9 @@
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
-<td><code>SIGFPE (8)</code></td>
+<td><code>SIGSEGV (11)</code></td>
 <td>Exc</td>
-<td>Floating point exception (divide by zero)</td>
+<td>Incorrect memory access (write to inaccessible area)</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
@@ -9862,6 +9875,12 @@
 <td>Err</td>
 <td>Abnormal termination, raised by the VM when a VM fault is detected</td>
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
+</tr>
+<tr>
+<td><code>SIGHUP (1)</code></td>
+<td>Int</td>
+<td>Hang up, VM exits normally</td>
+<td><code>-Xrs</code></td>
 </tr>
 <tr>
 <td><code>SIGINT (2)</code></td>
@@ -9876,27 +9895,27 @@
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
-<td><code>SIGHUP (1)</code></td>
-<td>Int</td>
-<td>Hang up, VM exits normally</td>
-<td><code>-Xrs</code></td>
-</tr>
-<tr>
 <td><code>SIGUSR2 (31)</code></td>
 <td>Int</td>
 <td>User-defined signal for triggering a dump agent</td>
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
-<td><code>SIGQUIT (3)</code></td>
-<td>Con</td>
-<td>Triggers a Java dump by default</td>
-<td><code>-Xrs</code></td>
-</tr>
-<tr>
 <td><code>No Name (40)</code></td>
 <td>Con</td>
 <td>Used by the VM for control purposes</td>
+<td><code>-Xrs</code></td>
+</tr>
+<tr>
+<td><code>SIGCHLD (20)</code></td>
+<td>Con</td>
+<td>Used by the <code>java.lang.Process</code> implementation</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>SIGQUIT (3)</code></td>
+<td>Con</td>
+<td>Triggers a Java dump by default</td>
 <td><code>-Xrs</code></td>
 </tr>
 <tr>
@@ -9912,21 +9931,15 @@
 <td><code>-Xrs</code> or <code>-Xrs:sync</code></td>
 </tr>
 <tr>
-<td><code>SIGRTMIN (50)</code></td>
-<td>Con</td>
-<td>Used by the VM for thread introspection</td>
-<td>-</td>
-</tr>
-<tr>
 <td><code>SIGRTMAX -1 (56)</code></td>
 <td>Con</td>
 <td>Used by the <code>java.net</code> class library code</td>
 <td>-</td>
 </tr>
 <tr>
-<td><code>SIGCHLD (20)</code></td>
+<td><code>SIGRTMIN (50)</code></td>
 <td>Con</td>
-<td>Used by the <code>java.lang.Process</code> implementation</td>
+<td>Used by the VM for thread introspection</td>
 <td>-</td>
 </tr>
 </tbody>
@@ -9952,7 +9965,7 @@ command line syntax to use with the compiler, where available:</p>
 </thead>
 <tbody>
 <tr>
-<td>Linux&reg;, macOS&reg;, and z/OS&reg;</td>
+<td>Linux&reg;, macOS&reg;, and z/OS</td>
 <td><code>libjsig.so</code></td>
 <td><code>gcc -L$JAVA_HOME/bin -ljsig -L$JAVA_HOME/lib/j9vm -ljvm &lt;java_application&gt;.c</code></td>
 </tr>
@@ -9982,6 +9995,7 @@ environment variable as an alternative method to the command line for linking th
 <li><a href="../xsigcatch/">-Xsigcatch</a></li>
 <li><a href="../xsigchain/">-Xsigchain</a></li>
 <li><a href="../xsignal/">-Xsignal (z/OS only)</a></li>
+<li><a href="../version0.57/#the-signaling-process-id-and-process-name-are-recorded-and-reported-in-tracepoints-and-javacore">What's new in version 0.57.0</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== openj9_signals.md ==== -->
 
