@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.56.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [The `zlib` library bundled on all Linux platforms except Linux on IBM Z](#the-zlib-library-bundled-on-all-linux-platforms-except-linux-on-ibm-z)
+- [The signaling process ID and process name are recorded and reported in tracepoints and javacore](#the-signaling-process-id-and-process-name-are-recorded-and-reported-in-tracepoints-and-javacore)
 
 ## Features and changes
 
@@ -41,6 +42,14 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 The `zlib` compression library is now bundled on all Linux&reg; platforms except Linux on IBM Z&reg;. You don't have to specifically install the `zlib` library with the operating system for data compression and decompression.
 
 For more information on hardware-accelerated data compression and decompression, see [Hardware acceleration](introduction.md#hardware-acceleration).
+
+### The signaling process ID and process name are recorded and reported in tracepoints and javacore
+
+On all platforms except Windows&trade;, when an asynchronous signal `SIGABRT`, `SIGQUIT`, or `SIGUSR2` occurs, the process ID (pid) and the name of the process that sent the signal is recorded and reported in a tracepoint and in the javacore.
+
+The `SIGINT`, `SIGHUP`, and `SIGTERM` signals create a tracepoint that includes the pid but these signals do not create javacore files.
+
+For more information, see [Signal handling](openj9_signals.md).
 
 ## Known problems and full release information
 
