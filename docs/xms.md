@@ -24,11 +24,11 @@
 # -Xms / -Xmx
 
 
-These Oracle&reg; HotSpot&trade; options set the initial/minimum Java&trade; heap size, and the maximum heap size respectively. These options are recognized by the Eclipse OpenJ9&trade; VM.
+The Oracle&reg; HotSpot&trade; option `-Xms` sets the initial or the minimum Java&trade; heap size, and the `-Xmx` HotSpot option sets the maximum heap size. These options are recognized by the Eclipse OpenJ9&trade; VM.
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
 
-- If you set `-Xms` &gt; `-Xmx`, the VM fails with the message `-Xms too large for -Xmx`.
+- If you set `-Xms` &gt; `-Xmx`, the VM fails with the message `-Xms too large for -Xmx`.<br>If you do not explicitly set the maximum object heap size with `-Xmx` and the VM uses the default value of `-Xmx`, then even if `-Xms` is greater than `-Xmx` initially, the VM starts successfully because the default `-Xmx` value is increased automatically to match `-Xms`.<br><br>For example, for a VM with 16 GB RAM, the default maximum size is 25% of RAM, therefore the default value of `Xmx` will be 4 GB. If the initial size is specified as 6 GB (`-Xms6g`), then `-Xms` (6 GB) is greater than `-Xmx` (4 GB) and before the 0.53.0 release that VM used to fail. But now with current adjustment, the default maximum heap size is increased automatically to 6 GB and the VM starts. This change in behavior was added from the 0.53.0 release onwards.
 - If you exceed the limit set by the `-Xmx` option, the VM generates an `OutofMemoryError`.
 - If you set a value for `-Xms`, the [`-XX:InitialRAMPercentage`](xxinitialrampercentage.md) option is ignored.
 - If you set a value for `-Xmx`, the [`-XX:MaxRAMPercentage`](xxinitialrampercentage.md) option is ignored.
@@ -62,11 +62,12 @@ The `-Xmx` option can be used with all OpenJ9 GC policies. However, the `-Xms` o
 :   Heap starts at 50 MB and grows to the default maximum.
 
 `-Xmx256m`
-:   Heap starts at default initial value and grows to a maximum of 256 MB.
+:   Heap starts at the default initial value and grows to a maximum of 256 MB.
 
 ## See also
 
 - [-Xsoftmx (Set "soft" maximum Java heap size)](xsoftmx.md)
+- [What's new in version 0.53.0](version0.53.md#the-default-maximum-heap-size-is-automatically-adjusted-based-on-the-initial-heap-size)
 
 
 
