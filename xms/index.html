@@ -9388,10 +9388,10 @@
 -->
 
 <h1 id="-xms-xmx">-Xms / -Xmx</h1>
-<p>These Oracle&reg; HotSpot&trade; options set the initial/minimum Java&trade; heap size, and the maximum heap size respectively. These options are recognized by the Eclipse OpenJ9&trade; VM.</p>
+<p>The Oracle&reg; HotSpot&trade; option <code>-Xms</code> sets the initial or the minimum Java&trade; heap size, and the <code>-Xmx</code> HotSpot option sets the maximum heap size. These options are recognized by the Eclipse OpenJ9&trade; VM.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Notes:</strong></p>
 <ul>
-<li>If you set <code>-Xms</code> &gt; <code>-Xmx</code>, the VM fails with the message <code>-Xms too large for -Xmx</code>.</li>
+<li>If you set <code>-Xms</code> &gt; <code>-Xmx</code>, the VM fails with the message <code>-Xms too large for -Xmx</code>.<br>If you do not explicitly set the maximum object heap size with <code>-Xmx</code> and the VM uses the default value of <code>-Xmx</code>, then even if <code>-Xms</code> is greater than <code>-Xmx</code> initially, the VM starts successfully because the default <code>-Xmx</code> value is increased automatically to match <code>-Xms</code>.<br><br>For example, for a VM with 16 GB RAM, the default maximum size is 25% of RAM, therefore the default value of <code>Xmx</code> will be 4 GB. If the initial size is specified as 6 GB (<code>-Xms6g</code>), then <code>-Xms</code> (6 GB) is greater than <code>-Xmx</code> (4 GB) and before the 0.53.0 release that VM used to fail. But now with current adjustment, the default maximum heap size is increased automatically to 6 GB and the VM starts. This change in behavior was added from the 0.53.0 release onwards.</li>
 <li>If you exceed the limit set by the <code>-Xmx</code> option, the VM generates an <code>OutofMemoryError</code>.</li>
 <li>If you set a value for <code>-Xms</code>, the <a href="../xxinitialrampercentage/"><code>-XX:InitialRAMPercentage</code></a> option is ignored.</li>
 <li>If you set a value for <code>-Xmx</code>, the <a href="../xxinitialrampercentage/"><code>-XX:MaxRAMPercentage</code></a> option is ignored.</li>
@@ -9435,11 +9435,12 @@ See <a href="../openj9_defaults/">Default settings for the OpenJ9 VM</a> for mor
 <dt><code>-Xms50m</code></dt>
 <dd>Heap starts at 50 MB and grows to the default maximum.</dd>
 <dt><code>-Xmx256m</code></dt>
-<dd>Heap starts at default initial value and grows to a maximum of 256 MB.</dd>
+<dd>Heap starts at the default initial value and grows to a maximum of 256 MB.</dd>
 </dl>
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../xsoftmx/">-Xsoftmx (Set "soft" maximum Java heap size)</a></li>
+<li><a href="../version0.53/#the-default-maximum-heap-size-is-automatically-adjusted-based-on-the-initial-heap-size">What's new in version 0.53.0</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xms.md ==== -->
 <!-- ==== END OF TOPIC ==== xmx.md ==== -->
