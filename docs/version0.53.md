@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.51.0 are included
 - [OpenSSL 3.5.1 is bundled on all platforms](#openssl-351-is-bundled-on-all-platforms)
 - [Offheap support is added for the `balanced` GC policy](#offheap-support-is-added-for-the-balanced-gc-policy)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New JDK Flight Recorder (JFR) events are added in this release](#new-jdk-flight-recorder-jfr-events-are-added-in-this-release) ![End of content that applies only to Java 11 and later](cr/java_close.png)
+- [The default maximum heap size is automatically adjusted based on the initial heap size](#the-default-maximum-heap-size-is-automatically-adjusted-based-on-the-initial-heap-size)
 
 ## Features and changes
 
@@ -67,6 +68,12 @@ In this release, the following new JFR events are added:
 - YoungGenerationConfiguration
 
 For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close.png)
+
+### The default maximum heap size is automatically adjusted based on the initial heap size
+
+If the maximum object heap size is not explicitly set with the `-Xmx` option and the VM uses the default value of `-Xmx`, then even if `-Xms` is greater than `-Xmx` initially, the VM starts successfully. The VM starts because the default `-Xmx` value is increased automatically to match `-Xms`.
+
+Until the 0.53.0 release, if `-Xms` was greater than `-Xmx`, the VM used to fail. For more information, see [`-Xms` / `-Xmx`](xms.md).
 
 ## Known problems and full release information
 
