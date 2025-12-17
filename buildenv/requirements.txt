@@ -47,7 +47,7 @@ jinja2==3.1.6
     #   mkdocs
     #   mkdocs-macros-plugin
     #   mkdocs-material
-markdown==3.4.4
+markdown==3.10
     # via
     #   mkdocs
     #   mkdocs-material
@@ -87,7 +87,7 @@ platformdirs==4.3.6
     # via mkdocs-get-deps
 pygments==2.16.1
     # via mkdocs-material
-pymdown-extensions==10.3
+pymdown-extensions==10.16.1
     # via mkdocs-material
 python-dateutil==2.9.0
     # via
