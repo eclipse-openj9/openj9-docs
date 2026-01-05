@@ -25,6 +25,7 @@
 <meta name="keywords" content="hashCode()">
 <meta name="keywords" content="getAddress()">
 <meta name="keywords" content="nonNullAddress()">
+<meta name="keywords" content="nonNullFieldEA()">
 <meta name="keywords" content="getHexAddress()">
 <meta name="keywords" content="hexAt()">
 <meta name="keywords" content="getHexValue()">
@@ -162,7 +163,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected long</code></div>
+<div class="col-first even-row-color"><code>protected final long</code></div>
 <div class="col-second even-row-color"><code><a href="#address" class="member-name-link">address</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -324,36 +325,39 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nonNullAddress()" class="member-name-link">nonNullAddress</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#notNull()" class="member-name-link">notNull</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nonNullFieldEA(long)" class="member-name-link">nonNullFieldEA</a><wbr>(long&nbsp;offset)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#reportClassCacheStats()" class="member-name-link">reportClassCacheStats</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sizeOfBaseType()" class="member-name-link">sizeOfBaseType</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sub(long)" class="member-name-link">sub</a><wbr>(long&nbsp;count)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../types/IDATA.html" title="class in com.ibm.j9ddr.vm29.types">IDATA</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sub(com.ibm.j9ddr.vm29.pointer.AbstractPointer)" class="member-name-link">sub</a><wbr>(<a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a>&nbsp;pointer)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sub(com.ibm.j9ddr.vm29.types.Scalar)" class="member-name-link">sub</a><wbr>(<a href="../types/Scalar.html" title="class in com.ibm.j9ddr.vm29.types">Scalar</a>&nbsp;count)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#notNull()" class="member-name-link">notNull</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#reportClassCacheStats()" class="member-name-link">reportClassCacheStats</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sizeOfBaseType()" class="member-name-link">sizeOfBaseType</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#subOffset(long)" class="member-name-link">subOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sub(long)" class="member-name-link">sub</a><wbr>(long&nbsp;count)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../types/IDATA.html" title="class in com.ibm.j9ddr.vm29.types">IDATA</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sub(com.ibm.j9ddr.vm29.pointer.AbstractPointer)" class="member-name-link">sub</a><wbr>(<a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a>&nbsp;pointer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sub(com.ibm.j9ddr.vm29.types.Scalar)" class="member-name-link">sub</a><wbr>(<a href="../types/Scalar.html" title="class in com.ibm.j9ddr.vm29.types">Scalar</a>&nbsp;count)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#subOffset(com.ibm.j9ddr.vm29.types.Scalar)" class="member-name-link">subOffset</a><wbr>(<a href="../types/Scalar.html" title="class in com.ibm.j9ddr.vm29.types">Scalar</a>&nbsp;offset)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#subOffset(long)" class="member-name-link">subOffset</a><wbr>(long&nbsp;offset)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#untag()" class="member-name-link">untag</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#subOffset(com.ibm.j9ddr.vm29.types.Scalar)" class="member-name-link">subOffset</a><wbr>(<a href="../types/Scalar.html" title="class in com.ibm.j9ddr.vm29.types">Scalar</a>&nbsp;offset)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#untag(long)" class="member-name-link">untag</a><wbr>(long&nbsp;tagBits)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#untag()" class="member-name-link">untag</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#untag(long)" class="member-name-link">untag</a><wbr>(long&nbsp;tagBits)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -377,7 +381,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="address">
 <h3>address</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">address</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">address</span></div>
 </section>
 </li>
 </ul>
@@ -535,6 +539,17 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="nonNullAddress()">
 <h3>nonNullAddress</h3>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">nonNullAddress</span>()
+                          throws <span class="exceptions"><a href="../../NullPointerDereference.html" title="class in com.ibm.j9ddr">NullPointerDereference</a></span></div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="../../NullPointerDereference.html" title="class in com.ibm.j9ddr">NullPointerDereference</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="nonNullFieldEA(long)">
+<h3>nonNullFieldEA</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">nonNullFieldEA</span><wbr><span class="parameters">(long&nbsp;offset)</span>
                           throws <span class="exceptions"><a href="../../NullPointerDereference.html" title="class in com.ibm.j9ddr">NullPointerDereference</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
@@ -856,7 +871,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2025 IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://eclipse.dev/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2026 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>
