@@ -80,10 +80,11 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">ClassGenerator</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a></span></div>
-<div class="block">This class generates the same structure and pointer classes that
-would be created at runtime from a DDR blob. The purpose of this
-class is to produce class files that can be used to compile the
-hand-written Java code in DDR_VM.</div>
+<div class="block">This class generates the same structure and pointer classes that would
+be created at runtime from a DDR blob, but only with those fields that
+are guaranteed to be present. Fields not mentioned in AuxFieldInfo29.dat
+are omitted to avoid references in hand-written Java code in DDR_VM
+that might not be present in system dumps.</div>
 </div>
 </section>
 <section class="summary">
@@ -135,7 +136,7 @@ hand-written Java code in DDR_VM.</div>
 <!-- ========= END OF CLASS DATA ========= -->
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2025 IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://eclipse.dev/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2026 IBM Corp. and others.</small></p>
 </footer>
 </main>
 </div>
