@@ -2885,37 +2885,61 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">This method reads number of the bytes depending on the pointers' base size.</div>
 </div>
-<div class="col-first even-row-color"><code>protected <a href="../vm29/types/I32.html" title="class in com.ibm.j9ddr.vm29.types">I32</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">StructurePointer.</span><code><a href="../vm29/pointer/StructurePointer.html#getI32Bitfield(int,int)" class="member-name-link">getI32Bitfield</a><wbr>(int&nbsp;s,
- int&nbsp;b)</code></div>
+<div class="col-first even-row-color"><code>protected final <a href="../vm29/types/I16.html" title="class in com.ibm.j9ddr.vm29.types">I16</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StructurePointer.</span><code><a href="../vm29/pointer/StructurePointer.html#getI16Bitfield(int,int)" class="member-name-link">getI16Bitfield</a><wbr>(int&nbsp;bitOffset,
+ int&nbsp;bitWidth)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected <a href="../vm29/types/IDATA.html" title="class in com.ibm.j9ddr.vm29.types">IDATA</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getIDATAAtOffset(long)" class="member-name-link">getIDATAAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-first odd-row-color"><code>protected final <a href="../vm29/types/I32.html" title="class in com.ibm.j9ddr.vm29.types">I32</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">StructurePointer.</span><code><a href="../vm29/pointer/StructurePointer.html#getI32Bitfield(int,int)" class="member-name-link">getI32Bitfield</a><wbr>(int&nbsp;bitOffset,
+ int&nbsp;bitWidth)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected int</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getIntAtOffset(long)" class="member-name-link">getIntAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-first even-row-color"><code>protected final <a href="../vm29/types/I64.html" title="class in com.ibm.j9ddr.vm29.types">I64</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StructurePointer.</span><code><a href="../vm29/pointer/StructurePointer.html#getI64Bitfield(int,int)" class="member-name-link">getI64Bitfield</a><wbr>(int&nbsp;bitOffset,
+ int&nbsp;bitWidth)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected long</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getLongAtOffset(long)" class="member-name-link">getLongAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-first odd-row-color"><code>protected final <a href="../vm29/types/I8.html" title="class in com.ibm.j9ddr.vm29.types">I8</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">StructurePointer.</span><code><a href="../vm29/pointer/StructurePointer.html#getI8Bitfield(int,int)" class="member-name-link">getI8Bitfield</a><wbr>(int&nbsp;bitOffset,
+ int&nbsp;bitWidth)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getObjectClassAtOffset(long)" class="member-name-link">getObjectClassAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-first even-row-color"><code>protected <a href="../vm29/types/IDATA.html" title="class in com.ibm.j9ddr.vm29.types">IDATA</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getIDATAAtOffset(long)" class="member-name-link">getIDATAAtOffset</a><wbr>(long&nbsp;offset)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected com.ibm.j9ddr.vm29.pointer.generated.J9ObjectMonitorPointer</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getObjectMonitorAtOffset(long)" class="member-name-link">getObjectMonitorAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-first odd-row-color"><code>protected int</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getIntAtOffset(long)" class="member-name-link">getIntAtOffset</a><wbr>(long&nbsp;offset)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getObjectReferenceAtOffset(long)" class="member-name-link">getObjectReferenceAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-first even-row-color"><code>protected long</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getLongAtOffset(long)" class="member-name-link">getLongAtOffset</a><wbr>(long&nbsp;offset)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected long</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getPointerAtOffset(long)" class="member-name-link">getPointerAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-first odd-row-color"><code>protected com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getObjectClassAtOffset(long)" class="member-name-link">getObjectClassAtOffset</a><wbr>(long&nbsp;offset)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected short</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getShortAtOffset(long)" class="member-name-link">getShortAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-first even-row-color"><code>protected com.ibm.j9ddr.vm29.pointer.generated.J9ObjectMonitorPointer</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getObjectMonitorAtOffset(long)" class="member-name-link">getObjectMonitorAtOffset</a><wbr>(long&nbsp;offset)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected <a href="../vm29/types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StructurePointer.</span><code><a href="../vm29/pointer/StructurePointer.html#getU32Bitfield(int,int)" class="member-name-link">getU32Bitfield</a><wbr>(int&nbsp;s,
- int&nbsp;b)</code></div>
+<div class="col-first odd-row-color"><code>protected com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getObjectReferenceAtOffset(long)" class="member-name-link">getObjectReferenceAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected long</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getPointerAtOffset(long)" class="member-name-link">getPointerAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected short</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getShortAtOffset(long)" class="member-name-link">getShortAtOffset</a><wbr>(long&nbsp;offset)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected final <a href="../vm29/types/U16.html" title="class in com.ibm.j9ddr.vm29.types">U16</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StructurePointer.</span><code><a href="../vm29/pointer/StructurePointer.html#getU16Bitfield(int,int)" class="member-name-link">getU16Bitfield</a><wbr>(int&nbsp;bitOffset,
+ int&nbsp;bitWidth)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected final <a href="../vm29/types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">StructurePointer.</span><code><a href="../vm29/pointer/StructurePointer.html#getU32Bitfield(int,int)" class="member-name-link">getU32Bitfield</a><wbr>(int&nbsp;bitOffset,
+ int&nbsp;bitWidth)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>protected final <a href="../vm29/types/U64.html" title="class in com.ibm.j9ddr.vm29.types">U64</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">StructurePointer.</span><code><a href="../vm29/pointer/StructurePointer.html#getU64Bitfield(int,int)" class="member-name-link">getU64Bitfield</a><wbr>(int&nbsp;bitOffset,
+ int&nbsp;bitWidth)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected final <a href="../vm29/types/U8.html" title="class in com.ibm.j9ddr.vm29.types">U8</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">StructurePointer.</span><code><a href="../vm29/pointer/StructurePointer.html#getU8Bitfield(int,int)" class="member-name-link">getU8Bitfield</a><wbr>(int&nbsp;bitOffset,
+ int&nbsp;bitWidth)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected <a href="../vm29/types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">AbstractPointer.</span><code><a href="../vm29/pointer/AbstractPointer.html#getUDATAAtOffset(long)" class="member-name-link">getUDATAAtOffset</a><wbr>(long&nbsp;offset)</code></div>
@@ -4238,7 +4262,7 @@ loadScripts(document, 'script');</script>
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2025 IBM Corp. and others.</small></p>
+<p class="legal-copy"><small><a href="https://eclipse.dev/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2026 IBM Corp. and others.</small></p>
 </footer>
 </div>
 </div>
