@@ -6,11 +6,15 @@
 <title>StructurePointer (OpenJ9 JDK 11)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="com.ibm.j9ddr.vm29.pointer.StructurePointer class">
-<meta name="keywords" content="nonNullFieldEA()">
 <meta name="keywords" content="at()">
-<meta name="keywords" content="getStartingBit()">
-<meta name="keywords" content="getU32Bitfield()">
+<meta name="keywords" content="getI8Bitfield()">
+<meta name="keywords" content="getI16Bitfield()">
 <meta name="keywords" content="getI32Bitfield()">
+<meta name="keywords" content="getI64Bitfield()">
+<meta name="keywords" content="getU8Bitfield()">
+<meta name="keywords" content="getU16Bitfield()">
+<meta name="keywords" content="getU32Bitfield()">
+<meta name="keywords" content="getU64Bitfield()">
 <meta name="keywords" content="getAsRuntimeType()">
 <meta name="keywords" content="formatFullInteractive()">
 <meta name="keywords" content="getStructureFields()">
@@ -36,7 +40,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -253,31 +257,56 @@ extends <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointe
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>protected <a href="../types/I32.html" title="class in com.ibm.j9ddr.vm29.types">I32</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getI32Bitfield(int,int)">getI32Bitfield</a></span>&#8203;(int&nbsp;s,
-              int&nbsp;b)</code></th>
+<td class="colFirst"><code>protected <a href="../types/I16.html" title="class in com.ibm.j9ddr.vm29.types">I16</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getI16Bitfield(int,int)">getI16Bitfield</a></span>&#8203;(int&nbsp;bitOffset,
+              int&nbsp;bitWidth)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>protected int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStartingBit(int,int)">getStartingBit</a></span>&#8203;(int&nbsp;s,
-              int&nbsp;b)</code></th>
+<td class="colFirst"><code>protected <a href="../types/I32.html" title="class in com.ibm.j9ddr.vm29.types">I32</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getI32Bitfield(int,int)">getI32Bitfield</a></span>&#8203;(int&nbsp;bitOffset,
+              int&nbsp;bitWidth)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>protected <a href="../types/I64.html" title="class in com.ibm.j9ddr.vm29.types">I64</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getI64Bitfield(int,int)">getI64Bitfield</a></span>&#8203;(int&nbsp;bitOffset,
+              int&nbsp;bitWidth)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>protected <a href="../types/I8.html" title="class in com.ibm.j9ddr.vm29.types">I8</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getI8Bitfield(int,int)">getI8Bitfield</a></span>&#8203;(int&nbsp;bitOffset,
+             int&nbsp;bitWidth)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="StructurePointer.StructureField.html" title="class in com.ibm.j9ddr.vm29.pointer">StructurePointer.StructureField</a>[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStructureFields()">getStructureFields</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code>protected <a href="../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getU32Bitfield(int,int)">getU32Bitfield</a></span>&#8203;(int&nbsp;s,
-              int&nbsp;b)</code></th>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>protected <a href="../types/U16.html" title="class in com.ibm.j9ddr.vm29.types">U16</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getU16Bitfield(int,int)">getU16Bitfield</a></span>&#8203;(int&nbsp;bitOffset,
+              int&nbsp;bitWidth)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>long</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nonNullFieldEA(long)">nonNullFieldEA</a></span>&#8203;(long&nbsp;offset)</code></th>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>protected <a href="../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getU32Bitfield(int,int)">getU32Bitfield</a></span>&#8203;(int&nbsp;bitOffset,
+              int&nbsp;bitWidth)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>protected <a href="../types/U64.html" title="class in com.ibm.j9ddr.vm29.types">U64</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getU64Bitfield(int,int)">getU64Bitfield</a></span>&#8203;(int&nbsp;bitOffset,
+              int&nbsp;bitWidth)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>protected <a href="../types/U8.html" title="class in com.ibm.j9ddr.vm29.types">U8</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getU8Bitfield(int,int)">getU8Bitfield</a></span>&#8203;(int&nbsp;bitOffset,
+             int&nbsp;bitWidth)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -286,7 +315,7 @@ extends <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointe
 <!--   -->
 </a>
 <h3>Methods declared in class&nbsp;com.ibm.j9ddr.vm29.pointer.<a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">AbstractPointer</a></h3>
-<code><a href="AbstractPointer.html#add(long)">add</a>, <a href="AbstractPointer.html#add(com.ibm.j9ddr.vm29.types.Scalar)">add</a>, <a href="AbstractPointer.html#addOffset(long)">addOffset</a>, <a href="AbstractPointer.html#addOffset(com.ibm.j9ddr.vm29.types.Scalar)">addOffset</a>, <a href="AbstractPointer.html#allBitsIn(long)">allBitsIn</a>, <a href="AbstractPointer.html#anyBitsIn(long)">anyBitsIn</a>, <a href="AbstractPointer.html#at(long)">at</a>, <a href="AbstractPointer.html#at(com.ibm.j9ddr.vm29.types.Scalar)">at</a>, <a href="AbstractPointer.html#compare(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">compare</a>, <a href="AbstractPointer.html#eq(java.lang.Object)">eq</a>, <a href="AbstractPointer.html#formatFullInteractive()">formatFullInteractive</a>, <a href="AbstractPointer.html#getAddress()">getAddress</a>, <a href="AbstractPointer.html#getAddressSpace()">getAddressSpace</a>, <a href="AbstractPointer.html#getBaseCharAtOffset(long)">getBaseCharAtOffset</a>, <a href="AbstractPointer.html#getBoolAtOffset(long)">getBoolAtOffset</a>, <a href="AbstractPointer.html#getByteAtOffset(long)">getByteAtOffset</a>, <a href="AbstractPointer.html#getBytesAtOffset(long,byte%5B%5D)">getBytesAtOffset</a>, <a href="AbstractPointer.html#getDoubleAtOffset(long)">getDoubleAtOffset</a>, <a href="AbstractPointer.html#getFloatAtOffset(long)">getFloatAtOffset</a>, <a href="AbstractPointer.html#getHexAddress()">getHexAddress</a>, <a href="AbstractPointer.html#getHexValue()">getHexValue</a>, <a href="AbstractPointer.html#getIDATAAtOffset(long)">getIDATAAtOffset</a>, <a href="AbstractPointer.html#getIntAtOffset(long)">getIntAtOffset</a>, <a href="AbstractPointer.html#getLongAtOffset(long)">getLongAtOffset</a>, <a href="AbstractPointer.html#getObjectClassAtOffset(long)">getObjectClassAtOffset</a>, <a href="AbstractPointer.html#getObjectMonitorAtOffset(long)">getObjectMonitorAtOffset</a>, <a href="AbstractPointer.html#getObjectReferenceAtOffset(long)">getObjectReferenceAtOffset</a>, <a href="AbstractPointer.html#getPointerAtOffset(long)">getPointerAtOffset</a>, <a href="AbstractPointer.html#getShortAtOffset(long)">getShortAtOffset</a>, <a href="AbstractPointer.html#getTargetName()">getTargetName</a>, <a href="AbstractPointer.html#getUDATAAtOffset(long)">getUDATAAtOffset</a>, <a href="AbstractPointer.html#gt(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">gt</a>, <a href="AbstractPointer.html#gte(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">gte</a>, <a href="AbstractPointer.html#hexAt(long)">hexAt</a>, <a href="AbstractPointer.html#hexAt(com.ibm.j9ddr.vm29.types.Scalar)">hexAt</a>, <a href="AbstractPointer.html#isNull()">isNull</a>, <a href="AbstractPointer.html#lt(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">lt</a>, <a href="AbstractPointer.html#lte(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">lte</a>, <a href="AbstractPointer.html#nonNullAddress()">nonNullAddress</a>, <a href="AbstractPointer.html#notNull()">notNull</a>, <a href="AbstractPointer.html#reportClassCacheStats()">reportClassCacheStats</a>, <a href="AbstractPointer.html#sizeOfBaseType()">sizeOfBaseType</a>, <a href="AbstractPointer.html#sub(long)">sub</a>, <a href="AbstractPointer.html#sub(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">sub</a>, <a href="AbstractPointer.html#sub(com.ibm.j9ddr.vm29.types.Scalar)">sub</a>, <a href="AbstractPointer.html#subOffset(long)">subOffset</a>, <a href="AbstractPointer.html#subOffset(com.ibm.j9ddr.vm29.types.Scalar)">subOffset</a>, <a href="AbstractPointer.html#untag()">untag</a>, <a href="AbstractPointer.html#untag(long)">untag</a></code></li>
+<code><a href="AbstractPointer.html#add(long)">add</a>, <a href="AbstractPointer.html#add(com.ibm.j9ddr.vm29.types.Scalar)">add</a>, <a href="AbstractPointer.html#addOffset(long)">addOffset</a>, <a href="AbstractPointer.html#addOffset(com.ibm.j9ddr.vm29.types.Scalar)">addOffset</a>, <a href="AbstractPointer.html#allBitsIn(long)">allBitsIn</a>, <a href="AbstractPointer.html#anyBitsIn(long)">anyBitsIn</a>, <a href="AbstractPointer.html#at(long)">at</a>, <a href="AbstractPointer.html#at(com.ibm.j9ddr.vm29.types.Scalar)">at</a>, <a href="AbstractPointer.html#compare(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">compare</a>, <a href="AbstractPointer.html#eq(java.lang.Object)">eq</a>, <a href="AbstractPointer.html#formatFullInteractive()">formatFullInteractive</a>, <a href="AbstractPointer.html#getAddress()">getAddress</a>, <a href="AbstractPointer.html#getAddressSpace()">getAddressSpace</a>, <a href="AbstractPointer.html#getBaseCharAtOffset(long)">getBaseCharAtOffset</a>, <a href="AbstractPointer.html#getBoolAtOffset(long)">getBoolAtOffset</a>, <a href="AbstractPointer.html#getByteAtOffset(long)">getByteAtOffset</a>, <a href="AbstractPointer.html#getBytesAtOffset(long,byte%5B%5D)">getBytesAtOffset</a>, <a href="AbstractPointer.html#getDoubleAtOffset(long)">getDoubleAtOffset</a>, <a href="AbstractPointer.html#getFloatAtOffset(long)">getFloatAtOffset</a>, <a href="AbstractPointer.html#getHexAddress()">getHexAddress</a>, <a href="AbstractPointer.html#getHexValue()">getHexValue</a>, <a href="AbstractPointer.html#getIDATAAtOffset(long)">getIDATAAtOffset</a>, <a href="AbstractPointer.html#getIntAtOffset(long)">getIntAtOffset</a>, <a href="AbstractPointer.html#getLongAtOffset(long)">getLongAtOffset</a>, <a href="AbstractPointer.html#getObjectClassAtOffset(long)">getObjectClassAtOffset</a>, <a href="AbstractPointer.html#getObjectMonitorAtOffset(long)">getObjectMonitorAtOffset</a>, <a href="AbstractPointer.html#getObjectReferenceAtOffset(long)">getObjectReferenceAtOffset</a>, <a href="AbstractPointer.html#getPointerAtOffset(long)">getPointerAtOffset</a>, <a href="AbstractPointer.html#getShortAtOffset(long)">getShortAtOffset</a>, <a href="AbstractPointer.html#getTargetName()">getTargetName</a>, <a href="AbstractPointer.html#getUDATAAtOffset(long)">getUDATAAtOffset</a>, <a href="AbstractPointer.html#gt(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">gt</a>, <a href="AbstractPointer.html#gte(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">gte</a>, <a href="AbstractPointer.html#hexAt(long)">hexAt</a>, <a href="AbstractPointer.html#hexAt(com.ibm.j9ddr.vm29.types.Scalar)">hexAt</a>, <a href="AbstractPointer.html#isNull()">isNull</a>, <a href="AbstractPointer.html#lt(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">lt</a>, <a href="AbstractPointer.html#lte(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">lte</a>, <a href="AbstractPointer.html#nonNullAddress()">nonNullAddress</a>, <a href="AbstractPointer.html#nonNullFieldEA(long)">nonNullFieldEA</a>, <a href="AbstractPointer.html#notNull()">notNull</a>, <a href="AbstractPointer.html#reportClassCacheStats()">reportClassCacheStats</a>, <a href="AbstractPointer.html#sizeOfBaseType()">sizeOfBaseType</a>, <a href="AbstractPointer.html#sub(long)">sub</a>, <a href="AbstractPointer.html#sub(com.ibm.j9ddr.vm29.pointer.AbstractPointer)">sub</a>, <a href="AbstractPointer.html#sub(com.ibm.j9ddr.vm29.types.Scalar)">sub</a>, <a href="AbstractPointer.html#subOffset(long)">subOffset</a>, <a href="AbstractPointer.html#subOffset(com.ibm.j9ddr.vm29.types.Scalar)">subOffset</a>, <a href="AbstractPointer.html#untag()">untag</a>, <a href="AbstractPointer.html#untag(long)">untag</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.com.ibm.j9ddr.vm29.j9.DataType">
@@ -337,39 +366,30 @@ extends <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointe
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="nonNullFieldEA(long)">
+<a id="getI8Bitfield(int,int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>nonNullFieldEA</h4>
-<pre class="methodSignature">public final&nbsp;long&nbsp;nonNullFieldEA&#8203;(long&nbsp;offset)
-                          throws <a href="../../NullPointerDereference.html" title="class in com.ibm.j9ddr">NullPointerDereference</a></pre>
+<h4>getI8Bitfield</h4>
+<pre class="methodSignature">protected final&nbsp;<a href="../types/I8.html" title="class in com.ibm.j9ddr.vm29.types">I8</a>&nbsp;getI8Bitfield&#8203;(int&nbsp;bitOffset,
+                                 int&nbsp;bitWidth)
+                          throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../NullPointerDereference.html" title="class in com.ibm.j9ddr">NullPointerDereference</a></code></dd>
+<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a id="getStartingBit(int,int)">
+<a id="getI16Bitfield(int,int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getStartingBit</h4>
-<pre class="methodSignature">protected&nbsp;int&nbsp;getStartingBit&#8203;(int&nbsp;s,
-                             int&nbsp;b)</pre>
-</li>
-</ul>
-<a id="getU32Bitfield(int,int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getU32Bitfield</h4>
-<pre class="methodSignature">protected&nbsp;<a href="../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a>&nbsp;getU32Bitfield&#8203;(int&nbsp;s,
-                             int&nbsp;b)
-                      throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<h4>getI16Bitfield</h4>
+<pre class="methodSignature">protected final&nbsp;<a href="../types/I16.html" title="class in com.ibm.j9ddr.vm29.types">I16</a>&nbsp;getI16Bitfield&#8203;(int&nbsp;bitOffset,
+                                   int&nbsp;bitWidth)
+                            throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
@@ -382,9 +402,84 @@ extends <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointe
 <ul class="blockList">
 <li class="blockList">
 <h4>getI32Bitfield</h4>
-<pre class="methodSignature">protected&nbsp;<a href="../types/I32.html" title="class in com.ibm.j9ddr.vm29.types">I32</a>&nbsp;getI32Bitfield&#8203;(int&nbsp;s,
-                             int&nbsp;b)
-                      throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<pre class="methodSignature">protected final&nbsp;<a href="../types/I32.html" title="class in com.ibm.j9ddr.vm29.types">I32</a>&nbsp;getI32Bitfield&#8203;(int&nbsp;bitOffset,
+                                   int&nbsp;bitWidth)
+                            throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="getI64Bitfield(int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getI64Bitfield</h4>
+<pre class="methodSignature">protected final&nbsp;<a href="../types/I64.html" title="class in com.ibm.j9ddr.vm29.types">I64</a>&nbsp;getI64Bitfield&#8203;(int&nbsp;bitOffset,
+                                   int&nbsp;bitWidth)
+                            throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="getU8Bitfield(int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getU8Bitfield</h4>
+<pre class="methodSignature">protected final&nbsp;<a href="../types/U8.html" title="class in com.ibm.j9ddr.vm29.types">U8</a>&nbsp;getU8Bitfield&#8203;(int&nbsp;bitOffset,
+                                 int&nbsp;bitWidth)
+                          throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="getU16Bitfield(int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getU16Bitfield</h4>
+<pre class="methodSignature">protected final&nbsp;<a href="../types/U16.html" title="class in com.ibm.j9ddr.vm29.types">U16</a>&nbsp;getU16Bitfield&#8203;(int&nbsp;bitOffset,
+                                   int&nbsp;bitWidth)
+                            throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="getU32Bitfield(int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getU32Bitfield</h4>
+<pre class="methodSignature">protected final&nbsp;<a href="../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a>&nbsp;getU32Bitfield&#8203;(int&nbsp;bitOffset,
+                                   int&nbsp;bitWidth)
+                            throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="getU64Bitfield(int,int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getU64Bitfield</h4>
+<pre class="methodSignature">protected final&nbsp;<a href="../types/U64.html" title="class in com.ibm.j9ddr.vm29.types">U64</a>&nbsp;getU64Bitfield&#8203;(int&nbsp;bitOffset,
+                                   int&nbsp;bitWidth)
+                            throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
@@ -419,7 +514,7 @@ extends <a href="AbstractPointer.html" title="class in com.ibm.j9ddr.vm29.pointe
 </main>
 <!-- ========= END OF CLASS DATA ========= -->
 <footer role="contentinfo">
-<p class="legalCopy"><small><a href="https://www.eclipse.org/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2025 IBM Corp. and others.</small></p>
+<p class="legalCopy"><small><a href="https://eclipse.dev/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2026 IBM Corp. and others.</small></p>
 </footer>
 </body>
 </html>
