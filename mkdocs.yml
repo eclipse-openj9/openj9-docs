@@ -501,4 +501,6 @@ nav:
         - "Java 21 API"                                                           : api-jdk21.md
         - "Java 25 API"                                                           : api-jdk25.md
 
+    - "Glossary"                                                                  : openj9glossary.md
+
     - "Legal"                                                                     : legal.md
