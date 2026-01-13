@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.56.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [The `zlib` library bundled on all Linux platforms except Linux on IBM Z](#the-zlib-library-bundled-on-all-linux-platforms-except-linux-on-ibm-z)
 - [The signaling process ID and process name are recorded and reported in tracepoints and javacore](#the-signaling-process-id-and-process-name-are-recorded-and-reported-in-tracepoints-and-javacore)
+- [A signal handler optimization feature is temporarily disabled](#a-signal-handler-optimization-feature-is-temporarily-disabled)
 
 ## Features and changes
 
@@ -50,6 +51,14 @@ On all platforms except Windows&trade;, when an asynchronous signal `SIGABRT`, `
 The `SIGINT`, `SIGHUP`, and `SIGTERM` signals create a tracepoint that includes the pid but these signals do not create javacore files.
 
 For more information, see [Signal handling](openj9_signals.md).
+
+### A signal handler optimization feature is temporarily disabled
+
+On the Windows platform, a feature that uses the x86-64 hardware and signal handler for improving the performance of null object checks and integer division overflows is temporarily disabled by default.
+
+Recent VM crashes that were observed on Windows 11 and Windows Server 2022 are suspected to be related to an interaction between the Windows control flow guard feature and the VM's signal handling mechanism. Disabling this signal handling optimization feature is a temporary measure while the root cause of the problem is determined. A reliable workaround cannot be recommended until the root cause is known.
+
+Depending on the workload, performance degradation from 0-10% on Windows was observed with this feature disabled.
 
 ## Known problems and full release information
 
