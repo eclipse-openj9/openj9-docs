@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.56.0 are included
 - [The `zlib` library bundled on all Linux platforms except Linux on IBM Z](#the-zlib-library-bundled-on-all-linux-platforms-except-linux-on-ibm-z)
 - [The signaling process ID and process name are recorded and reported in tracepoints and javacore](#the-signaling-process-id-and-process-name-are-recorded-and-reported-in-tracepoints-and-javacore)
 - [A signal handler optimization feature is temporarily disabled](#a-signal-handler-optimization-feature-is-temporarily-disabled)
+- ![Start of content that applies to Java 11 (LTS)](cr/java11.png) [A new NIO selector provider implementation is available for AIX](#a-new-nio-selector-provider-implementation-is-available-for-aix) ![End of content that applies to Java 11 (LTS)](cr/java_close.png)
 
 ## Features and changes
 
@@ -59,6 +60,16 @@ On the Windows platform, a feature that uses the x86-64 hardware and signal hand
 Recent VM crashes that were observed on Windows 11 and Windows Server 2022 are suspected to be related to an interaction between the Windows control flow guard feature and the VM's signal handling mechanism. Disabling this signal handling optimization feature is a temporary measure while the root cause of the problem is determined. A reliable workaround cannot be recommended until the root cause is known.
 
 Depending on the workload, performance degradation from 0-10% on Windows was observed with this feature disabled.
+
+### ![Start of content that applies to Java 11 (LTS)](cr/java11.png) A new NIO selector provider implementation is available for AIX
+
+A New Input/Output (NIO) channel selector provider, which is based on the pollset system facility, is implemented on AIX. The new implementation provides significant performance benefits when reading from, writing to, or managing multiple network sockets.
+
+This feature is not enabled by default. You can configure it by specifying the new value `sun.nio.ch.PollsetSelectorProvider` in the `java.nio.channels.spi.SelectorProvider` system property on the command line.
+
+For more information, see [Configuring the NIO selector provider (AIX only)](configuring.md#configuring-the-nio-selector-provider-aix-only).
+
+![End of content that applies to Java 11 (LTS)](cr/java_close.png)
 
 ## Known problems and full release information
 

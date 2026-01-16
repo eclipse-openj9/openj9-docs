@@ -280,8 +280,14 @@ This command-line string sets an initial heap size of 1 GB, a *soft* (adjustable
 
 For more information about the `com.ibm.lang.managment` package, which extends the `jdk.management` module, see the [API documentation](api-overview.md#monitoring-and-management).
 
+## ![Start of content that applies to Java 11 (LTS)](cr/java11.png) Configuring the NIO selector provider (AIX only)
 
+In the 0.57.0 release, a New Input/Output (NIO) channel selector provider, which is based on the pollset system facility, is implemented on AIX. NIO selectors are used for scalable I/O operations, allowing a single thread to monitor multiple channels. The pollset facility is an AIX-specific system call that efficiently handles multiple file descriptors. The NIO selector provider configuration provides significant performance benefits when reading from, writing to, or managing multiple network sockets.
 
+This feature is not enabled by default. You can configure it by specifying the new value `sun.nio.ch.PollsetSelectorProvider` in the `java.nio.channels.spi.SelectorProvider` system property on the command line.
 
+    -Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollsetSelectorProvider
+
+![End of content that applies to Java 11 (LTS)](cr/java_close.png)
 
 <!-- ==== END OF TOPIC ==== configuring.md ==== -->
