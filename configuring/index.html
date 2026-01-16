@@ -2189,6 +2189,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuring-the-nio-selector-provider-aix-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring the NIO selector provider (AIX only)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -11515,6 +11526,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuring-the-nio-selector-provider-aix-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring the NIO selector provider (AIX only)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -11817,6 +11839,12 @@ Hugepagesize:
 <li><code>setMaxHeapSize()</code>: Adjust the maximum heap size.</li>
 </ul>
 <p>For more information about the <code>com.ibm.lang.managment</code> package, which extends the <code>jdk.management</code> module, see the <a href="../api-overview/#monitoring-and-management">API documentation</a>.</p>
+<h2 id="configuring-the-nio-selector-provider-aix-only"><img alt="Start of content that applies to Java 11 (LTS)" src="../cr/java11.png" /> Configuring the NIO selector provider (AIX only)</h2>
+<p>In the 0.57.0 release, a New Input/Output (NIO) channel selector provider, which is based on the pollset system facility, is implemented on AIX. NIO selectors are used for scalable I/O operations, allowing a single thread to monitor multiple channels. The pollset facility is an AIX-specific system call that efficiently handles multiple file descriptors. The NIO selector provider configuration provides significant performance benefits when reading from, writing to, or managing multiple network sockets.</p>
+<p>This feature is not enabled by default. You can configure it by specifying the new value <code>sun.nio.ch.PollsetSelectorProvider</code> in the <code>java.nio.channels.spi.SelectorProvider</code> system property on the command line.</p>
+<pre><code>-Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollsetSelectorProvider
+</code></pre>
+<p><img alt="End of content that applies to Java 11 (LTS)" src="../cr/java_close.png" /></p>
 <!-- ==== END OF TOPIC ==== configuring.md ==== -->
 
 

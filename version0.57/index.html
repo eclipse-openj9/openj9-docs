@@ -536,6 +536,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-new-nio-selector-provider-implementation-is-available-for-aix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A new NIO selector provider implementation is available for AIX
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11367,6 +11378,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-new-nio-selector-provider-implementation-is-available-for-aix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A new NIO selector provider implementation is available for AIX
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11430,6 +11452,7 @@
 <li><a href="#the-zlib-library-bundled-on-all-linux-platforms-except-linux-on-ibm-z">The <code>zlib</code> library bundled on all Linux platforms except Linux on IBM Z</a></li>
 <li><a href="#the-signaling-process-id-and-process-name-are-recorded-and-reported-in-tracepoints-and-javacore">The signaling process ID and process name are recorded and reported in tracepoints and javacore</a></li>
 <li><a href="#a-signal-handler-optimization-feature-is-temporarily-disabled">A signal handler optimization feature is temporarily disabled</a></li>
+<li><img alt="Start of content that applies to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#a-new-nio-selector-provider-implementation-is-available-for-aix">A new NIO selector provider implementation is available for AIX</a> <img alt="End of content that applies to Java 11 (LTS)" src="../cr/java_close.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -11446,6 +11469,11 @@
 <p>On the Windows platform, a feature that uses the x86-64 hardware and signal handler for improving the performance of null object checks and integer division overflows is temporarily disabled by default.</p>
 <p>Recent VM crashes that were observed on Windows 11 and Windows Server 2022 are suspected to be related to an interaction between the Windows control flow guard feature and the VM's signal handling mechanism. Disabling this signal handling optimization feature is a temporary measure while the root cause of the problem is determined. A reliable workaround cannot be recommended until the root cause is known.</p>
 <p>Depending on the workload, performance degradation from 0-10% on Windows was observed with this feature disabled.</p>
+<h3 id="a-new-nio-selector-provider-implementation-is-available-for-aix"><img alt="Start of content that applies to Java 11 (LTS)" src="../cr/java11.png" /> A new NIO selector provider implementation is available for AIX</h3>
+<p>A New Input/Output (NIO) channel selector provider, which is based on the pollset system facility, is implemented on AIX. The new implementation provides significant performance benefits when reading from, writing to, or managing multiple network sockets.</p>
+<p>This feature is not enabled by default. You can configure it by specifying the new value <code>sun.nio.ch.PollsetSelectorProvider</code> in the <code>java.nio.channels.spi.SelectorProvider</code> system property on the command line.</p>
+<p>For more information, see <a href="../configuring/#configuring-the-nio-selector-provider-aix-only">Configuring the NIO selector provider (AIX only)</a>.</p>
+<p><img alt="End of content that applies to Java 11 (LTS)" src="../cr/java_close.png" /></p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.56.0 and v0.57.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.57/0.57.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.57.md ==== -->
