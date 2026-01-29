@@ -97,7 +97,7 @@ You can set the following options to make OpenJ9 behave in the same way as HotSp
 
 | Option                                      | Usage                                                           |
 |---------------------------------------------|-----------------------------------------------------------------|
-| ![Start of content that applies only to Java 8 (LTS)](cr/java8.png) [`-Djava.lang.string.substring.nocopy=true`](djavalangstringsubstringnocopy.md) |  Avoid String sharing by `String.substring()`. |
+| ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) [`-Djava.lang.string.substring.nocopy=true`](djavalangstringsubstringnocopy.md) |  Avoid String sharing by `String.substring()`. ![End of content that applies to Java 8 and 11 (LTS)](cr/java_close_lts.png)|
 | [`-Xnuma:none`](xnumanone.md)               | Disable non-uniform memory architecture (NUMA) awareness.       |
 | [`-XX:[+|-]HandleSIGABRT`](xxhandlesigabrt.md)    | Force handling of SIGABRT signals to be compatible with HotSpot. |
 

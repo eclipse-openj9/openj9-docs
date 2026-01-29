@@ -23,9 +23,9 @@
 
 # -Djava.lang.string.substring.nocopy
 
-:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** This system property is supported only on Java&trade; 8. String sharing cannot be enabled on Java 11 and later.
+:fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** This system property is supported only on Java&trade; 8 and Java 11. String sharing cannot be enabled on Java 17 and later.
 
-![Start of content that applies only to Java 8 (LTS)](cr/java8.png) Setting this property to `true` avoids sharing a String object when substring() is used to subset a String beginning from offset zero. Avoiding sharing is compatible with the Oracle HotSpot VM.
+![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) Setting this property to `true` avoids sharing a String object when substring() is used to subset a String beginning from offset zero. Avoiding sharing is compatible with the Oracle HotSpot VM. ![End of content that applies to Java 8 and 11 (LTS)](cr/java_close_lts.png)
 
 ## Syntax
 
