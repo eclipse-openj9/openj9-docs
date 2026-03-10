@@ -274,7 +274,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 32-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | OSX 10.15.7            | xcode 12.4 and clang 12.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.20                     |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | XL C/C++ 16.1.0.20                     |
 
 ### OpenJDK 11
 
@@ -287,7 +287,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.20                     |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | XL C/C++ 16.1.0.20                     |
 
 ### OpenJDK 17
 
@@ -300,7 +300,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.20                     |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | XL C/C++ 16.1.0.20                     |
 
 ### OpenJDK 21
 
@@ -313,7 +313,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.20                     |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | XL C/C++ 16.1.0.20                     |
 
 ### OpenJDK 25 and later
 
@@ -326,4 +326,4 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
 | macOS AArch64                 | macOS 11.5.2           | xcode 13.0 and clang 13.0.0           |
-| AIX POWER BE 64-bit           | AIX 7.2 TL5            | xlc/C++ 16.1.0.20                   |
+| AIX POWER BE 64-bit           | AIX 7.2 TL5            | Open XL C/C++ 17.1.3.5                   |
