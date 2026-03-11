@@ -42,7 +42,7 @@ The Eclipse OpenJ9&trade; virtual machine (VM) has two versions of the stack loc
 
 With the default mapper, the objects might be collected too early from a debugging perspective. In certain scenarios, such as when investigating a memory leak or finalization issues, the objects must be kept reachable even if they might not be used again. The debug local mapper helps to keep the objects reachable longer.
 
-Earlier the debug local mapper was enabled only by running the entire VM in the debug mode which significantly impacted performance. With the `-XX:+UseDebugLocalMap` option, you can enable the debug local mapper without running the entire VM in the debug mode to investigate memory leak or finalization issues in a more realistic conditions.
+Earlier the debug local mapper was enabled only by running the entire VM in debug mode which significantly impacted performance. With the `-XX:+UseDebugLocalMap` option, you can enable the debug local mapper without running the entire VM in debug mode to investigate memory leak or finalization issues.
 
 To disable the debug local mapper, set the `-XX:-UseDebugLocalMap` option on the command line.
 
