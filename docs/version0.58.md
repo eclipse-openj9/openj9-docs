@@ -41,7 +41,7 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 
 ### New `-XX:[+|-]UseDebugLocalMap` option is added
 
-With the new option, `-XX:+UseDebugLocalMap`, you can now enable the debug local mapper without running the entire VM in the debug mode. Earlier this was not possible which significantly impacted performance.
+With the new option, `-XX:+UseDebugLocalMap`, you can now enable the debug local mapper without running the entire VM in debug mode. Earlier this was not possible which significantly impacted performance.
 
 For more information, see [`-XX:[+|-]UseDebugLocalMap`](xxusedebuglocalmap.md).
 
