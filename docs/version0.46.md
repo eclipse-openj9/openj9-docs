@@ -71,7 +71,7 @@ For more information, see [ `-XX:[+|-]JITServerUseAOTCache`](xxjitserveruseaotca
 
 By default, the extended HCR capability in the VM is disabled for all OpenJDK versions, which is a change from the previous releases. You can enable the HCR capability by using the new option, [`-XX:+EnableExtendedHCR`](xxenableextendedhcr.md) option.
 
-The extended HCR feature is deprecated in this release and will be removed in a future release. From OpenJDK 25 onwards, extended HCR will not be supported. Following that, the extended HCR support will be removed from other earlier OpenJDK versions also.
+The extended HCR feature is deprecated in this release and will be removed in a future release. From OpenJDK 29 onwards, extended HCR will not be supported. Following that, the extended HCR support will be removed from other earlier OpenJDK versions also.
 
 ### New system property added to improve `jcmd` attaching in case of the `SocketException` error on Windows platform
 
