@@ -36,7 +36,7 @@ This option enables or disables the extended Hot Code Replace (HCR) capability i
 
 ## Explanation
 
-Supporting extended HCR has a maintenance cost and because only few users use this capability, the extended HCR feature is deprecated and will be removed in a future release. From OpenJDK 25 onwards, extended HCR will not be supported. Following that, the extended HCR support will be removed from other earlier OpenJDK versions also.
+Supporting extended HCR has a maintenance cost and because only few users use this capability, the extended HCR feature is deprecated and will be removed in a future release. From OpenJDK 29 onwards, extended HCR will not be supported. Following that, the extended HCR support will be removed from other earlier OpenJDK versions also.
 
 If the extended HCR support is disabled (`-XX:-EnableExtendedHCR`), it might result in a JVMTI failure. In case of such a failure, the following warning message is displayed:
 
