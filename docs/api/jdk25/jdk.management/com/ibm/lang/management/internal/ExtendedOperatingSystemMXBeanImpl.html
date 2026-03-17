@@ -168,14 +168,12 @@ implements <a href="../OperatingSystemMXBean.html" title="interface in com.ibm.l
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getArch()" class="member-name-link">getArch</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a unique string identifier for the architecture of the underlying
-operating system.</div>
+<div class="block">Returns the operating system architecture.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAvailableProcessors()" class="member-name-link">getAvailableProcessors</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the number of processors that are available for the virtual
-machine to run on.</div>
+<div class="block">Returns the number of processors available to the Java virtual machine.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCommittedVirtualMemorySize()" class="member-name-link">getCommittedVirtualMemorySize</a>()</code></div>
@@ -210,7 +208,7 @@ machine to run on.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the name of the underlying operating system.</div>
+<div class="block">Returns the operating system name.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/javax/management/MBeanNotificationInfo.html" title="class or interface in javax.management" class="external-link" target="_blank">MBeanNotificationInfo</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNotificationInfo()" class="member-name-link">getNotificationInfo</a>()</code></div>
@@ -256,9 +254,7 @@ in bytes.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSystemLoadAverage()" class="member-name-link">getSystemLoadAverage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a double value which holds the system load average calculated for
-the minute preceding the call, where <i>system load average</i> is taken
-to mean the following:</div>
+<div class="block">Returns the system load average for the last minute.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTotalMemorySize()" class="member-name-link">getTotalMemorySize</a>()</code></div>
@@ -273,7 +269,7 @@ to mean the following:</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVersion()" class="member-name-link">getVersion</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the version string for the underlying operating system.</div>
+<div class="block">Returns the operating system version.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isHardwareEmulated()" class="member-name-link">isHardwareEmulated</a>()</code></div>
@@ -846,19 +842,17 @@ functioning.</p></div>
 <h3>getArch</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getArch</span>()</div>
-<div class="block">Returns a unique string identifier for the architecture of the underlying
-operating system. The identifier value is identical to that which would
-be obtained from a call to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a>
-supplying the value &quot;os.arch&quot; for the key.</div>
+<div class="block">Returns the operating system architecture.
+This method is equivalent to <code>System.getProperty("os.arch")</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getArch()" title="class or interface in java.lang.management" class="external-link" target="_blank">getArch</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the identifier for the operating system architecture.</dd>
+<dd>the operating system architecture.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -870,15 +864,17 @@ supplying the value &quot;os.arch&quot; for the key.</div>
 <h3>getAvailableProcessors</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getAvailableProcessors</span>()</div>
-<div class="block">Returns the number of processors that are available for the virtual
-machine to run on. The information returned from this method is identical
-to that which would be received from a call to
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runtime.html#availableProcessors()" title="class or interface in java.lang" class="external-link" target="_blank"><code>Runtime.availableProcessors()</code></a>.</div>
+<div class="block">Returns the number of processors available to the Java virtual machine.
+This method is equivalent to the <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Runtime.html#availableProcessors()" title="class or interface in java.lang" class="external-link" target="_blank"><code>Runtime.availableProcessors()</code></a>
+method.
+<p> This value may change during a particular invocation of
+the virtual machine.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getAvailableProcessors()" title="class or interface in java.lang.management" class="external-link" target="_blank">getAvailableProcessors</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the number of available processors.</dd>
+<dd>the number of processors available to the virtual
+         machine; never smaller than one.</dd>
 </dl>
 </div>
 </section>
@@ -888,19 +884,17 @@ to that which would be received from a call to
 <h3>getName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
-<div class="block">Returns the name of the underlying operating system. The value is
-identical to that which would be obtained from a call to
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a> supplying the value
-&quot;os.name&quot; for the key.</div>
+<div class="block">Returns the operating system name.
+This method is equivalent to <code>System.getProperty("os.name")</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getName()" title="class or interface in java.lang.management" class="external-link" target="_blank">getName</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the name of the operating system.</dd>
+<dd>the operating system name.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -929,22 +923,25 @@ the object name of this platform managed object.</dd>
 <h3>getSystemLoadAverage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getSystemLoadAverage</span>()</div>
-<div class="block">Returns a double value which holds the system load average calculated for
-the minute preceding the call, where <i>system load average</i> is taken
-to mean the following:
+<div class="block">Returns the system load average for the last minute.
+The system load average is the sum of the number of runnable entities
+queued to the <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getAvailableProcessors()" title="class or interface in java.lang.management" class="external-link" target="_blank">available processors</a>
+and the number of runnable entities running on the available processors
+averaged over a period of time.
+The way in which the load average is calculated is operating system
+specific but is typically a damped time-dependent average.
 <p>
-the time-averaged value of the sum of the number of runnable entities
-running on the available processors and the number of runnable entities
-ready and queued to run on the available processors. The averaging
-technique adopted can vary depending on the underlying operating system.</div>
+If the load average is not available, a negative value is returned.
+<p>
+This method is designed to provide a hint about the system load
+and may be queried frequently.
+The load average may be unavailable on some platform where it is
+expensive to implement this method.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getSystemLoadAverage()" title="class or interface in java.lang.management" class="external-link" target="_blank">getSystemLoadAverage</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>normally, the system load average as a double. If the system load
-        average is not obtainable (e.g. because the calculation may
-        involve an unacceptable performance impact) then a negative value
-        is returned.</dd>
+<dd>the system load average; or a negative value if not available.</dd>
 </dl>
 </div>
 </section>
@@ -954,19 +951,17 @@ technique adopted can vary depending on the underlying operating system.</div>
 <h3>getVersion</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getVersion</span>()</div>
-<div class="block">Returns the version string for the underlying operating system. The value
-is identical to that which would be obtained from a call to
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a> supplying the value
-&quot;os.version&quot; for the key.</div>
+<div class="block">Returns the operating system version.
+This method is equivalent to <code>System.getProperty("os.version")</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html#getVersion()" title="class or interface in java.lang.management" class="external-link" target="_blank">getVersion</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/OperatingSystemMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">OperatingSystemMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the version of the operating system.</dd>
+<dd>the operating system version.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1089,7 +1084,7 @@ given filter and handback.</dd>
 </ul>
 </section>
 <!-- ========= END OF CLASS DATA ========= -->
-<footer role="contentinfo">
+<footer>
 <hr>
 <p class="legal-copy"><small><a href="https://eclipse.dev/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2026 IBM Corp. and others.</small></p>
 </footer>
