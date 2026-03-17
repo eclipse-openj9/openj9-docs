@@ -13,6 +13,7 @@
 <meta name="keywords" content="reportFatalError()">
 <meta name="keywords" content="reportHeapWalkError()">
 <meta name="keywords" content="reportForwardedObject()">
+<meta name="keywords" content="format()">
 <meta name="keywords" content="print()">
 <meta name="keywords" content="println()">
 <meta name="keywords" content="setMaxErrorsToReport()">
@@ -40,7 +41,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":6,"i2":10,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":10,"i9":6,"i10":6,"i11":10,"i12":10};
+var data = {"i0":6,"i1":10,"i2":6,"i3":10,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":10,"i10":6,"i11":6,"i12":10,"i13":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -219,35 +220,41 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#print()">print</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i1" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#print(java.lang.String)">print</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;arg)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#format(java.lang.String,java.lang.Object...)">format</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;format,
+      <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a>...&nbsp;arguments)</code></th>
 <td class="colLast">
 <div class="block">Output non-error information</div>
 </td>
 </tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#print()">print</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>abstract void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#print(java.lang.String)">print</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;arg)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#println()">println</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#println(java.lang.String)">println</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;arg)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#report(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError)">report</a></span>&#8203;(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error)</code></th>
 <td class="colLast">
 <div class="block">Report an error.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reportClass(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.lang.String)">reportClass</a></span>&#8203;(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
            com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
@@ -256,14 +263,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Report information from a class</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reportFatalError(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError)">reportFatalError</a></span>&#8203;(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error)</code></th>
 <td class="colLast">
 <div class="block">Report the fact that a fatal error has occurred.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reportForwardedObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">reportForwardedObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object,
                      com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;newObject)</code></th>
@@ -271,14 +278,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Report that a forwarded pointer was encountered when running with "midscavenge".</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reportGenericType(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement,java.lang.String)">reportGenericType</a></span>&#8203;(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
                  <a href="CheckElement.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckElement</a>&nbsp;reference,
                  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;prefix)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reportHeapWalkError(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement)">reportHeapWalkError</a></span>&#8203;(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
                    <a href="CheckElement.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckElement</a>&nbsp;previousObjectPtr1,
@@ -288,7 +295,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Report the fact that an error has occurred while walking the heap.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#reportObjectHeader(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,java.lang.String)">reportObjectHeader</a></span>&#8203;(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
                   com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objectPtr,
@@ -297,12 +304,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Report information from an object header.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMaxErrorsToReport(long)">setMaxErrorsToReport</a></span>&#8203;(long&nbsp;count)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shouldReport(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError)">shouldReport</a></span>&#8203;(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -443,6 +450,17 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Report that a forwarded pointer was encountered when running with "midscavenge".</div>
 </li>
 </ul>
+<a id="format(java.lang.String,java.lang.Object...)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>format</h4>
+<pre class="methodSignature">public abstract&nbsp;void&nbsp;format&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;format,
+                            <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">Object</a>...&nbsp;arguments)</pre>
+<div class="block">Output non-error information</div>
+</li>
+</ul>
 <a id="print(java.lang.String)">
 <!--   -->
 </a>
@@ -450,7 +468,6 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>print</h4>
 <pre class="methodSignature">public abstract&nbsp;void&nbsp;print&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink" target="_blank">String</a>&nbsp;arg)</pre>
-<div class="block">Output non-error information</div>
 </li>
 </ul>
 <a id="println(java.lang.String)">
