@@ -15,6 +15,7 @@
 <meta name="keywords" content="reportFatalError()">
 <meta name="keywords" content="reportHeapWalkError()">
 <meta name="keywords" content="reportForwardedObject()">
+<meta name="keywords" content="format()">
 <meta name="keywords" content="print()">
 <meta name="keywords" content="println()">
 <meta name="keywords" content="setMaxErrorsToReport()">
@@ -141,69 +142,73 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print()" class="member-name-link">print</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#print(java.lang.String)" class="member-name-link">print</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;arg)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#format(java.lang.String,java.lang.Object...)" class="member-name-link">format</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a>...&nbsp;arguments)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Output non-error information</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#println()" class="member-name-link">println</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#println(java.lang.String)" class="member-name-link">println</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;arg)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print()" class="member-name-link">print</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#report(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError)" class="member-name-link">report</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#print(java.lang.String)" class="member-name-link">print</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;arg)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#println()" class="member-name-link">println</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#println(java.lang.String)" class="member-name-link">println</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;arg)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#report(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError)" class="member-name-link">report</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Report an error.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportClass(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.lang.String)" class="member-name-link">reportClass</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportClass(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,java.lang.String)" class="member-name-link">reportClass</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
  com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;prefix)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Report information from a class</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportFatalError(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError)" class="member-name-link">reportFatalError</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportFatalError(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError)" class="member-name-link">reportFatalError</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Report the fact that a fatal error has occurred.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportForwardedObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">reportForwardedObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportForwardedObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">reportForwardedObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object,
  com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;newObject)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Report that a forwarded pointer was encountered when running with "midscavenge".</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reportGenericType(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement,java.lang.String)" class="member-name-link">reportGenericType</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reportGenericType(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement,java.lang.String)" class="member-name-link">reportGenericType</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
  <a href="CheckElement.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckElement</a>&nbsp;reference,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;prefix)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportHeapWalkError(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement)" class="member-name-link">reportHeapWalkError</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportHeapWalkError(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckElement)" class="member-name-link">reportHeapWalkError</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
  <a href="CheckElement.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckElement</a>&nbsp;previousObjectPtr1,
  <a href="CheckElement.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckElement</a>&nbsp;previousObjectPtr2,
  <a href="CheckElement.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckElement</a>&nbsp;previousObjectPtr3)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Report the fact that an error has occurred while walking the heap.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportObjectHeader(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,java.lang.String)" class="member-name-link">reportObjectHeader</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reportObjectHeader(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,java.lang.String)" class="member-name-link">reportObjectHeader</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error,
  com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objectPtr,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;prefix)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Report information from an object header.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMaxErrorsToReport(long)" class="member-name-link">setMaxErrorsToReport</a><wbr>(long&nbsp;count)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldReport(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError)" class="member-name-link">shouldReport</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setMaxErrorsToReport(long)" class="member-name-link">setMaxErrorsToReport</a><wbr>(long&nbsp;count)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldReport(com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError)" class="member-name-link">shouldReport</a><wbr>(<a href="CheckError.html" title="class in com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck">CheckError</a>&nbsp;error)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -306,10 +311,17 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="format(java.lang.String,java.lang.Object...)">
+<h3>format</h3>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">format</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;format,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a>...&nbsp;arguments)</span></div>
+<div class="block">Output non-error information</div>
+</section>
+</li>
+<li>
 <section class="detail" id="print(java.lang.String)">
 <h3>print</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;arg)</span></div>
-<div class="block">Output non-error information</div>
 </section>
 </li>
 <li>
