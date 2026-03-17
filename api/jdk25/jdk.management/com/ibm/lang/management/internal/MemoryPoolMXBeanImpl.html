@@ -122,31 +122,32 @@ implements <a href="../MemoryPoolMXBean.html" title="interface in com.ibm.lang.m
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCollectionUsage()" class="member-name-link">getCollectionUsage</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">If supported by the virtual machine, returns a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> which
-encapsulates this memory pool's memory usage after the most recent run of
-the garbage collector.</div>
+<div class="block">Returns the memory usage after the Java virtual machine
+most recently expended effort in recycling unused objects
+in this memory pool.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCollectionUsageThreshold()" class="member-name-link">getCollectionUsageThreshold</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns this memory pool's collection usage threshold.</div>
+<div class="block">Returns the collection usage threshold value of this memory pool
+in bytes.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCollectionUsageThresholdCount()" class="member-name-link">getCollectionUsageThresholdCount</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the number of times that the memory usage for this memory pool
-has grown to exceed the collection usage threshold.</div>
+<div class="block">Returns the number of times that the Java virtual machine
+has detected that the memory usage has reached or
+exceeded the collection usage threshold.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMemoryManagerNames()" class="member-name-link">getMemoryManagerNames</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a string array containing the unique names of each memory manager
-that manages this memory pool.</div>
+<div class="block">Returns the name of memory managers that manages this memory pool.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the name of this memory pool.</div>
+<div class="block">Returns the name representing this memory pool.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/javax/management/ObjectName.html" title="class or interface in javax.management" class="external-link" target="_blank">ObjectName</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObjectName()" class="member-name-link">getObjectName</a>()</code></div>
@@ -157,7 +158,8 @@ the object name of this platform managed object.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPeakUsage()" class="member-name-link">getPeakUsage</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns information on the peak usage of the memory pool.</div>
+<div class="block">Returns the peak memory usage of this memory pool since the
+Java virtual machine was started or since the peak was reset.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPreCollectionUsage()" class="member-name-link">getPreCollectionUsage</a>()</code></div>
@@ -167,72 +169,71 @@ the object name of this platform managed object.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryType.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryType</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getType()" class="member-name-link">getType</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the memory pool's type.</div>
+<div class="block">Returns the type of this memory pool.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUsage()" class="member-name-link">getUsage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the current memory usage of this memory pool as estimated by the
-virtual machine.</div>
+<div class="block">Returns an estimate of the memory usage of this memory pool.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUsageThreshold()" class="member-name-link">getUsageThreshold</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns this memory pool's usage threshold.</div>
+<div class="block">Returns the usage threshold value of this memory pool in bytes.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUsageThresholdCount()" class="member-name-link">getUsageThresholdCount</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the number of times that the memory usage for this memory pool
-has grown to exceed the current usage threshold.</div>
+<div class="block">Returns the number of times that the memory usage has crossed
+the usage threshold.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCollectionUsageThresholdExceeded()" class="member-name-link">isCollectionUsageThresholdExceeded</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a boolean indication of whether or not this memory pool hit or
-exceeded the current value of the collection usage threshold after the
-latest garbage collection run.</div>
+<div class="block">Tests if the memory usage of this memory pool after
+the most recent collection on which the Java virtual
+machine has expended effort has reached or
+exceeded its collection usage threshold.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCollectionUsageThresholdSupported()" class="member-name-link">isCollectionUsageThresholdSupported</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a boolean indication of whether or not this memory pool supports
-a collection usage threshold.</div>
+<div class="block">Tests if this memory pool supports a collection usage threshold.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUsageThresholdExceeded()" class="member-name-link">isUsageThresholdExceeded</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a boolean indication of whether or not this memory pool has hit
-or has exceeded the current value of the usage threshold.</div>
+<div class="block">Tests if the memory usage of this memory pool
+reaches or exceeds its usage threshold value.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isUsageThresholdSupported()" class="member-name-link">isUsageThresholdSupported</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a boolean indication of whether or not this memory pool supports
-a usage threshold.</div>
+<div class="block">Tests if this memory pool supports usage threshold.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValid()" class="member-name-link">isValid</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a boolean indication of whether or not this memory pool may still
-be considered valid.</div>
+<div class="block">Tests if this memory pool is valid in the Java virtual
+machine.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetPeakUsage()" class="member-name-link">resetPeakUsage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Updates this memory pool's memory usage peak value to be whatever the
-value of the current memory usage is.</div>
+<div class="block">Resets the peak memory usage statistic of this memory pool
+to the current memory usage.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCollectionUsageThreshold(long)" class="member-name-link">setCollectionUsageThreshold</a><wbr>(long&nbsp;threshold)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Updates this memory pool to have a new value for its collection usage
-threshold.</div>
+<div class="block">Sets the collection usage threshold of this memory pool to
+the given <code>threshold</code> value.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUsageThreshold(long)" class="member-name-link">setUsageThreshold</a><wbr>(long&nbsp;threshold)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Updates this memory pool to have a new value for its usage threshold.</div>
+<div class="block">Sets the threshold of this memory pool to the given <code>threshold</code>
+value if this memory pool supports the usage threshold.</div>
 </div>
 </div>
 </div>
@@ -265,18 +266,28 @@ threshold.</div>
 <h3>getCollectionUsage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></span>&nbsp;<span class="element-name">getCollectionUsage</span>()</div>
-<div class="block">If supported by the virtual machine, returns a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> which
-encapsulates this memory pool's memory usage after the most recent run of
-the garbage collector. No garbage collection will be actually occur as a
-result of this method getting called.</div>
+<div class="block">Returns the memory usage after the Java virtual machine
+most recently expended effort in recycling unused objects
+in this memory pool.
+This method does not request the Java virtual
+machine to perform any garbage collection other than its normal
+automatic memory management.
+This method returns <code>null</code> if the Java virtual
+machine does not support this method.
+
+<p>
+<b>MBeanServer access</b>:<br>
+The mapped type of <code>MemoryUsage</code> is
+<code>CompositeData</code> with attributes as specified in
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html#from(javax.management.openmbean.CompositeData)" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#getCollectionUsage()" title="class or interface in java.lang.management" class="external-link" target="_blank">getCollectionUsage</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> object that may be interrogated by the
-        caller to determine the details of the memory usage. Returns
-        <code>null</code> if the virtual machine does not support this
-        method.</dd>
+<dd>a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> representing the memory usage of
+this memory pool after the Java virtual machine most recently
+expended effort in recycling unused objects;
+<code>null</code> if this method is not supported.</dd>
 </dl>
 </div>
 </section>
@@ -301,13 +312,15 @@ result of this method getting called.</div>
 <h3>getCollectionUsageThreshold</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getCollectionUsageThreshold</span>()</div>
-<div class="block">Returns this memory pool's collection usage threshold.</div>
+<div class="block">Returns the collection usage threshold value of this memory pool
+in bytes.  The default value is zero. The collection usage
+threshold can be changed via the
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#setCollectionUsageThreshold(long)" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>setCollectionUsageThreshold</code></a> method.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#getCollectionUsageThreshold()" title="class or interface in java.lang.management" class="external-link" target="_blank">getCollectionUsageThreshold</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the collection usage threshold in bytes. The default value as set
-        by the virtual machine will be zero.</dd>
+<dd>the collection usage threshold of this memory pool in bytes.</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
@@ -323,14 +336,15 @@ result of this method getting called.</div>
 <h3>getCollectionUsageThresholdCount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getCollectionUsageThresholdCount</span>()</div>
-<div class="block">Returns the number of times that the memory usage for this memory pool
-has grown to exceed the collection usage threshold.</div>
+<div class="block">Returns the number of times that the Java virtual machine
+has detected that the memory usage has reached or
+exceeded the collection usage threshold.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#getCollectionUsageThresholdCount()" title="class or interface in java.lang.management" class="external-link" target="_blank">getCollectionUsageThresholdCount</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>a count of the number of times that the collection usage
-        threshold has been surpassed.</dd>
+<dd>the number of times that the memory
+usage has reached or exceeded the collection usage threshold.</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
@@ -346,14 +360,14 @@ has grown to exceed the collection usage threshold.</div>
 <h3>getMemoryManagerNames</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>[]</span>&nbsp;<span class="element-name">getMemoryManagerNames</span>()</div>
-<div class="block">Returns a string array containing the unique names of each memory manager
-that manages this memory pool. A memory pool will always have at least
-one memory manager associated with it.</div>
+<div class="block">Returns the name of memory managers that manages this memory pool.
+Each memory pool will be managed by at least one memory manager.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#getMemoryManagerNames()" title="class or interface in java.lang.management" class="external-link" target="_blank">getMemoryManagerNames</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the names of all the memory managers for this memory pool.</dd>
+<dd>an array of <code>String</code> objects, each is the name of
+a memory manager managing this memory pool.</dd>
 </dl>
 </div>
 </section>
@@ -363,7 +377,7 @@ one memory manager associated with it.</div>
 <h3>getName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
-<div class="block">Returns the name of this memory pool.</div>
+<div class="block">Returns the name representing this memory pool.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#getName()" title="class or interface in java.lang.management" class="external-link" target="_blank">getName</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
@@ -378,24 +392,22 @@ one memory manager associated with it.</div>
 <h3>getPeakUsage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></span>&nbsp;<span class="element-name">getPeakUsage</span>()</div>
-<div class="block">Returns information on the peak usage of the memory pool. The scope of
-this covers all elapsed time since either the start of the virtual
-machine or the peak usage was reset.</div>
+<div class="block">Returns the peak memory usage of this memory pool since the
+Java virtual machine was started or since the peak was reset.
+This method returns <code>null</code>
+if this memory pool is not valid (i.e. no longer exists).
+
+<p>
+<b>MBeanServer access</b>:<br>
+The mapped type of <code>MemoryUsage</code> is
+<code>CompositeData</code> with attributes as specified in
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html#from(javax.management.openmbean.CompositeData)" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#getPeakUsage()" title="class or interface in java.lang.management" class="external-link" target="_blank">getPeakUsage</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> which can be interrogated by the caller to
-        determine details of the peak memory usage. A <code>null</code>
-        value will be returned if the memory pool no longer exists (and
-        the pool is therefore considered to be invalid).</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#resetPeakUsage()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryPoolMXBean.resetPeakUsage()</code></a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isValid()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryPoolMXBean.isValid()</code></a></li>
-</ul>
-</dd>
+<dd>a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> object representing the peak
+memory usage; or <code>null</code> if this pool is not valid.</dd>
 </dl>
 </div>
 </section>
@@ -405,13 +417,17 @@ machine or the peak usage was reset.</div>
 <h3>getType</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryType.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryType</a></span>&nbsp;<span class="element-name">getType</span>()</div>
-<div class="block">Returns the memory pool's type.</div>
+<div class="block">Returns the type of this memory pool.
+
+<p>
+<b>MBeanServer access</b>:<br>
+The mapped type of <code>MemoryType</code> is <code>String</code>
+and the value is the name of the <code>MemoryType</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#getType()" title="class or interface in java.lang.management" class="external-link" target="_blank">getType</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryType.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryType</code></a> value indicating the type of the memory pool
-        (heap or non-heap).</dd>
+<dd>the type of this memory pool.</dd>
 </dl>
 </div>
 </section>
@@ -421,23 +437,32 @@ machine or the peak usage was reset.</div>
 <h3>getUsage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></span>&nbsp;<span class="element-name">getUsage</span>()</div>
-<div class="block">Returns the current memory usage of this memory pool as estimated by the
-virtual machine.</div>
+<div class="block">Returns an estimate of the memory usage of this memory pool.
+This method returns <code>null</code>
+if this memory pool is not valid (i.e. no longer exists).
+
+<p>
+This method requests the Java virtual machine to make
+a best-effort estimate of the current memory usage of this
+memory pool. For some memory pools, this method may be an
+expensive operation that requires some computation to determine
+the estimate.  An implementation should document when
+this is the case.
+
+<p>This method is designed for use in monitoring system
+memory usage and detecting low memory condition.
+
+<p>
+<b>MBeanServer access</b>:<br>
+The mapped type of <code>MemoryUsage</code> is
+<code>CompositeData</code> with attributes as specified in
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html#from(javax.management.openmbean.CompositeData)" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#getUsage()" title="class or interface in java.lang.management" class="external-link" target="_blank">getUsage</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>an instance of <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> that can be interrogated by
-        the caller to determine details on the pool's current memory
-        usage. A <code>null</code> value will be returned if the memory
-        pool no longer exists (in which case it is considered to be
-        invalid).</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isValid()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryPoolMXBean.isValid()</code></a></li>
-</ul>
-</dd>
+<dd>a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> object; or <code>null</code> if
+this pool not valid.</dd>
 </dl>
 </div>
 </section>
@@ -447,19 +472,19 @@ virtual machine.</div>
 <h3>getUsageThreshold</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getUsageThreshold</span>()</div>
-<div class="block">Returns this memory pool's usage threshold.</div>
+<div class="block">Returns the usage threshold value of this memory pool in bytes.
+Each memory pool has a platform-dependent default threshold value.
+The current usage threshold can be changed via the
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#setUsageThreshold(long)" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>setUsageThreshold</code></a> method.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#getUsageThreshold()" title="class or interface in java.lang.management" class="external-link" target="_blank">getUsageThreshold</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the usage threshold in bytes. The default value as set by the
-        virtual machine depends on the platform the virtual machine is
-        running on. will be zero.</dd>
+<dd>the usage threshold value of this memory pool in bytes.</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isUsageThresholdSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryPoolMXBean.isUsageThresholdSupported()</code></a></li>
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#setUsageThreshold(long)" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryPoolMXBean.setUsageThreshold(long)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -471,20 +496,14 @@ virtual machine.</div>
 <h3>getUsageThresholdCount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getUsageThresholdCount</span>()</div>
-<div class="block">Returns the number of times that the memory usage for this memory pool
-has grown to exceed the current usage threshold.</div>
+<div class="block">Returns the number of times that the memory usage has crossed
+the usage threshold.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#getUsageThresholdCount()" title="class or interface in java.lang.management" class="external-link" target="_blank">getUsageThresholdCount</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>a count of the number of times that the usage threshold has been
-        surpassed.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isUsageThresholdSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryPoolMXBean.isUsageThresholdSupported()</code></a></li>
-</ul>
-</dd>
+<dd>the number of times that the memory usage
+has crossed its usage threshold value.</dd>
 </dl>
 </div>
 </section>
@@ -494,22 +513,21 @@ has grown to exceed the current usage threshold.</div>
 <h3>isCollectionUsageThresholdExceeded</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCollectionUsageThresholdExceeded</span>()</div>
-<div class="block">Returns a boolean indication of whether or not this memory pool hit or
-exceeded the current value of the collection usage threshold after the
-latest garbage collection run.</div>
+<div class="block">Tests if the memory usage of this memory pool after
+the most recent collection on which the Java virtual
+machine has expended effort has reached or
+exceeded its collection usage threshold.
+This method does not request the Java virtual
+machine to perform any garbage collection other than its normal
+automatic memory management.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isCollectionUsageThresholdExceeded()" title="class or interface in java.lang.management" class="external-link" target="_blank">isCollectionUsageThresholdExceeded</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> if the collection usage threshold was
-        surpassed after the latest garbage collection run, otherwise
-        <code>false</code>.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isCollectionUsageThresholdSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryPoolMXBean.isCollectionUsageThresholdSupported()</code></a></li>
-</ul>
-</dd>
+<dd><code>true</code> if the memory usage of this memory pool
+reaches or exceeds the collection usage threshold value
+in the most recent collection;
+<code>false</code> otherwise.</dd>
 </dl>
 </div>
 </section>
@@ -519,13 +537,13 @@ latest garbage collection run.</div>
 <h3>isCollectionUsageThresholdSupported</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCollectionUsageThresholdSupported</span>()</div>
-<div class="block">Returns a boolean indication of whether or not this memory pool supports
-a collection usage threshold.</div>
+<div class="block">Tests if this memory pool supports a collection usage threshold.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isCollectionUsageThresholdSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank">isCollectionUsageThresholdSupported</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> if supported, <code>false</code> otherwise.</dd>
+<dd><code>true</code> if this memory pool supports the
+collection usage threshold; <code>false</code> otherwise.</dd>
 </dl>
 </div>
 </section>
@@ -535,20 +553,15 @@ a collection usage threshold.</div>
 <h3>isUsageThresholdExceeded</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isUsageThresholdExceeded</span>()</div>
-<div class="block">Returns a boolean indication of whether or not this memory pool has hit
-or has exceeded the current value of the usage threshold.</div>
+<div class="block">Tests if the memory usage of this memory pool
+reaches or exceeds its usage threshold value.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isUsageThresholdExceeded()" title="class or interface in java.lang.management" class="external-link" target="_blank">isUsageThresholdExceeded</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> if the usage threshold has been surpassed,
-        otherwise <code>false</code>.</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isUsageThresholdSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryPoolMXBean.isUsageThresholdSupported()</code></a></li>
-</ul>
-</dd>
+<dd><code>true</code> if the memory usage of
+this memory pool reaches or exceeds the threshold value;
+<code>false</code> otherwise.</dd>
 </dl>
 </div>
 </section>
@@ -558,13 +571,13 @@ or has exceeded the current value of the usage threshold.</div>
 <h3>isUsageThresholdSupported</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isUsageThresholdSupported</span>()</div>
-<div class="block">Returns a boolean indication of whether or not this memory pool supports
-a usage threshold.</div>
+<div class="block">Tests if this memory pool supports usage threshold.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isUsageThresholdSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank">isUsageThresholdSupported</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> if supported, <code>false</code> otherwise.</dd>
+<dd><code>true</code> if this memory pool supports usage threshold;
+<code>false</code> otherwise.</dd>
 </dl>
 </div>
 </section>
@@ -574,15 +587,16 @@ a usage threshold.</div>
 <h3>isValid</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isValid</span>()</div>
-<div class="block">Returns a boolean indication of whether or not this memory pool may still
-be considered valid. A memory pool becomes invalid once it has been
-removed by the virtual machine.</div>
+<div class="block">Tests if this memory pool is valid in the Java virtual
+machine.  A memory pool becomes invalid once the Java virtual
+machine removes it from the memory system.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isValid()" title="class or interface in java.lang.management" class="external-link" target="_blank">isValid</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> if the memory pool has not been removed by
-        the virtual machine, <code>false</code> otherwise.</dd>
+<dd><code>true</code> if the memory pool is valid in the running
+             Java virtual machine;
+        <code>false</code> otherwise.</dd>
 </dl>
 </div>
 </section>
@@ -592,8 +606,8 @@ removed by the virtual machine.</div>
 <h3>resetPeakUsage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resetPeakUsage</span>()</div>
-<div class="block">Updates this memory pool's memory usage peak value to be whatever the
-value of the current memory usage is.</div>
+<div class="block">Resets the peak memory usage statistic of this memory pool
+to the current memory usage.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#resetPeakUsage()" title="class or interface in java.lang.management" class="external-link" target="_blank">resetPeakUsage</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
@@ -606,18 +620,29 @@ value of the current memory usage is.</div>
 <h3>setCollectionUsageThreshold</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCollectionUsageThreshold</span><wbr><span class="parameters">(long&nbsp;threshold)</span></div>
-<div class="block">Updates this memory pool to have a new value for its collection usage
-threshold. Only values of zero or greater should be supplied. A zero
-value effectively turns off any further checking of collection memory
-usage by the virtual machine. A value greater than zero establishes the
-new threshold which the virtual machine will check against after each run
-of the garbage collector in the memory pool.</div>
+<div class="block">Sets the collection usage threshold of this memory pool to
+the given <code>threshold</code> value.
+When this threshold is set to positive, the Java virtual machine
+will check the memory usage at its best appropriate time after it has
+expended effort in recycling unused objects in this memory pool.
+<p>
+The collection usage threshold crossing checking is enabled
+in this memory pool if the threshold is set to a positive value.
+The collection usage threshold crossing checking is disabled
+if it is set to zero.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#setCollectionUsageThreshold(long)" title="class or interface in java.lang.management" class="external-link" target="_blank">setCollectionUsageThreshold</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>threshold</code> - the size of the new collection usage threshold expressed in
-           bytes.</dd>
+<dd><code>threshold</code> - the new collection usage threshold value in bytes.
+             Must be non-negative.</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isCollectionUsageThresholdSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryPoolMXBean.isCollectionUsageThresholdSupported()</code></a></li>
+<li><a href="../../../../../../java.management/java/lang/management/MemoryPoolMXBean.html#CollectionThreshold">Collection usage threshold</a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -627,16 +652,24 @@ of the garbage collector in the memory pool.</div>
 <h3>setUsageThreshold</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setUsageThreshold</span><wbr><span class="parameters">(long&nbsp;threshold)</span></div>
-<div class="block">Updates this memory pool to have a new value for its usage threshold.
-Only values of zero or greater should be supplied. A zero value
-effectively turns off any further checking of memory usage by the virtual
-machine. A value greater than zero establishes the new threshold which
-the virtual machine will check against.</div>
+<div class="block">Sets the threshold of this memory pool to the given <code>threshold</code>
+value if this memory pool supports the usage threshold.
+The usage threshold crossing checking is enabled in this memory pool
+if the threshold is set to a positive value.
+The usage threshold crossing checking is disabled
+if it is set to zero.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#setUsageThreshold(long)" title="class or interface in java.lang.management" class="external-link" target="_blank">setUsageThreshold</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryPoolMXBean</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>threshold</code> - the size of the new usage threshold expressed in bytes.</dd>
+<dd><code>threshold</code> - the new threshold value in bytes. Must be non-negative.</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryPoolMXBean.html#isUsageThresholdSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryPoolMXBean.isUsageThresholdSupported()</code></a></li>
+<li><a href="../../../../../../java.management/java/lang/management/MemoryPoolMXBean.html#UsageThreshold">Usage threshold</a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -664,7 +697,7 @@ the object name of this platform managed object.</dd>
 </ul>
 </section>
 <!-- ========= END OF CLASS DATA ========= -->
-<footer role="contentinfo">
+<footer>
 <hr>
 <p class="legal-copy"><small><a href="https://eclipse.dev/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2026 IBM Corp. and others.</small></p>
 </footer>

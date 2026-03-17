@@ -158,7 +158,7 @@ implements <a href="../MemoryMXBean.html" title="interface in com.ibm.lang.manag
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gc()" class="member-name-link">gc</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Requests the virtual machine to run the system garbage collector.</div>
+<div class="block">Runs the garbage collector.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentGCThreads()" class="member-name-link">getCurrentGCThreads</a>()</code></div>
@@ -181,8 +181,8 @@ in this virtual machine.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHeapMemoryUsage()" class="member-name-link">getHeapMemoryUsage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the current memory usage of the heap for both live objects and
-for objects no longer in use which are awaiting garbage collection.</div>
+<div class="block">Returns the current memory usage of the heap that
+is used for object allocation.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ExtendedMemoryMXBeanImpl.html" title="class in com.ibm.lang.management.internal">ExtendedMemoryMXBeanImpl</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
@@ -212,7 +212,8 @@ for objects no longer in use which are awaiting garbage collection.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNonHeapMemoryUsage()" class="member-name-link">getNonHeapMemoryUsage</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the current non-heap memory usage for the virtual machine.</div>
+<div class="block">Returns the current memory usage of non-heap memory that
+is used by the Java virtual machine.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/javax/management/MBeanNotificationInfo.html" title="class or interface in javax.management" class="external-link" target="_blank">MBeanNotificationInfo</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNotificationInfo()" class="member-name-link">getNotificationInfo</a>()</code></div>
@@ -230,8 +231,8 @@ the object name of this platform managed object.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObjectPendingFinalizationCount()" class="member-name-link">getObjectPendingFinalizationCount</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the number of objects in the virtual machine that are awaiting
-finalization.</div>
+<div class="block">Returns the approximate number of objects for which
+finalization is pending.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSharedClassCacheFreeSpace()" class="member-name-link">getSharedClassCacheFreeSpace</a>()</code></div>
@@ -269,8 +270,7 @@ finalization.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVerbose()" class="member-name-link">isVerbose</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a boolean indication of whether or not the memory system is
-producing verbose output.</div>
+<div class="block">Tests if verbose output for the memory system is enabled.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/GarbageCollectorMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">GarbageCollectorMXBean</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#makeGCBean(java.lang.String,java.lang.String,int)" class="member-name-link">makeGCBean</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;domainName,
@@ -324,7 +324,8 @@ producing verbose output.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setVerbose(boolean)" class="member-name-link">setVerbose</a><wbr>(boolean&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Updates the verbose output setting of the memory system.</div>
+<div class="block">Enables or disables verbose output for the memory
+system.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startNotificationThread()" class="member-name-link">startNotificationThread</a>()</code></div>
@@ -497,10 +498,21 @@ destroyed between the invocation and return of this method.</div>
 <h3>gc</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">gc</span>()</div>
-<div class="block">Requests the virtual machine to run the system garbage collector.</div>
+<div class="block">Runs the garbage collector.
+The call <code>gc()</code> is effectively equivalent to the
+call:
+<blockquote><pre>
+System.gc()
+</pre></blockquote></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html#gc()" title="class or interface in java.lang.management" class="external-link" target="_blank">gc</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryMXBean</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#gc()" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.gc()</code></a></li>
+</ul>
+</dd>
 </dl>
 </div>
 </section>
@@ -510,14 +522,31 @@ destroyed between the invocation and return of this method.</div>
 <h3>getHeapMemoryUsage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></span>&nbsp;<span class="element-name">getHeapMemoryUsage</span>()</div>
-<div class="block">Returns the current memory usage of the heap for both live objects and
-for objects no longer in use which are awaiting garbage collection.</div>
+<div class="block">Returns the current memory usage of the heap that
+is used for object allocation.  The heap consists
+of one or more memory pools.  The <code>used</code>
+and <code>committed</code> size of the returned memory
+usage is the sum of those values of all heap memory pools
+whereas the <code>init</code> and <code>max</code> size of the
+returned memory usage represents the setting of the heap
+memory which may not be the sum of those of all heap
+memory pools.
+<p>
+The amount of used memory in the returned memory usage
+is the amount of memory occupied by both live objects
+and garbage objects that have not been collected, if any.
+
+<p>
+<b>MBeanServer access</b>:<br>
+The mapped type of <code>MemoryUsage</code> is
+<code>CompositeData</code> with attributes as specified in
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html#from(javax.management.openmbean.CompositeData)" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html#getHeapMemoryUsage()" title="class or interface in java.lang.management" class="external-link" target="_blank">getHeapMemoryUsage</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>an instance of <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> which can be interrogated by
-        the caller.</dd>
+<dd>a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> object representing
+the heap memory usage.</dd>
 </dl>
 </div>
 </section>
@@ -527,13 +556,28 @@ for objects no longer in use which are awaiting garbage collection.</div>
 <h3>getNonHeapMemoryUsage</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryUsage</a></span>&nbsp;<span class="element-name">getNonHeapMemoryUsage</span>()</div>
-<div class="block">Returns the current non-heap memory usage for the virtual machine.</div>
+<div class="block">Returns the current memory usage of non-heap memory that
+is used by the Java virtual machine.
+The non-heap memory consists of one or more memory pools.
+The <code>used</code> and <code>committed</code> size of the
+returned memory usage is the sum of those values of
+all non-heap memory pools whereas the <code>init</code>
+and <code>max</code> size of the returned memory usage
+represents the setting of the non-heap
+memory which may not be the sum of those of all non-heap
+memory pools.
+
+<p>
+<b>MBeanServer access</b>:<br>
+The mapped type of <code>MemoryUsage</code> is
+<code>CompositeData</code> with attributes as specified in
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html#from(javax.management.openmbean.CompositeData)" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html#getNonHeapMemoryUsage()" title="class or interface in java.lang.management" class="external-link" target="_blank">getNonHeapMemoryUsage</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>an instance of <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> which can be interrogated by
-        the caller.</dd>
+<dd>a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryUsage.html" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>MemoryUsage</code></a> object representing
+the non-heap memory usage.</dd>
 </dl>
 </div>
 </section>
@@ -543,14 +587,16 @@ for objects no longer in use which are awaiting garbage collection.</div>
 <h3>getObjectPendingFinalizationCount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getObjectPendingFinalizationCount</span>()</div>
-<div class="block">Returns the number of objects in the virtual machine that are awaiting
-finalization. The returned value should only be used as an approximate
-guide.</div>
+<div class="block">Returns the approximate number of objects for which
+finalization is pending.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html#getObjectPendingFinalizationCount()" title="class or interface in java.lang.management" class="external-link" target="_blank">getObjectPendingFinalizationCount</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the number of objects awaiting finalization.</dd>
+<dd>the approximate number objects for which finalization
+is pending. If this MemoryMXBean contains information about a JVM in
+which finalization has been disabled or removed, this method always
+returns zero.</dd>
 </dl>
 </div>
 </section>
@@ -560,14 +606,13 @@ guide.</div>
 <h3>isVerbose</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isVerbose</span>()</div>
-<div class="block">Returns a boolean indication of whether or not the memory system is
-producing verbose output.</div>
+<div class="block">Tests if verbose output for the memory system is enabled.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html#isVerbose()" title="class or interface in java.lang.management" class="external-link" target="_blank">isVerbose</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> if verbose output is being produced ;
-        <code>false</code> otherwise.</dd>
+<dd><code>true</code> if verbose output for the memory
+system is enabled; <code>false</code> otherwise.</dd>
 </dl>
 </div>
 </section>
@@ -577,13 +622,21 @@ producing verbose output.</div>
 <h3>setVerbose</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setVerbose</span><wbr><span class="parameters">(boolean&nbsp;value)</span></div>
-<div class="block">Updates the verbose output setting of the memory system.</div>
+<div class="block">Enables or disables verbose output for the memory
+system.  The verbose output information and the output stream
+to which the verbose information is emitted are implementation
+dependent.  Typically, a Java virtual machine implementation
+prints a message whenever it frees memory at garbage collection.
+
+<p>
+Each invocation of this method enables or disables verbose
+output globally.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html#setVerbose(boolean)" title="class or interface in java.lang.management" class="external-link" target="_blank">setVerbose</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryMXBean</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>value</code> - <code>true</code> enables verbose output ;
-           <code>false</code> disables verbose output.</dd>
+<dd><code>value</code> - <code>true</code> to enable verbose output;
+             <code>false</code> to disable.</dd>
 </dl>
 </div>
 </section>
@@ -910,7 +963,7 @@ given filter and handback.</dd>
 </ul>
 </section>
 <!-- ========= END OF CLASS DATA ========= -->
-<footer role="contentinfo">
+<footer>
 <hr>
 <p class="legal-copy"><small><a href="https://eclipse.dev/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2026 IBM Corp. and others.</small></p>
 </footer>

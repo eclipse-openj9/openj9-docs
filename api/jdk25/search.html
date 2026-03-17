@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <div class="main-grid">
 <main role="main">
 <h1 class="title">Search</h1>
-<div><input type="text" id="page-search-input" disabled placeholder="Search documentation (type /)" aria-label="Search in documentation" autocomplete="off" spellcheck="false"><input type="reset" id="page-search-reset" disabled tabindex="-1" value="Reset">in <select id="search-modules">
+<div><input type="text" id="page-search-input" disabled placeholder="Search documentation (type /)" aria-label="Search in documentation" autocomplete="off" spellcheck="false"><input type="reset" id="page-search-reset" disabled tabindex="-1" value="Reset">in <select id="search-modules" aria-label="Select the module to search in.">
 <option value>all modules</option>
 <option value="jdk.management">jdk.management</option>
 <option value="openj9.criu">openj9.criu</option>
@@ -86,7 +86,7 @@ loadScripts(document, 'script');</script>
 <div id="result-container"></div>
 <script type="text/javascript" src="script-files/search-page.js"></script>
 </div>
-<footer role="contentinfo">
+<footer>
 <hr>
 <p class="legal-copy"><small><a href="https://eclipse.dev/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2026 IBM Corp. and others.</small></p>
 </footer>

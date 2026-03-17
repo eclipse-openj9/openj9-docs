@@ -165,14 +165,13 @@ implements <a href="../GarbageCollectorMXBean.html" title="interface in com.ibm.
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCollectionCount()" class="member-name-link">getCollectionCount</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns in a long the number of garbage collections carried out by the
-associated collector.</div>
+<div class="block">Returns the total number of collections that have occurred.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCollectionTime()" class="member-name-link">getCollectionTime</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">For the associated garbage collector, returns the total amount of time in
-milliseconds that it has spent carrying out garbage collection.</div>
+<div class="block">Returns the approximate accumulated collection elapsed time
+in milliseconds.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLastCollectionEndTime()" class="member-name-link">getLastCollectionEndTime</a>()</code></div>
@@ -192,8 +191,7 @@ milliseconds that it has spent carrying out garbage collection.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMemoryPoolNames()" class="member-name-link">getMemoryPoolNames</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the names of all of the memory pools managed by this
-<code>MXBean</code>.</div>
+<div class="block">Returns the name of memory pools that this memory manager manages.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMemoryUsed()" class="member-name-link">getMemoryUsed</a>()</code></div>
@@ -203,7 +201,7 @@ milliseconds that it has spent carrying out garbage collection.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the name of this particular memory manager.</div>
+<div class="block">Returns the name representing this memory manager.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/javax/management/MBeanNotificationInfo.html" title="class or interface in javax.management" class="external-link" target="_blank">MBeanNotificationInfo</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNotificationInfo()" class="member-name-link">getNotificationInfo</a>()</code></div>
@@ -236,8 +234,8 @@ the object name of this platform managed object.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isValid()" class="member-name-link">isValid</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns <code>true</code> if this memory manager is still valid in the
-virtual machine.</div>
+<div class="block">Tests if this memory manager is valid in the Java virtual
+machine.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeNotificationListener(javax.management.NotificationListener)" class="member-name-link">removeNotificationListener</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/javax/management/NotificationListener.html" title="class or interface in javax.management" class="external-link" target="_blank">NotificationListener</a>&nbsp;listener)</code></div>
@@ -359,14 +357,14 @@ information available.</dd>
 <h3>getCollectionCount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getCollectionCount</span>()</div>
-<div class="block">Returns in a long the number of garbage collections carried out by the
-associated collector.</div>
+<div class="block">Returns the total number of collections that have occurred.
+This method returns <code>-1</code> if the collection count is undefined for
+this collector.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/GarbageCollectorMXBean.html#getCollectionCount()" title="class or interface in java.lang.management" class="external-link" target="_blank">getCollectionCount</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/GarbageCollectorMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">GarbageCollectorMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the total number of garbage collections that have been carried
-        out by the associated garbage collector.</dd>
+<dd>the total number of collections that have occurred.</dd>
 </dl>
 </div>
 </section>
@@ -376,14 +374,20 @@ associated collector.</div>
 <h3>getCollectionTime</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getCollectionTime</span>()</div>
-<div class="block">For the associated garbage collector, returns the total amount of time in
-milliseconds that it has spent carrying out garbage collection.</div>
+<div class="block">Returns the approximate accumulated collection elapsed time
+in milliseconds.  This method returns <code>-1</code> if the collection
+elapsed time is undefined for this collector.
+<p>
+The Java virtual machine implementation may use a high resolution
+timer to measure the elapsed time.  This method may return the
+same value even if the collection count has been incremented
+if the collection elapsed time is very short.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/GarbageCollectorMXBean.html#getCollectionTime()" title="class or interface in java.lang.management" class="external-link" target="_blank">getCollectionTime</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/GarbageCollectorMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">GarbageCollectorMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the number of milliseconds that have been spent in performing
-        garbage collection. This is a cumulative figure.</dd>
+<dd>the approximate accumulated collection elapsed time
+in milliseconds.</dd>
 </dl>
 </div>
 </section>
@@ -590,14 +594,13 @@ registered with the MBean.</dd>
 <h3>getMemoryPoolNames</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>[]</span>&nbsp;<span class="element-name">getMemoryPoolNames</span>()</div>
-<div class="block">Returns the names of all of the memory pools managed by this
-<code>MXBean</code>.</div>
+<div class="block">Returns the name of memory pools that this memory manager manages.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryManagerMXBean.html#getMemoryPoolNames()" title="class or interface in java.lang.management" class="external-link" target="_blank">getMemoryPoolNames</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryManagerMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryManagerMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>string array containing the names of all of the managed memory
-        pools.</dd>
+<dd>an array of <code>String</code> objects, each is
+the name of a memory pool that this memory manager manages.</dd>
 </dl>
 </div>
 </section>
@@ -607,7 +610,7 @@ registered with the MBean.</dd>
 <h3>getName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
-<div class="block">Returns the name of this particular memory manager.</div>
+<div class="block">Returns the name representing this memory manager.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryManagerMXBean.html#getName()" title="class or interface in java.lang.management" class="external-link" target="_blank">getName</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryManagerMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryManagerMXBean</a></code></dd>
@@ -622,15 +625,16 @@ registered with the MBean.</dd>
 <h3>isValid</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isValid</span>()</div>
-<div class="block">Returns <code>true</code> if this memory manager is still valid in the
-virtual machine. That is, the memory manager has not been eliminated from
-the virtual machine memory.</div>
+<div class="block">Tests if this memory manager is valid in the Java virtual
+machine.  A memory manager becomes invalid once the Java virtual
+machine removes it from the memory system.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryManagerMXBean.html#isValid()" title="class or interface in java.lang.management" class="external-link" target="_blank">isValid</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/MemoryManagerMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">MemoryManagerMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> if the memory manager is still valid in the
-        virtual machine ; otherwise <code>false</code>.</dd>
+<dd><code>true</code> if the memory manager is valid in the
+              Java virtual machine;
+        <code>false</code> otherwise.</dd>
 </dl>
 </div>
 </section>
@@ -658,7 +662,7 @@ the object name of this platform managed object.</dd>
 </ul>
 </section>
 <!-- ========= END OF CLASS DATA ========= -->
-<footer role="contentinfo">
+<footer>
 <hr>
 <p class="legal-copy"><small><a href="https://eclipse.dev/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2026 IBM Corp. and others.</small></p>
 </footer>
