@@ -110,6 +110,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">JavaReference</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link" target="_blank">Object</a>
 implements <a href="../JavaReference.html" title="interface in com.ibm.dtfj.java">JavaReference</a></span></div>
+<div class="block">JavaReference is intended to represent either a standard reference within a java heap,
+ for example a reference from one object to another, or a root. A root is a reference
+ that is held outside of the heap, in the Java stack or within the JVM itself.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
