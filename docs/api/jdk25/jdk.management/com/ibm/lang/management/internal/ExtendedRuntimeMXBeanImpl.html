@@ -149,15 +149,14 @@ implements <a href="../RuntimeMXBean.html" title="interface in com.ibm.lang.mana
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBootClassPath()" class="member-name-link">getBootClassPath</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">If bootstrap class loading is supported by the virtual machine, returns a
-string containing the full bootstrap class path used by the boot class
-loader to locate and load class files.</div>
+<div class="block">Returns the boot class path that is used by the bootstrap class loader
+to search for class files.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClassPath()" class="member-name-link">getClassPath</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the class path string used by the system class loader to locate
-and load class files.</div>
+<div class="block">Returns the Java class path that is used by the system class loader
+to search for class files.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCPULoad()" class="member-name-link">getCPULoad</a>()</code></div>
@@ -169,8 +168,8 @@ to mean the following:</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link" target="_blank">List</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInputArguments()" class="member-name-link">getInputArguments</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a list of all of the input arguments passed to the virtual
-machine on start-up.</div>
+<div class="block">Returns the input arguments passed to the Java virtual machine
+which does not include the arguments to the <code>main</code> method.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../RuntimeMXBean.html" title="interface in com.ibm.lang.management">RuntimeMXBean</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getInstance()" class="member-name-link">getInstance</a>()</code></div>
@@ -180,19 +179,18 @@ machine on start-up.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLibraryPath()" class="member-name-link">getLibraryPath</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the Java library path that will be used by the virtual machine to
-locate and load libraries.</div>
+<div class="block">Returns the Java library path.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getManagementSpecVersion()" class="member-name-link">getManagementSpecVersion</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a string containing the management interface specification
-version that the virtual machine meets.</div>
+<div class="block">Returns the version of the specification for the management interface
+implemented by the running Java virtual machine.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the string name of this virtual machine.</div>
+<div class="block">Returns the name representing the running Java virtual machine.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/javax/management/ObjectName.html" title="class or interface in javax.management" class="external-link" target="_blank">ObjectName</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObjectName()" class="member-name-link">getObjectName</a>()</code></div>
@@ -203,34 +201,32 @@ the object name of this platform managed object.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpecName()" class="member-name-link">getSpecName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the name of the Java virtual machine specification followed by
-this virtual machine.</div>
+<div class="block">Returns the Java virtual machine specification name.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpecVendor()" class="member-name-link">getSpecVendor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the name of the Java virtual machine specification vendor.</div>
+<div class="block">Returns the Java virtual machine specification vendor.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSpecVersion()" class="member-name-link">getSpecVersion</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the name of the Java virtual machine specification version.</div>
+<div class="block">Returns the Java virtual machine specification version.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStartTime()" class="member-name-link">getStartTime</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the time, in milliseconds, when the virtual machine was started.</div>
+<div class="block">Returns the start time of the Java virtual machine in milliseconds.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link" target="_blank">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSystemProperties()" class="member-name-link">getSystemProperties</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a map of the names and values of every system property known to
-the virtual machine.</div>
+<div class="block">Returns a map of names and values of all system properties.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUptime()" class="member-name-link">getUptime</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the lifetime of the virtual machine in milliseconds.</div>
+<div class="block">Returns the uptime of the Java virtual machine in milliseconds.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVMGeneratedCPULoad()" class="member-name-link">getVMGeneratedCPULoad</a>()</code></div>
@@ -253,17 +249,17 @@ into their own JVMs.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVmName()" class="member-name-link">getVmName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the name of the Java virtual machine implementation.</div>
+<div class="block">Returns the Java virtual machine implementation name.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVmVendor()" class="member-name-link">getVmVendor</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the name of the Java virtual machine implementation vendor.</div>
+<div class="block">Returns the Java virtual machine implementation vendor.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVmVersion()" class="member-name-link">getVmVersion</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the version of the Java virtual machine implementation.</div>
+<div class="block">Returns the Java virtual machine implementation version.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAttachApiInitialized()" class="member-name-link">isAttachApiInitialized</a>()</code></div>
@@ -278,8 +274,9 @@ into their own JVMs.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBootClassPathSupported()" class="member-name-link">isBootClassPathSupported</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a boolean indication of whether or not the virtual machine
-supports a bootstrap class loading mechanism.</div>
+<div class="block">Tests if the Java virtual machine supports the boot class path
+mechanism used by the bootstrap class loader to search for class
+files.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVMIdle()" class="member-name-link">isVMIdle</a>()</code></div>
@@ -461,21 +458,23 @@ into their own JVMs.</div>
 <h3>getBootClassPath</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getBootClassPath</span>()</div>
-<div class="block">If bootstrap class loading is supported by the virtual machine, returns a
-string containing the full bootstrap class path used by the boot class
-loader to locate and load class files.
-<p>
-An indication of whether or not the virtual machine supports a boot class
-loader mechanism can be found from invoking the
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#isBootClassPathSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>RuntimeMXBean.isBootClassPathSupported()</code></a> method.
-</p></div>
+<div class="block">Returns the boot class path that is used by the bootstrap class loader
+to search for class files.
+
+<p> Multiple paths in the boot class path are separated by the
+path separator character of the platform on which the Java
+virtual machine is running.
+
+<p>A Java virtual machine implementation may not support
+the boot class path mechanism for the bootstrap class loader
+to search for class files.
+The <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#isBootClassPathSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank"><code>RuntimeMXBean.isBootClassPathSupported()</code></a> method can be used
+to determine if the Java virtual machine supports this method.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getBootClassPath()" title="class or interface in java.lang.management" class="external-link" target="_blank">getBootClassPath</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the bootstrap classpath with each entry separated by the path
-        separator character corresponding to the underlying operating
-        system.</dd>
+<dd>the boot class path.</dd>
 </dl>
 </div>
 </section>
@@ -485,21 +484,22 @@ loader mechanism can be found from invoking the
 <h3>getClassPath</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getClassPath</span>()</div>
-<div class="block">Returns the class path string used by the system class loader to locate
-and load class files. The value is identical to that which would be
-obtained from a call to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a>
-supplying the value &quot;java.class.path&quot; for the key.</div>
+<div class="block">Returns the Java class path that is used by the system class loader
+to search for class files.
+This method is equivalent to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty("java.class.path")</code></a>.
+
+<p> Multiple paths in the Java class path are separated by the
+path separator character of the platform of the Java virtual machine
+being monitored.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getClassPath()" title="class or interface in java.lang.management" class="external-link" target="_blank">getClassPath</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the system classpath with each entry separated by the path
-        separator character corresponding to the underlying operating
-        system.</dd>
+<dd>the Java class path.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -511,21 +511,21 @@ supplying the value &quot;java.class.path&quot; for the key.</div>
 <h3>getLibraryPath</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getLibraryPath</span>()</div>
-<div class="block">Returns the Java library path that will be used by the virtual machine to
-locate and load libraries. The value is identical to that which would be
-obtained from a call to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a>
-supplying the value &quot;java.library.path&quot; for the key.</div>
+<div class="block">Returns the Java library path.
+This method is equivalent to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty("java.library.path")</code></a>.
+
+<p> Multiple paths in the Java library path are separated by the
+path separator character of the platform of the Java virtual machine
+being monitored.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getLibraryPath()" title="class or interface in java.lang.management" class="external-link" target="_blank">getLibraryPath</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the Java library path with each entry separated by the path
-        separator character corresponding to the underlying operating
-        system.</dd>
+<dd>the Java library path.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -537,14 +537,14 @@ supplying the value &quot;java.library.path&quot; for the key.</div>
 <h3>getManagementSpecVersion</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getManagementSpecVersion</span>()</div>
-<div class="block">Returns a string containing the management interface specification
-version that the virtual machine meets.</div>
+<div class="block">Returns the version of the specification for the management interface
+implemented by the running Java virtual machine.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getManagementSpecVersion()" title="class or interface in java.lang.management" class="external-link" target="_blank">getManagementSpecVersion</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the version of the management interface specification adhered to
-        by the virtual machine.</dd>
+<dd>the version of the specification for the management interface
+implemented by the running Java virtual machine.</dd>
 </dl>
 </div>
 </section>
@@ -554,13 +554,17 @@ version that the virtual machine meets.</div>
 <h3>getName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
-<div class="block">Returns the string name of this virtual machine. This value may be
-different for each particular running virtual machine.</div>
+<div class="block">Returns the name representing the running Java virtual machine.
+The returned name string can be any arbitrary string and
+a Java virtual machine implementation can choose
+to embed platform-specific useful information in the
+returned name string.  Each running virtual machine could have
+a different name.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getName()" title="class or interface in java.lang.management" class="external-link" target="_blank">getName</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the name of this running virtual machine.</dd>
+<dd>the name representing the running Java virtual machine.</dd>
 </dl>
 </div>
 </section>
@@ -570,19 +574,17 @@ different for each particular running virtual machine.</div>
 <h3>getSpecName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getSpecName</span>()</div>
-<div class="block">Returns the name of the Java virtual machine specification followed by
-this virtual machine. The value is identical to that which would be
-obtained from a call to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a>
-supplying the value &quot;java.vm.specification.name&quot; for the key.</div>
+<div class="block">Returns the Java virtual machine specification name.
+This method is equivalent to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty("java.vm.specification.name")</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getSpecName()" title="class or interface in java.lang.management" class="external-link" target="_blank">getSpecName</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the name of the Java virtual machine specification.</dd>
+<dd>the Java virtual machine specification name.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -594,19 +596,17 @@ supplying the value &quot;java.vm.specification.name&quot; for the key.</div>
 <h3>getSpecVendor</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getSpecVendor</span>()</div>
-<div class="block">Returns the name of the Java virtual machine specification vendor. The
-value is identical to that which would be obtained from a call to
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a> supplying the value
-&quot;java.vm.specification.vendor&quot; for the key.</div>
+<div class="block">Returns the Java virtual machine specification vendor.
+This method is equivalent to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty("java.vm.specification.vendor")</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getSpecVendor()" title="class or interface in java.lang.management" class="external-link" target="_blank">getSpecVendor</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the name of the Java virtual machine specification vendor.</dd>
+<dd>the Java virtual machine specification vendor.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -618,10 +618,8 @@ value is identical to that which would be obtained from a call to
 <h3>getSpecVersion</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getSpecVersion</span>()</div>
-<div class="block">Returns the name of the Java virtual machine specification version. The
-value is identical to that which would be obtained from a call to
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a> supplying the value
-&quot;java.vm.specification.version&quot; for the key.</div>
+<div class="block">Returns the Java virtual machine specification version.
+This method is equivalent to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty("java.vm.specification.version")</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getSpecVersion()" title="class or interface in java.lang.management" class="external-link" target="_blank">getSpecVersion</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
@@ -629,8 +627,8 @@ value is identical to that which would be obtained from a call to
 <dd>the Java virtual machine specification version.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -642,12 +640,14 @@ value is identical to that which would be obtained from a call to
 <h3>getStartTime</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getStartTime</span>()</div>
-<div class="block">Returns the time, in milliseconds, when the virtual machine was started.</div>
+<div class="block">Returns the start time of the Java virtual machine in milliseconds.
+This method returns the approximate time when the Java virtual
+machine started.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getStartTime()" title="class or interface in java.lang.management" class="external-link" target="_blank">getStartTime</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the virtual machine start time in milliseconds.</dd>
+<dd>start time of the Java virtual machine in milliseconds.</dd>
 </dl>
 </div>
 </section>
@@ -657,12 +657,12 @@ value is identical to that which would be obtained from a call to
 <h3>getUptime</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getUptime</span>()</div>
-<div class="block">Returns the lifetime of the virtual machine in milliseconds.</div>
+<div class="block">Returns the uptime of the Java virtual machine in milliseconds.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getUptime()" title="class or interface in java.lang.management" class="external-link" target="_blank">getUptime</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the number of milliseconds the virtual machine has been running.</dd>
+<dd>uptime of the Java virtual machine in milliseconds.</dd>
 </dl>
 </div>
 </section>
@@ -672,19 +672,17 @@ value is identical to that which would be obtained from a call to
 <h3>getVmName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getVmName</span>()</div>
-<div class="block">Returns the name of the Java virtual machine implementation. The value is
-identical to that which would be obtained from a call to
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a> supplying the value
-&quot;java.vm.name&quot; for the key.</div>
+<div class="block">Returns the Java virtual machine implementation name.
+This method is equivalent to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty("java.vm.name")</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getVmName()" title="class or interface in java.lang.management" class="external-link" target="_blank">getVmName</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the name of the Java virtual machine implementation.</dd>
+<dd>the Java virtual machine implementation name.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -696,19 +694,17 @@ identical to that which would be obtained from a call to
 <h3>getVmVendor</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getVmVendor</span>()</div>
-<div class="block">Returns the name of the Java virtual machine implementation vendor. The
-value is identical to that which would be obtained from a call to
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a> supplying the value
-&quot;java.vm.vendor&quot; for the key.</div>
+<div class="block">Returns the Java virtual machine implementation vendor.
+This method is equivalent to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty("java.vm.vendor")</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getVmVendor()" title="class or interface in java.lang.management" class="external-link" target="_blank">getVmVendor</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the name of the Java virtual machine implementation vendor.</dd>
+<dd>the Java virtual machine implementation vendor.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -720,19 +716,17 @@ value is identical to that which would be obtained from a call to
 <h3>getVmVersion</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a></span>&nbsp;<span class="element-name">getVmVersion</span>()</div>
-<div class="block">Returns the version of the Java virtual machine implementation. The value
-is identical to that which would be obtained from a call to
-<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a> supplying the value
-&quot;java.vm.version&quot; for the key.</div>
+<div class="block">Returns the Java virtual machine implementation version.
+This method is equivalent to <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty("java.vm.version")</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getVmVersion()" title="class or interface in java.lang.management" class="external-link" target="_blank">getVmVersion</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>the version of the Java virtual machine implementation.</dd>
+<dd>the Java virtual machine implementation version.</dd>
 <dt>See Also:</dt>
 <dd>
-<ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(java.lang.String)</code></a></li>
+<ul class="tag-list">
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperty(java.lang.String)" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperty(String)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -744,13 +738,15 @@ is identical to that which would be obtained from a call to
 <h3>isBootClassPathSupported</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBootClassPathSupported</span>()</div>
-<div class="block">Returns a boolean indication of whether or not the virtual machine
-supports a bootstrap class loading mechanism.</div>
+<div class="block">Tests if the Java virtual machine supports the boot class path
+mechanism used by the bootstrap class loader to search for class
+files.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#isBootClassPathSupported()" title="class or interface in java.lang.management" class="external-link" target="_blank">isBootClassPathSupported</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> if supported, <code>false</code> otherwise.</dd>
+<dd><code>true</code> if the Java virtual machine supports the
+class path mechanism; <code>false</code> otherwise.</dd>
 </dl>
 </div>
 </section>
@@ -760,17 +756,30 @@ supports a bootstrap class loading mechanism.</div>
 <h3>getInputArguments</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link" target="_blank">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&gt;</span>&nbsp;<span class="element-name">getInputArguments</span>()</div>
-<div class="block">Returns a list of all of the input arguments passed to the virtual
-machine on start-up. This will <i>not </i> include any input arguments
-that are passed into the application's <code>main(String[] args)</code>
-method.</div>
+<div class="block">Returns the input arguments passed to the Java virtual machine
+which does not include the arguments to the <code>main</code> method.
+This method returns an empty list if there is no input argument
+to the Java virtual machine.
+<p>
+Some Java virtual machine implementations may take input arguments
+from multiple different sources: for examples, arguments passed from
+the application that launches the Java virtual machine such as
+the 'java' command, environment variables, configuration files, etc.
+<p>
+Typically, not all command-line options to the 'java' command
+are passed to the Java virtual machine.
+Thus, the returned input arguments may not
+include all command-line options.
+
+<p>
+<b>MBeanServer access</b>:<br>
+The mapped type of <code>List&lt;String&gt;</code> is <code>String[]</code>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getInputArguments()" title="class or interface in java.lang.management" class="external-link" target="_blank">getInputArguments</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>a list of strings, each one containing an argument to the virtual
-        machine. If no virtual machine arguments were passed in at
-        start-up time then this will be an empty list.</dd>
+<dd>a list of <code>String</code> objects; each element
+is an argument passed to the Java virtual machine.</dd>
 </dl>
 </div>
 </section>
@@ -780,13 +789,40 @@ method.</div>
 <h3>getSystemProperties</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link" target="_blank">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&gt;</span>&nbsp;<span class="element-name">getSystemProperties</span>()</div>
-<div class="block">Returns a map of the names and values of every system property known to
-the virtual machine.</div>
+<div class="block">Returns a map of names and values of all system properties.
+This method calls <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html#getProperties()" title="class or interface in java.lang" class="external-link" target="_blank"><code>System.getProperties()</code></a> to get all
+system properties.  Properties whose name or value is not
+a <code>String</code> are omitted.
+
+<p>
+<b>MBeanServer access</b>:<br>
+The mapped type of <code>Map&lt;String,String&gt;</code> is
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/javax/management/openmbean/TabularData.html" title="class or interface in javax.management.openmbean" class="external-link" target="_blank"><code>TabularData</code></a>
+with two items in each row as follows:
+<table class="striped" style="margin-left:2em">
+<caption style="display:none">Name and Type for each item</caption>
+<thead>
+<tr>
+  <th scope="col">Item Name</th>
+  <th scope="col">Item Type</th>
+  </tr>
+</thead>
+<tbody>
+<tr style="text-align:left">
+  <th scope="row"><code>key</code></th>
+  <td><code>String</code></td>
+  </tr>
+<tr>
+  <th scope="row"><code>value</code></th>
+  <td><code>String</code></td>
+  </tr>
+</tbody>
+</table></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html#getSystemProperties()" title="class or interface in java.lang.management" class="external-link" target="_blank">getSystemProperties</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/RuntimeMXBean.html" title="class or interface in java.lang.management" class="external-link" target="_blank">RuntimeMXBean</a></code></dd>
 <dt>Returns:</dt>
-<dd>a map containing the names and values of every system property.</dd>
+<dd>a map of names and values of all system properties.</dd>
 </dl>
 </div>
 </section>
@@ -814,7 +850,7 @@ the object name of this platform managed object.</dd>
 </ul>
 </section>
 <!-- ========= END OF CLASS DATA ========= -->
-<footer role="contentinfo">
+<footer>
 <hr>
 <p class="legal-copy"><small><a href="https://eclipse.dev/openj9/" target="_blank">Eclipse OpenJ9 website.</a><br> To raise a bug report or suggest an improvement create an <a href="https://github.com/eclipse-openj9/openj9/issues" target="_blank">Eclipse Openj9 issue.</a><br> Copyright &copy; 1998, 2026 IBM Corp. and others.</small></p>
 </footer>
