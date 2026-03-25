@@ -25,7 +25,7 @@
 
 ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) This option enables or disables JDK Flight Recorder (JFR) in the VM. This built-in profiling and troubleshooting feature in the VM collects profiling and diagnostic information.
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** OpenJ9 offers limited support for JFR functionalities. JFR can be enabled on OpenJ9 only by using the `jcmd` options. The produced JFR file can be viewed by using the JDK Mission Control (JMC) tool.
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** OpenJ9 offers limited support for JFR functionalities. JFR recording can be enabled or disabled on OpenJ9 only by using the `jcmd` options as specified in the Explanation section. The JDK Mission Control (JMC) tool is the only way to view the produced JFR file.
 
 ## Syntax
 
@@ -40,7 +40,7 @@
 
 If JFR is enabled in the VM with the `-XX:+FlightRecorder` option, then you can trigger profile and diagnostic recording with the [`jcmd`](https://eclipse.dev/openj9/docs/tool_jcmd/) tool. Recording does not start automatically, it must be triggered.
 
-To start a recording, specify the following command:
+To start a recording, specify the following `jcmd` option command:
 
 ```
 jcmd <vmid | display name | 0> JFR.start [filename=<file_name_with_path>] [duration=<time_with_unit_of_time>]
@@ -58,6 +58,13 @@ Example:
 
 ```
 jcmd 1234 JFR.start filename=/path/ABCD.jfr duration=4s
+
+```
+
+To stop a recording, specify the following command:
+
+```
+jcmd <vmid | display name | 0> JFR.stop
 
 ```
 
@@ -105,6 +112,7 @@ All JFR-related `jcmd` options might change in future releases.
     - JFR APIs (`jdk/jfr/*`classes)
     - Controlling JFR with Java Management Extensions (JMX)
     - JFR streaming
+    - The `jfr` command-line utility
 
 Support for JFR will be expanded in future releases.
 
