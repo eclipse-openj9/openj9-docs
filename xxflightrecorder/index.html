@@ -11460,7 +11460,7 @@
 
 <h1 id="-xx-flightrecorder">-XX:[+|-]FlightRecorder</h1>
 <p><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> This option enables or disables JDK Flight Recorder (JFR) in the VM. This built-in profiling and troubleshooting feature in the VM collects profiling and diagnostic information.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> OpenJ9 offers limited support for JFR functionalities. JFR can be enabled on OpenJ9 only by using the <code>jcmd</code> options. The produced JFR file can be viewed by using the JDK Mission Control (JMC) tool.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> OpenJ9 offers limited support for JFR functionalities. JFR recording can be enabled or disabled on OpenJ9 only by using the <code>jcmd</code> options as specified in the Explanation section. The JDK Mission Control (JMC) tool is the only way to view the produced JFR file.</p>
 <h2 id="syntax">Syntax</h2>
 <pre><code>    -XX:[+|-]FlightRecorder
 </code></pre>
@@ -11487,7 +11487,7 @@
 </table>
 <h2 id="explanation">Explanation</h2>
 <p>If JFR is enabled in the VM with the <code>-XX:+FlightRecorder</code> option, then you can trigger profile and diagnostic recording with the <a href="https://eclipse.dev/openj9/docs/tool_jcmd/"><code>jcmd</code></a> tool. Recording does not start automatically, it must be triggered.</p>
-<p>To start a recording, specify the following command:</p>
+<p>To start a recording, specify the following <code>jcmd</code> option command:</p>
 <pre><code>jcmd &lt;vmid | display name | 0&gt; JFR.start [filename=&lt;file_name_with_path&gt;] [duration=&lt;time_with_unit_of_time&gt;]
 
 </code></pre>
@@ -11505,6 +11505,10 @@
 </ul>
 <p>Example:</p>
 <pre><code>jcmd 1234 JFR.start filename=/path/ABCD.jfr duration=4s
+
+</code></pre>
+<p>To stop a recording, specify the following command:</p>
+<pre><code>jcmd &lt;vmid | display name | 0&gt; JFR.stop
 
 </code></pre>
 <p>All JFR-related <code>jcmd</code> options might change in future releases.</p>
@@ -11550,6 +11554,7 @@
 <li>JFR APIs (<code>jdk/jfr/*</code>classes)</li>
 <li>Controlling JFR with Java Management Extensions (JMX)</li>
 <li>JFR streaming</li>
+<li>The <code>jfr</code> command-line utility</li>
 </ul>
 </li>
 </ul>
