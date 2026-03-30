@@ -183,6 +183,9 @@ The following example sets 4 KB for text and 64 KB for stack, native data, and h
 ```
 LDR_CNTRL=TEXTPSIZE=4K@STACKPSIZE=64K@DATAPSIZE=64K
 ```
+On AIX systems, the `LDR_CNTRL` environment variable is set to `TEXTPSIZE=64K@DATAPSIZE=64K@STACKPSIZE=64K@SHMPSIZE=64K` by default to specify medium page sizes (64K) for the text, data, stack, and shared memory segments to improve performance.
+
+From the 0.59.0 release onwards, you can use the `-XX:-UseMediumPageSize` option to disable this default setting of the `LDR_CNTRL` environment variable. For more information, see [`-XX:[+|-]UseMediumPageSize`](xxusemediumpagesize.md).
 
 For more information, including support considerations, see [Large pages](https://www.ibm.com/support/knowledgecenter/ssw_aix_72/performance/large_page_ovw.html) and [Multiple page size support](https://www.ibm.com/support/knowledgecenter/ssw_aix_72/performance/multiple_page_size_support.html) in the AIX documentation.
 
