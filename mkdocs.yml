@@ -101,6 +101,7 @@ nav:
 
     - "Release notes" :
         - "Overview"                                                             : openj9_releases.md
+        - "Version 0.59.0"                                                       : version0.59.md
         - "Version 0.58.0"                                                       : version0.58.md
         - "Version 0.57.0"                                                       : version0.57.md
         - "Version 0.56.0"                                                       : version0.56.md
@@ -473,6 +474,7 @@ nav:
             - "-XX:[+|-]UseDebugLocalMap"                                        : xxdebuglocalmap.md
             - "-XX:[+|-]UseGCStartupHints"                                       : xxusegcstartuphints.md
             - "-XX:[+|-]UseJITServer"                                            : xxusejitserver.md
+            - "-XX:[+|-]UseMediumPageSize"                                       : xxusemediumpagesize.md
             - "-XX:[+|-]UseNoGC"                                                 : xxusenogc.md
             - "-XX:[+|-]UseZlibNX"                                               : xxusezlibnx.md
             - "-XX:[+|-]UTFCache"                                                : xxutfcache.md
