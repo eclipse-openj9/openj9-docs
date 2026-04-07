@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.58.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:[+|-]UseMediumPageSize` option is added](#new-xx-usemediumpagesize-option-is-added)
+- [A signal handler optimization feature that was disabled on Windows&trade; is enabled again](#a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again)
 
 ## Features and changes
 
@@ -41,6 +42,12 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 With the new option, `-XX:-UseMediumPageSize `, you can now disable the default setting of the `LDR_CNTRL` environment variable whereby medium page sizes (64 KB) are configured for text, data, stack, and shared memory segments.
 
 For more information, see [`-XX:[+|-]UseMediumPageSize`](xxusemediumpagesize.md).
+
+### A signal handler optimization feature that was disabled on Windows is enabled again
+
+In the [0.57.0 release](version0.57.md#a-signal-handler-optimization-feature-is-temporarily-disabled), on the Windows platform, a signal handler optimization feature was temporarily disabled by default. The feature was disabled because VM crashes were suspected to be related to an interaction between the Windows control flow guard feature and the VM's signal handling mechanism.
+
+Now the root cause for these VM crashes has been identified and fixed. Therefore, in this release, the disabled signal handler optimization feature is enabled again.
 
 ## Known problems and full release information
 
