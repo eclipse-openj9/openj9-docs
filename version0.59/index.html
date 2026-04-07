@@ -514,6 +514,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A signal handler optimization feature that was disabled on Windows is enabled again
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11490,6 +11501,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A signal handler optimization feature that was disabled on Windows is enabled again
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11551,6 +11573,7 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#new-xx-usemediumpagesize-option-is-added">New <code>-XX:[+|-]UseMediumPageSize</code> option is added</a></li>
+<li><a href="#a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again">A signal handler optimization feature that was disabled on Windows&trade; is enabled again</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -11559,6 +11582,9 @@
 <h3 id="new-xx-usemediumpagesize-option-is-added">New <code>-XX:[+|-]UseMediumPageSize</code> option is added</h3>
 <p>With the new option, <code>-XX:-UseMediumPageSize</code>, you can now disable the default setting of the <code>LDR_CNTRL</code> environment variable whereby medium page sizes (64 KB) are configured for text, data, stack, and shared memory segments.</p>
 <p>For more information, see <a href="../xxusemediumpagesize/"><code>-XX:[+|-]UseMediumPageSize</code></a>.</p>
+<h3 id="a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again">A signal handler optimization feature that was disabled on Windows is enabled again</h3>
+<p>In the <a href="../version0.57/#a-signal-handler-optimization-feature-is-temporarily-disabled">0.57.0 release</a>, on the Windows platform, a signal handler optimization feature was temporarily disabled by default. The feature was disabled because VM crashes were suspected to be related to an interaction between the Windows control flow guard feature and the VM's signal handling mechanism.</p>
+<p>Now the root cause for these VM crashes has been identified and fixed. Therefore, in this release, the disabled signal handler optimization feature is enabled again.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.58.0 and v0.59.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.59/0.59.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.59.md ==== -->
