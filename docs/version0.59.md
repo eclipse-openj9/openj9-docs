@@ -28,12 +28,15 @@ The following new features and notable changes since version 0.58.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [New `-XX:[+|-]UseMediumPageSize` option is added](#new-xx-usemediumpagesize-option-is-added)
 - [A signal handler optimization feature that was disabled on Windows&trade; is enabled again](#a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again)
+- [Compiler changes for Linux&reg;](#compiler-changes-for-linux)
 
 ## Features and changes
 
 ### Binaries and supported environments
 
 Eclipse OpenJ9&trade; release 0.59.0 supports OpenJDK 8, 11, 17, 21, 25, and 26.
+
+Linux x86 64-bit is now compiled on CentOS 7, modifying the minimum glibc version to 2.17 from 2.12.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
@@ -48,6 +51,12 @@ For more information, see [`-XX:[+|-]UseMediumPageSize`](xxusemediumpagesize.md)
 In the [0.57.0 release](version0.57.md#a-signal-handler-optimization-feature-is-temporarily-disabled), on the Windows platform, a signal handler optimization feature was temporarily disabled by default. The feature was disabled because VM crashes were suspected to be related to an interaction between the Windows control flow guard feature and the VM's signal handling mechanism.
 
 Now the root cause for these VM crashes has been identified and fixed. Therefore, in this release, the disabled signal handler optimization feature is enabled again.
+
+### Compiler changes for Linux
+
+Linux x86 64-bit, Linux on POWER&reg; LE 64-bit, and Linux on IBM Z&reg; 64-bit builds on all OpenJDK versions now use gcc 14.2 compiler.
+
+For more information, see [Supported environments](openj9_support.md).
 
 ## Known problems and full release information
 
