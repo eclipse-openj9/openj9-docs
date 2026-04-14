@@ -77,13 +77,9 @@ OpenJDK 8 binaries are expected to function on the minimum operating system leve
 | Ubuntu 22.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Ubuntu 24.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span>  | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Not all of these distributions are tested, but the following distributions are expected to function without problems:
 
-- Not all of these distributions are tested, but the following distributions are expected to function without problems:
-
-    - Linux distributions that have a minimum glibc version 2.12 (x) or 2.17 (others)
-
-- Support for OpenJ9 on CentOS 6.10 is removed from 0.46.0 release onwards. With the removal of support, the minimum glibc version (x) might change in future releases.
+    - Linux distributions that have a minimum glibc version 2.17
 
 | Windows&trade;                              | x32                                                                                  |  x64                                                                                 |
 |-------------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
@@ -118,13 +114,9 @@ OpenJDK 11 binaries are expected to function on the minimum operating system lev
 | Ubuntu 22.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 | Ubuntu 24.04                              | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> | :fontawesome-solid-check:{: .yes aria-hidden="true"}<span class="sr-only">yes</span> |
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Notes:**
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Not all of these distributions are tested, but the following distributions are expected to function without problems:
 
-- Not all of these distributions are tested, but the following distributions are expected to function without problems:
-
-    - Linux distributions that have a minimum glibc version 2.12 (x) or 2.17 (others)
-
-- Support for OpenJ9 on CentOS 6.10 is removed from 0.46.0 release onwards. With the removal of support, the minimum glibc version (x) might change in future releases.
+    - Linux distributions that have a minimum glibc version 2.17
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
@@ -161,7 +153,7 @@ OpenJDK 17 binaries are expected to function on the minimum operating system lev
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Not all of these distributions are tested, but the following distributions are expected to function without problems:
 
-- Linux distributions that have a minimum glibc version 2.17
+    - Linux distributions that have a minimum glibc version 2.17
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
@@ -198,7 +190,7 @@ OpenJDK 21 binaries are expected to function on the minimum operating system lev
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Not all of these distributions are tested, but the following distributions are expected to function without problems:
 
-- Linux distributions that have a minimum glibc version 2.17
+    - Linux distributions that have a minimum glibc version 2.17
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
@@ -236,7 +228,7 @@ OpenJDK 25 and later binaries are expected to function on the minimum operating 
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Not all of these distributions are tested, but the following distributions are expected to function without problems:
 
-- Linux distributions that have a minimum glibc version 2.17
+    - Linux distributions that have a minimum glibc version 2.17
 
 | Windows                                   | x64                                                                                  |
 |-------------------------------------------|--------------------------------------------------------------------------------------|
@@ -267,9 +259,9 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
-| Linux x86 64-bit              | CentOS 6.10            | gcc 11.2                              |
-| Linux on POWER&reg; LE 64-bit | CentOS 7.9             | gcc 11.2                              |
-| Linux on IBM Z&reg; 64-bit    | RHEL 7.9               | gcc 11.2                              |
+| Linux x86 64-bit              | CentOS 6.10            | gcc 14.2                              |
+| Linux on POWER&reg; LE 64-bit | CentOS 7.9             | gcc 14.2                              |
+| Linux on IBM Z&reg; 64-bit    | RHEL 7.9               | gcc 14.2                              |
 | Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
 | Windows x86 32-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
@@ -280,9 +272,9 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
-| Linux x86 64-bit              | CentOS 6.10            | gcc 11.2                              |
-| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 11.2                              |
-| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 11.2                              |
+| Linux x86 64-bit              | CentOS 6.10            | gcc 14.2                              |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 14.2                              |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 14.2                              |
 | Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
@@ -293,9 +285,9 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
-| Linux x86 64-bit              | CentOS 7.9             | gcc 11.2                              |
-| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 11.2                              |
-| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 11.2                              |
+| Linux x86 64-bit              | CentOS 7.9             | gcc 14.2                              |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 14.2                              |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 14.2                              |
 | Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
@@ -306,9 +298,9 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
-| Linux x86 64-bit              | CentOS 7.9             | gcc 11.2                              |
-| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 11.2                              |
-| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 11.2                              |
+| Linux x86 64-bit              | CentOS 7.9             | gcc 14.2                              |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 14.2                              |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 14.2                              |
 | Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |
@@ -319,9 +311,9 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 
 | Platform                      | Operating system       | Compiler                              |
 |-------------------------------|------------------------|---------------------------------------|
-| Linux x86 64-bit              | CentOS 7.9             | gcc 11.2                              |
-| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 11.2                              |
-| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 11.2                              |
+| Linux x86 64-bit              | CentOS 7.9             | gcc 14.2                              |
+| Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 14.2                              |
+| Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 14.2                              |
 | Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 10.15.7          | xcode 12.4 and clang 12.0.0           |

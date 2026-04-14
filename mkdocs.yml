@@ -471,7 +471,7 @@ nav:
             - "-XX:[+|-]TransparentHugePage"                                     : xxtransparenthugepage.md
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
             - "-XX:[+|-]UseContainerSupport"                                     : xxusecontainersupport.md
-            - "-XX:[+|-]UseDebugLocalMap"                                        : xxdebuglocalmap.md
+            - "-XX:[+|-]UseDebugLocalMap"                                        : xxusedebuglocalmap.md
             - "-XX:[+|-]UseGCStartupHints"                                       : xxusegcstartuphints.md
             - "-XX:[+|-]UseJITServer"                                            : xxusejitserver.md
             - "-XX:[+|-]UseMediumPageSize"                                       : xxusemediumpagesize.md
