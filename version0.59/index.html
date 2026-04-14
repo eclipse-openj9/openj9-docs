@@ -525,6 +525,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compiler-changes-for-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiler changes for Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -10404,7 +10426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../xxdebuglocalmap.md" class="md-nav__link">
+      <a href="../xxusedebuglocalmap/" class="md-nav__link">
         
   
   
@@ -11512,6 +11534,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compiler-changes-for-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiler changes for Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11574,6 +11618,8 @@
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><a href="#new-xx-usemediumpagesize-option-is-added">New <code>-XX:[+|-]UseMediumPageSize</code> option is added</a></li>
 <li><a href="#a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again">A signal handler optimization feature that was disabled on Windows&trade; is enabled again</a></li>
+<li><a href="#compiler-changes-for-linux">Compiler changes for Linux&reg;</a></li>
+<li><img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> <img alt="Start of content that applies to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11">glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11</a> <img alt="End of content that applies to Java 8 and 11 (LTS)" src="../cr/java_close_lts.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -11585,6 +11631,11 @@
 <h3 id="a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again">A signal handler optimization feature that was disabled on Windows is enabled again</h3>
 <p>In the <a href="../version0.57/#a-signal-handler-optimization-feature-is-temporarily-disabled">0.57.0 release</a>, on the Windows platform, a signal handler optimization feature was temporarily disabled by default. The feature was disabled because VM crashes were suspected to be related to an interaction between the Windows control flow guard feature and the VM's signal handling mechanism.</p>
 <p>Now the root cause for these VM crashes has been identified and fixed. Therefore, in this release, the disabled signal handler optimization feature is enabled again.</p>
+<h3 id="compiler-changes-for-linux">Compiler changes for Linux</h3>
+<p>Linux x86 64-bit, Linux on POWER&reg; LE 64-bit, and Linux on IBM Z&reg; 64-bit builds on all OpenJDK versions now use the gcc 14.2 compiler.</p>
+<p>For more information, see <a href="../openj9_support/">Supported environments</a>.</p>
+<h3 id="glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11"><img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> <img alt="Start of content that applies to Java 11 (LTS)" src="../cr/java11.png" /> glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11</h3>
+<p>For OpenJDK versions 8 and 11, Linux x86 64-bit is now compiled on CentOS 7, modifying the minimum glibc version to 2.17 from 2.12. The VM will fail to start on CentOS 6 from this release onwards. <img alt="End of content that applies to Java 8 and 11 (LTS)" src="../cr/java_close.png" /></p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.58.0 and v0.59.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.59/0.59.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.59.md ==== -->
