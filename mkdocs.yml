@@ -468,6 +468,7 @@ nav:
             - "-XX:[+|-]ShowNativeStackSymbols"                                  : xxshownativestacksymbols.md
             - "-XX:[+|-]ShowUnmountedThreadStacks"                               : xxshowunmountedthreadstacks.md
             - "-XX:-StackTraceInThrowable"                                       : xxstacktraceinthrowable.md
+            - "-XX:StartFlightRecording"                                         : xxstartflightrecording.md
             - "-XX:[+|-]TransparentHugePage"                                     : xxtransparenthugepage.md
             - "-XX:[+|-]UseCompressedOops"                                       : xxusecompressedoops.md
             - "-XX:[+|-]UseContainerSupport"                                     : xxusecontainersupport.md

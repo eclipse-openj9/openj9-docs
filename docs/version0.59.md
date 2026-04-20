@@ -30,6 +30,7 @@ The following new features and notable changes since version 0.58.0 are included
 - [A signal handler optimization feature that was disabled on Windows&trade; is enabled again](#a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again)
 - [Compiler changes for Linux&reg;](#compiler-changes-for-linux)
 - ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) [glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11](#glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11) ![End of content that applies to Java 8 and 11 (LTS)](cr/java_close_lts.png)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New `-XX:StartFlightRecording` command-line option is added](#new-xxstartflightrecording-command-line-option-is-added) ![End of content that applies to Java 8 and 11 (LTS)](cr/java_close_lts.png)
 
 ## Features and changes
 
@@ -60,6 +61,16 @@ For more information, see [Supported environments](openj9_support.md).
 ### ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11
 
 For OpenJDK versions 8 and 11, Linux x86 64-bit is now compiled on CentOS 7, modifying the minimum glibc version to 2.17 from 2.12. The VM will fail to start on CentOS 6 from this release onwards. ![End of content that applies to Java 8 and 11 (LTS)](cr/java_close.png)
+
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) New `-XX:StartFlightRecording` command-line option is added
+
+Support for the `-XX:StartFlightRecording` command-line option is now available from this release onwards. Instead of the JDK Flight Recorder (JFR)-related `jcmd` option, you can now use the `-XX:StartFlightRecording` command-line option to start the JFR recording in the VM.
+
+The `-XX:StartFlightRecording` command-line option cannot be used simultaneously with JFR-related `jcmd` options.
+
+For more information, see [`-XX:StartFlightRecording`](xxstartflightrecording.md).
+
+ ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 
 ## Known problems and full release information
 
