@@ -71,7 +71,7 @@ For more information, see [Compressed references](allocation.md#compressed-refer
 
 This release supports, as a technical preview, JDK Flight Recorder (JFR) that is available for OpenJDK 11 and later running on Linux&reg; x86 and Linux on AArch64 only.
 
-You can collect profiling and diagnostic information with JFR. You can enable or disable JFR in the VM with the [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md) option. ![End of content that applies only to Java 11 and later](cr/java_close.png)
+You can collect profiling and diagnostic information with JFR. You can enable or disable JFR in the VM with the [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md) option. ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 
 ## Known problems and full release information
 
