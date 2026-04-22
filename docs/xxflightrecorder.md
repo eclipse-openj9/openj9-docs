@@ -38,7 +38,7 @@
 
 ## Explanation
 
-If JFR is enabled in the VM with the `-XX:+FlightRecorder` option, then you can trigger profile and diagnostic recording with the [`jcmd`](https://eclipse.dev/openj9/docs/tool_jcmd/) tool. Recording does not start automatically, it must be triggered.
+If JFR is enabled in the VM with the `-XX:+FlightRecorder` option, then you can trigger profile and diagnostic recording with either the [`jcmd`](https://eclipse.dev/openj9/docs/tool_jcmd/) tool or the [`-XX:StartFlightRecording`](xxstartflightrecording.md) command-line option. Recording does not start automatically, it must be triggered.
 
 To start a recording, specify the following `jcmd` option command:
 
@@ -106,9 +106,11 @@ All JFR-related `jcmd` options might change in future releases.
 ```
   :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** To record and analyze the SystemProcess JFR event on z/OS (2.5 and 3.1), you must install [APAR OA62757](https://www.ibm.com/support/pages/apar/OA62757).
 
+- Support for the `-XX:StartFlightRecording` capability was made available in the 0.59.0 release.
+
 - Support for the following capabilities is not available:
 
-    - `-XX:StartFlightRecording` and `-XX:FlightRecorderOptions`
+    - `-XX:FlightRecorderOptions`
     - JFR APIs (`jdk/jfr/*`classes)
     - Controlling JFR with Java Management Extensions (JMX)
     - JFR streaming
@@ -125,6 +127,8 @@ Support for JFR will be expanded in future releases.
 - [What's new in version 0.53.0](version0.53.md#new-java-flight-recorder-jfr-events-are-added-in-this-release)
 - [What's new in version 0.54.0](version0.54.md#new-jdk-flight-recorder-jfr-events-are-added-in-this-release)
 - [What's new in version 0.56.0](version0.56.md#the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos)
+- [What's new in version 0.59.0](version0.59.md#new-xxstartflightrecording-command-line-option-is-added)
+- [-XX:StartFlightRecording](xxstartflightrecording.md)
 
 
 <!-- ==== END OF TOPIC ==== xxflightrecorder.md ==== -->
