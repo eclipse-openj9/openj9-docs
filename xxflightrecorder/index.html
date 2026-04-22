@@ -10294,6 +10294,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../xxstartflightrecording/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XX:StartFlightRecording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../xxtransparenthugepage/" class="md-nav__link">
         
   
@@ -11542,7 +11570,7 @@
 </tbody>
 </table>
 <h2 id="explanation">Explanation</h2>
-<p>If JFR is enabled in the VM with the <code>-XX:+FlightRecorder</code> option, then you can trigger profile and diagnostic recording with the <a href="https://eclipse.dev/openj9/docs/tool_jcmd/"><code>jcmd</code></a> tool. Recording does not start automatically, it must be triggered.</p>
+<p>If JFR is enabled in the VM with the <code>-XX:+FlightRecorder</code> option, then you can trigger profile and diagnostic recording with either the <a href="https://eclipse.dev/openj9/docs/tool_jcmd/"><code>jcmd</code></a> tool or the <a href="../xxstartflightrecording/"><code>-XX:StartFlightRecording</code></a> command-line option. Recording does not start automatically, it must be triggered.</p>
 <p>To start a recording, specify the following <code>jcmd</code> option command:</p>
 <pre><code>jcmd &lt;vmid | display name | 0&gt; JFR.start [filename=&lt;file_name_with_path&gt;] [duration=&lt;time_with_unit_of_time&gt;]
 
@@ -11604,9 +11632,12 @@
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> To record and analyze the SystemProcess JFR event on z/OS (2.5 and 3.1), you must install <a href="https://www.ibm.com/support/pages/apar/OA62757">APAR OA62757</a>.</p>
 <ul>
 <li>
+<p>Support for the <code>-XX:StartFlightRecording</code> capability was made available in the 0.59.0 release.</p>
+</li>
+<li>
 <p>Support for the following capabilities is not available:</p>
 <ul>
-<li><code>-XX:StartFlightRecording</code> and <code>-XX:FlightRecorderOptions</code></li>
+<li><code>-XX:FlightRecorderOptions</code></li>
 <li>JFR APIs (<code>jdk/jfr/*</code>classes)</li>
 <li>Controlling JFR with Java Management Extensions (JMX)</li>
 <li>JFR streaming</li>
@@ -11623,6 +11654,8 @@
 <li><a href="../version0.53/#new-java-flight-recorder-jfr-events-are-added-in-this-release">What's new in version 0.53.0</a></li>
 <li><a href="../version0.54/#new-jdk-flight-recorder-jfr-events-are-added-in-this-release">What's new in version 0.54.0</a></li>
 <li><a href="../version0.56/#the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos">What's new in version 0.56.0</a></li>
+<li><a href="../version0.59/#new-xxstartflightrecording-command-line-option-is-added">What's new in version 0.59.0</a></li>
+<li><a href="../xxstartflightrecording/">-XX:StartFlightRecording</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== xxflightrecorder.md ==== -->
 

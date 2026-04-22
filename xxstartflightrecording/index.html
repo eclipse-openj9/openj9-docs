@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://eclipse.dev/openj9/docs/xxexitonoutofmemoryerror/">
+        <link rel="canonical" href="https://eclipse.dev/openj9/docs/xxstartflightrecording/">
       
       
-        <link rel="prev" href="../xxensurehashed/">
+        <link rel="prev" href="../xxstacktraceinthrowable/">
       
       
-        <link rel="next" href="../xxflightrecorder/">
+        <link rel="next" href="../xxtransparenthugepage/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>-XX:[+|-]ExitOnOutOfMemoryError -  </title>
+        <title>XX:StartFlightRecording -  </title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-xx-exitonoutofmemoryerror" class="md-skip">
+        <a href="#-xxstartflightrecording" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -XX:[+|-]ExitOnOutOfMemoryError
+              XX:StartFlightRecording
             
           </span>
         </div>
@@ -8279,37 +8279,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    -XX:[+|-]ExitOnOutOfMemoryError
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../xxexitonoutofmemoryerror/" class="md-nav__link">
         
   
   
@@ -8325,48 +8298,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Syntax
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        See also
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -10280,10 +10211,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../xxstartflightrecording/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XX:StartFlightRecording
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -10299,6 +10257,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -11470,10 +11481,21 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
       
-        See also
+        See Also
       
     </span>
   </a>
@@ -11520,39 +11542,44 @@
 * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 -->
 
-<h1 id="-xx-exitonoutofmemoryerror">-XX:[+|-]ExitOnOutOfMemoryError</h1>
-<p>This HotSpot option is recognized by Eclipse OpenJ9&trade;. You can use the option to trigger a shut down on VM out-of-memory conditions.</p>
-<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> Java&trade;, heap, snap, and system dumps are enabled by default but can be disabled by including <a href="../xxheapdumponoutofmemoryerror/"><code>-XX:-HeapDumpOnOutOfMemoryError</code></a>.</p>
-<h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:[+|-]ExitOnOutOfMemoryError
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Effect</th>
-<th style="text-align: center;">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-XX:+ExitOnOutOfMemoryError</code></td>
-<td>Enable</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td><code>-XX:-ExitOnOutOfMemoryError</code></td>
-<td>Disable</td>
-<td style="text-align: center;"><span aria-hidden="true" class="twemoji yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"/></svg></span><span class="sr-only">yes</span></td>
-</tr>
-</tbody>
-</table>
-<h2 id="see-also">See also</h2>
+<h1 id="-xxstartflightrecording">-XX:StartFlightRecording</h1>
+<p><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> This command-line option starts the JDK Flight Recorder (JFR) recording in the VM. JFR is a built-in profiling and troubleshooting feature in the VM that is used to collect profiling and diagnostic information.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Notes:</strong></p>
 <ul>
-<li><a href="../version0.18/#new-exit-dump-agent-and-exitonoutofmemoryerror-option">What's new in version 0.18.0</a></li>
-<li><a href="../version0.20/#-xx-exitonoutofmemoryerror-option-behavior-update">What's new in version 0.20.0</a></li>
+<li>JFR recording can also be enabled or disabled on OpenJ9 by using the <code>jcmd</code> options as explained in the <a href="../xxflightrecorder/#explanation">-XX:[+|-]FlightRecorder</a> topic. The JDK Mission Control (JMC) tool is the only way to view the produced JFR file.</li>
+<li>The command-line option cannot be used simultaneously with JFR-related <code>jcmd</code> options.</li>
 </ul>
-<!-- ==== END OF TOPIC ==== xxexitonoutofmemoryerror.md ==== -->
+<h2 id="syntax">Syntax</h2>
+<pre><code>    -XX:StartFlightRecording[[=filename=&lt;file_name_with_path&gt;.jfr][,duration=&lt;time_with_unit_of_time&gt;][,delay=&lt;time_with_unit_of_time&gt;]
+</code></pre>
+<p>where:</p>
+<ul>
+<li>
+<p>Optional parameters are shown in brackets, [ ].</p>
+</li>
+<li>
+<p><code>filename=&lt;file_name_with_path&gt;</code> specifies the name of the file and its location where the recording is saved. The file name should have a <code>.jfr</code> extension. If a file name is not specified, the recording is saved in the <code>defaultJ9recording.jfr</code> file in the process working directory by default.</p>
+</li>
+<li>
+<p><code>duration=&lt;time_with_unit_of_time&gt;</code> specifies the duration of the recording. Units of time are <code>ns</code> (nanoseconds), <code>us</code> (microseconds), <code>ms</code> (milliseconds), <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), and <code>d</code> (days). You can specify only one unit of time, for example, 54s, 12m, 1h, or 2d. If the duration is not specified, the tool continues to record until the VM is shut down.</p>
+</li>
+<li>
+<p><code>delay=&lt;time_with_unit_of_time&gt;</code> specifies the delay in the start of the recording. The VM waits for that amount of time before starting the flight recording. Units of time are <code>ns</code> (nanoseconds), <code>us</code> (microseconds), <code>ms</code> (milliseconds), <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), and <code>d</code> (days). You can specify only one unit of time, for example, 54s, 12m, 1h, or 2d. If the delay is not specified, the default value of <code>0s</code> is used. The recording then starts immediately when the VM starts.</p>
+</li>
+</ul>
+<h2 id="explanation">Explanation</h2>
+<p>If JFR is enabled in the VM with the <code>-XX:+FlightRecorder</code> option, then you can trigger profile and diagnostic recording with either the <code>-XX:StartFlightRecording</code> command-line option or the <a href="https://eclipse.dev/openj9/docs/tool_jcmd/"><code>jcmd</code></a> tool. Recording does not start automatically, it must be triggered.</p>
+<p>Example of the command-line option:</p>
+<pre><code>-XX:StartFlightRecording=filename=/path/ABCD.jfr,duration=4s,delay=2s
+</code></pre>
+<p>The recording stops automatically with the <code>duration</code> parameter or when the VM stops.</p>
+<p><img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close_lts.png" /></p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../version0.59/#new-xxstartflightrecording-command-line-option-is-added">What's new in version 0.59.0</a></li>
+<li><a href="../xxflightrecorder/"><code>-XX:[+|-]FlightRecorder</code></a></li>
+</ul>
+<!-- ==== END OF TOPIC ==== xxstartflightrecording.md ==== -->
 
 
 
