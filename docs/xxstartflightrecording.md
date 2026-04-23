@@ -32,11 +32,13 @@
 
 ## Syntax
 
-        -XX:StartFlightRecording[[=filename=<file_name_with_path>.jfr][,duration=<time_with_unit_of_time>][,delay=<time_with_unit_of_time>]
+        -XX:StartFlightRecording[=filename=<file_name_with_path>.jfr][,duration=<time_with_unit_of_time>][,delay=<time_with_unit_of_time>]
 
 where:
 
 - Optional parameters are shown in brackets, [ ].
+
+- To use any of these parameters, specify `=` after `-XX:StartFlightRecording`, then list the parameters separated by commas. Parameters can be specified in any order.
 
 - `filename=<file_name_with_path>` specifies the name of the file and its location where the recording is saved. The file name should have a `.jfr` extension. If a file name is not specified, the recording is saved in the `defaultJ9recording.jfr` file in the process working directory by default.
 
@@ -44,15 +46,15 @@ where:
 
 - `delay=<time_with_unit_of_time>` specifies the delay in the start of the recording. The VM waits for that amount of time before starting the flight recording. Units of time are `ns` (nanoseconds), `us` (microseconds), `ms` (milliseconds), `s` (seconds), `m` (minutes), `h` (hours), and `d` (days). You can specify only one unit of time, for example, 54s, 12m, 1h, or 2d. If the delay is not specified, the default value of `0s` is used. The recording then starts immediately when the VM starts.
 
+Example:
+
+```
+-XX:StartFlightRecording=duration=4s,filename=/path/ABCD.jfr,delay=2s
+```
+
 ## Explanation
 
 If JFR is enabled in the VM with the `-XX:+FlightRecorder` option, then you can trigger profile and diagnostic recording with either the `-XX:StartFlightRecording` command-line option or the [`jcmd`](https://eclipse.dev/openj9/docs/tool_jcmd/) tool. Recording does not start automatically, it must be triggered.
-
-Example of the command-line option:
-
-```
--XX:StartFlightRecording=filename=/path/ABCD.jfr,duration=4s,delay=2s
-```
 
 The recording stops automatically with the `duration` parameter or when the VM stops.
 
