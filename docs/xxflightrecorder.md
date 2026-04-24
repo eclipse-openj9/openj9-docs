@@ -79,6 +79,7 @@ All JFR-related `jcmd` options might change in future releases.
 - CPUInformation
 - CPULoad (except z/OS)
 - ExecutionSample
+- GarbageCollection
 - GCHeapConfig
 - InitialEnvironmentVariable
 - InitialSystemProperty
@@ -88,6 +89,7 @@ All JFR-related `jcmd` options might change in future releases.
 - MonitorEnter
 - MonitorWait
 - NativeLibrary (except z/OS)
+- OldGarbageCollection
 - OSInformation
 - PhysicalMemory
 - SystemGC
@@ -101,6 +103,7 @@ All JFR-related `jcmd` options might change in future releases.
 - ThreadStart
 - ThreadStatistics
 - VirtualizationInformation
+- YoungGarbageCollection
 - YoungGenerationConfig
 
 ```

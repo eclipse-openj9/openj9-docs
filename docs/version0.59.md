@@ -31,6 +31,7 @@ The following new features and notable changes since version 0.58.0 are included
 - [Compiler changes for Linux&reg;](#compiler-changes-for-linux)
 - ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) [glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11](#glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11) ![End of content that applies to Java 8 and 11 (LTS)](cr/java_close_lts.png)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New `-XX:StartFlightRecording` command-line option is added](#new-xxstartflightrecording-command-line-option-is-added) ![End of content that applies to Java 8 and 11 (LTS)](cr/java_close_lts.png)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New JDK Flight Recorder (JFR) events are added in this release](#new-jdk-flight-recorder-jfr-events-are-added-in-this-release) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 
 ## Features and changes
 
@@ -71,6 +72,16 @@ The `-XX:StartFlightRecording` command-line option cannot be used simultaneously
 For more information, see [`-XX:StartFlightRecording`](xxstartflightrecording.md).
 
  ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
+
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) New JDK Flight Recorder (JFR) events are added in this release
+
+In this release, the following new JFR events are added:
+
+- GarbageCollection
+- OldGarbageCollection
+- YoungGarbageCollection
+
+For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 
 ## Known problems and full release information
 
