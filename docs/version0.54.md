@@ -26,7 +26,7 @@
 The following new features and notable changes since version 0.53.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New JDK Flight Recorder (JFR) events are added in this release](#new-jdk-flight-recorder-jfr-events-are-added-in-this-release) ![End of content that applies only to Java 11 and later](cr/java_close.png)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New JDK Flight Recorder (JFR) events are added in this release](#new-jdk-flight-recorder-jfr-events-are-added-in-this-release) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 - ![Start of content that applies to Java 24 and later](cr/java24plus.png) [New JDK 24 features](#new-jdk-24-features) ![End of content that applies to Java 24 and later](cr/java_close.png)
 
 ## Features and changes
@@ -46,7 +46,7 @@ In this release, the following new JFR events are added:
 - ModuleExports
 - ModuleRequires
 
-For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close.png)
+For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 
 ### ![Start of content that applies to Java 24 and later](cr/java24plus.png) New JDK 24 features
 
