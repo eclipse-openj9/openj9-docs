@@ -27,7 +27,7 @@
     
     
       
-        <title>XX:StartFlightRecording -  </title>
+        <title>-XX:StartFlightRecording -  </title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              XX:StartFlightRecording
+              -XX:StartFlightRecording
             
           </span>
         </div>
@@ -10230,7 +10230,7 @@
   <span class="md-ellipsis">
     
   
-    XX:StartFlightRecording
+    -XX:StartFlightRecording
   
 
     
@@ -10248,7 +10248,7 @@
   <span class="md-ellipsis">
     
   
-    XX:StartFlightRecording
+    -XX:StartFlightRecording
   
 
     
@@ -11550,12 +11550,15 @@
 <li>The command-line option cannot be used simultaneously with JFR-related <code>jcmd</code> options.</li>
 </ul>
 <h2 id="syntax">Syntax</h2>
-<pre><code>    -XX:StartFlightRecording[[=filename=&lt;file_name_with_path&gt;.jfr][,duration=&lt;time_with_unit_of_time&gt;][,delay=&lt;time_with_unit_of_time&gt;]
+<pre><code>    -XX:StartFlightRecording[=filename=&lt;file_name_with_path&gt;.jfr][,duration=&lt;time_with_unit_of_time&gt;][,delay=&lt;time_with_unit_of_time&gt;]
 </code></pre>
 <p>where:</p>
 <ul>
 <li>
 <p>Optional parameters are shown in brackets, [ ].</p>
+</li>
+<li>
+<p>To use any of these parameters, specify <code>=</code> after <code>-XX:StartFlightRecording</code>, then list the parameters separated by commas. Parameters can be specified in any order.</p>
 </li>
 <li>
 <p><code>filename=&lt;file_name_with_path&gt;</code> specifies the name of the file and its location where the recording is saved. The file name should have a <code>.jfr</code> extension. If a file name is not specified, the recording is saved in the <code>defaultJ9recording.jfr</code> file in the process working directory by default.</p>
@@ -11567,11 +11570,11 @@
 <p><code>delay=&lt;time_with_unit_of_time&gt;</code> specifies the delay in the start of the recording. The VM waits for that amount of time before starting the flight recording. Units of time are <code>ns</code> (nanoseconds), <code>us</code> (microseconds), <code>ms</code> (milliseconds), <code>s</code> (seconds), <code>m</code> (minutes), <code>h</code> (hours), and <code>d</code> (days). You can specify only one unit of time, for example, 54s, 12m, 1h, or 2d. If the delay is not specified, the default value of <code>0s</code> is used. The recording then starts immediately when the VM starts.</p>
 </li>
 </ul>
+<p>Example:</p>
+<pre><code>-XX:StartFlightRecording=duration=4s,filename=/path/ABCD.jfr,delay=2s
+</code></pre>
 <h2 id="explanation">Explanation</h2>
 <p>If JFR is enabled in the VM with the <code>-XX:+FlightRecorder</code> option, then you can trigger profile and diagnostic recording with either the <code>-XX:StartFlightRecording</code> command-line option or the <a href="https://eclipse.dev/openj9/docs/tool_jcmd/"><code>jcmd</code></a> tool. Recording does not start automatically, it must be triggered.</p>
-<p>Example of the command-line option:</p>
-<pre><code>-XX:StartFlightRecording=filename=/path/ABCD.jfr,duration=4s,delay=2s
-</code></pre>
 <p>The recording stops automatically with the <code>duration</code> parameter or when the VM stops.</p>
 <p><img alt="End of content that applies to Java 11 (LTS) and later" src="../cr/java_close_lts.png" /></p>
 <h2 id="see-also">See Also</h2>
