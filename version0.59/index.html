@@ -558,6 +558,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-jdk-flight-recorder-jfr-events-are-added-in-this-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New JDK Flight Recorder (JFR) events are added in this release
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11606,6 +11617,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#new-jdk-flight-recorder-jfr-events-are-added-in-this-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New JDK Flight Recorder (JFR) events are added in this release
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11671,6 +11693,7 @@
 <li><a href="#compiler-changes-for-linux">Compiler changes for Linux&reg;</a></li>
 <li><img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> <img alt="Start of content that applies to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11">glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11</a> <img alt="End of content that applies to Java 8 and 11 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#new-xxstartflightrecording-command-line-option-is-added">New <code>-XX:StartFlightRecording</code> command-line option is added</a> <img alt="End of content that applies to Java 8 and 11 (LTS)" src="../cr/java_close_lts.png" /></li>
+<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#new-jdk-flight-recorder-jfr-events-are-added-in-this-release">New JDK Flight Recorder (JFR) events are added in this release</a> <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -11692,6 +11715,14 @@
 <p>The <code>-XX:StartFlightRecording</code> command-line option cannot be used simultaneously with JFR-related <code>jcmd</code> options.</p>
 <p>For more information, see <a href="../xxstartflightrecording/"><code>-XX:StartFlightRecording</code></a>.</p>
 <p><img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></p>
+<h3 id="new-jdk-flight-recorder-jfr-events-are-added-in-this-release"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> New JDK Flight Recorder (JFR) events are added in this release</h3>
+<p>In this release, the following new JFR events are added:</p>
+<ul>
+<li>GarbageCollection</li>
+<li>OldGarbageCollection</li>
+<li>YoungGarbageCollection</li>
+</ul>
+<p>For more information, see <a href="../xxflightrecorder/"><code>-XX:[+|-]FlightRecorder</code></a>. <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.58.0 and v0.59.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.59/0.59.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.59.md ==== -->
