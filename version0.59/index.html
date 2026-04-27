@@ -569,6 +569,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compact-is-added-by-default-to-the-requestrequests-parameter-for-the-jcmd-dumpheap-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compact is added by default to the request=&lt;requests&gt; parameter for the jcmd Dump.heap command
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11628,6 +11639,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compact-is-added-by-default-to-the-requestrequests-parameter-for-the-jcmd-dumpheap-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compact is added by default to the request=&lt;requests&gt; parameter for the jcmd Dump.heap command
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11693,7 +11715,8 @@
 <li><a href="#compiler-changes-for-linux">Compiler changes for Linux&reg;</a></li>
 <li><img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> <img alt="Start of content that applies to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11">glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11</a> <img alt="End of content that applies to Java 8 and 11 (LTS)" src="../cr/java_close_lts.png" /></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#new-xxstartflightrecording-command-line-option-is-added">New <code>-XX:StartFlightRecording</code> command-line option is added</a> <img alt="End of content that applies to Java 8 and 11 (LTS)" src="../cr/java_close_lts.png" /></li>
-<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#new-jdk-flight-recorder-jfr-events-are-added-in-this-release">New JDK Flight Recorder (JFR) events are added in this release</a> <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></li>
+<li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#new-jdk-flight-recorder-jfr-events-are-added-in-this-release">New JDK Flight Recorder (JFR) events are added in this release</a> <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" />
+<a href="#compact-is-added-by-default-to-the-requestrequests-parameter-for-the-jcmd-dumpheap-command"><code>compact</code> is added by default to the <code>request=&lt;requests&gt;</code> parameter for the <code>jcmd Dump.heap</code> command</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -11723,6 +11746,10 @@
 <li>YoungGarbageCollection</li>
 </ul>
 <p>For more information, see <a href="../xxflightrecorder/"><code>-XX:[+|-]FlightRecorder</code></a>. <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></p>
+<h3 id="compact-is-added-by-default-to-the-requestrequests-parameter-for-the-jcmd-dumpheap-command"><code>compact</code> is added by default to the <code>request=&lt;requests&gt;</code> parameter for the <code>jcmd Dump.heap</code> command</h3>
+<p>When <code>jcmd Dump.heap</code> is used to request a heap dump, the <code>compact</code> option is now added to the dump request by default. The default request for heap dumps is now: <code>request=exclusive+compact+prepwalk</code>.</p>
+<p>For more information, see <code>-Xdump</code> suboptions: <a href="../xdump/#requestltrequestsgt"><code>request=&lt;requests&gt;</code></a>.</p>
+<p>For more information about <code>jcmd</code>, see <a href="../tool_jcmd/">Java diagnostic command (jcmd) tool</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.58.0 and v0.59.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.59/0.59.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.59.md ==== -->
