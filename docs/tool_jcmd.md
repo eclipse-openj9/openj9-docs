@@ -60,6 +60,8 @@ jcmd 31452 help Dump.heap
 jcmd 31452 Dump.heap myHeapDump
 ```
 
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** From the 0.59.0 release onwards, when `jcmd Dump.heap` is used to request a heap dump, the `compact` option is added to the dump request by default, making the full request `request=exclusive+compact+prepwalk`.
+
 :fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restrictions:** This tool is not supported and is subject to change or removal in future releases. Although similar in usage and output to the HotSpot tool of the same name, this tool is a different implementation that is specific to Eclipse OpenJ9&trade;. For information about the differences between these two implementations, see [Switching to OpenJ9](tool_migration.md).
 
 The tool uses the Attach API, and has the following limitations:
