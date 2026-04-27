@@ -32,6 +32,7 @@ The following new features and notable changes since version 0.58.0 are included
 - ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) [glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11](#glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11) ![End of content that applies to Java 8 and 11 (LTS)](cr/java_close_lts.png)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New `-XX:StartFlightRecording` command-line option is added](#new-xxstartflightrecording-command-line-option-is-added) ![End of content that applies to Java 8 and 11 (LTS)](cr/java_close_lts.png)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New JDK Flight Recorder (JFR) events are added in this release](#new-jdk-flight-recorder-jfr-events-are-added-in-this-release) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
+[`compact` is added by default to the `request=<requests>` parameter for the `jcmd Dump.heap` command](#compact-is-added-by-default-to-the-requestrequests-parameter-for-the-jcmd-dumpheap-command)
 
 ## Features and changes
 
@@ -82,6 +83,14 @@ In this release, the following new JFR events are added:
 - YoungGarbageCollection
 
 For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
+
+### `compact` is added by default to the `request=<requests>` parameter for the `jcmd Dump.heap` command
+
+When `jcmd Dump.heap` is used to request a heap dump, the `compact` option is now added to the dump request by default. The default request for heap dumps is now: `request=exclusive+compact+prepwalk`.
+
+For more information, see `-Xdump` suboptions: [`request=<requests>`](xdump.md#requestltrequestsgt).
+
+For more information about `jcmd`, see [Java diagnostic command (jcmd) tool](tool_jcmd.md).
 
 ## Known problems and full release information
 
