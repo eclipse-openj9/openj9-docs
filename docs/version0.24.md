@@ -81,7 +81,7 @@ You can now include additional parameters for `jcmd Dump` commands as indicated 
 - `Dump.system`, `Dump.heap`, `Dump.java`, and `Dump.snap` accept an optional `request=<requests>` parameter.
 - `Dump.heap` accepts an optional `opts=<options>` parameter.
 
-These parameters, including the `<file path>` parameter, can be in any order. The default for both system and heap dumps is now: `request=exclusive+prepwalk`. For further details, refer to the following `-Xdump` suboptions: [`request=<requests>`](xdump.md#requestltrequestsgt) and [`opts=<options>`](xdump.md#optsltoptionsgt). For more information about `jcmd`, see [Java diagnostic command (jcmd) tool](tool_jcmd.md).
+These parameters, including the `<file path>` parameter, can be in any order. The default for both system and heap dumps is now: `request=exclusive+prepwalk`. For further details, refer to the following `-Xdump` suboptions: [`request=<requests>`](xdump.md#requestrequests) and [`opts=<options>`](xdump.md#optsoptions). For more information about `jcmd`, see [Java diagnostic command (jcmd) tool](tool_jcmd.md).
 
 
 ### Change in behavior for the `jextract` utility
