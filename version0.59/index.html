@@ -504,10 +504,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-xx-usemediumpagesize-option-is-added" class="md-nav__link">
+  <a href="#on-aix-systems-ldr_cntrl-is-set-by-default-and-the-xx-usemediumpagesize-option-is-used-to-control-this-default-setting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        New -XX:[+|-]UseMediumPageSize option is added
+        On AIX systems, LDR_CNTRL is set by default, and the -XX:[+|-]UseMediumPageSize option is used to control this default setting
       
     </span>
   </a>
@@ -11574,10 +11574,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#new-xx-usemediumpagesize-option-is-added" class="md-nav__link">
+  <a href="#on-aix-systems-ldr_cntrl-is-set-by-default-and-the-xx-usemediumpagesize-option-is-used-to-control-this-default-setting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        New -XX:[+|-]UseMediumPageSize option is added
+        On AIX systems, LDR_CNTRL is set by default, and the -XX:[+|-]UseMediumPageSize option is used to control this default setting
       
     </span>
   </a>
@@ -11710,7 +11710,7 @@
 <p>The following new features and notable changes since version 0.58.0 are included in this release:</p>
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
-<li><a href="#new-xx-usemediumpagesize-option-is-added">New <code>-XX:[+|-]UseMediumPageSize</code> option is added</a></li>
+<li><a href="#on-aix-systems-ldr_cntrl-is-set-by-default-and-the-xx-usemediumpagesize-option-is-used-to-control-this-default-setting">On AIX systems, <code>LDR_CNTRL</code> is set by default, and the <code>-XX:[+|-]UseMediumPageSize</code> option is used to control this default setting</a></li>
 <li><a href="#a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again">A signal handler optimization feature that was disabled on Windows&trade; is enabled again</a></li>
 <li><a href="#compiler-changes-for-linux">Compiler changes for Linux&reg;</a></li>
 <li><img alt="Start of content that applies to Java 8 (LTS)" src="../cr/java8.png" /> <img alt="Start of content that applies to Java 11 (LTS)" src="../cr/java11.png" /> <a href="#glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11">glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11</a> <img alt="End of content that applies to Java 8 and 11 (LTS)" src="../cr/java_close_lts.png" /></li>
@@ -11722,8 +11722,8 @@
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
 <p>Eclipse OpenJ9&trade; release 0.59.0 supports OpenJDK 8, 11, 17, 21, 25, and 26.</p>
 <p>To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see <a href="../openj9_support/">Supported environments</a>.</p>
-<h3 id="new-xx-usemediumpagesize-option-is-added">New <code>-XX:[+|-]UseMediumPageSize</code> option is added</h3>
-<p>With the new option, <code>-XX:-UseMediumPageSize</code>, you can now disable the default setting of the <code>LDR_CNTRL</code> environment variable whereby medium page sizes (64 KB) are configured for text, data, stack, and shared memory segments.</p>
+<h3 id="on-aix-systems-ldr_cntrl-is-set-by-default-and-the-xx-usemediumpagesize-option-is-used-to-control-this-default-setting">On AIX systems, <code>LDR_CNTRL</code> is set by default, and the <code>-XX:[+|-]UseMediumPageSize</code> option is used to control this default setting</h3>
+<p>With the new option, <code>-XX:-UseMediumPageSize</code>, you can now disable the default setting of the <code>LDR_CNTRL</code> environment variable on AIX systems whereby medium page sizes (64 KB) are configured for text, data, stack, and shared memory segments.</p>
 <p>For more information, see <a href="../xxusemediumpagesize/"><code>-XX:[+|-]UseMediumPageSize</code></a>.</p>
 <h3 id="a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again">A signal handler optimization feature that was disabled on Windows is enabled again</h3>
 <p>In the <a href="../version0.57/#a-signal-handler-optimization-feature-is-temporarily-disabled">0.57.0 release</a>, on the Windows platform, a signal handler optimization feature was temporarily disabled by default. The feature was disabled because VM crashes were suspected to be related to an interaction between the Windows control flow guard feature and the VM's signal handling mechanism.</p>
@@ -11748,7 +11748,7 @@
 <p>For more information, see <a href="../xxflightrecorder/"><code>-XX:[+|-]FlightRecorder</code></a>. <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></p>
 <h3 id="compact-is-added-by-default-to-the-requestrequests-parameter-for-the-jcmd-dumpheap-command"><code>compact</code> is added by default to the <code>request=&lt;requests&gt;</code> parameter for the <code>jcmd Dump.heap</code> command</h3>
 <p>When <code>jcmd Dump.heap</code> is used to request a heap dump, the <code>compact</code> option is now added to the dump request by default. The default request for heap dumps is now: <code>request=exclusive+compact+prepwalk</code>.</p>
-<p>For more information, see <code>-Xdump</code> suboptions: <a href="../xdump/#requestltrequestsgt"><code>request=&lt;requests&gt;</code></a>.</p>
+<p>For more information, see <code>-Xdump</code> suboptions: <a href="../xdump/#requestrequests"><code>request=&lt;requests&gt;</code></a>.</p>
 <p>For more information about <code>jcmd</code>, see <a href="../tool_jcmd/">Java diagnostic command (jcmd) tool</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.58.0 and v0.59.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.59/0.59.md">Release notes</a>.</p>
