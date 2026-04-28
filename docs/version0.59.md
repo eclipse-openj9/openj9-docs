@@ -26,7 +26,7 @@
 The following new features and notable changes since version 0.58.0 are included in this release:
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
-- [New `-XX:[+|-]UseMediumPageSize` option is added](#new-xx-usemediumpagesize-option-is-added)
+- [On AIX systems, `LDR_CNTRL` is set by default, and the `-XX:[+|-]UseMediumPageSize` option is used to control this default setting](#on-aix-systems-ldr_cntrl-is-set-by-default-and-the-xx-usemediumpagesize-option-is-used-to-control-this-default-setting)
 - [A signal handler optimization feature that was disabled on Windows&trade; is enabled again](#a-signal-handler-optimization-feature-that-was-disabled-on-windows-is-enabled-again)
 - [Compiler changes for Linux&reg;](#compiler-changes-for-linux)
 - ![Start of content that applies to Java 8 (LTS)](cr/java8.png) ![Start of content that applies to Java 11 (LTS)](cr/java11.png) [glibc version is changed to 2.17 on Linux x86 64-bit builds for OpenJDK 8 and 11](#glibc-version-is-changed-to-217-on-linux-x86-64-bit-builds-for-openjdk-8-and-11) ![End of content that applies to Java 8 and 11 (LTS)](cr/java_close_lts.png)
@@ -42,9 +42,9 @@ Eclipse OpenJ9&trade; release 0.59.0 supports OpenJDK 8, 11, 17, 21, 25, and 26.
 
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
-### New `-XX:[+|-]UseMediumPageSize` option is added
+### On AIX systems, `LDR_CNTRL` is set by default, and the `-XX:[+|-]UseMediumPageSize` option is used to control this default setting
 
-With the new option, `-XX:-UseMediumPageSize `, you can now disable the default setting of the `LDR_CNTRL` environment variable whereby medium page sizes (64 KB) are configured for text, data, stack, and shared memory segments.
+With the new option, `-XX:-UseMediumPageSize `, you can now disable the default setting of the `LDR_CNTRL` environment variable on AIX systems whereby medium page sizes (64 KB) are configured for text, data, stack, and shared memory segments.
 
 For more information, see [`-XX:[+|-]UseMediumPageSize`](xxusemediumpagesize.md).
 
@@ -88,7 +88,7 @@ For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![En
 
 When `jcmd Dump.heap` is used to request a heap dump, the `compact` option is now added to the dump request by default. The default request for heap dumps is now: `request=exclusive+compact+prepwalk`.
 
-For more information, see `-Xdump` suboptions: [`request=<requests>`](xdump.md#requestltrequestsgt).
+For more information, see `-Xdump` suboptions: [`request=<requests>`](xdump.md#requestrequests).
 
 For more information about `jcmd`, see [Java diagnostic command (jcmd) tool](tool_jcmd.md).
 
