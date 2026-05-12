@@ -86,6 +86,7 @@ See [Using -X command-line options](x_jvm_commands.md) for more information abou
     - 2 GB nonpageable sizes are supported only on IBM zEnterprise EC12 processors or later.
     - A system programmer must configure z/OS for nonpageable large pages.
     - Users who require large pages must be authorized to the **IARRSM.LRGPAGES** resource in the RACF FACILITY class with read authority.
+    - On z/OS 3.1 or later, consider using [Dedicated Memory](https://www.ibm.com/docs/en/zos/3.2.0?topic=overview-dedicated-memory) support to ensure sufficient real storage assignment.
 
     31-bit VMs support a large page size of only 1 MB pageable.
 

@@ -247,14 +247,14 @@ When available, 1 MB pageable pages are the default size for the object heap and
 
 If a particular page size cannot be allocated, a smaller page size is attempted, in descending order. For example, if 2 GB nonpageable pages are requested but not available, the VM tries to allocate 1MB nonpageable pages. If 1 MB nonpageable pages are not available, the VM tries to allocate 1MB pageable pages. If large pages are not available, 4 KB pages are allocated.
 
-If you want to use nonpageable large pages for the object heap, a system programmer must configure z/OS for nonpageable large pages in the **IEASYSxx** parmlib member. Users who require large pages must also be authorized to the **IARRSM.LRGPAGES** resource in the RACF FACILITY class with read authority.
+If you want to use nonpageable large pages for the object heap, a system programmer must configure z/OS for nonpageable large pages in the **IEASYSxx** parmlib member. Users who require large pages must also be authorized to the **IARRSM.LRGPAGES** resource in the RACF FACILITY class with read authority. On z/OS 3.1 or later, consider using z/OS's [Dedicated Memory](https://www.ibm.com/docs/en/zos/3.2.0?topic=overview-dedicated-memory) support to help ensure the Java application is assigned sufficient real storage.
 
 Use the following z/OS system command to show large page usage for an LPAR:
 
 ```
 MODIFY AXR,IAXDMEM
 ```
-For more information, see [Displaying real storage memory statistics](https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.4.0/com.ibm.zos.v2r4.ieag100/iaxdmem.htm) in the z/OS product documentation.
+For more information, see [Displaying real storage memory statistics](https://www.ibm.com/docs/en/zos/3.2.0?topic=reference-displaying-real-storage-memory-statistics) in the z/OS product documentation.
 
 For usage information, including examples, see [`-Xlp:objectheap`](xlpobjectheap.md#pageablenonpageable).
 
