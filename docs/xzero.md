@@ -49,7 +49,7 @@ The following parameters are no longer supported. The options are parsed but do 
 | `-Xzero:sharezip`       | Enables the sharezip sub option      |
 | `-Xzero:nosharezip`     | Disables the sharezip sub option     |
 
-
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** From the 0.60.0 release onwards, the OpenJ9 VM supports ZIP files that use ZIP64 extensions, enabling support for JAR and ZIP archives larger than 4 GB. This support is independent of the `-Xzero` option settings.
 
 
 <!-- ==== END OF TOPIC ==== xzero.md ==== -->

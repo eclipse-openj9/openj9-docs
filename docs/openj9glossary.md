@@ -132,6 +132,7 @@ This glossary provides definitions for technical terms used throughout the Eclip
 | **VM (Virtual Machine)** | The runtime environment that executes Java bytecode and manages application resources. | <ul><li>[New to Eclipse OpenJ9?](openj9_newuser.md)</li><li>[Garbage collection policies](gc.md)</li><li>[The JIT compiler](jit.md)</li></ul> |
 | **Warm Optimization** | The standard JIT optimization level used after startup for most methods that reach the invocation threshold. See [Optimization levels](jit.md#optimization-levels). | <ul><li>[The JIT compiler](jit.md)</li><li>[-Xjit / -Xnojit](xjit.md)</li></ul> |
 | **Write Barrier** | A mechanism that tracks object reference modifications to support concurrent GC operations. | <ul><li>[Garbage collection policies](gc.md)</li></ul> |
+| **ZIP64** | Extensions to the ZIP file format specification that overcomes the 4 GB size limitation of standard ZIP files. Supported on 64-bit platforms from the 0.60.0 release onwards for bootstrap class loading and shared classes cache. | <ul><li>[What's new in version 0.60.0](version0.60.md)</li><li>[Introduction to class data sharing](shrc.md)</li><li>[-Xzero](xzero.md)</li></ul> |
 
 ## Command-Line Options & Configuration
 
