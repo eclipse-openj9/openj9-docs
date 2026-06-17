@@ -419,6 +419,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.60/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Version 0.60.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.59/" class="md-nav__link">
         
   
@@ -931,10 +959,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_20" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_21" >
         
           
-          <label class="md-nav__link" for="__nav_5_20" id="__nav_5_20_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_21" id="__nav_5_21_label" tabindex="0">
             
   
   
@@ -952,8 +980,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_20_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_20">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_21">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -5717,6 +5745,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See also
+      
+    </span>
+  </a>
   
 </li>
       
@@ -11624,6 +11663,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See also
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -11684,7 +11734,7 @@
 </tr>
 <tr>
 <td><a href="#dump"><code>dump</code></a></td>
-<td>Checks the operating system for settings that might truncate system dumps. (AIX&reg; and Linux&reg; only)</td>
+<td>Checks the settings that might prevent proper system dump operation.</td>
 </tr>
 <tr>
 <td><a href="#gc"><code>gc</code></a></td>
@@ -11711,7 +11761,6 @@
 <dd>Checks the classpath and reports errors such as a missing directory or JAR file.</dd>
 </dl>
 <h3 id="dump"><code>dump</code></h3>
-<p><strong>AIX and Linux only</strong></p>
 <pre><code>    -Xcheck:dump
 </code></pre>
 <dl>
@@ -11728,7 +11777,7 @@
 <li><code>JVMJ9VM134W The system fullcore option is set to FALSE, system dumps may be truncated</code></li>
 </ul>
 <dl>
-<dd>This message indicates that the AIX operating system <code>Enable full CORE dump</code>option is set to <em>FALSE</em>. This setting might result in truncated system dumps. For more information about how to set this option correctly on AIX, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html">Setting system resource limits on AIX and Linux systems</a>.</dd>
+<dd>This message indicates that the AIX operating system <code>Enable full CORE dump</code> option is set to <em>FALSE</em>. This setting might result in truncated system dumps. For more information about how to set this option correctly on AIX, see <a href="https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html">Setting system resource limits on AIX and Linux systems</a>.</dd>
 </dl>
 <p><!--<img alt="Linux" src="cr/_lnx.png" /> -->On <strong>Linux</strong> systems, the following messages are possible:</p>
 <ul>
@@ -11748,7 +11797,7 @@
 <li><code>JVMJ9VM135W /proc/sys/kernel/core_pattern setting "|/usr/share/apport/apport %p %s %c" specifies that core dumps are to be piped to an external program. The JVM may be unable to locate core dumps and rename them.</code></li>
 </ul>
 <dl>
-<dd>This message means that an external program, <strong>apport</strong>, is configured in the operating system to intercept any system dump files that are generated. For more information about this tool, see: <a href="https://wiki.ubuntu.com/Apport">Apport</a> The tool might interfere with the VM's system dump file processing by renaming or truncating system dumps. Review the configuration of the Apport tool and messages that are written by the tool in <code>/var/log/apport.log</code>. If problems occur when generating system dumps from the VM, consider disabling the Apport tool.</dd>
+<dd>This message means that an external program, <strong>apport</strong>, is configured in the operating system to intercept any system dump files that are generated. For more information about this tool, see: <a href="https://wiki.ubuntu.com/Apport">Apport</a>. The tool might interfere with the VM's system dump file processing by renaming or truncating system dumps. Review the configuration of the Apport tool and messages that are written by the tool in <code>/var/log/apport.log</code>. If problems occur when generating system dumps from the VM, consider disabling the Apport tool.</dd>
 </dl>
 <ul>
 <li><code>JVMJ9VM136W "/proc/sys/kernel/core_pattern setting "/tmp/cores/core.%e.%p.%h.%t " specifies a format string for renaming core dumps. The JVM may be unable to locate core dumps and rename them.</code></li>
@@ -11756,6 +11805,58 @@
 <dl>
 <dd>This message indicates that the Linux <code>/proc/sys/kernel/core_pattern</code> option is set to rename system dumps. The tokens that are used in the operating system dump name might interfere with the VM's system dump file processing, in particular with file names specified in the VM <code>-Xdump</code> options. If problems occur when generating system dumps from the VM, consider changing the <code>/proc/sys/kernel/core_pattern</code> setting to the default value of <code>core</code>.</dd>
 </dl>
+</dd>
+<dd>
+<p><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <strong>z/OS only</strong></p>
+</dd>
+<dd>
+<p>From the 0.60.0 release onwards, the <code>-Xcheck:dump</code> option is enhanced on z/OS systems to trigger extra checking for <code>-Xdump:system</code> agents. When this option is used, the VM now validates dataset names specified in <code>-Xdump:system</code> options. This validation allows earlier detection of improper VM options and prevents deployment of misconfigured applications. You can correct the invalid datasets as soon as they are identified, and when system dumps are triggered, your diagnostic dumps will be created successfully.</p>
+</dd>
+<dd>
+<p>If the <code>-Xcheck:dump</code> option is not used, then invalid datasets remain undetected. If and when system dumps are triggered, dumps with improper dataset names fail and critical diagnostic data will be lost.</p>
+</dd>
+<dd>
+<p>Examples:</p>
+</dd>
+<dd>
+<p>No change when all dataset names are valid (as is the case with the defaults):</p>
+</dd>
+<dt><pre><code>$ java -Xcheck:dump -version
+java version &quot;21.0.11-internal&quot; 2026-04-21
+IBM Semeru Runtime Certified Edition for z/OS (build 21.0.11-internal-adhoc.JENKINS.BuildJDK21s390xzosPersonal)
+IBM J9 VM (build 21.0.11-internal-adhoc.JENKINS.BuildJDK21s390xzosPersonal-dsntest-5de00868719, JRE 21 z/OS s390x-64-Bit Compressed References 20260429_3867 (JIT enabled, AOT enabled)
+OpenJ9   - 5de00868719
+OMR      - 4a4463e1977
+IBM      - 764a44bc845
+JCL      - 166e9d03068 based on jdk-21.0.11+10)
+</code></pre></dt>
+<dd>
+<p>When the <code>-Xcheck:dump</code> option is not used, the VM reports the invalid dataset name if and when the dump is triggered and the normal message output is omitted:</p>
+</dd>
+<dt><pre><code>$ java -Xdump:system:events=user,dsn='BAD..NAME.X&amp;DS' -version
+</code></pre></dt>
+<dd>
+<p>When the <code>-Xcheck:dump</code> option is used, the VM reports the problematic <code>-Xdump</code> options in the same format that is used by <code>-Xdump:what</code> and the VM fails to start:</p>
+</dd>
+<dt><pre><code>$ java -Xdump:system:events=user,dsn='BAD..NAME.X&amp;DS' -Xcheck:dump -version
+JVMJ9VM268E The following -Xdump:system options contain invalid dsn specifications:
+-Xdump:system:
+    events=user,
+    dsn=BAD..NAME.X&amp;DS,
+    range=1..0,
+    priority=999,
+    request=serial
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+</code></pre></dt>
+<dd>
+<p>If dump support is disabled, <code>-Xcheck:dump</code> is also disabled. The VM proceeds normally except for an additional message.</p>
+</dd>
+<dt><pre><code>$ java -Xdump:none -Xcheck:dump -version
+JVMJ9VM063W seekDumpAgent requires j9dmp29
+</code></pre></dt>
+<dd>
+<p><img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></p>
 </dd>
 </dl>
 <h3 id="gc"><code>gc</code></h3>
@@ -11780,13 +11881,13 @@
 <p>The available parameters are as follows:</p>
 <dl>
 <dt><code>:all</code></dt>
-<dd><strong>(Default if no options specified)</strong> Enables checking of all allocated and freed blocks on every free and allocate call. This check of the heap is the most thorough. It typically causes the VM to exit on nearly all memory-related problems soon after they are caused. This option has the greatest affect on performance.</dd>
+<dd><strong>(Default if no options specified)</strong> Enables checking of all allocated and freed blocks on every free and allocate call. This check of the heap is the most thorough. It typically causes the VM to exit on nearly all memory-related problems soon after they are caused. This option has the greatest effect on performance.</dd>
 <dt><code>:callsite=&lt;number_of_allocations&gt;</code></dt>
 <dd>
 <p>Displays callsite information every <code>&lt;number_of_allocations&gt;</code>. De-allocations are not counted. Callsite information is presented in a table with separate information for each callsite. Statistics include:</p>
 <ul>
 <li>The number and size of allocation and free requests since the last report.</li>
-<li>The number of the allocation request responsible for the largest allocation from each site.</li>
+<li>The number of the allocation requests responsible for the largest allocation from each site.</li>
 </ul>
 <p>Callsites are presented as <code>sourcefile:linenumber</code> for C code and assembly function name for assembler code.</p>
 <p>Callsites that do not provide callsite information are accumulated into an "unknown" entry.</p>
@@ -11796,13 +11897,13 @@
 <p>Causes memory allocation to fail (return NULL) after <code>&lt;number_of_allocations&gt;</code>. For example, setting <code>&lt;number_of_allocations&gt;</code> to 13 causes the 14th allocation to return NULL. De-allocations are not counted. Use this option to ensure that VM code reliably handles allocation failures. This option is useful for checking allocation site behavior rather than setting a specific allocation limit.</p>
 </dd>
 <dt><code>:ignoreUnknownBlocks</code></dt>
-<dd>Ignores attempts to free memory that was not allocated using the <code>-Xcheck:memory</code> tool. Instead, the <strong>-Xcheck:memory</strong> statistics that are printed out at the end of a run indicates the number of <em>"unknown"</em> blocks that were freed.</dd>
+<dd>Ignores attempts to free memory that was not allocated by using the <code>-Xcheck:memory</code> tool. Instead, the <strong>-Xcheck:memory</strong> statistics that are printed at the end of a run indicates the number of <em>"unknown"</em> blocks that were freed.</dd>
 <dt><code>:mprotect=[top|bottom]</code></dt>
 <dd>Locks pages of memory on supported platforms, causing the program to stop if padding before or after the allocated block is accessed for reads or writes. An extra page is locked on each side of the block returned to the user.</dd>
 <dd>If you do not request an exact multiple of one page of memory, a region on one side of your memory is not locked. The <code>top</code> and <code>bottom</code> options control which side of the memory area is locked. <code>top</code> aligns your memory blocks to the top of the page (lower address), so buffer underruns result in an application failure. <code>bottom</code> aligns your memory blocks to the bottom of the page (higher address) so buffer overruns result in an application failure.</dd>
 <dd>Standard padding scans detect buffer underruns when using <code>top</code> and buffer overruns when using <code>bottom</code>.</dd>
 <dt><code>:nofree</code></dt>
-<dd>Keeps a list of blocks that are already used instead of freeing memory. This list, and the list of currently allocated blocks, is checked for memory corruption on every allocation and deallocation. Use this option to detect a dangling pointer (a pointer that is "dereferenced" after its target memory is freed). This option cannot be reliably used with long-running applications (such as WebSphere&reg; Application Server), because <em>"freed"</em> memory is never reused or released by the VM.</dd>
+<dd>Keeps a list of blocks that are already used instead of freeing memory. This list, and the list of currently allocated blocks, is checked for memory corruption on every allocation and deallocation. Use this option to detect a dangling pointer (a pointer that is "dereferenced" after its target memory is freed). This option cannot be reliably used with long-running applications (such as WebSphere&reg; Application Server) because <em>"freed"</em> memory is never reused or released by the VM.</dd>
 <dt><code>:noscan</code></dt>
 <dd>Checks for blocks that are not freed. This option has little effect on performance, but memory corruption is not detected. This option is compatible only with <code>subAllocator</code>, <code>callsite</code>, and <code>callsitesmall</code>.</dd>
 <dt><code>:quick</code></dt>
@@ -11810,7 +11911,7 @@
 <dt><code>:skipto=&lt;number_of_allocations&gt;</code></dt>
 <dd>Causes the program to check only on allocations that occur after <code>&lt;number_of_allocations&gt;</code>. De-allocations are not counted. Use this option to speed up VM startup when early allocations are not causing the memory problem. The VM performs approximately 250+ allocations during startup.</dd>
 <dt><code>:subAllocator[=&lt;size_in_MB&gt;]</code></dt>
-<dd>Allocates a dedicated and contiguous region of memory for all VM allocations. This option helps to determine if user JNI code or the VM is responsible for memory corruption. Corruption in the VM <code>subAllocator</code> heap suggests that the VM is causing the problem; corruption in the user-allocated memory suggests that user code is corrupting memory. Typically, user and VM allocated memory are interleaved.</dd>
+<dd>Allocates a dedicated and contiguous region of memory for all VM allocations. This option helps to determine whether user JNI code or the VM is responsible for memory corruption. Corruption in the VM <code>subAllocator</code> heap suggests that the VM is causing the problem; corruption in the user-allocated memory suggests that user code is corrupting memory. Typically, user and VM allocated memory are interleaved.</dd>
 <dt><code>:zero</code></dt>
 <dd>Newly allocated blocks are set to 0 instead of being filled with the <code>0xE7E7xxxxxxxxE7E7</code> pattern. Setting these blocks to 0 helps you to determine whether a callsite is expecting zeroed memory, in which case the allocation request is followed by <code>memset(pointer, 0, size)</code>.</dd>
 </dl>
@@ -11822,6 +11923,10 @@
 <dl>
 <dd>Performs additional checks on the VM. By default, no checking is performed. For more information, run <code>-Xcheck:vm:help</code>.</dd>
 </dl>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../version0.60/#the-xcheckdump-option-is-enhanced-on-zos-systems">What's new in version 0.60.0</a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xcheck.md ==== -->
 
 
