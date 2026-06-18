@@ -49,6 +49,10 @@ Although the virtual thread runs on a carrier thread, the stack trace of the vir
 
 You can use the `-XX:+ShowCarrierFrames` option to add the stack trace of the carrier thread in addition to the virtual thread stack trace to the `Throwable.getStackTrace()` method, if an exception occurs. ![End of content that applies to Java 21 (LTS) and later](cr/java_close_lts.png)
 
+## See also
 
+- [`-XX:ContinuationCache`](xxcontinuationcache.md)
+- [`-XX:[+|-]ShowUnmountedThreadStacks`](xxshowunmountedthreadstacks.md)
+- [`-XX:[+|-]YieldPinnedVirtualThreads`](xxyieldpinnedvirtualthreads.md)
 
 <!-- ==== END OF TOPIC ==== xxshowcarrierframes.md ==== -->

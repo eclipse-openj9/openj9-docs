@@ -482,6 +482,7 @@ nav:
             - "-XX:[+|-]UTFCache"                                                : xxutfcache.md
             - "-XX:[+|-]VerboseVerification"                                     : xxverboseverification.md
             - "-XX:[+|-]VMLockClassLoader"                                       : xxvmlockclassloader.md
+            - "-XX:[+|-]YieldPinnedVirtualThreads"                               : xxyieldpinnedvirtualthreads.md
 
     - " Reference" :
         - "Supported environments"                                                : openj9_support.md
