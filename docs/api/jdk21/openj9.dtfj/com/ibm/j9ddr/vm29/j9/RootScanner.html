@@ -24,7 +24,6 @@
 <meta name="keywords" content="doPhantomReferenceSlot()">
 <meta name="keywords" content="doFinalizableObject()">
 <meta name="keywords" content="doUnfinalizedObject()">
-<meta name="keywords" content="doOwnableSynchronizerObject()">
 <meta name="keywords" content="doMonitorReference()">
 <meta name="keywords" content="doMonitorLookupCacheSlot()">
 <meta name="keywords" content="doJNIWeakGlobalReference()">
@@ -51,7 +50,6 @@
 <meta name="keywords" content="scanJNIWeakGlobalReferences()">
 <meta name="keywords" content="scanMonitorReferences()">
 <meta name="keywords" content="scanUnfinalizedObjects()">
-<meta name="keywords" content="scanOwnableSynchronizerObjects()">
 <meta name="keywords" content="scanMonitorLookupCaches()">
 <meta name="keywords" content="scanPhantomReferenceObjects()">
 <meta name="keywords" content="scanSoftReferenceObjects()">
@@ -271,131 +269,125 @@ loadScripts(document, 'script');</script>
  <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doOwnableSynchronizerObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doOwnableSynchronizerObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doPhantomReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doPhantomReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doPhantomReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doPhantomReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doPhantomReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doPhantomReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doPhantomReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doPhantomReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
  <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doRememberedSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doRememberedSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doRememberedSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doRememberedSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doRememberedSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doRememberedSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doRememberedSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doRememberedSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
  <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doSoftReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doSoftReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doSoftReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doSoftReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doSoftReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doSoftReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doSoftReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doSoftReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
  <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doStackSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doStackSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doStackSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doStackSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doStackSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doStackSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doStackSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doStackSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
  <a href="stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
  <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackLocation)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doStringCacheTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doStringCacheTableSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doStringCacheTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doStringCacheTableSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+ <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doStringTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doStringTableSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doStringTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doStringTableSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+ <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doUnfinalizedObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doUnfinalizedObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doStringCacheTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doStringCacheTableSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doVMClassSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">doVMClassSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;slot)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doStringCacheTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doStringCacheTableSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doVMClassSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doVMClassSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;slot,
  <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doStringTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doStringTableSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doVMThreadJNISlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doVMThreadJNISlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doStringTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doStringTableSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doVMThreadJNISlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doVMThreadJNISlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
  <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doUnfinalizedObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doUnfinalizedObject</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doVMThreadMonitorRecordSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doVMThreadMonitorRecordSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doVMClassSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">doVMClassSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;slot)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doVMClassSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doVMClassSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;slot,
- <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doVMThreadJNISlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doVMThreadJNISlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doVMThreadJNISlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doVMThreadJNISlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
- <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doVMThreadMonitorRecordSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doVMThreadMonitorRecordSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doVMThreadMonitorRecordSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doVMThreadMonitorRecordSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
- <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doVMThreadSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doVMThreadSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doVMThreadSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doVMThreadSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
- <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doWeakReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doWeakReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doWeakReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doWeakReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
- <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="RootScanner.Reachability.html" title="enum class in com.ibm.j9ddr.vm29.j9">RootScanner.Reachability</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getReachability()" class="member-name-link">getReachability</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanAllSlots()" class="member-name-link">scanAllSlots</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Scan all slots which contain references into the heap.</div>
-</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanClasses()" class="member-name-link">scanClasses</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doVMThreadMonitorRecordSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doVMThreadMonitorRecordSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+ <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanClassLoaders()" class="member-name-link">scanClassLoaders</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doVMThreadSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doVMThreadSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doVMThreadSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doVMThreadSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+ <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#doWeakReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">doWeakReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#doWeakReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)" class="member-name-link">doWeakReferenceSlot</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
+ <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="RootScanner.Reachability.html" title="enum class in com.ibm.j9ddr.vm29.j9">RootScanner.Reachability</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getReachability()" class="member-name-link">getReachability</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanClearable()" class="member-name-link">scanClearable</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanAllSlots()" class="member-name-link">scanAllSlots</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Scan all clearable root set references from the VM into the heap.</div>
+<div class="block">Scan all slots which contain references into the heap.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanFinalizableObjects()" class="member-name-link">scanFinalizableObjects</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanClasses()" class="member-name-link">scanClasses</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanJNIGlobalReferences()" class="member-name-link">scanJNIGlobalReferences</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanClassLoaders()" class="member-name-link">scanClassLoaders</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanClearable()" class="member-name-link">scanClearable</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Scan all clearable root set references from the VM into the heap.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanFinalizableObjects()" class="member-name-link">scanFinalizableObjects</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanJNIWeakGlobalReferences()" class="member-name-link">scanJNIWeakGlobalReferences</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanJNIGlobalReferences()" class="member-name-link">scanJNIGlobalReferences</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanJVMTIObjectTagTables()" class="member-name-link">scanJVMTIObjectTagTables</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanJNIWeakGlobalReferences()" class="member-name-link">scanJNIWeakGlobalReferences</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanMonitorLookupCaches()" class="member-name-link">scanMonitorLookupCaches</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanJVMTIObjectTagTables()" class="member-name-link">scanJVMTIObjectTagTables</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanMonitorReferences()" class="member-name-link">scanMonitorReferences</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanMonitorLookupCaches()" class="member-name-link">scanMonitorLookupCaches</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanNonCollectableObjects()" class="member-name-link">scanNonCollectableObjects</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanMonitorReferences()" class="member-name-link">scanMonitorReferences</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanOwnableSynchronizerObjects()" class="member-name-link">scanOwnableSynchronizerObjects</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanNonCollectableObjects()" class="member-name-link">scanNonCollectableObjects</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scanPermanentClasses()" class="member-name-link">scanPermanentClasses</a>()</code></div>
@@ -583,12 +575,6 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="doUnfinalizedObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
 <h3>doUnfinalizedObject</h3>
 <div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">doUnfinalizedObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="doOwnableSynchronizerObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
-<h3>doOwnableSynchronizerObject</h3>
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">doOwnableSynchronizerObject</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</span></div>
 </section>
 </li>
 <li>
@@ -932,17 +918,6 @@ loadScripts(document, 'script');</script>
 <h3>scanUnfinalizedObjects</h3>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scanUnfinalizedObjects</span>()
                                throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="scanOwnableSynchronizerObjects()">
-<h3>scanOwnableSynchronizerObjects</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scanOwnableSynchronizerObjects</span>()
-                                       throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
