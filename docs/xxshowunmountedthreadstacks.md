@@ -50,6 +50,6 @@ The `-XX:-ShowUnmountedThreadStacks` option is the default option because the ch
 
 - [`-XX:[+|-]ShowCarrierFrames`](xxshowcarrierframes.md)
 - [`-XX:ContinuationCache`](xxcontinuationcache.md)
-
+- [`-XX:[+|-]YieldPinnedVirtualThreads`](xxyieldpinnedvirtualthreads.md)
 
 <!-- ==== END OF TOPIC ==== xxshowunmountedthreadstacks.md ==== -->
