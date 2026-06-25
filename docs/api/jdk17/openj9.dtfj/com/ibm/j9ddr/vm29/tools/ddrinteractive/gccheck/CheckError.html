@@ -15,7 +15,6 @@
 <meta name="keywords" content="check_type_puddle">
 <meta name="keywords" content="check_type_unfinalized">
 <meta name="keywords" content="check_type_finalizable">
-<meta name="keywords" content="check_type_ownable_synchronizer">
 <meta name="keywords" content="_object">
 <meta name="keywords" content="_slot">
 <meta name="keywords" content="_stackLocation">
@@ -148,17 +147,14 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="#check_type_other" class="member-name-link">check_type_other</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#check_type_ownable_synchronizer" class="member-name-link">check_type_ownable_synchronizer</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#check_type_puddle" class="member-name-link">check_type_puddle</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#check_type_puddle" class="member-name-link">check_type_puddle</a></code></div>
+<div class="col-second even-row-color"><code><a href="#check_type_thread" class="member-name-link">check_type_thread</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>static final int</code></div>
-<div class="col-second odd-row-color"><code><a href="#check_type_thread" class="member-name-link">check_type_thread</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#check_type_unfinalized" class="member-name-link">check_type_unfinalized</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>static final int</code></div>
-<div class="col-second even-row-color"><code><a href="#check_type_unfinalized" class="member-name-link">check_type_unfinalized</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -226,27 +222,20 @@ loadScripts(document, 'script');</script>
  int&nbsp;errorCode,
  int&nbsp;errorNumber)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(com.ibm.j9ddr.vm29.pointer.generated.MM_OwnableSynchronizerObjectListPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check,int,int)" class="member-name-link">CheckError</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.MM_OwnableSynchronizerObjectListPointer&nbsp;object,
- com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
- com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle&nbsp;cycle,
- com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check&nbsp;check,
- int&nbsp;errorCode,
- int&nbsp;errorNumber)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.ibm.j9ddr.vm29.pointer.generated.MM_SublistPuddlePointer,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check,int,int)" class="member-name-link">CheckError</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.MM_SublistPuddlePointer&nbsp;object,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(com.ibm.j9ddr.vm29.pointer.generated.MM_SublistPuddlePointer,com.ibm.j9ddr.vm29.pointer.PointerPointer,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check,int,int)" class="member-name-link">CheckError</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.MM_SublistPuddlePointer&nbsp;object,
  <a href="../../../pointer/PointerPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">PointerPointer</a>&nbsp;slot,
  com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle&nbsp;cycle,
  com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check&nbsp;check,
  int&nbsp;errorCode,
  int&nbsp;errorNumber)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(com.ibm.j9ddr.vm29.pointer.generated.MM_UnfinalizedObjectListPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check,int,int)" class="member-name-link">CheckError</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.MM_UnfinalizedObjectListPointer&nbsp;object,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.ibm.j9ddr.vm29.pointer.generated.MM_UnfinalizedObjectListPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check,int,int)" class="member-name-link">CheckError</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.MM_UnfinalizedObjectListPointer&nbsp;object,
  com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
  com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle&nbsp;cycle,
  com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check&nbsp;check,
  int&nbsp;errorCode,
  int&nbsp;errorNumber)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -361,20 +350,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="see-list">
 <li><a href="../../../../../../../../constant-values.html#com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError.check_type_finalizable">Constant Field Values</a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="check_type_ownable_synchronizer">
-<h3>check_type_ownable_synchronizer</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">check_type_ownable_synchronizer</span></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="../../../../../../../../constant-values.html#com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckError.check_type_ownable_synchronizer">Constant Field Values</a></li>
 </ul>
 </dd>
 </dl>
@@ -541,17 +516,6 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(com.ibm.j9ddr.vm29.pointer.generated.MM_UnfinalizedObjectListPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check,int,int)">
 <h3>CheckError</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CheckError</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.MM_UnfinalizedObjectListPointer&nbsp;object,
- com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
- com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle&nbsp;cycle,
- com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check&nbsp;check,
- int&nbsp;errorCode,
- int&nbsp;errorNumber)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(com.ibm.j9ddr.vm29.pointer.generated.MM_OwnableSynchronizerObjectListPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle,com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check,int,int)">
-<h3>CheckError</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CheckError</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.MM_OwnableSynchronizerObjectListPointer&nbsp;object,
  com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
  com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckCycle&nbsp;cycle,
  com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.Check&nbsp;check,
