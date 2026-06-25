@@ -10155,6 +10155,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See also
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -10655,6 +10666,34 @@
     
   
     -XX:[+|-]VMLockClassLoader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xxyieldpinnedvirtualthreads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    -XX:[+|-]YieldPinnedVirtualThreads
   
 
     
@@ -11508,6 +11547,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See also
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -11584,6 +11634,12 @@
 <p>Virtual threads require platform threads to run because the operating system identifies only platform threads. Therefore, a VM maintains multiple platform threads that are used as carrier threads to run the virtual threads. The VM assigns a virtual thread to a platform thread in a process called <strong>mounting</strong>.</p>
 <p>Although the virtual thread runs on a carrier thread, the stack trace of the virtual thread and its carrier thread are separate. If an exception occurs on running the virtual threads, the thread dumps do not include stack frames from the carrier thread's stack.</p>
 <p>You can use the <code>-XX:+ShowCarrierFrames</code> option to add the stack trace of the carrier thread in addition to the virtual thread stack trace to the <code>Throwable.getStackTrace()</code> method, if an exception occurs. <img alt="End of content that applies to Java 21 (LTS) and later" src="../cr/java_close_lts.png" /></p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../xxcontinuationcache/"><code>-XX:ContinuationCache</code></a></li>
+<li><a href="../xxshowunmountedthreadstacks/"><code>-XX:[+|-]ShowUnmountedThreadStacks</code></a></li>
+<li><a href="../xxyieldpinnedvirtualthreads/"><code>-XX:[+|-]YieldPinnedVirtualThreads</code></a></li>
+</ul>
 <!-- ==== END OF TOPIC ==== xxshowcarrierframes.md ==== -->
 
 
