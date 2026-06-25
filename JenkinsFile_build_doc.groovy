@@ -79,19 +79,36 @@ timeout(time: 6, unit: 'HOURS') {
                 def TMP_DESC = (currentBuild.description) ? currentBuild.description + "<br>" : ""
                 currentBuild.description = TMP_DESC + "<a href=${JENKINS_URL}computer/${NODE_NAME}>${NODE_NAME}</a>"
 
+				// The jenkins git launcher can't run in the container, run it outside to avoid file sync problems.
+                stage('Checkout repos') {
+                    dir(BUILD_DIR) {
+                        checkout changelog: false, poll: false,
+                            scm: [$class: 'GitSCM',
+                                branches: [[name: CLONE_BRANCH]],
+                                extensions: [
+                                    [$class: 'CheckoutOption', timeout: 30],
+                                    [$class: 'CloneOption', timeout: 30]
+                                ],
+                                userRemoteConfigs: [[refspec: REFSPEC, url: "${HTTP}${OPENJ9_REPO}"]]]
+                    }
+                    if ((params.BUILD_TYPE == "PR") || (params.BUILD_TYPE == "MERGE")) {
+                        dir('push_repo') {
+                            checkout changelog: false, poll: false,
+                                scm: [$class: 'GitSCM',
+                                    branches: [[name: PUSH_BRANCH]],
+                                    extensions: [
+                                        [$class: 'CheckoutOption', timeout: 30],
+                                        [$class: 'CloneOption', timeout: 30],
+                                        [$class: 'LocalBranch', localBranch: PUSH_BRANCH]
+                                    ],
+                                    userRemoteConfigs: [[url: "${HTTP}${PUSH_REPO}"]]]
+                        }
+                    }
+                }
                 docker.image("${NAMESPACE}/${CONTAINER_NAME}:latest").pull()
                 docker.image("${NAMESPACE}/${CONTAINER_NAME}:latest").inside() {
                     stage('Build Doc') {
                         dir(BUILD_DIR) {
-                            checkout changelog: false, poll: false,
-                                scm: [$class: 'GitSCM',
-                                    branches: [[name: CLONE_BRANCH]],
-                                    extensions: [
-                                        [$class: 'CheckoutOption', timeout: 30],
-                                        [$class: 'CloneOption', timeout: 30]
-                                    ],
-                                    userRemoteConfigs: [[refspec: REFSPEC, url: "${HTTP}${OPENJ9_REPO}"]]]
-
                             if (GET_SHA) {
                                 MERGE_COMMIT = sh (script: 'git rev-parse HEAD', returnStdout: true).trim()
                             }
@@ -133,15 +150,6 @@ timeout(time: 6, unit: 'HOURS') {
                                 sh """
                                     git config --global core.preloadIndex false
                                     """
-                                checkout changelog: false, poll: false,
-                                    scm: [$class: 'GitSCM',
-                                        branches: [[name: PUSH_BRANCH]],
-                                        extensions: [
-                                            [$class: 'CheckoutOption', timeout: 30],
-                                            [$class: 'CloneOption', timeout: 30],
-                                            [$class: 'LocalBranch', localBranch: PUSH_BRANCH]
-                                        ],
-                                        userRemoteConfigs: [[url: "${HTTP}${PUSH_REPO}"]]]
                                 if (params.BUILD_TYPE == "PR") {
                                     dir("${ghprbPullId}") {
                                         copy_built_doc(BUILD_DIR)
