@@ -22,7 +22,6 @@
 <meta name="keywords" content="doPhantomReferenceSlot()">
 <meta name="keywords" content="doFinalizableObject()">
 <meta name="keywords" content="doUnfinalizedObject()">
-<meta name="keywords" content="doOwnableSynchronizerObject()">
 <meta name="keywords" content="doMonitorReference()">
 <meta name="keywords" content="doMonitorLookupCacheSlot()">
 <meta name="keywords" content="doJNIWeakGlobalReference()">
@@ -49,7 +48,6 @@
 <meta name="keywords" content="scanJNIWeakGlobalReferences()">
 <meta name="keywords" content="scanMonitorReferences()">
 <meta name="keywords" content="scanUnfinalizedObjects()">
-<meta name="keywords" content="scanOwnableSynchronizerObjects()">
 <meta name="keywords" content="scanMonitorLookupCaches()">
 <meta name="keywords" content="scanPhantomReferenceObjects()">
 <meta name="keywords" content="scanSoftReferenceObjects()">
@@ -84,7 +82,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":10,"i2":6,"i3":10,"i4":6,"i5":10,"i6":6,"i7":6,"i8":10,"i9":6,"i10":10,"i11":6,"i12":10,"i13":10,"i14":6,"i15":6,"i16":10,"i17":6,"i18":6,"i19":10,"i20":6,"i21":6,"i22":10,"i23":6,"i24":10,"i25":6,"i26":10,"i27":6,"i28":10,"i29":6,"i30":10,"i31":6,"i32":10,"i33":6,"i34":6,"i35":10,"i36":6,"i37":10,"i38":6,"i39":10,"i40":6,"i41":10,"i42":6,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10,"i67":10,"i68":10,"i69":10,"i70":10,"i71":10,"i72":10,"i73":10,"i74":10};
+var data = {"i0":6,"i1":10,"i2":6,"i3":10,"i4":6,"i5":10,"i6":6,"i7":6,"i8":10,"i9":6,"i10":10,"i11":6,"i12":10,"i13":10,"i14":6,"i15":6,"i16":10,"i17":6,"i18":6,"i19":10,"i20":6,"i21":10,"i22":6,"i23":10,"i24":6,"i25":10,"i26":6,"i27":10,"i28":6,"i29":10,"i30":6,"i31":10,"i32":6,"i33":6,"i34":10,"i35":6,"i36":10,"i37":6,"i38":10,"i39":6,"i40":10,"i41":6,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10,"i57":10,"i58":10,"i59":10,"i60":10,"i61":10,"i62":10,"i63":10,"i64":10,"i65":10,"i66":10,"i67":10,"i68":10,"i69":10,"i70":10,"i71":10,"i72":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -375,293 +373,283 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr id="i20" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doOwnableSynchronizerObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doOwnableSynchronizerObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i21" class="rowColor">
-<td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doPhantomReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doPhantomReferenceSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doPhantomReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doPhantomReferenceSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
                       <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doRememberedSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doRememberedSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doRememberedSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doRememberedSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
                 <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doSoftReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doSoftReferenceSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doSoftReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doSoftReferenceSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
                    <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doStackSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doStackSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doStackSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.j9.stackwalker.WalkState,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doStackSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
            <a href="stackwalker/WalkState.html" title="class in com.ibm.j9ddr.vm29.j9.stackwalker">WalkState</a>&nbsp;walkState,
            <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;stackLocation)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doStringCacheTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doStringCacheTableSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doStringCacheTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doStringCacheTableSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
                       <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doStringTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doStringTableSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doStringTableSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doStringTableSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
                  <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doUnfinalizedObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doUnfinalizedObject</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doVMClassSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">doVMClassSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doVMClassSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doVMClassSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;slot,
              <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doVMThreadJNISlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doVMThreadJNISlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i36" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doVMThreadJNISlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doVMThreadJNISlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
                  <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i38" class="altColor">
+<tr id="i37" class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doVMThreadMonitorRecordSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doVMThreadMonitorRecordSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i39" class="rowColor">
+<tr id="i38" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doVMThreadMonitorRecordSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doVMThreadMonitorRecordSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
                            <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i40" class="altColor">
+<tr id="i39" class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doVMThreadSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doVMThreadSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i41" class="rowColor">
+<tr id="i40" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doVMThreadSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doVMThreadSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
               <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i42" class="altColor">
+<tr id="i41" class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doWeakReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">doWeakReferenceSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i43" class="rowColor">
+<tr id="i42" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#doWeakReferenceSlot(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer,com.ibm.j9ddr.vm29.pointer.VoidPointer)">doWeakReferenceSlot</a></span>&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot,
                    <a href="../pointer/VoidPointer.html" title="class in com.ibm.j9ddr.vm29.pointer">VoidPointer</a>&nbsp;address)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i44" class="altColor">
+<tr id="i43" class="rowColor">
 <td class="colFirst"><code>protected <a href="RootScanner.Reachability.html" title="enum in com.ibm.j9ddr.vm29.j9">RootScanner.Reachability</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getReachability()">getReachability</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i45" class="rowColor">
+<tr id="i44" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanAllSlots()">scanAllSlots</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Scan all slots which contain references into the heap.</div>
 </td>
 </tr>
-<tr id="i46" class="altColor">
+<tr id="i45" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanClasses()">scanClasses</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i47" class="rowColor">
+<tr id="i46" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanClassLoaders()">scanClassLoaders</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i48" class="altColor">
+<tr id="i47" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanClearable()">scanClearable</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Scan all clearable root set references from the VM into the heap.</div>
 </td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i48" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanFinalizableObjects()">scanFinalizableObjects</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i50" class="altColor">
+<tr id="i49" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanJNIGlobalReferences()">scanJNIGlobalReferences</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanJNIWeakGlobalReferences()">scanJNIWeakGlobalReferences</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i52" class="altColor">
+<tr id="i51" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanJVMTIObjectTagTables()">scanJVMTIObjectTagTables</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i53" class="rowColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanMonitorLookupCaches()">scanMonitorLookupCaches</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i54" class="altColor">
+<tr id="i53" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanMonitorReferences()">scanMonitorReferences</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i55" class="rowColor">
+<tr id="i54" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanNonCollectableObjects()">scanNonCollectableObjects</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i56" class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanOwnableSynchronizerObjects()">scanOwnableSynchronizerObjects</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i57" class="rowColor">
+<tr id="i55" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanPermanentClasses()">scanPermanentClasses</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i58" class="altColor">
+<tr id="i56" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanPhantomReferenceObjects()">scanPhantomReferenceObjects</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i59" class="rowColor">
+<tr id="i57" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanRememberedSet()">scanRememberedSet</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i60" class="altColor">
+<tr id="i58" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanRoots()">scanRoots</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Scan all root set references from the VM into the heap.</div>
 </td>
 </tr>
-<tr id="i61" class="rowColor">
+<tr id="i59" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanSoftReferenceObjects()">scanSoftReferenceObjects</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i62" class="altColor">
+<tr id="i60" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanStringTable()">scanStringTable</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i63" class="rowColor">
+<tr id="i61" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanThreads()">scanThreads</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i64" class="altColor">
+<tr id="i62" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanUnfinalizedObjects()">scanUnfinalizedObjects</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i65" class="rowColor">
+<tr id="i63" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanVMClassSlots()">scanVMClassSlots</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i66" class="altColor">
+<tr id="i64" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#scanWeakReferenceObjects()">scanWeakReferenceObjects</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i67" class="rowColor">
+<tr id="i65" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setClassDataAsRoots(boolean)">setClassDataAsRoots</a></span>&#8203;(boolean&nbsp;classDataAsRoots)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i68" class="altColor">
+<tr id="i66" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setIncludeRememberedSetReferences(boolean)">setIncludeRememberedSetReferences</a></span>&#8203;(boolean&nbsp;includeRememberedSetReferences)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i69" class="rowColor">
+<tr id="i67" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setIncludeStackFrameClassReferences(boolean)">setIncludeStackFrameClassReferences</a></span>&#8203;(boolean&nbsp;includeStackFrameClassReferences)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i70" class="altColor">
+<tr id="i68" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setNurseryReferencesOnly(boolean)">setNurseryReferencesOnly</a></span>&#8203;(boolean&nbsp;nurseryReferencesOnly)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i71" class="rowColor">
+<tr id="i69" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setNurseryReferencesPossibly(boolean)">setNurseryReferencesPossibly</a></span>&#8203;(boolean&nbsp;nurseryReferencesPossibly)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i72" class="altColor">
+<tr id="i70" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScanStackSlots(boolean)">setScanStackSlots</a></span>&#8203;(boolean&nbsp;scanStackSlots)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i73" class="rowColor">
+<tr id="i71" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setStringTableAsRoot(boolean)">setStringTableAsRoot</a></span>&#8203;(boolean&nbsp;stringTableAsRoot)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i74" class="altColor">
+<tr id="i72" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setTrackVisibleStackFrameDepth(boolean)">setTrackVisibleStackFrameDepth</a></span>&#8203;(boolean&nbsp;trackVisibleStackFrameDepth)</code></th>
 <td class="colLast">&nbsp;</td>
@@ -856,15 +844,6 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>doUnfinalizedObject</h4>
 <pre class="methodSignature">protected abstract&nbsp;void&nbsp;doUnfinalizedObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</pre>
-</li>
-</ul>
-<a id="doOwnableSynchronizerObject(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>doOwnableSynchronizerObject</h4>
-<pre class="methodSignature">protected abstract&nbsp;void&nbsp;doOwnableSynchronizerObject&#8203;(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;slot)</pre>
 </li>
 </ul>
 <a id="doMonitorReference(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectMonitorPointer)">
@@ -1343,20 +1322,6 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h4>scanUnfinalizedObjects</h4>
 <pre class="methodSignature">protected&nbsp;void&nbsp;scanUnfinalizedObjects()
                                throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
-<dl>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
-</dl>
-</li>
-</ul>
-<a id="scanOwnableSynchronizerObjects()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>scanOwnableSynchronizerObjects</h4>
-<pre class="methodSignature">protected&nbsp;void&nbsp;scanOwnableSynchronizerObjects()
-                                       throws <a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
