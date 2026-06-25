@@ -11,8 +11,6 @@
 <meta name="keywords" content="mmObjectAccessBarrier">
 <meta name="keywords" content="getObjectHashCode()">
 <meta name="keywords" content="getFinalizeLink()">
-<meta name="keywords" content="getOwnableSynchronizerLink()">
-<meta name="keywords" content="isObjectInOwnableSynchronizerList()">
 <meta name="keywords" content="getReferenceLink()">
 <meta name="keywords" content="getLockword()">
 <meta name="keywords" content="getMonitor()">
@@ -167,18 +165,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Determine the basic hash code for the specified object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getOwnableSynchronizerLink(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getOwnableSynchronizerLink</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getReferenceLink(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getReferenceLink</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Fetch the ownableSynchronizer link field of object.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getReferenceLink(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">getReferenceLink</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Fetch the reference link field of the specified reference object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isObjectInOwnableSynchronizerList(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">isObjectInOwnableSynchronizerList</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -237,33 +227,6 @@ loadScripts(document, 'script');</script>
 <dd><code>object</code> - [in] the object to read</dd>
 <dt>Returns:</dt>
 <dd>the value stored in the object's finalizeLink field</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getOwnableSynchronizerLink(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
-<h3>getOwnableSynchronizerLink</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</span>&nbsp;<span class="element-name">getOwnableSynchronizerLink</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
-                                                                                       throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<div class="block">Fetch the ownableSynchronizer link field of object.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>object</code> - [in] the object to read</dd>
-<dt>Returns:</dt>
-<dd>the value stored in the object's ownableSynchronizer field</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="isObjectInOwnableSynchronizerList(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
-<h3>isObjectInOwnableSynchronizerList</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer</span>&nbsp;<span class="element-name">isObjectInOwnableSynchronizerList</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;object)</span>
-                                                                                              throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
 </dl>
