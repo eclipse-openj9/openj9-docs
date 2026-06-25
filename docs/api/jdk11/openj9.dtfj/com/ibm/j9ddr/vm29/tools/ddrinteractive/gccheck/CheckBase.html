@@ -50,7 +50,6 @@
 <meta name="keywords" content="J9MODRON_GCCHK_MISC_ALWAYS_DUMP_STACK">
 <meta name="keywords" content="J9MODRON_GCCHK_MISC_DARKMATTER">
 <meta name="keywords" content="J9MODRON_GCCHK_MISC_MIDSCAVENGE">
-<meta name="keywords" content="J9MODRON_GCCHK_MISC_OWNABLESYNCHRONIZER_CONSISTENCY">
 <meta name="keywords" content="J9MODRON_GCCHK_VALID_INDEXABLE_DATA_ADDRESS">
 <meta name="keywords" content="J9MODRON_SLOT_ITERATOR_OK">
 <meta name="keywords" content="J9MODRON_SLOT_ITERATOR_UNRECOVERABLE_ERROR">
@@ -99,9 +98,6 @@
 <meta name="keywords" content="J9MODRON_GCCHK_RC_HEAP_OBJECT_REMEMBERED">
 <meta name="keywords" content="J9MODRON_GCCHK_RC_NEW_POINTER_NOT_REMEMBERED_IN_CARD_TABLE">
 <meta name="keywords" content="J9MODRON_GCCHK_RC_INTERNAL_POINTER_NOT_IN_SCOPE">
-<meta name="keywords" content="J9MODRON_GCCHK_RC_OWNABLE_SYNCHRONIZER_INVALID_CLASS">
-<meta name="keywords" content="J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_OBJECT_IS_NOT_ATTACHED_TO_THE_LIST">
-<meta name="keywords" content="J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_LIST_HAS_CIRCULAR_REFERENCE">
 <meta name="keywords" content="J9MODRON_GCCHK_RC_CORRUPT_DATA_EXCEPTION">
 <meta name="keywords" content="invocation_unknown">
 <meta name="keywords" content="invocation_global_start">
@@ -411,217 +407,197 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_MISC_OWNABLESYNCHRONIZER_CONSISTENCY">J9MODRON_GCCHK_MISC_OWNABLESYNCHRONIZER_CONSISTENCY</a></span></code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_MISC_QUIET">J9MODRON_GCCHK_MISC_QUIET</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_MISC_SCAN">J9MODRON_GCCHK_MISC_SCAN</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_ONSTACK_ALIGNMENT_MASK">J9MODRON_GCCHK_ONSTACK_ALIGNMENT_MASK</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_LIST_HAS_CIRCULAR_REFERENCE">J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_LIST_HAS_CIRCULAR_REFERENCE</a></span></code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_OBJECT_IS_NOT_ATTACHED_TO_THE_LIST">J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_OBJECT_IS_NOT_ATTACHED_TO_THE_LIST</a></span></code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_HOT_SWAPPED_FOR_ARRAY">J9MODRON_GCCHK_RC_CLASS_HOT_SWAPPED_FOR_ARRAY</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_HOT_SWAPPED_POINTS_TO_STATICS">J9MODRON_GCCHK_RC_CLASS_HOT_SWAPPED_POINTS_TO_STATICS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_INVALID_RANGE">J9MODRON_GCCHK_RC_CLASS_INVALID_RANGE</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_IS_UNDEAD">J9MODRON_GCCHK_RC_CLASS_IS_UNDEAD</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_IS_UNLOADED">J9MODRON_GCCHK_RC_CLASS_IS_UNLOADED</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_NOT_FOUND">J9MODRON_GCCHK_RC_CLASS_NOT_FOUND</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_OBJECT_NOT_JLCLASS">J9MODRON_GCCHK_RC_CLASS_OBJECT_NOT_JLCLASS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_POINTER_NOT_JLCLASS">J9MODRON_GCCHK_RC_CLASS_POINTER_NOT_JLCLASS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_POINTER_UNALIGNED">J9MODRON_GCCHK_RC_CLASS_POINTER_UNALIGNED</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_STACK_OBJECT">J9MODRON_GCCHK_RC_CLASS_STACK_OBJECT</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_STATICS_FIELD_POINTS_WRONG_OBJECT">J9MODRON_GCCHK_RC_CLASS_STATICS_FIELD_POINTS_WRONG_OBJECT</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_STATICS_REFERENCE_IS_NOT_IN_SCANNING_RANGE">J9MODRON_GCCHK_RC_CLASS_STATICS_REFERENCE_IS_NOT_IN_SCANNING_RANGE</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CLASS_STATICS_WRONG_NUMBER_OF_REFERENCES">J9MODRON_GCCHK_RC_CLASS_STATICS_WRONG_NUMBER_OF_REFERENCES</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_CORRUPT_DATA_EXCEPTION">J9MODRON_GCCHK_RC_CORRUPT_DATA_EXCEPTION</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_DEAD_OBJECT">J9MODRON_GCCHK_RC_DEAD_OBJECT</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_DEAD_OBJECT_NEXT_IS_NOT_HOLE">J9MODRON_GCCHK_RC_DEAD_OBJECT_NEXT_IS_NOT_HOLE</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_DEAD_OBJECT_NEXT_IS_NOT_IN_REGION">J9MODRON_GCCHK_RC_DEAD_OBJECT_NEXT_IS_NOT_IN_REGION</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_DEAD_OBJECT_NEXT_IS_POINTED_INSIDE">J9MODRON_GCCHK_RC_DEAD_OBJECT_NEXT_IS_POINTED_INSIDE</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_DEAD_OBJECT_SIZE">J9MODRON_GCCHK_RC_DEAD_OBJECT_SIZE</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_DEAD_OBJECT_SIZE_NOT_ALIGNED">J9MODRON_GCCHK_RC_DEAD_OBJECT_SIZE_NOT_ALIGNED</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_DOUBLE_ARRAY_UNALIGNED">J9MODRON_GCCHK_RC_DOUBLE_ARRAY_UNALIGNED</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_HEAP_OBJECT_REMEMBERED">J9MODRON_GCCHK_RC_HEAP_OBJECT_REMEMBERED</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_INTERNAL_POINTER_NOT_IN_SCOPE">J9MODRON_GCCHK_RC_INTERNAL_POINTER_NOT_IN_SCOPE</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_INVALID_FLAGS">J9MODRON_GCCHK_RC_INVALID_FLAGS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_INVALID_INDEXABLE_DATA_ADDRESS">J9MODRON_GCCHK_RC_INVALID_INDEXABLE_DATA_ADDRESS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_INVALID_RANGE">J9MODRON_GCCHK_RC_INVALID_RANGE</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_J9CLASS_HEADER_INVALID">J9MODRON_GCCHK_RC_J9CLASS_HEADER_INVALID</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_NEW_POINTER_NOT_REMEMBERED">J9MODRON_GCCHK_RC_NEW_POINTER_NOT_REMEMBERED</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_NEW_POINTER_NOT_REMEMBERED_IN_CARD_TABLE">J9MODRON_GCCHK_RC_NEW_POINTER_NOT_REMEMBERED_IN_CARD_TABLE</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_NEW_SEGMENT_INVALID_FLAGS">J9MODRON_GCCHK_RC_NEW_SEGMENT_INVALID_FLAGS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_NOT_FOUND">J9MODRON_GCCHK_RC_NOT_FOUND</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_NOT_IN_OBJECT_REGION">J9MODRON_GCCHK_RC_NOT_IN_OBJECT_REGION</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_NULL_CLASS_POINTER">J9MODRON_GCCHK_RC_NULL_CLASS_POINTER</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_OBJECT_SLOT_POINTS_TO_J9CLASS">J9MODRON_GCCHK_RC_OBJECT_SLOT_POINTS_TO_J9CLASS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_OK">J9MODRON_GCCHK_RC_OK</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_OLD_SEGMENT_INVALID_FLAGS">J9MODRON_GCCHK_RC_OLD_SEGMENT_INVALID_FLAGS</a></span></code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_OWNABLE_SYNCHRONIZER_INVALID_CLASS">J9MODRON_GCCHK_RC_OWNABLE_SYNCHRONIZER_INVALID_CLASS</a></span></code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#J9MODRON_GCCHK_RC_OLD_SEGMENT_INVALID_FLAGS">J9MODRON_GCCHK_RC_OLD_SEGMENT_INVALID_FLAGS</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -1460,19 +1436,6 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </dl>
 </li>
 </ul>
-<a id="J9MODRON_GCCHK_MISC_OWNABLESYNCHRONIZER_CONSISTENCY">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>J9MODRON_GCCHK_MISC_OWNABLESYNCHRONIZER_CONSISTENCY</h4>
-<pre>public static final&nbsp;int J9MODRON_GCCHK_MISC_OWNABLESYNCHRONIZER_CONSISTENCY</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../../../../constant-values.html#com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckBase.J9MODRON_GCCHK_MISC_OWNABLESYNCHRONIZER_CONSISTENCY">Constant Field Values</a></dd>
-</dl>
-</li>
-</ul>
 <a id="J9MODRON_GCCHK_VALID_INDEXABLE_DATA_ADDRESS">
 <!--   -->
 </a>
@@ -2094,45 +2057,6 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../../../../constant-values.html#com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckBase.J9MODRON_GCCHK_RC_INTERNAL_POINTER_NOT_IN_SCOPE">Constant Field Values</a></dd>
-</dl>
-</li>
-</ul>
-<a id="J9MODRON_GCCHK_RC_OWNABLE_SYNCHRONIZER_INVALID_CLASS">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>J9MODRON_GCCHK_RC_OWNABLE_SYNCHRONIZER_INVALID_CLASS</h4>
-<pre>public static final&nbsp;int J9MODRON_GCCHK_RC_OWNABLE_SYNCHRONIZER_INVALID_CLASS</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../../../../constant-values.html#com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckBase.J9MODRON_GCCHK_RC_OWNABLE_SYNCHRONIZER_INVALID_CLASS">Constant Field Values</a></dd>
-</dl>
-</li>
-</ul>
-<a id="J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_OBJECT_IS_NOT_ATTACHED_TO_THE_LIST">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_OBJECT_IS_NOT_ATTACHED_TO_THE_LIST</h4>
-<pre>public static final&nbsp;int J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_OBJECT_IS_NOT_ATTACHED_TO_THE_LIST</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../../../../constant-values.html#com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckBase.J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_OBJECT_IS_NOT_ATTACHED_TO_THE_LIST">Constant Field Values</a></dd>
-</dl>
-</li>
-</ul>
-<a id="J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_LIST_HAS_CIRCULAR_REFERENCE">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_LIST_HAS_CIRCULAR_REFERENCE</h4>
-<pre>public static final&nbsp;int J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_LIST_HAS_CIRCULAR_REFERENCE</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../../../../constant-values.html#com.ibm.j9ddr.vm29.tools.ddrinteractive.gccheck.CheckBase.J9MODRON_GCCHK_OWNABLE_SYNCHRONIZER_LIST_HAS_CIRCULAR_REFERENCE">Constant Field Values</a></dd>
 </dl>
 </li>
 </ul>
