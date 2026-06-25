@@ -12,6 +12,7 @@
 <meta name="keywords" content="clazz()">
 <meta name="keywords" content="monitor()">
 <meta name="keywords" content="getClassName()">
+<meta name="keywords" content="isIndexableDataAddrPresent()">
 <meta name="keywords" content="rawSize()">
 <meta name="keywords" content="size()">
 <meta name="keywords" content="contiguousHeaderSize()">
@@ -106,6 +107,7 @@ initTheme();
 <li><a href="#clazz(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" tabindex="0">clazz(J9IndexableObjectPointer)</a></li>
 <li><a href="#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" tabindex="0">monitor(J9IndexableObjectPointer)</a></li>
 <li><a href="#getClassName(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" tabindex="0">getClassName(J9IndexableObjectPointer)</a></li>
+<li><a href="#isIndexableDataAddrPresent()" tabindex="0">isIndexableDataAddrPresent()</a></li>
 <li><a href="#rawSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" tabindex="0">rawSize(J9IndexableObjectPointer)</a></li>
 <li><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" tabindex="0">size(J9IndexableObjectPointer)</a></li>
 <li><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" tabindex="0">size(J9ObjectPointer)</a></li>
@@ -314,18 +316,21 @@ initTheme();
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Determine the validity of the data address belonging to objPointer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">monitor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isIndexableDataAddrPresent()" class="member-name-link">isIndexableDataAddrPresent</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rawSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">rawSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#monitor(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">monitor</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rawSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">rawSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer&nbsp;objPointer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../types/U32.html" title="class in com.ibm.j9ddr.vm29.types">U32</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#size(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">size</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objPointer)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -524,6 +529,14 @@ initTheme();
 </section>
 </li>
 <li>
+<section class="detail" id="isIndexableDataAddrPresent()">
+<h3>isIndexableDataAddrPresent</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isIndexableDataAddrPresent</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="rawSize(com.ibm.j9ddr.vm29.pointer.generated.J9IndexableObjectPointer)">
 <h3>rawSize</h3>
 <div class="horizontal-scroll">
@@ -629,7 +642,7 @@ initTheme();
 <div class="block">Determine the validity of the data address belonging to objPointer.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>objPointer</code> - array object who's data address validity we are checking</dd>
+<dd><code>objPointer</code> - array object whose data address validity we are checking</dd>
 <dt>Returns:</dt>
 <dd>true if the data address of objPointer is valid, false otherwise</dd>
 <dt>Throws:</dt>
