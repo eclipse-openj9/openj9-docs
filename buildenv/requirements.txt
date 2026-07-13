@@ -26,7 +26,7 @@ babel==2.12.1
     # via mkdocs-material
 backrefs==5.8
     # via mkdocs-material
-certifi==2026.1.4
+certifi==2026.2.25
     # via requests
 charset-normalizer==2.1.1
     # via requests
@@ -93,7 +93,7 @@ python-dateutil==2.9.0
     # via
     #   ghp-import
     #   mkdocs-macros-plugin
-pyyaml==6.0.1
+pyyaml==6.0.3
     # via
     #   mkdocs
     #   mkdocs-get-deps
