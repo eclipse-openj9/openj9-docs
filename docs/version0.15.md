@@ -40,6 +40,7 @@
 - [Change in behaviour of -XX:\[+|-\]IdleTuningCompactOnIdle](#change-in-behaviour-of-xxidletuningcompactonidle)
 - [Addition of heuristics for compaction during idle GC](#heuristics-for-compaction-during-idle-gc)
 - [Change in shared classes behavior for checking timestamps of `jar` or `zip` files](#change-in-shared-classes-behavior-for-checking-timestamps-of-jar-or-zip-files)
+- [New `-Xgc` parameter related to concurrent kickoff calculation is added](#new-xgc-parameter-related-to-concurrent-kickoff-calculation-is-added)
 
 
 ## Features and changes
@@ -120,6 +121,12 @@ OpenJ9 now automatically compacts the heap when certain triggers are met during 
 In earlier releases, the shared classes cache checks timestamps of `jar` or `zip` files every time a class is loaded and reloads a class if the timestamp has changed. This behavior is now changed; timestamps are checked only when `zip` or `jar` files are added to class loaders and used for the first time to look for a class, which can improve class-loading performance. If `jar` or `zip` files are updated after a class loader starts loading classes from them, an older version of the class might be loaded from the shared classes cache. To revert to the behavior of earlier releases, set the [`-Xshareclasses:checkURLTimestamps`](xshareclasses.md#checkurltimestamps) option on the command line when you start your application.
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Multiple `-Xshareclasses:` options are not combined, only the last one is used.
+
+### New `-Xgc` parameter related to concurrent kickoff calculation is added
+
+New parameter, `concurrentKickoffTenuringHeadroom`, is added to the `-Xgc` option. You can use this option to add the required headroom on top of the automatic concurrent kickoff calculation to trigger the concurrent global GC cycle earlier than the GC heuristic computed kickoff point.
+
+For more information, see [`-Xgc`](xgc.md#concurrentkickofftenuringheadroom).
 
 ## Full release information
 

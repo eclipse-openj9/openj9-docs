@@ -36,6 +36,7 @@ Options that change the behavior of the garbage collector.
 | [`breadthFirstScanOrdering`         ](#breadthfirstscanordering         ) | Sets the scan mode to breadth first.                                             |
 | [`classUnloadingKickoffThreshold`   ](#classunloadingkickoffthreshold   ) | Sets a threshold to start an early concurrent global garbage collection (GC) cycle due to recent, heavy class loading activity  |
 | [`classUnloadingThreshold`          ](#classunloadingthreshold          ) | Sets a threshold to trigger a class unloading operation in a global GC cycle                                     |
+| [`concurrentKickoffTenuringHeadroom`](#concurrentkickofftenuringheadroom) | Sets an additional percentage of free tenure memory as headroom for concurrent global GC kickoff timing.
 | [`concurrentScavenge`               ](#concurrentscavenge               ) | Enables a GC mode with less pause times.                                             |
 | [`disableEstimateFragmentation`     ](#disableestimatefragmentation     ) | Disables the calculating and reporting of the estimates of the macro fragmentation                                             |
 | [`dnssExpectedTimeRatioMaximum`     ](#dnssexpectedtimeratiomaximum     ) | Sets the maximum percentage of time to spend on local GC pauses                                             |
@@ -58,14 +59,14 @@ Options that change the behavior of the garbage collector.
 | [`suballocatorInitialSize`          ](#suballocatorinitialsize          ) | Sets the initial size in bytes for the `subAllocator` area that is used for compressed references.                               |
 | [`suballocatorQuickAllocDisable`    ](#suballocatorquickallocdisable    ) | Disables mmap-based allocation of the compressed references `subAllocator` area. (Linux only)                            |
 | [`suballocatorQuickAllocEnable`     ](#suballocatorquickallocenable     ) | Enables mmap-based allocation of the compressed references `subAllocator` area. (Linux only)                            |
-| [`synchronousGCOnOOM`               ](#synchronousgconoom               )     | Stops an application to allow GC activity.                                                                             |
-| [`targetPausetime`                  ](#targetpausetime                  )   | Sets the target GC pause time for the `metronome` and `balanced` GC policies.                            |
-| [`targetUtilization`                ](#targetutilization                )   | Sets application utilization for the `metronome` GC policy.                                                   |
+| [`synchronousGCOnOOM`               ](#synchronousgconoom               ) | Stops an application to allow GC activity.                                                                             |
+| [`targetPausetime`                  ](#targetpausetime                  ) | Sets the target GC pause time for the `metronome` and `balanced` GC policies.                            |
+| [`targetUtilization`                ](#targetutilization                ) | Sets application utilization for the `metronome` GC policy.                                                   |
 | [`tlhIncrementSize`                 ](#tlhincrementsize                 ) | Sets the size of the thread local heap (TLH) increment.                                                   |
 | [`tlhInitialSize`                   ](#tlhinitialsize                   ) | Sets the initial size of the thread local heap.                                                           |
 | [`tlhMaximumSize`                   ](#tlhmaximumsize                   ) | Sets the maximum size of the thread local heap.                                                           |
 | [`verboseFormat`                    ](#verboseformat                    ) | Sets the verbose GC format.                                                                               |
-| [`verbosegcCycleTime`               ](#verbosegccycletime                    ) | Sets the criteria for verbose GC logging.                                                                              |
+| [`verbosegcCycleTime`               ](#verbosegccycletime               ) | Sets the criteria for verbose GC logging.                                                                              |
 
 ### `breadthFirstScanOrdering`
 
@@ -92,6 +93,34 @@ Options that change the behavior of the garbage collector.
 : This option sets a threshold that is used to trigger an optional GC class unloading operation in a global GC cycle, irrespective of how the global GC cycle is triggered. The default value is 6.
 
 : This option is applicable to the following GC policies: `gencon`, `optavgpause`, and `optthruput`.
+
+### `concurrentKickoffTenuringHeadroom`
+
+        -Xgc:concurrentKickoffTenuringHeadroom=<value>
+
+: | Setting       | Value          |  Default headroom                                      |
+  |---------------|----------------|------------------------------------------------|
+  | `<value>`     | [percentage]   |    2% for stop-the-world (STW) scavenge <br>    10% for concurrent scavenge       |
+
+: where `<value>` is a percentage (0–99) of the current free memory size, every time kickoff point is calculated.
+
+: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Concurrent scavenge has high default headroom because it is more susceptible to promotion fluctuations due to shared survivor and allocate space during an active concurrent scavenge cycle.
+
+: This option is used to add the specified headroom on top of the automatic concurrent kickoff calculation to trigger the concurrent global GC cycle earlier than the GC heuristic computed kickoff point.
+
+: The GC heuristic computes a kickoff point based on steady-state metrics, such as allocation rate and marking speed, to determine when the concurrent global GC cycle should start. The default headroom is added to this kickoff point: 10% when concurrent scavenge is enabled ([`-Xgc:concurrentScavenge`](#concurrentscavenge)), or 2% for stop-the-world scavenge. With the `concurrentKickoffTenuringHeadroom` option, you can override the default headroom.
+
+: For example, if concurrent scavenge is enabled and the heuristic determines that kickoff should occur when 8% of tenure memory is free, the concurrent global GC cycle starts when 18% of tenure memory is free. This 18% = 8% (heuristically based value) + 10% (default headroom for concurrent scavenge).
+
+: If the `concurrentKickoffTenuringHeadroom` option is set to `15`, the effective kickoff point becomes 23% of free tenure memory, where 23% = 8% (heuristically based value) + 15% (`<value>` specified for `-Xgc:concurrentKickoffTenuringHeadroom`).
+
+: The typical scenario where this option is useful is to compensate for spikes in tenuring that would otherwise fill the tenure space faster than the concurrent GC can finish. The headroom triggers the concurrent cycle early enough to absorb those spikes.
+
+: This option was added in the [0.15.0 release](version0.15.md#new-xgc-parameter-related-to-concurrent-kickoff-calculation-is-added) and applies only to the `gencon` GC policy.
+
+: Even though the `-Xconcurrentslack` option is also used to add headroom but in the case of `gencon` GC policy, use the `concurrentKickoffTenuringHeadroom` option.
+
+: For more information about headroom, see [`-Xconcurrentslack`](xconcurrentslack.md).
 
 ### `concurrentScavenge`
 
