@@ -31,6 +31,7 @@ The following new features and notable changes since version 0.51.0 are included
 - [Offheap support is added for the `balanced` GC policy](#offheap-support-is-added-for-the-balanced-gc-policy)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New JDK Flight Recorder (JFR) events are added in this release](#new-jdk-flight-recorder-jfr-events-are-added-in-this-release) ![End of content that applies only to Java 11 and later](cr/java_close.png)
 - [The default maximum heap size is automatically adjusted based on the initial heap size](#the-default-maximum-heap-size-is-automatically-adjusted-based-on-the-initial-heap-size)
+- [Compiler changes for macOS&reg;](#compiler-changes-for-macos)
 
 ## Features and changes
 
@@ -74,6 +75,12 @@ For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![En
 If the maximum object heap size is not explicitly set with the `-Xmx` option and the VM uses the default value of `-Xmx`, then even if `-Xms` is greater than `-Xmx` initially, the VM starts successfully. The VM starts because the default `-Xmx` value is increased automatically to match `-Xms`.
 
 Until the 0.53.0 release, if `-Xms` was greater than `-Xmx`, the VM used to fail. For more information, see [`-Xms` / `-Xmx`](xms.md).
+
+### Compiler changes for macOS
+
+macOS x86 64-bit and macOS AArch64 now compiles on minimum macOS 13 with xcode 15.2 and clang 15.0.0.
+
+For more information, see [Supported environments](openj9_support.md).
 
 ## Known problems and full release information
 
