@@ -6299,6 +6299,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#concurrentkickofftenuringheadroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        concurrentKickoffTenuringHeadroom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#concurrentscavenge" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -11940,6 +11951,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#concurrentkickofftenuringheadroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        concurrentKickoffTenuringHeadroom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#concurrentscavenge" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -12341,6 +12363,10 @@
 <td>Sets a threshold to trigger a class unloading operation in a global GC cycle</td>
 </tr>
 <tr>
+<td><a href="#concurrentkickofftenuringheadroom"><code>concurrentKickoffTenuringHeadroom</code></a></td>
+<td>Sets an additional percentage of free tenure memory as headroom for concurrent global GC kickoff timing.</td>
+</tr>
+<tr>
 <td><a href="#concurrentscavenge"><code>concurrentScavenge</code>               </a></td>
 <td>Enables a GC mode with less pause times.</td>
 </tr>
@@ -12483,6 +12509,59 @@
 <dd>Where <code>&lt;value&gt;</code> is equal to the number of class loaders plus the number of anonymous classes that are loaded since the previous class unloading operation.</dd>
 <dd>This option sets a threshold that is used to trigger an optional GC class unloading operation in a global GC cycle, irrespective of how the global GC cycle is triggered. The default value is 6.</dd>
 <dd>This option is applicable to the following GC policies: <code>gencon</code>, <code>optavgpause</code>, and <code>optthruput</code>.</dd>
+</dl>
+<h3 id="concurrentkickofftenuringheadroom"><code>concurrentKickoffTenuringHeadroom</code></h3>
+<pre><code>    -Xgc:concurrentKickoffTenuringHeadroom=&lt;value&gt;
+</code></pre>
+<dl>
+<dd>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Default headroom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;value&gt;</code></td>
+<td>[percentage]</td>
+<td>2% for stop-the-world (STW) scavenge <br>    10% for concurrent scavenge</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dd>
+<p>where <code>&lt;value&gt;</code> is a percentage (0–99) of the current free memory size, every time kickoff point is calculated.</p>
+</dd>
+<dd>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> Concurrent scavenge has high default headroom because it is more susceptible to promotion fluctuations due to shared survivor and allocate space during an active concurrent scavenge cycle.</p>
+</dd>
+<dd>
+<p>This option is used to add the specified headroom on top of the automatic concurrent kickoff calculation to trigger the concurrent global GC cycle earlier than the GC heuristic computed kickoff point.</p>
+</dd>
+<dd>
+<p>The GC heuristic computes a kickoff point based on steady-state metrics, such as allocation rate and marking speed, to determine when the concurrent global GC cycle should start. The default headroom is added to this kickoff point: 10% when concurrent scavenge is enabled (<a href="#concurrentscavenge"><code>-Xgc:concurrentScavenge</code></a>), or 2% for stop-the-world scavenge. With the <code>concurrentKickoffTenuringHeadroom</code> option, you can override the default headroom.</p>
+</dd>
+<dd>
+<p>For example, if concurrent scavenge is enabled and the heuristic determines that kickoff should occur when 8% of tenure memory is free, the concurrent global GC cycle starts when 18% of tenure memory is free. This 18% = 8% (heuristically based value) + 10% (default headroom for concurrent scavenge).</p>
+</dd>
+<dd>
+<p>If the <code>concurrentKickoffTenuringHeadroom</code> option is set to <code>15</code>, the effective kickoff point becomes 23% of free tenure memory, where 23% = 8% (heuristically based value) + 15% (<code>&lt;value&gt;</code> specified for <code>-Xgc:concurrentKickoffTenuringHeadroom</code>).</p>
+</dd>
+<dd>
+<p>The typical scenario where this option is useful is to compensate for spikes in tenuring that would otherwise fill the tenure space faster than the concurrent GC can finish. The headroom triggers the concurrent cycle early enough to absorb those spikes.</p>
+</dd>
+<dd>
+<p>This option was added in the <a href="../version0.15/#new-xgc-parameter-related-to-concurrent-kickoff-calculation-is-added">0.15.0 release</a> and applies only to the <code>gencon</code> GC policy.</p>
+</dd>
+<dd>
+<p>Even though the <code>-Xconcurrentslack</code> option is also used to add headroom but in the case of <code>gencon</code> GC policy, use the <code>concurrentKickoffTenuringHeadroom</code> option.</p>
+</dd>
+<dd>
+<p>For more information about headroom, see <a href="../xconcurrentslack/"><code>-Xconcurrentslack</code></a>.</p>
+</dd>
 </dl>
 <h3 id="concurrentscavenge"><code>concurrentScavenge</code></h3>
 <p><strong>(64-bit only)</strong></p>
