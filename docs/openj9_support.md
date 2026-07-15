@@ -263,7 +263,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Linux x86 64-bit              | CentOS 6.10            | gcc 14.2                              |
 | Linux on POWER&reg; LE 64-bit | CentOS 7.9             | gcc 14.2                              |
 | Linux on IBM Z&reg; 64-bit    | RHEL 7.9               | gcc 14.2                              |
-| Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 14.2                              |
 | Windows x86 32-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 13               | xcode 15.2 and clang 15.0.0           |
@@ -276,7 +276,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Linux x86 64-bit              | CentOS 6.10            | gcc 14.2                              |
 | Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 14.2                              |
 | Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 14.2                              |
-| Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 14.2                              |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 13               | xcode 15.2 and clang 15.0.0           |
 | macOS AArch64                 | macOS 13               | xcode 15.2 and clang 15.0.0           |
@@ -289,7 +289,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Linux x86 64-bit              | CentOS 7.9             | gcc 14.2                              |
 | Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 14.2                              |
 | Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 14.2                              |
-| Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 14.2                              |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 13               | xcode 15.2 and clang 15.0.0           |
 | macOS AArch64                 | macOS 13               | xcode 15.2 and clang 15.0.0           |
@@ -302,7 +302,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Linux x86 64-bit              | CentOS 7.9             | gcc 14.2                              |
 | Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 14.2                              |
 | Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 14.2                              |
-| Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 14.2                              |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 13               | xcode 15.2 and clang 15.0.0           |
 | macOS AArch64                 | macOS 13               | xcode 15.2 and clang 15.0.0           |
@@ -315,7 +315,7 @@ The project builds and tests OpenJDK with OpenJ9 on a number of platforms. The o
 | Linux x86 64-bit              | CentOS 7.9             | gcc 14.2                              |
 | Linux on POWER LE 64-bit      | CentOS 7.9             | gcc 14.2                              |
 | Linux on IBM Z 64-bit         | RHEL 7.9               | gcc 14.2                              |
-| Linux AArch64 64-bit          | CentOS 7.9             | gcc 10.3                              |
+| Linux AArch64 64-bit          | CentOS 7.9             | gcc 14.2                              |
 | Windows x86 64-bit            | Windows Server 2019    | Microsoft Visual Studio 2022          |
 | macOS x86 64-bit              | macOS 13               | xcode 15.2 and clang 15.0.0           |
 | macOS AArch64                 | macOS 13               | xcode 15.2 and clang 15.0.0           |
