@@ -35,6 +35,8 @@ The following new features and notable changes since version 0.59.0 are included
 
 Eclipse OpenJ9&trade; release 0.60.0 supports OpenJDK 8, 11, 17, 21, 25, and 26.
 
+RHEL 9.4 is out of Extended Update Support (EUS) and is removed from the list of supported platforms. RHEL 9.6 is the new minimum operating system level.
+
 To learn more about support for OpenJ9 releases, including OpenJDK levels and platform support, see [Supported environments](openj9_support.md).
 
 ### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) The `-Xcheck:dump` option is enhanced on z/OS systems
