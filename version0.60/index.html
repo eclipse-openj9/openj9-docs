@@ -514,6 +514,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compiler-changes-for-linux-aarch64-64-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiler changes for Linux AArch64 64-bit
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11574,6 +11585,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compiler-changes-for-linux-aarch64-64-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiler changes for Linux AArch64 64-bit
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11635,6 +11657,7 @@
 <ul>
 <li><a href="#binaries-and-supported-environments">New binaries and changes to supported environments</a></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#the-xcheckdump-option-is-enhanced-on-zos-systems">The <code>-Xcheck:dump</code> option is enhanced on z/OS systems</a> <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></li>
+<li><a href="#compiler-changes-for-linux-aarch64-64-bit">Compiler changes for Linux AArch64 64-bit</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -11643,6 +11666,9 @@
 <h3 id="the-xcheckdump-option-is-enhanced-on-zos-systems"><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> The <code>-Xcheck:dump</code> option is enhanced on z/OS systems</h3>
 <p>The <code>-Xcheck:dump</code> option is enhanced on z/OS systems to trigger extra checking for <code>-Xdump:system</code> agents. When this option is used, the VM now validates dataset names that are specified in <code>-Xdump:system</code> options. This validation allows earlier detection of improper VM options and prevents deployment of misconfigured applications. You can ensure that when system dumps are triggered, your diagnostic dumps will be created successfully and will not fail because of invalid dataset names.</p>
 <p>For more information, see <a href="../xcheck/#dump"><code>-Xcheck:dump</code></a>. <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close_lts.png" /></p>
+<h3 id="compiler-changes-for-linux-aarch64-64-bit">Compiler changes for Linux AArch64 64-bit</h3>
+<p>Linux AArch64 64-bit builds on all OpenJDK versions now use the gcc 14.2 compiler.</p>
+<p>For more information, see <a href="../openj9_support/">Supported environments</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.59.0 and v0.60.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.60/0.60.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.60.md ==== -->
