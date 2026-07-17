@@ -86,6 +86,7 @@ All JFR-related `jcmd` options might change in future releases.
 - ExecutionSample
 - GarbageCollection
 - GCHeapConfig
+- GCHeapSummary
 - InitialEnvironmentVariable
 - InitialSystemProperty
 - JVMInformation
@@ -94,6 +95,7 @@ All JFR-related `jcmd` options might change in future releases.
 - MonitorEnter
 - MonitorWait
 - NativeLibrary (except z/OS)
+- NetworkUtilization
 - OldGarbageCollection
 - OSInformation
 - PhysicalMemory
@@ -136,6 +138,7 @@ Support for JFR will be expanded in future releases.
 - [What's new in version 0.54.0](version0.54.md#new-jdk-flight-recorder-jfr-events-are-added-in-this-release)
 - [What's new in version 0.56.0](version0.56.md#the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos)
 - [What's new in version 0.59.0](version0.59.md#new-xxstartflightrecording-command-line-option-is-added)
+- [What's new in version 0.60.0](version0.60.md#new-jdk-flight-recorder-jfr-events-are-added-in-this-release)
 - [-XX:StartFlightRecording](xxstartflightrecording.md)
 
 

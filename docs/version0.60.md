@@ -28,6 +28,7 @@ The following new features and notable changes since version 0.59.0 are included
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [The `-Xcheck:dump` option is enhanced on z/OS systems](#the-xcheckdump-option-is-enhanced-on-zos-systems) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 - [Compiler changes for Linux AArch64 64-bit](#compiler-changes-for-linux-aarch64-64-bit)
+- ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New JDK Flight Recorder (JFR) events are added in this release](#new-jdk-flight-recorder-jfr-events-are-added-in-this-release) ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 ## Features and changes
 
@@ -50,6 +51,15 @@ For more information, see [`-Xcheck:dump`](xcheck.md#dump). ![End of content tha
 Linux AArch64 64-bit builds on all OpenJDK versions now use the gcc 14.2 compiler.
 
 For more information, see [Supported environments](openj9_support.md).
+
+### ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) New JDK Flight Recorder (JFR) events are added in this release
+
+In this release, the following new JFR events are added:
+
+- GCHeapSummary
+- NetworkUtilization
+
+For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 ## Known problems and full release information
 
