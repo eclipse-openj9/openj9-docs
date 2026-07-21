@@ -102,23 +102,23 @@ Options that change the behavior of the garbage collector.
   |---------------|----------------|------------------------------------------------|
   | `<value>`     | [percentage]   |    2% for stop-the-world (STW) scavenge <br>    10% for concurrent scavenge       |
 
-: where `<value>` is a percentage (0–99) of the current free memory size, every time kickoff point is calculated.
+: where `<value>` is a percentage (0–99) of the free tenure memory at the end of the previous global collection.
+
+: This option is used to add headroom to the GC heuristic computed kickoff point, which is based on steady-state metrics, such as allocation rate and marking speed. The headroom causes the concurrent global GC cycle to start earlier than this kickoff point.
+
+: Starting the concurrent GC cycle earlier might help if the garbage collection log shows long global GC pauses, where concurrent work ended prematurely because of tenure allocation failure. Spikes in tenuring might fill the tenure space faster than the concurrent GC can finish. The headroom triggers the concurrent cycle early enough to absorb those spikes.
+
+: The default headroom is 10% when concurrent scavenge is enabled ([`-Xgc:concurrentScavenge`](#concurrentscavenge)), or 2% for stop-the-world scavenge. With the `concurrentKickoffTenuringHeadroom` option, you can override the default headroom.
+
+: For example, if concurrent scavenge is enabled and the heuristic determines that kickoff should occur when 8% of tenure memory is free, the concurrent global GC cycle starts when 18% of tenure memory is free. This 18% = 8% (heuristic kickoff point) + 10% (default headroom for concurrent scavenge).
+
+: If the `concurrentKickoffTenuringHeadroom` option is set to `15`, the effective kickoff point becomes 23% of free tenure memory, where 23% = 8% (heuristic kickoff point) + 15% (`<value>` specified for `-Xgc:concurrentKickoffTenuringHeadroom`).
 
 : :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Concurrent scavenge has high default headroom because it is more susceptible to promotion fluctuations due to shared survivor and allocate space during an active concurrent scavenge cycle.
 
-: This option is used to add the specified headroom on top of the automatic concurrent kickoff calculation to trigger the concurrent global GC cycle earlier than the GC heuristic computed kickoff point.
-
-: The GC heuristic computes a kickoff point based on steady-state metrics, such as allocation rate and marking speed, to determine when the concurrent global GC cycle should start. The default headroom is added to this kickoff point: 10% when concurrent scavenge is enabled ([`-Xgc:concurrentScavenge`](#concurrentscavenge)), or 2% for stop-the-world scavenge. With the `concurrentKickoffTenuringHeadroom` option, you can override the default headroom.
-
-: For example, if concurrent scavenge is enabled and the heuristic determines that kickoff should occur when 8% of tenure memory is free, the concurrent global GC cycle starts when 18% of tenure memory is free. This 18% = 8% (heuristically based value) + 10% (default headroom for concurrent scavenge).
-
-: If the `concurrentKickoffTenuringHeadroom` option is set to `15`, the effective kickoff point becomes 23% of free tenure memory, where 23% = 8% (heuristically based value) + 15% (`<value>` specified for `-Xgc:concurrentKickoffTenuringHeadroom`).
-
-: The typical scenario where this option is useful is to compensate for spikes in tenuring that would otherwise fill the tenure space faster than the concurrent GC can finish. The headroom triggers the concurrent cycle early enough to absorb those spikes.
-
 : This option was added in the [0.15.0 release](version0.15.md#new-xgc-parameter-related-to-concurrent-kickoff-calculation-is-added) and applies only to the `gencon` GC policy.
 
-: Even though the `-Xconcurrentslack` option is also used to add headroom but in the case of `gencon` GC policy, use the `concurrentKickoffTenuringHeadroom` option.
+: Although the `-Xconcurrentslack` option is also used to add headroom, use the `concurrentKickoffTenuringHeadroom` option for the `gencon` GC policy.
 
 : For more information about headroom, see [`-Xconcurrentslack`](xconcurrentslack.md).
 
