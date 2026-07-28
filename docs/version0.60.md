@@ -29,6 +29,7 @@ The following new features and notable changes since version 0.59.0 are included
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [The `-Xcheck:dump` option is enhanced on z/OS systems](#the-xcheckdump-option-is-enhanced-on-zos-systems) ![End of content that applies only to Java 11 and later](cr/java_close_lts.png)
 - [Compiler changes for Linux AArch64 64-bit](#compiler-changes-for-linux-aarch64-64-bit)
 - ![Start of content that applies to Java 11 (LTS) and later](cr/java11plus.png) [New JDK Flight Recorder (JFR) events are added in this release](#new-jdk-flight-recorder-jfr-events-are-added-in-this-release) ![End of content that applies only to Java 11 and later](cr/java_close.png)
+- [New parameter `footprint` added to the `-Xtune` command-line option](#new-parameter-footprint-added-to-the-xtune-command-line-option)
 
 ## Features and changes
 
@@ -60,6 +61,12 @@ In this release, the following new JFR events are added:
 - NetworkUtilization
 
 For more information, see [`-XX:[+|-]FlightRecorder`](xxflightrecorder.md). ![End of content that applies only to Java 11 and later](cr/java_close.png)
+
+### New parameter `footprint` added to the `-Xtune` command-line option
+
+The new `-Xtune:footprint` option added in this release is used to optimize Eclipse OpenJ9 VM function by minimizing OpenJ9 VM memory usage.
+
+For more information, see [`-Xtune'](xtune.md).
 
 ## Known problems and full release information
 

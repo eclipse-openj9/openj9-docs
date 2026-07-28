@@ -374,7 +374,7 @@ nav:
             - "-Xthr"                                                            : xthr.md
             - "-XtlhPrefetch"                                                    : xtlhprefetch.md
             - "-Xtrace"                                                          : xtrace.md
-            - "-Xtune:virtualized"                                               : xtunevirtualized.md
+            - "-Xtune"                                                           : xtune.md
             - "-Xverbosegclog"                                                   : xverbosegclog.md
             - "-Xverify"                                                         : xverify.md
             - "-Xzero"                                                           : xzero.md

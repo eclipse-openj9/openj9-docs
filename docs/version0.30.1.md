@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.30.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [Creation of system dumps on macOS 12](#creation-of-system-dumps-on-macos-12)
+- [New parameter `throughput` added to the `-Xtune` command-line option](#new-parameter-throughput-added-to-the-xtune-command-line-option)
 
 ## Features and changes
 
@@ -39,6 +40,12 @@ To learn more about support for OpenJ9 releases, including OpenJDK levels and pl
 ### Creation of system dumps on macOS 12
 
 Creation of system (core) dumps on macOS 12 or later is now possible.
+
+### New parameter `throughput` added to the `-Xtune` command-line option
+
+The new `-Xtune:throughput` option added in this release is used to increase resource utilization to maximize throughput.
+
+For more information, see [`-Xtune'](xtune.md).
 
 ## Known problems and full release information
 
