@@ -7786,14 +7786,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../xtunevirtualized/" class="md-nav__link">
+      <a href="../xtune/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    -Xtune:virtualized
+    -Xtune
   
 
     
@@ -11890,7 +11890,7 @@
 <p>Use a shared classes cache (<code>-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m</code>) with Ahead-Of-Time (AOT) compilation to improve your startup time. For persistence, store the cache in a volume that you map to your container. For more information, see <a href="../shrc/">Introduction to class data sharing</a> and <a href="../aot/">AOT Compiler</a>.</p>
 </li>
 <li>
-<p>Use the <a href="../xtunevirtualized/">-Xtune:virtualized</a> option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.</p>
+<p>Use the <a href="xtunevirtualized.md">-Xtune:virtualized</a> option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.</p>
 </li>
 <li>
 <p>Provide access to the <code>/proc</code> file system for container detection on Linux systems since the detection code requires access to the <code>/proc/1/cgroup</code> and <code>/proc/1/sched</code> files. If you mount the <code>/proc</code> file system with the <code>hidepid=2</code> option on Linux systems and the VM does not have root privileges, it cannot access the <code>/proc</code> file system and the container detection fails. Even though the container detection fails, the VM does start with a warning message. For example:</p>
