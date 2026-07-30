@@ -40,8 +40,10 @@ ENV PATH=/myenv/bin:$PATH
 # Activate the virtualenv environment, install build and test tools, create a new dependency list, and change permissions to ensure that Jenkins modify packages where necessary
 RUN /bin/bash -c "source /myenv/bin/activate && pip3 install pip pip-tools setuptools && pip3 install --requirement /tmp/requirements.txt && mv /tmp/requirements.txt /tmp/requirements.orig && pip-compile /tmp/requirements.in && chmod -R ugo+w /myenv"
 # Setup jenkins user
-RUN  useradd -m -d /home/jenkins -s /bin/sh jenkins \
-    && echo "jenkins:jenkinspass" | chpasswd \
+RUN userdel -r ubuntu \
+    && groupadd -g 1000 jenkins \
+    && useradd -u 1000 -g 1000 -m -d /home/jenkins -s /bin/sh jenkins \
+    && echo "jenkins:jenkinspass" | chpasswd
 # Standard SSH port
 EXPOSE 22
 # Default command
