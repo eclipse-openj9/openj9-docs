@@ -3788,6 +3788,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3804,6 +3822,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#threadmxbean-and-locked-synchronizers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ThreadMXBean and locked synchronizers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ThreadMXBean and locked synchronizers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#behavior-change-in-the-0600-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavior change in the 0.60.0 release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-usage-and-gc-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API usage and GC impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guidance-for-monitoring-and-apm-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guidance for monitoring and APM tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostic-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnostic confirmation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -11477,6 +11575,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#threadmxbean-and-locked-synchronizers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ThreadMXBean and locked synchronizers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ThreadMXBean and locked synchronizers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#behavior-change-in-the-0600-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavior change in the 0.60.0 release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-usage-and-gc-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API usage and GC impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guidance-for-monitoring-and-apm-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guidance for monitoring and APM tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostic-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnostic confirmation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -11517,8 +11684,7 @@
 
 <h1 id="language-management-interface">Language management interface</h1>
 <p>Eclipse OpenJ9&trade; provides MXBean extensions to the standard <code>java.lang.management</code> API, which can be used to monitor and manage the Java&trade; virtual machine.
-These extensions provide access to information about the state of the OpenJ9 VM and the environment in which it is running. The following
-tables list the MXBeans by package and describe the monitoring or management capabilities.</p>
+These extensions provide access to information about the state of the OpenJ9 VM and the environment in which it is running. The following tables list the MXBeans by package and describe the monitoring or management capabilities.</p>
 <p><strong>Package: <code>com.ibm.lang.management</code></strong></p>
 <table>
 <thead>
@@ -11597,6 +11763,68 @@ tables list the MXBeans by package and describe the monitoring or management cap
 </tbody>
 </table>
 <p>For more information about using these MXBeans, read the API documentation. For Java 8, see the <a href="../api-langmgmt/">OpenJ9 Language Management API documentation</a>. <!-- Link to API --></p>
+<h2 id="threadmxbean-and-locked-synchronizers">ThreadMXBean and locked synchronizers</h2>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> From the 0.60.0 release onwards, querying locked synchronizer information triggers a global garbage collection (GC) with compaction. Review this section before using <code>lockedSynchronizers=true</code> in any regularly scheduled monitoring loop.</p>
+<p>The VM tracks object-monitor locks (traditional <code>synchronized</code> blocks) natively for deadlock detection. But for deadlock detection that involves <code>java.util.concurrent</code> locks, such as <code>ReentrantLock</code>, the VM's built-in deadlock detector,<code>findDeadlockedThreads()</code>, needs to know which thread <em>owns</em> a <code>ReentrantLock</code> and which threads are <em>waiting</em> for it. This information is available in the locked-sychronizer list. Without the locked-synchronizer list, it can detect deadlocks only in <code>synchronized</code> blocks. The detector would silently miss any deadlock that is built on <code>AbstractOwnableSynchronizer</code> subclasses.</p>
+<p><code>java.lang.management.ThreadMXBean</code> provides runtime thread information, such as state, stack trace, CPU time, and lock contention. Two of its methods accept a <code>lockedSynchronizers</code> boolean parameter.</p>
+<ul>
+<li><code>ThreadInfo[] getThreadInfo(long[] ids, boolean lockedMonitors, boolean lockedSynchronizers)</code></li>
+<li><code>ThreadInfo[] dumpAllThreads(boolean lockedMonitors, boolean lockedSynchronizers)</code></li>
+</ul>
+<p>Either of these methods can be used to retrieve the set of <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/AbstractOwnableSynchronizer.html"><code>java.util.concurrent.locks.AbstractOwnableSynchronizer</code></a> objects locked by each thread. These methods are useful for deadlock analysis and diagnostic thread dumps.</p>
+<h3 id="behavior-change-in-the-0600-release">Behavior change in the 0.60.0 release</h3>
+<p>Before the 0.60.0 release, OpenJ9 maintained a locked-sychronizer list continuously during GC cycles. Calling these methods with <code>lockedSynchronizers=true</code> was inexpensive because the list was always current.</p>
+<p>Starting with the 0.60.0 release, the continuously maintained list is no longer kept. This change improves correctness. With the previous approach, it was difficult to keep the list consistent across all GC policies and concurrent GC phases. Now the list is rebuilt on demand each time the locked-synchronizer information is requested for.</p>
+<p>Rebuilding the list requires a walkable heap, a heap in which every live object on the Java heap is reachable and iterable in a single sequential pass. If the heap is not already in a walkable state when <code>lockedSynchronizers=true</code> is requested, OpenJ9 triggers a global stop-the-world (STW) GC with compaction, where compaction is the physical movement of all live objects together into one contiguous block of memory, eliminating the gaps left behind by objects that were collected. Every call to <code>getThreadInfo(ids, lockedMonitors, true)</code> or <code>dumpAllThreads(lockedMonitors, true)</code> might therefore trigger a compacting STW GC pause.</p>
+<h3 id="api-usage-and-gc-impact">API usage and GC impact</h3>
+<p>You can choose the appropriate <code>ThreadMXBean</code> variant based on what information you need:</p>
+<table>
+<thead>
+<tr>
+<th>Information needed</th>
+<th>API to use</th>
+<th>GC impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thread IDs only</td>
+<td><code>ThreadMXBean.getAllThreadIds()</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Thread state, no stack</td>
+<td><code>ThreadMXBean.getThreadInfo(long id)</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Thread state and bounded stack</td>
+<td><code>ThreadMXBean.getThreadInfo(long[] ids, int maxDepth)</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Thread state, stack and locked monitors (no synchronizers)</td>
+<td><code>ThreadMXBean.getThreadInfo(long[] ids, true, false)</code></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Locked synchronizers for diagnostic use</td>
+<td><code>ThreadMXBean.getThreadInfo(long[] ids, boolean, true)</code> or <code>dumpAllThreads(boolean, true)</code></td>
+<td>Global GC with compaction</td>
+</tr>
+</tbody>
+</table>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> <code>ThreadMXBean.findDeadlockedThreads()</code> detects deadlocks that involve <code>java.util.concurrent</code> locks and does <strong>not</strong> trigger a GC. Use this method for routine deadlock detection instead of querying locked synchronizers.</p>
+<h3 id="guidance-for-monitoring-and-apm-tools">Guidance for monitoring and APM tools</h3>
+<p>If your monitoring tool (for example, IBM HealthCenter, OMEGAMON, or a custom APM agent) calls <code>getThreadInfo</code> or <code>dumpAllThreads</code>, apply the following guidance:</p>
+<ul>
+<li>Audit every call to <code>getThreadInfo</code> and <code>dumpAllThreads</code> and check whether <code>lockedSynchronizers</code> is <code>true</code>. If the call does not explicitly need ownable-synchronizer data, pass <code>false</code> instead.</li>
+<li>Avoid using <code>lockedSynchronizers=true</code> in high-frequency polling loops. Treat it as a diagnostic operation with a cost comparable to heap dump generation.</li>
+<li>Use <code>findDeadlockedThreads()</code> for deadlock detection instead.</li>
+<li>Expect a GC pause whenever <code>lockedSynchronizers=true</code> is used. On IBM z/OS, elevated zIIP CPU utilization is also expected during compaction.</li>
+</ul>
+<h3 id="diagnostic-confirmation">Diagnostic confirmation</h3>
+<p>To confirm whether a GC pause was caused by a <code>getLockedSynchronizers</code> call, enable verbose GC logging (<code>-verbose:gc</code>) and look for <code>reason="rasdump"</code> in the output. For more information about verbose GC log output, see <a href="../vgclog_examples/">Verbose GC log examples</a>.</p>
 <!-- ==================================================================================================== -->
 
 <!-- ==== END OF TOPIC ==== interface_lang_management.md ==== -->

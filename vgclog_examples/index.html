@@ -12173,7 +12173,7 @@
   &lt;object-monitors candidates=&quot;132&quot; cleared=&quot;0&quot;  /&gt;
 &lt;/gc-op&gt;
 </code></pre>
-<p>The <code>&lt;memory-copied&gt;</code> element indicates that 5.75 MB (6,027,440B) of reachable objects were moved by the scavenge operation from the allocate space to the survivor space in the nursery area, and 0.54 MB(562,848 B) were moved to the tenure area.</p>
+<p>The <code>&lt;memory-copied&gt;</code> element indicates that 5.75 MB (6,027,440B) of reachable objects were moved by the scavenge operation from the allocate space to the survivor space in the nursery area, and 0.54 MB (562,848 B) were moved to the tenure area.</p>
 <p>The <code>&lt;scavenger-info&gt;</code> element shows that the <em>tenure age</em> is set to <code>7</code>. Any object in the allocate space with an age less than or equal to <code>7</code> is copied to the survivor space during this <code>scavenge</code>operation. Any object that is copied between the allocate and survivor areas more than <code>7</code> times is moved to the tenure area.</p>
 <p>For more information about how the scavenge operation acts on the Java object heap, see <a href="../gc/#gc-processing">GC processing</a>.</p>
 <p>The end of the increment is recorded with <code>&lt;gc-end&gt;</code> and provides another snapshot of memory allocation on the heap, similar to <code>&lt;gc-start&gt;</code>.</p>
@@ -13201,6 +13201,11 @@ The `<remembered set>` element shows that there are two overflow regions to atte
 <p>If the <code>balanced</code> global cycle is triggered during a <a href="#balanced-global-mark-gc-cycle"><code>balanced</code> global mark GC cycle</a>, a new <code>global</code> cycle is not recorded. Instead, the global mark cycle's global mark phase increment switches to a global garbage collect increment that is run as an STW increment. This switch is recorded in the logs by using a <code>&lt;cycle-continue&gt;</code> element, which precedes the <code>gc-start</code> element that records the new global garbage collect increment.</p>
 <p>If the <code>balanced</code> global cycle is not triggered during a <code>balanced</code> global mark cycle, the global cycle is recorded as a new cycle by using the <code>&lt;cycle-start&gt;</code> element.</p>
 <p>The element <code>&lt;sys-start reason="explicit"&gt;</code> is used in the logs to record a cycle that was triggered explicitly rather than by the garbage collector. For example, the trigger reason is recorded as <code>explicit</code> if a cycle is triggered by an application calling <code>System.gc()</code>. For more information about explicitly or implicitly triggering a GC cycle, see <a href="../gc_overview/">Garbage collection</a>.</p>
+<p>Similarly, the element <code>&lt;sys-start reason="rasdump"&gt;</code> is used in the logs to record a cycle that was triggered by a diagnostic facility that requires the heap to be in a walkable state. For example, producing a heap dump or calling <code>ThreadMXBean.getThreadInfo()</code> or <code>ThreadMXBean.dumpAllThreads()</code> with <code>lockedSynchronizers=true</code> can trigger this cycle. The <code>&lt;compact-info&gt;</code> element for such a cycle also carries <code>reason="rasdump"</code>.</p>
+<pre><code>&lt;sys-start reason=&quot;rasdump&quot; id=&quot;...&quot; timestamp=&quot;2024-01-15T10:22:31.456&quot; intervalms=&quot;30014.123&quot; /&gt;
+&lt;compact-info movecount=&quot;5123456&quot; movebytes=&quot;104857600&quot; reason=&quot;rasdump&quot; /&gt;
+</code></pre>
+<p>For more information about the performance impact of querying locked synchronizers and how to avoid unnecessary GC pauses, see <a href="../interface_lang_management/#threadmxbean-and-locked-synchronizers">Language management interface</a>.</p>
 <p>The global cycle operations run as a single GC increment during an STW pause.</p>
 <table style="width:100%" align="center">
 <caption>Table showing the <code>balanced</code> global cycle's GC increment and corresponding XML elements.</caption>

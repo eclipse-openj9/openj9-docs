@@ -575,6 +575,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getlockedsynchronizerstrue-parameter-now-triggers-a-global-gc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getLockedSynchronizers=true parameter now triggers a global GC
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11668,6 +11679,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getlockedsynchronizerstrue-parameter-now-triggers-a-global-gc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getLockedSynchronizers=true parameter now triggers a global GC
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -11732,6 +11754,7 @@
 <li><a href="#compiler-changes-for-linux-aarch64-64-bit">Compiler changes for Linux AArch64 64-bit</a></li>
 <li><img alt="Start of content that applies to Java 11 (LTS) and later" src="../cr/java11plus.png" /> <a href="#new-jdk-flight-recorder-jfr-events-are-added-in-this-release">New JDK Flight Recorder (JFR) events are added in this release</a> <img alt="End of content that applies only to Java 11 and later" src="../cr/java_close.png" /></li>
 <li><a href="#new-parameter-footprint-added-to-the-xtune-command-line-option">New parameter <code>footprint</code> added to the <code>-Xtune</code> command-line option</a></li>
+<li><a href="#getlockedsynchronizerstrue-parameter-now-triggers-a-global-gc"><code>getLockedSynchronizers=true</code> parameter now triggers a global GC</a></li>
 </ul>
 <h2 id="features-and-changes">Features and changes</h2>
 <h3 id="binaries-and-supported-environments">Binaries and supported environments</h3>
@@ -11754,6 +11777,11 @@
 <h3 id="new-parameter-footprint-added-to-the-xtune-command-line-option">New parameter <code>footprint</code> added to the <code>-Xtune</code> command-line option</h3>
 <p>The new <code>-Xtune:footprint</code> option added in this release is used to optimize Eclipse OpenJ9 VM function by minimizing OpenJ9 VM memory usage.</p>
 <p>For more information, see <a href="../xtune/">`-Xtune'</a>.</p>
+<h3 id="getlockedsynchronizerstrue-parameter-now-triggers-a-global-gc"><code>getLockedSynchronizers=true</code> parameter now triggers a global GC</h3>
+<p>Before the 0.60.0 release, OpenJ9 maintained an internal locked-synchronizer list that was updated continuously during garbage collection (GC) cycles. Calling <code>ThreadMXBean.getThreadInfo()</code> or <code>ThreadMXBean.dumpAllThreads()</code> with <code>lockedSynchronizers=true</code> was therefore instantaneous with no GC side effect.</p>
+<p>Starting with the 0.60.0 release, the continuously maintained list is removed. When locked-synchronizer information is requested for, OpenJ9 rebuilds the list on demand from the live heap. If the heap is not already in a walkable state, a global stop-the-world (STW) GC with compaction is triggered. This GC event appears in <code>-verbose:gc</code> output with <code>reason="rasdump"</code>.</p>
+<p>Monitoring and Application performance management (APM) tools that poll thread state at regular intervals by using <code>lockedSynchronizers=true</code> (for example, IBM HealthCenter) will now observe periodic GC compaction events. Depending on heap size and polling frequency, these periodic GC compaction events can cause noticeable GC pauses.</p>
+<p>For more information, see <a href="../interface_lang_management/">Language management interface</a>.</p>
 <h2 id="known-problems-and-full-release-information">Known problems and full release information</h2>
 <p>To see known problems and a complete list of changes between Eclipse OpenJ9 v0.59.0 and v0.60.0 releases, see the <a href="https://github.com/eclipse-openj9/openj9/blob/master/doc/release-notes/0.60/0.60.md">Release notes</a>.</p>
 <!-- ==== END OF TOPIC ==== version0.60.md ==== -->
