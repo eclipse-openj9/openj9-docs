@@ -508,7 +508,7 @@ nav:
         - "Java 17 API"                                                           : api-jdk17.md
         - "Java 21 API"                                                           : api-jdk21.md
         - "Java 25 API"                                                           : api-jdk25.md
-        - "Java 26 API"                                                           : api-jdk26.md
+        - "Java 27 API"                                                           : api-jdk27.md
 
     - "Glossary"                                                                  : openj9glossary.md
 
