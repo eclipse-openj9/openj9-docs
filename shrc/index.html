@@ -419,6 +419,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../version0.62/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Version 0.62.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../version0.61/" class="md-nav__link">
         
   
@@ -987,10 +1015,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_22" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_23" >
         
           
-          <label class="md-nav__link" for="__nav_5_22" id="__nav_5_22_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_23" id="__nav_5_23_label" tabindex="0">
             
   
   
@@ -1008,8 +1036,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_22_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_22">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_23">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -12026,6 +12054,7 @@ Default behavior includes the following characteristics:</p>
 <p>For a set of best practices when using class data sharing, see <a href="#creating-a-shared-classes-cache">Creating a shared classes cache</a>.</p>
 <h2 id="class-data-sharing-operations">Class data sharing operations</h2>
 <p>When a VM loads a class and the class loader is enabled for class sharing, the VM looks in the shared classes cache to see if the class is already present. If the class is present and the classpath or URL to load the class is a match, the VM loads the class from the cache. Otherwise, it loads the class from the file system and writes it into the cache.</p>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> From the 0.62.0 release onwards, the VM supports ZIP files that use ZIP64 extensions for shared classes cache operations. This allows caching of classes from large JAR files that exceed the 4 GB size limitation of standard ZIP files. The VM automatically detects ZIP64 extensions and handles them appropriately.</p>
 <p>The VM detects file system updates by storing timestamp values into the cache and comparing the cached values with actual values. In this way, the VM detects when a class might be invalidated and can mark the class as <em>stale</em>. These operations happen transparently when classes are loaded, so users can modify and update as many classes as they like during the lifetime of a shared classes cache, knowing that the correct classes are always loaded. Stale classes are <em>redeemed</em> if the same class is subsequently fetched by the class loader from another VM and checked against the stale class in the cache.</p>
 <p>Occasionally, caches that are created from one version of the VM might not be compatible with caches that are created from a different version. This situation typically occurs when an update is made in OpenJ9 that changes the internal cache data structure. If a VM detects an incompatible cache at start up, it creates a new cache that can coexist, even if it has the same name. The VM detects a conflict by checking an internal shared classes cache generation number.</p>
 <p>Caches are not compatible between VMs that are using different object storage modes. For example, a 64-bit VM that uses compressed references to store 64-bit objects in a 32-bit representation, cannot share a cache with a 64-bit VM that is not using compressed references. For more information about object storage options, see <a href="../allocation/#compressed-references">Compressed references</a>.</p>
@@ -12241,7 +12270,9 @@ For more information about using a modification context, see <a href="#sharing-m
 <h2 id="see-also">See also</h2>
 <ul>
 <li><a href="../aot/">AOT compiler</a></li>
-<li><a href="https://developer.ibm.com/languages/java/tutorials/j-class-sharing-openj9/">Class sharing article</a></li>
+</ul>
+<!--SG - This page is no longer available (22 May 2026) - [Class sharing article](https://developer.ibm.com/languages/java/tutorials/j-class-sharing-openj9/)-->
+<ul>
 <li><a href="../shrc_diag_util/">Diagnosing problems with class data sharing</a></li>
 </ul>
 <!-- ==== END OF TOPIC ==== shrc.md ==== -->
