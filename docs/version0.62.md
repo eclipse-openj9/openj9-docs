@@ -27,6 +27,7 @@ The following new features and notable changes since version 0.61.0 are included
 
 - [New binaries and changes to supported environments](#binaries-and-supported-environments)
 - [ZIP64 extension support is added](#zip64-extension-support-is-added)
+- ![Start of content that applies to Java 27 and later](cr/java27plus.png) [New JDK 27 features](#new-jdk-27-features) ![End of content that applies to Java 27 and later](cr/java_close.png)
 
 ## Features and changes
 
@@ -47,6 +48,24 @@ This enhancement enables the VM to eliminate the 4 GB size limitation of standar
 The VM automatically detects and handles ZIP files that contain ZIP64 extensions. The VM works with both standard ZIP files and ZIP files that use ZIP64 extensions.
 
 For more information about shared classes cache, see [Introduction to class data sharing](shrc.md).
+
+### ![Start of content that applies to Java 27 and later](cr/java27plus.png) New JDK 27 features
+
+The following features are supported by OpenJ9:
+
+- [JEP 537](https://openjdk.java.net/jeps/537): Vector API (Twelfth Incubator)
+
+The following features are implemented in OpenJDK and available in any build of OpenJDK 27 with OpenJ9:
+
+- [JEP 527](https://openjdk.java.net/jeps/527): Post-Quantum Hybrid Key Exchange for TLS 1.3
+- [JEP 531](https://openjdk.java.net/jeps/531): Lazy Constants (Third Preview)
+- [JEP 532](https://openjdk.java.net/jeps/532): Primitive Types in Patterns, instanceof, and switch
+(Fifth Preview)
+- [JEP 533](https://openjdk.java.net/jeps/533): Structured Concurrency (Seventh Preview)
+- [JEP 538](https://openjdk.java.net/jeps/538): PEM Encodings of Cryptographic Objects (Third Preview)
+
+You can find the full list of features for JDK 27 at the [OpenJDK project](https://openjdk.org/projects/jdk/27/).
+Any remaining features that are listed either do not apply to OpenJ9 or are not implemented and hence not applicable to OpenJ9 in this release. ![End of content that applies to Java 27 and later](cr/java_close.png)
 
 ## Known problems and full release information
 
