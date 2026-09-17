@@ -396,6 +396,7 @@ nav:
             - "-XX:[+|-]CpuLoadCompatibility"                                    : xxcpuloadcompatibility.md
             - "-XX:DiagnoseSyncOnValueBasedClasses"                              : xxdiagnosesynconvaluebasedclasses.md
             - "-XX:[+|-]DisableExplicitGC"                                       : xxdisableexplicitgc.md
+            - "-XX:DisclaimDir"                                                  : xxdisclaimdir.md
             - "-XX:[+|-]DisclaimJitScratch"                                      : xxdisclaimjitscratch.md
             - "-XX:[+|-]Enable3164Interoperability"                              : xxenable3164interoperability.md
             - "-XX:[+|-]EnableCPUMonitor"                                        : xxenablecpumonitor.md
@@ -441,6 +442,7 @@ nav:
             - "-XX:[+|-]LazySymbolResolution"                                    : xxlazysymbolresolution.md
             - "-XX:[+|-]LegacyXLogOption"                                        : xxlegacyxlogoption.md
             - "-XX:MaxDirectMemorySize"                                          : xxmaxdirectmemorysize.md
+            - "-XX:[+|-]MemoryDisclaim"                                          : xxmemorydisclaim.md
             - "-XX:[+|-]MergeCompilerOptions"                                    : xxmergecompileroptions.md
             - "-XX:OnOutOfMemoryError"                                           : xxonoutofmemoryerror.md
             - "-XX:[+|-]OpenJ9CommandLineEnv"                                    : xxopenj9commandlineenv.md
