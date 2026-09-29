@@ -8,6 +8,7 @@
 <meta name="description" content="declaration: module: openj9.dtfj, package: com.ibm.j9ddr.vm29.j9, class: ObjectHash">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <meta name="keywords" content="com.ibm.j9ddr.vm29.j9.ObjectHash class">
+<meta name="keywords" content="inlineConvertObjectToHash()">
 <meta name="keywords" content="convertObjectAddressToHash()">
 <meta name="keywords" content="convertValueToHash()">
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
@@ -134,6 +135,10 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convertValueToHash(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">convertValueToHash</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;vm,
  <a href="../types/UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../types/I32.html" title="class in com.ibm.j9ddr.vm29.types">I32</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#inlineConvertObjectToHash(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)" class="member-name-link">inlineConvertObjectToHash</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;vm,
+ com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objectPointer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -165,6 +170,18 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="inlineConvertObjectToHash(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
+<h3>inlineConvertObjectToHash</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../types/I32.html" title="class in com.ibm.j9ddr.vm29.types">I32</a></span>&nbsp;<span class="element-name">inlineConvertObjectToHash</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer&nbsp;vm,
+ com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer&nbsp;objectPointer)</span>
+                                     throws <span class="exceptions"><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="convertObjectAddressToHash(com.ibm.j9ddr.vm29.pointer.generated.J9JavaVMPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ObjectPointer)">
 <h3>convertObjectAddressToHash</h3>
