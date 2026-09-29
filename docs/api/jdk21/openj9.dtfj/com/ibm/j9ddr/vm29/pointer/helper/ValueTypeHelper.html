@@ -20,6 +20,9 @@
 <meta name="keywords" content="isFlattenableFieldSignature()">
 <meta name="keywords" content="isJ9ClassLargestAlignmentConstraintDouble()">
 <meta name="keywords" content="isJ9ClassLargestAlignmentConstraintReference()">
+<meta name="keywords" content="isJ9ClassLargestAlignmentConstraintInteger()">
+<meta name="keywords" content="isJ9ClassLargestAlignmentConstraintShort()">
+<meta name="keywords" content="getFlatFieldSize()">
 <meta name="keywords" content="isJ9ClassIsFlattened()">
 <meta name="keywords" content="isJ9FieldIsFlattened()">
 <meta name="keywords" content="classRequires4BytePrePadding()">
@@ -173,51 +176,66 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns an array of J9ClassPointers that contains the containerClazz passed in addition to the J9ClassPointers
  that correspond to the types of the field names passed in the nestingHierarchy array.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ValueTypeHelper.html" title="class in com.ibm.j9ddr.vm29.pointer.helper">ValueTypeHelper</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getValueTypeHelper()" class="member-name-link">getValueTypeHelper</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFlatFieldSize(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">getFlatFieldSize</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gets the flat field size for a value type class</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ValueTypeHelper.html" title="class in com.ibm.j9ddr.vm29.pointer.helper">ValueTypeHelper</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getValueTypeHelper()" class="member-name-link">getValueTypeHelper</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Factory method that returns a valueTypeHelper instance.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFieldInClassFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">isFieldInClassFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFieldInClassFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">isFieldInClassFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz,
  com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShape)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queries whether field is flattened of not.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFlattenableFieldSignature(java.lang.String)" class="member-name-link">isFlattenableFieldSignature</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;signature)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isFlattenableFieldSignature(java.lang.String)" class="member-name-link">isFlattenableFieldSignature</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link" target="_blank">String</a>&nbsp;signature)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queries if field signature is flattenable</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9ClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassAValueType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9ClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassAValueType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queries if J9Class is a value type</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9ClassIsFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassIsFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9ClassIsFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassIsFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queries if class is flattened</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9ClassLargestAlignmentConstraintDouble(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassLargestAlignmentConstraintDouble</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Queries if clazz contains a field with a double (64-bit) alignment constraint.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9ClassLargestAlignmentConstraintDouble(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassLargestAlignmentConstraintDouble</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9ClassLargestAlignmentConstraintInteger(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassLargestAlignmentConstraintInteger</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Queries if class contains a field with a double (64 bit) alignment constraint</div>
+<div class="block">Queries if clazz contains a field with an int (32-bit) alignment constraint.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9ClassLargestAlignmentConstraintReference(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassLargestAlignmentConstraintReference</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Queries if class contains a field with a reference alignment constraint</div>
+<div class="block">Queries if clazz contains a field with a reference alignment constraint.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9FieldIsFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">isJ9FieldIsFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;fieldClazz,
- com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShape)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9ClassLargestAlignmentConstraintShort(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)" class="member-name-link">isJ9ClassLargestAlignmentConstraintShort</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Queries if a field in a class is flattened</div>
+<div class="block">Queries if clazz contains a field with a short (16-bit) alignment constraint.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRomClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isRomClassAValueType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJ9FieldIsFlattened(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer,com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer)" class="member-name-link">isJ9FieldIsFlattened</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;fieldClazz,
+ com.ibm.j9ddr.vm29.pointer.generated.J9ROMFieldShapePointer&nbsp;fieldShape)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Queries if a field in a class is flattened</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isRomClassAValueType(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer)" class="member-name-link">isRomClassAValueType</a><wbr>(com.ibm.j9ddr.vm29.pointer.generated.J9ROMClassPointer&nbsp;romClass)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queries if J9ROMClass is a value type</div>
 </div>
 </div>
@@ -405,7 +423,7 @@ loadScripts(document, 'script');</script>
 <h3>isJ9ClassLargestAlignmentConstraintDouble</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isJ9ClassLargestAlignmentConstraintDouble</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</span>
                                                   throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<div class="block">Queries if class contains a field with a double (64 bit) alignment constraint</div>
+<div class="block">Queries if clazz contains a field with a double (64-bit) alignment constraint.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>clazz</code> - J9Class</dd>
@@ -421,7 +439,7 @@ loadScripts(document, 'script');</script>
 <h3>isJ9ClassLargestAlignmentConstraintReference</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isJ9ClassLargestAlignmentConstraintReference</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</span>
                                                      throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
-<div class="block">Queries if class contains a field with a reference alignment constraint</div>
+<div class="block">Queries if clazz contains a field with a reference alignment constraint.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>clazz</code> - J9Class</dd>
@@ -429,6 +447,56 @@ loadScripts(document, 'script');</script>
 <dd>true if clazz has reference alignment constraint, false otherwise</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isJ9ClassLargestAlignmentConstraintInteger(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">
+<h3>isJ9ClassLargestAlignmentConstraintInteger</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isJ9ClassLargestAlignmentConstraintInteger</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</span>
+                                                   throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<div class="block">Queries if clazz contains a field with an int (32-bit) alignment constraint.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>clazz</code> - J9Class</dd>
+<dt>Returns:</dt>
+<dd>true if clazz has int alignment constraint, false otherwise</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="isJ9ClassLargestAlignmentConstraintShort(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">
+<h3>isJ9ClassLargestAlignmentConstraintShort</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isJ9ClassLargestAlignmentConstraintShort</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</span>
+                                                 throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></span></div>
+<div class="block">Queries if clazz contains a field with a short (16-bit) alignment constraint.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>clazz</code> - J9Class</dd>
+<dt>Returns:</dt>
+<dd>true if clazz has short alignment constraint, false otherwise</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFlatFieldSize(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer)">
+<h3>getFlatFieldSize</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getFlatFieldSize</span><wbr><span class="parameters">(com.ibm.j9ddr.vm29.pointer.generated.J9ClassPointer&nbsp;clazz)</span>
+                      throws <span class="exceptions"><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a>,
+<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NoSuchFieldException.html" title="class or interface in java.lang" class="external-link" target="_blank">NoSuchFieldException</a></span></div>
+<div class="block">Gets the flat field size for a value type class</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>clazz</code> - J9Class</dd>
+<dt>Returns:</dt>
+<dd>flat field size in bytes</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../../../CorruptDataException.html" title="class in com.ibm.j9ddr">CorruptDataException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NoSuchFieldException.html" title="class or interface in java.lang" class="external-link" target="_blank">NoSuchFieldException</a></code></dd>
 </dl>
 </section>
 </li>
