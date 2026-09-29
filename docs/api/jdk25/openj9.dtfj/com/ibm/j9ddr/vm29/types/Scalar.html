@@ -31,6 +31,7 @@
 <meta name="keywords" content="convertSlotsToBytes()">
 <meta name="keywords" content="roundToSizeofUDATA()">
 <meta name="keywords" content="roundToSizeToObjectReference()">
+<meta name="keywords" content="roundToSizeofU16()">
 <meta name="keywords" content="roundToSizeofU32()">
 <meta name="keywords" content="roundToSizeofU64()">
 <meta name="keywords" content="roundToSizeToFJ9object()">
@@ -133,6 +134,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#convertSlotsToBytes(com.ibm.j9ddr.vm29.types.UDATA)" tabindex="0">convertSlotsToBytes(UDATA)</a></li>
 <li><a href="#roundToSizeofUDATA(com.ibm.j9ddr.vm29.types.UDATA)" tabindex="0">roundToSizeofUDATA(UDATA)</a></li>
 <li><a href="#roundToSizeToObjectReference(com.ibm.j9ddr.vm29.types.UDATA)" tabindex="0">roundToSizeToObjectReference(UDATA)</a></li>
+<li><a href="#roundToSizeofU16(com.ibm.j9ddr.vm29.types.UDATA)" tabindex="0">roundToSizeofU16(UDATA)</a></li>
 <li><a href="#roundToSizeofU32(com.ibm.j9ddr.vm29.types.UDATA)" tabindex="0">roundToSizeofU32(UDATA)</a></li>
 <li><a href="#roundToSizeofU64(com.ibm.j9ddr.vm29.types.UDATA)" tabindex="0">roundToSizeofU64(UDATA)</a></li>
 <li><a href="#roundToSizeToFJ9object(com.ibm.j9ddr.vm29.types.UDATA)" tabindex="0">roundToSizeToFJ9object(UDATA)</a></li>
@@ -302,29 +304,32 @@ loadScripts(document, 'script');</script>
  long&nbsp;size)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeofU32(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeofU32</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeofU16(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeofU16</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeofU64(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeofU64</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeofU32(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeofU32</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeofUDATA(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeofUDATA</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeofU64(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeofU64</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeToFJ9object(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeToFJ9object</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeofUDATA(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeofUDATA</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeToObjectReference(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeToObjectReference</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeToFJ9object(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeToFJ9object</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>short</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shortValue()" class="member-name-link">shortValue</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#signBitSet()" class="member-name-link">signBitSet</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#roundToSizeToObjectReference(com.ibm.j9ddr.vm29.types.UDATA)" class="member-name-link">roundToSizeToObjectReference</a><wbr>(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>short</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shortValue()" class="member-name-link">shortValue</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sizeof()" class="member-name-link">sizeof</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#signBitSet()" class="member-name-link">signBitSet</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sizeof()" class="member-name-link">sizeof</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -630,6 +635,14 @@ For mathematical equality use .eq(Scalar)</div>
 <h3>roundToSizeToObjectReference</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">roundToSizeToObjectReference</span><wbr><span class="parameters">(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</span></div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="roundToSizeofU16(com.ibm.j9ddr.vm29.types.UDATA)">
+<h3>roundToSizeofU16</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a></span>&nbsp;<span class="element-name">roundToSizeofU16</span><wbr><span class="parameters">(<a href="UDATA.html" title="class in com.ibm.j9ddr.vm29.types">UDATA</a>&nbsp;value)</span></div>
 </div>
 </section>
 </li>
