@@ -42,14 +42,14 @@ switch (params.BUILD_TYPE) {
             CLONE_BRANCH = MERGE_COMMIT
             GET_SHA = false
         } else {
-            CLONE_BRANCH = "refs/heads/master"
+            CLONE_BRANCH = "refs/heads/main"
             GET_SHA = true
         }
         SERVER = 'Github'
         break
     case "PR":
         PUSH_REPO = OPENJ9_STAGING_REPO
-        PUSH_BRANCH = 'master'
+        PUSH_BRANCH = 'main'
         REFSPEC = "+refs/pull/${ghprbPullId}/merge:refs/remotes/origin/pr/${ghprbPullId}/merge"
         GET_SHA = false
         CLONE_BRANCH = sha1
@@ -169,7 +169,7 @@ timeout(time: 6, unit: 'HOURS') {
                             stash includes: "${ARCHIVE}", name: 'doc'
 
                             // Cleanup and rebuild the Doc for push to Github repo as a downlaodable zip.
-                            // Build, save zip file, cleanup and checkout master branch, bring back zip file and commit/push.
+                            // Build, save zip file, cleanup and checkout main branch, bring back zip file and commit/push.
                             sh """
                                 git clean -ffxd
                                 git status
@@ -183,10 +183,10 @@ timeout(time: 6, unit: 'HOURS') {
                                 git clean -ffxd
                                 git reset --hard
                                 git status
-                                git checkout master
+                                git checkout main
                                 mv ${WORKSPACE}/${ZIP_FILENAME} downloads/
                             """
-                            push_doc_with_cred(OPENJ9_REPO, 'master', "Add zip download of ${RELEASE_BRANCH} release user documentation")
+                            push_doc_with_cred(OPENJ9_REPO, 'main', "Add zip download of ${RELEASE_BRANCH} release user documentation")
                         }
                     }
                 } // Exit container

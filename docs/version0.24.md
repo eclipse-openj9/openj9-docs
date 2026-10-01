@@ -100,7 +100,7 @@ The **ENVINFO** section of a Java dump file now includes further information abo
 
 ### Helm chart available for deploying JITServer
 
-A Helm Chart is now available for easier deployment of JITServer technology in a Kubernetes or OpenShift cluster. You can find the chart (**openj9-jitserver-chart**) in the [JITServer Helm repository](https://github.com/eclipse-openj9/openj9-utils/tree/master/helm-chart/openj9-jitserver-chart), which contains a complete set of usage instructions. For an introduction to JITServer technology, see [JITServer (tech. preview)](jitserver.md).
+A Helm Chart is now available for easier deployment of JITServer technology in a Kubernetes or OpenShift cluster. You can find the chart (**openj9-jitserver-chart**) in the [JITServer Helm repository](https://github.com/eclipse-openj9/openj9-utils/tree/main/helm-chart/openj9-jitserver-chart), which contains a complete set of usage instructions. For an introduction to JITServer technology, see [JITServer (tech. preview)](jitserver.md).
 
 ## Full release information
 

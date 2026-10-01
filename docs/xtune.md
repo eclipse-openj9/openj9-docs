@@ -72,8 +72,6 @@ This option is used to configure settings on Eclipse OpenJ9&trade; VM to tune pe
 
 : When `-Xtune:virtualized` is used along with the [`-Xshareclasses`](xshareclasses.md) option, the JIT compiler is more aggressive with its use of [AOT-compiled code](aot.md) compared to setting only `-Xshareclasses`. This action provides additional CPU savings during application start-up and ramp-up, but might come at the expense of an additional small loss in throughput.
 
-: For an example of the effect of using this option, see [Measuring the strengths of OpenJDK with Eclipse OpenJ9](https://github.com/eclipse-openj9/openj9-website/blob/master/benchmark/daytrader3.md).
-
 ## See also
 
 - [What's new in version 0.21.0](version0.21.md#performance-improvements)
