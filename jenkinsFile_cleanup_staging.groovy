@@ -25,7 +25,7 @@ import groovy.json.JsonSlurper;
 HTTP = 'https://'
 OPENJ9_STAGING_REPO = 'github.com/eclipse-openj9/openj9-docs-staging'
 CREDENTIAL_ID = 'github-bot'
-PUSH_BRANCH = 'master'
+PUSH_BRANCH = 'main'
 
 def cleanupPrs = []
 

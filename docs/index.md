@@ -36,7 +36,7 @@ To see which Java releases are LTS releases and which are feature releases, and 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** Documentation to support OpenJ9 is still under construction. The current content covers
 some high level information about OpenJ9 components together with the command-line options and environment variables that you can use to configure the VM when you start your application. Because OpenJ9 was contributed to the Eclipse Foundation by IBM, this content contains some links to additional information that forms part of the [IBM&reg; SDK, Java&trade; Technology Edition product documentation](https://www.ibm.com/support/knowledgecenter/SSYKE2/welcome_javasdk_family.html) in IBM Documentation. That content supplements the documentation here until a more complete set of user documentation is available.
 
-We welcome contributions to the user documentation. If you would like to get involved, please read our [Contribution guidelines](https://github.com/eclipse-openj9/openj9-docs/blob/master/CONTRIBUTING.md). If you spot any errors in the documentation, please raise an [issue](https://github.com/eclipse-openj9/openj9-docs/issues/new?template=documentation-error.md) at our GitHub repository.
+We welcome contributions to the user documentation. If you would like to get involved, please read our [Contribution guidelines](https://github.com/eclipse-openj9/openj9-docs/blob/main/CONTRIBUTING.md). If you spot any errors in the documentation, please raise an [issue](https://github.com/eclipse-openj9/openj9-docs/issues/new?template=documentation-error.md) at our GitHub repository.
 
 ## Supported environments
 
@@ -50,7 +50,7 @@ Several versions of the documentation are available, covering all releases of Op
 
 - [Online documentation for the last release](https://eclipse.dev/openj9/docs/index.html)
 - [Online, in-progress documentation for the forthcoming release](https://eclipse-openj9.github.io/openj9-docs/)
-- [Downloads of earlier releases](https://github.com/eclipse-openj9/openj9-docs/tree/master/downloads): to download a zip file, click the filename, then click **Download**. After downloading a `.zip` file, extract it, then open the `index.html` file in your browser.
+- [Downloads of earlier releases](https://github.com/eclipse-openj9/openj9-docs/tree/main/downloads): to download a zip file, click the filename, then click **Download**. After downloading a `.zip` file, extract it, then open the `index.html` file in your browser.
 
 ## Useful links
 
