@@ -424,7 +424,7 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 
         -Xgc:tlhIncrementSize=<bytes>
 
-: Sets the increment size of the thread local heap (TLH), which plays a key role in cache allocation. Threads start creating TLHs with a predefined initial size (default 2 KB). On every TLH refresh, the requested size for that thread is increased by an increment (default 4 KB). Use this option to control the increment size.
+: Sets the increment size of the thread local heap (TLH), which plays a key role in cache allocation. Threads start creating TLHs with a predefined initial size (default 4 KB). On every TLH refresh, the requested size for that thread is increased by an increment (default 4 KB). Use this option to control the increment size.
 
 : This option can be used with all OpenJ9 GC policies.
 
@@ -432,7 +432,7 @@ the dynamic compaction triggers that look at heap occupancy. This option works o
 
         -Xgc:tlhInitialSize=<bytes>
 
-: Sets the initial size of the TLH. The default size is 2 KB.
+: Sets the initial size of the TLH. The default size is 4 KB.
 
 : This option can be used with all OpenJ9 GC policies.
 
