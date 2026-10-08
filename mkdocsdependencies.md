@@ -57,20 +57,59 @@ The Docker image is built (by jobs in the Eclipse OpenJ9 Jenkins build server) f
 1. Get the `requirements.in` file from the [OpenJ9 repo](https://github.com/eclipse-openj9/openj9-docs/blob/master/buildenv/requirements.in) and save it in a directory.
 2. Ensure that you have [`pip-tools`](https://pypi.org/project/pip-tools/) installed on your test Ubuntu system. If not, install it by running the following commands:
 
+    <note>**Note:**
+
+    In September 2026, Ubuntu fyre instance reported some vulnerabilities related to Python packages installed through PIP. The fixed packages couldn't be installed in the usual way as they're apparently only available as Extended Security Maintenance (ESM) packages, even for the very latest 26.04 release. Because of which the following steps are segregated into Old and New steps. If you are facing issues in the Ubuntu fyre instance because of the vulnerabilities, then follow the new steps instead of the old steps.</note>
+
+   **Old step**
+
    ```
    sudo apt install python3-pip
    ```
    (Uses the `apt` package manager to install Python 3.)
+
+   **New step** - Ubuntu has moved python3-pip and python3-venv packages into ESM (Extended Security Maintenance) because of which installing or upgrading Python packages using the system's pip is no longer supported. Therefore this step should be changed to the following command:
+
+   ```
+   python3 -m venv /venv/myenv --without-pip
+   ```
+   (Creates an ESM-independent virtual environment WITHOUT the OS-managed python3-venv package. The `--without-pip` flag is critical — it removes dependency on the ESM-restricted python3-venv.)
+
+   **Old step**
 
    ```
    pip install --upgrade pip
    ```
    (Upgrades `pip`, the Python package manager.)
 
+   **New step** -
+
+   ```
+   source /venv/myenv/bin/activate
+   ```
+   (Activates the virtual environment. Prompt changes to: (myenv) root@<hostname>:~#)
+
+   **Old step**
+
    ```
    pip install pip-tools
    ```
    (Uses `pip` to install `pip-tools`.)
+
+   **New steps** -
+
+   ```
+   curl -0 https://bootstrap.pypa.io/get-pip.py
+   python3 get-pip.py
+   ```
+   (Downloads the official pip bootstrap script — do NOT use `apt install python3-pip`. Installs pip directly into the virtual environment — not system Python.)
+
+   After the pip is downloaded and installed successfully:
+
+   ```
+   pip3 install pip-tools
+   ```
+   (Installs pip-tools inside the venv.)
 
 3. In the same directory as `requirements.in`, run the following command. This command generates a `requirements.txt` file that lists the latest versions of the software in `requirements.in`, and any dependencies. If the requirements.txt exists because of an earlier dependency update test, delete that file (`rm requirements.txt`) before generating a new one.
 
@@ -151,6 +190,11 @@ Sometimes, changes to the software levels require corresponding changes in the s
    ```
    cp /myenv/lib/python3.10/site-packages/material/templates/base.html theme/base.html
    ```
+Check the Python version in this and update this command with the relevant version. For example,
+
+   ```
+   cp /myenv/lib/python3.12/site-packages/material/templates/base.html theme/base.html
+   ```
 
 5. From the `docs/openj9-docs` directory, run an MkDocs build with verbose output:
 
@@ -178,7 +222,7 @@ Here's a list (not necessarily exhaustive) of things to check. Compare the test 
 - Bulleted lists
 - Codeph and codeblock-style text (including, in IBM Docs only: copy icon, horizontal scrollbar, and the fancy drop-down sample in the JVMTI topic)
 - Content within tables (for example, code, icons)
-- Definition lists. The markup for these lists is a colon followed by a space at the beginning of a line in the .md file.
+- Definition lists. The markup for these lists is a colon followed by a space at the beginning of a line in the .md file. For an example, see the [Java Virtual Machine Tool Interface](https://eclipse.dev/openj9/docs/interface_jvmti/#java-virtual-machine-tool-interface) topic.
 - Trademark symbols
 - Italics
 - Bold text
@@ -211,4 +255,4 @@ This build uses the same pipeline script as mentioned in "Updating and running t
 
    When the image is available on docker hub, the [staging](https://openj9-jenkins.osuosl.org/view/Website-Doc/job/Build-Doc-Push_to_ghpages/) and [build](https://openj9-jenkins.osuosl.org/view/Website-Doc/job/Build-Doc-Push_to_Eclipse/) jobs can use it.
 
-3. Update the source files with any fixes that you had to make. Again, you might already have a relevant PR if you chose to create test files by updating the repo. When you add a comment of "Jenkins doc stage", the build should use the new Docker image from docker hub, and any changes that you made should be visible (the aim is for the docs to look the same as before, but if you changed some css, for example, you should be able to see that by using the browser's inspection tools). You can then do a final check and merge the PR.
+3. Update the source files with any fixes that you had to make. Again, you might already have a relevant PR if you chose to create test files by updating the repo. When you add a comment of "Jenkins doc stage", the build should use the new Docker image from docker hub, and any changes that you made should be visible. The aim is for the docs to look the same as before, but if you changed some CSS, for example, you should be able to see that by using the browser's inspection tools. You can then do a final check and merge the PR.
