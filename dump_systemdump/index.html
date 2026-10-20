@@ -11697,7 +11697,7 @@
 <h1 id="system-dump">System dump</h1>
 <p>System dumps, often known as <em>core dumps</em>, are platform-specific and contain a raw binary dump of the process memory. This type of dump has a complete copy of the Java heap, including the contents of all Java objects in the application.</p>
 <h2 id="obtaining-system-dumps">Obtaining system dumps</h2>
-<p>System dumps are produced in response to specific events. To discover which events generate a dump, run the <code>-Xdump:what</code> command. The following output captures the information shown for a system dump:</p>
+<p>System dumps are produced in response to specific events. To discover which events generate a dump, run the <code>-Xdump:what</code> command. The following output captures the information that is shown for a system dump:</p>
 <pre><code>-Xdump:system:
     events=gpf+abort+traceassert+corruptcache,
     label=/home/user/core.%Y%m%d.%H%M%S.%pid.%seq.dmp,
@@ -11721,6 +11721,8 @@
 <li><code>-d</code> sets the data limit</li>
 <li><code>-f</code> sets the file limit</li>
 </ul>
+<p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> If a system dump is requested by using a VM mechanism, such as <code>-Xdump:system</code>, the VM first attempts to increase its core <code>ulimit</code> from the soft limit to the hard limit dynamically at runtime. Therefore, when you investigate why a system dump is truncated or not produced, you can generally ignore the <code>RLIMIT_CORE</code> soft limit and check only the <code>RLIMIT_CORE</code> hard limit.</p>
+<p>This dynamic increase from the soft limit to the hard limit applies only when the VM requests the dump. This behavior does not apply to core dumps that are produced directly by the operating system.</p>
 <ol start="2">
 <li>For AIX systems, use the system management interface tool (SMIT) to enable a full CORE dump that is not a <em>pre-430 style CORE dump</em>. You can also set this configuration with the following command line option:</li>
 </ol>
