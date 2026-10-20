@@ -59,6 +59,8 @@ You can use the `-Xcheck` option to run checks during Eclipse OpenJ9&trade; virt
 
     : This message indicates that the AIX operating system user limit is set to restrict the size of system dumps to the value indicated. If a system dump is produced by the VM it might be truncated, and therefore of greatly reduced value in investigating the cause of crashes and other issues. For more information about how to set user limits on AIX, see [Setting system resource limits on AIX and Linux systems](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html).
 
+    : The VM can raise the core file size soft limit up to the hard limit when it produces a system dump, so this message is based on the hard limit.
+
     - `JVMJ9VM134W The system fullcore option is set to FALSE, system dumps may be truncated`
 
     : This message indicates that the AIX operating system `Enable full CORE dump` option is set to *FALSE*. This setting might result in truncated system dumps. For more information about how to set this option correctly on AIX, see [Setting system resource limits on AIX and Linux systems](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html).
@@ -68,6 +70,8 @@ You can use the `-Xcheck` option to run checks during Eclipse OpenJ9&trade; virt
     - `JVMJ9VM133W The system core size hard ulimit is set to <value>, system dumps may be truncated.`
 
     : This message indicates that the Linux operating system user limit is set to restrict the size of system dumps to the value indicated. If a system dump is produced by the VM, it might be truncated and therefore of greatly reduced value in investigating the cause of crashes and other issues. Review the documentation that is provided for your operating system to correctly configure the value for `ulimits`. For further information, see [Setting system resource limits on AIX and Linux systems](https://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.vm.80.doc/docs/j9_configure_ulimits.html).
+
+    : The VM can raise the core file size soft limit up to the hard limit when it produces a system dump, so this message is based on the hard limit.
 
     - `JVMJ9VM135W /proc/sys/kernel/core_pattern setting "|/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e" specifies that core dumps are to be piped to an external program. The JVM may be unable to locate core dumps and rename them.`
 

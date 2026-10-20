@@ -34,7 +34,7 @@ On some systems, a further environment variable might be required if your applic
 - **DYLD_LIBRARY_PATH** (macOS&reg;)
 - **PATH** (Windows&reg;)
 
-![Start of content that applies to Java 11+](cr/java11plus.png) Although most Java applications should run without changing anything on the underlying system, a unique pre-requisite exists for AIX systems on OpenJDK version 11 and later; you must have the [16.1 XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X) installed. ![End of content that applies only to Java 11 and later](cr/java_close.png)
+![Start of content that applies to Java 11+](cr/java11plus.png) Although most Java applications should run without changing anything on the underlying system, a unique prerequisite exists for AIX systems on OpenJDK version 11 and later; you must have the [16.1 XL C++ Runtime](https://www.ibm.com/support/pages/fix-list-xl-cc-runtime-aix#161X) installed. ![End of content that applies only to Java 11 and later](cr/java_close.png)
 
 ## Setting resource limits (AIX, Linux, and macOS)
 
@@ -62,7 +62,7 @@ To show hard limits, use `ulimit -Ha`.
 
 You can change limits for specific resources on a temporary basis by running the **ulimit** command. Alternatively, you can store limit settings in a configuration file, which is `/etc/security/limits` for AIX or `etc/security/limits.conf` for Linux. For more information about configuring resource limits, refer to the documentation for your operating system.   
 
-The main use case for changing `ulimit` resources is when enabling a system dump to ensure that all the required data can be collected for analysis. For more information, see [Enabling a full system dump](dump_systemdump.md#enabling-a-full-system-dump-aix-and-linux).
+The main use case for changing `ulimit` resources is when enabling a system dump to ensure that all the required data can be collected for analysis. If a system dump is requested by the VM, the VM attempts to raise the core file size soft limit to the hard limit. Therefore, the hard limit is the value that determines whether a system dump is truncated. For more information, see [Enabling a full system dump](dump_systemdump.md#enabling-a-full-system-dump-aix-linux-and-macos).
 
 ### Setting shared memory values
 
@@ -78,7 +78,7 @@ Shared memory limits are also important when configuring large page memory alloc
 
 ## Setting resource limits (z/OS)
 
-Resource limits imposed by z/OS might affect Java operations. To learn how these resource limits are set, see [Customizing the BPXPRMxx member of SYS1.PARMLIB](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.bpxb200/cusis.htm).
+Resource limits that are imposed by z/OS might affect Java operations. To learn how these resource limits are set, see [Customizing the BPXPRMxx member of SYS1.PARMLIB](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.bpxb200/cusis.htm).
 
 The OpenJ9 class data sharing feature is implemented by using shared memory segments on z/OS. Special consideration should be given to the following parameters that relate to the shared memory and IPC semaphore settings:
 
@@ -119,7 +119,7 @@ The suggested minimum values for Java applications are shown in the following ta
 
 You can change these settings dynamically without re-IPLing the system. For example, to set **MACPROCUSER** to 256, run `SETOMVS MAXPROCUSER=256`
 
-z/OS uses region sizes to determine the amount of storage available to running programs. For a Java runtime environment, the  region size must be sufficiently large to avoid storage related error messages or abends. Rather than restricting region size, allow the VM to use what it needs. Region size can be affected by one of the following parameters: **JCL REGION**, **BPXPRMxx MAXASSIZE**, the RACF OMVS segment **ASSIZEMAX**, or IEFUSI (Step initiation exit).
+z/OS uses region sizes to determine the amount of storage available to running programs. For a Java runtime environment, the region size must be sufficiently large to avoid storage related error messages or abends. Rather than restricting region size, allow the VM to use what it needs. Region size can be affected by one of the following parameters: **JCL REGION**, **BPXPRMxx MAXASSIZE**, the RACF OMVS segment **ASSIZEMAX**, or IEFUSI (Step initiation exit).
 
 **SHRLIBRGNSIZE** controls how much storage is reserved in each address space for mapping shared DLLs that have the +l extended attribute set. If this storage space is exceeded, DLLs are loaded into the address space instead of using a single copy of z/OS UNIX System Services storage that is shared between the address spaces. The z/OS command **D OMVS,L** shows the **SHRLIBRGNSIZE** size and peak usage. If this size is set to a much higher value than is needed, the Java application might have problems acquiring native storage. These problems can cause a z/OS abend, such as `878-10`, or a Java `OutOfMemoryError`.
 
@@ -145,7 +145,7 @@ A suitable **MEMLIMIT** value is also required. The OpenJ9 VM requirement is the
 - The JIT data cache maximum size.
 - The JIT code cache maximum size, if **RMODE64** is supported.
 
-:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you intend to use the Concurrent Scavenge mode of the default Generational Concurrent (`gencon`) garbage collection policy by using hardware-based support, the virtual storage used might exceed the Java maximum heap size. Set the z/OS memory limit to a larger value than the maximum heap size. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
+:fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If you intend to use the Concurrent Scavenge mode of the default Generational Concurrent (`gencon`) garbage collection policy by using hardware-based support, the virtual storage that is used might exceed the Java maximum heap size. Set the z/OS memory limit to a larger value than the maximum heap size. For more information, see [`-Xgc:concurrentScavenge`](xgc.md#concurrentscavenge).
 
 The following guides are available to help you configure Language Environment runtime options and callable services:
 
@@ -222,7 +222,7 @@ Where huge page support is available, the following default sizes apply for the 
 - Linux on IBM Power Systems: Varies depending on kernel version, check `/proc/meminfo`
 - Linux on IBM Z: 1 MB
 
-Transparent HugePage Support (THP) is an automated mechanism of using huge pages to back virtual memory. On Linux kernels that support THP, it is typically enabled by default with the **madvise** option and can be relied on to provide huge pages as required without any user configuration. To disable THP for your application, use the OpenJ9 [`-XX:-TransparentHugePage`](xxtransparenthugepage.md) option on the command line. To disable THP system-wide, change the **sysfs** boot time defaults with the command `transparent_hugepage=never `. For more information about THP see [Transparent HugePage Support](https://www.kernel.org/doc/html/latest/admin-guide/mm/transhuge.html).
+Transparent HugePage Support (THP) is an automated mechanism of using huge pages to back virtual memory. On Linux kernels that support THP, it is typically enabled by default with the **madvise** option and can be relied on to provide huge pages as required without any user configuration. To disable THP for your application, use the OpenJ9 [`-XX:-TransparentHugePage`](xxtransparenthugepage.md) option on the command line. To disable THP system-wide, change the **sysfs** boot time defaults with the command `transparent_hugepage=never`. For more information about THP, see [Transparent HugePage Support](https://www.kernel.org/doc/html/latest/admin-guide/mm/transhuge.html).
 
 ### Windows systems
 
@@ -245,7 +245,7 @@ When available, 1 MB pageable pages are the default size for the object heap and
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** The Flash Express feature (#0402) helps avoid demoting 1 MB pageable pages to 4 KB pages when there is system paging activity.
 
-If a particular page size cannot be allocated, a smaller page size is attempted, in descending order. For example, if 2 GB nonpageable pages are requested but not available, the VM tries to allocate 1MB nonpageable pages. If 1 MB nonpageable pages are not available, the VM tries to allocate 1MB pageable pages. If large pages are not available, 4 KB pages are allocated.
+If a particular page size cannot be allocated, a smaller page size is attempted, in descending order. For example, if 2 GB nonpageable pages are requested but not available, the VM tries to allocate 1 MB nonpageable pages. If 1 MB nonpageable pages are not available, the VM tries to allocate 1 MB pageable pages. If large pages are not available, 4 KB pages are allocated.
 
 If you want to use nonpageable large pages for the object heap, a system programmer must configure z/OS for nonpageable large pages in the **IEASYSxx** parmlib member. Users who require large pages must also be authorized to the **IARRSM.LRGPAGES** resource in the RACF FACILITY class with read authority. On z/OS 3.1 or later, consider using z/OS's [Dedicated Memory](https://www.ibm.com/docs/en/zos/3.2.0?topic=overview-dedicated-memory) support to help ensure the Java application is assigned sufficient real storage.
 
@@ -269,7 +269,7 @@ To enable an application to respond to DLPAR events, you can use OpenJ9 MXBean e
 - `ProcessingCapacityNotificationInfo`: Use to listen for changes to processing capacity.
 - `TotalPhysicalMemoryNotificationInfo`: Use to listen for changes to the total amount of physical memory that is available.
 
-These extensions can listen for events and trigger any necessary adjustments to the runtime environment. For example, if a Java VM is running in an LPAR with 2GB of memory, but the available memory might be adjusted between 1GB and 8GB, you might set the following options for the Java heap at run time:
+These extensions can listen for events and trigger any necessary adjustments to the runtime environment. For example, if a Java VM is running in an LPAR with 2 GB of memory, but the available memory might be adjusted between 1 GB and 8 GB, you might set the following options for the Java heap at run time:
 
 ```
 –Xms1g –Xsoftmx2g –Xmx8g

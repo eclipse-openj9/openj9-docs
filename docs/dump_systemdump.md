@@ -27,7 +27,7 @@ System dumps, often known as *core dumps*, are platform-specific and contain a r
 
 ## Obtaining system dumps
 
-System dumps are produced in response to specific events. To discover which events generate a dump, run the `-Xdump:what` command. The following output captures the information shown for a system dump:
+System dumps are produced in response to specific events. To discover which events generate a dump, run the `-Xdump:what` command. The following output captures the information that is shown for a system dump:
 
 ```
 -Xdump:system:
@@ -55,6 +55,10 @@ If you require a system dump that contains details of all the native threads tha
    - `-n` sets the number of open files
    - `-d` sets the data limit
    - `-f` sets the file limit
+
+   :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** If a system dump is requested by using a VM mechanism, such as `-Xdump:system`, the VM first attempts to increase its core `ulimit` from the soft limit to the hard limit dynamically at runtime. Therefore, when you investigate why a system dump is truncated or not produced, you can generally ignore the `RLIMIT_CORE` soft limit and check only the `RLIMIT_CORE` hard limit.
+
+   This dynamic increase from the soft limit to the hard limit applies only when the VM requests the dump. This behavior does not apply to core dumps that are produced directly by the operating system.
 
 2. For AIX systems, use the system management interface tool (SMIT) to enable a full CORE dump that is not a *pre-430 style CORE dump*. You can also set this configuration with the following command line option:
 
