@@ -152,13 +152,13 @@ Colour added by enabling attr_list under markdown_extensions: in mkdocs.yml, and
   margin: 0;
 }
 
-.column-incubator h3 {
+.column-eclipse h3 {
   font-size: 0.9rem;
   margin: 0;
   margin-bottom: 1rem ;
 }
 
-.column-incubator {
+.column-eclipse {
   display: flex;
   flex: 20%;
   justify-content: flex-end;
@@ -171,8 +171,8 @@ Colour added by enabling attr_list under markdown_extensions: in mkdocs.yml, and
   flex-direction: column;
 }
 
-.incubator-image {
-  margin-left: calc(100% - 2.5rem);
+.eclipse-image {
+  margin-left: calc(100% - 100px);
 }
 
 .footer-link {
@@ -180,7 +180,7 @@ Colour added by enabling attr_list under markdown_extensions: in mkdocs.yml, and
 }
 
 @media only screen and (max-width: 1040px), (min-device-width: 768px) and (max-device-width: 1024px) { 
-  .column-incubator h3 {
+  .column-eclipse h3 {
     font-size: 0.8rem;
   }
   
@@ -218,14 +218,14 @@ Colour added by enabling attr_list under markdown_extensions: in mkdocs.yml, and
     justify-content: center;
   }
 
-  .column-incubator {
+  .column-eclipse {
     display: flex;
     flex: 100%;
     justify-content: center;
     padding: 1rem 0;
   }
 
-  .incubator-image {
+  .eclipse-image {
     margin-left: 0;
     margin-bottom: 1rem;
   }
