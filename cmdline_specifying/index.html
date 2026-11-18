@@ -11698,7 +11698,7 @@ IBM-Java-Options: -Xshareclasses:name=mycache,nonfa
 -Da.long.system.property=this is a long system property value to
 demonstrate long VM arguments in the manifest file
 </code></pre>
-<p>Options specified in the manifest file are subject to the same restrictions as options files. For more information, see the <a href="../xoptionsfile/#xoptionsfile" title="Specifies a file that contains VM options and definitions. The contents of the options file are recorded in the ENVINFO section of a Java dump.">-Xoptionsfile</a> topic in the user guide.</p>
+<p>Options specified in the manifest file are subject to the same restrictions as options files. For more information, see the <a href="../xoptionsfile/" title="Specifies a file that contains VM options and definitions. The contents of the options file are recorded in the ENVINFO section of a Java dump.">-Xoptionsfile</a> topic in the user guide.</p>
 </li>
 <li>
 <p>Environment variables that are described in <a href="../env_var/" title="In general, environment variables are superseded by command-line arguments but retained for compatibility.">OpenJ9 environment variables</a> are translated into command-line options. For example, the following environment variable adds the parameter <code>-Xrs</code> to the list of arguments:</p>
@@ -11753,7 +11753,7 @@ demonstrate long VM arguments in the manifest file
 </ul>
 </li>
 </ol>
-<p>You can also use the <code>-Xoptionsfile</code> parameter to specify VM options. This parameter can be used on the command line, or as part of the <code>OPENJ9_JAVA_OPTIONS</code> environment variable. The contents of an option file are expanded in place during startup. For more information about the structure and contents of this type of file, see <a href="../xoptionsfile/#xoptionsfile" title="Specifies a file that contains VM options and definitions. The contents of the options file are recorded in the ENVINFO section of a Java dump.">-Xoptionsfile</a>.</p>
+<p>You can also use the <code>-Xoptionsfile</code> parameter to specify VM options. This parameter can be used on the command line, or as part of the <code>OPENJ9_JAVA_OPTIONS</code> environment variable. The contents of an option file are expanded in place during startup. For more information about the structure and contents of this type of file, see <a href="../xoptionsfile/" title="Specifies a file that contains VM options and definitions. The contents of the options file are recorded in the ENVINFO section of a Java dump.">-Xoptionsfile</a>.</p>
 <p>To troubleshoot startup problems, you can check which options are used by the OpenJ9 VM. Append the following command-line option, and inspect the Java core file that is generated:</p>
 <pre><code>-Xdump:java:events=vmstart
 </code></pre>

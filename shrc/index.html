@@ -12131,13 +12131,13 @@ Default behavior includes the following characteristics:</p>
 <tbody>
 <tr>
 <td>AOT code</td>
-<td><a href="../xshareclasses/#adjustminaot"><code>-Xshareclasses:adjustminaot</code></a></td>
-<td><a href="../xshareclasses/#adjustmaxaot"><code>-Xshareclasses:adjustmaxaot</code></a></td>
+<td><a href="../xshareclasses/#adjustminaot-cache-utility"><code>-Xshareclasses:adjustminaot</code></a></td>
+<td><a href="../xshareclasses/#adjustmaxaot-cache-utility"><code>-Xshareclasses:adjustmaxaot</code></a></td>
 </tr>
 <tr>
 <td>JIT code</td>
-<td><a href="../xshareclasses/#adjustminjit"><code>-Xshareclasses:adjustminjit</code></a></td>
-<td><a href="../xshareclasses/#adjustmaxjit"><code>-Xshareclasses:adjustmaxjit</code></a></td>
+<td><a href="../xshareclasses/#adjustminjitdata-cache-utility"><code>-Xshareclasses:adjustminjitdata</code></a></td>
+<td><a href="../xshareclasses/#adjustmaxjitdata-cache-utility"><code>-Xshareclasses:adjustmaxjitdata</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -12146,7 +12146,7 @@ Default behavior includes the following characteristics:</p>
 <p>The <a href="../xshareclasses/">-Xshareclasses</a> option is highly configurable, allowing you to specify where to create the cache, how much space to allocate, and more. The following best practices apply to using class data sharing:</p>
 <ul>
 <li>
-<p>Before starting your application, use the <a href="../xshareclasses/#listallcaches"><code>-Xshareclasses:listAllCaches</code></a> cache utility to review and maintain the existing caches on your system.</p>
+<p>Before starting your application, use the <a href="../xshareclasses/#listallcaches-cache-utility"><code>-Xshareclasses:listAllCaches</code></a> cache utility to review and maintain the existing caches on your system.</p>
 <p>This option lists all the caches that exist in the default directory, including compatible and incompatible caches. You can also specify the <code>cacheDir</code> suboption to look for caches in a specified directory. Remove any obsolete caches, as described in <a href="#housekeeping">Housekeeping</a>.</p>
 </li>
 <li>
@@ -12171,7 +12171,7 @@ Default behavior includes the following characteristics:</p>
 </li>
 <li>
 <p>Set a soft maximum size for the cache by specifying the <a href="../xscmx/">-Xscmx</a> option with the <a href="../xxsharedcachehardlimit/"><code>-XX:SharedCacheHardLimit</code></a> option.</p>
-<p>For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the <code>-Xscmx</code> option, to limit the data stored in the cache (<code>-XX:SharedCacheHardLimit=64m -Xscmx16m</code>). You can then adjust the soft maximum size by using the <a href="../xshareclasses/#adjustsoftmx"><code>-Xshareclasses:adjustsoftmx</code></a> cache utility or the <code>MemoryMXBean.setSharedClassCacheSoftmxBytes()</code> method in the <code>com.ibm.lang.management</code> API. For more information, see <a href="../xscmx/#setting-a-soft-maximum-size">Setting a soft maximum size</a>.</p>
+<p>For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the <code>-Xscmx</code> option, to limit the data stored in the cache (<code>-XX:SharedCacheHardLimit=64m -Xscmx16m</code>). You can then adjust the soft maximum size by using the <a href="../xshareclasses/#adjustsoftmx-cache-utility"><code>-Xshareclasses:adjustsoftmx</code></a> cache utility or the <code>MemoryMXBean.setSharedClassCacheSoftmxBytes()</code> method in the <code>com.ibm.lang.management</code> API. For more information, see <a href="../xscmx/#setting-a-soft-maximum-size">Setting a soft maximum size</a>.</p>
 </li>
 </ul>
 <h3 id="creating-layer-caches">Creating layer caches</h3>
@@ -12217,27 +12217,27 @@ MyCache                 Java8 64-bit  persistent      cr              2         
 <ul>
 <li><a href="../xshareclasses/#createlayer"><code>-Xshareclasses:createLayer</code></a></li>
 <li><a href="../xshareclasses/#layer"><code>-Xshareclasses:layer</code></a></li>
-<li><a href="../xshareclasses/#printtoplayerstats"><code>-Xshareclasses:printTopLayerStats</code></a> (for example output, see <a href="../shrc_diag_util/#printtoplayerstats">printTopLayerStats</a>)</li>
-<li><a href="../xshareclasses/#destroyalllayers"><code>-Xshareclasses:destroyAllLayers</code></a></li>
+<li><a href="../xshareclasses/#printtoplayerstats-cache-utility"><code>-Xshareclasses:printTopLayerStats</code></a> (for example output, see <a href="../shrc_diag_util/#printtoplayerstats">printTopLayerStats</a>)</li>
+<li><a href="../xshareclasses/#destroyalllayers-cache-utility"><code>-Xshareclasses:destroyAllLayers</code></a></li>
 </ul>
 <h2 id="saving-a-non-persistent-shared-classes-cache">Saving a non-persistent shared classes cache</h2>
 <p>As described in an earlier section, a shared classes cache can be persistent or non-persistent; persistent caches are memory-mapped files. By default, a cache is persistent on all platforms, except z/OS. Non-persistent caches are stored in shared memory and are removed when a system is rebooted. If you want to save a non-persistent cache beyond a reboot, you might want to consider taking a cache snapshot.</p>
-<p>To create a snapshot of a non-persistent shared classes cache, use the <a href="../xshareclasses/#snapshotcache"><code>-Xshareclasses:snapshotCache</code></a> cache utility. The snapshot has the same name and location as the shared cache, as specified by the <code>name</code> and <code>cacheDir</code> suboptions. The shared cache can be in use when the snapshot is taken, but VMs are blocked when they try to write to the shared cache while the cache data is copied to the file.</p>
-<p>Typically, after a system is reinitialized, the snapshot file is used to restore the copy of the non-persistent cache into shared memory, by using the <a href="../xshareclasses/#restorefromsnapshot"><code>-Xshareclasses:restoreFromSnapshot</code></a> cache utility. Because this process removes all non-persistent caches from shared memory, restoring the cache from the snapshot file can result in better VM startup performance, because the contents of the shared cache, including classes and AOT code, do not have to be re-created.</p>
-<p>The <a href="../xshareclasses/#listallcaches"><code>-Xshareclasses:listAllCaches</code></a> cache utility can be used to identify snapshots on a system.</p>
+<p>To create a snapshot of a non-persistent shared classes cache, use the <a href="../xshareclasses/#snapshotcache-cache-utility"><code>-Xshareclasses:snapshotCache</code></a> cache utility. The snapshot has the same name and location as the shared cache, as specified by the <code>name</code> and <code>cacheDir</code> suboptions. The shared cache can be in use when the snapshot is taken, but VMs are blocked when they try to write to the shared cache while the cache data is copied to the file.</p>
+<p>Typically, after a system is reinitialized, the snapshot file is used to restore the copy of the non-persistent cache into shared memory, by using the <a href="../xshareclasses/#restorefromsnapshot-cache-utility"><code>-Xshareclasses:restoreFromSnapshot</code></a> cache utility. Because this process removes all non-persistent caches from shared memory, restoring the cache from the snapshot file can result in better VM startup performance, because the contents of the shared cache, including classes and AOT code, do not have to be re-created.</p>
+<p>The <a href="../xshareclasses/#listallcaches-cache-utility"><code>-Xshareclasses:listAllCaches</code></a> cache utility can be used to identify snapshots on a system.</p>
 <p>A snapshot can be created only if the user has sufficient permissions to create the destination snapshot file. If a snapshot of the same name exists already, it is overwritten. On platforms that support persistent caches, the <code>nonpersistent</code> suboption must be specified in order to create a snapshot. For information about removing snapshot files, see the <code>destroySnapshot</code> and <code>destroyAllSnapshots</code> cache utilities in <a href="#housekeeping">Housekeeping</a>.</p>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> The <code>snapshotCache</code> and <code>restoreFromCache</code> cache utilities cannot be used on Windows systems.</p>
 <h2 id="housekeeping">Housekeeping</h2>
 <p>Caches can be deleted if they contain many stale classes or if the cache is full and you want to create a bigger cache. Use one of the following utilities to remove unwanted caches:</p>
 <ul>
-<li><a href="../xshareclasses/#destroy"><code>-Xshareclasses:destroy</code></a>: Removes specific caches when used with the <code>name</code>, <code>cacheDir</code>, and <code>nonpersistent</code> suboptions.</li>
-<li><a href="../xshareclasses/#destroyall"><code>-Xshareclasses:destroyAll</code></a>: Removes all the caches that are specified by the <code>cacheDir</code> and <code>nonpersistent</code> suboptions.</li>
-<li><a href="../xshareclasses/#destroysnapshot"><code>-Xshareclasses:destroySnapshot</code></a>: Removes a cache snapshot from disk that is specified by <code>name</code> and <code>cacheDir</code> suboptions.</li>
-<li><a href="../xshareclasses/#destroyallsnapshots"><code>-Xshareclasses:destroyAllSnapshots</code></a>: Removes all cache snapshots from disk that are found by specifying the <code>cacheDir</code> suboption.</li>
-<li><a href="../xshareclasses/#destroyalllayers"><code>-Xshareclasses:destroyAllLayers</code></a>: Removes all shared cache layers that are specified by the <code>name</code> and <code>cacheDir</code> suboptions.</li>
+<li><a href="../xshareclasses/#destroy-cache-utility"><code>-Xshareclasses:destroy</code></a>: Removes specific caches when used with the <code>name</code>, <code>cacheDir</code>, and <code>nonpersistent</code> suboptions.</li>
+<li><a href="../xshareclasses/#destroyall-cache-utility"><code>-Xshareclasses:destroyAll</code></a>: Removes all the caches that are specified by the <code>cacheDir</code> and <code>nonpersistent</code> suboptions.</li>
+<li><a href="../xshareclasses/#destroysnapshot-cache-utility"><code>-Xshareclasses:destroySnapshot</code></a>: Removes a cache snapshot from disk that is specified by <code>name</code> and <code>cacheDir</code> suboptions.</li>
+<li><a href="../xshareclasses/#destroyallsnapshots-cache-utility"><code>-Xshareclasses:destroyAllSnapshots</code></a>: Removes all cache snapshots from disk that are found by specifying the <code>cacheDir</code> suboption.</li>
+<li><a href="../xshareclasses/#destroyalllayers-cache-utility"><code>-Xshareclasses:destroyAllLayers</code></a>: Removes all shared cache layers that are specified by the <code>name</code> and <code>cacheDir</code> suboptions.</li>
 </ul>
 <p><span aria-hidden="true" class="twemoji note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M36.4 353.2c4.1-14.6 11.8-27.9 22.6-38.7l181.2-181.2 33.9-33.9 104 104 33.9 33.9-33.9 33.9-181.2 181.2c-10.7 10.7-24.1 18.5-38.7 22.6L30.4 510.6c-8.3 2.3-17.3 0-23.4-6.2S-1.4 489.3.9 481zm55.6-3.7c-4.4 4.7-7.6 10.4-9.3 16.6L58.6 453l86.9-24.1c6.4-1.8 12.2-5.1 17-9.7l-70.6-69.7zm354-146.1-104-104-34-33.9 44.9-44.9C366.4 7 384.8-.6 404-.6s37.6 7.6 51.1 21.2l35.7 35.7c13.6 13.6 21.2 32 21.2 51.1s-7.6 37.6-21.2 51.1l-44.9 44.9z"/></svg></span> <strong>Note:</strong> You must always use the utilities to remove non-persistent caches correctly from shared memory.</p>
-<p>Caches can also be removed if they are unused for a specified amount of time. To configure time-based housekeeping, use the <a href="../xshareclasses/#expire">-Xshareclasses:expire</a> option.</p>
+<p>Caches can also be removed if they are unused for a specified amount of time. To configure time-based housekeeping, use the <a href="../xshareclasses/#expire-cache-utility">-Xshareclasses:expire</a> option.</p>
 <p>If you want to remove a cache but allow it to be re-created when the VM restarts, use the <a href="../xshareclasses/#reset"><code>-Xshareclasses:reset</code></a> option.</p>
 <h2 id="support-for-custom-class-loaders">Support for custom class loaders</h2>
 <p>Classes are shared by the bootstrap class loader internally in the VM. The OpenJ9 implementation of <code>java.net.URLClassLoader</code> is modified to use <code>SharedClassURLClasspathHelper</code> and any class loaders that extend <code>java.net.URLClassLoader</code> can inherit this behavior. If you are using a custom class loader that does not extend <code>java.net.URLClassLoader</code>, you can use the Java Helper API to find and store classes in a shared classes cache.</p>
