@@ -46,7 +46,7 @@ Warning: Extended HCR is disabled, enable with -XX:+EnableExtendedHCR. This feat
 
 ## See also
 
-- [What's new in version 0.46.0](version0.46.md#new-xx-enableextendedhcr-option-added)
+- [What's new in version 0.46.0](version0.46.md#the-extended-hot-code-replace-hcr-capability-disabled-and-xx-enableextendedhcr-option-added)
 
 
 <!-- ==== END OF TOPIC ==== xxenableextendedhcr.md ==== -->

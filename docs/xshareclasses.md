@@ -29,7 +29,7 @@ This option can take a number of parameters, some of which are *cache utilities*
 
 Some cache utilities can work with caches from previous Java&trade; versions or caches that are created by VMs with different bit-widths. These caches are referred to as *"incompatible"* caches.
 
-See also the [Class data sharing](shrc.md) topic, which includes some [best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+See also the [Class data sharing](shrc.md) topic, which includes some [best practices for using `-Xshareclasses`](shrc.md#creating-a-shared-classes-cache).
 
 ## Syntax
 
@@ -109,7 +109,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : Otherwise, persistent caches are created with the same permissions as non-persistent caches. The permissions for non-persistent caches are `-rw-r-----`, or `-rw-rw----` if you also specify `-Xshareclasses:groupAccess`.
 
-: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** It is good practice to set an application-specific cache directory to avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** It is good practice to set an application-specific cache directory to avoid sharing the default cache directory with the default cache, or other application caches that don't set a cache directory, and means that your application is therefore unaffected by a user running [`java -Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility). See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#creating-a-shared-classes-cache).
 
 ### `cacheDirPerm`
 
@@ -136,7 +136,7 @@ When you specify `-Xshareclasses` without any parameters and without specifying 
 
 : †On z/OS systems, permissions for existing cache directories are unchanged, to avoid generating RACF&reg; errors, which generate log messages.
 
-: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** It is good practice to explicitly set permissions for the cache directory when the defaults are not appropriate. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#creating-a-shared-classes-cache).
 
 ### `cacheRetransformed`
 
@@ -376,7 +376,7 @@ case, the VM continues without using shared classes.
 
 :   Connects to a cache of a given name, creating the cache if it does not exist. This option is also used to indicate the cache that is to be modified by cache utilities; for example, `destroy`. Use the `listAllCaches` utility to show which named caches are currently available. If you do not specify a name, the default name *"sharedcc\_%u"* is used. "%u" in the cache name inserts the current user name. On operating systems other than Windows, you can specify *"%g"* in the cache name to insert the current group name.
 
-: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** It is good practice to explicitly specify a cache for your application. This avoids the application sharing a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application. Note that you cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#best-practices-for-using-xshareclasses).
+: :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** It is good practice to explicitly specify a cache for your application. This avoids the application sharing a cache that is enabled by default or with another application that doesn't set a name, and ensures that the size of your application cache can be set appropriately and that cache space is used exclusively for your application. Note that you cannot change the size of a default cache that already exists by using the [`-Xscmx`](xscmx.md) option, as that option has no effect on a pre-existing cache. See [Class data sharing: Best practices for using `-Xshareclasses`](shrc.md#creating-a-shared-classes-cache).
 
 ### `noaot`
 
@@ -474,7 +474,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
         -Xshareclasses:printAllStats
 
-:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats-cache-utility)). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see [Shared classes cache diagnostic utilities](shrc_diag_util.md#shared-classes-cache-diagnostic-utilities).
+:   Displays detailed information about the contents of the cache that is specified in the [`name`](#name) suboption. If the name is not specified, statistics are displayed about the default cache. For layered caches, information is shown for all layers (to see information for the top layer cache only, use [`printTopLayerStats=all`](#printtoplayerstats-cache-utility)). Every class is listed in chronological order with a reference to the location from which it was loaded. For more information, see [Shared classes cache diagnostic utilities](shrc_diag_util.md#diagnostic-cache-utilities).
 
 ### `printDetails` (Cache utility)
 
@@ -490,7 +490,7 @@ behavior, which can improve the performance of class loading from the shared cla
 
 : Specify one or more data types, which are separated by a plus symbol (+), to see more detailed information about the cache content. Data types include AOT data, class paths, and ROMMethods.
 
-: For more information and for a full list of data types, see [Shared classes cache diagnostic utilities](shrc_diag_util.md#shared-classes-cache-diagnostic-utilities).
+: For more information and for a full list of data types, see [Shared classes cache diagnostic utilities](shrc_diag_util.md#diagnostic-cache-utilities).
 
 ### `printTopLayerStats` (Cache utility)
 

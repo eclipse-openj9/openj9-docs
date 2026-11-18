@@ -50,7 +50,7 @@ If you set `-XX:-ReduceCPUMonitorOverhead`, the Eclipse OpenJ9&trade; VM monitor
 
 ## See also
 
-- [-XX:\[+|-\]EnableCPUMonitor](xxenablecpumonitor.md#xx/|-/enablecpumonitor "This option relates to the information about the CPU usage of thread categories that is available with the com.ibm.lang.management.JvmCpuMonitorMXBean application programming interface. CPU monitoring is enabled by default, and can be disabled by the command line option -XX:-EnableCPUMonitor. This option might not be supported in subsequent releases.")
+- [-XX:\[+|-\]EnableCPUMonitor](xxenablecpumonitor.md "This option relates to the information about the CPU usage of thread categories that is available with the com.ibm.lang.management.JvmCpuMonitorMXBean application programming interface. CPU monitoring is enabled by default, and can be disabled by the command line option -XX:-EnableCPUMonitor. This option might not be supported in subsequent releases.")
 
 
 <!-- ==== END OF TOPIC ==== xxreducecpumonitoroverhead.md ==== -->

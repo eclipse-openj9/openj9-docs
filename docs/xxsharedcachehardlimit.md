@@ -36,7 +36,7 @@ Specifies the size for a new shared classes cache. Use this option together with
 
 See [Using -X command-line options](x_jvm_commands.md) for more information about the `<size>` parameter.
 
-When you use this option with the `-Xscmx` option, the `-Xscmx` option sets the soft maximum size, and the `-XX:SharedCacheHardLimit` option sets the actual size, of a new shared classes cache. For more information, see [-Xscmx](xscmx.md#xscmx "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option). In earlier releases, the default cache size is platform-dependent.").
+When you use this option with the `-Xscmx` option, the `-Xscmx` option sets the soft maximum size, and the `-XX:SharedCacheHardLimit` option sets the actual size, of a new shared classes cache. For more information, see [-Xscmx](xscmx.md "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option). In earlier releases, the default cache size is platform-dependent.").
 
 If you use this option without the `-Xscmx` option, the behavior is the same as using the `-Xscmx` option by itself; both options set the actual size of the shared classes cache.
 
@@ -52,7 +52,7 @@ The following settings, when used together, set the soft maximum size of the sha
 
 ## See also
 
-- [-Xscmx](xscmx.md#xscmx "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option). In earlier releases, the default cache size is platform-dependent.")
+- [-Xscmx](xscmx.md "For a new shared classes cache, specifies either the actual size of the cache (if the -XX:SharedCacheHardLimit option is not present) or the soft maximum size of the cache (if used with the -XX:SharedCacheHardLimit option). In earlier releases, the default cache size is platform-dependent.")
 
 
 <!-- ==== END OF TOPIC ==== xxsharedcachehardlimit.md ==== -->

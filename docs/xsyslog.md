@@ -38,7 +38,7 @@ Enables operating system message logging.
 
 :fontawesome-solid-triangle-exclamation:{: .warn aria-hidden="true"} **Restriction:** The parameters `all`, `none` and `help` must be used on their own and cannot be combined. However, the other parameters can be grouped. For example, to include error, vital and warning messages use `-Xsyslog:error,vital,warn`.
 
-For message details see [OpenJ9 VM messages](messages_intro.md#jvm-messages).
+For message details see [OpenJ9 VM messages](messages_intro.md).
 
 ### `help`
 

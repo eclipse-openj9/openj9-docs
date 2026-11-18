@@ -26,15 +26,15 @@
 
 The following new features and notable changes from v.0.8.0 are included in this release:
 
-- [New binaries and supported environments.](#binaries-and-supported-platforms)
-- [The idle tuning feature is now supported on Linux running on Power&reg; Systems and IBM Z&reg; Systems.](#idle-tuning-feature)
-- [A new Garbage Collection (GC) policy is available that performs no housekeeping.](#new-gc-policy)
-- [A command line option is provided to automatically set a larger Java heap size for applications that run in containers.](#modifying-the-default-java-heap-size-for-applications-that-run-in-containers)
-- [You can now specify the maximum Java heap size as a percentage value.](#specifying-the-maximum-java-heap-size-as-a-percentage-value)
-- [The shared classes feature now supports nested jar files.](#shared-classes-support-for-nested-jar-files)
-- [System dump data can now be read to help diagnose problems on Linux and Windows platforms.](#direct-dump-reader-enabled-on-linux-and-windows)
-- [There are notable changes to the `java.lang.String` class.](#changes-to-the-javalangstring-class)
-- [There are notable changes to the `com.ibm.oti.shared.SharedClassCacheInfo` class.](#changes-to-the-SharedClassCacheInfo-class)
+- [New binaries and supported environments](#binaries-and-supported-platforms)
+- [The idle tuning feature is now supported on Linux running on Power&reg; Systems and IBM Z&reg; Systems](#idle-tuning-feature)
+- [A new Garbage Collection (GC) policy is available that performs no housekeeping](#new-gc-policy)
+- [A command line option is provided to automatically set a larger Java heap size for applications that run in containers](#modifying-the-default-java-heap-size-for-applications-that-run-in-containers)
+- [You can now specify the maximum Java heap size as a percentage value](#specifying-the-maximum-java-heap-size-as-a-percentage-value)
+- [The shared classes feature now supports nested jar files](#shared-classes-support-for-nested-jar-files)
+- [System dump data can now be read to help diagnose problems on Linux and Windows platforms](#direct-dump-reader-enabled-on-linux-and-windows)
+- [There are notable changes to the `java.lang.String` class](#changes-to-the-javalangstring-class)
+- [There are notable changes to the `com.ibm.oti.shared.SharedClassCacheInfo` class](#changes-to-the-sharedclasscacheinfo-class)
 - ![Start of content that applies only to Java 9](cr/java9plus.png) [New JDK 9 features](#new-jdk-9-features)
 - ![Start of content that applies only to Java 10](cr/java10plus.png) [New JDK 10 features](#new-jdk-10-features)
 
@@ -48,7 +48,7 @@ The following additional OpenJDK binaries that contain the Eclipse OpenJ9&trade;
 - [OpenJDK version 8 for 32-bit Windows](https://adoptopenjdk.net/releases.html?variant=openjdk8-openj9#x32_win)
 - [OpenJDK version 8 for x86 64-bit Linux (Large Heap)](https://adoptopenjdk.net/nightly.html?variant=openjdk8-openj9) for Java heaps >57 GB.
 
-Complete platform support information for OpenJ9 can be found in [Supported environments](#openj9_support.md)
+Complete platform support information for OpenJ9 can be found in [Supported environments](openj9_support.md)
 
 ### Idle tuning feature
 

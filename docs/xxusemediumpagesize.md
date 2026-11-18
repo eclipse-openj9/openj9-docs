@@ -46,7 +46,7 @@ You can re-enable the default setting with the `-XX:+UseMediumPageSize` option.
 
 ## See also
 
-- [What's new in version 0.59.0](version0.59.md#new-xx-usemediumpagesize-option-is-added)
+- [What's new in version 0.59.0](version0.59.md#on-aix-systems-ldr_cntrl-is-set-by-default-and-the-xx-usemediumpagesize-option-is-used-to-control-this-default-setting)
 - [Configuring your systems](configuring.md#aix-systems)
 - [-Xlp:codecache](xlpcodecache.md#aix)
 

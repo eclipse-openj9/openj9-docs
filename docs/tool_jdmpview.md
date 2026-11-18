@@ -163,10 +163,10 @@ You can chain more than two commands together by using multiple vertical bar cha
 
 The following commands can be used to interrogate the output:
 
-- [`charsFrom`](#using-`charsfrom`)
-- [`charsTo`](#using-`charsto`)
-- [`grep`](#using-`grep`)
-- [`tokens`](#using-`tokens`)
+- [`charsFrom`](#using-charsfrom)
+- [`charsTo`](#using-charsto)
+- [`grep`](#using-grep)
+- [`tokens`](#using-tokens)
 
 #### Using `CharsFrom`
 
