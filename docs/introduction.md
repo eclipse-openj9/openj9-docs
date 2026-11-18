@@ -73,7 +73,7 @@ To improve the performance of applications that run in containers, try setting t
 
 - Use a shared classes cache (`-Xshareclasses -XX:SharedCacheHardLimit=200m -Xscmx60m`) with Ahead-Of-Time (AOT) compilation to improve your startup time. For persistence, store the cache in a volume that you map to your container. For more information, see [Introduction to class data sharing](shrc.md) and [AOT Compiler](aot.md).
 
-- Use the [-Xtune:virtualized](xtunevirtualized.md) option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.
+- Use the [-Xtune:virtualized](xtune.md#virtualized) option, which configures OpenJ9 for typical cloud deployments where VM guests are provisioned with a small number of virtual CPUs to maximize the number of applications that can be run. When enabled, OpenJ9 adapts its internal processes to reduce the amount of CPU consumed and trim down the memory footprint. These changes come at the expense of only a small loss in throughput.
 
 - Provide access to the `/proc` file system for container detection on Linux systems since the detection code requires access to the `/proc/1/cgroup` and `/proc/1/sched` files. If you mount the `/proc` file system with the `hidepid=2` option on Linux systems and the VM does not have root privileges, it cannot access the `/proc` file system and the container detection fails. Even though the container detection fails, the VM does start with a warning message. For example:
 

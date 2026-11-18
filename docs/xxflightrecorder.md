@@ -134,7 +134,7 @@ Support for JFR will be expanded in future releases.
 
 - [What's new in version 0.49.0](version0.49.md#new-xx-flightrecorder-option-added)
 - [What's new in version 0.51.0](version0.51.md#support-for-jdk-flight-recorder-jfr-in-the-vm-for-openjdk-11-and-later-running-on-all-platforms)
-- [What's new in version 0.53.0](version0.53.md#new-java-flight-recorder-jfr-events-are-added-in-this-release)
+- [What's new in version 0.53.0](version0.53.md#new-jdk-flight-recorder-jfr-events-are-added-in-this-release)
 - [What's new in version 0.54.0](version0.54.md#new-jdk-flight-recorder-jfr-events-are-added-in-this-release)
 - [What's new in version 0.56.0](version0.56.md#the-nativelibrary-and-systemprocess-jfr-events-are-supported-in-all-platforms-except-zos)
 - [What's new in version 0.59.0](version0.59.md#new-xxstartflightrecording-command-line-option-is-added)

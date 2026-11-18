@@ -49,7 +49,7 @@ Setting the value to 0 disables this feature, which causes the following idle tu
 ## See also
 
 - [-XX:\[+|-\]IdleTuningGcOnIdle](xxidletuninggconidle.md)
-- [-XX:IdleTuningMinFreeHeapOnIdle](xxidletuningminfreeheaponidle.md#xxidletuningminfreeheaponidle)
+- [-XX:IdleTuningMinFreeHeapOnIdle](xxidletuningminfreeheaponidle.md)
 - [-XX:\[+|-\]IdleTuningCompactOnIdle](xxidletuningcompactonidle.md) (From OpenJ9 version 0.23.0 this option has no effect.)
 
 <!-- ==== END OF TOPIC ==== xxidletuningminidlewaittime.md ==== -->

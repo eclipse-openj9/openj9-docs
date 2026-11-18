@@ -155,7 +155,7 @@ Example of output:
 #JITServer: CpuLoad 206% (AvgUsage 25%) JvmCpu 113%
 ...
 ```
-A value greater than 0 for the `Compilation Queue Size` is a sign that the server is overloaded. Compilation requests that wait in the compilation queue face greater delays and run the risk of exceeding network timeouts. To avoid this scenario, you can reduce the number of connected clients, use the techniques that are described in section [Alleviating CPU congestion at the server](#alleviating-CPU-congestion-at-the-server), or increase the number of compilation threads at the server by using the [`-XcompilationThreads`](xcompilationthreads.md) option.
+A value greater than 0 for the `Compilation Queue Size` is a sign that the server is overloaded. Compilation requests that wait in the compilation queue face greater delays and run the risk of exceeding network timeouts. To avoid this scenario, you can reduce the number of connected clients, use the techniques that are described in section [Alleviating CPU congestion at the server](#alleviating-cpu-congestion-at-the-server), or increase the number of compilation threads at the server by using the [`-XcompilationThreads`](xcompilationthreads.md) option.
 
 Increasing the maximum number of client threads can improve performance in high network latency settings because there can be more in-progress concurrent compilation requests. Increasing the number of threads at the server can improve performance if the server has many CPU cores available and serves a large number of clients concurrently.
 

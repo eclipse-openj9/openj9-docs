@@ -122,8 +122,8 @@ The following cache utilities are available to adjust the storage values when a 
 
 | Component | Adjusting the minimum storage value                           | Adjusting the maximum storage value         |
 |-----------|---------------------------------------------------------------|---------------------------------------------|
-| AOT code  |[`-Xshareclasses:adjustminaot`](xshareclasses.md#adjustminaot) | [`-Xshareclasses:adjustmaxaot`](xshareclasses.md#adjustmaxaot) |
-| JIT code  |[`-Xshareclasses:adjustminjit`](xshareclasses.md#adjustminjit) | [`-Xshareclasses:adjustmaxjit`](xshareclasses.md#adjustmaxjit) |
+| AOT code  |[`-Xshareclasses:adjustminaot`](xshareclasses.md#adjustminaot-cache-utility) | [`-Xshareclasses:adjustmaxaot`](xshareclasses.md#adjustmaxaot-cache-utility) |
+| JIT code  |[`-Xshareclasses:adjustminjitdata`](xshareclasses.md#adjustminjitdata-cache-utility) | [`-Xshareclasses:adjustmaxjitdata`](xshareclasses.md#adjustmaxjitdata-cache-utility) |
 
 You can also use the `-Xshareclasses:findAotMethods` cache utility to list the AOT methods in a cache that match a method specification. This utility helps you identify methods that are causing a failure in an application. You can then invalidate the method without destroying the cache by using the `-Xshareclasses:invalidateAotMethods` cache utility. You can also revalidate an AOT method with the `-Xshareclasses:revalidateAotMethods` cache utility. To troubleshoot AOT problems, use the `-Xshareclasses:verboseAOT` suboption on the command line, which generates output about AOT code that is found or stored in the cache. For more information, see [`-Xshareclasses`](xshareclasses.md).
 
@@ -131,7 +131,7 @@ You can also use the `-Xshareclasses:findAotMethods` cache utility to list the A
 
 The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing you to specify where to create the cache, how much space to allocate, and more. The following best practices apply to using class data sharing:
 
-- Before starting your application, use the [`-Xshareclasses:listAllCaches`](xshareclasses.md#listallcaches) cache utility to review and maintain the existing caches on your system.
+- Before starting your application, use the [`-Xshareclasses:listAllCaches`](xshareclasses.md#listallcaches-cache-utility) cache utility to review and maintain the existing caches on your system.
 
     This option lists all the caches that exist in the default directory, including compatible and incompatible caches. You can also specify the `cacheDir` suboption to look for caches in a specified directory. Remove any obsolete caches, as described in [Housekeeping](#housekeeping).
 
@@ -161,7 +161,7 @@ The [-Xshareclasses](xshareclasses.md) option is highly configurable, allowing y
 
 - Set a soft maximum size for the cache by specifying the [-Xscmx](xscmx.md) option with the [`-XX:SharedCacheHardLimit`](xxsharedcachehardlimit.md) option.
 
-    For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the `-Xscmx` option, to limit the data stored in the cache (`-XX:SharedCacheHardLimit=64m -Xscmx16m`). You can then adjust the soft maximum size by using the [`-Xshareclasses:adjustsoftmx`](xshareclasses.md#adjustsoftmx) cache utility or the `MemoryMXBean.setSharedClassCacheSoftmxBytes()` method in the `com.ibm.lang.management` API. For more information, see [Setting a soft maximum size](xscmx.md#setting-a-soft-maximum-size).
+    For example, you might create a 64 MB shared cache and set a smaller value, such as 16 MB, for the `-Xscmx` option, to limit the data stored in the cache (`-XX:SharedCacheHardLimit=64m -Xscmx16m`). You can then adjust the soft maximum size by using the [`-Xshareclasses:adjustsoftmx`](xshareclasses.md#adjustsoftmx-cache-utility) cache utility or the `MemoryMXBean.setSharedClassCacheSoftmxBytes()` method in the `com.ibm.lang.management` API. For more information, see [Setting a soft maximum size](xscmx.md#setting-a-soft-maximum-size).
 
 
 ### Creating layer caches
@@ -210,18 +210,18 @@ The following options and cache utilities are available for creating, managing, 
 
 - [`-Xshareclasses:createLayer`](xshareclasses.md#createlayer)
 - [`-Xshareclasses:layer`](xshareclasses.md#layer)
-- [`-Xshareclasses:printTopLayerStats`](xshareclasses.md#printtoplayerstats) (for example output, see [printTopLayerStats](shrc_diag_util.md#printtoplayerstats))
-- [`-Xshareclasses:destroyAllLayers`](xshareclasses.md#destroyalllayers)
+- [`-Xshareclasses:printTopLayerStats`](xshareclasses.md#printtoplayerstats-cache-utility) (for example output, see [printTopLayerStats](shrc_diag_util.md#printtoplayerstats))
+- [`-Xshareclasses:destroyAllLayers`](xshareclasses.md#destroyalllayers-cache-utility)
 
 ## Saving a non-persistent shared classes cache
 
 As described in an earlier section, a shared classes cache can be persistent or non-persistent; persistent caches are memory-mapped files. By default, a cache is persistent on all platforms, except z/OS. Non-persistent caches are stored in shared memory and are removed when a system is rebooted. If you want to save a non-persistent cache beyond a reboot, you might want to consider taking a cache snapshot.
 
-To create a snapshot of a non-persistent shared classes cache, use the [`-Xshareclasses:snapshotCache`](xshareclasses.md#snapshotcache) cache utility. The snapshot has the same name and location as the shared cache, as specified by the `name` and `cacheDir` suboptions. The shared cache can be in use when the snapshot is taken, but VMs are blocked when they try to write to the shared cache while the cache data is copied to the file.
+To create a snapshot of a non-persistent shared classes cache, use the [`-Xshareclasses:snapshotCache`](xshareclasses.md#snapshotcache-cache-utility) cache utility. The snapshot has the same name and location as the shared cache, as specified by the `name` and `cacheDir` suboptions. The shared cache can be in use when the snapshot is taken, but VMs are blocked when they try to write to the shared cache while the cache data is copied to the file.
 
-Typically, after a system is reinitialized, the snapshot file is used to restore the copy of the non-persistent cache into shared memory, by using the [`-Xshareclasses:restoreFromSnapshot`](xshareclasses.md#restorefromsnapshot) cache utility. Because this process removes all non-persistent caches from shared memory, restoring the cache from the snapshot file can result in better VM startup performance, because the contents of the shared cache, including classes and AOT code, do not have to be re-created.
+Typically, after a system is reinitialized, the snapshot file is used to restore the copy of the non-persistent cache into shared memory, by using the [`-Xshareclasses:restoreFromSnapshot`](xshareclasses.md#restorefromsnapshot-cache-utility) cache utility. Because this process removes all non-persistent caches from shared memory, restoring the cache from the snapshot file can result in better VM startup performance, because the contents of the shared cache, including classes and AOT code, do not have to be re-created.
 
-The [`-Xshareclasses:listAllCaches`](xshareclasses.md#listallcaches) cache utility can be used to identify snapshots on a system.
+The [`-Xshareclasses:listAllCaches`](xshareclasses.md#listallcaches-cache-utility) cache utility can be used to identify snapshots on a system.
 
 A snapshot can be created only if the user has sufficient permissions to create the destination snapshot file. If a snapshot of the same name exists already, it is overwritten. On platforms that support persistent caches, the `nonpersistent` suboption must be specified in order to create a snapshot. For information about removing snapshot files, see the `destroySnapshot` and `destroyAllSnapshots` cache utilities in [Housekeeping](#housekeeping).
 
@@ -231,15 +231,15 @@ A snapshot can be created only if the user has sufficient permissions to create 
 
 Caches can be deleted if they contain many stale classes or if the cache is full and you want to create a bigger cache. Use one of the following utilities to remove unwanted caches:
 
-- [`-Xshareclasses:destroy`](xshareclasses.md#destroy): Removes specific caches when used with the `name`, `cacheDir`, and `nonpersistent` suboptions.
-- [`-Xshareclasses:destroyAll`](xshareclasses.md#destroyall): Removes all the caches that are specified by the `cacheDir` and `nonpersistent` suboptions.
-- [`-Xshareclasses:destroySnapshot`](xshareclasses.md#destroysnapshot): Removes a cache snapshot from disk that is specified by `name` and `cacheDir` suboptions.
-- [`-Xshareclasses:destroyAllSnapshots`](xshareclasses.md#destroyallsnapshots): Removes all cache snapshots from disk that are found by specifying the `cacheDir` suboption.
-- [`-Xshareclasses:destroyAllLayers`](xshareclasses.md#destroyalllayers): Removes all shared cache layers that are specified by the `name` and `cacheDir` suboptions.
+- [`-Xshareclasses:destroy`](xshareclasses.md#destroy-cache-utility): Removes specific caches when used with the `name`, `cacheDir`, and `nonpersistent` suboptions.
+- [`-Xshareclasses:destroyAll`](xshareclasses.md#destroyall-cache-utility): Removes all the caches that are specified by the `cacheDir` and `nonpersistent` suboptions.
+- [`-Xshareclasses:destroySnapshot`](xshareclasses.md#destroysnapshot-cache-utility): Removes a cache snapshot from disk that is specified by `name` and `cacheDir` suboptions.
+- [`-Xshareclasses:destroyAllSnapshots`](xshareclasses.md#destroyallsnapshots-cache-utility): Removes all cache snapshots from disk that are found by specifying the `cacheDir` suboption.
+- [`-Xshareclasses:destroyAllLayers`](xshareclasses.md#destroyalllayers-cache-utility): Removes all shared cache layers that are specified by the `name` and `cacheDir` suboptions.
 
 :fontawesome-solid-pencil:{: .note aria-hidden="true"} **Note:** You must always use the utilities to remove non-persistent caches correctly from shared memory.
 
-Caches can also be removed if they are unused for a specified amount of time. To configure time-based housekeeping, use the [-Xshareclasses:expire](xshareclasses.md#expire) option.
+Caches can also be removed if they are unused for a specified amount of time. To configure time-based housekeeping, use the [-Xshareclasses:expire](xshareclasses.md#expire-cache-utility) option.
 
 If you want to remove a cache but allow it to be re-created when the VM restarts, use the [`-Xshareclasses:reset`](xshareclasses.md#reset) option.
 

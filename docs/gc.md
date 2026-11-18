@@ -60,7 +60,7 @@ The following sections provide more information about each policy and when you m
 
 The Generational Concurrent GC policy ([`-Xgcpolicy:gencon`](xgcpolicy.md#gencon)) is probably best suited if you have a transactional application, with many short-lived objects. This policy aims to minimize GC pause times without compromising throughput. This is the default policy employed by the VM, so if you want to use it you don't need to specify it on the command line when you start your application.
 
-If your application requires the allocation of objects of very different sizes and liveness on the Java heap, you might experience heap fragmentation, which in turn might lead to global heap compaction. In these circumstances, the [Balanced GC policy](xgcpolicy.md#balanced-policy) might be more appropriate.
+If your application requires the allocation of objects of very different sizes and liveness on the Java heap, you might experience heap fragmentation, which in turn might lead to global heap compaction. In these circumstances, the [Balanced GC policy](xgcpolicy.md#balanced-64-bit-only) might be more appropriate.
 
 ### GC processing
 
@@ -101,7 +101,7 @@ More information about Concurrent Scavenge mode can be found in the blog post [C
 
 **(64-bit only)**
 
-The Balanced GC policy ([`-Xgcpolicy:balanced`](xgcpolicy.md#balanced)) evens out pause times and reduces the overhead of some of the costlier operations that are typically associated with garbage collection, such as compaction and class unloading. The Java heap is divided into a large number of regions (1,000 - 2,000), which are managed individually by an incremental generational collector to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates.
+The Balanced GC policy ([`-Xgcpolicy:balanced`](xgcpolicy.md#balanced-64-bit-only)) evens out pause times and reduces the overhead of some of the costlier operations that are typically associated with garbage collection, such as compaction and class unloading. The Java heap is divided into a large number of regions (1,000 - 2,000), which are managed individually by an incremental generational collector to reduce the maximum pause time on large heaps and increase the efficiency of garbage collection. The aim of the policy is to avoid global garbage collections by matching object allocation and survival rates.
 
 ###  When to use
 
@@ -194,7 +194,7 @@ Although high application utilization is desirable for optimal throughput, the G
 
 A higher utilization typically requires a larger heap because the GC isn't allowed to run as much as a lower utilization would permit. The relationship between utilization and heap size is highly application dependent, and striking an appropriate balance requires iterative experimentation with the application and VM parameters. You might need to adjust heap size or pause time or target utilization to achieve an acceptable runtime configuration.
 
-To learn about default options and tuning options that can be used with the `metronome` policy, see [`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-defaults-and-options).
+To learn about default options and tuning options that can be used with the `metronome` policy, see [`-Xgcpolicy:metronome`](xgcpolicy.md#metronome-options).
 
 
 ## `nogc` policy

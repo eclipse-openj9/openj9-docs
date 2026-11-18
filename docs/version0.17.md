@@ -70,7 +70,7 @@ The new options are:
 - [`createLayer`](xshareclasses.md#createlayer)
 - [`layer=<number>`](xshareclasses.md#layer) (see this section for more information about layered caches)
 - [`printTopLayerStats`](xshareclasses.md#printtoplayerstats-cache-utility)
-- [`destroyAllLayers`](xshareclasses.md#destroyalllayers)
+- [`destroyAllLayers`](xshareclasses.md#destroyalllayers-cache-utility)
 
 ### New shared classes cache suboption to skip disk space check
 
